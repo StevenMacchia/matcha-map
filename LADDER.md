@@ -16,6 +16,7 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 | 8 | Mascot | Sonnet subagent | done | A round matcha-cup character with a face, used in the header, pins, empty state and About; pastel basemap tint, soft pattern, favicon. Same words, same layout. | all-models 13% |
 | 9 | Instagram watch loop | Sonnet subagent | done | A watch list of accounts re-checked on a schedule, the Instagram Graph API adapter made real (captions by username, hashtag discovery), new handles found in captions added as candidates, `npm run watch` and `npm run discover`, setup guide. No scraping behind the login wall. | all-models 13% |
 | 10 | Richer cards | Sonnet subagent | done | Each pop-up card gets the post photo, the Instagram or TikTok post link, flavors and menu from the caption, price when stated. Schema, extractor, adapters and card. Starts after rungs 8 and 9. | all-models 14%, Fable 5% |
+| 11 | Make it work | Sonnet subagent | running | End-to-end check of site and pipeline without any token, fixes, a local scheduler (`npm run loop`) so the map refreshes itself, README truth pass. | |
 
 ## Log
 
@@ -35,3 +36,4 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 - 2026-11-22 10:50: full ingest over 151 sources: 39 events, 24 upcoming, all 24 with coordinates (from 4 this morning). Rung 10 (richer cards) started.
 - 2026-11-22 11:20: rung 10 done. Events carry image (downloaded to `site/img/events/`, credit and link back), posts, menu (rule-based from a 60-term vocabulary), price, description and brand links. After ingest: 39 events, 23 upcoming, all 23 with a photo, 11 with a menu, 3 with a price, 24 with a description. No Instagram or TikTok post links yet: none of the live sources is Instagram or TikTok until the Graph token exists or posts are pasted. Cards show photo, when, where, menu pills, description, Post / Instagram / Directions. `npm test`: 92 pass. Worker spent about 230k tokens.
 - 2026-11-22 11:25: spend for the day so far: weekly all-models 10% -> 14%, Fable 0% -> 5%. Open: the Meta app setup (waiting on a Facebook sign-in inside the browser pane), then the token into `.env` and a live `npm run watch`.
+- 2026-11-22 12:10: Meta app wizard filled in Steven's Chrome (name, email, Instagram + oEmbed + Pages use cases, no portfolio); Create app triggered Facebook's re-enter-password dialog, which only Steven can answer. Steven: leave Meta alone, make the app and site work. Rung 11 started.
