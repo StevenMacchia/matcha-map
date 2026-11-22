@@ -150,3 +150,20 @@ export function promote(wl, sources, { now = new Date(), graphOn = false } = {})
   }
   return { sources: out, promoted };
 }
+
+// Order for the by-handle search checks (rung 22): accounts that have had a hit first, then "watching", then candidates, then quiet;
+// inside a group the oldest last_checked first (never checked first). Returns a new array.
+export function priority(acc) {
+  if ((acc.hits || 0) > 0) return 0;
+  if (acc.status === "watching") return 1;
+  if (acc.status === "candidate") return 2;
+  return 3;
+}
+export function prioritize(accounts) {
+  const t = (a) => (a.last_checked ? Date.parse(a.last_checked) : 0);
+  return accounts.slice().sort((a, b) => priority(a) - priority(b) || t(a) - t(b));
+}
+// The accounts one search step may check: the due ones of a platform in priority order, at most `cap` (one credit each).
+export function pickForSearch(accounts, platform, cap) {
+  return prioritize(accounts.filter((a) => a.platform === platform)).slice(0, Math.max(0, cap));
+}

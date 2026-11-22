@@ -21,6 +21,7 @@ import { hasMatcha } from "../../adapters/mato.js";
 import { httpUrl } from "../html.js";
 import { UA } from "../fetch.js";
 import { CITY_STATE, looksLikeHandle, slugify, skipped } from "./common.js";
+import { parsePostText, cleanText } from "./ig-caption.js";
 import { info, warn, debug } from "../log.js";
 
 export const name = "social-search";
@@ -31,7 +32,21 @@ export const SEEN_DAYS = 14;
 export const MAX_AGE_DAYS = 45;
 export const CITIES_PER_RUN = 6;
 export const SHAPES = ["matcha pop up {city}", "matcha popup {city} this weekend", "{city} matcha cart OR matcha stand"];
-export const TAG_QUERIES = ["#matchapopup", "#matchapopups", "matcha pop up tour 2026", "matcha pop up december"];
+export const TAG_QUERIES = ["#matchapopup", "#matchapopups", "matcha pop up tour 2026", "matcha pop up december", "#matchapopupla", "#matchapopupnyc", "#matchacart", "#matchaevent"];
+export const TAGS_PER_RUN = 5, HOODS_PER_RUN = 4, TAG_CITIES_PER_RUN = 2;
+// Neighbourhood-level queries (rung 22). q is the search text; place is the city the event is filed under when the post names the
+// neighbourhood but not the city.
+export const HOODS = [
+  ["Williamsburg Brooklyn", "Williamsburg", "Brooklyn", "NY"], ["Bushwick Brooklyn", "Bushwick", "Brooklyn", "NY"], ["East Village New York", "East Village", "New York", "NY"],
+  ["Lower East Side New York", "Lower East Side", "New York", "NY"], ["SoHo New York", "SoHo", "New York", "NY"], ["Flushing Queens", "Flushing", "New York", "NY"],
+  ["Astoria Queens", "Astoria", "New York", "NY"], ["Jersey City", "Jersey City", "Jersey City", "NJ"],
+  ["Koreatown Los Angeles", "Koreatown", "Los Angeles", "CA"], ["Silver Lake Los Angeles", "Silver Lake", "Los Angeles", "CA"], ["Arts District Los Angeles", "Arts District", "Los Angeles", "CA"],
+  ["Sawtelle Los Angeles", "Sawtelle", "Los Angeles", "CA"], ["Little Tokyo Los Angeles", "Little Tokyo", "Los Angeles", "CA"], ["Pasadena", "Pasadena", "Pasadena", "CA"],
+  ["Long Beach CA", "Long Beach", "Long Beach", "CA"], ["Orange County CA", "Orange County", "Irvine", "CA"],
+  ["Mission District San Francisco", "Mission District", "San Francisco", "CA"], ["Japantown San Francisco", "Japantown", "San Francisco", "CA"], ["Oakland CA", "Oakland", "Oakland", "CA"], ["San Jose CA", "San Jose", "San Jose", "CA"],
+];
+const slotOf = (now) => Math.floor(new Date(now).getTime() / (6 * 3600000));
+const rotate = (list, n, slot) => (list.length ? Array.from({ length: Math.min(n, list.length) }, (_, i) => list[(slot * n + i) % list.length]) : []);
 const DAY = 86400000;
 
 // ---- budget ----------------------------------------------------------------------------------
@@ -60,17 +75,20 @@ export function citiesForSlot(cities, now = new Date(), perRun = CITIES_PER_RUN)
   return Array.from({ length: Math.min(perRun, cities.length) }, (_, i) => cities[(start + i) % cities.length]);
 }
 export function buildQueries(cities, now = new Date()) {
-  const q = [];
-  for (const city of citiesForSlot(cities, now)) SHAPES.forEach((s, i) => q.push({ q: s.replace("{city}", city), city, shape: i }));
-  for (const t of TAG_QUERIES) q.push({ q: t, city: null, shape: "tag" });
+  const q = [], slot = slotOf(now);
+  const chosen = citiesForSlot(cities, now);
+  for (const city of chosen) SHAPES.forEach((s, i) => q.push({ q: s.replace("{city}", city), city, shape: i }));
+  for (const h of rotate(HOODS, HOODS_PER_RUN, slot)) q.push({ q: `matcha pop up ${h[0]}`, city: h[2], shape: "hood" });
+  for (const t of rotate(TAG_QUERIES, TAGS_PER_RUN, slot)) q.push({ q: t, city: null, shape: "tag" });
+  for (const city of rotate(cities, TAG_CITIES_PER_RUN, slot + 7)) q.push({ q: `#matchapopup ${city}`, city, shape: "tag-city" });
   return q;
 }
 
 // ---- Tavily ----------------------------------------------------------------------------------
-export async function tavilySearch(query, { key, domains = ["tiktok.com", "instagram.com"], http = fetch, max = 20 } = {}) {
+export async function tavilySearch(query, { key, domains = ["tiktok.com", "instagram.com"], http = fetch, max = 20, raw = false } = {}) {
   const r = await http("https://api.tavily.com/search", {
     method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}`, "User-Agent": UA },
-    body: JSON.stringify({ query, search_depth: "basic", max_results: max, include_domains: domains, time_range: "month", include_raw_content: false }),
+    body: JSON.stringify({ query, search_depth: "basic", max_results: max, include_domains: domains, time_range: "month", include_raw_content: !!raw }),
     signal: AbortSignal.timeout(30000),
   });
   if (!r.ok) { const e = new Error(`Tavily HTTP ${r.status}`); e.status = r.status; throw e; }
@@ -144,7 +162,7 @@ const NOISE = /how to make|\brecipe\b|\breview\b|\branking\b|\btier list\b|best 
 const strip = (s) => String(s || "").replace(/#\w+/g, " ").replace(/\s+/g, " ").trim();
 const cityRe = (c) => new RegExp(`\\b${c.replace(/\./g, "\\.")}\\b`, "i");
 export const hasPlaceWord = (text) => Object.keys(CITY_STATE).some((c) => cityRe(c).test(text));
-const dated = (t, ref) => findDates(t, { y: ref.getUTCFullYear(), mo: ref.getUTCMonth() + 1, d: ref.getUTCDate() }).some((g) => ["md", "dm", "num"].includes(g.kind));
+const dated = (t, ref, rel = false) => findDates(t, { y: ref.getUTCFullYear(), mo: ref.getUTCMonth() + 1, d: ref.getUTCDate() }).some((g) => ["md", "dm", "num", ...(rel ? ["rel", "weekday", "weekend"] : [])].includes(g.kind));
 // {drop, reason}: no matcha word; or a recipe/review/ranking-style post that does not also carry a date and a place.
 export function noise(text, ref = new Date()) {
   const t = strip(text);
@@ -155,14 +173,18 @@ export function noise(text, ref = new Date()) {
 export const looksLikePopup = (text) => POPUP_WORD.test(strip(text));
 
 // First known city named in the text (hashtags removed first, so a hashtag alone never gives a place).
+// Places a post can name that the shared city table lacks; a neighbourhood from HOODS gives its city when no city is named.
+const EXTRA_PLACES = { Pasadena: "CA", "Long Beach": "CA", "Jersey City": "NJ", Irvine: "CA", Anaheim: "CA", "Santa Ana": "CA", "Costa Mesa": "CA", Queens: "NY" };
 export function cityIn(text) {
   const t = strip(text);
   let best = null;
-  for (const c of Object.keys(CITY_STATE)) {
+  for (const [c, st] of [...Object.entries(CITY_STATE), ...Object.entries(EXTRA_PLACES)]) {
     const m = cityRe(c).exec(t);
-    if (m && (!best || m.index < best.index)) best = { city: c, index: m.index };
+    if (m && (!best || m.index < best.index)) best = { city: c === "Queens" ? "New York" : c, state: st, index: m.index };
   }
-  return best ? { city: best.city, state: CITY_STATE[best.city] } : null;
+  if (best) return { city: best.city, state: best.state };
+  for (const [, hood, city, state] of HOODS) if (cityRe(hood).test(t)) return { city, state };
+  return null;
 }
 
 // ---- results -> RawItems ---------------------------------------------------------------------
@@ -180,15 +202,27 @@ export function sourceFor(platform, handle, brand, place, sources = []) {
 
 // One search result (+ optional TikTok oEmbed) -> {raw|null, reason, who|null}. who = {platform, handle, brand} for a matcha pop-up
 // result (a watch-list candidate). raw is a RawItem with source_hint, returned only when the extractor finds a real, upcoming, placed event.
-export function resultToItem(res, { oembed = null, now = new Date(), sources = [], query = "" } = {}) {
+// opts.handle forces the account (a by-handle search whose result names it); opts.rawContent lets Tavily's raw_content text help.
+export function resultToItem(res, { oembed = null, now = new Date(), sources = [], query = "", handle: forced = null, rawContent = true } = {}) {
   const p = parseSocialUrl(res.url);
   if (!p) return { raw: null, reason: "url", who: null };
-  const published = (p.id && p.platform === "tiktok" ? tiktokTime(p.id) : null) || (oembed?.id && tiktokTime(oembed.id)) || (res.published_date && !Number.isNaN(Date.parse(res.published_date)) ? new Date(res.published_date).toISOString() : null);
+  const snippet = [res.title, res.content, oembed?.caption].filter(Boolean).join(" \n ").replace(/\s+/g, " ").trim();
+  const n0 = noise(snippet, now);
+  if (n0.drop) return { raw: null, reason: n0.reason, who: null };
+  // The post date, best source first: TikTok id, the Instagram og:description / snippet / raw-content line, Tavily's own date.
+  let info = parsePostText(snippet, { now });
+  // raw_content (the page text Tavily extracted) is read only for a result that already passed the matcha filter, and is capped so
+  // comment threads and related-post text do not become the caption. It supplies the "Posted:" line and the author.
+  const extra = rawContent && res.raw_content && res.raw_content !== res.content ? String(res.raw_content).replace(/\s+/g, " ").slice(0, 1500) : "";
+  if (extra && (!info.published || !info.handle)) { const x = parsePostText(extra, { now }); info = { ...info, published: info.published || x.published, handle: info.handle || x.handle, nonEnglishMonth: info.nonEnglishMonth || x.nonEnglishMonth }; }
+  const published = (p.id && p.platform === "tiktok" ? tiktokTime(p.id) : null) || (oembed?.id && tiktokTime(oembed.id)) || info.published || (res.published_date && !Number.isNaN(Date.parse(res.published_date)) ? new Date(res.published_date).toISOString() : null);
   if (published && now - Date.parse(published) > MAX_AGE_DAYS * DAY) return { raw: null, reason: "old", who: null };
-  const text = [res.title, res.content, oembed?.caption].filter(Boolean).join(" \n ").replace(/\s+/g, " ").trim();
+  // The words used for the event: the caption without the og:description header and the page's own dates.
+  const body = info.text || snippet;
+  const text = extra && !dated(body, new Date(published || now), !!published) ? `${body} \n ${cleanText(extra)}` : body;
   const n = noise(text, now);
   if (n.drop) return { raw: null, reason: n.reason, who: null };
-  const handle = oembed?.handle || (p.platform === "instagram" ? igHandle(p, res.title, res.content) : p.handle);
+  const handle = forced || oembed?.handle || (p.platform === "instagram" ? info.handle || igHandle(p, res.title, res.content) : p.handle);
   const who = handle && looksLikePopup(text) ? { platform: p.platform, handle, brand: oembed?.author || handle } : null;
   if (!handle) return { raw: null, reason: "no handle", who };
   const place = cityIn(text);
@@ -197,12 +231,12 @@ export function resultToItem(res, { oembed = null, now = new Date(), sources = [
   const clean = strip(text);
   const raw = {
     source_url: canonical, text: clean, description: clean, // the caption is the brand's own words; the matcha-word keep rule (write.js keepMatoEvent) reads it
-    published_at: published, handle: p.platform === "instagram" ? handle : undefined,
+    published_at: published, noRelative: !published, handle: p.platform === "instagram" ? handle : undefined,
     image_url: oembed?.image_url || null, maxAheadDays: 150, posts: { [p.platform]: p.kind === "profile" ? null : canonical },
     hints: { city: place.city, state: place.state },
   };
   const source = sourceFor(p.platform, handle, oembed?.author || handle, place, sources);
-  if (!dated(clean, new Date(published || now))) return { raw: null, reason: "no date", who };
+  if (!dated(clean, new Date(published || now), !!published)) return { raw: null, reason: "no date", who };
   const cands = extract(raw, { source: { ...source, home_city: place.city, home_state: place.state }, now }).filter((c) => !c.cityInferred && c.start.slice(0, 10) >= new Date(now).toISOString().slice(0, 10));
   if (!cands.length) return { raw: null, reason: "no upcoming date", who };
   raw.source_hint = source;
@@ -235,7 +269,7 @@ export async function discover(ctx) {
     capHit = canSpend(budget, 1);
     if (capHit) { warn(`social-search: ${capHit} reached (${budget.used_run} credits this run, ${budget.used_month} this month); skipping the rest`); break; }
     let rs;
-    try { rs = await tavilySearch(q.q, { key, http }); } catch (e) {
+    try { rs = await tavilySearch(q.q, { key, http, raw: true }); } catch (e) {
       if (STOP.has(e.status)) { warn(`social-search: ${e.message}, stopping`); stats.stopped = e.status; break; }
       warn(`social-search "${q.q}": ${e.message}`); continue;
     }
@@ -290,17 +324,52 @@ export async function recheckTiktok(acc, ctx = {}) {
   if (why) { warn(`tiktok recheck @${acc.handle}: ${why} reached, skipped`); return null; }
   const http = ctx.http || fetch;
   let rs;
-  try { rs = await tavilySearch(`"${acc.handle}" matcha`, { key: env.TAVILY_API_KEY, domains: ["tiktok.com"], http }); } catch (e) { warn(`tiktok recheck @${acc.handle}: ${e.message}`); return null; }
+  try { rs = await tavilySearch(`"${acc.handle}" matcha`, { key: env.TAVILY_API_KEY, domains: ["tiktok.com"], http, max: 10, raw: true }); } catch (e) { warn(`tiktok recheck @${acc.handle}: ${e.message}`); return null; }
   spend(budget, 1);
   if (!ctx.budget) saveBudget(budget, ctx.budgetFile, now);
   const out = [];
+  out.seen = 0;
   for (const res of rs) {
     const p = parseSocialUrl(res.url);
     if (!p || p.kind !== "video" || p.handle?.toLowerCase() !== String(acc.handle).toLowerCase()) continue;
     if (!hasMatcha(res.title, res.content)) continue;
+    out.seen++;
     const oe = ctx.oembed ? await ctx.oembed(p.url) : await tiktokOembed(p.url, { http });
     if (!ctx.oembed) await (ctx.wait || sleep)(1000);
     const r = resultToItem(res, { oembed: oe, now, sources: ctx.sources || [], query: `"${acc.handle}" matcha` });
+    if (r.raw) out.push(r.raw);
+  }
+  return out;
+}
+
+// An Instagram account on the watch list, due for its check (rung 22): one Tavily query `"<handle>" matcha` over instagram.com
+// (include_domains takes domains only; a path such as instagram.com/<handle> returns nothing, tested 2026-11-22), 10 results, past month.
+// A result belongs to the account when its og:description / snippet names the handle, or the handle is written in the text.
+// -> RawItems (with source_hint) carrying .seen (posts of the account found), or null when it could not run.
+const reEsc = (x) => String(x).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const mentions = (text, handle) => new RegExp(`(?<![A-Za-z0-9._])@?${reEsc(handle)}(?![A-Za-z0-9_])`, "i").test(text);
+export async function recheckInstagram(acc, ctx = {}) {
+  const env = ctx.env || process.env, now = new Date(ctx.now || Date.now());
+  if (!env.TAVILY_API_KEY) return null;
+  const budget = ctx.budget || loadBudget(ctx.budgetFile, now);
+  const why = canSpend(budget, 1);
+  if (why) { warn(`instagram recheck @${acc.handle}: ${why} reached, skipped`); return null; }
+  const http = ctx.http || fetch;
+  let rs;
+  try { rs = await tavilySearch(`"${acc.handle}" matcha`, { key: env.TAVILY_API_KEY, domains: ["instagram.com"], http, max: 10, raw: true }); } catch (e) { warn(`instagram recheck @${acc.handle}: ${e.message}`); return null; }
+  spend(budget, 1);
+  if (!ctx.budget) saveBudget(budget, ctx.budgetFile, now);
+  const out = [];
+  out.seen = 0;
+  for (const res of rs) {
+    const p = parseSocialUrl(res.url);
+    if (!p || p.kind !== "post") continue;
+    const text = [res.title, res.content, String(res.raw_content || "").slice(0, 1500)].join(" ");
+    const info = parsePostText(text, { now });
+    const mine = info.handle ? info.handle.toLowerCase() === String(acc.handle).toLowerCase() : mentions(text, acc.handle);
+    if (!mine) continue;
+    out.seen++;
+    const r = resultToItem(res, { now, sources: ctx.sources || [], query: `"${acc.handle}" matcha`, handle: acc.handle });
     if (r.raw) out.push(r.raw);
   }
   return out;

@@ -187,6 +187,7 @@ export function extract(raw, ctx = {}) {
   const text = String(raw.text || "").replace(/\s+/g, " ").trim();
   const hints = raw.hints || {};
   const ref = refDate(raw.published_at || now, homeTz);
+  const today = refDate(now, homeTz);
   const own = [source.instagram, source.tiktok];
 
   // Where: hints win, then text.
@@ -216,6 +217,9 @@ export function extract(raw, ctx = {}) {
         // Stale-page guard: a year-less date far ahead is more likely last season's.
         if (raw.maxAheadDays && d.inferred && cmpDays(d, ref) > raw.maxAheadDays) continue;
         const rel = ["rel", "weekday", "weekend"].includes(g.kind);
+        // A relative word ("tomorrow", "this Saturday") resolves against the post date (raw.published_at). Without a trusted post date
+        // (raw.noRelative) it is not used; and a relative day that resolves before today is a past post, never an event.
+        if (rel && (raw.noRelative || cmpDays(d, today) < 0)) continue;
         const base = { explicit: !rel, timed: !!t, rel, weak: g.kind === "weekday" || g.kind === "weekend" };
         if (t) {
           slots.push({ ...base, start: zonedIso(tz, d.y, d.mo, d.d, t.start.h, t.start.mi), end: t.end ? zonedIso(tz, d.y, d.mo, d.d, t.end.h, t.end.mi) : null, all_day: false });

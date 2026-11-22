@@ -4,6 +4,11 @@
     "lng": -73.977286,
     "source": "nominatim"
   },
+  "1011 k st atlanta ga": {
+    "lat": 33.727995,
+    "lng": -84.415269,
+    "source": "nominatim"
+  },
   "10455 n central expy dallas tx 75230": {
     "lat": 32.888809,
     "lng": -96.770217,
@@ -78,6 +83,10 @@
     "lng": -117.778782,
     "source": "nominatim"
   },
+  "1744 rinehart rd orlando fl": {
+    "miss": true,
+    "at": 1795378393269
+  },
   "176 nw 25th st miami fl 33127": {
     "lat": 25.800662,
     "lng": -80.198562,
@@ -150,6 +159,11 @@
   "201 f street washington dc": {
     "lat": 38.897122,
     "lng": -77.003297,
+    "source": "nominatim"
+  },
+  "2026 edison st dallas tx": {
+    "lat": 32.793492,
+    "lng": -96.817101,
     "source": "nominatim"
   },
   "20812 international blvd seattle wa": {
@@ -230,6 +244,11 @@
     "lng": -83.055792,
     "source": "nominatim"
   },
+  "2915 knox ave los angeles ca 90039": {
+    "lat": 34.102873,
+    "lng": -118.243294,
+    "source": "nominatim"
+  },
   "313 north state street orem ut 84057": {
     "lat": 40.302982,
     "lng": -111.697661,
@@ -298,6 +317,11 @@
   "450 northeast 20th street boca raton fl 33431": {
     "lat": 26.367455,
     "lng": -80.079273,
+    "source": "nominatim"
+  },
+  "5023 n florida ave tampa fl": {
+    "lat": 27.992221,
+    "lng": -82.459053,
     "source": "nominatim"
   },
   "508 clematis street west palm beach fl 33401": {
@@ -403,6 +427,11 @@
     "lng": -83.040925,
     "source": "nominatim"
   },
+  "8110 olive blvd st louis mo 63130": {
+    "lat": 38.673111,
+    "lng": -90.346306,
+    "source": "nominatim"
+  },
   "8219 sw 124th st miami fl": {
     "lat": 25.655482,
     "lng": -80.326845,
@@ -411,6 +440,11 @@
   "83 water street brooklyn ny 11201": {
     "lat": 40.70331,
     "lng": -73.990971,
+    "source": "nominatim"
+  },
+  "903 marietta st atlanta ga": {
+    "lat": 33.777017,
+    "lng": -84.407928,
     "source": "nominatim"
   },
   "91 east 3rd street new york ny 10003": {
@@ -506,6 +540,10 @@
     "lat": 40.652601,
     "lng": -73.949721,
     "source": "nominatim"
+  },
+  "bujimatcha houston tx": {
+    "miss": true,
+    "at": 1795378305468
   },
   "cafe monet art & clay studio austin tx": {
     "miss": true,

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22T19:35:27.421Z",
+  "generated": "2026-11-22T20:13:59.047Z",
   "events": [
     {
       "id": "1ca91778ead5",
@@ -434,7 +434,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -483,7 +483,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -535,7 +535,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -685,6 +685,88 @@
       }
     },
     {
+      "id": "a1671789b266",
+      "brand": "searchinghighwithlo",
+      "source_id": "instagram:searchinghighwithlo",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "searchinghighwithlo",
+      "source_url": "https://www.instagram.com/reel/Df8VEqyMLdS/",
+      "title": "searchinghighwithlo pop-up at bujimatcha",
+      "start": "2026-11-19T00:00:00-06:00",
+      "end": null,
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "@bujimatcha",
+      "address": "",
+      "city": "Houston",
+      "state": "TX",
+      "zip": null,
+      "lat": 29.758938,
+      "lng": -95.367697,
+      "geocode_source": "none",
+      "confidence": "unsure",
+      "status": "past",
+      "last_seen": "2026-11-22T20:08:48.701Z",
+      "first_seen": "2026-11-22T20:08:48.701Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": "https://www.instagram.com/reel/Df8VEqyMLdS/",
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "HOUSTON HOT GIRL EVENTS YOU SHOULD KNOW ABOUT ... ... searchinghighwithlo on November 19, 2026. ... Buji Matcha Pop Up - hosted by - Nov. 22 - Seremoni",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/searchinghighwithlo/",
+        "tiktok": null
+      }
+    },
+    {
+      "id": "8687903221fa",
+      "brand": "bribwillis",
+      "source_id": "tiktok:bribwillis",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@bribwillis/video/7710026369333284109",
+      "title": "bribwillis pop-up at snoops",
+      "start": "2026-11-19T09:00:00-06:00",
+      "end": "2026-11-19T13:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "@snoops",
+      "address": "2026 Edison St",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": null,
+      "lat": 32.793492,
+      "lng": -96.817101,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bribwillis/video/7710026369333284109",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "DFW Matcha Pop-Ups: November 19-22 | TikTok Mo Matcha \\ ō Matcha \\ 9am - 1pm \\ 2001 S Ervay Dallas, TX 75212 \\ 7pm - 9pm \\ 2026 Edison St.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bribwillis"
+      }
+    },
+    {
       "id": "01c582fdbd28",
       "brand": "Diablicos Coffee",
       "source_id": "mato:diablicos.coffee",
@@ -707,7 +789,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -729,6 +811,47 @@
         "website": null,
         "instagram": "https://www.instagram.com/diablicos.coffee/",
         "tiktok": null
+      }
+    },
+    {
+      "id": "2b8bab42332a",
+      "brand": "bribwillis",
+      "source_id": "tiktok:bribwillis",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@bribwillis/video/7710026369333284109",
+      "title": "bribwillis pop-up at snoops",
+      "start": "2026-11-20T09:00:00-06:00",
+      "end": "2026-11-20T13:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "@snoops",
+      "address": "2026 Edison St",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": null,
+      "lat": 32.793492,
+      "lng": -96.817101,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bribwillis/video/7710026369333284109",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "DFW Matcha Pop-Ups: November 19-22 | TikTok Mo Matcha \\ ō Matcha \\ 9am - 1pm \\ 2001 S Ervay Dallas, TX 75212 \\ 7pm - 9pm \\ 2026 Edison St.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bribwillis"
       }
     },
     {
@@ -773,6 +896,47 @@
       }
     },
     {
+      "id": "0a30ccef92dc",
+      "brand": "bribwillis",
+      "source_id": "tiktok:bribwillis",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@bribwillis/video/7710026369333284109",
+      "title": "bribwillis pop-up at snoops",
+      "start": "2026-11-21T09:00:00-06:00",
+      "end": "2026-11-21T13:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "@snoops",
+      "address": "2026 Edison St",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": null,
+      "lat": 32.793492,
+      "lng": -96.817101,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bribwillis/video/7710026369333284109",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "DFW Matcha Pop-Ups: November 19-22 | TikTok Mo Matcha \\ ō Matcha \\ 9am - 1pm \\ 2001 S Ervay Dallas, TX 75212 \\ 7pm - 9pm \\ 2026 Edison St.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bribwillis"
+      }
+    },
+    {
       "id": "eb5167e6c4a4",
       "brand": "Filo Cafe",
       "source_id": "filo-cafe",
@@ -795,7 +959,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -824,6 +988,90 @@
       }
     },
     {
+      "id": "c88ad6046c7d",
+      "brand": "mrs.stript",
+      "source_id": "tiktok:mrs_stript",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "mrs.stript",
+      "source_url": "https://www.tiktok.com/@mrs.stript/video/7710658528532368654",
+      "title": "mrs.stript pop-up at BUJI",
+      "start": "2026-11-21T12:00:00-05:00",
+      "end": "2026-11-21T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "@BUJI",
+      "address": "5023 N Florida Ave",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": null,
+      "lat": 27.992221,
+      "lng": -82.459053,
+      "geocode_source": "nominatim",
+      "confidence": "confirmed",
+      "status": "past",
+      "last_seen": "2026-11-22T20:08:48.701Z",
+      "first_seen": "2026-11-22T20:08:48.701Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@mrs.stript/video/7710658528532368654",
+        "other": null
+      },
+      "menu": [
+        "banana"
+      ],
+      "price": null,
+      "description": "stript Go bananas is really that gworl!! c. ] Matcha pop-ups! c.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@mrs.stript"
+      }
+    },
+    {
+      "id": "cf150b3342d1",
+      "brand": "mrs.stript",
+      "source_id": "tiktok:mrs_stript",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@mrs.stript/video/7709615115439443214",
+      "title": "mrs.stript pop-up at Striptofficial",
+      "start": "2026-11-21T12:00:00-05:00",
+      "end": "2026-11-21T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "@Striptofficial",
+      "address": "903 Marietta St",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": null,
+      "lat": 33.777017,
+      "lng": -84.407928,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:08:48.701Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@mrs.stript/video/7709615115439443214",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "BUJI x Striptofficial Matcha Pop-Ups — 5 Cities Weekend (Nov 21–22) | TikTok ATL, GA Sunday, November 22nd 12–4PM Jaide ATL 903 Marietta St NW, Atlanta, GA 30318 x Matcha pop-ups!!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@mrs.stript"
+      }
+    },
+    {
       "id": "7efaa9eeeaae",
       "brand": "Moody Matcha Ritual",
       "source_id": "mato:moodymatcharitual",
@@ -846,7 +1094,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -868,6 +1116,47 @@
         "website": null,
         "instagram": "https://www.instagram.com/moodymatcharitual/",
         "tiktok": null
+      }
+    },
+    {
+      "id": "0e589a93f30e",
+      "brand": "momokomart",
+      "source_id": "tiktok:momokomart",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@momokomart/video/7708066751048617229",
+      "title": "momokomart pop-up",
+      "start": "2026-11-22T00:00:00-05:00",
+      "end": null,
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "",
+      "address": "",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": null,
+      "lat": 33.754466,
+      "lng": -84.389815,
+      "geocode_source": "none",
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@momokomart/video/7708066751048617229",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "Shogun Matcha Pop-Up in Atlanta: Nov 22nd & Chasen ... - TikTok **Event Details** **Location:** Momoko Mart, 5389G New Peachtree rd., Chamblee, GA **Date:** Sunday, November 22nd **Time:** 11 AM - 3",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@momokomart"
       }
     },
     {
@@ -893,7 +1182,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -940,7 +1229,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -1028,7 +1317,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:34:50.123Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T19:34:50.123Z",
       "extracted_by": "rule",
       "image": null,
@@ -1043,6 +1332,47 @@
       "links": {
         "website": null,
         "instagram": "https://www.instagram.com/letsgograbmatcha/",
+        "tiktok": null
+      }
+    },
+    {
+      "id": "15fe62eca93b",
+      "brand": "searchinghighwithlo",
+      "source_id": "instagram:searchinghighwithlo",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "searchinghighwithlo",
+      "source_url": "https://www.instagram.com/reel/Df8VEqyMLdS/",
+      "title": "searchinghighwithlo pop-up at bujimatcha",
+      "start": "2026-11-22T00:00:00-06:00",
+      "end": null,
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "@bujimatcha",
+      "address": "",
+      "city": "Houston",
+      "state": "TX",
+      "zip": null,
+      "lat": 29.758938,
+      "lng": -95.367697,
+      "geocode_source": "none",
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:08:48.701Z",
+      "first_seen": "2026-11-22T20:08:48.701Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": "https://www.instagram.com/reel/Df8VEqyMLdS/",
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "HOUSTON HOT GIRL EVENTS YOU SHOULD KNOW ABOUT ... ... searchinghighwithlo on November 19, 2026. ... Buji Matcha Pop Up - hosted by - Nov. 22 - Seremoni",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/searchinghighwithlo/",
         "tiktok": null
       }
     },
@@ -1110,7 +1440,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1157,7 +1487,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -1203,7 +1533,7 @@
       "lng": -81.693677,
       "geocode_source": "none",
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-22T19:34:50.123Z",
       "first_seen": "2026-11-22T19:34:50.123Z",
       "extracted_by": "rule",
@@ -1247,7 +1577,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -1294,7 +1624,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "past",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -1341,7 +1671,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -1388,7 +1718,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -1415,6 +1745,47 @@
       }
     },
     {
+      "id": "60bd5f47de62",
+      "brand": "bribwillis",
+      "source_id": "tiktok:bribwillis",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@bribwillis/video/7710026369333284109",
+      "title": "bribwillis pop-up at snoops",
+      "start": "2026-11-22T09:00:00-06:00",
+      "end": "2026-11-22T13:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "@snoops",
+      "address": "2026 Edison St",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": null,
+      "lat": 32.793492,
+      "lng": -96.817101,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bribwillis/video/7710026369333284109",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "DFW Matcha Pop-Ups: November 19-22 | TikTok Mo Matcha \\ ō Matcha \\ 9am - 1pm \\ 2001 S Ervay Dallas, TX 75212 \\ 7pm - 9pm \\ 2026 Edison St.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bribwillis"
+      }
+    },
+    {
       "id": "c88def6d2b0c",
       "brand": "Longevity Cities",
       "source_id": "allevents:longevity-cities",
@@ -1437,7 +1808,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -1484,7 +1855,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -1536,8 +1907,8 @@
       "lng": -78.639099,
       "geocode_source": "none",
       "confidence": "unsure",
-      "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "status": "past",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1586,7 +1957,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -1639,7 +2010,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -1687,8 +2058,8 @@
       "lng": -71.087773,
       "geocode_source": "nominatim",
       "confidence": "confirmed",
-      "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -1735,7 +2106,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -1784,7 +2155,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -1806,6 +2177,49 @@
         "website": null,
         "instagram": null,
         "tiktok": null
+      }
+    },
+    {
+      "id": "004b2d272c61",
+      "brand": "mrs.stript",
+      "source_id": "tiktok:mrs_stript",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "mrs.stript",
+      "source_url": "https://www.tiktok.com/@mrs.stript/video/7710658528532368654",
+      "title": "mrs.stript pop-up at BUJI",
+      "start": "2026-11-22T12:00:00-05:00",
+      "end": "2026-11-22T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "@BUJI",
+      "address": "5023 N Florida Ave",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": null,
+      "lat": 27.992221,
+      "lng": -82.459053,
+      "geocode_source": "nominatim",
+      "confidence": "confirmed",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:08:48.701Z",
+      "first_seen": "2026-11-22T20:08:48.701Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@mrs.stript/video/7710658528532368654",
+        "other": null
+      },
+      "menu": [
+        "banana"
+      ],
+      "price": null,
+      "description": "stript Go bananas is really that gworl!! c. ] Matcha pop-ups! c.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@mrs.stript"
       }
     },
     {
@@ -1831,7 +2245,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1885,7 +2299,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -1906,6 +2320,90 @@
       "links": {
         "website": null,
         "instagram": "https://www.instagram.com/jaide.atelier/",
+        "tiktok": null
+      }
+    },
+    {
+      "id": "1e234f291dbf",
+      "brand": "mrs.stript",
+      "source_id": "tiktok:mrs_stript",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@mrs.stript/video/7709615115439443214",
+      "title": "mrs.stript pop-up at Striptofficial",
+      "start": "2026-11-22T12:00:00-05:00",
+      "end": "2026-11-22T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "@Striptofficial",
+      "address": "903 Marietta St",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": null,
+      "lat": 33.777017,
+      "lng": -84.407928,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:08:48.701Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@mrs.stript/video/7709615115439443214",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "BUJI x Striptofficial Matcha Pop-Ups — 5 Cities Weekend (Nov 21–22) | TikTok ATL, GA Sunday, November 22nd 12–4PM Jaide ATL 903 Marietta St NW, Atlanta, GA 30318 x Matcha pop-ups!!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@mrs.stript"
+      }
+    },
+    {
+      "id": "2bcc628c1393",
+      "brand": "bujimatcha",
+      "source_id": "instagram:bujimatcha",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "bujimatcha",
+      "source_url": "https://www.instagram.com/reel/Df3DxsQAlsy/",
+      "title": "bujimatcha pop-up at striptofficial",
+      "start": "2026-11-22T12:00:00-05:00",
+      "end": "2026-11-22T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "@striptofficial",
+      "address": "1011 K St",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": null,
+      "lat": 33.727995,
+      "lng": -84.415269,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": "https://www.instagram.com/reel/Df3DxsQAlsy/",
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "blueberry"
+      ],
+      "price": null,
+      "description": "DC + Atlanta, BUJI is coming to your city this Sunday! Pull up for BUJI bevs, shop STRIPT + BUJI m…\" # BUJI Matcha on Instagram: \"DC + Atlanta, BUJI is coming to your city this Sunday!",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/bujimatcha/",
         "tiktok": null
       }
     },
@@ -1932,7 +2430,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1978,8 +2476,8 @@
       "lng": -77.047023,
       "geocode_source": "none",
       "confidence": "unsure",
-      "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2028,7 +2526,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2076,8 +2574,8 @@
       "lng": -95.357761,
       "geocode_source": "nominatim",
       "confidence": "confirmed",
-      "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -2123,8 +2621,8 @@
       "lng": -76.993249,
       "geocode_source": "nominatim",
       "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "status": "past",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2171,7 +2669,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -2222,7 +2720,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -2271,7 +2769,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "past",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2293,6 +2791,47 @@
         "website": null,
         "instagram": null,
         "tiktok": null
+      }
+    },
+    {
+      "id": "8a7478e2e476",
+      "brand": "bujimatcha",
+      "source_id": "tiktok:bujimatcha",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@bujimatcha/video/7709556778467462413",
+      "title": "bujimatcha pop-up",
+      "start": "2026-11-22T12:00:00-06:00",
+      "end": "2026-11-22T17:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "",
+      "address": "1145 Providence St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77002",
+      "lat": 29.76795,
+      "lng": -95.357761,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bujimatcha/video/7709556778467462413",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "BUJI Matcha Pop-Up Houston November 22 | Matcha Beverages & Merch | TikTok CapCut · Editing made easyBUJI Matcha · 4d ago Houston, you’re up next!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@bujimatcha"
       }
     },
     {
@@ -2318,7 +2857,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2365,7 +2904,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2412,7 +2951,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -2465,7 +3004,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -2512,7 +3051,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -2559,7 +3098,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2606,7 +3145,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2653,7 +3192,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2700,7 +3239,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2747,7 +3286,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2794,7 +3333,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2841,7 +3380,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2888,7 +3427,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -2937,7 +3476,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -2955,6 +3494,47 @@
       "menu": [],
       "price": null,
       "description": "Full & Still is a beginner-friendly ikebana workshop hosted by Forager Crafts in Frogtown, Los Angeles.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/foragercrafts/",
+        "tiktok": null
+      }
+    },
+    {
+      "id": "c9f5a47891c3",
+      "brand": "foragercrafts",
+      "source_id": "instagram:foragercrafts",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "foragercrafts",
+      "source_url": "https://www.instagram.com/p/Df2lCsUDySL/",
+      "title": "foragercrafts pop-up",
+      "start": "2026-11-22T15:00:00-08:00",
+      "end": null,
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "",
+      "address": "2915 Knox Ave",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "90039",
+      "lat": 34.102873,
+      "lng": -118.243294,
+      "geocode_source": "nominatim",
+      "confidence": "confirmed",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:08:48.701Z",
+      "first_seen": "2026-11-22T20:08:48.701Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": "https://www.instagram.com/p/Df2lCsUDySL/",
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "Full & Still — Ikebana + Matcha Sunday, November 22 at 3:00 PM ... Hi everyone, it's Nana my ikebana and matcha tea workshops are back！ 2915 Knox Ave , Los Angeles, CA 90039. This",
       "links": {
         "website": null,
         "instagram": "https://www.instagram.com/foragercrafts/",
@@ -2984,7 +3564,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -3037,7 +3617,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -3089,7 +3669,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3138,7 +3718,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T18:29:44.927Z",
       "extracted_by": "rule",
       "image": null,
@@ -3179,7 +3759,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3226,7 +3806,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3273,7 +3853,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -3320,7 +3900,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3367,7 +3947,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T18:29:44.927Z",
       "extracted_by": "rule",
       "image": null,
@@ -3408,7 +3988,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -3460,7 +4040,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3482,6 +4062,51 @@
         "website": null,
         "instagram": null,
         "tiktok": null
+      }
+    },
+    {
+      "id": "cfdc0e7f85d6",
+      "brand": "cube.tea.studio.o",
+      "source_id": "tiktok:cube_tea_studio_o",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@cube.tea.studio.o/video/7709634665975401742",
+      "title": "cube.tea.studio.o pop-up",
+      "start": "2026-11-26T11:30:00-06:00",
+      "end": "2026-11-26T18:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "",
+      "address": "8110 Olive Blvd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63130",
+      "lat": 38.673111,
+      "lng": -90.346306,
+      "geocode_source": "nominatim",
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@cube.tea.studio.o/video/7709634665975401742",
+        "other": null
+      },
+      "menu": [
+        "milk tea",
+        "lemon",
+        "boba"
+      ],
+      "price": null,
+      "description": "TikTok - Make Your Day 7 ·2h ago Do you want a milk tea? Yes. At Cube Tea Studio every cup is made to order: fresh tea poured over creamy milk, plus fruit slushies, matcha and lemon tea.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@cube.tea.studio.o"
       }
     },
     {
@@ -3507,7 +4132,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3554,7 +4179,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3601,7 +4226,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -3648,7 +4273,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -3785,7 +4410,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -3832,7 +4457,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3879,7 +4504,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -3926,7 +4551,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4020,7 +4645,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4067,7 +4692,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4118,7 +4743,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -4165,7 +4790,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4212,7 +4837,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4259,7 +4884,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -4308,7 +4933,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4355,7 +4980,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4404,7 +5029,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4453,7 +5078,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4502,7 +5127,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4549,7 +5174,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -4598,7 +5223,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4645,7 +5270,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4692,7 +5317,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4739,7 +5364,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -4792,7 +5417,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4839,7 +5464,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4886,7 +5511,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4933,7 +5558,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -4980,7 +5605,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:29:32.330Z",
       "extracted_by": "rule",
       "image": {
@@ -5029,7 +5654,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5076,7 +5701,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5123,7 +5748,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5217,7 +5842,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5266,7 +5891,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -5313,7 +5938,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -5360,7 +5985,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5407,7 +6032,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -5454,7 +6079,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5501,7 +6126,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5548,7 +6173,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T18:21:36.297Z",
+      "last_seen": "2026-11-22T20:08:48.701Z",
       "first_seen": "2026-11-22T18:21:36.297Z",
       "extracted_by": "rule",
       "image": {
@@ -5602,7 +6227,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5649,7 +6274,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5696,7 +6321,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -5748,7 +6373,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -5795,7 +6420,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5842,7 +6467,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -5889,7 +6514,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -5936,7 +6561,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -5983,7 +6608,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -6030,7 +6655,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -6077,7 +6702,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -6124,7 +6749,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -6171,7 +6796,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -6218,7 +6843,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -6265,7 +6890,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -6312,7 +6937,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -6359,7 +6984,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T18:21:36.297Z",
+      "last_seen": "2026-11-22T20:08:48.701Z",
       "first_seen": "2026-11-22T18:21:36.297Z",
       "extracted_by": "rule",
       "image": {
@@ -6406,7 +7031,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -6453,7 +7078,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -6500,7 +7125,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -6547,7 +7172,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -6596,7 +7221,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -6643,7 +7268,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -6690,7 +7315,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -6737,7 +7362,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -6786,7 +7411,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -6835,7 +7460,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -6888,7 +7513,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -6938,7 +7563,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -6985,7 +7610,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7012,6 +7637,47 @@
       }
     },
     {
+      "id": "c676cf3f543c",
+      "brand": "emkari_cafe",
+      "source_id": "tiktok:emkari_cafe",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.tiktok.com/@emkari_cafe/video/7710008452852075807",
+      "title": "emkari_cafe pop-up",
+      "start": "2026-12-06T00:00:00-08:00",
+      "end": null,
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "",
+      "address": "",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": null,
+      "lat": 32.715706,
+      "lng": -117.163828,
+      "geocode_source": "none",
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-22T20:12:18.734Z",
+      "first_seen": "2026-11-22T20:12:18.734Z",
+      "extracted_by": "rule",
+      "image": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@emkari_cafe/video/7710008452852075807",
+        "other": null
+      },
+      "menu": [],
+      "price": null,
+      "description": "Filipino & Vietnamese Matcha & Coffee Popup in San Diego | Dec 6th A new popup event is set to take place on December 6th at the Day to Day Collective, offering a special taste of Filipino and…",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": "https://www.tiktok.com/@emkari_cafe"
+      }
+    },
+    {
       "id": "69a125250524",
       "brand": "Cafe Monet Art & Clay Studio",
       "source_id": "mato:cafe_monet_studio",
@@ -7034,7 +7700,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -7083,7 +7749,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7133,7 +7799,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7180,7 +7846,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -7227,7 +7893,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -7274,7 +7940,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7321,7 +7987,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7368,7 +8034,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -7415,7 +8081,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7462,7 +8128,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7509,7 +8175,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7556,7 +8222,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7603,7 +8269,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T18:21:36.297Z",
+      "last_seen": "2026-11-22T20:08:48.701Z",
       "first_seen": "2026-11-22T18:21:36.297Z",
       "extracted_by": "rule",
       "image": {
@@ -7652,7 +8318,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7701,7 +8367,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -7748,7 +8414,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7797,7 +8463,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -7844,7 +8510,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7891,7 +8557,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7938,7 +8604,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -7985,7 +8651,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8035,7 +8701,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8082,7 +8748,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8129,7 +8795,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8176,7 +8842,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -8225,7 +8891,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8272,7 +8938,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8319,7 +8985,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -8366,7 +9032,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -8413,7 +9079,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -8464,7 +9130,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8511,7 +9177,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8558,7 +9224,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8605,7 +9271,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -8652,7 +9318,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8701,7 +9367,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8748,7 +9414,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8795,7 +9461,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8842,7 +9508,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8889,7 +9555,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -8936,7 +9602,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -8983,7 +9649,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -9030,7 +9696,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:35:27.421Z",
+      "last_seen": "2026-11-22T20:13:59.047Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -9118,7 +9784,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -9165,7 +9831,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -9212,7 +9878,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T19:21:04.133Z",
+      "last_seen": "2026-11-22T20:12:18.734Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {

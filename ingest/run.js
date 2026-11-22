@@ -12,12 +12,13 @@ import luma from "./adapters/luma.js";
 import eventbrite from "./adapters/eventbrite.js";
 import ics from "./adapters/ics.js";
 import website from "./adapters/website.js";
+import marketspread from "./adapters/marketspread.js";
 import manual, { parsePaste, readInbox, matchSource } from "./adapters/manual.js";
 import instagram from "./adapters/instagram-graph.js";
 import tiktok from "./adapters/tiktok.js";
 import { oembed } from "./adapters/oembed.js";
 
-const ADAPTERS = [mato, luma, eventbrite, ics, website, manual]; // first match reads a source
+const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual]; // first match reads a source
 const EXTRA = [instagram, tiktok];                    // wired, off without keys
 
 function args(argv) {

@@ -16,11 +16,12 @@ import luma from "./adapters/luma.js";
 import eventbrite from "./adapters/eventbrite.js";
 import ics from "./adapters/ics.js";
 import website from "./adapters/website.js";
+import marketspread from "./adapters/marketspread.js";
 import manual from "./adapters/manual.js";
-import { recheckTiktok } from "./lib/sites/social-search.js";
+import { recheckTiktok, recheckInstagram, loadBudget, saveBudget } from "./lib/sites/social-search.js";
 import graph, { creds } from "./adapters/instagram-graph.js";
 
-const ADAPTERS = [mato, luma, eventbrite, ics, website, manual];
+const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual];
 const pad = (s, n) => String(s).padEnd(n).slice(0, n);
 
 async function main() {
@@ -44,22 +45,34 @@ async function main() {
   if (only && !due.length) warn(`no account "${only}" on the watch list`);
   info(`${due.length} of ${wl.accounts.length} accounts to check`);
 
+  // Search checks cost one Tavily credit each. Caps per step (env WATCH_IG_CAP / WATCH_TT_CAP, default 60 / 40), highest priority first:
+  // accounts with a hit, then watching, then candidates, oldest last_checked first. Accounts past the cap stay due for the next run.
+  const budget = loadBudget(undefined, now);
+  const caps = { instagram: +(env.WATCH_IG_CAP ?? 60), tiktok: +(env.WATCH_TT_CAP ?? 40) };
+  const queue = new Set([...wlib.pickForSearch(due, "instagram", caps.instagram), ...wlib.pickForSearch(due, "tiktok", caps.tiktok)].map((a) => a));
+  const order = new Map(wlib.prioritize(due).map((a, i) => [a, i]));
+  due.sort((a, b) => order.get(a) - order.get(b));
+  const stat = { instagram: { checked: 0, posts: 0, events: 0, credits: 0 }, tiktok: { checked: 0, posts: 0, events: 0, credits: 0 } };
   const known = new Set(readEvents().map((e) => e.id));
   const candidates = [], live = [], notes = new Map();
   for (const acc of due) {
     let source = sources.find((s) => s.id === acc.source_id) || wlib.pseudoSource(acc);
     let items = [], ran = false, searchOnly = false;
     try {
-      if (acc.platform === "tiktok" && !noFetch) {
-        // TikTok is never opened: a Tavily query `"<handle>" matcha` over tiktok.com plus the open oEmbed (1 credit).
-        const found = await recheckTiktok(acc, { now, env, sources });
-        if (found) { items = items.concat(found); ran = true; searchOnly = true; if (found[0]?.source_hint) source = found[0].source_hint; }
+      const search = !noFetch && queue.has(acc) && (acc.platform === "tiktok" || acc.platform === "instagram");
+      if (search) {
+        // Never opened: a Tavily query `"<handle>" matcha` over the platform's domain (1 credit), plus TikTok's open oEmbed.
+        const before = budget.used_run;
+        const found = await (acc.platform === "tiktok" ? recheckTiktok : recheckInstagram)(acc, { now, env, sources, budget });
+        const st = stat[acc.platform];
+        st.credits += budget.used_run - before;
+        if (found) { st.checked++; st.posts += found.seen || 0; st.events += found.length; items = items.concat(found); ran = true; searchOnly = true; if (found[0]?.source_hint) source = found[0].source_hint; }
       }
       if (acc.platform === "instagram" && igOn && !noFetch) { items = items.concat(await graph.fetch(source, ctx)); ran = true; searchOnly = false; }
       const adapter = source.schedule_url ? ADAPTERS.find((x) => x.matches(source)) : null;
       if (adapter && adapter !== manual) { items = items.concat(await adapter.fetch(source, ctx)); ran = true; searchOnly = false; }
     } catch (e) { warn(`${acc.handle}: ${e.message}`); notes.set(acc.handle, `failed: ${e.message}`); continue; }
-    if (!ran) { notes.set(acc.handle, igOn ? "nothing to check" : "needs token"); continue; }
+    if (!ran) { notes.set(acc.handle, queue.has(acc) ? "search failed or cap reached" : igOn ? "nothing to check" : "over the search cap or no source"); continue; }
     if (!searchOnly) live.push(source.id); // search snippets are not a full listing: a missing post must not decay its events
     const { candidates: cs, popupAt } = await processItems(items, source, { now, handle: source.instagram ?? (wlib.readNote(acc.notes) ? null : acc.handle) });
     const ids = new Set(dedupeCandidates(cs, now).map((c) => c.id));
@@ -69,7 +82,9 @@ async function main() {
     notes.set(acc.handle, `${items.length} items, ${ids.size} dated`);
   }
 
+  saveBudget(budget, undefined, now); // credits are spent even on --dry
   const { merged } = await finalize(candidates, { now, geocoder, fetcher, liveSourceIds: live, dry });
+  for (const k of ["instagram", "tiktok"]) info(`by-handle ${k}: ${stat[k].checked} accounts checked, ${stat[k].posts} posts of theirs seen, ${stat[k].events} dated events, ${stat[k].credits} credits`);
   info(`${candidates.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);
 
   if (has("--promote")) {

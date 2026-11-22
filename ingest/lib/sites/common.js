@@ -8,6 +8,16 @@
 // everything for us; at most CAP network fetches per site per run; every further request stops after an HTTP 429
 // or 403; only public pages, JSON-LD or JSON the page itself embeds; never instagram.com, tiktok.com or
 // facebook.com; keep matcha events only (word list in adapters/mato.js).
+//
+// Pop-up aggregators checked in rung 22 (2026-11-22) and skipped; none has a public, allowed, structured, dated listing:
+//   thepopuplist.com     robots.txt allows all, but every page redirects to /lander (a parked page); no listings.
+//   popupinsider.com     robots.txt allows public pages; a retail-industry magazine (WordPress), editorial articles, no event listing, no JSON-LD.
+//   shoppopup.com        did not answer (no connection).
+//   popupsnearme.com     a Squarespace "Coming Soon" page; its robots.txt carries "Disallow: /".
+//   thepopupcollective.com  a photography portfolio (Wix); no events.
+//   US pop-up finders    three web searches found only city pages on Eventbrite and AllEvents (both crawled already) and editorial roundups.
+//   Local calendars seen in results, not built: thebostoncalendar.com, downtownraleigh.org/do, rinoartdistrict.org/do (single-city, mostly past dates).
+//   MarketSpread         is used: adapters/marketspread.js (robots allows all; vendor page -> market -> event pages naming the vendor).
 import { parseRobots, robotsAllows } from "../fetch.js";
 import { jsonLd, ldImage, httpUrl, decode } from "../html.js";
 import { eventToRaw, hasMatcha } from "../../adapters/mato.js";
@@ -20,7 +30,7 @@ const STATE_SET = new Set(STATES);
 
 // Prefixes of pseudo-source ids. Events under them stay only while a matcha word is in their text (write.js).
 // The order is the duplicate priority: when two sites list the same event, the lower rank wins.
-export const SITE_ORDER = ["mato", "luma", "eventbrite", "dostuff", "meetup", "linktree", "allevents"];
+export const SITE_ORDER = ["mato", "luma", "eventbrite", "dostuff", "meetup", "linktree", "allevents", "tiktok", "instagram"];
 
 export const slugify = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 export const looksLikeHandle = (s) => /^[A-Za-z0-9._]{3,30}$/.test(s || "") && /[A-Za-z]/.test(s) && !/\.$/.test(s) && !/\.\./.test(s);
