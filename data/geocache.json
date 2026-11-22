@@ -1,0 +1,89 @@
+{
+  "10455 n central expy dallas tx 75230": {
+    "lat": 32.888809,
+    "lng": -96.770217,
+    "source": "nominatim"
+  },
+  "10455 n central expy ste 106 dallas tx 75230": {
+    "miss": true,
+    "at": 1795351946008
+  },
+  "1600 bonita ave la verne ca 91750": {
+    "lat": 34.103786,
+    "lng": -117.778782,
+    "source": "nominatim"
+  },
+  "73 e jackson blvd chicago il": {
+    "lat": 41.878172,
+    "lng": -87.625696,
+    "source": "nominatim"
+  },
+  "citycovestudios fredericksburg va": {
+    "miss": true,
+    "at": 1795351937844
+  },
+  "fredericksburg va": {
+    "lat": 38.300116,
+    "lng": -77.457147,
+    "source": "nominatim"
+  },
+  "houston tx": {
+    "lat": 29.758938,
+    "lng": -95.367697,
+    "source": "nominatim"
+  },
+  "isshiki matcha soho new york ny": {
+    "miss": true,
+    "at": 1795351953082
+  },
+  "isshiki new york ny": {
+    "miss": true,
+    "at": 1795351950052
+  },
+  "laseraway logan circle northern virginia va": {
+    "miss": true,
+    "at": 1795351944555
+  },
+  "manhattan new york ny": {
+    "lat": 40.757955,
+    "lng": -73.985532,
+    "source": "nominatim"
+  },
+  "miami fl": {
+    "lat": 25.774157,
+    "lng": -80.193597,
+    "source": "nominatim"
+  },
+  "new york ny": {
+    "lat": 40.712728,
+    "lng": -74.006015,
+    "source": "nominatim"
+  },
+  "northern virginia va": {
+    "lat": 38.840872,
+    "lng": -77.11447,
+    "source": "nominatim"
+  },
+  "south block northern virginia va": {
+    "miss": true,
+    "at": 1795351941124
+  },
+  "the malin washington dc": {
+    "miss": true,
+    "at": 1795351935991
+  },
+  "vale matcha & coffee seattle wa": {
+    "lat": 47.617271,
+    "lng": -122.334857,
+    "source": "nominatim"
+  },
+  "washington dc": {
+    "lat": 38.895098,
+    "lng": -77.036385,
+    "source": "nominatim"
+  },
+  "wearealchemycollective pop-up northern virginia va": {
+    "miss": true,
+    "at": 1795351943177
+  }
+}
