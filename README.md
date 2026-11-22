@@ -68,6 +68,8 @@ Not covered: Instagram and TikTok are not scraped. Their terms forbid it and the
 - TikTok Display or Research API (`TIKTOK_KEY`): needs an approved app, which is slow to get and limited to approved uses.
 - oEmbed (`INSTAGRAM_OEMBED_TOKEN` for Instagram, public for TikTok) returns a post's caption for a link you already have. It cannot search or list posts.
 
+Why TikTok cannot be crawled: its public pages sit behind bot checks, the Display API returns only the authorized user's own videos, the Research API needs an approved application, and oEmbed works only on single links someone pastes. So there is no TikTok crawler here; pasted links go through the oEmbed path and the inbox.
+
 ## Optional keys
 
 Set as environment variables. All are optional; the site and ingest work without them.
@@ -84,11 +86,24 @@ Set as environment variables. All are optional; the site and ingest work without
 
 The map keeps a watch list of accounts in `data/watchlist.json` (every Instagram handle in `data/sources.json`, 82 today, plus 22 candidates found by discovery; 104 accounts as of 2026-11-22).
 
-- `npm run discover` finds new candidate accounts: @mentions in captions we already hold, Instagram hashtags (needs a token), Brave search (needs `BRAVE_API_KEY`), and public MATO and Luma pages. Add `-- --dry` to preview.
+- `npm run discover` finds new candidate accounts and matcha events: @mentions in captions we already hold, Instagram hashtags (needs a token), Brave search (needs `BRAVE_API_KEY`), and the public event sites below. Add `-- --dry` to preview, `-- --no-<site>` to skip one site and `-- --only <site>` to run just one (`mato`, `luma`, `eventbrite`, `dostuff`, `meetup`, `linktree`, `allevents`). `npm run refresh` runs it first.
 - `npm run watch` checks every account that is due (24, 72 or 168 hours apart) and writes new dates to the map. Flags: `-- --all`, `-- --handle <h>`, `-- --dry`, `-- --promote` (turns accounts with real hits into source records).
 - Without any key, discover and watch still work: they read public MATO and Luma pages, the schedule pages of the brands that have one, and @mentions in text already held. They cannot see an Instagram or TikTok account, so a brand with no public schedule page stays a pin with no dates. `-- --promote` changes nothing unless an account has a real hit.
 - Instagram runs only through Meta's official Graph API and stays off until `INSTAGRAM_TOKEN` and `INSTAGRAM_BUSINESS_ID` are in `.env`. Setup: `docs/INSTAGRAM-SETUP.md`. Copy `.env.example` to `.env`.
 - `.github/workflows/watch.yml` runs discover, watch and ingest every 6 hours and commits the data. It only matters once the repo is on GitHub.
+
+## Event sites
+
+`npm run discover` crawls these public sites for matcha events and new organizers (code in `ingest/lib/sites/<name>.js`, URL patterns and robots lines in each file's header). Every crawl reads robots.txt first and skips a site that answers it with 401, 403 or 429 or disallows everything; sends the project User-Agent; waits 1 second per host; uses the 6-hour disk cache; stops at 300 fetches per site and for good after an HTTP 429 or 403; prefers sitemaps, JSON-LD and the JSON a page embeds over scraping HTML; and never calls an endpoint that needs a login. Events keep only a matcha word (`hasMatcha` in `ingest/adapters/mato.js`). An event gets the pseudo-source id `<site>:<organizer slug>` (brand = organizer, kind popup, or organizer when the title says class, workshop, meetup, tasting, 101 or club); a new organizer becomes a watchlist candidate (`found_via: search`, `found_from: <site>`).
+
+- **MATO** (`ma.to`): city pages and the sitemap, see `ingest/lib/mato-city.js`.
+- **Luma** (`luma.com/discover`): the places on the discover page, then Luma's own public paging API for each US place (3 pages of 50); the host calendar is the organizer. Luma's search endpoint needs a login and is not used.
+- **Eventbrite**: the matcha search page of each of the 40 cities in `data/cities-discover.json`, then the event pages (JSON-LD with time, address, organizer, image). A source whose `schedule_url` is an Eventbrite organizer page (`/o/...`) is read by `ingest/adapters/eventbrite.js` from the page's embedded `upcomingEvents`.
+- **DoStuff network** (DoNYC, Do312, Do206, Do214, Do713 and 11 more): the matcha search page and event pages of each city. Do512, DoTheBay and Do314 answer 403 to robots.txt and are skipped. It finds little (these sites are mostly concerts).
+- **Meetup**: the public event search for "matcha" in each city (events embedded in the page). The hosting group is the organizer.
+- **Allevents.in**: the matcha page of each city (JSON-LD events; times from its FAQ lines). Confidence is at most "likely", and an event another site already has is dropped by title and day.
+- **Linktree and Beacons**: `linktr.ee/robots.txt` ends with "User-agent: * Disallow: /" for every bot it does not name, so Linktree pages are skipped today (the three brands on it stay unread); `beacons.ai` allows crawling, no source is on it yet. For each source whose website or schedule_url is on either, a dated pop-up line in the bio or a link title becomes an event for that brand; MATO, Luma, Eventbrite, Partiful, Posh and Shopify events links are written to `data/discover-leads.json` under the source id so a human can set `schedule_url`. No event is made from a bare link.
+- Checked and skipped: **Yelp** (robots.txt disallows everything), **Posh** (client-rendered, data behind a disallowed API), **Partiful** (private invite links, no public listing), **Resident Advisor** (club music, no matcha).
 
 ## Run it on a schedule
 

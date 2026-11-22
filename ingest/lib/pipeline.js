@@ -3,7 +3,8 @@ import fs from "node:fs";
 import { extract, richFields } from "./extract.js";
 import { downloadImages, pruneImages } from "./images.js";
 import { improve } from "./llm.js";
-import { matoKind, isMatoSource, eventId, mergeEvents, readEvents, writeEvents, endMs, KEEP_PAST_DAYS } from "./write.js";
+import { SITE_ORDER } from "./sites/common.js";
+import { matoKind, isMatoSource, isPseudoId, eventId, mergeEvents, readEvents, writeEvents, endMs, KEEP_PAST_DAYS } from "./write.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 
@@ -42,11 +43,23 @@ export function dedupeCandidates(candidates, now) {
   return [...byId.values()];
 }
 
-// An event first found on MATO under mato:<slug> is replaced when the same venue is later read as a real source
-// (same handle, same day, same place): the old record would otherwise show twice.
+// An event first found on MATO (or another event site) under <site>:<slug> is replaced when the same venue is later read as a
+// real source (same handle, same day, same place): the old record would otherwise show twice. A pseudo-source event is also
+// dropped when a better-ranked site (see SITE_ORDER) reads the same title on the same day.
 export function dropSuperseded(existing, final) {
-  const sameSlot = new Set(final.filter((c) => !String(c.source_id).startsWith("mato:") && c.handle).map((c) => `${String(c.handle).toLowerCase()}|${String(c.start).slice(0, 10)}|${String(c.venue || c.address || "").toLowerCase().trim()}`));
-  return existing.filter((e) => !(String(e.source_id).startsWith("mato:") && sameSlot.has(`${String(e.handle || "").toLowerCase()}|${String(e.start).slice(0, 10)}|${String(e.venue || e.address || "").toLowerCase().trim()}`)));
+  const slot = (e) => `${String(e.handle || "").toLowerCase()}|${String(e.start).slice(0, 10)}|${String(e.venue || e.address || "").toLowerCase().trim()}`;
+  const sameSlot = new Set(final.filter((c) => !isPseudoId(c.source_id) && c.handle).map(slot));
+  const rank = (id) => { const i = SITE_ORDER.indexOf(String(id).split(":")[0]); return isPseudoId(id) ? i : -1; };
+  const norm = (t) => String(t || "").toLowerCase().replace(/&amp;/g, "&").replace(/[^a-z0-9]+/g, " ").trim();
+  const best = new Map();
+  for (const c of final) { if (!norm(c.title)) continue; const k = `${norm(c.title)}|${String(c.start).slice(0, 10)}`; best.set(k, Math.min(best.get(k) ?? 99, rank(c.source_id))); }
+  return existing.filter((e) => {
+    if (!isPseudoId(e.source_id)) return true;
+    if (sameSlot.has(slot(e))) return false;
+    if (!norm(e.title)) return true;
+    const b = best.get(`${norm(e.title)}|${String(e.start).slice(0, 10)}`);
+    return !(b !== undefined && b < rank(e.source_id));
+  });
 }
 
 // Geocode, merge with data/events.json, and (unless dry) write. Returns {merged, final}.

@@ -13,12 +13,13 @@ import { setVerbose, warn, info } from "./lib/log.js";
 import * as wlib from "./lib/watchlist.js";
 import mato from "./adapters/mato.js";
 import luma from "./adapters/luma.js";
+import eventbrite from "./adapters/eventbrite.js";
 import ics from "./adapters/ics.js";
 import website from "./adapters/website.js";
 import manual from "./adapters/manual.js";
 import graph, { creds } from "./adapters/instagram-graph.js";
 
-const ADAPTERS = [mato, luma, ics, website, manual];
+const ADAPTERS = [mato, luma, eventbrite, ics, website, manual];
 const pad = (s, n) => String(s).padEnd(n).slice(0, n);
 
 async function main() {

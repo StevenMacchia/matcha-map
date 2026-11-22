@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { SOCIAL_POST } from "./extract.js";
 import { hasMatcha } from "../adapters/mato.js";
+import { SITE_ORDER } from "./sites/common.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 const DAY = 86400000;
@@ -50,7 +51,9 @@ export function clean(e) {
 
 // MATO finds: the slug is nearly always the brand's own handle, so they are pop-ups, unless the title says class, workshop, meetup, tasting, 101 or club.
 export const MATO_ORGANIZER = /\b(class(es)?|workshop|meet-?up|tasting|101|club)\b/i;
-export const isMatoSource = (id, source) => String(id || "").startsWith("mato:") || /Found on MATO/.test(source?.kind_note || "");
+// The same rule covers the pseudo-sources of the other event sites (luma:, eventbrite:, dostuff:, meetup:, allevents:, see ingest/lib/sites).
+export const isPseudoId = (id) => SITE_ORDER.some((p) => String(id || "").startsWith(`${p}:`));
+export const isMatoSource = (id, source) => isPseudoId(id) || /Found on MATO/.test(source?.kind_note || "");
 export const matoKind = (title) => (MATO_ORGANIZER.test(String(title || "")) ? "organizer" : "popup");
 
 // One-off migration: an event saved before the card fields existed gets them defaulted.
@@ -85,8 +88,8 @@ function carryRich(merged, prev, c) {
   merged.links = Object.fromEntries(["website", "instagram", "tiktok"].map((k) => [k, c.links?.[k] || prev.links?.[k] || null]));
 }
 
-// Events found through MATO (source_id mato:<slug>) stay only while their title, description, venue or brand has a matcha word.
-export const keepMatoEvent = (e) => !String(e.source_id).startsWith("mato:") || hasMatcha(e.title, e.description, e.venue, e.brand, (e.menu || []).join(" "));
+// Events found through MATO or another event site (source_id mato:<slug>, luma:<slug> ...) stay only while their title, description, venue or brand has a matcha word.
+export const keepMatoEvent = (e) => !isPseudoId(e.source_id) || hasMatcha(e.title, e.description, e.venue, e.brand, (e.menu || []).join(" "));
 
 // mergeEvents(existing[], candidates[], opts) -> { events, decay, stats }
 //  opts.now: Date|string; opts.liveSourceIds: sources fetched OK this run;

@@ -11,7 +11,12 @@
     "discover": "node ingest/lib/discover.js",
     "watch": "node ingest/watch.js",
     "loop": "node ingest/loop.js",
-    "refresh": "node ingest/loop.js --once"
+    "refresh": "node ingest/loop.js --once",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^4.166.0"
+  }
 }

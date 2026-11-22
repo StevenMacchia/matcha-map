@@ -2,7 +2,9 @@
 // Every source is a small function returning [{handle, found_via, found_from, evidence}] and is
 // open or official: Instagram Graph hashtags (token), Brave Search API (key), public MATO and
 // Luma pages (robots.txt respected), @mentions in captions we already hold (inbox, cache).
-// No scraping behind a login, no cookies, no headless browser. Flags: --dry, --no-fetch, --no-mato (skip the MATO city crawl), --verbose.
+// No scraping behind a login, no cookies, no headless browser. Flags: --dry, --no-fetch, --verbose, --no-<site> (skip one site:
+// mato, luma, eventbrite, dostuff, meetup, linktree, allevents) and --only <site> (run just that site; the Graph, Brave and
+// mention steps are skipped). The per-site crawlers live in ingest/lib/sites (mato's in mato-city.js).
 import "./env.js";
 import fs from "node:fs";
 import path from "node:path";
@@ -14,8 +16,11 @@ import * as wlib from "./watchlist.js";
 import { readInbox } from "../adapters/manual.js";
 import graph from "../adapters/instagram-graph.js";
 import { crawlMato } from "./mato-city.js";
+import { CITY_STATE } from "./sites/common.js";
 import { createGeocoder } from "./geocode.js";
 import { processItems, finalize } from "./pipeline.js";
+import { readEvents } from "./write.js";
+import { runSites, parseFlags, siteOn, summaryLine, dedupeItems, skipDominated, capConfidence, NAMES } from "./sites/index.js";
 
 // ---- @mentions -------------------------------------------------------------------------------
 const POPUP_WORDS = /pop[\s-]?ups?\b|\bcart\b|\bmarket\b|\bcollab|take[\s-]?over|matcha/i;
@@ -75,7 +80,7 @@ export function fromBraveResults(json, city = null) {
   return { candidates, leads };
 }
 
-// ---- MATO and Luma (public pages, robots.txt respected by the fetcher) ---------------------------
+// ---- MATO and Luma data helpers (the crawls themselves: mato-city.js and sites/luma.js) ---------------------------
 const MATCHA_SLUG = /matcha/i;
 
 export function fromMatoHtml(html) {
@@ -120,14 +125,6 @@ async function discoverMato(fetcher, { now, sources }) {
   const s = r.stats;
   info(`ma.to: ${s.cities} cities (${s.usCities} US), ${s.cityPages} city pages, ${s.matchaCards} matcha cards, ${s.sitemapPages} sitemap pages (${s.sitemapMatches} matcha slugs), ${s.eventPages} event pages, ${s.kept} matcha events kept, ${s.fetches} fetches${s.stopped429 ? ", stopped on 429" : ""}`);
   return { candidates: r.candidates, leads: [], items: r.items, kept: r.kept, stats: s };
-}
-
-async function discoverLuma(fetcher) {
-  const r = await fetcher.get("https://luma.com/discover");
-  if (!r.ok) { warn(`luma.com/discover: ${r.blocked ? "blocked by robots.txt" : `HTTP ${r.status || "error"}`}`); return { candidates: [], leads: [] }; }
-  const m = /<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/.exec(r.text);
-  if (!m) return { candidates: [], leads: [] };
-  try { return fromLumaData(JSON.parse(m[1])); } catch { return { candidates: [], leads: [] }; }
 }
 
 // ---- Brave Search ----------------------------------------------------------------------------
@@ -208,6 +205,8 @@ async function main() {
   const argv = process.argv.slice(2);
   setVerbose(argv.includes("--verbose"));
   const dry = argv.includes("--dry"), noFetch = argv.includes("--no-fetch");
+  const flags = parseFlags(argv);
+  if (flags.only && !NAMES.includes(flags.only)) { console.error(`--only needs one of: ${NAMES.join(", ")}`); process.exit(2); }
   const now = new Date(), env = process.env;
   const fetcher = createFetcher({ noFetch });
   const wl = wlib.load();
@@ -216,41 +215,61 @@ async function main() {
   const found = [], leads = [], counts = {};
   const take = (name, list) => { counts[name] = list.length; found.push(...list); };
 
-  take("graph hashtags + mentions", fromGraphItems(await graph.discover({ env, fetcher })));
-  take("inbox mentions", fromInbox());
-  take("cache mentions", fromCache());
-  const brave = await discoverBrave(env, now, { perRun: 10 });
-  take("brave search", brave.candidates); leads.push(...brave.leads);
+  if (!flags.only) {
+    take("graph hashtags + mentions", fromGraphItems(await graph.discover({ env, fetcher })));
+    take("inbox mentions", fromInbox());
+    take("cache mentions", fromCache());
+    const brave = await discoverBrave(env, now, { perRun: 10 });
+    take("brave search", brave.candidates); leads.push(...brave.leads);
+  }
   let sources = [];
   try { sources = JSON.parse(fs.readFileSync("data/sources.json", "utf8")); } catch { /* none */ }
-  let mato = null;
-  for (const [name, fn] of [["ma.to", (f) => discoverMato(f, { now, sources })], ["luma.com", discoverLuma]]) {
-    if (noFetch || (name === "ma.to" && argv.includes("--no-mato"))) { counts[name] = 0; continue; }
-    try { const r = await fn(fetcher); take(name, r.candidates); leads.push(...r.leads); if (name === "ma.to") mato = r; } catch (e) { warn(`${name}: ${e.message}`); counts[name] = 0; }
+  let cities = Object.keys(CITY_STATE);
+  try { cities = JSON.parse(fs.readFileSync("data/cities-discover.json", "utf8")).cities || cities; } catch { /* default list */ }
+
+  // Events found on the sites, as [{source, raw}] in priority order: MATO first, then ingest/lib/sites/index.js order.
+  let list = [];
+  if (siteOn("mato", flags, noFetch)) {
+    try {
+      const mato = await discoverMato(fetcher, { now, sources });
+      take("ma.to", mato.candidates);
+      list.push(...mato.items);
+    } catch (e) { warn(`ma.to: ${e.message}`); counts["ma.to"] = 0; }
   }
+  const results = await runSites({ fetcher, now, sources, cities }, flags);
+  for (const r of results) {
+    take(r.name, r.candidates); leads.push(...r.leads);
+    for (const raw of r.items) list.push({ source: raw.source_hint, raw });
+  }
+  list = dedupeItems(list);
 
   const added = addAll(wl, found, now);
   for (const [k, v] of Object.entries(counts)) info(`${k.padEnd(26)} ${v} found`);
-  info(`\n${added.length} new candidates (${wl.accounts.length} accounts on the list), ${leads.length} post leads`);
+  info(`
+${added.length} new candidates (${wl.accounts.length} accounts on the list), ${leads.length} leads`);
   for (const a of added.slice(0, 40)) info(`  + @${a.handle.padEnd(26)} ${a.found_via.padEnd(8)} ${String(a.found_from).slice(0, 60)}`);
   if (added.length > 40) info(`  ... and ${added.length - 40} more`);
-  if (dry) { info("(dry run: nothing written)"); return; }
+  if (dry) { for (const r of results) info(summaryLine(r)); info("(dry run: nothing written)"); return; }
   wlib.save(wl, { now });
-  if (mato?.items.length) {
-    // The matcha events MATO listed go through the same extractor, geocoder and writer as every other source.
+  if (list.length) {
+    // Every matcha event the sites listed goes through the same extractor, geocoder and writer as every other source.
     const bySource = new Map();
-    for (const { source, raw } of mato.items) { if (!bySource.has(source.id)) bySource.set(source.id, { source, items: [] }); bySource.get(source.id).items.push(raw); }
-    const cands = [];
+    for (const { source, raw } of list) { if (!bySource.has(source.id)) bySource.set(source.id, { source, items: [] }); bySource.get(source.id).items.push(raw); }
+    let cands = [];
     for (const { source, items } of bySource.values()) cands.push(...(await processItems(items, source, { now, handle: source.instagram })).candidates);
-    const { merged } = await finalize(cands, { now, geocoder: createGeocoder({ noFetch }), fetcher, liveSourceIds: [], dry: false });
-    info(`ma.to events: ${cands.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);
-  }
+    cands = skipDominated(cands.map(capConfidence), readEvents());
+    const before = new Set(readEvents().map((e) => e.id));
+    const { merged, final } = await finalize(cands, { now, geocoder: createGeocoder({ noFetch }), fetcher, liveSourceIds: [], dry: false });
+    const fresh = (prefix) => final.filter((c) => String(c.source_id).startsWith(prefix) && !before.has(c.id)).length;
+    info(`site events: ${cands.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);
+    for (const r of results) info(summaryLine(r, { new: fresh(`${r.name}:`) }));
+  } else for (const r of results) info(summaryLine(r, { new: 0 }));
   if (leads.length) {
     const file = "data/discover-leads.json";
     let old = []; try { old = JSON.parse(fs.readFileSync(file, "utf8")).leads || []; } catch { /* first */ }
     const seen = new Set(old.map((l) => l.url));
     const all = old.concat(leads.filter((l) => !seen.has(l.url))).slice(-200);
-    fs.writeFileSync(file, JSON.stringify({ updated: now.toISOString(), note: "Post URLs found without a usable handle. Paste the caption into data/inbox to read one.", leads: all }, null, 2) + "\n");
+    fs.writeFileSync(file, JSON.stringify({ updated: now.toISOString(), note: "Post URLs found without a usable handle (paste the caption into data/inbox to read one), and schedule links found on Linktree pages (set the source's schedule_url from them).", leads: all }, null, 2) + "\n");
   }
   info("wrote data/watchlist.json");
 }

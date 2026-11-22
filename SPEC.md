@@ -151,6 +151,12 @@ export default {
 //   image_url?, posts?: { instagram?, tiktok? }, description?, price_hint? }  (all optional; set only when the source gives them)
 ```
 
+### Event sites (crawlers)
+
+Besides per-source adapters, `npm run discover` runs one crawler per public event site: `ingest/lib/sites/<name>.js` exports `{ name, host, discover(ctx) -> { items, candidates, leads?, stats } }`. Sites, in order (the order is also the duplicate priority, real sources first): `mato` (ingest/lib/mato-city.js), `luma` (discover places + paging API), `eventbrite` (city search pages + event pages JSON-LD), `dostuff` (16 city sites with a matcha search page), `meetup` (public search, Apollo state in the page), `linktree` (bio and link titles of known brands on linktr.ee or beacons.ai; linktr.ee's robots.txt disallows us, so only Beacons pages are read), `allevents` (city pages, JSON-LD, FAQ times). Flags `--no-<name>` and `--only <name>`.
+
+Rules for every crawler: robots.txt first (skip on 401/403/429 or a Disallow of /), project User-Agent, 1 request per second per host, the 6-hour cache, 300 network fetches per site per run, stop for the run on HTTP 429 or 403, prefer sitemaps, JSON-LD and embedded page JSON, no endpoint that needs a login, never instagram.com, tiktok.com or facebook.com, matcha events only. A RawItem carries `source_hint`: the source it belongs to. Events from a site that no source reads get the pseudo-source `<site>:<organizer slug>` (kind popup, or organizer by the title rule; category matcha; brand = organizer; handle and `links.instagram` only when the page gives an Instagram handle). A new organizer becomes a watchlist candidate with `found_via: search`, `found_from: <site>` and a note `site=<name>; org=<slug>; home=City, ST; brand=...`. The same title on the same day from two sites keeps the better-ranked one; Allevents events are never "confirmed". Linktree schedule links go to `data/discover-leads.json` under their source id. Eventbrite organizer pages are also an adapter (`ingest/adapters/eventbrite.js`, embedded `upcomingEvents`). Checked and skipped: Yelp (robots disallows all), Posh, Partiful, Resident Advisor; TikTok, Instagram and Facebook are never crawled.
+
 Pipeline: adapters return RawItems. A shared extractor turns each into event candidates (rules first, optional LLM step). The geocoder fills lat/lng. The writer dedupes and writes `data/events.json`. Adapters never touch the map. An Instagram or TikTok adapter drops in later with the same shape.
 
 ## 5. Instagram and TikTok: the honest rules
