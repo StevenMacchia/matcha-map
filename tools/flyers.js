@@ -133,14 +133,14 @@ function captionFor(e) {
   const s1 = `${e.brand} is popping up on ${dayLabel(e.start, tz, true)}${t ? ", " + t : ""}.`;
   const s2 = `Find them at ${place || [e.city, e.state].filter(Boolean).join(", ")}.`;
   const tags = ["#matcha", "#matchapopup", tag(e.city) + "matcha", tag(e.city) + "popup", "#matchamap"].filter((x, i, arr) => arr.indexOf(x) === i).slice(0, 8);
-  return [s1 + " " + s2, h ? `via @${h}` : "", [e.city, e.state].filter(Boolean).join(", "), tags.join(" "), "Map: matchamap.us"].filter(Boolean).join("\n\n") + "\n";
+  return [s1 + " " + s2, h ? `via @${h}` : "", [e.city, e.state].filter(Boolean).join(", "), tags.join(" "), "Map: link in bio"].filter(Boolean).join("\n\n") + "\n";
 }
 function captionRoundup(city, list) {
   const names = [...list].sort((a, b) => new Date(a.start) - new Date(b.start)).slice(0, 6).map((e) => e.brand + (handleOf(e) ? " (@" + handleOf(e) + ")" : ""));
   const tags = ["#matcha", "#matchapopup", tag(city) + "matcha", tag(city) + "popup", "#matchamap"];
-  return [`${list.length} matcha pop-ups in ${city} this weekend. See who is where and when on the map.`, names.join("\n"), city, tags.join(" "), "Map: matchamap.us"].join("\n\n") + "\n";
+  return [`${list.length} matcha pop-ups in ${city} this weekend. See who is where and when on the map.`, names.join("\n"), city, tags.join(" "), "Map: link in bio"].join("\n\n") + "\n";
 }
-const WELCOME_CAPTION = ["Matcha Map is a map of matcha pop-ups across America. Every pop-up, where and when, in one place.", "We credit every brand we share and link back to them.", "#matcha #matchapopup #matchamap", "Map: matchamap.us"].join("\n\n") + "\n";
+const WELCOME_CAPTION = ["Matcha Map is a map of matcha pop-ups across America. Every pop-up, where and when, in one place.", "We credit every brand we share and link back to them.", "#matcha #matchapopup #matchamap", "Map: link in bio"].join("\n\n") + "\n";
 
 // ---- chrome ----
 function shot(htmlText, out, w, h, transparent) {
