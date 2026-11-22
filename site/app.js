@@ -35,6 +35,7 @@
   var charsReady = fetch("characters.svg").then(function (r) { if (!r.ok) throw new Error("characters"); return r.text(); }).then(function (t) {
     var doc = new DOMParser().parseFromString(t, "image/svg+xml");
     doc.querySelectorAll("symbol").forEach(function (s) { SYM[s.id] = s; });
+    if (window.Drawn) window.Drawn.init(SYM);
   }).catch(function () { /* characters are decoration; the page works without them */ });
 
   function drawChar(name, cls) {
@@ -290,7 +291,7 @@
   var THUMB_FACE = "<span class=\"th-char\" data-char=\"m-base\"></span>";
   function photoHTML(e) {
     var src = imgSrc(e);
-    if (!src) return "<div class=\"ph ph-empty\">" + FACE_BLOCK + "</div>";
+    if (!src) return window.Drawn ? window.Drawn.block(e, { when: whenText(e) }) : "<div class=\"ph ph-empty\">" + FACE_BLOCK + "</div>";
     var credit = e.image.credit ? "<span class=\"ph-credit\">Photo: " + esc(e.image.credit) + "</span>" : "";
     return "<div class=\"ph\"><img src=\"" + esc(src) + "\" alt=\"" + esc(e.brand) + " pop-up post photo\" loading=\"lazy\" decoding=\"async\"" +
       (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + ">" + credit + "</div>";
@@ -340,7 +341,7 @@
     if (b.instagram) links.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(b.instagram) + "/"]);
     if (b.tiktok) links.push(["TikTok", "https://www.tiktok.com/@" + encodeURIComponent(b.tiktok)]);
     if (safeUrl(b.schedule_url) && b.schedule_url !== b.website) links.push(["Schedule", b.schedule_url]);
-    return "<div class=\"card bcard\"><h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3>" + kindWord(b) +
+    return "<div class=\"card bcard\">" + (window.Drawn ? window.Drawn.block(b, { mode: "brand" }) : "") + "<h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3>" + kindWord(b) +
       "<p class=\"muted\">" + esc(b.home_city + ", " + b.home_state) + "</p>" +
       "<p class=\"when\">No dates posted here yet</p>" + linksHTML(links) + "</div>";
   }
@@ -523,7 +524,7 @@
       var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · ");
       var thumb = src
         ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"56\" height=\"56\" loading=\"lazy\" decoding=\"async\"" + (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + "></span>"
-        : "<span class=\"th th-face\">" + THUMB_FACE + "</span>";
+        : (window.Drawn ? "<span class=\"th th-drawn\">" + window.Drawn.card(e, { mode: "thumb" }) + "</span>" : "<span class=\"th th-face\">" + THUMB_FACE + "</span>");
       return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong>" + kindWord(e) + "<span class=\"when\">" +
         esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" +
         (m ? "<span class=\"menu-prev\">" + esc(m) + "</span>" : "") + dist + "</span></button>";
@@ -814,6 +815,8 @@
     setTimeout(function () {
       var svg = hdr.querySelector("svg");
       if (svg && !calm() && !document.hidden) animOnce(svg, "blink");
+      var dc = document.querySelector(".ph-drawn svg.dc");
+      if (dc && !calm() && !document.hidden) animOnce(dc, "blink");
       blinkLoop();
     }, 4000 + Math.random() * 3000);
   }
