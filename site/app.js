@@ -10,7 +10,7 @@
   var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  var state = { chip: "any", day: "", recent: false, userLoc: null, zip: "", events: [], brands: [], view: "map" };
+  var state = { chip: "any", day: "", recent: false, userLoc: null, zip: "", events: [], brands: [], shops: [], view: "map" };
   var items = {};     // key -> item { kind, key, ll:[lat,lng], data, past, name }
   var live = {};      // marker id -> { marker, el, kind, key, count }
   var openKey = null;
@@ -146,7 +146,8 @@
   function addData() {
     if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(visibleEvents()), cluster: true, clusterRadius: 56, clusterMaxZoom: 13 });
     if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: featureColl(visibleBrands()), cluster: true, clusterRadius: 44, clusterMaxZoom: 12 });
-    ["ev", "br"].forEach(function (s) {
+    if (!map.getSource("sh")) map.addSource("sh", { type: "geojson", data: featureColl(visibleShops()), cluster: true, clusterRadius: 40, clusterMaxZoom: 13 });
+    ["ev", "br", "sh"].forEach(function (s) {
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
     scheduleSync();
@@ -164,7 +165,7 @@
   var NUDGE = 12; // px: brand mochi sit down-right of their spot so an event pin on top does not hide them
   function syncMarkers() {
     var seen = {};
-    ["ev", "br"].forEach(function (src) {
+    ["ev", "br", "sh"].forEach(function (src) {
       if (!map.getSource(src) || !map.isSourceLoaded(src)) {
         Object.keys(live).forEach(function (id) { if (live[id].src === src) seen[id] = 1; });
         return;
@@ -206,37 +207,41 @@
   }
 
   function pinLabel(it) {
+    if (it.kind === "s") return it.data.name + ", shop" + (it.data.city ? ", " + it.data.city : "");
     return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) : it.data.brand + ", " + it.data.home_city + ", no dates yet";
   }
   function makePin(it) {
     var el = document.createElement("button");
     el.type = "button";
-    el.className = "mk " + (it.kind === "e" ? "mk-ev" : "mk-br") + (it.past ? " past" : "") + (it.key === openKey ? " sel" : "");
+    el.className = "mk " + (it.kind === "e" ? "mk-ev" : it.kind === "s" ? "mk-sh" : "mk-br") + (it.past ? " past" : "") + (it.key === openKey ? " sel" : "");
     el.setAttribute("aria-label", pinLabel(it));
     var inner = document.createElement("span");
     inner.className = "mk-in";
     if (it.kind === "e") {
       inner.appendChild(drawChar("m-base"));
       if (!it.past) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
+    } else if (it.kind === "s") {
+      inner.appendChild(drawChar("s-shop"));
     } else {
       inner.innerHTML = "<span class=\"mochi\"></span>";
     }
     el.appendChild(inner);
     el.addEventListener("click", function (ev) { ev.stopPropagation(); cardOpener = null; pinOpener = el; showCard(it.key, ev.detail === 0); });
-    var marker = new maplibregl.Marker({ element: el, anchor: it.kind === "e" ? "bottom" : "center", offset: it.kind === "e" ? [0, 0] : [NUDGE, NUDGE] }).setLngLat(lngLat(it.ll));
+    var marker = new maplibregl.Marker({ element: el, anchor: it.kind === "e" ? "bottom" : "center", offset: it.kind === "e" || it.kind === "s" ? [0, 0] : [NUDGE, NUDGE] }).setLngLat(lngLat(it.ll));
     var rec = { marker: marker, el: el, kind: it.kind, key: it.key, label: pinLabel(it) };
     if (it.kind === "e") el.style.zIndex = "2";
-    entrance(rec, it.kind === "e" ? "pop" : "jiggle");
+    if (it.kind === "s") el.style.zIndex = "1";
+    entrance(rec, it.kind === "e" || it.kind === "s" ? "pop" : "jiggle");
     return rec;
   }
   function makeCluster(src, id, f) {
     var n = f.properties.point_count;
     var el = document.createElement("button");
     el.type = "button";
-    el.className = "mk mk-cl " + (src === "ev" ? "cl-ev" : "cl-br");
+    el.className = "mk mk-cl " + (src === "ev" ? "cl-ev" : src === "sh" ? "cl-sh" : "cl-br");
     var inner = document.createElement("span");
     inner.className = "mk-in";
-    inner.appendChild(drawChar("c-dango"));
+    inner.appendChild(drawChar(src === "sh" ? "s-shop" : "c-dango"));
     var num = document.createElement("span");
     num.className = "cl-n";
     inner.appendChild(num);
@@ -253,13 +258,14 @@
     });
     rec.marker = new maplibregl.Marker({ element: el, anchor: "center", offset: src === "br" ? [NUDGE, NUDGE] : [0, 0] }).setLngLat(f.geometry.coordinates);
     if (src === "ev") el.style.zIndex = "3";
+    if (src === "sh") el.style.zIndex = "1";
     entrance(rec, "pop");
     return rec;
   }
   function setCount(rec, n, first) {
     rec.count = n;
     rec.num.textContent = n;
-    rec.label = n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : " brands") + " here, zoom in";
+    rec.label = n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : rec.el.classList.contains("cl-sh") ? " shops" : " brands") + " here, zoom in";
     rec.el.setAttribute("aria-label", rec.label);
     rec.el.classList.toggle("cl-m", n > 9);
     rec.el.classList.toggle("cl-l", n > 24);
@@ -345,7 +351,27 @@
       "<p class=\"muted\">" + esc(b.home_city + ", " + b.home_state) + "</p>" +
       "<p class=\"when\">No dates posted here yet</p>" + linksHTML(links) + "</div>";
   }
-  function cardHTML(item) { return item.kind === "e" ? eventCard(item.data) : brandCard(item.data); }
+  // Hours: the raw OSM string, passed through; long ones are cut with the full text in a title.
+  function hoursHTML(h) {
+    if (!h) return "";
+    var s = String(h).replace(/\s+/g, " ").trim(), cut = s.length > 64 ? s.slice(0, 63).replace(/[\s;,]+$/, "") + "\u2026" : s;
+    return "<p class=\"hours\" title=\"" + esc(s) + "\">" + esc(cut) + "</p>";
+  }
+  function shopAddress(s) {
+    var tail = [s.city, [s.state, s.zip].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+    return [s.address, tail].filter(Boolean).join(", ");
+  }
+  function shopCard(s) {
+    var links = [];
+    if (safeUrl(s.website)) links.push(["Website", s.website]);
+    if (s.instagram) links.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(s.instagram) + "/"]);
+    links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + s.lat + "," + s.lng]);
+    var credit = s.source === "osm" && safeUrl(s.osm_url) ? "<p class=\"credit-line\">Data: <a href=\"" + esc(s.osm_url) + "\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a></p>" : "";
+    var art = window.Drawn ? window.Drawn.block({ id: s.id, brand: s.name, home_city: s.city, home_state: s.state }, { mode: "shop" }) : "";
+    return "<div class=\"card scard\">" + art + "<h3><span class=\"card-shop\" data-char=\"s-shop\"></span><span>" + esc(s.name) + "</span></h3><span class=\"kindword\">Shop</span>" +
+      "<p class=\"muted\">" + esc(shopAddress(s)) + "</p>" + hoursHTML(s.opening_hours) + linksHTML(links) + credit + "</div>";
+  }
+  function cardHTML(item) { return item.kind === "e" ? eventCard(item.data) : item.kind === "s" ? shopCard(item.data) : brandCard(item.data); }
 
   var popup = null, closeT = null;
   function finishClose() {
@@ -378,7 +404,7 @@
       fillChars(box);
       box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(); refocus(back); });
       popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "340px", focusAfterOpen: false, className: "mm-pop",
-        anchor: "bottom", offset: it.kind === "e" ? [0, -50] : [NUDGE, NUDGE - 12] })
+        anchor: "bottom", offset: it.kind === "e" ? [0, -50] : it.kind === "s" ? [0, -18] : [NUDGE, NUDGE - 12] })
         .setLngLat(lngLat(it.ll)).setDOMContent(box).addTo(map);
       // Keep the whole card on screen: nudge the map down when the card would run off the top.
       var pr = popup.getElement().getBoundingClientRect(), mr = map.getContainer().getBoundingClientRect();
@@ -430,7 +456,7 @@
     cardOpener = ae && ae.closest && ae.closest("#list") ? ae.getAttribute("data-key") : null;
     if (state.view === "list") setView("map");
     map.resize();
-    var z = Math.max(map.getZoom(), it.kind === "e" ? 14 : 13.2);
+    var z = Math.max(map.getZoom(), it.kind === "e" ? 14 : it.kind === "s" ? 15 : 13.2);
     // On a phone the sheet covers the lower part of the map, so the pin lands in the upper part;
     // on desktop the card opens above the pin, so the pin lands low.
     var h = map.getContainer().clientHeight;
@@ -463,6 +489,18 @@
     state.brands = out;
   }
 
+  function buildShops(list) {
+    state.shops = (list || []).filter(function (s) { return isFinite(s.lat) && isFinite(s.lng) && s.name; }).map(function (s) {
+      var it = { kind: "s", key: "s:" + s.id, ll: [s.lat, s.lng], data: s, name: s.name };
+      items[it.key] = it;
+      return it;
+    });
+  }
+  // Storefronts switch: on by default, remembered on its own key.
+  var SHOPS_KEY = "matchamap.shops", shopsOn = true;
+  try { if (localStorage.getItem(SHOPS_KEY) === "0") shopsOn = false; } catch (e) { /* ignore */ }
+  function visibleShops() { return shopsOn ? state.shops : []; }
+
   // ---------- what counts: kind and category (data/KINDS.md) ----------
   var KINDS = ["popup", "cafe", "organizer", "festival", "venue", "tea-brand"], CATS = ["matcha", "coffee", "boba", "bakery", "dessert", "other"];
   var KIND_WORD = { cafe: "cafe", organizer: "class", festival: "festival", venue: "host", "tea-brand": "tea brand" };
@@ -483,7 +521,7 @@
   }
   // How many choices differ from the default (the badge number).
   function showDiff() {
-    var n = show.po ? 1 : 0;
+    var n = (show.po ? 1 : 0) + (shopsOn ? 0 : 1);
     if (!show.po) KINDS.forEach(function (k) { if (!show.k[k]) n++; });
     CATS.forEach(function (c) { if (!!show.c[c] !== (c === "matcha")) n++; });
     return n;
@@ -510,6 +548,8 @@
     if (src) src.setData(featureColl(visibleEvents()));
     var b = map.getSource("br");
     if (b) b.setData(featureColl(visibleBrands()));
+    var sh = map.getSource("sh");
+    if (sh) sh.setData(featureColl(visibleShops()));
     renderList(stagger);
   }
 
@@ -518,7 +558,7 @@
   function distOf(it) { return state.userLoc ? miles(state.userLoc, it.ll) : null; }
 
   function rowHTML(it) {
-    var d = distOf(it), dist = d != null ? "<span class=\"dist\">" + Math.round(d) + " mi</span>" : "";
+    var d = distOf(it), dist = d != null ? "<span class=\"dist\">" + (d < 10 ? Math.round(d * 10) / 10 : Math.round(d)) + " mi</span>" : "";
     if (it.kind === "e") {
       var e = it.data, tag = e.confidence && e.confidence !== "confirmed" ? "<em class=\"tag\">" + esc(e.confidence) + "</em>" : "";
       var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · ");
@@ -528,6 +568,11 @@
       return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong>" + kindWord(e) + "<span class=\"when\">" +
         esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" +
         (m ? "<span class=\"menu-prev\">" + esc(m) + "</span>" : "") + dist + "</span></button>";
+    }
+    if (it.kind === "s") {
+      var s = it.data;
+      return "<button type=\"button\" class=\"row shoprow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-shop\" aria-hidden=\"true\" data-char=\"s-shop\"></span><span class=\"rt\"><strong>" + esc(s.name) + "</strong><span class=\"kindword\">Shop</span><span>" +
+        esc([s.address, s.city].filter(Boolean).join(", ") || shopAddress(s)) + "</span>" + dist + "</span></button>";
     }
     return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-mochi\" aria-hidden=\"true\"><span class=\"mochi\"></span></span><span class=\"rt\"><strong>" + esc(it.data.brand) + "</strong>" + kindWord(it.data) + "<span>" +
       esc(it.data.home_city + ", " + it.data.home_state) + " · No dates posted here yet</span>" + dist + "</span></button>";
@@ -545,11 +590,22 @@
     var brands = visibleBrands().filter(function (it) { return inView(it.ll); });
     brands.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
 
+    var shopsIn = visibleShops().filter(function (it) { return inView(it.ll); });
+    shopsIn.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
+
     $("empty").hidden = vis.length > 0 || (state.chip === "any" && !state.day);
     var html = "";
     if (up.length) html += "<li class=\"head\">Pop-ups</li>" + up.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
     if (past.length) html += "<li class=\"head\">Recent</li>" + past.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
     if (brands.length) html += "<li class=\"head\">Brands</li>" + brands.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
+    if (shopsIn.length) {
+      if (map.getZoom() < 8 && !state.userLoc) html += "<li class=\"head\">Shops</li><li class=\"shopnote\">" + shopsIn.length + " shop" + (shopsIn.length === 1 ? "" : "s") + " \u00b7 zoom in</li>";
+      else if (map.getZoom() >= 8) {
+        var cap = 80, more = shopsIn.length - cap;
+        html += "<li class=\"head\">Shops</li>" + shopsIn.slice(0, cap).map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("") +
+          (more > 0 ? "<li class=\"shopnote\">+" + more + " more \u00b7 zoom in</li>" : "");
+      } else html += "<li class=\"head\">Shops</li><li class=\"shopnote\">" + shopsIn.length + " shops \u00b7 zoom in</li>";
+    }
     if (!html) html = "<li class=\"head\">Nothing in this part of the map. Zoom out or pan.</li>";
     var list = $("list");
     list.innerHTML = html;
@@ -742,6 +798,7 @@
   var showBtn = $("show-btn"), showPop = $("show-pop");
   function syncShow() {
     $("show-po").checked = show.po;
+    $("show-shops").checked = shopsOn;
     showPop.querySelectorAll("[data-kind]").forEach(function (i) { i.checked = !!show.k[i.getAttribute("data-kind")]; i.disabled = show.po; i.parentNode.classList.toggle("off", show.po); });
     showPop.querySelectorAll("[data-cat]").forEach(function (i) { i.checked = !!show.c[i.getAttribute("data-cat")]; });
     var n = showDiff(), badge = $("show-n");
@@ -764,6 +821,7 @@
   showPop.addEventListener("change", function (ev) {
     var t = ev.target, k = t.getAttribute("data-kind"), c = t.getAttribute("data-cat");
     if (t.id === "show-po") show.po = t.checked;
+    if (t.id === "show-shops") { shopsOn = t.checked; try { localStorage.setItem(SHOPS_KEY, shopsOn ? "1" : "0"); } catch (e) { /* ignore */ } }
     if (k) { if (t.checked) show.k[k] = true; else delete show.k[k]; }
     if (c) { if (t.checked) show.c[c] = true; else delete show.c[c]; }
     try { localStorage.setItem("matchamap.show2", JSON.stringify({ po: show.po, k: Object.keys(show.k), c: Object.keys(show.c) })); } catch (e) { /* ignore */ }
@@ -929,10 +987,19 @@
     go(); // sources added later by addData (style.load) start from the same lists
     var zs = ""; try { zs = localStorage.getItem(ZIP_KEY) || ""; } catch (e) { /* ignore */ }
     if (/^\d{5}$/.test(zs)) goZip(zs, true);
+    loadShops();
   }).catch(function () {
     oops("Could not load pop-ups. Try again in a moment.");
   }).then(function () { $("loading").hidden = true; });
 
+  // Storefronts load after events and brands so the first paint never waits for them.
+  function loadShops() {
+    fetch("data/shops.json").then(function (r) { if (!r.ok) throw new Error("shops"); return r.json(); }).then(function (d) {
+      buildShops(d.shops);
+      refreshEvents(false);
+    }).catch(function () { /* the storefront layer is optional */ });
+  }
+
   // Exposed for tests only.
-  window.__matcha = { state: state, matchesChip: matchesChip, whenText: whenText, map: map, live: live };
+  window.__matcha = { state: state, shopsOn: function () { return shopsOn; }, matchesChip: matchesChip, whenText: whenText, map: map, live: live };
 })();

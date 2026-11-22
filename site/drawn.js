@@ -58,7 +58,7 @@
   function build(e, o) {
     var mode = o.mode || "card", h = hash(e.brand), v = h % 3, P = VARS[v];
     var uid = "dc" + h.toString(36) + mode.charAt(0);
-    var W = 640, H = mode === "brand" ? 240 : 400;
+    var small = mode === "brand" || mode === "shop", W = 640, H = small ? 240 : 400;
     var bg = "class=\"dc-bg\" fill=\"" + P.bg + "\"", blob = "class=\"dc-blob\" fill=\"" + P.blob + "\"";
     var ink = "class=\"dc-ink\" fill=\"#3B2E27\"", mut = "class=\"dc-mut\" fill=\"#6B5A4F\"";
     var pose = e.kind === "organizer" ? "m-whisk" : (h % 2 ? "m-excited" : "m-happy");
@@ -75,17 +75,20 @@
     s += "<rect x=\"3\" y=\"3\" width=\"" + (W - 6) + "\" height=\"" + (H - 6) + "\" rx=\"26\" " + bg + "/>" +
       "<rect x=\"3\" y=\"3\" width=\"" + (W - 6) + "\" height=\"" + (H - 6) + "\" rx=\"26\" fill=\"url(#" + uid + ")\"/>";
     var mx, my, ms;
-    if (mode === "brand") { mx = 470; my = 56; ms = 130; } else { mx = 448; my = 70; ms = 156; }
+    if (small) { mx = 470; my = 56; ms = 130; } else { mx = 448; my = 70; ms = 156; }
     s += "<ellipse cx=\"" + (mx + ms / 2) + "\" cy=\"" + (my + ms * 0.55) + "\" rx=\"" + (ms * 0.6) + "\" ry=\"" + (ms * 0.6) + "\" " + blob + "/>";
-    s += put(pose, mx, my, ms);
+    s += put(mode === "shop" ? "s-shop" : pose, mx, my, ms);
     s += put("c-petal", W - 52, 18, 26, 25) + put("c-petal", W - 84, 30, 17, -20);
 
-    var maxW = mode === "brand" ? 410 : 396, name = String(e.brand || ""), size = 52, lines, i;
+    var maxW = small ? 410 : 396, name = String(e.brand || ""), size = 52, lines, i;
     if (tw(name, 52) <= maxW) lines = [name.replace(/\s+/g, " ").trim()]; else { size = 40; lines = wrap2(name, 40, maxW); }
     var y0 = lines.length > 1 ? 74 : 86;
     for (i = 0; i < lines.length; i++) s += "<text x=\"38\" y=\"" + (y0 + i * 46) + "\" font-size=\"" + size + "\" font-weight=\"800\" " + ink + ">" + esc(lines[i]) + "</text>";
 
-    if (mode === "brand") {
+    if (mode === "shop") {
+      s += "<text x=\"38\" y=\"150\" font-size=\"24\" font-weight=\"700\" " + ink + ">Matcha shop</text>";
+      s += "<text x=\"38\" y=\"186\" font-size=\"21\" font-weight=\"700\" " + mut + ">" + esc(fit([e.home_city, e.home_state].filter(Boolean).join(", "), 21, maxW)) + "</text>";
+    } else if (mode === "brand") {
       s += "<text x=\"38\" y=\"150\" font-size=\"24\" font-weight=\"700\" " + ink + ">No dates posted here yet</text>";
       s += "<text x=\"38\" y=\"186\" font-size=\"21\" font-weight=\"700\" " + mut + ">" + esc(fit([e.home_city, e.home_state].filter(Boolean).join(", "), 21, maxW)) + "</text>";
     } else {
@@ -122,9 +125,9 @@
   // Photo-slot markup: same size and radius as a photo, aria-label on the box, Save card beneath.
   function drawnBlock(e, opts) {
     opts = opts || {};
-    var brand = opts.mode === "brand";
+    var brand = opts.mode === "brand" || opts.mode === "shop", shop = opts.mode === "shop";
     return "<div class=\"dc-wrap\"><div class=\"ph ph-drawn" + (brand ? " ph-drawn-brand" : "") + "\" role=\"img\" aria-label=\"" + esc(e.brand) + ", drawn card\">" + drawnCard(e, opts) + "</div>" +
-      "<button type=\"button\" class=\"dc-save\" data-dc-save=\"" + esc(slug(e.brand)) + "\">Save card</button></div>";
+      (shop ? "" : "<button type=\"button\" class=\"dc-save\" data-dc-save=\"" + esc(slug(e.brand)) + "\">Save card</button>") + "</div>";
   }
 
   // Save card: serialize the SVG, draw it to a canvas 1200px wide, download a PNG.

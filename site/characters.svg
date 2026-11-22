@@ -30,6 +30,8 @@
     animation that always returns to 1:1. Blush is always below the eyes. Outline is 2 units
     at 64 units (about 1.2px on a 40px pin), round joins and caps. Eyes stay on one line;
     looking around moves .m-look by at most 2 units. Arms rotate about the shoulder only.
+    Storefront (s-shop): a small shop with a striped awning in matcha and cream, a round window, a door and a tiny
+    matcha-cup sign. No face. Same 2-unit outline and palette. Used only for permanent shops on the map.
     Sidekicks appear sparingly: Chasen in the header, loading and About; dango only on
     clusters; petals only in the opening moment.
 -->
@@ -161,6 +163,18 @@
   <path class="m-petal" fill="#F7C6D3" d="M10 19c-4.5-2-7.5-6-7.5-10 0-3.5 2.2-6 4.5-6.5L10 5l3-2.5c2.3.5 4.5 3 4.5 6.5 0 4-3 8-7.5 10z"/>
   <path class="m-petal-v" stroke="#EFA6BA" stroke-width="1" stroke-linecap="round" fill="none" d="M10 7v8"/>
 </symbol>
+<symbol id="s-shop" viewBox="0 0 64 64">
+  <path class="m-o m-c" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M11 28h42v26a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2z"/>
+  <circle class="m-o sh-win" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#BFE3E8" cx="23" cy="42.5" r="6.5"/>
+  <path class="m-o m-f sh-door" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" d="M36 56V41a6 6 0 0 1 12 0v15z"/>
+  <path class="m-o m-c sh-s1" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M7 17h12.5v8.5q-6.25 6-12.5 0z"/>
+  <path class="m-o m-f sh-s2" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" d="M19.5 17H32v8.5q-6.25 6-12.5 0z"/>
+  <path class="m-o m-c sh-s1" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M32 17h12.5v8.5q-6.25 6-12.5 0z"/>
+  <path class="m-o m-f sh-s2" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" d="M44.5 17H57v8.5q-6.25 6-12.5 0z"/>
+  <path class="m-o m-c" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M26.5 4h11c0 6-2 9.5-5.5 9.5S26.5 10 26.5 4z"/>
+  <ellipse class="m-o m-f" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" cx="32" cy="4" rx="5.5" ry="1.8"/>
+  <path class="m-l" fill="none" stroke="#4B3426" stroke-width="2" stroke-linecap="round" d="M32 13.5V17"/>
+</symbol>
 </defs>
 <g id="sheet">
   <rect width="640" height="240" fill="#FBF6EA"/>
@@ -177,5 +191,6 @@
   <use href="#c-chasen" x="262" y="130" width="36" height="54"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="258" y="202">Chasen</text>
   <use href="#c-dango" x="345" y="120" width="32" height="64"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="344" y="202">dango</text>
   <use href="#c-petal" x="420" y="150" width="28" height="28"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="418" y="202">petal</text>
+  <use href="#s-shop" x="470" y="120" width="64" height="64"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="486" y="202">shop</text>
 </g>
 </svg>

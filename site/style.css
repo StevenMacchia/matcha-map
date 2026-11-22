@@ -474,3 +474,33 @@ dialog .credit { font-size: 14px; color: var(--muted); }
 .dc-ink { fill: var(--dc-ink, #3B2E27); } .dc-mut { fill: var(--dc-mut, #6B5A4F); }
 .dc-pillr { fill: var(--dc-pill, #FFFBF0); stroke: var(--dc-edge); } .dc-price { fill: var(--dc-blob); }
 .dc-line { stroke: var(--dc-line, #4B3426); }
+
+/* ---------- storefronts (rung 21): permanent matcha shops ---------- */
+:root { --shmint: #BFE3D6; --shmint-edge: #6FA896; --shmint-pale: #E8F6F0; }
+:root[data-theme="dark"] { --shmint: #7FBFA9; --shmint-edge: #BFE3D6; --shmint-pale: #2B4A3F; }
+.mk-sh { width: 28px; height: 28px; }
+.mk-sh::before { content: ""; position: absolute; inset: -8px; }
+.mk-sh .mk-in { transform-origin: 50% 100%; transition: transform .18s var(--soft); filter: drop-shadow(0 2px 2px rgba(75,52,38,.25)); }
+.mk-sh .ch { display: block; width: 100%; height: 100%; }
+.mk-sh:hover .mk-in, .mk-sh:focus-visible .mk-in { transform: translateY(-3px) scale(1.1, .94); }
+.mk-sh.sel .mk-in { transform: scale(1.25); }
+.mk-sh.sel { z-index: 5 !important; }
+.mk-cl.cl-sh { width: 38px; height: 44px; }
+.mk-cl.cl-sh.cl-m { width: 42px; height: 48px; }
+.mk-cl.cl-sh.cl-l { width: 46px; height: 52px; }
+.mk-cl.cl-sh .ch { transform: none; display: block; width: 100%; height: 100%; }
+.cl-sh .m-c, .cl-sh .sh-s1 { fill: #E8F6F0; }
+.cl-sh .m-f, .cl-sh .sh-s2, .cl-sh .sh-door { fill: var(--shmint); }
+.cl-sh .cl-n { top: auto; bottom: -3px; transform: none; left: 50%; right: auto; min-width: 22px; padding: 0 6px; margin-left: -11px; width: auto; box-sizing: border-box;
+  font-size: 13px; line-height: 20px; border-radius: var(--pill); background: var(--shmint); border: 1.5px solid var(--mo); color: #3B2E27; text-shadow: none; }
+.cl-sh .cl-n.morph { animation: morph-sh .32s var(--spring); }
+@keyframes morph-sh { from { transform: scale(.4); opacity: .2; } to { transform: none; opacity: 1; } }
+.row.shoprow { border-left: 4px solid var(--shmint); min-height: 72px; }
+.row .th.th-shop { background: var(--shmint-pale); border-color: var(--shmint-edge); }
+.th-shop .ch { display: block; width: 40px; height: 40px; }
+.list li.shopnote { margin: 0 2px; padding: 10px 14px; border-radius: var(--r); border: 1.5px dashed var(--shmint-edge); color: var(--muted); font-weight: 700; font-size: 15px; }
+.card-shop { flex: none; display: block; width: 30px; height: 30px; }
+.card-shop .ch { display: block; width: 100%; height: 100%; }
+.card .hours { margin: 3px 0; font-size: 15px; font-weight: 700; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card .credit-line { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+.card .credit-line a { color: var(--muted); }
