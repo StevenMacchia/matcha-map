@@ -129,3 +129,7 @@ Nothing is deployed yet. The plan is Cloudflare Pages serving the `site/` folder
 ## License
 
 MIT. See `LICENSE`.
+
+## Search from a Claude session
+
+`.mcp.json` registers Tavily's MCP server for Claude Code sessions opened in this folder. It reads `TAVILY_API_KEY` from the environment (set it in your shell, or let the session load it; the key in `.env` is for the pipeline). With it, a research worker can search with domain filters, which the built-in search cannot do.
