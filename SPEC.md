@@ -16,6 +16,9 @@ It is not a review site. It is not a store finder for permanent cafes. Pop-ups a
 |---|---|
 | id | Slug, unique. |
 | brand | Display name. |
+| kind | `popup`, `cafe`, `venue`, `tea-brand`, `organizer` or `festival`. What sort of source it is; definitions in `data/KINDS.md`. The site shows `popup` by default and the filter widens to the rest. |
+| category | `matcha`, `coffee`, `boba`, `bakery`, `dessert` or `other`. What the brand mainly serves; `matcha` for everything today, the rest are for later expansion. |
+| kind_note | One short line on why, for anything that is not `popup`; null otherwise. |
 | home_city, home_state | Where the brand is based. State is two letters. |
 | website | Brand site, or null. |
 | instagram | Handle without `@`, or null. |
@@ -34,6 +37,9 @@ Example:
 {
   "id": "example-matcha-co",
   "brand": "Example Matcha Co",
+  "kind": "popup",
+  "category": "matcha",
+  "kind_note": null,
   "home_city": "Los Angeles",
   "home_state": "CA",
   "website": "https://example.com",

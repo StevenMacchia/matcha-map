@@ -909,5 +909,35 @@
   "wynwood marketplace miami fl": {
     "miss": true,
     "at": 1795371636237
+  },
+  "city:charleston|sc": {
+    "lat": 32.7884,
+    "lng": -79.9399,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:07.840Z"
+  },
+  "city:charlottesville|va": {
+    "lat": 38.0293,
+    "lng": -78.4767,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:09.216Z"
+  },
+  "city:greensboro|nc": {
+    "lat": 36.0726,
+    "lng": -79.792,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:10.700Z"
+  },
+  "city:greer|sc": {
+    "lat": 34.9381,
+    "lng": -82.2272,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:12.252Z"
+  },
+  "city:largo|fl": {
+    "lat": 27.9095,
+    "lng": -82.7873,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:13.582Z"
   }
 }

@@ -2,6 +2,9 @@
   {
     "id": "dream-tea-nyc",
     "brand": "Dream Tea NYC",
+    "kind": "tea-brand",
+    "category": "matcha",
+    "kind_note": "Tea company selling loose leaf and matcha; runs holiday-market stands.",
     "home_city": "New York",
     "home_state": "NY",
     "website": null,

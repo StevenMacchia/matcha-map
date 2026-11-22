@@ -1,4 +1,4 @@
-// Merge data/wave2/*.json into data/sources.json.
+// Merge data/<wave>/*.json into data/sources.json (folder as the first argument, default data/wave2).
 // Dedupes by id, by Instagram handle and by normalized brand name. Validates against the schema's required keys and enums.
 import fs from "node:fs";
 const schema = JSON.parse(fs.readFileSync("data/schema/source.schema.json", "utf8"));
@@ -12,8 +12,9 @@ const seenIg = new Set(base.map((s) => norm(s.instagram)).filter(Boolean));
 const seenBrand = new Set(base.map((s) => norm(s.brand)));
 const out = [...base];
 const report = [];
-for (const f of fs.readdirSync("data/wave2").filter((f) => f.endsWith(".json"))) {
-  const arr = JSON.parse(fs.readFileSync("data/wave2/" + f, "utf8"));
+const dir = process.argv[2] || "data/wave2";
+for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+  const arr = JSON.parse(fs.readFileSync(dir + "/" + f, "utf8"));
   let added = 0, dup = 0, bad = 0;
   for (const s of arr) {
     const missing = req.filter((k) => !(k in s));

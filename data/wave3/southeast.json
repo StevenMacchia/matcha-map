@@ -2,6 +2,9 @@
   {
     "id": "nok108-matcha",
     "brand": "NOK108",
+    "kind": "popup",
+    "category": "matcha",
+    "kind_note": null,
     "home_city": "Charlottesville",
     "home_state": "VA",
     "website": null,
@@ -18,6 +21,9 @@
   {
     "id": "gemora-matcha",
     "brand": "Gemora Matcha",
+    "kind": "tea-brand",
+    "category": "matcha",
+    "kind_note": "Matcha and hojicha product brand; no markets listed.",
     "home_city": "Charlottesville",
     "home_state": "VA",
     "website": "https://www.gemoramatcha.com",
@@ -34,6 +40,9 @@
   {
     "id": "matcha-mamas-greensboro",
     "brand": "Matcha Mamas",
+    "kind": "popup",
+    "category": "matcha",
+    "kind_note": null,
     "home_city": "Greensboro",
     "home_state": "NC",
     "website": null,
@@ -50,6 +59,9 @@
   {
     "id": "littlefoot-matcha",
     "brand": "Littlefoot Matcha",
+    "kind": "cafe",
+    "category": "matcha",
+    "kind_note": "Greensboro brand with a permanent Raleigh shop; books event matcha bars.",
     "home_city": "Greensboro",
     "home_state": "NC",
     "website": "https://littlefootmatcha.com",
@@ -66,6 +78,9 @@
   {
     "id": "habibtea-raleigh",
     "brand": "HabibTea",
+    "kind": "tea-brand",
+    "category": "matcha",
+    "kind_note": "Named only as a vendor at one matcha festival; thin evidence, looks like a tea brand.",
     "home_city": "Raleigh",
     "home_state": "NC",
     "website": null,
@@ -82,6 +97,9 @@
   {
     "id": "little-house-lattes",
     "brand": "Little House Lattes",
+    "kind": "popup",
+    "category": "matcha",
+    "kind_note": null,
     "home_city": "Raleigh",
     "home_state": "NC",
     "website": null,
@@ -98,6 +116,9 @@
   {
     "id": "balancedaf-wellness",
     "brand": "BalancedAF Wellness (Matcha MayFest)",
+    "kind": "organizer",
+    "category": "matcha",
+    "kind_note": "Wellness company organizing matcha vendor events.",
     "home_city": "Raleigh",
     "home_state": "NC",
     "website": null,
@@ -114,6 +135,9 @@
   {
     "id": "iris-coffee-lab",
     "brand": "Iris Coffee Lab",
+    "kind": "venue",
+    "category": "matcha",
+    "kind_note": "Coffee shop hosting recurring guest matcha pop-ups.",
     "home_city": "Raleigh",
     "home_state": "NC",
     "website": null,
@@ -130,6 +154,9 @@
   {
     "id": "the-matcha-market-atl",
     "brand": "The Matcha Market (The Artchive)",
+    "kind": "organizer",
+    "category": "matcha",
+    "kind_note": "Monthly matcha market that pairs matcha with local businesses.",
     "home_city": "Atlanta",
     "home_state": "GA",
     "website": null,
@@ -146,6 +173,9 @@
   {
     "id": "brue-coffee-charlotte",
     "brand": "Brü",
+    "kind": "popup",
+    "category": "coffee",
+    "kind_note": null,
     "home_city": "Charlotte",
     "home_state": "NC",
     "website": null,
@@ -162,6 +192,9 @@
   {
     "id": "mood-up-coffee-matcha",
     "brand": "Mood Up Coffee + Matcha",
+    "kind": "popup",
+    "category": "coffee",
+    "kind_note": null,
     "home_city": "Greensboro",
     "home_state": "NC",
     "website": null,
@@ -178,6 +211,9 @@
   {
     "id": "sip-and-sparkle",
     "brand": "Sip & Sparkle",
+    "kind": "popup",
+    "category": "matcha",
+    "kind_note": null,
     "home_city": "Greer",
     "home_state": "SC",
     "website": null,
@@ -194,6 +230,9 @@
   {
     "id": "holy-city-matcha",
     "brand": "Holy City Matcha",
+    "kind": "organizer",
+    "category": "matcha",
+    "kind_note": "Only evidence is a co-hosted matcha class; thin.",
     "home_city": "Charleston",
     "home_state": "SC",
     "website": null,
@@ -210,6 +249,9 @@
   {
     "id": "uma-matcha-fl",
     "brand": "Uma Matcha",
+    "kind": "popup",
+    "category": "matcha",
+    "kind_note": null,
     "home_city": "St. Petersburg",
     "home_state": "FL",
     "website": null,
@@ -226,6 +268,9 @@
   {
     "id": "mins-matcha",
     "brand": "Min's Matcha",
+    "kind": "tea-brand",
+    "category": "matcha",
+    "kind_note": "Packaged ready-to-drink matcha brand sold at markets.",
     "home_city": "Largo",
     "home_state": "FL",
     "website": "https://minsmatcha.com",
@@ -242,6 +287,9 @@
   {
     "id": "blind-tiger-ybor-matcha",
     "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
+    "kind": "venue",
+    "category": "coffee",
+    "kind_note": "Coffee roaster hosting a Matcha and Mimosa Sundays event.",
     "home_city": "Tampa",
     "home_state": "FL",
     "website": null,
@@ -258,6 +306,9 @@
   {
     "id": "eat-bubbles-nashville",
     "brand": "Eat Bubbles",
+    "kind": "cafe",
+    "category": "boba",
+    "kind_note": "Boba and matcha shop in L&L Market that also vendors at markets.",
     "home_city": "Nashville",
     "home_state": "TN",
     "website": "https://eatbubbles.com",
