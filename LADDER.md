@@ -31,6 +31,7 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 | 23 | Break the ceiling, sources | Sonnet subagent | done | Open-data temporary food permits (NYC, LA, SF), seasonal market vendor rosters, RSS feeds of city food newsletters and Google Alerts, Bluesky open search, public embed captions for human-submitted links. | all-models 23% |
 | 24 | Break the ceiling, intake | Sonnet subagent | pending | "Add a pop-up" on the site with a Pages Function queue, a one-click bookmarklet for posts you are viewing, a Get-on-the-map page and outreach template. Starts after rung 21. | |
 | 25 | Flyers and posts | Sonnet subagent | done | Flyer-style post images in the house style for other brands' pop-ups (single pop-up, weekend roundup per city), captions with credit, an outbox for review; posting via the API only after Steven approves a batch. | all-models 22% |
+| 26 | Flyers with character | Opus subagent | running | Redesign the flyer templates: Mattie large on every post, sticker petals and dango, speech bubbles, chunkier type, pastel two-tone; same facts and credits. | |
 
 ## Log
 
