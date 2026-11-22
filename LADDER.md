@@ -20,6 +20,7 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 | 12 | Cartoon treatment | Opus subagent | running | Hand-coloured vector basemap (MapLibre + OpenFreeMap), Mattie model sheet with expressions and sidekicks, opening moment, pin drops, springs, petals, idle blinks, bigger type and contrast; all off under reduced motion. | |
 | 13 | Seed wave 3 | 2 Sonnet subagents (NYC; Carolinas and Southeast) | running | Deep per-city research where the map is thin, looser evidence rule, `data/wave3/*.json`. | |
 | 14 | MATO city crawler | Sonnet subagent | running | Walk MATO per-city event pages for matcha events and venues; new brands and dated events without a token. | |
+| 15 | Gap check and harvest | Sonnet subagent | running | For LA, NYC, SF Bay, Seattle, Dallas, Houston, Chicago, Miami: count real pop-ups in the next 30 days the map is missing, harvest each into the paste inbox with its brand, list design and ladder gaps. | |
 
 ## Log
 
@@ -44,3 +45,4 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 - 2026-11-22 12:45: spend for the day: weekly all-models 10% -> 14%, Fable 0% -> 5%. Meta app: wizard filled in Steven's Chrome, stopped at Facebook's password re-entry, which only he can do; left alone at his request.
 - 2026-11-22 13:00: Steven's read: coverage far too thin (Raleigh-Durham looks empty, NYC missing most), design ugly and hard to read, the map itself needs charm. Deploy held until rungs 12 to 14 land. Note: Raleigh-Durham has 3 brands in the data but they are muted dots with no dates.
 - 2026-11-22 13:05: Steven: "cinematic level design, character design and cartoon, animations, transitions". Rung 12 widened to the full treatment and moved to an Opus worker. Rungs 13 (NYC; Carolinas and Southeast) and 14 (MATO city crawler) running in parallel.
+- 2026-11-22 13:15: the workbench session relayed Steven's 2 out of 10 ("so much missing, so many pop-ups missing, design"). Before counts, upcoming pop-ups on the map by city: 22 in all; San Antonio 6, Sacramento 4, San Francisco 3, Orlando 2, Raleigh 1, Houston 1, Dallas 1, New Orleans 1, North Bethesda 1, Miami 1, Fredericksburg 1; New York 0, Los Angeles 0, Seattle 0, Chicago 0. Rung 15 opened for the gap check; after counts go here when rungs 12 to 15 land.
