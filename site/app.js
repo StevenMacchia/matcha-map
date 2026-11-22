@@ -85,9 +85,9 @@
     return L.markerClusterGroup({
       showCoverageOnHover: false, maxClusterRadius: 44, spiderfyOnMaxZoom: true,
       iconCreateFunction: function (c) {
-        var n = c.getChildCount(), size = base + (n > 9 ? 6 : 0);
+        var n = c.getChildCount(), size = base + (n > 24 ? 12 : n > 9 ? 6 : 0);
         var el = document.createElement("span");
-        el.className = "cl " + cls;
+        el.className = "cl " + cls + (n > 24 ? " cl-l" : n > 9 ? " cl-m" : "");
         el.textContent = n;
         el.setAttribute("aria-label", n + " pins, zoom in");
         return L.divIcon({ html: el, className: "pinwrap", iconSize: [size, size], iconAnchor: anchor(size, cls === "cl-br") });
@@ -98,9 +98,16 @@
   var eventGroup = mkCluster("cl-ev", 36).addTo(map);
   var youMarker = null;
 
+  var CUP = "<svg viewBox=\"0 0 34 34\" width=\"34\" height=\"34\" aria-hidden=\"true\" focusable=\"false\">" +
+    "<path class=\"steam\" d=\"M14 9c-2-2 0-3.5 0-5.500M20 9c-2-2 0-3.5 0-5.500\"/>" +
+    "<path class=\"cup-body\" d=\"M5 14h24c0 9-5 15-12 15S5 23 5 14z\"/>" +
+    "<ellipse class=\"cup-body\" cx=\"17\" cy=\"14\" rx=\"12\" ry=\"4\"/>" +
+    "<ellipse class=\"cup-foam\" cx=\"17\" cy=\"14.3\" rx=\"9.5\" ry=\"2.800\"/>" +
+    "<path class=\"cup-swirl\" d=\"M13 14.5q4-2.5 8 0\"/>";
   function pinIcon(kind, past) {
     var el = document.createElement("span");
     el.className = "pin " + (kind === "e" ? "pin-ev" : "pin-br") + (past ? " past" : "");
+    if (kind === "e") el.innerHTML = CUP + (past ? "" : "<circle class=\"dot-new\" cx=\"28\" cy=\"6\" r=\"4\"/>") + "</svg>";
     var sz = kind === "e" ? 36 : 28;
     return L.divIcon({ html: el, className: "pinwrap", iconSize: [sz, sz], iconAnchor: anchor(sz, kind !== "e") });
   }
