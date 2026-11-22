@@ -70,6 +70,16 @@ Example:
 | status | `upcoming`, `past`, `cancelled`. |
 | first_seen, last_seen | ISO timestamps. |
 | extracted_by | `rule`, `llm`, `manual`. |
+| image | `{url, local, credit, width, height}` or null. The post or page photo: `url` is the remote image, `local` the downloaded copy under `site/img/events/` (null if the download failed), `credit` the brand handle or source host, size read from the file header. |
+| posts | `{instagram, tiktok, other}`, each a URL or null. Instagram `/p/` and `/reel/` links and TikTok video links go in their own key; the source page goes in `other`. |
+| menu | Array of up to 8 short strings (40 chars or fewer, lowercase): flavors and items the source names, such as `strawberry matcha`, `ube latte`, `hojicha`. `[]` when unknown. |
+| price | String or null, as stated: `$7–9`, `from $6`, `free`. |
+| description | String or null, up to 200 chars: a cleaned first line of the caption or event description (no URLs, hashtags, mentions or emoji). Only from the brand's own words, never a scraped date line. |
+| links | `{website, instagram, tiktok}` of the brand (profile URLs), copied from the source record. |
+
+All six new fields are required keys and nullable. A field is filled only when the source really gives it. Existing events are migrated on load (`migrateEvent` in `ingest/lib/write.js`): image null, posts from `source_url` when it is an Instagram or TikTok post, menu `[]`, price and description null, links from the source.
+
+Images are the brands' own public promo photos, shown with credit and a link back to the post. Each is downloaded once to `site/img/events/<event id>.<ext>` (jpg, png or webp, 2 MB or less, at most 2 redirects, robots.txt honored, 1 request per second per host) because Instagram CDN links expire. The remote URL is kept as the fallback; the site prefers the local copy.
 
 Confidence:
 
@@ -103,7 +113,13 @@ Example:
   "status": "upcoming",
   "last_seen": "2026-11-22T18:00:00Z",
   "first_seen": "2026-11-20T09:00:00Z",
-  "extracted_by": "rule"
+  "extracted_by": "rule",
+  "image": { "url": "https://cdn.example.com/spring.jpg", "local": "img/events/a1b2c3d4e5f6.jpg", "credit": "@examplematcha", "width": 1080, "height": 1350 },
+  "posts": { "instagram": "https://www.instagram.com/p/AbC123/", "tiktok": null, "other": "https://example.com/events/spring-popup" },
+  "menu": ["strawberry matcha", "ube latte", "hojicha"],
+  "price": "$7–9",
+  "description": "Our spring pop-up is back at Sunny Books.",
+  "links": { "website": "https://example.com", "instagram": "https://www.instagram.com/examplematcha/", "tiktok": null }
 }
 ```
 
@@ -125,7 +141,8 @@ export default {
   matches(source) { /* true if this adapter reads this source */ },
   async fetch(source, ctx) { /* returns RawItem[] */ },
 };
-// RawItem = { source_url, text, html?, published_at?, hints?: { start?, venue?, address? } }
+// RawItem = { source_url, text, html?, published_at?, hints?: { start?, venue?, address? },
+//   image_url?, posts?: { instagram?, tiktok? }, description?, price_hint? }  (all optional; set only when the source gives them)
 ```
 
 Pipeline: adapters return RawItems. A shared extractor turns each into event candidates (rules first, optional LLM step). The geocoder fills lat/lng. The writer dedupes and writes `data/events.json`. Adapters never touch the map. An Instagram or TikTok adapter drops in later with the same shape.

@@ -85,7 +85,7 @@ async function main() {
     rows.push(row);
     try {
       const o = await oembed(raw.source_url);
-      if (o) { raw.text = `${raw.text} ${o.text}`.trim(); raw.handle = o.handle; }
+      if (o) { raw.text = `${raw.text} ${o.text}`.trim(); raw.handle = o.handle; raw.image_url = raw.image_url || o.image_url || null; }
       const m = matchSource(raw, sources);
       if (!m) { row.note = "no source matched (add its handle to sources.json)"; continue; }
       raw.handle = raw.handle || m.handle;
@@ -94,7 +94,7 @@ async function main() {
   }
 
   // 3 and 4. Dedupe, geocode, merge, write (shared with `npm run watch`).
-  const { merged } = await finalize(candidates, { now, geocoder, liveSourceIds: live, dry });
+  const { merged } = await finalize(candidates, { now, geocoder, fetcher, liveSourceIds: live, dry });
 
   for (const r of rows) info(`${pad(r.id, 28)} ${pad(r.adapter, 16)} items ${pad(r.items, 3)} events ${pad(r.kept, 3)} ${r.note}`);
   const up = merged.events.filter((e) => e.status === "upcoming");

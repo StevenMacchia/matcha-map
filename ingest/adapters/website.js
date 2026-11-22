@@ -1,5 +1,5 @@
 // Generic brand page: fetch it, strip to text, hand each line with a date to the extractor.
-import { htmlToLines } from "../lib/html.js";
+import { htmlToLines, metaContent, httpUrl } from "../lib/html.js";
 import { findDates, refDate } from "../lib/extract.js";
 import { tzFor } from "../lib/tz.js";
 
@@ -27,6 +27,10 @@ export default {
     const url = source.schedule_url || source.website;
     const r = await ctx.fetcher.get(url);
     if (!r.ok) throw new Error(r.blocked ? "blocked by robots.txt" : `HTTP ${r.status || "error"}`);
-    return dateLines(r.text, ctx.now, source).map((text) => ({ source_url: url, text, maxAheadDays: 60 }));
+    const lines = dateLines(r.text, ctx.now, source);
+    // The page photo belongs to the event only when the page is about one or two dates; a long schedule has no single picture.
+    const og = lines.length && lines.length <= 2 ? metaContent(r.text, "og:image") : null;
+    const image_url = httpUrl(og);
+    return lines.map((text) => ({ source_url: url, text, maxAheadDays: 60, image_url }));
   },
 };

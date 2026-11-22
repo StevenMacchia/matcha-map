@@ -62,7 +62,7 @@ async function main() {
     notes.set(acc.handle, `${items.length} items, ${ids.size} dated`);
   }
 
-  const { merged } = await finalize(candidates, { now, geocoder, liveSourceIds: live, dry });
+  const { merged } = await finalize(candidates, { now, geocoder, fetcher, liveSourceIds: live, dry });
   info(`${candidates.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);
 
   if (has("--promote")) {

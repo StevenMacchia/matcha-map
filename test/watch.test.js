@@ -157,7 +157,7 @@ test("adapter fetch with a stubbed http uses business_discovery and maps items",
   const rate = createRate({ file: path.join(os.tmpdir(), `ig-rate-${process.pid}-a.json`) });
   const items = await igAdapter.fetch({ instagram: "brandhandle" }, { env: { INSTAGRAM_TOKEN: "T", INSTAGRAM_BUSINESS_ID: "99" }, http, rate, fetcher: {} });
   assert.equal(items.length, 2);
-  assert.match(decodeURIComponent(urls[0]), /\/99\?fields=business_discovery\.username\(brandhandle\)\{media\.limit\(25\)\{caption,permalink,timestamp,media_type\}\}/);
+  assert.match(decodeURIComponent(urls[0]), /\/99\?fields=business_discovery\.username\(brandhandle\)\{media\.limit\(25\)\{caption,permalink,timestamp,media_type,media_url,thumbnail_url\}\}/);
 });
 test("rate counter stops at 200 calls per hour and expires after an hour", () => {
   let t = 1_000_000;

@@ -170,3 +170,28 @@ dialog p { margin: 0 0 10px; font-size: 14px; }
 .brand h1 span { white-space: nowrap; }
 @media (max-width: 480px) { .btn.quiet { padding: 0 9px; } .bar { gap: 4px; } }
 @media (min-width: 900px) { .peek { margin-left: 12px; margin-right: 0; } .bar-actions { margin-left: auto; } }
+
+/* richer cards: photo, menu pills, price, description, links */
+.ph { position: relative; aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; background: var(--foam); margin: 0 0 10px; border: 1.5px solid var(--line); }
+.ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ph-empty { aspect-ratio: 16 / 5; display: flex; align-items: center; justify-content: center; }
+.ph-face { opacity: .9; }
+.ph-credit { position: absolute; left: 8px; bottom: 8px; max-width: calc(100% - 16px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; line-height: 18px; padding: 0 8px; border-radius: var(--pill); color: #fff; background: rgba(75,58,51,.66); }
+.card .menu { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 2px; }
+.card .menu-label { font-size: 12px; font-weight: 800; color: var(--muted); margin-right: 2px; }
+.card .pill { font-size: 12px; line-height: 20px; padding: 1px 10px; border-radius: var(--pill); background: var(--chipbg); border: 1.5px solid var(--line); color: var(--ink); }
+.card .pill.more { color: var(--muted); }
+.card .price { margin-left: auto; font-size: 14px; font-weight: 800; color: var(--deep); }
+.card .desc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-top: 6px; line-height: 1.35; }
+.ecard h3 { margin-top: 2px; }
+.sheet { max-height: 70%; }
+.sheet .close { top: 14px; right: 12px; z-index: 2; background: var(--panel); border: 1.5px solid var(--line); }
+.sheet #sheet-body { overflow-x: hidden; }
+.leaflet-popup-content .ecard { width: 280px; max-width: 100%; }
+.leaflet-container a.leaflet-popup-close-button { top: 8px !important; right: 8px !important; background: var(--panel) !important; border-radius: 50% !important; border: 1.5px solid var(--line); z-index: 2; }
+/* list rows with a thumbnail */
+.row.erow { display: flex; align-items: center; gap: 12px; }
+.row .rt { flex: 1; min-width: 0; display: block; }
+.row .th { flex: none; width: 48px; height: 48px; border-radius: 12px; overflow: hidden; background: var(--foam); border: 1.5px solid var(--line); display: flex; align-items: center; justify-content: center; }
+.row .th img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.row .menu-prev { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

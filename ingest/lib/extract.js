@@ -251,3 +251,191 @@ export function extract(raw, ctx = {}) {
   }
   return out;
 }
+
+// ---------------------------------------------------------------------------------------------
+// Rich fields: menu, price, description. Pure functions; each fills only what the text really says.
+import { FLAVORS, ITEMS, SUFFIXES, NOT_ITEMS, NEEDS_SUFFIX } from "./menu-terms.js";
+
+const EMOJI = /[\p{Extended_Pictographic}\p{Regional_Indicator}\u{FE0F}\u{200D}\u{20E3}\u{1F3FB}-\u{1F3FF}]/gu;
+const stripEmoji = (s) => String(s).replace(EMOJI, " ");
+const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const alt = (list) => list.flatMap((x) => x.split("|")).sort((a, b) => b.length - a.length).map((x) => esc(x).replace(/ /g, "\\s+")).join("|");
+const canonOf = new Map();
+for (const e of [...FLAVORS, ...ITEMS]) { const v = e.split("|"); for (const x of v) canonOf.set(x, v[0]); }
+const SUFFIX_RE = alt(SUFFIXES);
+const FLAVOR_RE = alt(FLAVORS), ITEM_RE = alt(ITEMS);
+const RE_COMPOUND = new RegExp(`(?<![\\w-])(?:(${FLAVOR_RE})\\s+)?(${FLAVOR_RE})(?:\\s+(?:iced|hot))?\\s+(${SUFFIX_RE})(?![\\w-])`, "gi");
+const RE_FLAVOR = new RegExp(`(?<![\\w-])(${FLAVOR_RE})(?![\\w-])`, "gi");
+const RE_ITEM = new RegExp(`(?<![\\w-])(${ITEM_RE})(?![\\w-])`, "gi");
+const RE_COMBO = new RegExp(`(?<![\\w-])(?:(${FLAVOR_RE})\\s*[x×+]\\s*matcha|matcha\\s*[x×+]\\s*(${FLAVOR_RE}))(?![\\w-])`, "gi");
+const RE_VOCAB = new RegExp(`(?<![\\w-])(?:${FLAVOR_RE}|${ITEM_RE}|matcha)(?![\\w-])`, "i");
+const HEADER = /(?:^|[\s(])(?:(?:on the )?menu(?:\s+(?:features|includes|offers|has|will include)(?:\s+[\w-]+){0,4}?)?|flavou?rs|we'?re (?:serving|pouring|offering)|serving|pouring|offering|featuring)(?:\s+(?:today|this week|include|includes))?\s*[:\-–—]\s*|\b(?:drinks|flavou?rs|treats|items)(?:\s+[\w'’-]+){0,4}?\s+(?:include|includes|featuring|feature)\s+/gi;
+const BULLET = /^\s*(?:[-*•·▪◦‣–—]|\p{Extended_Pictographic}|\p{Regional_Indicator})/u;
+const NOT_MENU_LINE = /(?:^|\s)(?:when|where|date|time|address|location|rsvp)\b|https?:|@|#|\b\d{1,2}(?::\d{2})?\s*(?:am|pm)\b|\b(?:mon|tues?|wednes|thurs?|fri|satur|sun)day\b|\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+\d/i;
+
+const canon = (s) => { const k = s.toLowerCase().replace(/\s+/g, " "); return canonOf.get(k) || k; };
+
+// Clean one candidate list item: no emoji, prices, brackets, hashtags. Returns "" if it is not a menu item.
+function cleanItem(s) {
+  let t = stripEmoji(s).replace(/\([^)]*\)/g, " ").replace(/\$\s?\d[\d.,]*/g, " ").replace(/[*_~"“”]/g, " ")
+    .replace(/^[\s\-–—•·.:;!?]+|[\s\-–—•·.:;!?]+$/g, "").replace(/\s+/g, " ").toLowerCase();
+  t = t.replace(/^(?:and|or|plus|our|the|a|an)\s+/, "");
+  if (!t || t.length > 40 || t.split(" ").length > 5 || /[@#]|https?:|\d/.test(t) || NOT_ITEMS.test(t)) return "";
+  if (!/[a-z]{3}/.test(t)) return "";
+  return t;
+}
+const splitItems = (s) => s.split(/[,;·•|\n]|\s&\s|\s\+\s|\sand\s|\s\/\s/).map(cleanItem).filter(Boolean);
+
+// menuFromText(text) -> string[] (lowercase, source order, deduped, at most 8). [] when the text names nothing.
+export function menuFromText(text) {
+  const src = String(text || "").replace(/\r/g, "");
+  if (!src.trim()) return [];
+  const hits = []; // {i, e, t}
+  const add = (i, e, t) => hits.push({ i, e, t });
+
+  // 1. Header lists: "Menu: a, b, c" or a header line followed by short lines.
+  const claimed = [];
+  for (const m of src.matchAll(HEADER)) {
+    const from = m.index + m[0].length;
+    let end = src.length;
+    const nl = src.indexOf("\n", from);
+    const sentence = /[.!?](?:\s|$)/g; sentence.lastIndex = from;
+    const se = sentence.exec(src);
+    let body;
+    if (nl === from || (nl > from && !src.slice(from, nl).trim())) {
+      // header alone on its line: take the following short lines until a blank line
+      const lines = []; let pos = nl + 1;
+      for (let n = 0; n < 8 && pos <= src.length; n++) {
+        const e2 = src.indexOf("\n", pos); const line = src.slice(pos, e2 < 0 ? src.length : e2);
+        if (!line.trim() || line.length > 60) break;
+        lines.push(line); pos = e2 < 0 ? src.length + 1 : e2 + 1;
+      }
+      body = lines.join("\n"); end = Math.max(from, pos - 1);
+    } else {
+      end = Math.min(nl < 0 ? src.length : nl, se ? se.index : src.length);
+      body = src.slice(from, end);
+    }
+    claimed.push([m.index, end]);
+    let off = from;
+    for (const part of body.split(/(?<=[,;·•|\n])|\s&\s|\s\+\s|\sand\s|\s\/\s/)) {
+      const it = splitItems(part)[0];
+      if (it) add(off, off + part.length, it);
+      off += part.length;
+    }
+  }
+  const taken = (i, e) => claimed.some(([a, b]) => i < b && e > a);
+
+  // 2. Bullet or emoji-led runs of two or more short lines, kept when the line names a known item.
+  const lines = []; let pos = 0;
+  for (const l of src.split("\n")) { lines.push({ l, i: pos }); pos += l.length + 1; }
+  for (let k = 0; k < lines.length; k++) {
+    const run = [];
+    while (k < lines.length && BULLET.test(lines[k].l) && lines[k].l.length <= 70 && !NOT_MENU_LINE.test(lines[k].l)) run.push(lines[k++]);
+    if (run.length >= 2) for (const { l, i } of run) {
+      const it = splitItems(l)[0];
+      if (it && RE_VOCAB.test(it) && !taken(i, i + l.length)) { add(i, i + l.length, it); claimed.push([i, i + l.length]); }
+    }
+  }
+
+  // 3. Vocabulary, longest reading first, never overlapping a list item.
+  const vocab = [];
+  const push = (m, text, flavorOnly) => {
+    if (flavorOnly && NEEDS_SUFFIX.has(canon(m[1]))) return;
+    vocab.push({ i: m.index, e: m.index + m[0].length, t: text });
+  };
+  for (const m of src.matchAll(RE_COMBO)) push(m, `${canon(m[1] || m[2])} matcha`);
+  for (const m of src.matchAll(RE_COMPOUND)) push(m, [m[1] && canon(m[1]), canon(m[2]), m[3].toLowerCase().replace(/\s+/g, " ")].filter(Boolean).join(" "));
+  for (const m of src.matchAll(RE_FLAVOR)) push(m, canon(m[1]), true);
+  for (const m of src.matchAll(RE_ITEM)) push(m, canon(m[1]));
+  vocab.sort((a, b) => a.i - b.i || (b.e - b.i) - (a.e - a.i));
+  const kept = [];
+  for (const v of vocab) {
+    if (taken(v.i, v.e)) continue;
+    if (kept.some((k) => v.i < k.e && v.e > k.i)) continue;
+    kept.push(v);
+  }
+  for (const v of kept) add(v.i, v.e, v.t);
+
+  // 4. Source order, dedupe, drop an item that sits whole inside a longer one, cap at 8.
+  hits.sort((a, b) => a.i - b.i);
+  const seen = [];
+  for (const h of hits) if (!seen.includes(h.t)) seen.push(h.t);
+  const out = seen.filter((t) => !seen.some((o) => o !== t && o.length > t.length && new RegExp(`(?<![\\w-])${esc(t)}(?![\\w-])`).test(o)));
+  return out.slice(0, 8);
+}
+
+// priceFromText(text) -> "$7", "$6–9", "from $5", "free" or null.
+export function priceFromText(text) {
+  const t = String(text || "");
+  const fmt = (n) => (Number.isInteger(n) ? String(n) : n.toFixed(2));
+  const found = [];
+  let from = false;
+  const rangeRe = /(?<![\w$])(from\s+|starting\s+at\s+|starts?\s+at\s+)?\$\s?(\d{1,3}(?:\.\d{2})?)(?:\s*(?:-|–|—|to)\s*\$?\s*(\d{1,3}(?:\.\d{2})?))?(?![\d,])/gi;
+  for (const m of t.matchAll(rangeRe)) {
+    const after = t.slice(m.index + m[0].length, m.index + m[0].length + 12), before = t.slice(Math.max(0, m.index - 24), m.index);
+    if (/^\s*(?:off|gift|credit|donat)/i.test(after) || /^\s*(?:from|of|per)\s+(?:every|each|all|the)\b/i.test(after) || /(?:worth|win|giveaway|prize|gift\s*card|raffle|donat\w*)\s*(?:of|:)?\s*$/i.test(before)) continue;
+    const a = parseFloat(m[2]), b = m[3] ? parseFloat(m[3]) : null;
+    if (b !== null && b < a) continue;
+    if (m[1]) from = true;
+    found.push(a); if (b !== null) found.push(b);
+  }
+  if (found.length) {
+    const lo = Math.min(...found), hi = Math.max(...found);
+    if (from) return `from $${fmt(lo)}`;
+    return lo === hi ? `$${fmt(lo)}` : `$${fmt(lo)}–${fmt(hi)}`;
+  }
+  if (/\bit'?s\s+free\b|\bfree\s+(?:entry|admission|event|rsvp|to\s+(?:attend|join|enter)|samples?|drinks?|matcha|pop-?ups?)\b|\bfree!/i.test(t)) return "free";
+  return null;
+}
+
+// descriptionFromText(text) -> first line of a caption or description, cleaned, at most 200 chars, or null.
+export function descriptionFromText(text, max = 200) {
+  for (const raw of String(text || "").replace(/\r/g, "").split("\n")) {
+    let l = stripEmoji(raw)
+      .replace(/https?:\/\/\S+|www\.\S+/gi, " ").replace(/(?<![\w])#[\w]+/g, " ").replace(/(?<![\w.])@[\w.]+/g, " ")
+      .replace(/\s+/g, " ").replace(/^[\s\-–—•·|:;,.]+|[\s\-–—•·|:;,]+$/g, "").trim();
+    if ((l.match(/[A-Za-z]/g) || []).length < 8) continue;
+    if (l.length > max) {
+      const sentences = l.match(/[^.!?]+[.!?]+(?:\s|$)/g) || [];
+      let acc = "";
+      for (const s of sentences) { if ((acc + s).trim().length > max) break; acc += s; }
+      l = acc.trim() || l.slice(0, max - 1).replace(/\s+\S*$/, "").replace(/[\s,;:-]+$/, "") + "…";
+    }
+    return l;
+  }
+  return null;
+}
+
+export const SOCIAL_POST = /^https?:\/\/(?:www\.)?(instagram|tiktok)\.com\/(?:(?:[A-Za-z0-9_.]+\/)?(?:p|reel|reels|tv)\/[A-Za-z0-9_-]+|@[\w.]+\/video\/\d+|t\/[A-Za-z0-9]+)/i;
+
+// postsFrom(urls[], otherUrl) -> {instagram, tiktok, other}
+export function postsFrom(urls, otherUrl = null) {
+  const posts = { instagram: null, tiktok: null, other: null };
+  for (const u of urls.filter(Boolean)) {
+    const m = SOCIAL_POST.exec(u);
+    if (m) { const k = m[1].toLowerCase(); if (!posts[k]) posts[k] = u.split(/[?#]/)[0]; }
+  }
+  if (otherUrl && !/^https?:\/\/(?:www\.)?(?:instagram|tiktok)\.com\//i.test(otherUrl)) posts.other = otherUrl;
+  return posts;
+}
+
+export const socialProfile = (kind, h) => (h ? (kind === "instagram" ? `https://www.instagram.com/${h}/` : `https://www.tiktok.com/@${h}`) : null);
+
+// richFields(raw, source) -> { image, posts, menu, price, description, links } for a candidate.
+export function richFields(raw, source = {}) {
+  const text = [raw.text, raw.description].filter(Boolean).join("\n");
+  const host = (() => { try { return new URL(raw.source_url).host.replace(/^www\./, ""); } catch { return null; } })();
+  const handle = raw.handle || source.instagram || source.tiktok || null;
+  const image = raw.image_url ? { url: raw.image_url, local: null, credit: handle ? `@${handle}` : host, width: null, height: null } : null;
+  // A caption (manual paste, Graph, TikTok) or an event description is the brand's own words; a scraped date line is not.
+  const descSrc = raw.description || (raw.manual || raw.media_type ? raw.text : null);
+  const price = raw.price_hint === "free" ? "free" : priceFromText(raw.price_hint) || priceFromText(text);
+  const inText = text.match(/https?:\/\/(?:www\.)?(?:instagram|tiktok)\.com\/\S+/i)?.[0];
+  const posts = postsFrom([raw.source_url, inText, ...Object.values(raw.posts || {})], raw.source_url);
+  for (const k of ["instagram", "tiktok", "other"]) if (raw.posts?.[k]) posts[k] = raw.posts[k];
+  return {
+    image, posts, menu: menuFromText(text), price,
+    description: descSrc ? descriptionFromText(descSrc) : null,
+    links: { website: source.website || null, instagram: socialProfile("instagram", source.instagram), tiktok: socialProfile("tiktok", source.tiktok) },
+  };
+}

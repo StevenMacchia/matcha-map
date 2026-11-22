@@ -5,40 +5,317 @@
   "description": "data/events.json: a generated timestamp and a list of events.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["generated", "events"],
+  "required": [
+    "generated",
+    "events"
+  ],
   "properties": {
-    "generated": { "type": "string", "format": "date-time" },
-    "events": { "type": "array", "items": { "$ref": "#/$defs/event" } }
+    "generated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    }
   },
   "$defs": {
     "event": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "brand", "source_id", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "confidence", "status", "last_seen", "first_seen", "extracted_by"],
+      "required": [
+        "id",
+        "brand",
+        "source_id",
+        "handle",
+        "source_url",
+        "title",
+        "start",
+        "end",
+        "tz",
+        "all_day",
+        "venue",
+        "address",
+        "city",
+        "state",
+        "zip",
+        "lat",
+        "lng",
+        "geocode_source",
+        "confidence",
+        "status",
+        "last_seen",
+        "first_seen",
+        "extracted_by",
+        "image",
+        "posts",
+        "menu",
+        "price",
+        "description",
+        "links"
+      ],
       "properties": {
-        "id": { "type": "string", "description": "Hash of source id + start + venue." },
-        "brand": { "type": "string" },
-        "source_id": { "type": "string" },
-        "handle": { "type": ["string", "null"] },
-        "source_url": { "type": "string", "format": "uri" },
-        "title": { "type": "string" },
-        "start": { "type": "string", "format": "date-time", "description": "ISO 8601 with offset, local to the venue." },
-        "end": { "type": ["string", "null"], "format": "date-time" },
-        "tz": { "type": "string", "description": "IANA zone, e.g. America/Los_Angeles." },
-        "all_day": { "type": "boolean" },
-        "venue": { "type": "string" },
-        "address": { "type": "string", "description": "Street." },
-        "city": { "type": "string" },
-        "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
-        "zip": { "type": ["string", "null"], "pattern": "^[0-9]{5}(-[0-9]{4})?$" },
-        "lat": { "type": ["number", "null"], "minimum": -90, "maximum": 90 },
-        "lng": { "type": ["number", "null"], "minimum": -180, "maximum": 180 },
-        "geocode_source": { "enum": ["nominatim", "mapbox", "manual", "none"] },
-        "confidence": { "enum": ["confirmed", "likely", "unsure"] },
-        "status": { "enum": ["upcoming", "past", "cancelled"] },
-        "last_seen": { "type": "string", "format": "date-time" },
-        "first_seen": { "type": "string", "format": "date-time" },
-        "extracted_by": { "enum": ["rule", "llm", "manual"] }
+        "id": {
+          "type": "string",
+          "description": "Hash of source id + start + venue."
+        },
+        "brand": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "handle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 with offset, local to the venue."
+        },
+        "end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "tz": {
+          "type": "string",
+          "description": "IANA zone, e.g. America/Los_Angeles."
+        },
+        "all_day": {
+          "type": "boolean"
+        },
+        "venue": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string",
+          "description": "Street."
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{5}(-[0-9]{4})?$"
+        },
+        "lat": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -90,
+          "maximum": 90
+        },
+        "lng": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -180,
+          "maximum": 180
+        },
+        "geocode_source": {
+          "enum": [
+            "nominatim",
+            "mapbox",
+            "manual",
+            "none"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "confirmed",
+            "likely",
+            "unsure"
+          ]
+        },
+        "status": {
+          "enum": [
+            "upcoming",
+            "past",
+            "cancelled"
+          ]
+        },
+        "last_seen": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "first_seen": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "extracted_by": {
+          "enum": [
+            "rule",
+            "llm",
+            "manual"
+          ]
+        },
+        "image": {
+          "description": "The post or page photo, with credit; null when the source gives none.",
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "url",
+                "local",
+                "credit",
+                "width",
+                "height"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The remote image."
+                },
+                "local": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^img/events/[A-Za-z0-9._-]+$",
+                  "description": "Downloaded copy, path under site/."
+                },
+                "credit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Brand handle or source host."
+                },
+                "width": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1
+                },
+                "height": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1
+                }
+              }
+            }
+          ]
+        },
+        "posts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "instagram",
+            "tiktok",
+            "other"
+          ],
+          "properties": {
+            "instagram": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "tiktok": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "other": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            }
+          }
+        },
+        "menu": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "description": "Flavors and items the source names; empty when unknown."
+        },
+        "price": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "As stated, e.g. $7-9, from $6, free."
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200,
+          "description": "Cleaned first line of the caption or event description."
+        },
+        "links": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "website",
+            "instagram",
+            "tiktok"
+          ],
+          "properties": {
+            "website": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "instagram": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "tiktok": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            }
+          }
+        }
       }
     }
   }

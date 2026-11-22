@@ -2,7 +2,7 @@
 
 Drop one pasted post per file as `data/inbox/<anything>.txt`, then run `npm run ingest -- --inbox`.
 
-Format: first line is the post URL (optional), the rest is the caption.
+Format: first line is the post URL (optional), the rest is the caption. A line starting with `image:` and a photo URL sets the card image.
 
     https://www.instagram.com/p/XXXXXXXX/
     Pop-up this Saturday 11am-3pm at @sunnybooks, 123 Main St, Los Angeles, CA 90012

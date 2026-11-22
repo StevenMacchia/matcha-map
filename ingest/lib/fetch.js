@@ -112,5 +112,11 @@ export function createFetcher({ noFetch = false, cacheDir = ".cache" } = {}) {
     return load(url, opts);
   }
 
-  return { get, noFetch };
+  // For binary downloads (images): the same robots rule and per-host pace, without the text cache.
+  async function allowed(url) {
+    const u = new URL(url);
+    return robotsAllows(await rulesFor(u), u.pathname + u.search);
+  }
+
+  return { get, noFetch, allowed, throttle };
 }

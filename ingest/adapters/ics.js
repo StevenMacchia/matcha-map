@@ -1,5 +1,6 @@
 // Generic ICS feed parser. Used for sources with schedule_kind "ics" and as a Luma fallback.
 import { isoLocal, tzFor, zonedIso } from "../lib/tz.js";
+import { imageUrl } from "../lib/html.js";
 
 // Unfold and read VEVENT blocks into plain objects.
 export function parseIcs(text) {
@@ -45,6 +46,7 @@ export function icsToRaw(text, source, since = 0) {
     items.push({
       source_url: e.URL?.val || source.schedule_url,
       text: `${e.SUMMARY?.val || ""}. ${e.DESCRIPTION?.val || ""}`.trim(),
+      image_url: imageUrl(e.ATTACH?.val),
       hints: { start: s.iso, end: en && !s.allDay ? en.iso : null, all_day: s.allDay, venue: null, address: e.LOCATION?.val || null, title: e.SUMMARY?.val || null },
     });
   }

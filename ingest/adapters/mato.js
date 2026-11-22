@@ -6,7 +6,7 @@
 // description and location.name ("@venue, City, ST"). So: venue page -> event links ->
 // keep the ones dated from yesterday on -> read the JSON-LD on each event page.
 // Public, no login.
-import { jsonLd } from "../lib/html.js";
+import { jsonLd, metaContent, ldImage } from "../lib/html.js";
 import { debug } from "../lib/log.js";
 
 const MON = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
@@ -26,14 +26,27 @@ export function eventLinks(html) {
   return [...seen];
 }
 
-// JSON-LD Event -> RawItem (or null).
-export function eventToRaw(ld, url) {
+// schema.org offers -> "free", "$12", "$8-12" or null (the extractor reads it as price text).
+export function offerPrice(offers) {
+  const o = [].concat(offers || []).filter(Boolean);
+  const nums = o.flatMap((x) => [x.price, x.lowPrice, x.highPrice]).map((v) => (v === undefined || v === null || v === "" ? NaN : Number(v))).filter((n) => Number.isFinite(n));
+  if (!nums.length || (o[0]?.priceCurrency && o[0].priceCurrency !== "USD")) return null;
+  const lo = Math.min(...nums), hi = Math.max(...nums);
+  if (hi === 0) return "free";
+  return lo === hi ? `$${lo}` : `$${lo}-${hi}`;
+}
+
+// JSON-LD Event -> RawItem (or null). venueImage is the venue page avatar, used only when the event has no image.
+export function eventToRaw(ld, url, venueImage = null) {
   if (!ld || ld["@type"] !== "Event" || !ld.startDate) return null;
   if (/Cancel/i.test(ld.eventStatus || "")) return null;
   const norm = (s) => (s ? String(s).replace(/\.\d+(?=[+-]\d\d:\d\d$|Z$)/, "") : null);
   return {
     source_url: url,
     text: `${ld.name || ""}. ${ld.description || ""}`.trim(),
+    description: ld.description || null,
+    image_url: ldImage(ld.image) || venueImage || null,
+    price_hint: offerPrice(ld.offers),
     hints: { start: norm(ld.startDate), end: norm(ld.endDate), venue: ld.location?.name || null, title: ld.name || null },
   };
 }
@@ -46,6 +59,8 @@ export default {
   async fetch(source, ctx) {
     const page = await ctx.fetcher.get(source.schedule_url);
     if (!page.ok) throw new Error(page.blocked ? "blocked by robots.txt" : `HTTP ${page.status || "error"}`);
+    const og = metaContent(page.text, "og:image");
+    const venueImage = og && !/mato-logo/.test(og) ? og : null;
     const cutoff = ctx.now.getTime() - 86400000;
     const slugs = eventLinks(page.text).filter((s) => { const d = slugDate(s); return d === null || d >= cutoff; });
     const items = [];
@@ -53,7 +68,7 @@ export default {
       const url = `https://ma.to/event/${s}`;
       const r = await ctx.fetcher.get(url);
       if (!r.ok) { debug("mato event failed", url, r.status); continue; }
-      const raw = eventToRaw(jsonLd(r.text).find((x) => x["@type"] === "Event"), url);
+      const raw = eventToRaw(jsonLd(r.text).find((x) => x["@type"] === "Event"), url, venueImage);
       if (raw) items.push(raw);
     }
     return items;

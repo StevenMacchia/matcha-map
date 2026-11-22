@@ -113,14 +113,59 @@
   }
 
   // ---------- cards ----------
+  // Only http(s) links are ever put in an href.
+  function safeUrl(u) { return typeof u === "string" && /^https?:\/\//i.test(u) ? u : ""; }
+  function imgSrc(e) { var im = e.image; return im ? (im.local || safeUrl(im.url)) : ""; }
+  function postUrl(e) {
+    var p = e.posts || {};
+    return safeUrl(p.instagram) || safeUrl(p.tiktok) || safeUrl(p.other) || safeUrl(e.source_url);
+  }
+  function menuOf(e) { return Array.isArray(e.menu) ? e.menu : []; }
+  var FACE_BLOCK = "<svg class=\"ph-face\" width=\"44\" height=\"44\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/></svg>";
+  var SMALL_FACE = "<svg class=\"sheet-face\" width=\"24\" height=\"24\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/></svg>";
+  var THUMB_FACE = "<svg width=\"32\" height=\"32\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/></svg>";
+  function photoHTML(e) {
+    var src = imgSrc(e);
+    if (!src) return "<div class=\"ph ph-empty\">" + FACE_BLOCK + "</div>";
+    var credit = e.image.credit ? "<span class=\"ph-credit\">Photo: " + esc(e.image.credit) + "</span>" : "";
+    return "<div class=\"ph\"><img src=\"" + esc(src) + "\" alt=\"" + esc(e.brand) + " pop-up post photo\" loading=\"lazy\" decoding=\"async\"" +
+      (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + ">" + credit + "</div>";
+  }
+  // Broken image: try the remote copy once, then the foam block with Mattie.
+  function imgFallback(root) {
+    root.addEventListener("error", function (ev) {
+      var img = ev.target;
+      if (!img || img.tagName !== "IMG") return;
+      var remote = img.getAttribute("data-remote");
+      if (remote) { img.removeAttribute("data-remote"); img.src = remote; return; }
+      var box = img.closest(".ph, .th");
+      if (!box) return;
+      if (box.classList.contains("th")) box.innerHTML = THUMB_FACE;
+      else { box.className = "ph ph-empty"; box.innerHTML = FACE_BLOCK; }
+    }, true);
+  }
+  function menuHTML(e) {
+    var m = menuOf(e), price = e.price ? "<span class=\"price\">" + esc(e.price) + "</span>" : "";
+    if (!m.length && !price) return "";
+    var pills = m.slice(0, 6).map(function (x) { return "<span class=\"pill\">" + esc(x) + "</span>"; }).join("");
+    if (m.length > 6) pills += "<span class=\"pill more\">+" + (m.length - 6) + " more</span>";
+    return "<div class=\"menu\">" + (m.length ? "<span class=\"menu-label\">Menu</span>" : "") + pills + price + "</div>";
+  }
   function eventCard(e) {
     var line2 = [e.venue, e.address, [e.city, e.state].filter(Boolean).join(", ")].filter(Boolean).join(" · ");
     var tag = e.confidence && e.confidence !== "confirmed" ? " <span class=\"tag\">" + esc(e.confidence) + "</span>" : "";
-    return "<div class=\"card\"><h3>" + esc(e.brand) + tag + "</h3>" +
+    var links = [], post = postUrl(e), L = e.links || {};
+    if (post) links.push(["Post", post]);
+    if (safeUrl(L.instagram)) links.push(["Instagram", L.instagram]);
+    if (safeUrl(L.tiktok)) links.push(["TikTok", L.tiktok]);
+    links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng]);
+    return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + esc(e.brand) + tag + "</h3>" +
       "<p>" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
-      "<p class=\"muted\">" + esc(line2) + "</p>" +
-      "<div class=\"links\"><a href=\"" + esc(e.source_url) + "\" target=\"_blank\" rel=\"noopener\">Source</a>" +
-      "<a href=\"https://www.google.com/maps/dir/?api=1&amp;destination=" + e.lat + "," + e.lng + "\" target=\"_blank\" rel=\"noopener\">Directions</a></div></div>";
+      "<p class=\"muted\">" + esc(line2) + "</p>" + menuHTML(e) +
+      (e.description ? "<p class=\"desc muted\">" + esc(e.description) + "</p>" : "") +
+      "<div class=\"links\">" + links.map(function (l) {
+        return "<a href=\"" + esc(l[1]) + "\" target=\"_blank\" rel=\"noopener\">" + l[0] + "</a>";
+      }).join("") + "</div></div>";
   }
   function brandCard(b) {
     var links = [];
@@ -148,15 +193,17 @@
     var html = cardHTML(rec.item);
     if (wide.matches) {
       $("sheet").hidden = true;
-      L.popup({ offset: [0, -10], autoPanPadding: [30, 30] }).setLatLng(rec.item.ll).setContent(html).openOn(map);
+      L.popup({ offset: [0, -10], autoPanPadding: [30, 30], maxWidth: 320, minWidth: 260 }).setLatLng(rec.item.ll).setContent(html).openOn(map);
     } else {
       map.closePopup();
       $("sheet-body").innerHTML = html;
       var h3 = $("sheet-body").querySelector("h3");
-      if (h3) h3.insertAdjacentHTML("afterbegin", "<svg class=\"sheet-face\" width=\"24\" height=\"24\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/></svg>");
+      if (h3 && !h3.querySelector(".sheet-face")) h3.insertAdjacentHTML("afterbegin", SMALL_FACE);
+      $("sheet").scrollTop = 0;
       $("sheet").hidden = false;
     }
   }
+  imgFallback(document);
   $("sheet-close").addEventListener("click", closeCard);
   map.on("click", function () { if (!wide.matches) closeCard(); });
 
@@ -233,8 +280,13 @@
     var d = distOf(it), dist = d != null ? "<span>" + Math.round(d) + " mi</span>" : "";
     if (it.kind === "e") {
       var e = it.data, tag = e.confidence && e.confidence !== "confirmed" ? "<em class=\"tag\">" + esc(e.confidence) + "</em>" : "";
-      return "<button type=\"button\" class=\"row" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\"><strong>" + esc(e.brand) + tag + "</strong><span>" +
-        esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" + dist + "</button>";
+      var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · ");
+      var thumb = src
+        ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"48\" height=\"48\" loading=\"lazy\" decoding=\"async\"" + (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + "></span>"
+        : "<span class=\"th th-face\">" + THUMB_FACE + "</span>";
+      return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong><span>" +
+        esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" +
+        (m ? "<span class=\"menu-prev\">" + esc(m) + "</span>" : "") + dist + "</span></button>";
     }
     return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><strong>" + esc(it.data.brand) + "</strong><span>" +
       esc(it.data.home_city + ", " + it.data.home_state) + " · No dates posted here yet</span>" + dist + "</button>";

@@ -10,8 +10,15 @@ export function parsePaste(text, fallbackUrl = null) {
   const lines = String(text).replace(/\r/g, "").split("\n");
   let url = fallbackUrl;
   if (/^https?:\/\/\S+$/.test((lines[0] || "").trim())) url = lines.shift().trim();
-  const caption = lines.join("\n").trim();
-  return { source_url: url, text: caption, manual: true };
+  // A line starting with "image:" gives the photo url; it is not part of the caption.
+  let image_url = null;
+  const rest = lines.filter((l) => {
+    const m = /^\s*image:\s*(https?:\/\/\S+)\s*$/i.exec(l);
+    if (m) { image_url = m[1]; return false; }
+    return true;
+  });
+  const caption = rest.join("\n").trim();
+  return { source_url: url, text: caption, manual: true, image_url };
 }
 
 export function readInbox(dir = "data/inbox") {

@@ -5,6 +5,7 @@
 // That is public, needs no login, and luma.com/robots.txt allows it. Fallback if the blob
 // is missing: the public ICS feed https://api.lu.ma/ics/get?entity=calendar&id=<cal-id>.
 import { isoLocal } from "../lib/tz.js";
+import { httpUrl } from "../lib/html.js";
 import { icsToRaw } from "./ics.js";
 
 // Pull the embedded data out of the page HTML.
@@ -24,6 +25,7 @@ export function entryToRaw(entry) {
   return {
     source_url: `https://luma.com/${ev.url}`,
     text: ev.name || "",
+    image_url: httpUrl(ev.cover_url),
     hints: {
       start: isoLocal(ev.start_at, tz), end: ev.end_at ? isoLocal(ev.end_at, tz) : null, tz,
       venue: place, address: g.full_address || g.short_address || null,

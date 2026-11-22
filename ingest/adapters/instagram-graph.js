@@ -19,7 +19,7 @@
 //     Limit: 30 unique hashtags per rolling 7 days per account.
 //  3. Hashtag media:
 //       GET /{hashtag-id}/recent_media | /{hashtag-id}/top_media
-//           ?user_id={INSTAGRAM_BUSINESS_ID}&fields=caption,permalink,timestamp,media_type&limit=50
+//           ?user_id={INSTAGRAM_BUSINESS_ID}&fields=caption,permalink,timestamp,media_type,media_url,thumbnail_url&limit=50
 //     recent_media: max 50 per page, only media from the last 24 hours. The `username` field
 //     CANNOT be requested here, so owners are found by @mentions in the caption or later by hand.
 //
@@ -82,6 +82,7 @@ export function mapBusinessDiscovery(json, handle) {
   const media = json?.business_discovery?.media?.data || [];
   return media.filter((m) => m.caption && m.permalink).map((m) => ({
     source_url: m.permalink, text: m.caption, published_at: m.timestamp, handle, media_type: m.media_type || null,
+    image_url: m.thumbnail_url || (m.media_type !== "VIDEO" ? m.media_url : null) || null, posts: { instagram: m.permalink },
   }));
 }
 
@@ -89,7 +90,7 @@ export function mapBusinessDiscovery(json, handle) {
 export function mapHashtagMedia(json, tag, edge = "recent_media") {
   return (json?.data || []).filter((m) => m.permalink).map((m) => ({
     source_url: m.permalink, text: m.caption || "", published_at: m.timestamp, handle: m.username || null,
-    media_type: m.media_type || null, shortcode: shortcodeOf(m.permalink), hashtag: tag, edge,
+    media_type: m.media_type || null, image_url: m.thumbnail_url || (m.media_type !== "VIDEO" ? m.media_url : null) || null, posts: { instagram: m.permalink }, shortcode: shortcodeOf(m.permalink), hashtag: tag, edge,
   }));
 }
 
@@ -119,7 +120,7 @@ export default {
     if (!c) { warnOnce("ig", OFF_LINE); return []; }
     if (ctx.fetcher?.noFetch) return [];
     const rate = ctx.rate || createRate();
-    const fields = `business_discovery.username(${source.instagram}){media.limit(25){caption,permalink,timestamp,media_type}}`;
+    const fields = `business_discovery.username(${source.instagram}){media.limit(25){caption,permalink,timestamp,media_type,media_url,thumbnail_url}}`;
     const url = `${BASE}/${c.id}?fields=${encodeURIComponent(fields)}&access_token=${c.token}`;
     try {
       const j = await graph(url, rate, ctx.http || fetch);

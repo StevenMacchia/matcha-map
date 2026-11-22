@@ -2,6 +2,7 @@
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { SOCIAL_POST } from "./extract.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 const DAY = 86400000;
@@ -30,11 +31,49 @@ export function computeStatus(e, now) {
 const stepDown = (c, n) => CONF[Math.max(0, CONF.indexOf(c) - n)];
 
 // Fields of the schema, in a stable order, so candidates carry no extra keys.
-const FIELDS = ["id", "brand", "source_id", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "confidence", "status", "last_seen", "first_seen", "extracted_by"];
+const FIELDS = ["id", "brand", "source_id", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "posts", "menu", "price", "description", "links"];
+const emptyPosts = () => ({ instagram: null, tiktok: null, other: null });
+const emptyLinks = () => ({ website: null, instagram: null, tiktok: null });
+const DEFAULTS = { menu: () => [], posts: emptyPosts, links: emptyLinks };
 export function clean(e) {
   const o = {};
-  for (const k of FIELDS) o[k] = e[k] === undefined ? null : e[k];
+  for (const k of FIELDS) {
+    const v = e[k];
+    o[k] = v === undefined || v === null ? (DEFAULTS[k] ? DEFAULTS[k]() : null) : v;
+  }
+  o.posts = { ...emptyPosts(), ...o.posts };
+  o.links = { ...emptyLinks(), ...o.links };
+  o.menu = (Array.isArray(o.menu) ? o.menu : []).slice(0, 8);
   return o;
+}
+
+// One-off migration: an event saved before the card fields existed gets them defaulted.
+// posts come from source_url when it is an Instagram or TikTok post; links come from its source.
+export function migrateEvent(e, source = null) {
+  const m = { ...e };
+  const posts = { ...emptyPosts(), ...(e.posts || {}) };
+  const sm = SOCIAL_POST.exec(e.source_url || "");
+  if (sm && !posts[sm[1].toLowerCase()]) posts[sm[1].toLowerCase()] = e.source_url.split(/[?#]/)[0];
+  m.posts = posts;
+  const links = { ...emptyLinks(), ...(e.links || {}) };
+  if (source) {
+    links.website = links.website || source.website || null;
+    links.instagram = links.instagram || (source.instagram ? `https://www.instagram.com/${source.instagram}/` : null);
+    links.tiktok = links.tiktok || (source.tiktok ? `https://www.tiktok.com/@${source.tiktok}` : null);
+  }
+  m.links = links;
+  return clean(m);
+}
+
+// A fresh reading keeps what the last one learned when it brings nothing new: the downloaded image
+// (same url), and any link or image the source stopped showing.
+function carryRich(merged, prev, c) {
+  if (prev.image) {
+    if (!c.image) merged.image = prev.image;
+    else if (c.image.url === prev.image.url) merged.image = { ...c.image, local: prev.image.local || c.image.local || null, width: prev.image.width || c.image.width || null, height: prev.image.height || c.image.height || null };
+  }
+  merged.posts = Object.fromEntries(["instagram", "tiktok", "other"].map((k) => [k, c.posts?.[k] || prev.posts?.[k] || null]));
+  merged.links = Object.fromEntries(["website", "instagram", "tiktok"].map((k) => [k, c.links?.[k] || prev.links?.[k] || null]));
 }
 
 // mergeEvents(existing[], candidates[], opts) -> { events, decay, stats }
@@ -59,6 +98,7 @@ export function mergeEvents(existing, candidates, { now = new Date(), liveSource
     }
     seenThisRun.add(id);
     const merged = { ...(prev || {}), ...c, id, first_seen: prev ? prev.first_seen : nowIso, last_seen: nowIso };
+    if (prev) carryRich(merged, prev, c);
     if (prev && prev.status === "cancelled") merged.status = "cancelled";
     byId.set(id, clean(merged));
     delete newDecay[id];
@@ -102,6 +142,12 @@ export function writeEvents(events, { now = new Date(), dataPath = "data/events.
   return body;
 }
 
+// Reads events and migrates old records (see migrateEvent). Sources come from sources.json beside the file.
 export function readEvents(dataPath = "data/events.json") {
-  try { return JSON.parse(fs.readFileSync(dataPath, "utf8")).events || []; } catch { return []; }
+  let events = [];
+  try { events = JSON.parse(fs.readFileSync(dataPath, "utf8")).events || []; } catch { return []; }
+  let sources = [];
+  try { sources = JSON.parse(fs.readFileSync(path.join(path.dirname(dataPath), "sources.json"), "utf8")); } catch { /* none */ }
+  const byId = new Map(sources.map((s) => [s.id, s]));
+  return events.map((e) => migrateEvent(e, byId.get(e.source_id) || null));
 }

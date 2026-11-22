@@ -50,6 +50,15 @@ Only real, public posts. Nothing is invented.
 - Brand pages: schedule or events pages on a brand's own site, read by rule.
 - The inbox: posts pasted by hand.
 
+What a card shows beyond when and where, and where each piece comes from. A field is filled only when the source really gives it, otherwise it stays empty.
+
+- `image`: MATO event page JSON-LD `image` (or the venue avatar), Luma `cover_url`, ICS `ATTACH`, a brand page's `og:image` when the page lists one or two dates, a Graph API `media_url`, a TikTok or Instagram oEmbed `thumbnail_url`, or an `image: <url>` line in an inbox paste. Each image is downloaded once to `site/img/events/<event id>.<ext>` (jpg, png or webp, 2 MB or less) because CDN links expire; the remote URL stays as a fallback. They are the brands' own public promo photos, shown with credit and a link to the post.
+- `posts`: any `instagram.com/p/` or `/reel/` and `tiktok.com` video URL, plus the source page.
+- `menu`: flavors and items found by `menuFromText` (`ingest/lib/extract.js`, vocabulary in `ingest/lib/menu-terms.js`) in the event text: a "Menu:" or "flavors:" list, a bullet or emoji-led list, "strawberry x matcha" combos, or known terms. Empty when the text names none.
+- `price`: `offers.price` on MATO, or a price in the text (`$7`, `$6–9`, `from $5`, `free`).
+- `description`: the brand's own first line, cleaned (no links, hashtags, mentions or emoji), 200 chars at most.
+- `links`: the brand's website, Instagram and TikTok profiles from `data/sources.json`.
+
 Not covered: Instagram and TikTok are not scraped. Their terms forbid it and the pages need a login, so this project does not try. Two adapters are wired but off:
 
 - Instagram Graph API (`INSTAGRAM_TOKEN`): needs a business or creator account that is connected to a Meta app, and reads only that account's own posts, so it fits a brand that agrees to connect.
@@ -83,7 +92,7 @@ Nothing is deployed yet. The plan is Cloudflare Pages serving the `site/` folder
 
 ## Layout
 
-- `site/`: the static site (`index.html`, `app.js`, `style.css`, `cities.js`, `data/`).
+- `site/`: the static site (`index.html`, `app.js`, `style.css`, `cities.js`, `data/`, `img/events/` for downloaded event photos).
 - `ingest/`: `run.js`, `adapters/` (one per source kind) and `lib/` (fetch, extract, geocode, write).
 - `data/`: `sources.json`, `events.json`, `inbox/`, `schema/`, geocode cache and overrides.
 - `docs/`: setup notes. `.github/workflows/`: the 6-hour watch job.

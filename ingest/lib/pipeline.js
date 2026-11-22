@@ -1,6 +1,7 @@
 // Shared by `npm run ingest` and `npm run watch`: RawItems -> candidates, then dedupe, geocode, merge, write.
 import fs from "node:fs";
-import { extract } from "./extract.js";
+import { extract, richFields } from "./extract.js";
+import { downloadImages, pruneImages } from "./images.js";
 import { improve } from "./llm.js";
 import { eventId, mergeEvents, readEvents, writeEvents, endMs, KEEP_PAST_DAYS } from "./write.js";
 
@@ -10,7 +11,8 @@ const CONF = ["unsure", "likely", "confirmed"];
 export async function itemToCandidates(raw, source, now, handle) {
   let cands = extract(raw, { source, now });
   cands = await improve(cands, raw, { now });
-  return cands.map((c) => ({ ...c, brand: source.brand, source_id: source.id, handle: raw.handle || handle || null }));
+  const rich = richFields(raw, source);
+  return cands.map((c) => ({ ...c, ...rich, brand: source.brand, source_id: source.id, handle: raw.handle || handle || null }));
 }
 
 // processItems(items, source, {now, handle}) -> { candidates, popupAt }.
@@ -40,7 +42,7 @@ export function dedupeCandidates(candidates, now) {
 }
 
 // Geocode, merge with data/events.json, and (unless dry) write. Returns {merged, final}.
-export async function finalize(candidates, { now, geocoder, liveSourceIds = [], dry = false }) {
+export async function finalize(candidates, { now, geocoder, fetcher = null, liveSourceIds = [], dry = false }) {
   const final = [];
   for (const c of dedupeCandidates(candidates, now)) final.push(await geocoder.geocode(c));
   if (!dry) geocoder.save();
@@ -49,6 +51,10 @@ export async function finalize(candidates, { now, geocoder, liveSourceIds = [], 
   try { decay = JSON.parse(fs.readFileSync("data/decay.json", "utf8")); } catch { /* first run */ }
   const merged = mergeEvents(existing, final, { now, liveSourceIds, decay });
   if (!dry) {
+    if (fetcher) {
+      merged.images = await downloadImages(merged.events, { fetcher });
+      pruneImages(merged.events);
+    }
     writeEvents(merged.events, { now });
     fs.writeFileSync("data/decay.json", JSON.stringify(merged.decay, null, 2) + "\n");
   }
