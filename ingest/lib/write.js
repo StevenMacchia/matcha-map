@@ -96,6 +96,9 @@ export function writeEvents(events, { now = new Date(), dataPath = "data/events.
     fs.mkdirSync(path.dirname(p), { recursive: true });
     fs.writeFileSync(p, body);
   }
+  // Brands layer: copy sources.json next to events.json so the site needs no hand copy.
+  const srcFrom = path.join(path.dirname(dataPath), "sources.json");
+  if (fs.existsSync(srcFrom)) fs.copyFileSync(srcFrom, path.join(path.dirname(sitePath), "sources.json"));
   return body;
 }
 

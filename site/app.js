@@ -1,0 +1,338 @@
+(function () {
+  "use strict";
+
+  var $ = function (id) { return document.getElementById(id); };
+  var wide = window.matchMedia("(min-width: 900px)");
+  var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  var state = { chip: "any", day: "", recent: false, userLoc: null, events: [], brands: [], view: "map" };
+  var markers = {};   // key -> { marker, item }
+  var openKey = null;
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  // ---------- dates (venue-local, read straight from the ISO string) ----------
+  function parts(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(iso || "");
+    if (!m) return null;
+    return { y: +m[1], mo: +m[2], d: +m[3], h: +m[4], mi: +m[5], key: m[1] + "-" + m[2] + "-" + m[3] };
+  }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function dateKey(dt) { return dt.getFullYear() + "-" + pad(dt.getMonth() + 1) + "-" + pad(dt.getDate()); }
+  function addDays(dt, n) { var x = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + n); return x; }
+  function clock(p) {
+    var h = p.h % 12 || 12, ap = p.h < 12 ? "am" : "pm";
+    return h + (p.mi ? ":" + pad(p.mi) : "") + ap;
+  }
+  function whenText(e) {
+    var s = parts(e.start);
+    if (!s) return "";
+    var wd = DAYS[new Date(Date.UTC(s.y, s.mo - 1, s.d)).getUTCDay()];
+    var day = wd + " " + MONTHS[s.mo - 1] + " " + s.d;
+    if (e.all_day) return day + " · all day";
+    var en = parts(e.end);
+    var t = clock(s);
+    if (en && en.key === s.key) {
+      var a = clock(s), b = clock(en);
+      // 11am–3pm (drop the first am/pm when both match)
+      t = (a.slice(-2) === b.slice(-2) ? a.slice(0, -2) : a) + "–" + b;
+    }
+    return day + " · " + t;
+  }
+
+  function matchesChip(e) {
+    var s = parts(e.start);
+    if (!s) return false;
+    var now = new Date(), today = dateKey(now);
+    if (state.day) return s.key === state.day;
+    switch (state.chip) {
+      case "today": return s.key === today;
+      case "week": return s.key >= today && s.key <= dateKey(addDays(now, 6));
+      case "weekend": {
+            var dow = now.getDay(), sat = addDays(now, dow === 0 ? -1 : 6 - dow), sun = addDays(sat, 1);
+        if (s.key === dateKey(sat) || s.key === dateKey(sun)) return s.key >= today;
+        var fri = addDays(sat, -1);
+        return s.key === dateKey(fri) && s.h >= 17 && s.key >= today;
+      }
+      default: return s.key >= today || e.status === "upcoming";
+    }
+  }
+
+  // ---------- geo ----------
+  function miles(a, b) {
+    var R = 3958.8, r = Math.PI / 180;
+    var dLat = (b[0] - a[0]) * r, dLng = (b[1] - a[1]) * r;
+    var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+
+  // ---------- map ----------
+  var map = L.map("map", { zoomControl: true, minZoom: 3, maxZoom: 19 });
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19, attribution: "© <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a> contributors"
+  }).addTo(map);
+  map.fitBounds([[24.5, -125], [49.5, -66.5]]);
+
+  // No inline style attributes (CSP): sizes go through iconSize.
+  function mkCluster(cls, base) {
+    return L.markerClusterGroup({
+      showCoverageOnHover: false, maxClusterRadius: 44, spiderfyOnMaxZoom: true,
+      iconCreateFunction: function (c) {
+        var n = c.getChildCount(), size = base + (n > 9 ? 6 : 0);
+        var el = document.createElement("span");
+        el.className = "cl " + cls;
+        el.textContent = n;
+        el.setAttribute("aria-label", n + " pins, zoom in");
+        return L.divIcon({ html: el, className: "pinwrap", iconSize: [size, size] });
+      }
+    });
+  }
+  var brandGroup = mkCluster("cl-br", 28).addTo(map);
+  var eventGroup = mkCluster("cl-ev", 36).addTo(map);
+  var youMarker = null;
+
+  function pinIcon(kind, past) {
+    var el = document.createElement("span");
+    el.className = "pin " + (kind === "e" ? "pin-ev" : "pin-br") + (past ? " past" : "");
+    return L.divIcon({ html: el, className: "pinwrap", iconSize: kind === "e" ? [36, 36] : [28, 28] });
+  }
+
+  // ---------- cards ----------
+  function eventCard(e) {
+    var line2 = [e.venue, e.address, [e.city, e.state].filter(Boolean).join(", ")].filter(Boolean).join(" · ");
+    var tag = e.confidence && e.confidence !== "confirmed" ? " <span class=\"tag\">" + esc(e.confidence) + "</span>" : "";
+    return "<div class=\"card\"><h3>" + esc(e.brand) + tag + "</h3>" +
+      "<p>" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
+      "<p class=\"muted\">" + esc(line2) + "</p>" +
+      "<div class=\"links\"><a href=\"" + esc(e.source_url) + "\" target=\"_blank\" rel=\"noopener\">Source</a>" +
+      "<a href=\"https://www.google.com/maps/dir/?api=1&amp;destination=" + e.lat + "," + e.lng + "\" target=\"_blank\" rel=\"noopener\">Directions</a></div></div>";
+  }
+  function brandCard(b) {
+    var links = [];
+    if (b.website) links.push(["Website", b.website]);
+    if (b.instagram) links.push(["Instagram", "https://www.instagram.com/" + b.instagram + "/"]);
+    if (b.tiktok) links.push(["TikTok", "https://www.tiktok.com/@" + b.tiktok]);
+    if (b.schedule_url && b.schedule_url !== b.website) links.push(["Schedule", b.schedule_url]);
+    return "<div class=\"card\"><h3>" + esc(b.brand) + "</h3>" +
+      "<p class=\"muted\">" + esc(b.home_city + ", " + b.home_state) + "</p>" +
+      "<p>No dates posted here yet</p><div class=\"links\">" +
+      links.map(function (l) { return "<a href=\"" + esc(l[1]) + "\" target=\"_blank\" rel=\"noopener\">" + l[0] + "</a>"; }).join("") +
+      "</div></div>";
+  }
+  function cardHTML(item) { return item.kind === "e" ? eventCard(item.data) : brandCard(item.data); }
+
+  function closeCard() {
+    openKey = null;
+    $("sheet").hidden = true;
+    map.closePopup();
+  }
+  function showCard(key) {
+    var rec = markers[key];
+    if (!rec) return;
+    openKey = key;
+    var html = cardHTML(rec.item);
+    if (wide.matches) {
+      $("sheet").hidden = true;
+      L.popup({ offset: [0, -10], autoPanPadding: [30, 30] }).setLatLng(rec.item.ll).setContent(html).openOn(map);
+    } else {
+      map.closePopup();
+      $("sheet-body").innerHTML = html;
+      $("sheet").hidden = false;
+    }
+  }
+  $("sheet-close").addEventListener("click", closeCard);
+  map.on("click", function () { if (!wide.matches) closeCard(); });
+
+  function flyTo(key) {
+    var rec = markers[key];
+    if (!rec) return;
+    if (state.view === "list") setView("map");
+    var group = rec.item.kind === "e" ? eventGroup : brandGroup;
+    map.invalidateSize();
+    if (map.getZoom() < 9) map.setView(rec.item.ll, 11, { animate: false });
+    group.zoomToShowLayer(rec.marker, function () { showCard(key); });
+  }
+
+  // ---------- layers ----------
+  function addMarker(item, group) {
+    var m = L.marker(item.ll, {
+      icon: pinIcon(item.kind, item.past), keyboard: true,
+      title: item.kind === "e" ? item.data.brand + ", " + whenText(item.data) : item.data.brand + ", " + item.data.home_city,
+      alt: item.data.brand, zIndexOffset: item.kind === "e" ? 1000 : 0, riseOnHover: true
+    });
+    m.on("click", function () { showCard(item.key); });
+    markers[item.key] = { marker: m, item: item };
+    return m;
+  }
+
+  function buildBrands(sources) {
+    var byCity = {};
+    sources.forEach(function (s) {
+      if (s.active === false) return;
+      var k = s.home_city + "|" + s.home_state;
+      if (CITIES[k]) (byCity[k] = byCity[k] || []).push(s);
+    });
+    var out = [];
+    Object.keys(byCity).forEach(function (k) {
+      var list = byCity[k].sort(function (a, b) { return a.id < b.id ? -1 : 1; }), c = CITIES[k], n = list.length;
+      list.forEach(function (s, i) {
+        var ll = c;
+        if (n > 1) { // deterministic ring around the centroid, ~1.5 mi radius
+          var a = (2 * Math.PI * i) / n, r = 0.022;
+          ll = [c[0] + r * Math.sin(a), c[1] + (r * Math.cos(a)) / Math.cos(c[0] * Math.PI / 180)];
+        }
+        out.push({ kind: "b", key: "b:" + s.id, ll: ll, data: s, name: s.brand });
+      });
+    });
+    state.brands = out;
+    brandGroup.addLayers(out.map(function (it) { return addMarker(it, brandGroup); }));
+  }
+
+  function visibleEvents() {
+    return state.events.filter(function (it) {
+      var e = it.data;
+      if (e.status === "cancelled") return false;
+      if (e.status === "past") return state.recent;
+      return matchesChip(e);
+    });
+  }
+
+  function refreshEvents() {
+    eventGroup.clearLayers();
+    var vis = visibleEvents();
+    vis.forEach(function (it) { eventGroup.addLayer(addMarker(it, eventGroup)); });
+    renderList();
+  }
+
+  // ---------- list ----------
+  function inView(ll) { return map.getBounds().contains(ll); }
+  function distOf(it) { return state.userLoc ? miles(state.userLoc, it.ll) : null; }
+
+  function rowHTML(it) {
+    var d = distOf(it), dist = d != null ? "<span>" + Math.round(d) + " mi</span>" : "";
+    if (it.kind === "e") {
+      var e = it.data, tag = e.confidence && e.confidence !== "confirmed" ? "<em class=\"tag\">" + esc(e.confidence) + "</em>" : "";
+      return "<button type=\"button\" class=\"row" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\"><strong>" + esc(e.brand) + tag + "</strong><span>" +
+        esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" + dist + "</button>";
+    }
+    return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><strong>" + esc(it.data.brand) + "</strong><span>" +
+      esc(it.data.home_city + ", " + it.data.home_state) + " · No dates posted here yet</span>" + dist + "</button>";
+  }
+
+  function renderList() {
+    var evs = visibleEvents().filter(function (it) { return inView(it.ll); });
+    var up = evs.filter(function (it) { return it.data.status !== "past"; });
+    var past = evs.filter(function (it) { return it.data.status === "past"; });
+    var byStart = function (a, b) { return a.data.start < b.data.start ? -1 : 1; };
+    var cmp = state.userLoc ? function (a, b) { return distOf(a) - distOf(b); } : byStart;
+    up.sort(cmp);
+    past.sort(state.userLoc ? cmp : function (a, b) { return -byStart(a, b); });
+    var brands = state.brands.filter(function (it) { return inView(it.ll); });
+    brands.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
+
+    var anyMatch = visibleEvents().length > 0;
+    $("empty").hidden = anyMatch || (state.chip === "any" && !state.day);
+    var html = "";
+    if (up.length) html += "<li class=\"head\">Pop-ups</li>" + up.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
+    if (past.length) html += "<li class=\"head\">Recent</li>" + past.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
+    if (brands.length) html += "<li class=\"head\">Brands</li>" + brands.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
+    if (!html) html = "<li class=\"head\">Nothing in this part of the map. Zoom out or pan.</li>";
+    $("list").innerHTML = html;
+  }
+  $("list").addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-key]");
+    if (b) flyTo(b.getAttribute("data-key"));
+  });
+  var moveT;
+  map.on("moveend", function () { clearTimeout(moveT); moveT = setTimeout(renderList, 80); });
+
+  // ---------- filters ----------
+  function saveChip() {
+    try { localStorage.setItem("matchamap.filter", JSON.stringify({ chip: state.chip, recent: state.recent })); } catch (e) { /* ignore */ }
+  }
+  function syncChips() {
+    document.querySelectorAll("[data-chip]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(!state.day && b.getAttribute("data-chip") === state.chip));
+    });
+    $("recent").setAttribute("aria-pressed", String(state.recent));
+    $("day").value = state.day;
+  }
+  function applyFilters() { syncChips(); saveChip(); closeCard(); refreshEvents(); }
+  document.querySelectorAll("[data-chip]").forEach(function (b) {
+    b.addEventListener("click", function () { state.chip = b.getAttribute("data-chip"); state.day = ""; applyFilters(); });
+  });
+  $("recent").addEventListener("click", function () { state.recent = !state.recent; applyFilters(); });
+  $("day").addEventListener("change", function () { state.day = $("day").value; applyFilters(); });
+  $("empty-any").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); });
+
+  // ---------- view toggle ----------
+  function setView(v) {
+    state.view = v;
+    document.body.classList.toggle("show-list", v === "list");
+    var t = $("view-toggle");
+    t.textContent = v === "list" ? "Map" : "List";
+    t.setAttribute("aria-pressed", String(v === "list"));
+    if (v === "map") setTimeout(function () { map.invalidateSize(); }, 0);
+  }
+  $("view-toggle").addEventListener("click", function () { setView(state.view === "list" ? "map" : "list"); });
+  wide.addEventListener("change", function () { closeCard(); setView("map"); });
+
+  // ---------- near me ----------
+  $("near").addEventListener("click", function () {
+    var note = $("note");
+    if (!navigator.geolocation) { note.textContent = "Location is off. Pan the map instead."; note.hidden = false; return; }
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      note.hidden = true;
+      state.userLoc = [pos.coords.latitude, pos.coords.longitude];
+      if (youMarker) youMarker.remove();
+      var el = document.createElement("span"); el.className = "you";
+      youMarker = L.marker(state.userLoc, { icon: L.divIcon({ html: el, className: "pinwrap", iconSize: [24, 24] }), interactive: false, keyboard: false }).addTo(map);
+      if (state.view === "list") setView("map");
+      map.setView(state.userLoc, 10);
+      renderList();
+    }, function () {
+      note.textContent = "Location is off. Pan the map instead."; note.hidden = false;
+    }, { timeout: 10000, maximumAge: 300000 });
+  });
+
+  // ---------- about ----------
+  var about = $("about"), aboutOpener = null;
+  $("about-btn").addEventListener("click", function () { aboutOpener = document.activeElement; about.showModal(); $("about-close").focus(); });
+  $("about-close").addEventListener("click", function () { about.close(); });
+  about.addEventListener("click", function (e) { if (e.target === about) about.close(); });
+  about.addEventListener("close", function () { if (aboutOpener) aboutOpener.focus(); });
+  // Native <dialog> modal keeps focus inside and makes the page inert; Tab wraps within it.
+
+  // ---------- load ----------
+  function getJSON(u) { return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
+
+  try {
+    var saved = JSON.parse(localStorage.getItem("matchamap.filter") || "null");
+    if (saved && ["today", "weekend", "week", "any"].indexOf(saved.chip) >= 0) state.chip = saved.chip;
+    if (saved && saved.recent) state.recent = true;
+  } catch (e) { /* ignore */ }
+  syncChips();
+
+  Promise.all([getJSON("data/events.json"), getJSON("data/sources.json").catch(function () { return []; })]).then(function (res) {
+    var data = res[0];
+    if (data.generated) {
+      var g = new Date(data.generated);
+      $("updated").textContent = "Last updated " + MONTHS[g.getMonth()] + " " + g.getDate() + ", " + g.getFullYear() + ".";
+    }
+    state.events = (data.events || []).filter(function (e) { return e.lat != null && e.lng != null; }).map(function (e) {
+      return { kind: "e", key: "e:" + e.id, ll: [e.lat, e.lng], data: e, past: e.status === "past", name: e.brand };
+    });
+    buildBrands(res[1] || []);
+    refreshEvents();
+  }).catch(function () {
+    var note = $("note"); note.textContent = "Could not load pop-ups. Try again in a moment."; note.hidden = false;
+  });
+
+  // Exposed for tests only.
+  window.__matcha = { state: state, matchesChip: matchesChip, whenText: whenText, map: map };
+})();

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://unpkg.com; style-src 'self' https://unpkg.com; img-src 'self' https://tile.openstreetmap.org data: blob:; connect-src 'self'; worker-src blob:; base-uri 'self'; form-action 'none'">
+<title>Matcha Map</title>
+<meta name="description" content="Matcha pop-ups across America, by day.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand">
+    <h1>Matcha Map</h1>
+    <p>Matcha pop-ups across America, by day.</p>
+  </div>
+  <div class="bar-actions">
+    <button type="button" id="view-toggle" class="btn quiet" aria-pressed="false">List</button>
+    <button type="button" id="about-btn" class="btn quiet">About</button>
+  </div>
+</header>
+
+<div class="filters" role="group" aria-label="Filters">
+  <button type="button" class="chip" data-chip="today" aria-pressed="false">Today</button>
+  <button type="button" class="chip" data-chip="weekend" aria-pressed="false">This weekend</button>
+  <button type="button" class="chip" data-chip="week" aria-pressed="false">Next 7 days</button>
+  <button type="button" class="chip" data-chip="any" aria-pressed="true">Any date</button>
+  <button type="button" class="chip" id="recent" aria-pressed="false">Recent</button>
+  <label class="day"><span>Pick a day</span><input type="date" id="day"></label>
+  <button type="button" id="near" class="chip near">Near me</button>
+</div>
+<p id="note" class="note" role="status" aria-live="polite" hidden></p>
+
+<main class="main">
+  <section id="list-panel" class="list-panel" aria-label="List of pins on the map">
+    <div id="empty" class="empty" hidden>
+      <p>No pop-ups found for this day. Brands near you are still on the map.</p>
+      <button type="button" id="empty-any" class="linkbtn">Show any date</button>
+    </div>
+    <ul id="list" class="list"></ul>
+  </section>
+  <section id="map-panel" class="map-panel" aria-label="Map">
+    <div id="map"></div>
+    <div id="sheet" class="sheet" role="dialog" aria-label="Details" hidden>
+      <button type="button" id="sheet-close" class="close" aria-label="Close details">&times;</button>
+      <div id="sheet-body"></div>
+    </div>
+  </section>
+</main>
+
+<dialog id="about" aria-modal="true" aria-labelledby="about-title">
+  <h2 id="about-title">About Matcha Map</h2>
+  <p>A map of matcha pop-ups and the brands behind them, so you can find one near you on the day you are free.</p>
+  <p>Dates come from brand websites, MATO, Luma and posts added by hand. Instagram and TikTok are not scraped. Many brands only post dates there, so some pins show a brand with no dates yet.</p>
+  <p id="updated">Last updated unknown.</p>
+  <p>See a pop-up that is missing? <a href="https://github.com/StevenMacchia/matcha-map/issues" target="_blank" rel="noopener">Send a post link</a>.</p>
+  <p>Map &copy; OpenStreetMap contributors.</p>
+  <button type="button" id="about-close" class="btn">Close</button>
+</dialog>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="cities.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
