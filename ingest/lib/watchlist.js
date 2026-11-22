@@ -2,6 +2,7 @@
 // Pure functions plus load/save. Cadence and status rules live here so they are testable.
 import fs from "node:fs";
 import path from "node:path";
+import { readNote } from "./mato-city.js";
 
 export const FILE = "data/watchlist.json";
 const HOUR = 3600000, DAY = 86400000;
@@ -93,6 +94,14 @@ export function seedFromSources(sources, wl = { updated: null, accounts: [] }, n
 // A pseudo source for an account that is not in sources.json yet. Its id is the slug of the handle,
 // so events keep the same ids after promotion.
 export function pseudoSource(acc) {
+  const mv = readNote(acc.notes); // found on MATO: read its venue page, events keep the id mato:<slug>
+  if (mv && acc.platform === "instagram") {
+    return {
+      id: acc.source_id || `mato:${mv.slug}`, brand: mv.brand || acc.handle, home_city: mv.city, home_state: mv.state,
+      website: null, instagram: acc.handle, tiktok: null,
+      schedule_url: `https://ma.to/venue/${mv.slug}`, schedule_kind: "website", adapter: "mato", active: true,
+    };
+  }
   return {
     id: acc.source_id || slug(acc.handle), brand: acc.handle, home_city: "", home_state: "",
     website: null, instagram: acc.platform === "instagram" ? acc.handle : null, tiktok: acc.platform === "tiktok" ? acc.handle : null,
@@ -111,6 +120,20 @@ export function promote(wl, sources, { now = new Date(), graphOn = false } = {})
     let id = slug(acc.handle);
     if (out.some((s) => s.id === id)) id = `${id}-ig`;
     if (out.some((s) => s.instagram && s.instagram.toLowerCase() === acc.handle.toLowerCase())) { acc.source_id = out.find((s) => s.instagram.toLowerCase() === acc.handle.toLowerCase()).id; continue; }
+    const mv = readNote(acc.notes);
+    if (mv && !mv.state) continue; // the source schema needs a state
+    if (mv) {
+      // A MATO find: city and state come from the MATO page, its venue page is the schedule.
+      out.push({
+        id, brand: mv.brand || acc.handle, home_city: mv.city, home_state: mv.state, website: null, instagram: acc.handle, tiktok: null,
+        schedule_url: `https://ma.to/venue/${mv.slug}`, schedule_kind: "website", adapter: "mato", active: true,
+        notes: `Found on MATO (${acc.found_from}). Brand name and city come from the MATO listing; check them.`,
+        added: day, verified: null,
+      });
+      acc.source_id = id;
+      promoted.push(acc.handle);
+      continue;
+    }
     out.push({
       id, brand: acc.handle, home_city: "", home_state: "", website: null, instagram: acc.handle, tiktok: null,
       schedule_url: null, schedule_kind: "manual", adapter: graphOn ? "instagram-graph" : "manual", active: true,

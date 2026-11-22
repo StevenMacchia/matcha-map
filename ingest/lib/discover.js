@@ -2,7 +2,7 @@
 // Every source is a small function returning [{handle, found_via, found_from, evidence}] and is
 // open or official: Instagram Graph hashtags (token), Brave Search API (key), public MATO and
 // Luma pages (robots.txt respected), @mentions in captions we already hold (inbox, cache).
-// No scraping behind a login, no cookies, no headless browser.
+// No scraping behind a login, no cookies, no headless browser. Flags: --dry, --no-fetch, --no-mato (skip the MATO city crawl), --verbose.
 import "./env.js";
 import fs from "node:fs";
 import path from "node:path";
@@ -13,6 +13,9 @@ import { setVerbose, warn, warnOnce, info } from "./log.js";
 import * as wlib from "./watchlist.js";
 import { readInbox } from "../adapters/manual.js";
 import graph from "../adapters/instagram-graph.js";
+import { crawlMato } from "./mato-city.js";
+import { createGeocoder } from "./geocode.js";
+import { processItems, finalize } from "./pipeline.js";
 
 // ---- @mentions -------------------------------------------------------------------------------
 const POPUP_WORDS = /pop[\s-]?ups?\b|\bcart\b|\bmarket\b|\bcollab|take[\s-]?over|matcha/i;
@@ -111,28 +114,12 @@ export function fromLumaData(data) {
   return { candidates, leads };
 }
 
-async function discoverMato(fetcher) {
-  const out = { candidates: [], leads: [] };
-  const home = await fetcher.get("https://ma.to/");
-  if (!home.ok) { warn(`ma.to: ${home.blocked ? "blocked by robots.txt" : `HTTP ${home.status || "error"}`}`); return out; }
-  const pages = [home.text];
-  const first = fromMatoHtml(home.text);
-  for (const c of first.cities.slice(0, 8)) {
-    const r = await fetcher.get(`https://ma.to/events/${c}`);
-    if (r.ok) pages.push(r.text);
-  }
-  const venues = new Set(), events = new Set();
-  for (const p of pages) { const f = fromMatoHtml(p); f.venues.forEach((v) => venues.add(v)); f.events.forEach((e) => events.add(e)); }
-  for (const v of venues) out.candidates.push({ handle: v, found_via: "search", found_from: "ma.to", evidence: `MATO venue /venue/${v} (slug matches matcha; handle unverified)` });
-  let n = 0;
-  for (const e of events) {
-    if (n++ >= 10) break;
-    const r = await fetcher.get(`https://ma.to/event/${e}`);
-    const v = r.ok ? /href="\/venue\/([a-z0-9._-]+)"/i.exec(r.text)?.[1] : null;
-    if (v) out.candidates.push({ handle: v, found_via: "search", found_from: "ma.to", evidence: `MATO event /event/${e}` });
-    else out.leads.push({ url: `https://ma.to/event/${e}`, found_via: "search", found_from: "ma.to", evidence: e });
-  }
-  return out;
+// MATO: every US city page plus the sitemap (see ingest/lib/mato-city.js). Returns candidates and the events found.
+async function discoverMato(fetcher, { now, sources }) {
+  const r = await crawlMato(fetcher, { now, sources });
+  const s = r.stats;
+  info(`ma.to: ${s.cities} cities (${s.usCities} US), ${s.cityPages} city pages, ${s.matchaCards} matcha cards, ${s.sitemapPages} sitemap pages (${s.sitemapMatches} matcha slugs), ${s.eventPages} event pages, ${s.kept} matcha events kept, ${s.fetches} fetches${s.stopped429 ? ", stopped on 429" : ""}`);
+  return { candidates: r.candidates, leads: [], items: r.items, kept: r.kept, stats: s };
 }
 
 async function discoverLuma(fetcher) {
@@ -234,9 +221,12 @@ async function main() {
   take("cache mentions", fromCache());
   const brave = await discoverBrave(env, now, { perRun: 10 });
   take("brave search", brave.candidates); leads.push(...brave.leads);
-  for (const [name, fn] of [["ma.to", discoverMato], ["luma.com", discoverLuma]]) {
-    if (noFetch) { counts[name] = 0; continue; }
-    try { const r = await fn(fetcher); take(name, r.candidates); leads.push(...r.leads); } catch (e) { warn(`${name}: ${e.message}`); counts[name] = 0; }
+  let sources = [];
+  try { sources = JSON.parse(fs.readFileSync("data/sources.json", "utf8")); } catch { /* none */ }
+  let mato = null;
+  for (const [name, fn] of [["ma.to", (f) => discoverMato(f, { now, sources })], ["luma.com", discoverLuma]]) {
+    if (noFetch || (name === "ma.to" && argv.includes("--no-mato"))) { counts[name] = 0; continue; }
+    try { const r = await fn(fetcher); take(name, r.candidates); leads.push(...r.leads); if (name === "ma.to") mato = r; } catch (e) { warn(`${name}: ${e.message}`); counts[name] = 0; }
   }
 
   const added = addAll(wl, found, now);
@@ -246,6 +236,15 @@ async function main() {
   if (added.length > 40) info(`  ... and ${added.length - 40} more`);
   if (dry) { info("(dry run: nothing written)"); return; }
   wlib.save(wl, { now });
+  if (mato?.items.length) {
+    // The matcha events MATO listed go through the same extractor, geocoder and writer as every other source.
+    const bySource = new Map();
+    for (const { source, raw } of mato.items) { if (!bySource.has(source.id)) bySource.set(source.id, { source, items: [] }); bySource.get(source.id).items.push(raw); }
+    const cands = [];
+    for (const { source, items } of bySource.values()) cands.push(...(await processItems(items, source, { now, handle: source.instagram })).candidates);
+    const { merged } = await finalize(cands, { now, geocoder: createGeocoder({ noFetch }), fetcher, liveSourceIds: [], dry: false });
+    info(`ma.to events: ${cands.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);
+  }
   if (leads.length) {
     const file = "data/discover-leads.json";
     let old = []; try { old = JSON.parse(fs.readFileSync(file, "utf8")).leads || []; } catch { /* first */ }

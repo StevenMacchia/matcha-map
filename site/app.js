@@ -2,17 +2,55 @@
   "use strict";
 
   var $ = function (id) { return document.getElementById(id); };
+  var NS = "http://www.w3.org/2000/svg";
   var wide = window.matchMedia("(min-width: 900px)");
+  var motionQ = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var fineQ = window.matchMedia("(hover: hover) and (pointer: fine)");
+  var params = new URLSearchParams(location.search);
   var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   var state = { chip: "any", day: "", recent: false, userLoc: null, events: [], brands: [], view: "map" };
-  var markers = {};   // key -> { marker, item }
+  var items = {};     // key -> item { kind, key, ll:[lat,lng], data, past, name }
+  var live = {};      // marker id -> { marker, el, kind, key, count }
   var openKey = null;
+
+  // ---------- motion ----------
+  // ?motion=reduce forces the calm mode for testing; the media query is the real switch.
+  function calm() { return params.get("motion") === "reduce" || motionQ.matches; }
+  function syncMotion() { document.documentElement.classList.toggle("rm", calm()); }
+  syncMotion();
+  motionQ.addEventListener("change", syncMotion);
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  // ---------- characters ----------
+  // characters.svg holds the model sheet as <symbol>s. Each use copies a symbol's parts into a
+  // live inline <svg>, so CSS can blink the eyes, swing the arms and ripple the foam.
+  var SYM = {};
+  var charsReady = fetch("characters.svg").then(function (r) { if (!r.ok) throw new Error("characters"); return r.text(); }).then(function (t) {
+    var doc = new DOMParser().parseFromString(t, "image/svg+xml");
+    doc.querySelectorAll("symbol").forEach(function (s) { SYM[s.id] = s; });
+  }).catch(function () { /* characters are decoration; the page works without them */ });
+
+  function drawChar(name, cls) {
+    var svg = document.createElementNS(NS, "svg"), s = SYM[name];
+    svg.setAttribute("class", "ch ch-" + name + (cls ? " " + cls : ""));
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    if (!s) return svg;
+    svg.setAttribute("viewBox", s.getAttribute("viewBox"));
+    for (var n = s.firstElementChild; n; n = n.nextElementSibling) svg.appendChild(document.importNode(n, true));
+    return svg;
+  }
+  function fillChars(root) {
+    (root || document).querySelectorAll("[data-char]").forEach(function (el) {
+      if (el.querySelector("svg")) return;
+      el.appendChild(drawChar(el.getAttribute("data-char")));
     });
   }
 
@@ -24,7 +62,7 @@
   }
   function pad(n) { return (n < 10 ? "0" : "") + n; }
   function dateKey(dt) { return dt.getFullYear() + "-" + pad(dt.getMonth() + 1) + "-" + pad(dt.getDate()); }
-  function addDays(dt, n) { var x = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + n); return x; }
+  function addDays(dt, n) { return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + n); }
   function clock(p) {
     var h = p.h % 12 || 12, ap = p.h < 12 ? "am" : "pm";
     return h + (p.mi ? ":" + pad(p.mi) : "") + ap;
@@ -39,7 +77,6 @@
     var t = clock(s);
     if (en && en.key === s.key) {
       var a = clock(s), b = clock(en);
-      // 11am–3pm (drop the first am/pm when both match)
       t = (a.slice(-2) === b.slice(-2) ? a.slice(0, -2) : a) + "–" + b;
     }
     return day + " · " + t;
@@ -61,7 +98,7 @@
       case "today": return s.key === today;
       case "week": return s.key >= today && s.key <= dateKey(addDays(now, 6));
       case "weekend": {
-            var dow = now.getDay(), sat = addDays(now, dow === 0 ? -1 : 6 - dow), sun = addDays(sat, 1);
+        var dow = now.getDay(), sat = addDays(now, dow === 0 ? -1 : 6 - dow), sun = addDays(sat, 1);
         if (s.key === dateKey(sat) || s.key === dateKey(sun)) return s.key >= today;
         var fri = addDays(sat, -1);
         return s.key === dateKey(fri) && s.h >= 17 && s.key >= today;
@@ -77,46 +114,164 @@
     var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
     return 2 * R * Math.asin(Math.sqrt(h));
   }
+  function lngLat(ll) { return [ll[1], ll[0]]; }
 
   // ---------- map ----------
-  var map = L.map("map", { zoomControl: true, minZoom: 3, maxZoom: 19, doubleClickZoom: true, touchZoom: true });
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19, attribution: "© <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a> contributors"
-  }).addTo(map);
-  map.fitBounds([[24.5, -125], [49.5, -66.5]]);
-  // Brand dots get eyes and blush from zoom 9 up (class z9 on the map container).
+  var HOME = [[-125, 24.5], [-66.5, 49.5]], HI = [-157.95, 21.4];
+  function isDark() { return document.documentElement.getAttribute("data-theme") === "dark"; }
+  function styleUrl() { return isDark() ? "map-style-dark.json" : "map-style.json"; }
+  var map = new maplibregl.Map({
+    container: "map", style: styleUrl(), bounds: HOME, fitBoundsOptions: { padding: 16 },
+    minZoom: 2.5, maxZoom: 18, dragRotate: false, pitchWithRotate: false, touchPitch: false,
+    attributionControl: { compact: true }, fadeDuration: 200
+  });
+  map.touchZoomRotate.disableRotation();
+  map.keyboard.disableRotation();
+  if (wide.matches) map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+  map.getCanvas().setAttribute("aria-label", "Map of matcha pop-ups. Use arrow keys to pan, plus and minus to zoom.");
+
+  // Brand mochi get eyes and blush from zoom 9 up (class z9 on the map container).
   function syncZoomFace() { map.getContainer().classList.toggle("z9", map.getZoom() >= 9); }
   map.on("zoomend", syncZoomFace);
-  syncZoomFace();
 
-  // No inline style attributes (CSP): sizes go through iconSize.
-  var NUDGE = 14; // px: brand pins sit down-right of their spot so an event pin on top does not hide them
-  function anchor(size, brand) { var a = size / 2 - (brand ? NUDGE : 0); return [a, a]; }
-  function mkCluster(cls, base) {
-    return L.markerClusterGroup({
-      showCoverageOnHover: false, maxClusterRadius: 44, spiderfyOnMaxZoom: true,
-      iconCreateFunction: function (c) {
-        var n = c.getChildCount(), size = base + (n > 24 ? 12 : n > 9 ? 6 : 0);
-        var el = document.createElement("span");
-        el.className = "cl " + cls + (n > 24 ? " cl-l" : n > 9 ? " cl-m" : "");
-        el.textContent = n;
-        el.setAttribute("aria-label", n + " pins, zoom in");
-        return L.divIcon({ html: el, className: "pinwrap", iconSize: [size, size], iconAnchor: anchor(size, cls === "cl-br") });
+  function featureColl(list) {
+    return { type: "FeatureCollection", features: list.map(function (it) {
+      return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(it.ll) }, properties: { key: it.key } };
+    }) };
+  }
+  // Clusters come from MapLibre's GeoJSON clustering; every pin and cluster is drawn as an HTML
+  // marker holding a character, synced from querySourceFeatures. The circle layers are invisible
+  // and exist only so the sources load.
+  function addData() {
+    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(visibleEvents()), cluster: true, clusterRadius: 56, clusterMaxZoom: 13 });
+    if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: featureColl(state.brands), cluster: true, clusterRadius: 44, clusterMaxZoom: 12 });
+    ["ev", "br"].forEach(function (s) {
+      if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
+    });
+    scheduleSync();
+  }
+  map.on("style.load", addData);
+
+  var syncQueued = false;
+  function scheduleSync() {
+    if (syncQueued) return;
+    syncQueued = true;
+    requestAnimationFrame(function () { syncQueued = false; syncMarkers(); });
+  }
+  map.on("render", scheduleSync);
+
+  var NUDGE = 12; // px: brand mochi sit down-right of their spot so an event pin on top does not hide them
+  function syncMarkers() {
+    var seen = {};
+    ["ev", "br"].forEach(function (src) {
+      if (!map.getSource(src) || !map.isSourceLoaded(src)) {
+        Object.keys(live).forEach(function (id) { if (live[id].src === src) seen[id] = 1; });
+        return;
       }
+      map.querySourceFeatures(src).forEach(function (f) {
+        var p = f.properties, id = p.cluster ? src + "c" + p.cluster_id : p.key;
+        if (seen[id]) return;
+        if (!p.cluster && !items[id]) return;
+        seen[id] = 1;
+        var rec = live[id];
+        if (!rec) {
+          rec = live[id] = p.cluster ? makeCluster(src, id, f) : makePin(items[id]);
+          rec.src = src;
+          rec.marker.addTo(map);
+        } else if (p.cluster && rec.count !== p.point_count) setCount(rec, p.point_count);
+      });
+    });
+    Object.keys(live).forEach(function (id) { if (!seen[id]) { live[id].marker.remove(); delete live[id]; } });
+  }
+
+  function animOnce(el, cls, delay) {
+    if (calm()) return;
+    el.classList.remove(cls);
+    void el.offsetWidth;
+    if (delay) el.style.animationDelay = delay + "ms";
+    el.classList.add(cls);
+    el.addEventListener("animationend", function done(ev) {
+      if (ev.target !== el) return;
+      el.classList.remove(cls); el.style.animationDelay = ""; el.removeEventListener("animationend", done);
     });
   }
-  var brandGroup = mkCluster("cl-br", 28).addTo(map);
-  var eventGroup = mkCluster("cl-ev", 36).addTo(map);
-  var youMarker = null;
 
-  // Event pin: Mattie's face in a cup (symbol m-face in index.html), with a pink dot when upcoming.
-  var FACE = "<svg viewBox=\"0 0 64 64\" width=\"38\" height=\"38\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/>";
-  function pinIcon(kind, past) {
-    var el = document.createElement("span");
-    el.className = "pin " + (kind === "e" ? "pin-ev" : "pin-br") + (past ? " past" : "");
-    if (kind === "e") el.innerHTML = FACE + (past ? "" : "<circle class=\"dot-new\" cx=\"54\" cy=\"10\" r=\"7\"/>") + "</svg>";
-    var sz = kind === "e" ? 38 : 28;
-    return L.divIcon({ html: el, className: "pinwrap", iconSize: [sz, sz], iconAnchor: anchor(sz, kind !== "e") });
+  var dropUntil = 0, dropIdx = 0;
+  function entrance(rec, fallback) {
+    var inner = rec.el.firstChild;
+    if (Date.now() < dropUntil) animOnce(inner, "drop", Math.min(dropIdx++ * 38, 700));
+    else animOnce(inner, fallback);
+  }
+
+  function pinLabel(it) {
+    return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) : it.data.brand + ", " + it.data.home_city + ", no dates yet";
+  }
+  function makePin(it) {
+    var el = document.createElement("button");
+    el.type = "button";
+    el.className = "mk " + (it.kind === "e" ? "mk-ev" : "mk-br") + (it.past ? " past" : "") + (it.key === openKey ? " sel" : "");
+    el.setAttribute("aria-label", pinLabel(it));
+    var inner = document.createElement("span");
+    inner.className = "mk-in";
+    if (it.kind === "e") {
+      inner.appendChild(drawChar("m-base"));
+      if (!it.past) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
+    } else {
+      inner.innerHTML = "<span class=\"mochi\"></span>";
+    }
+    el.appendChild(inner);
+    el.addEventListener("click", function (ev) { ev.stopPropagation(); cardOpener = null; showCard(it.key, ev.detail === 0); });
+    var marker = new maplibregl.Marker({ element: el, anchor: it.kind === "e" ? "bottom" : "center", offset: it.kind === "e" ? [0, 0] : [NUDGE, NUDGE] }).setLngLat(lngLat(it.ll));
+    var rec = { marker: marker, el: el, kind: it.kind, key: it.key };
+    if (it.kind === "e") el.style.zIndex = "2";
+    entrance(rec, it.kind === "e" ? "pop" : "jiggle");
+    return rec;
+  }
+  function makeCluster(src, id, f) {
+    var n = f.properties.point_count;
+    var el = document.createElement("button");
+    el.type = "button";
+    el.className = "mk mk-cl " + (src === "ev" ? "cl-ev" : "cl-br");
+    var inner = document.createElement("span");
+    inner.className = "mk-in";
+    inner.appendChild(drawChar("c-dango"));
+    var num = document.createElement("span");
+    num.className = "cl-n";
+    inner.appendChild(num);
+    el.appendChild(inner);
+    var rec = { marker: null, el: el, kind: "c", count: 0, num: num };
+    setCount(rec, n, true);
+    el.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      var cid = f.properties.cluster_id;
+      map.getSource(src).getClusterExpansionZoom(cid).then(function (z) {
+        var c = f.geometry.coordinates;
+        if (calm()) map.jumpTo({ center: c, zoom: z + 0.2 }); else map.easeTo({ center: c, zoom: z + 0.2, duration: 600 });
+      }).catch(function () { map.easeTo({ center: f.geometry.coordinates, zoom: map.getZoom() + 2 }); });
+    });
+    rec.marker = new maplibregl.Marker({ element: el, anchor: "center", offset: src === "br" ? [NUDGE, NUDGE] : [0, 0] }).setLngLat(f.geometry.coordinates);
+    if (src === "ev") el.style.zIndex = "3";
+    entrance(rec, "pop");
+    return rec;
+  }
+  function setCount(rec, n, first) {
+    rec.count = n;
+    rec.num.textContent = n;
+    rec.el.setAttribute("aria-label", n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : " brands") + " here, zoom in");
+    rec.el.classList.toggle("cl-m", n > 9);
+    rec.el.classList.toggle("cl-l", n > 24);
+    if (!first) animOnce(rec.num, "morph");
+  }
+  function setSelected(key) {
+    Object.keys(live).forEach(function (id) {
+      var r = live[id];
+      if (r.kind === "c") return;
+      var on = id === key;
+      if (on !== r.el.classList.contains("sel")) {
+        r.el.classList.toggle("sel", on);
+        if (on && r.kind === "e") animOnce(r.el.querySelector(".ch"), "wave");
+      }
+    });
   }
 
   // ---------- cards ----------
@@ -128,9 +283,9 @@
     return safeUrl(p.instagram) || safeUrl(p.tiktok) || safeUrl(p.other) || safeUrl(e.source_url);
   }
   function menuOf(e) { return Array.isArray(e.menu) ? e.menu : []; }
-  var FACE_BLOCK = "<svg class=\"ph-face\" width=\"44\" height=\"44\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/></svg>";
-  var SMALL_FACE = "<svg class=\"sheet-face\" width=\"24\" height=\"24\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/></svg>";
-  var THUMB_FACE = "<svg width=\"32\" height=\"32\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/></svg>";
+  var FACE_BLOCK = "<span class=\"ph-face\" data-char=\"m-happy\"></span>";
+  var SMALL_FACE = "<span class=\"card-face\" data-char=\"m-base\"></span>";
+  var THUMB_FACE = "<span class=\"th-char\" data-char=\"m-base\"></span>";
   function photoHTML(e) {
     var src = imgSrc(e);
     if (!src) return "<div class=\"ph ph-empty\">" + FACE_BLOCK + "</div>";
@@ -147,9 +302,15 @@
       if (remote) { img.removeAttribute("data-remote"); img.src = remote; return; }
       var box = img.closest(".ph, .th");
       if (!box) return;
-      if (box.classList.contains("th")) box.innerHTML = THUMB_FACE;
+      if (box.classList.contains("th")) { box.className = "th th-face"; box.innerHTML = THUMB_FACE; }
       else { box.className = "ph ph-empty"; box.innerHTML = FACE_BLOCK; }
+      fillChars(box);
     }, true);
+  }
+  function linksHTML(links) {
+    return "<div class=\"links\">" + links.map(function (l) {
+      return "<a href=\"" + esc(l[1]) + "\" target=\"_blank\" rel=\"noopener\">" + l[0] + "</a>";
+    }).join("") + "</div>";
   }
   function menuHTML(e) {
     var m = menuOf(e), price = e.price ? "<span class=\"price\">" + esc(e.price) + "</span>" : "";
@@ -166,85 +327,112 @@
     if (safeUrl(L.instagram)) links.push(["Instagram", L.instagram]);
     if (safeUrl(L.tiktok)) links.push(["TikTok", L.tiktok]);
     links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng]);
-    return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + esc(e.brand) + tag + "</h3>" +
-      "<p>" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
+    return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + "<span>" + esc(e.brand) + tag + "</span></h3>" +
+      "<p class=\"when\">" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
       "<p class=\"muted\">" + esc(line2) + "</p>" + menuHTML(e) +
-      (e.description ? "<p class=\"desc muted\">" + esc(e.description) + "</p>" : "") +
-      "<div class=\"links\">" + links.map(function (l) {
-        return "<a href=\"" + esc(l[1]) + "\" target=\"_blank\" rel=\"noopener\">" + l[0] + "</a>";
-      }).join("") + "</div></div>";
+      (e.description ? "<p class=\"desc muted\">" + esc(e.description) + "</p>" : "") + linksHTML(links) + "</div>";
   }
   function brandCard(b) {
     var links = [];
-    if (b.website) links.push(["Website", b.website]);
-    if (b.instagram) links.push(["Instagram", "https://www.instagram.com/" + b.instagram + "/"]);
-    if (b.tiktok) links.push(["TikTok", "https://www.tiktok.com/@" + b.tiktok]);
-    if (b.schedule_url && b.schedule_url !== b.website) links.push(["Schedule", b.schedule_url]);
-    return "<div class=\"card\"><h3>" + esc(b.brand) + "</h3>" +
+    if (safeUrl(b.website)) links.push(["Website", b.website]);
+    if (b.instagram) links.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(b.instagram) + "/"]);
+    if (b.tiktok) links.push(["TikTok", "https://www.tiktok.com/@" + encodeURIComponent(b.tiktok)]);
+    if (safeUrl(b.schedule_url) && b.schedule_url !== b.website) links.push(["Schedule", b.schedule_url]);
+    return "<div class=\"card bcard\"><h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3>" +
       "<p class=\"muted\">" + esc(b.home_city + ", " + b.home_state) + "</p>" +
-      "<p>No dates posted here yet</p><div class=\"links\">" +
-      links.map(function (l) { return "<a href=\"" + esc(l[1]) + "\" target=\"_blank\" rel=\"noopener\">" + l[0] + "</a>"; }).join("") +
-      "</div></div>";
+      "<p class=\"when\">No dates posted here yet</p>" + linksHTML(links) + "</div>";
   }
   function cardHTML(item) { return item.kind === "e" ? eventCard(item.data) : brandCard(item.data); }
 
-  function closeCard() {
-    openKey = null;
+  var popup = null, closeT = null;
+  function finishClose() {
+    clearTimeout(closeT); closeT = null;
     $("sheet").hidden = true;
-    map.closePopup();
+    $("sheet").classList.remove("out");
+    if (popup) { popup.remove(); popup = null; }
   }
-  function showCard(key) {
-    var rec = markers[key];
-    if (!rec) return;
+  function closeCard(instant) {
+    if (!openKey && !popup && $("sheet").hidden) return;
+    openKey = null;
+    setSelected(null);
+    var sheetOpen = !$("sheet").hidden;
+    if (instant || calm()) { finishClose(); return; }
+    if (sheetOpen) $("sheet").classList.add("out");
+    if (popup) popup.getElement().classList.add("out");
+    clearTimeout(closeT);
+    closeT = setTimeout(finishClose, 200);
+  }
+  function showCard(key, focusIt) {
+    var it = items[key];
+    if (!it) return;
+    finishClose();
     openKey = key;
-    var html = cardHTML(rec.item);
+    setSelected(key);
+    var html = cardHTML(it);
     if (wide.matches) {
-      $("sheet").hidden = true;
-      L.popup({ offset: [0, -10], autoPanPadding: [30, 30], maxWidth: 320, minWidth: 260 }).setLatLng(rec.item.ll).setContent(html).openOn(map);
+      var box = document.createElement("div");
+      box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html;
+      fillChars(box);
+      box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(); refocus(back); });
+      popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "340px", focusAfterOpen: false, className: "mm-pop",
+        anchor: "bottom", offset: it.kind === "e" ? [0, -50] : [NUDGE, NUDGE - 12] })
+        .setLngLat(lngLat(it.ll)).setDOMContent(box).addTo(map);
+      // Keep the whole card on screen: nudge the map down when the card would run off the top.
+      var pr = popup.getElement().getBoundingClientRect(), mr = map.getContainer().getBoundingClientRect();
+      var over = mr.top + 12 - pr.top;
+      if (over > 0) map.panBy([0, -over], { duration: calm() ? 0 : 300 });
+      if (focusIt) box.querySelector(".pop-close").focus();
     } else {
-      map.closePopup();
-      $("sheet-body").innerHTML = html;
-      var h3 = $("sheet-body").querySelector("h3");
-      if (h3 && !h3.querySelector(".sheet-face")) h3.insertAdjacentHTML("afterbegin", SMALL_FACE);
-      $("sheet").scrollTop = 0;
-      $("sheet").hidden = false;
+      var body = $("sheet-body");
+      body.innerHTML = html;
+      fillChars(body);
+      var sh = $("sheet");
+      body.scrollTop = 0;
+      sh.hidden = false;
+      animOnce(sh, "in");
+      if (focusIt) $("sheet-close").focus();
     }
   }
+  function refocus(back) {
+    if (!back) return;
+    setTimeout(function () { var r = document.querySelector("#list [data-key=\"" + back + "\"]"); if (r) r.focus(); }, 0);
+  }
   imgFallback(document);
-  $("sheet-close").addEventListener("click", closeCard);
-  map.on("click", function () { if (!wide.matches) closeCard(); });
+  $("sheet-close").addEventListener("click", function () { var back = cardOpener; closeCard(); refocus(back); });
+  map.on("click", function (e) {
+    var t = e.originalEvent && e.originalEvent.target;
+    if (t && t.closest && t.closest(".maplibregl-marker, .maplibregl-popup")) return;
+    closeCard();
+  });
   // Escape closes the open card (the About dialog handles its own Escape) and hands focus back to the row that opened it.
   var cardOpener = null;
   document.addEventListener("keydown", function (ev) {
     if (ev.key !== "Escape" || !openKey || $("about").open) return;
     var back = cardOpener;
     closeCard();
-    if (back) setTimeout(function () { var r = document.querySelector("#list [data-key=\"" + back + "\"]"); if (r) r.focus(); }, 0);
+    refocus(back);
   });
 
+  function moveMap(opts, done) {
+    if (calm()) { map.jumpTo(opts); } else { opts.curve = 1.3; opts.speed = 1.5; opts.essential = false; map.flyTo(opts); }
+    if (done) map.once("moveend", function () { setTimeout(done, 30); });
+  }
   function flyTo(key) {
-    var rec = markers[key];
-    if (!rec) return;
-    var ae = document.activeElement; cardOpener = ae && ae.getAttribute && ae.closest("#list") ? ae.getAttribute("data-key") : null;
+    var it = items[key];
+    if (!it) return;
+    var ae = document.activeElement;
+    cardOpener = ae && ae.closest && ae.closest("#list") ? ae.getAttribute("data-key") : null;
     if (state.view === "list") setView("map");
-    var group = rec.item.kind === "e" ? eventGroup : brandGroup;
-    map.invalidateSize();
-    if (map.getZoom() < 9) map.setView(rec.item.ll, 11, { animate: false });
-    group.zoomToShowLayer(rec.marker, function () { showCard(key); });
+    map.resize();
+    var z = Math.max(map.getZoom(), it.kind === "e" ? 14 : 13.2);
+    // On a phone the sheet covers the lower part of the map, so the pin lands in the upper part;
+    // on desktop the card opens above the pin, so the pin lands low.
+    var h = map.getContainer().clientHeight;
+    var off = wide.matches ? [0, Math.round(h * 0.3)] : [0, -Math.round(h * 0.26)];
+    moveMap({ center: lngLat(it.ll), zoom: z, offset: off }, function () { syncMarkers(); showCard(key, !!cardOpener); });
   }
 
   // ---------- layers ----------
-  function addMarker(item, group) {
-    var m = L.marker(item.ll, {
-      icon: pinIcon(item.kind, item.past), keyboard: true,
-      title: item.kind === "e" ? item.data.brand + ", " + whenText(item.data) : item.data.brand + ", " + item.data.home_city,
-      alt: item.data.brand, zIndexOffset: item.kind === "e" ? 1000 : 0, riseOnHover: true
-    });
-    m.on("click", function () { showCard(item.key); });
-    markers[item.key] = { marker: m, item: item };
-    return m;
-  }
-
   function buildBrands(sources) {
     var byCity = {};
     sources.forEach(function (s) {
@@ -261,11 +449,12 @@
           var a = (2 * Math.PI * i) / n, r = 0.022;
           ll = [c[0] + r * Math.sin(a), c[1] + (r * Math.cos(a)) / Math.cos(c[0] * Math.PI / 180)];
         }
-        out.push({ kind: "b", key: "b:" + s.id, ll: ll, data: s, name: s.brand });
+        var it = { kind: "b", key: "b:" + s.id, ll: ll, data: s, name: s.brand };
+        items[it.key] = it;
+        out.push(it);
       });
     });
     state.brands = out;
-    brandGroup.addLayers(out.map(function (it) { return addMarker(it, brandGroup); }));
   }
 
   function visibleEvents() {
@@ -281,35 +470,37 @@
     });
   }
 
-  function refreshEvents() {
-    eventGroup.clearLayers();
-    var vis = visibleEvents();
-    vis.forEach(function (it) { eventGroup.addLayer(addMarker(it, eventGroup)); });
-    renderList();
+  function refreshEvents(stagger) {
+    var src = map.getSource("ev");
+    if (src) src.setData(featureColl(visibleEvents()));
+    var b = map.getSource("br");
+    if (b && !b._mmSet) { b.setData(featureColl(state.brands)); b._mmSet = true; }
+    renderList(stagger);
   }
 
   // ---------- list ----------
-  function inView(ll) { return map.getBounds().contains(ll); }
+  function inView(ll) { return map.getBounds().contains(lngLat(ll)); }
   function distOf(it) { return state.userLoc ? miles(state.userLoc, it.ll) : null; }
 
   function rowHTML(it) {
-    var d = distOf(it), dist = d != null ? "<span>" + Math.round(d) + " mi</span>" : "";
+    var d = distOf(it), dist = d != null ? "<span class=\"dist\">" + Math.round(d) + " mi</span>" : "";
     if (it.kind === "e") {
       var e = it.data, tag = e.confidence && e.confidence !== "confirmed" ? "<em class=\"tag\">" + esc(e.confidence) + "</em>" : "";
       var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · ");
       var thumb = src
-        ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"48\" height=\"48\" loading=\"lazy\" decoding=\"async\"" + (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + "></span>"
+        ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"56\" height=\"56\" loading=\"lazy\" decoding=\"async\"" + (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + "></span>"
         : "<span class=\"th th-face\">" + THUMB_FACE + "</span>";
-      return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong><span>" +
+      return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong><span class=\"when\">" +
         esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" +
         (m ? "<span class=\"menu-prev\">" + esc(m) + "</span>" : "") + dist + "</span></button>";
     }
-    return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><strong>" + esc(it.data.brand) + "</strong><span>" +
-      esc(it.data.home_city + ", " + it.data.home_state) + " · No dates posted here yet</span>" + dist + "</button>";
+    return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-mochi\" aria-hidden=\"true\"><span class=\"mochi\"></span></span><span class=\"rt\"><strong>" + esc(it.data.brand) + "</strong><span>" +
+      esc(it.data.home_city + ", " + it.data.home_state) + " · No dates posted here yet</span>" + dist + "</span></button>";
   }
 
-  function renderList() {
-    var evs = visibleEvents().filter(function (it) { return inView(it.ll); });
+  function renderList(stagger) {
+    var vis = visibleEvents();
+    var evs = vis.filter(function (it) { return inView(it.ll); });
     var up = evs.filter(function (it) { return it.data.status !== "past"; });
     var past = evs.filter(function (it) { return it.data.status === "past"; });
     var byStart = function (a, b) { return a.data.start < b.data.start ? -1 : 1; };
@@ -319,23 +510,38 @@
     var brands = state.brands.filter(function (it) { return inView(it.ll); });
     brands.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
 
-    var anyMatch = visibleEvents().length > 0;
-    $("empty").hidden = anyMatch || (state.chip === "any" && !state.day);
+    $("empty").hidden = vis.length > 0 || (state.chip === "any" && !state.day);
     var html = "";
     if (up.length) html += "<li class=\"head\">Pop-ups</li>" + up.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
     if (past.length) html += "<li class=\"head\">Recent</li>" + past.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
     if (brands.length) html += "<li class=\"head\">Brands</li>" + brands.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
     if (!html) html = "<li class=\"head\">Nothing in this part of the map. Zoom out or pan.</li>";
-    $("list").innerHTML = html;
+    var list = $("list");
+    list.innerHTML = html;
+    fillChars(list);
+    if (stagger && !calm()) {
+      var rows = list.children;
+      for (var i = 0; i < rows.length && i < 12; i++) animOnce(rows[i], "row-in", i * 30);
+    }
   }
   $("list").addEventListener("click", function (ev) {
     var b = ev.target.closest("button[data-key]");
     if (b) flyTo(b.getAttribute("data-key"));
   });
   var moveT;
-  map.on("moveend", function () { clearTimeout(moveT); moveT = setTimeout(renderList, 80); });
+  map.on("moveend", function () { clearTimeout(moveT); moveT = setTimeout(function () { renderList(false); }, 80); });
 
   // ---------- filters ----------
+  var ink = document.querySelector(".chip-ink");
+  function moveInk() {
+    var t = state.day ? null : document.querySelector("[data-chip][aria-pressed=\"true\"]");
+    if (!t) { ink.classList.add("off"); return; }
+    ink.classList.remove("off");
+    ink.classList.toggle("pink", t.getAttribute("data-chip") === "today");
+    ink.style.width = t.offsetWidth + "px";
+    ink.style.height = t.offsetHeight + "px";
+    ink.style.transform = "translate(" + t.offsetLeft + "px," + t.offsetTop + "px)";
+  }
   function saveChip() {
     try { localStorage.setItem("matchamap.filter", JSON.stringify({ chip: state.chip })); } catch (e) { /* ignore */ }
   }
@@ -345,9 +551,11 @@
     });
     $("recent").setAttribute("aria-pressed", String(state.recent));
     $("day").value = state.day;
+    $("day").classList.toggle("set", !!state.day);
     $("day-clear").hidden = !state.day;
+    moveInk();
   }
-  function applyFilters() { syncChips(); saveChip(); closeCard(); refreshEvents(); }
+  function applyFilters() { syncChips(); saveChip(); closeCard(true); refreshEvents(true); }
   document.querySelectorAll("[data-chip]").forEach(function (b) {
     b.addEventListener("click", function () { state.chip = b.getAttribute("data-chip"); state.day = ""; applyFilters(); });
   });
@@ -355,19 +563,32 @@
   $("day").addEventListener("change", function () { state.day = $("day").value; applyFilters(); });
   $("day-clear").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); $("day").focus(); });
   $("empty-any").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); });
+  window.addEventListener("resize", moveInk);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveInk);
 
   // ---------- Hawaii ----------
   // The first view fits the contiguous US; one quiet button jumps to Honolulu and back.
-  var HOME = [[24.5, -125], [49.5, -66.5]], HI = [21.4, -157.95], inHawaii = false;
+  // A small Mattie hops off the button while the map flies.
+  var inHawaii = false;
+  function hop() {
+    if (calm()) return;
+    var h = $("hop");
+    h.hidden = false;
+    animOnce(h, "go");
+    setTimeout(function () { h.hidden = true; }, 820);
+  }
   function setupHawaii() {
     var has = state.brands.some(function (b) { return b.data.home_state === "HI"; }) ||
       state.events.some(function (e) { return e.data.state === "HI"; });
     var btn = $("hawaii");
     btn.hidden = !has;
     btn.addEventListener("click", function () {
-      closeCard();
+      closeCard(true);
       inHawaii = !inHawaii;
-      if (inHawaii) map.setView(HI, 9); else map.fitBounds(HOME);
+      hop();
+      if (inHawaii) moveMap({ center: HI, zoom: 9 });
+      else if (calm()) map.fitBounds(HOME, { padding: 16, animate: false });
+      else map.fitBounds(HOME, { padding: 16, duration: 1400, curve: 1.3 });
       btn.textContent = inHawaii ? "Mainland" : "Hawaii";
     });
     map.on("moveend", function () {
@@ -383,20 +604,23 @@
     var t = $("view-toggle");
     t.textContent = v === "list" ? "Map" : "List";
     t.setAttribute("aria-pressed", String(v === "list"));
-    if (v === "map") setTimeout(function () { map.invalidateSize(); }, 0);
+    if (v === "map") setTimeout(function () { map.resize(); }, 0);
+    else renderList(true);
   }
   $("view-toggle").addEventListener("click", function () { setView(state.view === "list" ? "map" : "list"); });
-  wide.addEventListener("change", function () { closeCard(); setView("map"); });
+  wide.addEventListener("change", function () { closeCard(true); setView("map"); });
 
-  // Status line with Mattie looking surprised, for errors and denied location.
+  // Status line with Mattie looking surprised (sweat drop), for errors and denied location.
   function oops(text) {
     var note = $("note");
-    note.innerHTML = "<svg class=\"oops\" width=\"24\" height=\"24\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-oops\"/></svg>";
+    note.innerHTML = "<span class=\"oops\" data-char=\"m-surprised\"></span>";
+    fillChars(note);
     note.appendChild(document.createTextNode(text));
     note.hidden = false;
   }
 
   // ---------- near me ----------
+  var youMarker = null;
   $("near").addEventListener("click", function () {
     var note = $("note");
     if (!navigator.geolocation) { oops("Location is off. Pan the map instead."); return; }
@@ -404,11 +628,12 @@
       note.hidden = true;
       state.userLoc = [pos.coords.latitude, pos.coords.longitude];
       if (youMarker) youMarker.remove();
-      var el = document.createElement("span"); el.className = "you";
-      youMarker = L.marker(state.userLoc, { icon: L.divIcon({ html: el, className: "pinwrap", iconSize: [24, 24] }), interactive: false, keyboard: false }).addTo(map);
+      var el = document.createElement("span");
+      el.className = "you";
+      el.innerHTML = "<span class=\"ring\"></span><span class=\"ring r2\"></span><span class=\"you-dot\"></span>";
+      youMarker = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(lngLat(state.userLoc)).addTo(map);
       if (state.view === "list") setView("map");
-      map.setView(state.userLoc, 10);
-      renderList();
+      moveMap({ center: lngLat(state.userLoc), zoom: 10 }, function () { animOnce(el, "ping"); renderList(true); });
     }, function () {
       oops("Location is off. Pan the map instead.");
     }, { timeout: 10000, maximumAge: 300000 });
@@ -420,10 +645,109 @@
   $("about-close").addEventListener("click", function () { about.close(); });
   about.addEventListener("click", function (e) { if (e.target === about) about.close(); });
   about.addEventListener("close", function () { if (aboutOpener) aboutOpener.focus(); });
-  // Native <dialog> modal keeps focus inside and makes the page inert; Tab wraps within it.
+
+  // ---------- theme crossfade ----------
+  // Light by default; the header button turns dark on and off and remembers it (theme.js reads it first).
+  var themeBtn = $("theme-btn"), themeMeta = document.querySelector("meta[name=theme-color]");
+  function syncThemeBtn() {
+    themeBtn.setAttribute("aria-pressed", String(isDark()));
+    themeMeta.setAttribute("content", isDark() ? "#17211A" : "#FBF6EA");
+  }
+  syncThemeBtn();
+  themeBtn.addEventListener("click", function () {
+    var dark = !isDark();
+    if (dark) document.documentElement.setAttribute("data-theme", "dark"); else document.documentElement.removeAttribute("data-theme");
+    try { localStorage.setItem("matchamap.theme", dark ? "dark" : "light"); } catch (e) { /* ignore */ }
+    syncThemeBtn();
+    var f = $("mapfade");
+    f.classList.add("on");
+    twirl();
+    setTimeout(function () {
+      map.setStyle(styleUrl(), { diff: false });
+      map.once("idle", function () { f.classList.remove("on"); });
+    }, 250);
+  });
+
+  // ---------- header Mattie: blink, breathe, glance ----------
+  var hdr = $("hdr-mattie");
+  function blinkLoop() {
+    setTimeout(function () {
+      var svg = hdr.querySelector("svg");
+      if (svg && !calm() && !document.hidden) animOnce(svg, "blink");
+      blinkLoop();
+    }, 4000 + Math.random() * 3000);
+  }
+  var lookRaf = 0, lookX = 0, lookY = 0;
+  function onPointer(ev) {
+    lookX = ev.clientX; lookY = ev.clientY;
+    if (lookRaf) return;
+    lookRaf = requestAnimationFrame(function () {
+      lookRaf = 0;
+      var g = hdr.querySelector(".m-look");
+      if (!g || calm()) return;
+      var r = hdr.getBoundingClientRect(), dx = lookX - (r.left + r.width / 2), dy = lookY - (r.top + r.height / 2);
+      var d = Math.sqrt(dx * dx + dy * dy) || 1, k = Math.min(d / 240, 1) * 2;
+      g.style.transform = "translate(" + (dx / d * k).toFixed(2) + "px," + (dy / d * k * 0.7).toFixed(2) + "px)";
+    });
+  }
+  if (fineQ.matches) document.addEventListener("pointermove", onPointer, { passive: true });
+
+  function twirl() { var s = $("chasen").querySelector("svg"); if (s) animOnce(s, "twirl"); }
+
+  // ---------- opening moment ----------
+  var SEEN = "matchamap.opened";
+  var intro = $("intro");
+  var introDone = false, introTimers = [];
+  function endIntro(fast) {
+    if (introDone) return;
+    introDone = true;
+    introTimers.forEach(clearTimeout);
+    try { sessionStorage.setItem(SEEN, "1"); } catch (e) { /* ignore */ }
+    intro.classList.add("gone");
+    setTimeout(function () { intro.hidden = true; $("petals").hidden = true; $("petals").innerHTML = ""; }, fast ? 160 : 320);
+  }
+  function petals() {
+    var box = $("petals");
+    box.hidden = false;
+    var n = 8;
+    for (var i = 0; i < n; i++) {
+      var p = document.createElement("span");
+      p.className = "petal";
+      p.style.left = (6 + i * (88 / n) + Math.random() * 6).toFixed(1) + "%";
+      p.style.animationDelay = Math.round(i * 90 + Math.random() * 120) + "ms";
+      p.style.animationDuration = Math.round(1700 + Math.random() * 700) + "ms";
+      p.style.setProperty("--sway", (Math.random() * 40 - 20).toFixed(0) + "px");
+      p.style.setProperty("--spin", (Math.random() * 300 + 120).toFixed(0) + "deg");
+      p.appendChild(drawChar("c-petal"));
+      box.appendChild(p);
+    }
+  }
+  function playIntro() {
+    var first = params.get("intro") === "1";
+    try { first = first || !sessionStorage.getItem(SEEN); } catch (e) { first = false; }
+    if (!first || calm()) {
+      // Repeat visit, or calm mode: a 300ms fade only.
+      intro.classList.add("quick");
+      setTimeout(function () { endIntro(false); }, 0);
+      return;
+    }
+    fillChars(intro);
+    intro.classList.add("play");
+    petals();
+    introTimers.push(setTimeout(function () {
+      var m = intro.querySelector(".intro-mattie").getBoundingClientRect();
+      intro.style.setProperty("--ix", Math.round(m.left + m.width / 2) + "px");
+      intro.style.setProperty("--iy", Math.round(m.top + m.height / 2) + "px");
+      intro.classList.add("iris");
+      dropUntil = Date.now() + 900; dropIdx = 0;
+      Object.keys(live).forEach(function (id) { entrance(live[id], "pop"); });
+    }, 880));
+    introTimers.push(setTimeout(function () { endIntro(false); }, 1400));
+  }
+  $("intro-skip").addEventListener("click", function () { endIntro(true); });
 
   // ---------- load ----------
-  function getJSON(u) { return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
+  function getJSON(u) { twirl(); return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
 
   try {
     var saved = JSON.parse(localStorage.getItem("matchamap.filter") || "null");
@@ -431,23 +755,39 @@
   } catch (e) { /* ignore */ }
   syncChips();
 
-  Promise.all([getJSON("data/events.json"), getJSON("data/sources.json").catch(function () { return []; })]).then(function (res) {
-    var data = res[0];
+  charsReady.then(function () {
+    fillChars(document.querySelector(".bar"));
+    fillChars($("loading"));
+    fillChars($("empty"));
+    fillChars($("about"));
+    fillChars($("sheet"));
+    fillChars($("hop"));
+    playIntro();
+    blinkLoop();
+    twirl();
+  });
+
+  var dataReady = Promise.all([getJSON("data/events.json"), getJSON("data/sources.json").catch(function () { return []; })]);
+  Promise.all([dataReady, charsReady]).then(function (r) {
+    var res = r[0], data = res[0];
     if (data.generated) {
       var g = new Date(data.generated);
       $("updated").textContent = "Last updated " + MONTHS[g.getMonth()] + " " + g.getDate() + ", " + g.getFullYear() + ".";
     }
     state.events = (data.events || []).filter(function (e) { return e.lat != null && e.lng != null; }).map(function (e) {
       e.status = liveStatus(e);
-      return { kind: "e", key: "e:" + e.id, ll: [e.lat, e.lng], data: e, past: e.status === "past", name: e.brand };
+      var it = { kind: "e", key: "e:" + e.id, ll: [e.lat, e.lng], data: e, past: e.status === "past", name: e.brand };
+      items[it.key] = it;
+      return it;
     });
     buildBrands(res[1] || []);
     setupHawaii();
-    refreshEvents();
+    var go = function () { syncZoomFace(); refreshEvents(false); };
+    go(); // sources added later by addData (style.load) start from the same lists
   }).catch(function () {
     oops("Could not load pop-ups. Try again in a moment.");
   }).then(function () { $("loading").hidden = true; });
 
   // Exposed for tests only.
-  window.__matcha = { state: state, matchesChip: matchesChip, whenText: whenText, map: map };
+  window.__matcha = { state: state, matchesChip: matchesChip, whenText: whenText, map: map, live: live };
 })();

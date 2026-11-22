@@ -8,6 +8,21 @@
     "miss": true,
     "at": 1795351946008
   },
+  "1145 providence st houston tx 77002": {
+    "lat": 29.76795,
+    "lng": -95.357761,
+    "source": "nominatim"
+  },
+  "1348 4th st ne dc": {
+    "lat": 38.90408,
+    "lng": -77.000567,
+    "source": "nominatim"
+  },
+  "1417 w morse ave chicago il": {
+    "lat": 42.007764,
+    "lng": -87.666528,
+    "source": "nominatim"
+  },
   "1600 bonita ave la verne ca 91750": {
     "lat": 34.103786,
     "lng": -117.778782,
@@ -17,22 +32,119 @@
     "miss": true,
     "at": 1795366336806
   },
+  "20812 international blvd seattle wa": {
+    "miss": true,
+    "at": 1795371603379
+  },
+  "2722 fifth ave san diego ca": {
+    "lat": 33.116063,
+    "lng": -117.082913,
+    "source": "nominatim"
+  },
+  "626 st seattle wa": {
+    "miss": true,
+    "at": 1795371615700
+  },
+  "713 lorimer st new york ny": {
+    "lat": 40.718158,
+    "lng": -73.950215,
+    "source": "nominatim"
+  },
   "73 e jackson blvd chicago il": {
     "lat": 41.878172,
     "lng": -87.625696,
     "source": "nominatim"
   },
+  "admari miami fl": {
+    "miss": true,
+    "at": 1795371885843
+  },
   "amatō at maynard crossing raleigh nc": {
     "miss": true,
     "at": 1795366331806
+  },
+  "amore mio florals studio orlando fl": {
+    "miss": true,
+    "at": 1795371631211
+  },
+  "andaz miami beach resort & spa miami fl": {
+    "lat": 25.812731,
+    "lng": -80.12237,
+    "source": "nominatim"
+  },
+  "atlanta ga": {
+    "lat": 33.754466,
+    "lng": -84.389815,
+    "source": "nominatim"
+  },
+  "audubon park church orlando fl": {
+    "lat": 28.563187,
+    "lng": -81.342965,
+    "source": "nominatim"
+  },
+  "audubon park orlando fl": {
+    "lat": 28.564601,
+    "lng": -81.342718,
+    "source": "nominatim"
+  },
+  "austin tx": {
+    "lat": 30.264926,
+    "lng": -97.747409,
+    "source": "nominatim"
+  },
+  "aveda store at bellevue square seattle wa": {
+    "miss": true,
+    "at": 1795371616036
+  },
+  "baltimore md": {
+    "lat": 39.290882,
+    "lng": -76.610759,
+    "source": "nominatim"
   },
   "binchoyaki sacramento ca": {
     "miss": true,
     "at": 1795366340843
   },
+  "boston ma": {
+    "lat": 42.358834,
+    "lng": -71.05783,
+    "source": "nominatim"
+  },
   "brambleton farmers market washington dc": {
     "miss": true,
     "at": 1795366352989
+  },
+  "brookline ma": {
+    "lat": 42.332918,
+    "lng": -71.118783,
+    "source": "nominatim"
+  },
+  "cafe monet art & clay studio austin tx": {
+    "miss": true,
+    "at": 1795371634278
+  },
+  "café monet austin tx": {
+    "miss": true,
+    "at": 1795371874910
+  },
+  "caphin minneapolis minneapolis mn": {
+    "lat": 44.921237,
+    "lng": -93.328611,
+    "source": "nominatim"
+  },
+  "càphin minneapolis mn": {
+    "lat": 44.921237,
+    "lng": -93.328611,
+    "source": "nominatim"
+  },
+  "carinocoffeehtx houston tx": {
+    "miss": true,
+    "at": 1795371851619
+  },
+  "chicago il": {
+    "lat": 41.875562,
+    "lng": -87.624421,
+    "source": "nominatim"
   },
   "city:albany|ny": {
     "lat": 42.6512,
@@ -332,6 +444,31 @@
     "miss": true,
     "at": 1795351937844
   },
+  "creamed | htx houston tx": {
+    "miss": true,
+    "at": 1795371846584
+  },
+  "crème pilates houston tx": {
+    "miss": true,
+    "at": 1795371853681
+  },
+  "crowbar + volière spirits minneapolis mn": {
+    "miss": true,
+    "at": 1795371856468
+  },
+  "desi bistro orlando fl": {
+    "miss": true,
+    "at": 1795371873862
+  },
+  "driehaus museum chicago il": {
+    "lat": 41.894285,
+    "lng": -87.626503,
+    "source": "nominatim"
+  },
+  "el patio wynwood miami fl": {
+    "miss": true,
+    "at": 1795371630169
+  },
   "eoc studio sacramento ca": {
     "miss": true,
     "at": 1795366344884
@@ -340,10 +477,22 @@
     "miss": true,
     "at": 1795366337826
   },
+  "filo cafe washington md": {
+    "miss": true,
+    "at": 1795371644300
+  },
+  "forager crafts los angeles ca": {
+    "miss": true,
+    "at": 1795371620083
+  },
   "fredericksburg va": {
     "lat": 38.300116,
     "lng": -77.457147,
     "source": "nominatim"
+  },
+  "gardens studio orlando fl": {
+    "miss": true,
+    "at": 1795371646426
   },
   "geek'd orlando fl": {
     "lat": 28.554945,
@@ -354,10 +503,36 @@
     "miss": true,
     "at": 1795366339848
   },
+  "hachi at japan village food court new york ny": {
+    "miss": true,
+    "at": 1795371889193
+  },
+  "hello rising studio atlanta ga": {
+    "miss": true,
+    "at": 1795371884945
+  },
+  "honolulu hi": {
+    "lat": 21.304547,
+    "lng": -157.855676,
+    "source": "nominatim"
+  },
+  "hothouse dance studio minneapolis mn": {
+    "miss": true,
+    "at": 1795371870644
+  },
+  "houston houston tx": {
+    "lat": 29.767579,
+    "lng": -95.367463,
+    "source": "nominatim"
+  },
   "houston tx": {
     "lat": 29.758938,
     "lng": -95.367697,
     "source": "nominatim"
+  },
+  "isamatcha co houston tx": {
+    "miss": true,
+    "at": 1795371594056
   },
   "isshiki matcha soho new york ny": {
     "miss": true,
@@ -367,23 +542,127 @@
     "miss": true,
     "at": 1795351950052
   },
+  "ivanhoe farmers market orlando fl": {
+    "miss": true,
+    "at": 1795371859701
+  },
+  "ivanhoe park brewing orlando fl": {
+    "miss": true,
+    "at": 1795371860756
+  },
+  "jaide atl atlanta ga": {
+    "miss": true,
+    "at": 1795371586068
+  },
+  "japan village cabin new york ny": {
+    "miss": true,
+    "at": 1795371890346
+  },
+  "japan village new york ny": {
+    "lat": 40.746128,
+    "lng": -73.600497,
+    "source": "nominatim"
+  },
+  "jcch honolulu hi": {
+    "miss": true,
+    "at": 1795371632174
+  },
+  "jiaren cafe san francisco ca": {
+    "miss": true,
+    "at": 1795371626343
+  },
+  "jiaren cafe santa clara ca": {
+    "lat": 37.348542,
+    "lng": -121.945783,
+    "source": "nominatim"
+  },
+  "jiaren yoga studio san francisco ca": {
+    "miss": true,
+    "at": 1795371866930
+  },
+  "journey to the dumpling sacramento ca": {
+    "lat": 38.568504,
+    "lng": -121.482258,
+    "source": "nominatim"
+  },
+  "joy flower pot bk new york ny": {
+    "miss": true,
+    "at": 1795371858656
+  },
+  "joy flower pot new york ny": {
+    "miss": true,
+    "at": 1795371600283
+  },
   "kaiser farmers market san francisco ca": {
     "miss": true,
     "at": 1795366335795
   },
+  "kohiko coffee house houston tx": {
+    "miss": true,
+    "at": 1795371593091
+  },
+  "kyoto coast matcha – ocean beach san diego ca": {
+    "miss": true,
+    "at": 1795371642351
+  },
   "laseraway logan circle northern virginia va": {
     "miss": true,
     "at": 1795351944555
+  },
+  "lee's flower shop baltimore md": {
+    "miss": true,
+    "at": 1795371588120
+  },
+  "logan square chicago il": {
+    "lat": 41.928373,
+    "lng": -87.706764,
+    "source": "nominatim"
+  },
+  "los angeles ca": {
+    "lat": 34.053692,
+    "lng": -118.242768,
+    "source": "nominatim"
   },
   "manhattan new york ny": {
     "lat": 40.757955,
     "lng": -73.985532,
     "source": "nominatim"
   },
+  "merai bar boston ma": {
+    "miss": true,
+    "at": 1795371590150
+  },
+  "merai bar brookline ma": {
+    "miss": true,
+    "at": 1795371843707
+  },
   "miami fl": {
     "lat": 25.774157,
     "lng": -80.193597,
     "source": "nominatim"
+  },
+  "miami miami fl": {
+    "lat": 25.849476,
+    "lng": -80.257979,
+    "source": "nominatim"
+  },
+  "milly’s wine bar & bistro minneapolis mn": {
+    "lat": 44.974703,
+    "lng": -93.252131,
+    "source": "nominatim"
+  },
+  "minneapolis mn": {
+    "lat": 44.9773,
+    "lng": -93.265469,
+    "source": "nominatim"
+  },
+  "momoko mart @ chinatown atlanta ga": {
+    "miss": true,
+    "at": 1795371641658
+  },
+  "monarca thrift club minneapolis mn": {
+    "miss": true,
+    "at": 1795371627969
   },
   "moonchild san antonio tx": {
     "miss": true,
@@ -413,14 +692,73 @@
     "lng": -77.11447,
     "source": "nominatim"
   },
+  "onli houston tx": {
+    "miss": true,
+    "at": 1795371848506
+  },
   "orlando fl": {
     "lat": 28.542122,
     "lng": -81.379045,
     "source": "nominatim"
   },
+  "paint your heart out washington va": {
+    "miss": true,
+    "at": 1795371621272
+  },
   "parkside pharmacy sacramento ca": {
     "lat": 38.536845,
     "lng": -121.504759,
+    "source": "nominatim"
+  },
+  "patine san diego ca": {
+    "miss": true,
+    "at": 1795371864544
+  },
+  "philadelphia philadelphia pa": {
+    "lat": 39.952724,
+    "lng": -75.163526,
+    "source": "nominatim"
+  },
+  "phoenix az": {
+    "lat": 33.448437,
+    "lng": -112.074141,
+    "source": "nominatim"
+  },
+  "pip chandler phoenix az": {
+    "miss": true,
+    "at": 1795371882100
+  },
+  "pip coffee + clay - phoenix phoenix az": {
+    "miss": true,
+    "at": 1795371880850
+  },
+  "pip coffee + clay (phoenix) phoenix az": {
+    "miss": true,
+    "at": 1795371879966
+  },
+  "pip coffee+clay - phoenix phoenix az": {
+    "miss": true,
+    "at": 1795371637372
+  },
+  "pip coffee+clay chandler phoenix az": {
+    "miss": true,
+    "at": 1795371878678
+  },
+  "pip coffee+clay chandler studio phoenix az": {
+    "miss": true,
+    "at": 1795371876976
+  },
+  "pip coffee+clay phoenix az": {
+    "miss": true,
+    "at": 1795371879030
+  },
+  "postern coffee atlanta ga": {
+    "miss": true,
+    "at": 1795371640264
+  },
+  "pottery chicago chicago il": {
+    "lat": 41.911718,
+    "lng": -87.654211,
     "source": "nominatim"
   },
   "raleigh nc": {
@@ -442,9 +780,28 @@
     "lng": -98.495141,
     "source": "nominatim"
   },
+  "san diego ca": {
+    "lat": 32.715706,
+    "lng": -117.163828,
+    "source": "nominatim"
+  },
   "san francisco ca": {
     "lat": 37.787936,
     "lng": -122.40752,
+    "source": "nominatim"
+  },
+  "seattle wa": {
+    "lat": 47.603832,
+    "lng": -122.330062,
+    "source": "nominatim"
+  },
+  "sip & pickle miami fl": {
+    "miss": true,
+    "at": 1795371875740
+  },
+  "sky coffee buenos aires miami fl": {
+    "lat": 25.793767,
+    "lng": -80.18874,
     "source": "nominatim"
   },
   "south block northern virginia va": {
@@ -455,26 +812,102 @@
     "miss": true,
     "at": 1795366351510
   },
+  "the blind goat houston tx": {
+    "lat": 29.802254,
+    "lng": -95.491724,
+    "source": "nominatim"
+  },
   "the malin washington dc": {
     "miss": true,
     "at": 1795351935991
   },
+  "the pottery loop chicago il": {
+    "miss": true,
+    "at": 1795371623937
+  },
   "the well studio san francisco ca": {
     "miss": true,
     "at": 1795366333768
+  },
+  "the wharf washington dc": {
+    "lat": 38.878688,
+    "lng": -77.023759,
+    "source": "nominatim"
+  },
+  "thrifty whiskers chicago il": {
+    "lat": 42.007764,
+    "lng": -87.666528,
+    "source": "nominatim"
+  },
+  "toppedoffco houston tx": {
+    "miss": true,
+    "at": 1795371850600
+  },
+  "tresse georgetown washington dc": {
+    "miss": true,
+    "at": 1795371617007
+  },
+  "tresse washington dc": {
+    "miss": true,
+    "at": 1795371617832
+  },
+  "twilight epiphany skyspace houston tx": {
+    "lat": 29.716487,
+    "lng": -95.404264,
+    "source": "nominatim"
+  },
+  "un caffe roastery houston tx": {
+    "miss": true,
+    "at": 1795371849545
   },
   "vale matcha & coffee seattle wa": {
     "lat": 47.617271,
     "lng": -122.334857,
     "source": "nominatim"
   },
+  "vintage vintage vintage dc washington va": {
+    "miss": true,
+    "at": 1795371887199
+  },
+  "vintage vintage vintage washington dc": {
+    "lat": 38.910037,
+    "lng": -76.99874,
+    "source": "nominatim"
+  },
+  "vivetropicomn minneapolis mn": {
+    "miss": true,
+    "at": 1795371869829
+  },
+  "viviette vintage los angeles ca": {
+    "miss": true,
+    "at": 1795371596128
+  },
   "washington dc": {
     "lat": 38.895098,
     "lng": -77.036385,
     "source": "nominatim"
   },
+  "washington md": {
+    "lat": 39.58935,
+    "lng": -77.710254,
+    "source": "nominatim"
+  },
+  "washington va": {
+    "lat": 36.740236,
+    "lng": -81.942167,
+    "source": "nominatim"
+  },
   "wearealchemycollective pop-up northern virginia va": {
     "miss": true,
     "at": 1795351943177
+  },
+  "wicker park chicago il": {
+    "lat": 41.9115,
+    "lng": -87.677475,
+    "source": "nominatim"
+  },
+  "wynwood marketplace miami fl": {
+    "miss": true,
+    "at": 1795371636237
   }
 }

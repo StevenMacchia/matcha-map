@@ -41,12 +41,19 @@ export function dedupeCandidates(candidates, now) {
   return [...byId.values()];
 }
 
+// An event first found on MATO under mato:<slug> is replaced when the same venue is later read as a real source
+// (same handle, same day, same place): the old record would otherwise show twice.
+export function dropSuperseded(existing, final) {
+  const sameSlot = new Set(final.filter((c) => !String(c.source_id).startsWith("mato:") && c.handle).map((c) => `${String(c.handle).toLowerCase()}|${String(c.start).slice(0, 10)}|${String(c.venue || c.address || "").toLowerCase().trim()}`));
+  return existing.filter((e) => !(String(e.source_id).startsWith("mato:") && sameSlot.has(`${String(e.handle || "").toLowerCase()}|${String(e.start).slice(0, 10)}|${String(e.venue || e.address || "").toLowerCase().trim()}`)));
+}
+
 // Geocode, merge with data/events.json, and (unless dry) write. Returns {merged, final}.
 export async function finalize(candidates, { now, geocoder, fetcher = null, liveSourceIds = [], dry = false }) {
   const final = [];
   for (const c of dedupeCandidates(candidates, now)) final.push(await geocoder.geocode(c));
   if (!dry) geocoder.save();
-  const existing = readEvents();
+  const existing = dropSuperseded(readEvents(), final);
   let decay = {};
   try { decay = JSON.parse(fs.readFileSync("data/decay.json", "utf8")); } catch { /* first run */ }
   const merged = mergeEvents(existing, final, { now, liveSourceIds, decay });
