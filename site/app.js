@@ -77,6 +77,10 @@
     maxZoom: 19, attribution: "© <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a> contributors"
   }).addTo(map);
   map.fitBounds([[24.5, -125], [49.5, -66.5]]);
+  // Brand dots get eyes and blush from zoom 9 up (class z9 on the map container).
+  function syncZoomFace() { map.getContainer().classList.toggle("z9", map.getZoom() >= 9); }
+  map.on("zoomend", syncZoomFace);
+  syncZoomFace();
 
   // No inline style attributes (CSP): sizes go through iconSize.
   var NUDGE = 14; // px: brand pins sit down-right of their spot so an event pin on top does not hide them
@@ -98,17 +102,13 @@
   var eventGroup = mkCluster("cl-ev", 36).addTo(map);
   var youMarker = null;
 
-  var CUP = "<svg viewBox=\"0 0 34 34\" width=\"34\" height=\"34\" aria-hidden=\"true\" focusable=\"false\">" +
-    "<path class=\"steam\" d=\"M14 9c-2-2 0-3.5 0-5.500M20 9c-2-2 0-3.5 0-5.500\"/>" +
-    "<path class=\"cup-body\" d=\"M5 14h24c0 9-5 15-12 15S5 23 5 14z\"/>" +
-    "<ellipse class=\"cup-body\" cx=\"17\" cy=\"14\" rx=\"12\" ry=\"4\"/>" +
-    "<ellipse class=\"cup-foam\" cx=\"17\" cy=\"14.3\" rx=\"9.5\" ry=\"2.800\"/>" +
-    "<path class=\"cup-swirl\" d=\"M13 14.5q4-2.5 8 0\"/>";
+  // Event pin: Mattie's face in a cup (symbol m-face in index.html), with a pink dot when upcoming.
+  var FACE = "<svg viewBox=\"0 0 64 64\" width=\"38\" height=\"38\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/>";
   function pinIcon(kind, past) {
     var el = document.createElement("span");
     el.className = "pin " + (kind === "e" ? "pin-ev" : "pin-br") + (past ? " past" : "");
-    if (kind === "e") el.innerHTML = CUP + (past ? "" : "<circle class=\"dot-new\" cx=\"28\" cy=\"6\" r=\"4\"/>") + "</svg>";
-    var sz = kind === "e" ? 36 : 28;
+    if (kind === "e") el.innerHTML = FACE + (past ? "" : "<circle class=\"dot-new\" cx=\"54\" cy=\"10\" r=\"7\"/>") + "</svg>";
+    var sz = kind === "e" ? 38 : 28;
     return L.divIcon({ html: el, className: "pinwrap", iconSize: [sz, sz], iconAnchor: anchor(sz, kind !== "e") });
   }
 
@@ -152,6 +152,8 @@
     } else {
       map.closePopup();
       $("sheet-body").innerHTML = html;
+      var h3 = $("sheet-body").querySelector("h3");
+      if (h3) h3.insertAdjacentHTML("afterbegin", "<svg class=\"sheet-face\" width=\"24\" height=\"24\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-face\"/></svg>");
       $("sheet").hidden = false;
     }
   }
@@ -318,10 +320,18 @@
   $("view-toggle").addEventListener("click", function () { setView(state.view === "list" ? "map" : "list"); });
   wide.addEventListener("change", function () { closeCard(); setView("map"); });
 
+  // Status line with Mattie looking surprised, for errors and denied location.
+  function oops(text) {
+    var note = $("note");
+    note.innerHTML = "<svg class=\"oops\" width=\"24\" height=\"24\" viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#m-oops\"/></svg>";
+    note.appendChild(document.createTextNode(text));
+    note.hidden = false;
+  }
+
   // ---------- near me ----------
   $("near").addEventListener("click", function () {
     var note = $("note");
-    if (!navigator.geolocation) { note.textContent = "Location is off. Pan the map instead."; note.hidden = false; return; }
+    if (!navigator.geolocation) { oops("Location is off. Pan the map instead."); return; }
     navigator.geolocation.getCurrentPosition(function (pos) {
       note.hidden = true;
       state.userLoc = [pos.coords.latitude, pos.coords.longitude];
@@ -332,7 +342,7 @@
       map.setView(state.userLoc, 10);
       renderList();
     }, function () {
-      note.textContent = "Location is off. Pan the map instead."; note.hidden = false;
+      oops("Location is off. Pan the map instead.");
     }, { timeout: 10000, maximumAge: 300000 });
   });
 
@@ -366,8 +376,8 @@
     setupHawaii();
     refreshEvents();
   }).catch(function () {
-    var note = $("note"); note.textContent = "Could not load pop-ups. Try again in a moment."; note.hidden = false;
-  });
+    oops("Could not load pop-ups. Try again in a moment.");
+  }).then(function () { $("loading").hidden = true; });
 
   // Exposed for tests only.
   window.__matcha = { state: state, matchesChip: matchesChip, whenText: whenText, map: map };

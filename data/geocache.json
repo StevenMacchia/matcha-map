@@ -85,5 +85,299 @@
   "wearealchemycollective pop-up northern virginia va": {
     "miss": true,
     "at": 1795351943177
+  },
+  "city:albany|ny": {
+    "lat": 42.6512,
+    "lng": -73.755,
+    "source": "nominatim",
+    "at": "2026-11-22T16:45:53.099Z"
+  },
+  "city:arlington|va": {
+    "lat": 38.8769,
+    "lng": -77.0893,
+    "source": "nominatim",
+    "at": "2026-11-22T16:45:54.581Z"
+  },
+  "city:ballwin|mo": {
+    "lat": 38.5962,
+    "lng": -90.5387,
+    "source": "nominatim",
+    "at": "2026-11-22T16:45:55.959Z"
+  },
+  "city:baltimore|md": {
+    "lat": 39.2909,
+    "lng": -76.6108,
+    "source": "nominatim",
+    "at": "2026-11-22T16:45:57.460Z"
+  },
+  "city:baton rouge|la": {
+    "lat": 30.4494,
+    "lng": -91.187,
+    "source": "nominatim",
+    "at": "2026-11-22T16:45:58.887Z"
+  },
+  "city:bayside|wi": {
+    "lat": 43.1861,
+    "lng": -87.9049,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:00.292Z"
+  },
+  "city:brooklyn|ny": {
+    "lat": 40.6526,
+    "lng": -73.9497,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:01.847Z"
+  },
+  "city:cambridge|ma": {
+    "lat": 42.3656,
+    "lng": -71.104,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:03.427Z"
+  },
+  "city:charlotte|nc": {
+    "lat": 35.2272,
+    "lng": -80.8431,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:04.838Z"
+  },
+  "city:cincinnati|oh": {
+    "lat": 39.1013,
+    "lng": -84.5127,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:06.266Z"
+  },
+  "city:colorado springs|co": {
+    "lat": 38.834,
+    "lng": -104.8253,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:07.875Z"
+  },
+  "city:columbus|oh": {
+    "lat": 39.9623,
+    "lng": -83.0007,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:09.427Z"
+  },
+  "city:covington|ky": {
+    "lat": 39.0832,
+    "lng": -84.5108,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:11.012Z"
+  },
+  "city:des moines|ia": {
+    "lat": 41.5869,
+    "lng": -93.6249,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:13.159Z"
+  },
+  "city:detroit|mi": {
+    "lat": 42.3316,
+    "lng": -83.0466,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:14.712Z"
+  },
+  "city:fairfield|ct": {
+    "lat": 41.1412,
+    "lng": -73.2637,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:16.237Z"
+  },
+  "city:falls church|va": {
+    "lat": 38.8823,
+    "lng": -77.1711,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:17.536Z"
+  },
+  "city:fort lauderdale|fl": {
+    "lat": 26.1223,
+    "lng": -80.1434,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:18.952Z"
+  },
+  "city:gallatin|tn": {
+    "lat": 36.3883,
+    "lng": -86.4476,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:20.383Z"
+  },
+  "city:grand prairie|tx": {
+    "lat": 32.746,
+    "lng": -96.9978,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:21.882Z"
+  },
+  "city:hoboken|nj": {
+    "lat": 40.7433,
+    "lng": -74.0324,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:23.326Z"
+  },
+  "city:jacksonville|fl": {
+    "lat": 30.3262,
+    "lng": -81.6579,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:24.797Z"
+  },
+  "city:jersey city|nj": {
+    "lat": 40.7216,
+    "lng": -74.0475,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:26.141Z"
+  },
+  "city:kansas city|mo": {
+    "lat": 39.1001,
+    "lng": -94.5781,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:27.652Z"
+  },
+  "city:memphis|tn": {
+    "lat": 35.146,
+    "lng": -90.0518,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:29.199Z"
+  },
+  "city:miami beach|fl": {
+    "lat": 25.7929,
+    "lng": -80.1353,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:30.728Z"
+  },
+  "city:minneapolis|mn": {
+    "lat": 44.9773,
+    "lng": -93.2655,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:32.162Z"
+  },
+  "city:morrisville|nc": {
+    "lat": 35.8243,
+    "lng": -78.83,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:33.574Z"
+  },
+  "city:nashville|tn": {
+    "lat": 36.1623,
+    "lng": -86.7743,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:35.000Z"
+  },
+  "city:new orleans|la": {
+    "lat": 29.9575,
+    "lng": -90.0629,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:36.603Z"
+  },
+  "city:noblesville|in": {
+    "lat": 40.0461,
+    "lng": -86.014,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:38.117Z"
+  },
+  "city:north bethesda|md": {
+    "lat": 39.0406,
+    "lng": -77.1234,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:39.397Z"
+  },
+  "city:northbrook|il": {
+    "lat": 42.1287,
+    "lng": -87.8265,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:40.797Z"
+  },
+  "city:orlando|fl": {
+    "lat": 28.5421,
+    "lng": -81.379,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:42.437Z"
+  },
+  "city:phoenix|az": {
+    "lat": 33.4484,
+    "lng": -112.0741,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:44.016Z"
+  },
+  "city:pittsburgh|pa": {
+    "lat": 40.4407,
+    "lng": -80.0026,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:45.291Z"
+  },
+  "city:portland|or": {
+    "lat": 45.5202,
+    "lng": -122.6742,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:46.867Z"
+  },
+  "city:raleigh|nc": {
+    "lat": 35.7804,
+    "lng": -78.6391,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:48.361Z"
+  },
+  "city:richmond|va": {
+    "lat": 37.5385,
+    "lng": -77.4343,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:50.033Z"
+  },
+  "city:sacramento|ca": {
+    "lat": 38.5811,
+    "lng": -121.4939,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:51.652Z"
+  },
+  "city:salt lake city|ut": {
+    "lat": 40.7596,
+    "lng": -111.8868,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:53.304Z"
+  },
+  "city:san antonio|tx": {
+    "lat": 29.4246,
+    "lng": -98.4951,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:54.790Z"
+  },
+  "city:st. louis|mo": {
+    "lat": 38.6254,
+    "lng": -90.19,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:56.257Z"
+  },
+  "city:st. petersburg|fl": {
+    "lat": 27.7712,
+    "lng": -82.634,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:57.717Z"
+  },
+  "city:staten island|ny": {
+    "lat": 40.5835,
+    "lng": -74.1496,
+    "source": "nominatim",
+    "at": "2026-11-22T16:46:59.228Z"
+  },
+  "city:tampa|fl": {
+    "lat": 27.945,
+    "lng": -82.4583,
+    "source": "nominatim",
+    "at": "2026-11-22T16:47:00.790Z"
+  },
+  "city:tucson|az": {
+    "lat": 32.2229,
+    "lng": -110.9748,
+    "source": "nominatim",
+    "at": "2026-11-22T16:47:02.244Z"
+  },
+  "city:tulsa|ok": {
+    "lat": 36.1563,
+    "lng": -95.9928,
+    "source": "nominatim",
+    "at": "2026-11-22T16:47:03.794Z"
+  },
+  "city:west des moines|ia": {
+    "lat": 41.5644,
+    "lng": -93.7594,
+    "source": "nominatim",
+    "at": "2026-11-22T16:47:05.414Z"
   }
 }
