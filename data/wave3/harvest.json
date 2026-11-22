@@ -1,0 +1,18 @@
+[
+  {
+    "id": "dream-tea-nyc",
+    "brand": "Dream Tea NYC",
+    "home_city": "New York",
+    "home_state": "NY",
+    "website": null,
+    "instagram": null,
+    "tiktok": null,
+    "schedule_url": "https://www.eventbrite.com/o/dream-tea-nyc-115792355101",
+    "schedule_kind": "manual",
+    "adapter": "manual",
+    "active": true,
+    "notes": "Tea brand (loose leaf, ceremonial matcha, matcha gift sets) that runs weekly holiday-market stands across NYC; Eventbrite organizer page lists dated stands (Columbus Circle Dec 1-31, Cobble Hill Dec 5-6, Dumbo Dec 14-20, Fort Greene Dec 5). Instagram handle not found on the Eventbrite pages and not guessed. The manual inbox matcher needs a handle in the URL or text, so these pastes will not match until a handle is added or the matcher also tries the brand name.",
+    "added": "2026-11-22",
+    "verified": "2026-11-22"
+  }
+]
