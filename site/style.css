@@ -407,3 +407,13 @@ dialog .credit { font-size: 14px; color: var(--muted); }
 .maplibregl-ctrl-attrib-inner { color: var(--muted); }
 [data-theme="dark"] .maplibregl-ctrl-attrib-button, [data-theme="dark"] .maplibregl-ctrl-group .maplibregl-ctrl-icon { filter: invert(1) hue-rotate(180deg) brightness(1.4); }
 [data-theme="dark"] .maplibregl-ctrl-attrib.maplibregl-compact-show, [data-theme="dark"] .maplibregl-ctrl-attrib.maplibregl-compact { background: var(--panel) !important; }
+/* phone header: tagline runs under the name so it never truncates; Chasen rests until there is room */
+@media (max-width: 599px) {
+  .bar { gap: 6px; padding: 6px 8px 6px 10px; }
+  .mark { width: 34px; height: 34px; }
+  .brand h1 { font-size: 21px; gap: 6px; }
+  .brand p { margin-left: 2px; font-size: 14px; }
+  .sidekick { display: none; }
+  .btn.quiet { padding: 0 11px; }
+  .bar-actions { gap: 4px; }
+}
