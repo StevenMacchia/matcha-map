@@ -23,6 +23,11 @@
     "lng": -73.988083,
     "source": "nominatim"
   },
+  "1110 e colonial dr orlando fl 32803": {
+    "lat": 28.553156,
+    "lng": -81.364971,
+    "source": "nominatim"
+  },
   "1145 providence st houston tx 77002": {
     "lat": 29.76795,
     "lng": -95.357761,
@@ -32,6 +37,10 @@
     "lat": 37.348403,
     "lng": -121.945813,
     "source": "nominatim"
+  },
+  "12058 collegiate way orlando fl 32817": {
+    "miss": true,
+    "at": 1795379593217
   },
   "1208 saint charles avenue new orleans la": {
     "lat": 29.941002,
@@ -48,9 +57,18 @@
     "lng": -81.362137,
     "source": "nominatim"
   },
+  "1217 trinity woods lane orlando fl": {
+    "miss": true,
+    "at": 1795379600461
+  },
   "127 rosa l parks boulevard nashville tn 37203": {
     "lat": 36.159821,
     "lng": -86.782943,
+    "source": "nominatim"
+  },
+  "1300 alden rd orlando fl 32803": {
+    "lat": 28.562518,
+    "lng": -81.372121,
     "source": "nominatim"
   },
   "1331 metropolitan pkwy atlanta ga": {
@@ -63,9 +81,19 @@
     "lng": -77.000567,
     "source": "nominatim"
   },
+  "1348 4th street washington dc": {
+    "lat": 38.910063,
+    "lng": -76.998807,
+    "source": "nominatim"
+  },
   "1417 w morse ave chicago il": {
     "lat": 42.007764,
     "lng": -87.666528,
+    "source": "nominatim"
+  },
+  "1444 n alafaya trail orlando fl": {
+    "lat": 28.564459,
+    "lng": -81.209856,
     "source": "nominatim"
   },
   "15317 broadway avenue maple heights oh 15317": {
@@ -83,6 +111,11 @@
     "lng": -117.778782,
     "source": "nominatim"
   },
+  "1661 wisconsin ave washington dc": {
+    "lat": 38.912065,
+    "lng": -77.065334,
+    "source": "nominatim"
+  },
   "1744 rinehart rd orlando fl": {
     "miss": true,
     "at": 1795378393269
@@ -91,6 +124,15 @@
     "lat": 25.800662,
     "lng": -80.198562,
     "source": "nominatim"
+  },
+  "1770 w berteau ave chicago il": {
+    "lat": 41.958336,
+    "lng": -87.673665,
+    "source": "nominatim"
+  },
+  "1770 w berteau ave suite 407 chicago il": {
+    "miss": true,
+    "at": 1795379585349
   },
   "1808 s good latimer expy dallas tx": {
     "lat": 32.775539,
@@ -166,6 +208,10 @@
     "lng": -96.817101,
     "source": "nominatim"
   },
+  "20327 exchange st ashburn va 20147": {
+    "miss": true,
+    "at": 1795379614430
+  },
   "20812 international blvd seattle wa": {
     "miss": true,
     "at": 1795371603379
@@ -184,6 +230,10 @@
     "lng": -111.784732,
     "source": "nominatim"
   },
+  "22 713 lorimer st new york ny": {
+    "miss": true,
+    "at": 1795379570006
+  },
   "2211 16th st sacramento ca": {
     "lat": 38.56473,
     "lng": -121.490898,
@@ -192,6 +242,11 @@
   "222 main street beech grove in 46107": {
     "lat": 39.722049,
     "lng": -86.084667,
+    "source": "nominatim"
+  },
+  "2220 gratiot ave detroit mi": {
+    "lat": 42.350887,
+    "lng": -83.032985,
     "source": "nominatim"
   },
   "224 east hennepin avenue minneapolis mn": {
@@ -209,6 +264,11 @@
     "lng": -75.135458,
     "source": "nominatim"
   },
+  "2361 30th st san diego ca": {
+    "lat": 32.730232,
+    "lng": -117.129474,
+    "source": "nominatim"
+  },
   "2400 14th street washington dc": {
     "lat": 38.921153,
     "lng": -77.032284,
@@ -217,6 +277,11 @@
   "2501 sunset avenue san diego ca": {
     "lat": 32.558121,
     "lng": -117.082009,
+    "source": "nominatim"
+  },
+  "2507 st baltimore md": {
+    "lat": 39.313003,
+    "lng": -76.642021,
     "source": "nominatim"
   },
   "2520 airline dr houston tx 77009": {
@@ -234,6 +299,16 @@
     "lng": -90.225072,
     "source": "nominatim"
   },
+  "2697 biscayne blvd miami fl": {
+    "lat": 25.802716,
+    "lng": -80.189019,
+    "source": "nominatim"
+  },
+  "2700 wilshire blvd los angeles ca": {
+    "lat": 34.060826,
+    "lng": -118.282549,
+    "source": "nominatim"
+  },
   "2722 fifth ave san diego ca": {
     "lat": 33.116063,
     "lng": -117.082913,
@@ -244,14 +319,66 @@
     "lng": -83.055792,
     "source": "nominatim"
   },
+  "2804 adams ave flan san diego ca": {
+    "miss": true,
+    "at": 1795379583129
+  },
+  "2804 adams ave san diego ca": {
+    "lat": 32.763056,
+    "lng": -117.133698,
+    "source": "nominatim"
+  },
+  "2911 e robinson st orlando fl 32803": {
+    "lat": 28.546071,
+    "lng": -81.346755,
+    "source": "nominatim"
+  },
+  "2915 knox ave los angeles ca": {
+    "lat": 34.102873,
+    "lng": -118.243294,
+    "source": "nominatim"
+  },
   "2915 knox ave los angeles ca 90039": {
     "lat": 34.102873,
     "lng": -118.243294,
     "source": "nominatim"
   },
+  "2915 knox ave unit 103 los angeles ca": {
+    "miss": true,
+    "at": 1795379579039
+  },
+  "3000 corrine dr orlando fl 32803": {
+    "lat": 28.567534,
+    "lng": -81.345716,
+    "source": "nominatim"
+  },
+  "3009 edgewater dr orlando fl 32804": {
+    "lat": 28.578198,
+    "lng": -81.389455,
+    "source": "nominatim"
+  },
   "313 north state street orem ut 84057": {
     "lat": 40.302982,
     "lng": -111.697661,
+    "source": "nominatim"
+  },
+  "321 canal st new york ny": {
+    "lat": 40.720326,
+    "lng": -74.002704,
+    "source": "nominatim"
+  },
+  "3222 m street northern virginia va": {
+    "miss": true,
+    "at": 1795379634330
+  },
+  "3363 buford hwy atlanta ga": {
+    "lat": 33.817333,
+    "lng": -84.361806,
+    "source": "nominatim"
+  },
+  "3421 s orange ave orlando fl 32806": {
+    "lat": 28.505786,
+    "lng": -81.376014,
     "source": "nominatim"
   },
   "3500 severn avenue metairie la 70002": {
@@ -284,9 +411,23 @@
     "lng": -111.871849,
     "source": "nominatim"
   },
+  "400 bonnet springs blvd lakeland fl 33815": {
+    "miss": true,
+    "at": 1795379602619
+  },
+  "400 s orlando ave winter park fl 32789": {
+    "lat": 28.584065,
+    "lng": -81.364913,
+    "source": "nominatim"
+  },
   "4028 central ave minneapolis mn": {
     "lat": 45.01131,
     "lng": -93.247308,
+    "source": "nominatim"
+  },
+  "411 18th st sacramento ca": {
+    "lat": 38.5836,
+    "lng": -121.479765,
     "source": "nominatim"
   },
   "4126 lorain avenue cleveland oh 44113": {
@@ -298,6 +439,15 @@
     "lat": 37.390735,
     "lng": -122.040609,
     "source": "nominatim"
+  },
+  "420 e church st orlando fl": {
+    "lat": 28.540125,
+    "lng": -81.371571,
+    "source": "nominatim"
+  },
+  "420 e church st suite 115 orlando fl": {
+    "miss": true,
+    "at": 1795379452914
   },
   "4238 wilson boulevard arlington va 22203": {
     "lat": 38.879014,
@@ -319,6 +469,20 @@
     "lng": -80.079273,
     "source": "nominatim"
   },
+  "455 penn st ne washington dc": {
+    "miss": true,
+    "at": 1795379612414
+  },
+  "455 penn st washington dc": {
+    "lat": 38.910299,
+    "lng": -76.997552,
+    "source": "nominatim"
+  },
+  "4770 owings mills blvd baltimore md": {
+    "lat": 39.402802,
+    "lng": -76.796642,
+    "source": "nominatim"
+  },
   "5023 n florida ave tampa fl": {
     "lat": 27.992221,
     "lng": -82.459053,
@@ -334,9 +498,19 @@
     "lng": -80.194281,
     "source": "nominatim"
   },
+  "519 memorial dr atlanta ga": {
+    "lat": 33.746513,
+    "lng": -84.371126,
+    "source": "nominatim"
+  },
   "560 berne st atlanta ga": {
     "lat": 33.737314,
     "lng": -84.369297,
+    "source": "nominatim"
+  },
+  "5737 w irlo bronson memorial hwy kissimmee fl 34746": {
+    "lat": 28.333489,
+    "lng": -81.514301,
     "source": "nominatim"
   },
   "5841 bellflower boulevard lakewood ca 90713": {
@@ -368,6 +542,11 @@
     "lng": -73.986861,
     "source": "nominatim"
   },
+  "6310 ne 74th st seattle wa 98115": {
+    "lat": 47.682846,
+    "lng": -122.260988,
+    "source": "nominatim"
+  },
   "638 north highland avenue atlanta ga": {
     "lat": 33.771628,
     "lng": -84.353032,
@@ -378,6 +557,16 @@
     "lng": -73.986828,
     "source": "nominatim"
   },
+  "7007 sea world dr orlando fl 32821": {
+    "lat": 28.41101,
+    "lng": -81.461876,
+    "source": "nominatim"
+  },
+  "7007 sea world drive orlando fl": {
+    "lat": 28.41101,
+    "lng": -81.461876,
+    "source": "nominatim"
+  },
   "7033 union park ln austin tx": {
     "miss": true,
     "at": 1795374362267
@@ -386,6 +575,20 @@
     "lat": 40.718158,
     "lng": -73.950215,
     "source": "nominatim"
+  },
+  "713 lorimer street new york ny": {
+    "lat": 40.718158,
+    "lng": -73.950215,
+    "source": "nominatim"
+  },
+  "718 w 18th st houston tx 77008": {
+    "lat": 29.801573,
+    "lng": -95.410331,
+    "source": "nominatim"
+  },
+  "718 w 18th st ste d houston tx 77008": {
+    "miss": true,
+    "at": 1795379636805
   },
   "73 e jackson blvd chicago il": {
     "lat": 41.878172,
@@ -400,6 +603,11 @@
   "743 santee street los angeles ca 90014": {
     "lat": 34.04186,
     "lng": -118.250979,
+    "source": "nominatim"
+  },
+  "7563 sand lake rd orlando fl 32819": {
+    "lat": 28.450545,
+    "lng": -81.41644,
     "source": "nominatim"
   },
   "7565 norman rockwell lane las vegas nv 89143": {
@@ -422,6 +630,11 @@
     "lng": -118.37433,
     "source": "nominatim"
   },
+  "800 31st st st petersburg fl": {
+    "lat": 27.780179,
+    "lng": -82.675449,
+    "source": "nominatim"
+  },
   "811 bethel rd columbus oh 43214": {
     "lat": 40.06309,
     "lng": -83.040925,
@@ -440,6 +653,11 @@
   "83 water street brooklyn ny 11201": {
     "lat": 40.70331,
     "lng": -73.990971,
+    "source": "nominatim"
+  },
+  "850 ne 2nd ave miami fl": {
+    "lat": 25.782271,
+    "lng": -80.191033,
     "source": "nominatim"
   },
   "903 marietta st atlanta ga": {
@@ -484,6 +702,15 @@
     "lng": -80.12237,
     "source": "nominatim"
   },
+  "ashburn va": {
+    "lat": 39.029784,
+    "lng": -77.474415,
+    "source": "nominatim"
+  },
+  "atlanta chinatown atlanta ga": {
+    "miss": true,
+    "at": 1795379455614
+  },
   "atlanta ga": {
     "lat": 33.754466,
     "lng": -84.389815,
@@ -522,6 +749,10 @@
     "lng": -73.965491,
     "source": "nominatim"
   },
+  "boo song road cambridge ma": {
+    "miss": true,
+    "at": 1795379621617
+  },
   "boston ma": {
     "lat": 42.358834,
     "lng": -71.05783,
@@ -536,6 +767,11 @@
     "lng": -71.118783,
     "source": "nominatim"
   },
+  "brooklyn bridge park brooklyn ny": {
+    "lat": 40.698289,
+    "lng": -73.99993,
+    "source": "nominatim"
+  },
   "brooklyn ny": {
     "lat": 40.652601,
     "lng": -73.949721,
@@ -544,6 +780,10 @@
   "bujimatcha houston tx": {
     "miss": true,
     "at": 1795378305468
+  },
+  "caf austin tx": {
+    "miss": true,
+    "at": 1795379606362
   },
   "cafe monet art & clay studio austin tx": {
     "miss": true,
@@ -655,6 +895,11 @@
   "carinocoffeehtx houston tx": {
     "miss": true,
     "at": 1795371851619
+  },
+  "central park orlando fl": {
+    "lat": 28.477703,
+    "lng": -81.46812,
+    "source": "nominatim"
   },
   "charlotte nc": {
     "lat": 35.227209,
@@ -1024,14 +1269,33 @@
     "miss": true,
     "at": 1795371856468
   },
+  "dallas tx": {
+    "lat": 32.776272,
+    "lng": -96.796856,
+    "source": "nominatim"
+  },
+  "denver co": {
+    "lat": 39.739236,
+    "lng": -104.984862,
+    "source": "nominatim"
+  },
   "desi bistro orlando fl": {
     "miss": true,
     "at": 1795371873862
+  },
+  "detroit mi": {
+    "lat": 42.331551,
+    "lng": -83.04664,
+    "source": "nominatim"
   },
   "driehaus museum chicago il": {
     "lat": 41.894285,
     "lng": -87.626503,
     "source": "nominatim"
+  },
+  "druid hills farmers market atlanta ga": {
+    "miss": true,
+    "at": 1795379639571
   },
   "el patio wynwood miami fl": {
     "miss": true,
@@ -1075,6 +1339,16 @@
     "miss": true,
     "at": 1795366339848
   },
+  "grant park market atlanta ga": {
+    "lat": 33.746541,
+    "lng": -84.370782,
+    "source": "nominatim"
+  },
+  "gratiot detroit mi": {
+    "lat": 42.379938,
+    "lng": -83.023006,
+    "source": "nominatim"
+  },
   "hachi at japan village food court new york ny": {
     "miss": true,
     "at": 1795371889193
@@ -1082,6 +1356,19 @@
   "hello rising studio atlanta ga": {
     "miss": true,
     "at": 1795371884945
+  },
+  "hgo org houston tx": {
+    "miss": true,
+    "at": 1795379567960
+  },
+  "hoboken nj": {
+    "lat": 40.743307,
+    "lng": -74.032375,
+    "source": "nominatim"
+  },
+  "home ec san diego ca": {
+    "miss": true,
+    "at": 1795379582212
   },
   "honolulu hi": {
     "lat": 21.304547,
@@ -1123,6 +1410,10 @@
   "isshiki new york ny": {
     "miss": true,
     "at": 1795351950052
+  },
+  "isshikimatcha new york ny": {
+    "miss": true,
+    "at": 1795379450628
   },
   "ivanhoe farmers market orlando fl": {
     "miss": true,
@@ -1188,9 +1479,19 @@
     "miss": true,
     "at": 1795371593091
   },
+  "kuns park los angeles ca": {
+    "lat": 34.104221,
+    "lng": -117.778071,
+    "source": "nominatim"
+  },
   "kyoto coast matcha – ocean beach san diego ca": {
     "miss": true,
     "at": 1795371642351
+  },
+  "lakeland fl": {
+    "lat": 28.039465,
+    "lng": -81.949804,
+    "source": "nominatim"
   },
   "lansing mi": {
     "lat": 42.733825,
@@ -1210,6 +1511,14 @@
     "miss": true,
     "at": 1795371588120
   },
+  "literati lounge a miami fl": {
+    "miss": true,
+    "at": 1795379611358
+  },
+  "livenation com phoenix az": {
+    "miss": true,
+    "at": 1795379608267
+  },
   "logan square chicago il": {
     "lat": 41.928373,
     "lng": -87.706764,
@@ -1219,6 +1528,10 @@
     "lat": 34.053692,
     "lng": -118.242768,
     "source": "nominatim"
+  },
+  "lucky girl market rva washington dc": {
+    "miss": true,
+    "at": 1795379632482
   },
   "manhattan new york ny": {
     "lat": 40.757955,
@@ -1233,6 +1546,10 @@
   "matcha mrkt atlanta ga": {
     "miss": true,
     "at": 1795374383451
+  },
+  "matchafest miami miami fl": {
+    "miss": true,
+    "at": 1795379644565
   },
   "merai bar boston ma": {
     "miss": true,
@@ -1279,6 +1596,15 @@
     "miss": true,
     "at": 1795366345981
   },
+  "namo miami fl": {
+    "miss": true,
+    "at": 1795379610218
+  },
+  "ne washington dc": {
+    "lat": 38.897643,
+    "lng": -77.006146,
+    "source": "nominatim"
+  },
   "new orleans la": {
     "lat": 29.957466,
     "lng": -90.062949,
@@ -1303,6 +1629,10 @@
     "lng": -77.11447,
     "source": "nominatim"
   },
+  "olastudionyc brooklyn ny": {
+    "miss": true,
+    "at": 1795379619356
+  },
   "onli houston tx": {
     "miss": true,
     "at": 1795371848506
@@ -1315,6 +1645,10 @@
   "paint your heart out washington va": {
     "miss": true,
     "at": 1795371621272
+  },
+  "panya brooklyn new york ny": {
+    "miss": true,
+    "at": 1795379616250
   },
   "parkside pharmacy sacramento ca": {
     "lat": 38.536845,
@@ -1368,6 +1702,10 @@
     "miss": true,
     "at": 1795371879030
   },
+  "pip phoenix az": {
+    "miss": true,
+    "at": 1795379607180
+  },
   "pittsburgh pa": {
     "lat": 40.440697,
     "lng": -80.002567,
@@ -1392,6 +1730,10 @@
     "lng": -78.639099,
     "source": "nominatim"
   },
+  "renegade craft fair chicago il": {
+    "miss": true,
+    "at": 1795378915772
+  },
   "resident company club - flatiron new york ny": {
     "miss": true,
     "at": 1795374374309
@@ -1399,6 +1741,14 @@
   "restaurant of the week houston tx": {
     "miss": true,
     "at": 1795374291033
+  },
+  "rogers park & swap chicago il": {
+    "miss": true,
+    "at": 1795379609243
+  },
+  "roots it miami fl": {
+    "miss": true,
+    "at": 1795379628406
   },
   "sacramento ca": {
     "lat": 38.581061,
@@ -1429,6 +1779,10 @@
     "lng": -122.40752,
     "source": "nominatim"
   },
+  "sandy springs farmers market atlanta ga": {
+    "miss": true,
+    "at": 1795379642809
+  },
   "seattle wa": {
     "lat": 47.603832,
     "lng": -122.330062,
@@ -1447,18 +1801,49 @@
     "miss": true,
     "at": 1795351941124
   },
+  "southern steer butcher orlando orlando fl": {
+    "miss": true,
+    "at": 1795379597324
+  },
   "st noir cafe new orleans la": {
     "miss": true,
     "at": 1795366351510
+  },
+  "st petersburg fl": {
+    "lat": 27.771226,
+    "lng": -82.634026,
+    "source": "nominatim"
   },
   "stillroom irvington ny": {
     "miss": true,
     "at": 1795374357981
   },
+  "sunrise mart new york ny": {
+    "lat": 40.752418,
+    "lng": -73.980734,
+    "source": "nominatim"
+  },
+  "sunrise mart step new york ny": {
+    "miss": true,
+    "at": 1795379617519
+  },
+  "sweetgreen wynwood miami fl": {
+    "lat": 25.801677,
+    "lng": -80.198981,
+    "source": "nominatim"
+  },
   "tampa fl": {
     "lat": 27.944985,
     "lng": -82.458311,
     "source": "nominatim"
+  },
+  "thaiyo san diego ca": {
+    "miss": true,
+    "at": 1795379454606
+  },
+  "the anime edit miami fl": {
+    "miss": true,
+    "at": 1795379627470
   },
   "the artisans bazaar at fort greene park brooklyn ny": {
     "miss": true,
@@ -1477,6 +1862,11 @@
     "miss": true,
     "at": 1795371623937
   },
+  "the row washington dc": {
+    "lat": 38.910817,
+    "lng": -77.045656,
+    "source": "nominatim"
+  },
   "the well studio san francisco ca": {
     "miss": true,
     "at": 1795366333768
@@ -1490,6 +1880,10 @@
     "lat": 42.007764,
     "lng": -87.666528,
     "source": "nominatim"
+  },
+  "tiny basket washington dc": {
+    "miss": true,
+    "at": 1795379573942
   },
   "toppedoffco houston tx": {
     "miss": true,
@@ -1537,6 +1931,10 @@
   "viviette vintage los angeles ca": {
     "miss": true,
     "at": 1795371596128
+  },
+  "vvv december washington dc": {
+    "miss": true,
+    "at": 1795379576033
   },
   "washington dc": {
     "lat": 38.895098,
