@@ -71,7 +71,7 @@ test("status and 30-day expiry", () => {
 test("output is sorted by start and has only schema keys", () => {
   const r = mergeEvents([], [cand({ start: "2026-12-20T10:00:00-08:00", end: null, venue: "B" }), cand({ venue: "A" })], { now });
   assert.deepEqual(r.events.map((e) => e.venue), ["A", "B"]);
-  assert.equal(Object.keys(r.events[0]).length, 29);
+  assert.equal(Object.keys(r.events[0]).length, 31);
 });
 
 test("robots rules: longest match wins, wildcards", () => {
@@ -91,4 +91,31 @@ test("mato slug dates", () => {
   assert.equal(slugDate("holiday-cookie-buffet-14-dec-2026"), Date.UTC(2026, 11, 14));
   assert.equal(slugDate("matcha-pilates-social-2026-10-24"), Date.UTC(2026, 9, 24));
   assert.equal(slugDate("no-date"), null);
+});
+
+test("migrateEvent copies kind and category from the source, with defaults when it is missing", async () => {
+  const { migrateEvent } = await import("../ingest/lib/write.js");
+  const e = { ...cand(), id: "a1" };
+  const a = migrateEvent(e, { kind: "cafe", category: "coffee" });
+  assert.equal(a.kind, "cafe");
+  assert.equal(a.category, "coffee");
+  const b = migrateEvent(e, null);
+  assert.equal(b.kind, "popup");
+  assert.equal(b.category, "matcha");
+  const c = migrateEvent({ ...e, source_id: "mato:some-venue", kind: "organizer" }, null);
+  assert.equal(c.kind, "popup");
+  assert.equal(c.category, "matcha");
+  for (const title of ["Moody Matcha Workshop", "Matcha + Meetup", "Tea Tasting", "Matcha 101", "Whisk Club", "Latte Art Class"]) assert.equal(migrateEvent({ ...e, source_id: "mato:x", title }, null).kind, "organizer", title);
+  const d = migrateEvent({ ...e, title: "Matcha Pop-Up", source_id: "promoted" }, { kind: "organizer", category: "other", kind_note: "Found on MATO; only its matcha events are kept." });
+  assert.equal(d.kind, "popup");
+  assert.equal(d.category, "matcha");
+});
+test("the MATO pseudo-source is an organizer and candidates carry the source kind", async () => {
+  const { itemToCandidates } = await import("../ingest/lib/pipeline.js");
+  const { pseudoSource } = await import("../ingest/lib/watchlist.js");
+  const ps = pseudoSource({ platform: "instagram", handle: "x", notes: "" });
+  assert.ok(ps.id);
+  const raw = { source_url: "https://e.com/p", text: "Matcha pop-up Sat Dec 6 11am-3pm at Sunny Books, 1 Main St, Los Angeles CA", title: "Matcha pop-up", published_at: "2026-11-20T00:00:00Z", handle: "x", images: [] };
+  const cs = await itemToCandidates(raw, { id: "s1", brand: "B", kind: "festival", category: "dessert" }, now, "x");
+  for (const c of cs) { assert.equal(c.kind, "festival"); assert.equal(c.category, "dessert"); }
 });

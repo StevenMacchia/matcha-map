@@ -16,7 +16,7 @@ It is not a review site. It is not a store finder for permanent cafes. Pop-ups a
 |---|---|
 | id | Slug, unique. |
 | brand | Display name. |
-| kind | `popup`, `cafe`, `venue`, `tea-brand`, `organizer` or `festival`. What sort of source it is; definitions in `data/KINDS.md`. The site shows `popup` by default and the filter widens to the rest. |
+| kind | `popup`, `cafe`, `venue`, `tea-brand`, `organizer` or `festival`. What sort of source it is; definitions in `data/KINDS.md`. The site shows every kind of matcha event by default; Show can narrow to `popup`. |
 | category | `matcha`, `coffee`, `boba`, `bakery`, `dessert` or `other`. What the brand mainly serves; `matcha` for everything today, the rest are for later expansion. |
 | kind_note | One short line on why, for anything that is not `popup`; null otherwise. |
 | home_city, home_state | Where the brand is based. State is two letters. |
@@ -196,7 +196,7 @@ If env `CLAUDE_API_KEY` is set, an optional Claude step (model `claude-sonnet-5-
 
 ## 8. The site
 
-A static page in `site/`. Plain HTML, CSS and JS. No build step to run it. MapLibre GL JS or Leaflet from a pinned CDN version, with OpenStreetMap raster tiles and the required attribution. It reads `site/data/events.json`, copied from `data/events.json` by the ingest step.
+A static page in `site/`. Plain HTML, CSS and JS. No build step to run it. MapLibre GL JS from a pinned CDN version over OpenFreeMap vector tiles, with the required OpenStreetMap attribution. It reads `site/data/events.json`, copied from `data/events.json` by the ingest step.
 
 Phone first at 390px, then 1440px.
 
@@ -209,6 +209,8 @@ Features:
 - A list view that mirrors the map.
 - A card per event: brand, when, address, a link to the source post. Few words.
 - Confidence shown as one small word, only when it is not confirmed.
+- What counts (see data/KINDS.md): every event carries `kind` and `category` copied from its source. The map, list and brand layer show category `matcha` with every kind on by default. One "Show" pill in the filter row, after the date chips, opens a small popover (a positioned panel, not a dialog; closes on outside tap and Escape). It holds a first switch, "Pop-up brands only" (off; when on it keeps kind `popup` and greys out the kind boxes), then checkboxes for kinds, all on by default (Pop-ups, Cafes that pop up, Classes and meetups, Festivals, Hosts and venues, Tea brands) and, under a thin rule, categories (Matcha on; Coffee, Boba, Bakery, Dessert, Other off). A count badge ("Show · 3") counts the choices that differ from the default. On phones (640px and under) the date chips keep their sideways-scrolling row and Show, Near me and the zip box sit in a second, non-scrolling row. The choice is kept in localStorage. Cards and rows show the kind as a tiny muted word only when it is not a pop-up.
+- Zip search: a zip field and Go button next to "Near me". The first use loads `site/data/zips.json` (GeoNames centroids, CC BY 4.0), flies to the zip at zoom 10, drops Chasen there, sorts the list by distance and keeps the zip in localStorage. A "Near 27601 · Clear" row sits under the chips. An unknown zip shakes the field and says "No such zip" for 3 seconds. Near me and a zip clear each other.
 
 Look: quiet. No dashboards, no gamified chrome, no gradients for their own sake.
 

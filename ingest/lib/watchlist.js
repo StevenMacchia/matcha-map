@@ -101,6 +101,7 @@ export function pseudoSource(acc) {
       id: acc.source_id || `mato:${mv.slug}`, brand: mv.brand || acc.handle, home_city: mv.city, home_state: mv.state,
       website: null, instagram: looksLikeHandle(mv.slug) ? mv.slug : null, tiktok: null,
       schedule_url: `https://ma.to/venue/${mv.slug}`, schedule_kind: "website", adapter: "mato", active: true,
+      kind: "popup", category: "matcha",
     };
   }
   return {
@@ -129,7 +130,7 @@ export function promote(wl, sources, { now = new Date(), graphOn = false } = {})
       out.push({
         id, brand: mv.brand || acc.handle, home_city: mv.city, home_state: mv.state, website: null, instagram: looksLikeHandle(mv.slug) ? mv.slug : null, tiktok: null,
         schedule_url: `https://ma.to/venue/${mv.slug}`, schedule_kind: "website", adapter: "mato", active: true,
-        kind: "organizer", category: "other", kind_note: "Found on MATO; only its matcha events are kept.",
+        kind: "popup", category: "matcha", kind_note: "Found on MATO; only its matcha events are kept. Classes and meetups are marked per event.",
         notes: `Found on MATO (${acc.found_from}). Brand name and city come from the MATO listing; check them.`,
         added: day, verified: null,
       });

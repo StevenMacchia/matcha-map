@@ -3,7 +3,7 @@ import fs from "node:fs";
 import { extract, richFields } from "./extract.js";
 import { downloadImages, pruneImages } from "./images.js";
 import { improve } from "./llm.js";
-import { eventId, mergeEvents, readEvents, writeEvents, endMs, KEEP_PAST_DAYS } from "./write.js";
+import { matoKind, isMatoSource, eventId, mergeEvents, readEvents, writeEvents, endMs, KEEP_PAST_DAYS } from "./write.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 
@@ -12,7 +12,8 @@ export async function itemToCandidates(raw, source, now, handle) {
   let cands = extract(raw, { source, now });
   cands = await improve(cands, raw, { now });
   const rich = richFields(raw, source);
-  return cands.map((c) => ({ ...c, ...rich, brand: source.brand, source_id: source.id, handle: raw.handle || handle || null }));
+  const mato = isMatoSource(source.id, source);
+  return cands.map((c) => ({ ...c, ...rich, ...(mato ? { kind: matoKind(c.title), category: "matcha" } : { kind: source.kind || "popup", category: source.category || "matcha" }), brand: source.brand, source_id: source.id, handle: raw.handle || handle || null }));
 }
 
 // processItems(items, source, {now, handle}) -> { candidates, popupAt }.

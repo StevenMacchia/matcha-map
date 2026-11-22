@@ -29,6 +29,10 @@
         "id",
         "brand",
         "source_id",
+        "kind",
+        "category",
+        "kind",
+        "category",
         "handle",
         "source_url",
         "title",
@@ -66,6 +70,28 @@
         },
         "source_id": {
           "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "popup",
+            "cafe",
+            "venue",
+            "tea-brand",
+            "organizer",
+            "festival"
+          ],
+          "description": "Copied from the source. The site shows popup by default. See data/KINDS.md."
+        },
+        "category": {
+          "enum": [
+            "matcha",
+            "coffee",
+            "boba",
+            "bakery",
+            "dessert",
+            "other"
+          ],
+          "description": "Copied from the source. The site shows matcha by default."
         },
         "handle": {
           "type": [

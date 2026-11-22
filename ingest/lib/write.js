@@ -32,10 +32,10 @@ export function computeStatus(e, now) {
 const stepDown = (c, n) => CONF[Math.max(0, CONF.indexOf(c) - n)];
 
 // Fields of the schema, in a stable order, so candidates carry no extra keys.
-const FIELDS = ["id", "brand", "source_id", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "posts", "menu", "price", "description", "links"];
+const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "posts", "menu", "price", "description", "links"];
 const emptyPosts = () => ({ instagram: null, tiktok: null, other: null });
 const emptyLinks = () => ({ website: null, instagram: null, tiktok: null });
-const DEFAULTS = { menu: () => [], posts: emptyPosts, links: emptyLinks };
+const DEFAULTS = { menu: () => [], posts: emptyPosts, links: emptyLinks, kind: () => "popup", category: () => "matcha" };
 export function clean(e) {
   const o = {};
   for (const k of FIELDS) {
@@ -47,6 +47,11 @@ export function clean(e) {
   o.menu = (Array.isArray(o.menu) ? o.menu : []).slice(0, 8);
   return o;
 }
+
+// MATO finds: the slug is nearly always the brand's own handle, so they are pop-ups, unless the title says class, workshop, meetup, tasting, 101 or club.
+export const MATO_ORGANIZER = /\b(class(es)?|workshop|meet-?up|tasting|101|club)\b/i;
+export const isMatoSource = (id, source) => String(id || "").startsWith("mato:") || /Found on MATO/.test(source?.kind_note || "");
+export const matoKind = (title) => (MATO_ORGANIZER.test(String(title || "")) ? "organizer" : "popup");
 
 // One-off migration: an event saved before the card fields existed gets them defaulted.
 // posts come from source_url when it is an Instagram or TikTok post; links come from its source.
@@ -63,6 +68,9 @@ export function migrateEvent(e, source = null) {
     links.tiktok = links.tiktok || (source.tiktok ? `https://www.tiktok.com/@${source.tiktok}` : null);
   }
   m.links = links;
+  // kind and category come from the source; MATO finds with no source record are organizers, anything else unknown is a matcha pop-up.
+  if (isMatoSource(e.source_id, source)) { m.kind = matoKind(e.title); m.category = "matcha"; }
+  else { m.kind = source?.kind || e.kind || "popup"; m.category = source?.category || e.category || "matcha"; }
   return clean(m);
 }
 

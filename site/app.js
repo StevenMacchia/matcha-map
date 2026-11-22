@@ -10,7 +10,7 @@
   var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  var state = { chip: "any", day: "", recent: false, userLoc: null, events: [], brands: [], view: "map" };
+  var state = { chip: "any", day: "", recent: false, userLoc: null, zip: "", events: [], brands: [], view: "map" };
   var items = {};     // key -> item { kind, key, ll:[lat,lng], data, past, name }
   var live = {};      // marker id -> { marker, el, kind, key, count }
   var openKey = null;
@@ -144,7 +144,7 @@
   // and exist only so the sources load.
   function addData() {
     if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(visibleEvents()), cluster: true, clusterRadius: 56, clusterMaxZoom: 13 });
-    if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: featureColl(state.brands), cluster: true, clusterRadius: 44, clusterMaxZoom: 12 });
+    if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: featureColl(visibleBrands()), cluster: true, clusterRadius: 44, clusterMaxZoom: 12 });
     ["ev", "br"].forEach(function (s) {
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
@@ -329,7 +329,7 @@
     if (safeUrl(L.instagram)) links.push(["Instagram", L.instagram]);
     if (safeUrl(L.tiktok)) links.push(["TikTok", L.tiktok]);
     links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng]);
-    return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + "<span>" + esc(e.brand) + tag + "</span></h3>" +
+    return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + "<span>" + esc(e.brand) + tag + "</span></h3>" + kindWord(e) +
       "<p class=\"when\">" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
       "<p class=\"muted\">" + esc(line2) + "</p>" + menuHTML(e) +
       (e.description ? "<p class=\"desc muted\">" + esc(e.description) + "</p>" : "") + linksHTML(links) + "</div>";
@@ -340,7 +340,7 @@
     if (b.instagram) links.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(b.instagram) + "/"]);
     if (b.tiktok) links.push(["TikTok", "https://www.tiktok.com/@" + encodeURIComponent(b.tiktok)]);
     if (safeUrl(b.schedule_url) && b.schedule_url !== b.website) links.push(["Schedule", b.schedule_url]);
-    return "<div class=\"card bcard\"><h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3>" +
+    return "<div class=\"card bcard\"><h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3>" + kindWord(b) +
       "<p class=\"muted\">" + esc(b.home_city + ", " + b.home_state) + "</p>" +
       "<p class=\"when\">No dates posted here yet</p>" + linksHTML(links) + "</div>";
   }
@@ -462,9 +462,38 @@
     state.brands = out;
   }
 
+  // ---------- what counts: kind and category (data/KINDS.md) ----------
+  var KINDS = ["popup", "cafe", "organizer", "festival", "venue", "tea-brand"], CATS = ["matcha", "coffee", "boba", "bakery", "dessert", "other"];
+  var KIND_WORD = { cafe: "cafe", organizer: "class", festival: "festival", venue: "host", "tea-brand": "tea brand" };
+  // Default: category matcha, every kind on. "Pop-up brands only" keeps kind popup.
+  var show = { po: false, k: {}, c: { matcha: true } };
+  KINDS.forEach(function (k) { show.k[k] = true; });
+  try {
+    var sv = JSON.parse(localStorage.getItem("matchamap.show2") || "null");
+    if (sv && Array.isArray(sv.k) && Array.isArray(sv.c)) {
+      show = { po: !!sv.po, k: {}, c: {} };
+      sv.k.forEach(function (k) { if (KINDS.indexOf(k) >= 0) show.k[k] = true; });
+      sv.c.forEach(function (c) { if (CATS.indexOf(c) >= 0) show.c[c] = true; });
+    }
+  } catch (e) { /* ignore */ }
+  function passesShow(o) {
+    var k = o.kind || "popup";
+    return (show.po ? k === "popup" : !!show.k[k]) && !!show.c[o.category || "matcha"];
+  }
+  // How many choices differ from the default (the badge number).
+  function showDiff() {
+    var n = show.po ? 1 : 0;
+    if (!show.po) KINDS.forEach(function (k) { if (!show.k[k]) n++; });
+    CATS.forEach(function (c) { if (!!show.c[c] !== (c === "matcha")) n++; });
+    return n;
+  }
+  function kindWord(o) { return KIND_WORD[o.kind] ? "<span class=\"kindword\">" + KIND_WORD[o.kind] + "</span>" : ""; }
+  function visibleBrands() { return state.brands.filter(function (it) { return passesShow(it.data); }); }
+
   function visibleEvents() {
     return state.events.filter(function (it) {
       var e = it.data;
+      if (!passesShow(e)) return false;
       if (e.status === "cancelled") return false;
       if (e.status === "past") {
         if (!state.recent) return false;
@@ -479,7 +508,7 @@
     var src = map.getSource("ev");
     if (src) src.setData(featureColl(visibleEvents()));
     var b = map.getSource("br");
-    if (b && !b._mmSet) { b.setData(featureColl(state.brands)); b._mmSet = true; }
+    if (b) b.setData(featureColl(visibleBrands()));
     renderList(stagger);
   }
 
@@ -495,11 +524,11 @@
       var thumb = src
         ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"56\" height=\"56\" loading=\"lazy\" decoding=\"async\"" + (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + "></span>"
         : "<span class=\"th th-face\">" + THUMB_FACE + "</span>";
-      return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong><span class=\"when\">" +
+      return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong>" + kindWord(e) + "<span class=\"when\">" +
         esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" +
         (m ? "<span class=\"menu-prev\">" + esc(m) + "</span>" : "") + dist + "</span></button>";
     }
-    return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-mochi\" aria-hidden=\"true\"><span class=\"mochi\"></span></span><span class=\"rt\"><strong>" + esc(it.data.brand) + "</strong><span>" +
+    return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-mochi\" aria-hidden=\"true\"><span class=\"mochi\"></span></span><span class=\"rt\"><strong>" + esc(it.data.brand) + "</strong>" + kindWord(it.data) + "<span>" +
       esc(it.data.home_city + ", " + it.data.home_state) + " · No dates posted here yet</span>" + dist + "</span></button>";
   }
 
@@ -512,7 +541,7 @@
     var cmp = state.userLoc ? function (a, b) { return distOf(a) - distOf(b); } : byStart;
     up.sort(cmp);
     past.sort(state.userLoc ? cmp : function (a, b) { return -byStart(a, b); });
-    var brands = state.brands.filter(function (it) { return inView(it.ll); });
+    var brands = visibleBrands().filter(function (it) { return inView(it.ll); });
     brands.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
 
     $("empty").hidden = vis.length > 0 || (state.chip === "any" && !state.day);
@@ -624,25 +653,131 @@
     note.hidden = false;
   }
 
-  // ---------- near me ----------
-  var youMarker = null;
+  // ---------- near me and zip ----------
+  // One "you are here" marker: a dot for Near me, Chasen for a zip. Each clears the other.
+  var youMarker = null, ZIP_KEY = "matchamap.zip";
+  function placeYou(ll, zip) {
+    state.userLoc = ll;
+    if (youMarker) youMarker.remove();
+    var el = document.createElement("span");
+    el.className = "you" + (zip ? " you-zip" : "");
+    el.innerHTML = "<span class=\"ring\"></span><span class=\"ring r2\"></span>" + (zip ? "" : "<span class=\"you-dot\"></span>");
+    if (zip) el.appendChild(drawChar("c-chasen", "you-chasen"));
+    youMarker = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(lngLat(ll)).addTo(map);
+    return el;
+  }
+  function clearYou() {
+    if (youMarker) { youMarker.remove(); youMarker = null; }
+    state.userLoc = null; state.zip = "";
+    $("nearrow").hidden = true;
+    try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ }
+  }
   $("near").addEventListener("click", function () {
     var note = $("note");
     if (!navigator.geolocation) { oops("Location is off. Pan the map instead."); return; }
     navigator.geolocation.getCurrentPosition(function (pos) {
       note.hidden = true;
-      state.userLoc = [pos.coords.latitude, pos.coords.longitude];
-      if (youMarker) youMarker.remove();
-      var el = document.createElement("span");
-      el.className = "you";
-      el.innerHTML = "<span class=\"ring\"></span><span class=\"ring r2\"></span><span class=\"you-dot\"></span>";
-      youMarker = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(lngLat(state.userLoc)).addTo(map);
+      clearYou();
+      $("zip").value = "";
+      var el = placeYou([pos.coords.latitude, pos.coords.longitude], false);
       if (state.view === "list") setView("map");
       moveMap({ center: lngLat(state.userLoc), zoom: 10 }, function () { animOnce(el, "ping"); renderList(true); });
     }, function () {
       oops("Location is off. Pan the map instead.");
     }, { timeout: 10000, maximumAge: 300000 });
   });
+
+  var zipsP = null;
+  function loadZips() {
+    if (!zipsP) {
+      var ld = $("loading");
+      ld.hidden = false;
+      zipsP = fetch("data/zips.json").then(function (r) { if (!r.ok) throw new Error("zips"); return r.json(); }).then(function (z) { ld.hidden = true; return z; }, function (err) { ld.hidden = true; zipsP = null; throw err; });
+    }
+    return zipsP;
+  }
+  var zipErrT = null;
+  function zipError(text) {
+    var inp = $("zip"), er = $("zip-err");
+    er.textContent = text || "No such zip";
+    var r = inp.getBoundingClientRect();
+    er.style.left = Math.max(8, Math.min(r.left, window.innerWidth - 150)) + "px";
+    er.style.top = (r.bottom + 6) + "px";
+    er.hidden = false;
+    animOnce(inp, "shake");
+    clearTimeout(zipErrT);
+    zipErrT = setTimeout(function () { er.hidden = true; }, 3000);
+  }
+  // Fly to a zip's centroid. quiet: a return visit, so no error and the map jumps there.
+  function goZip(zip, quiet) {
+    if (!/^\d{5}$/.test(zip)) { if (!quiet) zipError("No such zip"); return; }
+    loadZips().then(function (z) {
+      var c = Object.prototype.hasOwnProperty.call(z, zip) ? z[zip] : null;
+      if (!c || !isFinite(c[0]) || !isFinite(c[1])) {
+        if (!quiet) zipError("No such zip"); else { try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ } }
+        return;
+      }
+      $("zip-err").hidden = true;
+      closeCard(true);
+      clearYou();
+      state.zip = zip;
+      $("zip").value = zip;
+      var el = placeYou([c[0], c[1]], true);
+      $("nearzip").textContent = zip;
+      $("nearrow").hidden = false;
+      try { localStorage.setItem(ZIP_KEY, zip); } catch (e) { /* ignore */ }
+      if (state.view === "list") setView("map");
+      var opts = { center: lngLat(state.userLoc), zoom: 10 };
+      if (quiet) { map.jumpTo(opts); animOnce(el, "ping"); renderList(false); }
+      else moveMap(opts, function () { animOnce(el, "ping"); renderList(true); });
+    }).catch(function () { if (!quiet) zipError("Zip list did not load"); });
+  }
+  $("zip").addEventListener("input", function () { this.value = this.value.replace(/\D/g, "").slice(0, 5); });
+  $("zip").addEventListener("keydown", function (ev) { if (ev.key === "Enter") { ev.preventDefault(); goZip(this.value, false); } });
+  $("zip-go").addEventListener("click", function () { goZip($("zip").value, false); });
+  $("nearclear").addEventListener("click", function () { clearYou(); $("zip").value = ""; renderList(true); $("zip").focus(); });
+
+  // ---------- show: which kinds and categories ----------
+  var showBtn = $("show-btn"), showPop = $("show-pop");
+  function syncShow() {
+    $("show-po").checked = show.po;
+    showPop.querySelectorAll("[data-kind]").forEach(function (i) { i.checked = !!show.k[i.getAttribute("data-kind")]; i.disabled = show.po; i.parentNode.classList.toggle("off", show.po); });
+    showPop.querySelectorAll("[data-cat]").forEach(function (i) { i.checked = !!show.c[i.getAttribute("data-cat")]; });
+    var n = showDiff(), badge = $("show-n");
+    badge.hidden = n === 0;
+    badge.textContent = " · " + n;
+    showBtn.setAttribute("aria-label", n === 0 ? "Show" : "Show, " + n + " changed");
+  }
+  function placeShow() {
+    var r = showBtn.getBoundingClientRect(), w = showPop.offsetWidth || 260;
+    showPop.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8)) + "px";
+    showPop.style.top = (r.bottom + 6) + "px";
+  }
+  function openShow() { showPop.hidden = false; showBtn.setAttribute("aria-expanded", "true"); placeShow(); animOnce(showPop, "pop-in"); }
+  function closeShow(back) {
+    if (showPop.hidden) return;
+    showPop.hidden = true; showBtn.setAttribute("aria-expanded", "false");
+    if (back) showBtn.focus();
+  }
+  showBtn.addEventListener("click", function () { if (showPop.hidden) openShow(); else closeShow(); });
+  showPop.addEventListener("change", function (ev) {
+    var t = ev.target, k = t.getAttribute("data-kind"), c = t.getAttribute("data-cat");
+    if (t.id === "show-po") show.po = t.checked;
+    if (k) { if (t.checked) show.k[k] = true; else delete show.k[k]; }
+    if (c) { if (t.checked) show.c[c] = true; else delete show.c[c]; }
+    try { localStorage.setItem("matchamap.show2", JSON.stringify({ po: show.po, k: Object.keys(show.k), c: Object.keys(show.c) })); } catch (e) { /* ignore */ }
+    syncShow();
+    closeCard(true);
+    refreshEvents(true);
+  });
+  document.addEventListener("pointerdown", function (ev) {
+    if (showPop.hidden || showPop.contains(ev.target) || showBtn.contains(ev.target)) return;
+    closeShow();
+  });
+  document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && !showPop.hidden) { ev.stopPropagation(); closeShow(true); } }, true);
+  window.addEventListener("resize", function () { if (!showPop.hidden) placeShow(); });
+  document.querySelectorAll(".filters, .frow1").forEach(function (f) { f.addEventListener("scroll", function () { closeShow(); }); });
+  syncShow();
 
   // ---------- about ----------
   var about = $("about"), aboutOpener = null;
@@ -789,6 +924,8 @@
     setupHawaii();
     var go = function () { syncZoomFace(); refreshEvents(false); };
     go(); // sources added later by addData (style.load) start from the same lists
+    var zs = ""; try { zs = localStorage.getItem(ZIP_KEY) || ""; } catch (e) { /* ignore */ }
+    if (/^\d{5}$/.test(zs)) goZip(zs, true);
   }).catch(function () {
     oops("Could not load pop-ups. Try again in a moment.");
   }).then(function () { $("loading").hidden = true; });

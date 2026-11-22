@@ -2,7 +2,7 @@
 
 ## What this is
 
-A map of matcha pop-ups across America, by day, so you can find one near you when you are free. It is a plain HTML site on Leaflet and OpenStreetMap, fed by a small ingest script that writes `data/events.json`.
+A map of matcha pop-ups across America, by day, so you can find one near you when you are free. It is a plain HTML site on MapLibre GL over OpenFreeMap vector tiles (map data from OpenStreetMap contributors, attribution shown on the map and in About), fed by a small ingest script that writes `data/events.json`.
 
 Coverage, as of 2026-11-22: 151 brands in 31 states (82 with an Instagram handle, 2 with TikTok, 50 with a public schedule page), 39 pop-ups on file, 23 upcoming from 12 brands, 25 of them with a downloaded photo. The other brands post dates on Instagram or TikTok only, so they show as a pin with no dates until a post is added by hand.
 
@@ -13,6 +13,7 @@ No `npm install` is needed. Node 20 or newer.
 - `npm run dev` serves `site/` at http://localhost:8790 with `tools/serve.js`, a plain Node static server, so nothing is downloaded. Another port: `npm run dev -- --port 8791`. (`npx serve site -l 8790` also works if you have it.)
 - `npm run ingest` reads every active source and rewrites `data/events.json`, then copies it and `data/sources.json` into `site/data/`. It takes about a minute on a cold cache and caches fetches and geocodes in `.cache/` and `data/geocache.json`.
 - `npm test` runs the unit tests.
+- Type a zip to jump there: the site flies to the zip's centroid, drops Chasen on it, sorts the list by distance and remembers the zip. `node tools/gen-zips.js` rebuilds `site/data/zips.json`.
 - `npm run refresh` runs discover, watch and ingest once, in that order. `npm run loop` does the same every 6 hours while the window stays open. See "Run it on a schedule".
 
 Ingest flags: `--source <id>`, `--paste`, `--inbox`, `--no-fetch`, `--dry`, `--verbose`.
@@ -46,6 +47,7 @@ Only real, public posts. Nothing is invented.
 
 ## Where the data comes from
 
+- Zip centroids (`site/data/zips.json`): GeoNames postal codes, CC BY 4.0, https://www.geonames.org.
 - MATO venue pages: event pages are read through their JSON-LD.
 - Luma calendars: embedded page data, with the calendar's ICS feed as a fallback.
 - Brand pages: schedule or events pages on a brand's own site, read by rule.
@@ -97,7 +99,7 @@ The map keeps a watch list of accounts in `data/watchlist.json` (every Instagram
 
 ## Deploy later
 
-Nothing is deployed yet. The plan is Cloudflare Pages serving the `site/` folder, with `npm run ingest` run before each publish. The pages load Leaflet from unpkg with pinned versions and SRI hashes.
+Nothing is deployed yet. The plan is Cloudflare Pages serving the `site/` folder, with `npm run ingest` run before each publish. The pages load MapLibre GL from unpkg with pinned versions and SRI hashes.
 
 ## Layout
 
@@ -105,7 +107,7 @@ Nothing is deployed yet. The plan is Cloudflare Pages serving the `site/` folder
 - `ingest/`: `run.js`, `watch.js`, `loop.js`, `adapters/` (one per source kind) and `lib/` (fetch, extract, geocode, write).
 - `data/`: `sources.json`, `events.json`, `inbox/`, `schema/`, geocode cache and overrides.
 - `docs/`: setup notes. `.github/workflows/`: the 6-hour watch job.
-- `tools/`: `serve.js` (dev server), `windows-task.ps1`, `merge-sources.js`, `gen-cities.js`.
+- `tools/`: `serve.js` (dev server), `windows-task.ps1`, `merge-sources.js`, `gen-cities.js`, `gen-zips.js`.
 - `test/`: unit tests.
 - `SPEC.md`: the contract. `LADDER.md`: the build log.
 
