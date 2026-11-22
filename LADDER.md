@@ -28,6 +28,8 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 | 20 | Drawn cards | Sonnet subagent | done | When a pop-up has no photo, the card draws its own in the house style: Mattie, brand, flavors, day, place. | all-models 17% |
 | 21 | Storefronts | Sonnet subagent | running | A third layer of little store icons for permanent matcha shops, from OpenStreetMap (Overpass) plus our cafe-kind brands; own cluster colour, card with address, hours, website, Instagram, Directions; toggle under Show. | |
 | 22 | Instagram by handle | Sonnet subagent | running | Search every known Instagram handle and watched creator through Tavily for recent posts, read the post date from the snippet so relative dates resolve, neighbourhood queries for NYC and LA, a MarketSpread vendor adapter, a check of pop-up aggregator sites. | |
+| 23 | Break the ceiling, sources | Sonnet subagent | running | Open-data temporary food permits (NYC, LA, SF), seasonal market vendor rosters, RSS feeds of city food newsletters and Google Alerts, Bluesky open search, public embed captions for human-submitted links. | |
+| 24 | Break the ceiling, intake | Sonnet subagent | pending | "Add a pop-up" on the site with a Pages Function queue, a one-click bookmarklet for posts you are viewing, a Get-on-the-map page and outreach template. Starts after rung 21. | |
 
 ## Log
 
