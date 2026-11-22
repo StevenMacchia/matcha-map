@@ -1,0 +1,70 @@
+# Instagram setup (one time)
+
+The map reads Instagram only through Meta's official Graph API. It never logs in as you, never uses cookies, and never scrapes. Until you finish these steps the Instagram parts stay off and the map still works from websites, Luma, MATO and pasted posts.
+
+Plan about 45 minutes. Meta changes its menus often, so names below may differ a little.
+
+## What you need
+
+- A Facebook account.
+- A Facebook Page you manage (any Page; it can be empty).
+- An Instagram professional account (business or creator) linked to that Page. This is the account the map asks questions "as". It does not need to post anything.
+
+## Steps
+
+1. Go to developers.facebook.com and log in. Click **Get Started** and finish the developer registration.
+2. Click **Create App**. Pick the **Business** type (or "Other", then Business). Name it "Matcha Map". Add your email.
+3. If your Instagram account is personal, open Instagram, then Settings, then **Account type and tools**, then **Switch to professional account**. Pick Business or Creator.
+4. Link Instagram to your Facebook Page. In Instagram: Settings, **Account Center** (or "Linked accounts"), connect the Page. Or in Facebook Page settings: **Linked accounts**, then Instagram.
+5. In your app dashboard, click **Add Product** and add **Instagram** (the Instagram API with Facebook Login, "Instagram Graph API").
+6. Open **Tools**, then **Graph API Explorer**. In the right panel choose your app as "Meta App" and "User Token" as the token type.
+7. Under Permissions add these, then click **Generate Access Token** and approve the dialog (pick your Page and Instagram account when asked):
+   - `instagram_basic`
+   - `pages_show_list`
+   - `pages_read_engagement`
+   - `instagram_manage_insights` (Meta's Business Discovery page lists it as required, so add it.)
+   Hashtag search also needs the **Instagram Public Content Access** feature. In App Review you can request it; in development mode with your own accounts it works for people with a role on the app.
+8. Copy the short-lived token. It lasts about an hour.
+9. Exchange it for a long-lived token (60 days). Open this address in a browser, with your values filled in:
+   `https://graph.facebook.com/v21.0/oauth/access_token?grant_type=fb_exchange_token&client_id=APP_ID&client_secret=APP_SECRET&fb_exchange_token=SHORT_TOKEN`
+   APP_ID and APP_SECRET are under **App settings, Basic**. The reply holds `access_token`. That is your long-lived token. Keep the app secret private.
+10. Find your Page id. In Graph API Explorer, with the long-lived token, run `me/accounts`. Copy the `id` of your Page.
+11. Find your Instagram id. Run `PAGE_ID?fields=instagram_business_account`. Copy the number inside `instagram_business_account`, the `id`.
+12. Copy `.env.example` to `.env` in the repo and fill in:
+    ```
+    INSTAGRAM_TOKEN=the long-lived token
+    INSTAGRAM_BUSINESS_ID=the instagram_business_account id
+    ```
+    `.env` is git-ignored. Never commit it. On GitHub, add the same two values as repository secrets of the same names (Settings, Secrets and variables, Actions).
+13. Test it: `npm run watch -- --dry --handle rockysmatcha`. The "Instagram Graph: off" line should be gone.
+
+## Refreshing the token
+
+A long-lived token lasts 60 days and must be replaced before it expires. Generate a fresh short-lived token in the Explorer (steps 6 to 8) and repeat step 9. Put a reminder in your calendar for day 50. If it expires, redo steps 6 to 9. The map logs a Graph error and keeps running without Instagram.
+
+## Limits, in plain words
+
+- Business Discovery and hashtag search count against Meta's **platform rate limit**: about 200 calls per hour times the number of app users, counted per rolling hour (errors 4 and 17). The map keeps its own stricter counter of 200 calls per hour in `.cache/ig-rate.json` and stops early with a log line. One account check is one call, so 31 accounts a day is nothing. Hashtags cost 3 calls each (search, recent, top).
+- Hashtag search allows **30 unique hashtags per 7 days** per Instagram account. `data/hashtags.json` starts with 8. Do not grow it past about 20.
+- Hashtag `recent_media` only returns posts from the **last 24 hours**, up to 50 per page. The API does not return the poster's username on hashtag results. The map finds owners from @mentions in the caption and from search.
+- Business Discovery reads only **public business or creator** accounts. Age-gated accounts return nothing.
+
+## What the API cannot do
+
+- Read private accounts.
+- Read personal (non-professional) accounts.
+- Read stories.
+- Read other people's comments or followers. The map stores none of that anyway.
+- Post, like, follow or message. The map is read-only.
+
+## TikTok
+
+The map does not scrape TikTok either.
+
+- The **Display API** needs an approved app and shows only the videos of the account that authorizes it. It cannot read other brands.
+- The **Research API** is for approved researchers.
+- So TikTok here is limited to Brave search results (`site:` queries) and TikTok's open oEmbed on a video URL you paste in.
+
+## Brave Search key (optional)
+
+Discovery can also search the open web for `site:instagram.com "matcha pop up" <city>`. Get a free key at api.search.brave.com, put it in `.env` as `BRAVE_API_KEY`. The free plan allows 1 request per second. The map runs 10 cities per run, rotating, and waits between calls.

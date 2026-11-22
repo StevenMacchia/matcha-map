@@ -145,6 +145,10 @@ What we do instead:
 - oEmbed: only for a single public post URL a human pasted. Instagram oEmbed needs a Meta app token. TikTok oEmbed (`https://www.tiktok.com/oembed`) is open and returns title and author for a public video URL.
 - Manual paste (section 6) is the main way the map stays fresh while coverage grows.
 
+The watch list. `data/watchlist.json` holds every account the map watches: handle, status (candidate, watching, quiet, dropped), when it was last checked, hits and a cadence. Watching accounts with a pop-up in the last 30 days are checked every 24 hours, other watching accounts every 72, quiet ones every 168. An account goes quiet after 90 days without a dated pop-up, and a candidate with none in 60 days is dropped. A candidate becomes watching on its first dated pop-up. `npm run watch` does the checking through the shared pipeline; `--promote` turns watching accounts with hits into records in `sources.json` for a human to finish.
+
+Discovery. `npm run discover` adds candidates from: @mentions and collabs next to pop-up words in captions the pipeline holds (inbox, cache, Graph results), Instagram hashtag search through the Graph API, the Brave Search API for `site:instagram.com` queries (key needed), and the public MATO and Luma listing pages within robots.txt. Every source is official or open. Nothing logs in, and nothing evades a check.
+
 For brand websites and schedule pages:
 
 - Respect robots.txt and rate limits.

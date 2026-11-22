@@ -1,0 +1,47 @@
+# Watch loop: every 6 hours, find new accounts, check the watch list, rebuild events.
+# NOTE: nothing is deployed yet. This file only matters once the repo has a remote on GitHub.
+# Without the secrets below the job still runs: every key-gated step logs "off" and does nothing,
+# and the commit step finds no change. Nothing here scrapes behind a login.
+name: watch
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+      INSTAGRAM_BUSINESS_ID: ${{ secrets.INSTAGRAM_BUSINESS_ID }}
+      BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+      MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm test
+      - run: npm run discover
+      - run: npm run watch
+      # Geocoding and fetches were cached by the two steps above; this rebuilds site/data from them.
+      - run: npm run ingest -- --no-fetch
+      - name: Commit changes
+        run: |
+          git config user.name "matcha-map bot"
+          git config user.email "matcha-map-bot@users.noreply.github.com"
+          git add data/*.json site/data/*.json
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "watch: update watch list and events"
+            git push
+          fi

@@ -1,12 +1,11 @@
 // npm run ingest: sources -> adapters -> extractor -> geocoder -> writer.
 // Flags: --source <id> | --paste [--file <path>] | --inbox | --no-fetch | --dry | --verbose
 // Default run = every active source, then data/inbox/*.txt. Exit non-zero only on a crash.
+import "./lib/env.js";
 import fs from "node:fs";
 import { createFetcher } from "./lib/fetch.js";
-import { extract } from "./lib/extract.js";
-import { improve } from "./lib/llm.js";
+import { itemToCandidates, finalize } from "./lib/pipeline.js";
 import { createGeocoder } from "./lib/geocode.js";
-import { eventId, mergeEvents, readEvents, writeEvents, endMs, KEEP_PAST_DAYS } from "./lib/write.js";
 import { setVerbose, warn, info } from "./lib/log.js";
 import mato from "./adapters/mato.js";
 import luma from "./adapters/luma.js";
@@ -28,13 +27,6 @@ function args(argv) {
     else if (argv[i].startsWith("--")) a.flags.add(argv[i].slice(2));
   }
   return a;
-}
-
-// One RawItem -> geocode-ready candidates for a source.
-async function itemToCandidates(raw, source, now, handle) {
-  let cands = extract(raw, { source, now });
-  cands = await improve(cands, raw, { now });
-  return cands.map((c) => ({ ...c, brand: source.brand, source_id: source.id, handle: raw.handle || handle || null }));
 }
 
 const pad = (s, n) => String(s).padEnd(n).slice(0, n);
@@ -101,24 +93,8 @@ async function main() {
     } catch (e) { row.note = `failed: ${e.message}`; warn(`${name}: ${e.message}`); }
   }
 
-  // 3. Dedupe by id (best confidence wins), drop long-past, geocode.
-  const CONF = ["unsure", "likely", "confirmed"];
-  const byId = new Map();
-  for (const c of candidates) {
-    c.id = eventId(c);
-    if (now.getTime() - endMs(c) > KEEP_PAST_DAYS * 86400000) continue;
-    const p = byId.get(c.id);
-    if (!p || CONF.indexOf(c.confidence) > CONF.indexOf(p.confidence)) byId.set(c.id, c);
-  }
-  const final = [];
-  for (const c of byId.values()) final.push(await geocoder.geocode(c));
-  if (!dry) geocoder.save();
-
-  // 4. Merge and write.
-  const existing = readEvents();
-  let decay = {};
-  try { decay = JSON.parse(fs.readFileSync("data/decay.json", "utf8")); } catch { /* first run */ }
-  const merged = mergeEvents(existing, final, { now, liveSourceIds: live, decay });
+  // 3 and 4. Dedupe, geocode, merge, write (shared with `npm run watch`).
+  const { merged } = await finalize(candidates, { now, geocoder, liveSourceIds: live, dry });
 
   for (const r of rows) info(`${pad(r.id, 28)} ${pad(r.adapter, 16)} items ${pad(r.items, 3)} events ${pad(r.kept, 3)} ${r.note}`);
   const up = merged.events.filter((e) => e.status === "upcoming");
@@ -130,8 +106,6 @@ async function main() {
     info("(dry run: nothing written)");
     return;
   }
-  writeEvents(merged.events, { now });
-  fs.writeFileSync("data/decay.json", JSON.stringify(merged.decay, null, 2) + "\n");
   info("wrote data/events.json and site/data/events.json");
 }
 

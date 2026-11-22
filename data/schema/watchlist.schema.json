@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "watchlist.schema.json",
+  "title": "Watchlist",
+  "description": "data/watchlist.json: the accounts the map watches for the next pop-up.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["updated", "accounts"],
+  "properties": {
+    "updated": { "type": ["string", "null"], "format": "date-time" },
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["handle", "platform", "source_id", "status", "found_via", "found_from", "first_seen", "last_checked", "last_post_with_popup", "hits", "checks", "cadence_hours", "notes"],
+        "properties": {
+          "handle": { "type": "string", "pattern": "^[A-Za-z0-9._]+$", "description": "Without @." },
+          "platform": { "enum": ["instagram", "tiktok"] },
+          "source_id": { "type": ["string", "null"], "description": "id in data/sources.json; null until promoted." },
+          "status": { "enum": ["candidate", "watching", "quiet", "dropped"] },
+          "found_via": { "enum": ["seed", "mention", "hashtag", "search", "manual"] },
+          "found_from": { "type": ["string", "null"], "description": "A handle, a hashtag, or a URL." },
+          "first_seen": { "type": "string", "format": "date-time" },
+          "last_checked": { "type": ["string", "null"], "format": "date-time" },
+          "last_post_with_popup": { "type": ["string", "null"], "format": "date-time" },
+          "hits": { "type": "integer", "minimum": 0, "description": "Dated pop-ups found." },
+          "checks": { "type": "integer", "minimum": 0 },
+          "cadence_hours": { "enum": [24, 72, 168], "description": "24 watching with a hit in 30 days; 72 watching with none or candidate; 168 quiet." },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

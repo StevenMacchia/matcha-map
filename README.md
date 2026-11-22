@@ -68,6 +68,15 @@ Set as environment variables. All are optional; the site and ingest work without
 | `TIKTOK_KEY` | TikTok API adapter. |
 | `INSTAGRAM_OEMBED_TOKEN` | Captions for pasted Instagram links. |
 
+## Keep it fresh
+
+The map keeps a watch list of accounts in `data/watchlist.json` (31 seeded from the sources, more as discovery finds them).
+
+- `npm run discover` finds new candidate accounts: @mentions in captions we already hold, Instagram hashtags (needs a token), Brave search (needs `BRAVE_API_KEY`), and public MATO and Luma pages. Add `-- --dry` to preview.
+- `npm run watch` checks every account that is due (24, 72 or 168 hours apart) and writes new dates to the map. Flags: `-- --all`, `-- --handle <h>`, `-- --dry`, `-- --promote` (turns accounts with real hits into source records).
+- Instagram runs only through Meta's official Graph API and stays off until `INSTAGRAM_TOKEN` and `INSTAGRAM_BUSINESS_ID` are in `.env`. Setup: `docs/INSTAGRAM-SETUP.md`. Copy `.env.example` to `.env`.
+- `.github/workflows/watch.yml` runs discover, watch and ingest every 6 hours and commits the data. It only matters once the repo is on GitHub.
+
 ## Deploy later
 
 Nothing is deployed yet. The plan is Cloudflare Pages serving the `site/` folder, with `npm run ingest` run before each publish. The pages load Leaflet from unpkg with pinned versions and SRI hashes.
@@ -77,6 +86,7 @@ Nothing is deployed yet. The plan is Cloudflare Pages serving the `site/` folder
 - `site/`: the static site (`index.html`, `app.js`, `style.css`, `cities.js`, `data/`).
 - `ingest/`: `run.js`, `adapters/` (one per source kind) and `lib/` (fetch, extract, geocode, write).
 - `data/`: `sources.json`, `events.json`, `inbox/`, `schema/`, geocode cache and overrides.
+- `docs/`: setup notes. `.github/workflows/`: the 6-hour watch job.
 - `test/`: unit tests.
 - `SPEC.md`: the contract. `LADDER.md`: the build log.
 

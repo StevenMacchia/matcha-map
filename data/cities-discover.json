@@ -1,0 +1,4 @@
+{
+  "note": "US cities searched through the Brave Search API, 10 per run in rotation (see ingest/lib/discover.js).",
+  "cities": ["New York", "Brooklyn", "Los Angeles", "San Francisco", "Oakland", "San Diego", "Seattle", "Portland", "Chicago", "Boston", "Philadelphia", "Washington DC", "Atlanta", "Miami", "Austin", "Houston", "Dallas", "Denver", "Phoenix", "Las Vegas", "Minneapolis", "Detroit", "Nashville", "Charlotte", "Raleigh", "Pittsburgh", "Baltimore", "San Jose", "Sacramento", "Salt Lake City", "Orlando", "Tampa", "New Orleans", "Honolulu", "Columbus", "Cleveland", "Kansas City", "St. Louis", "Indianapolis", "Providence"]
+}

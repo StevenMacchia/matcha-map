@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "npx serve site -l 8790 --no-clipboard",
     "ingest": "node ingest/run.js",
-    "test": "node --test"
+    "test": "node --test",
+    "discover": "node ingest/lib/discover.js",
+    "watch": "node ingest/watch.js"
   },
   "license": "MIT"
 }
