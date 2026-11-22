@@ -79,50 +79,189 @@ for (const e of eligible.filter(weekendOf)) {
 }
 
 // ---- builders ----
+// Every post is a character post: Mattie is large and touches the content (peeks over the photo, holds the
+// sign or a speech bubble with the date, points at the venue, or whisks). Pose, side, colour, frame tilt and
+// companions come from stable hashes, so a feed of posts varies and a re-render is identical.
+const mix = (h) => { h ^= h >>> 16; h = Math.imul(h, 0x45d9f3b) >>> 0; h ^= h >>> 16; return h >>> 0; };   // spread djb2 bits so poses balance
+const SW = 952;   // stage width (canvas 1080 minus 64 a side); the stage sits at y 470 and is 766 tall
+const SH = 766;
+const SPARK = '<path d="M12 1C13 8 16 11 23 12C16 13 13 16 12 23C11 16 8 13 1 12C8 11 11 8 12 1Z" fill="#FFE7A0" stroke="#4B3426" stroke-width="1.8" stroke-linejoin="round"/>';
+const spark = (x, y, s) => `<svg class="spk" viewBox="0 0 24 24" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px">${SPARK}</svg>`;
+const petal = (x, y, s, r) => `<svg class="pet" viewBox="0 0 20 20" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px;transform:rotate(${r}deg)"><use href="#c-petal" width="20" height="20"/></svg>`;
+const PIN = '<svg class="pin" viewBox="0 0 42 52"><path d="M21 49C13 39 4 30 4 20a17 17 0 0 1 34 0c0 10-9 19-17 29z" fill="var(--strong)" stroke="#4B3426" stroke-width="3.5" stroke-linejoin="round"/><circle cx="21" cy="20" r="6.5" fill="#FFFDF7" stroke="#4B3426" stroke-width="3"/></svg>';
+function band(h) {   // pastel upper tone with a scalloped, outlined lower edge
+  let d = "M0 0";
+  for (let x = 0; x < 1080; x += 60) d += " a30 18 0 0 0 60 0";
+  return `<div class="band" style="height:${h}px"></div><svg class="wave" viewBox="0 0 1080 40" style="top:${h - 1}px"><path d="${d} V-2 H0z" style="fill:var(--top)"/><path d="${d}" fill="none" stroke="#4B3426" stroke-opacity=".85" stroke-width="3.5" stroke-linecap="round"/></svg>`;
+}
+function mattie(pose, x, y, s, flip, cls = "mt") {
+  const vh = pose === "m-peek" ? 38 : 64;
+  return `<svg class="${cls}${flip ? " flip" : ""}" viewBox="0 0 64 ${vh}" style="left:${x}px;top:${y}px;width:${s}px;height:${(s * vh) / 64}px"><use href="#${pose}" width="64" height="${vh}"/></svg>`;
+}
+function buddy(kind, x, y, h) {
+  const [vb, w] = kind === "chasen" ? ["0 0 32 48", (h * 32) / 48] : ["0 0 32 64", h / 2];
+  return `<svg class="co" viewBox="${vb}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><use href="#c-${kind}" width="${vb.split(" ")[2]}" height="${vb.split(" ")[3]}"/></svg>`;
+}
+// petals and one sparkle in the margins: three of five spots, by hash
+function margins(seed, spots) {
+  const pick = spots.map((_, i) => i).sort((a, b) => (hash(seed + ":" + a) & 255) - (hash(seed + ":" + b) & 255)).slice(0, 3);
+  return pick.map((i, k) => { const [x, y, s, r] = spots[i]; return k === 2 ? spark(x, y, s * 0.9) : petal(x, y, s, r); }).join("");
+}
+const MARGIN_SPOTS = [[28, 452, 50, -24], [1004, 456, 46, 32], [30, 1150, 44, 18], [1006, 1176, 48, -28], [500, 1238, 40, 60]];
+function headerHtml({ tag, sun, titleHtml, extra = "" }) {
+  return `<div class="hdr"><div class="hrow"><div class="wm">${FACE}Matcha Map</div><div class="tag${sun ? " sun" : ""}">${esc(tag)}</div></div>${titleHtml}${extra}</div>`;
+}
+
+// rough width of a string in em at weight 800, to decide one line or two before the page lays out
+const emWidth = (s) => [...String(s)].reduce((w, c) => w + (/[A-Z]/.test(c) ? 0.72 : /[a-z]/.test(c) ? 0.57 : /[0-9]/.test(c) ? 0.6 : c === " " ? 0.27 : 0.5), 0);
+
 function flyerHtml(e, size) {
-  const tz = e.tz || "America/New_York", h = hash(e.brand), v = h % 3, handle = handleOf(e);
+  const tz = e.tz || "America/New_York", hb = hash(e.brand), hi = mix(hash(e.id || e.brand)), handle = handleOf(e);
   const brand = String(e.brand || "").replace(/\s+/g, " ").trim();
-  const pose = ["m-happy", "m-excited", "m-wave"][(h >> 3) % 3];
   const local = e.image && e.image.local && fs.existsSync(path.join(ROOT, "site", e.image.local)) ? path.join(ROOT, "site", e.image.local) : null;
-  const visual = local
-    ? `<div class="photo"><div class="im"><img src="${pathToFileURL(local).href}" alt=""></div>${sym(pose, "0 0 64 64", "sticker")}</div>`
-    : `<div class="blob"></div>` + sym(pose, "0 0 64 64", "m") +
-      `<svg class="pet" style="left:4%;top:6%;width:70px;height:70px;transform:rotate(-20deg)" viewBox="0 0 20 20"><use href="#c-petal" width="20" height="20"/></svg>` +
-      `<svg class="pet" style="right:6%;bottom:4%;width:48px;height:96px" viewBox="0 0 32 64"><use href="#c-dango" width="32" height="64"/></svg>`;
-  const menu = (Array.isArray(e.menu) ? e.menu : []).filter(Boolean).slice(0, 5);
-  const where = [];
-  if (e.venue) where.push(`<span class="l">${esc(trunc(e.venue, 46))}</span>`);
-  if (e.address) where.push(`<span class="l a">${esc(trunc(e.address, 52))}</span>`);
-  where.push(`<span class="l a">${esc([e.city, e.state].filter(Boolean).join(", "))}</span>`);
-  return render("flyer.html", {
-    css: CSS, defs, fitjs: FITJS, face: FACE, size, variant: "v" + v,
-    kindLabel: e.kind === "cafe" ? "Matcha cafe" : "Matcha pop-up",
-    brand, nameClass: brand.length > 28 ? " two" : "",
-    handleHtml: handle ? `<div class="handle">@${esc(handle)}</div>` : "",
-    day: dayLabel(e.start, tz), time: timeText(e) || "Time on the post",
-    whereHtml: where.join(""),
-    pillsHtml: menu.length ? `<div class="pills">${menu.map((m) => `<span class="pill">${esc(trunc(String(m), 30))}</span>`).join("")}</div>` : "",
-    visual,
-  });
+  const whisk = e.kind === "organizer" || e.kind === "cafe";
+  const layout = local ? (whisk ? "point" : ["peek", "sign", "bubble", "point"][hi % 4]) : (whisk ? "bubble" : ["sign", "bubble"][hi % 2]);
+  const flip = ((hi >>> 2) & 1) === 1;                          // which side the stage sits on
+  const X = (x, w) => (flip ? SW - x - w : x);
+  const pal = ["chasen", "dango", null, null][(hi >>> 4) % 4];   // a companion on about half the posts
+  const rot = ((hi >>> 6) % 5) - 2;                               // frame tilt, -2 to 2 degrees
+  const deco = (hi >>> 9) & 1;
+  const face = whisk ? "m-whisk" : ["m-happy", "m-excited", "m-base"][(hi >>> 10) % 3];
+
+  // header band height follows the brand (one line or two) and the credit pill
+  const oneLine = emWidth(brand) * 84 <= 940;
+  const bandH = 50 + 66 + 30 + (oneLine ? 124 : 206) + (handle ? 68 : 0) + 44;
+  const top = bandH + 42, SH = 1236 - top;
+
+  const day = dayLabel(e.start, tz), time = timeText(e) || "Time on the post";
+  const when = (mx) => `<span class="pd" data-fit data-max="${mx}" data-min1="28">${esc(day)}</span><span class="pt" data-fit data-max="${mx}" data-min1="28">${esc(time)}</span>`;
+  const cityLine = [e.city, e.state].filter(Boolean).join(", ");
+  const vname = e.venue ? trunc(String(e.venue), 60) : cityLine;
+  const subs = [e.address ? trunc(String(e.address), 52) : "", e.venue ? cityLine : ""].filter(Boolean);
+  const vc = `<div class="vc">${PIN}<div class="tx"><div class="vn">${esc(vname)}</div>${subs.map((s) => `<div class="va">${esc(s)}</div>`).join("")}</div></div>`;
+  const menuArr = (Array.isArray(e.menu) ? e.menu : []).filter(Boolean).slice(0, 5);
+  const menu = (cap) => menuArr.length ? `<div class="menu" style="max-height:${cap}px">${menuArr.map((m) => `<span class="mp">${esc(trunc(String(m), 26))}</span>`).join("")}</div>` : "";
+  const facts = (x, y, w, h, inner, just = "flex-start") => `<div class="facts" style="left:${X(x, w)}px;top:${y}px;width:${w}px;height:${h}px;justify-content:${just}">${inner}</div>`;
+  const frame = (x, y, w, h) => {
+    const d = deco ? `<svg class="fpet" viewBox="0 0 20 20" style="right:-30px;top:-34px;width:84px;height:84px;transform:rotate(28deg)"><use href="#c-petal" width="20" height="20"/></svg>`
+      : `<div class="tape${hi & 1 ? " t2" : ""}" style="left:-46px;top:6px;transform:rotate(-38deg)"></div>`;
+    return `<div class="frame" style="left:${X(x, w)}px;top:${y}px;width:${w}px;height:${h}px;transform:rotate(${rot}deg)"><div class="im"><img src="${pathToFileURL(local).href}" alt=""></div>${d}</div>`;
+  };
+  // Mattie under a prop (wooden sign on two sticks, or a speech bubble) that carries the date and time.
+  // The prop sits just above Mattie's head; the sticks run behind him and end in his hands.
+  const held = (kind, cx, pw, ph, ms, pose, lift = 1) => {
+    const my = SH - ms - 6, mx = cx - ms / 2, head = my + 0.21 * ms;
+    // lift the prop toward the top of the stage on tall stages so the space above it is not empty (the sticks grow)
+    const room = head - (kind === "sign" ? 22 : 44) - ph;
+    const py = Math.max(0, Math.round(kind === "sign" ? room * lift : room)), px = cx - pw / 2;
+    let out = "";
+    if (kind === "sign") {
+      for (const f of [0.133, 0.867]) out += `<div class="stick" style="left:${X(mx + f * ms - 10, 20)}px;top:${py + ph - 30}px;height:${Math.round(my + 0.656 * ms + 10 - (py + ph - 30))}px"></div>`;
+      out += `<div class="board" style="left:${X(px, pw)}px;top:${py}px;width:${pw}px;height:${ph}px">${when(42)}</div>`;
+    } else {
+      out += `<div class="bubble" style="left:${X(px, pw)}px;top:${py}px;width:${pw}px;height:${ph}px">${when(42)}</div>`;
+    }
+    out += mattie(pose, X(mx, ms), my, ms, flip);
+    return { html: out, py, my, mx };
+  };
+
+  let stage = "";
+  if (!local) {
+    // no photo: Mattie is the picture, bigger, holding the sign (or under a speech bubble when whisking)
+    const ms = Math.min(600, SH - 260), cx = SW + 30 - ms / 2;
+    stage += `<div class="blob" style="left:${X(cx - ms * 0.53, ms * 1.06)}px;top:${SH - ms * 1.06 + 4}px;width:${ms * 1.06}px;height:${ms * 1.06}px"></div>`;
+    stage += facts(0, 0, 420, pal ? SH - 230 : SH - 40, vc + menu(200), "center");
+    if (pal) stage += buddy(pal, X(40, pal === "chasen" ? 120 : 90), SH - 200, 180);
+    else stage += petal(X(70, 70), SH - 170, 70, -18) + petal(X(200, 50), SH - 90, 50, 34);
+    const h = held(layout, cx, 500, 216, ms, whisk ? "m-whisk" : face, 0.4);
+    stage += h.html + spark(X(cx + ms * 0.4, 46), h.my + ms * 0.08, 46);
+  } else if (layout === "peek") {
+    // photo on one side, Mattie peeking over its top edge with both hands hooked on the frame
+    const fs_ = 460, fy = SH - fs_ - 22, pw = 580, ph = (pw * 38) / 64;
+    stage += frame(SW - fs_ - 10, fy, fs_, fs_);
+    stage += mattie("m-peek", X(SW - fs_ / 2 - 10 - pw / 2, pw), Math.round(fy - 0.921 * ph), pw);
+    stage += facts(0, 0, 430, SH, `<div class="when">${when(46)}</div>${vc}${menu(132)}`, "center");
+    if (pal) stage += buddy(pal, X(SW - 60, pal === "chasen" ? 100 : 76), SH - 150, 150);
+    stage += spark(X(SW - fs_ - 40, 44), Math.max(0, fy - 330), 44);
+  } else if (layout === "sign" || layout === "bubble") {
+    // photo and menu on one side; venue card, the held prop and Mattie on the other
+    const ms = SH >= 820 ? 440 : 400, cx = SW - 241;
+    const fw = SH >= 820 ? 452 : 400;
+    stage += facts(0, 0, fw + 10, SH, `${frame(0, 0, fw, fw * 1.25).replace('class="frame" style="left:' + X(0, fw) + "px;top:0px;", 'class="frame" style="position:relative;')}${menu(132)}`, "center");
+    const h = held(layout, cx, 482, 200, ms, face);
+    stage += facts(470, 0, 482, Math.max(170, h.py - 20), vc, "center");
+    if (pal) stage += buddy(pal, X(SW - 70, pal === "chasen" ? 100 : 76), SH - 156, 150);
+    stage += h.html + spark(X(452, 40), h.my + 60, 40);
+  } else {
+    // point: big photo in the upper corner, date pills beside it, the venue card under it, and Mattie
+    // beside the card with an arm raised toward it and a dotted trail (whisking instead for cafes)
+    const ms = 420, my = SH - ms - 4, mx = SW - ms + 10, pw = Math.min(500, SH - 216);
+    const cy = Math.max(pw + 30, Math.min(SH - 186, Math.round(my + 0.47 * ms) - 84));
+    stage += frame(0, 0, pw, pw);
+    stage += facts(pw + 44, 12, SW - pw - 44, Math.max(200, my + 60), `<div class="when">${when(46)}</div>${menu(132)}`);
+    stage += facts(0, cy, 470, 176, vc, "center");
+    if (!whisk) stage += `<div class="trail" style="left:${X(482, mx + 0.1 * ms - 482)}px;top:${cy + 86}px;width:${Math.round(mx + 0.1 * ms - 482)}px"></div>`;
+    if (pal) stage += buddy(pal, X(SW - 66, pal === "chasen" ? 100 : 76), SH - 156, 150);
+    stage += mattie(whisk ? "m-whisk" : "m-wave", X(mx, ms), my, ms, !flip);
+    stage += spark(X(mx + ms * 0.1, 40), my - 6, 40);
+  }
+
+  const inWeekend = weekendOf(e);
+  const title = oneLine
+    ? `<div class="brand" data-fit data-max="118" data-min1="60">${esc(brand)}</div>`
+    : `<div class="brand" data-fit data-max="98" data-min1="98" data-lines="2" data-max2="98" data-min="56">${esc(brand)}</div>`;
+  const scene = band(bandH) + headerHtml({ tag: inWeekend ? "this weekend" : e.kind === "cafe" ? "Matcha cafe" : "Matcha pop-up", sun: inWeekend, titleHtml: title, extra: handle ? `<div class="via">via @${esc(handle)}</div>` : "" }) +
+    `<div class="stage" style="top:${top}px;height:${SH}px">${stage}</div>` + margins(e.id || brand, MARGIN_SPOTS.map((s, i) => (i < 2 ? [s[0], bandH + 22, s[2], s[3]] : s)));
+  return render("flyer.html", { css: CSS, defs, fitjs: FITJS, size, variant: "v" + (hb % 4), scene });
 }
 
 function roundupHtml(city, list, size) {
+  const story = size === "story";
   const sorted = [...list].sort((a, b) => new Date(a.start) - new Date(b.start));
-  const max = size === "story" ? 8 : 6, shown = sorted.slice(0, max);
+  const max = 6, shown = sorted.slice(0, max);
   const first = sorted[0], last = sorted[sorted.length - 1];
   const a = dayLabel(first.start, first.tz), b = dayLabel(last.start, last.tz);
-  const rows = shown.map((e, i) => {
+  const h = hash(city);
+  const cards = shown.map((e) => {
     const sub = (e.venue && e.venue.toLowerCase() !== String(e.brand).toLowerCase() ? e.venue : "") || [e.city, e.state].filter(Boolean).join(", ");
-    const bullet = i % 2 ? sym("c-dango", "0 0 32 64", "b") : sym("m-happy", "4 9 56 52", "b");
-    return `<div class="row">${bullet}<div class="tx"><div class="rb">${esc(e.brand)}</div><div class="rs">${esc(trunc(sub, 44))}</div></div><div class="rd">${esc(dayLabel(e.start, e.tz).split(",")[0])}</div></div>`;
+    const dango = `<svg class="db" viewBox="0 0 32 64"><use href="#c-dango" width="32" height="64"/></svg>`;
+    const dl = esc(dayLabel(e.start, e.tz));
+    return story
+      ? `<div class="rc">${dango}<div class="tx"><div class="rb">${esc(e.brand)}</div><div class="rs">${esc(trunc(String(sub), 44))}</div></div><span class="rd">${dl}</span></div>`
+      : `<div class="rc"><div class="r1">${dango}<span class="rd">${dl}</span></div><div class="rb">${esc(e.brand)}</div><div class="rs">${esc(trunc(String(sub), 34))}</div></div>`;
   }).join("");
-  const more = (sorted.length > max ? `<div class="more">+ ${sorted.length - max} more on the map</div>` : "") + (size === "story" ? `<div class="vis"><div class="blob"></div>${sym("m-excited", "0 0 64 64", "m")}</div>` : "");
-  const title = "This weekend in " + city;
-  return render("roundup.html", {
-    css: CSS, defs, fitjs: FITJS, face: FACE, size, variant: "v" + (hash(city) % 3),
-    city, titleClass: title.length > 24 ? " two" : "", range: a === b ? a : `${a} to ${b}`,
-    rows, moreHtml: more,
-  });
+  const more = sorted.length > max ? `+ ${sorted.length - max} more on the map` : "";
+  const bandH = story ? 520 : 450;
+  const title = `<div class="ttl" data-fit data-max="${story ? 100 : 92}" data-min1="70" data-lines="2" data-max2="${story ? 92 : 84}" data-min="52" style="width:${story ? 620 : 600}px">This weekend in ${esc(city)}</div>`;
+  let scene = band(bandH) + headerHtml({ tag: "this weekend", sun: true, titleHtml: title, extra: `<span class="pd rng">${esc(a === b ? a : `${a} to ${b}`)}</span>` });
+  scene += story ? mattie("m-wave", 700, 140, 330) : mattie("m-wave", 664, 96, 380);
+  scene += story ? spark(640, 110, 44) + petal(980, 440, 50, 24) : spark(636, 100, 40) + petal(972, 404, 46, 24);
+  const gridTop = story ? 568 : 498, odd = !story && shown.length % 2 === 1;
+  const cell = odd ? `<div class="cell">${buddy("chasen", 110, 30, 150)}${buddy("dango", 270, 14, 176)}${spark(40, 40, 44)}${petal(370, 120, 46, 20)}</div>` : "";
+  const spread = story ? "" : `height:${1226 - gridTop}px;grid-auto-rows:${shown.length > 4 ? 218 : 250}px;align-content:space-evenly;`;
+  scene += `<div class="grid" style="top:${gridTop}px;${spread}">${cards}${cell}</div>`;
+  if (story) {
+    scene += `<div class="blob" style="left:315px;top:1420px;width:450px;height:450px;opacity:.4"></div>`;
+    scene += buddy("chasen", 170, 1610, 160) + buddy("dango", 830, 1590, 180);
+    scene += mattie(["m-happy", "m-excited"][h % 2], 320, 1366, 440);
+    scene += petal(120, 1480, 54, -20) + spark(880, 1460, 46) + petal(940, 1740, 44, 30);
+    if (more) scene += `<div class="more" style="top:${gridTop + shown.length * 134}px">${esc(more)}</div>`;
+  } else {
+    if (more) scene += `<div class="more" style="top:1206px">${esc(more)}</div>`;
+    scene += margins(city, MARGIN_SPOTS.slice(2).concat([[30, 470, 46, -20], [1000, 520, 42, 30]]));
+  }
+  return render("roundup.html", { css: CSS, defs, fitjs: FITJS, size, variant: "v" + (h % 4), scene });
+}
+
+function welcomeHtml() {
+  let scene = band(620) + headerHtml({ tag: "hello", sun: true, titleHtml: "" });
+  scene += `<div class="blob" style="left:250px;top:150px;width:580px;height:580px"></div>`;
+  scene += petal(150, 230, 90, -20) + petal(860, 300, 70, 30) + spark(820, 180, 56) + spark(196, 560, 40);
+  scene += buddy("dango", 170, 600, 150) + buddy("chasen", 826, 620, 130);
+  scene += mattie("m-whisk", 230, 140, 620);
+  scene += `<div class="big" style="top:820px">Every matcha pop-up, one map</div>`;
+  scene += `<div class="lead" style="top:1060px">Where and when, so you can find one near you</div>`;
+  return render("welcome.html", { css: CSS, defs, fitjs: FITJS, size: "feed", variant: "v0", scene });
 }
 
 // ---- captions ----
@@ -188,7 +327,7 @@ for (const [tpl, out, w, h] of [["logo.html", "logo.png", 1024, 512], ["logo-mar
   const wdir = path.join(OUTBOX, "welcome"), png = path.join(wdir, "welcome.png");
   fs.mkdirSync(wdir, { recursive: true });
   if (!fs.existsSync(path.join(wdir, "welcome.txt")) || FORCE) fs.writeFileSync(path.join(wdir, "welcome.txt"), WELCOME_CAPTION);
-  if (FORCE || !fs.existsSync(png)) jobs.push(async () => { const ok = await shot(render("welcome.html", { css: CSS, defs, fitjs: FITJS, face: FACE, size: "feed" }), png, 1080, 1350); if (ok) made++; return ok; });
+  if (FORCE || !fs.existsSync(png)) jobs.push(async () => { const ok = await shot(welcomeHtml(), png, 1080, 1350); if (ok) made++; return ok; });
 }
 for (const e of inWeek) {
   queue(`${slug(e.brand)}-${dayKey(e.start, e.tz)}-${e.id}`, () => flyerHtml(e, "feed"), "feed", captionFor(e),
