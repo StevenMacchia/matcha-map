@@ -176,6 +176,8 @@ What we do instead:
 
 The watch list. `data/watchlist.json` holds every account the map watches: handle, status (candidate, watching, quiet, dropped), when it was last checked, hits and a cadence. Watching accounts with a pop-up in the last 30 days are checked every 24 hours, other watching accounts every 72, quiet ones every 168. An account goes quiet after 90 days without a dated pop-up, and a candidate with none in 60 days is dropped. A candidate becomes watching on its first dated pop-up. `npm run watch` does the checking through the shared pipeline; `--promote` turns watching accounts with hits into records in `sources.json` for a human to finish.
 
+Search snippets (rung 19). `ingest/lib/sites/social-search.js` is a crawler like the event sites but it opens no page of tiktok.com or instagram.com. It sends Tavily Search queries (include_domains tiktok.com and instagram.com, time_range month, 20 results) for 12 rotating cities times three query shapes plus four hashtag-style queries (40 credits a run; caps in `data/tavily-budget.json`: 120 per run, 900 per month, counted locally; the crawler logs and stops at a cap). TikTok video results go to TikTok's open oEmbed (1 request per second) for caption, author and thumbnail; Instagram results keep snippet and title only. Text goes through the normal extractor: an event needs a calendar date, a city named in the text (a hashtag never counts) and a future start; confidence is `likely` at most, `unsure` without a time or address. Events belong to `tiktok:<handle>` or `instagram:<handle>` pseudo-sources, or to the real source that owns the handle; `posts.tiktok` or `posts.instagram` holds the post. Every creator in a matcha pop-up result becomes a watch-list candidate (platform tiktok or instagram, found_from tavily); a due TikTok account is re-checked by a Tavily query, never by fetching tiktok.com.
+
 Discovery. `npm run discover` adds candidates from: @mentions and collabs next to pop-up words in captions the pipeline holds (inbox, cache, Graph results), Instagram hashtag search through the Graph API, the Brave Search API for `site:instagram.com` queries (key needed), and the public MATO and Luma listing pages within robots.txt. Every source is official or open. Nothing logs in, and nothing evades a check.
 
 For brand websites and schedule pages:
@@ -236,3 +238,13 @@ Open questions:
 - Do we ask brands to submit events directly?
 - Does the Graph API route get used, or does paste stay the whole story?
 - When does the pipeline run: by hand, or on a schedule?
+
+### Storefronts (rung 21)
+
+A third layer for permanent matcha shops, from `site/data/shops.json` (`{generated, attribution, shops[]}`; each shop has id, name, lat, lng, address, city, state, zip, website, instagram, phone, opening_hours (raw OSM string), cuisine, source `osm` or `brand`, osm_url, fetched). Built by `npm run shops` (OpenStreetMap through Overpass plus the cafe-kind brands; see README).
+
+- Pin: the `s-shop` symbol in `characters.svg` (a small shop with a striped matcha and cream awning, a round window, a door and a tiny cup sign; no face), about 26px. Its own clusters (soft mint, a count pill under the shop). Drawn under event pins and above brand mochi. Loaded after events and brands, so first paint never waits for it.
+- Show popover: a "Storefronts" switch in its own group above the kinds, on by default, remembered under its own key; the badge counts it when off.
+- Card: the shop icon beside the name, the small word "Shop", the address, the raw hours on one line (truncated with the full text in a title), pills Website, Instagram, Directions, and a "Data: OpenStreetMap" line linking to the OSM page. No photo: a drawn placeholder (the shop symbol, the name, the city).
+- List: a "Shops" section after Pop-ups and Brands. At country zoom it is one count line ("412 shops · zoom in"); rows appear from zoom 8, sorted by distance when Near me or a zip is active, otherwise by name, capped at 80 rows.
+- About carries the OpenStreetMap ODbL line.

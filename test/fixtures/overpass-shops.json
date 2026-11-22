@@ -1,0 +1,7 @@
+{"version":0.6,"elements":[
+{"type":"node","id":101,"lat":40.7231,"lon":-73.9876,"tags":{"amenity":"cafe","name":"Matcha Test House","addr:housenumber":"12","addr:street":"Orchard St","addr:city":"New York","addr:state":"NY","addr:postcode":"10002","website":"https://matchatest.example","contact:instagram":"https://www.instagram.com/matchatest/","opening_hours":"Mo-Fr 08:00-18:00; Sa 09:00-17:00","phone":"+1 212 555 0100"}},
+{"type":"way","id":202,"center":{"lat":34.0522,"lon":-118.2437},"tags":{"amenity":"cafe","name":"Cha Cha Matcha","website":"https://www.instagram.com/chachamatcha/"}},
+{"type":"node","id":303,"lat":21.3069,"lon":-157.8583,"tags":{"shop":"tea","name":"Honolulu Tea Bar","cuisine":"matcha"}},
+{"type":"node","id":404,"tags":{"name":"No Position"}},
+{"type":"node","id":505,"lat":40.7232,"lon":-73.9877,"tags":{"amenity":"cafe","name":"Matcha Test House"}}
+]}

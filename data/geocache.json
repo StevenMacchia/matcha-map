@@ -170,6 +170,11 @@
     "lng": -111.784732,
     "source": "nominatim"
   },
+  "2211 16th st sacramento ca": {
+    "lat": 38.56473,
+    "lng": -121.490898,
+    "source": "nominatim"
+  },
   "222 main street beech grove in 46107": {
     "lat": 39.722049,
     "lng": -86.084667,
@@ -590,6 +595,10 @@
     "miss": true,
     "at": 1795374290022
   },
+  "cafenookiee cleveland oh": {
+    "miss": true,
+    "at": 1795375142158
+  },
   "cambridge ma": {
     "lat": 42.365635,
     "lng": -71.104002,
@@ -951,6 +960,11 @@
     "miss": true,
     "at": 1795351937844
   },
+  "cleveland oh": {
+    "lat": 41.499657,
+    "lng": -81.693677,
+    "source": "nominatim"
+  },
   "columbus circle holiday market by urbanspace new york ny": {
     "miss": true,
     "at": 1795374565181
@@ -1048,6 +1062,11 @@
   "houston tx": {
     "lat": 29.758938,
     "lng": -95.367697,
+    "source": "nominatim"
+  },
+  "in the pink providence ri": {
+    "lat": 41.827411,
+    "lng": -71.400356,
     "source": "nominatim"
   },
   "irvington ny": {
@@ -1325,6 +1344,11 @@
     "lng": -87.654211,
     "source": "nominatim"
   },
+  "providence ri": {
+    "lat": 41.823989,
+    "lng": -71.412834,
+    "source": "nominatim"
+  },
   "raleigh nc": {
     "lat": 35.780398,
     "lng": -78.639099,
@@ -1341,6 +1365,11 @@
   "sacramento ca": {
     "lat": 38.581061,
     "lng": -121.493895,
+    "source": "nominatim"
+  },
+  "salt lake city ut": {
+    "lat": 40.75962,
+    "lng": -111.886797,
     "source": "nominatim"
   },
   "salvatore galateria sacramento ca": {

@@ -17,6 +17,7 @@ import eventbrite from "./adapters/eventbrite.js";
 import ics from "./adapters/ics.js";
 import website from "./adapters/website.js";
 import manual from "./adapters/manual.js";
+import { recheckTiktok } from "./lib/sites/social-search.js";
 import graph, { creds } from "./adapters/instagram-graph.js";
 
 const ADAPTERS = [mato, luma, eventbrite, ics, website, manual];
@@ -46,15 +47,20 @@ async function main() {
   const known = new Set(readEvents().map((e) => e.id));
   const candidates = [], live = [], notes = new Map();
   for (const acc of due) {
-    const source = sources.find((s) => s.id === acc.source_id) || wlib.pseudoSource(acc);
-    let items = [], ran = false;
+    let source = sources.find((s) => s.id === acc.source_id) || wlib.pseudoSource(acc);
+    let items = [], ran = false, searchOnly = false;
     try {
-      if (acc.platform === "instagram" && igOn && !noFetch) { items = items.concat(await graph.fetch(source, ctx)); ran = true; }
+      if (acc.platform === "tiktok" && !noFetch) {
+        // TikTok is never opened: a Tavily query `"<handle>" matcha` over tiktok.com plus the open oEmbed (1 credit).
+        const found = await recheckTiktok(acc, { now, env, sources });
+        if (found) { items = items.concat(found); ran = true; searchOnly = true; if (found[0]?.source_hint) source = found[0].source_hint; }
+      }
+      if (acc.platform === "instagram" && igOn && !noFetch) { items = items.concat(await graph.fetch(source, ctx)); ran = true; searchOnly = false; }
       const adapter = source.schedule_url ? ADAPTERS.find((x) => x.matches(source)) : null;
-      if (adapter && adapter !== manual) { items = items.concat(await adapter.fetch(source, ctx)); ran = true; }
+      if (adapter && adapter !== manual) { items = items.concat(await adapter.fetch(source, ctx)); ran = true; searchOnly = false; }
     } catch (e) { warn(`${acc.handle}: ${e.message}`); notes.set(acc.handle, `failed: ${e.message}`); continue; }
     if (!ran) { notes.set(acc.handle, igOn ? "nothing to check" : "needs token"); continue; }
-    live.push(source.id);
+    if (!searchOnly) live.push(source.id); // search snippets are not a full listing: a missing post must not decay its events
     const { candidates: cs, popupAt } = await processItems(items, source, { now, handle: source.instagram ?? (wlib.readNote(acc.notes) ? null : acc.handle) });
     const ids = new Set(dedupeCandidates(cs, now).map((c) => c.id));
     const fresh = [...ids].filter((id) => !known.has(id)).length;

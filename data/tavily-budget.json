@@ -1,0 +1,9 @@
+{
+  "note": "Tavily credits counted locally (basic search = 1, advanced = 2). Free tier is about 1,000 a month.",
+  "per_run": 120,
+  "per_month": 900,
+  "month": "2026-11",
+  "used_month": 326,
+  "last_run_credits": 40,
+  "updated": "2026-11-22T19:34:50.123Z"
+}

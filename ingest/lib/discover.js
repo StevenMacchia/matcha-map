@@ -3,7 +3,7 @@
 // open or official: Instagram Graph hashtags (token), Brave Search API (key), public MATO and
 // Luma pages (robots.txt respected), @mentions in captions we already hold (inbox, cache).
 // No scraping behind a login, no cookies, no headless browser. Flags: --dry, --no-fetch, --verbose, --no-<site> (skip one site:
-// mato, luma, eventbrite, dostuff, meetup, linktree, allevents) and --only <site> (run just that site; the Graph, Brave and
+// mato, luma, eventbrite, dostuff, meetup, linktree, allevents, social-search) and --only <site> (run just that site; the Graph, Brave and
 // mention steps are skipped). The per-site crawlers live in ingest/lib/sites (mato's in mato-city.js).
 import "./env.js";
 import fs from "node:fs";
@@ -195,7 +195,7 @@ export function fromGraphItems(items) {
 export function addAll(wl, found, now = new Date()) {
   const added = [];
   for (const c of found) {
-    const acc = wlib.addCandidate(wl, { handle: c.handle, found_via: c.found_via, found_from: c.found_from, notes: (c.evidence || "").slice(0, 160) }, now);
+    const acc = wlib.addCandidate(wl, { handle: c.handle, platform: c.platform, found_via: c.found_via, found_from: c.found_from, notes: (c.evidence || "").slice(0, 160) }, now);
     if (acc) added.push(acc);
   }
   return added;
@@ -236,7 +236,7 @@ async function main() {
       list.push(...mato.items);
     } catch (e) { warn(`ma.to: ${e.message}`); counts["ma.to"] = 0; }
   }
-  const results = await runSites({ fetcher, now, sources, cities }, flags);
+  const results = await runSites({ fetcher, now, sources, cities, env }, flags);
   for (const r of results) {
     take(r.name, r.candidates); leads.push(...r.leads);
     for (const raw of r.items) list.push({ source: raw.source_hint, raw });
@@ -260,7 +260,7 @@ ${added.length} new candidates (${wl.accounts.length} accounts on the list), ${l
     cands = skipDominated(cands.map(capConfidence), readEvents());
     const before = new Set(readEvents().map((e) => e.id));
     const { merged, final } = await finalize(cands, { now, geocoder: createGeocoder({ noFetch }), fetcher, liveSourceIds: [], dry: false });
-    const fresh = (prefix) => final.filter((c) => String(c.source_id).startsWith(prefix) && !before.has(c.id)).length;
+    const fresh = (prefix) => final.filter((c) => (prefix === "social-search:" ? /^(tiktok|instagram):/ : new RegExp(`^${prefix}`)).test(String(c.source_id)) && !before.has(c.id)).length;
     info(`site events: ${cands.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);
     for (const r of results) info(summaryLine(r, { new: fresh(`${r.name}:`) }));
   } else for (const r of results) info(summaryLine(r, { new: 0 }));

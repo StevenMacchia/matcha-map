@@ -63,7 +63,8 @@ The map does not scrape TikTok either.
 
 - The **Display API** needs an approved app and shows only the videos of the account that authorizes it. It cannot read other brands.
 - The **Research API** is for approved researchers.
-- So TikTok here is limited to Brave search results (`site:` queries) and TikTok's open oEmbed on a video URL you paste in.
+- So TikTok here is limited to search snippets and TikTok's open oEmbed. `ingest/lib/sites/social-search.js` asks the Tavily search API (`TAVILY_API_KEY`, free tier about 1,000 credits a month; local caps in `data/tavily-budget.json`: 120 per run, 900 per month) for matcha pop-up posts on tiktok.com and instagram.com, then sends each TikTok video URL to `https://www.tiktok.com/oembed` (1 request per second) for the caption, creator and thumbnail. No tiktok.com or instagram.com page is ever opened.
+- Every TikTok creator seen in a matcha pop-up result joins the watch list as a candidate (`platform: tiktok`, `found_via: search`, `found_from: tavily`). When one is due on the watch cadence, `npm run watch` re-checks it with a Tavily query `"<handle>" matcha` limited to tiktok.com (1 credit), never by touching tiktok.com.
 
 ## Brave Search key (optional)
 

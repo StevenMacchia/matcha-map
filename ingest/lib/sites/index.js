@@ -12,17 +12,19 @@
 //   Partiful           events are private invite links; there is no public listing or search, and the robots.txt only names a few
 //                      search bots. Skipped.
 //   Resident Advisor   a club-music listing (ra.co); no matcha events, and /api/ is disallowed. Skipped.
-//   TikTok, Instagram, Facebook: never crawled (README, "Not covered").
+//   social-search       TikTok and Instagram through Tavily search snippets and TikTok's open oEmbed (social-search.js); no page of those hosts is opened.
+//   TikTok, Instagram, Facebook pages: never crawled (README, "Not covered").
 import * as luma from "./luma.js";
 import * as eventbrite from "./eventbrite.js";
 import * as dostuff from "./dostuff.js";
 import * as meetup from "./meetup.js";
 import * as linktree from "./linktree.js";
 import * as allevents from "./allevents.js";
+import * as socialSearch from "./social-search.js";
 import { SITE_ORDER, dupKey, titleKey } from "./common.js";
 import { info, warn } from "../log.js";
 
-export const SITES = [luma, eventbrite, dostuff, meetup, linktree, allevents];
+export const SITES = [luma, eventbrite, dostuff, meetup, linktree, allevents, socialSearch];
 export const NAMES = ["mato", ...SITES.map((s) => s.name)];
 
 // argv -> {only, off:Set}. Unknown --only names are reported by the caller.
@@ -85,6 +87,10 @@ export function skipDominated(cands, existing) {
 }
 
 // Allevents lists events that come from elsewhere, so nothing from it is "confirmed".
-export const capConfidence = (c) => (String(c.source_id).startsWith("allevents:") && c.confidence === "confirmed" ? { ...c, confidence: "likely" } : c);
+export const capConfidence = (c) => {
+  // Search-snippet finds (a tiktok.com or instagram.com post URL): "likely" at most, "unsure" without a time or an address.
+  if (/^https?:\/\/(?:www\.)?(?:tiktok|instagram)\.com\//i.test(c.source_url || "") && c.confidence !== "unsure") return { ...c, confidence: c.timed && c.hasAddress ? "likely" : "unsure" };
+  return String(c.source_id).startsWith("allevents:") && c.confidence === "confirmed" ? { ...c, confidence: "likely" } : c;
+};
 
 void info;

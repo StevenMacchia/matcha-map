@@ -86,7 +86,7 @@ Set as environment variables. All are optional; the site and ingest work without
 
 The map keeps a watch list of accounts in `data/watchlist.json` (every Instagram handle in `data/sources.json`, 82 today, plus 22 candidates found by discovery; 104 accounts as of 2026-11-22).
 
-- `npm run discover` finds new candidate accounts and matcha events: @mentions in captions we already hold, Instagram hashtags (needs a token), Brave search (needs `BRAVE_API_KEY`), and the public event sites below. Add `-- --dry` to preview, `-- --no-<site>` to skip one site and `-- --only <site>` to run just one (`mato`, `luma`, `eventbrite`, `dostuff`, `meetup`, `linktree`, `allevents`). `npm run refresh` runs it first.
+- `npm run discover` finds new candidate accounts and matcha events: @mentions in captions we already hold, Instagram hashtags (needs a token), Brave search (needs `BRAVE_API_KEY`), TikTok and Instagram through search snippets and TikTok oEmbed (Tavily, `TAVILY_API_KEY`; no scraping), and the public event sites below. Add `-- --dry` to preview, `-- --no-<site>` to skip one site and `-- --only <site>` to run just one (`mato`, `luma`, `eventbrite`, `dostuff`, `meetup`, `linktree`, `allevents`, `social-search`). `npm run refresh` runs it first.
 - `npm run watch` checks every account that is due (24, 72 or 168 hours apart) and writes new dates to the map. Flags: `-- --all`, `-- --handle <h>`, `-- --dry`, `-- --promote` (turns accounts with real hits into source records).
 - Without any key, discover and watch still work: they read public MATO and Luma pages, the schedule pages of the brands that have one, and @mentions in text already held. They cannot see an Instagram or TikTok account, so a brand with no public schedule page stays a pin with no dates. `-- --promote` changes nothing unless an account has a real hit.
 - Instagram runs only through Meta's official Graph API and stays off until `INSTAGRAM_TOKEN` and `INSTAGRAM_BUSINESS_ID` are in `.env`. Setup: `docs/INSTAGRAM-SETUP.md`. Copy `.env.example` to `.env`.
@@ -133,3 +133,12 @@ MIT. See `LICENSE`.
 ## Search from a Claude session
 
 `.mcp.json` registers Tavily's MCP server for Claude Code sessions opened in this folder. It reads `TAVILY_API_KEY` from the environment (set it in your shell, or let the session load it; the key in `.env` is for the pipeline). With it, a research worker can search with domain filters, which the built-in search cannot do.
+
+## Storefronts
+
+A third map layer shows permanent matcha shops as little storefront icons, on by default (Show > Storefronts turns it off). Pop-up pins stay on top, brand mochi below.
+
+- `npm run shops` builds `data/shops.json` and copies it to `site/data/shops.json`. It asks OpenStreetMap through the Overpass API (seven bounding boxes, one query at a time, a plain User-Agent, `[timeout:180]`, a 60 second wait and one retry on 429 or 504, raw answers cached in `.cache/` for a day) for cafes, tea and ice cream places, restaurants and tea, coffee or beverage shops whose name, brand, cuisine or description says matcha, plus a short list of matcha-first chains (`ingest/lib/shops/brands.js`). It also reads the site of every cafe-kind brand in `data/sources.json`, looks for a street address (JSON-LD, then a footer line), geocodes it and adds the shop; a brand with no address on its site gets no point.
+- Matches are deduped (same name within 150 m). A human hides or fixes mistakes in `data/shops-overrides.json`: `{ "osm:node/123": { "hide": true } }` or `{ "osm:way/9": { "lat": 40.7, "lng": -73.9, "name": "Better name" } }`.
+- It is its own command and is not part of `npm run refresh`: the public Overpass servers are shared and can be slow, so a run takes minutes. Run it now and then.
+- The data is © OpenStreetMap contributors, ODbL; the file carries the attribution and each card links to its OpenStreetMap page.
