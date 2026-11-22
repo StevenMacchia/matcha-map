@@ -2,7 +2,7 @@
 // Pure functions plus load/save. Cadence and status rules live here so they are testable.
 import fs from "node:fs";
 import path from "node:path";
-import { readNote } from "./mato-city.js";
+import { readNote, looksLikeHandle } from "./mato-city.js";
 
 export const FILE = "data/watchlist.json";
 const HOUR = 3600000, DAY = 86400000;
@@ -10,6 +10,7 @@ export const QUIET_AFTER_DAYS = 90;      // watching -> quiet after this long wi
 export const DROP_CANDIDATE_DAYS = 60;   // candidate with no hit this long -> dropped
 export const RECENT_HIT_DAYS = 30;
 
+export { readNote };
 export const slug = (handle) => String(handle).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 export const norm = (h) => String(h || "").replace(/^@/, "").trim();
 const key = (a) => `${a.platform}:${a.handle.toLowerCase()}`;
@@ -98,7 +99,7 @@ export function pseudoSource(acc) {
   if (mv && acc.platform === "instagram") {
     return {
       id: acc.source_id || `mato:${mv.slug}`, brand: mv.brand || acc.handle, home_city: mv.city, home_state: mv.state,
-      website: null, instagram: acc.handle, tiktok: null,
+      website: null, instagram: looksLikeHandle(mv.slug) ? mv.slug : null, tiktok: null,
       schedule_url: `https://ma.to/venue/${mv.slug}`, schedule_kind: "website", adapter: "mato", active: true,
     };
   }
@@ -117,7 +118,8 @@ export function promote(wl, sources, { now = new Date(), graphOn = false } = {})
   const day = new Date(now).toISOString().slice(0, 10);
   for (const acc of wl.accounts) {
     if (acc.platform !== "instagram" || acc.source_id || acc.status !== "watching" || !(acc.hits > 0)) continue;
-    let id = slug(acc.handle);
+    const mv0 = readNote(acc.notes);
+    let id = slug(mv0 ? mv0.slug : acc.handle);
     if (out.some((s) => s.id === id)) id = `${id}-ig`;
     if (out.some((s) => s.instagram && s.instagram.toLowerCase() === acc.handle.toLowerCase())) { acc.source_id = out.find((s) => s.instagram.toLowerCase() === acc.handle.toLowerCase()).id; continue; }
     const mv = readNote(acc.notes);
@@ -125,8 +127,9 @@ export function promote(wl, sources, { now = new Date(), graphOn = false } = {})
     if (mv) {
       // A MATO find: city and state come from the MATO page, its venue page is the schedule.
       out.push({
-        id, brand: mv.brand || acc.handle, home_city: mv.city, home_state: mv.state, website: null, instagram: acc.handle, tiktok: null,
+        id, brand: mv.brand || acc.handle, home_city: mv.city, home_state: mv.state, website: null, instagram: looksLikeHandle(mv.slug) ? mv.slug : null, tiktok: null,
         schedule_url: `https://ma.to/venue/${mv.slug}`, schedule_kind: "website", adapter: "mato", active: true,
+        kind: "organizer", category: "other", kind_note: "Found on MATO; only its matcha events are kept.",
         notes: `Found on MATO (${acc.found_from}). Brand name and city come from the MATO listing; check them.`,
         added: day, verified: null,
       });
@@ -137,6 +140,7 @@ export function promote(wl, sources, { now = new Date(), graphOn = false } = {})
     out.push({
       id, brand: acc.handle, home_city: "", home_state: "", website: null, instagram: acc.handle, tiktok: null,
       schedule_url: null, schedule_kind: "manual", adapter: graphOn ? "instagram-graph" : "manual", active: true,
+      kind: "popup", category: "matcha", kind_note: null,
       notes: `Found via ${acc.found_via}${acc.found_from ? ` (${acc.found_from})` : ""}. Brand, city and state need a human edit.`,
       added: day, verified: null,
     });

@@ -86,7 +86,7 @@ async function main() {
     try {
       const o = await oembed(raw.source_url);
       if (o) { raw.text = `${raw.text} ${o.text}`.trim(); raw.handle = o.handle; raw.image_url = raw.image_url || o.image_url || null; }
-      const m = matchSource(raw, sources);
+      const m = matchSource(raw, sources, { file: name });
       if (!m) { row.note = "no source matched (add its handle to sources.json)"; continue; }
       raw.handle = raw.handle || m.handle;
       for (const c of await itemToCandidates(raw, m.source, now, m.handle)) { candidates.push(c); row.kept++; }

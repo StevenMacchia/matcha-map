@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { SOCIAL_POST } from "./extract.js";
+import { hasMatcha } from "../adapters/mato.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 const DAY = 86400000;
@@ -76,6 +77,9 @@ function carryRich(merged, prev, c) {
   merged.links = Object.fromEntries(["website", "instagram", "tiktok"].map((k) => [k, c.links?.[k] || prev.links?.[k] || null]));
 }
 
+// Events found through MATO (source_id mato:<slug>) stay only while their title, description, venue or brand has a matcha word.
+export const keepMatoEvent = (e) => !String(e.source_id).startsWith("mato:") || hasMatcha(e.title, e.description, e.venue, e.brand, (e.menu || []).join(" "));
+
 // mergeEvents(existing[], candidates[], opts) -> { events, decay, stats }
 //  opts.now: Date|string; opts.liveSourceIds: sources fetched OK this run;
 //  opts.decay: { [id]: stepsAlreadyApplied } (sidecar state so decay is not repeated).
@@ -83,9 +87,9 @@ export function mergeEvents(existing, candidates, { now = new Date(), liveSource
   const nowIso = new Date(now).toISOString();
   const nowMs = new Date(now).getTime();
   const live = new Set(liveSourceIds);
-  const byId = new Map(existing.map((e) => [e.id, { ...e }]));
+  const byId = new Map(existing.filter(keepMatoEvent).map((e) => [e.id, { ...e }]));
   const newDecay = { ...decay };
-  const stats = { added: 0, updated: 0, decayed: 0, dropped: 0 };
+  const stats = { added: 0, updated: 0, decayed: 0, dropped: 0, cleaned: existing.filter((e) => !keepMatoEvent(e)).length };
   const seenThisRun = new Set();
 
   for (const c of candidates) {

@@ -54,7 +54,7 @@ async function main() {
     } catch (e) { warn(`${acc.handle}: ${e.message}`); notes.set(acc.handle, `failed: ${e.message}`); continue; }
     if (!ran) { notes.set(acc.handle, igOn ? "nothing to check" : "needs token"); continue; }
     live.push(source.id);
-    const { candidates: cs, popupAt } = await processItems(items, source, { now, handle: acc.handle });
+    const { candidates: cs, popupAt } = await processItems(items, source, { now, handle: source.instagram ?? (wlib.readNote(acc.notes) ? null : acc.handle) });
     const ids = new Set(dedupeCandidates(cs, now).map((c) => c.id));
     const fresh = [...ids].filter((id) => !known.has(id)).length;
     candidates.push(...cs);

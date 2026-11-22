@@ -36,6 +36,21 @@ export function offerPrice(offers) {
   return lo === hi ? `$${lo}` : `$${lo}-${hi}`;
 }
 
+// What counts as matcha (shared with the city crawler, the filter below and the writer cleanup).
+const MATCHA_WORDS = /\b(matcha|hojicha|genmaicha|usucha|koicha)\b|ceremonial[\s-]grade|ceremonial matcha/i;
+export function hasMatcha(...parts) { return MATCHA_WORDS.test(parts.filter(Boolean).join(" | ")); }
+export const slugHasMatcha = (s) => /matcha|hojicha|genmaicha|usucha|koicha/i.test(s);
+
+// Pseudo sources from MATO discovery (id mato:<slug>) and sources whose kind is venue or organizer host many
+// non-matcha events; for those only matcha events are kept. A missing kind means "popup" (keep everything).
+export function needsMatchaFilter(source) {
+  return String(source?.id || "").startsWith("mato:") || ["venue", "organizer"].includes(source?.kind);
+}
+// RawItem -> true when its title, description, tags or venue name (or the source brand) has a matcha word.
+export function rawHasMatcha(raw, source = {}) {
+  return hasMatcha(raw.text, raw.description, raw.tags, raw.hints?.title, raw.hints?.venue, source.brand);
+}
+
 // JSON-LD Event -> RawItem (or null). venueImage is the venue page avatar, used only when the event has no image.
 export function eventToRaw(ld, url, venueImage = null) {
   if (!ld || ld["@type"] !== "Event" || !ld.startDate) return null;
@@ -47,6 +62,7 @@ export function eventToRaw(ld, url, venueImage = null) {
     description: ld.description || null,
     image_url: ldImage(ld.image) || venueImage || null,
     price_hint: offerPrice(ld.offers),
+    tags: [].concat(ld.keywords || []).join(" ") || null,
     hints: { start: norm(ld.startDate), end: norm(ld.endDate), venue: ld.location?.name || null, title: ld.name || null },
   };
 }
@@ -69,7 +85,7 @@ export default {
       const r = await ctx.fetcher.get(url);
       if (!r.ok) { debug("mato event failed", url, r.status); continue; }
       const raw = eventToRaw(jsonLd(r.text).find((x) => x["@type"] === "Event"), url, venueImage);
-      if (raw) items.push(raw);
+      if (raw && (!needsMatchaFilter(source) || rawHasMatcha(raw, source))) items.push(raw);
     }
     return items;
   },

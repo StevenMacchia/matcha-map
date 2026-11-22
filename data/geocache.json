@@ -32,6 +32,11 @@
     "miss": true,
     "at": 1795366336806
   },
+  "190 court new york ny": {
+    "lat": 43.242266,
+    "lng": -77.611829,
+    "source": "nominatim"
+  },
   "20812 international blvd seattle wa": {
     "miss": true,
     "at": 1795371603379
@@ -45,6 +50,11 @@
     "miss": true,
     "at": 1795371615700
   },
+  "68 jay st brooklyn ny 11201": {
+    "lat": 40.702847,
+    "lng": -73.986828,
+    "source": "nominatim"
+  },
   "713 lorimer st new york ny": {
     "lat": 40.718158,
     "lng": -73.950215,
@@ -53,6 +63,11 @@
   "73 e jackson blvd chicago il": {
     "lat": 41.878172,
     "lng": -87.625696,
+    "source": "nominatim"
+  },
+  "83 water street brooklyn ny 11201": {
+    "lat": 40.70331,
+    "lng": -73.990971,
     "source": "nominatim"
   },
   "admari miami fl": {
@@ -194,11 +209,23 @@
     "source": "nominatim",
     "at": "2026-11-22T16:46:03.427Z"
   },
+  "city:charleston|sc": {
+    "lat": 32.7884,
+    "lng": -79.9399,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:07.840Z"
+  },
   "city:charlotte|nc": {
     "lat": 35.2272,
     "lng": -80.8431,
     "source": "nominatim",
     "at": "2026-11-22T16:46:04.838Z"
+  },
+  "city:charlottesville|va": {
+    "lat": 38.0293,
+    "lng": -78.4767,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:09.216Z"
   },
   "city:cincinnati|oh": {
     "lat": 39.1013,
@@ -266,6 +293,18 @@
     "source": "nominatim",
     "at": "2026-11-22T16:46:21.882Z"
   },
+  "city:greensboro|nc": {
+    "lat": 36.0726,
+    "lng": -79.792,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:10.700Z"
+  },
+  "city:greer|sc": {
+    "lat": 34.9381,
+    "lng": -82.2272,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:12.252Z"
+  },
   "city:hoboken|nj": {
     "lat": 40.7433,
     "lng": -74.0324,
@@ -289,6 +328,12 @@
     "lng": -94.5781,
     "source": "nominatim",
     "at": "2026-11-22T16:46:27.652Z"
+  },
+  "city:largo|fl": {
+    "lat": 27.9095,
+    "lng": -82.7873,
+    "source": "nominatim",
+    "at": "2026-11-22T18:29:13.582Z"
   },
   "city:memphis|tn": {
     "lat": 35.146,
@@ -909,35 +954,5 @@
   "wynwood marketplace miami fl": {
     "miss": true,
     "at": 1795371636237
-  },
-  "city:charleston|sc": {
-    "lat": 32.7884,
-    "lng": -79.9399,
-    "source": "nominatim",
-    "at": "2026-11-22T18:29:07.840Z"
-  },
-  "city:charlottesville|va": {
-    "lat": 38.0293,
-    "lng": -78.4767,
-    "source": "nominatim",
-    "at": "2026-11-22T18:29:09.216Z"
-  },
-  "city:greensboro|nc": {
-    "lat": 36.0726,
-    "lng": -79.792,
-    "source": "nominatim",
-    "at": "2026-11-22T18:29:10.700Z"
-  },
-  "city:greer|sc": {
-    "lat": 34.9381,
-    "lng": -82.2272,
-    "source": "nominatim",
-    "at": "2026-11-22T18:29:12.252Z"
-  },
-  "city:largo|fl": {
-    "lat": 27.9095,
-    "lng": -82.7873,
-    "source": "nominatim",
-    "at": "2026-11-22T18:29:13.582Z"
   }
 }
