@@ -5,11 +5,13 @@
   "description": "Interactive map of matcha pop-ups across America: where and when, so you can find one near you on a given day.",
   "type": "module",
   "scripts": {
-    "dev": "npx serve site -l 8790 --no-clipboard",
+    "dev": "node tools/serve.js",
     "ingest": "node ingest/run.js",
     "test": "node --test",
     "discover": "node ingest/lib/discover.js",
-    "watch": "node ingest/watch.js"
+    "watch": "node ingest/watch.js",
+    "loop": "node ingest/loop.js",
+    "refresh": "node ingest/loop.js --once"
   },
   "license": "MIT"
 }

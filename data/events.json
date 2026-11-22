@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22T17:02:17.600Z",
+  "generated": "2026-11-22T17:45:19.692Z",
   "events": [
     {
       "id": "1ca91778ead5",
@@ -412,7 +412,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -579,7 +579,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -628,7 +628,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -673,7 +673,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -720,7 +720,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -767,7 +767,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -819,7 +819,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -864,7 +864,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -911,7 +911,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -962,7 +962,7 @@
       "geocode_source": "nominatim",
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -1007,7 +1007,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1052,7 +1052,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1097,7 +1097,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1142,7 +1142,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1187,7 +1187,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1234,7 +1234,7 @@
       "geocode_source": "nominatim",
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1281,7 +1281,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1331,7 +1331,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1376,7 +1376,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1421,7 +1421,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1466,7 +1466,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1511,7 +1511,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1556,7 +1556,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1601,7 +1601,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -1646,7 +1646,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -1691,7 +1691,7 @@
       "geocode_source": "none",
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-22T17:02:17.600Z",
+      "last_seen": "2026-11-22T17:45:19.692Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {

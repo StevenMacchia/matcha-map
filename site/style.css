@@ -1,6 +1,6 @@
 :root {
-  --accent: #8CBF7A; --accent-ink: #FBF6EA; --deep: #4F7A43; --foam: #E6F2DC; --pink: #F6B7C7; --cream: #FFFBF0; --chipbg: #FFFBF0;
-  --canvas: #FBF6EA; --panel: #FFFDF7; --ink: #4B3A33; --muted: #8A766B; --line: #D5E6CB; --brandpin: #A8C79A;
+  --accent: #8CBF7A; --accent-ink: #2B3A27; --deep: #46703B; --foam: #E6F2DC; --pink: #F6B7C7; --cream: #FFFBF0; --chipbg: #FFFBF0;
+  --canvas: #FBF6EA; --panel: #FFFDF7; --ink: #4B3A33; --muted: #75625A; --line: #D5E6CB; --brandpin: #A8C79A;
   --shadow: 0 1px 3px rgba(75,58,51,.14), 0 8px 24px rgba(75,58,51,.10);
   --peach: #F8D3B5; --foamedge: #CFE5C2; --btnfill: #fff;
   --mc: #FFFBF0; --mf: #DCEBC9; --mo: #4B3A33; --mx: #4B3A33; --mb: #F6B7C7; --mbo: .85;
@@ -195,3 +195,6 @@ dialog p { margin: 0 0 10px; font-size: 14px; }
 .row .th { flex: none; width: 48px; height: 48px; border-radius: 12px; overflow: hidden; background: var(--foam); border: 1.5px solid var(--line); display: flex; align-items: center; justify-content: center; }
 .row .th img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .row .menu-prev { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* contrast: today chip text on its pink fill in dark mode */
+@media (prefers-color-scheme: dark) { .chip[data-chip="today"][aria-pressed="true"] { color: #1E2A1F; } }

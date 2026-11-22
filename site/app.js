@@ -45,6 +45,13 @@
     return day + " · " + t;
   }
 
+  // events.json status is as of the last ingest; recompute from the end time (ISO strings carry the offset).
+  function liveStatus(e) {
+    if (e.status === "cancelled") return "cancelled";
+    var st = Date.parse(e.start), en = e.end ? Date.parse(e.end) : st + (e.all_day ? 86400000 : 3 * 3600000);
+    return isNaN(en) ? e.status : (en < Date.now() ? "past" : "upcoming");
+  }
+
   function matchesChip(e) {
     var s = parts(e.start);
     if (!s) return false;
@@ -206,10 +213,19 @@
   imgFallback(document);
   $("sheet-close").addEventListener("click", closeCard);
   map.on("click", function () { if (!wide.matches) closeCard(); });
+  // Escape closes the open card (the About dialog handles its own Escape) and hands focus back to the row that opened it.
+  var cardOpener = null;
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key !== "Escape" || !openKey || $("about").open) return;
+    var back = cardOpener;
+    closeCard();
+    if (back) setTimeout(function () { var r = document.querySelector("#list [data-key=\"" + back + "\"]"); if (r) r.focus(); }, 0);
+  });
 
   function flyTo(key) {
     var rec = markers[key];
     if (!rec) return;
+    var ae = document.activeElement; cardOpener = ae && ae.getAttribute && ae.closest("#list") ? ae.getAttribute("data-key") : null;
     if (state.view === "list") setView("map");
     var group = rec.item.kind === "e" ? eventGroup : brandGroup;
     map.invalidateSize();
@@ -422,6 +438,7 @@
       $("updated").textContent = "Last updated " + MONTHS[g.getMonth()] + " " + g.getDate() + ", " + g.getFullYear() + ".";
     }
     state.events = (data.events || []).filter(function (e) { return e.lat != null && e.lng != null; }).map(function (e) {
+      e.status = liveStatus(e);
       return { kind: "e", key: "e:" + e.id, ll: [e.lat, e.lng], data: e, past: e.status === "past", name: e.brand };
     });
     buildBrands(res[1] || []);

@@ -4,15 +4,16 @@
 
 A map of matcha pop-ups across America, by day, so you can find one near you when you are free. It is a plain HTML site on Leaflet and OpenStreetMap, fed by a small ingest script that writes `data/events.json`.
 
-Coverage, as of 2026-11-22: 37 brands, 4 upcoming pop-ups. Most brands post dates on Instagram only, so the map is only as fresh as the hand-added posts.
+Coverage, as of 2026-11-22: 151 brands in 31 states (82 with an Instagram handle, 2 with TikTok, 50 with a public schedule page), 39 pop-ups on file, 23 upcoming from 12 brands, 25 of them with a downloaded photo. The other brands post dates on Instagram or TikTok only, so they show as a pin with no dates until a post is added by hand.
 
 ## Run it
 
 No `npm install` is needed. Node 20 or newer.
 
-- `npm run dev` (or `npx serve site -l 8790`) serves `site/` at http://localhost:8790.
+- `npm run dev` serves `site/` at http://localhost:8790 with `tools/serve.js`, a plain Node static server, so nothing is downloaded. Another port: `npm run dev -- --port 8791`. (`npx serve site -l 8790` also works if you have it.)
 - `npm run ingest` reads every active source and rewrites `data/events.json`, then copies it and `data/sources.json` into `site/data/`. It takes about a minute on a cold cache and caches fetches and geocodes in `.cache/` and `data/geocache.json`.
 - `npm test` runs the unit tests.
+- `npm run refresh` runs discover, watch and ingest once, in that order. `npm run loop` does the same every 6 hours while the window stays open. See "Run it on a schedule".
 
 Ingest flags: `--source <id>`, `--paste`, `--inbox`, `--no-fetch`, `--dry`, `--verbose`.
 
@@ -59,7 +60,7 @@ What a card shows beyond when and where, and where each piece comes from. A fiel
 - `description`: the brand's own first line, cleaned (no links, hashtags, mentions or emoji), 200 chars at most.
 - `links`: the brand's website, Instagram and TikTok profiles from `data/sources.json`.
 
-Not covered: Instagram and TikTok are not scraped. Their terms forbid it and the pages need a login, so this project does not try. Two adapters are wired but off:
+Not covered: Instagram and TikTok are not scraped. Their terms forbid it and the pages need a login, so this project does not try. No token is present today, so both adapters are off and every pop-up on the map came from a public brand page, MATO, Luma or the hand-paste inbox. That leaves most brands (about 100 of 151) as a pin with no dates. Two adapters are wired but off until keys exist:
 
 - Instagram Graph API (`INSTAGRAM_TOKEN`): needs a business or creator account that is connected to a Meta app, and reads only that account's own posts, so it fits a brand that agrees to connect.
 - TikTok Display or Research API (`TIKTOK_KEY`): needs an approved app, which is slow to get and limited to approved uses.
@@ -79,12 +80,20 @@ Set as environment variables. All are optional; the site and ingest work without
 
 ## Keep it fresh
 
-The map keeps a watch list of accounts in `data/watchlist.json` (31 seeded from the sources, more as discovery finds them).
+The map keeps a watch list of accounts in `data/watchlist.json` (every Instagram handle in `data/sources.json`, 82 today, plus 22 candidates found by discovery; 104 accounts as of 2026-11-22).
 
 - `npm run discover` finds new candidate accounts: @mentions in captions we already hold, Instagram hashtags (needs a token), Brave search (needs `BRAVE_API_KEY`), and public MATO and Luma pages. Add `-- --dry` to preview.
 - `npm run watch` checks every account that is due (24, 72 or 168 hours apart) and writes new dates to the map. Flags: `-- --all`, `-- --handle <h>`, `-- --dry`, `-- --promote` (turns accounts with real hits into source records).
+- Without any key, discover and watch still work: they read public MATO and Luma pages, the schedule pages of the brands that have one, and @mentions in text already held. They cannot see an Instagram or TikTok account, so a brand with no public schedule page stays a pin with no dates. `-- --promote` changes nothing unless an account has a real hit.
 - Instagram runs only through Meta's official Graph API and stays off until `INSTAGRAM_TOKEN` and `INSTAGRAM_BUSINESS_ID` are in `.env`. Setup: `docs/INSTAGRAM-SETUP.md`. Copy `.env.example` to `.env`.
 - `.github/workflows/watch.yml` runs discover, watch and ingest every 6 hours and commits the data. It only matters once the repo is on GitHub.
+
+## Run it on a schedule
+
+- `npm run loop`: discover, then watch, then ingest, at once and again every 6 hours while the terminal stays open. Each cycle prints one line with a timestamp, the result and time of each step, and the event counts. A step that fails is reported and the next one still runs. Ctrl+C stops it. `-- --every 2` changes the interval in hours.
+- `npm run refresh`: the same three steps once. Exit code 1 only if a step crashed.
+- Windows, without leaving a terminal open: `powershell -ExecutionPolicy Bypass -File toolswindows-task.ps1` registers a Task Scheduler job named "Matcha Map refresh" that runs `npm run refresh` in this folder every 6 hours as you, while you are signed in, and logs to `.cache/refresh.log`. Remove it with `-Remove`. The script is not run for you.
+- Refreshing writes `data/` and `site/data/`; the site picks it up on the next page load. It also reads the clock: a pop-up that has ended is shown as past even before the next refresh.
 
 ## Deploy later
 
@@ -93,9 +102,10 @@ Nothing is deployed yet. The plan is Cloudflare Pages serving the `site/` folder
 ## Layout
 
 - `site/`: the static site (`index.html`, `app.js`, `style.css`, `cities.js`, `data/`, `img/events/` for downloaded event photos).
-- `ingest/`: `run.js`, `adapters/` (one per source kind) and `lib/` (fetch, extract, geocode, write).
+- `ingest/`: `run.js`, `watch.js`, `loop.js`, `adapters/` (one per source kind) and `lib/` (fetch, extract, geocode, write).
 - `data/`: `sources.json`, `events.json`, `inbox/`, `schema/`, geocode cache and overrides.
 - `docs/`: setup notes. `.github/workflows/`: the 6-hour watch job.
+- `tools/`: `serve.js` (dev server), `windows-task.ps1`, `merge-sources.js`, `gen-cities.js`.
 - `test/`: unit tests.
 - `SPEC.md`: the contract. `LADDER.md`: the build log.
 
