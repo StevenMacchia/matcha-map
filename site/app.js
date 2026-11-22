@@ -72,13 +72,15 @@
   }
 
   // ---------- map ----------
-  var map = L.map("map", { zoomControl: true, minZoom: 3, maxZoom: 19 });
+  var map = L.map("map", { zoomControl: true, minZoom: 3, maxZoom: 19, doubleClickZoom: true, touchZoom: true });
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19, attribution: "© <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a> contributors"
   }).addTo(map);
   map.fitBounds([[24.5, -125], [49.5, -66.5]]);
 
   // No inline style attributes (CSP): sizes go through iconSize.
+  var NUDGE = 14; // px: brand pins sit down-right of their spot so an event pin on top does not hide them
+  function anchor(size, brand) { var a = size / 2 - (brand ? NUDGE : 0); return [a, a]; }
   function mkCluster(cls, base) {
     return L.markerClusterGroup({
       showCoverageOnHover: false, maxClusterRadius: 44, spiderfyOnMaxZoom: true,
@@ -88,7 +90,7 @@
         el.className = "cl " + cls;
         el.textContent = n;
         el.setAttribute("aria-label", n + " pins, zoom in");
-        return L.divIcon({ html: el, className: "pinwrap", iconSize: [size, size] });
+        return L.divIcon({ html: el, className: "pinwrap", iconSize: [size, size], iconAnchor: anchor(size, cls === "cl-br") });
       }
     });
   }
@@ -99,7 +101,8 @@
   function pinIcon(kind, past) {
     var el = document.createElement("span");
     el.className = "pin " + (kind === "e" ? "pin-ev" : "pin-br") + (past ? " past" : "");
-    return L.divIcon({ html: el, className: "pinwrap", iconSize: kind === "e" ? [36, 36] : [28, 28] });
+    var sz = kind === "e" ? 36 : 28;
+    return L.divIcon({ html: el, className: "pinwrap", iconSize: [sz, sz], iconAnchor: anchor(sz, kind !== "e") });
   }
 
   // ---------- cards ----------
@@ -197,7 +200,11 @@
     return state.events.filter(function (it) {
       var e = it.data;
       if (e.status === "cancelled") return false;
-      if (e.status === "past") return state.recent;
+      if (e.status === "past") {
+        if (!state.recent) return false;
+        var p = parts(e.start);
+        return state.day ? !!p && p.key === state.day : state.chip === "any"; // Recent follows the date filter
+      }
       return matchesChip(e);
     });
   }
@@ -253,7 +260,7 @@
 
   // ---------- filters ----------
   function saveChip() {
-    try { localStorage.setItem("matchamap.filter", JSON.stringify({ chip: state.chip, recent: state.recent })); } catch (e) { /* ignore */ }
+    try { localStorage.setItem("matchamap.filter", JSON.stringify({ chip: state.chip })); } catch (e) { /* ignore */ }
   }
   function syncChips() {
     document.querySelectorAll("[data-chip]").forEach(function (b) {
@@ -261,6 +268,7 @@
     });
     $("recent").setAttribute("aria-pressed", String(state.recent));
     $("day").value = state.day;
+    $("day-clear").hidden = !state.day;
   }
   function applyFilters() { syncChips(); saveChip(); closeCard(); refreshEvents(); }
   document.querySelectorAll("[data-chip]").forEach(function (b) {
@@ -268,7 +276,28 @@
   });
   $("recent").addEventListener("click", function () { state.recent = !state.recent; applyFilters(); });
   $("day").addEventListener("change", function () { state.day = $("day").value; applyFilters(); });
+  $("day-clear").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); $("day").focus(); });
   $("empty-any").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); });
+
+  // ---------- Hawaii ----------
+  // The first view fits the contiguous US; one quiet button jumps to Honolulu and back.
+  var HOME = [[24.5, -125], [49.5, -66.5]], HI = [21.4, -157.95], inHawaii = false;
+  function setupHawaii() {
+    var has = state.brands.some(function (b) { return b.data.home_state === "HI"; }) ||
+      state.events.some(function (e) { return e.data.state === "HI"; });
+    var btn = $("hawaii");
+    btn.hidden = !has;
+    btn.addEventListener("click", function () {
+      closeCard();
+      inHawaii = !inHawaii;
+      if (inHawaii) map.setView(HI, 9); else map.fitBounds(HOME);
+      btn.textContent = inHawaii ? "Mainland" : "Hawaii";
+    });
+    map.on("moveend", function () {
+      var c = map.getCenter(), now = c.lng < -140 && c.lat < 30;
+      if (now !== inHawaii) { inHawaii = now; btn.textContent = now ? "Mainland" : "Hawaii"; }
+    });
+  }
 
   // ---------- view toggle ----------
   function setView(v) {
@@ -314,7 +343,6 @@
   try {
     var saved = JSON.parse(localStorage.getItem("matchamap.filter") || "null");
     if (saved && ["today", "weekend", "week", "any"].indexOf(saved.chip) >= 0) state.chip = saved.chip;
-    if (saved && saved.recent) state.recent = true;
   } catch (e) { /* ignore */ }
   syncChips();
 
@@ -328,6 +356,7 @@
       return { kind: "e", key: "e:" + e.id, ll: [e.lat, e.lng], data: e, past: e.status === "past", name: e.brand };
     });
     buildBrands(res[1] || []);
+    setupHawaii();
     refreshEvents();
   }).catch(function () {
     var note = $("note"); note.textContent = "Could not load pop-ups. Try again in a moment."; note.hidden = false;

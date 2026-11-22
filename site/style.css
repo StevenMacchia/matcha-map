@@ -36,6 +36,8 @@ button, input { font: inherit; color: inherit; }
 .chip { flex: none; min-height: 44px; padding: 0 16px; border-radius: 22px; border: 1px solid var(--line); background: var(--canvas); cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .chip.near { border-color: var(--accent); }
+.chip.clear { min-width: 44px; padding: 0; font-size: 20px; margin-left: -4px; }
+.geo { position: absolute; top: 10px; right: 10px; z-index: 500; min-height: 44px; padding: 0 14px; border-radius: 22px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); box-shadow: var(--shadow); cursor: pointer; }
 .day { flex: none; display: flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14px; color: var(--muted); }
 .day input { min-height: 44px; border: 1px solid var(--line); border-radius: var(--r); background: var(--canvas); padding: 0 8px; }
 .note { margin: 0; padding: 6px 12px; font-size: 13px; color: var(--muted); background: var(--panel); border-bottom: 1px solid var(--line); }
@@ -99,3 +101,5 @@ dialog p { margin: 0 0 10px; font-size: 14px; }
 }
 @media (max-width: 899px) { .leaflet-control-zoom { display: none; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+.leaflet-container .card a, .leaflet-popup-content a { color: var(--accent); }
+.leaflet-popup-close-button { color: var(--muted) !important; }
