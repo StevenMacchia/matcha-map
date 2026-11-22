@@ -1,6 +1,7 @@
 {
-  // Cloudflare Workers static assets: serves the site/ folder. Deploy with `npx wrangler deploy`.
-  "name": "matcha-map",
+  // Cloudflare Pages project "matchamap": serves the site/ folder at https://matchamap-cu7.pages.dev
+  // Deploy: npx wrangler pages deploy site --project-name matchamap --branch main
+  "name": "matchamap",
   "compatibility_date": "2026-11-01",
-  "assets": { "directory": "./site" }
+  "pages_build_output_dir": "./site"
 }
