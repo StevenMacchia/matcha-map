@@ -26,6 +26,7 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 | 18 | More event sites | Sonnet subagent | done | Crawlers for public event sites that list matcha pop-ups (Luma discover by city, Eventbrite public pages, the DoStuff city sites, Allevents, Linktree pages of known brands), each obeying robots and rate limits; TikTok stays oEmbed-only. | all-models 18% |
 | 19 | TikTok and Instagram via search | Sonnet subagent | running | Google Programmable Search over tiktok.com and instagram.com for matcha pop-up captions, TikTok oEmbed for title, creator and thumbnail, extractor for date and place, creators onto the watch list; starts after rung 18 and the key. | |
 | 20 | Drawn cards | Sonnet subagent | done | When a pop-up has no photo, the card draws its own in the house style: Mattie, brand, flavors, day, place. | all-models 17% |
+| 21 | Storefronts | Sonnet subagent | running | A third layer of little store icons for permanent matcha shops, from OpenStreetMap (Overpass) plus our cafe-kind brands; own cluster colour, card with address, hours, website, Instagram, Directions; toggle under Show. | |
 
 ## Log
 
