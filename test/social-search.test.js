@@ -103,7 +103,7 @@ test("social-search: budget counter and queries", () => {
   assert.equal(ss.loadBudget(f, new Date("2026-12-02T00:00:00Z")).used_month, 0); // a new month resets
   const cities = Array.from({ length: 40 }, (_, i) => `C${i}`);
   const qs = ss.buildQueries(cities, now);
-  assert.equal(qs.length, 12 * 3 + 4);
+  assert.equal(qs.length, ss.CITIES_PER_RUN * 3 + 4);
   assert.ok(qs.some((q) => q.q === "#matchapopup"));
   assert.ok(NAMES.includes("social-search"));
   assert.ok(parseFlags(["--no-social-search"]).off.has("social-search"));
