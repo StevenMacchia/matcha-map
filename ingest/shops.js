@@ -6,10 +6,10 @@ import fs from "node:fs";
 import { createFetcher } from "./lib/fetch.js";
 import { createGeocoder } from "./lib/geocode.js";
 import { setVerbose, warn, info } from "./lib/log.js";
-import { BOXES } from "./lib/shops/boxes.js";
+import { loadBoxes } from "./lib/shops/boxes.js";
 import { buildQuery, runQuery, parseElements } from "./lib/shops/overpass.js";
 import { findAddress } from "./lib/shops/brandsites.js";
-import { dedupe, applyOverrides, fillState } from "./lib/shops/merge.js";
+import { dedupe, applyOverrides, fillState, legitimate } from "./lib/shops/merge.js";
 
 export const ATTRIBUTION = "© OpenStreetMap contributors, ODbL";
 const read = (p, d) => { try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch { return d; } };
@@ -28,29 +28,21 @@ export async function brandShops({ fetcher, geocoder, sources, fetched }) {
     if (!a) { missing.push(s.id); continue; }
     const ev = { id: "brand:" + s.id, address: a.address, city: a.city || s.home_city, state: a.state || s.home_state, zip: a.zip, confidence: "confirmed" };
     await geocoder.geocode(ev);
-    if (ev.lat == null || ev.geocode_source === "none") { missing.push(s.id + " (address found, not geocoded)"); continue; }
+    if (ev.lat == null || !["nominatim", "mapbox"].includes(ev.geocode_source)) { missing.push(s.id + " (address found, not geocoded)"); continue; }
     out.push({
       id: "brand:" + s.id, brand_id: s.id, name: s.brand, lat: ev.lat, lng: ev.lng,
       address: a.address, city: ev.city, state: ev.state, zip: a.zip || null,
       website: s.website, instagram: s.instagram || null, phone: a.phone || null,
-      opening_hours: a.hours || null, cuisine: null, source: "brand", geocode_source: ev.geocode_source, osm_url: null, fetched,
+      opening_hours: a.hours || null, cuisine: null, source: "brand", verified: true, geocode_source: ev.geocode_source, osm_url: null, fetched,
     });
   }
   return { shops: out, missing };
 }
 
-// One box; a box the server says is too big is cut into four and each part is asked in turn (depth 3 at most).
-export async function queryBox(bbox, opts, depth = 0) {
-  try {
-    const j = await runQuery(buildQuery(bbox), opts);
-    return j ? j.elements || [] : [];
-  } catch (e) {
-    if (!e.tooBig || depth >= 3) throw e;
-    const [s, w, n, ea] = bbox, my = (s + n) / 2, mx = (w + ea) / 2, out = [];
-    warn(`box ${bbox.join(",")} too big, splitting`);
-    for (const b of [[s, w, my, mx], [s, mx, my, ea], [my, w, n, mx], [my, mx, n, ea]]) out.push(...(await queryBox(b, opts, depth + 1)));
-    return out;
-  }
+// One metro box. Throws with .timeout (skip the box) or .allFailed (every mirror failed).
+export async function queryBox(bbox, opts) {
+  const j = await runQuery(buildQuery(bbox), opts);
+  return j ? j.elements || [] : [];
 }
 
 async function main() {
@@ -59,14 +51,24 @@ async function main() {
   const noFetch = flags.has("no-fetch");
   const t0 = Date.now(), fetched = new Date().toISOString();
   const osm = new Map();
-  let noCoords = 0;
+  let noCoords = 0, raw = 0, ran = 0, skipped = 0, fails = 0, stopped = false;
   const oi = process.argv.indexOf("--only"), only = oi > 0 ? process.argv[oi + 1] : null;
-  for (const box of BOXES) {
+  const boxes = loadBoxes();
+  for (const box of boxes) {
     if (only && box.name !== only) continue;
     const tb = Date.now();
-    const els = await queryBox(box.bbox, { noFetch });
+    let els;
+    try { els = await queryBox(box.bbox, { noFetch }); fails = 0; }
+    catch (e) {
+      if (e.timeout) { skipped++; warn(`box ${box.name} skipped, timed out: ${e.message}`); continue; }
+      fails++; skipped++; warn(`box ${box.name} failed on every mirror: ${e.message}`);
+      if (fails >= 3) { warn("three boxes in a row failed on every mirror; stopping the Overpass pass for this run"); stopped = true; break; }
+      continue;
+    }
+    ran++;
     noCoords += els.filter((el) => (el.lat ?? el.center?.lat) == null || (el.lon ?? el.center?.lon) == null).length;
     const got = parseElements(els, fetched);
+    raw += got.length;
     got.forEach((s) => osm.set(s.id, s));
     info(`  ${box.name}: ${got.length} (${Math.round((Date.now() - tb) / 1000)} s)`);
   }
@@ -79,17 +81,20 @@ async function main() {
     for (const m of brands.missing) warn("brand with no street address found, no point made:", m);
   }
   const cities = cityTable();
-  let shops = dedupe([...osm.values(), ...brands.shops]);
+  const leg = legitimate([...osm.values(), ...brands.shops]);
+  let shops = dedupe(leg.kept);
   shops = applyOverrides(shops, read("data/shops-overrides.json", {})).map((s) => fillState(s, cities));
   shops.sort((a, b) => (a.state || "~").localeCompare(b.state || "~") || a.name.localeCompare(b.name));
   const out = { generated: fetched, attribution: ATTRIBUTION, shops };
+  const site = shops.filter((s) => s.verified);
   fs.mkdirSync("site/data", { recursive: true });
   fs.writeFileSync("data/shops.json", JSON.stringify(out, null, 1) + "\n");
-  fs.writeFileSync("site/data/shops.json", JSON.stringify(out) + "\n");
+  fs.writeFileSync("site/data/shops.json", JSON.stringify({ ...out, shops: site }) + "\n");
 
   const by = (f) => { const m = {}; shops.forEach((s) => { const k = f(s); m[k] = (m[k] || 0) + 1; }); return Object.entries(m).sort((a, b) => b[1] - a[1]); };
   info(`Dropped, no coordinates (no node position or way center): ${noCoords}. Only OSM coordinates and geocoded street addresses are ever used; nothing is spread or placed at a city centre.`);
-  info(`${shops.length} shops (${osm.size} OSM, ${brands.shops.length} brand sites) in ${Math.round((Date.now() - t0) / 1000)} s`);
+  info(`Boxes run ${ran}, skipped ${skipped}${stopped ? " (stopped early)" : ""} of ${boxes.length}. Raw OSM hits ${raw}; dropped closed ${leg.dropped.closed}, no address ${leg.dropped.noAddress}, no name ${leg.dropped.noName}.`);
+  info(`${shops.length} kept (${site.length} verified, written to the site; ${shops.length - site.length} unverified, data/ only; ${brands.shops.length} brand sites) in ${Math.round((Date.now() - t0) / 1000)} s`);
   info("By state: " + by((s) => s.state || "?").slice(0, 12).map(([k, n]) => `${k} ${n}`).join(", "));
   info("Top cities: " + by((s) => (s.city || "?") + (s.state ? ", " + s.state : "")).slice(0, 10).map(([k, n]) => `${k} ${n}`).join("; "));
 }

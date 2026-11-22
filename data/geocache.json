@@ -362,6 +362,11 @@
     "lng": -111.697661,
     "source": "nominatim"
   },
+  "32 e 13th st cincinnati oh 45202": {
+    "lat": 39.109744,
+    "lng": -84.513916,
+    "source": "nominatim"
+  },
   "321 canal st new york ny": {
     "lat": 40.720326,
     "lng": -74.002704,
@@ -468,6 +473,10 @@
     "lat": 26.367455,
     "lng": -80.079273,
     "source": "nominatim"
+  },
+  "4524 university way ne seattle wa 98105": {
+    "miss": true,
+    "at": 1795384727819
   },
   "455 penn st ne washington dc": {
     "miss": true,
@@ -634,6 +643,15 @@
     "lat": 27.780179,
     "lng": -82.675449,
     "source": "nominatim"
+  },
+  "8055 clairemont mesa blvd san diego ca 92111": {
+    "lat": 32.832296,
+    "lng": -117.149918,
+    "source": "nominatim"
+  },
+  "8055 clairemont mesa blvd suite 101 san diego ca 92111": {
+    "miss": true,
+    "at": 1795384730409
   },
   "811 bethel rd columbus oh 43214": {
     "lat": 40.06309,
@@ -1599,6 +1617,11 @@
   "namo miami fl": {
     "miss": true,
     "at": 1795379610218
+  },
+  "ne seattle wa": {
+    "lat": 47.603832,
+    "lng": -122.330062,
+    "source": "nominatim"
   },
   "ne washington dc": {
     "lat": 38.897643,

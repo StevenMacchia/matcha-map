@@ -22,6 +22,21 @@ export function dedupe(list, within = 150) {
   return out;
 }
 
+// Legitimacy: a name, a street address (OSM house number + street, or addr:full), not tagged closed.
+// verified = a website, opening hours or a phone number backs it up; brand-site shops are verified.
+// Unverified shops stay in data/shops.json but are not written to the site layer.
+export function legitimate(list) {
+  const kept = [], dropped = { closed: 0, noAddress: 0, noName: 0 };
+  for (const s of list) {
+    if (!String(s.name || "").trim()) { dropped.noName++; continue; }
+    if (s.closed) { dropped.closed++; continue; }
+    if (!String(s.address || "").trim()) { dropped.noAddress++; continue; }
+    const { closed, ...rest } = s;
+    kept.push({ ...rest, verified: s.source === "brand" ? true : !!(s.website || s.opening_hours || s.phone) });
+  }
+  return { kept, dropped };
+}
+
 export function applyOverrides(list, overrides = {}) {
   const out = [];
   for (const s of list) {
