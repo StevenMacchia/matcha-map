@@ -178,6 +178,7 @@
           rec = live[id] = p.cluster ? makeCluster(src, id, f) : makePin(items[id]);
           rec.src = src;
           rec.marker.addTo(map);
+          rec.el.setAttribute("aria-label", rec.label); // addTo writes "Map marker" over it
         } else if (p.cluster && rec.count !== p.point_count) setCount(rec, p.point_count);
       });
     });
@@ -220,9 +221,9 @@
       inner.innerHTML = "<span class=\"mochi\"></span>";
     }
     el.appendChild(inner);
-    el.addEventListener("click", function (ev) { ev.stopPropagation(); cardOpener = null; showCard(it.key, ev.detail === 0); });
+    el.addEventListener("click", function (ev) { ev.stopPropagation(); cardOpener = null; pinOpener = el; showCard(it.key, ev.detail === 0); });
     var marker = new maplibregl.Marker({ element: el, anchor: it.kind === "e" ? "bottom" : "center", offset: it.kind === "e" ? [0, 0] : [NUDGE, NUDGE] }).setLngLat(lngLat(it.ll));
-    var rec = { marker: marker, el: el, kind: it.kind, key: it.key };
+    var rec = { marker: marker, el: el, kind: it.kind, key: it.key, label: pinLabel(it) };
     if (it.kind === "e") el.style.zIndex = "2";
     entrance(rec, it.kind === "e" ? "pop" : "jiggle");
     return rec;
@@ -257,7 +258,8 @@
   function setCount(rec, n, first) {
     rec.count = n;
     rec.num.textContent = n;
-    rec.el.setAttribute("aria-label", n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : " brands") + " here, zoom in");
+    rec.label = n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : " brands") + " here, zoom in";
+    rec.el.setAttribute("aria-label", rec.label);
     rec.el.classList.toggle("cl-m", n > 9);
     rec.el.classList.toggle("cl-l", n > 24);
     if (!first) animOnce(rec.num, "morph");
@@ -393,8 +395,10 @@
       if (focusIt) $("sheet-close").focus();
     }
   }
+  var pinOpener = null;
   function refocus(back) {
-    if (!back) return;
+    if (!back) { if (pinOpener && document.contains(pinOpener)) pinOpener.focus(); pinOpener = null; return; }
+    pinOpener = null;
     setTimeout(function () { var r = document.querySelector("#list [data-key=\"" + back + "\"]"); if (r) r.focus(); }, 0);
   }
   imgFallback(document);
@@ -414,8 +418,9 @@
   });
 
   function moveMap(opts, done) {
-    if (calm()) { map.jumpTo(opts); } else { opts.curve = 1.3; opts.speed = 1.5; opts.essential = false; map.flyTo(opts); }
+    // Listen first: jumpTo fires moveend before it returns.
     if (done) map.once("moveend", function () { setTimeout(done, 30); });
+    if (calm()) { map.jumpTo(opts); } else { opts.curve = 1.3; opts.speed = 1.5; opts.essential = false; map.flyTo(opts); }
   }
   function flyTo(key) {
     var it = items[key];
