@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source.schema.json",
+  "title": "Source",
+  "description": "One entry of data/sources.json (an array of these).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "brand", "home_city", "home_state", "website", "instagram", "tiktok", "schedule_url", "schedule_kind", "adapter", "active", "notes", "added", "verified"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "brand": { "type": "string", "minLength": 1 },
+    "home_city": { "type": "string" },
+    "home_state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "website": { "type": ["string", "null"], "format": "uri" },
+    "instagram": { "type": ["string", "null"], "pattern": "^[A-Za-z0-9._]+$", "description": "Handle without @." },
+    "tiktok": { "type": ["string", "null"], "pattern": "^[A-Za-z0-9._]+$", "description": "Handle without @." },
+    "schedule_url": { "type": ["string", "null"], "format": "uri" },
+    "schedule_kind": { "enum": ["website", "eventbrite", "partiful", "linktree", "ics", "rss", "manual", "none"] },
+    "adapter": { "type": "string", "description": "Name of the ingest adapter that reads this source." },
+    "active": { "type": "boolean" },
+    "notes": { "type": "string" },
+    "added": { "type": "string", "format": "date" },
+    "verified": { "type": ["string", "null"], "format": "date", "description": "Date a human last checked the handles." }
+  }
+}
