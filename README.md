@@ -139,7 +139,23 @@ MIT. See `LICENSE`.
 
 A third map layer shows permanent matcha shops as little storefront icons, on by default (Show > Storefronts turns it off). Pop-up pins stay on top, brand mochi below.
 
-- `npm run shops` builds `data/shops.json` and copies it to `site/data/shops.json`. It asks OpenStreetMap through the Overpass API (seven bounding boxes, one query at a time, a plain User-Agent, `[timeout:180]`, a 60 second wait and one retry on 429 or 504, raw answers cached in `.cache/` for a day) for cafes, tea and ice cream places, restaurants and tea, coffee or beverage shops whose name, brand, cuisine or description says matcha, plus a short list of matcha-first chains (`ingest/lib/shops/brands.js`). It also reads the site of every cafe-kind brand in `data/sources.json`, looks for a street address (JSON-LD, then a footer line), geocodes it and adds the shop; a brand with no address on its site gets no point.
+- `npm run shops` builds `data/shops.json` (every kept shop, with a `verified` flag) and `site/data/shops.json` (verified shops only, which is what the map draws). It asks OpenStreetMap through the Overpass API, one metro box at a time (one per city in `site/cities.js` and `data/cities-discover.json`, about 70, each 0.7 by 0.9 degrees, bigger for the largest metros), `[timeout:60]`, 1 request per second, a plain User-Agent, mirrors overpass-api.de, overpass.kumi.systems and overpass.private.coffee in that order, raw answers cached per box in `.cache/` for a day. A box that times out is skipped and logged; three boxes in a row failing on every mirror stops the run and writes what finished. A match is a node or way whose name or brand says matcha, or whose name is on the confirmed chains list (`ingest/lib/shops/brands.js`). It also reads the site of every cafe-kind brand in `data/sources.json` (robots permitting), looks for a street address, geocodes it and adds the shop only when the geocode is a real street address (nominatim or mapbox, never a city fallback).
+- Legitimacy (`legitimate()` in `ingest/lib/shops/merge.js`): a shop needs a name and a street address (`addr:housenumber` + `addr:street`, or `addr:full`) and must not be tagged `disused:*`, `abandoned:*`, `opening_hours=off`, `closed`, or an `end_date` in the past. `verified` is true when it has a website, opening hours or a phone number (brand-site shops are always verified); unverified shops stay in `data/shops.json` but are not drawn.
 - Matches are deduped (same name within 150 m). A human hides or fixes mistakes in `data/shops-overrides.json`: `{ "osm:node/123": { "hide": true } }` or `{ "osm:way/9": { "lat": 40.7, "lng": -73.9, "name": "Better name" } }`.
-- It is its own command and is not part of `npm run refresh`: the public Overpass servers are shared and can be slow, so a run takes minutes. Run it now and then.
+- It is its own command and is not part of `npm run refresh`: the public Overpass servers are shared and can be slow, so a run takes many minutes. Run it now and then.
 - The data is © OpenStreetMap contributors, ODbL; the file carries the attribution and each card links to its OpenStreetMap page.
+
+## Posts
+
+`npm run flyers` makes flyer-style Instagram posts for the @matchamap.us account, in the house style (cream canvas, petal pattern, Mattie, azuki outlines). It reads `data/events.json` and writes to `tools/brand/outbox/<yyyy-mm-dd>/`:
+
+- one single pop-up flyer (1080x1350) for every upcoming event in the next 7 days whose kind is popup or cafe, category matcha, and confidence not "unsure";
+- a "This weekend in <City>" roundup (feed and 1080x1920 story) for every city with three or more such events this weekend;
+- a welcome post, once, in `tools/brand/outbox/welcome/`;
+- a `.txt` caption beside each image (brand, day, time, place, "via @handle" when the brand has a handle, the city, a few hashtags, "Map: matchamap.us") and an `INDEX.md` listing each file with its event id and source URL.
+
+Templates are plain HTML in `tools/brand/templates/`, rendered with headless Chrome (set `CHROME_PATH` if Chrome is not at the default Windows location). Re-running skips images that already exist; `--force` redraws them, `--logos` redraws `tools/brand/logo.png` and `logo-mark.png`, `--date=YYYY-MM-DD` picks the day.
+
+Credit and consent: every flyer credits the brand's handle in its caption and links the map. Posting is a human step for now: read `INDEX.md`, check each source URL, then post by hand. Nothing is posted automatically.
+
+Posting through the Instagram Graph API (content publishing) is possible later. It needs the `instagram_content_publish` permission and a public image URL. Two calls: `POST /{ig-user-id}/media` with `image_url` and `caption` returns a `creation_id`, then `POST /{ig-user-id}/media_publish` with that `creation_id` publishes it. This repo does not implement it.
