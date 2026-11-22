@@ -1,0 +1,13 @@
+{
+  "name": "matcha-map",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive map of matcha pop-ups across America: where and when, so you can find one near you on a given day.",
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/serve.js",
+    "ingest": "node ingest/run.js",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
