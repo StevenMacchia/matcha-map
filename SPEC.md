@@ -159,6 +159,15 @@ Rules for every crawler: robots.txt first (skip on 401/403/429 or a Disallow of 
 
 Pipeline: adapters return RawItems. A shared extractor turns each into event candidates (rules first, optional LLM step). The geocoder fills lat/lng. The writer dedupes and writes `data/events.json`. Adapters never touch the map. An Instagram or TikTok adapter drops in later with the same shape.
 
+### Sources nobody else uses (rung 23)
+
+Four more crawlers in `ingest/lib/sites/` follow the same rules and shape; their pseudo-source prefixes are `permits:`, `markets:`, `feeds:`, `bluesky:`.
+- `permits`: open-data permit tables (Socrata and one ArcGIS service; dataset ids, fields and the query are in the file header). A matcha name on a temporary food, special event or street-use permit becomes an all-day event, confidence "likely", description "Temporary food permit on file". Licences already running for more than 14 days are skipped. Deduped against existing events by brand and day.
+- `markets`: vendor pages of recurring markets (config in the file). A matcha vendor on a page that lists dates becomes one event per date, vendor and dates from the same page; a roster without dates yields a watch-list candidate only. Renegade Craft Fair has a dedicated reader (city, dates and vendor grid per fair page).
+- `feeds`: RSS/Atom list in `data/feeds.json` (city outlets, plus Google Alerts feeds the owner pastes in). Items need a matcha word and a pop-up word, a brand in the headline, and a future date and place the extractor finds in the text. Only the feed files are fetched.
+- `bluesky`: Bluesky's open search API (`api.bsky.app`), four queries, posts under 45 days old with a US place and a future date; `published_at` is the post time.
+- `ingest/lib/embed-captions.js`: public Instagram and TikTok embed pages for a link a person pasted into `data/inbox/`, with a hard inbox-only check, a cap of 30 per run and the host's robots.txt. Both hosts disallow the embed path today, so it fetches nothing until that changes. Hook for the manual path: `raw = await enrichFromEmbed(raw, { fetcher, file, state })`.
+
 ## 5. Instagram and TikTok: the honest rules
 
 We do not scrape those apps behind their login walls or around their bot checks. It breaks their terms and gets blocked. So:

@@ -1,0 +1,223 @@
+{
+  "note": "Feeds read by npm run discover -- --only feeds (ingest/lib/sites/feeds.js). Each: name, url, city and state (the outlet's city, used when an item names no place), kind news or alert. Items are kept when the title or summary has a matcha word and a pop-up word. Add your own: Google Alerts feeds (README, Google Alerts) and any Substack or Beehiiv newsletter (its /feed address). robots.txt is read for every host.",
+  "notFound": [
+    "Time Out city feeds (timeout.com/<city>/rss.xml answers 404; no public feed found)",
+    "The Infatuation (no public RSS found)",
+    "Thrillist (no public RSS found)",
+    "Do512 (feed answers HTML, robots.txt 403)",
+    "DCist (closed)",
+    "Substack or Beehiiv newsletters about matcha pop-ups: none confirmed by 2026-11-22; add the /feed address of one here once you find it"
+  ],
+  "feeds": [
+    {
+      "name": "Eater NY",
+      "url": "https://ny.eater.com/rss/index.xml",
+      "city": "New York",
+      "state": "NY",
+      "kind": "news"
+    },
+    {
+      "name": "Eater LA",
+      "url": "https://la.eater.com/rss/index.xml",
+      "city": "Los Angeles",
+      "state": "CA",
+      "kind": "news"
+    },
+    {
+      "name": "Eater SF",
+      "url": "https://sf.eater.com/rss/index.xml",
+      "city": "San Francisco",
+      "state": "CA",
+      "kind": "news"
+    },
+    {
+      "name": "Eater Seattle",
+      "url": "https://seattle.eater.com/rss/index.xml",
+      "city": "Seattle",
+      "state": "WA",
+      "kind": "news"
+    },
+    {
+      "name": "Eater Chicago",
+      "url": "https://chicago.eater.com/rss/index.xml",
+      "city": "Chicago",
+      "state": "IL",
+      "kind": "news"
+    },
+    {
+      "name": "Eater Austin",
+      "url": "https://austin.eater.com/rss/index.xml",
+      "city": "Austin",
+      "state": "TX",
+      "kind": "news"
+    },
+    {
+      "name": "Eater Dallas",
+      "url": "https://dallas.eater.com/rss/index.xml",
+      "city": "Dallas",
+      "state": "TX",
+      "kind": "news"
+    },
+    {
+      "name": "Eater Houston",
+      "url": "https://houston.eater.com/rss/index.xml",
+      "city": "Houston",
+      "state": "TX",
+      "kind": "news"
+    },
+    {
+      "name": "Eater Miami",
+      "url": "https://miami.eater.com/rss/index.xml",
+      "city": "Miami",
+      "state": "FL",
+      "kind": "news"
+    },
+    {
+      "name": "Eater Atlanta",
+      "url": "https://atlanta.eater.com/rss/index.xml",
+      "city": "Atlanta",
+      "state": "GA",
+      "kind": "news"
+    },
+    {
+      "name": "Eater DC",
+      "url": "https://dc.eater.com/rss/index.xml",
+      "city": "Washington",
+      "state": "DC",
+      "kind": "news"
+    },
+    {
+      "name": "Secret NYC",
+      "url": "https://secretnyc.co/feed/",
+      "city": "New York",
+      "state": "NY",
+      "kind": "news"
+    },
+    {
+      "name": "Secret Los Angeles",
+      "url": "https://secretlosangeles.com/feed/",
+      "city": "Los Angeles",
+      "state": "CA",
+      "kind": "news"
+    },
+    {
+      "name": "Secret San Francisco",
+      "url": "https://secretsanfrancisco.com/feed/",
+      "city": "San Francisco",
+      "state": "CA",
+      "kind": "news"
+    },
+    {
+      "name": "Secret Chicago",
+      "url": "https://secretchicago.com/feed/",
+      "city": "Chicago",
+      "state": "IL",
+      "kind": "news"
+    },
+    {
+      "name": "Secret Houston",
+      "url": "https://secrethouston.com/feed/",
+      "city": "Houston",
+      "state": "TX",
+      "kind": "news"
+    },
+    {
+      "name": "Secret Atlanta",
+      "url": "https://secretatlanta.co/feed/",
+      "city": "Atlanta",
+      "state": "GA",
+      "kind": "news"
+    },
+    {
+      "name": "Secret Miami",
+      "url": "https://secretmiami.com/feed/",
+      "city": "Miami",
+      "state": "FL",
+      "kind": "news"
+    },
+    {
+      "name": "Hoboken Girl",
+      "url": "https://hobokengirl.com/feed/",
+      "city": "Hoboken",
+      "state": "NJ",
+      "kind": "news"
+    },
+    {
+      "name": "Greenpointers",
+      "url": "https://greenpointers.com/feed",
+      "city": "Brooklyn",
+      "state": "NY",
+      "kind": "news"
+    },
+    {
+      "name": "Brokelyn",
+      "url": "https://brokelyn.com/feed/",
+      "city": "Brooklyn",
+      "state": "NY",
+      "kind": "news"
+    },
+    {
+      "name": "We Like LA",
+      "url": "https://welikela.com/feed/",
+      "city": "Los Angeles",
+      "state": "CA",
+      "kind": "news"
+    },
+    {
+      "name": "SFist",
+      "url": "https://sfist.com/feed/",
+      "city": "San Francisco",
+      "state": "CA",
+      "kind": "news"
+    },
+    {
+      "name": "Capitol Hill Seattle Blog",
+      "url": "https://www.capitolhillseattle.com/feed/",
+      "city": "Seattle",
+      "state": "WA",
+      "kind": "news"
+    },
+    {
+      "name": "Block Club Chicago",
+      "url": "https://blockclubchicago.org/feed/",
+      "city": "Chicago",
+      "state": "IL",
+      "kind": "news"
+    },
+    {
+      "name": "Chicago Reader",
+      "url": "https://www.chicagoreader.com/feed/",
+      "city": "Chicago",
+      "state": "IL",
+      "kind": "news"
+    },
+    {
+      "name": "Houstonia",
+      "url": "https://www.houstoniamag.com/feed",
+      "city": "Houston",
+      "state": "TX",
+      "kind": "news"
+    },
+    {
+      "name": "Gothamist",
+      "url": "https://gothamist.com/feed",
+      "city": "New York",
+      "state": "NY",
+      "kind": "news"
+    },
+    {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/rss",
+      "city": "Miami",
+      "state": "FL",
+      "kind": "news"
+    },
+    {
+      "name": "Secret NYC food and drink",
+      "url": "https://secretnyc.co/category/food-drink/feed/",
+      "city": "New York",
+      "state": "NY",
+      "kind": "news"
+    }
+  ]
+}

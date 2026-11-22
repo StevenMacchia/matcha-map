@@ -90,7 +90,17 @@ export function skipDominated(cands, existing) {
 export const capConfidence = (c) => {
   // Search-snippet finds (a tiktok.com or instagram.com post URL): "likely" at most, "unsure" without a time or an address.
   if (/^https?:\/\/(?:www\.)?(?:tiktok|instagram)\.com\//i.test(c.source_url || "") && c.confidence !== "unsure") return { ...c, confidence: c.timed && c.hasAddress ? "likely" : "unsure" };
-  return String(c.source_id).startsWith("allevents:") && c.confidence === "confirmed" ? { ...c, confidence: "likely" } : c;
+  // Aggregator, feed, permit and Bluesky finds: "likely" at most (no human-checked time or address).
+  return /^(allevents|feeds|bluesky|embed|permits):/.test(String(c.source_id)) && c.confidence === "confirmed" ? { ...c, confidence: "likely" } : c;
 };
 
 void info;
+
+// Rung 23: sources nobody else uses (open-data permits, market rosters, news feeds, Bluesky). Appended registrations; run order is after the
+// event sites. Pseudo-source prefixes: permits:, markets:, feeds:, bluesky:. Each reads only public JSON, XML or pages behind robots.txt.
+import * as permits from "./permits.js";
+import * as markets from "./markets.js";
+import * as feeds from "./feeds.js";
+import * as bluesky from "./bluesky.js";
+SITES.push(permits, markets, feeds, bluesky);
+NAMES.push(permits.name, markets.name, feeds.name, bluesky.name);

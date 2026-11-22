@@ -159,3 +159,22 @@ Templates are plain HTML in `tools/brand/templates/`, rendered with headless Chr
 Credit and consent: every flyer credits the brand's handle in its caption and links the map. Posting is a human step for now: read `INDEX.md`, check each source URL, then post by hand. Nothing is posted automatically.
 
 Posting through the Instagram Graph API (content publishing) is possible later. It needs the `instagram_content_publish` permission and a public image URL. Two calls: `POST /{ig-user-id}/media` with `image_url` and `caption` returns a `creation_id`, then `POST /{ig-user-id}/media_publish` with that `creation_id` publishes it. This repo does not implement it.
+
+## Open data, markets, feeds, Bluesky
+
+Four more sources run inside `npm run discover` (`--only permits|markets|feeds|bluesky` runs one):
+
+- **permits**: city open-data tables of temporary food, special event and street-use permits (NYC, Chicago, Los Angeles, San Francisco, Seattle, DC). A permit holder or event with "matcha" or "hojicha" in its name and a future date becomes an all-day pop-up marked "Temporary food permit on file". Austin and Los Angeles County have no usable table; the reasons are in `ingest/lib/sites/permits.js`.
+- **markets**: vendor pages of the big markets. Renegade Craft Fair is read per fair (city, dates, vendor grid); other sites list vendors by script, so most return a roster at best, and a roster without dates only adds a watch-list candidate.
+- **feeds**: city food and events RSS in `data/feeds.json`. Add a feed by adding `{ "name", "url", "city", "state" }`.
+- **bluesky**: Bluesky's open search for matcha pop-up posts, no key.
+
+### Google Alerts (a step for you)
+
+1. Open google.com/alerts, search for `matcha pop up` (make a second for `matcha popup`), choose Show options, set "How many" to All results and "Deliver to" to RSS feed, then Create alert.
+2. Click the RSS icon beside the alert and copy the feed address (it starts with `https://www.google.com/alerts/feeds/`).
+3. Paste it into `data/feeds.json` as `{ "name": "Google Alert: matcha pop up", "url": "<address>", "city": "", "state": "", "kind": "alert" }`. Items with a date and a US place in the text become events; the rest are ignored.
+
+### Embed captions for pasted links
+
+`ingest/lib/embed-captions.js` reads the public embed page of an Instagram post or TikTok video that you pasted into `data/inbox/`, never anything found by search. Both hosts' robots.txt disallow the embed path today, so it makes no request; paste the caption as before. Rung 22's manual adapter can call `enrichFromEmbed(raw, { fetcher, file, state: newEmbedState() })` once per inbox file.
