@@ -24,6 +24,8 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 | 16 | Zip code search | Sonnet subagent | done | A zip box beside Near me: flies to the zip, sorts the list by distance, remembers it; US zip centroids from GeoNames bundled and lazy-loaded; starts after rung 12. | all-models 18% |
 | 17 | What counts as a pop-up | Sonnet subagent | done | Classify every brand (kind: popup, cafe, venue, tea-brand, organizer, festival; category: matcha now, others later), write the definitions, update the source schema; then the pipeline and a filter on the site after rungs 12 and 14. | all-models 18% |
 | 18 | More event sites | Sonnet subagent | running | Crawlers for public event sites that list matcha pop-ups (Luma discover by city, Eventbrite public pages, the DoStuff city sites, Allevents, Linktree pages of known brands), each obeying robots and rate limits; TikTok stays oEmbed-only. | |
+| 19 | TikTok and Instagram via search | Sonnet subagent | pending | Google Programmable Search over tiktok.com and instagram.com for matcha pop-up captions, TikTok oEmbed for title, creator and thumbnail, extractor for date and place, creators onto the watch list; starts after rung 18 and the key. | |
+| 20 | Drawn cards | Sonnet subagent | running | When a pop-up has no photo, the card draws its own in the house style: Mattie, brand, flavors, day, place. | |
 
 ## Log
 
