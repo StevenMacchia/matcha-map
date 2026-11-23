@@ -85,3 +85,10 @@ test("serves tier: a coffee or tea shop needs a menu page and at least three dis
   assert.match(checkRow({ ...serves, menu_url: null }).held, /menu_url/);
   assert.equal(checkRow({ ...row, note: "Pop-up window at Maison Neue" }).shop.note, "Pop-up window at Maison Neue");
 });
+
+test("public-page rows are kept and shown but are not verified; unknown evidence is held back from the map", () => {
+  const pp = checkRow({ ...row, confirmed_via: "public-page", website: null }).shop;
+  assert.equal(pp.confirmed_via, "public-page");
+  assert.equal(pp.verified, false);
+  assert.equal(checkRow({ ...row, confirmed_via: "yelp" }).shop.confirmed_via, null);
+});

@@ -5,5 +5,17 @@
   "zip": "27412",
   "why": "OSM spells it Littleftoot; the shop site says Littlefoot Matcha. 1101 West Gate City Blvd (pin 36.0629, -79.8094) is in Greensboro, NC 27412 (Nominatim reverse), not Raleigh; hidden: the researched Greensboro row (brand:web-littlefoot-matcha) carries this shop with the hours and photo from its own site",
   "hide": true
+ },
+ "osm:node/11007004668": {
+  "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
+ },
+ "osm:way/421376676": {
+  "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
+ },
+ "osm:node/12083747993": {
+  "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
+ },
+ "osm:way/1079804234": {
+  "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
  }
 }

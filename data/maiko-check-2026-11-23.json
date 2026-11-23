@@ -1,0 +1,152 @@
+{
+  "generated": "2026-11-23T21:25:06.314Z",
+  "stores": [
+    {
+      "city": "Tempe",
+      "address": "920 E University Dr Suite 106",
+      "status": "unknown",
+      "evidence": "matchaaz.com/about (undated, (c) 2026) shows no notice; No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchaaz.com/about"
+    },
+    {
+      "city": "Philadelphia",
+      "address": "923 Race St",
+      "status": "unknown",
+      "evidence": "Directory listings conflict (one marked Closed, undated); No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=pa&target=pa-philadelphia-store"
+    },
+    {
+      "city": "San Diego",
+      "address": "8072 Clairemont Mesa Blvd",
+      "status": "unknown",
+      "evidence": "No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ca&target=ca-sandiego"
+    },
+    {
+      "city": "Richardson",
+      "address": "100 S Central Expy Ste 15",
+      "status": "unknown",
+      "evidence": "No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-richardson"
+    },
+    {
+      "city": "San Antonio",
+      "address": "7115 Blanco Rd Ste 112",
+      "status": "unknown",
+      "evidence": "MapQuest listing marked Closed (undated); No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-san-antonio"
+    },
+    {
+      "city": "San Antonio",
+      "address": "11330 Potranco Rd #101",
+      "status": "unknown",
+      "evidence": "No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-potranco"
+    },
+    {
+      "city": "Boston",
+      "address": "115 Jersey Street",
+      "status": "unknown",
+      "evidence": "MapQuest listing marked Closed (undated, last review Oct 2025); No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=ma&target=ma-boston"
+    },
+    {
+      "city": "New York",
+      "address": "132 Bowery",
+      "status": "unknown",
+      "evidence": "No closure or reopening report found; No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ny&target=ny-ny"
+    },
+    {
+      "city": "Atlanta",
+      "address": "5306 Buford Hwy NE",
+      "status": "unknown",
+      "evidence": "matchacafeatl.com (undated) still lists hours and no notice; No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://matchacafeatl.com/"
+    },
+    {
+      "city": "Charlotte",
+      "address": "8128 Providence Rd Suite 900",
+      "status": "unknown",
+      "evidence": "No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nc&target=nc-charlotte"
+    },
+    {
+      "city": "Orlando",
+      "address": "4693 Gardens Park Blvd Suite 117",
+      "status": "unknown",
+      "evidence": "No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=fl&target=fl-millenia"
+    },
+    {
+      "city": "Frisco",
+      "address": "9244 Prestmont Pl #207",
+      "status": "unknown",
+      "evidence": "No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-frisco"
+    },
+    {
+      "city": "Honolulu",
+      "address": "2310 Kuhio Ave",
+      "status": "unknown",
+      "evidence": "Maiko store page lists no hours or notice (call for hours); No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=hi&target=hi-honolulu-main-store"
+    },
+    {
+      "city": "Las Vegas",
+      "address": "4545 Spring Mountain Rd Ste 109",
+      "status": "unknown",
+      "evidence": "No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=nv&target=nv-lv-store"
+    },
+    {
+      "city": "Escondido",
+      "address": "1024 W Valley Pkwy",
+      "status": "unknown",
+      "evidence": "Maiko store page lists no hours or notice; No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ca&target=ca-escondido"
+    },
+    {
+      "city": "Escondido",
+      "address": "1024 W Valley Parkway",
+      "status": "unknown",
+      "evidence": "Maiko store page lists no hours or notice; No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ca&target=ca-escondido"
+    },
+    {
+      "city": "Fort Lee",
+      "address": "1630 Lemoine Ave",
+      "status": "unknown",
+      "evidence": "MapQuest listing marked Permanently closed (undated); No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=nj&target=usa-on-newjersey"
+    },
+    {
+      "city": "Flushing",
+      "address": "133-33 39th Ave",
+      "status": "unknown",
+      "evidence": "Directory hours conflict, undated; No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ny&target=ny-ta"
+    },
+    {
+      "city": "Atlanta",
+      "address": "5306 Buford Highway NE Ste B",
+      "status": "unknown",
+      "evidence": "matchacafeatl.com (undated) still lists hours and no notice; No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=ga&target=ga-atlanta"
+    },
+    {
+      "city": "Duluth",
+      "address": "2131 Pleasant Hill Rd ste #139",
+      "status": "unknown",
+      "evidence": "matchacafeatl.com (undated) lists Duluth hours, MapQuest says Closed; No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=ga&target=ga-duluth"
+    },
+    {
+      "city": "Troy",
+      "address": "5082 Rochester Rd",
+      "status": "unknown",
+      "evidence": "No store-specific page found after Nov 8; Sacramento Bee (Nov 9, via Yahoo) and What Now (Nov 16) say all company stores closed Nov 8 for the Matcha Toko rebrand, only Sacramento is reported reopened (Nov 21).",
+      "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=mi&target=mi-troy"
+    }
+  ]
+}
