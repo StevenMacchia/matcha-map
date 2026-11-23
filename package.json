@@ -8,6 +8,7 @@
     "dev": "node tools/serve.js",
     "ingest": "node ingest/run.js",
     "test": "node --test",
+    "check:jsonld": "node tools/check-jsonld.js",
     "discover": "node ingest/lib/discover.js",
     "review": "node ingest/review.js",
     "shops": "node ingest/shops.js",
