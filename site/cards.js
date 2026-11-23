@@ -375,8 +375,10 @@ export function cardHtml(e, ctx = {}) {
   const v = verdict(e, ctx), b = brandOf(e, ctx), name = nameOf(e, b), id = safeId(e.id);
   const plain = String(e.description || "").replace(/[*_`#>]+/g, " ").replace(/\s+/g, " ").trim();
   const desc = plain ? `<p class="mm-desc">${esc(cut(plain, 200))}</p>` : "";
-  const report = id ? `<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a>` : "";
   const live = !/^(past|cancelled)$/.test(dayWord(e, ctx.now || new Date()).kind);
+  // the foot: report, and for an upcoming pop-up the host kit (captions, counter QR, share card) at /promote/
+  const promote = id && live ? `<a class="mm-report mm-promote" href="${esc(ctx.base || "")}promote/?event=${id}">${ICON.share}<span>Promote this pop-up</span></a>` : "";
+  const report = id ? `<p class="mm-foot">${promote}<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a></p>` : "";
   return `<article class="mm-card${ctx.page ? " mm-page" : ""}${compact ? " mm-compact" : ""} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>` +
     `<header class="mm-top"><p class="mm-verdict"><span class="mm-vday">${esc(v.day)}</span>${v.time ? ` <span class="mm-vtime">${esc(v.time)}</span>` : ""}${v.where ? `<span class="mm-vwhere">${esc(v.where)}</span>` : ""}</p></header>` +
     `<div class="mm-media">${heroHtml(e, ctx, v, name)}</div>` +
