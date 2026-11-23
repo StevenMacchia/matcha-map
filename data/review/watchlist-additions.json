@@ -1,0 +1,281 @@
+{
+  "generated": "2026-11-22",
+  "note": "Records for tools/apply-watchlist-additions.js. status is the watch-list status; city and state are the brand's home. Not yet merged into data/watchlist.json.",
+  "additions": [
+    {
+      "handle": "whatatastematcha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "big-wiss-matcha",
+      "city": "Dearborn",
+      "state": "MI",
+      "reason": "wave4 midwest sweep: Big Wiss Matcha, matcha pop-up brand",
+      "evidence": "https://bigwissmatcha.com/",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "dimamatcha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "dima-matcha",
+      "city": "Chicago",
+      "state": "IL",
+      "reason": "wave4 midwest sweep: Dima Matcha, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/dimamatcha/",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "yayasmatcha_mn",
+      "platform": "tiktok",
+      "status": "candidate",
+      "source_id": "yayas-matcha-mn",
+      "city": "Minneapolis",
+      "state": "MN",
+      "reason": "wave4 midwest sweep: Yaya's Matcha, matcha pop-up brand (TikTok)",
+      "evidence": "https://www.tiktok.com/@yayasmatcha_mn/photo/7702193758837755149,",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "lattelab.official",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "lattelab-denver",
+      "city": "Denver",
+      "state": "CO",
+      "reason": "wave4 midwest sweep: LATTE lab., matcha pop-up brand",
+      "evidence": "https://www.instagram.com/lattelab.official,",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "yujomatcha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "yujo-matcha",
+      "city": "Chicago",
+      "state": "IL",
+      "reason": "wave4 midwest sweep: Yujo Matcha, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/popular/yujo-matcha-chicago",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "alivecoffeeandmore",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "alive-coffee-matcha-fl",
+      "city": "Tampa",
+      "state": "FL",
+      "reason": "wave4 southeast sweep: Alive Coffee Matcha & More, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/p/DfF-PYBkVf5",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "centralmatcha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "central-matcha",
+      "city": "Austin",
+      "state": "TX",
+      "reason": "wave4 texas sweep: Central Matcha, matcha pop-up brand",
+      "evidence": "https://centralmatcha.com/pages/find-us",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "tokicha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "tokicha",
+      "city": "Plano",
+      "state": "TX",
+      "reason": "wave4 texas sweep: Tokicha, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/reel/Df-Lt3FhQvB",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "pinkmatchabar",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "pink-matcha-bar",
+      "city": "Fort Worth",
+      "state": "TX",
+      "reason": "wave4 texas sweep: Pink Matcha Bar, matcha pop-up brand",
+      "evidence": "https://www.tiktok.com/@bribwillis/video/7707339141754768654",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "saintcloudmatcha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "saint-cloud-matcha",
+      "city": "San Antonio",
+      "state": "TX",
+      "reason": "wave4 texas sweep: Saint Cloud Matcha, matcha pop-up brand",
+      "evidence": "https://www.tiktok.com/@saintcloudmatcha/video/7708554261285686541",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "brew.and.bloom",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "brew-and-bloom",
+      "city": "Fort Worth",
+      "state": "TX",
+      "reason": "wave4 texas sweep: Brew & Bloom, matcha pop-up brand",
+      "evidence": "https://www.tiktok.com/@michellenunezflores/video/7673575502577372430",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "airamatchastudio",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "aira-matcha-studio",
+      "city": "St. Louis",
+      "state": "MO",
+      "reason": "wave4 trending sweep: Aira Matcha Studio, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/reel/De4wbVqpaZw",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "drinkmikamatcha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "mika-matcha",
+      "city": "Rockville",
+      "state": "MD",
+      "reason": "wave4 trending sweep: Mika Matcha, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/p/De4ypMmtPKV",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "glimpsematchapopup",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "glimpse-matcha-popup",
+      "city": "Portland",
+      "state": "OR",
+      "reason": "wave4 west sweep: Glimpse Matcha, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/p/Df7dbZiG7Qz.",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "sondermatchapdx",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "sonder-matcha-pdx",
+      "city": "Portland",
+      "state": "OR",
+      "reason": "wave4 west sweep: Sonder Matcha, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/p/Df8kWmzm0NZ",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "hojiteastudio",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "hojitea-studio",
+      "city": "Portland",
+      "state": "OR",
+      "reason": "wave4 west sweep: Hojitea Studio, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/reel/Dfi79hDggBU.",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "standardmatcha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "standard-matcha-seattle",
+      "city": "Seattle",
+      "state": "WA",
+      "reason": "wave4 west sweep: Standard Matcha, matcha pop-up brand",
+      "evidence": "https://www.discoverslu.com/events/standard-matcha/",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "saintcha.co",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "saintcha-matcha",
+      "city": "Seattle",
+      "state": "WA",
+      "reason": "wave4 west sweep: Saintcha Matcha, matcha pop-up brand",
+      "evidence": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "frolic.cafe",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "frolic-cafe-seattle",
+      "city": "Seattle",
+      "state": "WA",
+      "reason": "wave4 west sweep: Frolic Cafe, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/p/Df5LXrVTzJW.",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "teesmatcha25",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "tees-matcha",
+      "city": "Seattle",
+      "state": "WA",
+      "reason": "wave4 west sweep: Tee's Matcha, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/reel/DfVOCQDSXZM",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "latte_syndrome",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "latte-syndrome",
+      "city": "Oakland",
+      "state": "CA",
+      "reason": "wave4 west sweep: Latte Syndrome, matcha pop-up brand",
+      "evidence": "https://www.instagram.com/reel/DfaWa1oimCO",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "rebelbunnymatcha",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": null,
+      "city": null,
+      "state": null,
+      "reason": "Trending doc: matcha brand whose tins pop-ups resell; shared by pop-up vendors",
+      "evidence": "https://www.instagram.com/p/Df7dpPeFYej",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "tsubomimatcha",
+      "platform": "tiktok",
+      "status": "candidate",
+      "source_id": null,
+      "city": null,
+      "state": null,
+      "reason": "Trending doc: TikTok creator-run matcha pop-up, videos reach 160K views",
+      "evidence": "https://www.tiktok.com/discover/matcha-cart-pop-up-set-up",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "ceremony.brand",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "ceremony-nashville",
+      "city": "Nashville",
+      "state": "TN",
+      "reason": "Sweep southeast: posts a weekly where-to-find-us card; source has no handle",
+      "evidence": "data/review/sweep-southeast.md",
+      "added": "2026-11-22"
+    },
+    {
+      "handle": "fuelpdx",
+      "platform": "instagram",
+      "status": "candidate",
+      "source_id": "fuel-matcha-pdx",
+      "city": "Portland",
+      "state": "OR",
+      "reason": "Fuel Matcha: Portland pop-up cart; handle read from KOIN post text naming the cart",
+      "evidence": "https://www.instagram.com/reel/Df7ntjbCgcX",
+      "added": "2026-11-22"
+    }
+  ]
+}

@@ -12,6 +12,7 @@
     "review": "node ingest/review.js",
     "shops": "node ingest/shops.js",
     "watch": "node ingest/watch.js",
+    "watchlist:apply": "node tools/apply-watchlist-additions.js",
     "loop": "node ingest/loop.js",
     "refresh": "node ingest/loop.js --once",
     "brands": "node ingest/brands.js",
@@ -24,9 +25,13 @@
     "art": "node tools/illustrate/run.js",
     "feeds": "node tools/gen-feeds.js",
     "event-pages": "node tools/gen-event-pages.js",
+    "weekend": "node tools/gen-weekend.js",
+    "brand-extras": "node tools/gen-brand-extras.js",
+    "sitemap-extras": "node tools/gen-sitemap-extras.js",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev",
-    "search": "node tools/search.js"
+    "search": "node tools/search.js",
+    "brands:apply": "node tools/apply-brand-facts.js"
   },
   "license": "MIT",
   "devDependencies": {
