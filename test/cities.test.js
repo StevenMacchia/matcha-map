@@ -49,10 +49,10 @@ test("gen-cities: parsing both Census files, top 20 per state, DC, Hawaii, towns
   const gaz = parseGazetteer(text("census-gaz-places.txt"));
   assert.equal(gaz.get("3700000"), undefined);
   assert.deepEqual(gaz.get("4752006"), { lat: 36.1718, lng: -86.7847 });
-  const cities = buildCities(places, gaz);
+  const cities = buildCities(places, gaz, 20);
   const of = (st) => cities.filter((c) => c.state === st);
 
-  // North Carolina: 22 incorporated places and a bigger CDP -> exactly 20, no CDP, ranked 1..20, Raleigh first.
+  // North Carolina: 22 incorporated places and a bigger CDP -> exactly 20 at a cut of 20, no CDP, ranked 1..20, Raleigh first.
   const nc = of("NC");
   assert.equal(nc.length, 20);
   assert.ok(!nc.some((c) => /Bigville/.test(c.name)));
@@ -105,9 +105,9 @@ test("tz: split states by position", () => {
   assert.equal(tzForPlace("ZZ", 0, 0), null);
 });
 
-test("data/cities.json: the real list has its source, 20 per state (DC and Hawaii one), sorted, under 300 KB", () => {
+test("data/cities.json: the real list has its source, 50 per state (DC and Hawaii one), sorted, under 500 KB", () => {
   const raw = fs.readFileSync("data/cities.json", "utf8");
-  assert.ok(raw.length < 300 * 1024);
+  assert.ok(raw.length < 500 * 1024);
   const j = JSON.parse(raw);
   assert.match(j.source.population, /^https:\/\/www2\.census\.gov\/.+sub-est2024\.csv$/);
   assert.match(j.source.gazetteer, /^https:\/\/www2\.census\.gov\/.+Gaz_place_national\.zip$/);
@@ -115,9 +115,9 @@ test("data/cities.json: the real list has its source, 20 per state (DC and Hawai
   const by = {};
   for (const c of j.cities) by[c.state] = (by[c.state] || 0) + 1;
   assert.equal(Object.keys(by).length, 51);
-  for (const [st, n] of Object.entries(by)) assert.ok(n <= 20 && (n >= 19 || ["DC", "HI"].includes(st)), `${st} has ${n}`);
+  for (const [st, n] of Object.entries(by)) assert.ok(n <= 50 && (n >= 39 || ["DC", "HI", "NV"].includes(st)), `${st} has ${n}`);
   assert.equal(by.DC, 1);
-  assert.ok(j.cities.length > 950);
+  assert.ok(j.cities.length > 2300);
   assert.ok(j.cities.every((c, i) => c.rank_us === i + 1 && (i === 0 || j.cities[i - 1].pop >= c.pop)));
   assert.ok(j.cities.every((c) => /^[a-z0-9-]+$/.test(c.slug) && /^[A-Z]{2}$/.test(c.state) && c.tz && Number.isFinite(c.lat) && Number.isFinite(c.lng)));
   assert.ok(!j.cities.some((c) => / (city|town|village|borough|CDP)$|\(balance\)|metropolitan government/.test(c.name)));
@@ -135,7 +135,7 @@ test("gen-cities: the file text and site/cities.js text round-trip and keep the 
   win.CITIES = JSON.parse(JSON.stringify(win.CITIES)); win.CITY_LIST = JSON.parse(JSON.stringify(win.CITY_LIST)); // out of the vm realm
   assert.deepEqual(win.CITIES["Raleigh|NC"], [35.8, -78.6]); // the list wins over an extra of the same key
   assert.deepEqual(win.CITIES["Bayside|WI"], [43.1861, -87.9049]);
-  assert.deepEqual(win.CITY_LIST[1], ["Cary", "NC", 35.79, -78.78, "cary", 180000]);
+  assert.deepEqual(win.CITY_LIST[1], ["Cary", "NC", 35.79, -78.78, 180000]);
 });
 
 test("site/cities.js: every listed city is there, in the old shape, with the brand home cities kept", () => {
@@ -145,11 +145,11 @@ test("site/cities.js: every listed city is there, in the old shape, with the bra
   const cities = loadCities();
   assert.equal(win.CITY_LIST.length, cities.length);
   for (const c of cities) { const k = `${c.name}|${c.state}`; assert.deepEqual(win.CITIES[k], [c.lat, c.lng], k); }
-  assert.ok(win.CITY_LIST.every((r, i) => r.length === 6 && (i === 0 || win.CITY_LIST[i - 1][5] >= r[5])));
+  assert.ok(win.CITY_LIST.every((r, i) => r.length === 5 && (i === 0 || win.CITY_LIST[i - 1][4] >= r[4])));
   const sources = JSON.parse(fs.readFileSync("data/sources.json", "utf8"));
   for (const s of sources) assert.ok(win.CITIES[`${s.home_city}|${s.home_state}`], `home city ${s.home_city}|${s.home_state}`);
   assert.ok(Object.keys(win.CITIES).every((k) => /\|[A-Z]{2}$/.test(k)));
-  assert.ok(fs.statSync("site/cities.js").size < 200 * 1024);
+  assert.ok(fs.statSync("site/cities.js").size < 250 * 1024);
 });
 
 test("candidateTags: top 60 city tags plus nicknames, minus the active ones", () => {
@@ -361,7 +361,7 @@ test("geocode: a listing that names only a listed city and its state resolves fr
     assert.equal(ev2.lat, raleigh.lat);
     // A city that is not listed still asks (and here fails, so no coordinates).
     const before = calls;
-    const ev3 = await g.geocode({ id: "e3", city: "Ballwin", state: "MO", confidence: "confirmed" });
+    const ev3 = await g.geocode({ id: "e3", city: "Cuba", state: "MO", confidence: "confirmed" }); // 3,000 people: never in the top 50
     assert.ok(calls > before);
     assert.equal(ev3.lat, null);
   } finally { globalThis.fetch = realFetch; }

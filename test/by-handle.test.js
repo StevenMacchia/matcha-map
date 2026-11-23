@@ -71,7 +71,8 @@ test("an Instagram result: the post date from the og:description turns 'this Sat
 
 test("neighbourhood: a post that names Williamsburg is filed under Brooklyn", () => {
   assert.deepEqual(ss.cityIn("matcha pop up in Williamsburg this weekend"), { city: "Brooklyn", state: "NY" });
-  assert.deepEqual(ss.cityIn("matcha in Pasadena"), { city: "Pasadena", state: "CA" });
+  assert.deepEqual(ss.cityIn("matcha in Pasadena"), { city: "Pasadena", state: "CA" }); // the hand list of known places keeps the bare name on CA
+  assert.deepEqual(ss.cityIn("matcha in Pasadena, CA"), { city: "Pasadena", state: "CA" });
   assert.deepEqual(ss.cityIn("Silver Lake matcha, Los Angeles"), { city: "Los Angeles", state: "CA" });
   assert.equal(ss.cityIn("#Williamsburg"), null);
 });

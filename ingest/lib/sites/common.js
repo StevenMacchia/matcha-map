@@ -23,7 +23,7 @@ import { jsonLd, ldImage, httpUrl, decode } from "../html.js";
 import { eventToRaw, hasMatcha } from "../../adapters/mato.js";
 import { zonedIso, tzFor, STATES } from "../tz.js";
 import { debug, warn } from "../log.js";
-import { crawlCities, cityOf } from "../cities.js";
+import { crawlCities, cityOf, findCity } from "../cities.js";
 import { planCities, perRunDefault, CRAWL_STATE_FILE } from "../crawl-state.js";
 
 export { hasMatcha };
@@ -199,10 +199,14 @@ for (const c of crawlCities()) {
 // or a better-known place elsewhere ("mobile cart", Birmingham UK, Vancouver BC, Lincoln Park). Small towns are matched only when
 // a caption names the state with them (the "City, ST" patterns).
 const NOT_IN_TEXT = new Set(["Orange", "Mobile", "Independence", "Surprise", "Hollywood", "Ontario", "Vancouver", "Birmingham", "Manchester", "Athens", "Lincoln"]);
+// A name two such cities share is listed only when the biggest is clearly the one meant (findCity's AMBIGUOUS_RATIO): a bare
+// "Pasadena" or "Springfield" in a caption is left to the "City, ST" patterns rather than filed in the wrong state.
 export const TEXT_CITY_STATE = {};
 for (const c of crawlCities()) {
   const name = c.state === "DC" ? "Washington DC" : c.name;
-  if ((c.pop >= 100000 || c.name === "Brooklyn") && !NOT_IN_TEXT.has(c.name) && !(name in TEXT_CITY_STATE)) TEXT_CITY_STATE[name] = c.state;
+  if (!(c.pop >= 100000 || c.name === "Brooklyn") || NOT_IN_TEXT.has(c.name) || name in TEXT_CITY_STATE) continue;
+  if (c.state !== "DC" && findCity(c.name)?.state !== c.state) continue;
+  TEXT_CITY_STATE[name] = c.state;
 }
 // The URL slug of a city on the event sites: DC is "washington" there, every other city its file slug.
 export const placeSlug = (c) => (c.state === "DC" ? "washington" : c.slug);

@@ -24,14 +24,19 @@ export const norm = (s) => String(s || "").toLowerCase().replace(/\./g, "").repl
 // "Washington DC" and "Washington, DC" are the one DC entry.
 const DC_NAME = /^washington(?:\s*,?\s*d\.?c\.?)?$/i;
 
-// A city by name (and state when the name is shared: Columbus, Portland, Springfield). Without a state the biggest city of that name wins.
+// A city by name (and state when the name is shared: Columbus, Portland, Springfield). Without a state the biggest city of
+// that name wins only when it is at least AMBIGUOUS_RATIO times the next one (Columbus OH over GA, Kansas City MO over KS);
+// closer pairs (Pasadena CA and TX, Springfield MO and MA) need the state, or a bare mention files the event in the wrong state.
+export const AMBIGUOUS_RATIO = 3;
 export function findCity(name, state = null, list = loadCities()) {
   const st = state ? String(state).toUpperCase() : null;
   const n = norm(name);
   if (!n) return null;
   if (DC_NAME.test(String(name).trim()) && (!st || st === "DC")) return list.find((c) => c.state === "DC") || null;
-  const hit = list.find((c) => norm(c.name) === n && (!st || c.state === st));
-  return hit || EXTRA_CITIES.find((c) => norm(c.name) === n && (!st || c.state === st)) || null;
+  const hits = list.concat(EXTRA_CITIES).filter((c) => norm(c.name) === n && (!st || c.state === st)).sort((a, b) => b.pop - a.pop);
+  if (!hits.length) return null;
+  if (!st && hits.length > 1 && hits[0].pop < AMBIGUOUS_RATIO * hits[1].pop) return null;
+  return hits[0];
 }
 
 // The crawl order: every listed city biggest first, then the extras at the place their population gives them.
