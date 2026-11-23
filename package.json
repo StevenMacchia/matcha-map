@@ -16,6 +16,7 @@
     "series": "node ingest/series.js",
     "tidy": "node ingest/tidy.js",
     "enrich": "node ingest/enrich.js",
+    "promote": "node ingest/promote.js",
     "watch": "node ingest/watch.js",
     "watchlist:apply": "node tools/apply-watchlist-additions.js",
     "loop": "node ingest/loop.js",

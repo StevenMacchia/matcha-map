@@ -8,15 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:31c135dfd4cf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
-DTSTART;VALUE=DATE:20261220
-DTEND;VALUE=DATE:20261221
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261220T160000Z
+DTEND:20261220T164500Z
 SUMMARY:Matcha 101 'Whisk & Sip'
 LOCATION:KINKA\, 63 East 7th Street\, New York\, NY
 DESCRIPTION:Join us Matcha 101! Learn about Matcha and How to whisk and dri
- nk.\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/
- e/31c135dfd4cf/
+ nk.\nPrice: $44.52\nLikely\, not fully confirmed.\nMore: https://matchamap
+ -cu7.pages.dev/e/31c135dfd4cf/
 URL:https://matchamap-cu7.pages.dev/e/31c135dfd4cf/
 GEO:40.727665;-73.986861
 STATUS:CONFIRMED

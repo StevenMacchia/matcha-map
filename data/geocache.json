@@ -224,6 +224,11 @@
     "lng": -77.065593,
     "source": "nominatim"
   },
+  "1661 wisconsin ave nw washington dc": {
+    "lat": 38.912065,
+    "lng": -77.065334,
+    "source": "nominatim"
+  },
   "1661 wisconsin ave washington dc": {
     "lat": 38.912065,
     "lng": -77.065334,
@@ -404,6 +409,10 @@
     "lng": -97.702653,
     "source": "nominatim"
   },
+  "2006 philomena st austin tx 78723 austin tx 78723": {
+    "miss": true,
+    "at": 1795458154090
+  },
   "201 f street washington dc": {
     "lat": 38.897122,
     "lng": -77.003297,
@@ -488,6 +497,11 @@
   "224 east hennepin avenue minneapolis mn 55414": {
     "lat": 44.987698,
     "lng": -93.256485,
+    "source": "nominatim"
+  },
+  "23 west girard avenue philadelphia pa": {
+    "lat": 39.968829,
+    "lng": -75.135458,
     "source": "nominatim"
   },
   "23 west girard avenue philadelphia pa 19123": {
@@ -635,6 +649,11 @@
     "lng": -73.991332,
     "source": "nominatim"
   },
+  "2795 east grand boulevard detroit mi": {
+    "lat": 42.374578,
+    "lng": -83.062032,
+    "source": "nominatim"
+  },
   "2795 east grand boulevard detroit mi 48211": {
     "lat": 42.376913,
     "lng": -83.055792,
@@ -657,6 +676,11 @@
   "2810 riverby rd ste 104 houston tx 77020": {
     "miss": true,
     "at": 1795391922319
+  },
+  "288 buckhead avenue atlanta ga 30305 atlanta ga": {
+    "lat": 33.838303,
+    "lng": -84.378234,
+    "source": "nominatim"
   },
   "2911 e robinson st orlando fl 32803": {
     "lat": 28.546071,
@@ -794,6 +818,11 @@
     "lng": -77.10209,
     "source": "nominatim"
   },
+  "3574 2nd avenue detroit mi": {
+    "lat": 42.34542,
+    "lng": -83.063155,
+    "source": "nominatim"
+  },
   "3574 2nd avenue detroit mi 48201": {
     "lat": 42.34542,
     "lng": -83.063155,
@@ -882,9 +911,17 @@
     "lng": -77.110671,
     "source": "nominatim"
   },
+  "4238 wilson blvd arlington va 22203 arlington va 22203": {
+    "miss": true,
+    "at": 1795458153105
+  },
   "4238 wilson blvd unit 1240 arlington va 22203 arlington va": {
     "miss": true,
     "at": 1795412792637
+  },
+  "4238 wilson blvd unit 1240 arlington va 22203 arlington va 22203": {
+    "miss": true,
+    "at": 1795458152221
   },
   "4238 wilson boulevard arlington va 22203": {
     "lat": 38.879014,
@@ -1038,6 +1075,10 @@
     "lng": -73.991574,
     "source": "nominatim"
   },
+  "53 water st brooklyn ny 11201 brooklyn ny 11201": {
+    "miss": true,
+    "at": 1795458151246
+  },
   "530 technology dr irvine ca 92618": {
     "lat": 33.674353,
     "lng": -117.760403,
@@ -1110,6 +1151,11 @@
   "6255 sunset boulevard los angeles ca 90028": {
     "lat": 34.098586,
     "lng": -118.325436,
+    "source": "nominatim"
+  },
+  "626 st helens ave tacoma wa": {
+    "lat": 47.257698,
+    "lng": -122.44297,
     "source": "nominatim"
   },
   "626 st seattle wa": {
@@ -1266,6 +1312,11 @@
   "76 cross street somerville ma 02145": {
     "lat": 42.385488,
     "lng": -71.087773,
+    "source": "nominatim"
+  },
+  "769 westminster st providence ri": {
+    "lat": 41.818014,
+    "lng": -71.420987,
     "source": "nominatim"
   },
   "7731 menchaca road austin tx 78745": {
@@ -2165,6 +2216,11 @@
     "miss": true,
     "at": 1795371620083
   },
+  "fort greene park brooklyn ny 11205 brooklyn ny": {
+    "lat": 40.690584,
+    "lng": -73.974194,
+    "source": "nominatim"
+  },
   "fort lauderdale fl": {
     "lat": 26.122308,
     "lng": -80.143379,
@@ -2939,9 +2995,18 @@
     "miss": true,
     "at": 1795440817565
   },
+  "venue: aveda store at bellevue square bellevue wa": {
+    "miss": true,
+    "at": 1795458247676
+  },
   "venue: aveda store at bellevue square seattle wa": {
     "miss": true,
     "at": 1795400397067
+  },
+  "venue: bellevue square bellevue wa": {
+    "lat": 47.615655,
+    "lng": -122.203677,
+    "source": "nominatim-venue"
   },
   "venue: big feeling december boston ma": {
     "miss": true,

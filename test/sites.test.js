@@ -318,3 +318,13 @@ test("watchlist: a site candidate keeps the schema's handle pattern and a note",
   assert.equal(acc.status, "candidate");
   assert.ok(acc.notes.length <= 160);
 });
+
+// Population lane P1: Eventbrite sitemap seeds.
+import { seedsFromSitemap } from "../ingest/lib/sites/eventbrite.js";
+import { test as seedTest } from "node:test";
+import seedAssert from "node:assert/strict";
+seedTest("eventbrite sitemap seeds keep US matcha search pages only", () => {
+  const xml = `<urlset><url><loc>https://www.eventbrite.com/d/ca--gilroy/matcha/</loc></url><url><loc>https://www.eventbrite.com/d/ny--new-york--jamaica/matcha-classes/</loc></url><url><loc>https://www.eventbrite.com/d/ok--norman/matcha/</loc></url><url><loc>https://www.eventbrite.com/d/sweden--sticklinge-udde/matcha/</loc></url><url><loc>https://www.eventbrite.com/d/il--chicago--maplewood/matcha/</loc></url><url><loc>https://www.eventbrite.com/d/ca--gilroy/matcha/</loc></url></urlset>`;
+  const s = seedsFromSitemap(xml);
+  seedAssert.deepEqual(s.map((x) => `${x.state}:${x.city}`), ["CA:Gilroy", "OK:Norman", "IL:Chicago"]);
+});

@@ -31,5 +31,22 @@
   "city": "Arlington",
   "state": "VA",
   "why": "After School Coffee House: the source gave only \"Northern Virginia\", not a city; its home city Arlington until the venue's own city is known"
+ },
+ "68e932a1bcfc": {
+  "city": "Tacoma",
+  "state": "WA",
+  "address": "626 St Helens Ave",
+  "lat": 47.257698,
+  "lng": -122.44297,
+  "geocode_source": "nominatim",
+  "why": "Sabz Matcha at Cocobolo, 626 St Helens Ave is in Tacoma (the MATO page says so), not Seattle"
+ },
+ "f38213be4726": {
+  "city": "Bellevue",
+  "state": "WA",
+  "lat": 47.615655,
+  "lng": -122.203677,
+  "geocode_source": "nominatim-venue",
+  "why": "Aveda Store at Bellevue Square is in Bellevue, not Seattle; pinned at Bellevue Square (venue lookup)"
  }
 }

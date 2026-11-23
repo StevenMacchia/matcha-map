@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:6d61a8ba1dfd@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
-DTSTART;VALUE=DATE:20261212
-DTEND;VALUE=DATE:20261213
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261212T233000Z
+DTEND:20261213T013000Z
 SUMMARY:Matcha Latte & Latte Candle Making Class
 LOCATION:11 Green Pond Road\, Rockaway\, NJ
 DESCRIPTION:Sip\, create\, and celebrate! Join us December 12 for a festive
   Matcha Latte & Latte Candle Making Class. Handmade gifts\, holiday fun & 
- memori\nMenu: latte\nLikely\, not fully confirmed.\nMore: https://matchama
- p-cu7.pages.dev/e/6d61a8ba1dfd/
+ memori\nMenu: latte\nPrice: $49.87\nLikely\, not fully confirmed.\nMore: h
+ ttps://matchamap-cu7.pages.dev/e/6d61a8ba1dfd/
 URL:https://matchamap-cu7.pages.dev/e/6d61a8ba1dfd/
 GEO:40.911908;-74.501272
 STATUS:CONFIRMED

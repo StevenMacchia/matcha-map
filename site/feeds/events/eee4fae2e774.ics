@@ -8,18 +8,18 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:eee4fae2e774@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
-DTSTART;VALUE=DATE:20261128
-DTEND;VALUE=DATE:20261129
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
 SUMMARY:Matcha + Meetup: San Antonio | Benefits for The Birthday Party Proj
  ect
 LOCATION:Blush Restaurant & Bakery\, 713 South Alamo Street\, San Antonio\,
   TX
 DESCRIPTION:Make new friends over brunch or coffee while supporting small b
- usinesses and giving back to non-profit\, The Birthday Party Project.\nLik
- ely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/eee4fa
- e2e774/
+ usinesses and giving back to non-profit\, The Birthday Party Project.\nPri
+ ce: Free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/eee4fae2e774/
 URL:https://matchamap-cu7.pages.dev/e/eee4fae2e774/
 GEO:29.416973;-98.488581
 STATUS:CONFIRMED

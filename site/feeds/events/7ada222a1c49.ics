@@ -8,17 +8,17 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:7ada222a1c49@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
-DTSTART;VALUE=DATE:20261128
-DTEND;VALUE=DATE:20261129
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261128T200000Z
+DTEND:20261128T230000Z
 SUMMARY:Matcha + Meetup: El Paso | Benefits for The Birthday Party Project
 LOCATION:Café Rosé the Pink Cafe El Paso\, 307 East Franklin Avenue\, El 
  Paso\, TX
 DESCRIPTION:Make new friends over brunch or coffee while supporting small b
- usinesses and giving back to non-profit\, The Birthday Party Project.\nLik
- ely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/7ada22
- 2a1c49/
+ usinesses and giving back to non-profit\, The Birthday Party Project.\nPri
+ ce: Free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/7ada222a1c49/
 URL:https://matchamap-cu7.pages.dev/e/7ada222a1c49/
 GEO:31.761973;-106.487608
 STATUS:CONFIRMED

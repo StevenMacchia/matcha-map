@@ -180,9 +180,22 @@ export function promote(items, existing = [], { sources = [], now = new Date() }
   return { candidates: out, stats };
 }
 
-// Unsure items as a plain-text table for a human.
-export function unsureTable(items) {
-  const rows = items.filter((i) => !PROMOTE.has(effectiveConfidence(i))).sort((a, b) => String(a.start).localeCompare(String(b.start)));
+// Items a person has settled live in data/review/settled.json (a run file is rewritten, so notes on its items do not survive), keyed by
+// the page URL plus the event day; an item whose notes start "dropped:" or say "checked <date>" is settled too (docs/LANES.md).
+export const settledKey = (i) => `${[i.source_url, ...arr(i.evidence)].find((u) => u && !/instagram\.com|tiktok\.com/.test(u)) || i.source_url || arr(i.evidence)[0] || ""}|${String(i.start || "").slice(0, 10)}`;
+export function readSettled(dir = REVIEW_DIR) {
+  try { return new Map((JSON.parse(fs.readFileSync(path.join(dir, "settled.json"), "utf8")).settled || []).map((s) => [`${s.url}|${s.day}`, s])); } catch { return new Map(); }
+}
+export function isSettled(i, settled = new Map(), now = new Date()) {
+  const n = String(i.notes || "");
+  if (settled.has(settledKey(i)) || /\bdropped: /.test(n)) return true;
+  const c = /\bchecked (20\d\d-\d\d-\d\d)/.exec(n); // opened within the last 14 days: not reopened
+  return !!c && new Date(now).getTime() - Date.parse(c[1]) < 14 * 86400000;
+}
+
+// Unsure items as a plain-text table for a human: the ones nobody has settled yet.
+export function unsureTable(items, settled = readSettled()) {
+  const rows = items.filter((i) => !PROMOTE.has(effectiveConfidence(i)) && !isSettled(i, settled)).sort((a, b) => String(a.start).localeCompare(String(b.start)));
   const cut = (s, n) => { const t = String(s ?? "").replace(/\s+/g, " "); return (t.length > n ? t.slice(0, n - 1) + "…" : t).padEnd(n); };
   const lines = [`${cut("date", 16)} ${cut("brand", 22)} ${cut("title", 34)} ${cut("where", 28)} ${cut("file", 18)} evidence`];
   for (const i of rows) {

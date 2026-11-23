@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:a2deab1831dc@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T010415Z
-DTSTART;VALUE=DATE:20261205
-DTEND;VALUE=DATE:20261206
+DTSTART:20261205T200000Z
+DTEND:20261205T230000Z
 SUMMARY:Matcha + Meetup: Tucson (Giving Back Edition)
 LOCATION:Tucson\, AZ
 DESCRIPTION:Join us for coffee at different cafe. Build your community whil
- e supporting local businesses\, and giving back to people in need.\nDetail
- s not confirmed yet. Check the brand's post before you go.\nMore: https://
- matchamap-cu7.pages.dev/e/a2deab1831dc/
+ e supporting local businesses\, and giving back to people in need.\nPrice:
+  $23.18\nDetails not confirmed yet. Check the brand's post before you go.\
+ nMore: https://matchamap-cu7.pages.dev/e/a2deab1831dc/
 URL:https://matchamap-cu7.pages.dev/e/a2deab1831dc/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

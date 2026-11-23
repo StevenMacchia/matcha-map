@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:4a9586dacab3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -24,7 +24,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:9fc3ea7a0140@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -41,7 +41,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:e8151f92bd15@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
@@ -57,48 +57,33 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:907bad3baf0e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
 SUMMARY:Espresso & Matcha Pop-Up at Patine
 LOCATION:Patine\, 2722 Fifth Ave\, San Diego\, CA
-DESCRIPTION:A Black Friday pop-up brings an espresso bar and a matcha bar t
- o Patine\, a culinary and cookbook shop in Bankers Hill. miel provides pas
- tries. m. m. at 2722 Fifth Ave.\nMenu: pastry\nMore: https://matchamap-cu7
- .pages.dev/e/907bad3baf0e/
+DESCRIPTION:Black Friday pop up in Bankers Hill Join us for an espresso + m
+ atcha bar alongside pastry chef extraordinaire matcha.y.miel at cozy\, cul
+ inary & cookbook shop patine.sd.\nMenu: pastry\, espresso matcha\nMore: ht
+ tps://matchamap-cu7.pages.dev/e/907bad3baf0e/
 URL:https://matchamap-cu7.pages.dev/e/907bad3baf0e/
 GEO:33.116063;-117.082913
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:b192ec8a7beb@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T054608Z
-DTSTART:20261127T180000Z
-DTEND:20261127T220000Z
-SUMMARY:Espresso & Matcha Pop-Up at Patine
-LOCATION:2722 Fifth Ave\, San Diego\, CA
-DESCRIPTION:Black Friday pop up in Bankers Hill Join us for an espresso + m
- atcha bar alongside pastry chef extraordinaire matcha.y.miel at cozy\, cul
- inary & cookbook shop patine.sd.\nMenu: espresso matcha\, pastry\nMore: ht
- tps://matchamap-cu7.pages.dev/e/b192ec8a7beb/
-URL:https://matchamap-cu7.pages.dev/e/b192ec8a7beb/
-GEO:33.116063;-117.082913
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:9a6762c17c0d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T160000Z
 DTEND:20261129T180000Z
 SUMMARY:Pilates at The Ranch
 LOCATION:The Ranch\, 2501 Sunset Avenue\, San Diego\, CA
-DESCRIPTION:Price: $44.52–81.88\nLikely\, not fully confirmed.\nMore: htt
- ps://matchamap-cu7.pages.dev/e/9a6762c17c0d/
+DESCRIPTION:Pilates lead by Pilates Instructor Kari from ViGlo Wellness \, 
+ join us for a refreshing session at the ranch with live music and vendors\
+ nPrice: $44.52–81.88\nLikely\, not fully confirmed.\nMore: https://match
+ amap-cu7.pages.dev/e/9a6762c17c0d/
 URL:https://matchamap-cu7.pages.dev/e/9a6762c17c0d/
 GEO:32.558121;-117.082009
 STATUS:CONFIRMED
@@ -106,7 +91,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:1cdd1761a275@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261122T235305Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
@@ -122,43 +107,9 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:c676cf3f543c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261122T202629Z
-DTSTART;VALUE=DATE:20261206
-DTEND;VALUE=DATE:20261207
-SUMMARY:emkari_cafe pop-up
-LOCATION:San Diego\, CA
-DESCRIPTION:Filipino & Vietnamese Matcha & Coffee Popup in San Diego | Dec 
- 6th A new popup event is set to take place on December 6th at the Day to D
- ay Collective\, offering a special taste of Filipino and…\nDetails not c
- onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
- ap-cu7.pages.dev/e/c676cf3f543c/
-URL:https://matchamap-cu7.pages.dev/e/c676cf3f543c/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:d3a3eb0bdb3f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T121327Z
-DTSTART;VALUE=DATE:20261206
-DTEND;VALUE=DATE:20261207
-SUMMARY:Kaphé Muna pop-up at goldenmakersmarket
-LOCATION:San Diego\, CA
-DESCRIPTION:meaning “coffee first” in Tagalog\, is a specialty coffee &
-  matcha pop-up that uses coffe…" Drawing inspiration from their Filipino
-  American upbringing\, they take a playful and intentional approach…\nPr
- ice: free\nDetails not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/d3a3eb0bdb3f/
-URL:https://matchamap-cu7.pages.dev/e/d3a3eb0bdb3f/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:10d8b6b680e2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261206T190000Z
 DTEND:20261206T230000Z
 SUMMARY:San Diego Matcha Market at Day to Day Collective
@@ -177,7 +128,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:56fe399aee68@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART:20261206T190000Z
 DTEND:20261206T230000Z
@@ -192,24 +143,25 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:1706d7cc5fb3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261206T200000Z
 DTEND:20261207T010000Z
 SUMMARY:Kaphé Muna coffee and matcha pop-up at Golden Makers Market
 LOCATION:San Diego\, CA
-DESCRIPTION:Kaphé Muna\, a Filipino-heritage specialty coffee and matcha p
- op-up\, is a named vendor among 45+ makers at the Golden Makers holiday ma
- rket in Point Loma. Free RSVP through the market.\nMenu: specialty coffee\
- , matcha drinks\nDetails not confirmed yet. Check the brand's post before 
- you go.\nMore: https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
+DESCRIPTION:meaning “coffee first” in Tagalog\, is a specialty coffee &
+  matcha pop-up that uses coffe…" Drawing inspiration from their Filipino
+  American upbringing\, they take a playful and intentional approach…\nMe
+ nu: specialty coffee\, matcha drinks\nPrice: free\nDetails not confirmed y
+ et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
+ es.dev/e/1706d7cc5fb3/
 URL:https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:b6b0697a0973@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213

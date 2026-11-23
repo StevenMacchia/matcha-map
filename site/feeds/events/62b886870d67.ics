@@ -8,14 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:62b886870d67@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20270303T163000Z
 DTEND:20270303T183000Z
 SUMMARY:Matcha Crawl
 LOCATION:Atlanta\, GA
-DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/62b886870d67/
+DESCRIPTION:We gathered Atlanta best matcha vendors all in one place so you
+  can enjoy them all at once! This matcha crawl will have you buzzing & see
+ ing green!\nDetails not confirmed yet. Check the brand's post before you g
+ o.\nMore: https://matchamap-cu7.pages.dev/e/62b886870d67/
 URL:https://matchamap-cu7.pages.dev/e/62b886870d67/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

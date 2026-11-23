@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:562f1c67c3cb@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T131640Z
-DTSTART;VALUE=DATE:20261220
-DTEND;VALUE=DATE:20261221
+DTSTART:20261220T190000Z
+DTEND:20261220T220000Z
 SUMMARY:Matcha + Meetup: Houston | Entrepreneur Speed Networking Roulette
 LOCATION:Houston\, TX
 DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nDetails 
- not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/562f1c67c3cb/
+ for collaborations in this roulette edition of speed networking.\nPrice: $
+ 25.09\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/562f1c67c3cb/
 URL:https://matchamap-cu7.pages.dev/e/562f1c67c3cb/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
