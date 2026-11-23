@@ -1,0 +1,25 @@
+{
+ "generated": "2026-11-23T21:36:55.673Z",
+ "group": "west-toko",
+ "shops": [
+  {
+   "name": "Matcha Toko",
+   "address": "6905 Stockton Blvd",
+   "city": "Sacramento",
+   "state": "CA",
+   "zip": null,
+   "website": null,
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.yahoo.com/news/articles/matcha-dessert-shop-south-sacramento-140000482.html",
+   "read": "2026-11-23",
+   "confirmed_via": "public-page",
+   "note": "Formerly Matcha Cafe Maiko; reopened as Matcha Toko on Nov 21",
+   "notes": "Sacramento Bee story syndicated on Yahoo News (matcha and dessert shop in south Sacramento gets a new name, holds grand opening Saturday Nov 21). No own site or hours found yet; the business did not answer the Bee."
+  }
+ ]
+}

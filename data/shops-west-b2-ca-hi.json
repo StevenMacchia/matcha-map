@@ -154,7 +154,6 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "read": "2026-11-23",
-   "confirmed_via": "own-site",
    "name": "Matcha Cafe Maiko",
    "address": "2310 Kuhio Ave",
    "city": "Honolulu",
@@ -162,7 +161,7 @@
    "zip": "96815",
    "website": "https://www.matchacafe-maiko.com",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=hi&target=hi-honolulu-main-store",
-   "notes": "Honolulu main store, #143, Waikiki. The store page says to call for current hours.",
+   "notes": "Held 2026-11-23: all Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json. Honolulu main store, #143, Waikiki. The store page says to call for current hours.",
    "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
   },
   {

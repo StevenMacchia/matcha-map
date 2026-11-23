@@ -7,15 +7,91 @@
   "hide": true
  },
  "osm:node/11007004668": {
-  "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
+  "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
  },
  "osm:way/421376676": {
-  "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
+  "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
  },
  "osm:node/12083747993": {
-  "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
+  "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
  },
  "osm:way/1079804234": {
-  "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
+  "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-premium-matcha-cafe-maiko-az-tempe-920-e-unive-754902": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-ca-san-diego-8072-clairemont-f9a331": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-ca-escondido-1024-w-valley-p-9c0517": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-millenia-fl-orlando-4693-gar-2e0c58": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-hi-honolulu-2310-kuhio-ave-e82de2": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-ma-boston-115-jersey-street-47608b": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-mi-troy-5082-rochester-rd-71d7bd": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-nc-charlotte-8128-providence-b266f1": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-nj-fort-lee-1630-lemoine-ave-cb99bb": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "osm:node/14121437619": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "osm:node/10756703060": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-ny-flushing-133-33-39th-ave-5795fc": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-pa-philadelphia-923-race-st-35969b": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-tx-richardson-100-s-central-6cbcd1": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-tx-san-antonio-7115-blanco-r-cb4a18": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-tx-san-antonio-11330-potranc-5c0c2f": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-cafe-maiko-tx-frisco-9244-prestmont-pl-a543fd": {
+  "verified": false,
+  "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
  }
 }

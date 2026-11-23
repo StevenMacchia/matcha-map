@@ -13,13 +13,12 @@
    "image_url": "http://static1.squarespace.com/static/5e1d726bf9d8514b273b2ebd/t/5e67d5fe6f89e273f541f88d/1583863295793/long+front+logo+green+sign.png?format=1500w",
    "image_credit": "Photo: Matcha Cafe Maiko Atlanta website",
    "read": "2026-11-23",
-   "notes": "Suite B, Buford Highway (Doraville area, site prints Atlanta). Site hours not tied to one store, so left blank.",
+   "notes": "Held 2026-11-23: all Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json. Suite B, Buford Highway (Doraville area, site prints Atlanta). Site hours not tied to one store, so left blank.",
    "name": "Matcha Cafe Maiko",
    "address": "5306 Buford Hwy NE",
    "city": "Atlanta",
    "state": "GA",
    "source_url": "https://matchacafeatl.com/",
-   "confirmed_via": "own-site",
    "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
   },
   {
@@ -33,13 +32,12 @@
    "image_url": null,
    "image_credit": null,
    "read": "2026-11-23",
-   "notes": "Brand Instagram handle (matchastand_maiko) from the chain site. Store page says call for hours.",
+   "notes": "Held 2026-11-23: all Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json. Brand Instagram handle (matchastand_maiko) from the chain site. Store page says call for hours.",
    "name": "Matcha Cafe Maiko",
    "address": "8128 Providence Rd Suite 900",
    "city": "Charlotte",
    "state": "NC",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nc&target=nc-charlotte",
-   "confirmed_via": "own-site",
    "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
   },
   {
@@ -53,13 +51,12 @@
    "image_url": "http://static1.squarespace.com/static/69d55f94971c866ea49bf3b8/t/69f37ea5cfa3e81e12d2a5c1/1777565349021/matcha-cafe-maiko-barista-whisking-ceremonial-matcha.jpg?format=1500w",
    "image_credit": "Photo: Matcha Cafe Maiko Orlando website",
    "read": "2026-11-23",
-   "notes": "Second Orlando store; the Mills 50 store is already in the shop layer. Own pages disagree on hours, so left blank.",
+   "notes": "Held 2026-11-23: all Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json. Second Orlando store; the Mills 50 store is already in the shop layer. Own pages disagree on hours, so left blank.",
    "name": "Matcha Cafe Maiko (Millenia)",
    "address": "4693 Gardens Park Blvd Suite 117",
    "city": "Orlando",
    "state": "FL",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=fl&target=fl-millenia",
-   "confirmed_via": "own-site",
    "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
   },
   {
