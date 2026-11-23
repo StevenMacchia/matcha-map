@@ -1,0 +1,296 @@
+{
+  "generated": "2026-11-23",
+  "metros": ["atlanta", "phoenix"],
+  "method_notes": [
+    "Brands were found with WebSearch and page reads (AJC, Rough Draft Atlanta, Secret Atlanta, Phoenix New Times, What Now, ma.to, Luma, Eventbrite) before our data was opened. Our data (events.json, sources.json, watchlist.json, review/*) was read only afterwards.",
+    "data/events.json only holds events starting 2026-10-24 or later. A pop-up before that date is marked found_by_our_data 'no' with data_window_note 'before events.json window'; that is a coverage-window effect, not proof the pipeline could not have found it.",
+    "Instagram and TikTok were never fetched. Instagram evidence is only a handle or post link printed on a press or venue page, so posted_at is null and readable_without_login is 'partial' by platform rule, not tested.",
+    "The search tool did not index Reddit, Posh, Partiful, Google Business posts or Linktrees for these brands, and surfaced only a few Luma pages; absence of those channels is a search limit, not evidence they do not exist.",
+    "Several brands are weak fits: Ponder Coffee, Stroll Coffee, Yumi's Coffee and Soundtrack Coffee are coffee carts or residencies that serve matcha, not matcha-only brands; The Postcard is a permanent cafe whose dated pop-up is a workshop at a host venue; Neighbor Matcha is a workshop host."
+  ],
+  "brands": [
+    {
+      "metro": "atlanta",
+      "brand": "Shogun Matcha",
+      "handle": "shogunmatcha",
+      "website": "https://shogunuji.com",
+      "why_independent": "Founder-run (Dan Tirmizi) roaming matcha stand at farmers markets and venue pop-ups since Jan 2025; first permanent location only planned for early 2027 (What Now Atlanta, 2026-11-13).",
+      "popups": [
+        {
+          "date": "2026-06-12",
+          "venue": "Poke House Buckhead, 3280 Peachtree Rd NE",
+          "source_url": "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/",
+          "channels": [
+            {"channel": "local-press-or-newsletter", "url": "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/", "posted_at": "2026-06 (week of Jun 12)", "readable_without_login": "yes", "why": "AJC weekly pop-up roundup, public page, exact date, time and address"},
+            {"channel": "host-venue-instagram", "url": "https://instagram.com/poke.house.atl", "posted_at": null, "readable_without_login": "partial", "why": "handle linked from the AJC article; post itself not opened, Instagram shows a login wall after a few posts"},
+            {"channel": "own-instagram-post", "url": "https://instagram.com/shogunmatcha", "posted_at": null, "readable_without_login": "partial", "why": "brand handle linked from AJC and named by Rough Draft as the schedule of record; post not opened"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "before events.json window (starts 2026-10-24)",
+          "missed_channel_that_would_catch": "local-press-or-newsletter (AJC weekly pop-up roundup adapter) or own-instagram-post"
+        },
+        {
+          "date": "2026-06-13",
+          "venue": "Sandy Springs Farmers Market, 1 Galambos Way (City Green at City Springs)",
+          "source_url": "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/",
+          "channels": [
+            {"channel": "local-press-or-newsletter", "url": "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/", "posted_at": "2026-06 (week of Jun 12)", "readable_without_login": "yes", "why": "AJC roundup, public"},
+            {"channel": "host-venue-instagram", "url": "https://instagram.com/sandy.springs.farmers.market", "posted_at": null, "readable_without_login": "partial", "why": "handle linked from AJC; post not opened"},
+            {"channel": "ticketing-page", "url": "https://www.eventbrite.com/e/shogun-matcha-pop-up-at-farmers-markets-tickets-1377680833459", "posted_at": null, "readable_without_login": "yes", "why": "Eventbrite page by organizer Shogun Matcha at City Green at City Springs; it only says 'Multiple dates' and shows Event ended, so no specific date is readable"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "before events.json window",
+          "missed_channel_that_would_catch": "host-venue-instagram (@sandy.springs.farmers.market), AJC roundup, or the market's own vendor page"
+        },
+        {
+          "date": "2026-06-14",
+          "venue": "Avondale Estates Farmers Market, 64 N Avondale Rd",
+          "source_url": "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/",
+          "channels": [
+            {"channel": "local-press-or-newsletter", "url": "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/", "posted_at": "2026-06 (week of Jun 12)", "readable_without_login": "yes", "why": "AJC roundup, public"},
+            {"channel": "host-venue-instagram", "url": "https://instagram.com/aefarmersmarket", "posted_at": null, "readable_without_login": "partial", "why": "handle linked from AJC; post not opened"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "before events.json window",
+          "missed_channel_that_would_catch": "local-press-or-newsletter (AJC roundup) or host-venue-instagram"
+        }
+      ],
+      "known_to_us": {"in_sources": true, "in_watchlist": true, "note": "sources id shogun-matcha (manual adapter), watchlist handle shogunmatcha. events.json already holds Nov 7, 15, 21, 22 and Dec 5, 12, 20 Shogun events; I did not verify those on a public page."},
+      "other_public_channels_seen": [
+        {"channel": "own-website", "url": "https://shogunuji.com", "readable_without_login": "yes", "why": "public, but no events page or schedule; social links are placeholders"},
+        {"channel": "local-press-or-newsletter", "url": "https://roughdraftatlanta.com/2026/04/29/matcha-drinks-desserts-atlanta/", "readable_without_login": "yes", "why": "Rough Draft April 2026 guide gives a weekly pattern (Fri Poke House, Sat Sandy Springs, Sun Avondale), no dates"}
+      ]
+    },
+    {
+      "metro": "atlanta",
+      "brand": "Muracha",
+      "handle": "drinkmuracha",
+      "website": "https://drinkmuracha.com",
+      "why_independent": "Atlanta/Nashville matcha tea company that sells online and does occasional host-venue pop-ups (Bella Cucina, Buckhead).",
+      "popups": [
+        {
+          "date": "2026-08-22",
+          "venue": "Bella Cucina, 288 Buckhead Ave, Atlanta",
+          "source_url": "https://www.ajc.com/food-and-dining/2026/08/a-free-summer-festival-matcha-pop-up-and-more-food-events-this-week/",
+          "channels": [
+            {"channel": "local-press-or-newsletter", "url": "https://www.ajc.com/food-and-dining/2026/08/a-free-summer-festival-matcha-pop-up-and-more-food-events-this-week/", "posted_at": "2026-08", "readable_without_login": "yes", "why": "AJC roundup, public, date and 11-3 hours"},
+            {"channel": "host-venue-web-calendar", "url": "https://bellacucina.com/products/muracha-pop-up-saturday-august-22nd-2026", "posted_at": null, "readable_without_login": "yes", "why": "host shop's own public product page for the event (my fetch returned HTTP 429, so this is from the AJC link, not read)"},
+            {"channel": "own-instagram-post", "url": "https://www.instagram.com/p/DaNgIqpu6H5/", "posted_at": null, "readable_without_login": "partial", "why": "post linked by AJC; account owner not confirmed and post not opened"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "before events.json window",
+          "missed_channel_that_would_catch": "host-venue-web-calendar (bellacucina.com product pages; our data already reads this site for the Dec 12 date)"
+        },
+        {
+          "date": "2026-12-12",
+          "venue": "Bella Cucina, Atlanta",
+          "source_url": "https://bellacucina.com/products/muracha-matcha-pop-up-saturday-december-12th-2026",
+          "channels": [
+            {"channel": "host-venue-web-calendar", "url": "https://bellacucina.com/products/muracha-matcha-pop-up-saturday-december-12th-2026", "posted_at": null, "readable_without_login": "yes", "why": "public shop product page; URL taken from our own events.json, not independently fetched by me"}
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "45475a09eeec",
+          "missed_channel_that_would_catch": null
+        }
+      ],
+      "known_to_us": {"in_sources": true, "in_watchlist": false, "note": "sources id muracha (tea-brand, manual, instagram null); the handle drinkmuracha is not recorded anywhere in data/"}
+    },
+    {
+      "metro": "atlanta",
+      "brand": "Notcha Matcha",
+      "handle": "notchamatchaofficial",
+      "website": null,
+      "why_independent": "Founder-run (Queneesha Gregory) plant-based matcha pop-up, started at Augusta Market April 2025, alternates between Atlanta and Augusta, no storefront (Secret Atlanta 2025-12-01, Rough Draft 2026-04).",
+      "popups": [],
+      "no_dated_popup_found": true,
+      "notes": "Two press pieces (Secret Atlanta, Rough Draft) both say the schedule lives on Instagram only. No public non-Instagram page with a dated Notcha pop-up was found. Our events.json has Notcha events for 2026-11-07 and 2026-11-21 (ids c5da731012f6, 257a03769639), both sourced from one Instagram post https://www.instagram.com/p/DfQRRZzia_i/ with no venue; I did not open it. This is the clearest case of a brand whose only dated channel is Instagram.",
+      "known_to_us": {"in_sources": true, "in_watchlist": true, "note": "sources notcha-matcha, watchlist notchamatchaofficial"},
+      "other_public_channels_seen": [
+        {"channel": "local-press-or-newsletter", "url": "https://secretatlanta.co/hot-lemon-pepper-notcha-matcha/", "readable_without_login": "yes", "why": "profile, 2025-12-01, no dates"},
+        {"channel": "local-press-or-newsletter", "url": "https://roughdraftatlanta.com/2026/04/29/matcha-drinks-desserts-atlanta/", "readable_without_login": "yes", "why": "venue listed as 'various locations', no dates"}
+      ]
+    },
+    {
+      "metro": "atlanta",
+      "brand": "Ponder Coffee (Ponder Coffee Cart)",
+      "handle": "pondercoffeecart",
+      "website": null,
+      "why_independent": "Small coffee cart that serves matcha and runs dated cart pop-ups at Press Shop and Collected ATL (Marietta). WEAK FIT: coffee-first, matcha is one menu item.",
+      "popups": [
+        {
+          "date": "2026-11-21",
+          "venue": "Press Shop, 72 Georgia Ave SE, Atlanta (8am-noon)",
+          "source_url": "https://www.ajc.com/food-and-dining/2026/11/atlanta-coffee-scene-november-2026/",
+          "channels": [
+            {"channel": "local-press-or-newsletter", "url": "https://www.ajc.com/food-and-dining/2026/11/atlanta-coffee-scene-november-2026/", "posted_at": "2026-11", "readable_without_login": "yes", "why": "AJC monthly coffee roundup, public, gives both dates and hours"},
+            {"channel": "own-instagram-post", "url": "https://www.instagram.com/pondercoffeecart/", "posted_at": null, "readable_without_login": "partial", "why": "profile linked from AJC; not opened"},
+            {"channel": "host-venue-instagram", "url": "https://www.instagram.com/press.shop/", "posted_at": null, "readable_without_login": "partial", "why": "profile linked from AJC; not opened"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "local-press-or-newsletter (AJC coffee roundup) or own-instagram-post"
+        },
+        {
+          "date": "2026-11-28",
+          "venue": "Press Shop, 72 Georgia Ave SE, Atlanta (8am-noon)",
+          "source_url": "https://www.ajc.com/food-and-dining/2026/11/atlanta-coffee-scene-november-2026/",
+          "channels": [
+            {"channel": "local-press-or-newsletter", "url": "https://www.ajc.com/food-and-dining/2026/11/atlanta-coffee-scene-november-2026/", "posted_at": "2026-11", "readable_without_login": "yes", "why": "same AJC roundup"},
+            {"channel": "host-venue-instagram", "url": "https://www.instagram.com/press.shop/", "posted_at": null, "readable_without_login": "partial", "why": "profile linked from AJC; not opened"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "local-press-or-newsletter (AJC coffee roundup); still upcoming, so catchable now"
+        },
+        {
+          "date": null,
+          "venue": "Collected ATL, 10 Powder Springs St SW, Marietta (1-5pm, a Saturday in Nov 2026, exact date not printed)",
+          "source_url": "https://www.ajc.com/food-and-dining/2026/11/atlanta-coffee-scene-november-2026/",
+          "channels": [
+            {"channel": "local-press-or-newsletter", "url": "https://www.ajc.com/food-and-dining/2026/11/atlanta-coffee-scene-november-2026/", "posted_at": "2026-11", "readable_without_login": "yes", "why": "AJC roundup gives only 'a Saturday in November'"},
+            {"channel": "host-venue-instagram", "url": "https://www.instagram.com/collectedatl/", "posted_at": null, "readable_without_login": "partial", "why": "profile linked from AJC; not opened"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "host-venue-instagram (@collectedatl) would carry the exact date"
+        }
+      ],
+      "known_to_us": {"in_sources": false, "in_watchlist": false, "note": "handles pondercoffeecart, press.shop, collectedatl not in any data file (watchlist 'ponder' hits are Ponderosa library)"}
+    },
+    {
+      "metro": "atlanta",
+      "brand": "The Postcard (with Wanderstate Mercantile, Chamblee)",
+      "handle": "thepostcardatl",
+      "website": null,
+      "why_independent": "Small matcha and coffee shop that ran a dated off-site workshop at a host retail shop (Wanderstate Mercantile, Chamblee). WEAK FIT: permanent cafe; the pop-up is a ticketed workshop at a host venue.",
+      "popups": [
+        {
+          "date": "2026-09-20",
+          "venue": "Wanderstate Mercantile, Chamblee (two morning workshops, $65)",
+          "source_url": "https://roughdraftatlanta.com/2026/09/03/quick-bites-september-3-atlanta-restaurant-news/",
+          "channels": [
+            {"channel": "local-press-or-newsletter", "url": "https://roughdraftatlanta.com/2026/09/03/quick-bites-september-3-atlanta-restaurant-news/", "posted_at": "2026-09-03", "readable_without_login": "yes", "why": "Rough Draft 'Quick Bites' newsletter item, public"},
+            {"channel": "host-venue-instagram", "url": "@shopwanderstate", "posted_at": null, "readable_without_login": "partial", "why": "handle linked from the Rough Draft item; not opened"},
+            {"channel": "own-instagram-post", "url": "@thepostcardatl", "posted_at": null, "readable_without_login": "partial", "why": "handle linked from the Rough Draft item; not opened"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "before events.json window",
+          "missed_channel_that_would_catch": "local-press-or-newsletter (Rough Draft Quick Bites) or host-venue-instagram"
+        }
+      ],
+      "known_to_us": {"in_sources": false, "in_watchlist": false, "note": "thepostcardatl and shopwanderstate not in any data file"}
+    },
+    {
+      "metro": "phoenix",
+      "brand": "Matcha Club AZ",
+      "handle": null,
+      "website": null,
+      "why_independent": "Small matcha-serving brand that supplies matcha at host-venue events (Sanctuary Camelback Mountain). Handle and site not found; could not confirm it is a standalone brand beyond the ma.to credit.",
+      "popups": [
+        {
+          "date": "2026-05-15",
+          "venue": "Sanctuary Camelback Mountain Resort, Spa Courtyard, 5700 E McDonald Dr, Paradise Valley/Phoenix",
+          "source_url": "https://ma.to/event/matcha-mahjong-15-may-2026",
+          "channels": [
+            {"channel": "host-venue-web-calendar", "url": "https://ma.to/event/matcha-mahjong-15-may-2026", "posted_at": null, "readable_without_login": "yes", "why": "ma.to event page for venue sanctuaryaz_, public, credits 'Matcha is by Matcha Club AZ'"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "before events.json window",
+          "missed_channel_that_would_catch": "host-venue-web-calendar: ma.to venue page /venue/sanctuaryaz_ (we already ingest ma.to for pipcoffeeclay; this venue is not in sources)"
+        }
+      ],
+      "known_to_us": {"in_sources": false, "in_watchlist": false, "note": "'matcha club' hits in data are Chicago, Dallas and New York groups; no Arizona one. Sanctuary Camelback also ran Luma events (luma.com/junematchamahjong, luma.com/matchaandmahjongaug) that do not name Matcha Club AZ."}
+    },
+    {
+      "metro": "phoenix",
+      "brand": "Neighbor Matcha",
+      "handle": null,
+      "website": null,
+      "why_independent": "Small Phoenix matcha/ceramics workshop host that runs ticketed workshops inside a host cafe (PIP coffee+clay). WEAK FIT: workshop series, no cart or market evidence.",
+      "popups": [
+        {
+          "date": "2026-11-21",
+          "venue": "PIP coffee+clay, Phoenix (9:30am, Matcha Bowl Workshop Part 1)",
+          "source_url": "https://ma.to/event/matcha-bowl-workshop-part-1-21-nov-2026",
+          "channels": [
+            {"channel": "host-venue-web-calendar", "url": "https://ma.to/event/matcha-bowl-workshop-part-1-21-nov-2026", "posted_at": null, "readable_without_login": "yes", "why": "ma.to event page for venue pipcoffeeclay, public, names Neighbor Matcha as host"}
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "host-venue-web-calendar (ma.to; an adapter already exists for this venue, so the Part 1 gap is a pipeline miss, cause not determined; Part 1 is already past today)"
+        },
+        {
+          "date": "2026-12-12",
+          "venue": "PIP coffee+clay, Phoenix (9:30am, Matcha Making Workshop Part 2)",
+          "source_url": "https://ma.to/venue/pipcoffeeclay",
+          "channels": [
+            {"channel": "host-venue-web-calendar", "url": "https://ma.to/venue/pipcoffeeclay", "posted_at": null, "readable_without_login": "yes", "why": "ma.to venue page lists Matcha Making Workshop Part 2 for Sat 12 Dec 9:30 AM, public"}
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "42ce152c9009",
+          "missed_channel_that_would_catch": null
+        }
+      ],
+      "known_to_us": {"in_sources": true, "in_watchlist": false, "note": "sources id neighbor-matcha (organizer, no handle); watchlist has pipcoffeeclay (found via ma.to/phoenix). Our event 42ce152c9009 is filed under brand PIP coffee+clay, not Neighbor Matcha."}
+    },
+    {
+      "metro": "phoenix",
+      "brand": "Stroll Coffee",
+      "handle": null,
+      "website": null,
+      "why_independent": "Mobile coffee cart (Ty and Frederick Watson) known for matcha specials; pops up at breweries, restaurants and shops and sells Thu-Sun at Dig It Gardens. WEAK FIT: coffee cart with a residency.",
+      "popups": [],
+      "no_dated_popup_found": true,
+      "notes": "Phoenix New Times (Dec 2025) and search snippets describe a Thu-Sun residency at Dig It Gardens, 3015 N 16th St, and plans for a second cart in 2026. No dated pop-up on any public page was found. The PNT page returned 403 on direct fetch, so details are from search snippets.",
+      "known_to_us": {"in_sources": false, "in_watchlist": false, "note": "no Stroll Coffee entry in data"}
+    },
+    {
+      "metro": "phoenix",
+      "brand": "Yumi's Coffee",
+      "handle": null,
+      "website": null,
+      "why_independent": "Japanese-style coffee and matcha cart (Yumi Yamauchi) that popped up at Dig It Gardens and The Churchill Neighbor Market before opening a permanent shop at 1710 N 16th St. WEAK FIT: now a permanent shop.",
+      "popups": [],
+      "no_dated_popup_found": true,
+      "notes": "Phoenix New Times (Sept 2025 per search snippet) describes cart pop-ups; no dated pop-up page found. Direct fetch returned 403.",
+      "known_to_us": {"in_sources": false, "in_watchlist": false, "note": "no Yumi's Coffee entry in data"}
+    },
+    {
+      "metro": "phoenix",
+      "brand": "Soundtrack Coffee",
+      "handle": "soundtrack.coffee_",
+      "website": null,
+      "why_independent": "Coffee pop-up begun at home in 2023 with a residency at Chilte, 765 Grand Ave, since April; menu includes matcha lattes. WEAK FIT: coffee-first residency.",
+      "popups": [],
+      "no_dated_popup_found": true,
+      "notes": "Phoenix New Times coverage gives the residency start (early April) but no dated pop-up; handle comes from a search snippet.",
+      "known_to_us": {"in_sources": false, "in_watchlist": false, "note": "no Soundtrack Coffee entry in data"}
+    }
+  ],
+  "totals": {
+    "brands": 10,
+    "brands_with_a_dated_popup": 6,
+    "brands_without_dated_popup": ["Notcha Matcha", "Stroll Coffee", "Yumi's Coffee", "Soundtrack Coffee"],
+    "popups_listed": 12,
+    "popups_listed_with_exact_date": 11,
+    "popups_found_by_our_data": 2,
+    "popups_found_by_our_data_ids": ["45475a09eeec", "42ce152c9009"],
+    "popups_before_events_json_window": 6,
+    "popups_in_window_missed": 4,
+    "channel_counts_across_popups": {
+      "local-press-or-newsletter": 8,
+      "host-venue-instagram": 7,
+      "own-instagram-post": 4,
+      "host-venue-web-calendar": 5,
+      "ticketing-page": 1,
+      "own-website": 0,
+      "other": 0
+    }
+  }
+}

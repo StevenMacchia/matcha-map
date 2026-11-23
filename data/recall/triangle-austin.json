@@ -1,0 +1,496 @@
+{
+  "generated": "2026-11-23",
+  "metros": [
+    "triangle",
+    "austin"
+  ],
+  "events_json_window_note": "data/events.json holds events only from 2026-10-24 onward, so any earlier pop-up shows found_by_our_data:no regardless of discovery. Treat those as unscorable for event-level recall.",
+  "brands": [
+    {
+      "metro": "triangle",
+      "brand": "amatō",
+      "handle": "amatosweetlover",
+      "website": null,
+      "why_independent": "Raleigh/Cary Japanese bakery that runs mobile matcha and pastry pop-ups, market stands and a recurring Maynard Crossing pop-up; ma.to calls it a mobile pop-up bakery. Matcha is one of several products.",
+      "popups": [
+        {
+          "date": "2026-11-14",
+          "venue": "not stated on the ma.to venue list page (our data says Maynard Crossing or unnamed)",
+          "source_url": "https://ma.to/venue/amatosweetlover",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/venue/amatosweetlover",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing, no login"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/amatosweetlover/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Not fetched by me (rule). Our own data cites amatō reels as evidence for these dates; Instagram posts are viewable logged-out only in part"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "ec79c8728571",
+          "missed_channel_that_would_catch": null
+        },
+        {
+          "date": "2026-11-15",
+          "venue": "not stated on the ma.to venue list page (our data says Maynard Crossing or unnamed)",
+          "source_url": "https://ma.to/venue/amatosweetlover",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/venue/amatosweetlover",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing, no login"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/amatosweetlover/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Not fetched by me (rule). Our own data cites amatō reels as evidence for these dates; Instagram posts are viewable logged-out only in part"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "7e5917bba948",
+          "missed_channel_that_would_catch": null
+        },
+        {
+          "date": "2026-11-19",
+          "venue": "not stated on the ma.to venue list page (our data says Maynard Crossing or unnamed)",
+          "source_url": "https://ma.to/venue/amatosweetlover",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/venue/amatosweetlover",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing, no login"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/amatosweetlover/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Not fetched by me (rule). Our own data cites amatō reels as evidence for these dates; Instagram posts are viewable logged-out only in part"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "7b132e876a44",
+          "missed_channel_that_would_catch": null
+        },
+        {
+          "date": "2026-11-20",
+          "venue": "not stated on the ma.to venue list page (our data says Maynard Crossing or unnamed)",
+          "source_url": "https://ma.to/venue/amatosweetlover",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/venue/amatosweetlover",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing, no login"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/amatosweetlover/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Not fetched by me (rule). Our own data cites amatō reels as evidence for these dates; Instagram posts are viewable logged-out only in part"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "376205833bd2",
+          "missed_channel_that_would_catch": null
+        },
+        {
+          "date": "2026-11-21",
+          "venue": "not stated on the ma.to venue list page (our data says Maynard Crossing or unnamed)",
+          "source_url": "https://ma.to/venue/amatosweetlover",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/venue/amatosweetlover",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing, no login"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/amatosweetlover/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Not fetched by me (rule). Our own data cites amatō reels as evidence for these dates; Instagram posts are viewable logged-out only in part"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "005d665e2a4a",
+          "missed_channel_that_would_catch": null
+        },
+        {
+          "date": "2026-11-22",
+          "venue": "amatō at Maynard Crossing, 1283 NW Maynard Rd, Cary NC",
+          "source_url": "https://ma.to/venue/amatosweetlover",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/event/amato-matcha-pastries-pop-up-22-nov-2026",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing, no login"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/amatosweetlover/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Not fetched by me (rule). Our own data cites amatō reels as evidence for these dates; Instagram posts are viewable logged-out only in part"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "570516e1a944",
+          "missed_channel_that_would_catch": null
+        }
+      ],
+      "extra_channels_seen": [
+        {
+          "channel": "other",
+          "url": "https://ma.to/venue/amatosweetlover",
+          "posted_at": null,
+          "readable_without_login": "yes",
+          "why": "ma.to venue page lists all dates in one place"
+        },
+        {
+          "channel": "other",
+          "url": "(search snippet only) ma.to Carrboro listing at The Bazaar, marked rescheduled, no new date",
+          "posted_at": null,
+          "readable_without_login": "yes",
+          "why": "undated, not counted"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      }
+    },
+    {
+      "metro": "triangle",
+      "brand": "Cloud Cart NC",
+      "handle": null,
+      "website": null,
+      "why_independent": "Matcha cart vendor named only as the matcha vendor at a market; no own page found. Little else is public, so independence is inferred from the cart format.",
+      "popups": [
+        {
+          "date": "2026-09-05",
+          "venue": "Gym Tacos, 3701 Hillsborough St, Raleigh (Tropi Market, organizer TROPICAFE)",
+          "source_url": "https://ma.to/event/tropi-market-05-sep-2026",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/event/tropi-market-05-sep-2026",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to event listing names matcha from Cloud Cart NC; hours conflict (12-17 vs 4-9 PM) on the page"
+            },
+            {
+              "channel": "host-venue-instagram",
+              "url": "https://www.instagram.com/tropicafe_nc/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Organizer handle @tropicafe_nc from ma.to; not fetched, so unknown whether it tagged the cart"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "market-organizer-vendor-list via ma.to adapter (the vendor is named in the listing text) or host-venue-instagram; outside events.json window (earliest event start 2026-10-24); not attributable to a discovery miss"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": false,
+        "in_watchlist": false
+      }
+    },
+    {
+      "metro": "triangle",
+      "brand": "Frame Matcha",
+      "handle": "framematcha",
+      "website": null,
+      "why_independent": "New small matcha project whose first official event was a pop-up at Iris Coffee Lab; no permanent cafe.",
+      "popups": [
+        {
+          "date": "2025-08-03",
+          "venue": "Iris Coffee Lab, 725 Tucker St, Raleigh",
+          "source_url": "https://downtownraleigh.org/do/frame-x-iris-matcha-pop-up",
+          "channels": [
+            {
+              "channel": "host-venue-web-calendar",
+              "url": "https://downtownraleigh.org/do/frame-x-iris-matcha-pop-up",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "Downtown Raleigh Partnership events calendar, public, marked past"
+            },
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://raltoday.6amcity.com/newsletter/0000019a-0ccb-d02f-af9b-9ccb73770000",
+              "posted_at": "2025-11-11",
+              "readable_without_login": "yes",
+              "why": "Raleigh Today newsletter, dated 11.11.2025 per search snippet; I did not open it, so unsure it covers this same Aug 3 event"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "host-venue-web-calendar (downtownraleigh.org). OLDER THAN 6 MONTHS (Aug 2025); outside events.json window (earliest event start 2026-10-24); not attributable to a discovery miss"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      },
+      "note": "No newer dated pop-up found on any public page. Our sources note says dates are on Instagram."
+    },
+    {
+      "metro": "triangle",
+      "brand": "Postres Hechos Con Amor / Gelatina's Juanita",
+      "handle": "gelatinasjuanita",
+      "website": null,
+      "why_independent": "Raleigh dessert collective that hosts pop-up markets; its dated matcha item was a one-off collab with Café Haus (pre-order pickup). WEAK FIT: matcha is not its focus.",
+      "popups": [
+        {
+          "date": "2026-09-11",
+          "venue": "Café Haus, downtown Raleigh (pre-order pickup)",
+          "source_url": "https://ma.to/event/cafe-haus-gelatinas-juanita-11-sep-2026",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/event/cafe-haus-gelatinas-juanita-11-sep-2026",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing, pre-order only, no external order link"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "ma.to adapter, or host-venue (Café Haus) Instagram; brand is not matcha-focused so a matcha filter would likely have dropped it; outside events.json window (earliest event start 2026-10-24); not attributable to a discovery miss"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": false,
+        "in_watchlist": false
+      }
+    },
+    {
+      "metro": "triangle",
+      "brand": "Mazay ka Matcha",
+      "handle": null,
+      "website": null,
+      "why_independent": "Mobile matcha cart (founder Hayaa Hyder, Morrisville) doing 2-3 pop-ups a week at festivals, markets, a mosque and a restaurant (Indy Week, posted 2026-07-13).",
+      "popups": [],
+      "extra_channels_seen": [
+        {
+          "channel": "local-press-or-newsletter",
+          "url": "https://indyweek.com/news/culture/food/character-studies-hayaa-hyder-mazay-ka-matcha/",
+          "posted_at": "2026-07-13",
+          "readable_without_login": "yes",
+          "why": "Indy Week profile; names venues and events but no dates"
+        },
+        {
+          "channel": "own-instagram-post",
+          "url": null,
+          "posted_at": null,
+          "readable_without_login": "partial",
+          "why": "Article says customers mostly find her on Instagram; handle not given and not found by search"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": false
+      },
+      "note": "COULD NOT FIND A DATED POP-UP on any public page. Handle unknown to us as well."
+    },
+    {
+      "metro": "austin",
+      "brand": "Chai & Cha",
+      "handle": null,
+      "website": null,
+      "why_independent": "Student-run matcha and chai pop-up (Tarnoor Kaur, Linda Nguyen, UT Austin); 12 pop-ups in 2025-26, no cafe.",
+      "popups": [
+        {
+          "date": "2026-03-11",
+          "venue": "Yugo Austin Rio, Women Owned Business Market",
+          "source_url": "https://thedailytexan.com/2026/07/16/whisked-with-chai-cha/",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://thedailytexan.com/2026/07/16/whisked-with-chai-cha/",
+              "posted_at": "2026-07-16",
+              "readable_without_login": "yes",
+              "why": "Daily Texan profile, public; mentions the date after the fact"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": null,
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Article says the founders promote on Instagram; handle not given and not fetched"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "own-instagram-post (pop-ups announced there) or host-venue (Yugo) Instagram; outside events.json window (earliest event start 2026-10-24); not attributable to a discovery miss"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": false
+      },
+      "note": "Sources entry has no handle, so no Instagram check can run."
+    },
+    {
+      "metro": "austin",
+      "brand": "Horai & Co",
+      "handle": null,
+      "website": null,
+      "why_independent": "Matcha pop-up brand that took over Honey Moon Spirit Lounge for a midday matcha lunch; no cafe found.",
+      "popups": [
+        {
+          "date": "2026-06-05",
+          "venue": "Honey Moon Spirit Lounge, 624 W 34th St, Austin",
+          "source_url": "https://ma.to/event/matcha-lunch-at-honey-moon-05-jun-2026",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/event/matcha-lunch-at-honey-moon-05-jun-2026",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing, 11:00-15:00, no handle for Horai"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "ma.to adapter. data_note: sources.json note for horai-and-co cites this same ma.to event, so the pipeline did see it; it is not in events.json only because the file starts 2026-10-24."
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": false
+      }
+    },
+    {
+      "metro": "austin",
+      "brand": "Matchara",
+      "handle": null,
+      "website": null,
+      "why_independent": "Hand-whisked matcha bar that appears as a guest pop-up at a venue (ClawZania Austin); no cafe found.",
+      "popups": [
+        {
+          "date": "2026-05-02",
+          "venue": "ClawZania Austin (13:00-15:00)",
+          "source_url": "https://ma.to/event/matchara-pop-up-02-may-2026",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/event/matchara-pop-up-02-may-2026",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "ma.to listing; no Instagram handles shown for brand or venue"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "missed_channel_that_would_catch": "ma.to adapter; outside events.json window (earliest event start 2026-10-24); not attributable to a discovery miss"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": false,
+        "in_watchlist": false
+      }
+    },
+    {
+      "metro": "austin",
+      "brand": "Central Matcha",
+      "handle": "centralmatcha",
+      "website": "https://centralmatcha.com/",
+      "why_independent": "Farmers-market stand (Patrick Cheung): Barton Creek and Texas Farmers Market at Bell on Saturdays, TFM at Mueller on Sundays, plus retail at Local Pastures.",
+      "popups": [
+        {
+          "date": "2026-11-22",
+          "venue": "Texas Farmers' Market at Mueller, 2006 Philomena St, Austin",
+          "source_url": "https://centralmatcha.com/pages/find-us",
+          "channels": [
+            {
+              "channel": "own-website",
+              "url": "https://centralmatcha.com/pages/find-us",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "Recurring weekly market schedule only; no dated event, so the Nov 22 date is derived from \"Sunday at Mueller\", not read as a date"
+            },
+            {
+              "channel": "market-organizer-vendor-list",
+              "url": "https://texasfarmersmarket.org/bell-vendors/central-matcha/",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "TFM vendor profile (profile dated May 19, no year); lists markets, no dates"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "5758a7f584fe",
+          "missed_channel_that_would_catch": null
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      },
+      "note": "Recurring weekly slot, not a dated announcement."
+    },
+    {
+      "metro": "austin",
+      "brand": "Mori Matcha",
+      "handle": null,
+      "website": "https://morimatchabar.com/",
+      "why_independent": "Mobile matcha cart / pop-up (Tiffany Nguyen, Aaron Perez) that started as a pop-up in September 2025 and has no cafe (Axios Austin, CBS Austin).",
+      "popups": [],
+      "extra_channels_seen": [
+        {
+          "channel": "local-press-or-newsletter",
+          "url": "https://www.axios.com/local/austin/2026/03/05/austin-pop-up-fuels-matcha-craze",
+          "posted_at": "2026-03-05",
+          "readable_without_login": "yes",
+          "why": "Axios (URL date); search snippet says it pops up at TruFusion on \"Saturday 8:15-1:30\" with no calendar date; page itself returned 403 to me"
+        },
+        {
+          "channel": "own-instagram-post",
+          "url": null,
+          "posted_at": null,
+          "readable_without_login": "partial",
+          "why": "Axios says upcoming events are in the Instagram bio; handle not found"
+        },
+        {
+          "channel": "own-website",
+          "url": "https://morimatchabar.com/",
+          "posted_at": null,
+          "readable_without_login": "yes",
+          "why": "Page is just the brand name; no schedule"
+        },
+        {
+          "channel": "other",
+          "url": null,
+          "posted_at": null,
+          "readable_without_login": "unknown",
+          "why": "A search summary and our own notes mention a Monday cart at 1 Hotel Austin (TikTok source); recurring, no per-week dates"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": false
+      },
+      "note": "COULD NOT FIND A CALENDAR-DATED POP-UP on any public page I could read; the only dates are weekday-only. Counted as no dated pop-up."
+    }
+  ]
+}
