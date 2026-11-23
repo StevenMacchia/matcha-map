@@ -5,7 +5,7 @@ import fs from "node:fs";
 import vm from "node:vm";
 import { shopCardHtml, menuSectionHtml, hoursTodayHtml, parseHours, hoursState, menuForBrand } from "../site/shopcard.js";
 
-const SHOPS = JSON.parse(fs.readFileSync(new URL("../site/data/shops.json", import.meta.url), "utf8")).shops;
+const SHOPS = JSON.parse(fs.readFileSync(new URL("../data/shops.json", import.meta.url), "utf8")).shops;
 const MENUS = JSON.parse(fs.readFileSync(new URL("../site/data/menus.json", import.meta.url), "utf8"));
 const byId = (id) => SHOPS.find((s) => s.id === id);
 // Wednesday 2026-11-25 at 10:00 in Las Vegas (18:00 UTC)
