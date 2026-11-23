@@ -44,6 +44,12 @@ section{margin-top:28px}
 h2{font-size:22px;font-weight:800;margin:0 0 4px;display:flex;align-items:center;gap:10px}
 h2 .pill{font-size:12px;background:var(--pink);color:#3B2E27;border:2px solid var(--ink);border-radius:999px;padding:1px 10px}
 .hint{color:var(--muted);font-size:14px;margin:0 0 14px}
+.fams{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}
+.fams a{font-size:12.5px;font-weight:800;color:var(--ink);text-decoration:none;background:var(--panel);border:2px solid var(--ink);border-radius:999px;padding:3px 11px}
+.fams a b{color:var(--deep);margin-left:2px}
+h3.fam{font-size:16px;font-weight:800;margin:20px 0 10px;display:flex;align-items:center;gap:8px;scroll-margin-top:110px}
+h3.fam::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--ink)}
+h3.fam[hidden]{display:none}
 
 /* try it */
 .try{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:18px;align-items:center;background:var(--panel);border:3px solid var(--ink);border-radius:24px;padding:18px;box-shadow:6px 6px 0 var(--ink)}
@@ -121,6 +127,13 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
   </section>
 
   <section>
+    <h2>The top matcha combinations <span class="pill" id="n50">50</span></h2>
+    <p class="hint">Each named drink and its aliases, grouped by family. A menu line that matches a name or alias gets exactly this drawing.</p>
+    <nav class="fams" id="fams" aria-label="Families"></nav>
+    <div id="fifty"></div>
+  </section>
+
+  <section>
     <h2>The test menu <span class="pill">12</span></h2>
     <p class="hint">The looks the illustrator has to get right, drawn live in your browser.</p>
     <div class="grid" id="tests"></div>
@@ -143,7 +156,7 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
 </div>
 
 <script type="module">
-import { specFromText, drawDrink, parseSymbols, TEST_DRINKS, VERSION } from "../art.js";
+import { specFromText, drawDrink, parseSymbols, TEST_DRINKS, VERSION, useCatalog, catalogEntries } from "../art.js";
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -170,6 +183,10 @@ setSize("full");
 let symbols = {};
 try { symbols = parseSymbols(await (await fetch("../characters.svg")).text()); } catch {}
 if (symbols["m-wave"]) $("#mascot").innerHTML = `<svg viewBox="${symbols["m-wave"].vb}">${symbols["m-wave"].body}</svg>`;
+// committed art index; its catalogue (data/drinks.json, when present) teaches the live drawing the same names
+let index = { drinks: {}, events: {} };
+try { index = await (await fetch("index.json", { cache: "no-cache" })).json(); } catch {}
+if (index.catalog) useCatalog(index.catalog);
 
 const partsOf = (s) => {
   if (!s) return `<span>not a drink or sweet</span>`;
@@ -183,7 +200,7 @@ const partsOf = (s) => {
   if (s.straw) out.push(`<span><i class="sw" style="background:${s.straw.c}"></i>straw</span>`);
   return out.join("");
 };
-const tile = (art, text, small) => `<figure class="tile" data-q="${esc(text.toLowerCase())}" style="margin:0"><div class="panes"><div class="pane l">${art}</div><div class="pane d">${art}</div></div><figcaption class="cap"><q>${esc(text)}</q>${small ? `<small>${esc(small)}</small>` : ""}</figcaption></figure>`;
+const tile = (art, text, small, q) => `<figure class="tile" data-q="${esc((q || text).toLowerCase())}" style="margin:0"><div class="panes"><div class="pane l">${art}</div><div class="pane d">${art}</div></div><figcaption class="cap"><q>${esc(text)}</q>${small ? `<small>${esc(small)}</small>` : ""}</figcaption></figure>`;
 
 // try it
 function tryIt() {
@@ -200,9 +217,23 @@ tryIt();
 // test menu, drawn live
 $("#tests").innerHTML = TEST_DRINKS.map((t, i) => { const s = specFromText(t); return tile(drawDrink(s, { symbols, uid: "t" + i }), t, `${s.vessel}${s.item ? " · " + s.item : ""}`); }).join("");
 
+// the top combinations, by family (committed files; drawn live when the index is missing)
+const fams = index.families || catalogEntries().reduce((o, e) => { const s = specFromText(e.name); (o[e.family] = o[e.family] || []).push({ slug: null, name: e.name, aliases: e.aliases, s }); return o; }, {});
+const FAM = { "layered-fruit": "Layered fruit", "foam-top": "Foam tops", "tea-forward": "Tea forward", hot: "Hot", tonic: "Tonics and sparkling", latte: "Lattes", dessert: "Desserts and treats", seasonal: "Seasonal", specialty: "Specialty" };
+const famName = (f) => FAM[f] || String(f).replace(/-/g, " ").replace(/^./, (c) => c.toUpperCase());
+const famId = (f) => "fam-" + f.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+let n50 = 0;
+$("#fams").innerHTML = Object.entries(fams).map(([f, l]) => `<a href="#${famId(f)}">${esc(famName(f))} <b>${l.length}</b></a>`).join("");
+$("#fifty").innerHTML = Object.entries(fams).map(([f, list]) => `<h3 class="fam" id="${famId(f)}">${esc(famName(f))}</h3><div class="grid">` + list.map((d, i) => {
+  n50++;
+  const file = d.slug && index.drinks && index.drinks[d.slug] ? index.drinks[d.slug].file : null;
+  const art = file ? `<img src="${esc(file)}" alt="${esc(d.name)}" width="200" height="240" loading="lazy" decoding="async">` : drawDrink(d.s || specFromText(d.name), { symbols, uid: "f" + n50 });
+  const al = (d.aliases || []).filter((a) => a.toLowerCase() !== d.name.toLowerCase());
+  return tile(art, d.name, al.length ? "also: " + al.join(", ") : "", [d.name, ...al].join(" "));
+}).join("") + "</div>").join("");
+$("#n50").textContent = n50;
+
 // committed art
-let index = { drinks: {}, events: {} };
-try { index = await (await fetch("index.json", { cache: "no-cache" })).json(); } catch {}
 const drinks = Object.entries(index.drinks || {});
 $("#nd").textContent = drinks.length;
 $("#drinks").innerHTML = drinks.length ? drinks.map(([slug, d]) => tile(`<img src="${esc(d.file)}" alt="${esc(d.text)}" width="200" height="240" loading="lazy" decoding="async">`, d.text, d.spec ? `${d.spec.vessel}${d.spec.item ? " · " + d.spec.item : ""}` : "")).join("") : `<div class="empty">Run <code>npm run art</code> to draw the menus.</div>`;
