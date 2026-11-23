@@ -100,6 +100,8 @@ export function eventHandle(e, srcById) {
 }
 
 // ---- JSON-LD ----
+const FREE = /^\s*(free|free entry|free admission|no cover|no charge)\s*[.!]?\s*$/i;
+export const isFree = (e) => typeof e.price === "string" && FREE.test(e.price);
 export function eventLd(e, ctx) {
   const approx = isApprox(e);
   const place = { "@type": "Place", name: approx || !e.venue ? [e.city, e.state].filter(Boolean).join(", ") : e.venue };
@@ -107,24 +109,28 @@ export function eventLd(e, ctx) {
   if (e.city) addr.addressLocality = e.city;
   if (e.state) addr.addressRegion = e.state;
   if (!approx && e.address) addr.streetAddress = e.address;
+  if (!approx && /^\d{5}(-\d{4})?$/.test(String(e.zip || ""))) addr.postalCode = String(e.zip);
   place.address = addr;
+  if (!approx && typeof e.lat === "number" && typeof e.lng === "number" && isFinite(e.lat) && isFinite(e.lng)) place.geo = { "@type": "GeoCoordinates", latitude: e.lat, longitude: e.lng };
   const ld = {
     "@type": "Event",
     name: e.title || `${ctx.brand} matcha pop-up`,
     startDate: e.all_day ? String(e.start).slice(0, 10) : e.start,
-    eventStatus: "https://schema.org/EventScheduled",
+    eventStatus: e.status === "cancelled" ? "https://schema.org/EventCancelled" : "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: place,
     organizer: { "@type": "Organization", name: ctx.brand },
   };
   if (e.end) ld.endDate = e.all_day ? String(e.end).slice(0, 10) : e.end;
   if (ctx.insta) ld.organizer.url = ctx.insta;
+  if (isFree(e)) ld.isAccessibleForFree = true, ld.offers = { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock" };
   const im = imgUrl(e);
   if (im) ld.image = [im];
   const d = String(e.description || "").slice(0, 200).trim();
   ld.description = d || `Matcha pop-up by ${ctx.brand}${e.city ? " in " + e.city : ""}.`;
   return ld;
 }
+export const eventPageId = (e) => (e.id && /^[a-z0-9]{6,32}$/i.test(e.id) ? e.id : "");
 export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
 // ---- html ----
@@ -345,6 +351,11 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
       { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
       { "@type": "ListItem", position: 2, name: label, item: canonical }] }];
     for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: it.insta }) });
+    const listed = ups.filter((it) => eventPageId(it.e));
+    if (listed.length) ld.push({ "@context": "https://schema.org", "@type": "ItemList", name: `Matcha pop-ups in ${label}`, numberOfItems: listed.length, itemListElement: listed.slice(0, 50).map((it, i) => {
+      const ev = eventLd(it.e, { brand: it.brand, insta: it.insta });
+      return { "@type": "ListItem", position: i + 1, url: `${SITE_URL}/e/${it.e.id}/`, item: { "@type": "Event", name: ev.name, startDate: ev.startDate, url: `${SITE_URL}/e/${it.e.id}/`, location: { "@type": "Place", name: ev.location.name, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
+    }) });
     const ogKey = `city-${c.slug}-${c.state.toLowerCase()}`;
     const image = d.cityOg && d.cityOg.has(ogKey) ? `${SITE_URL}/og/${ogKey}.png` : undefined;
     files.set(cityPath(c) + "index.html", shell({ title, desc, canonical, ld, body, image }));
@@ -382,6 +393,12 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
     const ld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
       { "@type": "ListItem", position: 2, name: b.name, item: canonical }] }];
+    const org = { "@context": "https://schema.org", "@type": "Organization", name: b.name, url: canonical };
+    const same = [b.instagram ? `https://www.instagram.com/${b.instagram}/` : "", b.website, b.tiktok ? (safeUrl(b.tiktok) || "https://www.tiktok.com/@" + String(b.tiktok).replace(/^@/, "").replace(/[^A-Za-z0-9._]/g, "")) : ""].filter(Boolean);
+    if (same.length) org.sameAs = same;
+    const logo = d.brandPictures && d.brandPictures.get(b.slug);
+    if (logo) org.logo = logo;
+    ld.push(org);
     for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: b.instagram ? `https://www.instagram.com/${b.instagram}/` : "" }) });
     files.set(`brand/${b.slug}/index.html`, shell({ title, desc, canonical, ld, body }));
     urls.push({ loc: canonical, thin: !b.events.length && !b.city, slug: b.slug });
@@ -441,6 +458,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     shops: read("site/data/shops.json").shops || [],
     cityFeeds: new Set(fs.existsSync(path.join(root, "site/feeds")) ? fs.readdirSync(path.join(root, "site/feeds")).filter((n) => n.endsWith(".ics")).map((n) => n.slice(0, -4)) : []),
     cityOg: new Set(fs.existsSync(path.join(root, "site/og")) ? fs.readdirSync(path.join(root, "site/og")).filter((n) => /^city-.*.png$/.test(n)).map((n) => n.slice(0, -4)) : []),
+    brandPictures: (() => { try { return new Map(read("site/data/brands.json").brands.filter((x) => String(x.picture || "").startsWith("https://")).map((x) => [handleSlug(x.handle), x.picture])); } catch { return new Map(); } })(),
     watchlist: fs.existsSync(path.join(root, "data/watchlist.json")) ? read("data/watchlist.json") : { accounts: [] },
   };
   const out = buildSite(data);

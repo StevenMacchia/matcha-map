@@ -180,3 +180,64 @@ test("deep links: city slugs resolve to the biggest listed city, DC included, an
   const all = JSON.parse(fs.readFileSync(new URL("../data/cities.json", import.meta.url), "utf8")).cities;
   for (const c of all) if (c.state !== "DC") assert.equal(slugOf(c.name), c.slug, c.name);
 });
+
+// ---- SEO rung 1: JSON-LD shape ----
+const ISO = /^\d{4}-\d\d-\d\d(T\d\d:\d\d:\d\d([+-]\d\d:\d\d|Z))?$/;
+function checkShape(node, where) {
+  const walk = (v, p) => {
+    assert.ok(v !== undefined, `${where}: undefined at ${p}`);
+    if (typeof v === "number") assert.ok(Number.isFinite(v), `${where}: NaN at ${p}`);
+    if (typeof v === "string") assert.ok(!/undefined|NaN|\[object/.test(v), `${where}: bad text at ${p}: ${v}`);
+    if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) walk(x, p + "." + k);
+  };
+  walk(node, "$");
+  if (node["@type"] === "Event") {
+    for (const k of ["name", "startDate", "location", "eventStatus", "eventAttendanceMode", "organizer"]) assert.ok(node[k], `${where}: Event.${k}`);
+    assert.match(node.startDate, ISO);
+    if (node.endDate) assert.match(node.endDate, ISO);
+    assert.ok(node.location.name && node.location.address, `${where}: location`);
+  }
+  if (node["@type"] === "Organization") assert.ok(node.name && /^https?:\/\//.test(node.url), `${where}: Organization`);
+}
+
+test("Event JSON-LD: postal code, geo, free offers only when the data says free, cancelled status, approx stays city-level", () => {
+  const e = eventLd(ev({ zip: "27601", price: "Free entry" }), { brand: "Moonbee", insta: "https://www.instagram.com/moonbeematcha/" });
+  assert.equal(e.location.address.postalCode, "27601");
+  assert.deepEqual(e.location.geo, { "@type": "GeoCoordinates", latitude: 35.8, longitude: -78.6 });
+  assert.equal(e.offers.price, "0");
+  assert.equal(e.offers.availability, "https://schema.org/InStock");
+  assert.equal(eventLd(ev({ price: "$15" }), { brand: "M" }).offers, undefined, "no invented prices");
+  assert.equal(eventLd(ev({ price: null }), { brand: "M" }).offers, undefined);
+  assert.equal(eventLd(ev({ status: "cancelled" }), { brand: "M" }).eventStatus, "https://schema.org/EventCancelled");
+  const ap = eventLd(ev({ approx: true, venue: "", address: "", zip: "27601", geocode_source: "none" }), { brand: "M" });
+  assert.equal(ap.location.geo, undefined);
+  assert.equal(ap.location.address.postalCode, undefined);
+  assert.equal(ap.location.address.streetAddress, undefined);
+});
+
+test("city pages carry an ItemList of upcoming events; brand pages carry an Organization; every block is well formed", () => {
+  const out = buildSite(data([ev({}), ev({ start: "2026-12-05T10:00:00-05:00", end: null, price: "free" })], { brandPictures: new Map([["moonbeematcha", "https://img.example/m.jpg"]]) }));
+  const c = ldOf(page(out, "city/nc/raleigh/index.html"));
+  const list = c.find((x) => x["@type"] === "ItemList");
+  assert.equal(list.numberOfItems, 2);
+  assert.equal(list.itemListElement[0].item["@type"], "Event");
+  assert.match(list.itemListElement[0].url, /^https:\/\/.+\/e\/aaaaaa\d{6}\/$/);
+  assert.equal(list.itemListElement[0].item.location.address.addressLocality, "Raleigh");
+  const b = ldOf(page(out, "brand/moonbeematcha/index.html"));
+  const org = b.find((x) => x["@type"] === "Organization");
+  assert.equal(org.url, "https://matchamap-cu7.pages.dev/brand/moonbeematcha/");
+  assert.ok(org.sameAs.includes("https://www.instagram.com/moonbeematcha/") && org.sameAs.includes("https://moonbee.example"));
+  assert.equal(org.logo, "https://img.example/m.jpg");
+  for (const [p, html] of out.files) if (p.endsWith(".html")) for (const n of ldOf(html)) checkShape(n, p);
+});
+
+test("the committed pages' JSON-LD is well formed (no undefined, NaN, bad dates)", async () => {
+  const dir = new URL("../site/e/", import.meta.url);
+  let n = 0;
+  for (const d of fs.readdirSync(dir).slice(0, 400)) {
+    const f = new URL(`${d}/index.html`, dir);
+    if (!fs.existsSync(f)) continue;
+    for (const node of ldOf(fs.readFileSync(f, "utf8"))) { checkShape(node, d); n++; }
+  }
+  assert.ok(n > 0);
+});

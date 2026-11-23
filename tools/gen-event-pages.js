@@ -36,7 +36,7 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false, card =
   const canonical = `${SITE_URL}/e/${e.id}/`;
   const img = ogImage(e, { hasArt });
   const ld = { "@context": "https://schema.org", ...eventLd(e, { brand, insta: e.handle ? `https://www.instagram.com/${e.handle}/` : "" }), url: canonical };
-  if (img.endsWith(".svg") || img.endsWith("/og.png")) { if (!(e.image && (e.image.local || e.image.url)) && !e.image_url) delete ld.image; }
+  if (img.endsWith("/og.png")) delete ld.image; else ld.image = [img];
   if (typeof ld.description === "string") { ld.description = ld.description.replace(/[*_`#>]+/g, " ").replace(/\s+/g, " ").trim(); if (!ld.description) delete ld.description; }
   const go = `/?event=${e.id}`;
   return `<!doctype html>
