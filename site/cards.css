@@ -69,6 +69,24 @@
 .mm-card .mm-desc, .mm-desc { font-size: 15.5px; line-height: 1.45; padding: 10px 14px 10px 34px; border-radius: 16px; background: var(--mm-soft); overflow-wrap: anywhere; position: relative; }
 .mm-desc::before { content: "“"; position: absolute; left: 10px; top: 2px; font-size: 34px; font-weight: 800; line-height: 1; color: var(--pink-edge, #D98CA2); }
 
+/* ---- going strip (social wave): I'm going, the count, invite ---- */
+.mm-go { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.mm-go[hidden] { display: none; }
+.mm-going { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px 7px 10px; border-radius: 999px; border: 2px solid var(--mm-stk); background: var(--accent, #8CBF7A); color: var(--accent-ink, #1F2E1B); font: inherit; font-size: 14.5px; font-weight: 800; line-height: 1.2; cursor: pointer; box-shadow: 0 2.5px 0 var(--mm-stk); transition: transform .12s ease, box-shadow .12s ease; }
+.mm-going:hover { background: var(--deep, #3E6B33); color: var(--canvas, #FBF6EA); }
+.mm-going:active { transform: translateY(2px); box-shadow: 0 0 0 var(--mm-stk); }
+.mm-going[aria-pressed="true"] { background: var(--mm-t1); color: var(--ink, #3B2E27); }
+.mm-going[aria-pressed="true"]:hover { background: var(--mm-t1e); }
+.mm-going .mm-i { width: 18px; height: 18px; }
+.mm-gcount { font-size: 14px; font-weight: 800; color: var(--deep, #3E6B33); }
+.mm-gcount:empty { display: none; }
+.mm-invite { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; padding: 6px 11px; border-radius: 999px; background: var(--mm-soft); color: var(--deep, #3E6B33) !important; font-size: 13.5px; font-weight: 800; text-decoration: none; }
+.mm-invite:hover { background: var(--foam, #E6F2DC); }
+.mm-invite .mm-i { width: 16px; height: 16px; }
+.mm-go.mm-busy .mm-going { opacity: .6; pointer-events: none; }
+.mm-compact .mm-going { font-size: 13.5px; padding: 6px 12px 6px 9px; }
+.mm-compact .mm-invite { font-size: 13px; }
+
 /* ---- drink chips: stickers ---- */
 .mm-chips { display: flex; flex-wrap: wrap; gap: 10px 8px; }
 .mm-chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 13px 3px 3px; border-radius: 999px; border: 2px solid var(--mm-stk); background: var(--mm-t0); color: #3B2E27; font-size: 14.5px; font-weight: 800; box-shadow: 0 2.5px 0 var(--mm-stk); transform: rotate(-1.2deg); }

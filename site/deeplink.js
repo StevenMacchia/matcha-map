@@ -3,6 +3,7 @@
 //   ?city=<slug>-<st>  centres on a listed city, e.g. raleigh-nc
 //   ?event=<id>        opens that pop-up's card
 //   ?brand=<handle>    opens that brand's card
+//   ?plan=<id,id,...>  opens the Weekend tour on those pop-ups, in that order (a shared plan; at most 12)
 (function (root) {
   "use strict";
   function slugOf(name) { return String(name).toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
@@ -13,7 +14,8 @@
       q: clean(p.get("q"), 80),
       city: clean(p.get("city"), 80).toLowerCase(),
       event: /^[a-z0-9]{6,32}$/i.test(p.get("event") || "") ? p.get("event") : "",
-      brand: clean(p.get("brand"), 60).replace(/^@/, "").toLowerCase()
+      brand: clean(p.get("brand"), 60).replace(/^@/, "").toLowerCase(),
+      plan: clean(p.get("plan"), 400).split(",").map(function (s) { return s.trim(); }).filter(function (s, i, a) { return /^[a-z0-9]{6,32}$/i.test(s) && a.indexOf(s) === i; }).slice(0, 12)
     };
   }
   // list: window.CITY_LIST rows [name, ST, lat, lng, pop], biggest first. DC is "washington-dc" like the page paths.

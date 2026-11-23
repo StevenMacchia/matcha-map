@@ -676,3 +676,7 @@ dialog details.credit p { margin: 6px 0 10px; font-size: 14px; color: var(--mute
 body.card-open .frow1 { visibility: hidden; }
 .chip.near .ic { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linejoin: round; vertical-align: -4px; }
 @media (max-width: 640px) { .frow2 .chip.near { padding: 0 12px; } }
+
+/* Weekend tour bar (social wave): on wide screens it sits at the bottom of the map, clear of the card that opens above the pin; the Share button carries a stroked icon */
+@media (min-width: 900px) { .tour-bar { top: auto; bottom: 18px; } }
+.tour-bar .tb-share svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }

@@ -26,7 +26,7 @@ function pages() {
   if (city) list.push(`/city/${st}/${city}/`);
   if (brand) list.push(`/brand/${brand}/`);
   list.push("/add/");
-  if (ev) list.push(`/e/${ev}/`, `/?event=${ev}`); // the shared-link form opens the card on the map, sometimes before the real map exists
+  if (ev) list.push(`/e/${ev}/`, `/?event=${ev}`, `/?plan=${ev}`); // the shared-link forms: the card on the map (sometimes before the real map exists), a one-stop plan
   list.push("/weekend/", "/art/gallery.html");
   return list;
 }
@@ -46,7 +46,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function startServer() {
   // --url <base> (the smoke workflow runs it against the live site) or SMOKE_URL: test that server instead of starting one.
   const ai = process.argv.indexOf("--url"), given = ai > 0 ? process.argv[ai + 1] : process.env.SMOKE_URL;
-  if (given) return { base: given.replace(/\/$/, ""), stop() {} };
+  if (given) return { base: given.replace(/\/$/, ""), stop() {}, staticOnly: false };
   const port = await freePort();
   const p = spawn(process.execPath, [path.join(ROOT, "tools", "serve.js"), "--port", String(port)], { stdio: ["ignore", "pipe", "inherit"] });
   await new Promise((res, rej) => {
@@ -54,7 +54,7 @@ async function startServer() {
     p.on("exit", (c) => rej(new Error("serve.js exited " + c)));
     setTimeout(() => rej(new Error("serve.js did not start")), 10000);
   });
-  return { base: `http://localhost:${port}`, stop() { p.kill(); } };
+  return { base: `http://localhost:${port}`, stop() { p.kill(); }, staticOnly: true }; // tools/serve.js has no functions: /api/* answers 404 here
 }
 
 async function startChrome(bin) {
@@ -98,6 +98,7 @@ const PROBE = `(() => { const q = (s) => document.querySelectorAll(s).length; co
   return { rows: q("#list .row, #list li"), pins: q(".maplibregl-marker"), empty: !!e && !e.hidden, loading: !!l && !l.hidden && getComputedStyle(l).display !== "none" }; })()`;
 
 async function checkPage(cdp, base, url, [w, h], opts = {}) {
+  const apiOk = (u) => opts.staticOnly && u.startsWith(origin + "/api/"); // no functions on the static server: not a page error
   const t0 = Date.now(), origin = new URL(base).origin, errors = [], reqs = new Map();
   // background: true opens the tab behind the current one, so the page loads with document.hidden and a 0 by 0 window
   const { targetId } = await cdp.send("Target.createTarget", { url: "about:blank", background: !!opts.background });
@@ -110,7 +111,7 @@ async function checkPage(cdp, base, url, [w, h], opts = {}) {
       errors.push("exception: " + ((d.exception && (d.exception.description || d.exception.value)) || d.text).split("\n")[0]);
     } else if (method === "Network.requestWillBeSent") reqs.set(p.requestId, p.request.url);
     else if (method === "Network.responseReceived") {
-      if (p.response.url.startsWith(origin) && p.response.status >= 400 && !p.response.url.endsWith("/favicon.ico")) errors.push(`${p.response.status} ${p.response.url.slice(origin.length)}`);
+      if (p.response.url.startsWith(origin) && p.response.status >= 400 && !p.response.url.endsWith("/favicon.ico") && !apiOk(p.response.url)) errors.push(`${p.response.status} ${p.response.url.slice(origin.length)}`);
     } else if (method === "Network.loadingFailed") {
       const u = reqs.get(p.requestId) || "";
       if (u.startsWith(origin) && !p.canceled && p.errorText !== "net::ERR_ABORTED") errors.push(`failed ${u.slice(origin.length)} ${p.errorText}`);
@@ -152,7 +153,7 @@ const cdp = new CDP(chrome.ws);
 const results = [];
 try {
   await cdp.open();
-  for (const url of pages()) for (const size of SIZES) results.push(await checkPage(cdp, server.base, url, size));
+  for (const url of pages()) for (const size of SIZES) results.push(await checkPage(cdp, server.base, url, size, { staticOnly: server.staticOnly }));
   // a window with no room (1 by 1) and a tab that loads hidden: the list must still render and nothing may throw;
   // pins are not required (nothing is in a 1 px view, and a hidden tab gets no animation frames to place them)
   results.push(await checkPage(cdp, server.base, "/", [1, 1], { tag: "1x1 window", noPins: true, emptyOk: true }));

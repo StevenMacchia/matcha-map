@@ -986,6 +986,7 @@
       var box = document.createElement("div");
       box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html;
       fillChars(box);
+      if (window.MatchaRsvp) window.MatchaRsvp.hydrate(box);
       box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
       popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "380px", focusAfterOpen: false, className: "mm-pop",
         anchor: "bottom", offset: it.kind === "e" ? [0, -50] : it.kind === "s" ? [0, -18] : [NUDGE, NUDGE - 12] })
@@ -1001,6 +1002,7 @@
       body.innerHTML = html;
       fillChars(body);
       if (window.MatchaCards && window.MatchaCards.wire) window.MatchaCards.wire(body);
+      if (window.MatchaRsvp) window.MatchaRsvp.hydrate(body);
       var sh = $("sheet");
       body.scrollTop = 0;
       sh.hidden = false;
@@ -1852,6 +1854,10 @@
   function applyDeepLink() {
     var DL = window.MatchaDeepLink, dl = DL && DL.parse(location.search);
     if (!dl) return false;
+    if (dl.plan && dl.plan.length) { // a friend's plan: the tour on their stops, in their order (S3)
+      var pk = dl.plan.map(function (id) { return "e:" + id; }).filter(function (k) { return items[k]; });
+      if (pk.length) { widenFor(pk[0]); startTourWith(pk, true); return true; }
+    }
     if (dl.event && items["e:" + dl.event]) { widenFor("e:" + dl.event); flyTo("e:" + dl.event); return true; }
     var bk = dl.brand && brandKeyOf(dl.brand);
     if (bk) { widenFor(bk); flyTo(bk); return true; }
@@ -2085,17 +2091,21 @@
     tourBtn.setAttribute("aria-label", "Weekend tour, " + n + " pop-ups this weekend");
   }
   map.on("moveend", function () { if (!tour) syncTour(); });
-  function startTour() {
-    var keys = tourList();
-    if (keys.length < 2) return;
-    tour = { keys: keys, i: 0 };
+  function startTour() { startTourWith(tourList(), false); }
+  // shared: a plan from a link (?plan=), which may be one stop; the bar then says whose it is
+  function startTourWith(keys, shared) {
+    if (!keys || keys.length < (shared ? 1 : 2)) return;
+    tour = { keys: keys.slice(), i: 0, shared: !!shared };
     if (!tourBar) {
       tourBar = document.createElement("div");
       tourBar.className = "tour-bar";
       tourBar.setAttribute("role", "group");
       tourBar.setAttribute("aria-label", "Weekend tour");
       tourBar.innerHTML = "<button type=\"button\" class=\"tb-back\" aria-label=\"Previous pop-up\">&lsaquo;</button><span class=\"tb-at\" aria-live=\"polite\"></span>" +
-        "<button type=\"button\" class=\"tb-next\" aria-label=\"Next pop-up\">&rsaquo;</button><button type=\"button\" class=\"tb-x\" aria-label=\"End the tour\">&times;</button>";
+        "<button type=\"button\" class=\"tb-next\" aria-label=\"Next pop-up\">&rsaquo;</button>" +
+        "<button type=\"button\" class=\"tb-share\" aria-label=\"Share my plan\" title=\"Share my plan\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 15V3.5M7.5 8 12 3.5 16.5 8\"/><path d=\"M5 12v6.5A2 2 0 0 0 7 20.5h10a2 2 0 0 0 2-2V12\"/></svg></button>" +
+        "<button type=\"button\" class=\"tb-x\" aria-label=\"End the tour\">&times;</button>";
+      tourBar.querySelector(".tb-share").addEventListener("click", sharePlan);
       tourBar.querySelector(".tb-back").addEventListener("click", function () { stepTour(-1); });
       tourBar.querySelector(".tb-next").addEventListener("click", function () { stepTour(1); });
       tourBar.querySelector(".tb-x").addEventListener("click", endTour);
@@ -2112,9 +2122,18 @@
   }
   function showStop(first) {
     var key = tour.keys[tour.i], it = items[key];
-    tourBar.querySelector(".tb-at").textContent = (tour.i + 1) + " of " + tour.keys.length + (it ? " · " + stopTime(it.data) : "");
+    tourBar.querySelector(".tb-at").textContent = (tour.shared ? "Shared plan · " : "") + (tour.i + 1) + " of " + tour.keys.length + (it ? " · " + stopTime(it.data) : "");
     if (!first) animOnce(tourBar, "nudge");
     flyTo(key);
+  }
+  // Share my plan (S3): the stops as ?plan=<ids>, through the share sheet or the clipboard.
+  function planUrl() { return location.origin + location.pathname + "?plan=" + tour.keys.map(function (k) { return k.slice(2); }).join(","); }
+  function sharePlan() {
+    if (!tour) return;
+    var url = planUrl(), n = tour.keys.length, text = "My matcha plan this weekend, " + n + (n === 1 ? " stop" : " stops") + ". Come along:";
+    var at = tourBar.querySelector(".tb-at"), said = function (t) { var was = at.textContent; at.textContent = t; setTimeout(function () { if (at.textContent === t) at.textContent = was; }, 1800); };
+    if (navigator.share) { navigator.share({ title: "My matcha plan", text: text, url: url }).catch(function () { /* closed */ }); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text + " " + url).then(function () { said("Link copied"); }, function () { said("Could not copy"); });
   }
   function stopTime(e) {
     var p = parts(e.start);

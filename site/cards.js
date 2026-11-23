@@ -213,6 +213,8 @@ const ICON = {
   map: I('<path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/>'),
   cal: I('<rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13.5v4M10 15.5h4"/>'),
   share: I('<path d="M12 15V3.5M7.5 8 12 3.5 16.5 8"/><path d="M5 12v6.5A2 2 0 0 0 7 20.5h10a2 2 0 0 0 2-2V12"/>'),
+  going: I('<circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.5 11 15l4.5-5.5"/>'),
+  invite: I('<circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M17.5 8v6M14.5 11h6"/>'),
   flag: I('<path d="M5 21V4M5 4.5h11l-2 4 2 4H5"/>'),
   ig: I('<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/>'),
   tt: I('<path d="M14 3.5v11.2a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14 3.5a5 5 0 0 0 5 4.6"/>'),
@@ -351,6 +353,18 @@ function nearbyHtml(e, ctx) {
 }
 const nameOf = (e, b) => cut(e.brand || (b && b.name) || "Matcha pop-up", 60);
 
+// The going strip (social wave, S1 and S2): "I'm going" with the live count, and "Invite a friend". Rendered hidden;
+// site/rsvp.js shows it once the API answers, so a page without the API has no half-working button. Not on static
+// pages (their CSP has no connect-src) and not on past or cancelled pop-ups.
+function goHtml(e, ctx, v, name, live) {
+  const id = safeId(e.id);
+  if (!id || !live || ctx.page) return "";
+  const where = e.venue && !/^(tbd|tba)$/i.test(e.venue) ? e.venue : cityOf(e, ctx);
+  const text = cut(join([name, join([v.day, v.time], " "), where], ", "), 160) + ". Come with me:";
+  return `<div class="mm-go" data-mm-go="${id}" hidden><button type="button" class="mm-going" data-mm-going="${id}" aria-pressed="false">${ICON.going}<span>I'm going</span></button><span class="mm-gcount" aria-live="polite"></span>` +
+    `<a class="mm-invite" href="${esc(ctx.base || "")}?event=${id}&amp;via=friend" data-mm-share data-title="${esc(name + " matcha pop-up")}" data-text="${esc(text)}">${ICON.invite}<span>Invite a friend</span></a></div>`;
+}
+
 // ---- the card ------------------------------------------------------------------------------------------------
 export function cardHtml(e, ctx = {}) {
   e = e || {};
@@ -362,10 +376,11 @@ export function cardHtml(e, ctx = {}) {
   const plain = String(e.description || "").replace(/[*_`#>]+/g, " ").replace(/\s+/g, " ").trim();
   const desc = plain ? `<p class="mm-desc">${esc(cut(plain, 200))}</p>` : "";
   const report = id ? `<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a>` : "";
+  const live = !/^(past|cancelled)$/.test(dayWord(e, ctx.now || new Date()).kind);
   return `<article class="mm-card${ctx.page ? " mm-page" : ""}${compact ? " mm-compact" : ""} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>` +
     `<header class="mm-top"><p class="mm-verdict"><span class="mm-vday">${esc(v.day)}</span>${v.time ? ` <span class="mm-vtime">${esc(v.time)}</span>` : ""}${v.where ? `<span class="mm-vwhere">${esc(v.where)}</span>` : ""}</p></header>` +
     `<div class="mm-media">${heroHtml(e, ctx, v, name)}</div>` +
-    `<div class="mm-main">${brandRow(e, ctx, name, b)}${desc}${chipsHtml(e, ctx)}${factsHtml(e)}${placeHtml(e, ctx, name)}</div>` +
+    `<div class="mm-main">${brandRow(e, ctx, name, b)}${goHtml(e, ctx, v, name, live)}${desc}${chipsHtml(e, ctx)}${factsHtml(e)}${placeHtml(e, ctx, name)}</div>` +
     `<div class="mm-more">${postsHtml(e, ctx, b)}${storyHtml(e, ctx, name, b)}${nearbyHtml(e, ctx)}${report}</div>` +
     `</article>`;
 }
@@ -467,9 +482,11 @@ export function wire(root, ctx = {}) {
     ev.preventDefault();
     const label = a.querySelector("span");
     const done = (t) => { if (label) { const was = label.textContent; label.textContent = t; setTimeout(() => { label.textContent = was; }, 1800); } };
-    if (nav.share) nav.share({ title: a.getAttribute("data-title") || "Matcha pop-up", url }).catch(() => {});
-    else if (nav.clipboard && nav.clipboard.writeText) nav.clipboard.writeText(url).then(() => done("Link copied"), () => legacyCopy(url, a, done, loc));
-    else if (legacyCopy(url, a, done, null)) { /* copied */ }
+    // data-text (the invite) goes with the link: the share sheet gets it as text, the clipboard gets "text link"
+    const text = a.getAttribute("data-text") || "", copy = text ? text + " " + url : url;
+    if (nav.share) nav.share(text ? { title: a.getAttribute("data-title") || "Matcha pop-up", text, url } : { title: a.getAttribute("data-title") || "Matcha pop-up", url }).catch(() => {});
+    else if (nav.clipboard && nav.clipboard.writeText) nav.clipboard.writeText(copy).then(() => done(text ? "Copied" : "Link copied"), () => legacyCopy(copy, a, done, loc));
+    else if (legacyCopy(copy, a, done, null)) { /* copied */ }
     else if (loc) loc.href = url;
   });
   root.addEventListener("error", (ev) => {

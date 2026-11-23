@@ -5,7 +5,7 @@
 // tiles or Instagram images.
 var VERSION = "mm-f5cf36d43f";
 var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE = "mm-lib-maplibre-4.7.1";
-var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/pwa.js",
+var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/rsvp.js", "/pwa.js",
   "/cities.js", "/citypins.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",
   "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png", "/icons/favicon-32.png", "/shell.css",
   "/cards.css", "/cards-app.js", "/cards.js", "/search.js", "/search.css", "/art.js", "/img-helper.js"];
@@ -84,6 +84,7 @@ self.addEventListener("fetch", function (e) {
     return;
   }
   if (url.origin !== self.location.origin) return; // tiles, fonts, Instagram images: straight to the network, never stored
+  if (url.pathname.indexOf("/api/") === 0) return; // counts and forms: live answers only, never from a cache
   if (req.mode === "navigate") { e.respondWith(networkFirstPage(req)); return; }
   if ((url.pathname.indexOf("/data/") === 0 && /\.json$/.test(url.pathname)) || url.pathname.indexOf("/img/events/") === 0) {
     e.respondWith(staleWhileRevalidate(req, DATA_CACHE));

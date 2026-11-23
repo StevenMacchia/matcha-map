@@ -1,0 +1,4 @@
+{
+  "rsvp": false,
+  "note": "rsvp turns the going strip on once the INTAKE KV namespace is bound on the Pages project (docs/INTAKE.md). Off, the page never calls /api/rsvp."
+}
