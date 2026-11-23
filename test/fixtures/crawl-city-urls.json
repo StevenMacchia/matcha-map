@@ -1,0 +1,61 @@
+{
+  "note": "City page URLs as read on 2026-11-22: Eventbrite /d/<st>--<slug>/matcha/ (nc--cary served 40 NC events), Allevents /<slug>/matcha for the biggest city of a name and /<slug>-<st>/matcha for the others (columbus-ga served Columbus GA; columbus-oh redirected to /columbus/), Meetup find?...location=us--<st>--<City>.",
+  "cases": [
+    {
+      "name": "New York",
+      "state": "NY",
+      "eventbrite": "https://www.eventbrite.com/d/ny--new-york/matcha/",
+      "allevents": "https://allevents.in/new-york/matcha",
+      "meetup": "https://www.meetup.com/find/?keywords=matcha&source=EVENTS&location=us--ny--New%20York"
+    },
+    {
+      "name": "Washington",
+      "state": "DC",
+      "eventbrite": "https://www.eventbrite.com/d/dc--washington/matcha/",
+      "allevents": "https://allevents.in/washington/matcha",
+      "meetup": "https://www.meetup.com/find/?keywords=matcha&source=EVENTS&location=us--dc--Washington"
+    },
+    {
+      "name": "St. Louis",
+      "state": "MO",
+      "eventbrite": "https://www.eventbrite.com/d/mo--st-louis/matcha/",
+      "allevents": "https://allevents.in/st-louis/matcha",
+      "meetup": "https://www.meetup.com/find/?keywords=matcha&source=EVENTS&location=us--mo--St.%20Louis"
+    },
+    {
+      "name": "Columbus",
+      "state": "OH",
+      "eventbrite": "https://www.eventbrite.com/d/oh--columbus/matcha/",
+      "allevents": "https://allevents.in/columbus/matcha",
+      "meetup": "https://www.meetup.com/find/?keywords=matcha&source=EVENTS&location=us--oh--Columbus"
+    },
+    {
+      "name": "Columbus",
+      "state": "GA",
+      "eventbrite": "https://www.eventbrite.com/d/ga--columbus/matcha/",
+      "allevents": "https://allevents.in/columbus-ga/matcha",
+      "meetup": "https://www.meetup.com/find/?keywords=matcha&source=EVENTS&location=us--ga--Columbus"
+    },
+    {
+      "name": "Cary",
+      "state": "NC",
+      "eventbrite": "https://www.eventbrite.com/d/nc--cary/matcha/",
+      "allevents": "https://allevents.in/cary/matcha",
+      "meetup": "https://www.meetup.com/find/?keywords=matcha&source=EVENTS&location=us--nc--Cary"
+    },
+    {
+      "name": "Brooklyn",
+      "state": "NY",
+      "eventbrite": "https://www.eventbrite.com/d/ny--brooklyn/matcha/",
+      "allevents": "https://allevents.in/brooklyn/matcha",
+      "meetup": "https://www.meetup.com/find/?keywords=matcha&source=EVENTS&location=us--ny--Brooklyn"
+    },
+    {
+      "name": "Weymouth",
+      "state": "MA",
+      "eventbrite": "https://www.eventbrite.com/d/ma--weymouth/matcha/",
+      "allevents": "https://allevents.in/weymouth-ma/matcha",
+      "meetup": "https://www.meetup.com/find/?keywords=matcha&source=EVENTS&location=us--ma--Weymouth"
+    }
+  ]
+}

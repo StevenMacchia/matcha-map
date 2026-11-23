@@ -27,7 +27,8 @@ let lastReq = 0;
 
 // POST one query, trying each mirror once in order. Returns parsed JSON (cached a day per query).
 // A timeout ends the box at once: err.timeout = true, no retry. Every mirror failing otherwise: err.allFailed = true.
-export async function runQuery(query, { cacheDir = ".cache", noFetch = false, endpoints = ENDPOINTS, fetchImpl = fetch, gapMs = 1000, timeoutMs = 75000 } = {}) {
+// An HTTP 429 (rate limited) or 504 (gateway timeout) makes us wait before the next mirror: backoffMs, doubled for each one in a row.
+export async function runQuery(query, { cacheDir = ".cache", noFetch = false, endpoints = ENDPOINTS, fetchImpl = fetch, gapMs = 1000, timeoutMs = 75000, backoffMs = 15000 } = {}) {
   fs.mkdirSync(cacheDir, { recursive: true });
   const file = path.join(cacheDir, "overpass-" + createHash("sha1").update(query).digest("hex") + ".json");
   try {
@@ -36,6 +37,7 @@ export async function runQuery(query, { cacheDir = ".cache", noFetch = false, en
   } catch { /* no cache */ }
   if (noFetch) return null;
   const errs = [];
+  let backoffs = 0;
   for (const ep of endpoints) {
     const wait = lastReq + gapMs - Date.now();
     if (wait > 0) await sleep(wait);
@@ -55,6 +57,7 @@ export async function runQuery(query, { cacheDir = ".cache", noFetch = false, en
       }
       errs.push(`${ep} HTTP ${res.status}`);
       warn(errs[errs.length - 1]);
+      if (res.status === 429 || res.status === 504) await sleep(backoffMs * 2 ** backoffs++);
     } catch (e) {
       if (e.timeout) throw e;
       errs.push(`${ep} ${e.name === "TimeoutError" ? "timeout" : e.message}`);

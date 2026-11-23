@@ -21,13 +21,12 @@ test("buildQuery: timeout 60, matcha on name and brand, curated chains, no cuisi
   assert.ok(/out center tags;$/.test(q));
 });
 
-test("metroBoxes: one box per distinct city, normal and big sizes, discover-only cities added", () => {
-  const boxes = metroBoxes({ "New York|NY": [40.7, -74], "Austin|TX": [30.27, -97.74], "Brooklyn|NY": [40.65, -73.95] }, ["Austin", "Providence", "Nowhere"]);
-  assert.deepEqual(boxes.map((b) => b.name), ["Austin", "Brooklyn", "New York", "Providence"]);
-  const au = boxes.find((b) => b.name === "Austin").bbox, ny = boxes.find((b) => b.name === "New York").bbox;
-  assert.ok(Math.abs(au[2] - au[0] - 0.7) < 1e-3 && Math.abs(au[3] - au[1] - 0.9) < 1e-3);
-  assert.ok(Math.abs(ny[2] - ny[0] - 1.2) < 1e-3 && Math.abs(ny[3] - ny[1] - 1.2) < 1e-3);
-  assert.ok(boxes.every((b) => b.bbox[0] < b.bbox[2] && b.bbox[1] < b.bbox[3]));
+test("metroBoxes: one box per listed city, sized by population (more in test/cities.test.js)", () => {
+  const mk = (name, pop, lat, lng, rank_us) => ({ name, state: "TX", pop, lat, lng, slug: name.toLowerCase(), rank_in_state: 1, rank_us, tz: "America/Chicago" });
+  const boxes = metroBoxes([mk("Austin", 960000, 30.27, -97.74, 2), mk("Waco", 140000, 31.55, -97.15, 3), mk("Marfa", 1700, 30.31, -104.02, 4), mk("Houston", 2300000, 29.76, -95.37, 1)]);
+  assert.deepEqual(boxes.map((b) => b.name), ["Houston", "Austin", "Waco", "Marfa"]);
+  const span = (b) => Math.round((b.bbox[2] - b.bbox[0]) * 111.32);
+  assert.deepEqual(boxes.map(span), [24, 24, 16, 10]);
 });
 
 test("legitimate: drops closed, no address, no name; sets verified from website, hours or phone", () => {

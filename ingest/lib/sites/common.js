@@ -23,6 +23,8 @@ import { jsonLd, ldImage, httpUrl, decode } from "../html.js";
 import { eventToRaw, hasMatcha } from "../../adapters/mato.js";
 import { zonedIso, tzFor, STATES } from "../tz.js";
 import { debug, warn } from "../log.js";
+import { crawlCities, cityOf } from "../cities.js";
+import { planCities, perRunDefault, CRAWL_STATE_FILE } from "../crawl-state.js";
 
 export { hasMatcha };
 export const CAP = 300;
@@ -186,14 +188,31 @@ export function finish(site, raws, sources = []) {
   return { items, candidates };
 }
 
-// The 40 cities of data/cities-discover.json: state for the per-city crawls.
-export const CITY_STATE = {
-  "New York": "NY", Brooklyn: "NY", "Los Angeles": "CA", "San Francisco": "CA", Oakland: "CA", "San Diego": "CA", Seattle: "WA", Portland: "OR", Chicago: "IL",
-  Boston: "MA", Philadelphia: "PA", "Washington DC": "DC", Atlanta: "GA", Miami: "FL", Austin: "TX", Houston: "TX", Dallas: "TX", Denver: "CO", Phoenix: "AZ",
-  "Las Vegas": "NV", Minneapolis: "MN", Detroit: "MI", Nashville: "TN", Charlotte: "NC", Raleigh: "NC", Pittsburgh: "PA", Baltimore: "MD", "San Jose": "CA",
-  Sacramento: "CA", "Salt Lake City": "UT", Orlando: "FL", Tampa: "FL", "New Orleans": "LA", Honolulu: "HI", Columbus: "OH", Cleveland: "OH", "Kansas City": "MO",
-  "St. Louis": "MO", Indianapolis: "IN", Providence: "RI",
-};
+// City name -> state for every city of data/cities.json (the 20 most populous places per state), biggest first, so a name two states share
+// (Columbus, Portland, Springfield) keeps the bigger city. "Washington DC" is the DC entry; Brooklyn is an extra the crawlers keep.
+export const CITY_STATE = {};
+for (const c of crawlCities()) {
+  const name = c.state === "DC" ? "Washington DC" : c.name;
+  if (!(name in CITY_STATE)) CITY_STATE[name] = c.state;
+}
+// The names to look for inside free text (captions, posts): cities of 100,000 or more, without the names that are also ordinary words
+// or a better-known place elsewhere ("mobile cart", Birmingham UK, Vancouver BC, Lincoln Park). Small towns are matched only when
+// a caption names the state with them (the "City, ST" patterns).
+const NOT_IN_TEXT = new Set(["Orange", "Mobile", "Independence", "Surprise", "Hollywood", "Ontario", "Vancouver", "Birmingham", "Manchester", "Athens", "Lincoln"]);
+export const TEXT_CITY_STATE = {};
+for (const c of crawlCities()) {
+  const name = c.state === "DC" ? "Washington DC" : c.name;
+  if ((c.pop >= 100000 || c.name === "Brooklyn") && !NOT_IN_TEXT.has(c.name) && !(name in TEXT_CITY_STATE)) TEXT_CITY_STATE[name] = c.state;
+}
+// The URL slug of a city on the event sites: DC is "washington" there, every other city its file slug.
+export const placeSlug = (c) => (c.state === "DC" ? "washington" : c.slug);
+
+// The cities a per-city crawler asks about this run: ctx.cities (entries or names) or the whole crawl order, the next CRAWL_CITIES_PER_RUN
+// from this site's cursor, passing over cities skipped after a 404 or an empty page (see crawl-state.js).
+export function planFor(site, ctx = {}) {
+  const list = (ctx.cities ? ctx.cities.map(cityOf) : crawlCities()).filter(Boolean);
+  return planCities(site, list, { perRun: ctx.perRun ?? perRunDefault(ctx.env), now: ctx.now || new Date(), file: ctx.crawlFile || CRAWL_STATE_FILE, persist: !ctx.fetcher?.noFetch });
+}
 export const citySlug = (name) => String(name).toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 // What a crawler returns when it does not run.

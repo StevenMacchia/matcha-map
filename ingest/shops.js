@@ -1,12 +1,15 @@
 // npm run shops: permanent matcha storefronts -> data/shops.json and site/data/shops.json.
 // Sources: OpenStreetMap through Overpass (one query at a time per box), plus our cafe-kind brands
-// whose own site shows a street address. Flags: --no-fetch (cache only) | --no-brands | --verbose
+// whose own site shows a street address. One box per city of data/cities.json, biggest first; a run asks SHOP_BOXES_PER_RUN of them
+// (default 120) from a saved position (.cache/shops-cursor.json), so successive runs walk the whole country. Shops already in
+// data/shops.json from boxes not asked this run are kept; the ones inside a box asked again are replaced by what that box returns now.
+// Flags: --no-fetch (cache only) | --no-brands | --all (every box this run) | --only <city> | --verbose
 import "./lib/env.js";
 import fs from "node:fs";
 import { createFetcher } from "./lib/fetch.js";
 import { createGeocoder } from "./lib/geocode.js";
 import { setVerbose, warn, info } from "./lib/log.js";
-import { loadBoxes } from "./lib/shops/boxes.js";
+import { loadBoxes, nextBoxes, boxesPerRun } from "./lib/shops/boxes.js";
 import { buildQuery, runQuery, parseElements } from "./lib/shops/overpass.js";
 import { findAddress } from "./lib/shops/brandsites.js";
 import { dedupe, applyOverrides, fillState, legitimate } from "./lib/shops/merge.js";
@@ -54,8 +57,11 @@ async function main() {
   let noCoords = 0, raw = 0, ran = 0, skipped = 0, fails = 0, stopped = false;
   const oi = process.argv.indexOf("--only"), only = oi > 0 ? process.argv[oi + 1] : null;
   const boxes = loadBoxes();
-  for (const box of boxes) {
-    if (only && box.name !== only) continue;
+  const plan = only ? { batch: boxes.filter((b) => b.name === only), commit() {} } : nextBoxes(boxes, { perRun: flags.has("all") ? boxes.length : boxesPerRun() });
+  const asked = [];
+  let attempted = 0;
+  for (const box of plan.batch) {
+    attempted++;
     const tb = Date.now();
     let els;
     try { els = await queryBox(box.bbox, { noFetch }); fails = 0; }
@@ -66,12 +72,17 @@ async function main() {
       continue;
     }
     ran++;
+    asked.push(box.bbox);
     noCoords += els.filter((el) => (el.lat ?? el.center?.lat) == null || (el.lon ?? el.center?.lon) == null).length;
     const got = parseElements(els, fetched);
     raw += got.length;
     got.forEach((s) => osm.set(s.id, s));
     info(`  ${box.name}: ${got.length} (${Math.round((Date.now() - tb) / 1000)} s)`);
   }
+  if (!noFetch) plan.commit(stopped ? attempted - 1 : attempted);
+  // OSM shops from earlier runs outside the boxes asked now stay (the cursor means a run covers only part of the country).
+  const inside = (s, bb) => s.lat >= bb[0] && s.lat <= bb[2] && s.lng >= bb[1] && s.lng <= bb[3];
+  for (const s of read("data/shops.json", { shops: [] }).shops) if (s.source === "osm" && !osm.has(s.id) && !asked.some((bb) => inside(s, bb))) osm.set(s.id, s);
   let brands = { shops: [], missing: [] };
   if (!flags.has("no-brands")) {
     const fetcher = createFetcher({ noFetch });
@@ -93,7 +104,7 @@ async function main() {
 
   const by = (f) => { const m = {}; shops.forEach((s) => { const k = f(s); m[k] = (m[k] || 0) + 1; }); return Object.entries(m).sort((a, b) => b[1] - a[1]); };
   info(`Dropped, no coordinates (no node position or way center): ${noCoords}. Only OSM coordinates and geocoded street addresses are ever used; nothing is spread or placed at a city centre.`);
-  info(`Boxes run ${ran}, skipped ${skipped}${stopped ? " (stopped early)" : ""} of ${boxes.length}. Raw OSM hits ${raw}; dropped closed ${leg.dropped.closed}, no address ${leg.dropped.noAddress}, no name ${leg.dropped.noName}.`);
+  info(`Boxes run ${ran}, skipped ${skipped}${stopped ? " (stopped early)" : ""} of ${plan.batch.length} asked this run (${boxes.length} in all). Raw OSM hits ${raw}; dropped closed ${leg.dropped.closed}, no address ${leg.dropped.noAddress}, no name ${leg.dropped.noName}.`);
   info(`${shops.length} kept (${site.length} verified, written to the site; ${shops.length - site.length} unverified, data/ only; ${brands.shops.length} brand sites) in ${Math.round((Date.now() - t0) / 1000)} s`);
   info("By state: " + by((s) => s.state || "?").slice(0, 12).map(([k, n]) => `${k} ${n}`).join(", "));
   info("Top cities: " + by((s) => (s.city || "?") + (s.state ? ", " + s.state : "")).slice(0, 10).map(([k, n]) => `${k} ${n}`).join("; "));

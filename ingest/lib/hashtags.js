@@ -15,7 +15,7 @@ import { hasMatcha } from "../adapters/mato.js";
 import { processItems } from "./pipeline.js";
 import { parseAddress, refDate } from "./extract.js";
 import { STATES } from "./tz.js";
-import { CITY_STATE } from "./sites/common.js";
+import { TEXT_CITY_STATE } from "./sites/common.js";
 import { prettyHandle } from "./names.js";
 import { slug } from "./watchlist.js";
 import { warn, info } from "./log.js";
@@ -64,7 +64,7 @@ export function planTags(cfg, rate, now = new Date()) {
 
 // ---- brand from a caption --------------------------------------------------------------------
 const GENERIC = new Set(["matcha", "matchapopup", "matchapopups", "matchaevent", "matchaevents", "popup", "popups", "popupshop", "food", "foodie", "foodies", "coffee", "cafe", "cafes", "smallbusiness", "smallbiz", "explore", "explorepage", "fyp", "foryou", "foryoupage", "viral", "trending", "reels", "instagood", "love", "tea", "teatime", "barista", "coffeeshop", "matchalatte", "matchalover", "matchalovers", "matchatime", "matchagirl", "matchaaddict", "matchaobsessed", "matchaholic", "matchagram", "matchalife", "matchaday", "matchaseason", "matchacommunity", "matchadrink", "matchatea", "matchacafe", "matchalatteart", "matchalove", "matchacoffee", "matchaeverything", "matchacart", "matchabar", "matchafest", "matchamarket", "matchatruck", "matchastand", "popupmatcha", "matchapopupshop", "supportsmallbusiness", "shoplocal", "weekend", "sunday", "saturday"]);
-const CITY_WORDS = new Set([...Object.keys(CITY_STATE).map((c) => c.toLowerCase().replace(/[^a-z]/g, "")), "nyc", "la", "sf", "atl", "dc", "bayarea", "oc", "nj", "philly", "losangeles", "newyork", "newyorkcity"]);
+const CITY_WORDS = new Set([...Object.keys(TEXT_CITY_STATE).map((c) => c.toLowerCase().replace(/[^a-z]/g, "")), "nyc", "la", "sf", "atl", "dc", "bayarea", "oc", "nj", "philly", "losangeles", "newyork", "newyorkcity"]);
 const BRAND_LOOK = /matcha|cafe|tea|bar|co$|^co(?!ffee|ok|mmunity|ntent)/;
 const NAME_STOP = new Set(["our", "this", "the", "a", "an", "my", "your", "first", "next", "new", "weekend", "matcha", "every", "last", "another", "big", "special", "monthly", "summer", "winter", "spring", "fall", "holiday", "sunday", "saturday", "friday", "monday", "tuesday", "wednesday", "thursday", "join", "visit", "see", "come", "at", "for", "to", "and", "with", "from", "pop"]);
 
@@ -121,7 +121,7 @@ const EXTRA_CITIES = {
   Madison: "WI", Albuquerque: "NM", Gallup: "NM", "Fort Lauderdale": "FL", "St. Petersburg": "FL", Berkeley: "CA", "Palo Alto": "CA", "Santa Barbara": "CA", Cincinnati: "OH",
 };
 const ALIASES = { NYC: ["New York", "NY"], "New York City": ["New York", "NY"], "Bay Area": ["San Francisco", "CA"], DC: ["Washington DC", "DC"], ATL: ["Atlanta", "GA"], Philly: ["Philadelphia", "PA"], Vegas: ["Las Vegas", "NV"] };
-const CITIES = new Map([...Object.entries(CITY_STATE), ...Object.entries(EXTRA_CITIES)].map(([c, s]) => [c, [c, s]]).concat(Object.entries(ALIASES)));
+const CITIES = new Map([...Object.entries(TEXT_CITY_STATE), ...Object.entries(EXTRA_CITIES)].map(([c, s]) => [c, [c, s]]).concat(Object.entries(ALIASES)));
 const CITY_RE = new RegExp(`(?<![\\w#@])(${[...CITIES.keys()].sort((a, b) => b.length - a.length).map((c) => c.replace(/[.]/g, "\\.")).join("|")})(?![\\w])`);
 const STATE_SET = new Set(STATES);
 const CITY_ST = new RegExp(`\\b([A-Z][A-Za-z.'-]+(?:\\s[A-Z][A-Za-z.'-]+){0,2}),\\s*(${STATES.join("|")})\\b`);

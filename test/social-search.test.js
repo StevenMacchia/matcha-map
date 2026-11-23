@@ -119,7 +119,7 @@ test("social-search: the crawler stops at the per-run cap and only calls the Tav
   fs.writeFileSync(budgetFile, JSON.stringify({ per_run: 3, per_month: 900, month: "2026-11", used_month: 0 }));
   const calls = [];
   const http = async (url) => { calls.push(String(url)); return { ok: true, status: 200, json: async () => ({ results: [] }) }; };
-  const r = await ss.discover({ env: { TAVILY_API_KEY: "test" }, now, http, wait: async () => {}, budgetFile, cities: ["Seattle", "Austin"], noSeen: true, sources: [] });
+  const r = await ss.discover({ env: { TAVILY_API_KEY: "test" }, now, http, wait: async () => {}, budgetFile, searchCities: ["Seattle", "Austin"], noSeen: true, sources: [] });
   assert.equal(calls.length, 3);
   assert.ok(calls.every((u) => u === "https://api.tavily.com/search"));
   assert.equal(r.stats.credits, 3);

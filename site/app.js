@@ -776,6 +776,22 @@
     clearTimeout(zipErrT);
     zipErrT = setTimeout(function () { er.hidden = true; }, 3000);
   }
+  // Land on a point for a zip or a city: Chasen, the label under the filters, the list sorted by distance. quiet: a return visit.
+  function landAt(c, label, zip, quiet) {
+    $("zip-err").hidden = true;
+    closeCard(true);
+    clearYou();
+    state.zip = zip;
+    $("zip").value = label;
+    var el = placeYou([c[0], c[1]], true);
+    $("nearzip").textContent = label;
+    $("nearrow").hidden = false;
+    if (zip) { try { localStorage.setItem(ZIP_KEY, zip); } catch (e) { /* ignore */ } }
+    if (state.view === "list") setView("map");
+    var opts = { center: lngLat(state.userLoc), zoom: 10 };
+    if (quiet) { map.jumpTo(opts); animOnce(el, "ping"); renderList(false); }
+    else moveMap(opts, function () { animOnce(el, "ping"); renderList(true); });
+  }
   // Fly to a zip's centroid. quiet: a return visit, so no error and the map jumps there.
   function goZip(zip, quiet) {
     if (!/^\d{5}$/.test(zip)) { if (!quiet) zipError("No such zip"); return; }
@@ -785,24 +801,36 @@
         if (!quiet) zipError("No such zip"); else { try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ } }
         return;
       }
-      $("zip-err").hidden = true;
-      closeCard(true);
-      clearYou();
-      state.zip = zip;
-      $("zip").value = zip;
-      var el = placeYou([c[0], c[1]], true);
-      $("nearzip").textContent = zip;
-      $("nearrow").hidden = false;
-      try { localStorage.setItem(ZIP_KEY, zip); } catch (e) { /* ignore */ }
-      if (state.view === "list") setView("map");
-      var opts = { center: lngLat(state.userLoc), zoom: 10 };
-      if (quiet) { map.jumpTo(opts); animOnce(el, "ping"); renderList(false); }
-      else moveMap(opts, function () { animOnce(el, "ping"); renderList(true); });
+      landAt(c, zip, zip, quiet);
     }).catch(function () { if (!quiet) zipError("Zip list did not load"); });
   }
-  $("zip").addEventListener("input", function () { this.value = this.value.replace(/\D/g, "").slice(0, 5); });
-  $("zip").addEventListener("keydown", function (ev) { if (ev.key === "Enter") { ev.preventDefault(); goZip(this.value, false); } });
-  $("zip-go").addEventListener("click", function () { goZip($("zip").value, false); });
+  // A city of window.CITY_LIST (biggest first): "Raleigh", "Raleigh NC" or "Raleigh, NC". The biggest city of a shared name wins.
+  var plain = function (s) { return String(s).toLowerCase().replace(/\./g, "").replace(/\s+/g, " ").trim(); };
+  function findListed(q) {
+    var list = window.CITY_LIST || [], m = /^(.+?)[,\s]+([A-Za-z]{2})$/.exec(q.trim());
+    var tries = m ? [[plain(m[1]), m[2].toUpperCase()], [plain(q), ""]] : [[plain(q), ""]];
+    for (var t = 0; t < tries.length; t++) {
+      for (var i = 0; i < list.length; i++) if (plain(list[i][0]) === tries[t][0] && (!tries[t][1] || list[i][1] === tries[t][1])) return list[i];
+    }
+    return null;
+  }
+  function goCity(q) {
+    var c = findListed(q);
+    if (!c) { zipError("No such zip or city"); return; }
+    landAt([c[2], c[3]], c[0] + ", " + c[1], "", false);
+  }
+  // The input takes a zip or a city; the datalist of listed cities (biggest first) is filled on the first focus.
+  function goPlace(v) { if (/^\d{5}$/.test(v.trim())) goZip(v.trim(), false); else if (v.trim()) goCity(v); }
+  $("zip").addEventListener("focus", function () {
+    var dl = $("citylist");
+    if (dl.firstChild || !window.CITY_LIST) return;
+    var frag = document.createDocumentFragment();
+    window.CITY_LIST.forEach(function (c) { var o = document.createElement("option"); o.value = c[0] + ", " + c[1]; frag.appendChild(o); });
+    dl.appendChild(frag);
+  });
+  $("zip").addEventListener("input", function () { if (/^\d/.test(this.value)) this.value = this.value.replace(/\D/g, "").slice(0, 5); });
+  $("zip").addEventListener("keydown", function (ev) { if (ev.key === "Enter") { ev.preventDefault(); goPlace(this.value); } });
+  $("zip-go").addEventListener("click", function () { goPlace($("zip").value); });
   $("nearclear").addEventListener("click", function () { clearYou(); $("zip").value = ""; renderList(true); $("zip").focus(); });
 
   // ---------- show: which kinds and categories ----------

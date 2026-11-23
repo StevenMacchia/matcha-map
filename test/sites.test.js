@@ -1,6 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
 import * as common from "../ingest/lib/sites/common.js";
 import * as luma from "../ingest/lib/sites/luma.js";
 import * as eb from "../ingest/lib/sites/eventbrite.js";
@@ -165,7 +167,8 @@ test("eventbrite crawl: robots first, one page per city, event pages for hits", 
   const pages = { "https://www.eventbrite.com/d/ny--new-york/matcha/": f.listing_html };
   for (const h of hits) pages[h.url] = f.event_html;
   const fetcher = fake(pages);
-  const r = await eb.discover({ fetcher, now, sources: [], cities: ["New York", "Atlantis"] });
+  const crawlFile = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "eb-")), "crawl.json");
+  const r = await eb.discover({ fetcher, now, sources: [], cities: ["New York", "Atlantis"], crawlFile });
   assert.equal(fetcher.seen[0], "https://www.eventbrite.com/robots.txt");
   assert.equal(r.stats.listings, 1);
   assert.equal(r.stats.hits, 3);

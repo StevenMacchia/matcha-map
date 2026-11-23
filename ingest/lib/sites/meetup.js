@@ -9,16 +9,18 @@
 //                  country} or an __ref, featuredEventPhoto{__ref -> PhotoInfo{highResUrl}}, group{__ref -> Group{name,urlname}}}.
 //                  The first page holds about a dozen events; the search is fuzzy, so the matcha word list decides.
 // One page per city. The hosting group is the organizer.
-import { hasMatcha, siteBudget, gate, finish, skipped, CAP, CITY_STATE, looksLikeHandle } from "./common.js";
+import { hasMatcha, siteBudget, gate, finish, skipped, CAP, looksLikeHandle, planFor } from "./common.js";
+import { cityOf } from "../cities.js";
 import { zonedIso, tzFor } from "../tz.js";
 import { httpUrl } from "../html.js";
 
 export const name = "meetup";
 export const host = "www.meetup.com";
 
+// A city entry (or a listed city's name) -> the search: location=us--<state>--<City name>.
 export const cityUrl = (city) => {
-  const st = (CITY_STATE[city] || "").toLowerCase();
-  return `https://${host}/find/?keywords=matcha&source=EVENTS&location=us--${st}--${encodeURIComponent(city === "Washington DC" ? "Washington" : city)}`;
+  const c = cityOf(city);
+  return `https://${host}/find/?keywords=matcha&source=EVENTS&location=us--${c.state.toLowerCase()}--${encodeURIComponent(c.name)}`;
 };
 
 const readApollo = (html) => {
@@ -54,21 +56,26 @@ export function parseSearch(html, cityHint = null) {
 }
 
 export async function discover(ctx) {
-  const { fetcher, sources = [], cities = Object.keys(CITY_STATE), cap = CAP } = ctx;
+  const { fetcher, sources = [], cap = CAP } = ctx;
   const b = siteBudget(fetcher, name, cap);
   const g = await gate(b, host);
   if (!g.ok) return skipped(g.reason);
+  const plan = planFor(name, ctx);
   const seen = new Set(), raws = [];
   let searches = 0;
-  for (const city of cities) {
-    if (!CITY_STATE[city] || b.st.stopped || b.left() <= 0) continue;
+  for (const city of plan.batch) {
+    if (b.st.stopped || b.left() <= 0) break;
     const r = await b.get(cityUrl(city));
-    if (!r.ok) continue;
+    if (r.skipped) break;
+    if (!r.ok) { plan.done(city, r.status === 404 ? "404" : "error"); continue; }
     searches++;
-    for (const raw of parseSearch(r.text, { city, state: CITY_STATE[city] })) if (!seen.has(raw.source_url)) { seen.add(raw.source_url); raws.push(raw); }
+    const found = parseSearch(r.text, { city: city.name, state: city.state });
+    plan.done(city, found.length ? "ok" : "empty");
+    for (const raw of found) if (!seen.has(raw.source_url)) { seen.add(raw.source_url); raws.push(raw); }
   }
+  const cur = plan.finish();
   const out = finish(name, raws, sources);
-  return { ...out, stats: { searches, fetches: b.st.used, pages: b.st.pages, hitCap: b.st.hitCap, stopped: b.st.stopped } };
+  return { ...out, stats: { cities: plan.batch.length, cursor: cur.cursor, skippedCities: cur.skipped, searches, fetches: b.st.used, pages: b.st.pages, hitCap: b.st.hitCap, stopped: b.st.stopped } };
 }
 
 export default { name, host, discover };

@@ -52,6 +52,28 @@ export function tzFor({ city, state } = {}) {
   return STATE_TZ[st] || null;
 }
 
+// Zone of a place from its state plus where it sits, for the states a single zone does not cover. Boundaries are approximate to the
+// county; they only decide which wall clock a listing without an explicit offset is read in.
+const SPLITS = {
+  TX: (lat, lng) => (lng < -104.5 ? "America/Denver" : null),
+  FL: (lat, lng) => (lng < -85.0 ? "America/Chicago" : null),
+  TN: (lat, lng) => (lng > -85.5 ? "America/New_York" : null),
+  KY: (lat, lng) => (lng < -86.0 ? "America/Chicago" : null),
+  IN: (lat, lng) => ((lat > 41.2 && lng < -86.8) || (lat < 38.5 && lng < -87.0) ? "America/Chicago" : null),
+  MI: (lat, lng) => (lat > 45 && lng < -87.55 ? "America/Chicago" : null),
+  ND: (lat, lng) => (lat < 47.6 && lng < -102.0 ? "America/Denver" : null),
+  SD: (lat, lng) => (lng < -101.0 ? "America/Denver" : null),
+  NE: (lat, lng) => (lng < -101.5 ? "America/Denver" : null),
+  KS: (lat, lng) => (lng < -101.5 ? "America/Denver" : null),
+  ID: (lat) => (lat > 45.7 ? "America/Los_Angeles" : null),
+  OR: (lat, lng) => (lng > -117.5 && lat < 44.5 ? "America/Boise" : null),
+};
+export function tzForPlace(state, lat, lng) {
+  const st = String(state || "").toUpperCase();
+  const split = SPLITS[st] && Number.isFinite(lat) && Number.isFinite(lng) ? SPLITS[st](lat, lng) : null;
+  return split || STATE_TZ[st] || null;
+}
+
 // Offset (minutes east of UTC) of a zone at an instant (ms).
 export function offsetMinutes(tz, ms) {
   const p = parts(tz, ms);

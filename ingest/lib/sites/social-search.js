@@ -20,7 +20,8 @@ import { extract, findDates } from "../extract.js";
 import { hasMatcha } from "../../adapters/mato.js";
 import { httpUrl } from "../html.js";
 import { UA } from "../fetch.js";
-import { CITY_STATE, looksLikeHandle, slugify, skipped } from "./common.js";
+import { TEXT_CITY_STATE, looksLikeHandle, slugify, skipped } from "./common.js";
+import { searchLabels } from "../cities.js";
 import { parsePostText, cleanText } from "./ig-caption.js";
 import { info, warn, debug } from "../log.js";
 
@@ -180,7 +181,8 @@ const POPUP_WORD = /pop[\s-]?ups?\b|\bcart\b|\bstand\b|\bmarket\b|\bcollab|take[
 const NOISE = /how to make|\brecipe\b|\breview\b|\branking\b|\btier list\b|best matcha in|taste test|\btrying\b|matcha haul|day in my life|\bgrwm\b|\bvs\.? |\bhomemade\b|\bunboxing\b/i;
 const strip = (s) => String(s || "").replace(/#\w+/g, " ").replace(/\s+/g, " ").trim();
 const cityRe = (c) => new RegExp(`\\b${c.replace(/\./g, "\\.")}\\b`, "i");
-export const hasPlaceWord = (text) => Object.keys(CITY_STATE).some((c) => cityRe(c).test(text));
+const CITY_RES = new Map(Object.keys(TEXT_CITY_STATE).map((c) => [c, cityRe(c)]));
+export const hasPlaceWord = (text) => [...CITY_RES.values()].some((re) => re.test(text));
 const dated = (t, ref, rel = false) => findDates(t, { y: ref.getUTCFullYear(), mo: ref.getUTCMonth() + 1, d: ref.getUTCDate() }).some((g) => ["md", "dm", "num", ...(rel ? ["rel", "weekday", "weekend"] : [])].includes(g.kind));
 // {drop, reason}: no matcha word; or a recipe/review/ranking-style post that does not also carry a date and a place.
 export function noise(text, ref = new Date()) {
@@ -197,8 +199,8 @@ const EXTRA_PLACES = { Pasadena: "CA", "Long Beach": "CA", "Jersey City": "NJ", 
 export function cityIn(text) {
   const t = strip(text);
   let best = null;
-  for (const [c, st] of [...Object.entries(CITY_STATE), ...Object.entries(EXTRA_PLACES)]) {
-    const m = cityRe(c).exec(t);
+  for (const [c, st] of [...Object.entries(TEXT_CITY_STATE), ...Object.entries(EXTRA_PLACES)]) {
+    const m = (CITY_RES.get(c) || cityRe(c)).exec(t);
     if (m && (!best || m.index < best.index)) best = { city: c === "Queens" ? "New York" : c, state: st, index: m.index };
   }
   if (best) return { city: best.city, state: best.state };
@@ -278,7 +280,7 @@ export async function discover(ctx) {
   const key = env.TAVILY_API_KEY;
   if (!key) return skipped("no TAVILY_API_KEY (set it in .env)");
   const http = ctx.http || fetch, wait = ctx.wait || sleep;
-  const cities = ctx.cities || Object.keys(CITY_STATE);
+  const cities = ctx.searchCities || searchLabels();
   const budget = loadBudget(ctx.budgetFile, now);
   const seen = ctx.noSeen ? {} : loadSeen(now);
   const stats = { credits: 0, queries: 0, byShape: {}, tiktok: 0, instagram: 0, oembedOk: 0, oembedUseful: 0, oembedFail: 0, noise: 0, events: 0, fetches: 0, pages: 0 };

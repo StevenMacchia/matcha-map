@@ -15,7 +15,7 @@ import { setVerbose, warn, warnOnce, info } from "./log.js";
 import * as wlib from "./watchlist.js";
 import { readInbox } from "../adapters/manual.js";
 import { crawlMato } from "./mato-city.js";
-import { CITY_STATE } from "./sites/common.js";
+import { crawlCities, searchLabels } from "./cities.js";
 import { createGeocoder } from "./geocode.js";
 import { processItems, finalize } from "./pipeline.js";
 import { readEvents } from "./write.js";
@@ -127,7 +127,8 @@ async function discoverMato(fetcher, { now, sources }) {
 }
 
 // ---- Brave Search ----------------------------------------------------------------------------
-// 10 cities per run, rotating by 6-hour slot, so 40 cities x 4 runs a day stays inside the free plan.
+// 10 cities per run, rotating by 6-hour slot over the biggest cities of data/cities.json (SEARCH_CITIES_POOL, default 100), so the
+// number of searches per run stays inside the free plan however long the city list is.
 export function citiesForRun(cities, now = new Date(), perRun = 10) {
   if (!cities.length) return [];
   const slot = Math.floor(new Date(now).getTime() / (6 * 3600000));
@@ -138,8 +139,8 @@ export function citiesForRun(cities, now = new Date(), perRun = 10) {
 async function discoverBrave(env, now, { perRun = 10, http = fetch, wait = (ms) => new Promise((r) => setTimeout(r, ms)) } = {}) {
   const out = { candidates: [], leads: [] };
   if (!env.BRAVE_API_KEY) { warnOnce("brave", "Brave search: off (set BRAVE_API_KEY to search instagram.com for pop-up accounts)"); return out; }
-  let cities = [];
-  try { cities = JSON.parse(fs.readFileSync("data/cities-discover.json", "utf8")).cities || []; } catch { warn("data/cities-discover.json missing"); }
+  const cities = searchLabels();
+  if (!cities.length) warn("data/cities.json missing");
   for (const city of citiesForRun(cities, now, perRun)) {
     const q = `site:instagram.com "matcha pop up" ${city}`;
     try {
@@ -222,8 +223,9 @@ async function main() {
   }
   let sources = [];
   try { sources = JSON.parse(fs.readFileSync("data/sources.json", "utf8")); } catch { /* none */ }
-  let cities = Object.keys(CITY_STATE);
-  try { cities = JSON.parse(fs.readFileSync("data/cities-discover.json", "utf8")).cities || cities; } catch { /* default list */ }
+  // Every listed city, biggest first: the per-city crawlers walk it with their own cursors (CRAWL_CITIES_PER_RUN a run each).
+  // The Tavily search takes its own short rotation (ctx.searchCities) from the same file.
+  const cities = crawlCities();
 
   // Events found on the sites, as [{source, raw}] in priority order: MATO first, then ingest/lib/sites/index.js order.
   let list = [];
@@ -234,7 +236,7 @@ async function main() {
       list.push(...mato.items);
     } catch (e) { warn(`ma.to: ${e.message}`); counts["ma.to"] = 0; }
   }
-  const results = await runSites({ fetcher, now, sources, cities, env }, flags);
+  const results = await runSites({ fetcher, now, sources, cities, searchCities: searchLabels(), env }, flags);
   for (const r of results) {
     take(r.name, r.candidates); leads.push(...r.leads);
     for (const raw of r.items) list.push({ source: raw.source_hint, raw });

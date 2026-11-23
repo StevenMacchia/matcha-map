@@ -151,7 +151,7 @@ button, input { font: inherit; color: inherit; }
 .chip.show[aria-expanded="true"] { background: var(--foam); border-color: var(--accent); }
 .show-n { font-weight: 800; color: var(--deep); }
 .zipbox { position: relative; z-index: 1; flex: none; display: flex; align-items: center; gap: 4px; }
-.zip { width: 84px; min-height: 44px; border: 1.5px solid var(--edge); border-radius: var(--pill); background: var(--btnfill); padding: 0 14px; font-weight: 800; font-size: 16px; letter-spacing: .06em; color: var(--ink); }
+.zip { width: 140px; min-height: 44px; border: 1.5px solid var(--edge); border-radius: var(--pill); background: var(--btnfill); padding: 0 14px; font-weight: 800; font-size: 16px; letter-spacing: .02em; color: var(--ink); }
 .zip::placeholder { color: var(--muted); font-weight: 700; letter-spacing: 0; }
 .chip.go { min-width: 44px; padding: 0 14px; font-weight: 800; color: var(--deep); background: var(--btnfill); }
 .zip.shake { animation: shake .36s ease; }

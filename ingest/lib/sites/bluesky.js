@@ -10,7 +10,7 @@
 // and a US place (a street address, "City, ST", or a known city name such as Brooklyn, NYC, LA). published_at = createdAt, so
 // "this Saturday" resolves against the day of the post. Pseudo-source `bluesky:<handle>`, brand = the display name (else the
 // handle), kind popup, category matcha; posts.other = the bsky.app post URL. Volume is low and that is expected.
-import { siteBudget, gate, finish, CAP, CITY_STATE } from "./common.js";
+import { siteBudget, gate, finish, CAP, CITY_STATE, TEXT_CITY_STATE } from "./common.js";
 import { matchaPopup, usable, tagKinds } from "./textfind.js";
 import { slugify } from "./common.js";
 
@@ -29,7 +29,7 @@ export function cityFromText(text) {
   const cs = /\b([A-Z][a-z]+(?: [A-Z][a-z]+)?),\s*([A-Z]{2})\b/.exec(t);
   if (cs && Object.values(CITY_STATE).includes(cs[2])) return { city: cs[1], state: cs[2] };
   for (const [k, [c, s]] of Object.entries(ALIASES)) if (new RegExp(`(?<![A-Za-z])${k.replace(/\./g, "\\.")}(?![A-Za-z])`).test(t)) return { city: c, state: s };
-  for (const [c, s] of Object.entries(CITY_STATE)) if (c !== "Washington DC" && new RegExp(`\\b${c.replace(/\./g, "\\.")}\\b`).test(t)) return { city: c, state: s };
+  for (const [c, s] of Object.entries(TEXT_CITY_STATE)) if (c !== "Washington DC" && new RegExp(`\\b${c.replace(/\./g, "\\.")}\\b`).test(t)) return { city: c, state: s };
   void STATE_NAMES;
   return null;
 }

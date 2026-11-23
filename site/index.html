@@ -55,8 +55,9 @@
  <div class="frow2">
   <button type="button" id="show-btn" class="chip show" aria-expanded="false" aria-controls="show-pop">Show<span id="show-n" class="show-n" hidden></span></button>
   <button type="button" id="near" class="chip near">Near me</button>
-  <div class="zipbox" role="group" aria-label="Jump to a zip code">
-    <input id="zip" class="zip" type="text" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" aria-label="Zip code" placeholder="Zip">
+  <div class="zipbox" role="group" aria-label="Jump to a zip code or city">
+    <input id="zip" class="zip" type="text" list="citylist" autocomplete="off" autocapitalize="words" aria-label="Zip code or city" placeholder="Zip or city">
+    <datalist id="citylist"></datalist>
     <button type="button" id="zip-go" class="chip go">Go</button>
   </div>
  </div>

@@ -1,6 +1,7 @@
 // Geocoding: overrides > cache > Mapbox (if token) > Nominatim. 1 req/sec to Nominatim.
 import fs from "node:fs";
 import { UA } from "./fetch.js";
+import { findCity } from "./cities.js";
 import { debug, warn } from "./log.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
@@ -81,8 +82,10 @@ export function createGeocoder({ noFetch = false, cachePath = "data/geocache.jso
       if (viaVenue) ev.confidence = capConf(ev.confidence, "likely");
       return ev;
     }
-    // Last resort: the city centre, so it still shows on the map, roughly.
-    const c = tail ? await lookup(tail) : null;
+    // Last resort: the city centre, so it still shows on the map, roughly. A city of data/cities.json with its state comes from the
+    // file (Census coordinates), so a listing that names only a city costs no Nominatim request.
+    const listed = ev.city && ev.state ? findCity(ev.city, ev.state) : null;
+    const c = listed ? { lat: listed.lat, lng: listed.lng } : tail ? await lookup(tail) : null;
     if (c) {
       ev.lat = c.lat; ev.lng = c.lng; ev.geocode_source = "none";
       ev.confidence = "unsure";

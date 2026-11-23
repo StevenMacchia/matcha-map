@@ -16,12 +16,19 @@
 // duplicates of an event another site already has are dropped by title and day (see sites/index.js).
 import { decode } from "../html.js";
 import { zonedIso, tzFor } from "../tz.js";
-import { ldEvents, ldToRaw, titleKey, siteBudget, gate, finish, skipped, CAP, CITY_STATE, citySlug } from "./common.js";
+import { ldEvents, ldToRaw, titleKey, siteBudget, gate, finish, skipped, CAP, CITY_STATE, planFor, hasMatcha } from "./common.js";
+import { cityOf } from "../cities.js";
 
 export const name = "allevents";
 export const host = "allevents.in";
 
-export const cityUrl = (city) => `https://${host}/${citySlug(city === "Washington DC" ? "washington" : city)}/matcha`;
+// A city entry (or a listed city's name) -> its page. The biggest city of a name, from 150,000 people, lives at /<slug>/matcha (as
+// /new-york/matcha); every other city needs its state: /columbus-ga/matcha (read 2026-11-22; /columbus-oh/matcha redirects to /columbus/matcha).
+export const cityUrl = (city) => {
+  const c = cityOf(city);
+  const bare = c.state === "DC" || (c.pop >= 150000 && CITY_STATE[c.name] === c.state);
+  return `https://${host}/${c.state === "DC" ? "washington" : bare ? c.slug : `${c.slug}-${c.state.toLowerCase()}`}/matcha`;
+};
 
 const MON = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
 
@@ -70,21 +77,26 @@ export function parseCityPage(html, cityHint) {
 }
 
 export async function discover(ctx) {
-  const { fetcher, sources = [], cities = Object.keys(CITY_STATE), cap = CAP } = ctx;
+  const { fetcher, sources = [], cap = CAP } = ctx;
   const b = siteBudget(fetcher, name, cap);
   const g = await gate(b, host);
   if (!g.ok) return skipped(g.reason);
+  const plan = planFor(name, ctx);
   const seen = new Set(), raws = [];
   let pages = 0;
-  for (const city of cities) {
-    if (!CITY_STATE[city] || b.st.stopped || b.left() <= 0) continue;
+  for (const city of plan.batch) {
+    if (b.st.stopped || b.left() <= 0) break;
     const r = await b.get(cityUrl(city));
-    if (!r.ok) continue;
+    if (r.skipped) break;
+    if (!r.ok) { plan.done(city, r.status === 404 ? "404" : "error"); continue; }
     pages++;
-    for (const raw of parseCityPage(r.text, { city, state: CITY_STATE[city] })) if (!seen.has(raw.source_url)) { seen.add(raw.source_url); raws.push(raw); }
+    const found = parseCityPage(r.text, { city: city.name, state: city.state });
+    plan.done(city, found.some((x) => hasMatcha(x.text, x.description, x.hints?.title)) ? "ok" : "empty");
+    for (const raw of found) if (!seen.has(raw.source_url)) { seen.add(raw.source_url); raws.push(raw); }
   }
+  const cur = plan.finish();
   const out = finish(name, raws, sources);
-  return { ...out, stats: { cityPages: pages, fetches: b.st.used, pages: b.st.pages, hitCap: b.st.hitCap, stopped: b.st.stopped } };
+  return { ...out, stats: { cities: plan.batch.length, cursor: cur.cursor, skippedCities: cur.skipped, cityPages: pages, fetches: b.st.used, pages: b.st.pages, hitCap: b.st.hitCap, stopped: b.st.stopped } };
 }
 
 export default { name, host, discover };
