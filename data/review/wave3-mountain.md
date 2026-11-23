@@ -11,3 +11,8 @@ Result: 0 new dated pop-ups, 0 new brands. No item had a public page showing a d
 | Albuquerque | 0 | 0 | 0/0/0 | Visit ABQ, Downtown Growers listings | Growers market season ended Nov 7; winter market starts Jan. No matcha vendor named. |
 | Tucson | 1 | 0 | 0/0/0 | Searches only | Milk and Maple posts on Instagram. |
 | Boise | 0 | 0 | 0/0/0 | Visit Boise holiday market lists (Merry Makers, Boise Christmas Vendor Market Dec 19-20, Local Makers Market Nov 27-29) | No matcha vendor named on any list; would need vendor-list confirmation. |
+
+## Tavily pass (8 searches, instagram.com and tiktok.com filter)
+
+Queries: Nakama, MatchaSanya, LATTE lab., Era Matcha, Middle Child, Neighbor, Milk and Maple, "matcha pop up Denver December". Result: 0 snippets quote a date inside 2026-11-23 to 2027-01-15, so 0 items added.
+Snippets seen were all past: Era Matcha at The Stockist Shop, 875 E 900 S, SLC, Nov 21; JUNBI event Nov 15; Nakama at Clubhouse Studio Nov 6-8; MAKi MATCHA at University of Denver Nov 6; a Phoenix-area market Nov 21. Nothing came back for MatchaSanya, Middle Child or Milk and Maple beyond generic TikTok pages. Era Matcha does pop up in SLC regularly (next date likely on Instagram only).
