@@ -204,3 +204,9 @@ A one-page map cannot be found by search, so `npm run pages` (`tools/gen-pages.j
 Domain switch: edit `SITE_URL` in `tools/site-url.js` to `https://matchamap.us`, run `npm run pages`, deploy. Canonicals, Open Graph, the sitemap, robots and JSON-LD all follow.
 
 Search Console, once the domain exists: add it as a property (domain verification by DNS), open Sitemaps, submit `sitemap.xml`. Bing Webmaster Tools can import the same property.
+
+## Install it
+
+Matcha Map is one site that also installs: open it in Chrome, Edge or Android and use "Add to home screen" (About, or the quiet bar on a second visit); on iPhone, Safari's Share sheet then Add to Home Screen. Nothing separate to download. Offline it opens the saved shell and the last data, with a note saying when that was.
+
+Service worker (`site/sw.js`): the shell files are cached, `data/*.json` and `img/events/*` are stale-while-revalidate, pages are network-first, map tiles and Instagram images are never stored. The shell files are not fingerprinted, so **bump `VERSION` in `site/sw.js` whenever one of them changes** (and add new shell files to its `SHELL` list); activate drops older caches and visitors see "New version, tap to refresh". Icons come from `npm run icons`.

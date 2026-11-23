@@ -128,7 +128,7 @@ export function eventLd(e, ctx) {
 export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
 // ---- html ----
-const CSP = "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'";
+const CSP = "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'";
 
 export function shell({ title, desc, canonical, ld = [], body }) {
   return `<!doctype html>
@@ -142,6 +142,9 @@ export function shell({ title, desc, canonical, ld = [], body }) {
 <link rel="canonical" href="${esc(canonical)}">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FBF6EA">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Matcha Map">
 <meta property="og:title" content="${esc(title)}">

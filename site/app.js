@@ -143,7 +143,13 @@
   map.getCanvas().setAttribute("aria-label", "Map of matcha pop-ups. Use arrow keys to pan, plus and minus to zoom.");
 
   // Brand mochi get eyes and blush from zoom 9 up (class z9 on the map container).
-  function syncZoomFace() { map.getContainer().classList.toggle("z9", map.getZoom() >= 9); }
+  // The approximate rings also shrink when zoomed out: zl under 6, zm from 6 to 9 (style.css). One class toggle, at most once a frame.
+  function syncZoomFace() {
+    var z = map.getZoom(), c = map.getContainer().classList;
+    c.toggle("z9", z >= 9); c.toggle("zl", z < 6); c.toggle("zm", z >= 6 && z < 9);
+  }
+  var zoomRaf = 0;
+  map.on("zoom", function () { if (!zoomRaf) zoomRaf = requestAnimationFrame(function () { zoomRaf = 0; syncZoomFace(); }); });
   map.on("zoomend", syncZoomFace);
 
   function featureColl(list) {

@@ -20,6 +20,7 @@
     "flyers": "node tools/flyers.js",
     "pages": "node tools/gen-pages.js",
     "og": "node tools/gen-og.js",
+    "icons": "node tools/gen-icons.js",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev"
   },
