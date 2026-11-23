@@ -973,6 +973,7 @@
   function showCard(key, focusIt) {
     var it = items[key];
     if (!it) return;
+    if (!fullDone && fullP && it.kind === "e") { fullP.then(function () { showCard(key, focusIt); }); return; }
     // The desktop card is a MapLibre popup, which needs the real map: a deep link (?event=) that lands while the stand-in
     // is still up threw inside Popup.addTo (live, 2026-11-23). It waits for the real map; the stand-in hands the listener over.
     if (wide.matches && map.isPre) { map.once("load", function () { showCard(key, focusIt); }); return; }
@@ -2007,7 +2008,10 @@
     twirl();
   });
 
-  var dataReady = Promise.all([getJSON("data/events.json"), getJSON("data/sources.json").catch(function () { return []; })]);
+  // The list and the pins start from events-slim.json (a fifth of the bytes); the full events.json follows in the
+  // background and replaces each slim record by id. A card waits for it (showCard), so it never opens without its text.
+  var fullDone = false, fullP = null;
+  var dataReady = Promise.all([getJSON("data/events-slim.json").catch(function () { return getJSON("data/events.json"); }), getJSON("data/sources.json").catch(function () { return []; })]);
   Promise.all([dataReady, charsReady]).then(function (r) {
     var res = r[0], data = res[0];
     if (data.generated) {
@@ -2020,6 +2024,9 @@
       items[it.key] = it;
       return it;
     });
+    // Slim data: fetch the full records now (they carry description, posts, evidence, photo URLs).
+    if (data.slim) fullP = getJSON("data/events.json").then(landFull).catch(function () { /* the slim records stay */ }).then(function () { fullDone = true; });
+    else fullDone = true;
     buildBrands(res[1] || []);
     setupHawaii();
     // a breath between reading the data and building the list keeps each under a long task on a phone (N7c)
@@ -2027,6 +2034,17 @@
   }).catch(function () {
     oops(navigator.onLine === false ? "You are offline and nothing was saved yet." : "Could not load pop-ups.", ["Try again", function () { location.reload(); }], navigator.onLine === false ? "m-sleepy" : "");
   }).then(function () { $("loading").hidden = true; });
+  // Swap each slim record for its full one, in place by id: same item object, same key, same pin and row.
+  function landFull(full) {
+    var byId = {};
+    (full.events || []).forEach(function (e) { byId[e.id] = e; });
+    state.events.forEach(function (it) {
+      var e = byId[it.data.id];
+      if (!e) return;
+      e.status = liveStatus(e);
+      it.data = e;
+    });
+  }
   function firstList(res) {
     var go = function () { syncZoomFace(); refreshEvents(false); };
     var zs = ""; try { zs = localStorage.getItem(ZIP_KEY) || ""; } catch (e) { /* ignore */ }
