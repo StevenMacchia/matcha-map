@@ -1,6 +1,9 @@
-// Matcha Map service worker. Bump VERSION whenever a shell file below changes (the files are not fingerprinted);
-// activate then drops every older cache. Never caches map tiles or Instagram images.
-var VERSION = "mm-4";
+// Matcha Map service worker. VERSION is stamped by tools/sw-version.js (a hash of the shell files) before every deploy, so a
+// changed shell always installs a new worker; activate then drops every older cache. Online, shell files are fetched from the
+// network first and the cache only fills in offline, so a visitor never gets yesterday's style.css under today's index.html
+// (that happened on 2026-11-22 when rung 35 changed the shell under a worker that precached rung 34's). Never caches map
+// tiles or Instagram images.
+var VERSION = "mm-bbfd01be99";
 var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE = "mm-lib-maplibre-4.7.1";
 var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/pwa.js",
   "/cities.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",
@@ -12,6 +15,7 @@ var LIB = ["https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js", "https://u
 var offline = false;
 
 self.addEventListener("install", function (e) {
+  self.skipWaiting(); // a new shell takes over at once; pwa.js reloads the open page once when a previous worker is replaced
   e.waitUntil(Promise.all([
     caches.open(SHELL_CACHE).then(function (c) {
       return Promise.all(SHELL.map(function (u) { return c.add(new Request(u, { cache: "reload" })); }).concat(
@@ -84,5 +88,17 @@ self.addEventListener("fetch", function (e) {
     e.respondWith(staleWhileRevalidate(req, DATA_CACHE));
     return;
   }
-  e.respondWith(caches.match(req, { ignoreSearch: true }).then(function (hit) { return hit || fetch(req); }));
+  e.respondWith(networkFirstAsset(req));
 });
+
+// Shell files (css, js, svg, map styles, icons): the network copy when there is one, kept for offline; the cache only when there is not.
+function networkFirstAsset(req) {
+  return fetch(req).then(function (r) {
+    tell("online");
+    if (r && r.ok) caches.open(SHELL_CACHE).then(function (c) { c.put(req, r.clone()); });
+    return r;
+  }).catch(function () {
+    tell("offline");
+    return caches.match(req, { ignoreSearch: true }).then(function (hit) { return hit || Response.error(); });
+  });
+}
