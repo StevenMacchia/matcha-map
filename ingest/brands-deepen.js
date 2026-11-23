@@ -37,8 +37,11 @@ async function main() {
   const last = new Map(), posts = new Map();
   for (const e of events) {
     const h0 = String(e.handle || "").toLowerCase();
+    const k0 = e.source_id ? "src:" + e.source_id : null;
+    if (k0 && e.posts && e.posts.instagram && (e.image_url || (e.image && e.image.url))) posts.set(k0, [...(posts.get(k0) || []), { permalink: e.posts.instagram, image_url: e.image_url || e.image.url, timestamp: e.start, caption: String(e.title || "").replace(/\s+/g, " ").trim().slice(0, 80) }]);
+    if (k0 && e.start) { const d0 = String(e.start).slice(0, 10); if (!last.get(k0) || d0 > last.get(k0)) last.set(k0, d0); }
     const link = e.posts && e.posts.instagram, img = e.image_url || (e.image && e.image.url);
-    if (h0 && link && img) posts.set(h0, [...(posts.get(h0) || []), { permalink: link, image_url: img, timestamp: e.start, caption: String(e.title || "").replace(/s+/g, " ").trim().slice(0, 80) }]);
+    if (h0 && link && img) posts.set(h0, [...(posts.get(h0) || []), { permalink: link, image_url: img, timestamp: e.start, caption: String(e.title || "").replace(/\s+/g, " ").trim().slice(0, 80) }]);
     const h = String(e.handle || "").toLowerCase(); if (!h) continue;
     const d = String(e.start || "").slice(0, 10);
     if (d && (!last.get(h) || d > last.get(h))) last.set(h, d);
@@ -51,12 +54,13 @@ async function main() {
   let read = 0, unreadable = 0;
   for (const b of data.brands) {
     const h = b.handle.toLowerCase();
-    const src = byHandle.get(h);
+    const src = b.source_id ? sources.find((s) => s.id === b.source_id) : byHandle.get(h);
+    const key = b.source_id ? "src:" + b.source_id : h;
     const e = { ...(extra[b.handle] || {}) };
     const website = b.website || src?.website || null;
     if (!b.website && src?.website) e.website = src.website;
-    if (last.get(h)) e.last_dated_post_seen = last.get(h);
-    if (!(b.recent || []).length && posts.get(h)) { const seen = new Set(); e.recent = posts.get(h).sort((x, y) => String(y.timestamp).localeCompare(String(x.timestamp))).filter((p) => !seen.has(p.permalink) && seen.add(p.permalink)).slice(0, 3); }
+    if (last.get(key)) e.last_dated_post_seen = last.get(key);
+    if (!(b.recent || []).length && posts.get(key)) { const seen = new Set(); e.recent = posts.get(key).sort((x, y) => String(y.timestamp).localeCompare(String(x.timestamp))).filter((p) => !seen.has(p.permalink) && seen.add(p.permalink)).slice(0, 3); }
     if (website && (!b.bio || !b.picture)) {
       let page = siteCache.get(website);
       if (page === undefined) {
@@ -76,7 +80,9 @@ async function main() {
   console.log("after ", JSON.stringify(after), `of ${data.brands.length}`);
   if (dry) return;
   fs.writeFileSync("data/brands-extra.json", JSON.stringify({ about: "Gaps of the brand cards filled from each brand's own public website and from the events we hold (npm run brands:deepen). Only empty fields are filled.", brands: extra }, null, 1) + "\n");
-  data.brands = attachBrandExtras(data.brands, extra);
-  fs.writeFileSync(file, JSON.stringify(data) + "\n");
+  // Rebuild the file the way `npm run brands` does (so the size cap applies), now that the extras are on disk.
+  const wlib = await import("./lib/watchlist.js");
+  const { buildBrands, writeBrands } = await import("./lib/enrich/brands.js");
+  writeBrands(buildBrands(wlib.load(), sources), file);
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main();
