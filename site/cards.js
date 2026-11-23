@@ -598,7 +598,9 @@ function brandFacts(brand, ctx) {
   const h = String(brand.handle || brand.instagram || "").replace(/^@/, "").toLowerCase();
   const b = (h && byKey(ctx.brands, h, "handle")) || (brand.picture || brand.bio || brand.recent ? brand : null) || {};
   const name = cut(brand.brand || b.name || brand.name || h || "Matcha brand", 60);
-  return { h, b, name, pic: safeUrl(b.picture), kind: KIND[brand.kind || b.kind] || "", bio: bioLine(b.bio || brand.bio),
+  // the brand's own copy on this site (picture_local) first, then the Instagram picture
+  const local = typeof b.picture_local === "string" && /^\/?[A-Za-z0-9_][A-Za-z0-9_./-]*$/.test(b.picture_local) && !/\.\.|\/\//.test(b.picture_local) ? b.picture_local : "";
+  return { h, b, name, pic: local || safeUrl(b.picture), kind: KIND[brand.kind || b.kind] || "", bio: bioLine(b.bio || brand.bio),
     fol: followersWord(b.followers), web: safeUrl(brand.website || b.website),
     city: brand.home_city || b.home_city || "", state: brand.home_state || b.home_state || "" };
 }

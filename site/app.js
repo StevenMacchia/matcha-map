@@ -585,8 +585,7 @@
       if (!window.MatchaPins) inner.appendChild(drawChar("s-shop"));
       fillChars(inner);
     } else {
-      inner.innerHTML = "<span class=\"mochi\"></span>";
-      brandPic(inner.firstChild, it);
+      inner.innerHTML = brandPinHTML(it);
     }
     el.appendChild(inner);
     el.setAttribute("data-key", it.key);
@@ -656,7 +655,17 @@
   }
   // The brand's picture (brands.json) inside its mochi, round and cropped to fill; the mochi face stays when there is none
   // or the image fails. brands.json lands after the first pins, so brandsLanded() fills the ones already on the map.
-  function brandPicUrl(it) { var b = it && it.data && brandsBy[String(it.data.instagram || "").replace(/^@/, "").toLowerCase()]; return b ? safeUrl(b.picture) : ""; }
+  // the brand's own copy on this site (picture_local, site/brand/<handle>/avatar.jpg) first, then the Instagram picture
+  function brandPicUrl(it) {
+    var b = it && it.data && brandsBy[String(it.data.instagram || "").replace(/^@/, "").toLowerCase()], P = window.MatchaPins;
+    return b ? (P && P.src(b.picture_local)) || safeUrl(b.picture) : "";
+  }
+  // a brand pin: the picture in the sage mochi frame, else the drawn card art with the brand's initial
+  function brandPinHTML(it) {
+    var P = window.MatchaPins;
+    if (!P) return "<span class=\"mochi\"></span>";
+    return P.brandPin({ photo: brandPicUrl(it), drawn: artFor(it) });
+  }
   function brandPic(mochi, it) {
     var u = brandPicUrl(it);
     if (!u || !mochi || mochi.querySelector("img")) return;
@@ -697,9 +706,10 @@
     var inner = document.createElement("span");
     inner.className = "mk-in";
     if (src === "ap") { inner.appendChild(ringEl()); inner.appendChild(drawChar("m-base")); }
-    else if (src === "br" || src === "bc") { // a brand stack or a city's brands: the mochi, with the first brand's picture
-      var mo = document.createElement("span"), first = items[p.dg ? (densG[p.key] || {}).lead : p.lead];
-      mo.className = "mochi"; inner.appendChild(mo); if (first) brandPic(mo, first);
+    else if (src === "br" || src === "bc") { // a city's brands: the pin of its most followed brand with a picture, and the count
+      var first = items[p.dg ? (densG[p.key] || {}).lead : p.lead];
+      inner.innerHTML = first ? brandPinHTML(first) : "";
+      if (first) el.setAttribute("data-key", first.key);
     }
     else inner.appendChild(drawChar(src === "sh" ? "s-shop" : "c-dango"));
     var num = document.createElement("span");
@@ -1427,7 +1437,7 @@
   // its size class (cl-m over 9, cl-l over 24), widened on both sides by the count badge that pokes out to the right.
   // single pins: the mock's rule, one pin joins another closer than about 28 px (40 around a pop-up); a pin may tuck its
   // edge under a neighbour, but never its middle. Groups are measured by their whole box.
-  var PIN_HALF = { e: [25, 25], s: [14, 14], b: [12, 12] };
+  var PIN_HALF = { e: [25, 25], s: [14, 14], b: [14, 14] };
   // groups: to zoom 12 a neighbourhood pill (up to three faces and the count, a pink count above), from 12 a stack
   function densShift(p) { return KIND_SHIFT[p.kind]; }
   function densHalf(p, n) {
