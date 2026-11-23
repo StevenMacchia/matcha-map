@@ -101,7 +101,149 @@ function findFlavors(t) {
   return out.sort((x, y) => x.at - y.at);
 }
 
+// ---- the drink catalogue: named combinations and their aliases ----------------------------------------
+// BUILTIN_DRINKS is the top-50 list drawn from the words alone. data/drinks.json (when present; run.js and
+// the gallery pass it to useCatalog) adds or replaces entries by name and alias, and its `components`
+// (base, layers with colour hex, top, toppings, serve style, hot) override what the words would give,
+// including the colours. Entry shape: { name, family, aliases: [], components: {...} }.
+const B = (family, names) => names.map((x) => { const [name, ...aliases] = x.split("|"); return { name, family, aliases }; });
+export const BUILTIN_DRINKS = [
+  ...B("Classics", ["matcha latte|matcha|house matcha", "iced matcha latte|iced matcha lattes", "hot matcha latte|hot matcha", "usucha|ceremonial matcha|ceremonial|matcha bowl", "koicha", "iced matcha|matcha americano"]),
+  ...B("Fruit", ["strawberry matcha latte|strawberry matcha|strawberry", "mango matcha latte|mango matcha|mango", "blueberry matcha latte|blueberry matcha|blueberry", "banana matcha latte|banana matcha|banana", "peach matcha latte|peach matcha|peach", "raspberry matcha latte|raspberry matcha|raspberry", "passion fruit matcha|passionfruit matcha", "lychee matcha latte|lychee matcha|lychee", "coconut matcha latte|coconut matcha"]),
+  ...B("Roots and nuts", ["ube matcha latte|ube matcha|ube", "taro matcha latte|taro matcha", "black sesame matcha latte|black sesame matcha|black sesame", "pistachio matcha latte|pistachio matcha|pistachio", "kinako matcha latte|kinako matcha", "red bean matcha latte|azuki matcha latte|red bean matcha"]),
+  ...B("Tea blends", ["hojicha swirl matcha latte|hojicha matcha swirl|hojicha matcha", "hojicha latte|hojicha|iced hojicha latte", "genmaicha matcha latte|genmaicha matcha"]),
+  ...B("Coffee", ["dirty matcha|espresso matcha|dirty matcha latte", "matcha einspanner|einspanner", "matcha affogato|affogato"]),
+  ...B("Sparkling", ["matcha tonic|matcha espresso tonic", "yuzu matcha tonic|yuzu matcha|yuzu tonic matcha", "matcha lemonade|lemonade matcha|lemon", "sparkling matcha|matcha soda", "matcha coconut water|coconut water matcha"]),
+  ...B("Foam tops", ["strawberry cloud matcha|strawberry cloud matcha latte", "matcha cloud latte|cloud matcha|vanilla cloud matcha", "cheese foam matcha|matcha cheese foam|cheese cloud matcha", "sea salt cream matcha|salted cream matcha", "ube cloud matcha|ube cloud matcha latte"]),
+  ...B("Boba", ["brown sugar boba matcha|brown sugar matcha boba|brown sugar boba", "matcha milk tea with boba|matcha boba|iced matcha with boba|matcha milk tea", "taro boba matcha|taro matcha boba"]),
+  ...B("Floral and sweet", ["lavender matcha latte|lavender matcha|lavender", "rose matcha latte|rose matcha", "sakura matcha latte|sakura matcha|sakura", "honey matcha latte|honey matcha|honey", "vanilla matcha latte|vanilla matcha|vanilla", "cookies and cream matcha|oreo matcha"]),
+  ...B("Desserts", ["matcha soft serve|soft serve", "matcha tiramisu|tiramisu", "matcha cheesecake", "matcha shaved ice|matcha kakigori"]),
+];
+// What the words of some catalogue names need to draw right (the parser cannot guess these).
+const BUILTIN_WORDS = { "matcha coconut water": { components: { base: "coconut water", layers: [{ name: "coconut water", hex: "#F4FAF2" }, { name: "matcha", hex: "#7DB54E" }] } },
+  "matcha tonic": { components: { layers: [{ name: "tonic", hex: "#EAF6EF" }, { name: "matcha", hex: "#7DB54E" }] } },
+  "sparkling matcha": { components: { layers: [{ name: "tonic", hex: "#EEF8E6" }, { name: "matcha", hex: "#9CCB6A" }] } },
+  "sea salt cream matcha": { components: { top: { type: "foam", hex: "#FFF8EE" } } },
+  "hojicha swirl matcha latte": { components: { blend: "marble", layers: [{ name: "milk", hex: "#FFF7EA" }, { name: "hojicha", hex: "#C98B5A" }, { name: "matcha", hex: "#7DB54E" }] } } };
+for (const e of BUILTIN_DRINKS) if (BUILTIN_WORDS[e.name]) Object.assign(e, BUILTIN_WORDS[e.name]);
+
+let CATALOG = new Map(), ENTRIES = [], specCache = new Map();
+const hexOk = (h) => { if (typeof h !== "string") return null; const m = h.trim().match(/^#?([0-9a-f]{6}|[0-9a-f]{3})$/i); if (!m) return null; const x = m[1].length === 3 ? m[1].replace(/./g, "$&$&") : m[1]; return "#" + x.toUpperCase(); };
+const word = (x) => typeof x === "string" ? x : x && (x.name || x.type || x.kind || x.flavor || x.id) || "";
+const listOf = (x) => Array.isArray(x) ? x : x ? [x] : [];
+// useCatalog(entries): these entries (an array, or {drinks: [...]}) replace the built-in list; none -> built-in.
+export function useCatalog(extra) {
+  const given = listOf(extra && !Array.isArray(extra) ? extra.drinks : extra);
+  const list = (given.length ? given : BUILTIN_DRINKS).filter((e) => e && (e.name || e.id));
+  const byName = new Map();
+  for (const e of list) {
+    const name = String(e.name || e.id).trim(), key = cleanText(name);
+    const prev = byName.get(key);
+    byName.set(key, { ...(prev || {}), ...e, name, family: e.family || e.category || e.group || (prev && prev.family) || "More",
+      aliases: [...new Set([...(prev ? prev.aliases : []), ...listOf(e.aliases || e.alias).map(String)])] });
+  }
+  ENTRIES = [...byName.values()]; CATALOG = new Map(); specCache = new Map();
+  for (const e of ENTRIES) for (const a of [e.name, ...e.aliases]) { const k = cleanText(a); if (k && (!CATALOG.has(k) || cleanText(e.name) === k)) CATALOG.set(k, e); }
+  return ENTRIES.length;
+}
+export const catalogEntries = () => ENTRIES.slice();
+export const catalogFamilies = () => [...new Set(ENTRIES.map((e) => e.family))];
+
+// One catalogue entry -> spec: the parser reads the name plus the component words, then the components'
+// own layers, colours, top, toppings and serve style replace its guesses.
+function specFromEntry(e) {
+  const c = e.components || {}, serve = String(c.serve || c.serve_style || c.serveStyle || c.style || c.vessel || "").toLowerCase();
+  const topW = word(c.top), tops = listOf(c.toppings).map(word);
+  const hot = c.hot === true || /\bhot\b/.test(serve);
+  const words = [e.name, c.base && word(c.base), hot ? "hot" : "", serve, topW, ...tops.map((x) => "with " + x)].filter(Boolean).join(" ");
+  const byName = parseText(e.name); // a sweet stays a sweet ("matcha soft serve ... with matcha dust")
+  const s = (byName && byName.kind === "sweet" ? byName : parseText(words)) || byName || parseText("matcha latte");
+  s.name = cleanText(e.name); s.label = titleCase(String(e.name).replace(/\s*\(.*?\)\s*/g, " ").trim()).slice(0, 34); s.family = e.family;
+  const seed = hash(s.name); s.seed = seed; s.side = seed % 2 ? "l" : "r";
+  // serve style
+  const V = [[/\bcan/, "can"], [/bottle/, "bottle"], [/bowl|chawan|whisk/, "bowl"], [/soft ?serve|cone/, "cone"], [/to ?go|paper|hot.*cup/, "cup"], [/mug|ceramic/, "mug"],
+    [/rocks|short/, "short"], [/coupe|affogato/, "coupe"], [/shaved|kakigori/, "kakigori"], [/plate|slice|dessert/, "plate"], [/tall|glass|iced|cold|cup/, "tall"]];
+  const v = serve && V.find(([re]) => re.test(serve));
+  if (v && s.kind === "drink" && s.vessel !== "bowl" && !["cone", "plate", "kakigori", "coupe"].includes(v[1])) {
+    s.vessel = v[1]; s.temp = ["mug", "cup", "bowl"].includes(v[1]) ? "hot" : hot ? "hot" : "iced";
+    if (s.temp === "hot") { s.ice = 0; s.straw = null; }
+  }
+  // layers, bottom to top (a `position` of "top" first, or layers_order "top_to_bottom", flips them)
+  let L = listOf(c.layers).map((l) => typeof l === "string" ? { name: l } : l || {});
+  if (L.length && (/top.*bottom/i.test(c.layers_order || c.order || "") || /top/i.test(L[0].position || "") || /bottom/i.test(L[L.length - 1].position || ""))) L = L.reverse();
+  if (L.length) {
+    const out = L.map((l) => {
+      const nm = cleanText(word(l)) || "layer", fk = KEYS.find((k) => nm === k || nm.startsWith(k + " ") || nm.endsWith(" " + k));
+      const col = hexOk(l.hex || l.color || l.colour || l.c) || (/matcha/.test(nm) ? MATCHA : /milk|cream|oat/.test(nm) ? MILK : fk ? FLAVORS[fk][0] : LATTE);
+      const f = Number(l.f ?? l.share ?? l.fraction ?? l.ratio ?? l.portion ?? l.amount);
+      return { c: col, f: f > 0 ? f : 0, n: fk && !/milk|matcha/.test(nm) ? fk : nm };
+    });
+    const free = out.filter((l) => !l.f), used = out.reduce((a, l) => a + l.f, 0);
+    const rest = 1 - used;
+    free.forEach((l) => { l.f = rest > 0.05 ? rest / free.length : 1 / out.length; });
+    const sum = out.reduce((a, l) => a + l.f, 0);
+    if (s.kind === "sweet") s.colors = out.map((l) => l.c).filter((x) => x !== MILK).slice(0, 3).concat(s.colors).slice(0, 3);
+    else {
+      const foam = s.layers.length && /^(foam|cloud|cream)$/.test(s.layers[s.layers.length - 1].n) ? s.layers[s.layers.length - 1] : null;
+      s.layers = out.map((l) => ({ ...l, f: Math.round((l.f / sum) * (foam ? 0.78 : 1) * 100) / 100 }));
+      if (foam) s.layers.push(foam);
+      s.blend = c.blend || (out.length < 2 ? "solid" : /swirl|marble|blend/.test(words) ? "marble" : "layered");
+      if (s.temp === "hot" && s.vessel !== "bowl") { // a hot latte is one stirred colour
+        const tea = s.layers[s.layers.length - (foam ? 2 : 1)], milk = out.find((l) => /milk|cream/.test(l.n));
+        s.layers = [{ c: milk ? mix(tea.c, milk.c, 0.42) : tea.c, f: 1, n: tea.n + (milk ? " latte" : "") }]; s.blend = "solid";
+      }
+    }
+  }
+  // top: colour from the file wins
+  const topHex = c.top && typeof c.top === "object" ? hexOk(c.top.hex || c.top.color || c.top.colour) : null;
+  if (topW && s.kind === "drink") {
+    const type = /none/.test(topW) ? null : /whip/.test(topW) ? null : /cloud/.test(topW) ? "cloud" : /foam|cheese|sea salt|salted|espuma|sweet cream|coconut cream/.test(topW) ? "foam" : /einspanner|cream/.test(topW) ? "cream" : /art|heart|rosetta/.test(topW) ? "art" : null;
+    if (/whip/.test(topW) && !s.toppings.includes("whip")) s.toppings.push("whip");
+    if (type) {
+      const tc = topHex || (s.top && s.top.c) || (type === "cream" ? "#FFF4DC" : "#FFFBF2");
+      if (!s.top || s.top.type !== type) {
+        if (type !== "art" && s.vessel !== "bowl" && !s.layers.some((l) => /^(foam|cloud|cream)$/.test(l.n))) { s.layers.forEach((l) => { l.f = Math.round(l.f * 78) / 100; }); s.layers.push({ c: tc, f: 0.22, n: type }); }
+      }
+      s.top = { type, c: tc };
+      const fl = s.layers[s.layers.length - 1]; if (/^(foam|cloud|cream)$/.test(fl.n)) { fl.c = tc; fl.n = type; }
+      if (type === "cream") s.straw = null;
+    }
+  } else if (topHex && s.top) { s.top.c = topHex; const fl = s.layers[s.layers.length - 1]; if (fl && /^(foam|cloud|cream)$/.test(fl.n)) fl.c = topHex; }
+  for (const t of tops.map((x) => x.toLowerCase())) {
+    const tok = /boba|pearl|tapioca/.test(t) ? "boba" : /jell/.test(t) ? "jelly" : /mochi/.test(t) ? "mochi" : /oreo|cookies and cream/.test(t) ? "oreo" : /cookie|crumble|crumb|biscoff|graham/.test(t) ? "crumble"
+      : /strawberr|berr/.test(t) ? "berries" : /dust|powder|sift/.test(t) ? "dust" : /taro/.test(t) ? "taro" : /sesame/.test(t) ? "sesame" : /red bean|azuki|anko/.test(t) ? "beans" : /whip/.test(t) ? "whip" : null;
+    if (tok && !s.toppings.includes(tok)) s.toppings.push(tok);
+    if (/brown sugar/.test(t)) s.streaks = "#B5733C";
+  }
+  for (const t of tops.map((x) => x.toLowerCase())) {
+    const tok = /coconut flake/.test(t) ? "flakes" : /pistachio/.test(t) ? "pistachio" : /honeycomb/.test(t) ? "honeycomb" : /cinnamon/.test(t) ? "cinnamon" : null;
+    if (tok && !s.toppings.includes(tok)) s.toppings.push(tok);
+  }
+  const gw = listOf(c.garnish).map(word).join(" ").toLowerCase(), G = [];
+  const citrusHex = (L.map((l) => hexOk(l.hex || l.color)).find((h, i) => /yuzu|lemon|lime|orange|citrus/.test(word(L[i]))) || (/yuzu/.test(gw) ? FLAVORS.yuzu[0] : FLAVORS.lemon[0]));
+  if (/strawberr/.test(gw)) G.push({ type: "strawberry", c: "#EF5A78" });
+  if (/lemon|yuzu|lime|orange|citrus/.test(gw)) G.push({ type: "citrus", c: citrusHex });
+  if (/mint/.test(gw)) G.push({ type: "mint", c: "#6CBF5A" });
+  if (/cinnamon/.test(gw) || s.toppings.includes("cinnamon")) G.push({ type: "cinnamon", c: "#B9774A" });
+  if (/sakura|blossom|rose/.test(gw)) G.push({ type: "sakura", c: "#F6B7C7" });
+  if (/matcha (dust|salt)/.test(gw) && !s.toppings.includes("dust")) s.toppings.push("dust");
+  if (/latte art/.test(gw) && s.temp === "hot" && !s.top) s.top = { type: "art", c: MILK };
+  if (G.length && s.kind === "drink") { const seen = new Set(); s.garnish = [...G, ...s.garnish].filter((g) => !seen.has(g.type) && seen.add(g.type)).slice(0, 2); }
+  s.toppings = s.toppings.filter((t) => t !== "cinnamon");
+  if (s.toppings.includes("boba") && s.straw) s.straw.w = 14;
+  return s;
+}
+
 export function specFromText(text) {
+  const key = cleanText(text);
+  const e = key && CATALOG.get(key);
+  if (!e) return parseText(text);
+  if (!specCache.has(e.name)) specCache.set(e.name, JSON.stringify(specFromEntry(e)));
+  return JSON.parse(specCache.get(e.name));
+}
+useCatalog();
+
+function parseText(text) {
   const raw = String(text || "").trim(), t = cleanText(raw);
   if (!t) return null;
   const fl = findFlavors(t), has = (re) => re.test(t), seed = hash(t), R = rng(seed);
@@ -192,11 +334,11 @@ export function specFromText(text) {
     layers.forEach((l) => { l.f *= 0.8; }); layers.push({ c: "#6E4330", f: 0.2, n: "espresso" }); if (blend === "solid") blend = "layered";
   }
   let top = null;
-  const foamAt = lastIndex(t, /\b(cloud|cold foam|foam|cream top|cheese foam|cream cap)\b/);
+  const foamAt = lastIndex(t, /\b(cloud|cold foam|foam|cream top|cheese foam|cream cap|sea salt cream|salted cream)\b/);
   if (has(/\beinspanner\b/)) top = { type: "cream", c: "#FFF4DC" };
   else if (foamAt >= 0) {
     const before = fl.filter((f) => f.at < foamAt && f.r !== "t").pop(), w = before && t.slice(before.at + before.k.length, foamAt).trim().length < 6 ? before : null;
-    top = { type: "foam", c: w ? (w.k === "cheese" ? "#FFF1C2" : mix(w.c, WHITE, 0.45)) : "#FFF5E1" };
+    top = { type: /^cloud/.test(t.slice(foamAt)) ? "cloud" : "foam", c: has(/cheese/) ? "#FFF1C2" : w ? mix(w.c, WHITE, 0.45) : "#FFFBF2" };
   } else if (temp === "hot" && vessel !== "bowl" && milky) top = { type: "art", c: MILK };
   if (top && top.type !== "art" && vessel !== "bowl") { layers.forEach((l) => { l.f *= 0.78; }); layers.push({ c: top.c, f: 0.22, n: top.type }); }
   const tops = [];
@@ -298,6 +440,9 @@ function onTop(spec, cx, y, w, R) { // crumbs and dust on a foam, cream or whip 
   if (spec.toppings.includes("sesame")) s += dots(cx, y, w * 0.6, 7, "#3B2E27", 12, R, 1.2);
   if (spec.toppings.includes("oreo")) s += el("circle", { cx: cx + w * 0.18, cy: y - 6, r: 11, ...solid("#3B2A26", { "stroke-width": 2.5 }) }) + el("circle", { cx: cx + w * 0.18, cy: y - 6, r: 6, fill: "#FFF7EA" }) + dots(cx - 6, y, w * 0.5, 6, "#3B2A26", 8, R, 2);
   if (spec.toppings.includes("beans")) s += dots(cx, y, w * 0.5, 6, "#8A4B44", 8, R, 3);
+  if (spec.toppings.includes("flakes")) s += dots(cx, y, w * 0.6, 7, WHITE, 9, R, 2.4) + dots(cx, y, w * 0.5, 6, "#E9DCC6", 5, R, 1.8);
+  if (spec.toppings.includes("pistachio")) s += dots(cx, y, w * 0.6, 7, "#8DB45E", 10, R, 2.2);
+  if (spec.toppings.includes("honeycomb")) s += el("rect", { x: cx + w * 0.12, y: y - 12, width: 18, height: 14, rx: 3, ...solid("#F2B731", { "stroke-width": 2.5 }) });
   return s;
 }
 function whip(cx, y, w) {
@@ -325,15 +470,45 @@ function steam(x, y) {
   return [-14, 4, 20].map((d, i) => P(D(["M", x + d, y, "c", -7, -9, 7, -14, 0, -24]), line({ "stroke-width": 3.5, opacity: 0.32 - i * 0.04 }))).join("");
 }
 
+// A tall soft dome of foam over the rim ("cloud"), or a lower cap ("foam", "cold foam", "cheese foam").
+function cloudDome(rx, y, h, c) {
+  const d = D(["M", -rx + 1, y + 3, "C", -rx - 7, y - h * 0.3, -rx * 0.75, y - h * 0.78, -rx * 0.36, y - h * 0.62,
+    "C", -rx * 0.26, y - h * 1.08, rx * 0.3, y - h * 1.12, rx * 0.36, y - h * 0.64, "C", rx * 0.72, y - h * 0.8, rx + 7, y - h * 0.3, rx - 1, y + 3, "Z"]);
+  return P(d, { fill: WHITE, stroke: WHITE, "stroke-width": 10, "stroke-linejoin": "round" }) + P(d, solid(c, { "stroke-width": 3.8 })) +
+    P(D(["M", -rx + 8, y - 2, "Q", 0, y + 6, rx - 8, y - 2]), line({ stroke: mix(c, "#C9B8A0", 0.35), "stroke-width": 3, opacity: 0.7 })) +
+    P(D(["M", -rx * 0.62, y - h * 0.4, "q", rx * 0.12, -h * 0.2, rx * 0.26, -h * 0.2, "M", -rx * 0.1, y - h * 0.82, "q", rx * 0.12, -h * 0.12, rx * 0.24, -h * 0.06]), line({ stroke: WHITE, "stroke-width": 3.5 }));
+}
+// Layered drinks: fruit bits in a purée at the bottom, and matcha drips where it was poured over milk.
+function layerCues(spec, G, liq, bot, R) {
+  const L = spec.layers, total = L.reduce((a, l) => a + l.f, 0), yAt = (k) => bot - (L.slice(0, k).reduce((a, l) => a + l.f, 0) / total) * (bot - liq);
+  let s = "";
+  const f0 = FLAVORS[L[0].n];
+  if (L.length > 1 && ((f0 && f0[1] === "f") || /guava|fruit|berry|cherry/.test(L[0].n)) && !/^strawberr/.test(L[0].n)) {
+    const y1 = yAt(1), w = G.widthAt(-10);
+    for (let i = 0; i < 5; i++) {
+      const x = -w / 2 + 10 + i * (w - 28) / 4 + R() * 4, y = y1 + 5 + R() * Math.max(2, bot - y1 - 18);
+      s += el("rect", { x, y, width: 10, height: 9, rx: 3.5, fill: dark(L[0].c, 0.16), transform: `rotate(${n(R() * 50 - 25)} ${n(x + 5)} ${n(y + 4.5)})` });
+    }
+  }
+  for (let k = 1; k < L.length; k++) {
+    if (!/matcha|hojicha|espresso/.test(L[k].n) || !/milk|ube|taro|sesame|pistachio|lemonade|tonic|coconut|vanilla/.test(L[k - 1].n)) continue;
+    const yb = yAt(k), w = G.widthAt(yb);
+    for (const dx of [-w * 0.22, w * 0.18]) s += P(D(["M", dx, yb - 2, "c", 0, 6, -3, 9, 0, 13]), line({ stroke: L[k].c, "stroke-width": 5 })) + el("circle", { cx: dx + 1, cy: yb + 17, r: 2.6, fill: L[k].c });
+  }
+  return s;
+}
+
 function glassDrink(spec, G, uid, R) {
-  const H = G.H, top = G.rim.y, liq = top + (spec.top && spec.top.type === "cream" ? 6 : spec.temp === "iced" ? 18 : 14), bot = -4;
+  const dome = spec.top && (spec.top.type === "cloud" || spec.top.type === "foam") ? (spec.top.type === "cloud" ? 44 : 26) : 0;
+  const H = G.H, top = G.rim.y, liq = top + (dome ? 8 : spec.top && spec.top.type === "cream" ? 6 : spec.temp === "iced" ? 18 : 14), bot = -4;
   const g = gradient(uid + "l", spec.layers, liq, bot, spec.blend);
   let s = "", defs = g.defs + `<clipPath id="${uid}c">${P(G.clip)}</clipPath>`;
   s += P(G.clip, { fill: WHITE, stroke: WHITE, "stroke-width": 14, "stroke-linejoin": "round" }); // die-cut halo
   s += P(G.clip, { fill: "#EEF7F3", "fill-opacity": 0.85 });
-  if (spec.straw) { const a = spec.straw.a * Math.PI / 180; s += strawSvg(spec.straw, -6 + Math.sin(a) * 20, -18, 10 + Math.sin(a) * (H + 40), top - 36); }
+  if (spec.straw) { const a = spec.straw.a * Math.PI / 180; s += strawSvg(spec.straw, -6 + Math.sin(a) * 20, -18, 10 + Math.sin(a) * (H + 40), top - 36 - dome * 0.8); }
   let inner = el("rect", { x: -80, y: liq, width: 160, height: -liq, fill: g.fill });
   if (spec.blend === "marble") { const c = spec.layers[spec.layers.length - 1].c, w = G.widthAt(liq); inner += P(D(["M", -w / 3, liq + 10, "c", -10, 20, 16, 26, 4, 48, "M", w / 5, liq + 10, "c", 12, 18, -10, 30, 6, 56]), line({ stroke: c, "stroke-width": 9, opacity: 0.55 })); }
+  if (spec.blend === "layered") inner += layerCues(spec, G, liq, bot, R);
   inner += inside(spec, G, liq, R);
   const wl = G.widthAt(liq);
   inner += el("ellipse", { cx: 0, cy: liq, rx: wl / 2, ry: 6, fill: light(spec.layers[spec.layers.length - 1].c, 0.25), stroke: INK, "stroke-width": 2.5, "stroke-opacity": 0.35 });
@@ -342,8 +517,9 @@ function glassDrink(spec, G, uid, R) {
   s += P(D(["M", -G.widthAt(-30) / 2 + 9, -30, "L", -G.rim.rx + 11, top + 16]), line({ stroke: WHITE, "stroke-width": 5, opacity: 0.8 }));
   s += P(G.sides, line({ "stroke-width": 4.5 })) + el("ellipse", { cx: 0, cy: top, rx: G.rim.rx, ry: G.rim.ry, fill: "none", stroke: INK, "stroke-width": 4 });
   if (spec.top && spec.top.type === "cream") s += P(D(["M", -G.rim.rx + 3, top + 2, "C", -G.rim.rx + 4, top - 16, G.rim.rx - 4, top - 16, G.rim.rx - 3, top + 2]), solid(spec.top.c, { "stroke-width": 3.5 }));
-  if (spec.toppings.includes("whip")) s += whip(0, top + 2, G.rim.rx * 1.6);
-  const ty = spec.toppings.includes("whip") ? top - 16 : spec.top && spec.top.type === "cream" ? top - 7 : liq;
+  if (dome) s += cloudDome(G.rim.rx, top, dome, spec.top.c);
+  if (spec.toppings.includes("whip")) s += whip(0, top + 2 - dome * 0.8, G.rim.rx * 1.6);
+  const ty = dome ? top - dome * 0.8 : spec.toppings.includes("whip") ? top - 16 : spec.top && spec.top.type === "cream" ? top - 7 : liq;
   s += onTop(spec, 0, ty, G.rim.rx * 1.6, R);
   if (spec.toppings.includes("mochi") && spec.toppings.includes("whip")) s += el("rect", { x: -8, y: top - 40, width: 18, height: 16, rx: 8, ...solid("#FFF8F0", { "stroke-width": 2.5 }) });
   spec.garnish.forEach((gn, i) => { s += garnishAt(gn, i ? -G.rim.rx + 10 : G.rim.rx - 8, top - (gn.type === "mint" ? 4 : 0), R); });
