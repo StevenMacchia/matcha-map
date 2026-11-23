@@ -396,6 +396,7 @@ Blocked, Steven only: Facebook sign-in for the Meta app review, Tavily sign-in o
 - 09:35 Compact pop-up card on the desktop map (Steven, from a screenshot of a card running past a 1494 px pane: "look how big this card is"): cards.js marks the map pop-up (ctx.phone false, not a page) `mm-compact`: hero capped at 150 px, four actions in one row, two posts and two neighbours, the brand bio at 140 characters, no Hours box for a bare all-day flag (anywhere); cards.css has the compact rules; the popup's content box caps at the window height minus 190 px and scrolls inside with the close button fixed. Moment of Tea in Austin: about 1700 px to 918 px at 1440x900 (744 shown), 612 px at 1024x768, map no longer pans to the Arctic. Phone sheet and /e/ pages unchanged. 411 tests, smoke 18 of 18.
 - 09:39 Shared links: a `?event=` link that landed while the stand-in map was still up threw inside MapLibre's Popup.addTo (uncaught, every load in the app's pane; present since 2026-11-22). showCard now waits for the real map's load; the smoke loads the shared-link page at both widths (20 checks). Found while checking the compact card live.
 
+<<<<<<< HEAD
 ## Wave 4 (branch `claude/next-level-32bb5d`, 2026-11-23 10:05 ET)
 
 Steven after wave 3: "big improvements but population and upcoming events etc are not there yet", 6 of 10; wave 4 is volume only (more pop-ups, more upcoming dates, more cities), nothing on design or shell. Ceiling 45%, stop line 43%; open at 34% all models, 29% Fable. `main` merged at fe6af83 (the Graph planner branch 2cddd97 was already merged into main by the first session; 419 tests green).
@@ -513,3 +514,29 @@ Per-hour Graph yield, measured: run 1 read the never-read backlog first (72 call
 What moved: the thin-metro crawler runs and the review queue (Denver 1 to 3, Overland Park 0 to 3, Fort Worth 1 to 2, Columbus 2 to 3, Nashville 2 to 3, Jacksonville and Scottsdale 0 to 1, Aurora CO 0 to 1); Brooklyn, New York, Washington and Baltimore lost a date each as events passed or merged.
 
 Blocked, Steven only, with what each unlocks: Facebook sign-in for the Meta app review (advanced access: a higher Graph call rate and hashtag reads beyond 30 unique a week); Tavily sign-in on his Chrome tab (a paid tier past the 900 free credits a month, 125 left); `tools/windows-task.ps1` (the Windows scheduled refresh on his machine, if the first session's scheduled task is not the one he wants); free API keys that need an account: Ticketmaster (Discovery events by city), Eventbrite API (organizer and search endpoints without the 429s the public pages give), Yelp (events by location, 500 calls a day), Reddit (city-subreddit posts through the official API).
+=======
+## Social wave (main checkout session, worktree `_wt/matcha-map-live-fix`, 2026-11-23 afternoon ET)
+
+Steven's direction, verbatim: "RSVP to things", "Promote your own matcha pop up", "think things that will take this to the next social level for events". Budget: this wave at most 5 points of the weekly window, wave 4 (data, next-level session) at most 3, hard stop at 43% combined; 35% all models at the open.
+
+What the repo has to build on (explorer pass, 2026-11-23): six KV-only Pages Functions (submit, queue, approve, report, claim, alerts) behind a shared `storeForm`, a per-IP daily counter and a honeypot; no email sender of any kind (the alerts list is collect-only, no unsubscribe); no R2; no QR code; no host token, claim link or host page (a claim is a form a human reads); no per-device id; every public page's CSP is per page, and the static `/e/`, `/weekend/`, `/city/`, `/brand/` pages have no `connect-src`, so they cannot call the API. Production answers 503 on every API route: the KV namespace and `INTAKE_TOKEN` have never been bound (only Steven can create them; see "Only Steven can do" above). So in this wave nothing that needs email, uploads or a host login can ship honestly; those become cards with their prerequisite named.
+
+Rules Steven will judge by: no fake users, counts or reviews; rate limits and a report path on anything user-written; user content held for approval before it is public; minimal data, deletable; no passwords; CSP stays strict; tests and smoke at 1440 and 390 plus the hidden-tab load on every new screen.
+
+### Rungs
+
+| # | Rung | Ships this wave | Needs |
+|---|---|---|---|
+| S1 | **I'm going.** A going button on every upcoming pop-up card with a live count. Identity is a random device id (`matchamap.me`, localStorage, never sent anywhere else); one row per device per event in KV (`rsvp:<event>:<hash(me)>`), the count is the number of rows, never a stored number, so it cannot be faked by the site. `POST /api/rsvp` toggles, `GET /api/rsvp?events=` answers counts with a short cache. Rate limit 60 toggles a day per IP. Until KV is bound the button hides itself (the probe answers 503). | yes, dark until KV | KV binding |
+| S2 | **Invite a friend.** An action on the card that copies a message with the pop-up's line and the map link (`?event=<id>&via=friend`); the friend lands on the card with the going button in view. | yes | nothing |
+| S3 | **My plan, shareable.** The Weekend tour becomes a URL: `?plan=<id,id,id>` opens the tour on those stops; "Share my plan" copies it; a friend who opens it sees the same stops and can mark going on each. | yes | nothing |
+| S4 | **Promote your pop-up kit.** `/promote/?event=<id>`: for any listed pop-up, captions to copy for Instagram and TikTok with the map link, a QR code for the counter (pinned `qrcode-generator` from unpkg, already in script-src), and a downloadable share card drawn from the event (client-side SVG via `drawn.js`, rendered to PNG in a canvas). Linked from the card's host line and the brand page later. | yes | nothing |
+| S5 | **Host identity: claim link → host page.** A signed, expiring claim token mailed to the host, a host page with edit, "hosted by" badge, one Featured slot per host per week approved in the review route. | card | an email sender (Resend or Mailchannels key, Steven's account), the KV binding, a token design reviewed by Steven |
+| S6 | **Reminders and magic link.** Email the day before and the morning of to people who opted in; a magic link that binds an email to the device id so a going list survives a new phone; unsubscribe link in every mail. | card | the email sender; S1 live |
+| S7 | **Poster upload, menu and prices, post-event drops.** Image upload size-capped and re-encoded, held for approval; one photo and one line after the event. | card | R2 bucket (Steven's account), an approval UI for images, S5 |
+| S8 | **Follow a brand, who's going (initials, opt-in), host updates pushed to RSVPs, weekly "what's on near you".** | card | the email sender; S5 and S6 |
+| S9 | **Matcha passport.** QR check-in at the counter (the S4 code can carry a check-in link), stamps per pop-up, a profile page with cities and brands. | card | S1 live; a design pass with Steven (what a stamp proves without a host device) |
+
+### Social wave log
+- 10:11 Wave open. Explorer pass done (the repo map above), production probed (503 on every API route), budget agreed with the next-level session (3 points for wave 4). Building S1 to S4; S4 in a Sonnet worktree `_wt/matcha-map-promote`.
+>>>>>>> origin/main
