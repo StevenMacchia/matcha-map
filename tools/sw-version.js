@@ -14,7 +14,8 @@ const h = crypto.createHash("sha256");
 for (const u of files) {
   const p = path.join(SITE, u);
   if (!fs.existsSync(p)) { console.error(`sw.js precaches a missing file: ${u}`); process.exit(1); }
-  h.update(u).update(fs.readFileSync(p));
+  // index.html carries the previous run's ?v= stamps; hash it without them, or every run would mint a new version
+  h.update(u).update(u === "/index.html" ? fs.readFileSync(p, "utf8").replace(/\?v=mm-[0-9a-f]+/g, "") : fs.readFileSync(p));
 }
 h.update(sw.replace(/var VERSION = "[^"]*";/, "")); // the worker's own code counts too
 const version = "mm-" + h.digest("hex").slice(0, 10);
