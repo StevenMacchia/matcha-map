@@ -23,6 +23,7 @@
     "loop": "node ingest/loop.js",
     "refresh": "node ingest/loop.js --once",
     "brands": "node ingest/brands.js",
+    "brands:deepen": "node ingest/brands-deepen.js",
     "yelp": "node ingest/yelp.js",
     "clean": "node ingest/clean.js",
     "audit": "node tools/audit-events.js",
