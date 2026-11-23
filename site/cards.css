@@ -62,7 +62,7 @@
 .mm-avatar.mm-t1 { background: var(--mm-t1); } .mm-avatar.mm-t2 { background: var(--mm-t2); }
 .mm-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .mm-initial { font-size: 21px; font-weight: 800; color: var(--ink, #3B2E27); }
-.mm-conf { flex: none; align-self: center; font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; border: 2px solid; cursor: help; }
+.mm-conf { flex: none; align-self: center; font-size: 12px; font-weight: 800; letter-spacing: .01em; padding: 4px 10px; border-radius: 999px; border: 2px solid; cursor: help; white-space: nowrap; }
 .mm-conf-confirmed { background: var(--foam, #E6F2DC); color: var(--deep, #3E6B33); border-color: var(--accent, #8CBF7A); }
 .mm-conf-likely { background: var(--mm-t2); color: var(--ink, #3B2E27); border-color: var(--mm-t2e); }
 .mm-conf-unsure { background: var(--mm-t1); color: var(--ink, #3B2E27); border-color: var(--mm-t1e); border-style: dashed; }
