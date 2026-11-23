@@ -144,6 +144,7 @@ test("shopcard: image_url shows the photo with image_credit under it, escaped; n
   for (const part of [{ image_url: "https://example.com/p.png" }, { image_credit: "Photo: Leaf website" }, { image_url: "javascript:alert(1)", image_credit: "Photo: x" }, { image_url: "https://example.com/p.png", image_credit: "  " }]) {
     assert.doesNotMatch(shopCardHtml({ ...base, ...part }), /mm-shop-photo|mm-shop-cap|Photo:/, JSON.stringify(part));
   }
+  assert.match(shopCardHtml({ ...base, image_url: "http://example.com/p.png", image_credit: "Photo: x" }), /<img src="https:\/\/example\.com\/p\.png"/, "http is asked for over https (CSP)");
   const withPic = SHOPS.find((s) => s.image_url && s.image_credit);
   if (withPic) assert.ok(shopCardHtml(withPic).includes(`<figcaption class="mm-shop-cap">${withPic.image_credit.replace(/&/g, "&amp;").replace(/'/g, "&#39;")}</figcaption>`), withPic.name);
 });

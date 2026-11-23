@@ -476,7 +476,7 @@
   function pinLabel(it) {
     if (it.kind === "e" && it.approx) return approxLabel(it.data);
     if (it.kind === "e" && !it.past && isToday(it.data) && !it.now) return it.data.brand + ", today, " + whenText(it.data);
-    if (it.kind === "s") return it.data.name + ", shop" + (it.data.city ? ", " + it.data.city : "");
+    if (it.kind === "s") return it.data.name + (it.serves ? ", matcha on the menu" : ", shop") + (it.data.city ? ", " + it.data.city : "");
     return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) + (it.now ? ", happening now" : "") : it.data.brand + ", " + it.data.home_city + ", no dates yet";
   }
   // The pink dot on a pin means "on today" (it was on every upcoming pin, which said nothing).
@@ -485,7 +485,7 @@
     if (it.kind === "e") it.now = !it.past && !it.approx && happeningNow(it.data);
     var el = document.createElement("button");
     el.type = "button";
-    el.className = "mk " + (it.kind === "e" ? "mk-ev" : it.kind === "s" ? "mk-sh" : "mk-br") + (it.approx ? " mk-ap" : "") + (it.past ? " past" : "") + (it.key === openKey ? " sel" : "");
+    el.className = "mk " + (it.kind === "e" ? "mk-ev" : it.kind === "s" ? "mk-sh" + (it.serves ? " mk-sv" : "") : "mk-br") + (it.approx ? " mk-ap" : "") + (it.past ? " past" : "") + (it.key === openKey ? " sel" : "");
     el.setAttribute("aria-label", pinLabel(it));
     if (it.approx) el.title = pinLabel(it);
     var inner = document.createElement("span");
@@ -889,7 +889,7 @@
     if (safeUrl(s.website)) quiet.push(["Website", s.website]);
     if (s.instagram) quiet.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(s.instagram) + "/"]);
     var credit = s.source === "osm" && safeUrl(s.osm_url) ? "<p class=\"credit-line\">Data: <a href=\"" + esc(s.osm_url) + "\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a></p>" : "";
-    return "<div class=\"card scard\"><h3><span class=\"card-shop\" data-char=\"s-shop\"></span><span>" + esc(s.name) + "</span></h3><p class=\"kline\"><span class=\"kindword\">Matcha shop</span></p>" +
+    return "<div class=\"card scard\"><h3><span class=\"card-shop\" data-char=\"s-shop\"></span><span>" + esc(s.name) + "</span></h3><p class=\"kline\"><span class=\"kindword\">" + (s.tier === "serves" ? "Matcha on the menu" : "Matcha shop") + "</span></p>" +
       "<p class=\"muted place\">" + esc(shopAddress(s)) + "</p>" + hoursHTML(s.opening_hours) +
       actsHTML(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + s.lat + "," + s.lng], null) +
       factsHTML(brandsBy[String(s.instagram || "").toLowerCase()]) + quietHTML(quiet) + yelpHTML(placesBy[placeKey(s.name, s.city, s.state, s.lat, s.lng)]) + credit + "</div>";
@@ -1100,15 +1100,30 @@
 
   function buildShops(list) {
     state.shops = (list || []).filter(function (s) { return isFinite(s.lat) && isFinite(s.lng) && s.name; }).map(function (s) {
-      var it = { kind: "s", key: "s:" + s.id, ll: [s.lat, s.lng], data: s, name: s.name };
+      var it = { kind: "s", key: "s:" + s.id, ll: [s.lat, s.lng], data: s, name: s.name, serves: s.tier === "serves" };
       items[it.key] = it;
       return it;
     });
   }
-  // Storefronts switch: on by default, remembered on its own key.
-  var SHOPS_KEY = "matchamap.shops", shopsOn = true;
+  // Storefronts switch and the "Matcha on the menu" switch (shops with tier "serves": coffee and tea shops that serve
+  // matcha): both on by default, each remembered on its own key.
+  var SHOPS_KEY = "matchamap.shops", shopsOn = true, SERVES_KEY = "matchamap.serves", servesOn = true;
   try { if (localStorage.getItem(SHOPS_KEY) === "0") shopsOn = false; } catch (e) { /* ignore */ }
-  function visibleShops() { return shopsOn ? state.shops : []; }
+  try { if (localStorage.getItem(SERVES_KEY) === "0") servesOn = false; } catch (e) { /* ignore */ }
+  function visibleShops() {
+    if (shopsOn && servesOn) return state.shops;
+    if (!shopsOn && !servesOn) return [];
+    return state.shops.filter(function (it) { return it.serves ? servesOn : shopsOn; });
+  }
+  // The Shops group's heading: "4 matcha shops · 2 with matcha on the menu", or the one part there is.
+  function shopsWords(list) {
+    var sv = 0;
+    list.forEach(function (it) { if (it.serves) sv++; });
+    var core = list.length - sv, out = [];
+    if (core) out.push(core + " matcha shop" + (core === 1 ? "" : "s"));
+    if (sv) out.push(sv + " with matcha on the menu");
+    return out.join(" · ");
+  }
 
   // ---------- what counts: kind and category (data/KINDS.md) ----------
   var KINDS = ["popup", "cafe", "organizer", "festival", "venue", "tea-brand"], CATS = ["matcha", "coffee", "boba", "bakery", "dessert", "other"];
@@ -1131,7 +1146,7 @@
   }
   // How many choices differ from the default (the badge number).
   function showDiff() {
-    var n = (show.po ? 1 : 0) + (show.un ? 0 : 1) + (shopsOn ? 0 : 1);
+    var n = (show.po ? 1 : 0) + (show.un ? 0 : 1) + (shopsOn ? 0 : 1) + (servesOn ? 0 : 1);
     if (!show.po) KINDS.forEach(function (k) { if (!show.k[k]) n++; });
     CATS.forEach(function (c) { if (!!show.c[c] !== (c === "matcha")) n++; });
     return n;
@@ -1224,7 +1239,7 @@
     }
     if (it.kind === "s") {
       var s = it.data;
-      return "<button type=\"button\" class=\"row shoprow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-shop\" aria-hidden=\"true\" data-char=\"s-shop\"></span><span class=\"rt\"><strong>" + esc(s.name) + "</strong><span class=\"kindword\">Shop</span><span>" +
+      return "<button type=\"button\" class=\"row shoprow" + (it.serves ? " shoprow-sv" : "") + "\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-shop\" aria-hidden=\"true\" data-char=\"s-shop\"></span><span class=\"rt\"><strong>" + esc(s.name) + "</strong><span class=\"kindword\">" + (it.serves ? "Matcha on the menu" : "Shop") + "</span><span>" +
         esc([s.address, s.city].filter(Boolean).join(", ") || shopAddress(s)) + "</span>" + dist + "</span></button>";
     }
     return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-mochi\" aria-hidden=\"true\"><span class=\"mochi\"></span></span><span class=\"rt\"><strong>" + esc(it.data.brand) + "</strong>" + kindWord(it.data) + "<span>" +
@@ -1285,8 +1300,8 @@
     if (shopsIn.length) {
       if (map.getZoom() >= 8) {
         var cap = 80, more = shopsIn.length - cap;
-        html += headHTML("Shops") + rowsHTML(shopsIn.slice(0, cap)) + (more > 0 ? "<li class=\"shopnote\">+" + more + " more · zoom in</li>" : "");
-      } else html += headHTML("Shops") + "<li class=\"shopnote\">" + shopsIn.length + " shop" + (shopsIn.length === 1 ? "" : "s") + " · zoom in</li>";
+        html += headHTML(shopsWords(shopsIn), 0, "shophead") + rowsHTML(shopsIn.slice(0, cap)) + (more > 0 ? "<li class=\"shopnote\">+" + more + " more · zoom in</li>" : "");
+      } else html += headHTML(shopsWords(shopsIn), 0, "shophead") + "<li class=\"shopnote\">Zoom in to see them</li>";
     }
 
     // Empty: nothing on for the chosen dates anywhere, or nothing in this part of the map. Sleepy Mattie, one line, the
@@ -1653,6 +1668,7 @@
     $("show-po").checked = show.po;
     $("show-un").checked = !!show.un;
     $("show-shops").checked = shopsOn;
+    $("show-serves").checked = servesOn;
     showPop.querySelectorAll("[data-kind]").forEach(function (i) { i.checked = !!show.k[i.getAttribute("data-kind")]; i.disabled = show.po; i.parentNode.classList.toggle("off", show.po); });
     showPop.querySelectorAll("[data-cat]").forEach(function (i) { i.checked = !!show.c[i.getAttribute("data-cat")]; });
     var n = showDiff(), badge = $("show-n");
@@ -1676,8 +1692,8 @@
   $("show-reset").addEventListener("click", function () {
     show = { po: false, un: true, k: {}, c: { matcha: true } };
     KINDS.forEach(function (k) { show.k[k] = true; });
-    shopsOn = true;
-    try { localStorage.removeItem("matchamap.show2"); localStorage.setItem(SHOPS_KEY, "1"); } catch (e) { /* ignore */ }
+    shopsOn = true; servesOn = true;
+    try { localStorage.removeItem("matchamap.show2"); localStorage.setItem(SHOPS_KEY, "1"); localStorage.setItem(SERVES_KEY, "1"); } catch (e) { /* ignore */ }
     syncShow(); closeCard(true); refreshEvents(true);
   });
   showPop.addEventListener("change", function (ev) {
@@ -1685,6 +1701,7 @@
     if (t.id === "show-po") show.po = t.checked;
     if (t.id === "show-un") show.un = t.checked;
     if (t.id === "show-shops") { shopsOn = t.checked; try { localStorage.setItem(SHOPS_KEY, shopsOn ? "1" : "0"); } catch (e) { /* ignore */ } }
+    if (t.id === "show-serves") { servesOn = t.checked; try { localStorage.setItem(SERVES_KEY, servesOn ? "1" : "0"); } catch (e) { /* ignore */ } }
     if (k) { if (t.checked) show.k[k] = true; else delete show.k[k]; }
     if (c) { if (t.checked) show.c[c] = true; else delete show.c[c]; }
     try { localStorage.setItem("matchamap.show2", JSON.stringify({ po: show.po, un: !!show.un, k: Object.keys(show.k), c: Object.keys(show.c) })); } catch (e) { /* ignore */ }
@@ -2182,5 +2199,5 @@
   }
 
   // Exposed for tests only.
-  window.__matcha = { state: state, shopsOn: function () { return shopsOn; }, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
+  window.__matcha = { state: state, shopsOn: function () { return shopsOn; }, servesOn: function () { return servesOn; }, shopsWords: shopsWords, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
 })();
