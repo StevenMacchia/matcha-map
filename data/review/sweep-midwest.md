@@ -9,3 +9,7 @@
 
 Tavily: 0 working calls (every call failed with an invalid API key error); Bluesky endpoint returned 403. WebSearch/WebFetch only, about 55 operations.
 New brands in data/wave4/midwest.json: Big Wiss Matcha, Dima Matcha, Vivid Minds Cafe, Matcha Cita.
+
+## Pass 2 (Tavily via npm run search, 13 searches)
+
+No new dated pop-ups in the window for any midwest metro. Snippets seen: Not Yet Cafe (@notyet_mpls, 212 13th Ave NE Minneapolis; coffee-led alley pop-up, last dated Sun 11/15, past); 444 Suite Minneapolis matcha pop-ups Oct 23/30/31 (past); Rocky's x Saie at Doma Cafe Chicago 11/17 (past, one day); Nakama Matcha at Denver University (undated); Pop Up Matcha Slow Bar (not midwest). A Chicago "try 5 matcha drinks in the Loop" crawl ($18, December events, no date in snippet) is a ticketed tour, not a pop-up; skipped. New brands added: Yaya's Matcha (MN), LATTE lab (Denver), Yujo Matcha (Chicago).
