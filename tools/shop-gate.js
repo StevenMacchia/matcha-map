@@ -9,6 +9,7 @@
 //   - an element with white-space nowrap, text-overflow ellipsis or -webkit-line-clamp is wider inside than out (no
 //     allowed selectors: the card uses none of them);
 //   - the action row is not fully in view without scrolling (sheet: in the viewport; pop-up: inside the pop-up content).
+// A failing case is measured once more after 400 ms before it counts; one that passes then is marked "(retried)".
 // Failures get a screenshot in qa/shop/<date>/fail/. Exit 1 on any failure.
 // Flags: --only <fixture,...> --widths 390,1440 --themes light --fonts 16 (a reduced run) --shots (also write the review
 //   shots to qa/shop/<date>/shots/) --port <n> (serve.js port; default a free one) --date YYYY-MM-DD.
@@ -34,6 +35,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const SHOPS = JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", "shops.json"), "utf8")).shops;
 const itemLen = (s) => Math.max(0, ...((s.menu && s.menu.items) || []).map((i) => (i.name || "").length + (i.note || "").length + (i.price || "").length));
 const pick = (f) => SHOPS.slice().sort(f)[0];
+const servesLen = (s) => (s.tier === "serves" && Array.isArray(s.menu_matcha) ? s.menu_matcha.length : -1);
 const FIX = [
   ["most-items", pick((a, b) => ((b.menu && b.menu.items.length) || 0) - ((a.menu && a.menu.items.length) || 0))],
   ["longest-lines", pick((a, b) => itemLen(b) - itemLen(a))],
@@ -42,7 +44,10 @@ const FIX = [
   ["no-photo", SHOPS.find((s) => !s.menu && !s.image && !s.website && !s.instagram) || SHOPS.find((s) => !s.image)],
   ["longest-name", pick((a, b) => (b.name + b.address + b.city).length - (a.name + a.address + a.city).length)],
   ["no-city", SHOPS.find((s) => !s.city && s.address && s.state)], // the address line fills the city from the nearest listed city
-].filter(([, s]) => s).map(([name, s]) => ({ name, id: s.id, label: s.name }));
+  // "Matcha on the menu" (tier serves): the one with the longest menu_matcha; none in the site data until SHOPS_SERVES=1
+  ["serves", pick((a, b) => servesLen(b) - servesLen(a))],
+].filter(([name, s]) => s && (name !== "serves" || servesLen(s) >= 0)).map(([name, s]) => ({ name, id: s.id, label: s.name }));
+if (!FIX.some((f) => f.name === "serves")) console.log("shop-gate: no serves rows in site/data/shops.json, the serves fixture is skipped");
 const ONLY = arg("--only") ? list("--only") : null;
 
 function findChrome() {
@@ -202,12 +207,21 @@ try {
     for (const [i, fx] of fixtures.entries()) {
       // the first opens through the ?shop= deep link, the rest through the app's own opener (the same flyTo a pin tap uses)
       if (i > 0) await pg.ev(`(() => { if (window.MatchaCards && window.MatchaCards.open) window.MatchaCards.open(${JSON.stringify("s:" + fx.id)}); return 1; })()`);
-      const ok = await waitCard(pg.ev, fx.id);
-      const fails = ok ? await pg.ev(CHECK) : ["the card did not open" + (i === 0 ? " from ?shop=" : "")];
+      let ok = await waitCard(pg.ev, fx.id), retried = false;
+      let fails = ok ? await pg.ev(CHECK) : [];
+      if (!ok || fails.length) {
+        // once more after 400 ms before it counts (a frame caught mid-layout once failed a case that passed on the rerun)
+        await sleep(400);
+        if (!ok) ok = await waitCard(pg.ev, fx.id, 5000);
+        const again = ok ? await pg.ev(CHECK) : ["the card did not open" + (i === 0 ? " from ?shop=" : "")];
+        retried = !again.length;
+        fails = again;
+      }
       fails.push(...pg.errors.splice(0).map((e) => "exception: " + e));
+      if (fails.length) retried = false;
       const tag = `${fx.name}-${w}-${theme}-${font}`;
       if (fails.length) await shot(pg.s, path.join(failDir, tag + ".png"));
-      rows.push({ fx: fx.name, w, theme, font, fails });
+      rows.push({ fx: fx.name, w, theme, font, fails, retried });
     }
     await pg.close();
   }
@@ -231,9 +245,10 @@ console.log("\nfixtures: " + fixtures.map((f) => `${f.name} = ${f.label} (${f.id
 console.log(`\n${pad("width", 7)}${pad("theme", 7)}${pad("font", 6)}${fixtures.map((f) => pad(f.name, 15)).join("")}`);
 for (const w of WIDTHS) for (const theme of THEMES) for (const font of FONTS) {
   const rs = rows.filter((r) => r.w === w && r.theme === theme && r.font === font);
-  console.log(`${pad(w, 7)}${pad(theme, 7)}${pad(font, 6)}${fixtures.map((f) => { const r = rs.find((x) => x.fx === f.name); return pad(!r ? "-" : r.fails.length ? "FAIL " + r.fails.length : "ok", 15); }).join("")}`);
+  console.log(`${pad(w, 7)}${pad(theme, 7)}${pad(font, 6)}${fixtures.map((f) => { const r = rs.find((x) => x.fx === f.name); return pad(!r ? "-" : r.fails.length ? "FAIL " + r.fails.length : r.retried ? "ok (retried)" : "ok", 15); }).join("")}`);
 }
 const bad = rows.filter((r) => r.fails.length);
+const retriedN = rows.filter((r) => r.retried).length, retriedNote = retriedN ? `, ${retriedN} on the retry` : "";
 for (const r of bad) { console.log(`\nFAIL ${r.fx} @${r.w} ${r.theme} ${r.font}px`); for (const f of r.fails.slice(0, 12)) console.log("  " + f); }
-console.log(bad.length ? `\nshop-gate: ${bad.length} of ${rows.length} cases failed (screenshots in ${path.relative(ROOT, failDir)})` : `\nshop-gate: all ${rows.length} cases passed`);
+console.log(bad.length ? `\nshop-gate: ${bad.length} of ${rows.length} cases failed${retriedNote} (screenshots in ${path.relative(ROOT, failDir)})` : `\nshop-gate: all ${rows.length} cases passed${retriedNote}`);
 process.exit(bad.length ? 1 : 0);

@@ -82,7 +82,8 @@ test("a confirmed Yelp lead becomes a row with nothing from Yelp on it, keyed by
 
 test("the scheduled refresh runs the Yelp lead search after the ingest, nothing else from Yelp", () => {
   const src = fs.readFileSync(path.join("ingest", "loop.js"), "utf8");
-  assert.match(src, /\["yelp-leads", \["ingest\/shops-keyed\.js", "--provider", "yelp"\]\]/);
+  assert.match(src, /\["yelp-leads", \["ingest\/shops-keyed\.js", "--provider", "yelp", "--limit", "250"\]\]/);
+  assert.match(src, /yelp-leads-day\.txt/, "once a UTC day");
   assert.match(src, /\["ingest", \["ingest\/run\.js"\]\], YELP_LEADS\]/);
   assert.ok(!/ingest\/yelp\.js/.test(src));
 });
