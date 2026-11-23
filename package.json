@@ -31,7 +31,7 @@
     "gate:card": "node tools/card-gate.js",
     "gate:shop": "node tools/shop-gate.js",
     "flyers": "node tools/flyers.js",
-    "pages": "node tools/gen-pages.js",
+    "pages": "node tools/gen-pages.js && node tools/slim-events.js",
     "og": "node tools/gen-og.js",
     "images": "node tools/shrink-images.js",
     "art": "node tools/illustrate/run.js",
