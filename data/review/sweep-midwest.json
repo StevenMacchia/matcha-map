@@ -1,0 +1,36 @@
+{
+  "generated": "2026-11-23T03:23:27.403Z",
+  "group": "midwest",
+  "items": [
+    {
+      "brand": "Nakama Matcha",
+      "handle": "nakamamatchaco",
+      "source_id": "nakama-matcha",
+      "title": "Matcha Mondays at Ironworks on Fox (recurring, unverified)",
+      "start": "2026-11-30T00:00:00-07:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/Denver",
+      "venue": "Ironworks on Fox",
+      "address": "651 W 42nd Ave, Denver, CO",
+      "city": "Denver",
+      "state": "CO",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://imginn.com/nakamamatchaco/",
+      "posts": [],
+      "evidence": [
+        "https://imginn.com/nakamamatchaco/",
+        "https://www.instagram.com/p/DbBpgW6M6po/"
+      ],
+      "menu": [],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Woman-owned mobile matcha truck serving a standard menu plus rotating seasonal drinks. A post on an Instagram mirror describes a weekly Matcha Monday stop at Ironworks, with a walk-up pickup window near the entrance.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Only the weekly 'Matcha Mondays' claim was seen, in an undated post on an Instagram mirror (search snippet via WebSearch, not opened on instagram.com). Could not confirm it is still running in winter, nor hours. The map already holds a 2027-07-13 Ironworks item from the same brand. Date is the next Monday, a placeholder; a human should check @nakamamatchaco. Do not promote."
+    }
+  ]
+}
