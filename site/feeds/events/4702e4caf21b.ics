@@ -8,12 +8,12 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:4702e4caf21b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261128T180000Z
-DTEND:20261128T210000Z
-SUMMARY:Matcha + Meetup: NYC | Film + Music Industry Monthly Mingle
-LOCATION:Brooklyn\, NY
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
+DTSTART:20261128T200000Z
+DTEND:20261128T230000Z
+SUMMARY:Matcha + Meetup: Denver | Film + Music Industry Monthly Mingle
+LOCATION:Denver\, CO
 DESCRIPTION:Life can be lonely for creatives when you're busy with your pas
  sions. Meet us at a different cafe each month for coffee and conversation!
  \nPrice: $17.85\nDetails not confirmed yet. Check the brand's post before 

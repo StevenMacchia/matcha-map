@@ -396,6 +396,123 @@ Blocked, Steven only: Facebook sign-in for the Meta app review, Tavily sign-in o
 - 09:35 Compact pop-up card on the desktop map (Steven, from a screenshot of a card running past a 1494 px pane: "look how big this card is"): cards.js marks the map pop-up (ctx.phone false, not a page) `mm-compact`: hero capped at 150 px, four actions in one row, two posts and two neighbours, the brand bio at 140 characters, no Hours box for a bare all-day flag (anywhere); cards.css has the compact rules; the popup's content box caps at the window height minus 190 px and scrolls inside with the close button fixed. Moment of Tea in Austin: about 1700 px to 918 px at 1440x900 (744 shown), 612 px at 1024x768, map no longer pans to the Arctic. Phone sheet and /e/ pages unchanged. 411 tests, smoke 18 of 18.
 - 09:39 Shared links: a `?event=` link that landed while the stand-in map was still up threw inside MapLibre's Popup.addTo (uncaught, every load in the app's pane; present since 2026-11-22). showCard now waits for the real map's load; the smoke loads the shared-link page at both widths (20 checks). Found while checking the compact card live.
 
+## Wave 4 (branch `claude/next-level-32bb5d`, 2026-11-23 10:05 ET)
+
+Steven after wave 3: "big improvements but population and upcoming events etc are not there yet", 6 of 10; wave 4 is volume only (more pop-ups, more upcoming dates, more cities), nothing on design or shell. Ceiling 45%, stop line 43%; open at 34% all models, 29% Fable. `main` merged at fe6af83 (the Graph planner branch 2cddd97 was already merged into main by the first session; 419 tests green).
+
+| Rung | Owner | Files | State | Spend after |
+|---|---|---|---|---|
+| W4-G hourly Graph read with the new planner: never-read accounts first, hashtags capped; 4 runs an hour apart, events committed after each, per-hour yield logged | this session (background loop) | `watchlist.json`, `events.json`, `hashtags.json`, caches | running | |
+| W4-V review queue: the held items nobody has opened yet (crawler run file after the wave-3 check, wave-3 sweep unsure items) verified against their pages | Sonnet | `data/review/wave4-runcheck.json`, `wave3-texas/midwest/northeast.json` in place | running | |
+| W4-C thin metros through the pipeline: a `--cities` flag for `npm run discover`, then Eventbrite, Allevents, Meetup, Luma and MATO for Denver, Las Vegas, Phoenix, Charlotte, Nashville, Columbus, Indianapolis, Jacksonville, Fort Worth, OKC and their suburbs | Sonnet | `ingest/lib/discover.js`, `crawl-state.js`, tests, run file | running | |
+| W4-K keyed adapters | none | | nothing new has a key (Ticketmaster, Eventbrite API, Yelp, Reddit, Brave stay off) | |
+| W4-M ingest, audit, tests, smoke, gate, merge, deploy, table | this session | | pending | |
+
+### Wave 4 log
+
+- 10:10 W4-G run 1 (planner on): 72 of 180 calls, 8 hashtag reads (113 posts, 6 dated kept, 8 accounts added), the never-read backlog read first; 0 new events, 9 updated. The backlog was not what it looked like: 327 accounts with an old "Invalid user id" error (personal accounts the business_discovery edge cannot read, plus junk handles from hashtag and Bluesky harvests such as bsky.social and financialtimes.com) are now `unreadable` and never retried; the rest are hashtag-discovered cafes, bakeries and personal accounts with "N items, 0 dated". A second read in the same hour (run 1b: 15 calls) took the backlog from 129 to 109 with 0 events. Per-hour yield of the backlog: 0 dated events. The dated events come from the 178 `watching` brands re-read on cadence, which main's scheduled run already covers. Watch list now: 178 watching, 438 candidate, 345 unreadable, 143 dropped, 109 never read.
+- 10:12 W4-V done (Sonnet, about 95k tokens): 22 held items opened; 3 promoted (HerCafe at Overland Park Farmers Market Dec 5, 12, 19: brand site "every Saturday 8am-12pm", city page Saturdays Dec 5 to 19 at 7950 Santa Fe St), 10 dropped (six "Matcha + Meetup" networking rows whose page calls the pin a placeholder, a registration walk, three ticketed classes), 9 still unsure (Atlanta Matcha Crawl, Chasen Dallas, Mori Austin, Tala Tulsa, MARU Boston: no page shows the date). `data/review/wave4-runcheck.json`.
+- 10:20 W4-C done (Sonnet, about 100k tokens): `npm run discover -- --cities a,b,...` (8551f91: exact batch, cursor and skip list untouched, `resolveCityNames`, test; Luma and MATO take no city list). Runs over the ten thin metros and their suburbs, no 429s: Eventbrite 14 cities 9 candidates (3 new), Allevents 2, Meetup 1, Luma 1, MATO 29 (its own city pages). Run file now holds, confirmed/likely/unsure: Las Vegas 1/0/3, Mesa 1/2/2, Fort Worth 1/1/4, Nashville 1/1/3, Columbus 1/0/2, Charlotte 0/0/3, Phoenix 0/0/1, Jacksonville 0/0/1; Denver, Tempe, Scottsdale, Chandler, Indianapolis and Oklahoma City 0. W4-G loop stopped after run 1 and 1b (the ingest's event write would race the hourly watch, and the backlog yield was 0); main's scheduled run keeps reading the watching brands. W4-M ingest started 10:21 (usage 36% all models, 33% Fable, combined with the first session's social wave).
+
+### Wave 4 close, 2026-11-23
+
+Ship: `main` merged (fe6af83, with the planner branch already in it), one real ingest (376 review items read: 4 new, 153 merged into events held, 179 left for a human; the Graph adapter stood down because the hour's 200 calls were spent by the loop and main's scheduled run), 420 tests green, audit "the writer would drop 0".
+
+Ingest line: 1142 candidates, 717 events (+7 new, 439 updated), 373 upcoming with coordinates, 105 cities. Before is the wave-3 close file (710, 366, 101).
+
+Per city (changed, or 3 or more upcoming), wave 3 close vs wave 4 close:
+
+| City | Before | After | Change |
+|---|---:|---:|---:|
+| Boston, MA | 24 | 24 | +0 |
+| Seattle, WA | 23 | 23 | +0 |
+| New York, NY | 21 | 20 | -1 |
+| Austin, TX | 16 | 16 | +0 |
+| Los Angeles, CA | 14 | 15 | +1 |
+| Houston, TX | 13 | 13 | +0 |
+| San Diego, CA | 13 | 13 | +0 |
+| Brooklyn, NY | 14 | 12 | -2 |
+| Portland, OR | 12 | 12 | +0 |
+| Miami, FL | 11 | 11 | +0 |
+| San Antonio, TX | 10 | 10 | +0 |
+| Oakland, CA | 9 | 9 | +0 |
+| Chicago, IL | 8 | 8 | +0 |
+| Dallas, TX | 8 | 8 | +0 |
+| Sacramento, CA | 8 | 8 | +0 |
+| San Francisco, CA | 8 | 8 | +0 |
+| Atlanta, GA | 7 | 7 | +0 |
+| Honolulu, HI | 7 | 7 | +0 |
+| Orlando, FL | 7 | 7 | +0 |
+| Philadelphia, PA | 7 | 7 | +0 |
+| Tampa, FL | 7 | 7 | +0 |
+| Washington, DC | 6 | 5 | -1 |
+| Bothell, WA | 4 | 4 | +0 |
+| El Paso, TX | 4 | 4 | +0 |
+| Mesa, AZ | 4 | 4 | +0 |
+| St. Petersburg, FL | 4 | 4 | +0 |
+| Arlington, VA | 3 | 3 | +0 |
+| Detroit, MI | 3 | 3 | +0 |
+| Minneapolis, MN | 3 | 3 | +0 |
+| Phoenix, AZ | 3 | 3 | +0 |
+| Pittsburgh, PA | 3 | 3 | +0 |
+| Virginia Beach, VA | 3 | 3 | +0 |
+| Columbus, OH | 2 | 3 | +1 |
+| Nashville, TN | 2 | 3 | +1 |
+| Denver, CO | 1 | 3 | +2 |
+| Overland Park, KS | 0 | 3 | +3 |
+| Baltimore, MD | 3 | 2 | -1 |
+| Fort Worth, TX | 1 | 2 | +1 |
+| Aurora, CO | 0 | 1 | +1 |
+| Jacksonville, FL | 0 | 1 | +1 |
+| Scottsdale, AZ | 0 | 1 | +1 |
+| Total upcoming | 366 | 373 | +7 |
+| Cities with an upcoming pop-up | 101 | 105 | +4 |
+
+Distinct cities per state with an upcoming pop-up:
+
+| State | Cities before | Cities after | After, by city |
+|---|---:|---:|---|
+| CA | 17 | 17 | Los Angeles 15, San Diego 13, Oakland 9, San Francisco 8, Sacramento 8, Fullerton 2, Anaheim 2, Monterey Park 1, Elk Grove 1, Santa Clara 1, Los Gatos 1, Chatsworth 1, Thousand Oaks 1, Tustin 1, Irvine 1, Morgan Hill 1, Lakewood 1 |
+| TX | 10 | 10 | Austin 16, Houston 13, San Antonio 10, Dallas 8, El Paso 4, Fort Worth 2, Plano 1, Cedar Park 1, Brownsville 1, Richmond 1 |
+| FL | 6 | 7 | Miami 11, Tampa 7, Orlando 7, St. Petersburg 4, Boca Raton 1, Jacksonville 1, Hialeah 1 |
+| WA | 7 | 7 | Seattle 23, Bothell 4, Vancouver 1, Kirkland 1, Renton 1, Federal Way 1, Tukwila 1 |
+| VA | 6 | 6 | Virginia Beach 3, Arlington 3, Charlottesville 1, Norfolk 1, Hampton 1, Fredericksburg 1 |
+| NY | 5 | 5 | New York 20, Brooklyn 12, Port Jefferson 2, Irvington 1, Port Chester 1 |
+| AZ | 3 | 4 | Mesa 4, Phoenix 3, Tucson 1, Scottsdale 1 |
+| IL | 4 | 4 | Chicago 8, Carol Stream 1, Elk Grove Village 1, Aurora 1 |
+| GA | 3 | 3 | Atlanta 7, Savannah 1, Avondale Estates 1 |
+| MI | 3 | 3 | Detroit 3, Lansing 1, Dearborn 1 |
+| MO | 3 | 3 | St. Louis 1, Saint Charles 1, Kansas City 1 |
+| NJ | 3 | 3 | Rockaway 1, Jersey City 1, Hoboken 1 |
+| OH | 3 | 3 | Columbus 3, Cleveland 2, Maple Heights 1 |
+| PA | 3 | 3 | Philadelphia 7, Pittsburgh 3, Upper Moreland Township 1 |
+| CO | 1 | 2 | Denver 3, Aurora 1 |
+| LA | 2 | 2 | New Orleans 2, Metairie 1 |
+| MA | 2 | 2 | Boston 24, Cambridge 1 |
+| MD | 2 | 2 | Baltimore 2, North Bethesda 1 |
+| MN | 2 | 2 | Minneapolis 3, Burnsville 1 |
+| NC | 2 | 2 | Wilmington 1, Charlotte 1 |
+| UT | 2 | 2 | Salt Lake City 1, Orem 1 |
+| CT | 1 | 1 | Fairfield 1 |
+| DC | 1 | 1 | Washington 5 |
+| HI | 1 | 1 | Honolulu 7 |
+| IA | 1 | 1 | West Des Moines 1 |
+| ID | 1 | 1 | Boise 1 |
+| IN | 1 | 1 | Beech Grove 1 |
+| KS | 0 | 1 | Overland Park 3 |
+| NE | 1 | 1 | Omaha 1 |
+| NM | 1 | 1 | Albuquerque 1 |
+| NV | 1 | 1 | Las Vegas 2 |
+| OR | 1 | 1 | Portland 12 |
+| SD | 1 | 1 | Sioux Falls 1 |
+| TN | 1 | 1 | Nashville 3 |
+
+
+Per-hour Graph yield, measured: run 1 read the never-read backlog first (72 calls, 58 account reads) and run 1b the rest (15 calls): 0 new dated events from the backlog, 6 dated posts from 8 hashtag reads. The backlog was hashtag-discovered cafes, bakeries and personal accounts, and 345 accounts are personal accounts the business_discovery edge cannot read (now `unreadable`, never retried). The dated events come from the 178 `watching` brands re-read on cadence, which main's scheduled run covers; the Meta app review would lift the 200-calls-an-hour cap and allow hashtag reads beyond 30 a week, but the limiting input today is how many matcha brands post dated pop-ups at all, not the cap.
+
+What moved: the thin-metro crawler runs and the review queue (Denver 1 to 3, Overland Park 0 to 3, Fort Worth 1 to 2, Columbus 2 to 3, Nashville 2 to 3, Jacksonville and Scottsdale 0 to 1, Aurora CO 0 to 1); Brooklyn, New York, Washington and Baltimore lost a date each as events passed or merged.
+
+Blocked, Steven only, with what each unlocks: Facebook sign-in for the Meta app review (advanced access: a higher Graph call rate and hashtag reads beyond 30 unique a week); Tavily sign-in on his Chrome tab (a paid tier past the 900 free credits a month, 125 left); `tools/windows-task.ps1` (the Windows scheduled refresh on his machine, if the first session's scheduled task is not the one he wants); free API keys that need an account: Ticketmaster (Discovery events by city), Eventbrite API (organizer and search endpoints without the 429s the public pages give), Yelp (events by location, 500 calls a day), Reddit (city-subreddit posts through the official API).
 ## Social wave (main checkout session, worktree `_wt/matcha-map-live-fix`, 2026-11-23 afternoon ET)
 
 Steven's direction, verbatim: "RSVP to things", "Promote your own matcha pop up", "think things that will take this to the next social level for events". Budget: this wave at most 5 points of the weekly window, wave 4 (data, next-level session) at most 3, hard stop at 43% combined; 35% all models at the open.

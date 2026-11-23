@@ -8,8 +8,8 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:3633ebd0cbbc@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T133648Z
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART:20261128T160000Z
 DTEND:20261128T180000Z
 SUMMARY:Enchantea after Thanksgiving refresh
@@ -25,8 +25,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:7195ba9f3d6b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151600Z
 DTSTART:20261206T160000Z
 DTEND:20261206T180000Z
 SUMMARY:Tulip Cafe Turkish hospitality
@@ -36,6 +36,22 @@ DESCRIPTION:Lots of drinks\, snacks\, and desserts for whether you want jus
  \, latte\nDetails not confirmed yet. Check the brand's post before you go.
  \nMore: https://matchamap-cu7.pages.dev/e/7195ba9f3d6b/
 URL:https://matchamap-cu7.pages.dev/e/7195ba9f3d6b/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:37bc9c1b4180@matchamap-cu7.pages.dev
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
+DTSTART:20261227T170000Z
+DTEND:20261227T200000Z
+SUMMARY:Matcha + Meetup: Columbus
+LOCATION:Columbus\, OH
+DESCRIPTION:Join us for coffee at different cafes each gathering. Build you
+ r community in your city with a fun day out! Meetup. Matcha. Support local
+ !\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before
+  you go.\nMore: https://matchamap-cu7.pages.dev/e/37bc9c1b4180/
+URL:https://matchamap-cu7.pages.dev/e/37bc9c1b4180/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

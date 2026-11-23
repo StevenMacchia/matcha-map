@@ -36,18 +36,18 @@
   },
   "stats": {
     "matchapopup": {
-      "runs": 2,
-      "posts": 137,
-      "kept": 4,
-      "last_run": "2026-11-23T08:33:15.837Z",
+      "runs": 3,
+      "posts": 176,
+      "kept": 7,
+      "last_run": "2026-11-23T15:08:02.488Z",
       "last_top": "2026-11-23T02:01:13.925Z",
-      "accounts": 28
+      "accounts": 29
     },
     "matchapopups": {
-      "runs": 2,
+      "runs": 3,
       "posts": 35,
       "kept": 0,
-      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_run": "2026-11-23T15:08:02.488Z",
       "last_top": "2026-11-23T02:01:13.925Z",
       "accounts": 0
     },
@@ -66,50 +66,50 @@
       "last_top": "2026-11-23T02:01:13.925Z"
     },
     "matchacart": {
-      "runs": 2,
-      "posts": 79,
+      "runs": 3,
+      "posts": 96,
       "kept": 0,
-      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_run": "2026-11-23T15:08:02.488Z",
       "last_top": "2026-11-23T02:01:13.925Z",
-      "accounts": 9
+      "accounts": 10
     },
     "matchaevent": {
-      "runs": 2,
-      "posts": 54,
+      "runs": 3,
+      "posts": 55,
       "kept": 0,
-      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_run": "2026-11-23T15:08:02.488Z",
       "last_top": "2026-11-23T02:01:13.925Z",
       "accounts": 1
     },
     "matchabar": {
-      "runs": 2,
-      "posts": 143,
-      "kept": 1,
-      "last_run": "2026-11-23T08:33:15.837Z",
+      "runs": 3,
+      "posts": 188,
+      "kept": 2,
+      "last_run": "2026-11-23T15:08:02.488Z",
       "last_top": "2026-11-23T02:01:13.925Z",
-      "accounts": 33
+      "accounts": 37
     },
     "popupmatcha": {
-      "runs": 2,
-      "posts": 53,
+      "runs": 3,
+      "posts": 54,
       "kept": 0,
-      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_run": "2026-11-23T15:08:02.488Z",
       "last_top": "2026-11-23T02:01:13.925Z",
       "accounts": 1
     },
     "matchafest": {
-      "runs": 2,
-      "posts": 61,
-      "kept": 1,
-      "last_run": "2026-11-23T08:33:15.837Z",
+      "runs": 3,
+      "posts": 70,
+      "kept": 2,
+      "last_run": "2026-11-23T15:08:02.488Z",
       "last_top": "2026-11-23T02:01:13.925Z",
-      "accounts": 2
+      "accounts": 4
     },
     "matchamarket": {
-      "runs": 2,
-      "posts": 51,
-      "kept": 1,
-      "last_run": "2026-11-23T08:33:15.837Z",
+      "runs": 3,
+      "posts": 52,
+      "kept": 2,
+      "last_run": "2026-11-23T15:08:02.488Z",
       "last_top": "2026-11-23T02:01:13.925Z",
       "accounts": 1
     },

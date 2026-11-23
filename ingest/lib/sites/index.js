@@ -32,7 +32,8 @@ export const NAMES = ["mato", ...SITES.map((s) => s.name)];
 export function parseFlags(argv) {
   const only = argv.includes("--only") ? String(argv[argv.indexOf("--only") + 1] || "").toLowerCase() : null;
   const off = new Set(NAMES.filter((n) => argv.includes(`--no-${n}`)));
-  return { only, off };
+  const cities = argv.includes("--cities") ? String(argv[argv.indexOf("--cities") + 1] || "").split(",").map((x) => x.trim()).filter(Boolean) : null;
+  return { only, off, cities };
 }
 export const siteOn = (name, { only, off }, noFetch = false) => !noFetch && (!only || only === name) && !off.has(name);
 

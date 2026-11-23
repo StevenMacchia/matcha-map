@@ -555,6 +555,11 @@
     "lng": -157.823876,
     "source": "nominatim"
   },
+  "2454 south beretania street honolulu hi 96826 honolulu hi": {
+    "lat": 21.294121,
+    "lng": -157.823876,
+    "source": "nominatim"
+  },
   "2456 w 8th ct hialeah fl 33010 hialeah fl": {
     "lat": 25.84396,
     "lng": -80.299211,
@@ -1267,6 +1272,10 @@
     "lat": 30.193816,
     "lng": -97.810912,
     "source": "nominatim"
+  },
+  "7950 santa fe st overland park ks 66204 overland park ks": {
+    "miss": true,
+    "at": 1795447336086
   },
   "7969 melrose avenue west hollywood ca 90046": {
     "lat": 34.083002,
@@ -2968,9 +2977,19 @@
     "miss": true,
     "at": 1795412797486
   },
+  "venue: brooklyn bridge park brooklyn ny": {
+    "lat": 40.698289,
+    "lng": -73.99993,
+    "source": "nominatim-venue"
+  },
   "venue: cafe monet art & clay studio austin tx": {
     "miss": true,
     "at": 1795400405244
+  },
+  "venue: casa austin tx": {
+    "lat": 30.326656,
+    "lng": -97.689551,
+    "source": "nominatim-venue"
   },
   "venue: casabunni houston tx": {
     "miss": true,
@@ -3059,6 +3078,16 @@
     "miss": true,
     "at": 1795436183287
   },
+  "venue: grant park market atlanta ga": {
+    "lat": 33.746541,
+    "lng": -84.370782,
+    "source": "nominatim-venue"
+  },
+  "venue: gratiot detroit mi": {
+    "lat": 42.338029,
+    "lng": -83.041276,
+    "source": "nominatim-venue"
+  },
   "venue: great falls park washington dc": {
     "lat": 38.990455,
     "lng": -77.251843,
@@ -3138,6 +3167,10 @@
     "miss": true,
     "at": 1795400416246
   },
+  "venue: matcha panda cafe - rittenhouse philadelphia pa": {
+    "miss": true,
+    "at": 1795447340095
+  },
   "venue: matchafest miami miami fl": {
     "miss": true,
     "at": 1795400409229
@@ -3205,6 +3238,10 @@
   "venue: pip coffee+clay - phoenix phoenix az": {
     "miss": true,
     "at": 1795400411191
+  },
+  "venue: pip coffee+clay phoenix az": {
+    "miss": true,
+    "at": 1795447338314
   },
   "venue: pipe & row seattle wa": {
     "lat": 47.65046,

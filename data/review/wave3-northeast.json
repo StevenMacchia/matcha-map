@@ -33,7 +33,7 @@
       "description": "MARU, a matcha brand, is popping up again inside Wishing Cup in downtown Boston from November 20 to December 6, serving matcha drinks to walk-ins. The cafe is a short walk from Government Center.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back."
+      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back. checked 2026-11-23: Wishing Cup site and Instagram caption not reachable, no page found showing per-day presence."
     },
     {
       "brand": "MARU",
@@ -66,7 +66,7 @@
       "description": "MARU, a matcha brand, is popping up again inside Wishing Cup in downtown Boston from November 20 to December 6, serving matcha drinks to walk-ins. The cafe is a short walk from Government Center.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back."
+      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back. checked 2026-11-23: Wishing Cup site and Instagram caption not reachable, no page found showing per-day presence."
     },
     {
       "brand": "MARU",
@@ -99,7 +99,7 @@
       "description": "MARU, a matcha brand, is popping up again inside Wishing Cup in downtown Boston from November 20 to December 6, serving matcha drinks to walk-ins. The cafe is a short walk from Government Center.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back."
+      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back. checked 2026-11-23: Wishing Cup site and Instagram caption not reachable, no page found showing per-day presence."
     },
     {
       "brand": "MARU",
@@ -131,8 +131,8 @@
       "pay": null,
       "description": "MARU, a matcha brand, is popping up again inside Wishing Cup in downtown Boston from November 20 to December 6, serving matcha drinks to walk-ins. The cafe is a short walk from Government Center.",
       "image_url": null,
-      "confidence": "likely",
-      "notes": "Run end date Dec 6 is quoted in a Wishing Cup Instagram caption (search snippet, page not opened); hours not checked."
+      "confidence": "unsure",
+      "notes": "Run end date Dec 6 is quoted in a Wishing Cup Instagram caption (search snippet, page not opened); hours not checked. checked 2026-11-23: caption not reachable; end date rests on a search snippet only, so held."
     },
     {
       "brand": "Caribe & Co.",

@@ -38,8 +38,8 @@
       "pay": null,
       "description": "HerCafe is Kansas City's first mobile matcha cart, hand-whisking drinks with in-house syrups and cold foams. Its site lists the Overland Park Farmers Market as its pop-up location every Saturday. The market runs holiday Saturdays Dec 5, 12 and 19.",
       "image_url": null,
-      "confidence": "unsure",
-      "notes": "Brand site says 'every Saturday' at Overland Park Farmers Market with no specific dates; the city lists the market Dec 5-19 (none Nov 28, Dec 26, Jan 2). Winter attendance by HerCafe is not confirmed on any page, so unsure. Market page lists hours 8am-12pm."
+      "confidence": "likely",
+      "notes": "weekly schedule from https://hercafekc.com (Overland Park Farmers Market, 8am-12pm, every Saturday); hours and address from https://www.visitoverlandpark.com/things-to-do/attractions/overland-park-farmers-market/ (Saturdays Dec 5-19, 8am-12pm, Clock Tower Landing, 7950 Santa Fe St)"
     },
     {
       "brand": "HerCafe",
@@ -77,8 +77,8 @@
       "pay": null,
       "description": "HerCafe is Kansas City's first mobile matcha cart, hand-whisking drinks with in-house syrups and cold foams. Its site lists the Overland Park Farmers Market as its pop-up location every Saturday. The market runs holiday Saturdays Dec 5, 12 and 19.",
       "image_url": null,
-      "confidence": "unsure",
-      "notes": "Brand site says 'every Saturday' at Overland Park Farmers Market with no specific dates; the city lists the market Dec 5-19 (none Nov 28, Dec 26, Jan 2). Winter attendance by HerCafe is not confirmed on any page, so unsure. Market page lists hours 8am-12pm."
+      "confidence": "likely",
+      "notes": "weekly schedule from https://hercafekc.com (Overland Park Farmers Market, 8am-12pm, every Saturday); hours and address from https://www.visitoverlandpark.com/things-to-do/attractions/overland-park-farmers-market/ (Saturdays Dec 5-19, 8am-12pm, Clock Tower Landing, 7950 Santa Fe St)"
     },
     {
       "brand": "HerCafe",
@@ -116,8 +116,8 @@
       "pay": null,
       "description": "HerCafe is Kansas City's first mobile matcha cart, hand-whisking drinks with in-house syrups and cold foams. Its site lists the Overland Park Farmers Market as its pop-up location every Saturday. The market runs holiday Saturdays Dec 5, 12 and 19.",
       "image_url": null,
-      "confidence": "unsure",
-      "notes": "Brand site says 'every Saturday' at Overland Park Farmers Market with no specific dates; the city lists the market Dec 5-19 (none Nov 28, Dec 26, Jan 2). Winter attendance by HerCafe is not confirmed on any page, so unsure. Market page lists hours 8am-12pm."
+      "confidence": "likely",
+      "notes": "weekly schedule from https://hercafekc.com (Overland Park Farmers Market, 8am-12pm, every Saturday); hours and address from https://www.visitoverlandpark.com/things-to-do/attractions/overland-park-farmers-market/ (Saturdays Dec 5-19, 8am-12pm, Clock Tower Landing, 7950 Santa Fe St)"
     }
   ]
 }

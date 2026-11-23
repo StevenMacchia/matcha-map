@@ -212,8 +212,9 @@ for (const c of crawlCities()) {
 export const placeSlug = (c) => (c.state === "DC" ? "washington" : c.slug);
 
 // The cities a per-city crawler asks about this run: ctx.cities (entries or names) or the whole crawl order, the next CRAWL_CITIES_PER_RUN
-// from this site's cursor, passing over cities skipped after a 404 or an empty page (see crawl-state.js).
+// from this site's cursor (ctx.only, from --cities: exactly those cities, no cursor or skip change), passing over cities skipped after a 404 or an empty page (see crawl-state.js).
 export function planFor(site, ctx = {}) {
+  if (ctx.only?.length) return planCities(site, ctx.only.map(cityOf).filter(Boolean), { exact: true });
   const list = (ctx.cities ? ctx.cities.map(cityOf) : crawlCities()).filter(Boolean);
   return planCities(site, list, { perRun: ctx.perRun ?? perRunDefault(ctx.env), now: ctx.now || new Date(), file: ctx.crawlFile || CRAWL_STATE_FILE, persist: !ctx.fetcher?.noFetch });
 }

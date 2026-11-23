@@ -58,6 +58,17 @@ export function searchLabels(pool = SEARCH_POOL, list = loadCities()) {
   return list.slice(0, pool).map((c) => searchLabel(c, list));
 }
 
+// Names for --cities ("Phoenix AZ", "Mesa", "Columbus, GA") -> { cities: [entry], missing: [name] }.
+export function resolveCityNames(names, list = loadCities()) {
+  const cities = [], missing = [];
+  for (const n of names) {
+    const m = String(n).trim().match(/^(.*\S)[\s,]+([A-Za-z]{2})$/);
+    const c = (m && findCity(m[1], m[2], list)) || findCity(n, null, list);
+    if (c) { if (!cities.includes(c)) cities.push(c); } else missing.push(n);
+  }
+  return { cities, missing };
+}
+
 // Accept a crawler's city argument as an entry or a name (tests and old callers pass names).
 export function cityOf(x) {
   if (x && typeof x === "object") return x;

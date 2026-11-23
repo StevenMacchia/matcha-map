@@ -8,17 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:dc98ba192282@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261128T170000Z
-DTEND:20261128T200000Z
-SUMMARY:Matcha + Meetup: Brooklyn
-LOCATION:Brooklyn\, NY
-DESCRIPTION:Join us for coffee\, latte\, or matcha! Each gathering is at a 
- different coffee shop. Build your community in your city with a fun day ou
- t!\nMenu: latte\nPrice: $12.51\nDetails not confirmed yet. Check the brand
- 's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/dc98ba1922
- 82/
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
+DTSTART:20261128T190000Z
+DTEND:20261128T220000Z
+SUMMARY:Matcha + Meetup: Aurora
+LOCATION:Aurora\, CO
+DESCRIPTION:Sip and socialize at Matcha + Meetup. Looking to connect with m
+ ore people in your community? Join us for a laid back gathering!\nPrice: $
+ 12.51\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/dc98ba192282/
 URL:https://matchamap-cu7.pages.dev/e/dc98ba192282/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
