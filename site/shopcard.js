@@ -167,8 +167,23 @@ export function menuForBrand(brand, menus) {
 }
 
 // ---- card ------------------------------------------------------------------------------------------------------
-function addressLine(s) {
-  const tail = [s.city, [s.state, s.zip].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+// Street, then "City, ST". Ten shops have no city on record: the nearest listed city to the pin stands in (within 25 miles,
+// same state), from ctx.cityList or window.CITY_LIST (rows [name, ST, lat, lng, population]).
+function nearestCity(s, ctx) {
+  const list = (ctx && ctx.cityList) || (typeof window !== "undefined" && window.CITY_LIST) || null;
+  if (!Array.isArray(list) || !isFinite(s.lat) || !isFinite(s.lng)) return "";
+  const k = Math.cos(s.lat * Math.PI / 180);
+  let best = null, bd = Infinity;
+  for (const c of list) {
+    if (!c || (s.state && c[1] !== s.state)) continue;
+    const d = Math.hypot(c[2] - s.lat, (c[3] - s.lng) * k);
+    if (d < bd) { bd = d; best = c; }
+  }
+  return best && bd * 69 <= 25 ? best[0] : "";
+}
+export function addressLine(s, ctx) {
+  const city = s.city || nearestCity(s, ctx);
+  const tail = [city, s.state].filter(Boolean).join(", ");
   return [s.address, tail].filter(Boolean).join(", ");
 }
 // A picture the shop's record carries (the same { local, url, credit } shape events use). None do today.
@@ -183,7 +198,7 @@ const isNum = (x) => typeof x === "number" && isFinite(x);
 export function shopCardHtml(s, ctx = {}) {
   if (!s || !s.name) return "";
   const now = ctx.now instanceof Date ? ctx.now : new Date();
-  const name = String(s.name), addr = addressLine(s);
+  const name = String(s.name), addr = addressLine(s, ctx);
   const head = `<div class="mm-shop-head"><span class="mm-shop-art" data-char="s-shop" aria-hidden="true"></span><div class="mm-shop-id">` +
     `<h3 class="mm-shop-name">${esc(cut(name, 80))}</h3><p class="mm-shop-kind">Matcha shop</p></div></div>` +
     (addr ? `<p class="mm-shop-addr">${esc(cut(addr, 140))}</p>` : "");

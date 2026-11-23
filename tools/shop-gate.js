@@ -41,6 +41,7 @@ const FIX = [
   ["no-menu", SHOPS.find((s) => !s.menu && s.website && s.opening_hours && /;.*;.*;/.test(s.opening_hours)) || SHOPS.find((s) => !s.menu)],
   ["no-photo", SHOPS.find((s) => !s.menu && !s.image && !s.website && !s.instagram) || SHOPS.find((s) => !s.image)],
   ["longest-name", pick((a, b) => (b.name + b.address + b.city).length - (a.name + a.address + a.city).length)],
+  ["no-city", SHOPS.find((s) => !s.city && s.address && s.state)], // the address line fills the city from the nearest listed city
 ].filter(([, s]) => s).map(([name, s]) => ({ name, id: s.id, label: s.name }));
 const ONLY = arg("--only") ? list("--only") : null;
 
