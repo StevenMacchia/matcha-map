@@ -1,0 +1,88 @@
+{
+ "generated": "2026-11-23T23:00:52.099Z",
+ "group": "population-triangle",
+ "items": [
+  {
+   "brand": "Saikō Matcha House",
+   "handle": "saikomatchahouse",
+   "source_id": "saiko-matcha-house",
+   "kind": "popup",
+   "category": "matcha",
+   "tz": "America/New_York",
+   "all_day": false,
+   "venue": "MODE at The Village District",
+   "address": "2068 Clark Ave",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27605",
+   "lat": null,
+   "lng": null,
+   "source_url": "https://www.saikomatchahouse.com/",
+   "posts": {
+    "instagram": null,
+    "tiktok": null,
+    "other": "https://www.saikomatchahouse.com/"
+   },
+   "menu": [
+    "ceremonial first-harvest matcha",
+    "house-made syrups"
+   ],
+   "price": null,
+   "hours": null,
+   "pay": null,
+   "description": "Raleigh-born matcha pop-up: ceremonial first-harvest matcha and house-made syrups.",
+   "image_url": null,
+   "confidence": "likely",
+   "extracted_by": "manual",
+   "evidence": [
+    "https://www.saikomatchahouse.com/",
+    "https://www.shopvillagedistrict.com/events/saiko-matcha-pop-up/"
+   ],
+   "title": "Saikō Matcha House pop-up, Black Friday weekend at MODE",
+   "start": "2026-11-27T10:00:00-05:00",
+   "end": "2026-11-27T14:00:00-05:00",
+   "notes": "read 2026-11-23 on saikomatchahouse.com under Upcoming Events: BLACK FRIDAY WEEKEND, Nov 27, 10AM-2PM, MODE @ The Village District. Street address is The Village District's own (2068 Clark Avenue, Raleigh NC 27605, from shopvillagedistrict.com); the shop's own suite is not printed."
+  },
+  {
+   "brand": "Saikō Matcha House",
+   "handle": "saikomatchahouse",
+   "source_id": "saiko-matcha-house",
+   "kind": "popup",
+   "category": "matcha",
+   "tz": "America/New_York",
+   "all_day": false,
+   "venue": "Maeve at The Village District",
+   "address": "2068 Clark Ave",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27605",
+   "lat": null,
+   "lng": null,
+   "source_url": "https://www.saikomatchahouse.com/",
+   "posts": {
+    "instagram": null,
+    "tiktok": null,
+    "other": "https://www.saikomatchahouse.com/"
+   },
+   "menu": [
+    "ceremonial first-harvest matcha",
+    "house-made syrups"
+   ],
+   "price": null,
+   "hours": null,
+   "pay": null,
+   "description": "Raleigh-born matcha pop-up: ceremonial first-harvest matcha and house-made syrups.",
+   "image_url": null,
+   "confidence": "likely",
+   "extracted_by": "manual",
+   "evidence": [
+    "https://www.saikomatchahouse.com/",
+    "https://www.shopvillagedistrict.com/events/saiko-matcha-pop-up/"
+   ],
+   "title": "Saikō Matcha House pop-up at Maeve",
+   "start": "2026-11-28T11:00:00-05:00",
+   "end": "2026-11-28T15:00:00-05:00",
+   "notes": "read 2026-11-23 on saikomatchahouse.com under Upcoming Events: Nov 28th, 11AM-3PM, Maeve @ The Village District. Street address is The Village District's own (2068 Clark Avenue, Raleigh NC 27605); the shop's own suite is not printed."
+  }
+ ]
+}

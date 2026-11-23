@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T18:10:06.021Z",
+  "updated": "2026-11-23T22:58:48.402Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -26782,6 +26782,25 @@
       "checks": 0,
       "cadence_hours": 72,
       "notes": "site=eventbrite; org=the-rouge-method; home=Oklahoma City, OK; brand=The Rouge Method; e.g. Pilates & Pores"
+    },
+    {
+      "handle": "saikomatchahouse",
+      "platform": "instagram",
+      "source_id": "saiko-matcha-house",
+      "status": "unreadable",
+      "found_via": "seed",
+      "found_from": "https://www.saikomatchahouse.com/",
+      "first_seen": "2026-11-23T22:58:40.471Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T22:58:48.402Z",
+      "unreadable_prior": "watching",
+      "unreadable_at": "2026-11-23T22:58:48.402Z"
     }
   ]
 }

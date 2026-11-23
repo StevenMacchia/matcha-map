@@ -4644,5 +4644,24 @@
     "home_state": "IL",
     "instagram": "yujomatcha",
     "notes": "Chicago matcha pop-up: runs inside The Coco Shop and at farmers markets (Wicker Park Farmers Market, Sept 2025); vendor at The Center of Order and Experimentation 'All Things Matcha' pop-ups (Mar 21 and Dec 6 2025). Source: https://www.instagram.com/popular/yujo-matcha-chicago (snippet), https://www.eventbrite.com/e/all-things-matcha-pop-up-tickets-1964513975183. No 2026-27 dates found."
+  },
+  {
+    "id": "saiko-matcha-house",
+    "brand": "Saikō Matcha House",
+    "kind": "popup",
+    "category": "matcha",
+    "kind_note": null,
+    "home_city": "Raleigh",
+    "home_state": "NC",
+    "website": "https://www.saikomatchahouse.com/",
+    "instagram": "saikomatchahouse",
+    "tiktok": null,
+    "schedule_url": "https://www.saikomatchahouse.com/",
+    "schedule_kind": "website",
+    "adapter": "website",
+    "active": true,
+    "notes": "Raleigh-born matcha pop-up (ceremonial first-harvest matcha, house-made syrups); posts 'Upcoming Events' on its own site, e.g. Village District Nov 27 and Nov 28 2026. Instagram handle read from the site's footer link.",
+    "added": "2026-11-23",
+    "verified": "2026-11-23"
   }
 ]
