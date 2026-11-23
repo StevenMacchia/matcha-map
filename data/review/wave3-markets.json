@@ -1,0 +1,69 @@
+{
+  "generated": "2026-11-23T12:21:27.497Z",
+  "group": "wave3-markets",
+  "items": [
+    {
+      "brand": "Muracha",
+      "handle": null,
+      "source_id": "muracha",
+      "title": "Muracha Matcha Pop-Up at Bella Cucina",
+      "start": "2026-12-12T11:00:00-05:00",
+      "end": "2026-12-12T14:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Bella Cucina",
+      "address": "288 Buckhead Avenue, Atlanta, GA 30305",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://bellacucina.com/products/muracha-matcha-pop-up-saturday-december-12th-2026",
+      "posts": [],
+      "evidence": [
+        "https://bellacucina.com/products/muracha-matcha-pop-up-saturday-december-12th-2026"
+      ],
+      "menu": [
+        "matcha served from the bar",
+        "Collector's Set: Yame No. 89 and Uji No. 18 first-harvest tins, whisk, chashaku"
+      ],
+      "price": null,
+      "hours": "11am-2pm",
+      "pay": null,
+      "description": "A holiday-season matcha bar at the Buckhead Village shop Bella Cucina, with Muracha serving matcha and selling its tins and tools. A limited Collector's Set made with artist Kristen Giorgi is on sale. Free to attend; no purchase needed.",
+      "image_url": "https://bellacucina.com/cdn/shop/files/muracha-matcha-pop-up-saturday-december-12th-2026-events-pop-up-bella-cucina-3481948.png?v=1795011254&width=782",
+      "confidence": "confirmed",
+      "notes": "Date, time and street address on the shop event page. Page shows a $0.00 placeholder price; drink prices not listed. Part of the winter-market sweep (holiday-season shop pop-up, not an organizer market)."
+    },
+    {
+      "brand": "Tsukime Matcha Bar",
+      "handle": "tsukimematcha",
+      "source_id": "tsukime-matcha",
+      "title": "Tsukime Matcha Bar at Occidental Flea Market",
+      "start": "2026-12-12T12:00:00-08:00",
+      "end": "2026-12-12T13:00:00-08:00",
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "venue": "Occidental Square Flea (Occidental Square)",
+      "address": "117 S Washington St, Seattle, WA 98104",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.tsukimematcha.com/popups",
+      "posts": [],
+      "evidence": [
+        "https://www.tsukimematcha.com/popups",
+        "https://www.thecraftmap.com/fair/occidental-square-flea-seattle-wa",
+        "https://downtownseattle.org/series/occidental-square-trading-post/"
+      ],
+      "menu": [],
+      "price": null,
+      "hours": "12:00-1:00 PM per the brand page; the market itself runs about noon to 5 pm",
+      "pay": null,
+      "description": "Tsukime is a traveling Seattle matcha cart serving ceremonial-grade matcha drinks. This stop is at the quarterly Occidental Square flea in Pioneer Square, a free outdoor market of handmade and vintage goods.",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/68b65b6ee4c2642b27c3e745/b6281090-22c0-4c67-ae8c-6dc298294219/DSC_8312.png",
+      "confidence": "likely",
+      "notes": "Brand page lists Sat Dec 12 2026 12-1 PM with the address; the one-hour window looks short (earlier listings are also 12-1) so the time may be a stub. Downtown Seattle Association page only shows the Oct 17 edition; Dec 12 market date is on thecraftmap and Secret Seattle, not yet on the DSA page. Menu and prices not published."
+    }
+  ]
+}
