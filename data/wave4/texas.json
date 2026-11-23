@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "id": "central-matcha",
+      "brand": "Central Matcha",
+      "kind": "popup",
+      "category": "matcha",
+      "kind_note": null,
+      "home_city": "Austin",
+      "home_state": "TX",
+      "website": "https://centralmatcha.com/",
+      "instagram": "centralmatcha",
+      "tiktok": null,
+      "schedule_url": "https://centralmatcha.com/pages/find-us",
+      "schedule_kind": "website",
+      "adapter": "website",
+      "active": true,
+      "notes": "Austin small business selling 100% ceremonial-grade matcha from Japan (shade grown, hand picked, stone ground). Stands at Texas Farmers' Market at Mueller on Sundays (10am-2pm) and Barton Creek or Bell (Cedar Park) on Saturdays; also retail at Local Pastures and wholesale/catering. Signature: matcha shot, iced matcha latte. Price and payment not published. Evidence: https://centralmatcha.com/pages/find-us",
+      "added": "2026-11-23",
+      "verified": null
+    }
+  ]
+}
