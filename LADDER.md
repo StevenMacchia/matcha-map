@@ -238,19 +238,21 @@ Steven: "Yes, wave 3". Coverage shortfalls from the gap list and the per-city ta
 
 | Rung | Owner | Files | State | Spend after |
 |---|---|---|---|---|
-| W3-S1 sweep mountain (Denver, Phoenix, Las Vegas, SLC, ABQ, Tucson, Boise) | Sonnet | `data/review/wave3-mountain.*`, `data/wave5/mountain.json` | running | |
-| W3-S2 sweep southeast (Charlotte, Raleigh, Nashville, Jacksonville, Tampa, Richmond, New Orleans, Birmingham, Memphis, Louisville, Charleston) | Sonnet | `wave3-southeast.*` | running | |
-| W3-S3 sweep midwest (Chicago, Detroit, Twin Cities, Columbus, Indy, Cleveland, Cincinnati, Milwaukee, KC, St. Louis, Omaha) | Sonnet | `wave3-midwest.*` | running | |
-| W3-S4 sweep northeast (Boston, Baltimore, Providence, Hartford, Buffalo, Pittsburgh, Philadelphia, DC suburbs, North Jersey) | Sonnet | `wave3-northeast.*` | running | |
-| W3-S5 sweep texas (Fort Worth, OKC, Tulsa, El Paso, Dallas, Houston, San Antonio, Austin: Dec and Jan dates) | Sonnet | `wave3-texas.*` | running | |
-| W3-S6 sweep west (South Bay, Sacramento, Orange County, Long Beach, Inland Empire, Honolulu, Portland, Seattle suburbs) | Sonnet | `wave3-west.*` | running | |
-| W3-S7 sweep markets (holiday and winter market vendor lists nationwide, Dec 1 to Jan 31; brand schedule pages) | Sonnet | `wave3-markets.*` | running | |
-| W3-V1 verify held items, west (sweep-west, sweep-socal) | Sonnet | those files, in place | running | |
-| W3-V2 verify held items, texas (sweep-texas, -3, sweep-midwest) | Sonnet | those files, in place | running | |
-| W3-V3 verify held items, east (sweep-southeast, -3, sweep-northeast, -3) | Sonnet | those files, in place | running | |
-| W3-V4 verify the crawlers' run file (50 unsure) into a new file | Sonnet | `data/review/wave3-runcheck.json` | running | |
-| W3-P1 pipeline: Instagram Graph read (no loop was running; 370 of 952 accounts never read), then Eventbrite, Luma, Allevents, Meetup, MATO crawlers past the cursor | Sonnet | `watchlist.json`, run file, `sources.json` pseudo-sources, caches | running | |
-| W3-M merge wave5, ingest with promote, quality audit, tests, smoke 1440/390, gate, merge main, deploy, before/after table | Fable (this session) | everything after the workers | pending | |
+| W3-S1 sweep mountain (Denver, Phoenix, Las Vegas, SLC, ABQ, Tucson, Boise) | Sonnet | `data/review/wave3-mountain.*`, `data/wave5/mountain.json` | done: 0 dated (8 Tavily Instagram-snippet searches, every dated snippet past) | |
+| W3-S2 sweep southeast (Charlotte, Raleigh, Nashville, Jacksonville, Tampa, Richmond, New Orleans, Birmingham, Memphis, Louisville, Charleston) | Sonnet | `wave3-southeast.*` | done: 0 dated (8 searches, same) | |
+| W3-S3 sweep midwest (Chicago, Detroit, Twin Cities, Columbus, Indy, Cleveland, Cincinnati, Milwaukee, KC, St. Louis, Omaha) | Sonnet | `wave3-midwest.*` | done: 3 unsure (HerCafe, Overland Park winter market) | |
+| W3-S4 sweep northeast (Boston, Baltimore, Providence, Hartford, Buffalo, Pittsburgh, Philadelphia, DC suburbs, North Jersey) | Sonnet | `wave3-northeast.*` | done: 7 (Caribe & Co. at SoWa 3 likely, MARU at Wishing Cup 1 likely 3 unsure), 1 brand | |
+| W3-S5 sweep texas (Fort Worth, OKC, Tulsa, El Paso, Dallas, Houston, San Antonio, Austin: Dec and Jan dates) | Sonnet | `wave3-texas.*` | done: 5 unsure from snippets (Chasen, Mori, Tala) | |
+| W3-S6 sweep west (South Bay, Sacramento, Orange County, Long Beach, Inland Empire, Honolulu, Portland, Seattle suburbs) | Sonnet | `wave3-west.*` | done: 1 confirmed (JCCH Mochi & Matcha Fest, Honolulu Dec 5), 1 brand | |
+| W3-S7 sweep markets (holiday and winter market vendor lists nationwide, Dec 1 to Jan 31; brand schedule pages) | Sonnet | `wave3-markets.*` | done: 2 (Muracha Atlanta Dec 12 confirmed, Tsukime Seattle Dec 12 likely); nothing dated in January | |
+| W3-S8 spread-east (second- and third-tier cities of NY, MA, GA, NC, TN, IL, PA, VA) | Sonnet | `wave3-spread-east.*` | done: 0 dated | |
+| W3-S9 spread-west (second- and third-tier cities of WA, OR, CO, TX, CA, AZ, NV, UT, NM, ID, HI) | Sonnet | `wave3-spread-west.*` | done: 0 dated (3 searches) | |
+| W3-V1 verify held items, west (sweep-west, sweep-socal) | Sonnet | those files, in place | done: 12 promoted, 8 dropped, 6 unsure | |
+| W3-V2 verify held items, texas (sweep-texas, -3, sweep-midwest) | Sonnet | those files, in place | done: 2 promoted, 19 unsure | |
+| W3-V3 verify held items, east (sweep-southeast, -3, sweep-northeast, -3) | Sonnet | those files, in place | done: 9 promoted, 10 unsure | |
+| W3-V4 verify the crawlers' run file (50 unsure) into a new file | Sonnet | `data/review/wave3-runcheck.json` | done: 14 promoted, 34 dropped, 2 unsure | |
+| W3-P1 pipeline: Instagram Graph read (no loop was running; 370 of 952 accounts never read), then Eventbrite, Luma, Allevents, Meetup, MATO crawlers past the cursor | Sonnet | `watchlist.json`, run file, `sources.json` pseudo-sources, caches | done: Graph 2 runs, 284 calls, about 10 accounts read (hashtags and 82 failing reads took the rest); Eventbrite 174 cities, Luma, Allevents, Meetup, MATO; run file 161 items | |
+| W3-M merge wave5, ingest with promote, quality audit, tests, smoke 1440/390, gate, merge main, deploy, before/after table | Fable (this session) | everything after the workers | done (see close) | all-models 33%, Fable 29% |
 
 Blocked, Steven only (not worked around): Facebook sign-in for the Meta app review, Tavily sign-in on his Chrome tab, the Windows scheduled-task command (`tools/windows-task.ps1`), and the free API keys that need an account (Ticketmaster, Eventbrite API, Yelp, Reddit).
 
@@ -260,3 +262,125 @@ Blocked, Steven only (not worked around): Facebook sign-in for the Meta app revi
 - 07:55 Steven on the live map: "some states still only show top 2-3 cities". Two spread workers added (W3-S8 spread-east, W3-S9 spread-west: second- and third-tier cities of the big states only). City hygiene committed (b1711c6): lower-case listing cities title-cased in the write path, override-by-id can name the real city (three After School Coffee House events at DC venues were "Northern Virginia"). Usage 32% all models, 27% Fable.
 - 08:10 Verifiers done: 37 held review items promoted (west 12: Muni Cafe, Howdy Y'all, Gato Dates x More Than Matcha weekly rows; east 9: Blind Tiger Tampa Sundays, Wishing Cup, Mahjong, Mat & Moov, Kyru DC; crawler run file 14 into `wave3-runcheck.json`, 34 dropped as past, networking meetups, pottery, pilates; Texas 2: Central Matcha Mueller Sundays under the weekly-schedule rule). Metro sweeps, honest and thin: mountain 0 (8 Tavily Instagram-snippet searches, every dated snippet already past), southeast 0 (8 searches, same), Texas 5 unsure (Chasen Dallas Wed/Thu, Mori Austin Mondays, Tala Tulsa), midwest 3 unsure (HerCafe at Overland Park winter market), northeast 7 (Caribe & Co. at SoWa Christmas Market 3 likely; MARU at Wishing Cup 1 likely 3 unsure; 1 new brand), west 1 confirmed (JCCH Mochi & Matcha Fest, Honolulu, Dec 5; 1 new brand), spread-east 0. Pattern unchanged from the gap check: brands post dates in Instagram stories and poster images; the open web shows classes, 2025 editions and the "Matcha + Meetup" networking series. The Graph read (W3-P1, running) is already moving counts in the working file (Boston 4 -> 20).
 - 08:40 Peer item from the city-pin work: San Francisco's Census internal point (37.7272, -123.0322) is 44 miles out at the Farallons. `tools/gen-cities.js` now carries `LAND_POINTS` (applied when the list is built and on `--site-only`), San Francisco at City Hall and Corpus Christi downtown (its point was in the bay, 22 km from the nearest street). Checked with a Nominatim reverse lookup of 418 listed cities (top 400 plus every city with an event or a brand): nine flagged by distance, two in water; Boston (HarborWalk), Seattle (Belltown), Long Beach, New Orleans, Orlando, Honolulu, Miami, New York, San Diego, Oakland and Chicago all sit on land at street zoom. site/cities.js regenerated (two rows changed). `main` pushed the first session's 652-event data (3997678) and the city pins (1d16ef5); merge after the pipeline worker commits, by union for the state files (events by id, watch list by handle, run file by item, geocache by key).
+
+### Wave 3 close, 2026-11-23
+
+Ship: `main` merged in (union for the state files: events by id, watch list by handle, run file by item, geocache by key; main's generated site data taken and regenerated), wave-5 brands merged (238 sources), one real ingest with every source on (the Graph adapter hit Meta's hourly limit at once because the pipeline worker and the first session's scheduled run had spent the hour; the review promote step, art, pages, feeds, event pages, weekend, brand extras and sitemap ran), a second write pass for the pin snap and city overrides, 410 tests green, audit "the writer would drop 0".
+
+Ingest line: 876 candidates, 710 events (+50 new, 316 updated), 366 upcoming with coordinates. Review promote: 350 items read, 34 new, 119 merged into events held, 159 left for a human, 30 set aside (better source has it). Audit: no matcha signal 145 across all dates (sources held as matcha-only brands; 0 upcoming from crawler pseudo-sources), off-topic words with matcha only in the title 19, duplicate-looking pairs 58.
+
+Before and after. "Open" is the committed file at the wave open (565 events, 274 upcoming by end date); "After" is the file this wave wrote (710, 366). Against main's morning data (3997678: 652 events, 316 upcoming, 90 cities) the wave adds:
+
+| Total upcoming | 316 | 366 | +50 |
+| Cities with an upcoming pop-up | 90 | 101 | +11 |
+
+Per city (cities that changed or hold 3 or more upcoming), open vs after:
+
+| City | Before | After | Change |
+|---|---:|---:|---:|
+| Boston, MA | 4 | 24 | +20 |
+| Seattle, WA | 10 | 23 | +13 |
+| New York, NY | 18 | 21 | +3 |
+| Austin, TX | 14 | 16 | +2 |
+| Brooklyn, NY | 15 | 14 | -1 |
+| Los Angeles, CA | 11 | 14 | +3 |
+| Houston, TX | 10 | 13 | +3 |
+| San Diego, CA | 10 | 13 | +3 |
+| Portland, OR | 10 | 12 | +2 |
+| Miami, FL | 8 | 11 | +3 |
+| San Antonio, TX | 7 | 10 | +3 |
+| Oakland, CA | 9 | 9 | +0 |
+| San Francisco, CA | 9 | 8 | -1 |
+| Sacramento, CA | 8 | 8 | +0 |
+| Chicago, IL | 7 | 8 | +1 |
+| Dallas, TX | 6 | 8 | +2 |
+| Atlanta, GA | 7 | 7 | +0 |
+| Orlando, FL | 7 | 7 | +0 |
+| Honolulu, HI | 6 | 7 | +1 |
+| Philadelphia, PA | 5 | 7 | +2 |
+| Tampa, FL | 2 | 7 | +5 |
+| Washington, DC | 5 | 6 | +1 |
+| Bothell, WA | 4 | 4 | +0 |
+| El Paso, TX | 4 | 4 | +0 |
+| Mesa, AZ | 4 | 4 | +0 |
+| St. Petersburg, FL | 4 | 4 | +0 |
+| Arlington, VA | 3 | 3 | +0 |
+| Baltimore, MD | 3 | 3 | +0 |
+| Minneapolis, MN | 3 | 3 | +0 |
+| Pittsburgh, PA | 3 | 3 | +0 |
+| Detroit, MI | 2 | 3 | +1 |
+| Phoenix, AZ | 2 | 3 | +1 |
+| Virginia Beach, VA | 2 | 3 | +1 |
+| Anaheim, CA | 1 | 2 | +1 |
+| Fullerton, CA | 0 | 2 | +2 |
+| Port Jefferson, NY | 0 | 2 | +2 |
+| Albuquerque, NM | 0 | 1 | +1 |
+| Aurora, IL | 0 | 1 | +1 |
+| Boca Raton, FL | 0 | 1 | +1 |
+| Boise, ID | 0 | 1 | +1 |
+| Brownsville, TX | 0 | 1 | +1 |
+| Burnsville, MN | 0 | 1 | +1 |
+| Carol Stream, IL | 0 | 1 | +1 |
+| Chatsworth, CA | 0 | 1 | +1 |
+| Elk Grove Village, IL | 0 | 1 | +1 |
+| Federal Way, WA | 0 | 1 | +1 |
+| Hampton, VA | 0 | 1 | +1 |
+| Morgan Hill, CA | 0 | 1 | +1 |
+| Norfolk, VA | 0 | 1 | +1 |
+| Plano, TX | 0 | 1 | +1 |
+| Port Chester, NY | 0 | 1 | +1 |
+| Rockaway, NJ | 0 | 1 | +1 |
+| Savannah, GA | 0 | 1 | +1 |
+| Thousand Oaks, CA | 0 | 1 | +1 |
+| Tukwila, WA | 0 | 1 | +1 |
+| Vancouver, WA | 0 | 1 | +1 |
+| Wilmington, NC | 0 | 1 | +1 |
+| Marina del Rey, CA | 1 | 0 | -1 |
+| philadelphia, PA | 1 | 0 | -1 |
+| Total upcoming | 274 | 366 | +92 |
+| Cities with an upcoming pop-up | 80 | 101 | +21 |
+
+Distinct cities per state with an upcoming pop-up, open vs after (Steven: "some states still only show top 2-3 cities"):
+
+| State | Cities before | Cities after | After, by city |
+|---|---:|---:|---|
+| CA | 14 | 17 | Los Angeles 14, San Diego 13, Oakland 9, San Francisco 8, Sacramento 8, Fullerton 2, Anaheim 2, Monterey Park 1, Elk Grove 1, Santa Clara 1, Los Gatos 1, Chatsworth 1, Thousand Oaks 1, Tustin 1, Irvine 1, Morgan Hill 1, Lakewood 1 |
+| TX | 8 | 10 | Austin 16, Houston 13, San Antonio 10, Dallas 8, El Paso 4, Plano 1, Fort Worth 1, Cedar Park 1, Brownsville 1, Richmond 1 |
+| WA | 4 | 7 | Seattle 23, Bothell 4, Vancouver 1, Kirkland 1, Renton 1, Federal Way 1, Tukwila 1 |
+| FL | 5 | 6 | Miami 11, Tampa 7, Orlando 7, St. Petersburg 4, Boca Raton 1, Hialeah 1 |
+| VA | 4 | 6 | Virginia Beach 3, Arlington 3, Charlottesville 1, Norfolk 1, Hampton 1, Fredericksburg 1 |
+| NY | 3 | 5 | New York 21, Brooklyn 14, Port Jefferson 2, Irvington 1, Port Chester 1 |
+| IL | 1 | 4 | Chicago 8, Carol Stream 1, Elk Grove Village 1, Aurora 1 |
+| AZ | 3 | 3 | Mesa 4, Phoenix 3, Tucson 1 |
+| GA | 2 | 3 | Atlanta 7, Savannah 1, Avondale Estates 1 |
+| MI | 3 | 3 | Detroit 3, Lansing 1, Dearborn 1 |
+| MO | 3 | 3 | St. Louis 1, Saint Charles 1, Kansas City 1 |
+| NJ | 2 | 3 | Rockaway 1, Jersey City 1, Hoboken 1 |
+| OH | 3 | 3 | Columbus 2, Cleveland 2, Maple Heights 1 |
+| PA | 4 | 3 | Philadelphia 7, Pittsburgh 3, Upper Moreland Township 1 |
+| LA | 2 | 2 | New Orleans 2, Metairie 1 |
+| MA | 2 | 2 | Boston 24, Cambridge 1 |
+| MD | 2 | 2 | Baltimore 3, North Bethesda 1 |
+| MN | 1 | 2 | Minneapolis 3, Burnsville 1 |
+| NC | 1 | 2 | Wilmington 1, Charlotte 1 |
+| UT | 2 | 2 | Salt Lake City 1, Orem 1 |
+| CO | 1 | 1 | Denver 1 |
+| CT | 1 | 1 | Fairfield 1 |
+| DC | 1 | 1 | Washington 6 |
+| HI | 1 | 1 | Honolulu 7 |
+| IA | 1 | 1 | West Des Moines 1 |
+| ID | 0 | 1 | Boise 1 |
+| IN | 1 | 1 | Beech Grove 1 |
+| NE | 1 | 1 | Omaha 1 |
+| NM | 0 | 1 | Albuquerque 1 |
+| NV | 1 | 1 | Las Vegas 2 |
+| OR | 1 | 1 | Portland 12 |
+| SD | 1 | 1 | Sioux Falls 1 |
+| TN | 1 | 1 | Nashville 2 |
+
+
+Honest reading: the number that moved is the Instagram Graph read (Boston 4 to 24, Seattle 10 to 23, Tampa 2 to 7, 21 more cities with a pop-up), plus 37 held review items that verification settled. Nine metro and spread sweeps over the open web found 18 dated items (4 confirmed or likely, 14 unsure) and 2 brands in about 1.1M tokens; every Instagram-snippet pass returned only past dates. The thin big metros (Denver 1, Las Vegas 2, Phoenix 3, Charlotte 1, Nashville 2, Columbus 2, Indianapolis 0, Jacksonville 0, Fort Worth 1, OKC 0) did not move because their brands post dates only in Instagram stories and poster images; the lever for them is the Graph backlog (332 watched accounts never read) and its budget split, not more web sweeps.
+
+Follow-ups worth a rung (not done here): the Graph run spends most of its 180 calls on hashtag reads and on 82 accounts that fail with "Invalid user id" (now skipped 7 days); a planner change that reads the never-checked accounts first would cover the backlog in about two days. A rescan of market vendor lists after about Dec 5 (organizers post them late or as images). The 159 review items left for a human (`npm run review`).
+
+Blocked, Steven only: Facebook sign-in for the Meta app review, Tavily sign-in on his Chrome tab, `tools/windows-task.ps1`, and the account-gated free keys (Ticketmaster, Eventbrite API, Yelp, Reddit).
