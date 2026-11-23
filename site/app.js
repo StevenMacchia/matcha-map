@@ -157,8 +157,15 @@
     window.addEventListener("resize", function () { self.s = null; });
   }
   PreMap.prototype = {
-    // read once (and again after a resize): reading it after the list renders would force a layout each time
-    size: function () { return this.s || (this.s = [this.el.clientWidth || innerWidth, this.el.clientHeight || innerHeight]); },
+    // read once (and again after a resize): reading it after the list renders would force a layout each time. A tab that
+    // loads in the background, or before the pane has a size, reads 0 by 0: answer 1 by 1 for now and read again next call.
+    size: function () {
+      if (this.s) return this.s;
+      var w = this.el.clientWidth || innerWidth || 0, h = this.el.clientHeight || innerHeight || 0;
+      var s = [Math.max(1, w), Math.max(1, h)];
+      if (w > 0 && h > 0) this.s = s;
+      return s;
+    },
     ws: function () { return 512 * Math.pow(2, this.z); },
     mid: function () { var s = this.size(), p = this.pad; return [(s[0] + p.left - p.right) / 2, (s[1] + p.top - p.bottom) / 2]; },
     project: function (v) {
@@ -178,16 +185,21 @@
       var s = this.size(), p = this.pad;
       var l = (q.left || 0) + p.left, r = (q.right || 0) + p.right, t = (q.top || 0) + p.top, bt = (q.bottom || 0) + p.bottom;
       var x0 = mx(b.getWest()), x1 = mx(b.getEast()), y0 = my(b.getNorth()), y1 = my(b.getSouth());
-      var z = Math.log2(Math.min((s[0] - l - r) / Math.max(1e-9, (x1 - x0) * 512), (s[1] - t - bt) / Math.max(1e-9, (y1 - y0) * 512)));
+      // the room left for the bounds is at least a pixel each way: a window with no size yet, or padding taller than
+      // the window, made the argument of log2 zero or negative, z NaN, and toLL threw (live, 2026-11-23: the throw
+      // was inside the page's main function, so the list and the pins never rendered in a tab that loaded hidden)
+      var aw = Math.max(1, s[0] - l - r), ah = Math.max(1, s[1] - t - bt);
+      var z = Math.log2(Math.min(aw / Math.max(1e-9, (x1 - x0) * 512), ah / Math.max(1e-9, (y1 - y0) * 512)));
       z = Math.max(MAP_OPTS.minZoom, Math.min(o.maxZoom || MAP_OPTS.maxZoom, z));
       var w = 512 * Math.pow(2, z);
       var cx = (x0 + x1) / 2 - ((q.left || 0) - (q.right || 0)) / 2 / w, cy = (y0 + y1) / 2 - ((q.top || 0) - (q.bottom || 0)) / 2 / w;
+      if (!isFinite(z) || !isFinite(cx) || !isFinite(cy)) return { center: this.c, zoom: this.z }; // cannot fit: stay put
       return { center: toLL([ux(cx), uy(cy)]), zoom: z };
     },
     fitBounds: function (b, o) { return this.jumpTo(this.cameraForBounds(b, o)); },
     jumpTo: function (o) {
       var z0 = this.z;
-      if (o.zoom != null) this.z = Math.max(MAP_OPTS.minZoom, Math.min(MAP_OPTS.maxZoom, o.zoom));
+      if (o.zoom != null && isFinite(o.zoom)) this.z = Math.max(MAP_OPTS.minZoom, Math.min(MAP_OPTS.maxZoom, o.zoom));
       if (o.center) {
         var ll = toLL(o.center), off = o.offset || [0, 0], w = this.ws();
         this.c = toLL([ux(mx(ll.lng) - off[0] / w), uy(my(ll.lat) - off[1] / w)]);
@@ -276,7 +288,16 @@
   whenGpu(makeMap);
   // Phone (N7): the map runs under the floating header and chips, and the list peeks from the bottom; the map's padding
   // keeps the camera's centre in the open part between them. --chrome (the chips' bottom edge) places the toasts and list.
-  var mapPad = { top: 0, bottom: 0, left: 0, right: 0 };
+  var mapPad = { top: 0, bottom: 0, left: 0, right: 0 }, refitLater = false;
+  // The home view at this window's size. A window with no size yet (a tab opened in the background, a tab restored at
+  // launch, the pane still opening) cannot fit anything: the camera stays where it is and the fit runs again on the
+  // first resize that has a size, on a wide screen; a narrow one keeps the region the phone path opened in the meantime.
+  // Whatever happens in here, the rest of the page goes on (the "nothing broken" rule).
+  function refitHome() {
+    var el = map.getContainer();
+    if (!(el.clientWidth || innerWidth) || !(el.clientHeight || innerHeight)) { refitLater = true; return; }
+    try { map.fitBounds(HOME, { padding: 16, animate: false }); refitLater = false; } catch (e) { refitLater = true; }
+  }
   function syncPad(refit) {
     var f = document.querySelector(".filters"), g = $("list-grip");
     var top = wide.matches || !f ? 0 : Math.round(f.getBoundingClientRect().bottom - map.getContainer().getBoundingClientRect().top);
@@ -287,11 +308,18 @@
     if (cur.top === mapPad.top && cur.bottom === mapPad.bottom) return;
     if (map.isMoving()) { map.once("moveend", function () { syncPad(false); }); return; }
     map.setPadding(mapPad);
-    if (refit) map.fitBounds(HOME, { padding: 16, animate: false });
+    if (refit) refitHome();
   }
-  syncPad(true);
+  try { syncPad(true); } catch (e) { /* the padding is cosmetic; never abort the page over it */ }
   var padT;
-  window.addEventListener("resize", function () { clearTimeout(padT); padT = setTimeout(function () { syncPad(false); }, 120); });
+  function padSoon() {
+    clearTimeout(padT);
+    padT = setTimeout(function () { try { syncPad(false); if (refitLater && wide.matches) refitHome(); } catch (e) { /* same */ } }, 120);
+  }
+  window.addEventListener("resize", padSoon);
+  // a tab that loaded hidden is sized when it is first shown, and not every browser fires a resize for that:
+  // the same pass runs on the visibility change, so the visitor finds the page ready when they switch to it
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) padSoon(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { syncPad(false); });
 
   // Brand mochi get eyes and blush from zoom 9 up (class z9 on the map container).
