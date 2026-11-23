@@ -595,7 +595,7 @@
     var rec = { marker: marker, el: el, kind: it.kind, key: it.key, label: pinLabel(it) };
     if (it.kind === "e") el.style.zIndex = it.approx ? "1" : "2";
     if (it.kind === "s") el.style.zIndex = "1";
-    entrance(rec, it.kind === "e" || it.kind === "s" ? "pop" : "jiggle");
+    entrance(rec, it.approx ? "pop" : "drop-in");
     return rec;
   }
   function ringEl() { var r = document.createElement("span"); r.className = "mk-ring"; return r; }
@@ -1195,13 +1195,13 @@
     var html = renderCard(it, { phone: !wide.matches, dist: distOf(it), events: state.events, items: items });
     if (wide.matches) {
       var box = document.createElement("div");
-      box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html;
+      box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html + "<span class=\"pop-mattie\" aria-hidden=\"true\" data-char=\"m-point\"></span>";
       fillChars(box);
       if (window.MatchaRsvp) window.MatchaRsvp.hydrate(box);
       if (window.MatchaFeatured) window.MatchaFeatured.paint(box);
       box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
       popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "26rem", focusAfterOpen: false, className: "mm-pop",
-        anchor: "bottom", offset: it.kind === "e" ? [0, it.approx ? -50 : -72] : it.kind === "s" ? [0, -24] : [NUDGE, NUDGE - 12] })
+        anchor: "bottom", offset: it.kind === "e" ? [0, it.approx ? -50 : -96] : it.kind === "s" ? [0, -34] : [NUDGE, NUDGE - 24] }) // clear of the selected pin, which grows a third
         .setLngLat(lngLat(it.ll)).setDOMContent(box).addTo(map);
       // Keep the whole card on screen: nudge the map down when the card would run off the top.
       var pr = popup.getElement().getBoundingClientRect(), mr = map.getContainer().getBoundingClientRect();

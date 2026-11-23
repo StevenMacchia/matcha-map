@@ -336,6 +336,24 @@ body.show-list .list-panel { display: block; }
 .pn-br { width: 34px; height: 30px; border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; background: var(--sage); border: 2.5px solid var(--sage-edge); box-shadow: 0 2px 5px rgba(94,138,78,.25); box-sizing: border-box; }
 .pn-br .pn-ph > img, .pn-br .pn-ph > svg { filter: saturate(.85); }
 .mk-br.sel .pn-br { transform: scale(1.3); }
+/* life (2026-11-23 mock): an idle bob on a slow random phase (--ph from pins.js), a hop on hover or tap, today's pulse,
+   the selected pin bigger with a halo; Mattie at the card's foot turns toward the pin. Off under html.rm. */
+.pn-bob { animation: pn-bob 3.6s ease-in-out infinite alternate; animation-delay: var(--ph, 0s); will-change: transform; }
+@keyframes pn-bob { from { transform: translateY(0) rotate(0); } to { transform: translateY(-3px) rotate(1deg); } }
+.mk:hover .pn-bob, .mk:focus-visible .pn-bob, .mk:active .pn-bob { animation: pn-hop .45s var(--spring); }
+@keyframes pn-hop { 40% { transform: translateY(-8px) scale(1.08); } }
+.pn-pulse { animation: pn-pulse 2.2s ease-out infinite; }
+.pn-pulse.b { animation-delay: 1.1s; }
+@keyframes pn-pulse { from { transform: scale(1); opacity: .75; } to { transform: scale(1.7); opacity: 0; } }
+.mk.sel { z-index: 30 !important; }
+.mk.sel .pn { transform: scale(1.32); transition: transform .3s var(--spring); }
+.mk.sel .pn-ground { width: 92px; height: 92px; margin: -40px 0 0 -46px; background: radial-gradient(closest-side, rgba(255,253,247,.95) 55%, rgba(246,183,199,.55) 75%, rgba(246,183,199,0)); }
+.mk.sel.mk-ev .pn-ground { margin-top: -66px; }
+.pop-mattie { position: absolute; left: -30px; bottom: -14px; width: 46px; height: 46px; pointer-events: none; transform: scaleX(-1) rotate(-8deg); transform-origin: 50% 90%; animation: mattie-turn .5s var(--spring) .1s both; }
+@keyframes mattie-turn { from { transform: scaleX(1) rotate(6deg); opacity: 0; } 60% { opacity: 1; } to { transform: scaleX(-1) rotate(-8deg); } }
+.card-open .sheet-peek .ch { transition: transform .4s var(--spring); transform: rotate(-10deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .pn-bob, .pn-pulse, .pop-mattie { animation: none !important; } }
+.rm .pn-pulse { display: none; }
 /* a stack (zoom 12 up): the first two pins fanned, the count */
 .mk-cl.cl-stack, .mk-cl.cl-stack.cl-m, .mk-cl.cl-stack.cl-l { width: 50px; height: 40px; }
 .pn-stack { width: 50px; height: 40px; }
