@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T03:03:15.610Z",
+  "updated": "2026-11-23T03:33:16.077Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -9059,10 +9059,10 @@
       "found_via": "search",
       "found_from": "eventbrite",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T03:33:16.077Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "site=eventbrite; org=beacon-park; home=Detroit, MI; brand=Beacon Park; e.g. Pure Barre Detroit x Beacon Park Pop-Up",
       "graph_error": "Graph API HTTP 400: Invalid user id",
@@ -9076,10 +9076,10 @@
       "found_via": "search",
       "found_from": "eventbrite",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T03:33:16.077Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "site=eventbrite; org=chai-khana; home=Detroit, MI; brand=Chai Khana; e.g. Matcha & Me: After Hours (Friendsgiving Edition)",
       "graph_error": "Graph API HTTP 400: Invalid user id",
@@ -9093,10 +9093,10 @@
       "found_via": "search",
       "found_from": "eventbrite",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T03:33:16.077Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "site=eventbrite; org=columbus-circle-holiday-market-by-urbanspace; home=New York, NY; brand=Columbus Circle Holiday Market by Urbanspace; e.g. Dream Tea NYC in ",
       "graph_error": "Graph API HTTP 400: Invalid user id",
@@ -9110,10 +9110,10 @@
       "found_via": "search",
       "found_from": "eventbrite",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T03:33:16.077Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "site=eventbrite; org=bluestone-lane-downtown-cafe; home=Nashville, TN; brand=Bluestone Lane - Downtown Café; e.g. Whisk & Bloom: The Art of Matcha Class ($24.99",
       "graph_error": "Graph API HTTP 400: Invalid user id",
@@ -9127,10 +9127,10 @@
       "found_via": "search",
       "found_from": "eventbrite",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T03:33:16.077Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "site=eventbrite; org=ballston-quarter; home=Arlington, VA; brand=Ballston Quarter; e.g. Matcha Tasting & Matcha Making Experience at Dov & Company in Arlington,",
       "graph_error": "Graph API HTTP 400: Invalid user id",
@@ -9144,10 +9144,10 @@
       "found_via": "search",
       "found_from": "eventbrite",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T03:33:16.077Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "site=eventbrite; org=the-royal-sonesta-washington-dc-capitol-hill; home=Washington, DC; brand=The Royal Sonesta Washington, DC Capitol Hill; e.g. The Royal Sone",
       "graph_error": "Graph API HTTP 400: Invalid user id",
@@ -13090,12 +13090,38 @@
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DKkMT9yxWOo/",
       "first_seen": "2026-11-23T02:33:15.953Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T03:33:16.077Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "in need of a laylaandringos matcha asap!!!🍵 \n\n#chicago #lilmolbigchi #laylaandringos #chicagofoodaythority #oldtownchicago #312 #foodporn #chimatcha"
+      "notes": "in need of a laylaandringos matcha asap!!!🍵 \n\n#chicago #lilmolbigchi #laylaandringos #chicagofoodaythority #oldtownchicago #312 #foodporn #chimatcha",
+      "graph_checked_at": "2026-11-23T03:33:16.077Z",
+      "name": "Layla & Ringo's",
+      "website": "https://www.change.org/p/help-support-a-more-dog-friendly-chicago",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/474078491_948167940599775_2720163084463631715_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=9M-vwyigprUQ7kNvwGSSGxE&_nc_oc=AdrGDk7Q3s80JdoavzvBs2H2ACkAtNoInmDrsUYdJoVNX6pG2uTZ7BHQie3owfGQ6Gg&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQQsZQzInbW1YbG75UGv0BBUYS7iAnJkiua0EuNPrHDdhg&oe=6B0975F8",
+      "followers_count": 9277,
+      "recent": [
+        {
+          "permalink": "https://www.instagram.com/reel/Df2V6uapdTB/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/910177074_1609751904168688_3654205460148293766_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1NDv5yoqzM4Q7kNvwGSCaxn&_nc_oc=AdprjATAd3NHzvzQ0SwYvZS7y2nooVKxpCxAXu3ovWcLs7QsXk-j8XAVMQR3L883QLs&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=C4XwCz39NZONazv5Kr1Mbw&_nc_tpa=Q5bMBQLIL5dTlkb5SLqh6YmRASu-c1UV_lSoVzRHkMYWAo-5GBQ9L591-ivAfZyU25MDTumYv9_NvWhZpg&_nc_ct=RQosPBUKFQwAAAA&oh=00_AQQdaej9QNDd2N-HKAuQAW6QIx5w0BSlS3jVfpOMf5wzAw&oe=6B098478",
+          "timestamp": "2026-11-17T16:19:18+0000",
+          "caption": "Tuesdays call for a Perfect 10 Matcha 🍵💜 an iced vanilla matcha topped with la"
+        },
+        {
+          "permalink": "https://www.instagram.com/p/DfzxA4-IOA5/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/907306354_17978614290140226_8410827045510007717_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=7njssCOzasEQ7kNvwFAX97Y&_nc_oc=AdpEaZULFnmKs87IgsCajLi33DDSUHssHV9jgECiu_4igfego-7r9mwFV2Byf2Xbyp8&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=C4XwCz39NZONazv5Kr1Mbw&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQSdN5M0ObmeYIRxQpu-XNczog6nFoJkPfDF9OY3e55XCg&oe=6B0989EB",
+          "timestamp": "2026-11-16T16:17:28+0000",
+          "caption": "new season, new sips ❄️☕️ winter specialty drinks are officially here. swipe to "
+        },
+        {
+          "permalink": "https://www.instagram.com/reel/Dfnp86MSBh-/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/895823376_2012470043043544_8584492797889624360_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=mVT_ik71hQsQ7kNvwGGGalI&_nc_oc=Ado_mbzcR7jByJlAciptouDkhY_-vdStMO2Qjd7h5VBEB1qi-NpxTX6Qm-7IijMwe6I&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=C4XwCz39NZONazv5Kr1Mbw&_nc_tpa=Q5bMBQJUMdSDK3B_-_oSxFV12QtrqOg2kbsIRsWN6wVpruXH41cnxINT4oX4nDGK3BY-JwxS1pM2zvkETg&_nc_ct=RQosPBUKFQwAAAA&oh=00_AQS97IyQK5Xu_WMO4gBu-6ObLKR3FV4oXOVuNjcfw8OAxA&oe=6B098220",
+          "timestamp": "2026-11-11T23:25:49+0000",
+          "caption": "it’s almost timeee! winter specialty drinks are coming 11.16 ❄️☕️"
+        }
+      ],
+      "bio": "Grocer ✦ Coffee ✦ Eatery\nOpen daily, 7am-6pm\n914 N Wells\n-\nProject by @episcope.hospitality"
     },
     {
       "handle": "matchaculture",
@@ -13142,7 +13168,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Matcha chi or avocado 🥑 🤔...\nAn unintentional  avocado appeared in a matcha jess made today lol\n^\n^\n*\n^\n^\n^\n^\n^\n^\n^\n#chi#matcha#almond#almond himatcha#chimatc"
+      "notes": "Matcha chi or avocado 🥑 🤔...\nAn unintentional  avocado appeared in a matcha jess made today lol\n^\n^\n*\n^\n^\n^\n^\n^\n^\n^\n#chi#matcha#almond#almond himatcha#chimatc",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T03:33:16.077Z"
     },
     {
       "handle": "bestmatchaindavao",
@@ -13157,7 +13185,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Something special is being whisked up behind the scenes. 🍵\n\nOur full matcha menu is officially coming soon, crafted with love, premium leaves, and pure matcha "
+      "notes": "Something special is being whisked up behind the scenes. 🍵\n\nOur full matcha menu is officially coming soon, crafted with love, premium leaves, and pure matcha ",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T03:33:16.077Z"
     },
     {
       "handle": "matchadavao",
@@ -13188,7 +13218,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Miyabi Matcha Latte \n\nEarthy, umami-rich, with a slight bitterness that lets the matcha shine.\n\nVol. 1 — smooth, balanced, and easy to sip.\nVol. 2 — deeper, str"
+      "notes": "Miyabi Matcha Latte \n\nEarthy, umami-rich, with a slight bitterness that lets the matcha shine.\n\nVol. 1 — smooth, balanced, and easy to sip.\nVol. 2 — deeper, str",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T03:33:16.077Z"
     },
     {
       "handle": "dangomatcha",
@@ -13198,12 +13230,37 @@
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DdQWpV7SW2S/",
       "first_seen": "2026-11-23T02:33:15.953Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T03:33:16.077Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "DANGO MATCHA 🍡🍵\n\nOur third drink on the menu, where rich, earthy matcha meets soft and chewy dango.\n\nSweet, and perfectly chewy. The matcha treat you didn’t k"
+      "notes": "DANGO MATCHA 🍡🍵\n\nOur third drink on the menu, where rich, earthy matcha meets soft and chewy dango.\n\nSweet, and perfectly chewy. The matcha treat you didn’t k",
+      "graph_checked_at": "2026-11-23T03:33:16.077Z",
+      "website": "http://dangomatcha.shop",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/582949220_18066534896454124_3459681831162165335_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=dhTF7ofZY-EQ7kNvwHC5V4z&_nc_oc=Adqvn4UD8o1mc-sjOyezt9tzOSb9-NBweJBK-KoIbKApzASAHy0FitjyS921ZpvBuCQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=M_7ZpL9HfiKXTt1_raz0aw&oh=00_AQTK4C53UVN8UGBC3iCPJeQ9Pmvw9qADWCpfpCX-m0U59Q&oe=6B099131",
+      "followers_count": 11578,
+      "recent": [
+        {
+          "permalink": "https://www.instagram.com/p/DgDuyllqdkN/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/914452480_18105552419454124_3717353425696541757_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=KPf5bWyfkPIQ7kNvwGHJaxp&_nc_oc=Adr5buPAo_Kh3xCLr4Nw-8YwRqwskPu5KFWHOnQrYiGFDD406rz3U80epxc9WCLsmxM&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=M_7ZpL9HfiKXTt1_raz0aw&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQSxgLkKLxzlrVBwPB59wjcLkZ1zQ0vdpgMTwuLjfbEVoQ&oe=6B099A4D",
+          "timestamp": "2026-11-22T21:14:36+0000",
+          "caption": "Have any plans this upcoming Black Friday weekend👁️👁️ WELLLLL…. come join us d"
+        },
+        {
+          "permalink": "https://www.instagram.com/p/DfsPBywKQtm/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/899550601_18104620328454124_5083864302071396080_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BlZrtQcLqfMQ7kNvwH3_xcE&_nc_oc=Adou3ZSuBOgLh5h-Cs-10YUTTsBmZCkRfr-fWteQh6ljx5wp4PH_e8Lmhq65bunyXns&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=M_7ZpL9HfiKXTt1_raz0aw&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQR_IEsTlt3BCHw_VomuijP9oaoCj7fL68TbghovwxUJNw&oe=6B0991DA",
+          "timestamp": "2026-11-13T18:09:16+0000",
+          "caption": "SURPRISE! I will be in Pembroke Pines tomorrow, November 14th from 1-7pm for xoe"
+        },
+        {
+          "permalink": "https://www.instagram.com/reel/DfqtdNAq-sN/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/900765486_18104549471454124_7043556454989677209_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=szdNKWoJmu8Q7kNvwGXWJqQ&_nc_oc=AdrqRZmRB7pdnNTb2L9r478tVdTyx8xoINOKLpdTHUcMDlfIrhDebQjApZ-FNOs9Hsw&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=M_7ZpL9HfiKXTt1_raz0aw&_nc_tpa=Q5bMBQLpVeuoZDDIPqFWCl-Ykh_6wshwYSIryTDpg6Xdt7duNF0nl6DZxdMIZIXfot9-iD01mr05mKaI9w&_nc_ct=RQosPBUKFQ4AAAA&oh=00_AQSoLIBmycdaH4A-aB3wqfY5SMC0MEvzdil7-yNiPnoyMw&oe=6B0976B0",
+          "timestamp": "2026-11-13T03:54:52+0000",
+          "caption": "THE MOMENT WE HAVE ALL BEEN WAITING FOR!!! 🍡 🍵 The decoden sets ARE HERE!! Aft"
+        }
+      ],
+      "bio": "Trinkets and Stationery🍮\nHave a special request? DM 💌\nWeekly Drops🍡\nShipping from Miami, FL 📍\nLatina and Women Owned\nEst. 2023"
     },
     {
       "handle": "chicagoland",
@@ -13250,7 +13307,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Our matcha carries a gentle, restorative grace.🤭🍵 #chazui #teashop #chicagomatcha #matcha"
+      "notes": "Our matcha carries a gentle, restorative grace.🤭🍵 #chazui #teashop #chicagomatcha #matcha",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T03:33:16.077Z"
     },
     {
       "handle": "chicagogram",
@@ -13313,7 +13372,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "my first time trying a persimmon matcha yesterday & it might’ve been one of the best matchas ive had … overlay.chi i loved how light & balanced this was !! we n"
+      "notes": "my first time trying a persimmon matcha yesterday & it might’ve been one of the best matchas ive had … overlay.chi i loved how light & balanced this was !! we n",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T03:33:16.077Z"
     },
     {
       "handle": "matchamoo",
