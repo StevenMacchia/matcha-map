@@ -158,3 +158,65 @@ Opened 2026-11-23 00:50 by a second orchestrator (Fable) on its own worktree bra
 - 2026-11-23 09:00: N9d done (Sonnet): sources 178 -> 236 (popup 166, cafe 33, organizer 16, tea-brand 12, venue 8, festival 1; with a handle 94 -> 129), watch list 927 -> 952 (158 watching, 736 candidates), 21 brands with a story, feeds end-time fix. Left for the merge rung: `site/data/sources.json` regenerates on ingest; `test/cities.test.js` wants Burlingame, CA (a new brand's home city) in `site/cities.js`. `main` merged again by N7 (c6d2162). Running: N7.
 - 2026-11-23 09:20: N7 done (Opus, about 387k tokens over four merges of `main`). Phone: the map is the whole screen, Mattie button, one search pill, theme button, one chip row, the list as a bottom sheet with a count; cards lead with the verdict (one card system through cards.js for sheet, popup and rows); opening moment about 1.5 s with skip, pin-to-card growth, petal trail on long flights, one canvas for particles; empty states from `docs/COPY.md` with Add your pop-up and the city feed; placeholders collapse per city with the full count and a quiet "without a place yet" (Steven's rule: nothing hidden); static pages print weekday dates, icon links, empty-city action, connect-src. Lighthouse local: desktop 95 -> 97 performance, 100 accessibility; mobile 65 -> 67 performance (MapLibre WebGL setup and HTML markers), 96 accessibility (attribution tap size). Tests 399, smoke 16 of 16. Where rungs 35 and N7 disagreed: N7 kept its top chip row and dropped the bottom date bar (the bottom is the sheet), kept rung 35's Sat and Sun chips, place clear, nearest-pop-up empty state, region-first opening and metro grouping. Launched: N7c (Opus) for mobile performance to 90 and the 390 flow walk, N9e (Sonnet) for the README. Then: the final gate, ingest once, merge or PR, deploy.
 - 2026-11-23 10:10: N7c done (Opus, about 353k tokens): the page renders header, chips and list from data before MapLibre starts (a worker WebGL check hands the GPU over, 2.5 s at most), no forced layout per pin, phone list built once, search index built on first focus, sheet moved with transforms only; Lighthouse mobile 65 -> 86 (one run 91; blocking 1,190 -> 310 ms, CLS 0.103 -> 0), desktop 93 -> 98, accessibility 100 on both; still short of 90 on mobile because MapLibre's first frame is one long task on Lighthouse's software GPU and the opening moment holds Speed Index. Deep links widen hidden filters for that visit with Undo; "ube" from New York flies to where the ube pop-ups are; long names wrap; the open card's pop-up always stays in the desktop list. N9e done: README rewritten (180 lines, source table with measured yield, key table, Steven's steps once), detail in `docs/SOURCES.md`. N9 running: merge `main`, one real ingest with the Instagram adapter off (shared Meta budget), before/after per-city table, audit counts, tests, smoke, full browser gate under `qa/gate/`; then the orchestrator merges into `main` and deploys with `npm run deploy`, or opens a PR.
+
+### Before and after, 2026-11-23
+
+One real ingest in the N9 worktree (Instagram Graph adapter off so the shared Meta budget stays with main; every other source, the review-folder promote step, art, pages, feeds, event pages, weekend, brand extras and sitemap extras on). Counts are upcoming events by city from `data/events.json` (upcoming = end date today or later; the ingest log counts 290 by clock time, this table counts 274 by date). "Morning" is the baseline from the log line "Facts at open" (254 upcoming; Phoenix area is a metro figure, Phoenix + Mesa here), "Before this ingest" is the committed file at the start of N9 (536 events, 241 upcoming), "After" is the file this ingest wrote (565 events, 274 upcoming).
+
+| City | Morning | Before this ingest | After | Change |
+|---|---:|---:|---:|---:|
+| Brooklyn | 14 | 14 | 15 | +1 |
+| Austin | 9 | 9 | 14 | +5 |
+| Los Angeles | 11 | 10 | 11 | +1 |
+| Portland | 0 | 1 | 10 | +9 |
+| Seattle | n/a | 5 | 10 | +5 |
+| Houston | 11 | 10 | 10 | +0 |
+| San Diego | 10 | 8 | 10 | +2 |
+| San Francisco | 9 | 9 | 9 | +0 |
+| Oakland | n/a | 0 | 9 | +9 |
+| Sacramento | n/a | 7 | 8 | +1 |
+| Miami | 9 | 9 | 8 | -1 |
+| Chicago | 10 | 15 | 7 | -8 |
+| Orlando | n/a | 7 | 7 | +0 |
+| San Antonio | n/a | 7 | 7 | +0 |
+| Atlanta | 10 | 4 | 7 | +3 |
+| Honolulu | n/a | 6 | 6 | +0 |
+| Dallas | 8 | 6 | 6 | +0 |
+| Washington | n/a | 5 | 5 | +0 |
+| Philadelphia | 3 | 4 | 5 | +1 |
+| Bothell | n/a | 1 | 4 | +3 |
+| Mesa | n/a | 4 | 4 | +0 |
+| El Paso | n/a | 4 | 4 | +0 |
+| Boston | 0 | 1 | 4 | +3 |
+| St. Petersburg | n/a | 4 | 4 | +0 |
+| Pittsburgh | n/a | 3 | 3 | +0 |
+| Denver | 0 | 1 | 1 | +0 |
+| Phoenix | 4 | 2 | 2 | +0 |
+| Las Vegas | 0 | 2 | 2 | +0 |
+| Minneapolis | n/a | 4 | 3 | -1 |
+| Detroit | n/a | 3 | 2 | -1 |
+| Nashville | n/a | 1 | 2 | +1 |
+| Charlotte | n/a | 1 | 1 | +0 |
+| Anaheim | n/a | 1 | 1 | +0 |
+| Irvine | n/a | 1 | 1 | +0 |
+| Long Beach | n/a | 1 | 0 | -1 |
+| Santa Ana | n/a | 0 | 0 | +0 |
+| Tampa | n/a | 2 | 2 | +0 |
+| Total upcoming | 254 | 241 | 274 | +33 |
+
+What moved the numbers: the 48 new items from `data/review` (41 more merged into events already held, 134 left for a human) and fresh source reads added 29 events (565 total), which lifted Portland 1 to 10, Oakland 0 to 9, Austin 9 to 14 and Seattle 5 to 10 while Chicago fell 15 to 7 as dated events passed or were dropped; Boston (1 to 4) and Denver (still 1) are still thin, and the empty big markets (Denver, Charlotte, Phoenix, Las Vegas) did not move because no source for them yielded a dated pop-up.
+
+Counts after the ingest (upcoming): hours 44, pay or price 72, evidence 274 (every one), menu 98, image 210; art files under `site/art/`: 410 event drawings plus 174 drink drawings (586 files including the index and gallery; 31 drinks and 115 events drawn this run, 13 pruned).
+
+`npm run audit -- --counts` summary (run after the ingest, so its before and after columns match):
+
+```
+no matcha signal (115 events across all dates, 33 of them upcoming)
+off-topic words, matcha only in the title (19)
+duplicate-looking pairs (48)
+the writer would drop 0
+before: 565 total, 274 upcoming
+after:  565 total, 274 upcoming
+```
+
+The 33 upcoming events with no matcha signal survived because they come from sources held as matcha-only brands (for example 333Matcha, Amato, After School Coffee House) whose pop-up posts do not repeat the word; the writer drops none of them.
