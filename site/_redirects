@@ -1,3 +1,0 @@
-# The site lives at https://matchamap.app (2026-11-23). The old pages.dev host and www send every path to it, permanently.
-https://matchamap-cu7.pages.dev/* https://matchamap.app/:splat 301
-https://www.matchamap.app/* https://matchamap.app/:splat 301
