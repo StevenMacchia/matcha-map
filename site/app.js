@@ -1889,6 +1889,12 @@
     });
     buildBrands(res[1] || []);
     setupHawaii();
+    // a breath between reading the data and building the list keeps each under a long task on a phone (N7c)
+    return new Promise(function (ok) { setTimeout(ok, 0); }).then(function () { firstList(res); });
+  }).catch(function () {
+    oops(navigator.onLine === false ? "You are offline and nothing was saved yet." : "Could not load pop-ups.", ["Try again", function () { location.reload(); }], navigator.onLine === false ? "m-sleepy" : "");
+  }).then(function () { $("loading").hidden = true; });
+  function firstList(res) {
     var go = function () { syncZoomFace(); refreshEvents(false); };
     var zs = ""; try { zs = localStorage.getItem(ZIP_KEY) || ""; } catch (e) { /* ignore */ }
     // A phone with no saved zip and no link opens on its region: framed before the first list, so the list is built
@@ -1901,9 +1907,7 @@
     loadShops();
     loadExtras();
     mountSearchSoon(res[1] || []);
-  }).catch(function () {
-    oops(navigator.onLine === false ? "You are offline and nothing was saved yet." : "Could not load pop-ups.", ["Try again", function () { location.reload(); }], navigator.onLine === false ? "m-sleepy" : "");
-  }).then(function () { $("loading").hidden = true; });
+  }
 
   // ---------- your region first (phones, rung 35) ----------
   // A whole country is a few specks on a tall screen. Without a saved zip or a deep link, a phone opens on the busiest
@@ -1915,7 +1919,10 @@
     if (pts.length < 3) return null;
     pts.forEach(function (a) {
       var n = 0;
-      for (var i = 0; i < pts.length; i++) if (miles(a.ll, pts[i].ll) < 60) n++;
+      for (var i = 0; i < pts.length; i++) {
+        var b = pts[i].ll;
+        if (Math.abs(b[0] - a.ll[0]) < 0.9 && Math.abs(b[1] - a.ll[1]) < 1.3 && miles(a.ll, b) < 60) n++; // a box first: 60 miles is under 0.9 degrees of latitude and 1.3 of longitude in the lower 48
+      }
       if (n > bn) { bn = n; best = a; }
     });
     return pts.filter(function (b) { return miles(best.ll, b.ll) < 20; });

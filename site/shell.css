@@ -127,7 +127,7 @@ body { background: var(--canvas); }
   .main { position: absolute; inset: 0; }
   .map-panel { inset: 0; }
   .maplibregl-ctrl-bottom-left, .maplibregl-ctrl-bottom-right { bottom: var(--peek); }
-  .geo { top: auto; right: 12px; bottom: calc(var(--peek) + 12px); }
+  .geo { top: auto; right: 12px; bottom: calc(var(--peek) + 56px); } /* above the attribution toggle (N7c) */
   .hop { top: auto; bottom: calc(var(--peek) + 60px); }
   .mapempty { bottom: calc(var(--peek) + 14px); }
 
@@ -267,3 +267,5 @@ html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
 /* N7c: rows out of sight skip layout and paint (on a phone almost the whole list sits under the peek at load) */
 .list > li { content-visibility: auto; contain-intrinsic-size: auto 92px; }
 .list > li.head, .list > li.apnote { contain-intrinsic-size: auto 28px; }
+/* "on now" in a list row: the deeper rose reads at 4.5:1 on the cream (the focus pink was 3.4:1) (N7c) */
+:root:not([data-theme="dark"]) .mm-row.mm-v-now .mm-rv { color: #B0405D; }

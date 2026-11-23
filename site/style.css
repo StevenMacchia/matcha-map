@@ -665,7 +665,8 @@ dialog .credit { font-size: 14px; color: var(--muted); }
 /* About: credits fold under one line */
 dialog details.credit summary { cursor: pointer; font-weight: 700; color: var(--deep); min-height: 32px; }
 dialog details.credit p { margin: 6px 0 10px; font-size: 14px; color: var(--muted); }
-@media (max-width: 640px) { .region-hint { top: auto; bottom: calc(76px + env(safe-area-inset-bottom)); } }
+/* phone: the line sits over the list peek, clear of the map's attribution toggle at the right (N7c) */
+@media (max-width: 640px) { .region-hint { top: auto; bottom: calc(76px + env(safe-area-inset-bottom)); width: calc(100% - 76px); left: calc(50% - 26px); } }
 @media (max-width: 640px) { .region-hint:not([hidden]) { animation-name: rise-in; } }
 @keyframes rise-in { from { transform: translate(-50%, 10px); opacity: 0; } to { transform: translateX(-50%); opacity: 1; } }
 .row .unc { display: inline-block; white-space: nowrap; margin-left: .3em; }
