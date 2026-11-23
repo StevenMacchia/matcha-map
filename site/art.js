@@ -200,7 +200,10 @@ function specFromEntry(e) {
     const type = /none/.test(topW) ? null : /whip/.test(topW) ? null : /cloud/.test(topW) ? "cloud" : /foam|cheese|sea salt|salted|espuma|sweet cream|coconut cream/.test(topW) ? "foam" : /einspanner|cream/.test(topW) ? "cream" : /art|heart|rosetta/.test(topW) ? "art" : null;
     if (/whip/.test(topW) && !s.toppings.includes("whip")) s.toppings.push("whip");
     if (type) {
-      const tc = topHex || (s.top && s.top.c) || (type === "cream" ? "#FFF4DC" : "#FFFBF2");
+      const nameFl = findFlavors(cleanText(e.name)).find((x) => !/^(t|k|m)$/.test(x.r) && !/cheese|coconut/.test(x.k));
+      const nameHex = nameFl && (L.map((l) => [cleanText(word(l)), hexOk(l.hex || l.color || l.colour)]).find(([nm]) => nm.startsWith(nameFl.k)) || [])[1] || (nameFl && nameFl.c);
+      const tint = (type === "cloud" || type === "foam") && nameHex && !/strawberr/.test(nameFl.k) ? mix(nameHex, WHITE, 0.62) : null;
+      const tc = topHex || tint || (/cheese/.test(topW + e.name.toLowerCase()) ? "#FFF1C2" : null) || (type === "cream" ? "#FFF4DC" : "#FFFBF2");
       if (!s.top || s.top.type !== type) {
         if (type !== "art" && s.vessel !== "bowl" && !s.layers.some((l) => /^(foam|cloud|cream)$/.test(l.n))) { s.layers.forEach((l) => { l.f = Math.round(l.f * 78) / 100; }); s.layers.push({ c: tc, f: 0.22, n: type }); }
       }
@@ -225,12 +228,27 @@ function specFromEntry(e) {
   if (/lemon|yuzu|lime|orange|citrus/.test(gw)) G.push({ type: "citrus", c: citrusHex });
   if (/mint/.test(gw)) G.push({ type: "mint", c: "#6CBF5A" });
   if (/cinnamon/.test(gw) || s.toppings.includes("cinnamon")) G.push({ type: "cinnamon", c: "#B9774A" });
-  if (/sakura|blossom|rose/.test(gw)) G.push({ type: "sakura", c: "#F6B7C7" });
+  if (/sakura|blossom|rose/.test(gw + " " + tops.join(" ").toLowerCase())) G.push({ type: "sakura", c: "#F6B7C7" });
   if (/matcha (dust|salt)/.test(gw) && !s.toppings.includes("dust")) s.toppings.push("dust");
   if (/latte art/.test(gw) && s.temp === "hot" && !s.top) s.top = { type: "art", c: MILK };
   if (G.length && s.kind === "drink") { const seen = new Set(); s.garnish = [...G, ...s.garnish].filter((g) => !seen.has(g.type) && seen.add(g.type)).slice(0, 2); }
   s.toppings = s.toppings.filter((t) => t !== "cinnamon");
   if (s.toppings.includes("boba") && s.straw) s.straw.w = 14;
+  if (s.vessel === "bowl" && /koicha|thick/.test(s.name) && s.layers.length) s.layers[0].c = mix(s.layers[0].c, "#2F5A1E", 0.35); // koicha is thick and dark
+  if (/lid/.test(serve) && s.kind === "drink" && ["tall", "short"].includes(s.vessel)) s.lid = true;
+  if (s.kind === "sweet" && /dessert cup/.test(serve) && ["tiramisu", "cake", "cheesecake"].includes(s.item) && L.length > 1) {
+    const lay = L.map((l) => ({ c: hexOk(l.hex || l.color || l.colour) || LATTE, n: cleanText(word(l)) || "layer" }));
+    Object.assign(s, { vessel: "short", size: "s", temp: "cold", blend: "layered", ice: 0, fizz: false, streaks: null, top: null, straw: null,
+      layers: [...lay, ...lay].map((l) => ({ ...l, f: Math.round(100 / (lay.length * 2)) / 100 })), colors: lay.map((l) => l.c) });
+    if (!s.toppings.includes("dust")) s.toppings.push("dust");
+  }
+  // fruit pieces and slices ("banana slices", "mango pieces") drawn in the glass in their layer's colour
+  const pc = tops.find((t) => /(piece|slice|chunk|cube)s?$/i.test(t) && !/strawberr/i.test(t));
+  if (pc && s.kind === "drink") {
+    const nm = cleanText(pc).replace(/ (piece|slice|chunk|cube)s?$/, "");
+    const hx = (L.map((l) => [cleanText(word(l)), hexOk(l.hex || l.color || l.colour)]).find(([x]) => x.startsWith(nm.split(" ")[0])) || [])[1] || (FLAVORS[nm] && FLAVORS[nm][0]) || "#FFD27A";
+    s.toppings.push("pieces"); s.pieces = { c: hx, round: /slice/i.test(pc) };
+  }
   return s;
 }
 
@@ -417,6 +435,11 @@ function inside(spec, G, y0, R) { // toppings that sit in the liquid
       s += el("rect", { x, y, width: 18, height: 16, rx: k === "jelly" ? 3 : 8, fill: c, "fill-opacity": k === "jelly" ? 0.75 : 1, stroke: INK, "stroke-width": 2, transform: `rotate(${n(R() * 30 - 15)} ${n(x + 9)} ${n(y + 8)})` });
     }
   }
+  if (spec.toppings.includes("pieces") && spec.pieces) for (let i = 0; i < 4; i++) {
+    const x = -bw / 2 + 14 + i * (bw - 28) / 3, y = -16 - (i % 2) * 14, c = spec.pieces.c;
+    s += spec.pieces.round ? el("circle", { cx: x, cy: y, r: 9, ...solid(light(c, 0.2), { "stroke-width": 2.2 }) }) + el("circle", { cx: x, cy: y, r: 3.5, fill: dark(c, 0.1) })
+      : el("rect", { x: x - 7, y: y - 7, width: 14, height: 13, rx: 3.5, transform: `rotate(${n(i * 23 - 20)} ${n(x)} ${n(y)})`, ...solid(c, { "stroke-width": 2.2 }) });
+  }
   if (spec.toppings.includes("berries")) for (let i = 0; i < 2; i++) {
     const x = i ? bw / 2 - 26 : -bw / 2 + 8, y = -40 + i * 8;
     s += berry(x + 9, y, 11, -20 + i * 40, true);
@@ -505,7 +528,7 @@ function glassDrink(spec, G, uid, R) {
   let s = "", defs = g.defs + `<clipPath id="${uid}c">${P(G.clip)}</clipPath>`;
   s += P(G.clip, { fill: WHITE, stroke: WHITE, "stroke-width": 14, "stroke-linejoin": "round" }); // die-cut halo
   s += P(G.clip, { fill: "#EEF7F3", "fill-opacity": 0.85 });
-  if (spec.straw) { const a = spec.straw.a * Math.PI / 180; s += strawSvg(spec.straw, -6 + Math.sin(a) * 20, -18, 10 + Math.sin(a) * (H + 40), top - 36 - dome * 0.8); }
+  if (spec.straw) { const a = spec.straw.a * Math.PI / 180; s += strawSvg(spec.straw, -6 + Math.sin(a) * 20, -18, 10 + Math.sin(a) * (H + 40), top - 36 - Math.max(dome * 0.8, spec.lid ? (dome || spec.toppings.includes("whip") ? 44 : 22) : 0)); }
   let inner = el("rect", { x: -80, y: liq, width: 160, height: -liq, fill: g.fill });
   if (spec.blend === "marble") { const c = spec.layers[spec.layers.length - 1].c, w = G.widthAt(liq); inner += P(D(["M", -w / 3, liq + 10, "c", -10, 20, 16, 26, 4, 48, "M", w / 5, liq + 10, "c", 12, 18, -10, 30, 6, 56]), line({ stroke: c, "stroke-width": 9, opacity: 0.55 })); }
   if (spec.blend === "layered") inner += layerCues(spec, G, liq, bot, R);
@@ -522,7 +545,13 @@ function glassDrink(spec, G, uid, R) {
   const ty = dome ? top - dome * 0.8 : spec.toppings.includes("whip") ? top - 16 : spec.top && spec.top.type === "cream" ? top - 7 : liq;
   s += onTop(spec, 0, ty, G.rim.rx * 1.6, R);
   if (spec.toppings.includes("mochi") && spec.toppings.includes("whip")) s += el("rect", { x: -8, y: top - 40, width: 18, height: 16, rx: 8, ...solid("#FFF8F0", { "stroke-width": 2.5 }) });
-  spec.garnish.forEach((gn, i) => { s += garnishAt(gn, i ? -G.rim.rx + 10 : G.rim.rx - 8, top - (gn.type === "mint" ? 4 : 0), R); });
+  if (spec.lid) {
+    const lh = dome || spec.toppings.includes("whip") ? dome + 12 : 20, rx = G.rim.rx + 4;
+    s += P(D(["M", -rx, top + 1, "C", -rx, top - lh * 1.2, rx, top - lh * 1.2, rx, top + 1, "Z"]), { fill: "#F4FBF8", "fill-opacity": 0.35, stroke: INK, "stroke-width": 3.5, "stroke-linejoin": "round" }) +
+      el("rect", { x: -rx - 2, y: top - 3, width: rx * 2 + 4, height: 8, rx: 4, ...solid("#F4FBF8", { "stroke-width": 3 }) }) +
+      P(D(["M", -rx * 0.55, top - lh * 0.55, "q", rx * 0.2, -lh * 0.3, rx * 0.5, -lh * 0.34]), line({ stroke: WHITE, "stroke-width": 4 }));
+  }
+  if (!spec.lid) spec.garnish.forEach((gn, i) => { s += garnishAt(gn, i ? -G.rim.rx + 10 : G.rim.rx - 8, top - (gn.type === "mint" ? 4 : 0), R); });
   return { s, defs };
 }
 
