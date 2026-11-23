@@ -222,7 +222,7 @@ test("city pages carry an ItemList of upcoming events; brand pages carry an Orga
   assert.equal(list.numberOfItems, 2);
   assert.equal(list.itemListElement[0].item["@type"], "Event");
   assert.equal(list.itemListElement[0].url, undefined, "Google: a ListItem has url or item, not both");
-  assert.match(list.itemListElement[0].item.image, /^https:///);
+  assert.match(list.itemListElement[0].item.image, /^https:\/\//);
   assert.match(list.itemListElement[0].item.url, /^https:\/\/.+\/e\/aaaaaa\d{6}\/$/);
   assert.equal(list.itemListElement[0].item.location.address.addressLocality, "Raleigh");
   const b = ldOf(page(out, "brand/moonbeematcha/index.html"));
