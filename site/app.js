@@ -987,6 +987,7 @@
       box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html;
       fillChars(box);
       if (window.MatchaRsvp) window.MatchaRsvp.hydrate(box);
+      if (window.MatchaFeatured) window.MatchaFeatured.paint(box);
       box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
       popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "380px", focusAfterOpen: false, className: "mm-pop",
         anchor: "bottom", offset: it.kind === "e" ? [0, -50] : it.kind === "s" ? [0, -18] : [NUDGE, NUDGE - 12] })
@@ -1003,6 +1004,7 @@
       fillChars(body);
       if (window.MatchaCards && window.MatchaCards.wire) window.MatchaCards.wire(body);
       if (window.MatchaRsvp) window.MatchaRsvp.hydrate(body);
+      if (window.MatchaFeatured) window.MatchaFeatured.paint(body);
       var sh = $("sheet");
       body.scrollTop = 0;
       sh.hidden = false;
@@ -1289,6 +1291,7 @@
     list.innerHTML = html;
     fillChars(list);
     if (window.MatchaRsvp) window.MatchaRsvp.hydrateRows(list);
+    if (window.MatchaFeatured) window.MatchaFeatured.paint(list); // Featured picks (site/featured.js, Profitability lane)
     if (stagger && !calm()) {
       var rows = list.children;
       for (var i = 0; i < rows.length && i < 8; i++) animOnce(rows[i], "row-in", i * 30);
@@ -1338,6 +1341,7 @@
       rowsHTML(rows, true);
     fillChars(list);
     if (window.MatchaRsvp) window.MatchaRsvp.hydrateRows(list);
+    if (window.MatchaFeatured) window.MatchaFeatured.paint(list); // Featured picks (site/featured.js, Profitability lane)
     if (stagger && !calm()) { var kids = list.children; for (var i = 0; i < kids.length && i < 8; i++) animOnce(kids[i], "row-in", i * 30); }
   }
   $("list").addEventListener("click", function (ev) {
