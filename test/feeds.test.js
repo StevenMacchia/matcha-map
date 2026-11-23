@@ -21,7 +21,7 @@ test("UTC conversion uses the offset in the ISO string", () => {
 
 test("timed event: DTSTART/DTEND in UTC, UID is the event id, LAST-MODIFIED from last_seen", () => {
   const l = veventLines(timed).join("\n");
-  assert.ok(l.split("\n").includes(`UID:aaaaaa000001@${SITE_HOST}`));
+  assert.ok(l.split("\n").includes(`UID:aaaaaa000001@matchamap-cu7.pages.dev`));
   assert.match(l, /^DTSTART:20261205T170000Z$/m);
   assert.match(l, /^DTEND:20261205T210000Z$/m);
   assert.match(l, /^LAST-MODIFIED:20261125T100000Z$/m);
@@ -119,7 +119,7 @@ test("buildEventPages: one page per upcoming event, none for past", () => {
 });
 
 test("feeds: UID has a domain, RSS title reads like prose and is capped, calendars drop past events", () => {
-  assert.ok(veventLines(timed).includes(`UID:aaaaaa000001@${SITE_HOST}`));
+  assert.ok(veventLines(timed).includes(`UID:aaaaaa000001@matchamap-cu7.pages.dev`));
   const xml = rss([timed], { now: NOW });
   assert.match(xml, /<title>Moonbee, Sat Dec 5, Austin<\/title>/);
   const many = Array.from({ length: 130 }, (_, i) => ({ ...timed, id: "m" + String(i).padStart(11, "0"), first_seen: new Date(Date.parse("2026-11-20T00:00:00Z") + i * 6e4).toISOString() }));

@@ -104,7 +104,7 @@ test("markup in data is escaped, past and cancelled events are left off, the CSP
   const out = buildSite(data([ev({ brand: "<script>x</script>", title: "<b>t</b>" }), ev({ start: "2026-11-01T11:00:00-05:00", end: "2026-11-01T15:00:00-05:00" }), ev({ status: "cancelled" })]));
   const h = page(out, "city/nc/raleigh/index.html");
   assert.ok(!h.includes("<script>x"));
-  assert.match(h, /Content-Security-Policy" content="default-src 'none'; script-src 'self';/);
+  assert.match(h, /Content-Security-Policy" content="default-src 'none'; script-src 'self' https:\/\/static\.cloudflareinsights\.com;/);
   assert.equal(isUpcoming(ev({ status: "cancelled" }), NOW.getTime()), false);
   assert.equal((h.match(/class="pg-ev"/g) || []).length, 1);
   assert.equal(timeText(ev({ start: "2026-11-28T00:00:00-05:00", end: null }), "America/New_York"), "Time not posted");

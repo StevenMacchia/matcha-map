@@ -10,7 +10,7 @@ import { cardHtml } from "../site/cards.js";
 import { esc, shortDayOf, makeCityLocator, cityPath, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf } from "./gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const CSP = "default-src 'none'; script-src 'self'; img-src 'self' https: data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'self'; form-action 'none'";
+const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; img-src 'self' https: data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'none'";
 
 // og:image: the event's photo, else site/art/events/<id>.svg when it exists, else the shared card.
 export function ogImage(e, { hasArt = () => false } = {}) {

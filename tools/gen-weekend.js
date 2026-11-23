@@ -12,7 +12,7 @@ import { cityCardHtml, renderCards, MAX_OG_BYTES } from "./gen-og.js";
 import { drinkLookup, drinkSlug, drinkName, slugify } from "../site/search.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const CSP = "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'";
+const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'none'";
 export const SUNDAY_CUTOFF_HOUR = 20; // from 8 pm Sunday local time, "this weekend" means the next one
 
 // ---- the window ----
