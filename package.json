@@ -22,6 +22,7 @@
     "audit": "node tools/audit-events.js",
     "regeocode": "node ingest/regeocode.js",
     "smoke": "node tools/smoke.js",
+    "gate:card": "node tools/card-gate.js",
     "flyers": "node tools/flyers.js",
     "pages": "node tools/gen-pages.js",
     "og": "node tools/gen-og.js",
