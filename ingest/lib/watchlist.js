@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { readNote, looksLikeHandle } from "./mato-city.js";
+import { displayName, isHandleShaped, cleanHandle } from "./names.js";
 
 export const FILE = "data/watchlist.json";
 const HOUR = 3600000, DAY = 86400000;
@@ -40,8 +41,15 @@ export function cadenceFor(acc, now = new Date()) {
   return 72;
 }
 
-export function isDue(acc, now = new Date()) {
+export const GRAPH_RETRY_DAYS = 7;
+// An account Graph said no to (personal, deleted, renamed) is not read again for a week.
+export const graphSkipped = (acc, now = new Date()) => !!acc.graph_error_at && new Date(now) - Date.parse(acc.graph_error_at) < GRAPH_RETRY_DAYS * DAY;
+// An Instagram account the Graph API has never read is due whatever its cadence says: an earlier pass may have marked it checked unread.
+export const needsFirstRead = (acc, graphOn) => graphOn && acc.platform === "instagram" && acc.status !== "dropped" && !acc.graph_checked_at && !graphSkipped(acc);
+
+export function isDue(acc, now = new Date(), { graphOn = false } = {}) {
   if (acc.status === "dropped") return false;
+  if (needsFirstRead(acc, graphOn)) return true;
   if (!acc.last_checked) return true;
   return new Date(now) - Date.parse(acc.last_checked) >= (acc.cadence_hours || cadenceFor(acc, now)) * HOUR;
 }
@@ -49,6 +57,41 @@ export function nextCheck(acc, now = new Date()) {
   if (acc.status === "dropped") return null;
   if (!acc.last_checked) return new Date(now).toISOString();
   return new Date(Date.parse(acc.last_checked) + (acc.cadence_hours || cadenceFor(acc, now)) * HOUR).toISOString();
+}
+
+// What business_discovery said about the account: name, site, picture, followers. Clears an old graph_error.
+export function recordGraph(acc, facts, now = new Date()) {
+  acc.graph_checked_at = new Date(now).toISOString();
+  delete acc.graph_error; delete acc.graph_error_at;
+  if (facts) {
+    if (facts.name) acc.name = facts.name;
+    for (const k of ["website", "profile_picture_url", "followers_count"]) if (facts[k] != null) acc[k] = facts[k];
+  }
+  return acc;
+}
+// Graph answered with an error for this account (not a rate limit): remember it and skip Graph reads of it for a week.
+export function recordGraphError(acc, message, now = new Date()) {
+  acc.graph_error = String(message).slice(0, 160);
+  acc.graph_error_at = new Date(now).toISOString();
+  return acc;
+}
+// A candidate whose last 25 posts never mention matcha is dropped; returns true when it was.
+export function dropIfNoMatcha(acc, items, hasMatcha, now = new Date()) {
+  if (acc.status !== "candidate" || !items.length || items.some((m) => hasMatcha(m.text))) return false;
+  acc.status = "dropped";
+  acc.notes = "no matcha in last 25 posts";
+  acc.dropped_at = new Date(now).toISOString();
+  return true;
+}
+// The brand name for a source: its hand-written brand, else the account's own name from Graph, else the handle made readable.
+// Only fills auto_name, never brand. Returns true when auto_name changed.
+export function setAutoName(source, acc) {
+  const handle = cleanHandle(source.instagram || acc.handle);
+  if (!acc.name || String(source.brand || "").trim().toLowerCase() !== handle.toLowerCase() && !isHandleShaped(source.brand)) return false;
+  const name = displayName(acc.name);
+  if (!name || source.auto_name === name) return false;
+  source.auto_name = name;
+  return true;
 }
 
 // Record one finished check. foundCount = dated pop-ups seen this check (drives status); hitCount = the new ones, added to hits; popupAt = ISO of the post that had one.
@@ -105,7 +148,7 @@ export function pseudoSource(acc) {
     };
   }
   return {
-    id: acc.source_id || slug(acc.handle), brand: acc.handle, home_city: "", home_state: "",
+    id: acc.source_id || slug(acc.handle), brand: acc.name ? displayName(acc.name) : acc.handle, home_city: "", home_state: "",
     website: null, instagram: acc.platform === "instagram" ? acc.handle : null, tiktok: acc.platform === "tiktok" ? acc.handle : null,
     schedule_url: null, schedule_kind: "manual", adapter: "manual", active: true,
   };

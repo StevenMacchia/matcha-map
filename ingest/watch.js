@@ -1,4 +1,7 @@
-// npm run watch: check every account on data/watchlist.json whose last check is older than its cadence.
+// npm run watch: the hourly pass. First the hashtag harvest (ingest/lib/hashtags.js), then every account on data/watchlist.json
+// that is due: past its cadence, or an Instagram account the Graph API has never read.
+// Graph calls per run are capped at HOURLY_LIMIT - 20 (hashtags first, then accounts by priority); accounts past the cap stay
+// due and are not marked checked, and a Meta rate limit ends the Graph reads cleanly.
 // Flags: --all (ignore cadence) | --handle <h> | --dry | --promote | --no-fetch | --verbose
 // Instagram accounts go through the Graph adapter when the token exists. Otherwise (or as well) the
 // source's own schedule_url is read by its non-Instagram adapter. Events go through the same
@@ -8,7 +11,9 @@ import fs from "node:fs";
 import { createFetcher } from "./lib/fetch.js";
 import { createGeocoder } from "./lib/geocode.js";
 import { processItems, dedupeCandidates, finalize } from "./lib/pipeline.js";
-import { readEvents } from "./lib/write.js";
+import { readEvents, passesWatchRule, hasPopupIntent } from "./lib/write.js";
+import { harvest, RUN_CALLS } from "./lib/hashtags.js";
+import { hasMatcha } from "./adapters/mato.js";
 import { setVerbose, warn, info } from "./lib/log.js";
 import * as wlib from "./lib/watchlist.js";
 import mato from "./adapters/mato.js";
@@ -18,8 +23,9 @@ import ics from "./adapters/ics.js";
 import website from "./adapters/website.js";
 import marketspread from "./adapters/marketspread.js";
 import manual from "./adapters/manual.js";
-import { recheckTiktok, recheckInstagram, loadBudget, saveBudget } from "./lib/sites/social-search.js";
-import graph, { creds } from "./adapters/instagram-graph.js";
+import { recheckTiktok, recheckInstagram, loadBudget, saveBudget, budgetLine } from "./lib/sites/social-search.js";
+import graph, { creds, createRate, runAllowance } from "./adapters/instagram-graph.js";
+import { brandOf } from "./lib/names.js";
 
 const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual];
 const pad = (s, n) => String(s).padEnd(n).slice(0, n);
@@ -39,9 +45,29 @@ async function main() {
   wlib.seedFromSources(sources, wl, now); // new Instagram sources join the list as "watching"
   const fetcher = createFetcher({ noFetch });
   const geocoder = createGeocoder({ noFetch });
-  const ctx = { fetcher, now, env };
 
-  const due = wl.accounts.filter((a) => (only ? a.handle.toLowerCase() === only : all ? a.status !== "dropped" : wlib.isDue(a, now)));
+  // Graph budget for this run: HOURLY_LIMIT - 20 (runAllowance), less what earlier runs in the same rolling hour already used.
+  // `counted` is the rate counter that also counts what this run takes, so hashtags and account reads share one allowance.
+  const rate = createRate();
+  const allowance = runAllowance(rate.used());
+  let spent = 0;
+  const counted = { ...rate, take() { const ok = rate.take(); if (ok) spent++; return ok; } };
+  const room = () => spent < allowance;
+  const ctx = { fetcher, now, env, rate: counted };
+  const stat = { instagram: { checked: 0, posts: 0, events: 0, credits: 0 }, tiktok: { checked: 0, posts: 0, events: 0, credits: 0 } };
+  const sourceIds = new Set(sources.map((s) => s.id));
+
+  // Step 1: hashtag posts become events and their brands join the watch list, so the account reads below pick them up.
+  const candidates = [], live = [], notes = new Map();
+  let tagStats = null;
+  if (igOn && !noFetch && !only) {
+    const h = await harvest({ now, env, rate: counted, room: () => spent < Math.min(allowance, RUN_CALLS), wl, sources, events: readEvents(), dry });
+    tagStats = h.stats;
+    candidates.push(...h.candidates);
+    for (const a of h.accounts) wlib.addCandidate(wl, { handle: a.handle, found_via: a.found_via, found_from: a.found_from, notes: a.evidence }, now);
+  }
+
+  const due = wl.accounts.filter((a) => (only ? a.handle.toLowerCase() === only : all ? a.status !== "dropped" : wlib.isDue(a, now, { graphOn: igOn })));
   if (only && !due.length) warn(`no account "${only}" on the watch list`);
   info(`${due.length} of ${wl.accounts.length} accounts to check`);
 
@@ -52,12 +78,15 @@ async function main() {
   const queue = new Set([...wlib.pickForSearch(due, "instagram", caps.instagram), ...wlib.pickForSearch(due, "tiktok", caps.tiktok)].map((a) => a));
   const order = new Map(wlib.prioritize(due).map((a, i) => [a, i]));
   due.sort((a, b) => order.get(a) - order.get(b));
-  const stat = { instagram: { checked: 0, posts: 0, events: 0, credits: 0 }, tiktok: { checked: 0, posts: 0, events: 0, credits: 0 } };
   const known = new Set(readEvents().map((e) => e.id));
-  const candidates = [], live = [], notes = new Map();
+  let waiting = 0, graphErrors = 0, dropped = 0, namesSet = 0, inGraph = false;
   for (const acc of due) {
-    let source = sources.find((s) => s.id === acc.source_id) || wlib.pseudoSource(acc);
-    let items = [], ran = false, searchOnly = false;
+    const real = sources.find((s) => s.id === acc.source_id);
+    let source = real || wlib.pseudoSource(acc);
+    const wantsGraph = acc.platform === "instagram" && igOn && !noFetch && !wlib.graphSkipped(acc, now);
+    // Past the Graph budget, or Meta said stop: the account stays due and is not marked checked.
+    if (wantsGraph && (ctx.rateStopped || !room())) { waiting++; continue; }
+    let items = [], ran = false, searchOnly = false, facts = null;
     try {
       const search = !noFetch && queue.has(acc) && (acc.platform === "tiktok" || acc.platform === "instagram");
       if (search) {
@@ -68,13 +97,39 @@ async function main() {
         st.credits += budget.used_run - before;
         if (found) { st.checked++; st.posts += found.seen || 0; st.events += found.length; items = items.concat(found); ran = true; searchOnly = true; if (found[0]?.source_hint) source = found[0].source_hint; }
       }
-      if (acc.platform === "instagram" && igOn && !noFetch) { items = items.concat(await graph.fetch(source, ctx)); ran = true; searchOnly = false; }
+      if (wantsGraph) {
+        inGraph = true;
+        const got = await graph.fetch(source, ctx);
+        inGraph = false;
+        if (ctx.rateStopped) { waiting++; continue; }
+        facts = got.facts || null;
+        items = items.concat(got);
+        ran = true; searchOnly = false;
+      }
       const adapter = source.schedule_url ? ADAPTERS.find((x) => x.matches(source)) : null;
       if (adapter && adapter !== manual) { items = items.concat(await adapter.fetch(source, ctx)); ran = true; searchOnly = false; }
-    } catch (e) { warn(`${acc.handle}: ${e.message}`); notes.set(acc.handle, `failed: ${e.message}`); continue; }
+    } catch (e) {
+      // Meta answered no for this account (personal, deleted, renamed): remember it and leave Graph alone for a week.
+      if (inGraph && e.api) { wlib.recordGraphError(acc, e.message, now); graphErrors++; notes.set(acc.handle, `graph error: ${e.message}`); inGraph = false; continue; }
+      inGraph = false;
+      warn(`${acc.handle}: ${e.message}`); notes.set(acc.handle, `failed: ${e.message}`); continue;
+    }
+    if (wantsGraph && ran) {
+      wlib.recordGraph(acc, facts, now);
+      if (real && wlib.setAutoName(real, acc)) namesSet++;
+      if (wlib.dropIfNoMatcha(acc, items, hasMatcha, now)) { dropped++; notes.set(acc.handle, acc.notes); continue; }
+    }
+    if (!real && acc.name) source = { ...source, brand: brandOf({ brand: source.brand, handle: acc.handle, auto_name: acc.name }) };
+    else if (real) source = { ...source, brand: brandOf({ brand: real.brand, handle: real.instagram, auto_name: real.auto_name }) };
     if (!ran) { notes.set(acc.handle, queue.has(acc) ? "search failed or cap reached" : igOn ? "nothing to check" : "over the search cap or no source"); continue; }
     if (!searchOnly) live.push(source.id); // search snippets are not a full listing: a missing post must not decay its events
-    const { candidates: cs, popupAt } = await processItems(items, source, { now, handle: source.instagram ?? (wlib.readNote(acc.notes) ? null : acc.handle) });
+    // An account that is not a source is written only when a post has a matcha term, pop-up intent and a place.
+    const watchOnly = !real && !wlib.readNote(acc.notes);
+    if (watchOnly) items = items.filter((r) => hasMatcha(r.text) && hasPopupIntent(r.text));
+    let { candidates: cs, popupAt } = await processItems(items, source, { now, handle: source.instagram ?? (wlib.readNote(acc.notes) ? null : acc.handle) });
+    if (watchOnly) cs = cs.filter((c) => passesWatchRule([c.title, c.description], c));
+    // No post picture: the account's profile picture stands in.
+    if (acc.profile_picture_url) for (const c of cs) if (!c.image_url && !c.image) c.image_url = acc.profile_picture_url;
     const ids = new Set(dedupeCandidates(cs, now).map((c) => c.id));
     const fresh = [...ids].filter((id) => !known.has(id)).length;
     candidates.push(...cs);
@@ -83,8 +138,11 @@ async function main() {
   }
 
   saveBudget(budget, undefined, now); // credits are spent even on --dry
-  const { merged } = await finalize(candidates, { now, geocoder, fetcher, liveSourceIds: live, dry });
+  const { merged } = await finalize(candidates, { now, geocoder, fetcher, liveSourceIds: live, dry, sourceIds });
   for (const k of ["instagram", "tiktok"]) info(`by-handle ${k}: ${stat[k].checked} accounts checked, ${stat[k].posts} posts of theirs seen, ${stat[k].events} dated events, ${stat[k].credits} credits`);
+  info(`graph: ${spent} of ${allowance} calls this run${tagStats ? ` (hashtags: ${tagStats.tags} tags, ${tagStats.posts} posts, ${tagStats.kept} dated US posts)` : ""}; ${graphErrors} accounts with a Graph error (skipped for ${wlib.GRAPH_RETRY_DAYS} days), ${dropped} dropped for no matcha, ${namesSet} names set`);
+  if (waiting) info(`${waiting} accounts wait for the next hour`);
+  info(budgetLine(budget));
   info(`${candidates.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);
 
   if (has("--promote")) {
@@ -98,6 +156,7 @@ async function main() {
   if (due.length > 60) info(`... and ${due.length - 60} more`);
   if (dry) { info("(dry run: nothing written)"); return; }
   wlib.save(wl, { now });
+  if (namesSet) fs.writeFileSync("data/sources.json", JSON.stringify(sources, null, 2) + "\n");
   info("wrote data/watchlist.json");
 }
 

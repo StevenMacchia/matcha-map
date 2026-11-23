@@ -13,6 +13,7 @@
     "watch": "node ingest/watch.js",
     "loop": "node ingest/loop.js",
     "refresh": "node ingest/loop.js --once",
+    "clean": "node ingest/clean.js",
     "flyers": "node tools/flyers.js",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev"

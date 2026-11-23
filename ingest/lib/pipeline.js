@@ -14,7 +14,7 @@ export async function itemToCandidates(raw, source, now, handle) {
   cands = await improve(cands, raw, { now });
   const rich = richFields(raw, source);
   const mato = isMatoSource(source.id, source);
-  return cands.map((c) => ({ ...c, ...rich, ...(mato ? { kind: matoKind(c.title), category: "matcha" } : { kind: source.kind || "popup", category: source.category || "matcha" }), brand: source.brand, source_id: source.id, handle: raw.handle || handle || null }));
+  return cands.map((c) => ({ ...c, ...rich, ...(mato ? { kind: matoKind(c.title), category: "matcha" } : { kind: source.kind || "popup", category: source.category || "matcha" }), brand: source.brand, image_url: raw.media_type ? raw.image_url || null : null, source_id: source.id, handle: raw.handle || handle || null }));
 }
 
 // processItems(items, source, {now, handle}) -> { candidates, popupAt }.
@@ -63,14 +63,14 @@ export function dropSuperseded(existing, final) {
 }
 
 // Geocode, merge with data/events.json, and (unless dry) write. Returns {merged, final}.
-export async function finalize(candidates, { now, geocoder, fetcher = null, liveSourceIds = [], dry = false }) {
+export async function finalize(candidates, { now, geocoder, fetcher = null, liveSourceIds = [], dry = false, sourceIds = null }) {
   const final = [];
   for (const c of dedupeCandidates(candidates, now)) final.push(await geocoder.geocode(c));
   if (!dry) geocoder.save();
   const existing = dropSuperseded(readEvents(), final);
   let decay = {};
   try { decay = JSON.parse(fs.readFileSync("data/decay.json", "utf8")); } catch { /* first run */ }
-  const merged = mergeEvents(existing, final, { now, liveSourceIds, decay });
+  const merged = mergeEvents(existing, final, { now, liveSourceIds, decay, sourceIds });
   if (!dry) {
     if (fetcher) {
       merged.images = await downloadImages(merged.events, { fetcher });

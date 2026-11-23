@@ -1,5 +1,6 @@
 {
   "business_discovery": {
+    "name": "Brand Handle", "website": "https://brand.example", "profile_picture_url": "https://scontent.cdninstagram.com/pp.jpg", "followers_count": 1200, "biography": "matcha, pop-ups",
     "media": {
       "data": [
         { "caption": "Pop-up this Saturday Dec 6, 11am-3pm at Sunny Books, 123 Main St, Los Angeles, CA 90012. w/ @sunnybooks", "permalink": "https://www.instagram.com/p/DAAA111/", "timestamp": "2026-11-20T18:00:00+0000", "media_type": "IMAGE", "id": "1" },

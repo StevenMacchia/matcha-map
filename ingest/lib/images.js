@@ -10,6 +10,7 @@ import { debug, warn } from "./log.js";
 
 export const MAX_BYTES = 2 * 1024 * 1024;
 export const MAX_REDIRECTS = 2;
+export const ROBOTS = "blocked by robots.txt";
 export const IMG_DIR = "site/img/events";
 
 // Sniff type and size from the first bytes. -> {ext, width, height} or null (not jpg, png or webp).
@@ -45,7 +46,7 @@ export async function fetchImage(url, { fetcher, fetchFn = fetch } = {}) {
   for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
     const u = new URL(cur);
     if (u.protocol !== "https:" && u.protocol !== "http:") throw new Error("not http");
-    if (fetcher?.allowed && !(await fetcher.allowed(cur))) throw new Error("blocked by robots.txt");
+    if (fetcher?.allowed && !(await fetcher.allowed(cur))) throw new Error(ROBOTS);
     if (fetcher?.throttle) await fetcher.throttle(u.host);
     const res = await fetchFn(cur, { headers: { "User-Agent": UA, Accept: "image/webp,image/png,image/jpeg" }, redirect: "manual", signal: AbortSignal.timeout(20000) });
     if (res.status >= 300 && res.status < 400 && res.headers.get("location")) { cur = new URL(res.headers.get("location"), cur).href; continue; }
@@ -64,7 +65,7 @@ export async function fetchImage(url, { fetcher, fetchFn = fetch } = {}) {
 // Fill image.local, width and height on events (mutates). Files already on disk are reused.
 export async function downloadImages(events, { fetcher, dir = IMG_DIR, fetchFn } = {}) {
   fs.mkdirSync(dir, { recursive: true });
-  const stats = { downloaded: 0, reused: 0, failed: 0 };
+  const stats = { downloaded: 0, reused: 0, failed: 0, robots: 0 };
   for (const e of events) {
     const img = e.image;
     if (!img?.url) continue;
@@ -77,7 +78,10 @@ export async function downloadImages(events, { fetcher, dir = IMG_DIR, fetchFn }
       Object.assign(img, { local: `img/events/${name}`, width: r.width, height: r.height });
       stats.downloaded++;
     } catch (err) {
-      stats.failed++; img.local = null;
+      img.local = null;
+      // A CDN that robots.txt closes to us (Instagram's) is not a failure: the site shows the API url itself, so keep it and stay quiet.
+      if (err.message === ROBOTS) { stats.robots++; e.image_url = e.image_url || img.url; continue; }
+      stats.failed++;
       debug("image failed", img.url, err.message);
       warn(`image ${e.id}: ${err.message}`);
     }

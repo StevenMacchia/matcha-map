@@ -17,9 +17,9 @@
 //     Feature: Instagram Public Content Access. Permission: instagram_basic
 //     (plus pages_read_engagement or business_management for Business Manager roles).
 //     Limit: 30 unique hashtags per rolling 7 days per account.
-//  3. Hashtag media:
+//  3. Hashtag media (read by ingest/lib/hashtags.js through hashtagId and hashtagEdge below):
 //       GET /{hashtag-id}/recent_media | /{hashtag-id}/top_media
-//           ?user_id={INSTAGRAM_BUSINESS_ID}&fields=caption,permalink,timestamp,media_type,media_url,thumbnail_url&limit=50
+//           ?user_id={INSTAGRAM_BUSINESS_ID}&fields=caption,permalink,timestamp,media_type,media_url,thumbnail_url,children{...}&limit=50
 //     recent_media: max 50 per page, only media from the last 24 hours. The `username` field
 //     CANNOT be requested here, so owners are found by @mentions in the caption or later by hand.
 //
@@ -30,12 +30,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { UA } from "../lib/fetch.js";
-import { warnOnce, warn, debug } from "../lib/log.js";
+import { warnOnce, debug } from "../lib/log.js";
 
 export const VERSION = "v21.0";
 const BASE = `https://graph.facebook.com/${VERSION}`;
 export const HOURLY_LIMIT = 200;
 export const HASHTAG_LIMIT = 30;
+// One watch run spends at most this many calls (hashtags first, then accounts), less what the rolling hour already used:
+// the last 20 of the hour's 200 are left for hand runs.
+export const runAllowance = (usedThisHour = 0) => Math.max(0, HOURLY_LIMIT - 20 - usedThisHour);
 const HOUR = 3600000, WEEK = 7 * 86400000;
 export const OFF_LINE = "Instagram Graph: off (set INSTAGRAM_TOKEN and INSTAGRAM_BUSINESS_ID; see docs/INSTAGRAM-SETUP.md)";
 
@@ -65,6 +68,9 @@ export function createRate({ file = ".cache/ig-rate.json", now = () => Date.now(
       const live = Object.entries(h).filter(([, t]) => now() - t < WEEK);
       return live.some(([k]) => k === tag) || live.length < HASHTAG_LIMIT;
     },
+    // The tags counted in the last 7 days, and how many new unique ones still fit.
+    hashtagsCounted() { return Object.entries(read().hashtags || {}).filter(([, t]) => now() - t < WEEK).map(([k]) => k); },
+    hashtagFree() { return Math.max(0, HASHTAG_LIMIT - this.hashtagsCounted().length); },
     hashtagUsed(tag) {
       const o = read();
       const h = Object.fromEntries(Object.entries(o.hashtags || {}).filter(([, t]) => now() - t < WEEK));
@@ -77,26 +83,36 @@ export function createRate({ file = ".cache/ig-rate.json", now = () => Date.now(
 // ---- response shapes -> RawItems --------------------------------------------------------------
 export const shortcodeOf = (permalink) => /instagram\.com\/(?:[^/]+\/)?(?:p|reel|reels|tv)\/([A-Za-z0-9_-]+)/.exec(permalink || "")?.[1] || null;
 
+// The picture to show: a video's thumbnail, a photo's own url, or the first photo of a carousel.
+const imageOf = (m) => m.thumbnail_url || (m.media_type !== "VIDEO" ? m.media_url : null) || (m.children?.data || []).find((c) => c.media_type === "IMAGE" && c.media_url)?.media_url || null;
+
 // business_discovery response -> RawItem[] (captioned media only).
 export function mapBusinessDiscovery(json, handle) {
   const media = json?.business_discovery?.media?.data || [];
   return media.filter((m) => m.caption && m.permalink).map((m) => ({
     source_url: m.permalink, text: m.caption, published_at: m.timestamp, handle, media_type: m.media_type || null,
-    image_url: m.thumbnail_url || (m.media_type !== "VIDEO" ? m.media_url : null) || null, posts: { instagram: m.permalink },
+    image_url: imageOf(m), posts: { instagram: m.permalink },
   }));
+}
+
+// business_discovery response -> the account's own facts (name, site, picture, followers), or null.
+export function mapAccountFacts(json) {
+  const b = json?.business_discovery;
+  if (!b) return null;
+  return { name: b.name || null, website: b.website || null, profile_picture_url: b.profile_picture_url || null, followers_count: Number.isFinite(b.followers_count) ? b.followers_count : null, biography: b.biography || null };
 }
 
 // Hashtag edge response -> RawItem[]. handle is null unless the API returned a username.
 export function mapHashtagMedia(json, tag, edge = "recent_media") {
   return (json?.data || []).filter((m) => m.permalink).map((m) => ({
     source_url: m.permalink, text: m.caption || "", published_at: m.timestamp, handle: m.username || null,
-    media_type: m.media_type || null, image_url: m.thumbnail_url || (m.media_type !== "VIDEO" ? m.media_url : null) || null, posts: { instagram: m.permalink }, shortcode: shortcodeOf(m.permalink), hashtag: tag, edge,
+    media_type: m.media_type || null, image_url: imageOf(m), posts: { instagram: m.permalink }, shortcode: shortcodeOf(m.permalink), hashtag: tag, edge,
   }));
 }
 
 // ---- HTTP ------------------------------------------------------------------------------------
-class Stop extends Error {}
-async function graph(url, rate, http) {
+export class Stop extends Error {}
+export async function graph(url, rate, http) {
   if (!rate.take()) throw new Stop(`Instagram Graph: stopped early, ${HOURLY_LIMIT} calls this hour used (counter in .cache/ig-rate.json)`);
   const r = await http(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(15000) });
   const j = await r.json().catch(() => ({}));
@@ -105,9 +121,30 @@ async function graph(url, rate, http) {
     if ([4, 17, 80002].includes(e.code)) throw new Stop(`Instagram Graph: Meta rate limit (code ${e.code}); stopping`);
     const err = new Error(`Graph API HTTP ${r.status}${e.message ? `: ${e.message}` : ""}`);
     err.code = e.code;
+    err.api = r.status < 500; // Meta answered and said no (personal account, renamed, deleted): not a network blip
     throw err;
   }
   return j;
+}
+
+// Hashtag id lookup: one call per tag, cached by the caller (data/hashtags.json ids). -> id or null.
+export async function hashtagId(tag, c, rate, http = fetch) {
+  const s = await graph(`${BASE}/ig_hashtag_search?user_id=${c.id}&q=${encodeURIComponent(tag)}&access_token=${c.token}`, rate, http);
+  return s.data?.[0]?.id || null;
+}
+
+// One hashtag edge (recent_media or top_media), up to `pages` pages while a page comes back full and has a next cursor.
+// `room()` is asked before every call so the caller's per-run budget holds; it returns false to stop.
+export const HASHTAG_FIELDS = "caption,permalink,timestamp,media_type,media_url,thumbnail_url,children{media_url,media_type}";
+export async function hashtagEdge(hid, edge, c, rate, { http = fetch, pages = 1, room = () => true } = {}) {
+  const out = [];
+  let url = `${BASE}/${hid}/${edge}?user_id=${c.id}&fields=${encodeURIComponent(HASHTAG_FIELDS)}&limit=50&access_token=${c.token}`;
+  for (let n = 0; n < pages && url && room(); n++) {
+    const j = await graph(url, rate, http);
+    out.push(...(j.data || []));
+    url = j.paging?.next && (j.data || []).length >= 50 ? j.paging.next : null;
+  }
+  return out;
 }
 
 export default {
@@ -120,45 +157,17 @@ export default {
     if (!c) { warnOnce("ig", OFF_LINE); return []; }
     if (ctx.fetcher?.noFetch) return [];
     const rate = ctx.rate || createRate();
-    const fields = `business_discovery.username(${source.instagram}){media.limit(25){caption,permalink,timestamp,media_type,media_url,thumbnail_url}}`;
+    const fields = `business_discovery.username(${source.instagram}){name,profile_picture_url,website,biography,followers_count,media.limit(25){caption,permalink,timestamp,media_type,media_url,thumbnail_url}}`;
     const url = `${BASE}/${c.id}?fields=${encodeURIComponent(fields)}&access_token=${c.token}`;
     try {
       const j = await graph(url, rate, ctx.http || fetch);
       const items = mapBusinessDiscovery(j, source.instagram);
+      items.facts = mapAccountFacts(j);
       debug("instagram media", source.instagram, items.length);
       return items;
     } catch (e) {
-      if (e instanceof Stop) { warnOnce("ig-stop", e.message); return []; }
+      if (e instanceof Stop) { ctx.rateStopped = true; warnOnce("ig-stop", e.message); return []; }
       throw e;
     }
-  },
-
-  // discover(ctx) -> RawItem[] from the hashtags in data/hashtags.json (recent_media + top_media).
-  async discover(ctx) {
-    const c = creds(ctx.env || process.env);
-    if (!c) { warnOnce("ig", OFF_LINE); return []; }
-    if (ctx.fetcher?.noFetch) return [];
-    const rate = ctx.rate || createRate();
-    const http = ctx.http || fetch;
-    let tags = [];
-    try { tags = JSON.parse(fs.readFileSync(ctx.hashtagsFile || "data/hashtags.json", "utf8")).hashtags || []; } catch { warn("data/hashtags.json missing or invalid"); }
-    const out = [];
-    for (const tag of tags) {
-      if (!rate.hashtagOk(tag)) { warn(`Instagram Graph: skipping #${tag}, 30 unique hashtags per 7 days reached`); continue; }
-      try {
-        const s = await graph(`${BASE}/ig_hashtag_search?user_id=${c.id}&q=${encodeURIComponent(tag)}&access_token=${c.token}`, rate, http);
-        const hid = s.data?.[0]?.id;
-        rate.hashtagUsed(tag);
-        if (!hid) continue;
-        for (const edge of ["recent_media", "top_media"]) {
-          const j = await graph(`${BASE}/${hid}/${edge}?user_id=${c.id}&fields=caption,permalink,timestamp,media_type&limit=50&access_token=${c.token}`, rate, http);
-          out.push(...mapHashtagMedia(j, tag, edge));
-        }
-      } catch (e) {
-        if (e instanceof Stop) { warn(e.message); break; }
-        warn(`#${tag}: ${e.message}`);
-      }
-    }
-    return out;
   },
 };

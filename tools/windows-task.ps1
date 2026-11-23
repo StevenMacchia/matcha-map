@@ -1,19 +1,26 @@
-# Registers (or removes) a Windows Task Scheduler job that runs `npm run refresh` in this repo every 6 hours.
-#   powershell -ExecutionPolicy Bypass -File tools\windows-task.ps1            # register
-#   powershell -ExecutionPolicy Bypass -File tools\windows-task.ps1 -Remove    # remove
-# Runs as the current user, only while that user is signed in. No keys needed. Output goes to .cache\refresh.log.
-param([switch]$Remove, [int]$EveryHours = 6)
+# Registers (or removes) two Windows Task Scheduler jobs for this repo:
+#   "Matcha Map watch"    runs `npm run watch` every hour (hashtag harvest, then the accounts that are due)
+#   "Matcha Map refresh"  runs `npm run refresh` every 6 hours (discover, watch, ingest)
+#   powershell -ExecutionPolicy Bypass -File tools\windows-task.ps1            # register both
+#   powershell -ExecutionPolicy Bypass -File tools\windows-task.ps1 -Remove    # remove both
+# Runs as the current user, only while that user is signed in. No keys needed. Output goes to .cache\watch.log and .cache\refresh.log.
+param([switch]$Remove, [int]$EveryHours = 6, [int]$WatchEveryHours = 1)
 
 $ErrorActionPreference = "Stop"
-$TaskName = "Matcha Map refresh"
 $Repo = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+$Jobs = @(
+  @{ Name = "Matcha Map watch";   Npm = "watch";   Hours = $WatchEveryHours; Log = "watch.log";   About = "watch (hashtags, then due accounts)" },
+  @{ Name = "Matcha Map refresh"; Npm = "refresh"; Hours = $EveryHours;      Log = "refresh.log"; About = "discover, watch, ingest" }
+)
 
 if ($Remove) {
-  if (Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue) {
-    Unregister-ScheduledTask -TaskName $TaskName -Confirm:$false
-    Write-Output "Removed the scheduled task '$TaskName'."
-  } else {
-    Write-Output "No scheduled task named '$TaskName'. Nothing to remove."
+  foreach ($j in $Jobs) {
+    if (Get-ScheduledTask -TaskName $j.Name -ErrorAction SilentlyContinue) {
+      Unregister-ScheduledTask -TaskName $j.Name -Confirm:$false
+      Write-Output "Removed the scheduled task '$($j.Name)'."
+    } else {
+      Write-Output "No scheduled task named '$($j.Name)'. Nothing to remove."
+    }
   }
   return
 }
@@ -23,21 +30,21 @@ if (-not $node) { throw "Node is not on PATH. Install Node 20 or newer, open a n
 $npm = Get-Command npm.cmd -ErrorAction SilentlyContinue
 if (-not $npm) { throw "npm.cmd is not on PATH. It ships with Node." }
 $nodeDir = Split-Path $node.Source
+New-Item -ItemType Directory -Force (Join-Path $Repo ".cache") | Out-Null
 
-# cmd.exe: put Node first on PATH, move to the repo, run the refresh, append output to a log.
-$log = Join-Path $Repo ".cache\refresh.log"
-New-Item -ItemType Directory -Force (Split-Path $log) | Out-Null
-$cmd = "/c set `"PATH=$nodeDir;%PATH%`" && cd /d `"$Repo`" && npm run refresh >> `"$log`" 2>&1"
+foreach ($j in $Jobs) {
+  $log = Join-Path $Repo (Join-Path ".cache" $j.Log)
+  # cmd.exe: put Node first on PATH, move to the repo, run the script, append output to a log.
+  $cmd = "/c set `"PATH=$nodeDir;%PATH%`" && cd /d `"$Repo`" && npm run $($j.Npm) >> `"$log`" 2>&1"
+  $action = New-ScheduledTaskAction -Execute "cmd.exe" -Argument $cmd -WorkingDirectory $Repo
+  $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(5) -RepetitionInterval (New-TimeSpan -Hours $j.Hours)
+  # A run that is still going when the next is due is left alone (IgnoreNew); one run never lasts past the hour.
+  $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 1) -MultipleInstances IgnoreNew
+  Register-ScheduledTask -TaskName $j.Name -Action $action -Trigger $trigger -Settings $settings -Description "Matcha Map: $($j.About) every $($j.Hours) hours." -Force | Out-Null
+  Write-Output "Registered '$($j.Name)': npm run $($j.Npm) every $($j.Hours) hours, log $log"
+}
 
-$action = New-ScheduledTaskAction -Execute "cmd.exe" -Argument $cmd -WorkingDirectory $Repo
-$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(5) -RepetitionInterval (New-TimeSpan -Hours $EveryHours)
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 1) -MultipleInstances IgnoreNew
-
-Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Description "Matcha Map: discover, watch, ingest every $EveryHours hours." -Force | Out-Null
-
-Write-Output "Registered '$TaskName'."
-Write-Output "  Runs:    npm run refresh in $Repo"
+Write-Output "  Repo:    $Repo"
 Write-Output "  Node:    $nodeDir"
-Write-Output "  Every:   $EveryHours hours, first run in about 5 minutes"
-Write-Output "  Log:     $log"
+Write-Output "  First runs in about 5 minutes."
 Write-Output "  Remove:  powershell -ExecutionPolicy Bypass -File tools\windows-task.ps1 -Remove"

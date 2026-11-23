@@ -234,7 +234,7 @@ test("matcha filter applies to mato: and venue/organizer sources only; missing k
 });
 
 test("writer cleanup drops non-matcha mato: events, keeps matcha ones and every other source", () => {
-  const base = { id: "i", source_id: "mato:x", brand: "Flower Shop", title: "Pottery night", description: null, venue: "Studio", start: "2026-12-05T16:00:00-08:00", end: null, confidence: "likely", first_seen: D, last_seen: D };
+  const base = { id: "i", state: "CA", source_id: "mato:x", brand: "Flower Shop", title: "Pottery night", description: null, venue: "Studio", start: "2026-12-05T16:00:00-08:00", end: null, confidence: "likely", first_seen: D, last_seen: D };
   const events = [
     { ...base, id: "a" },
     { ...base, id: "b", title: "Matcha workshop" },

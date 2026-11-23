@@ -5,7 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import * as wl from "../ingest/lib/watchlist.js";
 import { extractMentions, parseSearchUrl, fromBraveResults, fromGraphItems, addAll, citiesForRun, fromMatoHtml, fromLumaData } from "../ingest/lib/discover.js";
-import igAdapter, { mapBusinessDiscovery, mapHashtagMedia, createRate, shortcodeOf, creds } from "../ingest/adapters/instagram-graph.js";
+import igAdapter, { mapBusinessDiscovery, mapHashtagMedia, mapAccountFacts, createRate, shortcodeOf, creds, runAllowance, HOURLY_LIMIT } from "../ingest/adapters/instagram-graph.js";
 import { parseEnv } from "../ingest/lib/env.js";
 
 const fx = (n) => JSON.parse(fs.readFileSync(new URL(`./fixtures/${n}`, import.meta.url), "utf8"));
@@ -149,7 +149,6 @@ test("graph items -> candidates: mention in caption and username owner", () => {
 test("adapter is off without keys, returning []", async () => {
   assert.equal(creds({}), null);
   assert.deepEqual(await igAdapter.fetch({ instagram: "x" }, { env: {} }), []);
-  assert.deepEqual(await igAdapter.discover({ env: {} }), []);
 });
 test("adapter fetch with a stubbed http uses business_discovery and maps items", async () => {
   const urls = [];
@@ -157,7 +156,8 @@ test("adapter fetch with a stubbed http uses business_discovery and maps items",
   const rate = createRate({ file: path.join(os.tmpdir(), `ig-rate-${process.pid}-a.json`) });
   const items = await igAdapter.fetch({ instagram: "brandhandle" }, { env: { INSTAGRAM_TOKEN: "T", INSTAGRAM_BUSINESS_ID: "99" }, http, rate, fetcher: {} });
   assert.equal(items.length, 2);
-  assert.match(decodeURIComponent(urls[0]), /\/99\?fields=business_discovery\.username\(brandhandle\)\{media\.limit\(25\)\{caption,permalink,timestamp,media_type,media_url,thumbnail_url\}\}/);
+  assert.deepEqual(items.facts, { name: "Brand Handle", website: "https://brand.example", profile_picture_url: "https://scontent.cdninstagram.com/pp.jpg", followers_count: 1200, biography: "matcha, pop-ups" });
+  assert.match(decodeURIComponent(urls[0]), /\/99\?fields=business_discovery\.username\(brandhandle\)\{name,profile_picture_url,website,biography,followers_count,media\.limit\(25\)\{caption,permalink,timestamp,media_type,media_url,thumbnail_url\}\}/);
 });
 test("rate counter stops at 200 calls per hour and expires after an hour", () => {
   let t = 1_000_000;
@@ -232,4 +232,57 @@ test("promote writes source records for watching accounts with hits and no sourc
   assert.deepEqual(sources, copy);
   const on = wl.promote({ accounts: [acct({ handle: "zed", hits: 1 })] }, [], { now: t0, graphOn: true });
   assert.equal(on.sources[0].adapter, "instagram-graph");
+});
+
+// ---- pacing (rung 27) ---------------------------------------------------------------------------
+test("a watch run's Graph allowance is HOURLY_LIMIT - 20 less what the hour already used", () => {
+  assert.equal(runAllowance(0), HOURLY_LIMIT - 20);
+  assert.equal(runAllowance(150), 30);
+  assert.equal(runAllowance(190), 0);
+});
+test("rate Stop: fetch returns [] and flags ctx.rateStopped so the caller leaves the account unchecked", async () => {
+  const http = async () => ({ ok: false, status: 400, json: async () => ({ error: { code: 4, message: "limit" } }) });
+  const rate = createRate({ file: path.join(os.tmpdir(), `ig-rate-${process.pid}-d.json`) });
+  const ctx = { env: { INSTAGRAM_TOKEN: "T", INSTAGRAM_BUSINESS_ID: "99" }, http, rate, fetcher: {} };
+  assert.deepEqual(await igAdapter.fetch({ instagram: "x" }, ctx), []);
+  assert.equal(ctx.rateStopped, true);
+});
+test("a Graph error for one account throws with api set, so the watcher can park it for a week", async () => {
+  const http = async () => ({ ok: false, status: 400, json: async () => ({ error: { code: 110, message: "Invalid user id" } }) });
+  const rate = createRate({ file: path.join(os.tmpdir(), `ig-rate-${process.pid}-e.json`) });
+  const ctx = { env: { INSTAGRAM_TOKEN: "T", INSTAGRAM_BUSINESS_ID: "99" }, http, rate, fetcher: {} };
+  await assert.rejects(igAdapter.fetch({ instagram: "personal" }, ctx), (e) => e.api === true && !ctx.rateStopped);
+});
+test("an Instagram account Graph never read is due whatever its cadence; a graph_error parks it for 7 days", () => {
+  const read = acct({ last_checked: daysAgo(0), cadence_hours: 72, graph_checked_at: daysAgo(0) });
+  const unread = acct({ last_checked: daysAgo(0), cadence_hours: 72 });
+  assert.ok(!wl.isDue(unread, t0), "without graph the cadence rules");
+  assert.ok(wl.isDue(unread, t0, { graphOn: true }));
+  assert.ok(!wl.isDue(read, t0, { graphOn: true }));
+  const bad = wl.recordGraphError(acct({ last_checked: daysAgo(0), cadence_hours: 72 }), "Invalid user id", t0);
+  assert.ok(wl.graphSkipped(bad, new Date(t0 - 0 + 6 * D)));
+  assert.ok(!wl.graphSkipped(bad, new Date(t0.getTime() + 8 * D)));
+  assert.ok(!wl.isDue(bad, t0, { graphOn: true }));
+  assert.ok(!wl.isDue(acct({ platform: "tiktok", last_checked: daysAgo(0), cadence_hours: 72 }), t0, { graphOn: true }));
+});
+test("recordGraph keeps the account's facts and clears an old error; picks the name for a handle-shaped source", () => {
+  const a = wl.recordGraphError(acct(), "x", t0);
+  wl.recordGraph(a, mapAccountFacts(fx("graph-business-discovery.json")), t0);
+  assert.deepEqual([a.name, a.followers_count, a.graph_error, a.graph_checked_at], ["Brand Handle", 1200, undefined, t0.toISOString()]);
+  assert.equal(a.profile_picture_url, "https://scontent.cdninstagram.com/pp.jpg");
+  const src = { brand: "brandhandle", instagram: "brandhandle" };
+  assert.ok(wl.setAutoName(src, a));
+  assert.deepEqual([src.brand, src.auto_name], ["brandhandle", "Brand Handle"]);
+  const written = { brand: "Brand Handle Matcha", instagram: "brandhandle" };
+  assert.ok(!wl.setAutoName(written, a), "a hand-written brand gets no auto_name");
+  assert.equal(wl.pseudoSource(a).brand, "Brand Handle");
+});
+test("a candidate with no matcha in its last 25 posts is dropped after a Graph read", () => {
+  const has = (t) => /matcha/i.test(t);
+  const c = acct({ status: "candidate" });
+  assert.ok(!wl.dropIfNoMatcha(c, [], has, t0), "nothing read: no verdict");
+  assert.ok(!wl.dropIfNoMatcha(acct({ status: "candidate" }), [{ text: "Matcha latte" }], has, t0));
+  assert.ok(!wl.dropIfNoMatcha(acct({ status: "watching" }), [{ text: "lunch" }], has, t0), "only candidates");
+  assert.ok(wl.dropIfNoMatcha(c, [{ text: "lunch" }, { text: "dinner" }], has, t0));
+  assert.deepEqual([c.status, c.notes], ["dropped", "no matcha in last 25 posts"]);
 });

@@ -1,7 +1,7 @@
-// npm run loop:    discover -> watch -> ingest every 6 hours while this process is open (first run now).
-// npm run refresh: the same three steps once, then exit.
+// npm run loop:    watch every hour; discover and ingest every 6 hours (with a watch pass each time), while this process is open.
+// npm run refresh: discover -> watch -> ingest once, then exit.
 // Each step is its own child process, so one crash never stops the cycle. Needs no keys.
-// Flags: --once (same as refresh) | --every <hours> (default 6) | --verbose (pass step output through)
+// Flags: --once (same as refresh) | --every <hours> for discover + ingest (default 6) | --watch-every <hours> (default 1) | --verbose (pass step output through)
 import fs from "node:fs";
 import path from "node:path";
 import { spawn } from "node:child_process";
@@ -12,13 +12,12 @@ const argv = process.argv.slice(2);
 const once = argv.includes("--once");
 const verbose = argv.includes("--verbose");
 const hours = argv.includes("--every") ? Number(argv[argv.indexOf("--every") + 1]) : 6;
-if (!(hours > 0)) { console.error("--every needs a number of hours above 0"); process.exit(2); }
+const watchHours = argv.includes("--watch-every") ? Number(argv[argv.indexOf("--watch-every") + 1]) : 1;
+if (!(hours > 0) || !(watchHours > 0)) { console.error("--every and --watch-every need a number of hours above 0"); process.exit(2); }
 
-const STEPS = [
-  ["discover", ["ingest/lib/discover.js"]],
-  ["watch", ["ingest/watch.js"]],
-  ["ingest", ["ingest/run.js"]],
-];
+const WATCH = ["watch", ["ingest/watch.js"]];
+// The full cycle (discover, watch, ingest) and the hourly one (watch alone).
+const FULL = [["discover", ["ingest/lib/discover.js"]], WATCH, ["ingest", ["ingest/run.js"]]];
 
 const stamp = () => new Date().toISOString().replace("T", " ").slice(0, 19);
 const say = (m) => console.log(`[${stamp()}] ${m}`);
@@ -51,7 +50,7 @@ function counts() {
 
 let current = null, stopping = false, running = false, timer = null;
 
-async function cycle() {
+async function cycle(STEPS = FULL) {
   if (running) return;
   running = true;
   const parts = [];
@@ -77,13 +76,16 @@ process.on("SIGINT", stop);
 process.on("SIGTERM", stop);
 
 if (once) {
-  const ok = await cycle();
+  const ok = await cycle(FULL);
   process.exit(ok ? 0 : 1);
 } else {
-  say(`loop started: discover, watch, ingest every ${hours} hours. Ctrl+C to stop.`);
-  await cycle();
+  say(`loop started: watch every ${watchHours} h, discover and ingest every ${hours} h. Ctrl+C to stop.`);
+  await cycle(FULL);
   if (!stopping) {
-    timer = setInterval(() => { cycle(); }, hours * 3600 * 1000);
-    say(`next run at ${new Date(Date.now() + hours * 3600 * 1000).toISOString().replace("T", " ").slice(0, 16)}`);
+    // One hourly tick; every `hours` hours it is the full cycle, otherwise the watch pass alone.
+    const every = Math.max(1, Math.round(hours / watchHours));
+    let tick = 0;
+    timer = setInterval(() => { tick++; cycle(tick % every === 0 ? FULL : [WATCH]); }, watchHours * 3600 * 1000);
+    say(`next run at ${new Date(Date.now() + watchHours * 3600 * 1000).toISOString().replace("T", " ").slice(0, 16)}`);
   }
 }

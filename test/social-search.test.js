@@ -91,7 +91,9 @@ test("social-search: noise filter", () => {
 test("social-search: budget counter and queries", () => {
   const f = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "ss-")), "b.json");
   const b = ss.loadBudget(f, now);
-  assert.deepEqual([b.per_run, b.per_month, b.used_month, b.used_run], [120, 900, 0, 0]);
+  assert.deepEqual([b.per_run_config, b.per_month, b.used_month, b.used_run], [120, 900, 0, 0]);
+  assert.equal(b.per_run, ss.paceCap(120, 900, 0, now)); // spread over the runs left in the month
+  b.per_run = 120;
   for (let i = 0; i < 120; i++) { assert.equal(ss.canSpend(b), null); ss.spend(b); }
   assert.equal(ss.canSpend(b), "per-run cap");
   ss.saveBudget(b, f, now);
@@ -124,4 +126,22 @@ test("social-search: the crawler stops at the per-run cap and only calls the Tav
   assert.equal(r.stats.hitCap, true);
   assert.equal(JSON.parse(fs.readFileSync(budgetFile, "utf8")).used_month, 3);
   assert.match((await ss.discover({ env: {}, now })).stats.skipped, /TAVILY_API_KEY/);
+});
+
+test("pacing: per_run is min(configured, left / runs left), floored at 5, and the configured cap is saved back", () => {
+  const nov22 = new Date("2026-11-22T12:00:00Z"); // 8.5 days left, 4 discover runs a day = 34 runs
+  assert.equal(ss.paceCap(120, 900, 634, nov22), 7);                 // 266 left / 34 runs
+  assert.equal(ss.paceCap(120, 900, 0, new Date("2026-11-01T00:00:00Z")), 7); // a fresh month: 900 / 120 runs
+  assert.equal(ss.paceCap(120, 900, 899, nov22), 5);                 // never below 5
+  assert.equal(ss.paceCap(120, 900, 900, nov22), 5);
+  assert.equal(ss.paceCap(3, 900, 0, nov22), 3);                     // never above the configured cap
+  assert.equal(ss.paceCap(120, 900, 0, new Date("2026-11-30T23:00:00Z")), 120); // last hour: all of it
+  const f = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "ss-")), "b.json");
+  fs.writeFileSync(f, JSON.stringify({ per_run: 120, per_month: 900, month: "2026-11", used_month: 634 }));
+  const b = ss.loadBudget(f, nov22);
+  assert.deepEqual([b.per_run, b.per_run_config], [7, 120]);
+  b.used_run = 6; b.used_month = 640;
+  assert.equal(ss.budgetLine(b), "Tavily: 6 this run, 260 left this month");
+  ss.saveBudget(b, f, nov22);
+  assert.equal(JSON.parse(fs.readFileSync(f, "utf8")).per_run, 120);
 });

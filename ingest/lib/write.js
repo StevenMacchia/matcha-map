@@ -5,6 +5,7 @@ import path from "node:path";
 import { SOCIAL_POST } from "./extract.js";
 import { hasMatcha } from "../adapters/mato.js";
 import { SITE_ORDER } from "./sites/common.js";
+import { PLACEHOLDER_VENUE } from "./names.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 const DAY = 86400000;
@@ -33,7 +34,7 @@ export function computeStatus(e, now) {
 const stepDown = (c, n) => CONF[Math.max(0, CONF.indexOf(c) - n)];
 
 // Fields of the schema, in a stable order, so candidates carry no extra keys.
-const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "posts", "menu", "price", "description", "links"];
+const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "image_url", "posts", "menu", "price", "description", "links"];
 const emptyPosts = () => ({ instagram: null, tiktok: null, other: null });
 const emptyLinks = () => ({ website: null, instagram: null, tiktok: null });
 const DEFAULTS = { menu: () => [], posts: emptyPosts, links: emptyLinks, kind: () => "popup", category: () => "matcha" };
@@ -84,6 +85,8 @@ function carryRich(merged, prev, c) {
     if (!c.image) merged.image = prev.image;
     else if (c.image.url === prev.image.url) merged.image = { ...c.image, local: prev.image.local || c.image.local || null, width: prev.image.width || c.image.width || null, height: prev.image.height || c.image.height || null };
   }
+  // The API picture url is refreshed on every read; an older one stays only until a read brings a new one.
+  merged.image_url = c.image_url || prev.image_url || null;
   merged.posts = Object.fromEntries(["instagram", "tiktok", "other"].map((k) => [k, c.posts?.[k] || prev.posts?.[k] || null]));
   merged.links = Object.fromEntries(["website", "instagram", "tiktok"].map((k) => [k, c.links?.[k] || prev.links?.[k] || null]));
 }
@@ -91,19 +94,58 @@ function carryRich(merged, prev, c) {
 // Events found through MATO or another event site (source_id mato:<slug>, luma:<slug> ...) stay only while their title, description, venue or brand has a matcha word.
 export const keepMatoEvent = (e) => !isPseudoId(e.source_id) || hasMatcha(e.title, e.description, e.venue, e.brand, (e.menu || []).join(" "));
 
+// ---- noise rules (rung 27) --------------------------------------------------------------------
+// A title that is only "Matcha event" / "Matcha pop-up" with no brand beyond it says nothing about who or where.
+export const GENERIC_TITLE = /^matcha (event|pop[\s-]?up)$/i;
+export const hasNoBrand = (e) => !String(e.brand || "").trim() || /^matcha$/i.test(String(e.brand).trim()) || String(e.brand).trim().toLowerCase() === String(e.title || "").trim().toLowerCase();
+
+// A post of an account that is on the watch list but not in sources.json is written only with all three:
+// a matcha term, pop-up intent (a pop-up, market, vendor, booth, stand, cart, "find us", "serving"...) and a place.
+export const POPUP_INTENT = /pop[\s-]?ups?\b|\bmarket\b|\bvendors?\b|\bbooth\b|\bstand\b|\bcart\b|catch us|find us|we['’]?ll be at|\bserving\b|come by|this weekend at/i;
+export const hasPopupIntent = (...parts) => POPUP_INTENT.test(parts.filter(Boolean).join(" | "));
+export const hasPlace = (e) => !!(e.venue || e.address || e.city);
+export const passesWatchRule = (parts, place) => hasMatcha(...parts) && hasPopupIntent(...parts) && hasPlace(place);
+// An event of a watch-list account (not a source, not a site find). sourceIds: ids in data/sources.json.
+export const isWatchPseudo = (e, sourceIds) => !isPseudoId(e.source_id) && !String(e.source_id).startsWith("hashtag:") && !sourceIds.has(e.source_id);
+
+// Keep or drop one event. ctx.sourceIds (optional) switches on the watch-list rule.
+export function keepEvent(e, { sourceIds = null } = {}) {
+  if (!keepMatoEvent(e)) return false;
+  if (!e.state) return false; // no state, no place on the map (the schema needs one)
+  if (GENERIC_TITLE.test(String(e.title || "").trim()) && hasNoBrand(e)) return false;
+  if (sourceIds && isWatchPseudo(e, sourceIds) && !passesWatchRule([e.title, e.description, e.brand, e.venue, (e.menu || []).join(" ")], e)) return false;
+  return true;
+}
+
+const SITE_LISTING = /^(eventbrite|allevents|meetup):/;
+// Soften what is probably wrong without dropping it: a placeholder venue ("Cafe of the day") is blanked and the event marked
+// unsure; a listing whose only matcha word sits inside a long run of vendor names is an organizer event, unsure.
+export function tidy(e) {
+  let o = e;
+  if (PLACEHOLDER_VENUE.test(String(o.venue || "").trim())) o = { ...o, venue: "", confidence: "unsure" };
+  if (SITE_LISTING.test(String(o.source_id || ""))) {
+    const d = String(o.description || "");
+    const list = (d.match(/@\w/g) || []).length > 8 || d.split(",").length > 9;
+    if (list && !hasMatcha(o.title)) o = { ...o, confidence: "unsure", kind: "organizer" };
+  }
+  return o;
+}
+
 // mergeEvents(existing[], candidates[], opts) -> { events, decay, stats }
 //  opts.now: Date|string; opts.liveSourceIds: sources fetched OK this run;
 //  opts.decay: { [id]: stepsAlreadyApplied } (sidecar state so decay is not repeated).
-export function mergeEvents(existing, candidates, { now = new Date(), liveSourceIds = [], decay = {} } = {}) {
+export function mergeEvents(existing, candidates, { now = new Date(), liveSourceIds = [], decay = {}, sourceIds = null } = {}) {
   const nowIso = new Date(now).toISOString();
   const nowMs = new Date(now).getTime();
   const live = new Set(liveSourceIds);
-  const byId = new Map(existing.filter(keepMatoEvent).map((e) => [e.id, { ...e }]));
+  const byId = new Map(existing.filter((e) => keepEvent(e, { sourceIds })).map((e) => [e.id, { ...e }]));
   const newDecay = { ...decay };
-  const stats = { added: 0, updated: 0, decayed: 0, dropped: 0, cleaned: existing.filter((e) => !keepMatoEvent(e)).length };
+  const stats = { added: 0, updated: 0, decayed: 0, dropped: 0, cleaned: existing.filter((e) => !keepEvent(e, { sourceIds })).length };
   const seenThisRun = new Set();
 
-  for (const c of candidates) {
+  for (const c0 of candidates) {
+    if (!keepEvent(c0, { sourceIds })) { stats.cleaned++; continue; }
+    const c = tidy(c0);
     const id = c.id || eventId(c);
     const prev = byId.get(id);
     if (seenThisRun.has(id)) {
@@ -137,7 +179,7 @@ export function mergeEvents(existing, candidates, { now = new Date(), liveSource
     e.status = computeStatus(e, nowMs);
     // Past events are kept 30 days, then dropped.
     if (e.status === "past" && nowMs - endMs(e) > KEEP_PAST_DAYS * DAY) { stats.dropped++; delete newDecay[id]; continue; }
-    out.push(clean(e));
+    out.push(clean(tidy(e)));
   }
   out.sort((a, b) => Date.parse(a.start) - Date.parse(b.start) || a.id.localeCompare(b.id));
   for (const id of Object.keys(newDecay)) if (!out.some((e) => e.id === id)) delete newDecay[id];

@@ -14,7 +14,7 @@ No `npm install` is needed. Node 20 or newer.
 - `npm run ingest` reads every active source and rewrites `data/events.json`, then copies it and `data/sources.json` into `site/data/`. It takes about a minute on a cold cache and caches fetches and geocodes in `.cache/` and `data/geocache.json`.
 - `npm test` runs the unit tests.
 - Type a zip to jump there: the site flies to the zip's centroid, drops Chasen on it, sorts the list by distance and remembers the zip. `node tools/gen-zips.js` rebuilds `site/data/zips.json`.
-- `npm run refresh` runs discover, watch and ingest once, in that order. `npm run loop` does the same every 6 hours while the window stays open. See "Run it on a schedule".
+- `npm run refresh` runs discover, watch and ingest once, in that order. `npm run loop` runs watch every hour and the full cycle every 6 hours while the window stays open. `npm run clean` applies the noise rules to the events on file. See "Run it on a schedule".
 
 Ingest flags: `--source <id>`, `--paste`, `--inbox`, `--no-fetch`, `--dry`, `--verbose`.
 
@@ -108,9 +108,10 @@ The map keeps a watch list of accounts in `data/watchlist.json` (every Instagram
 
 ## Run it on a schedule
 
-- `npm run loop`: discover, then watch, then ingest, at once and again every 6 hours while the terminal stays open. Each cycle prints one line with a timestamp, the result and time of each step, and the event counts. A step that fails is reported and the next one still runs. Ctrl+C stops it. `-- --every 2` changes the interval in hours.
+- `npm run loop`: the full cycle (discover, watch, ingest) now and every 6 hours, and the watch pass alone every hour in between, while the terminal stays open. Each cycle prints one line with a timestamp, the result and time of each step, and the event counts. A step that fails is reported and the next one still runs. Ctrl+C stops it. `-- --every 6` and `-- --watch-every 1` change the intervals in hours.
+- `npm run watch`: the hourly pass. With the Instagram token it first harvests the hashtags in `data/hashtags.json` into events, then reads the due accounts, at most 180 Graph calls a run (see docs/INSTAGRAM-SETUP.md). The Tavily spend is spread over the month: each run's cap is the configured per_run or what is left divided by the runs left, never below 5, and the run prints "Tavily: N this run, M left this month".
 - `npm run refresh`: the same three steps once. Exit code 1 only if a step crashed.
-- Windows, without leaving a terminal open: `powershell -ExecutionPolicy Bypass -File toolswindows-task.ps1` registers a Task Scheduler job named "Matcha Map refresh" that runs `npm run refresh` in this folder every 6 hours as you, while you are signed in, and logs to `.cache/refresh.log`. Remove it with `-Remove`. The script is not run for you.
+- Windows, without leaving a terminal open: `powershell -ExecutionPolicy Bypass -File toolswindows-task.ps1` registers two Task Scheduler jobs as you, while you are signed in: "Matcha Map watch" runs `npm run watch` every hour (log `.cache/watch.log`) and "Matcha Map refresh" runs `npm run refresh` every 6 hours (log `.cache/refresh.log`). Remove both with `-Remove`. The script is not run for you.
 - Refreshing writes `data/` and `site/data/`; the site picks it up on the next page load. It also reads the clock: a pop-up that has ended is shown as past even before the next refresh.
 
 ## Deploy later

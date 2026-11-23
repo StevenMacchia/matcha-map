@@ -50,12 +50,31 @@ const rotate = (list, n, slot) => (list.length ? Array.from({ length: Math.min(n
 const DAY = 86400000;
 
 // ---- budget ----------------------------------------------------------------------------------
+// Runs per day the month is spread over: discover every 6 hours (ingest/loop.js default). The hourly watch shares the same per-run cap.
+export const RUNS_PER_DAY = 24 / 6;
+export const MIN_PER_RUN = 5;
+
+// The per-run cap that spreads what is left of the month over the runs left in it: min(configured, floor(left / runs left)),
+// never below MIN_PER_RUN and never above the configured cap. Without this, 6-hourly discover runs spend the month in two days.
+export function paceCap(configured, perMonth, usedMonth, now = new Date(), runsPerDay = RUNS_PER_DAY) {
+  const n = new Date(now);
+  const monthEnd = Date.UTC(n.getUTCFullYear(), n.getUTCMonth() + 1, 1);
+  const runsLeft = Math.max(1, Math.ceil(((monthEnd - n.getTime()) / DAY) * runsPerDay));
+  const paced = Math.floor(Math.max(0, perMonth - usedMonth) / runsLeft);
+  return Math.min(configured, Math.max(MIN_PER_RUN, paced));
+}
+
+// per_run is the effective cap for this run; per_run_config is what the file says and is what gets saved back.
 export function loadBudget(file = BUDGET_FILE, now = new Date()) {
   let b = {};
   try { b = JSON.parse(fs.readFileSync(file, "utf8")); } catch { /* first run */ }
   const month = new Date(now).toISOString().slice(0, 7);
-  return { note: "Tavily credits counted locally (basic search = 1, advanced = 2). Free tier is about 1,000 a month.", per_run: 120, per_month: 900, ...b, month, used_month: b.month === month ? b.used_month || 0 : 0, used_run: 0 };
+  const o = { note: "Tavily credits counted locally (basic search = 1, advanced = 2). Free tier is about 1,000 a month.", per_run: 120, per_month: 900, ...b, month, used_month: b.month === month ? b.used_month || 0 : 0, used_run: 0 };
+  o.per_run_config = o.per_run;
+  o.per_run = paceCap(o.per_run_config, o.per_month, o.used_month, now);
+  return o;
 }
+export const budgetLine = (b) => `Tavily: ${b.used_run} this run, ${Math.max(0, b.per_month - b.used_month)} left this month`;
 export function canSpend(b, cost = 1) {
   if (b.used_run + cost > b.per_run) return "per-run cap";
   if (b.used_month + cost > b.per_month) return "monthly cap";
@@ -63,8 +82,8 @@ export function canSpend(b, cost = 1) {
 }
 export function spend(b, cost = 1) { b.used_run += cost; b.used_month += cost; }
 export function saveBudget(b, file = BUDGET_FILE, now = new Date()) {
-  const { used_run, ...rest } = b;
-  fs.writeFileSync(file, JSON.stringify({ ...rest, last_run_credits: used_run, updated: new Date(now).toISOString() }, null, 2) + "\n");
+  const { used_run, per_run_config, ...rest } = b;
+  fs.writeFileSync(file, JSON.stringify({ ...rest, per_run: per_run_config ?? rest.per_run, last_run_credits: used_run, updated: new Date(now).toISOString() }, null, 2) + "\n");
 }
 
 // ---- queries ---------------------------------------------------------------------------------
@@ -310,6 +329,7 @@ export async function discover(ctx) {
     evidence: `q="${w.query}"${w.city ? `; city=${w.city}` : ""}`,
   }));
   stats.events = raws.length;
+  info(budgetLine(budget));
   info(`social-search: ${stats.credits} credits this run (${budget.used_month}/${budget.per_month} this month), ${stats.queries} queries, ${results.size} new results (tiktok ${stats.tiktok}, instagram ${stats.instagram} listed), oEmbed ${stats.oembedOk} answered (${stats.oembedUseful} with a caption, author or thumbnail) / ${stats.oembedFail} failed, ${raws.length} dated events, ${candidates.length} accounts`);
   return { items: raws, candidates, leads: [], stats: { ...stats, hitCap: !!capHit } };
 }

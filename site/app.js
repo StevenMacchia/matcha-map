@@ -286,7 +286,14 @@
   // ---------- cards ----------
   // Only http(s) links are ever put in an href.
   function safeUrl(u) { return typeof u === "string" && /^https?:\/\//i.test(u) ? u : ""; }
-  function imgSrc(e) { var im = e.image; return im ? (im.local || safeUrl(im.url)) : ""; }
+  // The picture: the downloaded copy, then the post's own url, then the url the Instagram API gave (Meta's urls expire, so the
+  // error handler below falls back to the drawn card).
+  function imgSrc(e) { var im = e.image; return (im && (im.local || safeUrl(im.url))) || safeUrl(e.image_url); }
+  function remoteAttr(e) { return e.image && e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : ""; }
+  function eventById(id) {
+    for (var i = 0; i < state.events.length; i++) if (state.events[i].data.id === id) return state.events[i].data;
+    return null;
+  }
   function postUrl(e) {
     var p = e.posts || {};
     return safeUrl(p.instagram) || safeUrl(p.tiktok) || safeUrl(p.other) || safeUrl(e.source_url);
@@ -298,11 +305,11 @@
   function photoHTML(e) {
     var src = imgSrc(e);
     if (!src) return window.Drawn ? window.Drawn.block(e, { when: whenText(e) }) : "<div class=\"ph ph-empty\">" + FACE_BLOCK + "</div>";
-    var credit = e.image.credit ? "<span class=\"ph-credit\">Photo: " + esc(e.image.credit) + "</span>" : "";
-    return "<div class=\"ph\"><img src=\"" + esc(src) + "\" alt=\"" + esc(e.brand) + " pop-up post photo\" loading=\"lazy\" decoding=\"async\"" +
-      (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + ">" + credit + "</div>";
+    var credit = e.image && e.image.credit ? "<span class=\"ph-credit\">Photo: " + esc(e.image.credit) + "</span>" : "";
+    return "<div class=\"ph\"><img src=\"" + esc(src) + "\" alt=\"" + esc(e.brand) + " pop-up post photo\" data-eid=\"" + esc(e.id) + "\" loading=\"lazy\" decoding=\"async\"" +
+      remoteAttr(e) + ">" + credit + "</div>";
   }
-  // Broken image: try the remote copy once, then the foam block with Mattie.
+  // Broken image: try the remote copy once, then the drawn card (or the foam block with Mattie when there is nothing to draw from).
   function imgFallback(root) {
     root.addEventListener("error", function (ev) {
       var img = ev.target;
@@ -311,7 +318,11 @@
       if (remote) { img.removeAttribute("data-remote"); img.src = remote; return; }
       var box = img.closest(".ph, .th");
       if (!box) return;
-      if (box.classList.contains("th")) { box.className = "th th-face"; box.innerHTML = THUMB_FACE; }
+      var ev = eventById(img.getAttribute("data-eid"));
+      if (box.classList.contains("th")) {
+        if (ev && window.Drawn) { box.className = "th th-drawn"; box.innerHTML = window.Drawn.card(ev, { mode: "thumb" }); }
+        else { box.className = "th th-face"; box.innerHTML = THUMB_FACE; }
+      } else if (ev && window.Drawn) { box.outerHTML = window.Drawn.block(ev, { when: whenText(ev) }); return; }
       else { box.className = "ph ph-empty"; box.innerHTML = FACE_BLOCK; }
       fillChars(box);
     }, true);
@@ -563,7 +574,7 @@
       var e = it.data, tag = e.confidence && e.confidence !== "confirmed" ? "<em class=\"tag\">" + esc(e.confidence) + "</em>" : "";
       var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · ");
       var thumb = src
-        ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"56\" height=\"56\" loading=\"lazy\" decoding=\"async\"" + (e.image.local && safeUrl(e.image.url) ? " data-remote=\"" + esc(e.image.url) + "\"" : "") + "></span>"
+        ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"56\" height=\"56\" data-eid=\"" + esc(e.id) + "\" loading=\"lazy\" decoding=\"async\"" + remoteAttr(e) + "></span>"
         : (window.Drawn ? "<span class=\"th th-drawn\">" + window.Drawn.card(e, { mode: "thumb" }) + "</span>" : "<span class=\"th th-face\">" + THUMB_FACE + "</span>");
       return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong>" + kindWord(e) + "<span class=\"when\">" +
         esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" +

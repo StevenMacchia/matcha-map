@@ -58,7 +58,8 @@
         "menu",
         "price",
         "description",
-        "links"
+        "links",
+        "image_url"
       ],
       "properties": {
         "id": {
@@ -253,6 +254,13 @@
               }
             }
           ]
+        },
+        "image_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A picture url straight from the Instagram Graph API (shown without downloading it). Refreshed on every read because Meta's urls expire; the site falls back to the drawn card when it fails."
         },
         "posts": {
           "type": "object",

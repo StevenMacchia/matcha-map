@@ -1,6 +1,6 @@
 // npm run discover: find new candidate accounts and add them to data/watchlist.json as "candidate".
 // Every source is a small function returning [{handle, found_via, found_from, evidence}] and is
-// open or official: Instagram Graph hashtags (token), Brave Search API (key), public MATO and
+// open or official: @mentions and hashtag posts through `npm run watch` (ingest/lib/hashtags.js), Brave Search API (key), public MATO and
 // Luma pages (robots.txt respected), @mentions in captions we already hold (inbox, cache).
 // No scraping behind a login, no cookies, no headless browser. Flags: --dry, --no-fetch, --verbose, --no-<site> (skip one site:
 // mato, luma, eventbrite, dostuff, meetup, linktree, allevents, social-search) and --only <site> (run just that site; the Graph, Brave and
@@ -14,7 +14,6 @@ import { htmlToLines } from "./html.js";
 import { setVerbose, warn, warnOnce, info } from "./log.js";
 import * as wlib from "./watchlist.js";
 import { readInbox } from "../adapters/manual.js";
-import graph from "../adapters/instagram-graph.js";
 import { crawlMato } from "./mato-city.js";
 import { CITY_STATE } from "./sites/common.js";
 import { createGeocoder } from "./geocode.js";
@@ -216,7 +215,6 @@ async function main() {
   const take = (name, list) => { counts[name] = list.length; found.push(...list); };
 
   if (!flags.only) {
-    take("graph hashtags + mentions", fromGraphItems(await graph.discover({ env, fetcher })));
     take("inbox mentions", fromInbox());
     take("cache mentions", fromCache());
     const brave = await discoverBrave(env, now, { perRun: 10 });

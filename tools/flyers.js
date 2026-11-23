@@ -6,6 +6,7 @@ import os from "node:os";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { brandOf, placeOf } from "../ingest/lib/names.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BRAND = path.join(ROOT, "tools", "brand");
@@ -18,9 +19,14 @@ const LOGOS = args.includes("--logos");
 const dateArg = (args.find((a) => a.startsWith("--date=")) || "").slice(7);
 
 const read = (p) => fs.readFileSync(p, "utf8");
-const events = JSON.parse(read(path.join(ROOT, "data", "events.json"))).events;
 const sources = JSON.parse(read(path.join(ROOT, "data", "sources.json")));
 const srcById = new Map(sources.map((s) => [s.id, s]));
+// A flyer never shows a handle as the brand (brand, then the source's auto_name, then the handle made readable), and a venue that is a
+// handle or a placeholder ("Cafe of the day") is shown as the city instead: it is blanked here, so every card and caption agrees.
+const events = JSON.parse(read(path.join(ROOT, "data", "events.json"))).events.map((e) => {
+  const handle = e.handle || srcById.get(e.source_id)?.instagram;
+  return { ...e, brand: brandOf({ brand: e.brand, handle, auto_name: srcById.get(e.source_id)?.auto_name }), venue: placeOf({ ...e, handle }) === e.venue ? e.venue : "" };
+});
 const sheet = read(path.join(ROOT, "site", "characters.svg"));
 const defs = '<svg width="0" height="0" style="position:absolute" xmlns="http://www.w3.org/2000/svg">' + sheet.slice(sheet.indexOf("<defs>"), sheet.indexOf("</defs>") + 7) + "</svg>";
 const CSS = read(path.join(TPL, "base.css"));
