@@ -101,48 +101,6 @@
       }
     },
     {
-      "id": "blind-tiger-ybor-sundays",
-      "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
-      "source_id": "blind-tiger-ybor-matcha",
-      "handle": null,
-      "title": "Ybor City Matcha & Mimosa Sundays",
-      "active": true,
-      "weekdays": [
-        0
-      ],
-      "start_time": "09:00",
-      "end_time": "14:00",
-      "tz": "America/New_York",
-      "from": "2026-12-06",
-      "until": null,
-      "skip": [],
-      "extend": true,
-      "horizon_days": 42,
-      "confirmed": "2026-11-23",
-      "confidence": "likely",
-      "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
-      "address": "1823 East 7th Avenue, Tampa, FL 33605",
-      "city": "Tampa",
-      "state": "FL",
-      "zip": null,
-      "lat": 27.960164,
-      "lng": -82.438447,
-      "source_url": "https://www.eventbrite.com/e/1982190772961",
-      "evidence": [
-        "https://www.eventbrite.com/e/1982190772961"
-      ],
-      "rule_source": "Eventbrite listing: recurring Sunday brunch 9am-2pm (read 2026-11-23)",
-      "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
-      "menu": [
-        "matcha",
-        "espresso, cold brew, nitro, chai",
-        "mimosas",
-        "pancakes, breakfast tacos, avocado toast"
-      ],
-      "price": "Free entry",
-      "hours": "Sundays 9am-2pm"
-    },
-    {
       "id": "nichos-nakagawa-tuesdays",
       "brand": "Nicho's Matcha Cafe",
       "source_id": "nichos-matcha-cafe",

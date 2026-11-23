@@ -123,8 +123,11 @@ function dropped(id) {
   if (!DROPS) { try { const o = JSON.parse(fs.readFileSync("data/overrides.json", "utf8")); DROPS = new Set(Object.keys(o).filter((k) => o[k] && o[k].drop === true)); } catch { DROPS = new Set(); } }
   return DROPS.has(id);
 }
+// "Matcha + Meetup: <city> | ..." (ADDVentures): a networking meetup at a cafe announced on RSVP, never a matcha pop-up.
+export const NETWORKING = /^\s*matcha\s*\+\s*meetup\b/i;
 export function keepEvent(e, { sourceIds = null } = {}) {
   if (dropped(e.id)) return false;
+  if (NETWORKING.test(String(e.title || ""))) return false; // the "Matcha + Meetup" networking series is not a pop-up (docs/LANES.md)
   if (!keepMatoEvent(e)) return false;
   // Site and web finds (pseudo sources) must name matcha as the point: hotel, craft-class and generic listings go (ingest/lib/quality.js).
   if (isPseudoId(e.source_id) && !judge(e).keep) return false;
