@@ -249,8 +249,10 @@ function drinkThumb(item, i, ctx, cls = "mm-chip-art") {
 }
 function heroHtml(e, ctx, v, name) {
   const art = eventArt(e, ctx), photo = photoOf(e, ctx);
+  // On an event page the hero is the largest thing above the fold: load it first, not lazily. Everywhere else it is lazy.
+  const lead = ctx.page ? ` fetchpriority="high"` : ` loading="lazy"`;
   let under = "";
-  if (art) under = `<img class="mm-hero-art" src="${esc(art)}" alt="" loading="lazy" decoding="async">`;
+  if (art) under = `<img class="mm-hero-art" src="${esc(art)}" alt=""${lead} decoding="async">`;
   else if (ctx.drawn && typeof ctx.drawn.card === "function") {
     let svg = "";
     try { svg = ctx.drawn.card(e, { mode: "card", when: v.day }); } catch { svg = ""; }
@@ -261,11 +263,12 @@ function heroHtml(e, ctx, v, name) {
     under = `<div class="mm-hero-collage mm-t${hash(e.brand || e.id) % 3}"><span class="mm-cups">${items.map((m, i) => `<span class="mm-cupbox">${drinkThumb(m, i, ctx, "mm-cup-art")}</span>`).join("")}</span><span class="mm-sticker">${esc(cut(name, 28))}</span></div>`;
   }
   if (!photo) return `<div class="mm-hero mm-hero-${art ? "art" : "drawn"}" role="img" aria-label="${esc("Drawing for " + name)}">${under}</div>`;
+  const dims = +(e.image||{}).width > 0 && +(e.image||{}).height > 0 ? ` width="${Math.round(+e.image.width)}" height="${Math.round(+e.image.height)}"` : "";
   const remote = photo.remote ? ` data-remote="${esc(photo.remote)}"` : "";
   const credit = e.image && e.image.credit ? `<span class="mm-credit">${esc(cut(e.image.credit, 40))}</span>` : "";
   return `<div class="mm-hero mm-hero-photo" role="img" aria-label="${esc("Photo from " + name + "'s post")}">${under}` +
     `<img class="mm-hero-blur" src="${esc(photo.src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"${remote}>` +
-    `<img class="mm-hero-img" src="${esc(photo.src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"${remote}>${credit}</div>`;
+    `<img class="mm-hero-img" src="${esc(photo.src)}" alt=""${dims}${lead} decoding="async" referrerpolicy="no-referrer"${remote}>${credit}</div>`;
 }
 function avatarHtml(name, pic, cls = "mm-avatar") {
   const ch = (String(name || "M").match(/[A-Za-z0-9]/) || ["M"])[0].toUpperCase();
@@ -395,8 +398,8 @@ export function cardHtml(e, ctx = {}) {
 // ---- the list row --------------------------------------------------------------------------------------------
 function thumbHtml(e, ctx, name) {
   const photo = photoOf(e, ctx), art = eventArt(e, ctx);
-  const under = art ? `<img class="mm-th-art" src="${esc(art)}" alt="" loading="lazy" decoding="async">` : `<span class="mm-th-cup mm-t${hash(e.brand || e.id) % 3}">${drinkThumb((e.menu && e.menu[0]) || "matcha latte", 0, ctx, "mm-cup-art")}</span>`;
-  const img = photo ? `<img class="mm-th-img" src="${esc(photo.src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"${photo.remote ? ` data-remote="${esc(photo.remote)}"` : ""}>` : "";
+  const under = art ? `<img class="mm-th-art" src="${esc(art)}" alt="" width="68" height="68" loading="lazy" decoding="async">` : `<span class="mm-th-cup mm-t${hash(e.brand || e.id) % 3}">${drinkThumb((e.menu && e.menu[0]) || "matcha latte", 0, ctx, "mm-cup-art")}</span>`;
+  const img = photo ? `<img class="mm-th-img" src="${esc(photo.src)}" alt="" width="68" height="68" loading="lazy" decoding="async" referrerpolicy="no-referrer"${photo.remote ? ` data-remote="${esc(photo.remote)}"` : ""}>` : "";
   return `<span class="mm-th" aria-hidden="true">${under}${img}</span>`;
 }
 export function rowHtml(e, ctx = {}) {
