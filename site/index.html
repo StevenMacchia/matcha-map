@@ -4,11 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://unpkg.com; style-src 'self' https://unpkg.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com https://tiles.openfreemap.org; img-src 'self' https://tiles.openfreemap.org https://*.cdninstagram.com https://*.fbcdn.net https: data: blob:; connect-src 'self' https://tiles.openfreemap.org; worker-src blob:; child-src blob:; base-uri 'self'; form-action 'none'">
-<title>Matcha Map</title>
-<meta name="description" content="Matcha pop-ups across America, by day.">
+<!-- seo:start (written by tools/gen-pages.js) -->
+<title>Matcha Map: matcha pop-ups across America, by day</title>
+<meta name="description" content="Find matcha pop-ups near you, day by day. One map of pop-ups, markets and shops across America, with times, places and menus.">
+<link rel="canonical" href="https://matchamap-cu7.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Matcha Map">
+<meta property="og:title" content="Matcha Map: matcha pop-ups across America, by day">
+<meta property="og:description" content="Find matcha pop-ups near you, day by day. One map of pop-ups, markets and shops across America, with times, places and menus.">
+<meta property="og:url" content="https://matchamap-cu7.pages.dev/">
+<meta property="og:image" content="https://matchamap-cu7.pages.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Matcha Map: matcha pop-ups across America, by day">
+<meta name="twitter:description" content="Find matcha pop-ups near you, day by day. One map of pop-ups, markets and shops across America, with times, places and menus.">
+<meta name="twitter:image" content="https://matchamap-cu7.pages.dev/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Matcha Map","url":"https://matchamap-cu7.pages.dev/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://matchamap-cu7.pages.dev/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<!-- seo:end -->
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FBF6EA">
 <script src="theme.js"></script>
+<script src="deeplink.js"></script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20stroke%3D%22%234B3426%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M9%2024c0%2022%208%2033%2023%2033s23-11%2023-33z%22%20fill%3D%22%23FFFBF0%22%2F%3E%3Cellipse%20cx%3D%2232%22%20cy%3D%2224%22%20rx%3D%2223%22%20ry%3D%227%22%20fill%3D%22%23DCEBC9%22%2F%3E%3Cpath%20d%3D%22M19%2022c-2-9%205-13%2011-10%205-4%2015-1%2015%208%22%20fill%3D%22%23DCEBC9%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2223%22%20cy%3D%2238%22%20r%3D%223.4%22%20fill%3D%22%234B3426%22%2F%3E%3Ccircle%20cx%3D%2241%22%20cy%3D%2238%22%20r%3D%223.4%22%20fill%3D%22%234B3426%22%2F%3E%3Cellipse%20cx%3D%2216%22%20cy%3D%2245%22%20rx%3D%224.5%22%20ry%3D%223%22%20fill%3D%22%23F6B7C7%22%2F%3E%3Cellipse%20cx%3D%2248%22%20cy%3D%2245%22%20rx%3D%224.5%22%20ry%3D%223%22%20fill%3D%22%23F6B7C7%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +35,13 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- rung 32: the cinematic layer (motion.css, motion.js). Linked here, not in the head, so the head stays one owner's. -->
+<link rel="stylesheet" href="motion.css">
 <!-- Opening moment: a cream wash that app.js plays once per session, or fades on repeat visits. -->
 <div id="intro" class="intro">
   <button type="button" id="intro-skip" class="skip">Skip</button>
   <div class="intro-stage" aria-hidden="true">
-    <span class="intro-mattie" data-char="m-whisk"></span>
+    <span class="intro-mattie" data-char="m-pour"></span>
     <p class="intro-title"><span>M</span><span>a</span><span>t</span><span>c</span><span>h</span><span>a</span><span class="sp"> </span><span>M</span><span>a</span><span>p</span></p>
   </div>
 </div>
@@ -97,7 +116,7 @@
   <section id="map-panel" class="map-panel" aria-label="Map">
     <div id="map"></div>
     <div id="mapfade" class="mapfade" aria-hidden="true"></div>
-    <div id="loading" class="loading" aria-live="polite"><span class="load-mattie" data-char="m-whisk"></span><p>Brewing…</p></div>
+    <div id="loading" class="loading" aria-live="polite"><span class="load-chasen" data-char="c-chasen"></span><p>Brewing…</p></div>
     <button type="button" id="hawaii" class="geo" hidden>Hawaii</button>
     <span id="hop" class="hop" aria-hidden="true" hidden><span class="hop-y" data-char="m-excited"></span></span>
     <div id="sheet" class="sheet" role="dialog" aria-label="Details" hidden>
@@ -126,5 +145,6 @@
 <script src="cities.js"></script>
 <script src="drawn.js"></script>
 <script src="app.js"></script>
+<script src="motion.js"></script>
 </body>
 </html>

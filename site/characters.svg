@@ -175,6 +175,35 @@
   <ellipse class="m-o m-f" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" cx="32" cy="4" rx="5.5" ry="1.8"/>
   <path class="m-l" fill="none" stroke="#4B3426" stroke-width="2" stroke-linecap="round" d="M32 13.5V17"/>
 </symbol>
+<symbol id="m-pour" viewBox="0 0 64 64">
+  <!-- pour: the opening beat. Mattie holds a little katakuchi up and pours; .m-pitcher tilts, .m-stream falls (both animated in motion.css). -->
+  <path class="m-o m-c m-arm-l" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M12.5 36.5c-3-.5-6 1.5-6.8 4.8-.7 3 1 5.4 3.6 5.2 2.2-.2 3.6-2.3 4-4.6"/>
+  <g class="m-feet"><ellipse class="m-o m-c m-foot-l" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" cx="24" cy="57.5" rx="5" ry="3"/><ellipse class="m-o m-c m-foot-r" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" cx="40" cy="57.5" rx="5" ry="3"/></g>
+  <path class="m-o m-c m-cup" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M10 26c0 19 8.5 30 22 30s22-11 22-30z"/>
+  <g class="m-foamg"><ellipse class="m-o m-f" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" cx="32" cy="26" rx="22" ry="6.5"/><path class="m-o m-f" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" d="M19 24.5c-1.5-8 5-12.5 11-9.5 5-4.5 15.5-1.5 15 8"/><path class="m-s" fill="none" stroke="#A8C996" stroke-width="1.6" stroke-linecap="round" d="M28.5 18c0-3.4 5.5-4.2 6.8-1 .9 2.4-2.6 3.6-3.6 1.6"/></g>
+  <g class="m-look"><g class="m-eyes"><path class="m-l" fill="none" stroke="#4B3426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 39.5q3-3.6 6 0M37 39.5q3-3.6 6 0"/></g></g>
+  <ellipse class="m-blush" fill="#F6B7C7" cx="18" cy="44" rx="3.8" ry="2.4"/><ellipse class="m-blush" fill="#F6B7C7" cx="46" cy="44" rx="3.8" ry="2.4"/>
+  <path class="m-o m-in m-mouth" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#B4535F" d="M29.6 42.4q2.4 4.2 4.8 0z"/>
+  <path class="m-stream" fill="none" stroke="#A8C996" stroke-width="3" stroke-linecap="round" d="M62.4 15c.8 6 .6 26 .2 42"/>
+  <g class="m-pitcher" transform="translate(-2 0) rotate(12 52 22)">
+    <path class="m-l" fill="none" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d="M46.2 15.4c-3-.4-4 4.4-.4 5.2"/>
+    <path class="m-o m-c" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M45.5 13h14c0 6.5-2.8 10-7 10s-7-3.5-7-10z"/>
+    <ellipse class="m-o m-f" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" cx="52.5" cy="13" rx="7" ry="1.9"/>
+    <path class="m-l" fill="none" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d="M59.2 13.6l3.4-1.8"/>
+  </g>
+  <path class="m-o m-c m-arm-r" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M51.5 35c2.5-2.5 5-6 4.4-9.4-.4-2.4-3-3-4.6-1.4-1.6 1.6-2 4.4-1.8 7"/>
+</symbol>
+<symbol id="m-point" viewBox="0 0 64 64">
+  <!-- point: the selected pin. Mattie points up and to the right, toward his card, eyes following. -->
+  <path class="m-o m-c m-arm-l" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M12.5 36.5c-3-.5-6 1.5-6.8 4.8-.7 3 1 5.4 3.6 5.2 2.2-.2 3.6-2.3 4-4.6"/>
+  <g class="m-feet"><ellipse class="m-o m-c m-foot-l" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" cx="24" cy="57.5" rx="5" ry="3"/><ellipse class="m-o m-c m-foot-r" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" cx="40" cy="57.5" rx="5" ry="3"/></g>
+  <path class="m-o m-c m-cup" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M10 26c0 19 8.5 30 22 30s22-11 22-30z"/>
+  <g class="m-foamg"><ellipse class="m-o m-f" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" cx="32" cy="26" rx="22" ry="6.5"/><path class="m-o m-f" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#DCEBC9" d="M19 24.5c-1.5-8 5-12.5 11-9.5 5-4.5 15.5-1.5 15 8"/><path class="m-s" fill="none" stroke="#A8C996" stroke-width="1.6" stroke-linecap="round" d="M28.5 18c0-3.4 5.5-4.2 6.8-1 .9 2.4-2.6 3.6-3.6 1.6"/></g>
+  <g class="m-look"><g class="m-eyes" transform="translate(1.4 -1)"><circle class="m-ink" fill="#4B3426" cx="24" cy="38.5" r="2.6"/><circle class="m-ink" fill="#4B3426" cx="40" cy="38.5" r="2.6"/><circle class="m-hi" fill="#FFFBF0" cx="24.9" cy="37.6" r=".8"/><circle class="m-hi" fill="#FFFBF0" cx="40.9" cy="37.6" r=".8"/></g></g>
+  <ellipse class="m-blush" fill="#F6B7C7" cx="18" cy="44" rx="3.8" ry="2.4"/><ellipse class="m-blush" fill="#F6B7C7" cx="46" cy="44" rx="3.8" ry="2.4"/>
+  <path class="m-o m-in m-mouth" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#B4535F" d="M29.6 42.4q2.4 4.2 4.8 0z"/>
+  <g transform="rotate(-100 52 38)"><g class="m-arm-r"><ellipse class="m-o m-c" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" cx="56.3" cy="48.4" rx="1.5" ry="2.6"/><path class="m-o m-c" stroke="#4B3426" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="#FFFBF0" d="M51.5 36.5c3-.5 6 1.5 6.8 4.8.7 3-1 5.4-3.6 5.2-2.2-.2-3.6-2.3-4-4.6"/></g></g>
+</symbol>
 </defs>
 <g id="sheet">
   <rect width="640" height="240" fill="#FBF6EA"/>
@@ -192,5 +221,7 @@
   <use href="#c-dango" x="345" y="120" width="32" height="64"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="344" y="202">dango</text>
   <use href="#c-petal" x="420" y="150" width="28" height="28"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="418" y="202">petal</text>
   <use href="#s-shop" x="470" y="120" width="64" height="64"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="486" y="202">shop</text>
+  <use href="#m-pour" x="556" y="120" width="64" height="64"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="574" y="202">pour</text>
+  <use href="#m-point" x="570" y="10" width="64" height="64"/><text font-family="sans-serif" font-size="11" font-weight="700" fill="#4B3426" x="586" y="92">point</text>
 </g>
 </svg>

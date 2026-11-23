@@ -54,6 +54,12 @@
       el.appendChild(drawChar(el.getAttribute("data-char")));
     });
   }
+  // motion.js draws petals with the same model sheet.
+  window.MatchaChars = { draw: drawChar, fill: fillChars };
+  // Tell motion.js (rung 32) what just happened; the site works the same when nothing listens.
+  function announce(name, detail) {
+    try { document.dispatchEvent(new CustomEvent("mm:" + name, { detail: detail || {} })); } catch (e) { /* old browsers: no choreography */ }
+  }
 
   // ---------- dates (venue-local, read straight from the ISO string) ----------
   function parts(iso) {
@@ -191,7 +197,13 @@
         } else if (p.cluster && rec.count !== p.point_count) setCount(rec, p.point_count);
       });
     });
-    Object.keys(live).forEach(function (id) { if (!seen[id]) { live[id].marker.remove(); delete live[id]; } });
+    Object.keys(live).forEach(function (id) { if (!seen[id]) { leave(live[id]); delete live[id]; } });
+  }
+  // During a scene change (a filter, the opening) markers fade out in 180ms before they go; otherwise they go at once.
+  function leave(rec) {
+    if (calm() || Date.now() > stageUntil) { rec.marker.remove(); return; }
+    rec.el.classList.add("leaving");
+    setTimeout(function () { rec.marker.remove(); }, 190);
   }
 
   function animOnce(el, cls, delay) {
@@ -206,19 +218,39 @@
     });
   }
 
-  var dropUntil = 0, dropIdx = 0;
+  // Arrival. Inside a scene window (the opening, a filter change) markers rise in a ripple from the centre of the map
+  // out: eight rings, 30ms apart. Outside it, a quick pop as clusters split and join while zooming.
+  var stageUntil = 0;
+  function stage(ms) { stageUntil = Date.now() + ms; }
+  function ringDelay(rec) {
+    var c = map.getContainer(), w = c.clientWidth / 2, h = c.clientHeight / 2;
+    var p = map.project(rec.marker.getLngLat()), d = Math.sqrt((p.x - w) * (p.x - w) + (p.y - h) * (p.y - h));
+    return Math.min(7, Math.floor(d / (Math.sqrt(w * w + h * h) || 1) * 8)) * 30;
+  }
   function entrance(rec, fallback) {
     var inner = rec.el.firstChild;
-    if (Date.now() < dropUntil) animOnce(inner, "drop", Math.min(dropIdx++ * 38, 700));
+    if (Date.now() < stageUntil) animOnce(inner, "rise", ringDelay(rec));
     else animOnce(inner, fallback);
+  }
+  // A pop-up that is open right now has steam rising from the cup.
+  function happeningNow(e) {
+    var st = Date.parse(e.start), en = e.end ? Date.parse(e.end) : st + 3 * 3600000, now = Date.now();
+    return !e.all_day && !isNaN(st) && !isNaN(en) && st <= now && now < en;
+  }
+  function steamEl() {
+    var s = document.createElement("span");
+    s.className = "mk-steam";
+    s.innerHTML = "<svg viewBox=\"0 0 18 14\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 13c-2-2.5 2-4 0-6.5S5 3 4.5 1\"/><path d=\"M12 13c-2-2.5 2-4 0-6.5S12 3 11.5 1\"/></svg>";
+    return s;
   }
 
   function pinLabel(it) {
     if (it.kind === "e" && it.approx) return approxLabel(it.data);
     if (it.kind === "s") return it.data.name + ", shop" + (it.data.city ? ", " + it.data.city : "");
-    return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) : it.data.brand + ", " + it.data.home_city + ", no dates yet";
+    return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) + (it.now ? ", happening now" : "") : it.data.brand + ", " + it.data.home_city + ", no dates yet";
   }
   function makePin(it) {
+    if (it.kind === "e") it.now = !it.past && !it.approx && happeningNow(it.data);
     var el = document.createElement("button");
     el.type = "button";
     el.className = "mk " + (it.kind === "e" ? "mk-ev" : it.kind === "s" ? "mk-sh" : "mk-br") + (it.approx ? " mk-ap" : "") + (it.past ? " past" : "") + (it.key === openKey ? " sel" : "");
@@ -228,8 +260,9 @@
     inner.className = "mk-in";
     if (it.kind === "e") {
       if (it.approx) inner.appendChild(ringEl());
-      inner.appendChild(drawChar("m-base"));
+      inner.appendChild(drawChar(it.key === openKey && !it.approx ? "m-point" : "m-base"));
       if (!it.past && !it.approx) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
+      if (it.now) inner.appendChild(steamEl());
     } else if (it.kind === "s") {
       inner.appendChild(drawChar("s-shop"));
     } else {
@@ -327,7 +360,7 @@
     rec.el.setAttribute("aria-label", rec.label);
     rec.el.classList.toggle("cl-m", n > 9);
     rec.el.classList.toggle("cl-l", n > 24);
-    if (!first) animOnce(rec.num, "morph");
+    if (!first) { animOnce(rec.num, "morph"); animOnce(rec.el.firstChild, "breathe"); }
   }
   // A cluster of city-only events: when they share one city, open the list filtered to that city's approximate events;
   // when it spans several (zoomed far out), zoom in like any cluster.
@@ -354,7 +387,12 @@
       var on = id === key;
       if (on !== r.el.classList.contains("sel")) {
         r.el.classList.toggle("sel", on);
-        if (on && r.kind === "e") animOnce(r.el.querySelector(".ch"), "wave");
+        // The selected Mattie lifts (motion.css) and points up at his card; he goes back to rest when it closes.
+        if (r.kind === "e" && !r.el.classList.contains("mk-ap")) {
+          var old = r.el.querySelector(".ch"), next = drawChar(on ? "m-point" : "m-base");
+          if (old) old.parentNode.replaceChild(next, old);
+          if (on) animOnce(next, "point-in");
+        }
       }
     });
   }
@@ -521,7 +559,9 @@
     if (safeUrl(L.instagram)) links.push(["Instagram", L.instagram]);
     if (safeUrl(L.tiktok)) links.push(["TikTok", L.tiktok]);
     if (safeUrl(e.source_url) && e.source_url !== post) links.push(["Event page", e.source_url]);
-    return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + "<span>" + esc(e.brand) + tag + "</span></h3>" + kindWord(e) +
+    // The title is the name alone; kind and confidence share one quiet line under it.
+    var kline = kindWord(e) + tag;
+    return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + "<span>" + esc(e.brand) + "</span></h3>" + (kline ? "<p class=\"kline\">" + kline + "</p>" : "") +
       "<p class=\"when\">" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
       "<p class=\"muted\">" + esc(line2) + "</p>" + menuHTML(e) +
       (e.description ? "<p class=\"desc muted\">" + esc(e.description) + "</p>" : "") +
@@ -598,6 +638,7 @@
       var over = mr.top + 12 - pr.top;
       if (over > 0) map.panBy([0, -over], { duration: calm() ? 0 : 300 });
       if (focusIt) box.querySelector(".pop-close").focus();
+      announce("card", { root: box, phone: false, key: key });
     } else {
       var body = $("sheet-body");
       body.innerHTML = html;
@@ -607,6 +648,7 @@
       sh.hidden = false;
       animOnce(sh, "in");
       if (focusIt) $("sheet-close").focus();
+      announce("card", { root: body, phone: true, key: key });
     }
   }
   var pinOpener = null;
@@ -634,7 +676,16 @@
   function moveMap(opts, done) {
     // Listen first: jumpTo fires moveend before it returns.
     if (done) map.once("moveend", function () { setTimeout(done, 30); });
-    if (calm()) { map.jumpTo(opts); } else { opts.curve = 1.3; opts.speed = 1.5; opts.essential = false; map.flyTo(opts); }
+    if (calm()) { map.jumpTo(opts); } else {
+      // A glide, never longer than two seconds, that slows down as it lands.
+      // MapLibre's maxDuration turns a long flight into a jump, so the length is set here from distance and zoom change.
+      var c = map.getCenter(), to = maplibregl.LngLat.convert(opts.center || c), d = miles([c.lat, c.lng], [to.lat, to.lng]);
+      var dz = Math.abs((opts.zoom == null ? map.getZoom() : opts.zoom) - map.getZoom());
+      opts.curve = 1.3; opts.essential = false;
+      opts.duration = Math.round(Math.min(2000, 650 + 260 * Math.log2(1 + d / 5) + 90 * dz));
+      opts.easing = function (t) { var s = t * t * (3 - 2 * t), o = 1 - Math.pow(1 - t, 3); return 0.45 * s + 0.55 * o; };
+      map.flyTo(opts);
+    }
   }
   function flyTo(key) {
     var it = items[key];
@@ -786,7 +837,11 @@
     var shopsIn = visibleShops().filter(function (it) { return inView(it.ll); });
     shopsIn.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
 
-    $("empty").hidden = vis.length > 0 || (state.chip === "any" && !state.day);
+    // Empty: nothing on for the chosen dates anywhere, or nothing in this part of the map. Sleepy Mattie, one line,
+    // one button to the next range (motion.js also floats it over the map on a phone).
+    var dated = !!state.day || state.chip !== "any", near = vis.length > 0 && !up.length && !past.length;
+    $("empty").hidden = !dated || !(vis.length === 0 || near);
+    if (!$("empty").hidden) emptyCopy(near);
     var html = "";
     if (up.length) html += "<li class=\"head\">Pop-ups</li>" + up.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
     if (past.length) html += "<li class=\"head\">Recent</li>" + past.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
@@ -799,14 +854,24 @@
           (more > 0 ? "<li class=\"shopnote\">+" + more + " more \u00b7 zoom in</li>" : "");
       } else html += "<li class=\"head\">Shops</li><li class=\"shopnote\">" + shopsIn.length + " shops \u00b7 zoom in</li>";
     }
-    if (!html) html = "<li class=\"head\">Nothing in this part of the map. Zoom out or pan.</li>";
+    if (!html && $("empty").hidden) html = "<li class=\"head\">Nothing in this part of the map. Zoom out or pan.</li>";
     var list = $("list");
     list.innerHTML = html;
     fillChars(list);
     if (stagger && !calm()) {
       var rows = list.children;
-      for (var i = 0; i < rows.length && i < 12; i++) animOnce(rows[i], "row-in", i * 30);
+      for (var i = 0; i < rows.length && i < 8; i++) animOnce(rows[i], "row-in", i * 30);
     }
+  }
+  var NEXT_RANGE = { today: ["weekend", "See this weekend"], weekend: ["week", "See next 7 days"], week: ["any", "See any date"] };
+  var RANGE_WORDS = { today: "today", weekend: "this weekend", week: "in the next 7 days" };
+  function emptyCopy(near) {
+    var words = state.day ? "on this day" : RANGE_WORDS[state.chip] || "on these dates";
+    var next = (!state.day && NEXT_RANGE[state.chip]) || ["any", "See any date"];
+    $("empty").querySelector("p").textContent = (near ? "Nothing near here " : "Nothing ") + words + ".";
+    var b = $("empty-any");
+    b.textContent = next[1];
+    b.setAttribute("data-next", next[0]);
   }
   // The list for one city's approximate events (opened from an approximate cluster), with a way back to the usual list.
   function renderApproxList(vis, stagger) {
@@ -819,7 +884,7 @@
     list.innerHTML = "<li class=\"head\">Place not posted yet \u00b7 " + esc(cityLine(e0)) + "</li><li class=\"apnote\"><button type=\"button\" class=\"aplink\" data-clear-ap>Show everything in view</button></li>" +
       rows.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
     fillChars(list);
-    if (stagger && !calm()) { var kids = list.children; for (var i = 0; i < kids.length && i < 12; i++) animOnce(kids[i], "row-in", i * 30); }
+    if (stagger && !calm()) { var kids = list.children; for (var i = 0; i < kids.length && i < 8; i++) animOnce(kids[i], "row-in", i * 30); }
   }
   $("list").addEventListener("click", function (ev) {
     if (ev.target.closest("[data-clear-ap]")) { state.apCity = ""; renderList(false); return; }
@@ -853,14 +918,15 @@
     $("day-clear").hidden = !state.day;
     moveInk();
   }
-  function applyFilters() { syncChips(); saveChip(); closeCard(true); refreshEvents(true); }
+  // A filter change is a scene change: old pins fade out, new ones rise from the centre out, petals drift (motion.js).
+  function applyFilters() { syncChips(); saveChip(); closeCard(true); stage(700); refreshEvents(true); announce("filter", { chip: state.chip, day: state.day }); }
   document.querySelectorAll("[data-chip]").forEach(function (b) {
     b.addEventListener("click", function () { state.chip = b.getAttribute("data-chip"); state.day = ""; applyFilters(); });
   });
   $("recent").addEventListener("click", function () { state.recent = !state.recent; applyFilters(); });
   $("day").addEventListener("change", function () { state.day = $("day").value; applyFilters(); });
   $("day-clear").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); $("day").focus(); });
-  $("empty-any").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); });
+  $("empty-any").addEventListener("click", function () { state.chip = this.getAttribute("data-next") || "any"; state.day = ""; applyFilters(); });
   window.addEventListener("resize", moveInk);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveInk);
 
@@ -986,7 +1052,7 @@
     if (state.view === "list") setView("map");
     var opts = { center: lngLat(state.userLoc), zoom: 10 };
     if (quiet) { map.jumpTo(opts); animOnce(el, "ping"); renderList(false); }
-    else moveMap(opts, function () { animOnce(el, "ping"); renderList(true); });
+    else moveMap(opts, function () { animOnce(el, "ping"); announce("land", { label: label }); renderList(true); });
   }
   // Fly to a zip's centroid. quiet: a return visit, so no error and the map jumps there.
   function goZip(zip, quiet) {
@@ -1138,47 +1204,63 @@
     if (introDone) return;
     introDone = true;
     introTimers.forEach(clearTimeout);
+    skipOff();
     try { sessionStorage.setItem(SEEN, "1"); } catch (e) { /* ignore */ }
     intro.classList.add("gone");
     setTimeout(function () { intro.hidden = true; $("petals").hidden = true; $("petals").innerHTML = ""; }, fast ? 160 : 320);
   }
+  // Any tap, key or scroll skips the opening; nothing waits on it.
+  var SKIPS = ["pointerdown", "keydown", "wheel", "touchstart"];
+  function skipNow() { endIntro(true); }
+  function skipOff() { SKIPS.forEach(function (t) { window.removeEventListener(t, skipNow, true); }); }
   function petals() {
     var box = $("petals");
     box.hidden = false;
-    var n = 8;
+    var n = 6;
     for (var i = 0; i < n; i++) {
       var p = document.createElement("span");
       p.className = "petal";
-      p.style.left = (6 + i * (88 / n) + Math.random() * 6).toFixed(1) + "%";
-      p.style.animationDelay = Math.round(i * 90 + Math.random() * 120) + "ms";
-      p.style.animationDuration = Math.round(1700 + Math.random() * 700) + "ms";
+      p.style.left = (8 + i * (84 / n) + Math.random() * 8).toFixed(1) + "%";
+      p.style.animationDelay = Math.round(i * 24 + Math.random() * 40) + "ms";
+      p.style.animationDuration = Math.round(880 + Math.random() * 140) + "ms";
       p.style.setProperty("--sway", (Math.random() * 40 - 20).toFixed(0) + "px");
-      p.style.setProperty("--spin", (Math.random() * 300 + 120).toFixed(0) + "deg");
+      p.style.setProperty("--spin", (Math.random() * 240 + 120).toFixed(0) + "deg");
       p.appendChild(drawChar("c-petal"));
       box.appendChild(p);
     }
   }
+  // The pour (rung 32): Mattie rises with a pitcher (0 to 380ms), tilts it and pours (200 to 600ms); at 640ms the map
+  // opens out from where the matcha lands, the camera eases in a touch and the pins rise from the centre out.
+  // The cover is gone at 1100ms. Repeat visits and calm mode get a 300ms fade.
+  var firstVisit = params.get("intro") === "1";
+  try { firstVisit = firstVisit || !sessionStorage.getItem(SEEN); } catch (e) { firstVisit = false; }
+  function introQuick() { intro.classList.add("quick"); setTimeout(function () { endIntro(false); }, 0); }
+  // Nothing waits on the opening: repeat visits and calm mode fade the cover at once, and a first visit whose
+  // characters have not arrived within 900ms (a slow network) gets the plain fade too.
+  var introStarted = false;
+  if (!firstVisit || calm()) introQuick();
+  else introTimers.push(setTimeout(function () { if (!introStarted) introQuick(); }, 900));
   function playIntro() {
-    var first = params.get("intro") === "1";
-    try { first = first || !sessionStorage.getItem(SEEN); } catch (e) { first = false; }
-    if (!first || calm()) {
-      // Repeat visit, or calm mode: a 300ms fade only.
-      intro.classList.add("quick");
-      setTimeout(function () { endIntro(false); }, 0);
-      return;
-    }
+    if (introDone || introStarted) return;
+    introStarted = true;
     fillChars(intro);
     intro.classList.add("play");
     petals();
+    SKIPS.forEach(function (t) { window.addEventListener(t, skipNow, { capture: true, passive: true }); });
     introTimers.push(setTimeout(function () {
       var m = intro.querySelector(".intro-mattie").getBoundingClientRect();
-      intro.style.setProperty("--ix", Math.round(m.left + m.width / 2) + "px");
-      intro.style.setProperty("--iy", Math.round(m.top + m.height / 2) + "px");
+      intro.style.setProperty("--ix", Math.round(m.left + m.width * 62 / 64) + "px");
+      intro.style.setProperty("--iy", Math.round(m.top + m.height * 57 / 64) + "px");
       intro.classList.add("iris");
-      dropUntil = Date.now() + 900; dropIdx = 0;
+      stage(800);
       Object.keys(live).forEach(function (id) { entrance(live[id], "pop"); });
-    }, 880));
-    introTimers.push(setTimeout(function () { endIntro(false); }, 1400));
+      if (!map.isMoving()) {
+        var z = map.getZoom();
+        map.jumpTo({ zoom: z - 0.28 });
+        map.easeTo({ zoom: z, duration: 560, easing: function (t) { return 1 - Math.pow(1 - t, 3); }, essential: false });
+      }
+    }, 640));
+    introTimers.push(setTimeout(function () { endIntro(false); }, 1100));
   }
   $("intro-skip").addEventListener("click", function () { endIntro(true); });
 
