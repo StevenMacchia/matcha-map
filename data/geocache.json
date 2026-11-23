@@ -1,4 +1,13 @@
 {
+  "100 s central expy richardson tx 75080": {
+    "lat": 32.948394,
+    "lng": -96.73746,
+    "source": "nominatim"
+  },
+  "100 s central expy ste 15 richardson tx 75080": {
+    "miss": true,
+    "at": 1795460261946
+  },
   "100 west 77th street new york ny 10024": {
     "lat": 40.780717,
     "lng": -73.977286,
@@ -19,14 +28,38 @@
     "lng": -84.415269,
     "source": "nominatim"
   },
+  "1017 w lake street chicago il 60607": {
+    "lat": 41.885404,
+    "lng": -87.652867,
+    "source": "nominatim"
+  },
+  "10250 santa monica blvd los angeles ca 90067": {
+    "lat": 34.058579,
+    "lng": -118.417811,
+    "source": "nominatim"
+  },
   "10250 santa monica blvd los angeles ca 90067 los angeles ca": {
     "lat": 34.058579,
     "lng": -118.417811,
     "source": "nominatim"
   },
+  "10250 santa monica blvd suite 1625 los angeles ca 90067": {
+    "miss": true,
+    "at": 1795460314972
+  },
+  "103 sullivan street new york ny 10012": {
+    "lat": 40.725611,
+    "lng": -74.002813,
+    "source": "nominatim"
+  },
   "10455 n central expy dallas tx 75230": {
     "lat": 32.888809,
     "lng": -96.770217,
+    "source": "nominatim"
+  },
+  "10455 n central expy dallas tx 75231": {
+    "lat": 32.889108,
+    "lng": -96.769177,
     "source": "nominatim"
   },
   "10455 n central expy ste 106 dallas tx 75230": {
@@ -53,6 +86,11 @@
     "lng": -97.497317,
     "source": "nominatim"
   },
+  "1101 west gate city boulevard greensboro nc": {
+    "lat": 36.06284,
+    "lng": -79.809769,
+    "source": "nominatim"
+  },
   "11064 livingston rd fort washington md": {
     "lat": 38.737977,
     "lng": -76.993713,
@@ -68,9 +106,23 @@
     "lng": -81.364971,
     "source": "nominatim"
   },
+  "11330 potranco rd 101 san antonio tx 78253": {
+    "miss": true,
+    "at": 1795460267214
+  },
+  "11330 potranco rd san antonio tx 78253": {
+    "lat": 29.434786,
+    "lng": -98.714576,
+    "source": "nominatim"
+  },
   "1145 providence st houston tx 77002": {
     "lat": 29.76795,
     "lng": -95.357761,
+    "source": "nominatim"
+  },
+  "1158 broadway new york ny 10001": {
+    "lat": 40.744771,
+    "lng": -73.988715,
     "source": "nominatim"
   },
   "117 s washington st seattle wa 98104 seattle wa": {
@@ -83,6 +135,11 @@
     "lng": -121.945813,
     "source": "nominatim"
   },
+  "11816 artesia blvd artesia ca 90701": {
+    "lat": 33.872939,
+    "lng": -118.081816,
+    "source": "nominatim"
+  },
   "120 ives st": {
     "lat": 41.821431,
     "lng": -71.392142,
@@ -91,6 +148,11 @@
   "12058 collegiate way orlando fl 32817": {
     "miss": true,
     "at": 1795379593217
+  },
+  "12070 ventura blvd studio city ca 91604": {
+    "lat": 34.143414,
+    "lng": -118.394965,
+    "source": "nominatim"
   },
   "1208 saint charles avenue new orleans la": {
     "lat": 29.941002,
@@ -111,6 +173,15 @@
     "miss": true,
     "at": 1795379600461
   },
+  "123 astronaut ellison s onizuka st los angeles ca 90012": {
+    "lat": 34.049962,
+    "lng": -118.242366,
+    "source": "nominatim"
+  },
+  "123 astronaut ellison s onizuka st suite 101-c los angeles ca 90012": {
+    "miss": true,
+    "at": 1795460324839
+  },
   "1233 se stark st portland or 97214": {
     "lat": 45.51946,
     "lng": -122.652912,
@@ -119,6 +190,11 @@
   "12375 sw 5th st beaverton or 97005": {
     "lat": 45.484122,
     "lng": -122.804062,
+    "source": "nominatim"
+  },
+  "1250 broadway new york ny 10001": {
+    "lat": 40.747666,
+    "lng": -73.987854,
     "source": "nominatim"
   },
   "127 rosa l parks boulevard nashville tn 37203": {
@@ -145,6 +221,11 @@
     "lng": -81.372121,
     "source": "nominatim"
   },
+  "132 bowery new york ny 10013": {
+    "lat": 40.718965,
+    "lng": -73.994974,
+    "source": "nominatim"
+  },
   "1331 metropolitan pkwy atlanta ga": {
     "lat": 33.718507,
     "lng": -84.408352,
@@ -163,6 +244,11 @@
   "1348 4th street washington dc": {
     "lat": 38.910063,
     "lng": -76.998807,
+    "source": "nominatim"
+  },
+  "1401 abbot kinney blvd venice ca 90291": {
+    "lat": 33.990677,
+    "lng": -118.465791,
     "source": "nominatim"
   },
   "1417 w morse ave chicago il": {
@@ -184,6 +270,11 @@
     "lng": -81.209856,
     "source": "nominatim"
   },
+  "151 north 7th street brooklyn ny 11249": {
+    "lat": 40.71813,
+    "lng": -73.957867,
+    "source": "nominatim"
+  },
   "1512 edison street dallas tx 75207": {
     "lat": 32.792977,
     "lng": -96.817925,
@@ -197,6 +288,11 @@
   "15317 broadway avenue maple heights oh 44137": {
     "lat": 41.418808,
     "lng": -81.574369,
+    "source": "nominatim"
+  },
+  "155 5th avenue brooklyn ny 11217": {
+    "lat": 40.677877,
+    "lng": -73.9792,
     "source": "nominatim"
   },
   "15557 union avenue los gatos ca 15557": {
@@ -248,6 +344,11 @@
     "lng": -122.429188,
     "source": "nominatim"
   },
+  "176 8th avenue new york ny 10011": {
+    "lat": 40.742674,
+    "lng": -74.000173,
+    "source": "nominatim"
+  },
   "176 northwest 25th street miami fl 33127": {
     "lat": 25.800661,
     "lng": -80.198569,
@@ -290,6 +391,15 @@
     "lng": -96.780659,
     "source": "nominatim"
   },
+  "1809 eldridge parkway houston tx 77077": {
+    "lat": 29.749146,
+    "lng": -95.624482,
+    "source": "nominatim"
+  },
+  "1809 eldridge parkway suite 104 houston tx 77077": {
+    "miss": true,
+    "at": 1795460254497
+  },
   "1810 county line road upper moreland township pa 19006": {
     "lat": 40.16589,
     "lng": -75.062115,
@@ -329,9 +439,19 @@
     "lng": -73.997693,
     "source": "nominatim"
   },
+  "183 grand street new york ny 10013": {
+    "lat": 40.719273,
+    "lng": -73.997693,
+    "source": "nominatim"
+  },
   "1830 west alabama street houston tx 77098": {
     "lat": 29.738937,
     "lng": -95.40589,
+    "source": "nominatim"
+  },
+  "184 prince street new york ny 10012": {
+    "lat": 40.726271,
+    "lng": -74.002157,
     "source": "nominatim"
   },
   "1850 k st washington dc": {
@@ -379,9 +499,19 @@
     "lng": -82.464059,
     "source": "nominatim"
   },
+  "1931 north new braunfels avenue san antonio tx 78208": {
+    "lat": 29.442571,
+    "lng": -98.461029,
+    "source": "nominatim"
+  },
   "20 massachusetts avenue washington dc": {
     "lat": 38.897705,
     "lng": -77.010741,
+    "source": "nominatim"
+  },
+  "20 west 29th street new york ny 10001": {
+    "lat": 40.745667,
+    "lng": -73.98816,
     "source": "nominatim"
   },
   "20 willett avenue port chester ny 10573": {
@@ -418,9 +548,19 @@
     "lng": -77.003297,
     "source": "nominatim"
   },
+  "202 n 9th street philadelphia pa 19107": {
+    "lat": 39.95537,
+    "lng": -75.154497,
+    "source": "nominatim"
+  },
   "2026 edison st dallas tx": {
     "lat": 32.793492,
     "lng": -96.817101,
+    "source": "nominatim"
+  },
+  "203 east 10th street new york ny 10003": {
+    "lat": 40.729679,
+    "lng": -73.986319,
     "source": "nominatim"
   },
   "203 roy st seattle wa": {
@@ -433,6 +573,11 @@
     "at": 1795379614430
   },
   "2033 chestnut st philadelphia pa 19103 philadelphia pa": {
+    "lat": 39.95232,
+    "lng": -75.174681,
+    "source": "nominatim"
+  },
+  "2033 chestnut street philadelphia pa 19103": {
     "lat": 39.95232,
     "lng": -75.174681,
     "source": "nominatim"
@@ -455,9 +600,19 @@
     "lng": -97.558852,
     "source": "nominatim"
   },
+  "214 bedford avenue brooklyn ny 11249": {
+    "lat": 40.71693,
+    "lng": -73.958901,
+    "source": "nominatim"
+  },
   "2150 east brown road mesa az 85213": {
     "lat": 33.437584,
     "lng": -111.784732,
+    "source": "nominatim"
+  },
+  "217 mulberry street new york ny 10012": {
+    "lat": 40.722233,
+    "lng": -73.996358,
     "source": "nominatim"
   },
   "22 713 lorimer st new york ny": {
@@ -487,6 +642,11 @@
   "2220 gratiot ave detroit mi": {
     "lat": 42.350887,
     "lng": -83.032985,
+    "source": "nominatim"
+  },
+  "2221 n lincoln ave chicago il 60614": {
+    "lat": 41.922555,
+    "lng": -87.64438,
     "source": "nominatim"
   },
   "224 east hennepin avenue minneapolis mn": {
@@ -524,6 +684,20 @@
     "lng": -117.171302,
     "source": "nominatim"
   },
+  "2310 n bellflower blvd long beach ca 90815": {
+    "lat": 33.799306,
+    "lng": -118.125205,
+    "source": "nominatim"
+  },
+  "2310 n bellflower blvd ste 103 long beach ca 90815": {
+    "miss": true,
+    "at": 1795460322896
+  },
+  "234 fayetteville street raleigh nc 27601": {
+    "lat": 35.777134,
+    "lng": -78.639574,
+    "source": "nominatim"
+  },
   "2360 india st san diego ca": {
     "lat": 32.729086,
     "lng": -117.170919,
@@ -532,6 +706,11 @@
   "2361 30th st san diego ca": {
     "lat": 32.730232,
     "lng": -117.129474,
+    "source": "nominatim"
+  },
+  "240 east 54th street new york ny 10022": {
+    "lat": 40.75743,
+    "lng": -73.967486,
     "source": "nominatim"
   },
   "240 east orangewood avenue anaheim ca": {
@@ -583,6 +762,10 @@
     "lat": 40.945446,
     "lng": -73.067637,
     "source": "nominatim"
+  },
+  "250 vesey street 2nd floor new york ny 10281": {
+    "miss": true,
+    "at": 1795460293537
   },
   "2501 sunset avenue san diego ca": {
     "lat": 32.558121,
@@ -644,9 +827,19 @@
     "lng": -74.00301,
     "source": "nominatim"
   },
+  "275 bleecker street new york ny 10014": {
+    "lat": 40.73165,
+    "lng": -74.00301,
+    "source": "nominatim"
+  },
   "279 broome st new york ny": {
     "lat": 40.718367,
     "lng": -73.991332,
+    "source": "nominatim"
+  },
+  "279 st nicholas avenue ridgewood ny 11385": {
+    "lat": 40.702108,
+    "lng": -73.912152,
     "source": "nominatim"
   },
   "2795 east grand boulevard detroit mi": {
@@ -706,6 +899,11 @@
     "lng": -77.093608,
     "source": "nominatim"
   },
+  "30 east 18th street new york ny 10003": {
+    "lat": 40.737523,
+    "lng": -73.989712,
+    "source": "nominatim"
+  },
   "3000 corrine dr orlando fl 32803": {
     "lat": 28.567534,
     "lng": -81.345716,
@@ -734,6 +932,16 @@
   "307 kamani st honolulu hi": {
     "lat": 21.296565,
     "lng": -157.85636,
+    "source": "nominatim"
+  },
+  "309 graham avenue brooklyn ny 11211": {
+    "lat": 40.713357,
+    "lng": -73.944421,
+    "source": "nominatim"
+  },
+  "3118 university avenue san diego ca 92104": {
+    "lat": 32.74855,
+    "lng": -117.127136,
     "source": "nominatim"
   },
   "313 north state street orem ut 84057": {
@@ -770,6 +978,11 @@
     "lng": -122.661662,
     "source": "nominatim"
   },
+  "327 lafayette street new york ny 10012": {
+    "lat": 40.725421,
+    "lng": -73.994829,
+    "source": "nominatim"
+  },
   "327 nw 10th ave portland or 97209 portland or": {
     "lat": 45.525697,
     "lng": -122.681434,
@@ -793,9 +1006,19 @@
     "lng": -84.361806,
     "source": "nominatim"
   },
+  "337 park avenue south new york ny 10010": {
+    "lat": 40.741273,
+    "lng": -73.985354,
+    "source": "nominatim"
+  },
   "3421 s orange ave orlando fl 32806": {
     "lat": 28.505786,
     "lng": -81.376014,
+    "source": "nominatim"
+  },
+  "350 greenwich street new york ny 10013": {
+    "lat": 40.718508,
+    "lng": -74.010406,
     "source": "nominatim"
   },
   "3500 severn avenue metairie la 70002": {
@@ -843,9 +1066,24 @@
     "lng": -118.167465,
     "source": "nominatim"
   },
+  "38 norman avenue brooklyn ny 11222": {
+    "lat": 40.724503,
+    "lng": -73.953918,
+    "source": "nominatim"
+  },
+  "38-35 bell boulevard bayside ny 11361": {
+    "lat": 40.765593,
+    "lng": -73.771869,
+    "source": "nominatim"
+  },
   "39 i street salt lake city ut 84103": {
     "lat": 40.770345,
     "lng": -111.871849,
+    "source": "nominatim"
+  },
+  "39-34 bell boulevard bayside ny 11361": {
+    "lat": 40.764327,
+    "lng": -73.771661,
     "source": "nominatim"
   },
   "3901 we pl 111 newport beach ca 92660": {
@@ -855,6 +1093,11 @@
   "3901 westerly pl 111 newport beach ca 92660": {
     "miss": true,
     "at": 1795396416687
+  },
+  "40 gold street new york ny 10038": {
+    "lat": 40.708729,
+    "lng": -74.005748,
+    "source": "nominatim"
   },
   "400 bonnet springs blvd lakeland fl 33815": {
     "miss": true,
@@ -898,6 +1141,15 @@
     "miss": true,
     "at": 1795379452914
   },
+  "421 8th avenue new york ny 10001": {
+    "lat": 40.751344,
+    "lng": -73.996268,
+    "source": "nominatim"
+  },
+  "421 8th avenue suite 40 new york ny 10001": {
+    "miss": true,
+    "at": 1795460284024
+  },
   "42201 n 41st dr anthem az 85086": {
     "miss": true,
     "at": 1795436171028
@@ -928,6 +1180,11 @@
     "lng": -77.110671,
     "source": "nominatim"
   },
+  "43 e broadway tempe az": {
+    "lat": 33.406523,
+    "lng": -111.938952,
+    "source": "nominatim"
+  },
   "4325 n ravenswood ave chicago il": {
     "lat": 41.960281,
     "lng": -87.673498,
@@ -941,6 +1198,11 @@
   "433 nw 10th ave portland or 97209 portland or": {
     "lat": 45.526323,
     "lng": -122.681431,
+    "source": "nominatim"
+  },
+  "44 washington avenue brooklyn ny 11205": {
+    "lat": 40.697414,
+    "lng": -73.967974,
     "source": "nominatim"
   },
   "4416 burnet rd austin tx 78756": {
@@ -966,6 +1228,11 @@
   "45 court street boston ma 02203 boston ma": {
     "lat": 42.359168,
     "lng": -71.058723,
+    "source": "nominatim"
+  },
+  "45 n raymond ave pasadena ca 91103": {
+    "lat": 34.146661,
+    "lng": -118.149091,
     "source": "nominatim"
   },
   "450 northeast 20th street boca raton fl 33431": {
@@ -1009,6 +1276,21 @@
   "46 hester street": {
     "lat": 40.715567,
     "lng": -73.990283,
+    "source": "nominatim"
+  },
+  "4677 hollywood blvd los angeles ca 90027": {
+    "lat": 34.100927,
+    "lng": -118.291149,
+    "source": "nominatim"
+  },
+  "475 north beverly drive beverly hills ca 90210": {
+    "lat": 34.071373,
+    "lng": -118.403475,
+    "source": "nominatim"
+  },
+  "477 madison avenue new york ny 10022": {
+    "lat": 40.758523,
+    "lng": -73.974632,
     "source": "nominatim"
   },
   "4770 owings mills blvd baltimore md": {
@@ -1060,6 +1342,11 @@
     "lng": -80.194281,
     "source": "nominatim"
   },
+  "510 n robertson blvd los angeles ca 90048": {
+    "lat": 34.0802,
+    "lng": -118.38503,
+    "source": "nominatim"
+  },
   "519 memorial dr atlanta ga": {
     "lat": 33.746513,
     "lng": -84.371126,
@@ -1089,6 +1376,21 @@
     "lng": -122.259415,
     "source": "nominatim"
   },
+  "534 east 14th street new york ny 10009": {
+    "lat": 40.729531,
+    "lng": -73.978839,
+    "source": "nominatim"
+  },
+  "54 bond street new york ny 10012": {
+    "lat": 40.725922,
+    "lng": -73.992379,
+    "source": "nominatim"
+  },
+  "55 water street brooklyn ny 11201": {
+    "lat": 40.703541,
+    "lng": -73.991989,
+    "source": "nominatim"
+  },
   "550 harrison ave boston ma": {
     "lat": 42.341119,
     "lng": -71.066017,
@@ -1112,6 +1414,11 @@
   "5737 w irlo bronson memorial hwy kissimmee fl 34746": {
     "lat": 28.333489,
     "lng": -81.514301,
+    "source": "nominatim"
+  },
+  "578 driggs avenue brooklyn ny 11211": {
+    "lat": 40.716466,
+    "lng": -73.957205,
     "source": "nominatim"
   },
   "5841 bellflower boulevard lakewood ca 90713": {
@@ -1210,6 +1517,11 @@
     "miss": true,
     "at": 1795391918224
   },
+  "70 greenpoint avenue brooklyn ny 11222": {
+    "lat": 40.729523,
+    "lng": -73.958159,
+    "source": "nominatim"
+  },
   "7007 sea world dr orlando fl 32821": {
     "lat": 28.41101,
     "lng": -81.461876,
@@ -1245,6 +1557,20 @@
   "704 s third st renton wa 98057": {
     "miss": true,
     "at": 1795391913378
+  },
+  "705 n alfred st los angeles ca 90069": {
+    "lat": 34.083789,
+    "lng": -118.375371,
+    "source": "nominatim"
+  },
+  "7115 blanco rd san antonio tx 78216": {
+    "lat": 29.521665,
+    "lng": -98.506202,
+    "source": "nominatim"
+  },
+  "7115 blanco rd ste 112 san antonio tx 78216": {
+    "miss": true,
+    "at": 1795460264826
   },
   "713 lorimer st new york ny": {
     "lat": 40.718158,
@@ -1357,6 +1683,16 @@
     "miss": true,
     "at": 1795384730409
   },
+  "8072 clairemont mesa blvd san diego ca 92111": {
+    "lat": 32.832706,
+    "lng": -117.163394,
+    "source": "nominatim"
+  },
+  "81 chrystie street new york ny 10002": {
+    "lat": 40.717365,
+    "lng": -73.994434,
+    "source": "nominatim"
+  },
   "810 king st": {
     "lat": 30.315608,
     "lng": -81.697152,
@@ -1396,6 +1732,11 @@
     "lng": -80.191033,
     "source": "nominatim"
   },
+  "87 christopher street new york ny 10014": {
+    "lat": 40.733616,
+    "lng": -74.003939,
+    "source": "nominatim"
+  },
   "903 marietta st atlanta ga": {
     "lat": 33.777017,
     "lng": -84.407928,
@@ -1406,9 +1747,42 @@
     "lng": -73.987808,
     "source": "nominatim"
   },
+  "92 berry street brooklyn ny 11249": {
+    "lat": 40.719469,
+    "lng": -73.958345,
+    "source": "nominatim"
+  },
+  "920 e university dr suite 106 tempe az 85281": {
+    "miss": true,
+    "at": 1795460249654
+  },
+  "920 e university dr tempe az 85281": {
+    "lat": 33.42241,
+    "lng": -111.925576,
+    "source": "nominatim"
+  },
+  "922 broadway new york ny 10010": {
+    "lat": 40.739922,
+    "lng": -73.9894,
+    "source": "nominatim"
+  },
+  "922 e apache blvd 105 tempe az 85281": {
+    "miss": true,
+    "at": 1795460251532
+  },
+  "922 e apache blvd tempe az 85281": {
+    "lat": 33.415272,
+    "lng": -111.925196,
+    "source": "nominatim"
+  },
   "922 s staples st corpus christi tx 78404": {
     "lat": 27.783043,
     "lng": -97.401795,
+    "source": "nominatim"
+  },
+  "923 race st philadelphia pa 19107": {
+    "lat": 39.955495,
+    "lng": -75.155152,
     "source": "nominatim"
   },
   "950 n 2nd st philadelphia pa": {

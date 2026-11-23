@@ -59,3 +59,17 @@ test("shop-read turns schema.org hours into OpenStreetMap syntax and never inven
   assert.equal(r.hours_osm, null);
   assert.equal(r.matcha_mentions, 2);
 });
+
+test("dedupe merges a researched branch name into the plain OSM row at the same spot, and keeps different shops apart", () => {
+  const osm = { id: "osm:node/9", name: "Cha Cha Matcha", lat: 40.74, lng: -73.99, address: "1158 Broadway", state: "NY", source: "osm", website: null };
+  const web = { id: "web:cha-cha-matcha-nomad", name: "Cha Cha Matcha NoMad", lat: 40.74001, lng: -73.99001, address: "1158 Broadway", state: "NY", source: "web", verified: true, opening_hours: "Mo-Su 08:00-20:00", source_url: "https://x.test/" };
+  const other = { id: "web:isshiki", name: "Isshiki Matcha at Ace Hotel", lat: 40.7405, lng: -73.9898, address: "20 W 29th", state: "NY", source: "web", verified: true };
+  const out = dedupe([osm, web, other]);
+  assert.equal(out.length, 2);
+  assert.equal(out[0].id, "osm:node/9");
+  assert.equal(out[0].name, "Cha Cha Matcha NoMad");
+  assert.equal(out[0].opening_hours, "Mo-Su 08:00-20:00");
+  // the shop's own hours replace OpenStreetMap's
+  const osm2 = { ...osm, id: "osm:node/10", opening_hours: "Mo-Sa 10:00-17:00" };
+  assert.equal(dedupe([osm2, web])[0].opening_hours, "Mo-Su 08:00-20:00");
+});

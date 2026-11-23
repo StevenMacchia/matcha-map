@@ -1,8 +1,9 @@
 {
  "osm:node/14122736558": {
-  "name": "Littlefoot Matcha Cafe",
+  "name": "Littlefoot Matcha",
   "city": "Greensboro",
   "zip": "27412",
-  "why": "OSM spells it Littleftoot; the shop site says Littlefoot Matcha. 1101 West Gate City Blvd (pin 36.0629, -79.8094) is in Greensboro, NC 27412 (Nominatim reverse), not Raleigh"
+  "why": "OSM spells it Littleftoot; the shop site says Littlefoot Matcha. 1101 West Gate City Blvd (pin 36.0629, -79.8094) is in Greensboro, NC 27412 (Nominatim reverse), not Raleigh; hidden: the researched row web:littlefoot-matcha-nc-greensboro carries this shop with the hours and photo from its own site",
+  "hide": true
  }
 }

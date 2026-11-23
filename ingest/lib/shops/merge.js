@@ -14,11 +14,18 @@ export function dedupe(list, within = 150) {
   const out = [];
   for (const s of list) {
     const k = norm(s.name);
-    const dup = out.find((o) => norm(o.name) === k && metres(o, s) <= within);
+    // Same name within `within` metres, or (a researched row names the branch, "Cha Cha Matcha NoMad") one name starts with the other
+    // within 75 m of the same spot.
+    const dup = out.find((o) => { const d = metres(o, s), n = norm(o.name); return (n === k && d <= within) || (d <= 75 && (n.startsWith(k + " ") || k.startsWith(n + " "))); });
     if (!dup) { out.push({ ...s }); continue; }
     for (const f of ["address", "city", "state", "zip", "website", "instagram", "phone", "opening_hours", "cuisine", "menu_url", "image_url", "image_credit", "source_url", "read", "confirmed_via"]) if (!dup[f] && s[f]) dup[f] = s[f];
     if (s.verified && !dup.verified) dup.verified = true;
     if (s.brand_id && !dup.brand_id) dup.brand_id = s.brand_id;
+    if (s.source === "web" && s.verified && dup.source !== "web") {
+      // The shop's own site beats OpenStreetMap for what it prints itself.
+      dup.name = s.name;
+      for (const f of ["opening_hours", "phone", "website", "instagram", "zip"]) if (s[f]) dup[f] = s[f];
+    }
   }
   return out;
 }
