@@ -6,7 +6,7 @@ A map of matcha pop-ups across America, by day, so you can find one near you whe
 
 It is a plain HTML site on MapLibre GL over OpenFreeMap tiles (map data from OpenStreetMap contributors). A set of Node scripts finds pop-ups, writes `data/events.json` and builds the static pages. There is no server and no build step for the site. The only dynamic part is a few Cloudflare Pages Functions for the Add form. Node 20 or newer; no `npm install` is needed except for `wrangler` (deploy).
 
-Counts move every day, so look at `data/events.json` for the real number. On the morning of 2026-11-23 it held 536 events and 236 brands in `data/sources.json`; after the day's wave 3 (an Instagram Graph read over the watch list, a verification pass over the held review items, nine metro sweeps) it held 710 events, 366 of them upcoming in 101 cities, and 238 brands.
+Counts move every day, so look at `data/events.json` for the real number. On the morning of 2026-11-23 it held 536 events and 236 brands in `data/sources.json`; after the day's wave 3 (an Instagram Graph read over the watch list, a verification pass over the held review items, nine metro sweeps) it held 710 events, 366 of them upcoming in 101 cities, and 238 brands; wave 4 the same afternoon (Graph planner, review queue, thin-metro crawler runs) took it to 717 events, 373 upcoming in 105 cities.
 
 Never invent an event. Only real, public posts. If a source does not give a field, it stays empty.
 
