@@ -1,5 +1,7 @@
 // npm run smoke: serve site/, drive headless Chrome over the key pages at desktop and phone width,
-// and fail on any uncaught exception, any 4xx/5xx for a same-origin asset, or an empty home page.
+// and fail on any uncaught exception, any 4xx/5xx for a same-origin asset, or an empty home page. The home page also
+// loads in a 1 by 1 window and in a background tab (document.hidden, no size): a visitor's tab restored at launch or
+// opened behind another one. On 2026-11-23 the stand-in map's fit threw on NaN there and the page stayed on "Brewing".
 // Flags: --url <base>. Env: CHROME_PATH (Chrome binary), SMOKE_URL (reuse a running server instead of starting tools/serve.js).
 // Talks to Chrome over the DevTools protocol with Node's built-in WebSocket (Node 22+), no dependencies.
 import fs from "node:fs";
@@ -92,12 +94,13 @@ class CDP {
   close() { this.ws.close(); }
 }
 
-const PROBE = `(() => { const q = (s) => document.querySelectorAll(s).length; const l = document.getElementById("loading");
-  return { rows: q("#list .row, #list li"), pins: q(".maplibregl-marker"), loading: !!l && !l.hidden && getComputedStyle(l).display !== "none" }; })()`;
+const PROBE = `(() => { const q = (s) => document.querySelectorAll(s).length; const l = document.getElementById("loading"), e = document.getElementById("empty");
+  return { rows: q("#list .row, #list li"), pins: q(".maplibregl-marker"), empty: !!e && !e.hidden, loading: !!l && !l.hidden && getComputedStyle(l).display !== "none" }; })()`;
 
-async function checkPage(cdp, base, url, [w, h]) {
+async function checkPage(cdp, base, url, [w, h], opts = {}) {
   const t0 = Date.now(), origin = new URL(base).origin, errors = [], reqs = new Map();
-  const { targetId } = await cdp.send("Target.createTarget", { url: "about:blank" });
+  // background: true opens the tab behind the current one, so the page loads with document.hidden and a 0 by 0 window
+  const { targetId } = await cdp.send("Target.createTarget", { url: "about:blank", background: !!opts.background });
   const { sessionId: sid } = await cdp.send("Target.attachToTarget", { targetId, flatten: true });
   let loaded;
   const loadP = new Promise((r) => (loaded = r));
@@ -116,22 +119,30 @@ async function checkPage(cdp, base, url, [w, h]) {
   const s = (m, p) => cdp.send(m, p, sid);
   await Promise.all([s("Page.enable"), s("Runtime.enable"), s("Network.enable")]);
   await s("Network.setCacheDisabled", { cacheDisabled: true });
-  await s("Emulation.setDeviceMetricsOverride", { width: w, height: h, deviceScaleFactor: 1, mobile: w < 500 });
+  if (w && h) await s("Emulation.setDeviceMetricsOverride", { width: w, height: h, deviceScaleFactor: 1, mobile: w < 500 });
   await s("Page.navigate", { url: base + url });
   await Promise.race([loadP, sleep(PAGE_TIMEOUT_MS)]);
   const probe = async () => (await s("Runtime.evaluate", { expression: PROBE, returnByValue: true })).result.value;
   let st = await probe();
-  const home = url === "/";
+  const home = url === "/", needPins = home && !opts.noPins;
   if (home) {
     const end = Date.now() + HOME_WAIT_MS;
-    while (Date.now() < end && (st.rows < 1 || st.pins < 1 || st.loading)) { await sleep(250); st = await probe(); }
-    if (st.rows < 1) errors.push("home page rendered no list rows");
-    if (st.pins < 1) errors.push("home page rendered no pin markers");
+    // a window with no room in view may show the empty state ("nothing in view, go there") instead of rows
+    const listed = () => st.rows >= 1 || (opts.emptyOk && st.empty);
+    while (Date.now() < end && (!listed() || (needPins && st.pins < 1) || st.loading)) { await sleep(250); st = await probe(); }
+    if (!listed()) errors.push("home page rendered no list rows" + (opts.emptyOk ? " and no empty state" : ""));
+    if (needPins && st.pins < 1) errors.push("home page rendered no pin markers");
     if (st.loading) errors.push("home page still shows the loading state after 10 s");
   } else await sleep(SETTLE_MS);
   await sleep(300);
+  let label = url + (opts.tag ? " " + opts.tag : "");
+  if (opts.background) {
+    // say what the tab really was, so a Chrome that stops hiding background tabs shows up in the table
+    const vis = (await s("Runtime.evaluate", { expression: "document.visibilityState + ' ' + innerWidth + 'x' + innerHeight", returnByValue: true })).result.value;
+    label += " (" + vis + ")";
+  }
   await cdp.send("Target.closeTarget", { targetId });
-  return { url, w, errors: [...new Set(errors)], rows: home ? st.rows : "-", pins: home ? st.pins : "-", ms: Date.now() - t0 };
+  return { url: label, w, errors: [...new Set(errors)], rows: home ? st.rows : "-", pins: home ? st.pins : "-", ms: Date.now() - t0 };
 }
 
 const bin = findChrome();
@@ -142,11 +153,15 @@ const results = [];
 try {
   await cdp.open();
   for (const url of pages()) for (const size of SIZES) results.push(await checkPage(cdp, server.base, url, size));
+  // a window with no room (1 by 1) and a tab that loads hidden: the list must still render and nothing may throw;
+  // pins are not required (nothing is in a 1 px view, and a hidden tab gets no animation frames to place them)
+  results.push(await checkPage(cdp, server.base, "/", [1, 1], { tag: "1x1 window", noPins: true, emptyOk: true }));
+  results.push(await checkPage(cdp, server.base, "/", [0, 0], { tag: "background tab", background: true, noPins: true, emptyOk: true }));
 } finally { cdp.close(); chrome.stop(); server.stop(); }
 
 const pad = (v, n) => String(v).padEnd(n);
-console.log(`\n${pad("page", 34)}${pad("width", 7)}${pad("errors", 8)}${pad("rows", 6)}${pad("pins", 6)}time`);
-for (const r of results) console.log(`${pad(r.url, 34)}${pad(r.w, 7)}${pad(r.errors.length, 8)}${pad(r.rows, 6)}${pad(r.pins, 6)}${(r.ms / 1000).toFixed(1)}s`);
+console.log(`\n${pad("page", 40)}${pad("width", 7)}${pad("errors", 8)}${pad("rows", 6)}${pad("pins", 6)}time`);
+for (const r of results) console.log(`${pad(r.url, 40)}${pad(r.w, 7)}${pad(r.errors.length, 8)}${pad(r.rows, 6)}${pad(r.pins, 6)}${(r.ms / 1000).toFixed(1)}s`);
 const bad = results.filter((r) => r.errors.length);
 for (const r of bad) { console.log(`\nFAIL ${r.url} @${r.w}`); for (const e of r.errors) console.log("  " + e); }
 console.log(bad.length ? `\nsmoke: ${bad.length} of ${results.length} checks failed` : `\nsmoke: all ${results.length} checks passed`);
