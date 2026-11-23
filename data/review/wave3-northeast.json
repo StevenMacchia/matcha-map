@@ -1,0 +1,249 @@
+{
+  "generated": "2026-11-23T12:20:56.821Z",
+  "group": "wave3-northeast",
+  "items": [
+    {
+      "brand": "MARU",
+      "handle": null,
+      "source_id": "maru-matcha",
+      "title": "MARU matcha pop-up at Wishing Cup",
+      "start": "2026-11-28T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Wishing Cup",
+      "address": "45 Court Street, Boston, MA",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/reel/DgDmRqrR074",
+      "posts": [
+        "https://www.instagram.com/reel/DgDmRqrR074"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/DgDmRqrR074"
+      ],
+      "menu": [
+        "matcha lattes"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "MARU, a matcha brand, is popping up again inside Wishing Cup in downtown Boston from November 20 to December 6, serving matcha drinks to walk-ins. The cafe is a short walk from Government Center.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back."
+    },
+    {
+      "brand": "MARU",
+      "handle": null,
+      "source_id": "maru-matcha",
+      "title": "MARU matcha pop-up at Wishing Cup",
+      "start": "2026-11-29T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Wishing Cup",
+      "address": "45 Court Street, Boston, MA",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/reel/DgDmRqrR074",
+      "posts": [
+        "https://www.instagram.com/reel/DgDmRqrR074"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/DgDmRqrR074"
+      ],
+      "menu": [
+        "matcha lattes"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "MARU, a matcha brand, is popping up again inside Wishing Cup in downtown Boston from November 20 to December 6, serving matcha drinks to walk-ins. The cafe is a short walk from Government Center.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back."
+    },
+    {
+      "brand": "MARU",
+      "handle": null,
+      "source_id": "maru-matcha",
+      "title": "MARU matcha pop-up at Wishing Cup",
+      "start": "2026-12-05T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Wishing Cup",
+      "address": "45 Court Street, Boston, MA",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/reel/DgDmRqrR074",
+      "posts": [
+        "https://www.instagram.com/reel/DgDmRqrR074"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/DgDmRqrR074"
+      ],
+      "menu": [
+        "matcha lattes"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "MARU, a matcha brand, is popping up again inside Wishing Cup in downtown Boston from November 20 to December 6, serving matcha drinks to walk-ins. The cafe is a short walk from Government Center.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Run quoted in a Wishing Cup Instagram caption (via search snippet, page not opened): MARU popping up again Nov 20 - Dec 6. Per-day hours and menu not checked; presence on this day inferred from the range, so held back."
+    },
+    {
+      "brand": "MARU",
+      "handle": null,
+      "source_id": "maru-matcha",
+      "title": "MARU matcha pop-up at Wishing Cup",
+      "start": "2026-12-06T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Wishing Cup",
+      "address": "45 Court Street, Boston, MA",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/reel/DgDmRqrR074",
+      "posts": [
+        "https://www.instagram.com/reel/DgDmRqrR074"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/DgDmRqrR074"
+      ],
+      "menu": [
+        "matcha lattes"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "MARU, a matcha brand, is popping up again inside Wishing Cup in downtown Boston from November 20 to December 6, serving matcha drinks to walk-ins. The cafe is a short walk from Government Center.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Run end date Dec 6 is quoted in a Wishing Cup Instagram caption (search snippet, page not opened); hours not checked."
+    },
+    {
+      "brand": "Caribe & Co.",
+      "handle": "caribeandco",
+      "source_id": "caribe-and-co",
+      "title": "Caribe & Co. pop-up cafe at SoWa Christmas Market",
+      "start": "2026-12-19T10:00:00-05:00",
+      "end": "2026-12-19T22:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "SoWa Christmas Market",
+      "address": "550 Harrison Ave, Boston, MA",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/p/Df7bmg1IZ3O",
+      "posts": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.instagram.com/reel/DfXsGL-C_vU"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.instagram.com/reel/DfXsGL-C_vU",
+        "https://www.sowaboston.com/sowa-christmas-market/"
+      ],
+      "menu": [
+        "cornmeal porridge matcha latte",
+        "carrot punch matcha (cold brew or matcha)"
+      ],
+      "price": null,
+      "hours": "Sat 10am-10pm",
+      "pay": null,
+      "description": "A Caribbean-inspired pop-up cafe inside the SoWa Christmas Market, serving cornmeal porridge matcha lattes and a carrot punch that can be made with matcha all holiday season.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Season run Nov 20 - Dec 27 and hours (Sat 10am-10pm, Christmas Eve 10am-4pm) quoted in Caribe & Co. captions via search snippets; page not opened. Matcha is one drink among coffees. Extra date beyond the Saturdays already on map."
+    },
+    {
+      "brand": "Caribe & Co.",
+      "handle": "caribeandco",
+      "source_id": "caribe-and-co",
+      "title": "Caribe & Co. pop-up cafe at SoWa Christmas Market",
+      "start": "2026-12-24T10:00:00-05:00",
+      "end": "2026-12-24T16:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "SoWa Christmas Market",
+      "address": "550 Harrison Ave, Boston, MA",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/p/Df7bmg1IZ3O",
+      "posts": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.instagram.com/reel/DfXsGL-C_vU"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.instagram.com/reel/DfXsGL-C_vU",
+        "https://www.sowaboston.com/sowa-christmas-market/"
+      ],
+      "menu": [
+        "cornmeal porridge matcha latte",
+        "carrot punch matcha (cold brew or matcha)"
+      ],
+      "price": null,
+      "hours": "Christmas Eve 10am-4pm",
+      "pay": null,
+      "description": "A Caribbean-inspired pop-up cafe inside the SoWa Christmas Market, serving cornmeal porridge matcha lattes and a carrot punch that can be made with matcha all holiday season.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Season run Nov 20 - Dec 27 and hours (Sat 10am-10pm, Christmas Eve 10am-4pm) quoted in Caribe & Co. captions via search snippets; page not opened. Matcha is one drink among coffees. Extra date beyond the Saturdays already on map."
+    },
+    {
+      "brand": "Caribe & Co.",
+      "handle": "caribeandco",
+      "source_id": "caribe-and-co",
+      "title": "Caribe & Co. pop-up cafe at SoWa Christmas Market",
+      "start": "2026-12-26T10:00:00-05:00",
+      "end": "2026-12-26T22:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "SoWa Christmas Market",
+      "address": "550 Harrison Ave, Boston, MA",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/p/Df7bmg1IZ3O",
+      "posts": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.instagram.com/reel/DfXsGL-C_vU"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.instagram.com/reel/DfXsGL-C_vU",
+        "https://www.sowaboston.com/sowa-christmas-market/"
+      ],
+      "menu": [
+        "cornmeal porridge matcha latte",
+        "carrot punch matcha (cold brew or matcha)"
+      ],
+      "price": null,
+      "hours": "Sat 10am-10pm",
+      "pay": null,
+      "description": "A Caribbean-inspired pop-up cafe inside the SoWa Christmas Market, serving cornmeal porridge matcha lattes and a carrot punch that can be made with matcha all holiday season.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Season run Nov 20 - Dec 27 and hours (Sat 10am-10pm, Christmas Eve 10am-4pm) quoted in Caribe & Co. captions via search snippets; page not opened. Matcha is one drink among coffees. Extra date beyond the Saturdays already on map."
+    }
+  ]
+}

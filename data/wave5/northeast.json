@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "id": "maru-matcha",
+      "brand": "MARU",
+      "kind": "popup",
+      "category": "matcha",
+      "home_city": "Boston",
+      "home_state": "MA",
+      "website": null,
+      "instagram": null,
+      "tiktok": null,
+      "schedule_url": "https://www.instagram.com/reel/DgDmRqrR074",
+      "schedule_kind": "manual",
+      "adapter": "manual",
+      "active": true,
+      "notes": "Matcha brand popping up at Wishing Cup, 45 Court Street, Boston, Nov 20 - Dec 6 2026 (second run). Handle not confirmed. Evidence: https://www.instagram.com/reel/DgDmRqrR074",
+      "added": "2026-11-23",
+      "verified": null
+    }
+  ]
+}
