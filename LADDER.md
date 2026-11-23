@@ -33,6 +33,18 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 | 25 | Flyers and posts | Sonnet subagent | done | Flyer-style post images in the house style for other brands' pop-ups (single pop-up, weekend roundup per city), captions with credit, an outbox for review; posting via the API only after Steven approves a batch. | all-models 22% |
 | 26 | Flyers with character | Opus subagent | done | Redesign the flyer templates: Mattie large on every post, sticker petals and dango, speech bubbles, chunkier type, pastel two-tone; same facts and credits. | all-models 24% |
 
+## Lanes
+
+Standing lanes set by Steven on 2026-11-23, one named worker each, each in its own worktree; the command center (the workbench session) hands out his prompts and gets every rung close. The first session owns the Design, SEO and Profitability rows (site code); the data session owns Population and Events. Budget: about one point of the weekly window per lane per rung, combined stop at 43%, ceiling 45%; reset Friday 2026-11-28 09:00Z.
+
+| Lane | Worker | Worktree / branch | State | Last rung | Next rung |
+|---|---|---|---|---|---|
+| Population (finding more: new public sources ranked by dated-event yield; measured as upcoming events and distinct cities per state) | `lane-population` | own worktree, branch `claude/lane-population-*` | proposed (card; starts on Steven's click) | wave 4: `--cities` crawler runs over the thin metros | rung P1: two new sources by expected yield (brand sites and Linktrees with schedules; Partiful, Posh and Eventeny public pages), built, run over the 30 biggest metros, yield per source |
+| Events (quality and depth: recurring series, stale and duplicates, time zones, fields filled, unconfirmed resolved, review queue under 20) | `lane-events` | own worktree, branch `claude/lane-events-*` | proposed (card; starts on Steven's click) | wave 4: review queue 22 opened, 3 promoted, 10 dropped | rung E1: recurring pop-ups as series (flag and end rule), stale and past cleared on the daily run |
+| Design | (first session) | | | | |
+| SEO | (first session) | | | | |
+| Profitability | (first session) | | | | |
+
 ## Log
 
 - 2026-11-22: repo created, board opened. Orchestrator: Claude (Fable) session, kept lean; workers are Sonnet.
