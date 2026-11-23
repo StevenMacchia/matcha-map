@@ -446,3 +446,22 @@ test("a city whose Census point is in water carries a land point (San Francisco)
   const listed = loadCities().find((c) => c.name === "San Francisco" && c.state === "CA");
   assert.ok(listed && listed.lng > -122.6, `data/cities.json San Francisco must be on land, got ${listed && listed.lng}`);
 });
+
+test("--cities: exactly the named cities, no cursor move, no skip entries; names take a trailing state", async () => {
+  const { resolveCityNames } = await import("../ingest/lib/cities.js");
+  const { parseFlags } = await import("../ingest/lib/sites/index.js");
+  assert.deepEqual(parseFlags(["--only", "meetup", "--cities", "Denver, Phoenix AZ"]).cities, ["Denver", "Phoenix AZ"]);
+  assert.equal(parseFlags(["--only", "meetup"]).cities, null);
+  const r = resolveCityNames(["Phoenix AZ", "Mesa", "Nowhereville"]);
+  assert.deepEqual(r.cities.map((c) => c.name + c.state), ["PhoenixAZ", "MesaAZ"]);
+  assert.deepEqual(r.missing, ["Nowhereville"]);
+  const file = tmp("crawl.json"), list = mk(10);
+  const p = planCities("eventbrite", list, { perRun: 4, file, now: t0 });
+  for (const c of p.batch) p.done(c, "ok");
+  p.finish();
+  const before = fs.readFileSync(file, "utf8");
+  const x = common.planFor("eventbrite", { only: [list[7], list[2]], perRun: 1, crawlFile: file, now: t0 });
+  assert.deepEqual(x.batch.map((c) => c.name), ["C7", "C2"]);
+  x.done(x.batch[0], "404"); x.done(x.batch[1], "empty"); x.finish();
+  assert.equal(fs.readFileSync(file, "utf8"), before);
+});

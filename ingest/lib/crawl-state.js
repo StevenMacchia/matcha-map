@@ -28,9 +28,11 @@ export function saveCrawlState(state, file = CRAWL_STATE_FILE) {
 }
 
 // The next `perRun` cities for a site from its cursor, wrapping once round the list and passing over the ones skipped.
+// exact: `cities` is the whole batch (skips ignored); the cursor and skip list are not read or written (--cities).
 // -> { batch, done(city, outcome), finish() }. outcome: "ok" (matcha events seen), "empty" or "404" (skip a week), anything else
 // ("error", "stopped") leaves the city as it was. finish() moves the cursor past the last city actually asked and saves.
-export function planCities(site, cities, { perRun = perRunDefault(), now = new Date(), file = CRAWL_STATE_FILE, persist = true } = {}) {
+export function planCities(site, cities, { perRun = perRunDefault(), now = new Date(), file = CRAWL_STATE_FILE, persist = true, exact = false } = {}) {
+  if (exact) return { batch: cities.slice(), done() {}, finish: () => ({ cursor: 0, skipped: 0 }) };
   const state = loadCrawlState(file, now);
   const n = cities.length;
   const start = n ? (state.cursor[site] || 0) % n : 0;

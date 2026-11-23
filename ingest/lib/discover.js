@@ -4,7 +4,9 @@
 // Luma pages (robots.txt respected), @mentions in captions we already hold (inbox, cache).
 // No scraping behind a login, no cookies, no headless browser. Flags: --dry, --no-fetch, --verbose, --no-<site> (skip one site:
 // mato, luma, eventbrite, dostuff, meetup, linktree, allevents, social-search) and --only <site> (run just that site; the Graph, Brave and
-// mention steps are skipped). The per-site crawlers live in ingest/lib/sites (mato's in mato-city.js).
+// mention steps are skipped), --cities <name,name,...> (names as in data/cities.json, a trailing state allowed: "Phoenix AZ,Mesa,Denver";
+// eventbrite, allevents and meetup ask exactly those cities, leaving their saved cursor and skip list alone; luma and mato have no
+// city list and ignore it). The per-site crawlers live in ingest/lib/sites (mato's in mato-city.js).
 import "./env.js";
 import fs from "node:fs";
 import path from "node:path";
@@ -15,7 +17,7 @@ import { setVerbose, warn, warnOnce, info } from "./log.js";
 import * as wlib from "./watchlist.js";
 import { readInbox } from "../adapters/manual.js";
 import { crawlMato } from "./mato-city.js";
-import { crawlCities, searchLabels } from "./cities.js";
+import { crawlCities, searchLabels, resolveCityNames } from "./cities.js";
 import { createGeocoder } from "./geocode.js";
 import { processItems, finalize } from "./pipeline.js";
 import { readEvents } from "./write.js";
@@ -271,7 +273,15 @@ async function main() {
       list.push(...mato.items);
     } catch (e) { warn(`ma.to: ${e.message}`); counts["ma.to"] = 0; }
   }
-  const results = await runSites({ fetcher, now, sources, cities, searchCities: searchLabels(), env }, flags);
+  let only = null;
+  if (flags.cities) {
+    const r = resolveCityNames(flags.cities);
+    for (const n of r.missing) warn(`--cities: no city "${n}" in data/cities.json`);
+    only = r.cities;
+    info(`--cities: ${only.map((c) => `${c.name} ${c.state}`).join(", ")}`);
+    if (!only.length) { console.error("--cities matched no city"); process.exit(2); }
+  }
+  const results = await runSites({ fetcher, now, sources, cities, only, searchCities: searchLabels(), env }, flags);
   for (const r of results) {
     take(r.name, r.candidates); leads.push(...r.leads);
     for (const raw of r.items) list.push({ source: raw.source_hint, raw, site: r.name });
