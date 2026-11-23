@@ -1,5 +1,5 @@
 {
-  // Cloudflare Pages project "matchamap": serves the site/ folder at https://matchamap-cu7.pages.dev
+  // Cloudflare Pages project "matchamap": serves the site/ folder at https://matchamap.app
   // Deploy: npx wrangler pages deploy site --project-name matchamap --branch main
   // The functions/ folder (next to site/) is deployed with it: /api/submit, /api/queue, /api/approve, /api/report, /api/claim, /api/alerts, /api/rsvp.
   "name": "matchamap",

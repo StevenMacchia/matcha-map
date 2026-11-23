@@ -6,15 +6,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { SITE_URL } from "./site-url.js";
+import { SITE_URL, SITE_HOST } from "./site-url.js";
 import { writeSlim } from "./slim-events.js";
 import { isUpcoming, isApprox, makeCityLocator, brandNameOf, timeText } from "./gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const NEW_DAYS = 14;
 export const NEW_MAX = 100;
-// UID = <event id>@<domain>. A UID is an identity, not a link: it stays on the first host for good, so a domain change
-// never duplicates events in a subscribed calendar. Not from tools/site-url.js on purpose.
+// UID = <event id>@matchamap-cu7.pages.dev, fixed on purpose: a UID is an identity, and calendars that subscribed before the
+// domain move (2026-11-23) would show every event twice if it changed. SITE_HOST stays the public host for links.
 export const UID_DOMAIN = "matchamap-cu7.pages.dev";
 // Calendar feeds: the end (or the start, if no end) is today or later, by the event's own calendar day.
 export function inCalendar(e, now = new Date()) {
