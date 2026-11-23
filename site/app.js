@@ -426,17 +426,28 @@
   var LABEL_Z = 13, lblRaf = 0;
   function labelSoon() { if (!lblRaf) lblRaf = requestAnimationFrame(function () { lblRaf = 0; layoutLabels(); }); }
   function boxOf(el) {
-    var r = el.getBoundingClientRect(), b = { l: r.left, t: r.top, r: r.right, b: r.bottom }, n = el.querySelector(".cl-n");
-    if (n) { var q = n.getBoundingClientRect(); b = { l: Math.min(b.l, q.left), t: Math.min(b.t, q.top), r: Math.max(b.r, q.right), b: Math.max(b.b, q.bottom) }; }
+    // the pin's own box, with what sticks out of it: a count badge, a day pill, the cup (class bx)
+    var r = el.getBoundingClientRect(), b = { l: r.left, t: r.top, r: r.right, b: r.bottom };
+    el.querySelectorAll(".cl-n, .bx").forEach(function (n) {
+      if (!n.getClientRects().length) return;
+      var q = n.getBoundingClientRect(); b = { l: Math.min(b.l, q.left), t: Math.min(b.t, q.top), r: Math.max(b.r, q.right), b: Math.max(b.b, q.bottom) };
+    });
     return b;
   }
-  function hits(a, b) { return Math.min(a.r, b.r) - Math.max(a.l, b.l) > 1 && Math.min(a.b, b.b) - Math.max(a.t, b.t) > 1; }
+  // overlap, or closer than gap px (labels keep 2 px from each other and from every pin)
+  function hits(a, b, gap) { var g = gap || 0; return Math.min(a.r, b.r) - Math.max(a.l, b.l) > -g && Math.min(a.b, b.b) - Math.max(a.t, b.t) > -g; }
+  // the bigger shop: a matcha shop over one that serves matcha, then a photo, posted hours, a checked place
+  function shopRank(it) {
+    if (!it) return 0;
+    var s = it.data;
+    return (it.serves ? 0 : 8) + (s.image_url ? 4 : 0) + (s.opening_hours ? 2 : 0) + (s.verified ? 1 : 0);
+  }
   function layoutLabels() {
     var on = map.getZoom() >= LABEL_Z, recs = [];
     Object.keys(live).forEach(function (id) { recs.push(live[id]); });
     if (fan) recs = recs.concat(fan.pins);
     recs = recs.filter(function (r) { return r.marker && r.el.isConnected && !r.el.classList.contains("leaving"); });
-    var want = on ? recs.filter(function (r) { return (r.kind === "s" || (r.kind === "e" && !r.el.classList.contains("mk-ap"))) && !r.el.classList.contains("fanned"); }) : [];
+    var want = on ? recs.filter(function (r) { return (r.kind === "s" || (r.kind === "e" && !r.el.classList.contains("mk-ap")) || (r.dg && r.el.classList.contains("cl-stack"))) && !r.el.classList.contains("fanned"); }) : [];
     recs.forEach(function (r) { if (r.lbl && want.indexOf(r) < 0) r.lbl.hidden = true; });
     if (!want.length) return;
     var pins = recs.map(function (r) { return { r: r, b: boxOf(r.el) }; }), placed = [];
@@ -446,26 +457,33 @@
       if (c.hidden || !c.getClientRects().length) return;
       var q = c.getBoundingClientRect(); pins.push({ r: null, b: { l: q.left, t: q.top, r: q.right, b: q.bottom } });
     });
-    want.sort(function (a, b) { return (a.kind === b.kind ? 0 : a.kind === "e" ? -1 : 1) || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0); });
+    // pop-ups first, then stacks, then shops, the bigger shop first (Flatiron rule below)
+    want.forEach(function (r) { r.lk = r.dg ? (densG[r.dg] || {}).lead : r.key; r.rank = r.kind === "e" ? 1e6 : r.dg ? 5e5 : shopRank(items[r.key]); });
+    want.sort(function (a, b) { return b.rank - a.rank || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0); });
+    var z14 = map.getZoom() >= 14;
     want.forEach(function (r) {
-      var it = items[r.key];
+      var it = items[r.lk];
       if (!it) return;
       if (!r.lbl) {
+        var nm = it.kind === "s" ? it.data.name : it.kind === "e" ? it.data.brand : it.data.brand, more = r.dg ? ((densG[r.dg] || {}).keys || []).length - 1 : 0;
         r.lbl = document.createElement("span");
-        r.lbl.className = "mk-lbl";
+        r.lbl.className = "mk-lbl lb-" + it.kind + (r.dg ? " lb-g" : "");
         r.lbl.setAttribute("aria-hidden", "true");
-        r.lbl.textContent = it.kind === "s" ? it.data.name : it.data.brand;
+        r.lbl.textContent = nm + (more > 0 ? " +" + more : "");
         r.el.appendChild(r.lbl);
       }
       var L = r.lbl;
       L.hidden = false; L.style.visibility = "hidden"; L.style.left = "0px"; L.style.top = "0px";
-      var w = L.offsetWidth, h = L.offsetHeight, mb = boxOf(r.el), er = r.el.getBoundingClientRect(), midY = it.kind === "e" ? mb.t + 13 : (mb.t + mb.b) / 2;
+      var w = L.offsetWidth, h = L.offsetHeight, mb = boxOf(r.el), er = r.el.getBoundingClientRect(), midY = (mb.t + mb.b) / 2;
       var tries = [{ l: mb.r + 3, t: midY - h / 2 }, { l: mb.l - 3 - w, t: midY - h / 2 }, { l: (mb.l + mb.r) / 2 - w / 2, t: mb.b + 2 }], spot = null;
       for (var i = 0; i < tries.length && !spot; i++) {
-        var c = { l: tries[i].l, t: tries[i].t, r: tries[i].l + w, b: tries[i].t + h }, clear = c.l >= area.l && c.t >= area.t && c.r <= area.r && c.b <= area.b;
-        for (var j = 0; j < placed.length && clear; j++) if (hits(c, placed[j])) clear = false;
-        for (var k = 0; k < pins.length && clear; k++) if (pins[k].r !== r && hits(c, pins[k].b)) clear = false;
+        var c = { l: tries[i].l, t: tries[i].t, r: tries[i].l + w, b: tries[i].t + h }, clear = c.l >= area.l && c.t >= area.t && c.r <= area.r && c.b <= area.b, byLabel = false;
+        for (var j = 0; j < placed.length && clear; j++) if (hits(c, placed[j], 2)) { clear = false; byLabel = true; }
+        for (var k = 0; k < pins.length && clear; k++) if (pins[k].r !== r && hits(c, pins[k].b, 2)) clear = false;
         if (clear) spot = c;
+        // the Flatiron rule: below zoom 14 a shop whose label would touch a bigger one's stays unlabelled (no hunting
+        // for another side, which crowds a busy corner); from zoom 14 it may take another side
+        else if (byLabel && it.kind === "s" && !r.dg && !z14) break;
       }
       if (!spot) { L.hidden = true; L.style.visibility = ""; return; }
       placed.push(spot);
@@ -559,12 +577,16 @@
       if (!it.past && !it.approx && isToday(it.data)) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
       if (it.now) inner.appendChild(steamEl());
     } else if (it.kind === "s") {
-      inner.appendChild(drawChar("s-shop"));
+      inner.innerHTML = window.MatchaPins ? window.MatchaPins.shopPin({ photo: it.data.image_url, serves: it.serves, open: shopOpen(it.data), drawn: SHOP_ART }) : "";
+      if (!window.MatchaPins) inner.appendChild(drawChar("s-shop"));
+      fillChars(inner);
     } else {
       inner.innerHTML = "<span class=\"mochi\"></span>";
       brandPic(inner.firstChild, it);
     }
     el.appendChild(inner);
+    el.setAttribute("data-key", it.key);
+    bobPhase(inner, it.key);
     el.addEventListener("click", function (ev) { ev.stopPropagation(); cardOpener = null; pinOpener = el; showCard(it.key, ev.detail === 0); });
     var marker = new maplibregl.Marker({ element: el, anchor: it.kind === "e" && !it.approx ? "bottom" : "center", offset: it.kind === "e" || it.kind === "s" ? [0, 0] : [NUDGE, NUDGE] }).setLngLat(lngLat(it.ll));
     var rec = { marker: marker, el: el, kind: it.kind, key: it.key, label: pinLabel(it) };
@@ -574,6 +596,36 @@
     return rec;
   }
   function ringEl() { var r = document.createElement("span"); r.className = "mk-ring"; return r; }
+  // ---- the pin look (site/pins.js, 2026-11-23 mock) ----
+  var SHOP_ART = "<span class=\"pn-draw\" data-char=\"s-shop\"></span>";
+  // open now from the shop's own hours (shopcard.js through cards-app.js); false until that module is in
+  function shopOpen(s) { var C = window.MatchaCards; try { return !!(C && C.openNow && C.openNow(s)); } catch (e) { return false; } }
+  function bobPhase(inner, key) { var b = inner.querySelector(".pn-bob"); if (b && window.MatchaPins) b.style.setProperty("--ph", window.MatchaPins.phase(key) + "s"); }
+  // a picture that fails steps aside for the drawn art of its kind
+  function artFor(it) {
+    if (!it) return "";
+    if (it.kind === "s") return SHOP_ART;
+    var D = window.Drawn;
+    return D ? D.card(it.kind === "e" ? it.data : { brand: it.data.brand || "", id: "b-" + it.data.id, kind: it.data.kind }, { mode: "thumb" }) : "";
+  }
+  map.getContainer().addEventListener("error", function (ev) {
+    var im = ev.target;
+    if (!im || im.tagName !== "IMG" || !im.closest(".pn")) return;
+    var ph = im.closest(".pn-ph"), face = im.closest("[data-fkey]"), mk = im.closest(".maplibregl-marker");
+    var it = items[(face && face.getAttribute("data-fkey")) || (mk && mk.getAttribute("data-key")) || ""];
+    if (ph) { ph.innerHTML = artFor(it); fillChars(ph); }
+  }, true);
+  // a group's faces: members with a picture first, then the rest
+  function faceOf(k) {
+    var it = items[k];
+    if (!it) return null;
+    var photo = it.kind === "s" ? it.data.image_url : it.kind === "e" ? imgSrc(it.data) : brandPicUrl(it);
+    return { key: k, kind: it.kind, photo: photo, drawn: artFor(it) };
+  }
+  function facesOf(keys, n) {
+    var all = keys.map(faceOf).filter(Boolean), withPic = all.filter(function (f) { return window.MatchaPins.src(f.photo); });
+    return withPic.concat(all.filter(function (f) { return withPic.indexOf(f) < 0; })).slice(0, n);
+  }
   // The brand's picture (brands.json) inside its mochi, round and cropped to fill; the mochi face stays when there is none
   // or the image fails. brands.json lands after the first pins, so brandsLanded() fills the ones already on the map.
   function brandPicUrl(it) { var b = it && it.data && brandsBy[String(it.data.instagram || "").replace(/^@/, "").toLowerCase()]; return b ? safeUrl(b.picture) : ""; }
@@ -589,7 +641,7 @@
   }
   function brandsLanded() {
     // brand pins and groups are drawn again: a group shows its most followed brand with a picture
-    Object.keys(live).forEach(function (id) { var r = live[id]; if (r.src === "br" || r.src === "bc") { r.marker.remove(); delete live[id]; } });
+    Object.keys(live).forEach(function (id) { var r = live[id]; if (r.src === "br" || r.src === "bc" || r.src === "sh" || r.dg) { r.marker.remove(); delete live[id]; } });
     setSources();
     scheduleSync();
     var C = window.MatchaCards;
@@ -625,6 +677,16 @@
     var num = document.createElement("span");
     num.className = "cl-n";
     inner.appendChild(num);
+    var dgg = p.dg && densG[p.key], PN = window.MatchaPins;
+    if (dgg && PN) {
+      var hood = map.getZoom() < 12, pops = dgg.keys.filter(function (k) { return items[k] && items[k].kind === "e"; }).length, faces = facesOf(dgg.keys, hood ? 3 : 2);
+      inner.innerHTML = hood ? PN.hoodPin(faces, dgg.keys.length, pops) : PN.stackPin(faces, dgg.keys.length);
+      inner.querySelectorAll(".pn-av, .pn-st").forEach(function (fe, i) { if (faces[i]) fe.setAttribute("data-fkey", faces[i].key); });
+      fillChars(inner);
+      num = inner.querySelector(".hd-n, .pn-fan");
+      el.className = "mk mk-cl cl-dg " + (hood ? "cl-hood" : "cl-stack") + (p.fan ? " cl-fan" : " cl-cell");
+      bobPhase(inner, p.key);
+    }
     el.appendChild(inner);
     var rec = { marker: null, el: el, kind: "c", count: 0, num: num, city: src === "ct" || src === "bc" ? p.city : "", cities: p.cities || 0, dg: p.dg ? p.key : "" };
     if (p.dg && p.fan) el.setAttribute("aria-expanded", "false");
@@ -1336,10 +1398,14 @@
   var KIND_SHIFT = { b: [NUDGE, NUDGE], e: [0, -23], s: [0, 0] }, KIND_SRC = { e: "ev", s: "sh", b: "br" };
   // Half of each marker's box (style.css), so no two markers on the map cover each other: a single pin, then a group by
   // its size class (cl-m over 9, cl-l over 24), widened on both sides by the count badge that pokes out to the right.
-  var PIN_HALF = { e: [20, 23], s: [14, 14], b: [11, 11] };
-  var GROUP_HALF = { e: [[26, 27], [28, 31], [30, 35]], s: [[22, 24], [24, 26], [26, 28]], b: [[25, 19], [25, 19], [25, 19]] };
+  var PIN_HALF = { e: [20, 23], s: [26, 25], b: [11, 11] };
+  // groups: to zoom 12 a neighbourhood pill (up to three faces and the count, a pink count above), from 12 a stack
   function densShift(p) { return KIND_SHIFT[p.kind]; }
-  function densHalf(p, n) { return n > 1 ? GROUP_HALF[p.kind][n > 24 ? 2 : n > 9 ? 1 : 0] : PIN_HALF[p.kind]; }
+  function densHalf(p, n) {
+    if (n <= 1) return PIN_HALF[p.kind];
+    if (map.getZoom() < 12) { var k = Math.min(3, n), w = 37 + 20 * k + 9 * String(n).length; return [w / 2 + 9, 26]; }
+    return [32, 27];
+  }
   function isDense() { return map.getZoom() >= DENSE_Z; }
   function denseAll() {
     if (denseCache) return denseCache;
@@ -1347,7 +1413,7 @@
     var list = mapEvents(false).concat(mapShops(), mapBrands());
     if (!D) { list.forEach(function (it) { out[KIND_SRC[it.kind]].push(featureColl([it]).features[0]); }); return (denseCache = out); }
     var pts = list.map(function (it) { return { key: it.key, ll: it.ll, kind: it.kind, nogrid: it.kind === "b" }; });
-    D.group(pts, z, { grid: z < 12 ? 0.01 : 0, shift: densShift, half: densHalf, slack: 0 }).forEach(function (g) {
+    D.group(pts, z, { grid: z < 12 ? 0.01 : 0, shift: densShift, half: densHalf, slack: 10 }).forEach(function (g) {
       var kind = items[g.key].kind, src = KIND_SRC[kind];
       if (g.keys.length === 1) { out[src].push({ type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: g.key } }); return; }
       var gk = "g:" + src + ":" + g.key;

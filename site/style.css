@@ -291,10 +291,47 @@ body.show-list .list-panel { display: block; }
 .mk-cl.cl-br.cl-bc, .mk-cl.cl-br.cl-fan, .mk-cl.cl-br.cl-cell { width: 22px; height: 22px; }
 .mk-cl.cl-bc .cl-n, .mk-cl.cl-br.cl-fan .cl-n, .mk-cl.cl-br.cl-cell .cl-n { right: -14px; bottom: -8px; }
 .mk-cl.fan-open .mk-in { opacity: .45; }
-/* name labels from zoom 13 (layoutLabels in app.js): quiet, small, on a plate; hidden while a zoom runs */
-.mk-lbl { position: absolute; left: 0; top: 0; z-index: 1; max-width: 150px; padding: 1px 6px; border-radius: 6px; background: color-mix(in srgb, var(--panel) 92%, transparent);
-  color: var(--ink); font-size: 12.5px; font-weight: 700; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; box-shadow: 0 1px 2px rgba(75,52,38,.18); }
+/* name labels from zoom 13 (layoutLabels in app.js), the mock's way: bold small text on a cream halo, coloured by kind;
+   hidden while a zoom runs */
+.mk-lbl { position: absolute; left: 0; top: 0; z-index: 1; max-width: 170px; font-size: 12.5px; font-weight: 800; line-height: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; color: var(--ink);
+  text-shadow: 0 0 2px var(--canvas), 0 0 2px var(--canvas), 0 0 3px var(--canvas), 0 0 4px var(--canvas), 1px 1px 0 var(--canvas), -1px -1px 0 var(--canvas), 1px -1px 0 var(--canvas), -1px 1px 0 var(--canvas); }
+.mk-lbl.lb-s { color: var(--deep); } .mk-lbl.lb-e { color: var(--pu-ink); } .mk-lbl.lb-b { color: var(--sage-ink); font-weight: 700; }
 .mk-lbl[hidden], .zooming .mk-lbl { display: none; }
+
+/* ---- the pin look (site/pins.js, the 2026-11-23 mock) ---- */
+:root { --pu-ink: #9A4B33; --sage: #C9D8BC; --sage-edge: #9CB58E; --sage-ink: #5B7150; --open: #4FA548; }
+:root[data-theme="dark"] { --pu-ink: #F4C3A6; --sage: #6F8A63; --sage-edge: #B7CCA9; --sage-ink: #C9D8BC; --open: #7BD072; }
+.pn-bob, .pn, .pn .pn-ph, .pn-ground { display: block; }
+.pn { position: relative; }
+.pn .pn-ph { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
+.pn .pn-ph > img, .pn .pn-ph > svg, .pn .pn-ph .pn-draw, .pn .pn-ph .pn-draw svg { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pn-ground { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -26px 0 0 -32px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(140,191,122,.30), rgba(140,191,122,0)); }
+/* shop: a round photo in a matcha ring, the cup as a mark, the open dot */
+.mk-sh { width: 40px; height: 40px; }
+.mk-sh::before { inset: -4px; }
+.pn-sh { width: 40px; height: 40px; border-radius: 50%; background: var(--panel); border: 3px solid var(--accent); box-shadow: 0 0 0 2px var(--panel), 0 3px 8px rgba(62,107,51,.35); box-sizing: border-box; }
+.pn-sh .pn-ph { inset: 1px; border-radius: 50%; background: var(--foam); }
+.pn-sh.sv { border-color: var(--shmint-edge); }
+.pn-sh .pn-draw { padding: 4px; box-sizing: border-box; }
+.pn-cup { position: absolute; right: -7px; bottom: -6px; width: 18px; height: 18px; border-radius: 50%; background: var(--panel); border: 1.5px solid var(--edge); display: grid; place-items: center; }
+.pn-cup svg { width: 13px; height: 13px; display: block; }
+.pn-open { position: absolute; right: -2px; top: -2px; width: 10px; height: 10px; border-radius: 50%; background: var(--open); border: 2px solid var(--panel); }
+/* a stack (zoom 12 up): the first two pins fanned, the count */
+.mk-cl.cl-stack, .mk-cl.cl-stack.cl-m, .mk-cl.cl-stack.cl-l { width: 50px; height: 40px; }
+.pn-stack { width: 50px; height: 40px; }
+.pn-stack .pn-st { position: absolute; top: 0; width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--accent); background: var(--panel); box-shadow: 0 0 0 2px var(--panel), 0 2px 6px rgba(62,107,51,.3); box-sizing: border-box; overflow: hidden; }
+.pn-stack .pn-st.k-e { border-radius: 12px; border-color: var(--peach-edge); }
+.pn-stack .pn-st.k-b { border-color: var(--sage-edge); }
+.pn-stack .pn-st1 { left: 0; transform: rotate(-8deg); } .pn-stack .pn-st2 { left: 14px; transform: rotate(7deg); }
+.pn-fan { position: absolute; right: -6px; bottom: -6px; font-size: 11px; font-weight: 800; color: var(--deep); background: var(--panel); border: 1.5px solid var(--edge); border-radius: 999px; padding: 0 5px; line-height: 15px; }
+/* a neighbourhood (zoom 10 to 12): up to three faces, the count, a pink count of pop-ups */
+.mk-cl.cl-hood, .mk-cl.cl-hood.cl-m, .mk-cl.cl-hood.cl-l { width: auto; height: auto; }
+.pn-hood { display: flex; align-items: center; padding: 4px 9px 4px 4px; border-radius: 999px; background: color-mix(in srgb, var(--panel) 96%, transparent); border: 2px solid var(--edge); box-shadow: var(--shadow); }
+.pn-hood .pn-av { position: relative; flex: none; width: 30px; height: 30px; border-radius: 50%; overflow: hidden; border: 2px solid var(--panel); margin-right: -10px; background: var(--foam); box-sizing: border-box; }
+.pn-hood .pn-av.k-e { border-radius: 9px; border-color: var(--peach-edge); }
+.pn-hood .pn-av.k-b { border-color: var(--sage-edge); }
+.hd-n { margin-left: 16px; font-weight: 800; font-size: 15px; color: var(--deep); line-height: 1; }
+.hd-p { position: absolute; right: -7px; top: -9px; font-size: 11px; line-height: 18px; min-width: 18px; text-align: center; color: #fff; background: #D9667F; border: 2px solid var(--panel); border-radius: 999px; padding: 0 3px; box-sizing: border-box; font-weight: 800; }
 
 /* clusters: dango */
 .mk-cl { width: 28px; height: 54px; }

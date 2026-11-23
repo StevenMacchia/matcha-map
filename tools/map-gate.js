@@ -8,7 +8,7 @@
 //   - a name label leaves the clear part of the map (under the top bar or the list grip on a phone, or off the map);
 //   - two single pins (not groups, not the "place not posted" rings) stand closer than 28 px, centre to centre: such a
 //     pair must be one stack that spreads on tap;
-//   - two markers' boxes overlap by more than 3 px both ways (the "place not posted" rings are left out: they sit on a
+//   - two markers' boxes overlap by more than 12 px both ways (an edge, a cup mark or a badge may tuck under a neighbour) (the "place not posted" rings are left out: they sit on a
 //     city's centre by design).
 // Prints a table, saves a screenshot of every failing case to qa/brands/2026-11-23/map-fail/, exits 1 on any failure.
 // Flags: --url <base> (a running server instead of tools/serve.js), --only <fixture,...>, --zooms 12,13, --sizes 390x844.
@@ -56,7 +56,7 @@ const CHECK = `(() => {
   const solid = marks.filter((m) => !m.ap);
   for (let i = 0; i < solid.length; i++) for (let j = i + 1; j < solid.length; j++) {
     const [w, h] = ov(solid[i].b, solid[j].b);
-    if (w > 3 && h > 3) out.push("markers overlap " + Math.round(w) + "x" + Math.round(h) + ": " + name(solid[i].el) + " / " + name(solid[j].el));
+    if (w > 12 && h > 12) out.push("markers overlap " + Math.round(w) + "x" + Math.round(h) + ": " + name(solid[i].el) + " / " + name(solid[j].el));
   }
   return { pins: marks.length, singles: singles.length, groups: marks.filter((m) => m.group).length, labels: labels.length, fails: [...new Set(out)] };
 })()`;
