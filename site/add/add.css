@@ -38,3 +38,11 @@
 .rv-wide { max-width: 760px; }
 @media (max-width: 380px) { .fm-two { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: no-preference) { .fm-done svg { animation: fm-pop .5s var(--spring); } @keyframes fm-pop { from { transform: scale(.7); opacity: 0; } to { transform: none; opacity: 1; } } }
+/* design 2026-11-23 */
+.fm ::placeholder, .pr ::placeholder { color: var(--muted); opacity: .8; }
+:root[data-theme="dark"] .fm input, :root[data-theme="dark"] .fm select, :root[data-theme="dark"] .fm textarea { border-color: color-mix(in srgb, var(--edge) 55%, var(--line)); }
+:root[data-theme="dark"] .fm input:focus-visible, :root[data-theme="dark"] .fm select:focus-visible, :root[data-theme="dark"] .fm textarea:focus-visible { border-color: var(--edge); }
+.fm-btn { transition: transform .12s ease, filter .15s ease; }
+@media (max-width: 480px) { .fm-hero { gap: 10px; } .fm-hero svg { width: 56px; height: 56px; } .fm-hero h1 { font-size: clamp(24px, 7.4vw, 30px); } }
+/* the content column lines up with the header's left edge (the header is 760 wide, the forms 560) */
+@media (min-width: 800px) { .fm, .pr { max-width: 760px; padding-right: 216px; } }

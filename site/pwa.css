@@ -13,3 +13,5 @@
 .offline #map { background: var(--canvas); }
 #ios-install { color: var(--muted); }
 @media (max-width: 640px) { .pwa-bar { width: calc(100vw - 24px); } .pwa-msg { flex: 1; font-size: 14px; } }
+/* design 2026-11-23: the install bar stays off a card that is open (it sat on top of the card's photo and text) */
+body.card-open .pwa-bar, body:has(.mm-pop) .pwa-bar, body:has(#sheet:not([hidden])) .pwa-bar { display: none; }
