@@ -47,7 +47,7 @@ Budget for the whole build: under 10% of the weekly usage limit. Spend is noted 
 
 ## Lanes
 
-Standing lanes set by Steven on 2026-11-23, one named worker each, each in its own worktree; the command center (the workbench session) hands out his prompts and gets every rung close. The first session owns the Design, SEO and Profitability rows (site code); the data session owns Population and Events. Budget: about one point of the weekly window per lane per rung, combined stop at 43%, ceiling 45%; reset Friday 2026-11-28 09:00Z.
+Standing lanes set by Steven on 2026-11-23, one named worker each, each in its own worktree; the command center (the workbench session) hands out his prompts and gets every rung close. The first session owns the Design, SEO and Profitability rows (site code); the data session owns Population and Events. Budget (Steven, 2026-11-23 afternoon: "Raise to 60%"): weekly ceiling 60% all models, combined stop line 58% across the five lanes; until the reset on Friday 2026-11-28 09:00Z the two data lanes plan up to four points each (about 8 of the roughly 20 points left; the first session's three lanes about 12), one rung at a time with a usage check before each worker.
 
 | Lane | Worker | Worktree / branch | State | Last rung | Next rung |
 |---|---|---|---|---|---|
