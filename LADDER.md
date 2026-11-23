@@ -1,19 +1,5 @@
 # Ladder
 
-## Lanes (Steven, 2026-11-23: five standing lanes, one named worker each; the next-level session owns the text of the Population and Events rows)
-
-| Lane | Worker | Current rung | State | Last report |
-|---|---|---|---|---|
-| Population (data) | next-level session | see its rows | - | - |
-| Events (ingest) | next-level session | see its rows | - | - |
-| Design | design (Sonnet, worktree `_wt/matcha-map-design`, branch `lane/design`) | Rung 1: audit at 390 and 1440, light and dark; top ten polish fixes; mocks for the one big change | starting | 2026-11-23 |
-| SEO | seo (Sonnet, worktree `_wt/matcha-map-seo`, branch `lane/seo`) | Rung 1: Event and Organization JSON-LD, city landing copy, titles and descriptions, sitemap, canonical, OG, internal links | starting | 2026-11-23 |
-| Profitability | revenue (Sonnet, worktree `_wt/matcha-map-revenue`, branch `lane/revenue`) | Rung 1: docs/REVENUE.md options memo with the numbers we can know; Featured request flow up to the payment step | starting | 2026-11-23 |
-
-Merge order for the site lanes: SEO, then Design, then Profitability (the hot files index.html, style.css, app.js, gen-pages.js conflict least that way). Budget (Steven, 2026-11-23 afternoon: "Raise to 60%"): weekly ceiling 60% all models, combined stop 58% across all five lanes; from 38% that is about twenty points before the Friday 2026-11-28 09:00Z reset, planned as up to four per site lane (12 for Design, SEO and Profitability together) and about eight for Population and Events. get_usage before each new worker.
-
-The work on this repo is split into rungs. One worker per rung, run in order. This board is the one place to see who is on what and where it stands. States: pending / running / done / blocked.
-
 Budget for the whole build: under 10% of the weekly usage limit. Spend is noted after each rung as a share of that weekly limit.
 
 | # | Rung | Worker | State | What it does | Spend after |
@@ -53,9 +39,11 @@ Standing lanes set by Steven on 2026-11-23, one named worker each, each in its o
 |---|---|---|---|---|---|
 | Population (finding more: new public sources ranked by dated-event yield; measured as upcoming events and distinct cities per state) | `lane-population` | own worktree, branch `claude/lane-population-*` | proposed (card; starts on Steven's click) | wave 4: `--cities` crawler runs over the thin metros | rung P1: two new sources by expected yield (brand sites and Linktrees with schedules; Partiful, Posh and Eventeny public pages), built, run over the 30 biggest metros, yield per source |
 | Events (quality and depth: recurring series, stale and duplicates, time zones, fields filled, unconfirmed resolved, review queue under 20) | `lane-events` | own worktree, branch `claude/lane-events-*` | proposed (card; starts on Steven's click) | wave 4: review queue 22 opened, 3 promoted, 10 dropped | rung E1: recurring pop-ups as series (flag and end rule), stale and past cleared on the daily run |
-| Design | (first session) | | | | |
-| SEO | (first session) | | | | |
-| Profitability | (first session) | | | | |
+| Design | `design` (Sonnet) | `_wt/matcha-map-design`, branch `lane/design` | running (rung 1) | - | rung D1: audit at 390 and 1440, light and dark (home list, opened card, brand page, host flow, share page); top ten polish fixes; two or three mocks for the one big change, sent for Steven's yes before any whole-screen change |
+| SEO | `seo` (Sonnet) | `_wt/matcha-map-seo`, branch `lane/seo` | running (rung 1) | - | rung S1: Event and Organization JSON-LD, city landing copy from the data, per-event and per-brand titles, sitemap lastmod, canonical, OG, internal links from cards, CWV numbers; Search Console steps as a Steven ask |
+| Profitability | `revenue` (Sonnet) | `_wt/matcha-map-revenue`, branch `lane/revenue` | running (rung 1) | - | rung R1: docs/REVENUE.md options memo with the numbers we can know; /featured/ request flow and /api/featured up to the payment step (Stripe is a Steven ask) |
+
+Merge order for the three site lanes: SEO, then Design, then Profitability (the hot files index.html, style.css, app.js and gen-pages.js conflict least that way); each lands on main through the first session's worktree with tests and the smoke (26 checks, the 1x1 window and the background tab included) before the deploy.
 
 ## Log
 
