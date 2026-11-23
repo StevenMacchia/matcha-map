@@ -9376,40 +9376,6 @@
     }
    }
   },
-  "whisked-matcha-bowl": {
-   "file": "drinks/whisked-matcha-bowl.svg",
-   "text": "whisked matcha bowl",
-   "v": "drink-1.1269cs5.h4q7c1",
-   "spec": {
-    "v": "drink-1",
-    "name": "whisked matcha bowl",
-    "label": "Whisked Matcha Bowl",
-    "seed": 952791542,
-    "size": "m",
-    "flavors": [],
-    "side": "r",
-    "tilt": 0.4,
-    "pose": "m-whisk",
-    "toppings": [],
-    "garnish": [],
-    "kind": "drink",
-    "vessel": "bowl",
-    "temp": "hot",
-    "layers": [
-     {
-      "c": "#8CC15A",
-      "f": 1,
-      "n": "matcha"
-     }
-    ],
-    "blend": "solid",
-    "ice": 0,
-    "fizz": false,
-    "streaks": null,
-    "top": null,
-    "straw": null
-   }
-  },
   "white-chocolate-matcha": {
    "file": "drinks/white-chocolate-matcha.svg",
    "text": "white chocolate matcha",
@@ -10418,15 +10384,6 @@
     "latte"
    ]
   },
-  "1ca91778ead5": {
-   "file": "events/1ca91778ead5.svg",
-   "text": "{\"brand\":\"Isshiki Matcha\",\"drinks\":[\"iced matcha latte\"]}",
-   "v": "drink-1.1269cs5.h4q7c1",
-   "brand": "Isshiki Matcha",
-   "drinks": [
-    "iced-matcha-latte"
-   ]
-  },
   "1cdd1761a275": {
    "file": "events/1cdd1761a275.svg",
    "text": "{\"brand\":\"Emkari Cafe\",\"drinks\":[\"iced matcha latte\"]}",
@@ -10810,15 +10767,6 @@
    "brand": "Sml Wrld Cafe",
    "drinks": [
     "latte"
-   ]
-  },
-  "31c135dfd4cf": {
-   "file": "events/31c135dfd4cf.svg",
-   "text": "{\"brand\":\"Kinka\",\"drinks\":[\"iced matcha latte\"]}",
-   "v": "drink-1.1269cs5.h4q7c1",
-   "brand": "Kinka",
-   "drinks": [
-    "iced-matcha-latte"
    ]
   },
   "31f7d5a21e08": {
@@ -13759,6 +13707,16 @@
     "iced-matcha-latte"
    ]
   },
+  "cd0e6b0e4240": {
+   "file": "events/cd0e6b0e4240.svg",
+   "text": "{\"brand\":\"Caribe & Co.\",\"drinks\":[\"latte\",\"pastry\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Caribe & Co.",
+   "drinks": [
+    "latte",
+    "pastry"
+   ]
+  },
   "cd6d451cf76d": {
    "file": "events/cd6d451cf76d.svg",
    "text": "{\"brand\":\"Central Matcha\",\"drinks\":[\"matcha shot\",\"iced matcha latte\"]}",
@@ -14320,6 +14278,16 @@
    "drinks": [
     "matcha-shot",
     "iced-matcha-latte"
+   ]
+  },
+  "edbfbfe7c201": {
+   "file": "events/edbfbfe7c201.svg",
+   "text": "{\"brand\":\"Caribe & Co.\",\"drinks\":[\"latte\",\"pastry\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Caribe & Co.",
+   "drinks": [
+    "latte",
+    "pastry"
    ]
   },
   "edfe892e72ef": {

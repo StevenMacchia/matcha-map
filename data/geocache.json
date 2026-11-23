@@ -490,6 +490,11 @@
     "lng": -93.256485,
     "source": "nominatim"
   },
+  "23 west girard avenue philadelphia pa": {
+    "lat": 39.968829,
+    "lng": -75.135458,
+    "source": "nominatim"
+  },
   "23 west girard avenue philadelphia pa 19123": {
     "lat": 39.968829,
     "lng": -75.135458,
@@ -633,6 +638,11 @@
   "279 broome st new york ny": {
     "lat": 40.718367,
     "lng": -73.991332,
+    "source": "nominatim"
+  },
+  "2795 east grand boulevard detroit mi": {
+    "lat": 42.374578,
+    "lng": -83.062032,
     "source": "nominatim"
   },
   "2795 east grand boulevard detroit mi 48211": {
@@ -792,6 +802,11 @@
   "3550 wilson blvd arlington va 22205": {
     "lat": 38.881688,
     "lng": -77.10209,
+    "source": "nominatim"
+  },
+  "3574 2nd avenue detroit mi": {
+    "lat": 42.34542,
+    "lng": -83.063155,
     "source": "nominatim"
   },
   "3574 2nd avenue detroit mi 48201": {
@@ -1266,6 +1281,11 @@
   "76 cross street somerville ma 02145": {
     "lat": 42.385488,
     "lng": -71.087773,
+    "source": "nominatim"
+  },
+  "769 westminster st providence ri": {
+    "lat": 41.818014,
+    "lng": -71.420987,
     "source": "nominatim"
   },
   "7731 menchaca road austin tx 78745": {

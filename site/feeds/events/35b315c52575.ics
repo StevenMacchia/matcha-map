@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:35b315c52575@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T131640Z
+DTSTAMP:20261123T182110Z
+LAST-MODIFIED:20261123T174717Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
-SUMMARY:Matcha + Meetup: Chicago | Creative Minds Edition
-LOCATION:Chicago\, IL
+SUMMARY:Matcha + Meetup: Atlanta | Creatives Edition
+LOCATION:Atlanta\, GA
 DESCRIPTION:Join us for coffee\, latte\, or matcha! Each gathering is at a 
- different coffee shop. Build your community in your city with a fun day ou
- t!\nMenu: latte\nDetails not confirmed yet. Check the brand's post before 
- you go.\nMore: https://matchamap-cu7.pages.dev/e/35b315c52575/
+ different coffee shop. Sip and socialize while building community.\nMenu: 
+ latte\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/35b315c52575/
 URL:https://matchamap-cu7.pages.dev/e/35b315c52575/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

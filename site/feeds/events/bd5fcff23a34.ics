@@ -8,12 +8,12 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:bd5fcff23a34@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T131640Z
+DTSTAMP:20261123T182110Z
+LAST-MODIFIED:20261123T174717Z
 DTSTART;VALUE=DATE:20261227
 DTEND;VALUE=DATE:20261228
-SUMMARY:Matcha + Meetup: Dallas | Entrepreneur Speed Networking Roulette
-LOCATION:Dallas\, TX
+SUMMARY:Matcha + Meetup: LA | Entrepreneur Speed Networking Roulette
+LOCATION:Los Angeles\, CA
 DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
  for collaborations in this roulette edition of speed networking.\nDetails 
  not confirmed yet. Check the brand's post before you go.\nMore: https://ma

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Caribe & Co. pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:cd0e6b0e4240@matchamap-cu7.pages.dev
+DTSTAMP:20261123T182110Z
+LAST-MODIFIED:20261123T182110Z
+DTSTART:20261205T140000Z
+DTEND:20261205T180000Z
+SUMMARY:Caribe & Co. pop-up
+LOCATION:769 Westminster St\, Providence\, RI
+DESCRIPTION:December 5 & 11 - A Christmas in the Caribbean cafe popup is co
+ ming to bigfeeling_pvd\nMenu: pastry\, latte\, ice cream\nMore: https://ma
+ tchamap-cu7.pages.dev/e/cd0e6b0e4240/
+URL:https://matchamap-cu7.pages.dev/e/cd0e6b0e4240/
+GEO:41.818014;-71.420987
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR
