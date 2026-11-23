@@ -13,6 +13,7 @@
     "review": "node ingest/review.js",
     "shops": "node ingest/shops.js",
     "menus": "node ingest/menus.js",
+    "series": "node ingest/series.js",
     "watch": "node ingest/watch.js",
     "watchlist:apply": "node tools/apply-watchlist-additions.js",
     "loop": "node ingest/loop.js",

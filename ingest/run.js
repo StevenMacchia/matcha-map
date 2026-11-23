@@ -20,6 +20,7 @@ import { oembed } from "./adapters/oembed.js";
 import { readReview, promote } from "./lib/review.js";
 import { readEvents } from "./lib/write.js";
 import { pullApproved } from "./lib/intake.js";
+import { readSeries, seriesCandidates, recheckSeries, writeSeries } from "./lib/series.js";
 
 if (process.argv.slice(2).some((x) => x === "--help" || x === "-h")) {
   console.log(["npm run ingest [-- flags]", "  --source <id>   one source only", "  --paste [--file <path>]   read pasted text", "  --inbox   data/inbox/*.txt only", "  --no-fetch   no network", "  --dry   write nothing", "  --verbose   more logging", "  --no-art   skip illustration", "  --help, -h   this text"].join("\n"));
@@ -116,6 +117,17 @@ async function main() {
     candidates.push(...rv.candidates);
     const d = Object.entries(rv.stats.dropped).map(([k, n]) => `${k} ${n}`).join(", ") || "none";
     info(`review: ${rv.stats.read} items, ${rv.stats.promoted} new, ${rv.stats.merged} merged into events held, ${rv.stats.duplicates} duplicates, ${rv.stats.unsure} left for a human (${rv.stats.hedged} hedged in notes), ${rv.stats.past} past, dropped: ${d}`);
+  }
+
+  // 2c. Recurring pop-ups: data/series.json -> dated occurrences flagged `series` (ingest/lib/series.js, docs/SERIES.md). --no-series skips it.
+  if (crawl && !a.source && !a.flags.has("no-series")) {
+    const list = readSeries();
+    if (list.length) {
+      if (!dry && !a.flags.has("no-fetch")) { for (const l of await recheckSeries(list, fetcher, now)) info("series: " + l); writeSeries(list); }
+      const sc = seriesCandidates(list, readEvents(), { sources, now });
+      candidates.push(...sc.candidates);
+      info(`series: ${sc.stats.series} running, ${sc.stats.added} dates added, ${sc.stats.flagged} held dates flagged`);
+    }
   }
 
   // 3 and 4. Dedupe, geocode, merge, write (shared with `npm run watch`).

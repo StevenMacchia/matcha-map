@@ -37,7 +37,7 @@ export function computeStatus(e, now) {
 const stepDown = (c, n) => CONF[Math.max(0, CONF.indexOf(c) - n)];
 
 // Fields of the schema, in a stable order, so candidates carry no extra keys.
-const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "approx", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "image_url", "posts", "menu", "price", "description", "links", "hours", "pay", "evidence"];
+const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "approx", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "image_url", "posts", "menu", "price", "description", "links", "hours", "pay", "evidence", "series"];
 const emptyPosts = () => ({ instagram: null, tiktok: null, other: null });
 const emptyLinks = () => ({ website: null, instagram: null, tiktok: null });
 const DEFAULTS = { approx: () => false, menu: () => [], posts: emptyPosts, links: emptyLinks, kind: () => "popup", category: () => "matcha", evidence: () => [] };
@@ -51,6 +51,7 @@ export function clean(e) {
   o.posts = { ...emptyPosts(), ...(Array.isArray(o.posts) ? postsFrom(o.posts) : o.posts) };
   o.links = { ...emptyLinks(), ...o.links };
   o.menu = (Array.isArray(o.menu) ? o.menu : []).slice(0, 8);
+  o.series = o.series && typeof o.series === "object" && o.series.id ? o.series : null; // a recurring pop-up's record (ingest/lib/series.js)
   o.evidence = [...new Set((Array.isArray(o.evidence) ? o.evidence : []).filter((u) => String(u || "").startsWith("http")))].slice(0, 8);
   return o;
 }
