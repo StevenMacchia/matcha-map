@@ -933,12 +933,12 @@
   var KINDS = ["popup", "cafe", "organizer", "festival", "venue", "tea-brand"], CATS = ["matcha", "coffee", "boba", "bakery", "dessert", "other"];
   var KIND_WORD = { cafe: "Cafe", organizer: "Class", festival: "Festival", venue: "Host", "tea-brand": "Tea brand" };
   // Default: category matcha, every kind on. "Pop-up brands only" keeps kind popup.
-  var show = { po: false, k: {}, c: { matcha: true } };
+  var show = { po: false, un: true, k: {}, c: { matcha: true } };
   KINDS.forEach(function (k) { show.k[k] = true; });
   try {
     var sv = JSON.parse(localStorage.getItem("matchamap.show2") || "null");
     if (sv && Array.isArray(sv.k) && Array.isArray(sv.c)) {
-      show = { po: !!sv.po, un: !!sv.un, k: {}, c: {} };
+      show = { po: !!sv.po, un: sv.un !== false, k: {}, c: {} };
       sv.k.forEach(function (k) { if (KINDS.indexOf(k) >= 0) show.k[k] = true; });
       sv.c.forEach(function (c) { if (CATS.indexOf(c) >= 0) show.c[c] = true; });
     }
@@ -950,7 +950,7 @@
   }
   // How many choices differ from the default (the badge number).
   function showDiff() {
-    var n = (show.po ? 1 : 0) + (show.un ? 1 : 0) + (shopsOn ? 0 : 1);
+    var n = (show.po ? 1 : 0) + (show.un ? 0 : 1) + (shopsOn ? 0 : 1);
     if (!show.po) KINDS.forEach(function (k) { if (!show.k[k]) n++; });
     CATS.forEach(function (c) { if (!!show.c[c] !== (c === "matcha")) n++; });
     return n;
@@ -967,7 +967,7 @@
       if (only !== undefined && !!it.approx !== only) return false;
       if (!passesShow(e)) return false;
       if (state.only && !state.only[e.id]) return false;
-      // Unsure and with no place at all ("Place not posted yet", "date unconfirmed"): off unless Show > Unconfirmed is on.
+      // Unsure and with no place at all: shown by default (every pop-up shows); Show > Unconfirmed turns them off.
       if (!show.un && unplaced(e)) return false;
       if (e.status === "cancelled") return false;
       if (e.status === "past") {
@@ -1041,6 +1041,7 @@
   // Where distances are measured from: the visitor's place, else the middle of the map.
   function refPoint() { if (state.userLoc) return state.userLoc; var c = map.getCenter(); return [c.lat, c.lng]; }
 
+  var apOpen = {};
   function renderList(stagger) {
     var vis = visibleEvents();
     if (state.apCity) return renderApproxList(vis, stagger);
@@ -1055,25 +1056,26 @@
     var shopsIn = visibleShops().filter(function (it) { return inView(it.ll); });
     shopsIn.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
 
-    // In a metro (a place is set, or zoomed in to a region) the city-only pop-ups gather under one dashed heading per city,
-    // after the placed ones, the same way the map draws one dashed ring per city. Zoomed out they stay in date order.
+    // Every pop-up shows (Steven's rule), shaped so the placed ones lead: the headline counts them all, with the ones
+    // without a place in quiet text; those follow as one collapsed row per city ("3 more in Atlanta, place not posted
+    // yet") that opens on tap. In a metro the cities go nearest first, zoomed out soonest first (N7, on rung 35's groups).
     var html = "", metro = !!state.userLoc || map.getZoom() >= 8;
-    if (metro) {
-      var placed = up.filter(function (it) { return !isCityOnly(it); }).sort(cmp), groups = {}, order = [];
-      up.forEach(function (it) {
-        if (!isCityOnly(it)) return;
-        var k = it.data.city + "|" + it.data.state;
-        if (!groups[k]) { groups[k] = []; order.push(k); }
-        groups[k].push(it);
-      });
-      var ref = refPoint();
-      order.sort(function (a, b) { return miles(ref, groups[a][0].ll) - miles(ref, groups[b][0].ll); });
-      if (placed.length) html += headHTML("Pop-ups", placed.length) + rowsHTML(placed);
-      order.forEach(function (k) {
-        var g = groups[k].sort(byStart);
-        html += headHTML("<span class=\"apl\">Place not posted yet</span> · " + esc(cityLine(g[0].data)), g.length, "ap-head") + rowsHTML(g, true);
-      });
-    } else if (up.length) html += headHTML("Pop-ups", up.length) + rowsHTML(up.sort(cmp));
+    var placed = up.filter(function (it) { return !isCityOnly(it); }).sort(cmp), groups = {}, order = [];
+    up.forEach(function (it) {
+      if (!isCityOnly(it)) return;
+      var k = it.data.city + "|" + it.data.state;
+      if (!groups[k]) { groups[k] = []; order.push(k); }
+      groups[k].push(it);
+    });
+    order.forEach(function (k) { groups[k].sort(byStart); });
+    var ref = refPoint();
+    order.sort(metro ? function (a, b) { return miles(ref, groups[a][0].ll) - miles(ref, groups[b][0].ll); } : function (a, b) { return byStart(groups[a][0], groups[b][0]); });
+    var unplacedN = up.length - placed.length;
+    if (up.length) html += "<li class=\"head\">Pop-ups <span class=\"n\">" + up.length + "</span>" + (unplacedN ? "<span class=\"n-q\"> · " + unplacedN + " without a place yet</span>" : "") + "</li>" + rowsHTML(placed);
+    order.forEach(function (k) {
+      var g = groups[k], open = !!apOpen[k], city = g[0].data.city || "this city";
+      html += "<li class=\"apgroup\"><button type=\"button\" class=\"aprow\" data-ap-open=\"" + esc(k) + "\" aria-expanded=\"" + open + "\"><span class=\"apl\">" + (placed.length ? g.length + " more" : g.length + " pop-up" + (g.length === 1 ? "" : "s")) + " in " + esc(city) + "</span><span class=\"apq\">place not posted yet</span></button></li>" + (open ? rowsHTML(g, true) : "");
+    });
     if (past.length) html += headHTML("Recent") + rowsHTML(past);
     if (brands.length) html += headHTML("Brands, no dates yet") + rowsHTML(brands);
     if (shopsIn.length) {
@@ -1145,6 +1147,8 @@
   }
   $("list").addEventListener("click", function (ev) {
     if (ev.target.closest("[data-clear-ap]")) { state.apCity = ""; renderList(false); return; }
+    var ap = ev.target.closest("[data-ap-open]");
+    if (ap) { var k = ap.getAttribute("data-ap-open"); apOpen[k] = !apOpen[k]; renderList(false); var again = document.querySelector("#list [data-ap-open=\"" + k.replace(/"/g, "") + "\"]"); if (again) again.focus(); return; }
     var b = ev.target.closest("button[data-key]");
     if (b) flyTo(b.getAttribute("data-key"));
   });
@@ -1461,7 +1465,7 @@
   showBtn.addEventListener("click", function () { if (showPop.hidden) openShow(); else closeShow(); });
   // Reset: every kind, matcha only, storefronts on (the defaults).
   $("show-reset").addEventListener("click", function () {
-    show = { po: false, un: false, k: {}, c: { matcha: true } };
+    show = { po: false, un: true, k: {}, c: { matcha: true } };
     KINDS.forEach(function (k) { show.k[k] = true; });
     shopsOn = true;
     try { localStorage.removeItem("matchamap.show2"); localStorage.setItem(SHOPS_KEY, "1"); } catch (e) { /* ignore */ }

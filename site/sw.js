@@ -3,7 +3,7 @@
 // network first and the cache only fills in offline, so a visitor never gets yesterday's style.css under today's index.html
 // (that happened on 2026-11-22 when rung 35 changed the shell under a worker that precached rung 34's). Never caches map
 // tiles or Instagram images.
-var VERSION = "mm-8191c700b5";
+var VERSION = "mm-46082ef858";
 var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE = "mm-lib-maplibre-4.7.1";
 var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/pwa.js",
   "/cities.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",

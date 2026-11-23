@@ -128,7 +128,7 @@ export function eventLd(e, ctx) {
 export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
 // ---- html ----
-const CSP = "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'";
+const CSP = "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'; connect-src 'self'";
 
 // image: a page's own share card (a city card from `npm run weekend`); the site card otherwise.
 export function shell({ title, desc, canonical, ld = [], body, image }) {
@@ -214,6 +214,9 @@ export function cityLead(c, wk, m30) {
 }
 
 // ---- the build ----
+// The calendar feed for a city page: its own when npm run feeds wrote one, else every pop-up.
+const feedOf = (d, c) => { const k = `${c.slug}-${c.state.toLowerCase()}`; return d.cityFeeds && d.cityFeeds.has(k) ? `/feeds/${k}.ics` : "/feeds/all.ics"; };
+
 export function buildSite(d) {
   const nowMs = d.now instanceof Date ? d.now.getTime() : Date.parse(d.now);
   const cities = d.cities;
@@ -309,7 +312,8 @@ export function buildSite(d) {
       }
       body += `</section>\n`;
     } else {
-      body += `<section><h2>Upcoming pop-ups</h2><p>Nothing is posted for ${esc(c.name)} yet. The map lists pop-ups as brands announce them.</p></section>\n`;
+      body += `<section><h2>Upcoming pop-ups</h2><p>Nothing is posted for ${esc(c.name)} yet. The map lists pop-ups as brands announce them.</p>` +
+        `<p><a class="pg-btn" href="/add/">Add your pop-up</a> <a class="pg-btn" href="${feedOf(d, c)}">Calendar feed of every pop-up</a></p></section>\n`;
     }
     const sh = nearShops.get(k) || [];
     if (sh.length) {
@@ -435,6 +439,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     now, generated: ev.generated, events: ev.events,
     cities: read("data/cities.json").cities, sources: read("data/sources.json"),
     shops: read("site/data/shops.json").shops || [],
+    cityFeeds: new Set(fs.existsSync(path.join(root, "site/feeds")) ? fs.readdirSync(path.join(root, "site/feeds")).filter((n) => n.endsWith(".ics")).map((n) => n.slice(0, -4)) : []),
     cityOg: new Set(fs.existsSync(path.join(root, "site/og")) ? fs.readdirSync(path.join(root, "site/og")).filter((n) => /^city-.*.png$/.test(n)).map((n) => n.slice(0, -4)) : []),
     watchlist: fs.existsSync(path.join(root, "data/watchlist.json")) ? read("data/watchlist.json") : { accounts: [] },
   };
