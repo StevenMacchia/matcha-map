@@ -19,7 +19,8 @@
    "city": "Atlanta",
    "state": "GA",
    "source_url": "https://matchacafeatl.com/",
-   "confirmed_via": "own-site"
+   "confirmed_via": "own-site",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
   },
   {
    "tier": "shop",
@@ -38,7 +39,8 @@
    "city": "Charlotte",
    "state": "NC",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nc&target=nc-charlotte",
-   "confirmed_via": "own-site"
+   "confirmed_via": "own-site",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
   },
   {
    "tier": "shop",
@@ -57,7 +59,8 @@
    "city": "Orlando",
    "state": "FL",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=fl&target=fl-millenia",
-   "confirmed_via": "own-site"
+   "confirmed_via": "own-site",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go"
   },
   {
    "tier": "shop",
