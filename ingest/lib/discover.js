@@ -233,6 +233,8 @@ async function main() {
   setVerbose(argv.includes("--verbose"));
   const dry = argv.includes("--dry"), noFetch = argv.includes("--no-fetch");
   const flags = parseFlags(argv);
+  // --dry: the Instagram parts (Brave site:instagram.com searches, Tavily social-search) are planned, not run; the other sites still read.
+  if (dry) flags.off.add("social-search");
   if (flags.only && !NAMES.includes(flags.only)) { console.error(`--only needs one of: ${NAMES.join(", ")}`); process.exit(2); }
   const now = new Date(), env = process.env;
   const fetcher = createFetcher({ noFetch });
@@ -247,7 +249,10 @@ async function main() {
   if (!flags.only) {
     take("inbox mentions", fromInbox());
     take("cache mentions", fromCache());
-    brave = await discoverBrave(env, now, { perRun: 10 });
+    if (dry) {
+      const q = env.BRAVE_API_KEY ? citiesForRun(searchLabels(), now, 10) : [];
+      info(`dry: Instagram parts planned, not run. Graph calls: none (discover never calls Meta; hashtags run in watch). Brave: ${env.BRAVE_API_KEY ? `${q.length} searches this slot (${q.join(", ")})` : "off, no key"}. Tavily social-search: skipped (see data/tavily-budget.json for credits left).`);
+    } else brave = await discoverBrave(env, now, { perRun: 10 });
     take("brave search", brave.candidates); leads.push(...brave.leads);
   }
   let sources = [];

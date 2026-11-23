@@ -2,7 +2,7 @@
 // that is due: past its cadence, or an Instagram account the Graph API has never read.
 // Graph calls per run are capped at HOURLY_LIMIT - 20 (hashtags first, then accounts by priority); accounts past the cap stay
 // due and are not marked checked, and a Meta rate limit ends the Graph reads cleanly.
-// Flags: --all (ignore cadence) | --handle <h> | --dry | --promote | --no-fetch | --verbose
+// Flags: --all (ignore cadence) | --handle <h> | --dry (plan only, no network) | --promote | --no-fetch | --verbose
 // Instagram accounts go through the Graph adapter when the token exists. Otherwise (or as well) the
 // source's own schedule_url is read by its non-Instagram adapter. Events go through the same
 // extractor, geocoder and writer as `npm run ingest`.
@@ -12,7 +12,8 @@ import { createFetcher } from "./lib/fetch.js";
 import { createGeocoder } from "./lib/geocode.js";
 import { processItems, dedupeCandidates, finalize } from "./lib/pipeline.js";
 import { readEvents, writeEvents, passesWatchRule, hasPopupIntent } from "./lib/write.js";
-import { harvest, RUN_CALLS, funnelLine } from "./lib/hashtags.js";
+import { harvest, RUN_CALLS, funnelLine, loadConfig, weekTags, planTags } from "./lib/hashtags.js";
+import { planWatch, formatPlan } from "./lib/plan.js";
 import { hasMatcha } from "./adapters/mato.js";
 import { setVerbose, warn, info } from "./lib/log.js";
 import * as wlib from "./lib/watchlist.js";
@@ -45,6 +46,15 @@ async function main() {
   const sources = JSON.parse(fs.readFileSync("data/sources.json", "utf8"));
   const wl = wlib.load();
   wlib.seedFromSources(sources, wl, now); // new Instagram sources join the list as "watching"
+  if (dry) {
+    // Plan only: reads the local watch list, hashtag config and rate file; no Meta, Tavily or other network call, nothing written.
+    const rate0 = createRate(), cfg = loadConfig();
+    const tags = planTags(cfg, rate0, now);
+    const p = planWatch({ accounts: wl.accounts, now, used: rate0.used(), tags, hashtagCalls: tags.length ? RUN_CALLS : 0, graphOn: true, guessCap: +(env.WATCH_GUESS_CAP ?? 15), all });
+    info(formatPlan(p));
+    info(igOn ? "token: present in the environment" : "token: not in the environment (a real run would skip Graph)");
+    return;
+  }
   const fetcher = createFetcher({ noFetch });
   const geocoder = createGeocoder({ noFetch });
 
