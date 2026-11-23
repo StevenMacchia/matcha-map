@@ -109,7 +109,15 @@
   function setY(y) { sy = y; sheet.style.setProperty("--sy", Math.round(y) + "px"); }
   function measure() {
     var panelH = sheet.parentNode.clientHeight, sh = sheet.offsetHeight;
-    peekY = Math.max(0, sh - Math.round(panelH * 0.52));
+    var show = Math.round(panelH * 0.52);
+    // the event card (cards.js) pins its going strip and buttons to the bottom of the sheet: the half-open sheet still shows
+    // the When and Where boxes above them, counting the going strip even while it waits (hidden) for the API
+    var boxes = body && body.querySelector(".mm-boxes"), dock = body && body.querySelector(".mm-dock");
+    if (boxes && dock) {
+      var go = dock.querySelector(".mm-go[hidden]"), rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      show = Math.max(show, Math.round(boxes.getBoundingClientRect().bottom - sheet.getBoundingClientRect().top + dock.offsetHeight + (go ? 3.25 * rem : 0) + 12));
+    }
+    peekY = Math.max(0, sh - show);
     if (peekY < 48) peekY = 0;
     grip.hidden = peekY === 0;
     return sh;
@@ -191,6 +199,12 @@
     sheet.addEventListener("click", function (ev) { if (swallow) { ev.preventDefault(); ev.stopPropagation(); } }, true);
     body.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", function () { if (!sheet.hidden && !wide.matches) { measure(); setSnap(snap); } });
+    // the card's head can grow after it opens (the Featured pill, the going strip arriving): the half-open snap follows,
+    // so the pinned row never comes to cover When and Where
+    if (typeof ResizeObserver === "function" && typeof MutationObserver === "function") {
+      var ro = new ResizeObserver(function () { if (!sheet.hidden && !wide.matches && !drag) { measure(); if (snap === "peek") setSnap(snap); } });
+      new MutationObserver(function () { ro.disconnect(); var t = body.querySelector(".mm-card .mm-top"), d = body.querySelector(".mm-card .mm-dock"); if (t) ro.observe(t); if (d) ro.observe(d); }).observe(body, { childList: true });
+    }
   }
 
   // ---------- N7: effects, one canvas, only at moments ----------

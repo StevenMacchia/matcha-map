@@ -84,8 +84,6 @@
 .mm-invite:hover { background: var(--foam, #E6F2DC); }
 .mm-invite .mm-i { width: 16px; height: 16px; }
 .mm-go.mm-busy .mm-going { opacity: .6; pointer-events: none; }
-.mm-compact .mm-going { font-size: 13.5px; padding: 6px 12px 6px 9px; }
-.mm-compact .mm-invite { font-size: 13px; }
 
 /* ---- drink chips: stickers ---- */
 .mm-chips { display: flex; flex-wrap: wrap; gap: 10px 8px; }
@@ -196,42 +194,6 @@
 :root[data-theme="dark"] .mm-chip.mm-t0 { background: #DCEBC9; } :root[data-theme="dark"] .mm-chip.mm-t1 { background: #F6CFDA; } :root[data-theme="dark"] .mm-chip.mm-t2 { background: #F4D6BC; }
 :root[data-theme="dark"] .mm-hero-photo { border-color: #2B3D2F; }
 
-/* ---- compact: the desktop map pop-up (.mm-compact, set by cards.js) ---- */
-.mm-card.mm-compact { padding: 0; gap: 10px; }
-.mm-compact .mm-main, .mm-compact .mm-more { gap: 10px; }
-.mm-compact .mm-sec { gap: 6px; }
-.mm-compact .mm-verdict { font-size: 19px; }
-.mm-compact .mm-vwhere { font-size: 13px; }
-.mm-compact .mm-hero, .mm-compact .mm-hero-photo { aspect-ratio: auto; height: 130px; border-radius: 16px; }
-.mm-compact .mm-hero-art { object-position: 50% 35%; }
-.mm-compact .mm-cupbox { width: 64px; height: 76px; }
-.mm-compact .mm-sticker { font-size: 16px; }
-.mm-compact .mm-avatar { width: 40px; height: 40px; }
-.mm-compact .mm-initial { font-size: 17px; }
-.mm-compact .mm-bname { font-size: 17px; }
-.mm-compact .mm-desc { font-size: 14.5px; padding: 0 12px 0 30px; border: solid transparent; border-width: 8px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.mm-compact .mm-chip { font-size: 13.5px; }
-.mm-compact .mm-chip-art, .mm-compact .mm-chip .mm-cup { width: 22px; height: 22px; }
-.mm-compact .mm-facts { display: flex; flex-wrap: nowrap; gap: 6px; }
-.mm-compact .mm-fact { flex: 0 1 auto; min-width: 0; padding: 5px 10px; display: flex; align-items: center; gap: 6px; border-width: 1.5px; }
-.mm-compact .mm-fact dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-.mm-compact .mm-fact dd { font-size: 13px; overflow-wrap: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mm-compact .mm-fact:first-child { flex-shrink: 1; }
-.mm-compact .mm-pname { font-size: 15.5px; }
-.mm-compact .mm-acts { grid-template-columns: repeat(4, 1fr); gap: 4px; position: sticky; bottom: 0; z-index: 2; padding: 14px 0 0; margin-top: -4px; background: linear-gradient(to bottom, rgba(255,253,247,0), var(--panel, #FFFDF6) 12px); }
-:root[data-theme="dark"] .mm-compact .mm-acts { background: linear-gradient(to bottom, rgba(31,43,34,0), var(--panel) 12px); }
-.mm-compact .mm-chip { padding-right: 10px; }
-.mm-compact .mm-act { font-size: 12px; gap: 3px; padding: 2px 0; }
-.mm-compact .mm-act .mm-i { width: 20px; height: 20px; padding: 9px; }
-.mm-compact .mm-h { font-size: 12px; }
-.mm-compact .mm-post { font-size: 13.5px; padding: 3px 11px 3px 3px; }
-.mm-compact .mm-pthumb { width: 32px; height: 32px; }
-.mm-compact .mm-story { padding: 10px 12px; border-radius: 16px; }
-.mm-compact .mm-bio { font-size: 14px; line-height: 1.4; }
-.mm-compact .mm-mini .mm-th { width: 40px; height: 40px; border-radius: 10px; }
-.mm-compact .mm-mini .mm-rn { font-size: 14.5px; }
-.mm-compact .mm-mini .mm-rv, .mm-compact .mm-mini .mm-rp { font-size: 12.5px; }
-.mm-compact .mm-report { font-size: 13px; padding: 4px 10px; }
 
 /* ---- page view: two columns on wide screens ---- */
 @media (min-width: 900px) {
@@ -254,8 +216,136 @@
 .pg-main.pg-card { max-width: 1100px; }
 .pg-card > .mm-card { margin: 4px auto 0; border: 2px solid var(--line, #DCE7D0); box-shadow: var(--shadow, 0 8px 24px rgba(75,52,38,.10)); }
 .pg-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px !important; }
-.mm-compact .mm-desc::before { top: -6px; }
 
 /* Featured pill (site/featured.js): one quiet word next to a name; paid and free look the same. */
 .mm-feat { display: inline-block; flex: none; font-size: 11.5px; font-weight: 800; line-height: 1.4; padding: 1px 8px; margin-left: 6px; border-radius: 999px; background: var(--foam, #E6F2DC); color: var(--deep, #3E6B33); border: 1.5px solid var(--line, #DCE7D0); vertical-align: middle; white-space: nowrap; }
 .mm-rn > .mm-feat { margin-left: 0; }
+
+/* ---- the sheet (.mm-sheet, mock A) and the desktop pop-up (.mm-compact, mock C) ----
+   Facts first: the day pill and time, the name, When and Where boxes, the quote, the menu in one sideways row, then the
+   buttons. Sizes are in rem on the shell's scale (13 / 15 / 17 / 21), so a visitor's larger default font grows the card.
+   The button row is a container: with room, every button has its icon and label; narrower, Calendar and Share drop their
+   icons; narrower still (a 320 px phone at a 20 px font), they keep only the icon and the label stays for screen readers. */
+.mm-sheet, .mm-compact { --mm-r: 14px; --mm-lift: 0 1px 2px rgba(75, 52, 38, .06), 0 4px 14px rgba(75, 52, 38, .06); padding: 0; gap: .875rem; background: none; border-radius: 0; max-width: none; }
+:root[data-theme="dark"] .mm-sheet, :root[data-theme="dark"] .mm-compact { --mm-lift: 0 1px 2px rgba(0, 0, 0, .3); }
+.mm-sheet { max-width: 40rem; margin: 0 auto; }
+.mm-sheet .mm-top, .mm-compact .mm-top { display: flex; flex-direction: column; gap: .25rem; min-width: 0; }
+.mm-dayline { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .5rem; padding-right: 2.5rem; min-height: 1.75rem; }
+.mm-daypill { display: inline-flex; align-items: center; padding: .1875rem .75rem; border-radius: 999px; background: var(--pink, #F6B7C7); color: #3B2228; font-size: .8125rem; font-weight: 800; line-height: 1.3; white-space: nowrap; }
+.mm-v-now .mm-daypill { background: var(--focus, #D9667F); color: #FFFDF7; }
+.mm-v-past .mm-daypill, .mm-v-cancelled .mm-daypill { background: var(--mm-soft); color: var(--muted, #6B5A4F); }
+.mm-daytime { font-size: .9375rem; font-weight: 700; color: var(--ink, #3B2E27); line-height: 1.3; overflow-wrap: anywhere; min-width: 0; }
+.mm-sheet .mm-bname, .mm-compact .mm-bname { font-size: 1.3125rem; line-height: 1.2; color: var(--deep, #3E6B33); overflow-wrap: anywhere; }
+.mm-sheet .mm-bname .mm-feat, .mm-compact .mm-bname .mm-feat { position: relative; top: -.125rem; font-size: .6875rem; }
+.mm-sheet .mm-bmeta, .mm-compact .mm-bmeta { font-size: .8125rem; gap: .25rem .5rem; line-height: 1.35; }
+.mm-sheet .mm-bmeta .mm-kind, .mm-compact .mm-bmeta .mm-kind { font-size: .75rem; padding: 0 .5rem; line-height: 1.5; }
+.mm-sheet .mm-conf, .mm-compact .mm-conf { font-size: .6875rem; padding: .0625rem .5rem; border-width: 1.5px; line-height: 1.4; }
+
+/* When and Where, side by side */
+.mm-boxes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .5rem; margin: 0; }
+.mm-box { display: flex; flex-direction: column; gap: .125rem; min-width: 0; padding: .625rem .75rem .6875rem; border-radius: var(--mm-r); background: var(--canvas, #FBF6EA); border: 1.5px solid var(--line, #DCE7D0); box-shadow: var(--mm-lift); }
+.mm-box dt { font-size: .6875rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--muted, #6B5A4F); line-height: 1.3; }
+.mm-box dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.mm-box-main { font-size: 1.0625rem; font-weight: 800; line-height: 1.25; color: var(--ink, #3B2E27); }
+.mm-box-where .mm-box-main { display: flex; align-items: flex-start; gap: .25rem; }
+.mm-box-where .mm-box-main .mm-i { width: 1rem; height: 1rem; margin-top: .1875rem; color: var(--focus, #D9667F); }
+.mm-box-where .mm-box-main span { min-width: 0; }
+.mm-box-sub { font-size: .8125rem; font-weight: 600; line-height: 1.35; color: var(--muted, #6B5A4F); }
+.mm-box .mm-note { margin-top: .125rem; font-size: .75rem; font-weight: 600; line-height: 1.35; color: var(--muted, #6B5A4F); font-style: italic; }
+
+/* the quote */
+.mm-q { display: flex; flex-direction: column; align-items: flex-start; gap: .125rem; position: relative; padding: .5625rem .875rem .625rem 2rem; border-radius: var(--mm-r); background: var(--mm-soft); min-width: 0; }
+.mm-q::before { content: "“"; position: absolute; left: .625rem; top: .25rem; font-size: 1.875rem; font-weight: 800; line-height: 1; color: var(--pink-edge, #D98CA2); }
+.mm-q-text { font-size: .9375rem; line-height: 1.45; overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; max-width: 100%; }
+.mm-compact .mm-q-text { -webkit-line-clamp: 1; line-clamp: 1; font-size: .875rem; }
+.mm-q-more { align-self: flex-end; font-size: .8125rem; font-weight: 800; line-height: 1.3; color: var(--deep, #3E6B33); }
+
+/* the menu: one row that scrolls sideways, fading at the right edge */
+.mm-sheet .mm-menu, .mm-compact .mm-menu { gap: .375rem; }
+.mm-sheet .mm-menu .mm-h { font-size: .75rem; }
+.mm-compact .mm-menu .mm-h { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.mm-sheet .mm-chips, .mm-compact .mm-chips { flex-wrap: nowrap; gap: .375rem; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; padding: 1px 1.75rem 4px 0; overscroll-behavior-x: contain;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.75rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 1.75rem), transparent); }
+.mm-sheet .mm-chips::-webkit-scrollbar, .mm-compact .mm-chips::-webkit-scrollbar { display: none; }
+.mm-sheet .mm-chip, .mm-compact .mm-chip, .mm-sheet .mm-chip:nth-child(even), .mm-compact .mm-chip:nth-child(even) { flex: none; transform: none; white-space: nowrap; gap: .375rem; padding: .1875rem .75rem .1875rem .1875rem; font-size: .875rem; line-height: 1.3; border-width: 1.5px; box-shadow: 0 2px 0 var(--mm-stk); }
+.mm-sheet .mm-chip-art, .mm-sheet .mm-chip .mm-cup, .mm-compact .mm-chip-art, .mm-compact .mm-chip .mm-cup { width: 1.5rem; height: 1.5rem; }
+
+/* the photo strip */
+.mm-strip, .mm-strip.mm-hero-photo { aspect-ratio: 21 / 8; border-radius: var(--mm-r); border: 0; box-shadow: var(--mm-lift); }
+.mm-strip .mm-hero-img { object-fit: cover; }
+.mm-strip .mm-hero-art { object-position: 50% 40%; }
+.mm-strip .mm-hero-collage { flex-direction: row; }
+.mm-strip .mm-cupbox { width: 3.75rem; height: 4.5rem; }
+.mm-strip .mm-credit { font-size: .6875rem; }
+
+/* the rest of the sheet, as before but on the same scale */
+.mm-sheet .mm-more { gap: .875rem; }
+.mm-sheet .mm-h { font-size: .75rem; }
+.mm-sheet .mm-post { font-size: .875rem; }
+.mm-sheet .mm-bio { font-size: .9375rem; }
+.mm-sheet .mm-smeta, .mm-sheet .mm-slinks a, .mm-sheet .mm-report { font-size: .8125rem; }
+.mm-sheet .mm-mini .mm-rn { font-size: .9375rem; }
+.mm-sheet .mm-mini .mm-rv, .mm-sheet .mm-mini .mm-rp { font-size: .8125rem; }
+.mm-sheet .mm-mini .mm-rn, .mm-sheet .mm-mini .mm-rp { white-space: normal; overflow-wrap: anywhere; }
+.mm-sheet .mm-mini .mm-rname { text-overflow: clip; overflow: visible; }
+.mm-sheet .mm-mini .mm-rn { flex-wrap: wrap; overflow: visible; }
+
+/* the dock: the going strip and the buttons, pinned to the bottom of the sheet; --sy (motion.js) is how far the sheet sits
+   below its full height, so at the half-open snap the dock rides the bottom of the screen, not the hidden bottom of the sheet */
+.mm-dock { display: flex; flex-direction: column; gap: .5rem; min-width: 0; container: mm-dock / inline-size; }
+.mm-sheet .mm-dock { position: sticky; bottom: var(--sy, 0px); z-index: 3; margin-top: -.25rem; padding: .625rem 0 calc(.75rem + env(safe-area-inset-bottom)); background: var(--panel, #FFFDF7); }
+.mm-sheet .mm-dock::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 1.25rem; pointer-events: none; background: linear-gradient(to bottom, color-mix(in srgb, var(--panel, #FFFDF7) 0%, transparent), var(--panel, #FFFDF7)); }
+.mm-compact .mm-dock { border-top: 1.5px solid var(--line, #DCE7D0); }
+.mm-sheet .mm-go, .mm-compact .mm-go { flex-wrap: nowrap; gap: .5rem; min-width: 0; container: mm-go / inline-size; }
+.mm-dock .mm-go[hidden] { display: none; }
+.mm-sheet .mm-going, .mm-compact .mm-going { flex: none; font-size: .875rem; padding: .375rem .875rem .375rem .625rem; border-width: 1.5px; box-shadow: 0 2px 0 var(--mm-stk); white-space: nowrap; }
+.mm-sheet .mm-going .mm-i, .mm-compact .mm-going .mm-i { width: 1.125rem; height: 1.125rem; }
+.mm-sheet .mm-gcount, .mm-compact .mm-gcount { flex: 1 1 auto; min-width: 0; font-size: .8125rem; line-height: 1.25; overflow-wrap: anywhere; }
+.mm-sheet .mm-invite, .mm-compact .mm-invite { flex: none; position: relative; font-size: .8125rem; padding: .375rem .75rem; white-space: nowrap; }
+.mm-sheet .mm-invite .mm-i, .mm-compact .mm-invite .mm-i { width: 1rem; height: 1rem; }
+.mm-dock .mm-acts { display: flex; gap: .5rem; position: static; padding: 0; margin: 0; background: none; }
+.mm-dock .mm-act, .mm-compact .mm-dock .mm-act { position: relative; flex: 1 1 auto; flex-direction: row; justify-content: center; align-items: center; gap: .375rem; min-width: 0; min-height: 2.75rem; padding: .5rem .75rem;
+  border-radius: 999px; border: 1.5px solid var(--edge, #6E9A5E); background: var(--panel, #FFFDF7); color: var(--deep, #3E6B33) !important; font-size: .9375rem; font-weight: 800; line-height: 1.2; white-space: nowrap; text-decoration: none; }
+.mm-dock .mm-act .mm-i, .mm-compact .mm-dock .mm-act .mm-i { box-sizing: border-box; width: 1.125rem; height: 1.125rem; padding: 0; border: 0; border-radius: 0; background: none; color: inherit; }
+.mm-dock .mm-act-go, .mm-compact .mm-dock .mm-act-go { flex: 1.6 1 auto; background: var(--accent, #8CBF7A); border-color: var(--deep, #3E6B33); color: var(--accent-ink, #1F2E1B) !important; box-shadow: 0 2px 0 var(--deep, #3E6B33); }
+.mm-dock .mm-act:hover { background: var(--foam, #E6F2DC); }
+.mm-dock .mm-act-go:hover { background: var(--deep, #3E6B33); color: var(--canvas, #FBF6EA) !important; }
+@container mm-go (max-width: 24rem) {
+  .mm-invite span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .mm-sheet .mm-invite, .mm-compact .mm-invite { padding: .5rem; }
+}
+@container mm-dock (max-width: 21rem) {
+  .mm-dock .mm-act:not(.mm-act-go) .mm-i { display: none; }
+  .mm-dock .mm-act { padding: .5rem .625rem; font-size: .875rem; }
+}
+@container mm-dock (max-width: 17.5rem) {
+  .mm-dock .mm-act:not(.mm-act-go) { flex: none; width: 2.75rem; padding: 0; }
+  .mm-dock .mm-act:not(.mm-act-go) .mm-i { display: block; }
+  .mm-dock .mm-act:not(.mm-act-go) span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+#sheet-body:has(> .mm-sheet) { padding-bottom: 0; }
+
+/* the pop-up: its width is 340 px at the usual font size (motion.css) and grows with a larger one (app.js lets it, maxWidth 26rem);
+   below the buttons, the way to the full page, then the foot */
+.mm-pop .maplibregl-popup-content { width: 21.25rem; }
+.mm-compact { gap: .5rem; }
+.mm-compact .mm-top { gap: .125rem; }
+.mm-compact .mm-bname { font-size: 1.1875rem; }
+.mm-compact .mm-dayline { padding-right: 2.25rem; }
+.mm-compact .mm-boxes { align-items: start; }
+.mm-compact .mm-box { padding: .5rem .625rem .5625rem; }
+.mm-compact .mm-box-main { font-size: .9375rem; }
+.mm-compact .mm-box-sub { font-size: .75rem; }
+.mm-compact .mm-q { padding: .375rem .75rem .375rem 1.75rem; }
+.mm-compact .mm-q::before { left: .5rem; top: .1875rem; font-size: 1.5rem; }
+.mm-compact .mm-dock { padding-top: .625rem; margin-top: .125rem; }
+.mm-compact .mm-foot { justify-content: flex-start; align-items: baseline; gap: .125rem .75rem; margin-top: -.125rem; }
+.mm-compact .mm-foot .mm-report { padding: 0; font-size: .75rem; line-height: 1.4; }
+.mm-compact .mm-foot .mm-report .mm-i { display: none; }
+.mm-full { font-size: .8125rem; font-weight: 700; line-height: 1.4; color: var(--deep, #3E6B33); text-underline-offset: 2px; }
+/* a short window with a large font: the quote steps out of the pop-up first (it is on the full page) so the buttons
+   never scroll; 44.9rem is just under 720 px at the usual 16 px and just under 900 px at 20 px */
+@media (max-height: 44.9rem) { .mm-compact .mm-q { display: none; } }
+
+/* the grip, visible on cream */
+.sheet-grip::before { background: color-mix(in srgb, var(--muted, #6B5A4F) 45%, var(--panel, #FFFDF7)); }
