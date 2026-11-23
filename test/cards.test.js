@@ -60,11 +60,17 @@ test("drink chips: art by slug, by alias and by '<item> matcha', else a cup", ()
 });
 
 test("hero: photo over art, then event art, then drawn, then a drink collage", () => {
-  const photo = cardHtml(ev({ image: { local: "img/events/aaaaaa000001.jpg", url: "https://cdn.example/p.jpg", credit: "@moonbee" } }), { now: NOW, art: ART });
+  // the page keeps the big picture; the phone sheet shows the same layers as a strip (photo over art, no blurred copy)
+  const strip = cardHtml(ev({ image: { local: "img/events/aaaaaa000001.jpg", url: "https://cdn.example/p.jpg", credit: "@moonbee" } }), { now: NOW, art: ART, phone: true });
+  assert.match(strip, /class="mm-strip mm-hero mm-hero-photo"[^]*class="mm-hero-art" src="art\/events\/aaaaaa000001\.svg"[^]*class="mm-hero-img" src="img\/events\/aaaaaa000001\.jpg"/);
+  assert.doesNotMatch(strip, /mm-hero-blur/);
+  assert.match(cardHtml(ev({ id: "bbbbbb000002" }), { now: NOW, phone: true, drawn: { card: (e, o) => `<svg id=${o.mode}></svg>` } }), /mm-hero-drawn"><svg id=strip>/);
+  assert.doesNotMatch(cardHtml(ev(), { now: NOW, phone: false, art: ART }), /mm-hero|mm-strip/, "no photo in the desktop pop-up");
+  const photo = cardHtml(ev({ image: { local: "img/events/aaaaaa000001.jpg", url: "https://cdn.example/p.jpg", credit: "@moonbee" } }), { now: NOW, art: ART, page: true });
   assert.match(photo, /mm-hero-photo[^]*class="mm-hero-art" src="art\/events\/aaaaaa000001\.svg"[^]*class="mm-hero-img" src="img\/events\/aaaaaa000001\.jpg" [^>]*data-remote="https:\/\/cdn\.example\/p\.jpg"/);
-  assert.match(cardHtml(ev(), { now: NOW, art: ART, base: "/" }), /class="mm-hero mm-hero-art"[^]*src="\/art\/events\/aaaaaa000001\.svg"/);
-  assert.match(cardHtml(ev({ id: "bbbbbb000002" }), { now: NOW, art: ART, drawn: { card: () => "<svg id=drawn></svg>" } }), /mm-hero-drawn"><svg id=drawn>/);
-  assert.match(cardHtml(ev({ id: "bbbbbb000002" }), { now: NOW }), /mm-hero-collage[^]*mm-sticker">Moonbee</);
+  assert.match(cardHtml(ev(), { now: NOW, art: ART, base: "/", page: true }), /class="mm-hero mm-hero-art"[^]*src="\/art\/events\/aaaaaa000001\.svg"/);
+  assert.match(cardHtml(ev({ id: "bbbbbb000002" }), { now: NOW, art: ART, page: true, drawn: { card: () => "<svg id=drawn></svg>" } }), /mm-hero-drawn"><svg id=drawn>/);
+  assert.match(cardHtml(ev({ id: "bbbbbb000002" }), { now: NOW, page: true }), /mm-hero-collage[^]*mm-sticker">Moonbee</);
   assert.doesNotMatch(cardHtml(ev({ image_url: "javascript:alert(1)" }), { now: NOW }), /javascript:/);
 });
 
@@ -72,7 +78,7 @@ test("a card with only a date and a city still has every frame", () => {
   const bare = { id: "cccccc000003", start: "2026-12-06T00:00:00-06:00", all_day: true, city: "Brooklyn", state: "NY" };
   const html = cardHtml(bare, { now: NOW });
   const t = text(html);
-  assert.match(t, /^Sun Dec 6 Brooklyn/);
+  assert.match(t, /^Sun Dec 6 Matcha pop-up Date not confirmed When All day Where Brooklyn, NY/); // the sheet: day, name, When and Where
   assert.match(html, /mm-hero-collage/);
   assert.match(t, /Matcha pop-up/);
   assert.match(t, /Date not confirmed/);
@@ -98,8 +104,13 @@ test("facts, confidence, posts and brand story", () => {
   const html = cardHtml(ev({ hours: "10am until sold out", pay: "Cash or Venmo", price: "$6-9", confidence: "likely",
     posts: { instagram: "https://www.instagram.com/p/XYZ/", tiktok: "https://www.tiktok.com/@m/video/1", other: null },
     source_url: "https://www.eventbrite.com/e/1", evidence: ["https://www.instagram.com/p/XYZ/?igsh=1"] }), {
-    now: NOW, brands: { brands: [{ handle: "moonbee.matcha", name: "Moonbee Matcha", bio: "Small-batch matcha from Houston.", followers: 4700, home_city: "Houston", home_state: "TX", picture: "https://cdn.example/a.jpg", recent: [] }] },
+    now: NOW, page: true, brands: { brands: [{ handle: "moonbee.matcha", name: "Moonbee Matcha", bio: "Small-batch matcha from Houston.", followers: 4700, home_city: "Houston", home_state: "TX", picture: "https://cdn.example/a.jpg", recent: [] }] },
   });
+  // the sheet and the pop-up fold the hours into When, and the price into the menu heading
+  const sheet = text(cardHtml(ev({ hours: "10am until sold out", price: "$6-9", menu: ["latte"] }), { now: NOW, phone: true }));
+  assert.match(sheet, /When 1pm to 5pm, until sold out Thu Nov 26/);
+  assert.match(sheet, /On the menu · \$6-9/);
+  assert.match(text(cardHtml(ev({ all_day: true, start: "2026-11-27T00:00:00-06:00", end: null, hours: "until sold out" }), { now: NOW, phone: false })), /When Until sold out Fri Nov 27/);
   const t = text(html);
   assert.match(t, /Hours 10am until sold out/);
   assert.match(t, /Price \$6-9/);
@@ -167,7 +178,8 @@ test("renderCard builds an element through the given document and wires it", () 
 test("description loses markdown markers; list row name sits in its own ellipsis span", () => {
   const html = cardHtml(ev({ description: "**Event Details** ***menu*** `x`" }), { now: NOW });
   assert.ok(!html.includes("**"));
-  assert.match(html, /<p class="mm-desc">Event Details menu x<\/p>/);
+  assert.match(html, /<p class="mm-q-text">Event Details menu x<\/p>/);
+  assert.match(cardHtml(ev({ description: "**Event Details** ***menu*** `x`" }), { now: NOW, page: true }), /<p class="mm-desc">Event Details menu x<\/p>/);
   assert.match(rowHtml(ev(), { now: NOW }), /<span class="mm-rname">Moonbee<\/span>/);
 });
 

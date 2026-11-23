@@ -989,7 +989,7 @@
       if (window.MatchaRsvp) window.MatchaRsvp.hydrate(box);
       if (window.MatchaFeatured) window.MatchaFeatured.paint(box);
       box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
-      popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "380px", focusAfterOpen: false, className: "mm-pop",
+      popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "26rem", focusAfterOpen: false, className: "mm-pop",
         anchor: "bottom", offset: it.kind === "e" ? [0, -50] : it.kind === "s" ? [0, -18] : [NUDGE, NUDGE - 12] })
         .setLngLat(lngLat(it.ll)).setDOMContent(box).addTo(map);
       // Keep the whole card on screen: nudge the map down when the card would run off the top.

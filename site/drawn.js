@@ -58,7 +58,7 @@
   function build(e, o) {
     var mode = o.mode || "card", h = hash(e.brand), v = h % 3, P = VARS[v];
     var uid = "dc" + h.toString(36) + mode.charAt(0);
-    var small = mode === "brand" || mode === "shop", W = 640, H = small ? 240 : 400;
+    var small = mode === "brand" || mode === "shop" || mode === "strip", W = 640, H = mode === "strip" ? 244 : small ? 240 : 400;
     var bg = "class=\"dc-bg\" fill=\"" + P.bg + "\"", blob = "class=\"dc-blob\" fill=\"" + P.blob + "\"";
     var ink = "class=\"dc-ink\" fill=\"#3B2E27\"", mut = "class=\"dc-mut\" fill=\"#6B5A4F\"";
     var pose = e.kind === "organizer" ? "m-whisk" : (h % 2 ? "m-excited" : "m-happy");
@@ -93,6 +93,16 @@
     } else if (mode === "brand") {
       s += "<text x=\"38\" y=\"150\" font-size=\"24\" font-weight=\"700\" " + ink + ">No dates posted here yet</text>";
       s += "<text x=\"38\" y=\"186\" font-size=\"21\" font-weight=\"700\" " + mut + ">" + esc(fit([e.home_city, e.home_state].filter(Boolean).join(", "), 21, maxW)) + "</text>";
+    } else if (mode === "strip") {
+      // the photo strip on the phone card: the name and one row of menu pills; the day and place are already above it
+      var sItems = (Array.isArray(e.menu) ? e.menu : []).slice(0, 3), sx = 38;
+      for (i = 0; i < sItems.length; i++) {
+        var st = fit(sItems[i], 19, 200), sw = Math.round(tw(st, 19) * 0.92 + 30);
+        if (sx + sw > 430) break;
+        s += "<rect x=\"" + sx + "\" y=\"" + (lines.length > 1 ? 150 : 128) + "\" width=\"" + sw + "\" height=\"36\" rx=\"18\" stroke-width=\"2.5\" class=\"dc-pillr\" fill=\"#FFFBF0\" stroke=\"" + P.edge + "\"/>" +
+          "<text x=\"" + (sx + sw / 2) + "\" y=\"" + ((lines.length > 1 ? 150 : 128) + 25) + "\" font-size=\"19\" font-weight=\"800\" text-anchor=\"middle\" " + ink + ">" + esc(st) + "</text>";
+        sx += sw + 10;
+      }
     } else {
       if (o.when) s += "<text x=\"38\" y=\"182\" font-size=\"26\" font-weight=\"800\" " + ink + ">" + esc(fit(o.when, 26, maxW)) + "</text>";
       if (e.venue) s += "<text x=\"38\" y=\"214\" font-size=\"21\" font-weight=\"700\" " + ink + ">" + esc(fit(e.venue, 21, maxW)) + "</text>";
@@ -114,7 +124,8 @@
     return s + "<rect x=\"3\" y=\"3\" width=\"" + (W - 6) + "\" height=\"" + (H - 6) + "\" rx=\"26\" fill=\"none\" stroke-width=\"5\" stroke=\"#4B3426\" class=\"dc-line\"/></svg>";
   }
 
-  // drawnCard(event, opts): opts.mode "card" (16:10, default), "thumb" (square crop), "brand" (no dates);
+  // drawnCard(event, opts): opts.mode "card" (16:10, default), "thumb" (square crop), "brand" (no dates),
+  // "strip" (21:8, the name and menu pills, for the phone card's photo strip);
   // opts.when is the venue-local day and time line the page already computes.
   function drawnCard(e, opts) {
     opts = opts || {};
