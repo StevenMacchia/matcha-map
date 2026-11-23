@@ -8,6 +8,7 @@ import { SITE_ORDER } from "./sites/common.js";
 import { PLACEHOLDER_VENUE, tidyCity } from "./names.js";
 import { judge, hasSignal } from "./quality.js";
 import { displayName } from "./names.js";
+import { findCity } from "./cities.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 const DAY = 86400000;
@@ -205,8 +206,23 @@ export function mergeEvents(existing, candidates, { now = new Date(), liveSource
   return { events: out, decay: newDecay, stats };
 }
 
+// An event drawn at its city's centre (approx, geocode_source "none") follows that centre when the city file moves it
+// (San Francisco's Census point was 44 miles out to sea until tools/gen-cities.js gave it a land point).
+export function snapApprox(events, lookup = findCity) {
+  let moved = 0;
+  const out = events.map((e) => {
+    if (!(e.approx && e.geocode_source === "none" && e.city && e.state)) return e;
+    const c = lookup(e.city, e.state);
+    if (!c || (Math.abs(c.lat - e.lat) < 0.0005 && Math.abs(c.lng - e.lng) < 0.0005)) return e;
+    moved++;
+    return { ...e, lat: c.lat, lng: c.lng };
+  });
+  return { events: out, moved };
+}
+
 // Write data/events.json and copy to site/data/events.json.
 export function writeEvents(events, { now = new Date(), dataPath = "data/events.json", sitePath = "site/data/events.json" } = {}) {
+  events = snapApprox(events).events;
   const body = JSON.stringify({ generated: new Date(now).toISOString(), events }, null, 2) + "\n";
   for (const p of [dataPath, sitePath]) {
     fs.mkdirSync(path.dirname(p), { recursive: true });

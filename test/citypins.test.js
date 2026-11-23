@@ -47,9 +47,11 @@ test("fixture: the pin sits on the biggest city's own centre, counts add up and 
 });
 
 test("a Census centre far from the city's own pop-ups is not used (San Francisco's is 44 miles out to sea)", () => {
-  const sf = CITIES["San Francisco|CA"];
-  assert.ok(sf[1] < -122.8, "the data still has the ocean centre this guards against");
-  const pins = CP.cityPins([item("d1", "San Francisco", "CA", 37.78, -122.42), item("d2", "San Francisco", "CA", 37.76, -122.44)], 6, CITIES);
+  // The city file now carries a land point for San Francisco (tools/gen-cities.js LAND_POINTS), so the ocean centre is put back here
+  // to keep testing the sidestep; the data itself must stay on land.
+  assert.ok(CITIES["San Francisco|CA"][1] > -122.8, "data/cities.json San Francisco should be on land now: " + CITIES["San Francisco|CA"]);
+  const SEA = { ...CITIES, "San Francisco|CA": [37.7272, -123.0322] };
+  const pins = CP.cityPins([item("d1", "San Francisco", "CA", 37.78, -122.42), item("d2", "San Francisco", "CA", 37.76, -122.44)], 6, SEA);
   assert.equal(pins.length, 1);
   assert.ok(Math.abs(pins[0].ll[1] - -122.43) < 0.02, "the pin is on the pop-ups, not at sea: " + pins[0].ll);
   // a city with no centre on file also uses its own pop-ups (arrays come from the vm realm, so compare by value)
