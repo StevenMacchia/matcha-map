@@ -7,7 +7,7 @@ import "./lib/env.js";
 import fs from "node:fs";
 import { createFetcher } from "./lib/fetch.js";
 import { crawlCities, resolveCityNames } from "./lib/cities.js";
-import { createProviders, confirmCandidate } from "./lib/shops/providers.js";
+import { createProviders, confirmCandidate, knownSites, nameKey } from "./lib/shops/providers.js";
 import { info, warn } from "./lib/log.js";
 
 const CURSOR = ".cache/keyed-cursor.json";
@@ -25,10 +25,14 @@ export async function run({ argv = process.argv.slice(2), env = process.env, htt
   const start = exact ? 0 : cursor.next % all.length;
   const batch = exact || Array.from({ length: Math.min(limit, all.length) }, (_, i) => all[(start + i) % all.length]);
   const prov = createProviders({ env, http });
+  const shopsNow = readJson("data/shops.json", { shops: [] }).shops;
+  const known = knownSites(readJson("data/sources.json", []), shopsNow);
+  const have = (c) => shopsNow.some((s) => nameKey(s.name) === nameKey(c.name) && Math.abs((s.lat ?? 0) - (c.lat ?? 99)) < 0.002 && Math.abs((s.lng ?? 0) - (c.lng ?? 999)) < 0.002);
+  const leads = {};
   const providers = ["yelp", "foursquare"].filter((p) => (!only || only === p));
   const summary = {};
   for (const p of providers) {
-    summary[p] = { cities: 0, candidates: 0, core: 0, serves: 0, held: {}, off: !prov.enabled(p) };
+    summary[p] = { cities: 0, candidates: 0, core: 0, serves: 0, onMap: 0, held: {}, off: !prov.enabled(p), calls: 0 };
     if (!prov.enabled(p)) { info(`${p}: off (no key in .env)`); continue; }
     const file = out(p);
     const prev = readJson(file, { shops: [] }).shops;
@@ -39,8 +43,10 @@ export async function run({ argv = process.argv.slice(2), env = process.env, htt
       summary[p].cities++;
       for (const c of res.candidates) {
         summary[p].candidates++;
+        if (have(c)) { summary[p].onMap++; continue; }
+        if (!c.website && known.get(nameKey(c.name))) c.website = known.get(nameKey(c.name));
         const r = await confirmCandidate(c, (u) => fetcher.get(u));
-        if (r.held) { summary[p].held[r.held] = (summary[p].held[r.held] || 0) + 1; continue; }
+        if (r.held) { summary[p].held[r.held] = (summary[p].held[r.held] || 0) + 1; (leads[p] ||= []).push({ provider: p, provider_id: c.provider_id, name: c.name, address: c.address, city: c.city, state: c.state, zip: c.zip, phone: c.phone, categories: c.categories, hint: c.hint, why: r.held }); continue; }
         rows.set(String(c.provider_id), r.row);
         summary[p][r.row.tier === "serves" ? "serves" : "core"]++;
       }
@@ -51,7 +57,10 @@ export async function run({ argv = process.argv.slice(2), env = process.env, htt
   }
   if (!dry && !exact) fs.mkdirSync(".cache", { recursive: true }), fs.writeFileSync(CURSOR, JSON.stringify({ next: (start + batch.length) % all.length }));
   prov.save();
-  for (const [p, s] of Object.entries(summary)) info(`${p}: ${s.off ? "off" : `${s.cities} cities, ${s.candidates} candidates, ${s.core} core and ${s.serves} serves rows confirmed on their own sites; held ${JSON.stringify(s.held)}`}`);
+  for (const p of providers) summary[p].calls = prov.used(p);
+  // Leads (unconfirmed candidates) stay in the gitignored cache, 24 hours, for a worker to confirm by name.
+  if (!dry) for (const [p, list] of Object.entries(leads)) { fs.mkdirSync(".cache", { recursive: true }); const f = `.cache/keyed-leads-${p}.json`; const old = readJson(f, { at: 0, leads: [] }); const keep = Date.now() - old.at < 86400000 ? old.leads.filter((x) => !list.some((y) => y.provider_id === x.provider_id)) : []; fs.writeFileSync(f, JSON.stringify({ at: Date.now(), leads: [...keep, ...list] })); }
+  for (const [p, s] of Object.entries(summary)) info(`${p}: ${s.off ? "off" : `${s.cities} cities, ${s.calls} calls today, ${s.onMap} already on the map, ${s.candidates} candidates, ${s.core} core and ${s.serves} serves rows confirmed on their own sites; held ${JSON.stringify(s.held)}`}`);
   return summary;
 }
 

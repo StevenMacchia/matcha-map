@@ -19,7 +19,7 @@ export const YELP_BASE = "https://api.yelp.com/v3/businesses/search";
 export const FSQ_BASE = "https://places-api.foursquare.com/places/search";
 export const FSQ_VERSION = "2025-06-17";
 export const ATTRIBUTION = { yelp: "Places found with Yelp Fusion", foursquare: "Places found with Foursquare" };
-export const DAILY_CAP = { yelp: 400, foursquare: 300 };
+export const DAILY_CAP = { yelp: 290, foursquare: 300 }; // Yelp Base plan: 5,000 calls a month, 300 a day
 const TTL_MS = 24 * 3600 * 1000;
 const CACHE = ".cache/keyed-places.json";
 
@@ -41,6 +41,16 @@ export function parseFoursquare(json) {
     phone: p.tel || null, website: /^https?:/i.test(p.website || "") ? p.website : null, instagram: p.social_media?.instagram || null,
     categories: (p.categories || []).map((c) => String(c.name || "").toLowerCase()),
   }));
+}
+
+// A candidate with no website borrows one only from our own records (a source or shop with the same name), never from the provider.
+export const nameKey = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, " ").trim();
+export function knownSites(sources = [], shops = []) {
+  const m = new Map();
+  const add = (name, url) => { const k = nameKey(name); if (!k || !/^https?:/i.test(url || "") || /instagram|facebook|linktr|tiktok/i.test(url)) return; m.set(k, m.has(k) && m.get(k) !== url ? null : url); };
+  for (const s of sources) add(s.brand, s.website);
+  for (const s of shops) add(s.name, s.website);
+  return m;
 }
 
 // ---- the core versus serves test (names and categories only; the shop's own site decides) -----------------------------------------------
