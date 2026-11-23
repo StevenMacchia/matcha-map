@@ -259,11 +259,38 @@
     rec.marker = new maplibregl.Marker({ element: el, anchor: "center", offset: src === "br" ? [NUDGE, NUDGE] : [0, 0] }).setLngLat(f.geometry.coordinates);
     if (src === "ev") el.style.zIndex = "3";
     if (src === "sh") el.style.zIndex = "1";
+    rec.snap = function () { snapCluster(src, rec, f.properties.cluster_id); };
+    rec.snap();
     entrance(rec, "pop");
     return rec;
   }
+  // MapLibre places a cluster at the mean of its points, which zoomed out is often open water or empty country between
+  // cities (Florida's cluster in the Gulf, the Southeast's in rural Alabama). Move it onto the place inside it that holds
+  // the most points: leaves are grouped on a 0.05 degree grid (about 5 km, one town), the biggest group wins, and the
+  // marker goes to that group's own centre. Leaves are read once per cluster id; the ids change with the zoom anyway.
+  var snapCache = {};
+  function snapCluster(src, rec, cid) {
+    var source = map.getSource(src), k = src + cid;
+    if (!source || !source.getClusterLeaves) return;
+    var done = function (ll) { if (rec.marker && live[src + "c" + cid] === rec) rec.marker.setLngLat(ll); };
+    if (snapCache[k]) return done(snapCache[k]);
+    Promise.resolve(source.getClusterLeaves(cid, 400, 0)).then(function (leaves) {
+      var cells = {}, best = null;
+      (leaves || []).forEach(function (l) {
+        var c = l.geometry.coordinates, key = Math.round(c[0] / 0.05) + "," + Math.round(c[1] / 0.05);
+        var cell = cells[key] || (cells[key] = { n: 0, x: 0, y: 0 });
+        cell.n++; cell.x += c[0]; cell.y += c[1];
+        if (!best || cell.n > best.n) best = cell;
+      });
+      if (!best) return;
+      snapCache[k] = [best.x / best.n, best.y / best.n];
+      done(snapCache[k]);
+    }).catch(function () { /* keep MapLibre's position */ });
+  }
+  map.on("sourcedata", function (e) { if (e.isSourceLoaded && e.sourceDataType !== "metadata") snapCache = {}; });
   function setCount(rec, n, first) {
     rec.count = n;
+    if (!first && rec.snap) rec.snap();
     rec.num.textContent = n;
     rec.label = n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : rec.el.classList.contains("cl-sh") ? " shops" : " brands") + " here, zoom in";
     rec.el.setAttribute("aria-label", rec.label);
