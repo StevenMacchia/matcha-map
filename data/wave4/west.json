@@ -189,6 +189,44 @@
       "notes": "Oakland Vietnamese coffee and matcha pop-up; manila ube matcha $7.5, banana matcha, strawberry einspanner matcha, signature coffee $7. Pops up at markets (Renegade West Oakland; a Thursday Dec 10 stop mentioned with the venue cut off). Evidence: https://www.instagram.com/reel/DfaWa1oimCO and https://www.instagram.com/reel/DfQPpzpSxya.",
       "added": "2026-11-23",
       "verified": null
+    },
+    {
+      "id": "makers-mart-sacramento",
+      "brand": "Makers Mart",
+      "kind": "organizer",
+      "category": "matcha",
+      "kind_note": "Market organizer that books matcha vendors.",
+      "home_city": "Sacramento",
+      "home_state": "CA",
+      "website": "https://sacmakersmart.com/events",
+      "instagram": null,
+      "tiktok": null,
+      "schedule_url": "https://sacmakersmart.com/events",
+      "schedule_kind": "manual",
+      "adapter": "manual",
+      "active": true,
+      "notes": "Annual Sacramento holiday craft fair (Dec 12, 2026, 11am-5pm, Scottish Rite Masonic Center, 6151 H St). 70+ artisans; Matte Matcha Bar and Mellobun listed as drink and pastry vendors. Evidence: https://happeningnext.com/event/makers-mart-eid3a0e9ju34n",
+      "added": "2026-11-23",
+      "verified": null
+    },
+    {
+      "id": "bloom-market-hey-daisy",
+      "brand": "Bloom Market (Hey Daisy Studio)",
+      "kind": "organizer",
+      "category": "matcha",
+      "kind_note": "Market organizer that books matcha vendors.",
+      "home_city": "Sacramento",
+      "home_state": "CA",
+      "website": "https://ma.to/venue/heydaisystudio",
+      "instagram": null,
+      "tiktok": null,
+      "schedule_url": "https://ma.to/venue/heydaisystudio",
+      "schedule_kind": "manual",
+      "adapter": "manual",
+      "active": true,
+      "notes": "Recurring Curtis Park market at Hey Daisy Studio, 3444 24th St, Sacramento; MATO says matcha and coffee are part of it (Jul 12 and Aug 2 editions, 9am-1pm). Matcha vendor not named. Holly Jolly Holiday Market there Sun Dec 6, 10am-2pm, vendors unlisted. Evidence: https://ma.to/event/bloom-market-02-aug-2026",
+      "added": "2026-11-23",
+      "verified": null
     }
   ]
 }

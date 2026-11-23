@@ -261,3 +261,9 @@ Details and the one-time setup commands are in `docs/INTAKE.md`.
 - **Shareable event pages.** `npm run event-pages` writes `site/e/<event-id>/index.html` with its own title, preview image and Event JSON-LD, redirecting to `/?event=<id>`. Both feeds and event pages run at the end of `npm run ingest`. `sitemap.xml` is written by `tools/gen-pages.js`, so the event pages are not listed there yet.
 - **Other forms.** `/report/?event=<id>`, `/claim/?brand=<id>`, `/alerts/` (no double opt-in yet, nothing mails the list), plus `/privacy/` and `/data-deletion/` (put your email in place of `STEVEN_EMAIL_HERE`). Analytics notes: `docs/ANALYTICS.md`. Meta App Review checklist: `docs/META-APP-REVIEW.md`.
 - **Daily job.** `.github/workflows/daily.yml` (09:17 UTC): discover, art if present, ingest, feeds, event pages, commit, then deploy to Cloudflare Pages when the secrets exist. Secrets to add in GitHub: `INSTAGRAM_TOKEN`, `INSTAGRAM_BUSINESS_ID`, `TAVILY_API_KEY`, `YELP_API_KEY`, `CLAUDE_API_KEY`, `INTAKE_URL`, `INTAKE_TOKEN`, `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
+
+## Install it
+
+Matcha Map is one site that also installs: open it in Chrome, Edge or Android and use "Add to home screen" (About, or the quiet bar on a second visit); on iPhone, Safari's Share sheet then Add to Home Screen. Nothing separate to download. Offline it opens the saved shell and the last data, with a note saying when that was.
+
+Service worker (`site/sw.js`): the shell files are cached, `data/*.json` and `img/events/*` are stale-while-revalidate, pages are network-first, map tiles and Instagram images are never stored. The shell files are not fingerprinted, so **bump `VERSION` in `site/sw.js` whenever one of them changes** (and add new shell files to its `SHELL` list); activate drops older caches and visitors see "New version, tap to refresh". Icons come from `npm run icons`.

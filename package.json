@@ -28,6 +28,7 @@
     "weekend": "node tools/gen-weekend.js",
     "brand-extras": "node tools/gen-brand-extras.js",
     "sitemap-extras": "node tools/gen-sitemap-extras.js",
+    "icons": "node tools/gen-icons.js",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev",
     "search": "node tools/search.js",

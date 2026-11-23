@@ -1,0 +1,384 @@
+{
+  "generated": "2026-11-23T03:57:36.603Z",
+  "group": "west",
+  "items": [
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "Matte Matcha Bar",
+      "handle": null,
+      "source_id": "mellobun-matte-matcha",
+      "title": "Matte Matcha Bar at Makers Mart holiday craft fair",
+      "start": "2026-12-12T11:00:00-08:00",
+      "end": "2026-12-12T17:00:00-08:00",
+      "venue": "Scottish Rite Masonic Center (Makers Mart)",
+      "address": "6151 H Street, Sacramento, CA 95819",
+      "city": "Sacramento",
+      "source_url": "https://happeningnext.com/event/makers-mart-eid3a0e9ju34n",
+      "posts": [],
+      "evidence": [
+        "https://happeningnext.com/event/makers-mart-eid3a0e9ju34n",
+        "https://www.thecraftmap.com/fair/makers-mart-holiday-craft-fair-sacramento-ca",
+        "https://sacramento.downtowngrid.com/events/makers-mart-a-holiday-craft-fair-scottish-rite/"
+      ],
+      "menu": [
+        "specialty matcha drinks"
+      ],
+      "price": null,
+      "hours": "Market 11am-5pm",
+      "pay": null,
+      "description": "Sacramento's holiday craft fair with 70+ artisans, a DJ and a raffle. Matte Matcha Bar, the mobile matcha cafe, serves specialty matcha drinks alongside Mellobun's pastries. Admission is a $5 suggested donation and parking is free.",
+      "image_url": "https://graph.facebook.com/sacmakersmart/picture?height=512",
+      "confidence": "confirmed",
+      "notes": "happeningnext page names Matte Matcha Bar and Mellobun as vendors with date, 11-5 and street address. Single third-party listing (organizer has not claimed it); two other listings confirm date and address but do not list vendors, so recheck sacmakersmart.com/events."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "Latte Syndrome",
+      "handle": "latte_syndrome",
+      "source_id": "latte-syndrome",
+      "title": "Latte Syndrome matcha and Vietnamese coffee pop-up at Me Va Con",
+      "start": "2026-12-03T10:00:00-08:00",
+      "end": "2026-12-03T16:00:00-08:00",
+      "venue": "Me Va Con Vietnamese Kitchen (sidewalk pop-up)",
+      "address": "6101 Telegraph Ave, Oakland, CA 94609",
+      "city": "Oakland",
+      "source_url": "https://www.instagram.com/latte.syndrome",
+      "posts": [
+        "https://www.instagram.com/reel/Df58ZjwIItv",
+        "https://www.instagram.com/reel/DfaWa1oimCO"
+      ],
+      "evidence": [
+        "https://www.instagram.com/latte.syndrome",
+        "https://www.instagram.com/reel/Df58ZjwIItv",
+        "https://www.instagram.com/reel/DfaWa1oimCO",
+        "https://eastbayexpress.com/?p=492962"
+      ],
+      "menu": [
+        "strawberry matcha einspanner",
+        "banana matcha",
+        "caramelized banana matcha",
+        "manila ube",
+        "vietnamese coffee"
+      ],
+      "price": "$7-8",
+      "hours": "10am-4pm",
+      "pay": null,
+      "description": "A Vietnamese-owned matcha and coffee pop-up that sets up in front of Me Va Con on Telegraph Avenue. Reviewers recommend the banana matcha and the strawberry einspanner, about $8 each.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from Instagram profile snippet: sets up in front of Me Va Con on Thursdays 10am-4pm. Address of Me Va Con from East Bay Express and listings, not from the brand. Reviewer says to check the page for where they pop up next; Nov 26 (Thanksgiving), Dec 24 and Dec 31 left out as unlikely. An earlier sweep's 'Dec 10, Porter Ranch' snippet is an unrelated LA post."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "Latte Syndrome",
+      "handle": "latte_syndrome",
+      "source_id": "latte-syndrome",
+      "title": "Latte Syndrome matcha and Vietnamese coffee pop-up at Me Va Con",
+      "start": "2026-12-10T10:00:00-08:00",
+      "end": "2026-12-10T16:00:00-08:00",
+      "venue": "Me Va Con Vietnamese Kitchen (sidewalk pop-up)",
+      "address": "6101 Telegraph Ave, Oakland, CA 94609",
+      "city": "Oakland",
+      "source_url": "https://www.instagram.com/latte.syndrome",
+      "posts": [
+        "https://www.instagram.com/reel/Df58ZjwIItv",
+        "https://www.instagram.com/reel/DfaWa1oimCO"
+      ],
+      "evidence": [
+        "https://www.instagram.com/latte.syndrome",
+        "https://www.instagram.com/reel/Df58ZjwIItv",
+        "https://www.instagram.com/reel/DfaWa1oimCO",
+        "https://eastbayexpress.com/?p=492962"
+      ],
+      "menu": [
+        "strawberry matcha einspanner",
+        "banana matcha",
+        "caramelized banana matcha",
+        "manila ube",
+        "vietnamese coffee"
+      ],
+      "price": "$7-8",
+      "hours": "10am-4pm",
+      "pay": null,
+      "description": "A Vietnamese-owned matcha and coffee pop-up that sets up in front of Me Va Con on Telegraph Avenue. Reviewers recommend the banana matcha and the strawberry einspanner, about $8 each.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from Instagram profile snippet: sets up in front of Me Va Con on Thursdays 10am-4pm. Address of Me Va Con from East Bay Express and listings, not from the brand. Reviewer says to check the page for where they pop up next; Nov 26 (Thanksgiving), Dec 24 and Dec 31 left out as unlikely. An earlier sweep's 'Dec 10, Porter Ranch' snippet is an unrelated LA post."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "Latte Syndrome",
+      "handle": "latte_syndrome",
+      "source_id": "latte-syndrome",
+      "title": "Latte Syndrome matcha and Vietnamese coffee pop-up at Me Va Con",
+      "start": "2026-12-17T10:00:00-08:00",
+      "end": "2026-12-17T16:00:00-08:00",
+      "venue": "Me Va Con Vietnamese Kitchen (sidewalk pop-up)",
+      "address": "6101 Telegraph Ave, Oakland, CA 94609",
+      "city": "Oakland",
+      "source_url": "https://www.instagram.com/latte.syndrome",
+      "posts": [
+        "https://www.instagram.com/reel/Df58ZjwIItv",
+        "https://www.instagram.com/reel/DfaWa1oimCO"
+      ],
+      "evidence": [
+        "https://www.instagram.com/latte.syndrome",
+        "https://www.instagram.com/reel/Df58ZjwIItv",
+        "https://www.instagram.com/reel/DfaWa1oimCO",
+        "https://eastbayexpress.com/?p=492962"
+      ],
+      "menu": [
+        "strawberry matcha einspanner",
+        "banana matcha",
+        "caramelized banana matcha",
+        "manila ube",
+        "vietnamese coffee"
+      ],
+      "price": "$7-8",
+      "hours": "10am-4pm",
+      "pay": null,
+      "description": "A Vietnamese-owned matcha and coffee pop-up that sets up in front of Me Va Con on Telegraph Avenue. Reviewers recommend the banana matcha and the strawberry einspanner, about $8 each.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from Instagram profile snippet: sets up in front of Me Va Con on Thursdays 10am-4pm. Address of Me Va Con from East Bay Express and listings, not from the brand. Reviewer says to check the page for where they pop up next; Nov 26 (Thanksgiving), Dec 24 and Dec 31 left out as unlikely. An earlier sweep's 'Dec 10, Porter Ranch' snippet is an unrelated LA post."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "For the Love of Matcha",
+      "handle": "fortheloveofmatchacafe",
+      "source_id": "for-the-love-of-matcha",
+      "title": "For the Love of Matcha at Grand Lake Farmers Market",
+      "start": "2026-11-28T09:00:00-08:00",
+      "end": "2026-11-28T14:00:00-08:00",
+      "venue": "Splash Pad Park",
+      "address": "746 Grand Ave, Oakland, CA 94610",
+      "city": "Oakland",
+      "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+      "posts": [
+        "https://www.instagram.com/reel/Dfvi65thyaz"
+      ],
+      "evidence": [
+        "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+        "https://joe.coffee/locations/ca/oakland/for-the-love-of-matcha-oakland/",
+        "https://www.instagram.com/reel/Dfvi65thyaz",
+        "https://www.agriculturalinstitute.org/grand-lake"
+      ],
+      "menu": [
+        "matcha latte",
+        "sweet potato matcha"
+      ],
+      "price": null,
+      "hours": "Sat 9am-2pm, closes once sold out",
+      "pay": null,
+      "description": "A weekly matcha pop-up at the Grand Lake Farmers Market in Oakland that closes once it sells out, so go early. Seasonal specials such as sweet potato matcha rotate in.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from KQED (weekly pop-up at Grand Lake and Temescal markets, sells out), a Joe Coffee listing (Sat 9-2, Sun 9-1, Splash Pad Park 746 Grand Ave), and the brand's Nov 14 reel (Temescal market 9am-1pm). Neither market's vendor directory names the brand online; Grand Lake closes Dec 26. Earlier sweep had the Temescal dates as unsure."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "For the Love of Matcha",
+      "handle": "fortheloveofmatchacafe",
+      "source_id": "for-the-love-of-matcha",
+      "title": "For the Love of Matcha at Grand Lake Farmers Market",
+      "start": "2026-12-05T09:00:00-08:00",
+      "end": "2026-12-05T14:00:00-08:00",
+      "venue": "Splash Pad Park",
+      "address": "746 Grand Ave, Oakland, CA 94610",
+      "city": "Oakland",
+      "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+      "posts": [
+        "https://www.instagram.com/reel/Dfvi65thyaz"
+      ],
+      "evidence": [
+        "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+        "https://joe.coffee/locations/ca/oakland/for-the-love-of-matcha-oakland/",
+        "https://www.instagram.com/reel/Dfvi65thyaz",
+        "https://www.agriculturalinstitute.org/grand-lake"
+      ],
+      "menu": [
+        "matcha latte",
+        "sweet potato matcha"
+      ],
+      "price": null,
+      "hours": "Sat 9am-2pm, closes once sold out",
+      "pay": null,
+      "description": "A weekly matcha pop-up at the Grand Lake Farmers Market in Oakland that closes once it sells out, so go early. Seasonal specials such as sweet potato matcha rotate in.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from KQED (weekly pop-up at Grand Lake and Temescal markets, sells out), a Joe Coffee listing (Sat 9-2, Sun 9-1, Splash Pad Park 746 Grand Ave), and the brand's Nov 14 reel (Temescal market 9am-1pm). Neither market's vendor directory names the brand online; Grand Lake closes Dec 26. Earlier sweep had the Temescal dates as unsure."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "For the Love of Matcha",
+      "handle": "fortheloveofmatchacafe",
+      "source_id": "for-the-love-of-matcha",
+      "title": "For the Love of Matcha at Grand Lake Farmers Market",
+      "start": "2026-12-12T09:00:00-08:00",
+      "end": "2026-12-12T14:00:00-08:00",
+      "venue": "Splash Pad Park",
+      "address": "746 Grand Ave, Oakland, CA 94610",
+      "city": "Oakland",
+      "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+      "posts": [
+        "https://www.instagram.com/reel/Dfvi65thyaz"
+      ],
+      "evidence": [
+        "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+        "https://joe.coffee/locations/ca/oakland/for-the-love-of-matcha-oakland/",
+        "https://www.instagram.com/reel/Dfvi65thyaz",
+        "https://www.agriculturalinstitute.org/grand-lake"
+      ],
+      "menu": [
+        "matcha latte",
+        "sweet potato matcha"
+      ],
+      "price": null,
+      "hours": "Sat 9am-2pm, closes once sold out",
+      "pay": null,
+      "description": "A weekly matcha pop-up at the Grand Lake Farmers Market in Oakland that closes once it sells out, so go early. Seasonal specials such as sweet potato matcha rotate in.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from KQED (weekly pop-up at Grand Lake and Temescal markets, sells out), a Joe Coffee listing (Sat 9-2, Sun 9-1, Splash Pad Park 746 Grand Ave), and the brand's Nov 14 reel (Temescal market 9am-1pm). Neither market's vendor directory names the brand online; Grand Lake closes Dec 26. Earlier sweep had the Temescal dates as unsure."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "For the Love of Matcha",
+      "handle": "fortheloveofmatchacafe",
+      "source_id": "for-the-love-of-matcha",
+      "title": "For the Love of Matcha at Temescal Farmers Market",
+      "start": "2026-11-29T09:00:00-08:00",
+      "end": "2026-11-29T13:00:00-08:00",
+      "venue": "Temescal Farmers Market (DMV parking lot)",
+      "address": "5300 Claremont Ave, Oakland, CA 94618",
+      "city": "Oakland",
+      "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+      "posts": [
+        "https://www.instagram.com/reel/Dfvi65thyaz"
+      ],
+      "evidence": [
+        "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+        "https://joe.coffee/locations/ca/oakland/for-the-love-of-matcha-oakland/",
+        "https://www.instagram.com/reel/Dfvi65thyaz",
+        "https://www.agriculturalinstitute.org/grand-lake"
+      ],
+      "menu": [
+        "matcha latte",
+        "sweet potato matcha"
+      ],
+      "price": null,
+      "hours": "Sun 9am-1pm, closes once sold out",
+      "pay": null,
+      "description": "A weekly matcha pop-up at the Temescal Farmers Market in Oakland that closes once it sells out, so go early. Seasonal specials such as sweet potato matcha rotate in.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from KQED (weekly pop-up at Grand Lake and Temescal markets, sells out), a Joe Coffee listing (Sat 9-2, Sun 9-1, Splash Pad Park 746 Grand Ave), and the brand's Nov 14 reel (Temescal market 9am-1pm). Neither market's vendor directory names the brand online; Grand Lake closes Dec 26. Earlier sweep had the Temescal dates as unsure."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "For the Love of Matcha",
+      "handle": "fortheloveofmatchacafe",
+      "source_id": "for-the-love-of-matcha",
+      "title": "For the Love of Matcha at Temescal Farmers Market",
+      "start": "2026-12-06T09:00:00-08:00",
+      "end": "2026-12-06T13:00:00-08:00",
+      "venue": "Temescal Farmers Market (DMV parking lot)",
+      "address": "5300 Claremont Ave, Oakland, CA 94618",
+      "city": "Oakland",
+      "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+      "posts": [
+        "https://www.instagram.com/reel/Dfvi65thyaz"
+      ],
+      "evidence": [
+        "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+        "https://joe.coffee/locations/ca/oakland/for-the-love-of-matcha-oakland/",
+        "https://www.instagram.com/reel/Dfvi65thyaz",
+        "https://www.agriculturalinstitute.org/grand-lake"
+      ],
+      "menu": [
+        "matcha latte",
+        "sweet potato matcha"
+      ],
+      "price": null,
+      "hours": "Sun 9am-1pm, closes once sold out",
+      "pay": null,
+      "description": "A weekly matcha pop-up at the Temescal Farmers Market in Oakland that closes once it sells out, so go early. Seasonal specials such as sweet potato matcha rotate in.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from KQED (weekly pop-up at Grand Lake and Temescal markets, sells out), a Joe Coffee listing (Sat 9-2, Sun 9-1, Splash Pad Park 746 Grand Ave), and the brand's Nov 14 reel (Temescal market 9am-1pm). Neither market's vendor directory names the brand online; Grand Lake closes Dec 26. Earlier sweep had the Temescal dates as unsure."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "state": "CA",
+      "brand": "For the Love of Matcha",
+      "handle": "fortheloveofmatchacafe",
+      "source_id": "for-the-love-of-matcha",
+      "title": "For the Love of Matcha at Temescal Farmers Market",
+      "start": "2026-12-13T09:00:00-08:00",
+      "end": "2026-12-13T13:00:00-08:00",
+      "venue": "Temescal Farmers Market (DMV parking lot)",
+      "address": "5300 Claremont Ave, Oakland, CA 94618",
+      "city": "Oakland",
+      "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+      "posts": [
+        "https://www.instagram.com/reel/Dfvi65thyaz"
+      ],
+      "evidence": [
+        "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+        "https://joe.coffee/locations/ca/oakland/for-the-love-of-matcha-oakland/",
+        "https://www.instagram.com/reel/Dfvi65thyaz",
+        "https://www.agriculturalinstitute.org/grand-lake"
+      ],
+      "menu": [
+        "matcha latte",
+        "sweet potato matcha"
+      ],
+      "price": null,
+      "hours": "Sun 9am-1pm, closes once sold out",
+      "pay": null,
+      "description": "A weekly matcha pop-up at the Temescal Farmers Market in Oakland that closes once it sells out, so go early. Seasonal specials such as sweet potato matcha rotate in.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Weekly schedule from KQED (weekly pop-up at Grand Lake and Temescal markets, sells out), a Joe Coffee listing (Sat 9-2, Sun 9-1, Splash Pad Park 746 Grand Ave), and the brand's Nov 14 reel (Temescal market 9am-1pm). Neither market's vendor directory names the brand online; Grand Lake closes Dec 26. Earlier sweep had the Temescal dates as unsure."
+    }
+  ]
+}

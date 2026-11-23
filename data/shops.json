@@ -1,26 +1,7 @@
 {
- "generated": "2026-11-22T20:30:14.907Z",
+ "generated": "2026-11-23T01:04:15.505Z",
  "attribution": "© OpenStreetMap contributors, ODbL",
  "shops": [
-  {
-   "id": "osm:node/13159184974",
-   "name": "Nana's Green Tea",
-   "lat": 36.062632,
-   "lng": -115.261683,
-   "address": "6925 South Buffalo Drive",
-   "city": null,
-   "state": null,
-   "zip": null,
-   "website": "https://nanasgreentealasvegas.com/",
-   "instagram": null,
-   "phone": null,
-   "opening_hours": "Mo-Su 11:00-22:00",
-   "cuisine": "tea",
-   "source": "osm",
-   "osm_url": "https://www.openstreetmap.org/node/13159184974",
-   "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
-  },
   {
    "id": "brand:labora",
    "brand_id": "labora",
@@ -40,7 +21,7 @@
    "verified": true,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-22T20:30:14.907Z"
+   "fetched": "2026-11-23T01:04:15.505Z"
   },
   {
    "id": "osm:node/11007004668",
@@ -343,7 +324,7 @@
    "cuisine": "coffee_shop",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/6006320286",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -381,6 +362,25 @@
    "cuisine": "tea",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/14121437619",
+   "fetched": "2026-11-22T20:30:14.907Z",
+   "verified": true
+  },
+  {
+   "id": "osm:node/13159184974",
+   "name": "Nana's Green Tea",
+   "lat": 36.062632,
+   "lng": -115.261683,
+   "address": "6925 South Buffalo Drive",
+   "city": null,
+   "state": "NV",
+   "zip": null,
+   "website": "https://nanasgreentealasvegas.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": "Mo-Su 11:00-22:00",
+   "cuisine": "tea",
+   "source": "osm",
+   "osm_url": "https://www.openstreetmap.org/node/13159184974",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true
   },
@@ -438,7 +438,7 @@
    "cuisine": null,
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/12739827416",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -457,7 +457,7 @@
    "cuisine": "coffee_shop;japanese",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/2549948620",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -476,7 +476,7 @@
    "cuisine": null,
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/2555136029",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -495,7 +495,7 @@
    "cuisine": null,
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/way/1149319923",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -514,7 +514,7 @@
    "cuisine": "tea",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/2268954021",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -533,26 +533,7 @@
    "cuisine": "coffee_shop",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/10756703060",
-   "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
-  },
-  {
-   "id": "osm:node/5403602691",
-   "name": "Matcha House",
-   "lat": 40.729679,
-   "lng": -73.986319,
-   "address": "203 East 10th Street",
-   "city": "New York",
-   "state": "NY",
-   "zip": "10003",
-   "website": "https://www.matchahousenyc.com/",
-   "instagram": null,
-   "phone": null,
-   "opening_hours": "Mo 09:00-18:00; Tu-Fr 08:00-18:00; Sa 09:00-18:00; Su off",
-   "cuisine": "matcha",
-   "source": "osm",
-   "osm_url": "https://www.openstreetmap.org/node/5403602691",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -571,7 +552,7 @@
    "cuisine": null,
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/4629752125",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -590,27 +571,8 @@
    "cuisine": "tea;teahouse;donut;cookie",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/6550407925",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
-  },
-  {
-   "id": "osm:node/14277211201",
-   "name": "Matchaful",
-   "lat": 40.719484,
-   "lng": -73.958365,
-   "address": "92 Berry Street",
-   "city": null,
-   "state": "NY",
-   "zip": null,
-   "website": null,
-   "instagram": null,
-   "phone": null,
-   "opening_hours": null,
-   "cuisine": "tea",
-   "source": "osm",
-   "osm_url": "https://www.openstreetmap.org/node/14277211201",
-   "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": false
   },
   {
    "id": "osm:node/11860537157",
@@ -628,7 +590,7 @@
    "cuisine": "japanese;tea;ice_cream;cake",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/11860537157",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -647,7 +609,7 @@
    "cuisine": "pastry;japanese",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/6916463756",
-   "fetched": "2026-11-22T20:30:14.907Z",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {
@@ -669,7 +631,7 @@
    "verified": true,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-22T20:30:14.907Z"
+   "fetched": "2026-11-23T01:04:15.505Z"
   },
   {
    "id": "osm:node/6377702634",
@@ -764,6 +726,44 @@
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/9659344789",
    "fetched": "2026-11-22T20:30:14.907Z",
+   "verified": true
+  },
+  {
+   "id": "osm:node/11629630569",
+   "name": "Matcha Panda",
+   "lat": 39.95537,
+   "lng": -75.154497,
+   "address": "202 North 9th Street",
+   "city": "Philadelphia",
+   "state": "PA",
+   "zip": "19107-1813",
+   "website": "https://matchapanda.com/",
+   "instagram": null,
+   "phone": "+1-215-352-3335",
+   "opening_hours": null,
+   "cuisine": "bubble_tea;cake;ice_cream",
+   "source": "osm",
+   "osm_url": "https://www.openstreetmap.org/node/11629630569",
+   "fetched": "2026-11-23T01:04:15.505Z",
+   "verified": true
+  },
+  {
+   "id": "osm:node/13608358235",
+   "name": "Matcha Panda",
+   "lat": 39.95232,
+   "lng": -75.174681,
+   "address": "2033 Chestnut Street",
+   "city": "Philadelphia",
+   "state": "PA",
+   "zip": "19103",
+   "website": "https://www.matchapanda.com/",
+   "instagram": null,
+   "phone": "+1-215-717-8358",
+   "opening_hours": null,
+   "cuisine": "coffee_shop",
+   "source": "osm",
+   "osm_url": "https://www.openstreetmap.org/node/13608358235",
+   "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true
   },
   {

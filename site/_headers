@@ -11,6 +11,12 @@
   Cache-Control: no-cache
 /robots.txt
   Cache-Control: no-cache
+/sw.js
+  Cache-Control: no-cache
+/manifest.webmanifest
+  Cache-Control: no-cache
+/icons/*
+  Cache-Control: public, max-age=86400
 /data/*
   Cache-Control: public, max-age=600
 /img/*
