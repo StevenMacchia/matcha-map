@@ -14,6 +14,8 @@
 //   - the sheet, which opens half way (motion.js), covers When and Where with its pinned row or has the row off screen there.
 // The sheet is measured at both snaps: half open (the button row and the boxes), then full (everything). A sticky box (the
 // pinned row) is meant to ride over what scrolls under it, so it is not counted as overlapping its siblings.
+// The brand card is one more fixture ("brand menu", ?brand=<handle>): the same checks on .mm-brand, less the pinned
+// button row and the half-open When and Where (it has neither), plus its Menu section must be there.
 // Prints a table, saves a screenshot of every failing case to qa/cards/2026-11-23/fail/, exits 1 on any failure.
 // Flags: --reduced (the smoke's matrix), --url <base> (a running server instead of tools/serve.js), --only <fixture,...>,
 // --widths 320,390. Exports runCardGate(cdp, base, opts) for tools/smoke.js. No dependencies (Node 22+ WebSocket).
@@ -28,7 +30,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FAIL_DIR = path.join(ROOT, "qa", "cards", "2026-11-23", "fail");
 const HEIGHT = { 320: 568, 360: 740, 390: 844, 430: 932, 768: 1024, 1024: 768, 1280: 720, 1440: 900, 1920: 1080 };
 export const FULL = { widths: [320, 360, 390, 430, 768, 1024, 1280, 1440, 1920], fixtures: null };
-export const REDUCED = { widths: [320, 390, 1024, 1440], fixtures: ["longest brand", "city only", "no photo", "unsure"] };
+export const REDUCED = { widths: [320, 390, 1024, 1440], fixtures: ["longest brand", "city only", "no photo", "unsure", "brand menu"] };
 // Cut on purpose, and only here: the quote (two lines in the sheet, one in the popup); the whole text is on /e/<id>/,
 // one tap away through "more" or "Full details and photo".
 export const ALLOW = [".mm-q-text"];
@@ -37,6 +39,20 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // ---- fixtures ----------------------------------------------------------------------------------------------------
 const upcoming = (e, now) => e && e.id && e.status !== "past" && e.status !== "cancelled" &&
   (Date.parse(e.end || e.start) + (e.all_day || !e.end ? 864e5 : 0)) > now && typeof e.lat === "number";
+// The brand card (design rung 5): the brand with the longest menu lines (data/menus.json, matched on its website host),
+// opened through ?brand=<handle>. Only brands without dates are brand pins, so only those count.
+const hostOf = (u) => { const m = /^https?:\/\/(?:www\.)?([^/?#:]+)/i.exec(u || ""); return m ? m[1].toLowerCase() : ""; };
+export function pickBrandFixture(sources, menus, events, now = Date.now()) {
+  const map = (menus && menus.menus) || {}, dated = new Set(events.filter((e) => upcoming(e, now)).map((e) => e.source_id));
+  const lineLen = (m) => Math.max(0, ...m.items.map((x) => [x.name, x.price, x.note].map((v) => String(v || "")).join("").length));
+  let best = null, bl = -1;
+  for (const s of sources || []) {
+    const m = map[hostOf(s.website)], h = String(s.instagram || "").replace(/^@/, "").toLowerCase();
+    if (!m || !Array.isArray(m.items) || !m.items.length || !h || s.active === false || dated.has(s.id)) continue;
+    if (lineLen(m) > bl) { bl = lineLen(m); best = { s, h }; }
+  }
+  return { name: "brand menu", kind: "brand", id: best ? best.h : null, label: best ? `${best.s.brand} (?brand=${best.h}, ${hostOf(best.s.website)})` : "none in the data" };
+}
 export function pickFixtures(events, brands, now = Date.now()) {
   const up = events.filter((e) => upcoming(e, now));
   const by = (f) => up.slice().sort((a, b) => f(b) - f(a))[0];
@@ -58,11 +74,11 @@ export function pickFixtures(events, brands, now = Date.now()) {
 }
 
 // ---- the checker, run in the page --------------------------------------------------------------------------------
-const CHECK = (allow) => `(() => {
-  const allow = ${JSON.stringify(allow)}, out = [], vw = innerWidth, vh = innerHeight, T = 1;
-  const phone = !document.querySelector(".mm-pop .maplibregl-popup-content .mm-card");
+const CHECK = (allow, card = ".mm-card") => `(() => {
+  const allow = ${JSON.stringify(allow)}, card = ${JSON.stringify(card)}, out = [], vw = innerWidth, vh = innerHeight, T = 1;
+  const phone = !document.querySelector(".mm-pop .maplibregl-popup-content " + card);
   const root = phone ? document.getElementById("sheet-body") : document.querySelector(".mm-pop .maplibregl-popup-content");
-  if (!root || !root.querySelector(".mm-card")) return { error: "no card" };
+  if (!root || !root.querySelector(card)) return { error: "no card" };
   const cs = (el) => getComputedStyle(el);
   const name = (el) => el.tagName.toLowerCase() + (el.id ? "#" + el.id : "") + (typeof el.className === "string" && el.className.trim() ? "." + el.className.trim().split(/\\s+/).slice(0, 2).join(".") : "");
   const scrolls = (el, ax) => { const s = cs(el), o = ax === "x" ? s.overflowX : s.overflowY;
@@ -105,9 +121,10 @@ const CHECK = (allow) => `(() => {
       if (w > T && h > T) fail(kids[j], "overlaps " + name(kids[i]) + " by " + Math.round(w) + "x" + Math.round(h));
     }
   }
-  // the button row, on screen without scrolling
+  // the button row, on screen without scrolling (the event card; the brand card has no pinned row, its links end it)
   const acts = root.querySelector(".mm-dock .mm-acts");
-  if (!acts) out.push("no button row (.mm-dock .mm-acts)");
+  if (card !== ".mm-card") { if (!root.querySelector(card + " .mm-menu-sec")) out.push("brand card has no Menu section"); }
+  else if (!acts) out.push("no button row (.mm-dock .mm-acts)");
   else {
     const a = acts.getBoundingClientRect();
     let box = { left: 0, top: 0, right: vw, bottom: vh };
@@ -134,7 +151,7 @@ const PEEK = `(() => { const out = [], vh = innerHeight, vw = innerWidth, d = do
   return out; })()`;
 const SNAP = (want) => `(() => { const sh = document.getElementById("sheet"), g = document.querySelector(".sheet-grip"); if (!sh || !g || g.hidden) return "full";
   const now = sh.classList.contains("peek") ? "peek" : "full"; if (now !== "${want}") g.click(); return sh.classList.contains("peek") ? "peek" : "full"; })()`;
-const READY = `(() => { const c = document.querySelector("#sheet:not([hidden]) #sheet-body .mm-card, .mm-pop .maplibregl-popup-content .mm-card"); return !!c; })()`;
+const READY = (card) => `(() => { const c = document.querySelector("#sheet:not([hidden]) #sheet-body ${card}, .mm-pop .maplibregl-popup-content ${card}"); return !!c; })()`;
 
 // cdp: { send(method, params, sessionId) }; base: http origin; opts: { reduced, only, widths, log, events, brands }
 export async function runCardGate(cdp, base, opts = {}) {
@@ -142,14 +159,16 @@ export async function runCardGate(cdp, base, opts = {}) {
   const events = opts.events || JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", "events.json"), "utf8")).events;
   const brands = opts.brands || JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", "brands.json"), "utf8")).brands;
   const M = opts.reduced ? REDUCED : FULL;
-  let fixtures = pickFixtures(events, brands);
+  const src = opts.sources || JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", "sources.json"), "utf8"));
+  const menus = opts.menus || JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", "menus.json"), "utf8"));
+  let fixtures = [...pickFixtures(events, brands), pickBrandFixture(Array.isArray(src) ? src : src.sources, menus, events)];
   const skipped = fixtures.filter((f) => !f.id);
   fixtures = fixtures.filter((f) => f.id && (!M.fixtures || M.fixtures.includes(f.name)) && (!opts.only || opts.only.includes(f.name)));
   for (const f of fixtures) log(`  fixture ${f.name.padEnd(20)} ${f.label}`);
   for (const f of skipped) log(`  fixture ${f.name.padEnd(20)} skipped: ${f.label}`);
   const widths = opts.widths || M.widths, rows = [];
   for (const f of fixtures) for (const w of widths) for (const font of [16, 20]) {
-    const h = HEIGHT[w] || 900;
+    const h = HEIGHT[w] || 900, brand = f.kind === "brand", card = brand ? ".mm-brand" : ".mm-card";
     const { targetId } = await cdp.send("Target.createTarget", { url: "about:blank" });
     const { sessionId: sid } = await cdp.send("Target.attachToTarget", { targetId, flatten: true });
     const s = (m, p) => cdp.send(m, p, sid);
@@ -159,9 +178,9 @@ export async function runCardGate(cdp, base, opts = {}) {
       await s("Emulation.setDeviceMetricsOverride", { width: w, height: h, deviceScaleFactor: 1, mobile: w < 500 });
       await s("Page.setFontSizes", { fontSizes: { standard: font, fixed: font === 16 ? 13 : 20 } });
       await s("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem("matchamap.theme","light");localStorage.setItem("mm.seen","1")}catch(e){}` });
-      await s("Page.navigate", { url: `${base}/?event=${f.id}&motion=reduce` });
+      await s("Page.navigate", { url: `${base}/?${brand ? "brand" : "event"}=${encodeURIComponent(f.id)}&motion=reduce` });
       let ok = false;
-      for (const end = Date.now() + 20000; Date.now() < end;) { await sleep(250); try { if (await ev(READY)) { ok = true; break; } } catch { /* navigating */ } }
+      for (const end = Date.now() + 20000; Date.now() < end;) { await sleep(250); try { if (await ev(READY(card))) { ok = true; break; } } catch { /* navigating */ } }
       if (ok) { await ev(`document.fonts ? document.fonts.ready.then(() => 1) : 1`); await sleep(700); }
       for (const [theme, feat] of [["light", false], ["dark", false], ["light", true]]) {
         const row = { fixture: f.name, w, theme: theme + (feat ? "+featured" : ""), font, fails: [] };
@@ -169,8 +188,8 @@ export async function runCardGate(cdp, base, opts = {}) {
         else {
           await ev(SET_THEME(theme)); await ev(FORCE_GOING); if (feat) await ev(ADD_FEATURED);
           await ev(FRAMES);
-          if (w < 900) { if ((await ev(SNAP("peek"))) === "peek") { await ev(FRAMES); row.fails.push(...((await ev(PEEK)) || [])); } await ev(SNAP("full")); await ev(FRAMES); }
-          const r = await ev(CHECK(ALLOW));
+          if (w < 900) { if ((await ev(SNAP("peek"))) === "peek" && !brand) { await ev(FRAMES); row.fails.push(...((await ev(PEEK)) || [])); } await ev(SNAP("full")); await ev(FRAMES); }
+          const r = await ev(CHECK(ALLOW, card));
           if (!r || r.error) row.fails.push((r && r.error) || "checker did not run"); else row.fails.push(...r.fails);
         }
         if (row.fails.length) {

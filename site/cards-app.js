@@ -8,13 +8,13 @@
 // app does not need to call anything after it sets innerHTML. Set window.MatchaCards.open = function (key) {...} to
 // open an also-nearby pop-up in place (key "e:<id>"); without it the link is a normal deep link (?event=<id>).
 import { cardHtml, rowHtml, brandCardHtml, wire, fitQuotes } from "./cards.js";
-import { shopCardHtml } from "./shopcard.js"; // the storefront card ("s:<id>")
+import { shopCardHtml, menuForBrand } from "./shopcard.js"; // the storefront card ("s:<id>"); the brand card's menu
 
-const data = { art: null, brands: null, sources: null, places: null };
+const data = { art: null, brands: null, sources: null, places: null, menus: null };
 let pages = null; // data/pages.json: which city and brand pages exist (written by npm run pages)
 const get = (u) => fetch(u).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-const ready = Promise.all([get("art/index.json"), get("data/brands.json"), get("data/sources.json"), get("data/places.json"), get("data/pages.json")])
-  .then(([art, brands, sources, places, idx]) => { Object.assign(data, { art, brands, sources, places }); pages = idx && Array.isArray(idx.cities) ? { cities: idx.cities, brands: new Set(idx.brands || []) } : null; });
+const ready = Promise.all([get("art/index.json"), get("data/brands.json"), get("data/sources.json"), get("data/places.json"), get("data/pages.json"), get("data/menus.json")])
+  .then(([art, brands, sources, places, idx, menus]) => { Object.assign(data, { art, brands, sources, places, menus }); pages = idx && Array.isArray(idx.cities) ? { cities: idx.cities, brands: new Set(idx.brands || []) } : null; });
 
 // "More in <city>" and the brand name link only to a page that exists, by the same rules as tools/gen-pages.js: the city
 // page by name and state, else the nearest one in the state within 25 km; the brand page by handle.
@@ -92,3 +92,14 @@ document.addEventListener("click", (ev) => {
   const open = window.MatchaCards && window.MatchaCards.open;
   if (id && typeof open === "function" && document.querySelector("#sheet:not([hidden]) #sheet-body > .ecard, .mm-pop .maplibregl-popup-content .ecard")) open("e:" + id);
 })();
+// A brand card opened before data/menus.json landed (a shared ?brand= link) has no Menu section; seen by the card gate on
+// 2026-11-23. Once the data is in, open it again when its brand has a menu.
+ready.then(() => {
+  if (typeof document.querySelector !== "function") return;
+  const el = document.querySelector("#sheet:not([hidden]) #sheet-body .mm-brand[data-handle], .mm-pop .maplibregl-popup-content .mm-brand[data-handle]");
+  const open = window.MatchaCards && window.MatchaCards.open;
+  if (!el || el.querySelector(".mm-menu-sec") || typeof open !== "function") return;
+  const h = el.getAttribute("data-handle"), list = Array.isArray(data.sources) ? data.sources : [];
+  const s = list.find((x) => x && String(x.instagram || "").replace(/^@/, "").toLowerCase() === h);
+  if (s && s.id && menuForBrand(s, data.menus)) open("b:" + s.id);
+});

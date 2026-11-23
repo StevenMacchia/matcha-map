@@ -166,6 +166,22 @@ test("brand card: next date, coming up, or no dates", () => {
   assert.match(text(brandCardHtml(b, [], { now: NOW })), /^No dates posted yet/);
 });
 
+test("brand card: the menu from data/menus.json after the dates, only when the website host has one", async () => {
+  const menus = JSON.parse((await import("node:fs")).readFileSync(new URL("../site/data/menus.json", import.meta.url), "utf8"));
+  const host = Object.keys(menus.menus).find((h) => menus.menus[h].items.length > 8);
+  const m = menus.menus[host];
+  const b = { handle: "moonbee.matcha", brand: "Moonbee", kind: "popup", home_city: "Houston", home_state: "TX", website: "https://www." + host + "/" };
+  const html = brandCardHtml(b, [ev({ start: "2026-11-27T10:00:00-06:00", end: null })], { now: NOW, menus });
+  assert.match(html, /<section class="mm-sec mm-menu-sec" aria-label="Menu">/);
+  assert.equal((html.match(/class="mm-menu-item"/g) || []).length, 8, "eight lines");
+  assert.ok(html.indexOf("Coming up") < html.indexOf("mm-menu-sec") && html.indexOf("mm-menu-sec") < html.indexOf("class=\"mm-acts\""), "after the dates, before the links");
+  assert.match(text(html), new RegExp("See the full menu From " + host.replace(/./g, "\.") + ", read "));
+  if (m.items[0].price) assert.ok(text(html).includes(m.items[0].price.trim()), "the price as written");
+  const none = brandCardHtml({ ...b, website: "https://no-menu.example/" }, [], { now: NOW, menus });
+  assert.doesNotMatch(none, /mm-menu/, "no menu, no section");
+  assert.doesNotMatch(brandCardHtml(b, [], { now: NOW }), /mm-menu/, "menus.json absent");
+});
+
 test("renderCard builds an element through the given document and wires it", () => {
   const made = [];
   const fake = { createElement: () => { const el = { set innerHTML(h) { this.html = h; }, get firstElementChild() { const c = { html: this.html, listeners: [], addEventListener(t) { this.listeners.push(t); } }; made.push(c); return c; } }; return el; } };

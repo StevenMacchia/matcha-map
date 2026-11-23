@@ -24,6 +24,8 @@
 //
 // Dates are venue-local ISO strings with an offset; day and time are read from the string, never converted.
 
+import { menuSectionHtml, menuForBrand } from "./shopcard.js"; // the brand card's Menu section, the same as the shop card's
+
 const KIND = { popup: "pop-up", cafe: "cafe", organizer: "class", festival: "festival", venue: "host", "tea-brand": "tea brand" };
 export const CONFIDENCE = {
   confirmed: ["Confirmed", "Date, time and address come straight from the host."],
@@ -533,6 +535,7 @@ export function rowHtml(e, ctx = {}) {
 // ---- the brand card ------------------------------------------------------------------------------------------
 // brand: a brands.json record ({handle, name, picture, bio, followers, website, home_city, home_state, kind, recent}) or a
 // sources.json record ({brand, instagram, tiktok, website, home_city, home_state, kind}); events: that brand's events.
+// ctx.menus (data/menus.json): the brand's menu shows after its dates when its website host has one.
 export function brandCardHtml(brand, events = [], ctx = {}) {
   brand = brand || {};
   const h = String(brand.handle || brand.instagram || "").replace(/^@/, "").toLowerCase();
@@ -558,6 +561,7 @@ export function brandCardHtml(brand, events = [], ctx = {}) {
     (stats.length ? `<p class="mm-stats">${stats.map((s) => `<span>${s}</span>`).join("")}</p>` : "") +
     (b && b.bio ? `<p class="mm-bio">${esc(cut(b.bio, 240))}</p>` : "") +
     (up.length ? `<section class="mm-sec"><h4 class="mm-h">Coming up</h4><ul class="mm-nlist">${up.slice(0, 5).map((e) => `<li>${rowHtml(e, { ...ctx, rowTag: "a", mini: true })}</li>`).join("")}</ul></section>` : "") +
+    menuSectionHtml(menuForBrand({ website: web }, ctx.menus), ctx) +
     (recent.length ? `<section class="mm-sec"><h4 class="mm-h">Latest posts</h4><div class="mm-grid">${recent.map((r) => `<a href="${esc(r.permalink)}" target="_blank" rel="noopener" aria-label="${esc(cut(r.caption || "Recent post", 80))}"><img src="${esc(r.image_url)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>`).join("")}</div></section>` : "") +
     (links.length ? `<div class="mm-acts">${links.join("")}</div>` : "") + `</article>`;
 }
