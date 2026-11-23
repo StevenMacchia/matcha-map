@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T03:24:22.563Z",
+  "generated": "2026-11-23T03:28:11.622Z",
   "group": "southeast",
   "items": [
     {
@@ -386,6 +386,77 @@
       "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
       "confidence": "unsure",
       "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+    },
+    {
+      "brand": "Ceremony",
+      "handle": "ceremony.brand",
+      "source_id": "ceremony-nashville",
+      "tz": "America/Chicago",
+      "state": "TN",
+      "city": "Nashville",
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "end": "2026-11-25T20:00:00-06:00",
+      "menu": [
+        "hand-whisked matcha latte",
+        "samples of multiple Ceremony drinks"
+      ],
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "title": "Ceremony matcha class (ticketed)",
+      "start": "2026-11-25T18:00:00-06:00",
+      "venue": null,
+      "address": "370 Herron Dr, Suite 8, Nashville, TN",
+      "price": "$65 per person",
+      "source_url": "https://www.instagram.com/p/Dficb2kpIf_",
+      "posts": [
+        "https://www.instagram.com/p/Dficb2kpIf_",
+        "https://www.instagram.com/p/Dfz-7iSlMT1"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Dficb2kpIf_",
+        "https://www.instagram.com/p/Dfz-7iSlMT1"
+      ],
+      "description": "A two-hour hands-on matcha class with Ceremony: learn traditional preparation, make your own, and taste several Ceremony drinks. The ticket covers one handcrafted latte.",
+      "confidence": "likely",
+      "notes": "kind: class (ticketed, not walk-in). Snippet quotes: 'Join us Wednesday, November 25th, from 6-8 PM for a matcha class experience with Ceremony!' ... '370 Herron Dr, Suite 8, Nashville, TN'; ticket $65 includes a hands-on matcha-making experience, one handcrafted latte, samples. Post is by a host venue whose name the snippet does not show. Year inferred from posts dated Nov 2026."
+    },
+    {
+      "brand": "Ceremony",
+      "handle": "ceremony.brand",
+      "source_id": "ceremony-nashville",
+      "tz": "America/Chicago",
+      "state": "TN",
+      "city": "Nashville",
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "end": "2026-12-08T20:00:00-06:00",
+      "menu": [
+        "matcha, prepared by hand"
+      ],
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "title": "Ceremony matcha class at Doma Coffee (ticketed)",
+      "start": "2026-12-08T18:30:00-06:00",
+      "venue": "Doma Coffee",
+      "address": null,
+      "price": null,
+      "source_url": "https://www.instagram.com/p/Df0PTy5EnmI",
+      "posts": [
+        "https://www.instagram.com/p/Df0PTy5EnmI",
+        "https://www.instagram.com/reel/Df-vgxzyXRn"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Df0PTy5EnmI",
+        "https://www.instagram.com/reel/Df-vgxzyXRn"
+      ],
+      "description": "An evening matcha class that starts with the story of matcha and moves to whisking your own, hosted at Doma Coffee.",
+      "confidence": "likely",
+      "notes": "kind: class (ticketed, not walk-in). Snippet quotes: 'Tuesday, December 8th, 6:30-8PM Join us for an evening of learning the art of matcha, hosted at @domacoffee'. The reel Df-vgxzyXRn (matched on ceremony.brand) recaps Ceremony's first class there, so the host is likely Ceremony; no street address or price seen."
     }
   ]
 }
