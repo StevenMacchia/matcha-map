@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:8696a22374a0@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T174717Z
-DTSTART;VALUE=DATE:20261128
-DTEND;VALUE=DATE:20261129
-SUMMARY:Matcha + Meetup: Atlanta | Film + Music Speed Networking Roulette
-LOCATION:Atlanta\, GA
-DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nDetails 
- not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/8696a22374a0/
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T131640Z
+DTSTART:20261128T210000Z
+DTEND:20261129T000000Z
+SUMMARY:Matcha + Meetup: Seattle | Film + Music Industry Monthly Mingle
+LOCATION:Seattle\, WA
+DESCRIPTION:Life can be lonely for creatives when you're busy with your pas
+ sions. Meet us at a different cafe each month for coffee and conversation!
+ \nPrice: $17.85\nDetails not confirmed yet. Check the brand's post before 
+ you go.\nMore: https://matchamap-cu7.pages.dev/e/8696a22374a0/
 URL:https://matchamap-cu7.pages.dev/e/8696a22374a0/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

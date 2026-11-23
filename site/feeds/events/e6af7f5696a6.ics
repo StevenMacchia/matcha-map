@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:e6af7f5696a6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T130449Z
-DTSTART;VALUE=DATE:20261219
-DTEND;VALUE=DATE:20261220
+DTSTART:20261219T200000Z
+DTEND:20261219T220000Z
 SUMMARY:Matcha + Meetup: San Francisco (Giving Back Edition)
 LOCATION:San Francisco\, CA
 DESCRIPTION:Join us for coffee at different cafe. Build your community whil
- e supporting local businesses\, and giving back to people in need.\nDetail
- s not confirmed yet. Check the brand's post before you go.\nMore: https://
- matchamap-cu7.pages.dev/e/e6af7f5696a6/
+ e supporting local businesses\, and giving back to people in need.\nPrice:
+  $23.18\nDetails not confirmed yet. Check the brand's post before you go.\
+ nMore: https://matchamap-cu7.pages.dev/e/e6af7f5696a6/
 URL:https://matchamap-cu7.pages.dev/e/e6af7f5696a6/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

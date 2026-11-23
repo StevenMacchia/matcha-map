@@ -8,51 +8,18 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:42ce152c9009@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T163000Z
 DTEND:20261212T183000Z
 SUMMARY:Matcha Making Workshop Part 2
 LOCATION:Phoenix\, AZ
 DESCRIPTION:Part two of a two-part matcha workshop with Neighbor Matcha at 
  PIP coffee+clay - Phoenix. Participants make matcha using the bowl built a
- nd decorated in part one on November 21.\nDetails not confirmed yet. Check
-  the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/
- 42ce152c9009/
+ nd decorated in part one on November 21.\nMenu: matcha bowl\nDetails not c
+ onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
+ ap-cu7.pages.dev/e/42ce152c9009/
 URL:https://matchamap-cu7.pages.dev/e/42ce152c9009/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:833c624b4f21@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T005942Z
-DTSTART:20261212T163000Z
-DTEND:20261212T183000Z
-SUMMARY:PIP coffee+clay pop-up
-LOCATION:Phoenix\, AZ
-DESCRIPTION:Phoenix are you ready? It’s time for another matcha workshop 
- with Neighbor Matcha! Swipe for more details\nMenu: matcha bowl\nDetails n
- ot confirmed yet. Check the brand's post before you go.\nMore: https://mat
- chamap-cu7.pages.dev/e/833c624b4f21/
-URL:https://matchamap-cu7.pages.dev/e/833c624b4f21/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:f26865a2a722@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T151724Z
-DTSTART:20261212T163000Z
-DTEND:20261212T183000Z
-SUMMARY:Matcha Making Workshop Part 2
-LOCATION:Phoenix\, AZ
-DESCRIPTION:Part two of a two-part matcha workshop with Neighbor Matcha at 
- PIP coffee+clay - Phoenix. Participants make matcha using the bowl built a
- nd decorated in part one on November 21.\nDetails not confirmed yet. Check
-  the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/
- f26865a2a722/
-URL:https://matchamap-cu7.pages.dev/e/f26865a2a722/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

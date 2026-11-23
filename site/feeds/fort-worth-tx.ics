@@ -7,26 +7,8 @@ X-WR-CALNAME:Matcha Map: Fort Worth\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e3f7c3fe61d6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
-DTSTART;VALUE=DATE:20261128
-DTEND;VALUE=DATE:20261129
-SUMMARY:Matcha + Meetup: Fort Worth | Benefits for The Birthday Party Proje
- ct
-LOCATION:Press Café\, 4801 Edwards Ranch Road\, Fort Worth\, TX
-DESCRIPTION:Make new friends over brunch or coffee while supporting small b
- usinesses and giving back to non-profit\, The Birthday Party Project.\nLik
- ely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/e3f7c3
- fe61d6/
-URL:https://matchamap-cu7.pages.dev/e/e3f7c3fe61d6/
-GEO:32.706937;-97.394244
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:4bb3cf17ced6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T151342Z
 DTSTART:20261128T180000Z
 DTEND:20261128T210000Z
@@ -38,6 +20,24 @@ DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
  e you go.\nMore: https://matchamap-cu7.pages.dev/e/4bb3cf17ced6/
 URL:https://matchamap-cu7.pages.dev/e/4bb3cf17ced6/
 STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:e3f7c3fe61d6@matchamap-cu7.pages.dev
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
+SUMMARY:Matcha + Meetup: Fort Worth | Benefits for The Birthday Party Proje
+ ct
+LOCATION:Press Café\, 4801 Edwards Ranch Road\, Fort Worth\, TX
+DESCRIPTION:Make new friends over brunch or coffee while supporting small b
+ usinesses and giving back to non-profit\, The Birthday Party Project.\nPri
+ ce: Free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/e3f7c3fe61d6/
+URL:https://matchamap-cu7.pages.dev/e/e3f7c3fe61d6/
+GEO:32.706937;-97.394244
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 END:VCALENDAR

@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Muracha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:45475a09eeec@matchamap-cu7.pages.dev
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261212T160000Z
+DTEND:20261212T190000Z
+SUMMARY:Muracha Matcha Pop-Up at Bella Cucina
+LOCATION:Bella Cucina\, 288 Buckhead Avenue\, Atlanta\, GA 30305\, Atlanta\
+ , GA
+DESCRIPTION:A holiday-season matcha bar at the Buckhead Village shop Bella 
+ Cucina\, with Muracha serving matcha and selling its tins and tools. A lim
+ ited Collector's Set made with artist Kristen Giorgi is on sale.\nMenu: ma
+ tcha served from the bar\, collector's set: yame no. 89 and uji no.\nMore:
+  https://matchamap-cu7.pages.dev/e/45475a09eeec/
+URL:https://matchamap-cu7.pages.dev/e/45475a09eeec/
+GEO:33.838303;-84.378234
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

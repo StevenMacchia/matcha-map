@@ -8,15 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:1ea3a2bd66ba@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261202T010000Z
 DTEND:20261202T030000Z
 SUMMARY:Peppermint Matcha Workshop at Ponderosa Branch
 LOCATION:Ponderosa Joint-Use Branch\, 240 East Orangewood Avenue\, Anaheim\
  , CA
-DESCRIPTION:Likely\, not fully confirmed.\nMore: https://matchamap-cu7.page
- s.dev/e/1ea3a2bd66ba/
+DESCRIPTION:Come learn a brief history of matcha\, techniques for making ma
+ tcha & an opportunity to practice making it.\nPrice: Free\nLikely\, not fu
+ lly confirmed.\nMore: https://matchamap-cu7.pages.dev/e/1ea3a2bd66ba/
 URL:https://matchamap-cu7.pages.dev/e/1ea3a2bd66ba/
 GEO:33.795391;-117.904133
 STATUS:CONFIRMED

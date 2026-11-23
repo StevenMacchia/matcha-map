@@ -8,15 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:95f3e62d1dd7@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
-DTSTART;VALUE=DATE:20261213
-DTEND;VALUE=DATE:20261214
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261213T190000Z
+DTEND:20261213T230000Z
 SUMMARY:Sweet Thang Sunday
 LOCATION:Neighborhood Cafe\, 17165 Southcenter Parkway\, Tukwila\, WA
 DESCRIPTION:It's Sweet Thang Sunday!! Join us for our monthly R&B Sunday br
- unch at Neighborhood Cafe in Tukwila!\nMenu: matcha flight\nLikely\, not f
- ully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/95f3e62d1dd7/
+ unch at Neighborhood Cafe in Tukwila!\nMenu: matcha flight\nPrice: Free\nL
+ ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/95f3
+ e62d1dd7/
 URL:https://matchamap-cu7.pages.dev/e/95f3e62d1dd7/
 GEO:47.449536;-122.263225
 STATUS:CONFIRMED

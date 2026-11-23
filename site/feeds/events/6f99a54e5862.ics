@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:6f99a54e5862@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T131640Z
-DTSTART;VALUE=DATE:20261127
-DTEND;VALUE=DATE:20261128
+DTSTART:20261127T200000Z
+DTEND:20261127T230000Z
 SUMMARY:Matcha + Meetup: Boise (Giving Back Edition)
 LOCATION:Boise\, ID
 DESCRIPTION:Join us for coffee at different cafe. Build your community whil
- e supporting local businesses\, and giving back to people in need.\nDetail
- s not confirmed yet. Check the brand's post before you go.\nMore: https://
- matchamap-cu7.pages.dev/e/6f99a54e5862/
+ e supporting local businesses\, and giving back to people in need.\nPrice:
+  $23.18\nDetails not confirmed yet. Check the brand's post before you go.\
+ nMore: https://matchamap-cu7.pages.dev/e/6f99a54e5862/
 URL:https://matchamap-cu7.pages.dev/e/6f99a54e5862/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

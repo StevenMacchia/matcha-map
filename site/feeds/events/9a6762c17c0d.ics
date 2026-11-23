@@ -8,14 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:9a6762c17c0d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T160000Z
 DTEND:20261129T180000Z
 SUMMARY:Pilates at The Ranch
 LOCATION:The Ranch\, 2501 Sunset Avenue\, San Diego\, CA
-DESCRIPTION:Price: $44.52–81.88\nLikely\, not fully confirmed.\nMore: htt
- ps://matchamap-cu7.pages.dev/e/9a6762c17c0d/
+DESCRIPTION:Pilates lead by Pilates Instructor Kari from ViGlo Wellness \, 
+ join us for a refreshing session at the ranch with live music and vendors\
+ nPrice: $44.52–81.88\nLikely\, not fully confirmed.\nMore: https://match
+ amap-cu7.pages.dev/e/9a6762c17c0d/
 URL:https://matchamap-cu7.pages.dev/e/9a6762c17c0d/
 GEO:32.558121;-117.082009
 STATUS:CONFIRMED

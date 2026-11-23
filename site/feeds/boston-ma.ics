@@ -7,54 +7,25 @@ X-WR-CALNAME:Matcha Map: Boston\, MA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:550b80a04b23@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
-DTSTART:20261127T050000Z
-DTEND:20261127T070000Z
-SUMMARY:Caribe & Co. pop-up
-LOCATION:Boston\, MA
-DESCRIPTION:Are you ready for our biggest savings & best restock of the yea
- r??\nDetails not confirmed yet. Check the brand's post before you go.\nMor
- e: https://matchamap-cu7.pages.dev/e/550b80a04b23/
-URL:https://matchamap-cu7.pages.dev/e/550b80a04b23/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:655f0758af3e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART:20261127T150000Z
 DTEND:20261128T000000Z
-SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market
+SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
-DESCRIPTION:Find us at SoWa Christmas Market all holiday season\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/655f0758af3e/
+DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
+ season??\nMenu: latte\nLikely\, not fully confirmed.\nMore: https://matcha
+ map-cu7.pages.dev/e/655f0758af3e/
 URL:https://matchamap-cu7.pages.dev/e/655f0758af3e/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:81f9c5ace08f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
-DTSTART:20261127T150000Z
-DTEND:20261128T000000Z
-SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
-LOCATION:Boston\, MA
-DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
- season??\nMenu: latte\nDetails not confirmed yet. Check the brand's post b
- efore you go.\nMore: https://matchamap-cu7.pages.dev/e/81f9c5ace08f/
-URL:https://matchamap-cu7.pages.dev/e/81f9c5ace08f/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:a16e8bdfebdf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T160000Z
 DTEND:20261128T210000Z
 SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
@@ -72,7 +43,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:1ba6262317db@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261128T193000Z
 DTEND:20261128T220000Z
@@ -88,8 +59,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:fd3e9ea34611@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T193000Z
 DTEND:20261128T220000Z
 SUMMARY:Matcha Tasting + Mug Making Workshop
@@ -106,38 +77,24 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:7e5b7812a852@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART:20261201T210000Z
 DTEND:20261202T020000Z
-SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market
+SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
-DESCRIPTION:Find us at SoWa Christmas Market all holiday season\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/7e5b7812a852/
+DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
+ season??\nMenu: latte\nLikely\, not fully confirmed.\nMore: https://matcha
+ map-cu7.pages.dev/e/7e5b7812a852/
 URL:https://matchamap-cu7.pages.dev/e/7e5b7812a852/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:9e524c1732ea@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
-DTSTART:20261201T210000Z
-DTEND:20261202T020000Z
-SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
-LOCATION:Boston\, MA
-DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
- season??\nMenu: latte\nDetails not confirmed yet. Check the brand's post b
- efore you go.\nMore: https://matchamap-cu7.pages.dev/e/9e524c1732ea/
-URL:https://matchamap-cu7.pages.dev/e/9e524c1732ea/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:3c6de1a2a56f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
 SUMMARY:Caribe & Co. pop-up at Big Feeling December
@@ -152,8 +109,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:9f4c1daa3f3f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T160000Z
 DTEND:20261205T210000Z
 SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
@@ -171,8 +128,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:491a6a327f77@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Caribe & Co. pop-up at Big Feeling December
@@ -187,8 +144,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:b23d2b6828e3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T160000Z
 DTEND:20261212T210000Z
 SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
@@ -205,25 +162,9 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:5d40ce1d06a8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T125252Z
-DTSTART;VALUE=DATE:20261219
-DTEND;VALUE=DATE:20261220
-SUMMARY:Matcha + Meetup: Boston | Film + Music Speed Networking Roulette
-LOCATION:Boston\, MA
-DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nDetails 
- not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/5d40ce1d06a8/
-URL:https://matchamap-cu7.pages.dev/e/5d40ce1d06a8/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:47d6336baa0c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261219T150000Z
 DTEND:20261220T030000Z
 SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
@@ -240,30 +181,34 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:acc6fad9fa1e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
-DTSTART:20261224T150000Z
-DTEND:20261224T210000Z
-SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
+UID:5d40ce1d06a8@matchamap-cu7.pages.dev
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T125252Z
+DTSTART:20261219T180000Z
+DTEND:20261219T210000Z
+SUMMARY:Matcha + Meetup: Boston | Film + Music Speed Networking Roulette
 LOCATION:Boston\, MA
-DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
- season??\nMenu: latte\nDetails not confirmed yet. Check the brand's post b
- efore you go.\nMore: https://matchamap-cu7.pages.dev/e/acc6fad9fa1e/
-URL:https://matchamap-cu7.pages.dev/e/acc6fad9fa1e/
+DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
+ for collaborations in this roulette edition of speed networking.\nPrice: $
+ 23.18\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/5d40ce1d06a8/
+URL:https://matchamap-cu7.pages.dev/e/5d40ce1d06a8/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:d09f2b6b2181@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261224T150000Z
 DTEND:20261224T210000Z
-SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market
+SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
-DESCRIPTION:Find us at SoWa Christmas Market all holiday season\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/d09f2b6b2181/
+DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
+ et\, serving cornmeal porridge matcha lattes and a carrot punch that can b
+ e made with matcha all holiday season.\nMenu: latte\, cornmeal porridge ma
+ tcha latte\, carrot punch matcha (cold brew or matcha\nLikely\, not fully 
+ confirmed.\nMore: https://matchamap-cu7.pages.dev/e/d09f2b6b2181/
 URL:https://matchamap-cu7.pages.dev/e/d09f2b6b2181/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
@@ -271,8 +216,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:551fdb4d6c75@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261226T150000Z
 DTEND:20261227T030000Z
 SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
@@ -289,54 +234,25 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:0bf60b3282b7@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
-DTSTART;VALUE=DATE:20261227
-DTEND;VALUE=DATE:20261228
-SUMMARY:Caribe & Co. pop-up
-LOCATION:Boston\, MA
-DESCRIPTION:It ain’t much\, but it’s hard work\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/0bf60b3282b7/
-URL:https://matchamap-cu7.pages.dev/e/0bf60b3282b7/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:103fe3817233@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261227
 DTEND;VALUE=DATE:20261228
-SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market
+SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
-DESCRIPTION:Find us at SoWa Christmas Market all holiday season\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/103fe3817233/
+DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
+ season??\nMenu: latte\nLikely\, not fully confirmed.\nMore: https://matcha
+ map-cu7.pages.dev/e/103fe3817233/
 URL:https://matchamap-cu7.pages.dev/e/103fe3817233/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:b196e632dd64@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
-DTSTART;VALUE=DATE:20261227
-DTEND;VALUE=DATE:20261228
-SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
-LOCATION:Boston\, MA
-DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
- season??\nMenu: latte\nDetails not confirmed yet. Check the brand's post b
- efore you go.\nMore: https://matchamap-cu7.pages.dev/e/b196e632dd64/
-URL:https://matchamap-cu7.pages.dev/e/b196e632dd64/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:0f3691600007@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270102
 DTEND;VALUE=DATE:20270103
 SUMMARY:Caribe & Co. pop-up
@@ -351,8 +267,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:3a298bbff452@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270104
 DTEND;VALUE=DATE:20270105
 SUMMARY:Caribe & Co. pop-up
@@ -367,8 +283,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:d7fcb7b462c0@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270305
 SUMMARY:Caribe & Co. pop-up
@@ -383,8 +299,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:5a85e8ad2a0b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182110Z
-LAST-MODIFIED:20261123T182110Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20271120
 DTEND;VALUE=DATE:20271121
 SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market
