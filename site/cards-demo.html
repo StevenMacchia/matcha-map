@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" class="pg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Matcha Map cards demo</title>
+<script src="theme.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="cards.css">
+<style>
+  .demo-top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 16px; }
+  .demo-frame { display: block; border: 0; }
+  .demo-top h1 { font-size: 22px; margin: 0; }
+  .demo-top p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+  .demo-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+  .demo-btns button { border: 2px solid var(--edge); background: var(--btnfill); border-radius: 999px; padding: 6px 14px; font-weight: 800; cursor: pointer; }
+  .demo-sec { max-width: 1400px; margin: 0 auto; padding: 8px 16px 24px; }
+  .demo-sec > h2 { font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 12px 0 12px; }
+  .demo-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 20px; align-items: start; }
+  .demo-cards > *, .demo-rows > *, .demo-pair > * { min-width: 0; }
+  .demo-cards > .mm-card { box-shadow: var(--shadow); border: 2px solid var(--line); }
+  .demo-rows { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 8px; }
+  .demo-page > .mm-card, .demo-page > .mm-brand { margin: 0 auto; box-shadow: var(--shadow); border: 2px solid var(--line); }
+  .demo-pair { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 1200px) { .demo-pair { grid-template-columns: 2.6fr 1fr; align-items: start; } }
+  @media (max-width: 420px) { .demo-cards, .demo-rows { grid-template-columns: minmax(0, 1fr); } .demo-sec { padding: 4px 10px 20px; } }
+</style>
+</head>
+<body class="pg">
+<header class="demo-top">
+  <div><h1>Cards demo</h1><p>site/cards.js with sample data, demo clock Thu Nov 26, 12:30 pm, here = downtown Houston</p></div>
+  <div class="demo-btns"><button type="button" id="theme">Light / dark</button><button type="button" id="drawn">Drawn hero on / off</button></div>
+</header>
+<main id="demo"></main>
+<script type="module">
+  import { renderCard, renderRow, renderBrandCard } from "./cards.js";
+  const q = new URLSearchParams(location.search);
+  // ?phone=<px>: the demo inside a phone-width frame, so phone media queries apply in a wide window.
+  if (q.get("phone")) {
+    const w = +q.get("phone") || 390, h = +q.get("h") || 900, inner = new URLSearchParams(q); inner.delete("phone"); inner.delete("h");
+    document.querySelector(".demo-top").remove();
+    const f = document.createElement("iframe"); f.src = "cards-demo.html?" + inner; f.width = w; f.height = h; f.title = "Phone width"; f.className = "demo-frame";
+    document.getElementById("demo").appendChild(f);
+    throw new Error("phone frame");
+  }
+  // ?phone=<px>: show the demo inside a phone-width frame (true 390 px media queries even in a wide window).
+  if (q.get("phone")) {
+    const w = +q.get("phone") || 390, h = +q.get("h") || 900, inner = new URLSearchParams(q); inner.delete("phone"); inner.delete("h"); inner.set("bare", "1");
+    document.body.innerHTML = "";
+    document.body.style.margin = "0";
+    const f = document.createElement("iframe"); f.src = "cards-demo.html?" + inner; f.width = w; f.height = h; f.title = "Phone width"; f.style.border = "0"; f.style.display = "block";
+    document.body.appendChild(f);
+    throw new Error("phone frame");
+  }
+  if (q.get("bare")) document.querySelector(".demo-top p").textContent = "Demo clock Thu Nov 26, 12:30 pm, near downtown Houston";
+  if (q.get("theme")) document.documentElement.setAttribute("data-theme", q.get("theme"));
+  document.getElementById("theme").onclick = () => {
+    const d = document.documentElement.getAttribute("data-theme") === "dark";
+    document.documentElement.setAttribute("data-theme", d ? "light" : "dark");
+  };
+  document.getElementById("drawn").onclick = () => { q.set("drawn", q.get("drawn") === "0" ? "1" : "0"); location.search = q; };
+  const get = (u) => fetch(u).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const getText = (u) => fetch(u).then((r) => (r.ok ? r.text() : "")).catch(() => "");
+  const [sample, art, brands, sources, all] = await Promise.all([get("data/sample-events.json"), get("art/index.json"), get("data/brands.json"), get("data/sources.json"), get("data/events.json")]);
+  let drawn = null;
+  if (q.get("drawn") !== "0") {
+    await new Promise((ok) => { const s = document.createElement("script"); s.src = "drawn.js"; s.onload = s.onerror = ok; document.head.appendChild(s); });
+    const t = await getText("characters.svg");
+    if (window.Drawn && t) { const SYM = {}; new DOMParser().parseFromString(t, "image/svg+xml").querySelectorAll("symbol").forEach((s) => { SYM[s.id] = s; }); window.Drawn.init(SYM); drawn = window.Drawn; }
+  }
+  const events = sample.events, now = new Date(sample.now);
+  // Also-nearby reads the sample plus every other upcoming event from the live file, as the app will.
+  const pool = events.concat(((all && all.events) || []).filter((e) => !events.some((s) => s.id === e.id)));
+  const ctx = { now, here: sample.here, art, brands, sources, events: pool, drawn, eventHref: (id) => "?event=" + id };
+  const only = q.get("only"), n = +(q.get("n") || 12), pick = (q.get("pick") || "").split(",").filter(Boolean).map(Number);
+  const list = pick.length ? pick.map((i) => events[i]).filter(Boolean) : events.slice(0, n);
+  const main = document.getElementById("demo");
+  const sec = (title, cls) => { const s = document.createElement("section"); s.className = "demo-sec"; s.innerHTML = `<h2>${title}</h2>`; const box = document.createElement("div"); box.className = cls; s.appendChild(box); main.appendChild(s); return box; };
+  if (!only || only === "rows") { const box = sec("List rows", "demo-rows"); list.forEach((e) => box.appendChild(renderRow(e, ctx))); }
+  if (!only || only === "cards") { const box = sec("Cards (sheet and popup)", "demo-cards"); list.forEach((e) => box.appendChild(renderCard(e, ctx))); }
+  if (!only || only === "page") {
+    const box = sec("Page view (/e/&lt;id&gt;/) and brand card", "demo-pair");
+    const pg = document.createElement("div"); pg.className = "demo-page"; pg.appendChild(renderCard(events[+(q.get("page") || 2)], { ...ctx, page: true })); box.appendChild(pg);
+    const e0 = events[0], bc = document.createElement("div"); bc.className = "demo-page";
+    bc.appendChild(renderBrandCard({ handle: e0.handle, brand: e0.brand, kind: e0.kind }, pool.filter((e) => e.handle === e0.handle), ctx)); box.appendChild(bc);
+  }
+  document.documentElement.setAttribute("data-ready", "1");
+</script>
+</body>
+</html>
