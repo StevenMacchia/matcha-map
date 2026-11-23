@@ -17,3 +17,13 @@ No new dated pop-ups were added. Every date found was either already on the map,
 | Savannah / Charleston | 0 | 0 | 0/0/0 | searches only | Holy City Matcha dates only appear on Instagram; nothing public found. |
 
 Note: the Eventbrite "All Things Matcha Pop-Up" (6 Dec) that keeps surfacing is Chicago, 2025, so it is not a southeast event.
+
+## Tavily pass (8 of 8 searches, instagram.com and tiktok.com filter)
+
+Brands searched: Ritual Grounds, Hami Cafe, Ceremony (Nashville), The Exit Plan, Ouri, Holy City Matcha, Matcha Mamiii, Gotcha Matcha. No snippet quoted both a date and a place inside 2026-11-23 to 2027-01-15, so no items were added.
+
+- Matcha Mamiii (Tampa): dated posts are Oct 27 (three pop-ups that week) and a Posh Blueprint x 92 Moss Co matcha night at Tropical Home Gallery, Ybor City, Wed Nov 18, 6-9 PM. Both are before the window.
+- Hami Cafe (Nashville): a reel says "popping up with @thehamicafe ... 7am-4pm 1205 Linden Ave" (https://www.instagram.com/reel/Df8AMOCxvfF) but quotes no date and the post date is not in the snippet, so it is left out.
+- Ceremony: Nov 10 post is a powder restock (11.12.26), not an event. Aug 15 Pilates class post is a class.
+- Holy City Matcha: "now booking November and December and 2027", no dates. The Exit Plan, Ouri, Ritual Grounds, Gotcha: only generic TikTok pages or old posts.
+- Also seen, not mine: yumi matcha Jax (Jacksonville) posted Nov 17 about booking private events in 2027, no dated public event.
