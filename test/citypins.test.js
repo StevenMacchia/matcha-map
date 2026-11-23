@@ -106,3 +106,14 @@ test("the page loads citypins.js before app.js and the worker precaches it", () 
   assert.ok(a > 0 && b > a, "citypins.js before app.js");
   assert.match(fs.readFileSync(path.join(SITE, "sw.js"), "utf8"), /"\/citypins\.js"/);
 });
+
+test("the national tier's options: merge only pins that would overlap, never by a radius", () => {
+  // two cities 60 miles apart at zoom 4: the default rule (30 px, at most 40 miles) keeps them apart; a 20 px pin rule
+  // with no cap merges them only when 20 px covers 60 miles at that zoom
+  const a = item("a", "Alpha", "TX", 30.0, -97.0), b = item("b", "Beta", "TX", 30.87, -97.0);
+  const px = CP.milesPerPx(30, 4);
+  assert.equal(CP.cityPins([a, b], 4, null).length, 2, "the default cap keeps 60 miles apart");
+  assert.equal(CP.cityPins([a, b], 4, null, { mergePx: 20, capMi: Infinity }).length, 20 * px >= 60 ? 1 : 2);
+  assert.equal(CP.cityPins([a, b], 4, null, { mergePx: Math.ceil(61 / px), capMi: Infinity }).length, 1, "no radius cap");
+  assert.equal(CP.cityPins([a, b], 8, null, { mergePx: 28, capMi: Infinity }).length, 2, "apart once they would not overlap");
+});

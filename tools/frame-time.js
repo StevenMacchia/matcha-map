@@ -13,7 +13,7 @@ const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? proces
 const CALM = process.argv.includes("--calm"), AT = arg("--at", "40.73,-73.99,12"), SIZE = arg("--size", "390x844"), PINS = +arg("--pins", 200);
 const EVAL = `(async () => {
   const m = window.__matcha.map, real = document.querySelectorAll(".maplibregl-marker").length;
-  const tpl = [...document.querySelectorAll(".maplibregl-marker")].filter((x) => x.querySelector(".pn") && !x.classList.contains("mk-cl"));
+  const tpl = [...document.querySelectorAll(".maplibregl-marker")].filter((x) => x.querySelector(".pn") && (!x.classList.contains("mk-cl") || x.classList.contains("cl-nt")));
   const b = m.getBounds(); let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   for (let i = 0; tpl.length && document.querySelectorAll(".maplibregl-marker").length < ${PINS} && i < 1000; i++) {
     const t = tpl[i % tpl.length].cloneNode(true); t.classList.remove("sel");
@@ -27,7 +27,7 @@ const EVAL = `(async () => {
   const stats = (ts) => { const d = ts.slice(1).map((t, i) => t - ts[i]).sort((a, b) => a - b), mean = d.reduce((a, b) => a + b, 0) / d.length;
     return { frames: d.length, medianMs: +d[Math.floor(d.length / 2)].toFixed(2), meanMs: +mean.toFixed(2), p95Ms: +d[Math.floor(d.length * 0.95)].toFixed(2), over20: d.filter((x) => x > 20).length, fps: +(1000 / mean).toFixed(1) }; };
   const idle = stats(await measure(3000));
-  const c = m.getCenter(); m.easeTo({ center: [c.lng + 0.02, c.lat + 0.01], duration: 3000 });
+  m.panBy([180, 90], { duration: 3000 }); // the same 200 px drag at any zoom
   const pan = stats(await measure(3000));
   return { at: ${JSON.stringify(AT)}, size: ${JSON.stringify(SIZE)}, realPins: real, pinsMeasured: n, idle, pan };
 })()`;

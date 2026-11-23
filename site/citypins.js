@@ -15,9 +15,12 @@
   function mergeMiles(lat, zoom) { return Math.min(CAP_MI, MERGE_PX * milesPerPx(lat, zoom)); }
 
   // items: [{ key, ll: [lat, lng], data: { city, state } }]. centroids: { "City|ST": [lat, lng] } (window.CITIES), optional.
+  // opts (optional): { mergePx, capMi }: the national tier (app.js, 2026-11-23) merges only pins that would overlap
+  // (mergePx, its pin size) and never by a radius (capMi Infinity).
   // Returns pins: [{ ll, city, state, n, cities: [{ city, state, n, ll }], keys }], biggest first, deterministic.
-  function cityPins(items, zoom, centroids) {
-    var groups = {}, order = [];
+  function cityPins(items, zoom, centroids, opts) {
+    var groups = {}, order = [], mpx = opts && opts.mergePx, cap = opts && opts.capMi != null ? opts.capMi : CAP_MI;
+    var within = function (lat) { return mpx ? Math.min(cap, mpx * milesPerPx(lat, zoom)) : mergeMiles(lat, zoom); };
     items.forEach(function (it) {
       var e = it.data || {}, ck = (e.city || "") + "|" + (e.state || "");
       var g = groups[ck];
@@ -37,7 +40,7 @@
       var best = null, bd = Infinity;
       for (var i = 0; i < pins.length; i++) {
         var p = pins[i], d = miles(p.ll, g.ll);
-        if (d <= mergeMiles(p.ll[0], zoom) && d < bd) { bd = d; best = p; }
+        if (d <= within(p.ll[0]) && d < bd) { bd = d; best = p; }
       }
       if (best) { best.n += g.n; best.cities.push(g); best.keys = best.keys.concat(g.keys); }
       else pins.push({ ll: g.ll, city: g.city, state: g.state, n: g.n, cities: [g], keys: g.keys.slice() });
