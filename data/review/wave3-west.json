@@ -1,0 +1,37 @@
+{
+  "generated": "2026-11-23T12:16:28.388Z",
+  "group": "wave3-west",
+  "items": [
+    {
+      "brand": "Green Times Matcha",
+      "handle": "greentimes.matcha",
+      "source_id": "green-times-matcha",
+      "title": "Mochi & Matcha Fest",
+      "start": "2026-12-05T09:00:00-10:00",
+      "end": "2026-12-05T13:00:00-10:00",
+      "all_day": false,
+      "tz": "Pacific/Honolulu",
+      "venue": "Japanese Cultural Center of Hawaii (first floor courtyard and breezeway)",
+      "address": "2454 South Beretania Street, Honolulu, HI 96826",
+      "city": "Honolulu",
+      "state": "HI",
+      "lat": 21.2917,
+      "lng": -157.8213,
+      "source_url": "https://allevents.in/honolulu/mochi-and-matcha-fest/100002004992347083",
+      "posts": [],
+      "evidence": [
+        "https://allevents.in/honolulu/mochi-and-matcha-fest/100002004992347083",
+        "https://www.jcchawaii.org/events",
+        "https://ma.to/event/mochi-matcha-fest-05-dec-2026"
+      ],
+      "menu": [],
+      "price": "Free admission; drinks priced by each vendor",
+      "hours": "9am-1pm",
+      "pay": null,
+      "description": "JCCH hosts its first Mochi & Matcha Fest: mochitsuki (mochi pounding) alongside modern mochi products and matcha drinks. Vendors include Green Times Matcha and Aloha Matcha Hawaii, plus Fujiya Hawaii, Mochiffle, Sip Cafe and others.",
+      "image_url": "https://cdn-az.allevents.in/events1/banners/270ea0a48d18fa789053c4b149b170569a4ad26b1f8858af8023179eb5bd0a87-rimg-w1080-h1350-dcb8c8a8-gmir.jpg?v=1794979098",
+      "confidence": "confirmed",
+      "notes": "Date, time, venue and street address on the public AllEvents page and JCCH calendar. Same event as the existing map entry 6e4abd99b485 (Fujiya Hawaii, unsure, no address): this item adds the address and names Green Times Matcha and Aloha Matcha Hawaii as vendors. The page does not say which vendors serve matcha; both matcha-named vendors are on the list. Lat/lng approximate."
+    }
+  ]
+}

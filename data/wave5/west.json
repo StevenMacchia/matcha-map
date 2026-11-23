@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "id": "aloha-matcha-hawaii",
+      "brand": "Aloha Matcha Hawaii",
+      "kind": "popup",
+      "category": "matcha",
+      "kind_note": null,
+      "home_city": "Honolulu",
+      "home_state": "HI",
+      "website": null,
+      "instagram": null,
+      "tiktok": null,
+      "schedule_url": "https://allevents.in/honolulu/mochi-and-matcha-fest/100002004992347083",
+      "schedule_kind": "manual",
+      "adapter": "manual",
+      "active": true,
+      "notes": "Listed as a vendor at the JCCH Mochi & Matcha Fest, Sat 2026-12-05 9am-1pm, 2454 S Beretania St, Honolulu (AllEvents). No website or handle found; no other dates seen.",
+      "added": "2026-11-23",
+      "verified": null
+    }
+  ]
+}
