@@ -279,3 +279,36 @@ test("drinks.json components win over the words, colours included", () => {
   assert.equal(S("strawberry matcha latte").layers[0].c, "#FF0066", "the file's colour beats the built-in one");
   loadCatalog(ROOT);
 });
+
+test("drinks.json: every vocabulary word maps to a drawn part, and the specs are pairwise distinct", () => {
+  const raw = JSON.parse(fs.readFileSync(path.join(ROOT, "data/drinks.json"), "utf8"));
+  const v = raw.vocabulary;
+  const probe = (components) => { useCatalog([{ name: "Probe Drink", family: "t", components: { layers: [{ name: "milk", hex: "#F4EFE6" }, { name: "matcha", hex: "#7FB069" }], ...components } }]); return S("probe drink"); };
+  for (const top of v.tops.filter((t) => t !== "none")) {
+    const s = probe({ top });
+    assert.ok((s.top && ["cloud", "foam", "cream"].includes(s.top.type)) || s.toppings.includes("whip"), `top "${top}" is drawn`);
+  }
+  assert.equal(probe({ top: "cloud foam" }).top.type, "cloud");
+  const vessels = { "iced tall glass": "tall", "hot mug": "mug", bowl: "bowl", can: "can", bottle: "bottle", "cup with lid": "tall" };
+  for (const serve of v.serves) {
+    if (vessels[serve]) assert.equal(probe({ serve }).vessel, vessels[serve], serve);
+  }
+  assert.equal(probe({ serve: "cup with lid" }).lid, true);
+  assert.equal(S("matcha soft serve").vessel, "cone", "soft-serve cone");
+  for (const t of v.toppings) {
+    const s = probe({ toppings: [t] });
+    assert.ok(s.toppings.length > 0 || s.garnish.length > 0, `topping "${t}" is drawn`);
+  }
+  for (const base of v.bases) assert.ok(probe({ base }), `base "${base}"`);
+  // the real catalogue: 59 specs, no two alike in what is drawn
+  loadCatalog(ROOT);
+  const key = (s) => JSON.stringify([s.vessel, s.item, s.layers, s.colors, s.top, s.toppings, s.garnish, s.lid, s.pieces, s.fizz]);
+  const seen = new Map();
+  for (const d of raw.drinks) {
+    const s = S(d.name);
+    for (const a of d.aliases || []) assertValidSvg(drawDrink(S(a), { symbols }));
+    assert.ok(!seen.has(key(s)), `${d.name} is drawn differently from ${seen.get(key(s))}`);
+    seen.set(key(s), d.name);
+  }
+  assert.equal(seen.size, raw.drinks.length);
+});

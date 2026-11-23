@@ -77,8 +77,9 @@ export async function renderAll({ events, sources, root = ROOT, force = false, i
   const rank = (fam) => { const i = catalog.order ? catalog.order.indexOf(fam) : -1; return i < 0 ? 99 : i; };
   for (const e of catalogEntries().map((x, i) => [x, i]).sort((a, b) => rank(a[0].family) - rank(b[0].family) || a[1] - b[1]).map((x) => x[0])) {
     const slug = slugify(specFromText(e.name).name);
-    (index.families[e.family] = index.families[e.family] || []).push({ slug, name: e.name, aliases: e.aliases });
+    (index.families[e.family] = index.families[e.family] || []).push({ slug, name: e.name, aliases: e.aliases, ...(e.popularity ? { popularity: e.popularity } : {}) });
   }
+  for (const list of Object.values(index.families)) list.sort((x, y) => (y.popularity || 0) - (x.popularity || 0));
   if (catalog.file) index.catalog = catalog.file;
 
   // 2. A scene per event without a downloaded photo.

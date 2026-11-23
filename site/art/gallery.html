@@ -113,6 +113,13 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
   </div>
 
   <section>
+    <h2>The top matcha combinations <span class="pill" id="n50">50</span></h2>
+    <p class="hint">Each named drink and its aliases, grouped by family. A menu line that matches a name or alias gets exactly this drawing.</p>
+    <nav class="fams" id="fams" aria-label="Families"></nav>
+    <div id="fifty"></div>
+  </section>
+
+  <section>
     <h2>Try a drink <span class="pill">live</span></h2>
     <p class="hint">Type any drink the way a menu says it. This is the same code the map and <code>npm run art</code> use.</p>
     <div class="try">
@@ -124,13 +131,6 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
       </div>
       <div class="out" id="out" aria-live="polite"></div>
     </div>
-  </section>
-
-  <section>
-    <h2>The top matcha combinations <span class="pill" id="n50">50</span></h2>
-    <p class="hint">Each named drink and its aliases, grouped by family. A menu line that matches a name or alias gets exactly this drawing.</p>
-    <nav class="fams" id="fams" aria-label="Families"></nav>
-    <div id="fifty"></div>
   </section>
 
   <section>
@@ -229,7 +229,8 @@ $("#fifty").innerHTML = Object.entries(fams).map(([f, list]) => `<h3 class="fam"
   const file = d.slug && index.drinks && index.drinks[d.slug] ? index.drinks[d.slug].file : null;
   const art = file ? `<img src="${esc(file)}" alt="${esc(d.name)}" width="200" height="240" loading="lazy" decoding="async">` : drawDrink(d.s || specFromText(d.name), { symbols, uid: "f" + n50 });
   const al = (d.aliases || []).filter((a) => a.toLowerCase() !== d.name.toLowerCase());
-  return tile(art, d.name, al.length ? "also: " + al.join(", ") : "", [d.name, ...al].join(" "));
+  const pop = d.popularity ? "●".repeat(d.popularity) + "○".repeat(Math.max(0, 5 - d.popularity)) + " popularity" : "";
+  return tile(art, d.name, [pop, al.length ? "also: " + al.join(", ") : ""].filter(Boolean).join(" · "), [d.name, ...al].join(" "));
 }).join("") + "</div>").join("");
 $("#n50").textContent = n50;
 
