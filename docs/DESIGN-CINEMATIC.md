@@ -1,4 +1,19 @@
-# Matcha Map: the cinematic pass (rung 32)
+# Matcha Map: design and motion
+
+## Round 2 direction (rung N7)
+
+![Phone home mock](mock-phone.png)
+
+1. **The map is the app.** On a phone the map runs edge to edge; the chrome floats over it as three soft pieces: Mattie's disc (About), one search pill (zip, city or brand, with Near me inside it) and the theme disc.
+2. **One chip row**, white pills with a shadow, scrolling sideways: Show first, then the dates. Today is the pink one.
+3. **The list is a sheet, not a page.** It peeks from the bottom with a count ("12 pop-ups in view"); drag or tap it up. A tapped pin opens the card sheet in its place.
+4. **Card: verdict first.** The picture (photo or drink scene) carries the verdict badges (Open now, distance); then the name, one line of when, one line of where, drink chips with their art, and one green Directions button. Everything else is below the fold.
+5. **One product.** Radii 26 (sheets), 18 (cards, pictures), pill (chips, buttons); two shadows (resting, floating); type 13, 15, 17, 21, 26; tap targets 44 px or more. Dark mode uses the same shapes on night greens.
+6. **Motion has three moments**: the opening (map settles, pins drop in a wave from the centre, Mattie hops in), the pin that grows into the card, and the flight to a place with a short petal trail. Everything else is a quiet fade or slide; reduced motion keeps only fades.
+
+---
+
+# The cinematic pass (rung 32)
 
 ## What "cinematic" means here
 
