@@ -21,7 +21,7 @@
 <p class="fm-lead">Running a matcha pop-up? Tell Mattie.</p>
 <form id="add-form" class="fm-card" data-endpoint="/api/submit" novalidate>
 <div class="fm-hp" aria-hidden="true"><label>Company <input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
-<div class="fm-row"><label for="brand">Brand name</label><input type="text" id="brand" name="brand" autocomplete="organization" maxlength="80" required><span class="fm-err" data-err="brand" role="alert"></span></div>
+<div class="fm-row"><label for="brand">Brand name</label><input type="text" id="brand" name="brand" placeholder="Your shop or pop-up name" autocomplete="organization" maxlength="80" required><span class="fm-err" data-err="brand" role="alert"></span></div>
 <div class="fm-row"><label for="handle">Instagram or TikTok<span class="fm-hint">Handle or profile link</span></label><input type="text" id="handle" name="handle" placeholder="@yourbrand" maxlength="200"><span class="fm-err" data-err="handle" role="alert"></span></div>
 <div class="fm-row"><label for="url">Post or event link<span class="fm-hint">Optional if you gave a handle</span></label><input type="url" id="url" name="url" placeholder="https://" maxlength="400" inputmode="url"><span class="fm-err" data-err="url" role="alert"></span></div>
 <div class="fm-row"><label for="date">Date</label><input type="date" id="date" name="date" required><span class="fm-err" data-err="date" role="alert"></span></div>
@@ -32,7 +32,7 @@
 <div class="fm-row"><label for="drinks">On the menu<span class="fm-hint">Separate with commas</span></label><input type="text" id="drinks" name="drinks" placeholder="strawberry matcha, hojicha latte" maxlength="200"><span class="fm-err" data-err="drinks" role="alert"></span></div>
 <div class="fm-row"><label for="price">Price range</label><input type="text" id="price" name="price" placeholder="$6-9" maxlength="40"><span class="fm-err" data-err="price" role="alert"></span></div>
 <div class="fm-row"><label for="notes">Anything else</label><textarea id="notes" name="notes" maxlength="600"></textarea><span class="fm-err" data-err="notes" role="alert"></span></div>
-<div class="fm-row"><label for="email">Your email<span class="fm-hint">Optional. Only so we can reply.</span></label><input type="email" id="email" name="email" autocomplete="email" maxlength="254"><span class="fm-err" data-err="email" role="alert"></span></div>
+<div class="fm-row"><label for="email">Your email<span class="fm-hint">Optional. Only so we can reply.</span></label><input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="254"><span class="fm-err" data-err="email" role="alert"></span></div>
 <p class="fm-top" id="form-error" role="alert"></p>
 <button class="fm-btn" type="submit">Send to Mattie</button>
 <p class="fm-note">Public, real pop-ups only. We read every one before it goes live. <a href="/privacy/">What we keep</a>.</p>

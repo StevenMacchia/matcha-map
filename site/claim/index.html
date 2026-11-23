@@ -22,10 +22,10 @@
 <p class="fm-lead">Your brand, your page.</p>
 <form id="claim-form" class="fm-card" data-endpoint="/api/claim" novalidate>
 <div class="fm-hp" aria-hidden="true"><label>Company <input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
-<div class="fm-row"><label for="brand">Brand</label><input type="text" id="brand" name="brand" maxlength="80" required><span class="fm-err" data-err="brand" role="alert"></span></div>
+<div class="fm-row"><label for="brand">Brand</label><input type="text" id="brand" name="brand" placeholder="Your shop or pop-up name" autocomplete="organization" maxlength="80" required><span class="fm-err" data-err="brand" role="alert"></span></div>
 <div class="fm-row"><label for="handle">Instagram or TikTok</label><input type="text" id="handle" name="handle" placeholder="@yourbrand" maxlength="200" required><span class="fm-err" data-err="handle" role="alert"></span></div>
 <div class="fm-row"><label for="role">Your role</label><input type="text" id="role" name="role" placeholder="Owner, manager, social" maxlength="80" required><span class="fm-err" data-err="role" role="alert"></span></div>
-<div class="fm-row"><label for="email">Your email</label><input type="email" id="email" name="email" autocomplete="email" maxlength="254" required><span class="fm-err" data-err="email" role="alert"></span></div>
+<div class="fm-row"><label for="email">Your email</label><input type="email" id="email" name="email" placeholder="you@yourbrand.com" autocomplete="email" maxlength="254" required><span class="fm-err" data-err="email" role="alert"></span></div>
 <div class="fm-row"><label for="proof">Proof link<span class="fm-hint">Your bio page or site that links to this handle</span></label><input type="url" id="proof" name="proof" placeholder="https://" maxlength="400" inputmode="url" required><span class="fm-err" data-err="proof" role="alert"></span></div>
 <p class="fm-top" id="form-error" role="alert"></p>
 <button class="fm-btn" type="submit">Send claim</button>

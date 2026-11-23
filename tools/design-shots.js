@@ -1,7 +1,7 @@
 // node tools/design-shots.js --out qa/design/2026-11-23 [--only name]  Screens at 390x844 and 1440x900, light and dark.
 import fs from "node:fs"; import os from "node:os"; import path from "node:path"; import net from "node:net"; import { spawn } from "node:child_process";
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
-const OUT = arg("--out", "qa/design/2026-11-23"), ONLY = arg("--only");
+const OUT = arg("--out", "qa/design/2026-11-23"), ONLY = arg("--only"), SIZES = (arg("--sizes", "390x844,1440x900")).split(",").map((s) => s.split("x").map(Number)), THEMES = arg("--themes", "light,dark").split(",");
 const EV = "ea06c1e9874b", BR = "heyteausa";
 const brand = fs.readdirSync("site/brand")[1];
 const SCREENS = [["home", "/?motion=reduce"], ["card", `/?event=${EV}&motion=reduce`], ["brand", `/brand/${brand}/`], ["promote", `/promote/?event=${EV}`], ["claim", "/claim/"], ["share", `/e/${EV}/`], ["add", "/add/"]];
@@ -19,7 +19,7 @@ let id = 0; const cb = new Map();
 ws.onmessage = (m) => { const j = JSON.parse(m.data); if (j.id && cb.has(j.id)) { cb.get(j.id)(j); cb.delete(j.id); } };
 const send = (method, params = {}, sessionId) => new Promise((res, rej) => { const i = ++id; cb.set(i, (j) => (j.error ? rej(new Error(j.error.message)) : res(j.result))); ws.send(JSON.stringify({ id: i, method, params, sessionId })); });
 fs.mkdirSync(OUT, { recursive: true });
-for (const [W, H] of [[390, 844], [1440, 900]]) for (const theme of ["light", "dark"]) for (const [name, url] of SCREENS) {
+for (const [W, H] of SIZES) for (const theme of THEMES) for (const [name, url] of SCREENS) {
   if (ONLY && !ONLY.split(",").includes(name)) continue;
   const { targetId } = await send("Target.createTarget", { url: "about:blank" });
   const { sessionId: sid } = await send("Target.attachToTarget", { targetId, flatten: true });

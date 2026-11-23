@@ -75,7 +75,7 @@ test("a card with only a date and a city still has every frame", () => {
   assert.match(t, /^Sun Dec 6 Brooklyn/);
   assert.match(html, /mm-hero-collage/);
   assert.match(t, /Matcha pop-up/);
-  assert.match(t, /Unsure/);
+  assert.match(t, /Date not confirmed/);
   assert.match(t, /Brooklyn, NY/);
   assert.match(html, /href="feeds\/events\/cccccc000003\.ics"/);
   assert.match(html, /href="e\/cccccc000003\/" data-mm-share/);

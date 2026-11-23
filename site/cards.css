@@ -62,7 +62,7 @@
 .mm-avatar.mm-t1 { background: var(--mm-t1); } .mm-avatar.mm-t2 { background: var(--mm-t2); }
 .mm-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .mm-initial { font-size: 21px; font-weight: 800; color: var(--ink, #3B2E27); }
-.mm-conf { flex: none; align-self: center; font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; border: 2px solid; cursor: help; }
+.mm-conf { flex: none; align-self: center; font-size: 12px; font-weight: 800; letter-spacing: .01em; padding: 4px 10px; border-radius: 999px; border: 2px solid; cursor: help; white-space: nowrap; }
 .mm-conf-confirmed { background: var(--foam, #E6F2DC); color: var(--deep, #3E6B33); border-color: var(--accent, #8CBF7A); }
 .mm-conf-likely { background: var(--mm-t2); color: var(--ink, #3B2E27); border-color: var(--mm-t2e); }
 .mm-conf-unsure { background: var(--mm-t1); color: var(--ink, #3B2E27); border-color: var(--mm-t1e); border-style: dashed; }
@@ -191,7 +191,8 @@
 .mm-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---- dark: stickers keep their cream faces ---- */
-:root[data-theme="dark"] .mm-chip { border-color: var(--mm-stk); }
+:root[data-theme="dark"] .mm-chip { --mm-cs: #86B077; border-color: var(--mm-cs); box-shadow: 0 2px 0 var(--mm-cs); }
+:root[data-theme="dark"] .mm-chip.mm-t1 { --mm-cs: #D79BAE; } :root[data-theme="dark"] .mm-chip.mm-t2 { --mm-cs: #D4A07A; }
 :root[data-theme="dark"] .mm-chip.mm-t0 { background: #DCEBC9; } :root[data-theme="dark"] .mm-chip.mm-t1 { background: #F6CFDA; } :root[data-theme="dark"] .mm-chip.mm-t2 { background: #F4D6BC; }
 :root[data-theme="dark"] .mm-hero-photo { border-color: #2B3D2F; }
 
@@ -201,18 +202,25 @@
 .mm-compact .mm-sec { gap: 6px; }
 .mm-compact .mm-verdict { font-size: 19px; }
 .mm-compact .mm-vwhere { font-size: 13px; }
-.mm-compact .mm-hero, .mm-compact .mm-hero-photo { aspect-ratio: 2 / 1; max-height: 150px; border-radius: 16px; }
+.mm-compact .mm-hero, .mm-compact .mm-hero-photo { aspect-ratio: auto; height: 130px; border-radius: 16px; }
+.mm-compact .mm-hero-art { object-position: 50% 35%; }
 .mm-compact .mm-cupbox { width: 64px; height: 76px; }
 .mm-compact .mm-sticker { font-size: 16px; }
 .mm-compact .mm-avatar { width: 40px; height: 40px; }
 .mm-compact .mm-initial { font-size: 17px; }
 .mm-compact .mm-bname { font-size: 17px; }
-.mm-compact .mm-desc { font-size: 14.5px; padding: 0 12px 0 30px; border: solid transparent; border-width: 8px 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.mm-compact .mm-desc { font-size: 14.5px; padding: 0 12px 0 30px; border: solid transparent; border-width: 8px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .mm-compact .mm-chip { font-size: 13.5px; }
-.mm-compact .mm-chip-art, .mm-compact .mm-chip .mm-cup { width: 28px; height: 28px; }
-.mm-compact .mm-fact { padding: 6px 10px 7px; }
+.mm-compact .mm-chip-art, .mm-compact .mm-chip .mm-cup { width: 22px; height: 22px; }
+.mm-compact .mm-facts { display: flex; flex-wrap: nowrap; gap: 6px; }
+.mm-compact .mm-fact { flex: 0 1 auto; min-width: 0; padding: 5px 10px; display: flex; align-items: center; gap: 6px; border-width: 1.5px; }
+.mm-compact .mm-fact dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.mm-compact .mm-fact dd { font-size: 13px; overflow-wrap: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mm-compact .mm-fact:first-child { flex-shrink: 1; }
 .mm-compact .mm-pname { font-size: 15.5px; }
-.mm-compact .mm-acts { grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.mm-compact .mm-acts { grid-template-columns: repeat(4, 1fr); gap: 4px; position: sticky; bottom: 0; z-index: 2; padding: 14px 0 0; margin-top: -4px; background: linear-gradient(to bottom, rgba(255,253,247,0), var(--panel, #FFFDF6) 12px); }
+:root[data-theme="dark"] .mm-compact .mm-acts { background: linear-gradient(to bottom, rgba(31,43,34,0), var(--panel) 12px); }
+.mm-compact .mm-chip { padding-right: 10px; }
 .mm-compact .mm-act { font-size: 12px; gap: 3px; padding: 2px 0; }
 .mm-compact .mm-act .mm-i { width: 20px; height: 20px; padding: 9px; }
 .mm-compact .mm-h { font-size: 12px; }

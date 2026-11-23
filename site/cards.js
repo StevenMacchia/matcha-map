@@ -26,7 +26,7 @@ const KIND = { popup: "pop-up", cafe: "cafe", organizer: "class", festival: "fes
 export const CONFIDENCE = {
   confirmed: ["Confirmed", "Date, time and address come straight from the host."],
   likely: ["Likely", "The date is posted. A detail or two is missing or read between the lines."],
-  unsure: ["Unsure", "We could not confirm every detail. Check the post before you go."],
+  unsure: ["Date not confirmed", "We could not confirm every detail. Check the post before you go."],
 };
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const DAYS_LONG = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
