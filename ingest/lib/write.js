@@ -9,6 +9,7 @@ import { PLACEHOLDER_VENUE, tidyCity } from "./names.js";
 import { judge, hasSignal } from "./quality.js";
 import { displayName } from "./names.js";
 import { findCity } from "./cities.js";
+import { mergeDuplicateEvents } from "./dedupe.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 const DAY = 86400000;
@@ -161,7 +162,7 @@ export function mergeEvents(existing, candidates, { now = new Date(), liveSource
   const live = new Set(liveSourceIds);
   const byId = new Map(existing.filter((e) => keepEvent(e, { sourceIds })).map((e) => [e.id, { ...e }]));
   const newDecay = { ...decay };
-  const stats = { added: 0, updated: 0, decayed: 0, dropped: 0, cleaned: existing.filter((e) => !keepEvent(e, { sourceIds })).length };
+  const stats = { added: 0, updated: 0, decayed: 0, dropped: 0, merged: 0, expired: 0, cleaned: existing.filter((e) => !keepEvent(e, { sourceIds })).length };
   const seenThisRun = new Set();
 
   for (const c0 of candidates) {
@@ -197,11 +198,17 @@ export function mergeEvents(existing, candidates, { now = new Date(), liveSource
         stats.decayed++;
       }
     }
+    // A city-only, unsure find that a live source has not shown again in 14 days is let go: nothing confirmed the date or the place.
+    if (!seenThisRun.has(id) && live.has(e.source_id) && e.confidence === "unsure" && e.approx && !["manual", "sweep"].includes(e.extracted_by) && (nowMs - Date.parse(e.last_seen)) / DAY >= DECAY_DAYS) { stats.expired++; delete newDecay[id]; continue; }
     e.status = computeStatus(e, nowMs);
     // Past events are kept 30 days, then dropped.
     if (e.status === "past" && nowMs - endMs(e) > KEEP_PAST_DAYS * DAY) { stats.dropped++; delete newDecay[id]; continue; }
     out.push(clean(tidy(e)));
   }
+  // The same pop-up read from two sources folds into one record (ingest/lib/dedupe.js: same brand, day and city; venue or 200 m).
+  const dd = mergeDuplicateEvents(out);
+  out.length = 0; out.push(...dd.events);
+  stats.merged = dd.merged.length;
   out.sort((a, b) => Date.parse(a.start) - Date.parse(b.start) || a.id.localeCompare(b.id));
   for (const id of Object.keys(newDecay)) if (!out.some((e) => e.id === id)) delete newDecay[id];
   return { events: out, decay: newDecay, stats };

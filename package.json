@@ -14,6 +14,7 @@
     "shops": "node ingest/shops.js",
     "menus": "node ingest/menus.js",
     "series": "node ingest/series.js",
+    "tidy": "node ingest/tidy.js",
     "watch": "node ingest/watch.js",
     "watchlist:apply": "node tools/apply-watchlist-additions.js",
     "loop": "node ingest/loop.js",
