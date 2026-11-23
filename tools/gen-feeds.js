@@ -6,14 +6,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { SITE_URL } from "./site-url.js";
+import { SITE_URL, SITE_HOST } from "./site-url.js";
 import { writeSlim } from "./slim-events.js";
 import { isUpcoming, isApprox, makeCityLocator, brandNameOf, timeText } from "./gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const NEW_DAYS = 14;
 export const NEW_MAX = 100;
-export const UID_DOMAIN = "matchamap-cu7.pages.dev";
+// UID = <event id>@<site host>: the host from tools/site-url.js, so a domain change moves it too.
+export const UID_DOMAIN = SITE_HOST;
 // Calendar feeds: the end (or the start, if no end) is today or later, by the event's own calendar day.
 export function inCalendar(e, now = new Date()) {
   if (!e || !e.id || e.status === "cancelled") return false;
