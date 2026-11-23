@@ -2,7 +2,7 @@
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { SOCIAL_POST } from "./extract.js";
+import { SOCIAL_POST, postsFrom } from "./extract.js";
 import { hasMatcha } from "../adapters/mato.js";
 import { SITE_ORDER } from "./sites/common.js";
 import { PLACEHOLDER_VENUE } from "./names.js";
@@ -46,7 +46,7 @@ export function clean(e) {
     const v = e[k];
     o[k] = v === undefined || v === null ? (DEFAULTS[k] ? DEFAULTS[k]() : null) : v;
   }
-  o.posts = { ...emptyPosts(), ...o.posts };
+  o.posts = { ...emptyPosts(), ...(Array.isArray(o.posts) ? postsFrom(o.posts) : o.posts) };
   o.links = { ...emptyLinks(), ...o.links };
   o.menu = (Array.isArray(o.menu) ? o.menu : []).slice(0, 8);
   o.evidence = [...new Set((Array.isArray(o.evidence) ? o.evidence : []).filter((u) => String(u || "").startsWith("http")))].slice(0, 8);
