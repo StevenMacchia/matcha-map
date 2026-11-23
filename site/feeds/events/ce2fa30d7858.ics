@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:More Than Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:ce2fa30d7858@matchamap-cu7.pages.dev
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T152119Z
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+SUMMARY:More Than Matcha pop-up
+LOCATION:Los Angeles\, CA
+DESCRIPTION:BIGGEST POP UP YET!!!\nMenu: maple walnut matcha latte\, salted
+  vanilla matcha latte\, white chocolate peppermint matcha latte\, banana b
+ read matcha latte\, classic matcha latte\nDetails not confirmed yet. Check
+  the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/
+ ce2fa30d7858/
+URL:https://matchamap-cu7.pages.dev/e/ce2fa30d7858/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

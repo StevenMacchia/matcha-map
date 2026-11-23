@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha + Meetup (ADDVentures) pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:37bc9c1b4180@matchamap-cu7.pages.dev
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
+DTSTART:20261227T170000Z
+DTEND:20261227T200000Z
+SUMMARY:Matcha + Meetup: Columbus
+LOCATION:Columbus\, OH
+DESCRIPTION:Join us for coffee at different cafes each gathering. Build you
+ r community in your city with a fun day out! Meetup. Matcha. Support local
+ !\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before
+  you go.\nMore: https://matchamap-cu7.pages.dev/e/37bc9c1b4180/
+URL:https://matchamap-cu7.pages.dev/e/37bc9c1b4180/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

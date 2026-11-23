@@ -7,24 +7,8 @@ X-WR-CALNAME:Matcha Map: Baltimore\, MD
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:4bb3cf17ced6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261128T170000Z
-DTEND:20261128T200000Z
-SUMMARY:Matcha + Meetup: Baltimore (Giving Back Edition)
-LOCATION:Baltimore\, MD
-DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
- unity while supporting local businesses\, and giving back to people in nee
- d.\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post befor
- e you go.\nMore: https://matchamap-cu7.pages.dev/e/4bb3cf17ced6/
-URL:https://matchamap-cu7.pages.dev/e/4bb3cf17ced6/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:814d8ffe3285@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
+DTSTAMP:20261123T152119Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261205T170000Z
 DTEND:20261205T200000Z
@@ -40,7 +24,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:6b2e645ce7fd@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
+DTSTAMP:20261123T152119Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261212T170000Z
 DTEND:20261212T230000Z

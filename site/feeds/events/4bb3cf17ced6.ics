@@ -8,12 +8,12 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:4bb3cf17ced6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261128T170000Z
-DTEND:20261128T200000Z
-SUMMARY:Matcha + Meetup: Baltimore (Giving Back Edition)
-LOCATION:Baltimore\, MD
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
+DTSTART:20261128T180000Z
+DTEND:20261128T210000Z
+SUMMARY:Matcha + Meetup: Fort Worth (Giving Back Edition)
+LOCATION:Fort Worth\, TX
 DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
  unity while supporting local businesses\, and giving back to people in nee
  d.\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post befor

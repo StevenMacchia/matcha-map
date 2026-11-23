@@ -8,8 +8,8 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:1be84bce42cf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T003314Z
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
 DTSTART:20261124T030000Z
 DTEND:20261124T060000Z
 SUMMARY:MATCHA MOONDAYS CEREMONY
@@ -24,16 +24,15 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:1baa72e3355b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T133648Z
-DTSTART;VALUE=DATE:20261206
-DTEND;VALUE=DATE:20261207
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T152119Z
+DTSTART:20261206T220000Z
+DTEND:20261206T230000Z
 SUMMARY:The Art of Matcha I A Founder- Led Tasting at LEEV
 LOCATION:Leev Matcha Atelier\, 7565 Norman Rockwell Lane\, Las Vegas\, NV
 DESCRIPTION:Discover the art of Japanese matcha through guided tastings\, h
- ands-on whisking\, and an intimate experience hosted by LEEV's founder.\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/1baa
- 72e3355b/
+ ands-on whisking\, and an intimate experience hosted by LEEV's founder.\nP
+ rice: $44.52\nMore: https://matchamap-cu7.pages.dev/e/1baa72e3355b/
 URL:https://matchamap-cu7.pages.dev/e/1baa72e3355b/
 GEO:36.298678;-115.280223
 STATUS:CONFIRMED

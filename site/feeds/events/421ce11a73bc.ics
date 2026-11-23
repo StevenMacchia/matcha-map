@@ -8,15 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:421ce11a73bc@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261220T180000Z
-DTEND:20261220T210000Z
-SUMMARY:Matcha + Meetup: D.C. | Entrepreneur Speed Networking Roulette
-LOCATION:Washington\, DC
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
+DTSTART:20261220T200000Z
+DTEND:20261220T230000Z
+SUMMARY:Matcha + Meetup: Scottsdale | Entrepreneur Speed Networking Roulett
+ e
+LOCATION:Scottsdale\, AZ
 DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
  for collaborations in this roulette edition of speed networking.\nPrice: $
- 24.57\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ 23.18\nDetails not confirmed yet. Check the brand's post before you go.\nM
  ore: https://matchamap-cu7.pages.dev/e/421ce11a73bc/
 URL:https://matchamap-cu7.pages.dev/e/421ce11a73bc/
 STATUS:TENTATIVE

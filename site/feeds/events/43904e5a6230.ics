@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:HerCafe pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:43904e5a6230@matchamap-cu7.pages.dev
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T152119Z
+DTSTART:20261219T140000Z
+DTEND:20261219T180000Z
+SUMMARY:HerCafe matcha cart at Overland Park Farmers Market (holiday market
+ )
+LOCATION:Overland Park\, KS
+DESCRIPTION:HerCafe is Kansas City's first mobile matcha cart\, hand-whiski
+ ng drinks with in-house syrups and cold foams. Its site lists the Overland
+  Park Farmers Market as its pop-up location every Saturday. The \nMenu: ba
+ nana pudding matcha\, berry chantilly matcha\, peach cobbler matcha\, salt
+ ed honey hojicha\, vanilla matcha\, maple matcha\, hojicha\nPrice: $7-8\nD
+ etails not confirmed yet. Check the brand's post before you go.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/43904e5a6230/
+URL:https://matchamap-cu7.pages.dev/e/43904e5a6230/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

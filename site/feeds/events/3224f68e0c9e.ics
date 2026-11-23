@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha + Meetup (ADDVentures) pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3224f68e0c9e@matchamap-cu7.pages.dev
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
+DTSTART:20261129T170000Z
+DTEND:20261129T200000Z
+SUMMARY:Matcha + Meetup: Jacksonville (Giving Back Edition)
+LOCATION:Jacksonville\, FL
+DESCRIPTION:Join us for coffee at different cafe. Build your community whil
+ e supporting local businesses\, and giving back to people in need.\nPrice:
+  $19.19\nDetails not confirmed yet. Check the brand's post before you go.\
+ nMore: https://matchamap-cu7.pages.dev/e/3224f68e0c9e/
+URL:https://matchamap-cu7.pages.dev/e/3224f68e0c9e/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

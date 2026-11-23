@@ -8,15 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:dcba96b79527@matchamap-cu7.pages.dev
-DTSTAMP:20261123T133648Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261128T180000Z
-DTEND:20261128T210000Z
-SUMMARY:Matcha + Meetup: NYC | Film + Music Speed Networking Roulette
-LOCATION:New York\, NY
+DTSTAMP:20261123T152119Z
+LAST-MODIFIED:20261123T151342Z
+DTSTART:20261128T190000Z
+DTEND:20261128T220000Z
+SUMMARY:Matcha + Meetup: Nashville | Film + Music Speed Networking Roulette
+LOCATION:Nashville\, TN
 DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
  for collaborations in this roulette edition of speed networking.\nPrice: $
- 23.18\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ 25.44\nDetails not confirmed yet. Check the brand's post before you go.\nM
  ore: https://matchamap-cu7.pages.dev/e/dcba96b79527/
 URL:https://matchamap-cu7.pages.dev/e/dcba96b79527/
 STATUS:TENTATIVE
