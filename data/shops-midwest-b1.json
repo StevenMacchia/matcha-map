@@ -1,0 +1,69 @@
+{
+  "generated": "2026-11-23T18:00:00Z",
+  "group": "midwest-b1",
+  "shops": [
+    {
+      "name": "Matcha Me",
+      "address": "2348 N High Street",
+      "city": "Columbus", "state": "OH", "zip": "43202",
+      "website": "https://www.matchamecafe.com",
+      "instagram": "matchamecafe",
+      "phone": "(614) 960-8972",
+      "opening_hours": "Mo-Th 08:00-18:00; Fr 08:00-19:00; Sa 09:00-19:00; Su 09:00-18:00",
+      "menu_url": null,
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.matchamecafe.com/contact",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "notes": "Matcha-only cafe near Ohio State; ceremonial-grade matcha from Japan."
+    },
+    {
+      "name": "CinSei",
+      "address": "32 E. 13th St.",
+      "city": "Cincinnati", "state": "OH", "zip": "45202",
+      "website": "https://cinsei.com",
+      "instagram": "cin.sei",
+      "phone": "+1-513-331-2875",
+      "opening_hours": "Sa 11:00-17:00; Su 12:00-16:00",
+      "menu_url": null,
+      "image_url": "http://cinsei.com/cdn/shop/files/cinsei_manga_cafe_matcha-1.jpg?v=1787141569",
+      "image_credit": "Photo: CinSei website",
+      "source_url": "https://cinsei.com/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "notes": "Manga and matcha cafe, permanent Over-the-Rhine space."
+    },
+    {
+      "name": "Northeast Tea House",
+      "address": "224 E Hennepin Ave",
+      "city": "Minneapolis", "state": "MN", "zip": "55414",
+      "website": "https://northeastteahouse.com",
+      "instagram": null,
+      "phone": "(612) 321-8215",
+      "opening_hours": null,
+      "menu_url": "https://northeastteahouse.com/pages/tea-menu",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://old-town-mpls.squarespace.com/business-directory-blog/northeastteahouse",
+      "read": "2026-11-23",
+      "confirmed_via": "press+site",
+      "notes": "Own site prints no street address; address from the Old Town Minneapolis directory. Mills its own matcha."
+    },
+    {
+      "name": "Recess",
+      "address": "902 E 17th St",
+      "city": "Indianapolis", "state": "IN", "zip": "46202",
+      "website": null,
+      "instagram": null,
+      "phone": null,
+      "opening_hours": null,
+      "menu_url": null,
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.indianapolismonthly.com/food-and-drinks/the-feed-ginas-juice-bar-returns-and-recess-puts-matcha-on-the-map/",
+      "read": "2026-11-23",
+      "notes": "Indianapolis matcha cafe per Axios and Indianapolis Monthly. No own site found, so held."
+    }
+  ]
+}

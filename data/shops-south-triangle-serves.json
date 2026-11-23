@@ -1,0 +1,31 @@
+{
+  "generated": "2026-11-23T21:00:00.000Z",
+  "group": "south-triangle-serves",
+  "shops": [
+    {
+      "name": "Heirloom Brewshop",
+      "tier": "serves",
+      "address": "219 S West St",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27603",
+      "website": "https://heirloom-raleigh.com",
+      "instagram": "heirloomraleigh",
+      "phone": "919-594-7029",
+      "opening_hours": null,
+      "menu_url": "https://heirloom-raleigh.com/weddings",
+      "menu_matcha": [
+        { "name": "Matcha Latte", "price": "$7" },
+        { "name": "Matcha Tonic", "price": "$7" },
+        { "name": "Matcha Lemonade", "price": "$7" },
+        { "name": "Matcha Cloud", "price": "$8" }
+      ],
+      "image_url": "https://irp.cdn-website.com/b105e58d/dms3rep/multi/opt/wvPBkBJQy9IDBvFOYpFXuU1AFyZe9G7z-1920w.png",
+      "image_credit": "Photo: Heirloom Brewshop website",
+      "source_url": "https://heirloom-raleigh.com/contact",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "notes": "Coffee, tea and sake bar in the Dillon Building. The site's 'Our Menu' page is at the odd path /weddings; its Drink Menu has a Matcha section (4 drinks) and the dessert menu adds MATCHA - MISU ($12) and MATCHA AFFOGATO ($10). heirloombrewshop.com redirects to heirloom-raleigh.com. Site prints no opening hours, so null."
+    }
+  ]
+}
