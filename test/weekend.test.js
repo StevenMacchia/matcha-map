@@ -82,10 +82,26 @@ test("weekend pages: og image points at the city card once it exists; jobs cover
   const outs = out.ogJobs.map((j) => j.out).sort();
   assert.ok(outs.includes("og/weekend-raleigh-nc.png") && outs.includes("og/city-raleigh-nc.png") && outs.includes("og/city-austin-tx.png"));
 });
-test("weekend pages: nothing in the window gives no city pages, only an empty index", () => {
-  const out = buildWeekend({ events: [events[2]], cities, sources, now: NOW });
-  assert.deepEqual([...out.files.keys()], ["weekend/index.html"]);
+test("weekend pages: nothing in the window gives a friendly, noindex page per city and an empty index", () => {
+  const out = buildWeekend({ events: [events[2]], cities, sources, now: NOW, hasFeed: (k) => k === "raleigh-nc" });
+  assert.deepEqual([...out.files.keys()].sort(), ["weekend/index.html", "weekend/raleigh-nc/index.html"]);
   assert.match(out.files.get("weekend/index.html"), /Nothing is posted/);
+  assert.match(out.files.get("weekend/index.html"), /Add your pop-up/);
+  const r = out.files.get("weekend/raleigh-nc/index.html");
+  assert.match(r, /nothing posted yet/);
+  assert.match(r, /name="robots" content="noindex/);
+  assert.match(r, /href="\/add\/"[^>]*>Add your pop-up/);
+  assert.match(r, /href="\/feeds\/raleigh-nc\.ics"/);
+  assert.match(r, /rel="icon"/);
+  assert.doesNotMatch(buildWeekend({ events: [events[2]], cities, sources, now: NOW }).files.get("weekend/raleigh-nc/index.html"), /.ics/);
+});
+test("sitemap extras: leaves noindex (empty weekend) pages out", () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "sm-"));
+  fs.mkdirSync(path.join(dir, "weekend", "a-nc"), { recursive: true }); fs.mkdirSync(path.join(dir, "weekend", "b-nc"), { recursive: true });
+  fs.writeFileSync(path.join(dir, "weekend", "a-nc", "index.html"), "<title>x</title>");
+  fs.writeFileSync(path.join(dir, "weekend", "b-nc", "index.html"), '<meta name="robots" content="noindex, follow">');
+  assert.deepEqual(extraPaths(dir), ["/weekend/a-nc/"]);
+  fs.rmSync(dir, { recursive: true, force: true });
 });
 
 const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>https://x.test/</loc><lastmod>2026-11-23</lastmod></url>\n<url><loc>https://x.test/city/nc/raleigh/</loc><lastmod>2026-11-23</lastmod></url>\n<url><loc>https://x.test/e/stale/</loc><lastmod>2026-11-01</lastmod></url>\n</urlset>\n`;

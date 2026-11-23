@@ -8,6 +8,8 @@
 .wk-b { min-width: 0; flex: 1; }
 .wk-b h3 { margin: 0 0 2px; font-size: 18px; line-height: 1.2; }
 .wk-b p { margin: 2px 0; }
+.wk-title { font-size: 15px; font-weight: 700; overflow-wrap: anywhere; }
+.wk-empty { max-width: 56ch; line-height: 1.55; background: var(--panel); border: 2px solid var(--line); border-radius: var(--r); padding: 14px 16px; margin: 14px 0; }
 .wk-when { font-weight: 800; color: var(--deep); font-size: 15px; }
 .wk-where { color: var(--muted); font-size: 15px; overflow-wrap: anywhere; }
 .wk-note { font-size: 13.5px; color: var(--muted); font-style: italic; }

@@ -1,0 +1,1 @@
+mmBrandExtra({"v":1,"brand":"miamirunclub","upcoming":[{"id":"ec03ffb63cb6","day":"Sunday, Nov 29","time":"9 AM","place":"Miami, FL","url":"/e/ec03ffb63cb6/","map":"/?event=ec03ffb63cb6"}],"drinks":[],"price":{"min":10,"max":10,"text":"$10"},"story":""});

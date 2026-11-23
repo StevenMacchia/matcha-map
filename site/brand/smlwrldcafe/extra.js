@@ -1,0 +1,1 @@
+mmBrandExtra({"v":1,"brand":"smlwrldcafe","upcoming":[],"drinks":[{"slug":"latte","name":"Latte","art":"/art/drinks/latte.svg"}],"price":null,"story":""});

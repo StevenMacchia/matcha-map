@@ -1,0 +1,1 @@
+mmBrandExtra({"v":1,"brand":"theliscoffee","upcoming":[{"id":"8523479f1766","day":"Sunday, Oct 10","time":"All day","place":"Hoboken, NJ","url":"/e/8523479f1766/","map":"/?event=8523479f1766"}],"drinks":[],"price":null,"story":""});

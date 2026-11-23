@@ -29,7 +29,11 @@ export function extraPaths(siteDir) {
   const out = [];
   const dirs = (d) => (fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }) : []);
   if (fs.existsSync(path.join(siteDir, "weekend", "index.html"))) out.push("/weekend/");
-  for (const d of dirs(path.join(siteDir, "weekend"))) if (d.isDirectory() && fs.existsSync(path.join(siteDir, "weekend", d.name, "index.html"))) out.push(`/weekend/${d.name}/`);
+  for (const d of dirs(path.join(siteDir, "weekend"))) {
+    const f = path.join(siteDir, "weekend", d.name, "index.html");
+    // empty-weekend pages are noindex: keep them out of the sitemap
+    if (d.isDirectory() && fs.existsSync(f) && !/<meta name="robots" content="noindex/.test(fs.readFileSync(f, "utf8"))) out.push(`/weekend/${d.name}/`);
+  }
   for (const d of dirs(path.join(siteDir, "e"))) if (d.isDirectory() && fs.existsSync(path.join(siteDir, "e", d.name, "index.html"))) out.push(`/e/${d.name}/`);
   for (const f of dirs(path.join(siteDir, "feeds"))) if (f.isFile() && f.name.endsWith(".ics")) out.push(`/feeds/${f.name}`);
   return out.sort();

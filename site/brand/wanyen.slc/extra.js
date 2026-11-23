@@ -1,0 +1,1 @@
+mmBrandExtra({"v":1,"brand":"wanyen.slc","upcoming":[],"drinks":[{"slug":"mango","name":"Mango","art":"/art/drinks/mango.svg"},{"slug":"ice-cream","name":"Ice Cream","art":"/art/drinks/ice-cream.svg"}],"price":{"min":10,"max":10,"text":"$10"},"story":"Dessert cafe that hosts dated matcha events."});

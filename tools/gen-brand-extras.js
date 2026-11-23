@@ -77,10 +77,17 @@ export function run({ root = ROOT, now = new Date() } = {}) {
   const brands = fs.existsSync(path.join(site, "data", "brands.json")) ? read("site/data/brands.json").brands : [];
   const out = buildExtras({ events: ev.events, sources: read("data/sources.json"), brands, art, now,
     hasPage: (slug) => fs.existsSync(path.join(site, "brand", slug, "index.html")) });
-  // clear stale fragments, then write
+  // Every brand page asks for extra.js (a script, because the page CSP has no connect-src): a brand with extras gets
+  // extra.json plus extra.js calling mmBrandExtra(<that object>); any other brand page gets a stub so the request never 404s.
   const bdir = path.join(site, "brand");
-  if (fs.existsSync(bdir)) for (const d of fs.readdirSync(bdir)) { const f = path.join(bdir, d, "extra.json"); if (fs.existsSync(f) && !out.has(d)) fs.rmSync(f); }
-  for (const [slug, x] of out) fs.writeFileSync(path.join(bdir, slug, "extra.json"), JSON.stringify(x));
+  if (fs.existsSync(bdir)) {
+    for (const d of fs.readdirSync(bdir)) {
+      if (!fs.existsSync(path.join(bdir, d, "index.html"))) continue;
+      const x = out.get(d), js = path.join(bdir, d, "extra.js"), json = path.join(bdir, d, "extra.json");
+      if (x) { fs.writeFileSync(json, JSON.stringify(x)); fs.writeFileSync(js, `mmBrandExtra(${JSON.stringify(x)});\n`); }
+      else { if (fs.existsSync(json)) fs.rmSync(json); fs.writeFileSync(js, "mmBrandExtra(null);\n"); }
+    }
+  }
   return { count: out.size };
 }
 

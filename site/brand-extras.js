@@ -15,7 +15,7 @@
     var box = el("section", "bx");
     if (x.story) box.appendChild(el("p", "bx-story", x.story));
     if (x.price && x.price.text) box.appendChild(el("p", "bx-meta", "Usual price: " + x.price.text));
-    if (x.upcoming && x.upcoming.length) {
+    if (x.upcoming && x.upcoming.length && !document.querySelector(".pg-ev")) { // the page already lists its upcoming pop-ups when it has cards
       box.appendChild(el("h2", null, "Next dates"));
       var ul = el("ul", "bx-list");
       x.upcoming.forEach(function (u) {
@@ -42,5 +42,11 @@
     }
     if (box.childNodes.length) host.appendChild(box);
   }
-  fetch(host.getAttribute("data-src") || "extra.json").then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
+  // The pages' CSP is default-src 'none' (no connect-src), so a fetch() of the JSON is blocked. Load extra.js instead (script-src 'self'),
+  // which calls mmBrandExtra(<the same object as extra.json>) or mmBrandExtra(null) for a brand with nothing extra.
+  window.mmBrandExtra = render;
+  var sc = document.createElement("script");
+  sc.src = (host.getAttribute("data-src") || "extra.json").replace(/.json$/, ".js");
+  sc.async = true;
+  document.head.appendChild(sc);
 })();

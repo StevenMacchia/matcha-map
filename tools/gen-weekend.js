@@ -51,7 +51,7 @@ const plural = (n) => `${n} matcha pop-up${n === 1 ? "" : "s"}`;
 const keyOf = (c, e) => (c ? `${c.slug}-${c.state.toLowerCase()}` : e.city && e.state ? `${slugify(e.city)}-${e.state.toLowerCase()}` : null);
 
 // ---- html ----
-function head({ title, desc, canonical, img, ld }) {
+function head({ title, desc, canonical, img, ld, noindex = false }) {
   return `<!doctype html>
 <html lang="en" class="pg">
 <head>
@@ -61,6 +61,7 @@ function head({ title, desc, canonical, img, ld }) {
 <title>${esc(title)} | Matcha Map</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${esc(canonical)}">
+${noindex ? '<meta name="robots" content="noindex, follow">\n' : ""}<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FBF6EA">
 <meta property="og:type" content="website">
@@ -110,9 +111,11 @@ function card(it, ctx) {
     if (chips.length >= 6) break;
   }
   const brandHead = it.handle ? `<a href="/brand/${esc(it.handle)}/">${esc(it.brand)}</a>` : esc(it.brand);
+  const same = (a, b) => String(a).toLowerCase().replace(/[^a-z0-9]/g, "") === String(b).toLowerCase().replace(/[^a-z0-9]/g, "");
+  const evTitle = e.title && !same(e.title, it.brand) ? `<p class="wk-title">${esc(e.title)}</p>` : "";
   const note = e.confidence === "unsure" ? `<p class="wk-note">Read from a post, not confirmed. Check the post before you go.</p>` : "";
   return `<li class="wk-ev">${pic ? `<img class="wk-pic" src="${esc(pic)}" alt="" width="96" height="96" loading="lazy">` : `<svg class="wk-pic wk-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg>`}
-<div class="wk-b"><p class="wk-when">${esc(timeText(e, ctx.tz))}</p><h3>${brandHead}</h3><p class="wk-where">${esc(place)}</p>
+<div class="wk-b"><p class="wk-when">${esc(timeText(e, ctx.tz))}</p><h3>${brandHead}</h3>${evTitle}<p class="wk-where">${esc(place)}</p>
 ${chips.length ? `<ul class="wk-chips">${chips.join("")}</ul>` : ""}${note}
 <p class="wk-links"><a href="/e/${esc(e.id)}/">Details</a><a href="/?event=${encodeURIComponent(e.id)}">On the map</a></p></div></li>`;
 }
@@ -150,6 +153,26 @@ export function cityPage(c, list, win, ctx) {
   return head({ title, desc, canonical, img, ld }) + body + FOOT;
 }
 
+// A city that has pop-ups coming up, just none between this Friday and Sunday: say so kindly and point on (noindex, not in the sitemap).
+export function emptyCityPage(c, win, ctx) {
+  const key = c.key, label = `${c.name}, ${c.state}`;
+  const title = `This weekend in ${c.name}: nothing posted yet`;
+  const desc = `No matcha pop-ups posted in ${label} for ${windowText(win.keys)} yet. Brands post a few days ahead.`;
+  const canonical = `${SITE_URL}/weekend/${key}/`;
+  const ld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
+    { "@type": "ListItem", position: 2, name: "This weekend", item: SITE_URL + "/weekend/" },
+    { "@type": "ListItem", position: 3, name: label, item: canonical }] }];
+  const body = `<nav class="pg-crumb" aria-label="Breadcrumb"><a href="/">Matcha Map</a> <span aria-hidden="true">›</span> <a href="/weekend/">This weekend</a> <span aria-hidden="true">›</span> <span>${esc(label)}</span></nav>
+<h1>${esc(title)}</h1>
+<p class="pg-lead">${esc(windowText(win.keys))}, ${esc(label)}.</p>
+<p class="wk-empty">Nothing is posted for ${esc(c.name)} this weekend yet. Brands usually post a few days ahead, so check back midweek. Know one? Add it and everyone here will see it.</p>
+<p class="wk-actions"><a class="pg-btn" href="/add/">Add your pop-up</a>${ctx.hasFeed(key) ? `<a class="pg-btn" href="/feeds/${esc(key)}.ics">${esc(c.name)} calendar feed</a>` : ""}<a class="pg-btn" href="/${cityPath(c)}">All upcoming in ${esc(c.name)}</a></p>
+<p class="pg-sub wk-more"><a href="/?city=${esc(key)}">See ${esc(c.name)} on the map</a> · <a href="/weekend/">Other cities this weekend</a></p>
+`;
+  return head({ title, desc, canonical, img: `${SITE_URL}/og.png`, ld, noindex: true }) + body + FOOT;
+}
+
 export function indexPage(rows, win, ctx) {
   const total = rows.reduce((a, r) => a + r.n, 0);
   const title = rows.length ? `This weekend: ${plural(total)} in ${rows.length} ${rows.length === 1 ? "city" : "cities"}` : "This weekend: matcha pop-ups";
@@ -163,13 +186,13 @@ export function indexPage(rows, win, ctx) {
 <p class="pg-lead">${esc(windowText(win.keys))}. Pick a city.</p>
 `;
   if (rows.length) body += `<ul class="pg-chips wk-cities">\n${rows.map((r) => `<li><a href="/weekend/${esc(r.key)}/">${esc(r.name)}, ${esc(r.state)}</a> <span class="pg-dim">${r.n}</span></li>`).join("\n")}\n</ul>\n`;
-  else body += `<p>Nothing is posted for this weekend yet. Brands usually post a few days ahead.</p>\n`;
-  body += `<p class="pg-sub"><a class="pg-btn" href="/">Open the map</a> <a class="pg-btn" href="/add/">Add a pop-up</a></p>\n`;
+  else body += `<p class="wk-empty">Nothing is posted for this weekend yet. Brands usually post a few days ahead, so check back midweek, or add one you know about.</p>\n`;
+  body += `<p class="pg-sub"><a class="pg-btn" href="/">Open the map</a> <a class="pg-btn" href="/add/">Add your pop-up</a></p>\n`;
   return head({ title, desc, canonical, img: `${SITE_URL}/og.png`, ld }) + body + FOOT;
 }
 
 // ---- the build ----
-export function buildWeekend({ events, cities = [], sources = [], art = null, now = new Date(), hasArt = () => false, hasFile = () => false, hasOg = () => false }) {
+export function buildWeekend({ events, cities = [], sources = [], art = null, now = new Date(), hasArt = () => false, hasFile = () => false, hasOg = () => false, hasFeed = () => false }) {
   const nowMs = now instanceof Date ? now.getTime() : Date.parse(now);
   const srcById = new Map(sources.map((s) => [s.id, s]));
   const locate = makeCityLocator(cities);
@@ -190,7 +213,7 @@ export function buildWeekend({ events, cities = [], sources = [], art = null, no
     if (!byCity.has(key)) byCity.set(key, { city, win, list: [] });
     byCity.get(key).list.push(info);
   }
-  const ctx = { hasArt, hasFile, hasOg, lookup, art };
+  const ctx = { hasArt, hasFile, hasOg, hasFeed, lookup, art };
   const files = new Map(), rows = [], ogJobs = [];
   for (const [key, v] of byCity) {
     v.list.sort((a, b) => Date.parse(a.e.start) - Date.parse(b.e.start) || (a.e.id < b.e.id ? -1 : 1));
@@ -198,6 +221,7 @@ export function buildWeekend({ events, cities = [], sources = [], art = null, no
     rows.push({ key, name: v.city.name, state: v.city.state, n: v.list.length });
     ogJobs.push({ out: `og/weekend-${key}.png`, tag: "This weekend", city: v.city.name, line: plural(v.list.length) });
   }
+  for (const [key, v] of upByCity) if (!byCity.has(key)) files.set(`weekend/${key}/index.html`, emptyCityPage(v.city, weekendWindow(nowMs, v.city.tz), ctx));
   rows.sort((a, b) => b.n - a.n || (a.key < b.key ? -1 : 1));
   const first = byCity.size ? byCity.get(rows[0].key).win : weekendWindow(nowMs);
   files.set("weekend/index.html", indexPage(rows, first, ctx));
@@ -241,6 +265,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     hasArt: (id) => fs.existsSync(path.join(site, "art", "events", `${id}.svg`)),
     hasFile: (p) => fs.existsSync(path.join(root, p)),
     hasOg: (n) => fs.existsSync(path.join(site, "og", n)),
+    hasFeed: (k) => fs.existsSync(path.join(site, "feeds", `${k}.ics`)),
   });
   fs.rmSync(path.join(site, "weekend"), { recursive: true, force: true });
   for (const [p, text] of out.files) { const f = path.join(site, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text); }

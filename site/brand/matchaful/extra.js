@@ -1,0 +1,1 @@
+mmBrandExtra({"v":1,"brand":"matchaful","upcoming":[],"drinks":[{"slug":"chocolate","name":"Chocolate","art":"/art/drinks/chocolate.svg"}],"price":null,"story":"NYC brand with permanent cafes; pop-up cafe and stands are a side line."});
