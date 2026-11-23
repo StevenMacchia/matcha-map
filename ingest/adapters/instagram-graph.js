@@ -135,7 +135,9 @@ export async function hashtagId(tag, c, rate, http = fetch) {
 
 // One hashtag edge (recent_media or top_media), up to `pages` pages while a page comes back full and has a next cursor.
 // `room()` is asked before every call so the caller's per-run budget holds; it returns false to stop.
-export const HASHTAG_FIELDS = "caption,permalink,timestamp,media_type,media_url,thumbnail_url,children{media_url,media_type}";
+// Hashtag media supports fewer fields than a user's media: no thumbnail_url, and children only as ids. Asking for either
+// fails the whole call with "(#100) Please read documentation for supported fields" (seen live 2026-11-22).
+export const HASHTAG_FIELDS = "caption,permalink,timestamp,media_type,media_url";
 export async function hashtagEdge(hid, edge, c, rate, { http = fetch, pages = 1, room = () => true } = {}) {
   const out = [];
   let url = `${BASE}/${hid}/${edge}?user_id=${c.id}&fields=${encodeURIComponent(HASHTAG_FIELDS)}&limit=50&access_token=${c.token}`;
