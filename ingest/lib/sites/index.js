@@ -6,7 +6,8 @@
 //                        through adapters/eventbrite.js), dostuff (16 city sites, 3 skipped), meetup (public event search),
 //                        allevents (city pages), linktree (Linktree / Beacons pages of known brands).
 // Checked and skipped (2026-11-22):
-//   Yelp events        robots.txt: "User-Agent: *  Disallow: /" (only named search bots are allowed). Skipped.
+//   Yelp events        robots.txt: "User-Agent: *  Disallow: /" (only named search bots are allowed). Skipped; Yelp's official Fusion events API is
+//                      used instead when YELP_API_KEY is set (yelp-events.js, rung N2). Rechecked 2026-11-22: still "Disallow: /".
 //   Posh (posh.vip)    the explore and city pages are client-rendered: no JSON-LD and no embedded event data in the HTML, and the
 //                      data calls go to /api/ and /next-bff/, which its robots.txt disallows. Skipped.
 //   Partiful           events are private invite links; there is no public listing or search, and the robots.txt only names a few

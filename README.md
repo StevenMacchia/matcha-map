@@ -83,6 +83,7 @@ Set as environment variables. All are optional; the site and ingest work without
 | `TIKTOK_KEY` | TikTok API adapter. |
 | `INSTAGRAM_OEMBED_TOKEN` | Captions for pasted Instagram links. |
 | `YELP_API_KEY` | Yelp Fusion: rating, hours, phone and a photo on the card for venues and shops (free, no card, 500 calls a day; the adapter stops at 400). |
+| `TICKETMASTER_API_KEY`, `EVENTBRITE_TOKEN`, `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` | Discovery through official APIs; see "Web discovery engine" for where to get each and its limits. `YELP_API_KEY` also turns on Yelp's events search there. |
 | `OPENAI_API_KEY` | Optional: `npm run art -- --image-api` lets OpenAI's gpt-image-1 draw a PNG of a menu drink beside its SVG (quality low, about $0.01 to $0.02 an image; 5 a run). Key at platform.openai.com/api-keys. Never used by tests or the ingest. |
 | `STABILITY_API_KEY` | Same, through Stability's Stable Image Core (3 credits, about $0.03 an image). Key at platform.stability.ai/account/keys. OpenAI wins when both are set. |
 
@@ -99,7 +100,7 @@ The Yelp and Instagram routes above are the no-card path; an "Open in Google Map
 The map keeps a watch list of accounts in `data/watchlist.json` (every Instagram handle in `data/sources.json`, 82 today, plus 22 candidates found by discovery; 104 accounts as of 2026-11-22).
 
 - `npm run watch` also searches each due Instagram and TikTok account by handle through Tavily (1 credit each, highest-priority first, caps `WATCH_IG_CAP` 60 and `WATCH_TT_CAP` 40) and reads the post date from the snippet so "this Saturday" resolves against the post; MarketSpread vendor pages are read when a market names the vendor as attending.
-- `npm run discover` finds new candidate accounts and matcha events: @mentions in captions we already hold, Instagram hashtags (needs a token), Brave search (needs `BRAVE_API_KEY`), TikTok and Instagram through search snippets and TikTok oEmbed (Tavily, `TAVILY_API_KEY`; no scraping), and the public event sites below. Add `-- --dry` to preview, `-- --no-<site>` to skip one site and `-- --only <site>` to run just one (`mato`, `luma`, `eventbrite`, `dostuff`, `meetup`, `linktree`, `allevents`, `social-search`). `npm run refresh` runs it first.
+- `npm run discover` finds new candidate accounts and matcha events: @mentions in captions we already hold, Instagram hashtags (needs a token), Brave search (needs `BRAVE_API_KEY`), TikTok and Instagram through search snippets and TikTok oEmbed (Tavily, `TAVILY_API_KEY`; no scraping), and the public event sites below. Add `-- --dry` to preview, `-- --no-<site>` to skip one site and `-- --only <site>` to run just one (`mato`, `luma`, `eventbrite`, `dostuff`, `meetup`, `linktree`, `allevents`, `social-search`, `permits`, `markets`, `feeds`, `bluesky`, `reddit`, `mastodon`, `gnews`, `ticketmaster`, `eventbrite-api`, `yelpevents`); `-- --report` adds the per-source yield table (see "Web discovery engine"). `npm run refresh` runs it first.
 - `npm run watch` checks every account that is due (24, 72 or 168 hours apart) and writes new dates to the map. Flags: `-- --all`, `-- --handle <h>`, `-- --dry`, `-- --promote` (turns accounts with real hits into source records).
 - Without any key, discover and watch still work: they read public MATO and Luma pages, the schedule pages of the brands that have one, and @mentions in text already held. They cannot see an Instagram or TikTok account, so a brand with no public schedule page stays a pin with no dates. `-- --promote` changes nothing unless an account has a real hit.
 - Instagram runs only through Meta's official Graph API and stays off until `INSTAGRAM_TOKEN` and `INSTAGRAM_BUSINESS_ID` are in `.env`. Setup: `docs/INSTAGRAM-SETUP.md`. Copy `.env.example` to `.env`.
@@ -198,6 +199,43 @@ Four more sources run inside `npm run discover` (`--only permits|markets|feeds|b
 ### Embed captions for pasted links
 
 `ingest/lib/embed-captions.js` reads the public embed page of an Instagram post or TikTok video that you pasted into `data/inbox/`, never anything found by search. Both hosts' robots.txt disallow the embed path today, so it makes no request; paste the caption as before. Rung 22's manual adapter can call `enrichFromEmbed(raw, { fetcher, file, state: newEmbedState() })` once per inbox file.
+
+## Web discovery engine
+
+`npm run discover` also reads the open web for new matcha pop-up posts (rung N2). Every finding of every crawler, old and new, is written to `data/review/<yyyy-mm-dd>.json` (`{generated, items}`; one event-shaped record per item with `evidence` URLs, `hours`, `pay` and `notes`), after the quality rules and the geocoder. `npm run ingest` then promotes what is good enough (below). Code: `ingest/lib/sites/<name>.js`, `ingest/lib/review.js`, `ingest/lib/quality.js`.
+
+Keyless, run every time:
+
+- **mastodon**: the public hashtag timelines of mastodon.social, mstdn.social, mas.to, hachyderm.io and mastodon.online for #matcha, #matchapopup, #matchalatte, #matchabar (40 posts each), plus `/api/v2/search` where it answers without a login (on mastodon.social it returns nothing signed out). An instance that wants a login is skipped. HTML is stripped; a federated post is read once.
+- **gnews**: Google News RSS is the obvious feed, but `news.google.com/robots.txt` disallows `/rss/search`, so it is not read (the module checks every run). Bing's news RSS carries a personal-use-only notice, so it is not used either. The news step runs on the open GDELT DOC API instead (no key; it asks for one request every 5 s, which is kept): one national query and 4 of the 40 biggest metros a run, rotating. Articles that look like local press are opened (robots.txt respected, at most 25 a run) and their matcha paragraphs read; the brand must come from the headline or an @mention.
+- **bluesky**: the four national queries plus "matcha pop up <city>" and "matcha bar <city>" for 6 of the 40 metros a run (rotating every 6 hours). A 403 or a non-JSON answer from the search is a quiet "skipped this run".
+- **reddit**: `www.reddit.com/robots.txt` is `User-agent: * Disallow: /`, so the public `.json` search pages are not read and the crawler reports itself skipped. With a free Reddit app (`REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET`, a "script" app at reddit.com/prefs/apps, 100 queries a minute) it runs the same search (`matcha popup` in the sub, newest first, last month) on the official API: r/matcha, r/tea and 10 of the 40 metro subreddits a run (r/nyc, r/LosAngeles, r/bayarea ... r/orangecounty; the list is `ingest/lib/sites/metros.js`). User-Agent `matcha-map/0.1 (+https://matchamap-cu7.pages.dev)`, one request every 2 s, an HTTP 429 ends the run. A post linking an Instagram, TikTok or Eventbrite URL also becomes a lead in `data/discover-leads.json`.
+
+Key-gated, off until the key is in `.env` (each logs "off (set ...)"):
+
+| Variable | Source | Where to get it, limits |
+|---|---|---|
+| `TICKETMASTER_API_KEY` | Ticketmaster Discovery API: `keyword=matcha`, and again with `classificationName=food` | developer.ticketmaster.com, free, 5000 calls a day, 5 a second |
+| `EVENTBRITE_TOKEN` | Eventbrite API. Event search left API v3 in 2020, so it reads the organizers of known brands (a source whose `schedule_url` or website is an Eventbrite `/o/` page), then the other events at the venues they use. The public city pages stay with the keyless `eventbrite` crawler. | eventbrite.com/platform/api-keys, free private token, 1000 calls an hour |
+| `YELP_API_KEY` | Yelp Fusion `/v3/events?term=matcha` for 6 metros a run (the same key the card enrichment uses). Yelp has narrowed this endpoint on some plans; a 404 ends it for the run. | yelp.com/developers, free, no card, 500 calls a day shared with enrichment |
+| `BRAVE_API_KEY` | Brave Search: besides watch-list candidates, an Instagram post result whose snippet announces a matcha pop-up now becomes an `instagram:` finding (likely at most) | api.search.brave.com, free plan, 1 query a second |
+| `TAVILY_API_KEY` | TikTok and Instagram search snippets (`social-search`), unchanged | tavily.com, free credits each month; budget in `data/tavily-budget.json` |
+| `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET` | Reddit, above | reddit.com/prefs/apps |
+
+Not built: Google Programmable Search's JSON API is closed to new customers; Google Places needs a billing account. Partiful and Yelp's own event pages stay skipped (robots.txt), see `ingest/lib/sites/index.js`.
+
+Extraction: rules first (`ingest/lib/extract.js`, which now also reads `pay`, such as "cash, Venmo", and labelled `hours`). With `CLAUDE_API_KEY`, a candidate the rules leave unsure is sent to the Claude API (`ingest/lib/llm.js`, model `claude-sonnet-5-5`, 800 tokens, at most 20 calls a run) for brand, date, time, venue, address, city, menu, price, hours and how to pay, as strict JSON with the exact supporting quote for every field. A field is kept only when its quote is in the post and the value follows from it (the date is re-read from the quote by the rule extractor, the time by `findTime`, place and menu words must be in the quote), so the model cannot invent a date or a place. A reading with a checked date and a checked venue or street in a checked city is "likely", otherwise "unsure".
+
+Quality rules (`ingest/lib/quality.js`: a list of patterns plus one matcha-signal check): a hotel listing ("Tempo by Hilton Nashville Downtown"), a craft class ("Pottery with a Purpose", "Matcha Bowl Pottery Class"), a fitness session, a generic place name, or a charity or networking title is dropped unless the title names matcha, or (except for a hotel or generic title) the text names matcha as the point ("a matcha pop-up", "serving matcha lattes"). Matcha as an object (a matcha bowl, a whisk set, "comment matcha for the link") does not count. Classes, tastings and workshops are kept as kind `organizer` (the schema has no `class` kind; the site's word for organizer is "class"). Drops are counted by rule id in the report, and the same rules apply to site finds already in `events.json` at their next merge.
+
+The review folder and promotion:
+
+- `npm run ingest` reads every `.json` file in `data/review/` (the dated run files and the hand-written `sweep-<group>.json` files from coverage sweeps, same item shape) and promotes items at confidence `confirmed` or `likely` that pass the quality rules. An item whose `notes` say "placeholder", "inferred", "assum...", "sample date", "not checked" or "holiday risk" is treated as unsure. Missing fields are tolerated (brand, state, a date and a URL are needed); an item with an address and no lat/lng is geocoded; an item with its own lat/lng keeps it. Items from sweep files get `extracted_by: "sweep"`. `-- --no-review` skips the step.
+- Dedupe is conservative: the same brand (or handle), the same start day, and the same venue or within 300 m is one event. It is merged into the event already held, keeping that event's id and taking the richer value of every other field (a time over all-day, a longer description, the union of menu and evidence).
+- `npm run review` prints the items a human must check (unsure or hedged) as a table with the evidence link; `-- --all` adds a count per file. To accept one, check the link and set its confidence to "likely" in the file. Dated run files are kept 14 days; sweep files are never touched.
+- The review-only crawlers (reddit, mastodon, gnews, yelpevents) write nothing else; the other sites still write their events directly as before and also land in the review file.
+
+Measurement: `npm run discover -- --report` prints one row per source (fetched, candidates, dated, geocoded, promoted, dropped by reason) and writes `docs/DISCOVERY-YIELD.md`.
 
 ## Pages and SEO
 
