@@ -354,7 +354,8 @@ const nameOf = (e, b) => cut(e.brand || (b && b.name) || "Matcha pop-up", 60);
 export function cardHtml(e, ctx = {}) {
   e = e || {};
   const v = verdict(e, ctx), b = brandOf(e, ctx), name = nameOf(e, b), id = safeId(e.id);
-  const desc = e.description ? `<p class="mm-desc">${esc(cut(e.description, 200))}</p>` : "";
+  const plain = String(e.description || "").replace(/[*_`#>]+/g, " ").replace(/s+/g, " ").trim();
+  const desc = plain ? `<p class="mm-desc">${esc(cut(plain, 200))}</p>` : "";
   const report = id ? `<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a>` : "";
   return `<article class="mm-card${ctx.page ? " mm-page" : ""} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>` +
     `<header class="mm-top"><p class="mm-verdict"><span class="mm-vday">${esc(v.day)}</span>${v.time ? ` <span class="mm-vtime">${esc(v.time)}</span>` : ""}${v.where ? `<span class="mm-vwhere">${esc(v.where)}</span>` : ""}</p></header>` +
@@ -380,7 +381,7 @@ export function rowHtml(e, ctx = {}) {
   const kind = KIND[e.kind] && e.kind !== "popup" ? `<span class="mm-kind">${esc(KIND[e.kind])}</span>` : "";
   const conf = e.confidence === "confirmed" ? `<span class="mm-dot mm-conf-confirmed" title="${esc(CONFIDENCE.confirmed[1])}"></span>` : e.confidence === "unsure" ? `<span class="mm-dot mm-conf-unsure" title="${esc(CONFIDENCE.unsure[1])}"></span>` : "";
   const inner = thumbHtml(e, ctx, name) +
-    `<span class="mm-rt"><span class="mm-rv">${esc(join([v.day, v.time], " "))}</span><span class="mm-rn">${esc(name)}${conf}${kind}</span>` +
+    `<span class="mm-rt"><span class="mm-rv">${esc(join([v.day, v.time], " "))}</span><span class="mm-rn"><span class="mm-rname">${esc(name)}</span>${conf}${kind}</span>` +
     (place ? `<span class="mm-rp">${esc(place)}</span>` : "") +
     (menu.length && !ctx.mini ? `<span class="mm-rm">${menu.map((m) => `<span>${esc(titleCase(cut(m, 24)))}</span>`).join("")}</span>` : "") + `</span>` +
     (dist ? `<span class="mm-rd">${esc(dist)}</span>` : "");
@@ -438,6 +439,17 @@ export const renderBrandCard = (brand, events, ctx = {}) => toEl(brandCardHtml(b
 
 // Share (navigator.share, else copy the link) and image fallbacks: a photo that fails tries its remote copy once, then
 // steps aside so the art underneath shows; a missing avatar leaves its initial; a missing drink drawing leaves a cup.
+// Last-resort copy for pages without the async clipboard (plain http, old browsers): a hidden field and execCommand.
+function legacyCopy(url, a, done, loc) {
+  let ok = false;
+  try {
+    const d = a.ownerDocument, t = d.createElement("textarea");
+    t.value = url; t.setAttribute("readonly", ""); t.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+    d.body.appendChild(t); t.select(); ok = !!d.execCommand("copy"); t.remove();
+  } catch { ok = false; }
+  if (ok) done("Link copied"); else if (loc) loc.href = url;
+  return ok;
+}
 export function wire(root, ctx = {}) {
   if (!root || typeof root.addEventListener !== "function" || root.__mmWired) return root;
   root.__mmWired = true;
@@ -451,7 +463,8 @@ export function wire(root, ctx = {}) {
     const label = a.querySelector("span");
     const done = (t) => { if (label) { const was = label.textContent; label.textContent = t; setTimeout(() => { label.textContent = was; }, 1800); } };
     if (nav.share) nav.share({ title: a.getAttribute("data-title") || "Matcha pop-up", url }).catch(() => {});
-    else if (nav.clipboard && nav.clipboard.writeText) nav.clipboard.writeText(url).then(() => done("Link copied"), () => { if (loc) loc.href = url; });
+    else if (nav.clipboard && nav.clipboard.writeText) nav.clipboard.writeText(url).then(() => done("Link copied"), () => legacyCopy(url, a, done, loc));
+    else if (legacyCopy(url, a, done, null)) { /* copied */ }
     else if (loc) loc.href = url;
   });
   root.addEventListener("error", (ev) => {

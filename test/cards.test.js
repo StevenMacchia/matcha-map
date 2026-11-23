@@ -163,3 +163,10 @@ test("renderCard builds an element through the given document and wires it", () 
   assert.deepEqual(el.listeners.sort(), ["click", "error"]);
   assert.throws(() => renderCard(ev(), { now: NOW }), /needs a document/);
 });
+
+test("description loses markdown markers; list row name sits in its own ellipsis span", () => {
+  const html = cardHtml(ev({ description: "**Event Details** ***menu*** `x`" }), { now: NOW });
+  assert.ok(!html.includes("**"));
+  assert.match(html, /<p class="mm-desc">Event Details menu x<\/p>/);
+  assert.match(rowHtml(ev(), { now: NOW }), /<span class="mm-rname">Moonbee<\/span>/);
+});

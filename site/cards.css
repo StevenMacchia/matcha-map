@@ -138,7 +138,9 @@
 .mm-row.mm-v-now .mm-rv { color: var(--focus, #D9667F); }
 .mm-row.mm-v-past .mm-rv { color: var(--muted, #6B5A4F); }
 .mm-rn { display: flex; align-items: center; gap: 6px; font-size: 16.5px; font-weight: 800; line-height: 1.25; min-width: 0; }
-.mm-rn { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.mm-rn { overflow: hidden; white-space: nowrap; }
+.mm-rname { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.mm-rn > .mm-dot, .mm-rn > .mm-kind { flex: none; }
 .mm-rp { font-size: 13.5px; color: var(--muted, #6B5A4F); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .mm-rm { display: flex; gap: 4px; margin-top: 3px; overflow: hidden; }
 .mm-rm span { flex: none; font-size: 11.5px; font-weight: 800; padding: 1px 8px; border-radius: 999px; background: var(--foam, #E6F2DC); color: var(--deep, #3E6B33); }

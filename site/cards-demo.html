@@ -44,17 +44,9 @@
     document.querySelector(".demo-top").remove();
     const f = document.createElement("iframe"); f.src = "cards-demo.html?" + inner; f.width = w; f.height = h; f.title = "Phone width"; f.className = "demo-frame";
     document.getElementById("demo").appendChild(f);
-    throw new Error("phone frame");
   }
-  // ?phone=<px>: show the demo inside a phone-width frame (true 390 px media queries even in a wide window).
-  if (q.get("phone")) {
-    const w = +q.get("phone") || 390, h = +q.get("h") || 900, inner = new URLSearchParams(q); inner.delete("phone"); inner.delete("h"); inner.set("bare", "1");
-    document.body.innerHTML = "";
-    document.body.style.margin = "0";
-    const f = document.createElement("iframe"); f.src = "cards-demo.html?" + inner; f.width = w; f.height = h; f.title = "Phone width"; f.style.border = "0"; f.style.display = "block";
-    document.body.appendChild(f);
-    throw new Error("phone frame");
-  }
+  const framed = !!q.get("phone");
+  if (!framed) {
   if (q.get("bare")) document.querySelector(".demo-top p").textContent = "Demo clock Thu Nov 26, 12:30 pm, near downtown Houston";
   if (q.get("theme")) document.documentElement.setAttribute("data-theme", q.get("theme"));
   document.getElementById("theme").onclick = () => {
@@ -88,6 +80,7 @@
     bc.appendChild(renderBrandCard({ handle: e0.handle, brand: e0.brand, kind: e0.kind }, pool.filter((e) => e.handle === e0.handle), ctx)); box.appendChild(bc);
   }
   document.documentElement.setAttribute("data-ready", "1");
+  }
 </script>
 </body>
 </html>
