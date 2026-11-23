@@ -51,6 +51,10 @@ test("confirmCandidate: a serves row needs the site's own address and three matc
   assert.equal(ok.row.menu_matcha.length, 3);
   assert.equal(ok.row.provider_id, "f1");
   assert.match(ok.row.attribution, /Foursquare/);
+  // Yelp: nothing from Yelp is stored, not even its id
+  const yb = await confirmCandidate({ ...f, provider: "yelp", provider_id: "y9", website: "https://teahill.example" }, siteGet({ "/": page("hello", addr), "/menu": menu }));
+  assert.equal(yb.row.provider_id, undefined);
+  assert.equal(yb.row.attribution, undefined);
   assert.equal(ok.row.opening_hours, "Mo-Su 08:00-18:00");
   assert.equal(checkRow({ ...ok.row }).shop.tier, "serves", "the researched-row loader accepts it");
   // a different street number on the site: held

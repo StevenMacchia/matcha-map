@@ -1,0 +1,38 @@
+{
+ "generated": "2026-11-23T20:43:25.630Z",
+ "group": "keyed-yelp",
+ "shops": [
+  {
+   "name": "Maruwu Seicha",
+   "address": "9426 Washington Blvd",
+   "city": "Culver City",
+   "state": "CA",
+   "zip": "90232",
+   "website": "https://www.maruwuseicha.us",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": "https://www.maruwuseicha.us/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.maruwuseicha.us/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Order authentic Japanese matcha beverages for pick up",
+     "price": null
+    },
+    {
+     "name": "AUTHENTIC JAPANESE MATCHA",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte + Okinawa Boba",
+     "price": null
+    }
+   ]
+  }
+ ]
+}

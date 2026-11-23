@@ -3,7 +3,7 @@
 // How the terms are respected: a provider answer is used to FIND a candidate (name, address, website, phone, categories), and is kept only in
 // the gitignored cache for 24 hours. A row reaches data/ only after the shop's own public site confirms it (confirmCandidate: the site prints
 // the same street number and the shop's menu or name says matcha), so what we store comes from the shop's own pages; from the provider we
-// keep only its place id (yelp_id / fsq_id) and the attribution line the terms require. No rating, review text, photo or provider URL is stored.
+// keep nothing from Yelp (not even its business id); from Foursquare only its place id and the attribution line. No rating, review text, photo or provider URL is stored.
 // Yelp Fusion gives no website, so a Yelp candidate stays in the cache for a worker to confirm by name (it never becomes a row on its own).
 //
 //   Yelp:       GET https://api.yelp.com/v3/businesses/search?term=matcha&location=<city, ST>&categories=<aliases>&limit=50   (Bearer key; free 500 calls a day)
@@ -120,7 +120,8 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
       opening_hours: rd("hours_osm"), menu_url: tier === "serves" && menuPage ? menuPage.url : rd("menu_url"),
       image_url: rd("image"), image_credit: rd("image") ? `Photo: ${c.name} website` : null,
       source_url: sameSpot.url || pages[0].url, read, confirmed_via: "own-site", tier, ...(menu_matcha ? { menu_matcha } : {}),
-      provider: c.provider, provider_id: c.provider_id, attribution: ATTRIBUTION[c.provider],
+      // Yelp terms 5(a)/(b): not even the Yelp business id is stored; the row stands on the shop's own pages. Foursquare rows keep theirs.
+      ...(c.provider === "yelp" ? {} : { provider: c.provider, provider_id: c.provider_id, attribution: ATTRIBUTION[c.provider] }),
     },
   };
 }

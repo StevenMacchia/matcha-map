@@ -9,7 +9,9 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 
 export const STATES = new Set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split(" "));
-export const CONFIRMED_VIA = new Set(["own-site", "instagram-bio", "press+site"]);
+// own-site, instagram-bio, press+site: confirmed (verified). public-page: a non-Yelp public page (ordering page header, Linktree, a market or mall
+// directory, local press, OpenStreetMap) names the shop and its address; the row is shown but verified stays false until an own page confirms it.
+export const CONFIRMED_VIA = new Set(["own-site", "instagram-bio", "press+site", "public-page"]);
 const http = (u) => (typeof u === "string" && /^https?:\/\/[^\s]+$/i.test(u.trim()) ? u.trim() : null);
 const str = (v) => (typeof v === "string" && v.trim() ? v.trim() : null);
 const handle = (v) => { const s = str(v); if (!s) return null; const m = /instagram\.com\/([A-Za-z0-9._]+)/i.exec(s); return (m ? m[1] : s.replace(/^@/, "")).toLowerCase().replace(/[^a-z0-9._]/g, "") || null; };
@@ -59,7 +61,7 @@ export function checkRow(r, file = "") {
       menu_url: http(r.menu_url), image_url: http(r.image_url), image_credit: str(r.image_credit),
       tier, ...(menu_matcha ? { menu_matcha } : {}),
       ...(str(r.provider_id) ? { provider: str(r.provider), provider_id: str(r.provider_id), attribution: str(r.attribution) } : {}), note: str(r.note) ? str(r.note).slice(0, 120) : null,
-      cuisine: null, source: "web", source_url, read: r.read, confirmed_via: via, verified: !!via,
+      cuisine: null, source: "web", source_url, read: r.read, confirmed_via: via, verified: !!via && via !== "public-page",
     },
   };
 }
@@ -86,8 +88,8 @@ export async function curatedShops({ geocoder, fetched, dir = "data" }) {
     const ev = { id: s.id, address: s.address, city: s.city, state: s.state, zip: s.zip, confidence: "confirmed" };
     await geocoder.geocode(ev);
     // A suite or unit number often defeats Nominatim: ask again with the street alone.
-    const bare = s.address.replace(/[,\s]+(?:suite|ste\.?|unit|#|space|bldg|building)\s*[\w-]+.*$/i, "").replace(/\s*\(.*$/, "").trim();
-    if (ev.lat == null && bare && bare !== s.address) { ev.address = bare; await geocoder.geocode(ev); }
+    const bare = s.address.split(",")[0].replace(/[\s]+(?:suite|ste\.?|unit|#|space|bldg|building|\d+(?:st|nd|rd|th) floor|ground floor|floor)\s*[\w-]*.*$/i, "").replace(/\s*\(.*$/, "").trim();
+    if (ev.lat == null && bare && bare !== s.address) { const again = { id: ev.id + "~bare", address: bare, city: s.city, state: s.state, zip: s.zip, confidence: "confirmed" }; await geocoder.geocode(again); Object.assign(ev, { lat: again.lat, lng: again.lng, geocode_source: again.geocode_source }); }
     if (ev.lat == null || !["nominatim", "mapbox", "manual"].includes(ev.geocode_source)) { held.push({ file, name: s.name, why: "address not geocoded" }); continue; }
     shops.push({ ...s, lat: ev.lat, lng: ev.lng, geocode_source: ev.geocode_source, osm_url: null, fetched });
   }
