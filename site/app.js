@@ -417,7 +417,7 @@
       rec.el.setAttribute("aria-label", rec.label); // addTo writes "Map marker" over it
       if (parents.length) bloom(rec, parents);
     });
-    if (fresh.length || gone) labelSoon();
+    if (fresh.length || gone) { labelSoon(); goingSoon(); }
   }
   // Name labels (2026-11-23): from LABEL_Z, shops and placed pop-ups carry their name in a small plate beside the pin.
   // A label that would overlap one already placed, or any pin, tries the other side, then below, then stays hidden.
@@ -571,7 +571,11 @@
     if (it.approx) el.title = pinLabel(it);
     var inner = document.createElement("span");
     inner.className = "mk-in";
-    if (it.kind === "e") {
+    if (it.kind === "e" && !it.approx && window.MatchaPins) {
+      var today = !it.past && isToday(it.data);
+      inner.innerHTML = window.MatchaPins.popPin({ photo: imgSrc(it.data), drawn: artFor(it), pill: window.MatchaPins.dayPill(it.data.start), today: today, going: goingN[it.data.id] || 0 });
+      if (today) el.classList.add("today");
+    } else if (it.kind === "e") {
       if (it.approx) inner.appendChild(ringEl());
       inner.appendChild(drawChar(it.key === openKey && !it.approx ? "m-point" : "m-base"));
       if (!it.past && !it.approx && isToday(it.data)) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
@@ -596,6 +600,30 @@
     return rec;
   }
   function ringEl() { var r = document.createElement("span"); r.className = "mk-ring"; return r; }
+  // Going badges on pop-up pins: the server's count (GET /api/rsvp through rsvp.js, the same counts the list rows show),
+  // drawn only when it is one or more; nothing is shown while the feature is off or the API does not answer.
+  var goingN = {}, goingT = 0;
+  function goingSoon() { clearTimeout(goingT); goingT = setTimeout(paintGoing, 400); }
+  function paintGoing() {
+    var R = window.MatchaRsvp, PN = window.MatchaPins;
+    if (!R || !R.pinCounts || !PN) return;
+    var ids = [];
+    Object.keys(live).forEach(function (id) { var r = live[id], it = items[id]; if (r.kind === "e" && it && !it.past && !it.approx) ids.push(it.data.id); });
+    if (!ids.length) return;
+    R.pinCounts(ids).then(function (c) {
+      var moved = false;
+      Object.keys(c || {}).forEach(function (id) {
+        var n = Math.floor(+c[id] || 0);
+        if ((goingN[id] || 0) !== n) { if ((goingN[id] || 0) >= 1 !== n >= 1) moved = true; goingN[id] = n; }
+        var r = live["e:" + id], pu = r && r.el.querySelector(".pn-pu");
+        if (!pu) return;
+        var old = pu.querySelector(".pn-going");
+        if (old) old.remove();
+        if (n >= 1) pu.insertAdjacentHTML("beforeend", PN.goingHTML(n));
+      });
+      if (moved) setSources(); // a badge widens the pin: the groups are worked out again
+    }).catch(function () { /* no badges */ });
+  }
   // ---- the pin look (site/pins.js, 2026-11-23 mock) ----
   var SHOP_ART = "<span class=\"pn-draw\" data-char=\"s-shop\"></span>";
   // open now from the shop's own hours (shopcard.js through cards-app.js); false until that module is in
@@ -801,9 +829,8 @@
         r.el.classList.toggle("sel", on);
         // The selected Mattie lifts (motion.css) and points up at his card; he goes back to rest when it closes.
         if (r.kind === "e" && !r.el.classList.contains("mk-ap")) {
-          var old = r.el.querySelector(".ch"), next = drawChar(on ? "m-point" : "m-base");
-          if (old) old.parentNode.replaceChild(next, old);
-          if (on) animOnce(next, "point-in");
+          var old = r.el.querySelector(".mk-in > .ch");
+          if (old) { var next = drawChar(on ? "m-point" : "m-base"); old.parentNode.replaceChild(next, old); if (on) animOnce(next, "point-in"); }
         }
       }
     });
@@ -1164,7 +1191,7 @@
       if (window.MatchaFeatured) window.MatchaFeatured.paint(box);
       box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
       popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "26rem", focusAfterOpen: false, className: "mm-pop",
-        anchor: "bottom", offset: it.kind === "e" ? [0, -50] : it.kind === "s" ? [0, -18] : [NUDGE, NUDGE - 12] })
+        anchor: "bottom", offset: it.kind === "e" ? [0, it.approx ? -50 : -72] : it.kind === "s" ? [0, -24] : [NUDGE, NUDGE - 12] })
         .setLngLat(lngLat(it.ll)).setDOMContent(box).addTo(map);
       // Keep the whole card on screen: nudge the map down when the card would run off the top.
       var pr = popup.getElement().getBoundingClientRect(), mr = map.getContainer().getBoundingClientRect();
@@ -1395,14 +1422,16 @@
   // each group's members by its feature key; KIND_SHIFT is where each kind's marker sits from its point (an event pin
   // stands on its point, so its middle is 23 px up; a brand mochi is nudged down-right).
   var densG = {}, denseCache = null;
-  var KIND_SHIFT = { b: [NUDGE, NUDGE], e: [0, -23], s: [0, 0] }, KIND_SRC = { e: "ev", s: "sh", b: "br" };
+  var KIND_SHIFT = { b: [NUDGE, NUDGE], e: [0, -35], s: [0, 0] }, KIND_SRC = { e: "ev", s: "sh", b: "br" };
   // Half of each marker's box (style.css), so no two markers on the map cover each other: a single pin, then a group by
   // its size class (cl-m over 9, cl-l over 24), widened on both sides by the count badge that pokes out to the right.
-  var PIN_HALF = { e: [20, 23], s: [26, 25], b: [11, 11] };
+  // single pins: the mock's rule, one pin joins another closer than about 28 px (40 around a pop-up); a pin may tuck its
+  // edge under a neighbour, but never its middle. Groups are measured by their whole box.
+  var PIN_HALF = { e: [25, 25], s: [14, 14], b: [12, 12] };
   // groups: to zoom 12 a neighbourhood pill (up to three faces and the count, a pink count above), from 12 a stack
   function densShift(p) { return KIND_SHIFT[p.kind]; }
   function densHalf(p, n) {
-    if (n <= 1) return PIN_HALF[p.kind];
+    if (n <= 1) return p.kind === "e" && items[p.key] && goingN[items[p.key].data.id] >= 1 ? [32, 25] : PIN_HALF[p.kind];
     if (map.getZoom() < 12) { var k = Math.min(3, n), w = 37 + 20 * k + 9 * String(n).length; return [w / 2 + 9, 26]; }
     return [32, 27];
   }

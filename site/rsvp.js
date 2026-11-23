@@ -124,6 +124,20 @@
       toggle(strip, b.getAttribute("data-mm-going"));
     });
   }
+  // Map pins (2026-11-23): the server's counts for these pop-ups, { id: n }, fetched at most once a minute each; {} while
+  // the feature is off or the API is not there. app.js draws a badge only for a count of one or more.
+  function pinCounts(ids) {
+    return probe().then(function (ok) {
+      if (!ok) return {};
+      var now = Date.now(), want = [];
+      (ids || []).forEach(function (id) { if (want.length < 60 && (!stamp[id] || now - stamp[id] > 60000) && want.indexOf(id) < 0) want.push(id); });
+      return (want.length ? fetchCounts(want) : Promise.resolve()).then(function () {
+        var out = {};
+        (ids || []).forEach(function (id) { if (counts[id] != null) out[id] = counts[id]; });
+        return out;
+      });
+    });
+  }
   // forget(): drops this device's id and list (the data-deletion page can call it; the server rows expire on their own)
-  window.MatchaRsvp = { hydrate: hydrate, hydrateRows: hydrateRows, isGoing: isGoing, going: going, probe: probe, label: label, rowLabel: rowLabel, forget: function () { meMem = null; goingMem = null; store(ME_KEY, null); store(GOING_KEY, null); } };
+  window.MatchaRsvp = { hydrate: hydrate, hydrateRows: hydrateRows, pinCounts: pinCounts, isGoing: isGoing, going: going, probe: probe, label: label, rowLabel: rowLabel, forget: function () { meMem = null; goingMem = null; store(ME_KEY, null); store(GOING_KEY, null); } };
 })();

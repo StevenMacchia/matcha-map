@@ -54,9 +54,10 @@ const CHECK = `(() => {
     if (d < MIN) out.push("pins " + d.toFixed(1) + " px apart: " + name(singles[i].el) + " / " + name(singles[j].el));
   }
   const solid = marks.filter((m) => !m.ap);
+  // a single pin may tuck an edge under a neighbour (the mock's rule); a group may not be covered
   for (let i = 0; i < solid.length; i++) for (let j = i + 1; j < solid.length; j++) {
     const [w, h] = ov(solid[i].b, solid[j].b);
-    if (w > 12 && h > 12) out.push("markers overlap " + Math.round(w) + "x" + Math.round(h) + ": " + name(solid[i].el) + " / " + name(solid[j].el));
+    if ((solid[i].group || solid[j].group) && w > 12 && h > 12) out.push("markers overlap " + Math.round(w) + "x" + Math.round(h) + ": " + name(solid[i].el) + " / " + name(solid[j].el));
   }
   return { pins: marks.length, singles: singles.length, groups: marks.filter((m) => m.group).length, labels: labels.length, fails: [...new Set(out)] };
 })()`;

@@ -316,6 +316,20 @@ body.show-list .list-panel { display: block; }
 .pn-cup { position: absolute; right: -7px; bottom: -6px; width: 18px; height: 18px; border-radius: 50%; background: var(--panel); border: 1.5px solid var(--edge); display: grid; place-items: center; }
 .pn-cup svg { width: 13px; height: 13px; display: block; }
 .pn-open { position: absolute; right: -2px; top: -2px; width: 10px; height: 10px; border-radius: 50%; background: var(--open); border: 2px solid var(--panel); }
+/* pop-up: the drawn card or the photo in a warm rounded card with a tail, the day pill, a going badge, today's pulse */
+.mk-ev:not(.mk-ap) { width: 46px; height: 56px; }
+.mk-ev:not(.mk-ap)::after { display: none; }
+.mk-ev:not(.mk-ap) .mk-in { height: 56px; filter: none; }
+.pn-pu { width: 46px; height: 46px; border-radius: 14px; background: var(--peach); border: 3px solid var(--peach-edge); box-shadow: 0 3px 10px rgba(201,138,94,.35); box-sizing: border-box; }
+.pn-pu::after { content: ""; position: absolute; left: 50%; bottom: -9px; width: 12px; height: 12px; margin-left: -6px; background: var(--peach-edge); transform: rotate(45deg); border-radius: 2px; z-index: -1; }
+.pn-pu .pn-ph { border-radius: 11px; }
+.pn-pu.today { background: var(--pink); border-color: var(--pink-edge); box-shadow: 0 0 0 5px rgba(246,183,199,.45), 0 3px 12px rgba(217,140,162,.45); }
+.pn-pu.today::after { background: var(--pink-edge); }
+.pn-pill { position: absolute; left: 50%; top: -15px; transform: translateX(-50%); padding: 1px 7px; border-radius: 999px; font-size: 11px; font-weight: 800; line-height: 16px; white-space: nowrap; background: var(--panel); color: var(--pu-ink); border: 1.5px solid var(--peach-edge); }
+.pn-pu.today .pn-pill { background: #D9667F; color: #fff; border-color: #D9667F; }
+.pn-going { position: absolute; right: calc(100% - 6px); bottom: 4px; font-size: 10px; font-weight: 800; background: var(--deep); color: var(--panel); border: 1.5px solid var(--panel); border-radius: 999px; padding: 0 5px; line-height: 15px; white-space: nowrap; }
+.pn-pulse { position: absolute; inset: -3px; border-radius: 16px; border: 3px solid var(--pink-edge); pointer-events: none; opacity: 0; }
+.mk.past .pn-pu { opacity: .6; filter: grayscale(.4); }
 /* a stack (zoom 12 up): the first two pins fanned, the count */
 .mk-cl.cl-stack, .mk-cl.cl-stack.cl-m, .mk-cl.cl-stack.cl-l { width: 50px; height: 40px; }
 .pn-stack { width: 50px; height: 40px; }
