@@ -12,6 +12,7 @@
     "discover": "node ingest/lib/discover.js",
     "review": "node ingest/review.js",
     "shops": "node ingest/shops.js",
+    "menus": "node ingest/menus.js",
     "watch": "node ingest/watch.js",
     "watchlist:apply": "node tools/apply-watchlist-additions.js",
     "loop": "node ingest/loop.js",

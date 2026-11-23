@@ -1,0 +1,26 @@
+{
+  "_about": "Menus the brand publishes only as an image or PDF, transcribed by eye from that image on the date shown. Every line is something printed on the image; nothing is added. npm run menus merges these under the sites it can parse as text. Re-read the image when the brand posts a new one.",
+  "menus": {
+    "matchahousenyc.com": {
+      "kind": "image",
+      "source_url": "https://matchahousenyc.com/menu-page",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/680aaea7cc5f2e167bd0100a/af778046-5f17-45fc-8033-083aba30a5e0/june+menu.png",
+      "read": "2026-11-23",
+      "note": "Spring menu 2026 as published on the site",
+      "items": [
+        { "name": "Matcha Latte", "price": "$7.50", "note": "iced or hot" },
+        { "name": "Matcha Cortado", "price": "$6.50", "note": "iced or hot" },
+        { "name": "Matcha Americano", "price": "$5.50", "note": "iced or hot" },
+        { "name": "Matchadamia Latte", "price": "$8.25", "note": "iced or hot" },
+        { "name": "Chocolate Matcha", "price": "$8", "note": "iced or hot" },
+        { "name": "Matcha Cold Foam", "price": "+$1.50", "note": "iced" },
+        { "name": "Strawberry Mochi", "price": "$6", "note": "PAVLO x MATCHA HOUSE" },
+        { "name": "Mango Mochi", "price": "$6", "note": "PAVLO x MATCHA HOUSE" },
+        { "name": "Earl Grey Cookie", "price": "$5", "note": "Bibble and Sip" },
+        { "name": "Natural Alkaline Artisan Water", "price": "$2.50", "note": "A9" },
+        { "name": "Sparkling Water", "price": "$3.50", "note": "Saratoga" },
+        { "name": "Milk substitutes", "price": "+$0.75", "note": "oat, soy, almond, macadamia nut, coconut, lactose free" }
+      ]
+    }
+  }
+}

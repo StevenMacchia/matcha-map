@@ -1,0 +1,1114 @@
+{
+ "generated": "2026-11-23T17:43:28.947Z",
+ "menus": {
+  "laboracafe.com": {
+   "items": [
+    {
+     "name": "SALTY 46",
+     "price": "$7.10+",
+     "note": "Salty Cheese foam layered between a choice of our house-made Viet drip coffee, ceremonial matcha, or espresso"
+    },
+    {
+     "name": "SCARLET 3",
+     "price": "$7.10+",
+     "note": "Strawberry foam layered between a choice of our house-made Viet drip coffee, ceremonial matcha, or espresso"
+    },
+    {
+     "name": "BANANA 53",
+     "price": "$7.10+",
+     "note": "Banana foam layered between a choice of our house-made Viet drip coffee, ceremonial matcha, or espresso"
+    },
+    {
+     "name": "BLUEBERRY 30",
+     "price": "$7.10+",
+     "note": "Blueberry foam layered between a choice of our house-made Viet drip coffee, ceremonial matcha, or espresso"
+    },
+    {
+     "name": "PISTACHIO 54",
+     "price": "$7.10+",
+     "note": "Pistachio foam layered between a choice of our house-made Viet drip coffee, ceremonial matcha, or espresso"
+    },
+    {
+     "name": "UBE 39",
+     "price": "$7.10+",
+     "note": "Ube foam layered between a choice of our house-made Viet drip coffee, ceremonial matcha, or espresso"
+    },
+    {
+     "name": "PANDAN 32",
+     "price": "$7.10+",
+     "note": "Pandan foam layered between a choice of our house-made Viet drip coffee, ceremonial matcha, or espresso"
+    },
+    {
+     "name": "LABORA 1",
+     "price": "$7.35",
+     "note": "Premium ceremonial grade matcha latte paired with whole-milk"
+    },
+    {
+     "name": "VIENNA MATCHA",
+     "price": "$8.35",
+     "note": "Ceremonial grade matcha latte beautifully layered with french vanilla foam"
+    },
+    {
+     "name": "MATCHA X2",
+     "price": "$7.60",
+     "note": "Ceremonial grade matcha latte beautifully layered with matcha foam"
+    },
+    {
+     "name": "EARL 37",
+     "price": "$7.85",
+     "note": "House-made Earl grey syrup, paired with our ceremonial matcha"
+    },
+    {
+     "name": "LATTE",
+     "price": "$5.85",
+     "note": "Milky espresso shot latte layered with whole-milk"
+    },
+    {
+     "name": "VIENNA LATTE",
+     "price": "$7.85",
+     "note": "Milky espresso shot latte beautifully layered with french vanilla foam"
+    },
+    {
+     "name": "AMERICANO",
+     "price": "$5.60",
+     "note": null
+    },
+    {
+     "name": "BROWN SUGAR SHAKEN ESPRESSO",
+     "price": "$7.60",
+     "note": null
+    },
+    {
+     "name": "DRIP VIET COFFEE IS PREMADE AND CANNOT SUBSTITUTE DAIRY",
+     "price": "$7.10",
+     "note": null
+    }
+   ],
+   "source_url": "http://www.laboracafe.com/menu",
+   "read": "2026-11-23",
+   "kind": "html"
+  },
+  "thematchabarx.com": {
+   "items": [
+    {
+     "name": "Lavender Thyme Matcha Latte with Lemon Curd Cold Foam",
+     "price": "$9.00",
+     "note": null
+    },
+    {
+     "name": "Orange Vanilla Cold Foam Houjicha Latte",
+     "price": "$8.50",
+     "note": null
+    },
+    {
+     "name": "Black Currant Coconut Water Matcha",
+     "price": "$9.00",
+     "note": null
+    },
+    {
+     "name": "Matcha Americano",
+     "price": "$6.00",
+     "note": "matcha & hot water"
+    },
+    {
+     "name": "Matcha Latte",
+     "price": "$7.00",
+     "note": "Nekohama Green Tea - single origin from Ando Cha family in Mie-ken, Japan & milk"
+    },
+    {
+     "name": "Houjicha Latte",
+     "price": "$6.50",
+     "note": "Nekohama Light Roasted Green Tea - single origin from Ando Cha family in Mie-ken, Japan & milk"
+    },
+    {
+     "name": "Sparkling Matcha",
+     "price": "$6.50",
+     "note": "matcha & sparkling mineral water"
+    },
+    {
+     "name": "Salted Honey",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "Vanilla",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "Lavender Thyme",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "Organic Minor Figures Oat Milk",
+     "price": "$1.00",
+     "note": null
+    },
+    {
+     "name": "Táche Pistachio Milk",
+     "price": "$1.00",
+     "note": null
+    }
+   ],
+   "source_url": "https://www.thematchabarx.com/menu",
+   "read": "2026-11-23",
+   "kind": "html"
+  },
+  "setsugekkany.com": {
+   "items": [
+    {
+     "name": "Matcha by a tea bowl",
+     "price": "$8.25 - $19.75",
+     "note": "Authentic Usucha Style"
+    },
+    {
+     "name": "Hot Matcha",
+     "price": "$5.25 - $15.25",
+     "note": "Premium Shot, Medium Thickness, and Light Thickness"
+    },
+    {
+     "name": "Hot Matcha Latte",
+     "price": "$6.25 - $16.5",
+     "note": "with hot oat milk"
+    },
+    {
+     "name": "Hot Matcha-ppuchino",
+     "price": "$6.5 - $17",
+     "note": "with hot oat milk and milk foam"
+    },
+    {
+     "name": "Iced Matcha",
+     "price": "$6 - $16.25",
+     "note": "with ice cubes"
+    },
+    {
+     "name": "Iced Matcha Latte",
+     "price": "$6.75 - $17.25",
+     "note": "with cold oat milk and ice cubes"
+    },
+    {
+     "name": "Iced Matcha-ppuccino",
+     "price": "$7 - $17.75",
+     "note": "with cold oat milk, milk foam, and ice cubes"
+    },
+    {
+     "name": "Matcha (Koicha) Affogato",
+     "price": "$8.5 - $22",
+     "note": "Milk gelato with Koicha (thick tea) with a touch of Shochu"
+    },
+    {
+     "name": "Matcha Tasting",
+     "price": "$15 - $27",
+     "note": "Three kinds of matcha"
+    },
+    {
+     "name": "Koicha",
+     "price": "$20 - $25",
+     "note": "A bowl of very thick tea"
+    },
+    {
+     "name": "Higashi - Dry Sweet",
+     "price": "$1",
+     "note": "made from Wasanbon , traditional Japanese sugar made in Kagawa"
+    }
+   ],
+   "source_url": "https://www.setsugekkany.com/menu/",
+   "read": "2026-11-23",
+   "kind": "html"
+  },
+  "nanasgreentealasvegas.com": {
+   "items": [
+    {
+     "name": "Matcha Latte",
+     "price": "R $6.75 · L $7.50",
+     "note": null
+    },
+    {
+     "name": "MatchaCream Latte",
+     "price": "R $7.25 · L $8.00",
+     "note": null
+    },
+    {
+     "name": "Matcha BrownSugar Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Matcha Chocolate Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Matcha Red Bean Latte w/ Mochi",
+     "price": "R $8.00 · L $9.00",
+     "note": null
+    },
+    {
+     "name": "Matcha Float w/ Mochi",
+     "price": "R $8.00 · L $8.75",
+     "note": null
+    },
+    {
+     "name": "Matcha Soft Serve Latte",
+     "price": "R $7.25 · L $8.00",
+     "note": null
+    },
+    {
+     "name": "Matcha Soft Serve Latte w/ Chocolate Crunch",
+     "price": "R $8.00 · L $8.75",
+     "note": null
+    },
+    {
+     "name": "Matcha Espresso Shot",
+     "price": "$6.95",
+     "note": null
+    },
+    {
+     "name": "Matcha Green Tea",
+     "price": "R $5.00 · L $5.75",
+     "note": null
+    },
+    {
+     "name": "Matcha Soda",
+     "price": "R $5.75 · L $6.75",
+     "note": null
+    },
+    {
+     "name": "Matcha Soft serve Soda",
+     "price": "R $6.95 · L $7.95",
+     "note": null
+    },
+    {
+     "name": "Matcha Brown Sugar Frappe",
+     "price": "$7.25",
+     "note": null
+    },
+    {
+     "name": "Matcha Chocolate Crunch Frappe",
+     "price": "$8.25",
+     "note": null
+    },
+    {
+     "name": "Matcha Frappe w/ Mochi",
+     "price": "$8.25",
+     "note": null
+    },
+    {
+     "name": "Black Sesame Frappe w/ Mochi",
+     "price": "$8.25",
+     "note": null
+    },
+    {
+     "name": "Matcha Warabimochi Frappe",
+     "price": "$8.75",
+     "note": null
+    },
+    {
+     "name": "Matcha Soft Serve Frappe",
+     "price": "$8.25",
+     "note": null
+    },
+    {
+     "name": "Hojicha Latte",
+     "price": "R $6.75 · L $7.50",
+     "note": null
+    },
+    {
+     "name": "Hojicha Chocolate Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Hojicha Caramel Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Hojicha Float w/ Mochi",
+     "price": "R $8.00 · L $8.75",
+     "note": null
+    },
+    {
+     "name": "Red Bean Latte",
+     "price": "$6.75 · L $7.50",
+     "note": null
+    },
+    {
+     "name": "Red Bean Brown Sugar Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Red Bean Caramel Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Red Bean Strawberry Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Black sesame Latte",
+     "price": "$6.75 · L $7.50",
+     "note": null
+    },
+    {
+     "name": "Black sesame Brown sugar Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Black sesame Soft serve Latte",
+     "price": "R $7.75 · L $8.50",
+     "note": null
+    },
+    {
+     "name": "Black sesame w/ Mochi",
+     "price": "R $8.00 · L $8.75",
+     "note": null
+    },
+    {
+     "name": "Coffee Americano",
+     "price": "R $3.75 · L $4.50",
+     "note": null
+    },
+    {
+     "name": "Café latte",
+     "price": "R $4.95 · L $5.95",
+     "note": null
+    },
+    {
+     "name": "Café mocha",
+     "price": "R $5.50 · L $6.50",
+     "note": null
+    },
+    {
+     "name": "Café latte w/ Soft serve",
+     "price": "R $6.25 · L $7.25",
+     "note": null
+    },
+    {
+     "name": "Hoji-cha",
+     "price": "$4.75",
+     "note": null
+    },
+    {
+     "name": "Genmai-cha",
+     "price": "$4.75",
+     "note": null
+    },
+    {
+     "name": "Cold Brewed Uji-cha",
+     "price": "R $4.75 · L $5.50",
+     "note": null
+    },
+    {
+     "name": "Cold Brewed Hoji-cha",
+     "price": "R $4.75 · L $5.50",
+     "note": null
+    },
+    {
+     "name": "Matcha Mochi Parfait",
+     "price": "$12.95",
+     "note": null
+    },
+    {
+     "name": "Matcha Warabi mochi Parfait",
+     "price": "$13.95",
+     "note": null
+    },
+    {
+     "name": "Hoji cha Mochi Parfait",
+     "price": "$12.95",
+     "note": null
+    },
+    {
+     "name": "Ho jicha Warabi mochi Parfait",
+     "price": "$13.95",
+     "note": null
+    },
+    {
+     "name": "Black Sesame Mochi Parfait",
+     "price": "$12.95",
+     "note": null
+    },
+    {
+     "name": "Black Sesame Warabi mochi Parfait",
+     "price": "$13.95",
+     "note": null
+    },
+    {
+     "name": "Matcha w/ Mochi & Red bean",
+     "price": "$6.95",
+     "note": null
+    },
+    {
+     "name": "Matcha w/ Warabi mochi",
+     "price": "$6.95",
+     "note": null
+    },
+    {
+     "name": "Matcha w/ Chocolate crunch",
+     "price": "$7.50",
+     "note": null
+    },
+    {
+     "name": "Ho jicha w/ Mochi & Red bean",
+     "price": "$6.95",
+     "note": null
+    },
+    {
+     "name": "Ho jicha w/ Warabi mochi",
+     "price": "$6.95",
+     "note": null
+    },
+    {
+     "name": "Ho jicha Soft serve",
+     "price": "$6.25",
+     "note": null
+    },
+    {
+     "name": "Matcha Soft serve",
+     "price": "$6.25",
+     "note": null
+    },
+    {
+     "name": "Matcha Vanilla Swirl",
+     "price": "$6.25",
+     "note": null
+    },
+    {
+     "name": "Vanilla Soft serve",
+     "price": "$6.25",
+     "note": null
+    },
+    {
+     "name": "Chicken Soboro Don",
+     "price": "$14.95",
+     "note": null
+    },
+    {
+     "name": "Sukiyaki Don",
+     "price": "$16.95",
+     "note": null
+    },
+    {
+     "name": "Katsu Don",
+     "price": "$17.50",
+     "note": null
+    },
+    {
+     "name": "Chicken Nanban Rice Plate",
+     "price": "$17.50",
+     "note": null
+    },
+    {
+     "name": "Tofu Teriyaki Stir fry Rice Plate",
+     "price": "$14.95",
+     "note": null
+    },
+    {
+     "name": "Tonkatsu Rice Plate",
+     "price": "$16.95",
+     "note": null
+    },
+    {
+     "name": "Chicken Katsu Curry",
+     "price": "$15.95",
+     "note": null
+    },
+    {
+     "name": "Chicken Karaage Curry",
+     "price": "$15.95",
+     "note": null
+    },
+    {
+     "name": "Pork Katsu Curry",
+     "price": "$17.50",
+     "note": null
+    },
+    {
+     "name": "Chicken Karaage Salad",
+     "price": "$11.95",
+     "note": null
+    },
+    {
+     "name": "Tofu Salad",
+     "price": "$10.95",
+     "note": null
+    },
+    {
+     "name": "Potato Salad",
+     "price": "$7.50",
+     "note": null
+    },
+    {
+     "name": "Katsu Sandwich",
+     "price": "$13.50",
+     "note": null
+    }
+   ],
+   "source_url": "https://nanasgreentealasvegas.com/menu.html",
+   "read": "2026-11-23",
+   "kind": "html"
+  },
+  "matchacafe-maiko.com": {
+   "items": [
+    {
+     "name": "Uji Kintoki",
+     "price": null,
+     "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and condensed milk for that very traditional taste"
+    },
+    {
+     "name": "Shaved Ice (Matcha)",
+     "price": null,
+     "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with matcha cream"
+    },
+    {
+     "name": "Shaved Ice (Mixed)",
+     "price": null,
+     "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with matcha and vanilla cream"
+    },
+    {
+     "name": "Shaved Ice (Vanilla)",
+     "price": null,
+     "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with vanilla cream"
+    },
+    {
+     "name": "Soft serve (Matcha)",
+     "price": null,
+     "note": "Our homemade matcha soft serve and a crispy cone that we make fresh every day"
+    },
+    {
+     "name": "Soft serve (Mix)",
+     "price": null,
+     "note": "Our homemade matcha & vanilla soft serve and a crispy cone that we make fresh every day"
+    },
+    {
+     "name": "Soft serve (Vanilla)",
+     "price": null,
+     "note": "Our thick, homemade vanilla soft serve and a crispy cone that we make fresh every day"
+    },
+    {
+     "name": "Maiko Special (Matcha)",
+     "price": null,
+     "note": "Our specialty containing matcha cream, matcha chiffon, chestnuts, and shiratama mochi"
+    },
+    {
+     "name": "Maiko Special (Mixed)",
+     "price": null,
+     "note": "Both matcha and vanilla cream together along with matcha chiffon, chestnuts, and shiratama mochi"
+    },
+    {
+     "name": "Maiko Special (Vanilla)",
+     "price": null,
+     "note": "Contains the perfect balance of vanilla cream, matcha ice, matcha chiffon, and azuki beans"
+    },
+    {
+     "name": "Matcha",
+     "price": null,
+     "note": "The most basic matcha drink still delivers an outstanding taste"
+    },
+    {
+     "name": "Matcha Lemon",
+     "price": null,
+     "note": "Enjoy the refreshing taste of matcha mixed with lemons"
+    },
+    {
+     "name": "Hojicha",
+     "price": null,
+     "note": "A different tea, hojicha will give you a mellow spicy taste"
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Hojicha Latte",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Matcha Frappe",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Hojicha Frappe",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Matcha Tea Float",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Matcha Latte Float",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Matcha Tea Lemon Float",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Hojicha Tea Float",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Hojicha Latte Float",
+     "price": null,
+     "note": "Nutrition information"
+    }
+   ],
+   "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
+   "read": "2026-11-23",
+   "kind": "html",
+   "note": "Main menu of the Hawaii store; items and prices vary by location"
+  },
+  "cafemaikoorl.com": {
+   "items": [
+    {
+     "name": "SOFT-SERVE",
+     "price": "$6.25",
+     "note": "Choose your soft-serve flavor"
+    },
+    {
+     "name": "MAIKO SPECIAL",
+     "price": "$9.25",
+     "note": "Choice of soft-serve with mochi balls, Japanese chestnut, adzuki red beans, sponge cake, corn flake, & agar jelly"
+    },
+    {
+     "name": "KAKIGORI",
+     "price": "$7.50",
+     "note": "Shaved ice with matcha syrup, condensed milk, mochi balls, and Adzuki red beans"
+    },
+    {
+     "name": "STRAWBERRY SHAVED ICE",
+     "price": "$9.50",
+     "note": "Shaved ice with homemade strawberry purée and choice of soft-serve"
+    },
+    {
+     "name": "UJI-KINTOKI",
+     "price": "$9.50",
+     "note": "Shaved ice with matcha syrup, adzuki red beans, mochi balls, Japanese chestnut and choice of soft-serve"
+    },
+    {
+     "name": "BOBA SUNDAE",
+     "price": "$7.25",
+     "note": "Choice of soft-serve with boba"
+    },
+    {
+     "name": "AFFOGATO",
+     "price": "$7.50",
+     "note": "Choice of soft-serve with a shot of espresso"
+    },
+    {
+     "name": "STRAWBERRY SUNDAE",
+     "price": "$7.50",
+     "note": "Choice of soft-serve with strawberry purée"
+    },
+    {
+     "name": "MATCHA TEA FLOAT",
+     "price": "M $6.50 · L $7.00",
+     "note": null
+    },
+    {
+     "name": "MATCHA LATTE FLOAT",
+     "price": "M $7.00 · L $7.75",
+     "note": null
+    },
+    {
+     "name": "MATCHA KUROMITSU KINAKO FLOAT",
+     "price": "M $7.25 · L $8.00",
+     "note": null
+    },
+    {
+     "name": "HOJICHA TEA FLOAT",
+     "price": "M $6.35 · L $6.85",
+     "note": null
+    },
+    {
+     "name": "HOJICHA LATTE FLOAT",
+     "price": "M $6.85 · L $7.50",
+     "note": null
+    },
+    {
+     "name": "BLACK SESAME FLOAT",
+     "price": "M $7.25 · L $8.00",
+     "note": null
+    },
+    {
+     "name": "AMERICANO FLOAT",
+     "price": "L $6.75",
+     "note": null
+    },
+    {
+     "name": "COFFEE LATTE FLOAT",
+     "price": "L $7.75",
+     "note": null
+    },
+    {
+     "name": "MATCHA FRAPPE",
+     "price": "M $6.00 · L $6.50",
+     "note": null
+    },
+    {
+     "name": "HOJICHA FRAPPE",
+     "price": "M $5.75 · L $6.25",
+     "note": null
+    },
+    {
+     "name": "MATCHA OREO FRAPPE",
+     "price": "M $6.85 · L $7.50",
+     "note": null
+    },
+    {
+     "name": "HOJICHA OREO FRAPPE",
+     "price": "M $6.50 · L $7.00",
+     "note": null
+    },
+    {
+     "name": "MATCHA LATTE",
+     "price": "M $5.25 · L $5.75",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "ROSE MATCHA LATTE",
+     "price": "L $6.50",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "HONEYCOMB MATCHA LATTE",
+     "price": "M $6.50 · L $7.00",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "KOKUTO MATCHA LATTE CREAM",
+     "price": "M $6.25 · L $6.75",
+     "note": null
+    },
+    {
+     "name": "KOKUTO MATCHA KUROMITSU KINAKO CREAM",
+     "price": "M $6.50 · L $7.00",
+     "note": null
+    },
+    {
+     "name": "HOJICHA LATTE",
+     "price": "M $5.00 · L $5.50",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "BLACK SESAME LATTE",
+     "price": "M $5.75 · L $6.50",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "STRAWBERRY MATCHA LATTE",
+     "price": "M $6.25 · L $6.75",
+     "note": null
+    },
+    {
+     "name": "BLACK SESAME ESPRESSO LATTE",
+     "price": "L $7.25",
+     "note": null
+    },
+    {
+     "name": "MATCHA ESPRESSO LATTE",
+     "price": "L $7.25",
+     "note": null
+    },
+    {
+     "name": "MATCHA TEA",
+     "price": "M $4.75 · L $5.25",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "HOJICHA TEA",
+     "price": "M $4.70 · L $5.20",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "YUZU MATCHA TEA",
+     "price": "M $5.25 · L $5.75",
+     "note": null
+    },
+    {
+     "name": "MATCHA LATTE CHEESE/ UBE FOAM",
+     "price": "M $6.25 · L $6.75",
+     "note": null
+    },
+    {
+     "name": "HOJICHA LATTE CHEESE/ UBE FOAM",
+     "price": "M $5.75 · L $6.50",
+     "note": null
+    },
+    {
+     "name": "BLACK SESAME LATTE CHEESE/ UBE FOAM",
+     "price": "M $6.75 · L $7.50",
+     "note": null
+    },
+    {
+     "name": "COFFEE LATTE CHEESE/ UBE FOAM",
+     "price": "L $6.75",
+     "note": null
+    },
+    {
+     "name": "STRAWBERRY SPRITZ",
+     "price": "$6.00",
+     "note": null
+    },
+    {
+     "name": "MATCHA TEA SPRITZ",
+     "price": "$6.00",
+     "note": null
+    },
+    {
+     "name": "YUZU TEA SPRITZ",
+     "price": "$6.00",
+     "note": null
+    },
+    {
+     "name": "YUZU MATCHA TEA SPRITZ",
+     "price": "$6.75",
+     "note": null
+    },
+    {
+     "name": "ESPRESSO",
+     "price": "$3.50",
+     "note": "Hot"
+    },
+    {
+     "name": "AMERICANO",
+     "price": "$4.25",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "COFFEE LATTE",
+     "price": "$5.75",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "CARAMEL MACHIATO",
+     "price": "$6.25",
+     "note": "Cold"
+    },
+    {
+     "name": "HONEYCOMB COFFEE LATTE",
+     "price": "$6.00",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "BROWN SUGAR SHAKEN ESPRESSO",
+     "price": "$6.00",
+     "note": "Cold"
+    },
+    {
+     "name": "ROSE COFFEE LATTE",
+     "price": "$6.00",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "LAVENDER COFFEE LATTE",
+     "price": "$6.00",
+     "note": "Hot / Cold"
+    },
+    {
+     "name": "VIETNAMESE COFFEE",
+     "price": "$6.00",
+     "note": "Cold"
+    },
+    {
+     "name": "BOBA",
+     "price": "$1.00",
+     "note": null
+    },
+    {
+     "name": "24K GOLD LEAF",
+     "price": "$5.00",
+     "note": null
+    },
+    {
+     "name": "RED BEANS",
+     "price": "$0.50",
+     "note": null
+    },
+    {
+     "name": "CRUSHED OREOS",
+     "price": "$1.00",
+     "note": null
+    },
+    {
+     "name": "WHIPPED CREAM",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "CORNFLAKES",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "STRAWBERRY PURÉE",
+     "price": "$1.25",
+     "note": null
+    },
+    {
+     "name": "JAPANESE CHESTNUT",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "MATCHA SPONGE CAKE",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "HONEYCOMB",
+     "price": "$1.50",
+     "note": null
+    },
+    {
+     "name": "ADD ICE CREAM",
+     "price": "$3.50",
+     "note": null
+    },
+    {
+     "name": "KOKUTO JELLY",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "SOY MILK",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "OAT MILK",
+     "price": "$0.75",
+     "note": null
+    },
+    {
+     "name": "ALMOND MILK",
+     "price": "$0.75",
+     "note": null
+    }
+   ],
+   "source_url": "https://cafemaikoorl.com/menu",
+   "read": "2026-11-23",
+   "kind": "html"
+  },
+  "cinsei.com": {
+   "items": [
+    {
+     "name": "Assorted Pastries",
+     "price": null,
+     "note": null
+    },
+    {
+     "name": "Hojicha Latte w/ French Vanilla",
+     "price": null,
+     "note": "Oat Milk / Whole Milk"
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null,
+     "note": "Oat Milk / Whole Milk"
+    },
+    {
+     "name": "Pistachio Matcha Latte",
+     "price": null,
+     "note": "Oat Milk / Whole Milk"
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null,
+     "note": "Oat Milk / Whole Milk"
+    },
+    {
+     "name": "Usucha",
+     "price": null,
+     "note": "A traditional Japanese method of preparing matcha"
+    }
+   ],
+   "source_url": "https://cinsei.com/",
+   "read": "2026-11-23",
+   "kind": "html"
+  },
+  "matchahousenyc.com": {
+   "kind": "image",
+   "source_url": "https://matchahousenyc.com/menu-page",
+   "image_url": "https://images.squarespace-cdn.com/content/v1/680aaea7cc5f2e167bd0100a/af778046-5f17-45fc-8033-083aba30a5e0/june+menu.png",
+   "read": "2026-11-23",
+   "note": "Spring menu 2026 as published on the site",
+   "items": [
+    {
+     "name": "Matcha Latte",
+     "price": "$7.50",
+     "note": "iced or hot"
+    },
+    {
+     "name": "Matcha Cortado",
+     "price": "$6.50",
+     "note": "iced or hot"
+    },
+    {
+     "name": "Matcha Americano",
+     "price": "$5.50",
+     "note": "iced or hot"
+    },
+    {
+     "name": "Matchadamia Latte",
+     "price": "$8.25",
+     "note": "iced or hot"
+    },
+    {
+     "name": "Chocolate Matcha",
+     "price": "$8",
+     "note": "iced or hot"
+    },
+    {
+     "name": "Matcha Cold Foam",
+     "price": "+$1.50",
+     "note": "iced"
+    },
+    {
+     "name": "Strawberry Mochi",
+     "price": "$6",
+     "note": "PAVLO x MATCHA HOUSE"
+    },
+    {
+     "name": "Mango Mochi",
+     "price": "$6",
+     "note": "PAVLO x MATCHA HOUSE"
+    },
+    {
+     "name": "Earl Grey Cookie",
+     "price": "$5",
+     "note": "Bibble and Sip"
+    },
+    {
+     "name": "Natural Alkaline Artisan Water",
+     "price": "$2.50",
+     "note": "A9"
+    },
+    {
+     "name": "Sparkling Water",
+     "price": "$3.50",
+     "note": "Saratoga"
+    },
+    {
+     "name": "Milk substitutes",
+     "price": "+$0.75",
+     "note": "oat, soy, almond, macadamia nut, coconut, lactose free"
+    }
+   ]
+  }
+ }
+}
