@@ -13,6 +13,7 @@
     "review": "node ingest/review.js",
     "shops": "node ingest/shops.js",
     "menus": "node ingest/menus.js",
+    "shops:deepen": "node ingest/shops-deepen.js",
     "series": "node ingest/series.js",
     "tidy": "node ingest/tidy.js",
     "enrich": "node ingest/enrich.js",

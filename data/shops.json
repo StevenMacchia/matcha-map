@@ -62,7 +62,7 @@
    "state": "AZ",
    "zip": "85281",
    "website": "https://www.matchaaz.com",
-   "instagram": null,
+   "instagram": "matchacafemaikoaz",
    "phone": "480-292-8466",
    "opening_hours": "Su-Th 11:00-21:30; Fr-Sa 11:00-22:00",
    "menu_url": "https://www.matchaaz.com/menu",
@@ -92,8 +92,8 @@
    "phone": "(818) 308-6952",
    "opening_hours": "Mo-Su 08:00-17:00",
    "menu_url": "https://cafe-matcha.com/pages/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://cafe-matcha.com/cdn/shop/files/Screenshot_2026-04-13_at_11.28.45_AM_1200x1200.png?v=1776110464",
+   "image_credit": "cafe-matcha.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://cafe-matcha.com/",
@@ -116,10 +116,10 @@
    "website": "https://cafe-matcha.com",
    "instagram": "cafe_matcha",
    "phone": "(323) 458-5100",
-   "opening_hours": null,
+   "opening_hours": "Mo-Su 08:00-17:00",
    "menu_url": "https://cafe-matcha.com/pages/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://cafe-matcha.com/cdn/shop/files/Screenshot_2026-04-13_at_11.28.45_AM_1200x1200.png?v=1776110464",
+   "image_credit": "cafe-matcha.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://cafe-matcha.com/",
@@ -274,8 +274,8 @@
    "phone": "(323) 407-6155",
    "opening_hours": "Mo-Su 08:00-18:00",
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
+   "image_credit": "kettl.co",
    "cuisine": null,
    "source": "web",
    "source_url": "https://kettl.co/pages/locations",
@@ -409,7 +409,7 @@
    "state": "CA",
    "zip": "92111",
    "website": "https://www.matchacafe-maiko.com",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": "858-262-3970",
    "opening_hours": null,
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
@@ -553,7 +553,7 @@
    "state": "CA",
    "zip": "90701",
    "website": "https://www.mecchamatcha.com",
-   "instagram": null,
+   "instagram": "mecchamatcha_ca",
    "phone": "(562) 202-9450",
    "opening_hours": "Mo-Th 08:00-21:00; Fr 08:00-21:30; Sa 09:00-21:30; Su 09:00-21:00",
    "menu_url": null,
@@ -579,7 +579,7 @@
    "state": "CA",
    "zip": "90815",
    "website": "https://www.mecchamatcha.com",
-   "instagram": null,
+   "instagram": "mecchamatcha_ca",
    "phone": "(562) 202-9450",
    "opening_hours": null,
    "menu_url": null,
@@ -609,8 +609,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/56cab4c0b654f92cd6ed4ce9/t/56cb0ea87da24f86a7a04c55/1456148141700/logo.png?format=1500w",
+   "image_credit": "midorimatchatea.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.timeout.com/los-angeles/restaurants/midori-matcha",
@@ -659,7 +659,7 @@
    "state": "FL",
    "zip": "32803",
    "website": "https://cafemaikoorl.com",
-   "instagram": null,
+   "instagram": "MatchaCafeMaikoOrlando",
    "phone": "+1-407-730-9090",
    "opening_hours": "Su-Th 12:00-21:00; Fr-Sa 12:00-22:00",
    "cuisine": "coffee_shop",
@@ -667,6 +667,11 @@
    "osm_url": "https://www.openstreetmap.org/node/11007004668",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true,
+   "image_url": "http://static1.squarespace.com/static/69d55f94971c866ea49bf3b8/t/69f37ea5cfa3e81e12d2a5c1/1777565349021/matcha-cafe-maiko-barista-whisking-ceremonial-matcha.jpg?format=1500w",
+   "menu_url": "https://matcha-cafe-maiko-orlando-fl.cloveronline.com/menu/all",
+   "image_credit": "cafemaikoorl.com",
+   "source_url": "https://cafemaikoorl.com",
+   "read": "2026-11-23",
    "menu": {
     "items": [
      {
@@ -1061,7 +1066,11 @@
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/6292161039",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
+   "verified": true,
+   "image_url": "http://static1.squarespace.com/static/69b4d8c19880f21d612e52e2/t/69b5c1ad1544da198078ea6d/1773519277991/Matcha+Theory+Logo+%281%29.png?format=1500w",
+   "image_credit": "thematchatheory.com",
+   "source_url": "https://www.thematchatheory.com/",
+   "read": "2026-11-23"
   },
   {
    "id": "osm:node/8613661338",
@@ -1073,14 +1082,18 @@
    "state": "IL",
    "zip": "60614",
    "website": "https://www.matchacitachi.com",
-   "instagram": null,
+   "instagram": "matchacitachi",
    "phone": null,
    "opening_hours": "Mo-Fr 09:00-17:00; Sa-Su 08:00-17:00",
    "cuisine": null,
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/8613661338",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
+   "verified": true,
+   "image_url": "https://static1.squarespace.com/static/66536296f27321176a4760b3/t/669a897f3414157f2cc8ec0d/1794853690240/",
+   "image_credit": "matchacitachi.com",
+   "source_url": "https://www.matchacitachi.com",
+   "read": "2026-11-23"
   },
   {
    "id": "brand:web-noble-fat-il-chicago-2221-n-lincoln-ave-8602cc",
@@ -1144,7 +1157,11 @@
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/13831193089",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
+   "verified": true,
+   "image_url": "https://littlematchacincy.square.site/uploads/b/c79a08a0-005a-11f1-b674-9963d475ec70/IMG_9666.jpeg",
+   "image_credit": "littlematchacincy.square.site",
+   "source_url": "https://littlematchacincy.square.site",
+   "read": "2026-11-23"
   },
   {
    "id": "osm:node/2458189474",
@@ -1175,14 +1192,15 @@
    "state": "MA",
    "zip": "01970",
    "website": "https://www.meandercoffee.com/",
-   "instagram": null,
+   "instagram": "meandersalem",
    "phone": null,
    "opening_hours": "Th-Fr 07:00-16:00; Sa-Su 08:00-16:00",
    "cuisine": "coffee_shop",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/13762175477",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
+   "verified": true,
+   "menu_url": "https://www.meandercoffee.com/menu"
   },
   {
    "id": "osm:node/9741839042",
@@ -1232,7 +1250,7 @@
    "state": "MD",
    "zip": null,
    "website": "https://www.kyotomatcha.us",
-   "instagram": null,
+   "instagram": "kyomatchausa",
    "phone": null,
    "opening_hours": "Su-Th 12:00-22:00; Fr-Sa 12:00-22:30",
    "cuisine": null,
@@ -1251,7 +1269,7 @@
    "state": "MD",
    "zip": "21043",
    "website": "https://www.matchatimegiftshop.com",
-   "instagram": null,
+   "instagram": "matchatimegiftshop",
    "phone": null,
    "opening_hours": null,
    "cuisine": null,
@@ -1270,7 +1288,7 @@
    "state": "MO",
    "zip": "64108",
    "website": "https://www.thematchabarx.com/",
-   "instagram": null,
+   "instagram": "thematchabarx",
    "phone": null,
    "opening_hours": null,
    "cuisine": "tea",
@@ -1278,6 +1296,11 @@
    "osm_url": "https://www.openstreetmap.org/node/13908302923",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true,
+   "image_url": "https://static1.squarespace.com/static/695be3f4cedb8b04b48acce3/t/695be5a0324cc8450971e7e8/1770399805046/",
+   "menu_url": "https://www.thematchabarx.com/menu",
+   "image_credit": "thematchabarx.com",
+   "source_url": "https://www.thematchabarx.com/",
+   "read": "2026-11-23",
    "menu": {
     "items": [
      {
@@ -1446,7 +1469,7 @@
    "state": "NV",
    "zip": null,
    "website": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nv&target=nv-lv-store",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": "+1 702-640-0033",
    "opening_hours": null,
    "cuisine": "tea",
@@ -1454,6 +1477,11 @@
    "osm_url": "https://www.openstreetmap.org/node/14121437619",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true,
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
+   "menu_url": "https://www.matchacafe-maiko.com/menu/",
+   "image_credit": "matchacafe-maiko.com",
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nv&target=nv-lv-store",
+   "read": "2026-11-23",
    "menu": {
     "items": [
      {
@@ -1584,13 +1612,18 @@
    "zip": null,
    "website": "https://nanasgreentealasvegas.com/",
    "instagram": null,
-   "phone": null,
+   "phone": "+1(555)000-0000",
    "opening_hours": "Mo-Su 11:00-22:00",
    "cuisine": "tea",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/13159184974",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true,
+   "image_url": "https://nanasgreentealasvegas.com/images/logo.png",
+   "menu_url": "https://nanasgreentealasvegas.com/menu.html",
+   "image_credit": "nanasgreentealasvegas.com",
+   "source_url": "https://nanasgreentealasvegas.com/",
+   "read": "2026-11-23",
    "menu": {
     "items": [
      {
@@ -1958,14 +1991,18 @@
    "state": "NV",
    "zip": "89146",
    "website": "https://www.matchalv.com/",
-   "instagram": null,
-   "phone": null,
-   "opening_hours": null,
+   "instagram": "urban.matcha",
+   "phone": "702-247-1779",
+   "opening_hours": "Tu-Su 12:00-22:00",
    "cuisine": "bubble_tea",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/way/1386013307",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
+   "verified": true,
+   "image_url": "https://static.wixstatic.com/media/8711a4_6cd47429b19e45e9a452cb2c1d01058f~mv2.png",
+   "image_credit": "matchalv.com",
+   "source_url": "https://www.matchalv.com/",
+   "read": "2026-11-23"
   },
   {
    "id": "osm:node/12739827416",
@@ -2277,8 +2314,8 @@
    "phone": null,
    "opening_hours": "Mo-Su 08:00-18:00",
    "menu_url": "https://isshikimatcha.com/pages/cafe-menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
+   "image_credit": "isshikimatcha.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://isshikimatcha.com/pages/locations",
@@ -2303,8 +2340,8 @@
    "phone": null,
    "opening_hours": "Mo-Su 07:30-17:00",
    "menu_url": "https://isshikimatcha.com/pages/cafe-menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
+   "image_credit": "isshikimatcha.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://isshikimatcha.com/pages/locations",
@@ -2329,8 +2366,8 @@
    "phone": null,
    "opening_hours": "Mo-Su 08:00-18:00",
    "menu_url": "https://isshikimatcha.com/pages/cafe-menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
+   "image_credit": "isshikimatcha.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://isshikimatcha.com/pages/locations",
@@ -2363,7 +2400,9 @@
    "verified": true,
    "source_url": "https://kettl.co/pages/locations",
    "read": "2026-11-23",
-   "confirmed_via": "own-site"
+   "confirmed_via": "own-site",
+   "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
+   "image_credit": "kettl.co"
   },
   {
    "id": "brand:web-kettl-matcha-sen-mon-ten-ny-brooklyn-38-norman-05a9ef",
@@ -2377,8 +2416,8 @@
    "phone": "917-909-0105",
    "opening_hours": "Mo-Th 10:00-18:00; Fr-Su 09:00-19:00",
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
+   "image_credit": "kettl.co",
    "cuisine": null,
    "source": "web",
    "source_url": "https://kettl.co/pages/locations",
@@ -2403,8 +2442,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2415,7 +2454,214 @@
    "lng": -73.957867,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:20:20.937Z",
+   "menu": {
+    "items": [
+     {
+      "name": "POUR OVER",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "ESPRESSO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "AMERICANO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "MACCHIATO",
+      "price": "$4.25",
+      "note": null
+     },
+     {
+      "name": "CORTADO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "FLAT WHITE",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "CAPPUCCINO",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "LATTE",
+      "price": "$5.25",
+      "note": null
+     },
+     {
+      "name": "MOCHA",
+      "price": "$6.25",
+      "note": null
+     },
+     {
+      "name": "MIZUDASHI",
+      "price": "$9",
+      "note": "Japanese Slow Drip Cold Brew"
+     },
+     {
+      "name": "COLD BREW SPRITZER",
+      "price": "$7",
+      "note": "with Pear and Tonic"
+     },
+     {
+      "name": "TIRAMISU LATTE",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "MISO MOCHA",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "DIRTY BLACK SESAME LATTE",
+      "price": "$7",
+      "note": "with white chocolate"
+     },
+     {
+      "name": "ICED STRAWBERRY MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "ICED MANGO MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "AZUKI MATCHA LATTE",
+      "price": "$7.25",
+      "note": null
+     },
+     {
+      "name": "MATCHA CORTADO",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "HOJICHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "HOUSE BREWED ORGANIC CHAI LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "KUWACHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "LAVENDER MILK TEA",
+      "price": "$5",
+      "note": null
+     },
+     {
+      "name": "BLACK SESAME LATTE",
+      "price": "$5.75",
+      "note": "with white choclate"
+     },
+     {
+      "name": "AZUKI RED BEAN LATTE",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "YUZU GINGER FIZZ",
+      "price": "$7.5",
+      "note": null
+     },
+     {
+      "name": "MISO SALMON",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "TUNA MAYO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "MENTAIKO COD ROE",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "CHASHU PORK",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "SUKIYAKI BEEF",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "KOMBU SEAWEED",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "UME PICKLED PLUM",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "HAM AND CHEESE",
+      "price": "$6.5",
+      "note": null
+     },
+     {
+      "name": "TAMAGO EGG SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "TUNA SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "SMOKED SALMON WITH WASABI MAYO",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "ORIGINAL",
+      "price": "$9",
+      "note": null
+     },
+     {
+      "name": "SHISO PESTO TURKEY AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "KARASHI HAM AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "WASABI TUNA MELT",
+      "price": "$12",
+      "note": null
+     }
+    ],
+    "source_url": "https://www.kijitorabrooklyn.com/menu",
+    "read": "2026-11-23",
+    "kind": "html"
+   }
   },
   {
    "id": "brand:web-kijitora-e14th-ny-new-york-534-east-14th-stree-1ea3c2",
@@ -2429,8 +2675,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2441,7 +2687,214 @@
    "lng": -73.978839,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:20:20.937Z",
+   "menu": {
+    "items": [
+     {
+      "name": "POUR OVER",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "ESPRESSO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "AMERICANO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "MACCHIATO",
+      "price": "$4.25",
+      "note": null
+     },
+     {
+      "name": "CORTADO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "FLAT WHITE",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "CAPPUCCINO",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "LATTE",
+      "price": "$5.25",
+      "note": null
+     },
+     {
+      "name": "MOCHA",
+      "price": "$6.25",
+      "note": null
+     },
+     {
+      "name": "MIZUDASHI",
+      "price": "$9",
+      "note": "Japanese Slow Drip Cold Brew"
+     },
+     {
+      "name": "COLD BREW SPRITZER",
+      "price": "$7",
+      "note": "with Pear and Tonic"
+     },
+     {
+      "name": "TIRAMISU LATTE",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "MISO MOCHA",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "DIRTY BLACK SESAME LATTE",
+      "price": "$7",
+      "note": "with white chocolate"
+     },
+     {
+      "name": "ICED STRAWBERRY MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "ICED MANGO MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "AZUKI MATCHA LATTE",
+      "price": "$7.25",
+      "note": null
+     },
+     {
+      "name": "MATCHA CORTADO",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "HOJICHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "HOUSE BREWED ORGANIC CHAI LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "KUWACHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "LAVENDER MILK TEA",
+      "price": "$5",
+      "note": null
+     },
+     {
+      "name": "BLACK SESAME LATTE",
+      "price": "$5.75",
+      "note": "with white choclate"
+     },
+     {
+      "name": "AZUKI RED BEAN LATTE",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "YUZU GINGER FIZZ",
+      "price": "$7.5",
+      "note": null
+     },
+     {
+      "name": "MISO SALMON",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "TUNA MAYO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "MENTAIKO COD ROE",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "CHASHU PORK",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "SUKIYAKI BEEF",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "KOMBU SEAWEED",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "UME PICKLED PLUM",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "HAM AND CHEESE",
+      "price": "$6.5",
+      "note": null
+     },
+     {
+      "name": "TAMAGO EGG SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "TUNA SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "SMOKED SALMON WITH WASABI MAYO",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "ORIGINAL",
+      "price": "$9",
+      "note": null
+     },
+     {
+      "name": "SHISO PESTO TURKEY AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "KARASHI HAM AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "WASABI TUNA MELT",
+      "price": "$12",
+      "note": null
+     }
+    ],
+    "source_url": "https://www.kijitorabrooklyn.com/menu",
+    "read": "2026-11-23",
+    "kind": "html"
+   }
   },
   {
    "id": "brand:web-kijitora-east-ny-brooklyn-309-graham-avenue-fbe6cc",
@@ -2455,8 +2908,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2467,7 +2920,214 @@
    "lng": -73.944421,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:20:20.937Z",
+   "menu": {
+    "items": [
+     {
+      "name": "POUR OVER",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "ESPRESSO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "AMERICANO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "MACCHIATO",
+      "price": "$4.25",
+      "note": null
+     },
+     {
+      "name": "CORTADO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "FLAT WHITE",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "CAPPUCCINO",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "LATTE",
+      "price": "$5.25",
+      "note": null
+     },
+     {
+      "name": "MOCHA",
+      "price": "$6.25",
+      "note": null
+     },
+     {
+      "name": "MIZUDASHI",
+      "price": "$9",
+      "note": "Japanese Slow Drip Cold Brew"
+     },
+     {
+      "name": "COLD BREW SPRITZER",
+      "price": "$7",
+      "note": "with Pear and Tonic"
+     },
+     {
+      "name": "TIRAMISU LATTE",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "MISO MOCHA",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "DIRTY BLACK SESAME LATTE",
+      "price": "$7",
+      "note": "with white chocolate"
+     },
+     {
+      "name": "ICED STRAWBERRY MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "ICED MANGO MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "AZUKI MATCHA LATTE",
+      "price": "$7.25",
+      "note": null
+     },
+     {
+      "name": "MATCHA CORTADO",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "HOJICHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "HOUSE BREWED ORGANIC CHAI LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "KUWACHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "LAVENDER MILK TEA",
+      "price": "$5",
+      "note": null
+     },
+     {
+      "name": "BLACK SESAME LATTE",
+      "price": "$5.75",
+      "note": "with white choclate"
+     },
+     {
+      "name": "AZUKI RED BEAN LATTE",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "YUZU GINGER FIZZ",
+      "price": "$7.5",
+      "note": null
+     },
+     {
+      "name": "MISO SALMON",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "TUNA MAYO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "MENTAIKO COD ROE",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "CHASHU PORK",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "SUKIYAKI BEEF",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "KOMBU SEAWEED",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "UME PICKLED PLUM",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "HAM AND CHEESE",
+      "price": "$6.5",
+      "note": null
+     },
+     {
+      "name": "TAMAGO EGG SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "TUNA SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "SMOKED SALMON WITH WASABI MAYO",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "ORIGINAL",
+      "price": "$9",
+      "note": null
+     },
+     {
+      "name": "SHISO PESTO TURKEY AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "KARASHI HAM AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "WASABI TUNA MELT",
+      "price": "$12",
+      "note": null
+     }
+    ],
+    "source_url": "https://www.kijitorabrooklyn.com/menu",
+    "read": "2026-11-23",
+    "kind": "html"
+   }
   },
   {
    "id": "brand:web-kijitora-mini-ny-brooklyn-578-driggs-avenue-d6bfc7",
@@ -2481,8 +3141,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2493,7 +3153,214 @@
    "lng": -73.957205,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:20:20.937Z",
+   "menu": {
+    "items": [
+     {
+      "name": "POUR OVER",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "ESPRESSO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "AMERICANO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "MACCHIATO",
+      "price": "$4.25",
+      "note": null
+     },
+     {
+      "name": "CORTADO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "FLAT WHITE",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "CAPPUCCINO",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "LATTE",
+      "price": "$5.25",
+      "note": null
+     },
+     {
+      "name": "MOCHA",
+      "price": "$6.25",
+      "note": null
+     },
+     {
+      "name": "MIZUDASHI",
+      "price": "$9",
+      "note": "Japanese Slow Drip Cold Brew"
+     },
+     {
+      "name": "COLD BREW SPRITZER",
+      "price": "$7",
+      "note": "with Pear and Tonic"
+     },
+     {
+      "name": "TIRAMISU LATTE",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "MISO MOCHA",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "DIRTY BLACK SESAME LATTE",
+      "price": "$7",
+      "note": "with white chocolate"
+     },
+     {
+      "name": "ICED STRAWBERRY MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "ICED MANGO MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "AZUKI MATCHA LATTE",
+      "price": "$7.25",
+      "note": null
+     },
+     {
+      "name": "MATCHA CORTADO",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "HOJICHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "HOUSE BREWED ORGANIC CHAI LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "KUWACHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "LAVENDER MILK TEA",
+      "price": "$5",
+      "note": null
+     },
+     {
+      "name": "BLACK SESAME LATTE",
+      "price": "$5.75",
+      "note": "with white choclate"
+     },
+     {
+      "name": "AZUKI RED BEAN LATTE",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "YUZU GINGER FIZZ",
+      "price": "$7.5",
+      "note": null
+     },
+     {
+      "name": "MISO SALMON",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "TUNA MAYO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "MENTAIKO COD ROE",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "CHASHU PORK",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "SUKIYAKI BEEF",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "KOMBU SEAWEED",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "UME PICKLED PLUM",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "HAM AND CHEESE",
+      "price": "$6.5",
+      "note": null
+     },
+     {
+      "name": "TAMAGO EGG SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "TUNA SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "SMOKED SALMON WITH WASABI MAYO",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "ORIGINAL",
+      "price": "$9",
+      "note": null
+     },
+     {
+      "name": "SHISO PESTO TURKEY AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "KARASHI HAM AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "WASABI TUNA MELT",
+      "price": "$12",
+      "note": null
+     }
+    ],
+    "source_url": "https://www.kijitorabrooklyn.com/menu",
+    "read": "2026-11-23",
+    "kind": "html"
+   }
   },
   {
    "id": "brand:web-kijitora-ridgewood-ny-ridgewood-279-st-nichola-791f76",
@@ -2507,8 +3374,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2519,7 +3386,214 @@
    "lng": -73.912152,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:20:20.937Z",
+   "menu": {
+    "items": [
+     {
+      "name": "POUR OVER",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "ESPRESSO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "AMERICANO",
+      "price": "$3.75",
+      "note": null
+     },
+     {
+      "name": "MACCHIATO",
+      "price": "$4.25",
+      "note": null
+     },
+     {
+      "name": "CORTADO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "FLAT WHITE",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "CAPPUCCINO",
+      "price": "$4.75",
+      "note": null
+     },
+     {
+      "name": "LATTE",
+      "price": "$5.25",
+      "note": null
+     },
+     {
+      "name": "MOCHA",
+      "price": "$6.25",
+      "note": null
+     },
+     {
+      "name": "MIZUDASHI",
+      "price": "$9",
+      "note": "Japanese Slow Drip Cold Brew"
+     },
+     {
+      "name": "COLD BREW SPRITZER",
+      "price": "$7",
+      "note": "with Pear and Tonic"
+     },
+     {
+      "name": "TIRAMISU LATTE",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "MISO MOCHA",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "DIRTY BLACK SESAME LATTE",
+      "price": "$7",
+      "note": "with white chocolate"
+     },
+     {
+      "name": "ICED STRAWBERRY MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "ICED MANGO MATCHA LATTE",
+      "price": "$8",
+      "note": null
+     },
+     {
+      "name": "AZUKI MATCHA LATTE",
+      "price": "$7.25",
+      "note": null
+     },
+     {
+      "name": "MATCHA CORTADO",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "HOJICHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "HOUSE BREWED ORGANIC CHAI LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "KUWACHA LATTE",
+      "price": "$6",
+      "note": null
+     },
+     {
+      "name": "LAVENDER MILK TEA",
+      "price": "$5",
+      "note": null
+     },
+     {
+      "name": "BLACK SESAME LATTE",
+      "price": "$5.75",
+      "note": "with white choclate"
+     },
+     {
+      "name": "AZUKI RED BEAN LATTE",
+      "price": "$5.75",
+      "note": null
+     },
+     {
+      "name": "YUZU GINGER FIZZ",
+      "price": "$7.5",
+      "note": null
+     },
+     {
+      "name": "MISO SALMON",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "TUNA MAYO",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "MENTAIKO COD ROE",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "CHASHU PORK",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "SUKIYAKI BEEF",
+      "price": "$4.5",
+      "note": null
+     },
+     {
+      "name": "KOMBU SEAWEED",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "UME PICKLED PLUM",
+      "price": "$4",
+      "note": null
+     },
+     {
+      "name": "HAM AND CHEESE",
+      "price": "$6.5",
+      "note": null
+     },
+     {
+      "name": "TAMAGO EGG SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "TUNA SALAD",
+      "price": "$7",
+      "note": null
+     },
+     {
+      "name": "SMOKED SALMON WITH WASABI MAYO",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "ORIGINAL",
+      "price": "$9",
+      "note": null
+     },
+     {
+      "name": "SHISO PESTO TURKEY AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "KARASHI HAM AND CHEESE",
+      "price": "$12",
+      "note": null
+     },
+     {
+      "name": "WASABI TUNA MELT",
+      "price": "$12",
+      "note": null
+     }
+    ],
+    "source_url": "https://www.kijitorabrooklyn.com/menu",
+    "read": "2026-11-23",
+    "kind": "html"
+   }
   },
   {
    "id": "osm:node/10756703060",
@@ -2676,8 +3750,8 @@
    "phone": null,
    "opening_hours": "Mo 09:00-18:00; Tu-Fr 08:00-18:00; Sa 09:00-18:00",
    "menu_url": "https://matchahousenyc.com/menu-page",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/680aaea7cc5f2e167bd0100a/t/681d0f38f1094d75c4ce0368/1746734904354/BRAND+LOGO.png?format=1500w",
+   "image_credit": "matchahousenyc.com",
    "cuisine": null,
    "source": "web",
    "source_url": "https://matchahousenyc.com/",
@@ -3076,6 +4150,11 @@
    "osm_url": "https://www.openstreetmap.org/node/6916463756",
    "fetched": "2026-11-23T01:04:15.505Z",
    "verified": true,
+   "image_url": "https://image.jimcdn.com/app/cms/image/transf/none/path/s829b2a241d8376a0/image/ib05737b5e324194c/version/1793208287/image.png",
+   "menu_url": "https://www.setsugekkany.com/menu/",
+   "image_credit": "setsugekkany.com",
+   "source_url": "https://www.setsugekkany.com/",
+   "read": "2026-11-23",
    "menu": {
     "items": [
      {
@@ -3151,8 +4230,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://sorate.co/cdn/shop/files/1200x1200pixels.png?v=1616650774",
+   "image_credit": "sorate.co",
    "cuisine": null,
    "source": "web",
    "source_url": "https://sorate.co/pages/flatiron-teahouse",
@@ -3177,8 +4256,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://sorate.co/cdn/shop/files/1200x1200pixels.png?v=1616650774",
+   "image_credit": "sorate.co",
    "cuisine": null,
    "source": "web",
    "source_url": "https://sorate.co/pages/soho-teahouse",
@@ -3220,7 +4299,7 @@
    "state": "OR",
    "zip": "97202",
    "website": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=or&target=or-portland",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": null,
    "opening_hours": null,
    "cuisine": "bubble_tea;ice_cream",
@@ -3228,6 +4307,11 @@
    "osm_url": "https://www.openstreetmap.org/way/421376676",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true,
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
+   "menu_url": "https://www.matchacafe-maiko.com/menu/",
+   "image_credit": "matchacafe-maiko.com",
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=or&target=or-portland",
+   "read": "2026-11-23",
    "menu": {
     "items": [
      {
@@ -3395,7 +4479,7 @@
    "state": "PA",
    "zip": "15217",
    "website": "https://www.kyotomatcha.us/",
-   "instagram": null,
+   "instagram": "kyomatchausa",
    "phone": null,
    "opening_hours": "12:00-22:30",
    "cuisine": "japanese;coffee_shop",
@@ -3412,7 +4496,7 @@
    "state": "PA",
    "zip": "19107",
    "website": "https://www.matchacafe-maiko.com",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": "267-861-0251",
    "opening_hours": null,
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
@@ -3628,7 +4712,11 @@
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/12708690933",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
+   "verified": true,
+   "image_url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ebd6f2cc-1225-4efe-b33d-673faec21136/id-preview-56e1eaa9--47623335-1913-4543-a02e-388d374a6145.lovable.app-1754675852659.png",
+   "image_credit": "lovelampmatcha.com",
+   "source_url": "https://lovelampmatcha.com/",
+   "read": "2026-11-23"
   },
   {
    "id": "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160",
@@ -3654,7 +4742,224 @@
    "lng": -96.769177,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:20:20.937Z",
+   "menu": {
+    "items": [
+     {
+      "name": "Strawberry Matcha Latte",
+      "price": "$6.85",
+      "note": "Matcha and milk layered with real strawberry puree."
+     },
+     {
+      "name": "Cardamom Matcha Latte",
+      "price": "$7.00",
+      "note": "Matcha and milk infused with our house-made cardamom syrup."
+     },
+     {
+      "name": "Matcha Latte",
+      "price": "$6.00",
+      "note": "Our signature latte made with ceremonial matcha and milk."
+     },
+     {
+      "name": "Jasmine Matcha Cloud",
+      "price": "$7.00",
+      "note": "Fragrant jasmine iced tea topped with a smooth matcha cream top."
+     },
+     {
+      "name": "Pink Coconut Matcha Cloud",
+      "price": "$8.00",
+      "note": "Matcha cloud layered over pink coconut water."
+     },
+     {
+      "name": "Sunset Matcha Cloud",
+      "price": "$7.50",
+      "note": "Citrus Earl Grey hibiscus tea topped with matcha cloud."
+     },
+     {
+      "name": "Hojicha Einspanner",
+      "price": "$7.85",
+      "note": "Roasted hojicha latte topped with a rich, silky sweet cream for a smooth, toasty finish."
+     },
+     {
+      "name": "Matcha Einspanner",
+      "price": "$8.00",
+      "note": "Hand-whisked ceremonial matcha latte topped with a thick, silky vanilla sweet cream."
+     },
+     {
+      "name": "Raspberry Matcha Latte",
+      "price": "$7.50",
+      "note": "Matcha and milk layered with our house-made raspberry puree."
+     },
+     {
+      "name": "Earl Grey Matcha Latte",
+      "price": "$7.50",
+      "note": "Matcha and milk infused with our house-made Earl Grey syrup for a smooth, floral finish."
+     },
+     {
+      "name": "Earl Grey Matcha Einspanner",
+      "price": "$8.00",
+      "note": "Earl Grey matcha topped with silky bergamot cream for a floral, creamy finish."
+     },
+     {
+      "name": "Tiramisu Latte",
+      "price": "$7.50",
+      "note": "Iced latte layered with cocoa and mascarpone cream."
+     },
+     {
+      "name": "Cookie Butter Latte",
+      "price": "$7.50",
+      "note": "Espresso and milk with our house-made cookie butter syrup."
+     },
+     {
+      "name": "Cardamom Latte",
+      "price": "$7.00",
+      "note": "Espresso and milk infused with our house-made cardamom syrup."
+     },
+     {
+      "name": "Creme Latte",
+      "price": "$6.00",
+      "note": "Espresso balanced with milk and a splash of cream."
+     },
+     {
+      "name": "Mont Blanc",
+      "price": "$7.00",
+      "note": "Americano topped with a silky vanilla cream, garnished with fresh orange zest and nutmeg."
+     },
+     {
+      "name": "Strawberry Protein Latte",
+      "price": "$8.50",
+      "note": "Espresso, milk, and strawberry with added protein for a creamy, fruit-forward latte."
+     },
+     {
+      "name": "Cardano",
+      "price": "$7.00",
+      "note": "Brown sugar Americano topped with sweet cardamom cream."
+     },
+     {
+      "name": "Earl Grey Latte",
+      "price": "$7.00",
+      "note": "Espresso and milk layered with our house-made coconut Earl Grey syrup."
+     },
+     {
+      "name": "Strawberry Refresher",
+      "price": "$6.00",
+      "note": "Real strawberry over ice with fresh lemon and gentle carbonation."
+     },
+     {
+      "name": "Raspberry Refresher",
+      "price": "$6.00",
+      "note": null
+     },
+     {
+      "name": "Raspberry Colada",
+      "price": "$6.00",
+      "note": "Our house-made raspberry puree with tropical coconut and a velvety cream top."
+     },
+     {
+      "name": "Brazilian Limeade",
+      "price": "$6.00",
+      "note": "Hand-shaken limeade with sweetened condensed milk for a bright, creamy, refreshing finish."
+     },
+     {
+      "name": "Cappuccino",
+      "price": "$5.00",
+      "note": "Espresso with steamed milk and a thick layer of silky microfoam. Served unsweetened unless specified otherwise."
+     },
+     {
+      "name": "Double Espresso",
+      "price": "$3.00",
+      "note": "Two shots of espresso with a rich body, concentrated flavor, and smooth finish. Served unsweetened unless specified otherwise."
+     },
+     {
+      "name": "Cortado",
+      "price": "$4.50",
+      "note": "Equal parts espresso and steamed milk for a rich, smooth, and balanced cup. Served unsweetened unless specified otherwise."
+     },
+     {
+      "name": "Pour Over Coffee",
+      "price": "$6.00",
+      "note": "Hand-brewed to order for a clean, balanced cup with bright aromatics and nuanced flavor. Served unsweetened unless specified otherwise. Hot "
+     },
+     {
+      "name": "Carrot Cake Muffin",
+      "price": "$6.00",
+      "note": null
+     },
+     {
+      "name": "Butter Croissant",
+      "price": "$5.00",
+      "note": null
+     },
+     {
+      "name": "Banana bread",
+      "price": "$3.50",
+      "note": null
+     },
+     {
+      "name": "Blueberry Cheesecake Croissant",
+      "price": "$6.00",
+      "note": null
+     },
+     {
+      "name": "Chocolate Muffin",
+      "price": "$4.00",
+      "note": null
+     },
+     {
+      "name": "Blueberry Muffin",
+      "price": "$4.00",
+      "note": null
+     },
+     {
+      "name": "Cheese Danish",
+      "price": "$5.50",
+      "note": null
+     },
+     {
+      "name": "Pumpkin Muffin",
+      "price": "$4.85",
+      "note": null
+     },
+     {
+      "name": "Smoked Chicken Sandwich",
+      "price": "$9.00",
+      "note": null
+     },
+     {
+      "name": "Apple Brown Sugar Latte",
+      "price": "$7.50",
+      "note": "Our house-made apple brown sugar syrup paired with espresso and your choice of milk."
+     },
+     {
+      "name": "Apple Brown Sugar Matcha",
+      "price": "$7.50",
+      "note": "Our house-made apple brown sugar syrup paired with matcha and your choice of milk."
+     },
+     {
+      "name": "Pumpkin Spice Latte",
+      "price": "$7.50",
+      "note": "Brown sugar latte topped with our house-made pumpkin spice cream."
+     },
+     {
+      "name": "Pumpkin Spice Matcha",
+      "price": "$7.50",
+      "note": "Brown sugar matcha latte topped with our house-made pumpkin spice cream."
+     },
+     {
+      "name": "Pumpkin Hot Chocolate",
+      "price": "$5.00",
+      "note": null
+     },
+     {
+      "name": "Banana Bread Matcha",
+      "price": "$8.00",
+      "note": "Ceremonial Yame matcha paired with our house-made roasted banana and brown butter-inspired syrup, with warm notes of vanilla, caramelized br"
+     }
+    ],
+    "source_url": "https://www.matchaandcreme.com/",
+    "read": "2026-11-23",
+    "kind": "html"
+   }
   },
   {
    "id": "brand:web-matcha-cafe-maiko-tx-richardson-100-s-central-6cbcd1",
@@ -3664,7 +4969,7 @@
    "state": "TX",
    "zip": "75080",
    "website": "https://www.matchacafe-maiko.com",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": "(214)656-4590",
    "opening_hours": null,
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
@@ -3808,7 +5113,7 @@
    "state": "TX",
    "zip": "78216",
    "website": "https://www.matchacafe-maiko.com",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": "(210)267-1020",
    "opening_hours": null,
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
@@ -3952,7 +5257,7 @@
    "state": "TX",
    "zip": "78253",
    "website": "https://www.matchacafe-maiko.com",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": "(210)257-0809",
    "opening_hours": null,
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
@@ -4097,7 +5402,7 @@
    "zip": "77077",
    "website": "https://www.hellomatchamia.com",
    "instagram": "hellomatchamia",
-   "phone": null,
+   "phone": "3462192792",
    "opening_hours": "Mo-Su 10:00-20:00",
    "menu_url": "https://www.hellomatchamia.com/menu",
    "image_url": "http://static1.squarespace.com/static/67613db6e67a0e5a35a7fc5e/t/6775d627ffc5395d231926ff/1735775783080/logo+website.png?format=1500w",
@@ -4150,7 +5455,7 @@
    "state": "VA",
    "zip": "22046",
    "website": "https://www.kyotomatcha.us/",
-   "instagram": null,
+   "instagram": "kyomatchausa",
    "phone": "+17038911370",
    "opening_hours": "Mo-Su 11:30-21:00",
    "cuisine": "japanese;dessert",
@@ -4188,7 +5493,7 @@
    "state": "VA",
    "zip": "22102-4501",
    "website": "https://www.matchacafe-maiko.com/eng/",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": "+1-240-486-4166",
    "opening_hours": null,
    "cuisine": "coffee_shop",
@@ -4196,6 +5501,11 @@
    "osm_url": "https://www.openstreetmap.org/node/12083747993",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true,
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
+   "menu_url": "https://www.matchacafe-maiko.com/menu/",
+   "image_credit": "matchacafe-maiko.com",
+   "source_url": "https://www.matchacafe-maiko.com/eng/",
+   "read": "2026-11-23",
    "menu": {
     "items": [
      {
@@ -4325,7 +5635,7 @@
    "state": "VA",
    "zip": "20121",
    "website": "https://www.matchacafe-maiko.com/eng/",
-   "instagram": null,
+   "instagram": "matchastand_maiko",
    "phone": "+1 703-830-0036",
    "opening_hours": "11:30-21:00",
    "cuisine": "coffee_shop",
@@ -4333,6 +5643,11 @@
    "osm_url": "https://www.openstreetmap.org/way/1079804234",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true,
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
+   "menu_url": "https://www.matchacafe-maiko.com/menu/",
+   "image_credit": "matchacafe-maiko.com",
+   "source_url": "https://www.matchacafe-maiko.com/eng/",
+   "read": "2026-11-23",
    "menu": {
     "items": [
      {

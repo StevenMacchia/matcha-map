@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T17:43:28.947Z",
+ "generated": "2026-11-23T19:32:40.637Z",
  "menus": {
   "laboracafe.com": {
    "items": [
@@ -1001,6 +1001,430 @@
     }
    ],
    "source_url": "https://cafemaikoorl.com/menu",
+   "read": "2026-11-23",
+   "kind": "html"
+  },
+  "kijitorabrooklyn.com": {
+   "items": [
+    {
+     "name": "POUR OVER",
+     "price": "$4",
+     "note": null
+    },
+    {
+     "name": "ESPRESSO",
+     "price": "$3.75",
+     "note": null
+    },
+    {
+     "name": "AMERICANO",
+     "price": "$3.75",
+     "note": null
+    },
+    {
+     "name": "MACCHIATO",
+     "price": "$4.25",
+     "note": null
+    },
+    {
+     "name": "CORTADO",
+     "price": "$4.5",
+     "note": null
+    },
+    {
+     "name": "FLAT WHITE",
+     "price": "$4.75",
+     "note": null
+    },
+    {
+     "name": "CAPPUCCINO",
+     "price": "$4.75",
+     "note": null
+    },
+    {
+     "name": "LATTE",
+     "price": "$5.25",
+     "note": null
+    },
+    {
+     "name": "MOCHA",
+     "price": "$6.25",
+     "note": null
+    },
+    {
+     "name": "MIZUDASHI",
+     "price": "$9",
+     "note": "Japanese Slow Drip Cold Brew"
+    },
+    {
+     "name": "COLD BREW SPRITZER",
+     "price": "$7",
+     "note": "with Pear and Tonic"
+    },
+    {
+     "name": "TIRAMISU LATTE",
+     "price": "$7",
+     "note": null
+    },
+    {
+     "name": "MISO MOCHA",
+     "price": "$7",
+     "note": null
+    },
+    {
+     "name": "DIRTY BLACK SESAME LATTE",
+     "price": "$7",
+     "note": "with white chocolate"
+    },
+    {
+     "name": "ICED STRAWBERRY MATCHA LATTE",
+     "price": "$8",
+     "note": null
+    },
+    {
+     "name": "ICED MANGO MATCHA LATTE",
+     "price": "$8",
+     "note": null
+    },
+    {
+     "name": "AZUKI MATCHA LATTE",
+     "price": "$7.25",
+     "note": null
+    },
+    {
+     "name": "MATCHA CORTADO",
+     "price": "$5.75",
+     "note": null
+    },
+    {
+     "name": "HOJICHA LATTE",
+     "price": "$6",
+     "note": null
+    },
+    {
+     "name": "HOUSE BREWED ORGANIC CHAI LATTE",
+     "price": "$6",
+     "note": null
+    },
+    {
+     "name": "KUWACHA LATTE",
+     "price": "$6",
+     "note": null
+    },
+    {
+     "name": "LAVENDER MILK TEA",
+     "price": "$5",
+     "note": null
+    },
+    {
+     "name": "BLACK SESAME LATTE",
+     "price": "$5.75",
+     "note": "with white choclate"
+    },
+    {
+     "name": "AZUKI RED BEAN LATTE",
+     "price": "$5.75",
+     "note": null
+    },
+    {
+     "name": "YUZU GINGER FIZZ",
+     "price": "$7.5",
+     "note": null
+    },
+    {
+     "name": "MISO SALMON",
+     "price": "$4.5",
+     "note": null
+    },
+    {
+     "name": "TUNA MAYO",
+     "price": "$4.5",
+     "note": null
+    },
+    {
+     "name": "MENTAIKO COD ROE",
+     "price": "$4.5",
+     "note": null
+    },
+    {
+     "name": "CHASHU PORK",
+     "price": "$4.5",
+     "note": null
+    },
+    {
+     "name": "SUKIYAKI BEEF",
+     "price": "$4.5",
+     "note": null
+    },
+    {
+     "name": "KOMBU SEAWEED",
+     "price": "$4",
+     "note": null
+    },
+    {
+     "name": "UME PICKLED PLUM",
+     "price": "$4",
+     "note": null
+    },
+    {
+     "name": "HAM AND CHEESE",
+     "price": "$6.5",
+     "note": null
+    },
+    {
+     "name": "TAMAGO EGG SALAD",
+     "price": "$7",
+     "note": null
+    },
+    {
+     "name": "TUNA SALAD",
+     "price": "$7",
+     "note": null
+    },
+    {
+     "name": "SMOKED SALMON WITH WASABI MAYO",
+     "price": "$12",
+     "note": null
+    },
+    {
+     "name": "ORIGINAL",
+     "price": "$9",
+     "note": null
+    },
+    {
+     "name": "SHISO PESTO TURKEY AND CHEESE",
+     "price": "$12",
+     "note": null
+    },
+    {
+     "name": "KARASHI HAM AND CHEESE",
+     "price": "$12",
+     "note": null
+    },
+    {
+     "name": "WASABI TUNA MELT",
+     "price": "$12",
+     "note": null
+    }
+   ],
+   "source_url": "https://www.kijitorabrooklyn.com/menu",
+   "read": "2026-11-23",
+   "kind": "html"
+  },
+  "matchaandcreme.com": {
+   "items": [
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": "$6.85",
+     "note": "Matcha and milk layered with real strawberry puree."
+    },
+    {
+     "name": "Cardamom Matcha Latte",
+     "price": "$7.00",
+     "note": "Matcha and milk infused with our house-made cardamom syrup."
+    },
+    {
+     "name": "Matcha Latte",
+     "price": "$6.00",
+     "note": "Our signature latte made with ceremonial matcha and milk."
+    },
+    {
+     "name": "Jasmine Matcha Cloud",
+     "price": "$7.00",
+     "note": "Fragrant jasmine iced tea topped with a smooth matcha cream top."
+    },
+    {
+     "name": "Pink Coconut Matcha Cloud",
+     "price": "$8.00",
+     "note": "Matcha cloud layered over pink coconut water."
+    },
+    {
+     "name": "Sunset Matcha Cloud",
+     "price": "$7.50",
+     "note": "Citrus Earl Grey hibiscus tea topped with matcha cloud."
+    },
+    {
+     "name": "Hojicha Einspanner",
+     "price": "$7.85",
+     "note": "Roasted hojicha latte topped with a rich, silky sweet cream for a smooth, toasty finish."
+    },
+    {
+     "name": "Matcha Einspanner",
+     "price": "$8.00",
+     "note": "Hand-whisked ceremonial matcha latte topped with a thick, silky vanilla sweet cream."
+    },
+    {
+     "name": "Raspberry Matcha Latte",
+     "price": "$7.50",
+     "note": "Matcha and milk layered with our house-made raspberry puree."
+    },
+    {
+     "name": "Earl Grey Matcha Latte",
+     "price": "$7.50",
+     "note": "Matcha and milk infused with our house-made Earl Grey syrup for a smooth, floral finish."
+    },
+    {
+     "name": "Earl Grey Matcha Einspanner",
+     "price": "$8.00",
+     "note": "Earl Grey matcha topped with silky bergamot cream for a floral, creamy finish."
+    },
+    {
+     "name": "Tiramisu Latte",
+     "price": "$7.50",
+     "note": "Iced latte layered with cocoa and mascarpone cream."
+    },
+    {
+     "name": "Cookie Butter Latte",
+     "price": "$7.50",
+     "note": "Espresso and milk with our house-made cookie butter syrup."
+    },
+    {
+     "name": "Cardamom Latte",
+     "price": "$7.00",
+     "note": "Espresso and milk infused with our house-made cardamom syrup."
+    },
+    {
+     "name": "Creme Latte",
+     "price": "$6.00",
+     "note": "Espresso balanced with milk and a splash of cream."
+    },
+    {
+     "name": "Mont Blanc",
+     "price": "$7.00",
+     "note": "Americano topped with a silky vanilla cream, garnished with fresh orange zest and nutmeg."
+    },
+    {
+     "name": "Strawberry Protein Latte",
+     "price": "$8.50",
+     "note": "Espresso, milk, and strawberry with added protein for a creamy, fruit-forward latte."
+    },
+    {
+     "name": "Cardano",
+     "price": "$7.00",
+     "note": "Brown sugar Americano topped with sweet cardamom cream."
+    },
+    {
+     "name": "Earl Grey Latte",
+     "price": "$7.00",
+     "note": "Espresso and milk layered with our house-made coconut Earl Grey syrup."
+    },
+    {
+     "name": "Strawberry Refresher",
+     "price": "$6.00",
+     "note": "Real strawberry over ice with fresh lemon and gentle carbonation."
+    },
+    {
+     "name": "Raspberry Refresher",
+     "price": "$6.00",
+     "note": null
+    },
+    {
+     "name": "Raspberry Colada",
+     "price": "$6.00",
+     "note": "Our house-made raspberry puree with tropical coconut and a velvety cream top."
+    },
+    {
+     "name": "Brazilian Limeade",
+     "price": "$6.00",
+     "note": "Hand-shaken limeade with sweetened condensed milk for a bright, creamy, refreshing finish."
+    },
+    {
+     "name": "Cappuccino",
+     "price": "$5.00",
+     "note": "Espresso with steamed milk and a thick layer of silky microfoam. Served unsweetened unless specified otherwise."
+    },
+    {
+     "name": "Double Espresso",
+     "price": "$3.00",
+     "note": "Two shots of espresso with a rich body, concentrated flavor, and smooth finish. Served unsweetened unless specified otherwise."
+    },
+    {
+     "name": "Cortado",
+     "price": "$4.50",
+     "note": "Equal parts espresso and steamed milk for a rich, smooth, and balanced cup. Served unsweetened unless specified otherwise."
+    },
+    {
+     "name": "Pour Over Coffee",
+     "price": "$6.00",
+     "note": "Hand-brewed to order for a clean, balanced cup with bright aromatics and nuanced flavor. Served unsweetened unless specified otherwise. Hot "
+    },
+    {
+     "name": "Carrot Cake Muffin",
+     "price": "$6.00",
+     "note": null
+    },
+    {
+     "name": "Butter Croissant",
+     "price": "$5.00",
+     "note": null
+    },
+    {
+     "name": "Banana bread",
+     "price": "$3.50",
+     "note": null
+    },
+    {
+     "name": "Blueberry Cheesecake Croissant",
+     "price": "$6.00",
+     "note": null
+    },
+    {
+     "name": "Chocolate Muffin",
+     "price": "$4.00",
+     "note": null
+    },
+    {
+     "name": "Blueberry Muffin",
+     "price": "$4.00",
+     "note": null
+    },
+    {
+     "name": "Cheese Danish",
+     "price": "$5.50",
+     "note": null
+    },
+    {
+     "name": "Pumpkin Muffin",
+     "price": "$4.85",
+     "note": null
+    },
+    {
+     "name": "Smoked Chicken Sandwich",
+     "price": "$9.00",
+     "note": null
+    },
+    {
+     "name": "Apple Brown Sugar Latte",
+     "price": "$7.50",
+     "note": "Our house-made apple brown sugar syrup paired with espresso and your choice of milk."
+    },
+    {
+     "name": "Apple Brown Sugar Matcha",
+     "price": "$7.50",
+     "note": "Our house-made apple brown sugar syrup paired with matcha and your choice of milk."
+    },
+    {
+     "name": "Pumpkin Spice Latte",
+     "price": "$7.50",
+     "note": "Brown sugar latte topped with our house-made pumpkin spice cream."
+    },
+    {
+     "name": "Pumpkin Spice Matcha",
+     "price": "$7.50",
+     "note": "Brown sugar matcha latte topped with our house-made pumpkin spice cream."
+    },
+    {
+     "name": "Pumpkin Hot Chocolate",
+     "price": "$5.00",
+     "note": null
+    },
+    {
+     "name": "Banana Bread Matcha",
+     "price": "$8.00",
+     "note": "Ceremonial Yame matcha paired with our house-made roasted banana and brown butter-inspired syrup, with warm notes of vanilla, caramelized br"
+    }
+   ],
+   "source_url": "https://www.matchaandcreme.com/",
    "read": "2026-11-23",
    "kind": "html"
   },

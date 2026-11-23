@@ -1,0 +1,276 @@
+{
+ "about": "Fields read from each shop's own public site by npm run shops:deepen; only empty fields on the shop row are filled.",
+ "shops": {
+  "brand:web-premium-matcha-cafe-maiko-az-tempe-920-e-unive-754902": {
+   "instagram": "matchacafemaikoaz",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchaaz.com"
+  },
+  "brand:web-cafe-matcha-ca-studio-city-12070-ventura-blvd-bfe519": {
+   "image_url": "https://cafe-matcha.com/cdn/shop/files/Screenshot_2026-04-13_at_11.28.45_AM_1200x1200.png?v=1776110464",
+   "image_credit": "cafe-matcha.com",
+   "read": "2026-11-23",
+   "source_url": "https://cafe-matcha.com"
+  },
+  "brand:web-cafe-matcha-ca-los-angeles-705-n-alfred-st-ef0c5b": {
+   "opening_hours": "Mo-Su 08:00-17:00",
+   "image_url": "https://cafe-matcha.com/cdn/shop/files/Screenshot_2026-04-13_at_11.28.45_AM_1200x1200.png?v=1776110464",
+   "image_credit": "cafe-matcha.com",
+   "read": "2026-11-23",
+   "source_url": "https://cafe-matcha.com"
+  },
+  "brand:web-kettl-ca-los-angeles-4677-hollywood-blvd-ab7e83": {
+   "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
+   "image_credit": "kettl.co",
+   "read": "2026-11-23",
+   "source_url": "https://kettl.co"
+  },
+  "brand:web-matcha-cafe-maiko-ca-san-diego-8072-clairemont-f9a331": {
+   "instagram": "matchastand_maiko",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com"
+  },
+  "brand:web-meccha-matcha-ca-artesia-11816-artesia-blvd-d90f05": {
+   "instagram": "mecchamatcha_ca",
+   "read": "2026-11-23",
+   "source_url": "https://www.mecchamatcha.com"
+  },
+  "brand:web-meccha-matcha-ca-long-beach-2310-n-bellflower-03c072": {
+   "instagram": "mecchamatcha_ca",
+   "read": "2026-11-23",
+   "source_url": "https://www.mecchamatcha.com"
+  },
+  "brand:web-midori-matcha-cafe-ca-los-angeles-123-astronau-bf1078": {
+   "image_url": "http://static1.squarespace.com/static/56cab4c0b654f92cd6ed4ce9/t/56cb0ea87da24f86a7a04c55/1456148141700/logo.png?format=1500w",
+   "image_credit": "midorimatchatea.com",
+   "read": "2026-11-23",
+   "source_url": "https://midorimatchatea.com"
+  },
+  "osm:node/11007004668": {
+   "instagram": "MatchaCafeMaikoOrlando",
+   "image_url": "http://static1.squarespace.com/static/69d55f94971c866ea49bf3b8/t/69f37ea5cfa3e81e12d2a5c1/1777565349021/matcha-cafe-maiko-barista-whisking-ceremonial-matcha.jpg?format=1500w",
+   "image_credit": "cafemaikoorl.com",
+   "menu_url": "https://matcha-cafe-maiko-orlando-fl.cloveronline.com/menu/all",
+   "read": "2026-11-23",
+   "source_url": "https://cafemaikoorl.com"
+  },
+  "osm:node/6292161039": {
+   "image_url": "http://static1.squarespace.com/static/69b4d8c19880f21d612e52e2/t/69b5c1ad1544da198078ea6d/1773519277991/Matcha+Theory+Logo+%281%29.png?format=1500w",
+   "image_credit": "thematchatheory.com",
+   "read": "2026-11-23",
+   "source_url": "https://www.thematchatheory.com/"
+  },
+  "osm:node/8613661338": {
+   "instagram": "matchacitachi",
+   "image_url": "https://static1.squarespace.com/static/66536296f27321176a4760b3/t/669a897f3414157f2cc8ec0d/1794853690240/",
+   "image_credit": "matchacitachi.com",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacitachi.com"
+  },
+  "osm:node/13831193089": {
+   "image_url": "https://littlematchacincy.square.site/uploads/b/c79a08a0-005a-11f1-b674-9963d475ec70/IMG_9666.jpeg",
+   "image_credit": "littlematchacincy.square.site",
+   "read": "2026-11-23",
+   "source_url": "https://littlematchacincy.square.site"
+  },
+  "osm:node/13762175477": {
+   "instagram": "meandersalem",
+   "menu_url": "https://www.meandercoffee.com/menu",
+   "read": "2026-11-23",
+   "source_url": "https://www.meandercoffee.com/"
+  },
+  "osm:node/5376369821": {
+   "instagram": "kyomatchausa",
+   "read": "2026-11-23",
+   "source_url": "https://www.kyotomatcha.us"
+  },
+  "osm:node/3224246961": {
+   "instagram": "matchatimegiftshop",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchatimegiftshop.com"
+  },
+  "osm:node/13908302923": {
+   "instagram": "thematchabarx",
+   "image_url": "https://static1.squarespace.com/static/695be3f4cedb8b04b48acce3/t/695be5a0324cc8450971e7e8/1770399805046/",
+   "image_credit": "thematchabarx.com",
+   "menu_url": "https://www.thematchabarx.com/menu",
+   "read": "2026-11-23",
+   "source_url": "https://www.thematchabarx.com/"
+  },
+  "osm:node/14121437619": {
+   "instagram": "matchastand_maiko",
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
+   "image_credit": "matchacafe-maiko.com",
+   "menu_url": "https://www.matchacafe-maiko.com/menu/",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nv&target=nv-lv-store"
+  },
+  "osm:node/13159184974": {
+   "phone": "+1(555)000-0000",
+   "image_url": "https://nanasgreentealasvegas.com/images/logo.png",
+   "image_credit": "nanasgreentealasvegas.com",
+   "menu_url": "https://nanasgreentealasvegas.com/menu.html",
+   "read": "2026-11-23",
+   "source_url": "https://nanasgreentealasvegas.com/"
+  },
+  "osm:way/1386013307": {
+   "opening_hours": "Tu-Su 12:00-22:00",
+   "phone": "702-247-1779",
+   "instagram": "urban.matcha",
+   "image_url": "https://static.wixstatic.com/media/8711a4_6cd47429b19e45e9a452cb2c1d01058f~mv2.png",
+   "image_credit": "matchalv.com",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchalv.com/"
+  },
+  "brand:web-isshiki-matcha-ny-new-york-183-grand-street-6af484": {
+   "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
+   "image_credit": "isshikimatcha.com",
+   "read": "2026-11-23",
+   "source_url": "https://isshikimatcha.com"
+  },
+  "brand:web-isshiki-matcha-at-ace-hotel-ny-new-york-20-wes-146692": {
+   "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
+   "image_credit": "isshikimatcha.com",
+   "read": "2026-11-23",
+   "source_url": "https://isshikimatcha.com"
+  },
+  "brand:web-isshiki-matcha-at-loulou-ny-new-york-176-8th-a-d611cd": {
+   "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
+   "image_credit": "isshikimatcha.com",
+   "read": "2026-11-23",
+   "source_url": "https://isshikimatcha.com"
+  },
+  "osm:node/2268954021": {
+   "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
+   "image_credit": "kettl.co",
+   "read": "2026-11-23",
+   "source_url": "https://kettl.co"
+  },
+  "brand:web-kettl-matcha-sen-mon-ten-ny-brooklyn-38-norman-05a9ef": {
+   "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
+   "image_credit": "kettl.co",
+   "read": "2026-11-23",
+   "source_url": "https://kettl.co"
+  },
+  "brand:web-kijitora-ny-brooklyn-151-north-7th-street-3c75b7": {
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
+   "read": "2026-11-23",
+   "source_url": "https://www.kijitorabrooklyn.com"
+  },
+  "brand:web-kijitora-e14th-ny-new-york-534-east-14th-stree-1ea3c2": {
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
+   "read": "2026-11-23",
+   "source_url": "https://www.kijitorabrooklyn.com"
+  },
+  "brand:web-kijitora-east-ny-brooklyn-309-graham-avenue-fbe6cc": {
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
+   "read": "2026-11-23",
+   "source_url": "https://www.kijitorabrooklyn.com"
+  },
+  "brand:web-kijitora-mini-ny-brooklyn-578-driggs-avenue-d6bfc7": {
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
+   "read": "2026-11-23",
+   "source_url": "https://www.kijitorabrooklyn.com"
+  },
+  "brand:web-kijitora-ridgewood-ny-ridgewood-279-st-nichola-791f76": {
+   "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
+   "image_credit": "kijitorabrooklyn.com",
+   "read": "2026-11-23",
+   "source_url": "https://www.kijitorabrooklyn.com"
+  },
+  "brand:web-matcha-house-ny-new-york-203-east-10th-street-1f82de": {
+   "image_url": "http://static1.squarespace.com/static/680aaea7cc5f2e167bd0100a/t/681d0f38f1094d75c4ce0368/1746734904354/BRAND+LOGO.png?format=1500w",
+   "image_credit": "matchahousenyc.com",
+   "read": "2026-11-23",
+   "source_url": "https://matchahousenyc.com"
+  },
+  "osm:node/6916463756": {
+   "image_url": "https://image.jimcdn.com/app/cms/image/transf/none/path/s829b2a241d8376a0/image/ib05737b5e324194c/version/1793208287/image.png",
+   "image_credit": "setsugekkany.com",
+   "menu_url": "https://www.setsugekkany.com/menu/",
+   "read": "2026-11-23",
+   "source_url": "https://www.setsugekkany.com/"
+  },
+  "brand:web-sorate-flatiron-teahouse-ny-new-york-30-east-1-781dff": {
+   "image_url": "http://sorate.co/cdn/shop/files/1200x1200pixels.png?v=1616650774",
+   "image_credit": "sorate.co",
+   "read": "2026-11-23",
+   "source_url": "https://sorate.co"
+  },
+  "brand:web-sorate-soho-teahouse-ny-new-york-103-sullivan-692910": {
+   "image_url": "http://sorate.co/cdn/shop/files/1200x1200pixels.png?v=1616650774",
+   "image_credit": "sorate.co",
+   "read": "2026-11-23",
+   "source_url": "https://sorate.co"
+  },
+  "osm:way/421376676": {
+   "instagram": "matchastand_maiko",
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
+   "image_credit": "matchacafe-maiko.com",
+   "menu_url": "https://www.matchacafe-maiko.com/menu/",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=or&target=or-portland"
+  },
+  "osm:node/9659344789": {
+   "instagram": "kyomatchausa",
+   "read": "2026-11-23",
+   "source_url": "https://www.kyotomatcha.us/"
+  },
+  "brand:web-matcha-cafe-maiko-pa-philadelphia-923-race-st-35969b": {
+   "instagram": "matchastand_maiko",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com"
+  },
+  "osm:node/12708690933": {
+   "image_url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ebd6f2cc-1225-4efe-b33d-673faec21136/id-preview-56e1eaa9--47623335-1913-4543-a02e-388d374a6145.lovable.app-1754675852659.png",
+   "image_credit": "lovelampmatcha.com",
+   "read": "2026-11-23",
+   "source_url": "https://lovelampmatcha.com/"
+  },
+  "brand:web-matcha-cafe-maiko-tx-richardson-100-s-central-6cbcd1": {
+   "instagram": "matchastand_maiko",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com"
+  },
+  "brand:web-matcha-cafe-maiko-tx-san-antonio-7115-blanco-r-cb4a18": {
+   "instagram": "matchastand_maiko",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com"
+  },
+  "brand:web-matcha-cafe-maiko-tx-san-antonio-11330-potranc-5c0c2f": {
+   "instagram": "matchastand_maiko",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com"
+  },
+  "brand:web-matcha-mia-eldridge-tx-houston-1809-eldridge-p-8d5013": {
+   "phone": "3462192792",
+   "read": "2026-11-23",
+   "source_url": "https://www.hellomatchamia.com"
+  },
+  "osm:node/11399205396": {
+   "instagram": "kyomatchausa",
+   "read": "2026-11-23",
+   "source_url": "https://www.kyotomatcha.us/"
+  },
+  "osm:node/12083747993": {
+   "instagram": "matchastand_maiko",
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
+   "image_credit": "matchacafe-maiko.com",
+   "menu_url": "https://www.matchacafe-maiko.com/menu/",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com/eng/"
+  },
+  "osm:way/1079804234": {
+   "instagram": "matchastand_maiko",
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
+   "image_credit": "matchacafe-maiko.com",
+   "menu_url": "https://www.matchacafe-maiko.com/menu/",
+   "read": "2026-11-23",
+   "source_url": "https://www.matchacafe-maiko.com/eng/"
+  }
+ }
+}
