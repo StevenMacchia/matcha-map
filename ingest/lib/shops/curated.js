@@ -23,6 +23,20 @@ export function shopId(name, state, city, address) {
   return `brand:web-${full.slice(0, 46).replace(/-+$/, "")}-${h}`;
 }
 
+// Tier: "shop" (the default; matcha is the core offer) or "serves" (a coffee or tea shop whose own public menu lists at least three distinct
+// matcha drinks: tier "serves", `menu_matcha` = [{name, price?}] read from `menu_url`, drawn as a lighter pin "Matcha on the menu").
+export const MIN_SERVES_ITEMS = 3;
+function matchaItems(list) {
+  const seen = new Set(), out = [];
+  for (const x of Array.isArray(list) ? list : []) {
+    const name = str(x?.name);
+    if (!name || !/matcha|ceremonial|usucha|koicha|hojicha|uji|green tea/i.test(name + " " + (x.note || "")) || seen.has(name.toLowerCase())) continue;
+    seen.add(name.toLowerCase());
+    out.push({ name: name.slice(0, 80), price: str(x.price) });
+  }
+  return out;
+}
+
 // One raw row -> { shop } (without coordinates) or { held: reason }.
 export function checkRow(r, file = "") {
   const name = str(r?.name), address = str(r?.address), city = str(r?.city), state = str(r?.state)?.toUpperCase() || null, source_url = http(r?.source_url);
@@ -33,6 +47,9 @@ export function checkRow(r, file = "") {
   if (!source_url) return { held: "no public source_url" };
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(r.read || ""))) return { held: "no read date" };
   const via = CONFIRMED_VIA.has(r.confirmed_via) ? r.confirmed_via : null;
+  const tier = r.tier === "serves" ? "serves" : "shop";
+  const menu_matcha = tier === "serves" ? matchaItems(r.menu_matcha) : null;
+  if (tier === "serves" && (!http(r.menu_url) || menu_matcha.length < MIN_SERVES_ITEMS)) return { held: `serves tier needs a menu_url and at least ${MIN_SERVES_ITEMS} distinct matcha drinks` };
   const zip = /^\d{5}/.test(String(r.zip || "")) ? String(r.zip).slice(0, 5) : null;
   return {
     shop: {
@@ -40,6 +57,7 @@ export function checkRow(r, file = "") {
       name, address, city, state, zip,
       website: http(r.website), instagram: handle(r.instagram), phone: str(r.phone), opening_hours: str(r.opening_hours),
       menu_url: http(r.menu_url), image_url: http(r.image_url), image_credit: str(r.image_credit),
+      tier, ...(menu_matcha ? { menu_matcha } : {}), note: str(r.note) ? str(r.note).slice(0, 120) : null,
       cuisine: null, source: "web", source_url, read: r.read, confirmed_via: via, verified: !!via,
     },
   };

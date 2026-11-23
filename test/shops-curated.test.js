@@ -74,3 +74,14 @@ test("dedupe merges a researched branch name into the plain OSM row at the same 
   const osm2 = { ...osm, id: "osm:node/10", opening_hours: "Mo-Sa 10:00-17:00" };
   assert.equal(dedupe([osm2, web])[0].opening_hours, "Mo-Su 08:00-20:00");
 });
+
+test("serves tier: a coffee or tea shop needs a menu page and at least three distinct matcha drinks; shop rows are the default", () => {
+  assert.equal(checkRow(row).shop.tier, "shop");
+  const serves = { ...row, name: "Heirloom Brewshop", tier: "serves", menu_url: "https://x.test/menu", menu_matcha: [{ name: "Matcha latte", price: "$6" }, { name: "Iced matcha", price: null }, { name: "Ceremonial matcha", price: "$8" }, { name: "Matcha latte", price: "$6" }] };
+  const ok = checkRow(serves).shop;
+  assert.equal(ok.tier, "serves");
+  assert.deepEqual(ok.menu_matcha.map((x) => x.name), ["Matcha latte", "Iced matcha", "Ceremonial matcha"]);
+  assert.match(checkRow({ ...serves, menu_matcha: serves.menu_matcha.slice(0, 2) }).held, /at least 3/);
+  assert.match(checkRow({ ...serves, menu_url: null }).held, /menu_url/);
+  assert.equal(checkRow({ ...row, note: "Pop-up window at Maison Neue" }).shop.note, "Pop-up window at Maison Neue");
+});

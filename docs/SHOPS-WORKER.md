@@ -4,7 +4,13 @@ Goal: a real matcha shop layer for every city on the top-50-per-state list (`dat
 
 ## What counts as a shop
 
-A permanent place that sells matcha drinks as a core offer: a matcha cafe or bar, a Japanese tea house or kissaten whose menu leads with matcha, a matcha bar inside a bakery, market hall or bookshop, and the matcha chains (Cha Cha Matcha, Matcha Cafe Maiko, Nana's Green Tea, Kettl, Matchaful, Setsugekka, Stonemill, Isshiki, Sorate, Chalait, Kissaten and any chain you find). Not every coffee shop that has a matcha latte on the menu. Test: the shop's own site or menu says matcha in its name, tagline or a dedicated section, or matcha drinks are most of what it sells. Not shops: pop-ups and carts (they are events), tea-only retailers with no cafe counter, a class studio, a brand with no storefront, a place that has closed.
+A permanent place that sells matcha drinks as a core offer: a matcha cafe or bar, a Japanese tea house or kissaten whose menu leads with matcha, a matcha bar inside a bakery, market hall or bookshop, and the matcha chains (Cha Cha Matcha, Matcha Cafe Maiko, Nana's Green Tea, Kettl, Matchaful, Setsugekka, Stonemill, Isshiki, Sorate, Chalait, Kissaten and any chain you find). Not every coffee shop that has a matcha latte on the menu. Test: the shop's own site or menu says matcha in its name, tagline or a dedicated section, or matcha drinks are most of what it sells. Coffee shops with a matcha latte or two are not shops (and have no tier row unless they pass the three-drink rule). Not shops: pop-ups and carts (they are events), tea-only retailers with no cafe counter, a class studio, a brand with no storefront, a place that has closed.
+
+## Two tiers
+
+- `tier: "shop"` (the default): matcha is the core offer, as above.
+- `tier: "serves"` (product owner, 2026-11-23): a coffee or tea shop that is not a matcha bar but whose own public menu page lists at least three distinct matcha drinks (not one latte). Drawn as a lighter pin "Matcha on the menu", counted separately. Required: `menu_url` (the shop's own menu page) and `menu_matcha` = `[{ "name": "...", "price": "$6.50" or null }, ...]` with at least three distinct matcha drink names exactly as the menu prints them. Read the menu with `node tools/shop-read.js <menu page>` or the fetch tool; if the menu is an image or a PDF you cannot read, the row is not written. A row that fails the three-drink rule is held automatically.
+- Optional on any row: `note` (at most 120 characters, shown on the card), for example "Pop-up window at Maison Neue" for a fixed counter inside another business.
 
 ## How to find them (public pages only, read-only)
 
@@ -43,6 +49,10 @@ Run `node tools/shop-read.js <shop website> --paths home,/contact,/locations,/vi
 - No coordinates in the file. The pipeline geocodes the address.
 - One row per location. A chain gets one row per store you can confirm on its own location page.
 - File shape: `{ "generated": "<ISO time>", "group": "<region>-<part>", "shops": [ ... ] }`. Write your own file only; never edit another file, `data/shops.json`, `site/` or `ingest/`.
+
+## Tips from the first batch
+
+Find the shop's real site with a search for its name plus city (guessed domains mostly fail). `shop-read` prints one address per site: for a chain read each store's own location page. Use PowerShell or `MSYS_NO_PATHCONV=1` for paths that start with `/`. A shop whose own site prints no street address can use `press+site` (press gives the address, the site confirms the shop) and says so in `notes`. If a handle on the site looks like a typo, check the footer link.
 
 ## Rules
 

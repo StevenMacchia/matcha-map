@@ -103,7 +103,9 @@ async function main() {
   shops = attachMenus(shops, read("data/menus.json", { menus: {} }).menus);
   shops.sort((a, b) => (a.state || "~").localeCompare(b.state || "~") || a.name.localeCompare(b.name));
   const out = { generated: fetched, attribution: ATTRIBUTION, shops };
-  const site = shops.filter((s) => s.verified);
+  // "serves" rows (coffee and tea shops with matcha on the menu) stay in data/shops.json; the site layer gets them only with SHOPS_SERVES=1
+  // (the site session switches that on once it draws the lighter "Matcha on the menu" pin).
+  const site = shops.filter((s) => s.verified && (s.tier !== "serves" || process.env.SHOPS_SERVES === "1"));
   fs.mkdirSync("site/data", { recursive: true });
   fs.writeFileSync("data/shops.json", JSON.stringify(out, null, 1) + "\n");
   fs.writeFileSync("site/data/shops.json", JSON.stringify({ ...out, shops: site }) + "\n");
