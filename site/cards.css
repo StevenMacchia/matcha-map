@@ -191,7 +191,8 @@
 .mm-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---- dark: stickers keep their cream faces ---- */
-:root[data-theme="dark"] .mm-chip { border-color: var(--mm-stk); }
+:root[data-theme="dark"] .mm-chip { --mm-cs: #86B077; border-color: var(--mm-cs); box-shadow: 0 2px 0 var(--mm-cs); }
+:root[data-theme="dark"] .mm-chip.mm-t1 { --mm-cs: #D79BAE; } :root[data-theme="dark"] .mm-chip.mm-t2 { --mm-cs: #D4A07A; }
 :root[data-theme="dark"] .mm-chip.mm-t0 { background: #DCEBC9; } :root[data-theme="dark"] .mm-chip.mm-t1 { background: #F6CFDA; } :root[data-theme="dark"] .mm-chip.mm-t2 { background: #F4D6BC; }
 :root[data-theme="dark"] .mm-hero-photo { border-color: #2B3D2F; }
 
