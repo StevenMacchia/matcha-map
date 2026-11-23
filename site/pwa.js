@@ -87,7 +87,9 @@
 
   // ---------- service worker and the update bar ----------
   if (!("serviceWorker" in navigator)) return;
-  var reloading = false, upd = null;
+  // Reload only when a worker that was already in charge is replaced (the update bar). On a first visit the new worker takes
+  // over with clients.claim(), which also fires controllerchange; reloading then restarted the opening mid-way (rung 35).
+  var reloading = false, upd = null, hadController = !!navigator.serviceWorker.controller;
   function offerUpdate(w) {
     if (upd || !w) return;
     upd = el("button", "pwa-update", "New version, tap to refresh");
@@ -103,6 +105,7 @@
   });
   navigator.serviceWorker.addEventListener("controllerchange", function () {
     if (reloading || !navigator.serviceWorker.controller) return;
+    if (!hadController) { hadController = true; return; }
     reloading = true;
     location.reload();
   });

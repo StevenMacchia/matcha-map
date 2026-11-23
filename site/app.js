@@ -78,7 +78,7 @@
     var s = parts(e.start);
     if (!s) return "";
     var wd = DAYS[new Date(Date.UTC(s.y, s.mo - 1, s.d)).getUTCDay()];
-    var day = wd + " " + MONTHS[s.mo - 1] + " " + s.d;
+    var day = wd + " " + MONTHS[s.mo - 1] + " " + s.d + (s.y !== new Date().getFullYear() ? ", " + s.y : "");
     if (e.all_day) return day + " · all day";
     var en = parts(e.end);
     var t = clock(s);
@@ -96,13 +96,18 @@
     return isNaN(en) ? e.status : (en < Date.now() ? "past" : "upcoming");
   }
 
-  function matchesChip(e) {
+  // The coming Saturday (today when it is Saturday; on Sunday, the one six days on) and the Sunday after it.
+  function satOf(now) { var dow = now.getDay(); return addDays(now, dow === 0 ? 6 : 6 - dow); }
+  function sunOf(now) { return addDays(satOf(now), 1); } // on a Sunday, Today covers today; Sun is next week's
+  function matchesChip(e, chip) {
     var s = parts(e.start);
     if (!s) return false;
     var now = new Date(), today = dateKey(now);
-    if (state.day) return s.key === state.day;
-    switch (state.chip) {
+    if (!chip && state.day) return s.key === state.day;
+    switch (chip || state.chip) {
       case "today": return s.key === today;
+      case "sat": return s.key === dateKey(satOf(now));
+      case "sun": return s.key === dateKey(sunOf(now));
       case "week": return s.key >= today && s.key <= dateKey(addDays(now, 6));
       case "weekend": {
         var dow = now.getDay(), sat = addDays(now, dow === 0 ? -1 : 6 - dow), sun = addDays(sat, 1);
@@ -144,9 +149,15 @@
 
   // Brand mochi get eyes and blush from zoom 9 up (class z9 on the map container).
   // The approximate rings also shrink when zoomed out: zl under 6, zm from 6 to 9 (style.css). One class toggle, at most once a frame.
+  // Below zoom 6 (the national and regional views) the map draws pop-ups only: city-only events join the same
+  // clusters, and brands and storefronts wait until zoom 6, so a whole-country view reads as where things are on.
+  var LOW_Z = 6, lowZ = null;
   function syncZoomFace() {
     var z = map.getZoom(), c = map.getContainer().classList;
     c.toggle("z9", z >= 9); c.toggle("zl", z < 6); c.toggle("zm", z >= 6 && z < 9);
+    var low = z < LOW_Z;
+    if (lowZ !== null && low !== lowZ) { lowZ = low; setSources(); } else lowZ = low;
+    syncHawaii();
   }
   var zoomRaf = 0;
   map.on("zoom", function () { if (!zoomRaf) zoomRaf = requestAnimationFrame(function () { zoomRaf = 0; syncZoomFace(); }); });
@@ -161,11 +172,11 @@
   // marker holding a character, synced from querySourceFeatures. The circle layers are invisible
   // and exist only so the sources load.
   function addData() {
-    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(visibleEvents(false)), cluster: true, clusterRadius: 56, clusterMaxZoom: 13 });
-    if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: featureColl(visibleBrands()), cluster: true, clusterRadius: 44, clusterMaxZoom: 12 });
-    if (!map.getSource("sh")) map.addSource("sh", { type: "geojson", data: featureColl(visibleShops()), cluster: true, clusterRadius: 40, clusterMaxZoom: 13 });
+    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(mapEvents(false)), cluster: true, clusterRadius: 56, clusterMaxZoom: 13 });
+    if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: featureColl(mapBrands()), cluster: true, clusterRadius: 44, clusterMaxZoom: 12 });
+    if (!map.getSource("sh")) map.addSource("sh", { type: "geojson", data: featureColl(mapShops()), cluster: true, clusterRadius: 40, clusterMaxZoom: 13 });
     // City-only events: always clustered (points on one spot join at every zoom), never drawn as separate stacked pins.
-    if (!map.getSource("ap")) map.addSource("ap", { type: "geojson", data: featureColl(visibleEvents(true)), cluster: true, clusterRadius: 1, clusterMaxZoom: 24 });
+    if (!map.getSource("ap")) map.addSource("ap", { type: "geojson", data: featureColl(mapEvents(true)), cluster: true, clusterRadius: 1, clusterMaxZoom: 17 });
     ["ev", "br", "sh", "ap"].forEach(function (s) {
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
@@ -182,8 +193,11 @@
   map.on("render", scheduleSync);
 
   var NUDGE = 12; // px: brand mochi sit down-right of their spot so an event pin on top does not hide them
+  // Clusters open outward (rung 35): when zooming in splits a cluster, the markers that replace it start at the cluster's
+  // spot and travel out to their own, so you can follow where things went. Transform and opacity only; off when calm.
+  var lastSyncZ = 0;
   function syncMarkers() {
-    var seen = {};
+    var seen = {}, fresh = [];
     ["ev", "br", "sh", "ap"].forEach(function (src) {
       if (!map.getSource(src) || !map.isSourceLoaded(src)) {
         Object.keys(live).forEach(function (id) { if (live[id].src === src) seen[id] = 1; });
@@ -195,15 +209,36 @@
         if (!p.cluster && !items[id]) return;
         seen[id] = 1;
         var rec = live[id];
-        if (!rec) {
-          rec = live[id] = p.cluster ? makeCluster(src, id, f) : makePin(items[id]);
-          rec.src = src;
-          rec.marker.addTo(map);
-          rec.el.setAttribute("aria-label", rec.label); // addTo writes "Map marker" over it
-        } else if (p.cluster && rec.count !== p.point_count) setCount(rec, p.point_count);
+        if (!rec) fresh.push([src, id, f]);
+        else if (p.cluster && rec.count !== p.point_count) setCount(rec, p.point_count);
       });
     });
-    Object.keys(live).forEach(function (id) { if (!seen[id]) { leave(live[id]); delete live[id]; } });
+    var z = map.getZoom(), zin = z > lastSyncZ + 0.001, parents = [];
+    lastSyncZ = z;
+    Object.keys(live).forEach(function (id) {
+      if (seen[id]) return;
+      var r = live[id];
+      if (zin && r.kind === "c" && fresh.length && !calm() && Date.now() > stageUntil) parents.push(map.project(r.marker.getLngLat()));
+      leave(r); delete live[id];
+    });
+    fresh.forEach(function (x) {
+      var src = x[0], id = x[1], f = x[2];
+      var rec = live[id] = f.properties.cluster ? makeCluster(src, id, f) : makePin(items[id]);
+      rec.src = src;
+      rec.marker.addTo(map);
+      rec.el.setAttribute("aria-label", rec.label); // addTo writes "Map marker" over it
+      if (parents.length) bloom(rec, parents);
+    });
+  }
+  function bloom(rec, parents) {
+    var at = map.project(rec.marker.getLngLat()), best = null, bd = 170;
+    parents.forEach(function (p) { var d = Math.hypot(p.x - at.x, p.y - at.y); if (d < bd && d > 2) { bd = d; best = p; } });
+    if (!best) return;
+    var inner = rec.el.firstChild;
+    inner.classList.remove("pop", "rise", "jiggle");
+    inner.style.setProperty("--bx", Math.round(best.x - at.x) + "px");
+    inner.style.setProperty("--by", Math.round(best.y - at.y) + "px");
+    animOnce(inner, "bloom");
   }
   // During a scene change (a filter, the opening) markers fade out in 180ms before they go; otherwise they go at once.
   function leave(rec) {
@@ -252,9 +287,12 @@
 
   function pinLabel(it) {
     if (it.kind === "e" && it.approx) return approxLabel(it.data);
+    if (it.kind === "e" && !it.past && isToday(it.data) && !it.now) return it.data.brand + ", today, " + whenText(it.data);
     if (it.kind === "s") return it.data.name + ", shop" + (it.data.city ? ", " + it.data.city : "");
     return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) + (it.now ? ", happening now" : "") : it.data.brand + ", " + it.data.home_city + ", no dates yet";
   }
+  // The pink dot on a pin means "on today" (it was on every upcoming pin, which said nothing).
+  function isToday(e) { var s = parts(e.start); return !!s && s.key === dateKey(new Date()); }
   function makePin(it) {
     if (it.kind === "e") it.now = !it.past && !it.approx && happeningNow(it.data);
     var el = document.createElement("button");
@@ -267,7 +305,7 @@
     if (it.kind === "e") {
       if (it.approx) inner.appendChild(ringEl());
       inner.appendChild(drawChar(it.key === openKey && !it.approx ? "m-point" : "m-base"));
-      if (!it.past && !it.approx) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
+      if (!it.past && !it.approx && isToday(it.data)) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
       if (it.now) inner.appendChild(steamEl());
     } else if (it.kind === "s") {
       inner.appendChild(drawChar("s-shop"));
@@ -424,7 +462,7 @@
   var THUMB_FACE = "<span class=\"th-char\" data-char=\"m-base\"></span>";
   function photoHTML(e) {
     var src = imgSrc(e);
-    if (!src) return window.Drawn ? window.Drawn.block(e, { when: whenText(e) }) : "<div class=\"ph ph-empty\">" + FACE_BLOCK + "</div>";
+    if (!src) return window.Drawn ? window.Drawn.block(e, { when: whenText(e), noSave: true }) : "<div class=\"ph ph-empty\">" + FACE_BLOCK + "</div>";
     var credit = e.image && e.image.credit ? "<span class=\"ph-credit\">Photo: " + esc(e.image.credit) + "</span>" : "";
     return "<div class=\"ph\"><img src=\"" + esc(src) + "\" alt=\"" + esc(e.brand) + " pop-up post photo\" data-eid=\"" + esc(e.id) + "\" loading=\"lazy\" decoding=\"async\"" +
       remoteAttr(e) + ">" + credit + "</div>";
@@ -450,7 +488,7 @@
       if (box.classList.contains("th")) {
         if (ev && window.Drawn) { box.className = "th th-drawn"; box.innerHTML = window.Drawn.card(ev, { mode: "thumb" }); }
         else { box.className = "th th-face"; box.innerHTML = THUMB_FACE; }
-      } else if (ev && window.Drawn) { box.outerHTML = window.Drawn.block(ev, { when: whenText(ev) }); return; }
+      } else if (ev && window.Drawn) { box.outerHTML = window.Drawn.block(ev, { when: whenText(ev), noSave: true }); return; }
       else { box.className = "ph ph-empty"; box.innerHTML = FACE_BLOCK; }
       fillChars(box);
     }, true);
@@ -555,60 +593,139 @@
     get("data/brands.json").then(function (d) { (d.brands || []).forEach(function (b) { if (b && b.handle) brandsBy[String(b.handle).toLowerCase()] = b; }); }).catch(function () { /* optional layer */ });
     get("data/places.json").then(function (d) { (d.places || []).forEach(function (p) { if (p && p.key) placesBy[p.key] = p; }); }).catch(function () { /* optional layer */ });
   }
+  // The card's actions: one primary, Share, then a single quiet row of text links (rung 35).
+  function actsHTML(primary, share) {
+    var out = "";
+    if (primary) out += "<a class=\"act pri\" href=\"" + esc(primary[1]) + "\" target=\"_blank\" rel=\"noopener\">" + primary[0] + "</a>";
+    if (share) out += "<button type=\"button\" class=\"act share\" data-share=\"" + esc(share[0]) + "\" data-title=\"" + esc(share[1]) + "\">" +
+      "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 15V4M7.5 8.5 12 4l4.5 4.5M6 12.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-6.5\"/></svg>Share</button>";
+    return out ? "<div class=\"acts\">" + out + "</div>" : "";
+  }
+  function quietHTML(links, extra) {
+    var parts = links.map(function (l) { return "<a href=\"" + esc(l[1]) + "\" target=\"_blank\" rel=\"noopener\">" + l[0] + "</a>"; });
+    if (extra) parts.push(extra);
+    return parts.length ? "<p class=\"qlinks\">" + parts.join("<span aria-hidden=\"true\"> · </span>") + "</p>" : "";
+  }
+  // The shareable address of a card: the deep links the SEO rung reads (?event=, ?brand=).
+  function shareUrl(q) { return location.origin + location.pathname.replace(/index\.html$/, "") + "?" + q; }
   function eventCard(e) {
-    var approx = isApprox(e), line2 = approx && !e.address ? placeLine(e) : [e.venue, e.address, cityLine(e)].filter(Boolean).join(" \u00b7 ");
-    var tag = e.confidence && e.confidence !== "confirmed" ? " <span class=\"tag\">" + esc(e.confidence) + "</span>" : "";
-    var links = [], post = postUrl(e), L = e.links || {}, where = e.venue || e.address;
-    if (where) links.push(["Open in Google Maps", mapsUrl(where, e.city, e.state)]);
-    if (!approx) links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng]);
-    if (post) links.push(["Post", post]);
-    if (safeUrl(L.instagram)) links.push(["Instagram", L.instagram]);
-    if (safeUrl(L.tiktok)) links.push(["TikTok", L.tiktok]);
-    if (safeUrl(e.source_url) && e.source_url !== post) links.push(["Event page", e.source_url]);
+    var approx = isApprox(e), cityOnly = approx && !e.address;
+    var place = cityOnly ? "<span class=\"apl\">Place not posted yet</span> · " + esc(cityLine(e)) : esc([e.venue, e.address, cityLine(e)].filter(Boolean).join(" · "));
+    var tag = e.confidence === "unsure" ? "<span class=\"tag\">Date unconfirmed</span>" : "";
+    var post = postUrl(e), L = e.links || {}, where = e.venue || e.address, quiet = [], primary = null;
+    if (!approx) primary = ["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng];
+    else if (where) primary = ["Find it on Google Maps", mapsUrl(where, e.city, e.state)];
+    if (where && !approx) quiet.push(["Google Maps", mapsUrl(where, e.city, e.state)]);
+    if (post) quiet.push(["Post", post]);
+    if (safeUrl(L.instagram)) quiet.push(["Instagram", L.instagram]);
+    if (safeUrl(L.tiktok)) quiet.push(["TikTok", L.tiktok]);
+    if (safeUrl(e.source_url) && e.source_url !== post) quiet.push(["Event page", e.source_url]);
+    var save = !imgSrc(e) && window.Drawn ? "<button type=\"button\" class=\"qbtn\" data-dc-save=\"" + esc(String(e.brand || "card").toLowerCase().replace(/[^a-z0-9]+/g, "-")) + "\">Save card</button>" : "";
     // The title is the name alone; kind and confidence share one quiet line under it.
     var kline = kindWord(e) + tag;
     return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + "<span>" + esc(e.brand) + "</span></h3>" + (kline ? "<p class=\"kline\">" + kline + "</p>" : "") +
       "<p class=\"when\">" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
-      "<p class=\"muted\">" + esc(line2) + "</p>" + menuHTML(e) +
+      "<p class=\"muted place\">" + place + "</p>" + actsHTML(primary, [shareUrl("event=" + encodeURIComponent(e.id)), e.brand + ", " + whenText(e)]) + menuHTML(e) +
       (e.description ? "<p class=\"desc muted\">" + esc(e.description) + "</p>" : "") +
-      factsHTML(brandsBy[igHandle(e)]) + linksHTML(links) + (e.venue ? yelpHTML(placesBy[placeKey(e.venue, e.city, e.state)]) : "") + "</div>";
+      factsHTML(brandsBy[igHandle(e)]) + quietHTML(quiet, save) + (e.venue ? yelpHTML(placesBy[placeKey(e.venue, e.city, e.state)]) : "") + "</div>";
   }
+  // Brand and shop cards carry no drawn art: the brand row already has the picture, and the art only repeated the name.
   function brandCard(b) {
-    var links = [];
-    if (safeUrl(b.website)) links.push(["Website", b.website]);
-    if (b.instagram) links.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(b.instagram) + "/"]);
-    if (b.tiktok) links.push(["TikTok", "https://www.tiktok.com/@" + encodeURIComponent(b.tiktok)]);
-    if (safeUrl(b.schedule_url) && b.schedule_url !== b.website) links.push(["Schedule", b.schedule_url]);
-    return "<div class=\"card bcard\">" + (window.Drawn ? window.Drawn.block(b, { mode: "brand" }) : "") + "<h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3>" + kindWord(b) +
-      "<p class=\"muted\">" + esc(b.home_city + ", " + b.home_state) + "</p>" +
-      "<p class=\"when\">No dates posted here yet</p>" + factsHTML(brandsBy[String(b.instagram || "").toLowerCase()]) + linksHTML(links) + "</div>";
+    var quiet = [], ig = b.instagram ? "https://www.instagram.com/" + encodeURIComponent(b.instagram) + "/" : "";
+    var primary = ig ? ["Instagram", ig] : safeUrl(b.website) ? ["Website", b.website] : null;
+    if (safeUrl(b.website) && primary && primary[0] !== "Website") quiet.push(["Website", b.website]);
+    if (b.tiktok) quiet.push(["TikTok", "https://www.tiktok.com/@" + encodeURIComponent(b.tiktok)]);
+    if (safeUrl(b.schedule_url) && b.schedule_url !== b.website) quiet.push(["Schedule", b.schedule_url]);
+    return "<div class=\"card bcard\"><h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3><p class=\"kline\">" + (kindWord(b) || "<span class=\"kindword\">Brand</span>") + "</p>" +
+      "<p class=\"muted place\">" + esc(b.home_city + ", " + b.home_state) + " · no dates posted here yet</p>" +
+      actsHTML(primary, [shareUrl("brand=" + encodeURIComponent(String(b.instagram || b.id).replace(/^@/, "").toLowerCase())), b.brand + " on Matcha Map"]) +
+      factsHTML(brandsBy[String(b.instagram || "").toLowerCase()]) + quietHTML(quiet) + "</div>";
   }
-  // Hours: the raw OSM string, passed through; long ones are cut with the full text in a title.
+  // Hours: OpenStreetMap's opening_hours, read into today's line for the common forms ("Mo-Th 10:00-19:00; Fr 10:00-20:00",
+  // "Sa,Su off", "24/7"); anything it cannot read is shown as written. The full string stays in the tooltip.
+  var OSM_DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+  function osmClock(t) {
+    var m = /^(\d{1,2}):(\d{2})$/.exec(t);
+    if (!m) return null;
+    var h = +m[1] % 24, ap = h < 12 ? "am" : "pm", h12 = h % 12 || 12;
+    return h12 + (m[2] !== "00" ? ":" + m[2] : "") + ap;
+  }
+  function osmToday(h, now) {
+    // "Mo-Fr 07:00-18:00, Sa-Su 08:00-18:00": a comma after a time starts a new rule; "Sa, Su": a comma between days is a list.
+    var s = String(h || "").trim().replace(/(\d)\s*,\s*(?=(?:Mo|Tu|We|Th|Fr|Sa|Su)\b)/g, "$1;").replace(/(Mo|Tu|We|Th|Fr|Sa|Su)\s*,\s*/g, "$1,");
+    if (/^24\/7$/.test(s)) return "Open 24 hours";
+    var today = (now || new Date()).getDay(), found = null;
+    var rules = s.split(";");
+    for (var r = 0; r < rules.length; r++) {
+      var rule = rules[r].trim();
+      if (!rule || /^(PH|SH|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/.test(rule)) continue; // holidays and dated exceptions
+      var m = /^((?:(?:Mo|Tu|We|Th|Fr|Sa|Su)(?:-(?:Mo|Tu|We|Th|Fr|Sa|Su))?)(?:,(?:Mo|Tu|We|Th|Fr|Sa|Su)(?:-(?:Mo|Tu|We|Th|Fr|Sa|Su))?)*)?\s*(.*)$/.exec(rule);
+      if (!m || (!m[1] && !/^\d/.test(m[2]))) return null; // PH, months, weeks: not read here
+      var on = !m[1];
+      if (m[1]) m[1].split(",").forEach(function (span) {
+        var ab = span.split("-"), a = OSM_DAYS.indexOf(ab[0]), b = ab[1] ? OSM_DAYS.indexOf(ab[1]) : a;
+        for (var d = a, n = 0; n < 7; d = (d + 1) % 7, n++) { if (d === today) on = true; if (d === b) break; }
+      });
+      if (!on) continue;
+      var t = m[2].trim();
+      if (/^(off|closed)$/i.test(t)) { found = "Closed today"; continue; }
+      var spans = t.split(",").map(function (x) {
+        var ab = x.trim().split("-"), a = osmClock(ab[0]), b = ab[1] && osmClock(ab[1]);
+        return a && b ? a + " to " + b : null;
+      });
+      if (spans.some(function (x) { return !x; })) return null;
+      found = "Open today " + spans.join(", ");
+    }
+    return found || "Closed today";
+  }
   function hoursHTML(h) {
     if (!h) return "";
-    var s = String(h).replace(/\s+/g, " ").trim(), cut = s.length > 64 ? s.slice(0, 63).replace(/[\s;,]+$/, "") + "\u2026" : s;
-    return "<p class=\"hours\" title=\"" + esc(s) + "\">" + esc(cut) + "</p>";
+    var s = String(h).replace(/\s+/g, " ").trim(), read = osmToday(s);
+    var text = read || (s.length > 64 ? s.slice(0, 63).replace(/[\s;,]+$/, "") + "…" : s);
+    return "<p class=\"hours\" title=\"" + esc(s) + "\">" + esc(text) + "</p>";
   }
   function shopAddress(s) {
     var tail = [s.city, [s.state, s.zip].filter(Boolean).join(" ")].filter(Boolean).join(", ");
     return [s.address, tail].filter(Boolean).join(", ");
   }
   function shopCard(s) {
-    var links = [];
-    if (safeUrl(s.website)) links.push(["Website", s.website]);
-    if (s.instagram) links.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(s.instagram) + "/"]);
-    links.unshift(["Open in Google Maps", mapsUrl(s.address ? s.name + ", " + s.address : s.name, s.city, s.state)]);
-    links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + s.lat + "," + s.lng]);
+    var quiet = [["Google Maps", mapsUrl(s.address ? s.name + ", " + s.address : s.name, s.city, s.state)]];
+    if (safeUrl(s.website)) quiet.push(["Website", s.website]);
+    if (s.instagram) quiet.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(s.instagram) + "/"]);
     var credit = s.source === "osm" && safeUrl(s.osm_url) ? "<p class=\"credit-line\">Data: <a href=\"" + esc(s.osm_url) + "\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a></p>" : "";
-    var art = window.Drawn ? window.Drawn.block({ id: s.id, brand: s.name, home_city: s.city, home_state: s.state }, { mode: "shop" }) : "";
-    return "<div class=\"card scard\">" + art + "<h3><span class=\"card-shop\" data-char=\"s-shop\"></span><span>" + esc(s.name) + "</span></h3><span class=\"kindword\">Shop</span>" +
-      "<p class=\"muted\">" + esc(shopAddress(s)) + "</p>" + hoursHTML(s.opening_hours) + factsHTML(brandsBy[String(s.instagram || "").toLowerCase()]) + linksHTML(links) + yelpHTML(placesBy[placeKey(s.name, s.city, s.state, s.lat, s.lng)]) + credit + "</div>";
+    return "<div class=\"card scard\"><h3><span class=\"card-shop\" data-char=\"s-shop\"></span><span>" + esc(s.name) + "</span></h3><p class=\"kline\"><span class=\"kindword\">Matcha shop</span></p>" +
+      "<p class=\"muted place\">" + esc(shopAddress(s)) + "</p>" + hoursHTML(s.opening_hours) +
+      actsHTML(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + s.lat + "," + s.lng], null) +
+      factsHTML(brandsBy[String(s.instagram || "").toLowerCase()]) + quietHTML(quiet) + yelpHTML(placesBy[placeKey(s.name, s.city, s.state, s.lat, s.lng)]) + credit + "</div>";
+  }
+  // Share: the phone's share sheet where there is one, else the link is copied (or shown, selected, when the clipboard is closed).
+  document.addEventListener("click", function (ev) {
+    var b = ev.target && ev.target.closest && ev.target.closest("[data-share]");
+    if (!b) return;
+    var url = b.getAttribute("data-share"), title = b.getAttribute("data-title") || "Matcha Map";
+    var done = function () { say("Link copied"); b.classList.add("done"); b.lastChild.textContent = "Copied"; setTimeout(function () { b.classList.remove("done"); b.lastChild.textContent = "Share"; }, 1800); };
+    var show = function () {
+      var box = b.parentNode.parentNode.querySelector(".share-url");
+      if (!box) { box = document.createElement("input"); box.className = "share-url"; box.readOnly = true; box.setAttribute("aria-label", "Link to this pop-up"); b.parentNode.insertAdjacentElement("afterend", box); }
+      box.value = url; box.focus(); box.select();
+    };
+    var copy = function () { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, show); else show(); };
+    // closing the share sheet is a choice, not a failure; anything else (no permission, nothing to share to) copies instead
+    if (navigator.share) navigator.share({ title: title, text: title, url: url }).catch(function (err) { if (!err || err.name !== "AbortError") copy(); });
+    else copy();
+  });
+  // One polite live region for short confirmations.
+  function say(text) {
+    var r = $("mm-live");
+    if (!r) { r = document.createElement("p"); r.id = "mm-live"; r.className = "sr"; r.setAttribute("role", "status"); r.setAttribute("aria-live", "polite"); document.body.appendChild(r); }
+    r.textContent = ""; setTimeout(function () { r.textContent = text; }, 30);
   }
   function cardHTML(item) { return item.kind === "e" ? eventCard(item.data) : item.kind === "s" ? shopCard(item.data) : brandCard(item.data); }
 
   var popup = null, closeT = null;
   function finishClose() {
     clearTimeout(closeT); closeT = null;
+    document.body.classList.remove("card-open");
     $("sheet").hidden = true;
     $("sheet").classList.remove("out");
     if (popup) { popup.remove(); popup = null; }
@@ -617,6 +734,8 @@
     if (!openKey && !popup && $("sheet").hidden) return;
     openKey = null;
     setSelected(null);
+    watchPin();
+    document.body.classList.remove("card-open");
     var sheetOpen = !$("sheet").hidden;
     if (instant || calm()) { finishClose(); return; }
     if (sheetOpen) $("sheet").classList.add("out");
@@ -630,6 +749,7 @@
     finishClose();
     openKey = key;
     setSelected(key);
+    requestAnimationFrame(watchPin);
     var html = cardHTML(it);
     if (wide.matches) {
       var box = document.createElement("div");
@@ -654,6 +774,7 @@
       sh.hidden = false;
       animOnce(sh, "in");
       if (focusIt) $("sheet-close").focus();
+      document.body.classList.add("card-open");
       announce("card", { root: body, phone: true, key: key });
     }
   }
@@ -748,7 +869,7 @@
 
   // ---------- what counts: kind and category (data/KINDS.md) ----------
   var KINDS = ["popup", "cafe", "organizer", "festival", "venue", "tea-brand"], CATS = ["matcha", "coffee", "boba", "bakery", "dessert", "other"];
-  var KIND_WORD = { cafe: "cafe", organizer: "class", festival: "festival", venue: "host", "tea-brand": "tea brand" };
+  var KIND_WORD = { cafe: "Cafe", organizer: "Class", festival: "Festival", venue: "Host", "tea-brand": "Tea brand" };
   // Default: category matcha, every kind on. "Pop-up brands only" keeps kind popup.
   var show = { po: false, k: {}, c: { matcha: true } };
   KINDS.forEach(function (k) { show.k[k] = true; });
@@ -772,7 +893,9 @@
     return n;
   }
   function kindWord(o) { return KIND_WORD[o.kind] ? "<span class=\"kindword\">" + KIND_WORD[o.kind] + "</span>" : ""; }
-  function visibleBrands() { return state.brands.filter(function (it) { return passesShow(it.data); }); }
+  // Brands with no dates step aside while a date filter is on: they are not on that day.
+  function dated() { return !!state.day || state.chip !== "any"; }
+  function visibleBrands() { return dated() ? [] : state.brands.filter(function (it) { return passesShow(it.data); }); }
 
   // only: true for the city-only events, false for the precise ones, omitted for both.
   function visibleEvents(only) {
@@ -790,32 +913,50 @@
     });
   }
 
-  function refreshEvents(stagger) {
+  // What the map draws (the list keeps everything in view): below LOW_Z the city-only events join the pop-up clusters
+  // and brands and storefronts wait.
+  function isLow() { return map.getZoom() < LOW_Z; }
+  function mapEvents(only) {
+    if (isLow()) return only ? [] : visibleEvents();
+    return visibleEvents(only);
+  }
+  function mapBrands() { return isLow() ? [] : visibleBrands(); }
+  function mapShops() { return isLow() ? [] : visibleShops(); }
+  function setSources() {
     var src = map.getSource("ev");
-    if (src) src.setData(featureColl(visibleEvents(false)));
+    if (src) src.setData(featureColl(mapEvents(false)));
     var ap = map.getSource("ap");
-    if (ap) ap.setData(featureColl(visibleEvents(true)));
+    if (ap) ap.setData(featureColl(mapEvents(true)));
     var b = map.getSource("br");
-    if (b) b.setData(featureColl(visibleBrands()));
+    if (b) b.setData(featureColl(mapBrands()));
     var sh = map.getSource("sh");
-    if (sh) sh.setData(featureColl(visibleShops()));
+    if (sh) sh.setData(featureColl(mapShops()));
+  }
+  function refreshEvents(stagger) {
+    setSources();
     renderList(stagger);
+    syncTour();
   }
 
   // ---------- list ----------
   function inView(ll) { return map.getBounds().contains(lngLat(ll)); }
   function distOf(it) { return state.userLoc ? miles(state.userLoc, it.ll) : null; }
 
-  function rowHTML(it) {
-    var d = distOf(it), dist = d != null ? "<span class=\"dist\">" + (d < 10 ? Math.round(d * 10) / 10 : Math.round(d)) + " mi</span>" : "";
+  function distHTML(d) { return d != null ? "<span class=\"dist\">" + (d < 10 ? Math.round(d * 10) / 10 : Math.round(d)) + " mi</span>" : ""; }
+  // A row. grouped: the row sits under its city's "Place not posted yet" heading, so the place line is left out.
+  // A city-only event never shows a distance: its pin is the city's centre, not the place.
+  function isCityOnly(it) { return it.approx && !it.data.address; }
+  function rowHTML(it, grouped) {
+    var dist = distHTML(it.approx ? null : distOf(it));
     if (it.kind === "e") {
-      var e = it.data, tag = e.confidence && e.confidence !== "confirmed" ? "<em class=\"tag\">" + esc(e.confidence) + "</em>" : "";
-      var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · ");
+      var e = it.data, unc = e.confidence === "unsure" ? "<span class=\"unc\">date unconfirmed</span>" : "";
+      var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · "), apx = isCityOnly(it);
       var thumb = src
         ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"56\" height=\"56\" data-eid=\"" + esc(e.id) + "\" loading=\"lazy\" decoding=\"async\"" + remoteAttr(e) + "></span>"
         : (window.Drawn ? "<span class=\"th th-drawn\">" + window.Drawn.card(e, { mode: "thumb" }) + "</span>" : "<span class=\"th th-face\">" + THUMB_FACE + "</span>");
-      return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong>" + kindWord(e) + "<span class=\"when\">" +
-        esc(whenText(e)) + "</span><span>" + esc(it.approx && !e.address ? placeLine(e) : [e.venue, e.city + ", " + e.state].filter(Boolean).join(" \u00b7 ")) + "</span>" +
+      var place = apx ? (grouped ? "" : "<span class=\"apl\">Place not posted yet</span> · " + esc(cityLine(e))) : esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · "));
+      return "<button type=\"button\" class=\"row erow" + (apx ? " ap" : "") + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + "</strong>" + kindWord(e) + "<span class=\"when\">" +
+        esc(whenText(e)) + unc + "</span>" + (place ? "<span>" + place + "</span>" : "") +
         (m ? "<span class=\"menu-prev\">" + esc(m) + "</span>" : "") + dist + "</span></button>";
     }
     if (it.kind === "s") {
@@ -826,6 +967,10 @@
     return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-mochi\" aria-hidden=\"true\"><span class=\"mochi\"></span></span><span class=\"rt\"><strong>" + esc(it.data.brand) + "</strong>" + kindWord(it.data) + "<span>" +
       esc(it.data.home_city + ", " + it.data.home_state) + " · No dates posted here yet</span>" + dist + "</span></button>";
   }
+  function headHTML(text, n, cls) { return "<li class=\"head" + (cls ? " " + cls : "") + "\">" + text + (n ? " <span class=\"n\">" + n + "</span>" : "") + "</li>"; }
+  function rowsHTML(list, grouped) { return list.map(function (it) { return "<li>" + rowHTML(it, grouped) + "</li>"; }).join(""); }
+  // Where distances are measured from: the visitor's place, else the middle of the map.
+  function refPoint() { if (state.userLoc) return state.userLoc; var c = map.getCenter(); return [c.lat, c.lng]; }
 
   function renderList(stagger) {
     var vis = visibleEvents();
@@ -834,33 +979,46 @@
     var up = evs.filter(function (it) { return it.data.status !== "past"; });
     var past = evs.filter(function (it) { return it.data.status === "past"; });
     var byStart = function (a, b) { return a.data.start < b.data.start ? -1 : 1; };
-    var cmp = state.userLoc ? function (a, b) { return distOf(a) - distOf(b); } : byStart;
-    up.sort(cmp);
+    var cmp = state.userLoc ? function (a, b) { return (distOf(a) - distOf(b)) || byStart(a, b); } : byStart;
     past.sort(state.userLoc ? cmp : function (a, b) { return -byStart(a, b); });
     var brands = visibleBrands().filter(function (it) { return inView(it.ll); });
     brands.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
-
     var shopsIn = visibleShops().filter(function (it) { return inView(it.ll); });
     shopsIn.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
 
-    // Empty: nothing on for the chosen dates anywhere, or nothing in this part of the map. Sleepy Mattie, one line,
-    // one button to the next range (motion.js also floats it over the map on a phone).
-    var dated = !!state.day || state.chip !== "any", near = vis.length > 0 && !up.length && !past.length;
-    $("empty").hidden = !dated || !(vis.length === 0 || near);
-    if (!$("empty").hidden) emptyCopy(near);
-    var html = "";
-    if (up.length) html += "<li class=\"head\">Pop-ups</li>" + up.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
-    if (past.length) html += "<li class=\"head\">Recent</li>" + past.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
-    if (brands.length) html += "<li class=\"head\">Brands</li>" + brands.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
+    // In a metro (a place is set, or zoomed in to a region) the city-only pop-ups gather under one dashed heading per city,
+    // after the placed ones, the same way the map draws one dashed ring per city. Zoomed out they stay in date order.
+    var html = "", metro = !!state.userLoc || map.getZoom() >= 8;
+    if (metro) {
+      var placed = up.filter(function (it) { return !isCityOnly(it); }).sort(cmp), groups = {}, order = [];
+      up.forEach(function (it) {
+        if (!isCityOnly(it)) return;
+        var k = it.data.city + "|" + it.data.state;
+        if (!groups[k]) { groups[k] = []; order.push(k); }
+        groups[k].push(it);
+      });
+      var ref = refPoint();
+      order.sort(function (a, b) { return miles(ref, groups[a][0].ll) - miles(ref, groups[b][0].ll); });
+      if (placed.length) html += headHTML("Pop-ups", placed.length) + rowsHTML(placed);
+      order.forEach(function (k) {
+        var g = groups[k].sort(byStart);
+        html += headHTML("<span class=\"apl\">Place not posted yet</span> · " + esc(cityLine(g[0].data)), g.length, "ap-head") + rowsHTML(g, true);
+      });
+    } else if (up.length) html += headHTML("Pop-ups", up.length) + rowsHTML(up.sort(cmp));
+    if (past.length) html += headHTML("Recent") + rowsHTML(past);
+    if (brands.length) html += headHTML("Brands, no dates yet") + rowsHTML(brands);
     if (shopsIn.length) {
-      if (map.getZoom() < 8 && !state.userLoc) html += "<li class=\"head\">Shops</li><li class=\"shopnote\">" + shopsIn.length + " shop" + (shopsIn.length === 1 ? "" : "s") + " \u00b7 zoom in</li>";
-      else if (map.getZoom() >= 8) {
+      if (map.getZoom() >= 8) {
         var cap = 80, more = shopsIn.length - cap;
-        html += "<li class=\"head\">Shops</li>" + shopsIn.slice(0, cap).map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("") +
-          (more > 0 ? "<li class=\"shopnote\">+" + more + " more \u00b7 zoom in</li>" : "");
-      } else html += "<li class=\"head\">Shops</li><li class=\"shopnote\">" + shopsIn.length + " shops \u00b7 zoom in</li>";
+        html += headHTML("Shops") + rowsHTML(shopsIn.slice(0, cap)) + (more > 0 ? "<li class=\"shopnote\">+" + more + " more · zoom in</li>" : "");
+      } else html += headHTML("Shops") + "<li class=\"shopnote\">" + shopsIn.length + " shop" + (shopsIn.length === 1 ? "" : "s") + " · zoom in</li>";
     }
-    if (!html && $("empty").hidden) html = "<li class=\"head\">Nothing in this part of the map. Zoom out or pan.</li>";
+
+    // Empty: nothing on for the chosen dates anywhere, or nothing in this part of the map. Sleepy Mattie, one line, the
+    // nearest pop-up with a button that goes there, and on a date filter the next range (motion.js floats it over the map on a phone).
+    var near = vis.length > 0 && !up.length && !past.length;
+    $("empty").hidden = !(dated() ? (vis.length === 0 || near) : !html);
+    if (!$("empty").hidden) emptyCopy(near, vis);
     var list = $("list");
     list.innerHTML = html;
     fillChars(list);
@@ -869,15 +1027,29 @@
       for (var i = 0; i < rows.length && i < 8; i++) animOnce(rows[i], "row-in", i * 30);
     }
   }
-  var NEXT_RANGE = { today: ["weekend", "See this weekend"], weekend: ["week", "See next 7 days"], week: ["any", "See any date"] };
-  var RANGE_WORDS = { today: "today", weekend: "this weekend", week: "in the next 7 days" };
-  function emptyCopy(near) {
-    var words = state.day ? "on this day" : RANGE_WORDS[state.chip] || "on these dates";
-    var next = (!state.day && NEXT_RANGE[state.chip]) || ["any", "See any date"];
-    $("empty").querySelector("p").textContent = (near ? "Nothing near here " : "Nothing ") + words + ".";
+  var NEXT_RANGE = { today: ["weekend", "See this weekend"], sat: ["weekend", "See this weekend"], sun: ["week", "See next 7 days"], weekend: ["week", "See next 7 days"], week: ["any", "See any date"] };
+  var RANGE_WORDS = { today: "today", sat: "on Saturday", sun: "on Sunday", weekend: "this weekend", week: "in the next 7 days" };
+  var nearestKey = "";
+  function emptyCopy(near, vis) {
+    var words = !dated() ? "" : state.day ? " on this day" : " " + (RANGE_WORDS[state.chip] || "on these dates");
+    var next = dated() ? ((!state.day && NEXT_RANGE[state.chip]) || ["any", "See any date"]) : null;
+    var line = (near ? "Nothing near here" : "Nothing") + words + ".", nb = $("empty-near");
+    nearestKey = "";
+    if (near) {
+      var ref = refPoint(), best = null, bd = Infinity;
+      vis.forEach(function (it) { if (it.data.status === "past") return; var d = miles(ref, it.ll); if (d < bd) { bd = d; best = it; } });
+      if (best) {
+        nearestKey = best.key;
+        line += " Nearest: " + (best.data.city || "a pop-up") + ", " + Math.round(bd) + " mi.";
+      }
+    }
+    $("empty").querySelector("p").textContent = line;
+    nb.hidden = !nearestKey;
+    if (nearestKey) nb.textContent = "Go to " + (items[nearestKey].data.city || "it");
     var b = $("empty-any");
-    b.textContent = next[1];
-    b.setAttribute("data-next", next[0]);
+    b.hidden = !next;
+    if (next) { b.textContent = next[1]; b.setAttribute("data-next", next[0]); }
+    b.classList.toggle("second", !!nearestKey);
   }
   // The list for one city's approximate events (opened from an approximate cluster), with a way back to the usual list.
   function renderApproxList(vis, stagger) {
@@ -887,8 +1059,8 @@
     var e0 = rows[0].data;
     $("empty").hidden = true;
     var list = $("list");
-    list.innerHTML = "<li class=\"head\">Place not posted yet \u00b7 " + esc(cityLine(e0)) + "</li><li class=\"apnote\"><button type=\"button\" class=\"aplink\" data-clear-ap>Show everything in view</button></li>" +
-      rows.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
+    list.innerHTML = headHTML("<span class=\"apl\">Place not posted yet</span> \u00b7 " + esc(cityLine(e0)), rows.length, "ap-head") + "<li class=\"apnote\"><button type=\"button\" class=\"aplink\" data-clear-ap>Show everything in view</button></li>" +
+      rowsHTML(rows, true);
     fillChars(list);
     if (stagger && !calm()) { var kids = list.children; for (var i = 0; i < kids.length && i < 8; i++) animOnce(kids[i], "row-in", i * 30); }
   }
@@ -904,7 +1076,7 @@
   var ink = document.querySelector(".chip-ink");
   function moveInk() {
     var t = state.day ? null : document.querySelector("[data-chip][aria-pressed=\"true\"]");
-    if (!t) { ink.classList.add("off"); return; }
+    if (!t || !t.offsetWidth) { ink.classList.add("off"); return; }
     ink.classList.remove("off");
     ink.classList.toggle("pink", t.getAttribute("data-chip") === "today");
     ink.style.width = t.offsetWidth + "px";
@@ -920,10 +1092,26 @@
     });
     $("recent").setAttribute("aria-pressed", String(state.recent));
     $("day").value = state.day;
-    $("day").classList.toggle("set", !!state.day);
+    $("day").parentNode.classList.toggle("set", !!state.day);
+    var dp = parts(state.day + "T00:00");
+    $("day-label").textContent = dp ? DAYS[new Date(dp.y, dp.mo - 1, dp.d).getDay()] + " " + MONTHS[dp.mo - 1] + " " + dp.d : "Pick a day";
     $("day-clear").hidden = !state.day;
     moveInk();
   }
+  // The phone chips carry the coming weekend's dates ("Sat 28", "Sun 29"); on a wide screen they are hidden, so a saved
+  // Saturday or Sunday reads as This weekend there.
+  (function () {
+    var now = new Date();
+    document.querySelector("[data-chip=sat]").textContent = "Sat " + satOf(now).getDate();
+    document.querySelector("[data-chip=sun]").textContent = "Sun " + sunOf(now).getDate();
+  })();
+  // The day chip opens the browser's own date picker; the input stays reachable by keyboard.
+  $("day").parentNode.addEventListener("click", function (ev) {
+    var inp = $("day");
+    if (ev.target === inp || typeof inp.showPicker !== "function") return;
+    ev.preventDefault();
+    try { inp.showPicker(); } catch (e) { inp.focus(); }
+  });
   // A filter change is a scene change: old pins fade out, new ones rise from the centre out, petals drift (motion.js).
   function applyFilters() { syncChips(); saveChip(); closeCard(true); stage(700); refreshEvents(true); announce("filter", { chip: state.chip, day: state.day }); }
   document.querySelectorAll("[data-chip]").forEach(function (b) {
@@ -933,13 +1121,24 @@
   $("day").addEventListener("change", function () { state.day = $("day").value; applyFilters(); });
   $("day-clear").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); $("day").focus(); });
   $("empty-any").addEventListener("click", function () { state.chip = this.getAttribute("data-next") || "any"; state.day = ""; applyFilters(); });
+  $("empty-near").addEventListener("click", function () {
+    var it = items[nearestKey];
+    if (!it) return;
+    if (state.view === "list") setView("map");
+    moveMap({ center: lngLat(it.ll), zoom: it.approx ? 9 : 10 });
+  });
   window.addEventListener("resize", moveInk);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveInk);
 
   // ---------- Hawaii ----------
   // The first view fits the contiguous US; one quiet button jumps to Honolulu and back.
   // A small Mattie hops off the button while the map flies.
-  var inHawaii = false;
+  var inHawaii = false, hawaiiHas = false;
+  // The button only means something over the whole mainland (or in Hawaii, as "Mainland").
+  function syncHawaii() {
+    var btn = $("hawaii");
+    if (btn) btn.hidden = !hawaiiHas || !(inHawaii || map.getZoom() < 5);
+  }
   function hop() {
     if (calm()) return;
     var h = $("hop");
@@ -951,7 +1150,8 @@
     var has = state.brands.some(function (b) { return b.data.home_state === "HI"; }) ||
       state.events.some(function (e) { return e.data.state === "HI"; });
     var btn = $("hawaii");
-    btn.hidden = !has;
+    hawaiiHas = has;
+    syncHawaii();
     btn.addEventListener("click", function () {
       closeCard(true);
       inHawaii = !inHawaii;
@@ -964,6 +1164,7 @@
     map.on("moveend", function () {
       var c = map.getCenter(), now = c.lng < -140 && c.lat < 30;
       if (now !== inHawaii) { inHawaii = now; btn.textContent = now ? "Mainland" : "Hawaii"; }
+      syncHawaii();
     });
   }
 
@@ -1000,12 +1201,14 @@
     el.innerHTML = "<span class=\"ring\"></span><span class=\"ring r2\"></span>" + (zip ? "" : "<span class=\"you-dot\"></span>");
     if (zip) el.appendChild(drawChar("c-chasen", "you-chasen"));
     youMarker = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(lngLat(ll)).addTo(map);
+    el.style.zIndex = "0"; // under the pins and the city's dashed ring, never over them
+    syncPlace();
     return el;
   }
   function clearYou() {
     if (youMarker) { youMarker.remove(); youMarker = null; }
     state.userLoc = null; state.zip = "";
-    $("nearrow").hidden = true;
+    syncPlace();
     try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ }
   }
   $("near").addEventListener("click", function () {
@@ -1016,6 +1219,7 @@
       clearYou();
       $("zip").value = "";
       var el = placeYou([pos.coords.latitude, pos.coords.longitude], false);
+      $("near").setAttribute("aria-pressed", "true");
       if (state.view === "list") setView("map");
       moveMap({ center: lngLat(state.userLoc), zoom: 10 }, function () { animOnce(el, "ping"); renderList(true); });
     }, function () {
@@ -1052,8 +1256,6 @@
     state.zip = zip;
     $("zip").value = label;
     var el = placeYou([c[0], c[1]], true);
-    $("nearzip").textContent = label;
-    $("nearrow").hidden = false;
     if (zip) { try { localStorage.setItem(ZIP_KEY, zip); } catch (e) { /* ignore */ } }
     if (state.view === "list") setView("map");
     var opts = { center: lngLat(state.userLoc), zoom: 10 };
@@ -1069,7 +1271,8 @@
         if (!quiet) zipError("No such zip"); else { try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ } }
         return;
       }
-      landAt(c, zip, zip, quiet);
+      var town = cityNear(c);
+      landAt(c, (town ? town[0] + ", " + town[1] + " " : "") + zip, zip, quiet);
     }).catch(function () { if (!quiet) zipError("Zip list did not load"); });
   }
   // A city of window.CITY_LIST (biggest first): "Raleigh", "Raleigh NC" or "Raleigh, NC". The biggest city of a shared name wins.
@@ -1088,7 +1291,7 @@
     landAt([c[2], c[3]], c[0] + ", " + c[1], "", false);
   }
   // The input takes a zip or a city; the datalist of listed cities (biggest first) is filled on the first focus.
-  function goPlace(v) { if (/^\d{5}$/.test(v.trim())) goZip(v.trim(), false); else if (v.trim()) goCity(v); }
+  function goPlace(v) { var z = /(?:^|\s)(\d{5})\s*$/.exec(v); if (z) goZip(z[1], false); else if (v.trim()) goCity(v); }
   $("zip").addEventListener("focus", function () {
     var dl = $("citylist");
     if (dl.firstChild || !window.CITY_LIST) return;
@@ -1099,7 +1302,18 @@
   $("zip").addEventListener("input", function () { if (/^\d/.test(this.value)) this.value = this.value.replace(/\D/g, "").slice(0, 5); });
   $("zip").addEventListener("keydown", function (ev) { if (ev.key === "Enter") { ev.preventDefault(); goPlace(this.value); } });
   $("zip-go").addEventListener("click", function () { goPlace($("zip").value); });
-  $("nearclear").addEventListener("click", function () { clearYou(); $("zip").value = ""; renderList(true); $("zip").focus(); });
+  // The place box carries its own clear button (the separate "Near ..." strip is gone).
+  function syncPlace() {
+    $("zip-clear").hidden = !state.userLoc;
+    if (!state.userLoc) $("near").setAttribute("aria-pressed", "false");
+  }
+  $("zip-clear").addEventListener("click", function () { clearYou(); $("zip").value = ""; renderList(true); $("zip").focus(); });
+  // The listed city nearest a point, within 30 miles (CITY_LIST is biggest first, so a near tie goes to the bigger city).
+  function cityNear(ll) {
+    var list = window.CITY_LIST || [], best = null, bd = 30;
+    for (var i = 0; i < list.length; i++) { var d = miles(ll, [list[i][2], list[i][3]]); if (d < bd - 2) { bd = d; best = list[i]; } }
+    return best;
+  }
 
   // ---------- show: which kinds and categories ----------
   var showBtn = $("show-btn"), showPop = $("show-pop");
@@ -1125,6 +1339,14 @@
     if (back) showBtn.focus();
   }
   showBtn.addEventListener("click", function () { if (showPop.hidden) openShow(); else closeShow(); });
+  // Reset: every kind, matcha only, storefronts on (the defaults).
+  $("show-reset").addEventListener("click", function () {
+    show = { po: false, k: {}, c: { matcha: true } };
+    KINDS.forEach(function (k) { show.k[k] = true; });
+    shopsOn = true;
+    try { localStorage.removeItem("matchamap.show2"); localStorage.setItem(SHOPS_KEY, "1"); } catch (e) { /* ignore */ }
+    syncShow(); closeCard(true); refreshEvents(true);
+  });
   showPop.addEventListener("change", function (ev) {
     var t = ev.target, k = t.getAttribute("data-kind"), c = t.getAttribute("data-cat");
     if (t.id === "show-po") show.po = t.checked;
@@ -1186,7 +1408,25 @@
     }, 4000 + Math.random() * 3000);
   }
   var lookRaf = 0, lookX = 0, lookY = 0;
+  // The header Mattie looks toward the selected pin while its card is open (rung 35), on phones too.
+  function lookAt(x, y) {
+    var g = hdr.querySelector(".m-look");
+    if (!g) return;
+    if (calm() || x == null) { g.style.transform = ""; return; }
+    var r = hdr.getBoundingClientRect(), dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height / 2);
+    var d = Math.sqrt(dx * dx + dy * dy) || 1, k = Math.min(d / 240, 1) * 2;
+    g.style.transform = "translate(" + (dx / d * k).toFixed(2) + "px," + (dy / d * k * 0.7).toFixed(2) + "px)";
+  }
+  var watchRaf = 0;
+  function watchPin() {
+    var rec = openKey && live[openKey];
+    if (!rec) { lookAt(null); return; }
+    var b = rec.el.getBoundingClientRect();
+    lookAt(b.left + b.width / 2, b.top + b.height / 2);
+  }
+  map.on("move", function () { if (openKey && !watchRaf) watchRaf = requestAnimationFrame(function () { watchRaf = 0; watchPin(); }); });
   function onPointer(ev) {
+    if (openKey) return;
     lookX = ev.clientX; lookY = ev.clientY;
     if (lookRaf) return;
     lookRaf = requestAnimationFrame(function () {
@@ -1301,7 +1541,8 @@
 
   try {
     var saved = JSON.parse(localStorage.getItem("matchamap.filter") || "null");
-    if (saved && ["today", "weekend", "week", "any"].indexOf(saved.chip) >= 0) state.chip = saved.chip;
+    if (saved && ["today", "sat", "sun", "weekend", "week", "any"].indexOf(saved.chip) >= 0) state.chip = saved.chip;
+    if (wide.matches && (state.chip === "sat" || state.chip === "sun")) state.chip = "weekend";
   } catch (e) { /* ignore */ }
   syncChips();
 
@@ -1335,12 +1576,133 @@
     var go = function () { syncZoomFace(); refreshEvents(false); };
     go(); // sources added later by addData (style.load) start from the same lists
     var zs = ""; try { zs = localStorage.getItem(ZIP_KEY) || ""; } catch (e) { /* ignore */ }
-    if (!applyDeepLink() && /^\d{5}$/.test(zs)) goZip(zs, true);
+    if (!applyDeepLink()) { if (/^\d{5}$/.test(zs)) goZip(zs, true); else if (!wide.matches) openRegion(); }
     loadShops();
     loadExtras();
   }).catch(function () {
-    oops("Could not load pop-ups. Try again in a moment.");
+    oops("Could not load pop-ups.");
+    var again = document.createElement("button");
+    again.type = "button"; again.className = "linkbtn"; again.textContent = "Try again";
+    again.addEventListener("click", function () { location.reload(); });
+    $("note").appendChild(again);
   }).then(function () { $("loading").hidden = true; });
+
+  // ---------- your region first (phones, rung 35) ----------
+  // A whole country is a few specks on a tall screen. Without a saved zip or a deep link, a phone opens on the busiest
+  // region (the most pop-ups within 60 miles of one another) at a readable zoom; a first visit gets one quiet line saying so.
+  var REGION_KEY = "matchamap.region";
+  // The pop-up with the most others within 60 miles wins; the view frames the ones within 20 miles of it.
+  function busiestRegion() {
+    var pts = visibleEvents().filter(function (it) { return it.data.status !== "past"; }), best = null, bn = 0;
+    if (pts.length < 3) return null;
+    pts.forEach(function (a) {
+      var n = 0;
+      for (var i = 0; i < pts.length; i++) if (miles(a.ll, pts[i].ll) < 60) n++;
+      if (n > bn) { bn = n; best = a; }
+    });
+    return pts.filter(function (b) { return miles(best.ll, b.ll) < 20; });
+  }
+  function openRegion() {
+    var near = busiestRegion();
+    if (!near) return;
+    var b = new maplibregl.LngLatBounds();
+    near.forEach(function (it) { b.extend(lngLat(it.ll)); });
+    var cam = map.cameraForBounds(b, { padding: { top: 60, bottom: 90, left: 40, right: 40 } }) || {};
+    var c = b.getCenter(), z = Math.max(9, Math.min(11, cam.zoom || 10));
+    map.jumpTo({ center: c, zoom: z });
+    var seen = false;
+    try { seen = !!localStorage.getItem(REGION_KEY); localStorage.setItem(REGION_KEY, "1"); } catch (e) { seen = true; }
+    if (seen) return;
+    var town = cityNear([c.lat, c.lng]);
+    var hint = document.createElement("div");
+    hint.className = "region-hint";
+    hint.setAttribute("role", "status");
+    hint.innerHTML = "<span>Starting where it is busiest" + (town ? ": " + esc(town[0]) : "") + ". Enter your zip for yours.</span>" +
+      "<button type=\"button\" class=\"rh-x\" aria-label=\"Dismiss\">&times;</button>";
+    var drop = function () { if (hint.parentNode) hint.remove(); };
+    hint.querySelector(".rh-x").addEventListener("click", drop);
+    document.addEventListener("mm:land", drop);
+    $("map-panel").appendChild(hint);
+    setTimeout(drop, 12000);
+  }
+
+  // ---------- weekend tour (rung 35) ----------
+  // This weekend's placed pop-ups near you (within 60 miles of your place, else in view), one at a time, in time order,
+  // with Back and Next. Each step is the usual glide and card; calm mode jumps.
+  var tour = null, tourBtn = null, tourBar = null;
+  function tourList() {
+    var b = map.getBounds();
+    return state.events.filter(function (it) {
+      var e = it.data;
+      if (it.past || it.approx || e.status === "cancelled" || !passesShow(e) || !(matchesChip(e, "weekend") || matchesChip(e, "sat") || matchesChip(e, "sun"))) return false;
+      return state.userLoc ? miles(state.userLoc, it.ll) < 60 : b.contains(lngLat(it.ll));
+    }).sort(function (a, c) { return a.data.start < c.data.start ? -1 : 1; }).map(function (it) { return it.key; });
+  }
+  function syncTour() {
+    if (!tourBtn) {
+      tourBtn = document.createElement("button");
+      tourBtn.type = "button";
+      tourBtn.className = "geo tour-btn";
+      tourBtn.hidden = true;
+      tourBtn.addEventListener("click", startTour);
+      $("map-panel").appendChild(tourBtn);
+    }
+    if (tour) { tourBtn.hidden = true; return; }
+    var n = map.getZoom() >= LOW_Z ? tourList().length : 0;
+    tourBtn.hidden = n < 2;
+    tourBtn.innerHTML = "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8 5.5v13l10-6.5z\"/></svg>Weekend tour <span class=\"tn\">" + n + "</span>";
+    tourBtn.setAttribute("aria-label", "Weekend tour, " + n + " pop-ups this weekend");
+  }
+  map.on("moveend", function () { if (!tour) syncTour(); });
+  function startTour() {
+    var keys = tourList();
+    if (keys.length < 2) return;
+    tour = { keys: keys, i: 0 };
+    if (!tourBar) {
+      tourBar = document.createElement("div");
+      tourBar.className = "tour-bar";
+      tourBar.setAttribute("role", "group");
+      tourBar.setAttribute("aria-label", "Weekend tour");
+      tourBar.innerHTML = "<button type=\"button\" class=\"tb-back\" aria-label=\"Previous pop-up\">&lsaquo;</button><span class=\"tb-at\" aria-live=\"polite\"></span>" +
+        "<button type=\"button\" class=\"tb-next\" aria-label=\"Next pop-up\">&rsaquo;</button><button type=\"button\" class=\"tb-x\" aria-label=\"End the tour\">&times;</button>";
+      tourBar.querySelector(".tb-back").addEventListener("click", function () { stepTour(-1); });
+      tourBar.querySelector(".tb-next").addEventListener("click", function () { stepTour(1); });
+      tourBar.querySelector(".tb-x").addEventListener("click", endTour);
+      $("map-panel").appendChild(tourBar);
+    }
+    tourBar.hidden = false;
+    syncTour();
+    showStop(true);
+  }
+  function stepTour(d) {
+    if (!tour) return;
+    tour.i = (tour.i + d + tour.keys.length) % tour.keys.length;
+    showStop(false);
+  }
+  function showStop(first) {
+    var key = tour.keys[tour.i], it = items[key];
+    tourBar.querySelector(".tb-at").textContent = (tour.i + 1) + " of " + tour.keys.length + (it ? " · " + stopTime(it.data) : "");
+    if (!first) animOnce(tourBar, "nudge");
+    flyTo(key);
+  }
+  function stopTime(e) {
+    var p = parts(e.start);
+    return p ? DAYS[new Date(Date.UTC(p.y, p.mo - 1, p.d)).getUTCDay()] + " " + (e.all_day ? "all day" : clock(p)) : "";
+  }
+  function endTour() {
+    tour = null;
+    if (tourBar) tourBar.hidden = true;
+    closeCard();
+    syncTour();
+    if (tourBtn && !tourBtn.hidden) tourBtn.focus();
+  }
+
+  // The attribution starts folded to its (i) button on phones; it is one tap away and still on every view.
+  map.once("load", function () {
+    if (wide.matches) return;
+    var a = map.getContainer().querySelector(".maplibregl-ctrl-attrib");
+    if (a) { a.classList.remove("maplibregl-compact-show"); a.removeAttribute("open"); }
+  });
 
   // Storefronts load after events and brands so the first paint never waits for them.
   function loadShops() {

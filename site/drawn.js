@@ -81,7 +81,9 @@
     s += put("c-petal", W - 52, 18, 26, 25) + put("c-petal", W - 84, 30, 17, -20);
 
     var maxW = small ? 410 : 396, name = String(e.brand || ""), size = 52, lines, i;
-    if (tw(name, 52) <= maxW) lines = [name.replace(/\s+/g, " ").trim()]; else { size = 40; lines = wrap2(name, 40, maxW); }
+    if (tw(name, 52) <= maxW) lines = [name.replace(/\s+/g, " ").trim()];
+    else if (!/\s/.test(name.trim())) { size = Math.max(28, Math.min(40, Math.floor(maxW / (name.length * 0.6)))); lines = [fit(name, size, maxW)]; } // one long word (a handle): smaller, never split mid-word
+    else { size = 40; lines = wrap2(name, 40, maxW); }
     var y0 = lines.length > 1 ? 74 : 86;
     for (i = 0; i < lines.length; i++) s += "<text x=\"38\" y=\"" + (y0 + i * 46) + "\" font-size=\"" + size + "\" font-weight=\"800\" " + ink + ">" + esc(lines[i]) + "</text>";
 
@@ -127,12 +129,12 @@
     opts = opts || {};
     var brand = opts.mode === "brand" || opts.mode === "shop", shop = opts.mode === "shop";
     return "<div class=\"dc-wrap\"><div class=\"ph ph-drawn" + (brand ? " ph-drawn-brand" : "") + "\" role=\"img\" aria-label=\"" + esc(e.brand) + ", drawn card\">" + drawnCard(e, opts) + "</div>" +
-      (shop ? "" : "<button type=\"button\" class=\"dc-save\" data-dc-save=\"" + esc(slug(e.brand)) + "\">Save card</button>") + "</div>";
+      (shop || opts.noSave ? "" : "<button type=\"button\" class=\"dc-save\" data-dc-save=\"" + esc(slug(e.brand)) + "\">Save card</button>") + "</div>";
   }
 
   // Save card: serialize the SVG, draw it to a canvas 1200px wide, download a PNG.
   function save(btn) {
-    var svg = btn.closest(".dc-wrap").querySelector("svg.dc");
+    var box = btn.closest(".dc-wrap") || btn.closest(".card"), svg = box && box.querySelector("svg.dc");
     if (!svg) return;
     var vb = svg.viewBox.baseVal, w = 1200, h = Math.round(w * vb.height / vb.width);
     var src = svg.outerHTML.replace("<svg ", "<svg width=\"" + w + "\" height=\"" + h + "\" ").replace(/\sblink/, "");

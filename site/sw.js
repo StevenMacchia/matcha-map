@@ -1,6 +1,6 @@
 // Matcha Map service worker. Bump VERSION whenever a shell file below changes (the files are not fingerprinted);
 // activate then drops every older cache. Never caches map tiles or Instagram images.
-var VERSION = "mm-1";
+var VERSION = "mm-2";
 var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE = "mm-lib-maplibre-4.7.1";
 var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/pwa.js",
   "/cities.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",

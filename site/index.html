@@ -65,55 +65,64 @@
 </header>
 
 <div class="filters" role="group" aria-label="Filters">
- <div class="frow1">
+ <div class="frow1" role="group" aria-label="Dates">
   <span class="chip-ink" aria-hidden="true"></span>
   <button type="button" class="chip" data-chip="today" aria-pressed="false">Today</button>
-  <button type="button" class="chip" data-chip="weekend" aria-pressed="false">This weekend</button>
-  <button type="button" class="chip" data-chip="week" aria-pressed="false">Next 7 days</button>
+  <button type="button" class="chip ph-only" data-chip="sat" aria-pressed="false">Sat</button>
+  <button type="button" class="chip ph-only" data-chip="sun" aria-pressed="false">Sun</button>
+  <button type="button" class="chip" data-chip="weekend" aria-pressed="false"><span class="lg-only">This weekend</span><span class="ph-only">Weekend</span></button>
+  <button type="button" class="chip" data-chip="week" aria-pressed="false"><span class="lg-only">Next 7 days</span><span class="ph-only">Week</span></button>
   <button type="button" class="chip" data-chip="any" aria-pressed="true">Any date</button>
   <button type="button" class="chip" id="recent" aria-pressed="false">Recent</button>
-  <label class="day"><span>Pick a day</span><input type="date" id="day"></label>
+  <label class="chip day"><span id="day-label">Pick a day</span><input type="date" id="day" aria-label="Pick a day"></label>
   <button type="button" id="day-clear" class="chip clear" aria-label="Clear date, show any date" hidden>&times;</button>
  </div>
  <div class="frow2">
   <button type="button" id="show-btn" class="chip show" aria-expanded="false" aria-controls="show-pop">Show<span id="show-n" class="show-n" hidden></span></button>
-  <button type="button" id="near" class="chip near">Near me</button>
+  <button type="button" id="near" class="chip near" aria-pressed="false" aria-label="Near me"><svg class="ic ph-only" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4 4 11l7 2 2 7z"/></svg><span class="lg-only">Near me</span></button>
   <div class="zipbox" role="group" aria-label="Jump to a zip code or city">
-    <input id="zip" class="zip" type="text" list="citylist" autocomplete="off" autocapitalize="words" aria-label="Zip code or city" placeholder="Zip or city">
+    <input id="zip" class="zip" type="text" list="citylist" autocomplete="off" autocapitalize="words" aria-label="Zip code or city" placeholder="Zip or city" enterkeyhint="go">
+    <button type="button" id="zip-clear" class="zip-clear" aria-label="Clear place" hidden>&times;</button>
     <datalist id="citylist"></datalist>
     <button type="button" id="zip-go" class="chip go">Go</button>
   </div>
  </div>
 </div>
 <div id="show-pop" class="show-pop" role="group" aria-label="What to show" hidden>
+  <p class="sp-h" id="sp-map">On the map</p>
+  <div role="group" aria-labelledby="sp-map">
   <label class="sw"><input type="checkbox" id="show-shops" role="switch"><span>Storefronts</span></label>
-  <hr>
   <label class="sw"><input type="checkbox" id="show-po" role="switch"><span>Pop-up brands only</span></label>
-  <hr>
+  </div>
+  <p class="sp-h" id="sp-kind">Kinds</p>
+  <div role="group" aria-labelledby="sp-kind">
   <label><input type="checkbox" data-kind="popup"><span>Pop-ups</span></label>
   <label><input type="checkbox" data-kind="cafe"><span>Cafes that pop up</span></label>
   <label><input type="checkbox" data-kind="organizer"><span>Classes and meetups</span></label>
   <label><input type="checkbox" data-kind="festival"><span>Festivals</span></label>
   <label><input type="checkbox" data-kind="venue"><span>Hosts and venues</span></label>
   <label><input type="checkbox" data-kind="tea-brand"><span>Tea brands</span></label>
-  <hr>
+  </div>
+  <p class="sp-h" id="sp-cat">Drinks</p>
+  <div role="group" aria-labelledby="sp-cat" class="sp-cats">
   <label><input type="checkbox" data-cat="matcha"><span>Matcha</span></label>
   <label><input type="checkbox" data-cat="coffee"><span>Coffee</span></label>
   <label><input type="checkbox" data-cat="boba"><span>Boba</span></label>
   <label><input type="checkbox" data-cat="bakery"><span>Bakery</span></label>
   <label><input type="checkbox" data-cat="dessert"><span>Dessert</span></label>
   <label><input type="checkbox" data-cat="other"><span>Other</span></label>
+  </div>
+  <p class="sp-foot"><button type="button" id="show-reset" class="linkbtn">Reset</button></p>
 </div>
 <p id="zip-err" class="zip-err" role="status" aria-live="polite" hidden>No such zip</p>
 <p id="note" class="note" role="status" aria-live="polite" hidden></p>
-<p id="nearrow" class="note nearrow" hidden>Near <b id="nearzip"></b> · <button type="button" id="nearclear" class="linkbtn">Clear</button></p>
 
 <main class="main">
   <section id="list-panel" class="list-panel" aria-label="List of pins on the map">
     <div id="empty" class="empty" hidden>
       <div class="sleepy-wrap" aria-hidden="true"><span class="sleepy" data-char="m-sleepy"></span><span class="zz">z</span><span class="zz z2">z</span></div>
       <p>Nothing on this day. Try another.</p>
-      <button type="button" id="empty-any" class="linkbtn">Show any date</button>
+      <div class="empty-acts"><button type="button" id="empty-near" class="linkbtn" hidden>Go there</button><button type="button" id="empty-any" class="linkbtn">Show any date</button></div>
     </div>
     <ul id="list" class="list"></ul>
   </section>
@@ -134,16 +143,14 @@
 <dialog id="about" aria-modal="true" aria-labelledby="about-title">
   <div class="about-cast" aria-hidden="true"><span class="about-mascot" data-char="m-wave"></span><span class="about-chasen" data-char="c-chasen"></span></div>
   <h2 id="about-title">About Matcha Map</h2>
-  <p>A map of matcha pop-ups and the brands behind them, so you can find one near you on the day you are free.</p>
-  <p>Every matcha event. Narrow to pop-up brands under Show.</p>
-  <p>Permanent matcha shops show as little storefronts. Turn them off under Show.</p>
-  <p>Dates come from brand sites, MATO, Luma and posts added by hand. Instagram and TikTok are not scraped, so some brands show a pin with no dates.</p>
-  <p id="updated">Last updated unknown.</p>
+  <p>Every matcha pop-up we can find across America, on one map, by day.</p>
+  <p>Dates come from brands' own posts and sites, event listings and tips you send. A dashed ring means the place is not posted yet; "date unconfirmed" means we read it from a post.</p>
+  <p>Little storefronts are permanent matcha shops. Turn them off, or narrow to pop-up brands, under Show.</p>
+  <p>Missing a pop-up? <a href="https://github.com/StevenMacchia/matcha-map/issues" target="_blank" rel="noopener">Send us the post</a>.</p>
+  <p id="updated" class="credit">Last updated unknown.</p>
   <p id="install-row" hidden><button type="button" id="install-btn" class="btn">Add to home screen</button></p>
   <p id="ios-install" hidden>On iPhone or iPad: in Safari, tap Share, then Add to Home Screen.</p>
-  <p>See a pop-up that is missing? <a href="https://github.com/StevenMacchia/matcha-map/issues" target="_blank" rel="noopener">Send a post link</a>.</p>
-  <p class="credit">Map: <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a> Data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Storefront data: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>, ODbL. Zip centroids: <a href="https://www.geonames.org" target="_blank" rel="noopener">GeoNames</a>, CC BY 4.0.</p>
-  <p>Mattie keeps the map. Made with matcha in hand.</p>
+  <details class="credit"><summary>Map and data credits</summary><p>Map: <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a>. Data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Storefront data: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>, ODbL. Zip centroids: <a href="https://www.geonames.org" target="_blank" rel="noopener">GeoNames</a>, CC BY 4.0. Mattie keeps the map.</p></details>
   <button type="button" id="about-close" class="btn">Close</button>
 </dialog>
 
