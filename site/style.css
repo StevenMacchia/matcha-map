@@ -305,7 +305,14 @@ body.show-list .list-panel { display: block; }
 .pn { position: relative; }
 .pn .pn-ph { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
 .pn .pn-ph > img, .pn .pn-ph > svg, .pn .pn-ph .pn-draw, .pn .pn-ph .pn-draw svg { display: block; width: 100%; height: 100%; object-fit: cover; }
-.pn-ground { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -26px 0 0 -32px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(140,191,122,.30), rgba(140,191,122,0)); }
+.pn-ground { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -26px 0 0 -32px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(140,191,122,.36), rgba(140,191,122,0)); }
+/* colour by kind (2026-11-23 mock): pop-ups warm, shops matcha green, brands muted sage; the ground under each pin tints the
+   basemap a touch in its kind's colour, softer in the dark theme */
+.mk-ev .pn-ground { background: radial-gradient(closest-side, rgba(246,183,199,.42), rgba(248,211,181,0)); }
+.mk-br .pn-ground { width: 52px; height: 52px; margin: -22px 0 0 -26px; background: radial-gradient(closest-side, rgba(156,181,142,.34), rgba(156,181,142,0)); }
+:root[data-theme="dark"] .pn-ground { opacity: .6; }
+:root[data-theme="dark"] .pn-sh, :root[data-theme="dark"] .pn-stack .pn-st { box-shadow: 0 0 0 2px var(--panel), 0 3px 8px rgba(0,0,0,.45); }
+:root[data-theme="dark"] .pn-pu { box-shadow: 0 3px 10px rgba(0,0,0,.45); }
 /* shop: a round photo in a matcha ring, the cup as a mark, the open dot */
 .mk-sh { width: 40px; height: 40px; }
 .mk-sh::before { inset: -4px; }
