@@ -53,6 +53,28 @@ Mobile stays under 90: first paint is three times faster, but under the simulate
 
 Screens: `docs/screens/n7-phone-light.png`, `n7-phone-dark.png`, `n7-desktop-light.png`, `n7-desktop-dark.png`.
 
+### Performance round (N7c)
+
+Lighthouse 13.6 against the local dev server (no compression), `--only-categories=performance,accessibility`, headless Chrome. Mobile ran three times after (it varies by about five points run to run); the table gives the middle run.
+
+| Lighthouse (local dev server) | Performance | Accessibility | FCP | LCP | TBT | CLS | SI |
+|---|---|---|---|---|---|---|---|
+| Mobile, before | 65 | 96 | 2.0 s | 2.0 s | 1,190 ms | 0.103 | 6.4 s |
+| Mobile, after (runs: 86, 86, 91) | 86 | 100 | 2.0 s | 2.0 s | 310 ms | 0 | 6.1 s |
+| Desktop, before | 93 | 96 | 0.4 s | 0.4 s | 170 ms | 0 | 1.8 s |
+| Desktop, after | 98 | 100 | 0.4 s | 0.4 s | 0 to 10 ms | 0 | 1.6 s |
+
+What moved it:
+
+- **The map starts once the GPU is free.** The 1.2 s of blocking was not MapLibre's code: its first WebGL setup waits on the GPU while the page's own first frames are still rasterising (a third of a second on Lighthouse's software GPU, 6 ms a second later). app.js now starts on a stand-in camera (`PreMap`: the same calls, web mercator maths, no drawing), so the chips, header and list render from the data at once; a worker makes a 1x1 WebGL context until two in a row come back in under 30 ms (2.5 s at most), then the real map is made and takes over the stand-in's camera, padding, listeners and controls. Without WebGL the stand-in stays and the list, cards and search still work. Lesson from the attempts: anything animating on screen while the map starts (Chasen's whisk kept up, the chrome sliding in early, a GPU petal canvas) pushes the GPU wait back into the map's first frames, so the opening still plays as one moment when the map has drawn.
+- **No layout per pin.** `animOnce` forced a reflow on every new marker to restart an animation that was not running; it now reflows only when the class is already on.
+- **The list is built once.** A phone frames its busiest region before the first list instead of building the whole country's list and then the region's; the busiest-region count checks a lat/lng box before the distance maths; reading the data and building the list are two tasks.
+- **Search waits for the box.** search.js, its stylesheet and the drink-art index (280 KB) load when the page goes idle; the search box and its index are built on the first focus of the place box (the tap lands in the new box), or at once for `?drink=`.
+- **CLS 0.10 to 0.** The phone list sheet sat at `top: var(--chrome)`, so measuring the chips moved its box; it now sits at `top: 0` and moves by transform only. Rows out of sight skip layout and paint (`content-visibility: auto`).
+- **Accessibility 100.** The attribution toggle is one 44 px icon (it was a tiled square, half under the region line), the region line and the Hawaii and tour buttons stand clear of it, and the "on now" row time is a deeper rose (4.5:1).
+
+Still short of 90 on most mobile runs: about 75 ms of MapLibre's first rendered frame (label placement and shader set-up for 64 style layers on a software GPU) lands as one long task, and Speed Index (6 s) counts the opening, which keeps the chrome and map hidden until the map has drawn. Not done, deliberately: pins as a symbol layer (the HTML markers now cost little; the remaining time is MapLibre's own frame), splitting cities.js (it is off the paint path; gen-cities.js is another owner's), and loading motion.css and cards.css late (both carry layout rules, so they would shift the page). On a phone with a real GPU the probe answers in milliseconds and the map starts as before.
+
 ---
 
 # The cinematic pass (rung 32)
