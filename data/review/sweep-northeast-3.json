@@ -1,0 +1,103 @@
+{
+  "generated": "2026-11-23T03:56:45.879Z",
+  "group": "northeast",
+  "items": [
+    {
+      "brand": "Kyru Matcha",
+      "handle": "kyrumatcha",
+      "source_id": "kyru-matcha",
+      "title": "Kyru at Vintage Vintage Vintage DC",
+      "start": "2027-01-02T11:00:00-05:00",
+      "end": null,
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Vintage Vintage Vintage DC",
+      "address": "1348 4th St NE, Washington, DC 20002",
+      "city": "Washington",
+      "state": "DC",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://ma.to/event/kyru-at-vintage-vintage-vintage-02-jan-2027",
+      "posts": [
+        "https://www.instagram.com/p/Df5yacRpXrJ"
+      ],
+      "evidence": [
+        "https://ma.to/event/kyru-at-vintage-vintage-vintage-02-jan-2027",
+        "https://ma.to/venue/kyrumatcha",
+        "https://www.instagram.com/p/Df5yacRpXrJ"
+      ],
+      "menu": [
+        "banana matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Kyru, a Virginia-based specialty cafe pop-up, serves matcha and cafe drinks inside the Vintage Vintage Vintage vintage shop near Union Market. Kyru ran the same collab in November, so expect a small drink menu and a browse through the racks.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "MATO lists Sat 2 Jan 2027 with the venue but no time and no street address; start time 11:00 is a PLACEHOLDER. Address is the shop's address from a web search (shop listed at 1348 4th St NE), not from the MATO page. Kyru's Nov 2026 pop-up at the same shop is on instagram.com/p/Df5yacRpXrJ."
+    },
+    {
+      "brand": "Longevity Cities (Matcha Walk)",
+      "handle": null,
+      "source_id": null,
+      "title": "Matcha Walk, first Longevity Philly event",
+      "start": "2026-11-29T10:00:00-05:00",
+      "end": "2026-11-29T12:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Matcha Panda Cafe, Rittenhouse",
+      "address": "2033 Chestnut St, Philadelphia, PA 19103",
+      "city": "Philadelphia",
+      "state": "PA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://luma.com/age-uzxr",
+      "posts": [],
+      "evidence": [
+        "https://luma.com/age-uzxr"
+      ],
+      "menu": [],
+      "price": "matcha at your own expense",
+      "hours": "10am-12pm",
+      "pay": null,
+      "description": "A Sunday-after-Thanksgiving meetup at Matcha Panda Cafe: meet for matcha, short welcome, then an easy flat walk on the Schuylkill River Trail with a talk on matcha. Free to join; you buy your own drink.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "kind: meetup/class, not a pop-up; matcha is bought at the existing cafe. Date, time and address are on the Luma page, so it would be confirmed if it counted as a pop-up. Include only if meetups are wanted."
+    },
+    {
+      "brand": "Partea NYC x Eve Beauty Koreatown",
+      "handle": "partea.nyc",
+      "source_id": null,
+      "title": "Eve Beauty Black Friday matcha pop-up",
+      "start": "2026-11-27T11:00:00-05:00",
+      "end": null,
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Eve Beauty Koreatown",
+      "address": null,
+      "city": "New York",
+      "state": "NY",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/reel/DgBbT8UO9lD",
+      "posts": [
+        "https://www.instagram.com/reel/DgBbT8UO9lD"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/DgBbT8UO9lD"
+      ],
+      "menu": [
+        "freshly served matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Eve Beauty's first matcha pop-up, with freshly served matcha from Partea NYC while you shop Black Friday deals in the Koreatown store.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Snippet says first-ever Matcha Pop-Up for Black Friday; date inferred as Fri 27 Nov 2026, time is a placeholder, no street address in the snippet. Not found on any other page. Needs a human check."
+    }
+  ]
+}
