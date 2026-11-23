@@ -36,7 +36,7 @@ test("sw.js precache list only names files that exist, and index.html links the 
   assert.match(html, /rel="apple-touch-icon"/);
   assert.match(html, /manifest-src 'self'/);
   assert.match(html, /worker-src 'self'/);
-  assert.match(html, /src="pwa\.js"/);
+  assert.match(html, /src="pwa\.js(?:\?v=mm-[0-9a-f]+)?"/); // tools/sw-version.js stamps ?v= on the shell links
   // linked outside the generated seo block, so tools/gen-pages.js keeps them
   const seo = html.slice(html.indexOf("seo:start"), html.indexOf("seo:end"));
   assert.ok(!seo.includes("manifest"));

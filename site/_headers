@@ -21,12 +21,19 @@
   Cache-Control: public, max-age=600
 /img/*
   Cache-Control: public, max-age=86400
+# Shell files are not fingerprinted, so a browser must revalidate them on every load (a cheap 304): a day-long max-age here
+# left visitors with yesterday's app.js under today's index.html on 2026-11-22 and the page crashed. index.html also carries
+# ?v=<hash> on its own script and style links (tools/sw-version.js), so a new deploy is fetched fresh by every browser.
 /*.css
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=0, must-revalidate
 /*.js
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=0, must-revalidate
 /*.svg
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=0, must-revalidate
+/map-style.json
+  Cache-Control: public, max-age=0, must-revalidate
+/map-style-dark.json
+  Cache-Control: public, max-age=0, must-revalidate
 /og.png
   Cache-Control: public, max-age=86400
 /*

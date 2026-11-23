@@ -20,4 +20,11 @@ h.update(sw.replace(/var VERSION = "[^"]*";/, "")); // the worker's own code cou
 const version = "mm-" + h.digest("hex").slice(0, 10);
 const next = sw.replace(/var VERSION = "[^"]*";/, `var VERSION = "${version}";`);
 if (next !== sw) fs.writeFileSync(swPath, next);
-console.log(`sw.js VERSION ${version}${next === sw ? " (unchanged)" : ""}`);
+
+// index.html: every local script and stylesheet link carries ?v=<version>, so a browser that cached the old file under a
+// day-long max-age still fetches the new one the moment the page changes. The service worker matches with ignoreSearch.
+const htmlPath = path.join(SITE, "index.html");
+const html = fs.readFileSync(htmlPath, "utf8");
+const stamped = html.replace(/((?:src|href)=")(?!https?:|\/\/)([^"?#]+\.(?:js|css))(?:\?v=[^"#]*)?(")/g, (m, a, file, b) => `${a}${file}?v=${version}${b}`);
+if (stamped !== html) fs.writeFileSync(htmlPath, stamped);
+console.log(`sw.js VERSION ${version}${next === sw ? " (unchanged)" : ""}; index.html links ${stamped === html ? "already" : "now"} stamped`);

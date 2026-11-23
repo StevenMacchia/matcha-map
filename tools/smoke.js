@@ -1,6 +1,6 @@
 // npm run smoke: serve site/, drive headless Chrome over the key pages at desktop and phone width,
 // and fail on any uncaught exception, any 4xx/5xx for a same-origin asset, or an empty home page.
-// Env: CHROME_PATH (Chrome binary), SMOKE_URL (reuse a running server instead of starting tools/serve.js).
+// Flags: --url <base>. Env: CHROME_PATH (Chrome binary), SMOKE_URL (reuse a running server instead of starting tools/serve.js).
 // Talks to Chrome over the DevTools protocol with Node's built-in WebSocket (Node 22+), no dependencies.
 import fs from "node:fs";
 import os from "node:os";
@@ -42,7 +42,9 @@ const freePort = () => new Promise((res, rej) => {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function startServer() {
-  if (process.env.SMOKE_URL) return { base: process.env.SMOKE_URL.replace(/\/$/, ""), stop() {} };
+  // --url <base> (the smoke workflow runs it against the live site) or SMOKE_URL: test that server instead of starting one.
+  const ai = process.argv.indexOf("--url"), given = ai > 0 ? process.argv[ai + 1] : process.env.SMOKE_URL;
+  if (given) return { base: given.replace(/\/$/, ""), stop() {} };
   const port = await freePort();
   const p = spawn(process.execPath, [path.join(ROOT, "tools", "serve.js"), "--port", String(port)], { stdio: ["ignore", "pipe", "inherit"] });
   await new Promise((res, rej) => {

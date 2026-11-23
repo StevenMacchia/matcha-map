@@ -1,13 +1,10 @@
-# Smoke test: serve site/, load the key pages in headless Chrome at desktop and phone width,
-# fail on uncaught exceptions, same-origin 4xx/5xx, or an empty home page. See README, "Smoke test".
+# Smoke test on every push to main: the site must come up in headless Chrome at 1440 and 390 with pins, list rows and no
+# uncaught error (tools/smoke.js). Catches a shell that crashes against its own page before visitors do.
 name: smoke
 on:
   push:
+    branches: [main]
   pull_request:
-
-permissions:
-  contents: read
-
 jobs:
   smoke:
     runs-on: ubuntu-latest
@@ -16,11 +13,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - uses: browser-actions/setup-chrome@v1
-        id: chrome
-      - run: npm run smoke
+          node-version: 24
+      - name: Unit tests
+        run: npm test
+      - name: Smoke (local build)
+        run: npm run smoke
         env:
-          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          CHROME: /usr/bin/google-chrome
+      - name: Smoke (live site)
+        if: github.event_name == 'push'
+        run: node tools/smoke.js --url https://matchamap-cu7.pages.dev
+        env:
+          CHROME: /usr/bin/google-chrome

@@ -97,7 +97,8 @@ export function veventLines(e, { stampIso } = {}) {
     lines.push(`DTSTART;VALUE=DATE:${s}`, `DTEND;VALUE=DATE:${endPlus}`);
   } else {
     const s = utcStamp(e.start);
-    const endIso = e.end && !isNaN(Date.parse(e.end)) ? e.end : new Date(Date.parse(e.start) + 2 * 36e5).toISOString();
+    const endOk = e.end && String(e.end).includes("T") && Date.parse(e.end) > Date.parse(e.start); // a date-only or earlier end would sort before DTSTART
+    const endIso = endOk ? e.end : new Date(Date.parse(e.start) + 2 * 36e5).toISOString();
     lines.push(`DTSTART:${s}`, `DTEND:${utcStamp(endIso)}`);
   }
   lines.push(`SUMMARY:${icsEscape(e.title || `${brand} matcha pop-up`)}`);

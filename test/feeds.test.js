@@ -28,6 +28,14 @@ test("timed event: DTSTART/DTEND in UTC, UID is the event id, LAST-MODIFIED from
   assert.doesNotMatch(l, /TZID|VTIMEZONE/);
 });
 
+test("timed start with a date-only or earlier end: DTEND is start plus 2 hours, never before DTSTART", () => {
+  for (const end of ["2026-12-05", "2026-12-05T08:00:00-06:00"]) {
+    const l = veventLines({ ...timed, end }).join("\n");
+    assert.match(l, /^DTSTART:20261205T170000Z$/m);
+    assert.match(l, /^DTEND:20261205T190000Z$/m);
+  }
+});
+
 test("all-day event: DATE values with an exclusive end", () => {
   const l = veventLines(allDay).join("\n");
   assert.match(l, /^DTSTART;VALUE=DATE:20261206$/m);
