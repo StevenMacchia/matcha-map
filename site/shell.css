@@ -49,9 +49,6 @@ body { background: var(--canvas); }
 .searchbar .go svg, .searchbar .near svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .searchbar .near svg .fill { fill: currentColor; stroke: none; }
 .searchbar:has(.zip:placeholder-shown) .go { display: none; }
-/* search.js (N8) mounts its own box inside the slot: the pill becomes its frame */
-.searchbar.has-search { padding: 0; background: none; box-shadow: none; height: auto; }
-.searchbar.has-search > .s-ic, .searchbar.has-search > .zip, .searchbar.has-search > .go { display: none; }
 
 .filters .chip { border: 1px solid var(--chipline); background: var(--panel); color: var(--ink); font-size: 15px; font-weight: 700; padding: 0 16px; }
 .filters .chip:hover { background: var(--foam); }
@@ -178,19 +175,19 @@ body { background: var(--canvas); }
 }
 
 /* ---------- the opening (app.js: html.opening, then .open-go; .fadein on repeat visits and in calm mode) ---------- */
-html.opening #map, html.fadein #map { opacity: 0; }
-html.opening #map { transform: scale(1.05); }
+html.opening:not(.open-go) #map, html.fadein:not(.open-go) #map { opacity: 0; }
+html.opening:not(.open-go) #map { transform: scale(1.05); }
 html.open-go #map { opacity: 1; transform: none; transition: opacity .7s ease, transform 1s var(--out); }
 html.fadein.open-go #map { transition: opacity .3s ease; }
-html.opening .bar > *, html.opening .filters { opacity: 0; transform: translateY(-16px); }
+html.opening:not(.open-go) .bar > *, html.opening:not(.open-go) .filters { opacity: 0; transform: translateY(-16px); }
 html.open-go .bar > *, html.open-go .filters { transition: opacity .38s ease, transform .5s var(--out); }
 html.open-go .bar > :nth-child(2) { transition-delay: .06s; }
 html.open-go .bar > :nth-child(3) { transition-delay: .12s; }
 html.open-go .filters { transition-delay: .18s; }
-html.opening .mark-btn { transform: translateY(30px) scale(.3); }
+html.opening:not(.open-go) .mark-btn { transform: translateY(30px) scale(.3); }
 html.open-go .mark-btn { transition: transform .62s var(--spring) .14s; }
 @media (max-width: 899px) {
-  html.opening .list-panel { transform: translateY(100%); }
+  html.opening:not(.open-go) .list-panel { transform: translateY(100%); }
   html.open-go .list-panel { transition-delay: .5s; }
 }
 /* a skipped opening lands at once; a stuck one (a script error) shows everything after 2.6 s */
@@ -218,3 +215,29 @@ html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
 .morph-ghost .ch { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; }
 .morph-hide { opacity: 0 !important; }
 .morph-show { transition: opacity .22s ease; }
+
+/* search.js (N8) inside the pill: its field loses its own frame, the pill is the frame */
+.searchbar.has-search { padding: 0 4px 0 14px; background: var(--panel); box-shadow: var(--e2); height: 48px; }
+.searchbar.has-search > .zip, .searchbar.has-search > .go { display: none; }
+.searchbar.has-search > .s-ic { display: block; }
+.searchbar.has-search .srch { flex: 1; min-width: 0; max-width: none; position: static; }
+.searchbar.has-search .srch-in { border: 0; background: transparent; min-height: 44px; padding: 0 6px; outline: none; }
+.searchbar.has-search .srch-pop { left: 0; right: 0; top: calc(100% + 8px); border: 0; box-shadow: var(--e2); border-radius: var(--r-card); }
+@media (min-width: 900px) { .searchbar.has-search { box-shadow: none; background: var(--canvas); } }
+
+/* card reveal for the cards.js card (N6): verdict, picture, then the body, then the rest; transform and opacity only */
+.mm-card.enter > * { animation: cin .34s var(--out) both; }
+.mm-card.enter > .mm-top { animation-delay: .04s; }
+.mm-card.enter > .mm-media { animation: none; }
+.mm-card.enter > .mm-main { animation-delay: .1s; }
+.mm-card.enter > .mm-more { animation-delay: .16s; }
+.mm-card.enter .mm-menu > * { animation: cin .3s var(--out) both; }
+.mm-card.enter .mm-menu > :nth-child(1) { animation-delay: .16s; } .mm-card.enter .mm-menu > :nth-child(2) { animation-delay: .2s; }
+.mm-card.enter .mm-menu > :nth-child(3) { animation-delay: .24s; } .mm-card.enter .mm-menu > :nth-child(n+4) { animation-delay: .28s; }
+/* list rows from cards.js keep the same stagger and press as the built-in rows */
+.mm-row { transition: transform .12s ease; }
+.mm-row:active { transform: scale(.98); }
+@media (max-width: 899px) {
+  /* with the list up, notes move to the bottom so the grip stays readable */
+  body.show-list .toasts { top: auto; bottom: calc(14px + env(safe-area-inset-bottom)); }
+}

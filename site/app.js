@@ -470,6 +470,7 @@
       } else if (ev && window.Drawn) { box.outerHTML = window.Drawn.block(ev, { when: whenText(ev) }); return; }
       else { box.className = "ph ph-empty"; box.innerHTML = FACE_BLOCK; }
       fillChars(box);
+      if (window.MatchaCards && window.MatchaCards.wire) window.MatchaCards.wire(box);
     }, true);
   }
   function linksHTML(links) {
@@ -699,6 +700,7 @@
       var body = $("sheet-body");
       body.innerHTML = html;
       fillChars(body);
+      if (window.MatchaCards && window.MatchaCards.wire) window.MatchaCards.wire(body);
       var sh = $("sheet");
       body.scrollTop = 0;
       sh.hidden = false;
@@ -742,6 +744,8 @@
       opts.duration = Math.round(Math.min(2000, 650 + 260 * Math.log2(1 + d / 5) + 90 * dz));
       opts.easing = function (t) { var s = t * t * (3 - 2 * t), o = 1 - Math.pow(1 - t, 3); return 0.45 * s + 0.55 * o; };
       map.flyTo(opts);
+      // motion.js draws a short petal trail for a long flight and a puff where it lands (N7).
+      if (opts.duration > 900) { announce("fly", { duration: opts.duration }); map.once("moveend", function () { announce("arrive", { center: map.getCenter() }); }); }
     }
   }
   function flyTo(key) {
@@ -758,6 +762,10 @@
     var off = wide.matches ? [0, Math.round(h * 0.3)] : [0, Math.round((mapPad.bottom - 0.52 * h) / 2)];
     moveMap({ center: lngLat(it.ll), zoom: z, offset: off }, function () { syncMarkers(); showCard(key, !!cardOpener); });
   }
+
+  // cards.js "Also nearby" opens a pop-up in place
+  window.MatchaCards = window.MatchaCards || {};
+  window.MatchaCards.open = function (key) { if (items[key]) flyTo(key); };
 
   // ---------- layers ----------
   function buildBrands(sources) {
@@ -831,6 +839,7 @@
       var e = it.data;
       if (only !== undefined && !!it.approx !== only) return false;
       if (!passesShow(e)) return false;
+      if (state.only && !state.only[e.id]) return false;
       if (e.status === "cancelled") return false;
       if (e.status === "past") {
         if (!state.recent) return false;
@@ -860,6 +869,9 @@
   function rowHTML(it) {
     var d = distOf(it), dist = d != null ? "<span class=\"dist\">" + (d < 10 ? Math.round(d * 10) / 10 : Math.round(d)) + " mi</span>" : "";
     if (it.kind === "e") {
+      // N6: the rich row from cards.js when it is loaded (same card system as the sheet)
+      var r = window.MatchaCards && window.MatchaCards.row && window.MatchaCards.row(it, { events: state.events });
+      if (r) return r;
       var e = it.data, tag = e.confidence && e.confidence !== "confirmed" ? "<em class=\"tag\">" + esc(e.confidence) + "</em>" : "";
       var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · ");
       var thumb = src
@@ -1386,6 +1398,56 @@
     return false;
   }
 
+  // ---------- N6 and N8: rich cards (cards.js) and search (search.js), loaded after the first paint ----------
+  // Both are ES modules; a classic script loads them with import(). Either can be missing: the built-in card and the
+  // zip-or-city field stay in place, so the site works the same without them.
+  var artIndex = null;
+  function loadArt() {
+    if (!loadArt.p) loadArt.p = fetch("art/index.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (a) { artIndex = a; return a; });
+    return loadArt.p;
+  }
+  function addCss(href) {
+    if (document.querySelector("link[href=\"" + href + "\"]")) return;
+    var l = document.createElement("link"); l.rel = "stylesheet"; l.href = href; document.head.appendChild(l);
+  }
+  // A drink picked in search narrows the map to the pop-ups that serve it, with a note to clear it.
+  function showOnly(evs, label) {
+    state.only = {};
+    (evs || []).forEach(function (e) { state.only[e.id] = true; });
+    stage(700); refreshEvents(true);
+    oops("Showing " + (label || "one drink") + ": " + (evs || []).length + " pop-up" + ((evs || []).length === 1 ? "" : "s") + ".", ["Show all", clearOnly], "m-happy");
+  }
+  function clearOnly() { if (!state.only) return; state.only = null; stage(700); refreshEvents(true); if (window.mmSearch && window.mmSearch.clear) window.mmSearch.clear(); }
+  function mountSearch(sources) {
+    var slot = $("search-slot");
+    if (!slot) return;
+    Promise.all([import("./search.js"), loadArt()]).then(function (r) {
+      var S = r[0];
+      if (!S || typeof S.mountSearch !== "function") return;
+      addCss("search.css");
+      var events = state.events.map(function (it) { return it.data; });
+      var mm = S.mountSearch(slot, {
+        events: events, sources: sources, art: r[1], cities: window.CITY_LIST, readUrl: false,
+        onPick: function (p) {
+          if (p.type === "event") { if (items["e:" + p.id]) flyTo("e:" + p.id); }
+          else if (p.type === "city") { var c = window.MatchaDeepLink && window.MatchaDeepLink.findCityBySlug(window.CITY_LIST, p.id); if (c) landAt([c[2], c[3]], c[0] + ", " + c[1], "", false); }
+          else if (p.type === "brand") { var k = brandKeyOf(String(p.id).toLowerCase()); if (k) flyTo(k); }
+          else if (p.type === "drink") showOnly(S.filterByDrink(events, p.id, r[1]), String(p.id).replace(/-/g, " "));
+        }
+      });
+      window.mmSearch = mm;
+      slot.classList.add("has-search");
+      // the box sits in the pill after the magnifier, before Near me
+      var box = slot.querySelector(".srch"), near = $("near");
+      if (box && near) slot.insertBefore(box, near);
+      var inp = slot.querySelector(".srch-in");
+      if (inp) inp.placeholder = wide.matches ? "Search brands, drinks, cities or a zip" : "Brand, drink or city";
+      if (inp) inp.addEventListener("keydown", function (ev) { if (ev.key === "Enter" && /^\d{5}$/.test(inp.value.trim())) { ev.preventDefault(); goZip(inp.value.trim(), false); } });
+      var drink = params.get("drink");
+      if (drink && mm && mm.applyQuery) mm.applyQuery({ drink: drink });
+    }).catch(function () { /* search.js not there: the zip-or-city field stays */ });
+  }
+
   // ---------- load ----------
   function getJSON(u) { twirl(); return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
 
@@ -1427,6 +1489,7 @@
     if (!applyDeepLink() && /^\d{5}$/.test(zs)) goZip(zs, true);
     loadShops();
     loadExtras();
+    mountSearch(res[1] || []);
   }).catch(function () {
     oops(navigator.onLine === false ? "You are offline and nothing was saved yet." : "Could not load pop-ups.", ["Try again", function () { location.reload(); }], navigator.onLine === false ? "m-sleepy" : "");
   }).then(function () { $("loading").hidden = true; });

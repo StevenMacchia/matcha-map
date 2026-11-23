@@ -1,12 +1,12 @@
 // Matcha Map service worker. Bump VERSION whenever a shell file below changes (the files are not fingerprinted);
 // activate then drops every older cache. Never caches map tiles or Instagram images.
-var VERSION = "mm-2";
+var VERSION = "mm-3";
 var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE = "mm-lib-maplibre-4.7.1";
 var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/pwa.js",
   "/cities.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",
   "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png", "/icons/favicon-32.png", "/shell.css"];
 // Files from the next-level workers (N6, N8): cached too, but one that is missing never stops the install.
-var EXTRA = ["/search.js", "/search.css", "/weekend.css", "/weekend/", "/brand-extras.js", "/cards.js", "/cards.css", "/art.js"];
+var EXTRA = ["/search.js", "/search.css", "/weekend.css", "/weekend/", "/brand-extras.js", "/cards.js", "/cards.css", "/cards-app.js", "/art.js"];
 // The map library is pinned and checked by SRI in index.html; the shell cannot draw a map without it.
 var LIB = ["https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js", "https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"];
 var offline = false;

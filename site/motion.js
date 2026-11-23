@@ -92,13 +92,13 @@
 
   // ---------- the card as a scene ----------
   function cardIn(ev) {
-    var d = ev.detail || {}, card = d.root && d.root.querySelector(".card");
+    var d = ev.detail || {}, card = d.root && d.root.querySelector(".card, .mm-card");
     if (card && !calm()) {
       card.classList.add("enter");
       // drop the class once it has played, so the fill-mode no longer holds transforms (the photo parallax needs them)
       setTimeout(function () { card.classList.remove("enter"); }, 760);
     }
-    if (d.phone) sheetOpen();
+    if (d.phone) { sheetOpen(); morph(d.root); }
   }
 
   // ---------- phone: the bottom sheet ----------
@@ -193,6 +193,133 @@
     window.addEventListener("resize", function () { if (!sheet.hidden && !wide.matches) { measure(); setSnap(snap); } });
   }
 
+  // ---------- N7: effects, one canvas, only at moments ----------
+  // Petals (and steam) for the opening, a landing and the empty state. One fixed canvas, added on demand and removed
+  // when the last particle is gone; at most 16 particles at a time; nothing under reduced motion; never a loop on idle.
+  var FX = (function () {
+    var cv = null, cx = null, parts = [], raf = 0, last = 0, dpr = 1;
+    var PINK = ["#F7C6D3", "#F6B7C7", "#FBD9E2"], VEIN = "#EFA6BA";
+    function ensure() {
+      if (cv) return true;
+      cv = document.createElement("canvas");
+      cv.className = "fx";
+      cv.setAttribute("aria-hidden", "true");
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      cv.width = Math.round(innerWidth * dpr); cv.height = Math.round(innerHeight * dpr);
+      cx = cv.getContext("2d");
+      if (!cx) { cv = null; return false; }
+      document.body.appendChild(cv);
+      return true;
+    }
+    function drop() { if (cv) cv.remove(); cv = null; cx = null; parts = []; cancelAnimationFrame(raf); raf = 0; }
+    function add(p) { if (parts.length < 16) parts.push(p); }
+    function frame(ts) {
+      if (!cx) { raf = 0; return; }
+      var dt = Math.min(48, ts - (last || ts)) / 1000;
+      last = ts;
+      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cx.clearRect(0, 0, innerWidth, innerHeight);
+      parts = parts.filter(function (p) { return (p.t += dt) < p.life; });
+      var dark = root.getAttribute("data-theme") === "dark";
+      parts.forEach(function (p) {
+        var k = p.t / p.life;
+        p.vy += p.g * dt; p.vx *= 0.985;
+        p.x += (p.vx + Math.sin(p.t * p.wob + p.ph) * p.sway) * dt; p.y += p.vy * dt; p.r += p.spin * dt;
+        var a = k < 0.15 ? k / 0.15 : k > 0.7 ? (1 - k) / 0.3 : 1;
+        cx.save();
+        cx.globalAlpha = Math.max(0, a) * (p.kind === "steam" ? 0.55 : 1);
+        cx.translate(p.x, p.y); cx.rotate(p.r);
+        if (p.kind === "steam") {
+          cx.fillStyle = dark ? "#DCEBC9" : "#FFFFFF";
+          cx.beginPath(); cx.arc(0, 0, p.s * (0.6 + k), 0, 6.283); cx.fill();
+        } else {
+          cx.scale(1, 0.55 + 0.45 * Math.abs(Math.cos(p.t * 4 + p.ph))); // a petal turning over
+          cx.fillStyle = p.c; cx.beginPath(); cx.ellipse(0, 0, p.s, p.s * 0.58, 0, 0, 6.283); cx.fill();
+          cx.strokeStyle = VEIN; cx.lineWidth = 1; cx.beginPath(); cx.moveTo(-p.s * 0.6, 0); cx.lineTo(p.s * 0.5, 0); cx.stroke();
+        }
+        cx.restore();
+      });
+      if (parts.length) raf = requestAnimationFrame(frame); else drop();
+    }
+    function go() { if (!raf) { last = 0; raf = requestAnimationFrame(frame); } }
+    function petal(x, y, vx, vy, life) {
+      add({ kind: "petal", x: x, y: y, vx: vx, vy: vy, g: 160, t: 0, life: life || 1.2, s: 5 + Math.random() * 3, r: Math.random() * 6, spin: (Math.random() - 0.5) * 6,
+        sway: 18 + Math.random() * 20, wob: 3 + Math.random() * 2, ph: Math.random() * 6, c: PINK[(Math.random() * 3) | 0] });
+    }
+    return {
+      // A puff from a point: petals thrown up and out, then drifting down (or a few wisps of steam rising).
+      burst: function (x, y, o) {
+        o = o || {};
+        if (calm() || document.hidden || !ensure()) return;
+        var n = Math.min(o.n || 8, 12), sp = o.spread || 1;
+        for (var i = 0; i < n; i++) {
+          var ang = -Math.PI / 2 + (i / (n - 1 || 1) - 0.5) * 2.4 * sp, v = 120 + Math.random() * 110;
+          if (o.kind === "steam") add({ kind: "steam", x: x + (Math.random() - 0.5) * 18, y: y, vx: (Math.random() - 0.5) * 16, vy: -40 - Math.random() * 30, g: 0, t: 0, life: 1.1,
+            s: 4 + Math.random() * 4, r: 0, spin: 0, sway: 8, wob: 4, ph: Math.random() * 6 });
+          else petal(x, y, Math.cos(ang) * v, Math.sin(ang) * v, 1.1 + Math.random() * 0.4);
+        }
+        go();
+      },
+      // One petal left behind at a point (the flight's trail).
+      trail: function (x, y) {
+        if (calm() || document.hidden || !ensure()) return;
+        petal(x + (Math.random() - 0.5) * 30, y + (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 40, -30, 0.9);
+        go();
+      },
+      stop: drop
+    };
+  })();
+  window.MatchaFX = FX;
+
+  // ---------- N7: the flight leaves a short petal trail; the landing gets a puff ----------
+  var flyT = [];
+  function fly(ev) {
+    flyT.forEach(clearTimeout); flyT = [];
+    var d = (ev.detail && ev.detail.duration) || 1200, panel = $("map-panel");
+    if (calm() || !panel) return;
+    // three petals near the middle of the map during the first part of the flight
+    for (var i = 1; i <= 3; i++) flyT.push(setTimeout(function () {
+      var r = panel.getBoundingClientRect();
+      FX.trail(r.left + r.width / 2, r.top + r.height * 0.45);
+    }, Math.round(d * 0.12 * i)));
+  }
+  function arrive() {
+    var m = api().map, panel = $("map-panel");
+    if (calm() || !m || !panel) return;
+    var r = panel.getBoundingClientRect(), p = m.project(m.getCenter());
+    FX.burst(r.left + p.x, r.top + p.y - 6, { n: 7, spread: 0.8 });
+  }
+
+  // ---------- N7: the pin becomes the card's picture (phone) ----------
+  // A ghost of the selected pin leaves the map and grows into the picture slot of the rising sheet, then hands over.
+  function morph(root) {
+    var pin = document.querySelector(".mk.sel .mk-in");
+    var slot = root && root.querySelector(".mm-media, [data-hero], .ph, figure, img");
+    if (calm() || !pin || !slot || !sheet || typeof slot.animate !== "function") return;
+    var a = pin.getBoundingClientRect();
+    if (!a.width) return;
+    // the slot's final place: the sheet ends at its peek snap; sheetOpen has just put it at its start
+    var b = slot.getBoundingClientRect(), off = sy - (snap === "peek" ? peekY : 0);
+    var tx = b.left, ty = b.top - off, tw = b.width, th = Math.min(b.height, innerHeight - ty);
+    if (!tw || th <= 0) return;
+    var g = document.createElement("div");
+    g.className = "morph-ghost";
+    g.setAttribute("aria-hidden", "true");
+    var svg = pin.querySelector("svg");
+    if (svg) g.appendChild(svg.cloneNode(true));
+    g.style.width = tw + "px"; g.style.height = th + "px";
+    document.body.appendChild(g);
+    slot.classList.add("morph-hide");
+    var anim = g.animate([
+      { transform: "translate(" + a.left + "px," + a.top + "px) scale(" + (a.width / tw) + "," + (a.height / th) + ")", borderRadius: "50%", opacity: 1 },
+      { transform: "translate(" + tx + "px," + ty + "px) scale(1,1)", borderRadius: "18px", opacity: 1, offset: 0.8 },
+      { transform: "translate(" + tx + "px," + ty + "px) scale(1,1)", borderRadius: "18px", opacity: 0 }
+    ], { duration: 480, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" });
+    setTimeout(function () { slot.classList.add("morph-show"); slot.classList.remove("morph-hide"); }, 340);
+    var done = function () { g.remove(); slot.classList.remove("morph-show", "morph-hide"); };
+    anim.onfinish = done; anim.oncancel = done;
+  }
+
   // ---------- loading: placeholder rows until the list arrives ----------
   (function () {
     var list = $("list"), ld = $("loading");
@@ -239,6 +366,8 @@
   document.addEventListener("mm:card", cardIn);
   document.addEventListener("mm:filter", drift);
   document.addEventListener("mm:land", land);
+  document.addEventListener("mm:fly", fly);
+  document.addEventListener("mm:arrive", arrive);
   var map = api().map;
   if (map) {
     var box = map.getContainer();
