@@ -8,14 +8,14 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:c022c6dc7550@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
-DTSTART:20261128T210000Z
-DTEND:20261128T230000Z
-SUMMARY:Matcha + Meetup: Seattle | Film + Music Industry Monthly Mingle
-LOCATION:Seattle\, WA
-DESCRIPTION:Price: $17.85\nDetails not confirmed yet. Check the brand's pos
- t before you go.\nMore: https://matchamap-cu7.pages.dev/e/c022c6dc7550/
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T063316Z
+DTSTART:20261128T180000Z
+DTEND:20261128T200000Z
+SUMMARY:Matcha + Meetup: Wilmington | Film + Music Industry Monthly Mingle
+LOCATION:Wilmington\, NC
+DESCRIPTION:Price: $19\nDetails not confirmed yet. Check the brand's post b
+ efore you go.\nMore: https://matchamap-cu7.pages.dev/e/c022c6dc7550/
 URL:https://matchamap-cu7.pages.dev/e/c022c6dc7550/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

@@ -7,40 +7,9 @@ X-WR-CALNAME:Matcha Map: Dallas\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1abc0036cebb@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
-DTSTART;VALUE=DATE:20261122
-DTEND;VALUE=DATE:20261123
-SUMMARY:Dallas Matcha Club pop-up
-LOCATION:Dallas\, TX
-DESCRIPTION:join us for matcha & letters at matcha & creme on sunday\, nove
- mber 22nd!\nDetails not confirmed yet. Check the brand's post before you g
- o.\nMore: https://matchamap-cu7.pages.dev/e/1abc0036cebb/
-URL:https://matchamap-cu7.pages.dev/e/1abc0036cebb/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:4a5a142d0f2b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
-DTSTART;VALUE=DATE:20261122
-DTEND;VALUE=DATE:20261123
-SUMMARY:333Matcha pop-up
-LOCATION:Dallas\, TX
-DESCRIPTION:we were closed yesterday to celebrate some of our friends and t
- eammates’ wedding. it was such a sweet time. congrats logan and caroline
- \nDetails not confirmed yet. Check the brand's post before you go.\nMore: 
- https://matchamap-cu7.pages.dev/e/4a5a142d0f2b/
-URL:https://matchamap-cu7.pages.dev/e/4a5a142d0f2b/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:3365ce9f985a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:333Matcha pop-up
@@ -55,8 +24,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:518e3aeb446f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:DECO DOLLS MARKET
@@ -72,8 +41,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:25d9142b97ad@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261204T180000Z
 DTEND:20261204T220000Z
 SUMMARY:333Matcha pop-up
@@ -87,8 +56,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:5c8851ad1635@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261205T180000Z
 DTEND:20261205T220000Z
 SUMMARY:333Matcha pop-up
@@ -102,8 +71,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:28a4309980a4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261206T180000Z
 DTEND:20261206T220000Z
 SUMMARY:333Matcha pop-up
@@ -117,8 +86,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:02df4c1fbcc8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART;VALUE=DATE:20261217
 DTEND;VALUE=DATE:20261218
 SUMMARY:Worship Night: Matcha + Mercy
@@ -129,6 +98,38 @@ DESCRIPTION:Soulful worship\, prayer\, matcha sips\, and mercy all night lo
 URL:https://matchamap-cu7.pages.dev/e/02df4c1fbcc8/
 GEO:32.792977;-96.817925
 STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:1e9680c3c66f@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T131640Z
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+SUMMARY:Matcha + Meetup: Dallas
+LOCATION:Dallas\, TX
+DESCRIPTION:Join us for coffee at different cafes each gathering. Build you
+ r community in your city with a fun day out! Meetup. Matcha. Support local
+ !\nDetails not confirmed yet. Check the brand's post before you go.\nMore:
+  https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
+URL:https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:bd5fcff23a34@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T131640Z
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+SUMMARY:Matcha + Meetup: Dallas | Entrepreneur Speed Networking Roulette
+LOCATION:Dallas\, TX
+DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
+ for collaborations in this roulette edition of speed networking.\nDetails 
+ not confirmed yet. Check the brand's post before you go.\nMore: https://ma
+ tchamap-cu7.pages.dev/e/bd5fcff23a34/
+URL:https://matchamap-cu7.pages.dev/e/bd5fcff23a34/
+STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 END:VCALENDAR

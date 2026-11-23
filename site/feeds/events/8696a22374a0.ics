@@ -8,12 +8,12 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:8696a22374a0@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T131640Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
-SUMMARY:Matcha + Meetup: LA | Film + Music Industry Monthly Mingle
-LOCATION:Brooklyn\, NY
+SUMMARY:Matcha + Meetup: Seattle | Film + Music Industry Monthly Mingle
+LOCATION:Seattle\, WA
 DESCRIPTION:Life can be lonely for creatives when you're busy with your pas
  sions. Meet us at a different cafe each month for coffee and conversation!
  \nDetails not confirmed yet. Check the brand's post before you go.\nMore: 

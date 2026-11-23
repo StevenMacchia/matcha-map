@@ -1,1 +1,1 @@
-mmBrandExtra(null);
+mmBrandExtra({"v":1,"brand":"hojiteastudio","upcoming":[],"drinks":[{"slug":"banana","name":"Banana","art":"/art/drinks/banana.svg"},{"slug":"hojicha-latte","name":"Hojicha latte","art":"/art/drinks/hojicha-latte.svg"},{"slug":"maple-matcha","name":"Maple Matcha","art":"/art/drinks/maple-matcha.svg"},{"slug":"coconut-cream","name":"Coconut Cream","art":"/art/drinks/coconut-cream.svg"}],"price":null,"story":"where tea heritage meets modern creativity ↓ upcoming pop-ups whisking in progress…temporary hibernation…"});

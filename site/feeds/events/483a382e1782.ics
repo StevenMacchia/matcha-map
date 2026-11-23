@@ -8,12 +8,12 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:483a382e1782@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T131640Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
-SUMMARY:Matcha + Meetup: Marina del Rey (Giving Back Edition)
-LOCATION:Marina del Rey\, CA
+SUMMARY:Matcha + Meetup: Savannah (Giving Back Edition)
+LOCATION:Savannah\, GA
 DESCRIPTION:Join us for coffee at different cafe. Build your community whil
  e supporting local businesses\, and giving back to people in need.\nDetail
  s not confirmed yet. Check the brand's post before you go.\nMore: https://

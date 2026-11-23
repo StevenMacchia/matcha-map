@@ -7,9 +7,25 @@ X-WR-CALNAME:Matcha Map: Virginia Beach\, VA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
+UID:3b3d4545fd63@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T131640Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Matcha + Meetup: Virginia Beach (Giving Back Edition)
+LOCATION:Virginia Beach\, VA
+DESCRIPTION:Join us for coffee at different cafe. Build your community whil
+ e supporting local businesses\, and giving back to people in need.\nDetail
+ s not confirmed yet. Check the brand's post before you go.\nMore: https://
+ matchamap-cu7.pages.dev/e/3b3d4545fd63/
+URL:https://matchamap-cu7.pages.dev/e/3b3d4545fd63/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:c70276cc5411@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261205T140000Z
 DTEND:20261205T160000Z
 SUMMARY:Matcha Mike Pop-Up at Landstown Middle School Holiday Market
@@ -23,8 +39,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:9c74b3bee993@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261212T140000Z
 DTEND:20261212T160000Z
 SUMMARY:Matcha Mike Pop-Up at Landstown High School PTSA Craft Fair

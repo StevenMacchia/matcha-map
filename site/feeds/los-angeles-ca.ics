@@ -7,54 +7,27 @@ X-WR-CALNAME:Matcha Map: Los Angeles\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:37e60d7dcb55@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
-DTSTART;VALUE=DATE:20261122
-DTEND;VALUE=DATE:20261123
-SUMMARY:UNLABELED Coffee and Matcha pop-up
-LOCATION:Los Angeles\, CA
-DESCRIPTION:It’s the last week for our Pumpkin Spice Make sure to stop by
-  Kuns Park this Thursday through Sunday to grab yours before they‘re gon
- e.\nMenu: pumpkin spice\nDetails not confirmed yet. Check the brand's post
-  before you go.\nMore: https://matchamap-cu7.pages.dev/e/37e60d7dcb55/
-URL:https://matchamap-cu7.pages.dev/e/37e60d7dcb55/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:aded07cb0287@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
-DTSTART:20261128T210000Z
-DTEND:20261128T230000Z
-SUMMARY:Matcha + Meetup: SFV | Coffee Meets to Benefit Dream Foundation
-LOCATION:Los Angeles\, CA
-DESCRIPTION:Price: $17.35\nDetails not confirmed yet. Check the brand's pos
- t before you go.\nMore: https://matchamap-cu7.pages.dev/e/aded07cb0287/
-URL:https://matchamap-cu7.pages.dev/e/aded07cb0287/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:483a382e1782@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
-DTSTART;VALUE=DATE:20261129
-DTEND;VALUE=DATE:20261130
-SUMMARY:Matcha + Meetup: Marina del Rey (Giving Back Edition)
-LOCATION:Marina del Rey\, CA
-DESCRIPTION:Join us for coffee at different cafe. Build your community whil
- e supporting local businesses\, and giving back to people in need.\nDetail
- s not confirmed yet. Check the brand's post before you go.\nMore: https://
- matchamap-cu7.pages.dev/e/483a382e1782/
-URL:https://matchamap-cu7.pages.dev/e/483a382e1782/
-STATUS:TENTATIVE
+UID:c349fd654710@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
+SUMMARY:GATO x More Than Matcha holiday pop-up at Westfield Century City
+LOCATION:Westfield Century City Holiday Market (in front of lululemon)\, 10
+ 250 Santa Monica Blvd\, Los Angeles\, CA 90067\, Los Angeles\, CA
+DESCRIPTION:A holiday pop-up from GATO DATES with More Than Matcha at the W
+ estfield Century City Holiday Market\, right in front of lululemon. Come f
+ or matcha and a sweet treat\, and do some gift shopping. It runs \nMenu: m
+ atcha drinks\, sweet treats and holiday gifts\nLikely\, not fully confirme
+ d.\nMore: https://matchamap-cu7.pages.dev/e/c349fd654710/
+URL:https://matchamap-cu7.pages.dev/e/c349fd654710/
+GEO:34.058579;-118.417811
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:e499ad0219d3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261129T230000Z
 DTEND:20261130T010000Z
@@ -71,8 +44,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:8af28062e823@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Daylight Matcha pop-up
@@ -86,8 +59,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:d326866419b2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
 SUMMARY:GIFTS OF GRACE : A FAITH FILLED CHRISTMAS GIVEAWAY/SWAP PARTY
@@ -102,8 +75,27 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:ace473101e9a@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261205T190000Z
+DTEND:20261205T210000Z
+SUMMARY:GATO x More Than Matcha holiday pop-up at Westfield Century City
+LOCATION:Westfield Century City Holiday Market (in front of lululemon)\, 10
+ 250 Santa Monica Blvd\, Los Angeles\, CA 90067\, Los Angeles\, CA
+DESCRIPTION:A holiday pop-up from GATO DATES with More Than Matcha at the W
+ estfield Century City Holiday Market\, right in front of lululemon. Come f
+ or matcha and a sweet treat\, and do some gift shopping. It runs \nMenu: m
+ atcha drinks\, sweet treats and holiday gifts\nLikely\, not fully confirme
+ d.\nMore: https://matchamap-cu7.pages.dev/e/ace473101e9a/
+URL:https://matchamap-cu7.pages.dev/e/ace473101e9a/
+GEO:34.058579;-118.417811
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:bf42f04c153e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
@@ -117,8 +109,46 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:e9eb92e5f447@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261212T190000Z
+DTEND:20261212T210000Z
+SUMMARY:GATO x More Than Matcha holiday pop-up at Westfield Century City
+LOCATION:Westfield Century City Holiday Market (in front of lululemon)\, 10
+ 250 Santa Monica Blvd\, Los Angeles\, CA 90067\, Los Angeles\, CA
+DESCRIPTION:A holiday pop-up from GATO DATES with More Than Matcha at the W
+ estfield Century City Holiday Market\, right in front of lululemon. Come f
+ or matcha and a sweet treat\, and do some gift shopping. It runs \nMenu: m
+ atcha drinks\, sweet treats and holiday gifts\nLikely\, not fully confirme
+ d.\nMore: https://matchamap-cu7.pages.dev/e/e9eb92e5f447/
+URL:https://matchamap-cu7.pages.dev/e/e9eb92e5f447/
+GEO:34.058579;-118.417811
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:a5572c77cbb7@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261219T190000Z
+DTEND:20261219T210000Z
+SUMMARY:GATO x More Than Matcha holiday pop-up at Westfield Century City
+LOCATION:Westfield Century City Holiday Market (in front of lululemon)\, 10
+ 250 Santa Monica Blvd\, Los Angeles\, CA 90067\, Los Angeles\, CA
+DESCRIPTION:A holiday pop-up from GATO DATES with More Than Matcha at the W
+ estfield Century City Holiday Market\, right in front of lululemon. Come f
+ or matcha and a sweet treat\, and do some gift shopping. It runs \nMenu: m
+ atcha drinks\, sweet treats and holiday gifts\nLikely\, not fully confirme
+ d.\nMore: https://matchamap-cu7.pages.dev/e/a5572c77cbb7/
+URL:https://matchamap-cu7.pages.dev/e/a5572c77cbb7/
+GEO:34.058579;-118.417811
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:8ad806714a90@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261219T210000Z
 DTEND:20261220T000000Z
@@ -134,7 +164,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:effda3422fd4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261219T210000Z
 DTEND:20261219T230000Z
@@ -149,40 +179,46 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:1e9680c3c66f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
-DTSTART;VALUE=DATE:20261227
-DTEND;VALUE=DATE:20261228
-SUMMARY:Matcha + Meetup: LA Creatives (Giving Back Edition)
-LOCATION:Los Angeles\, CA
-DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
- unity while supporting local businesses and giving back to people in need.
- \nDetails not confirmed yet. Check the brand's post before you go.\nMore: 
- https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
-URL:https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
-STATUS:TENTATIVE
+UID:2613002298b6@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261226T190000Z
+DTEND:20261226T210000Z
+SUMMARY:GATO x More Than Matcha holiday pop-up at Westfield Century City
+LOCATION:Westfield Century City Holiday Market (in front of lululemon)\, 10
+ 250 Santa Monica Blvd\, Los Angeles\, CA 90067\, Los Angeles\, CA
+DESCRIPTION:A holiday pop-up from GATO DATES with More Than Matcha at the W
+ estfield Century City Holiday Market\, right in front of lululemon. Come f
+ or matcha and a sweet treat\, and do some gift shopping. It runs \nMenu: m
+ atcha drinks\, sweet treats and holiday gifts\nLikely\, not fully confirme
+ d.\nMore: https://matchamap-cu7.pages.dev/e/2613002298b6/
+URL:https://matchamap-cu7.pages.dev/e/2613002298b6/
+GEO:34.058579;-118.417811
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:bd5fcff23a34@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
-DTSTART;VALUE=DATE:20261227
-DTEND;VALUE=DATE:20261228
-SUMMARY:Matcha + Meetup: LA | Entrepreneur Speed Networking Roulette
-LOCATION:Los Angeles\, CA
-DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nDetails 
- not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/bd5fcff23a34/
-URL:https://matchamap-cu7.pages.dev/e/bd5fcff23a34/
-STATUS:TENTATIVE
+UID:0d4f9752d35d@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261227T190000Z
+DTEND:20261227T210000Z
+SUMMARY:GATO x More Than Matcha holiday pop-up at Westfield Century City
+LOCATION:Westfield Century City Holiday Market (in front of lululemon)\, 10
+ 250 Santa Monica Blvd\, Los Angeles\, CA 90067\, Los Angeles\, CA
+DESCRIPTION:A holiday pop-up from GATO DATES with More Than Matcha at the W
+ estfield Century City Holiday Market\, right in front of lululemon. Come f
+ or matcha and a sweet treat\, and do some gift shopping. It runs \nMenu: m
+ atcha drinks\, sweet treats and holiday gifts\nLikely\, not fully confirme
+ d.\nMore: https://matchamap-cu7.pages.dev/e/0d4f9752d35d/
+URL:https://matchamap-cu7.pages.dev/e/0d4f9752d35d/
+GEO:34.058579;-118.417811
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:5dca5e383b5e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20270102
 DTEND;VALUE=DATE:20270103
@@ -197,7 +233,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:fda962f32610@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20270104
 DTEND;VALUE=DATE:20270105

@@ -8,15 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:3f80fb2ebff1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261213T150000Z
-DTEND:20261213T163000Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
 SUMMARY:Matcha Cultivars\, History\, and Preparation!
 LOCATION:Northeast Tea House\, 224 East Hennepin Avenue\, Minneapolis\, MN
 DESCRIPTION:Join us for a deep dive into the world of Matcha and its many c
- ultivars\, tasting\, learning\, and exploring together!\nPrice: $12\nMore:
-  https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
+ ultivars\, tasting\, learning\, and exploring together!\nLikely\, not full
+ y confirmed.\nMore: https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
 URL:https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
 GEO:44.987698;-93.256485
 STATUS:CONFIRMED

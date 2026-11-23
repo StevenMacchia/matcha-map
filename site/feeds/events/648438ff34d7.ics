@@ -8,19 +8,19 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:648438ff34d7@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261123T180000Z
 DTEND:20261123T200000Z
 SUMMARY:Dimatchai Matcha Pop-Up
-LOCATION:Washington\, DC
+LOCATION:TRESSE\, 1661 Wisconsin Ave NW\, Georgetown\, Washington\, DC
 DESCRIPTION:dimatchai hosts a one-day matcha pop-up at TRESSE in Georgetown
  .\nMenu: yame: okumidori matcha latte\, earl grey fig matcha\, coconut dat
- e matcha\, cardamom crème brûlée matcha\nDetails not confirmed yet. Che
- ck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/
- e/648438ff34d7/
+ e matcha\, cardamom crème brûlée matcha\nMore: https://matchamap-cu7.pa
+ ges.dev/e/648438ff34d7/
 URL:https://matchamap-cu7.pages.dev/e/648438ff34d7/
-STATUS:TENTATIVE
+GEO:38.912017;-77.065593
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 END:VCALENDAR

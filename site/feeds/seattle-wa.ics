@@ -8,8 +8,8 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:feeb3c6099c5@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261124
 SUMMARY:Howdy Y'all Coffee pop-up
@@ -22,9 +22,79 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:9d532d7b5846@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261124T180000Z
+DTEND:20261125T000000Z
+SUMMARY:Howdy Y'all Coffee at the Seattle Central Library
+LOCATION:Seattle Central Library\, 1000 4th Ave\, Seattle\, WA 98104\, Seat
+ tle\, WA
+DESCRIPTION:A matcha and hojicha counter inside the downtown library\, with
+  new corn and melon matcha this fall.\nMenu: corn matcha\, melon matcha\, 
+ cream top matcha latte\, hojicha\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/9d532d7b5846/
+URL:https://matchamap-cu7.pages.dev/e/9d532d7b5846/
+GEO:47.606714;-122.332698
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:f1854cd53ba0@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261125T180000Z
+DTEND:20261126T000000Z
+SUMMARY:Howdy Y'all Coffee at the Seattle Central Library
+LOCATION:Seattle Central Library\, 1000 4th Ave\, Seattle\, WA 98104\, Seat
+ tle\, WA
+DESCRIPTION:A matcha and hojicha counter inside the downtown library\, with
+  new corn and melon matcha this fall.\nMenu: corn matcha\, melon matcha\, 
+ cream top matcha latte\, hojicha\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/f1854cd53ba0/
+URL:https://matchamap-cu7.pages.dev/e/f1854cd53ba0/
+GEO:47.606714;-122.332698
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:8696a22374a0@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T131640Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: Seattle | Film + Music Industry Monthly Mingle
+LOCATION:Seattle\, WA
+DESCRIPTION:Life can be lonely for creatives when you're busy with your pas
+ sions. Meet us at a different cafe each month for coffee and conversation!
+ \nDetails not confirmed yet. Check the brand's post before you go.\nMore: 
+ https://matchamap-cu7.pages.dev/e/8696a22374a0/
+URL:https://matchamap-cu7.pages.dev/e/8696a22374a0/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:e9872d4702ae@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261128T180000Z
+DTEND:20261129T000000Z
+SUMMARY:Howdy Y'all Coffee at the Seattle Central Library
+LOCATION:Seattle Central Library\, 1000 4th Ave\, Seattle\, WA 98104\, Seat
+ tle\, WA
+DESCRIPTION:A matcha and hojicha counter inside the downtown library\, with
+  new corn and melon matcha this fall.\nMenu: corn matcha\, melon matcha\, 
+ cream top matcha latte\, hojicha\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/e9872d4702ae/
+URL:https://matchamap-cu7.pages.dev/e/e9872d4702ae/
+GEO:47.606714;-122.332698
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:68e932a1bcfc@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T020113Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261128T190000Z
 DTEND:20261128T230000Z
 SUMMARY:Sabz Matcha at Cocobolo
@@ -40,8 +110,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:f41c6892c9f8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261128T190000Z
 DTEND:20261128T230000Z
 SUMMARY:Nicho's Matcha Saturday pop-up at Hiroshi's
@@ -57,22 +127,26 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:c022c6dc7550@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
-DTSTART:20261128T210000Z
-DTEND:20261128T230000Z
-SUMMARY:Matcha + Meetup: Seattle | Film + Music Industry Monthly Mingle
-LOCATION:Seattle\, WA
-DESCRIPTION:Price: $17.85\nDetails not confirmed yet. Check the brand's pos
- t before you go.\nMore: https://matchamap-cu7.pages.dev/e/c022c6dc7550/
-URL:https://matchamap-cu7.pages.dev/e/c022c6dc7550/
-STATUS:TENTATIVE
+UID:1a05249858a9@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261130T180000Z
+DTEND:20261201T000000Z
+SUMMARY:Howdy Y'all Coffee at the Seattle Central Library
+LOCATION:Seattle Central Library\, 1000 4th Ave\, Seattle\, WA 98104\, Seat
+ tle\, WA
+DESCRIPTION:A matcha and hojicha counter inside the downtown library\, with
+  new corn and melon matcha this fall.\nMenu: corn matcha\, melon matcha\, 
+ cream top matcha latte\, hojicha\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/1a05249858a9/
+URL:https://matchamap-cu7.pages.dev/e/1a05249858a9/
+GEO:47.606714;-122.332698
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:5bb61b95cb25@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
@@ -88,9 +162,64 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:feea6798bb80@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261201T180000Z
+DTEND:20261202T000000Z
+SUMMARY:Howdy Y'all Coffee at the Seattle Central Library
+LOCATION:Seattle Central Library\, 1000 4th Ave\, Seattle\, WA 98104\, Seat
+ tle\, WA
+DESCRIPTION:A matcha and hojicha counter inside the downtown library\, with
+  new corn and melon matcha this fall.\nMenu: corn matcha\, melon matcha\, 
+ cream top matcha latte\, hojicha\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/feea6798bb80/
+URL:https://matchamap-cu7.pages.dev/e/feea6798bb80/
+GEO:47.606714;-122.332698
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:7dbe6c549968@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261202T180000Z
+DTEND:20261203T010000Z
+SUMMARY:Muni Cafe at Anh Oi Bake Shop
+LOCATION:Anh Oi Bake Shop\, 314 6th Ave S\, Seattle\, WA 98104\, Seattle\, 
+ WA
+DESCRIPTION:Muni Cafe is the resident drink counter at a Japantown bakery. 
+ Lattes come with matcha or espresso\, in Filipino-inspired flavors like bi
+ ko and ube.\nMenu: daydreamer\, biko latte\, sesame ube latte (matcha or e
+ spresso)\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/7dbe6c549968/
+URL:https://matchamap-cu7.pages.dev/e/7dbe6c549968/
+GEO:47.599507;-122.326189
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:b1bd5bab9556@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261202T180000Z
+DTEND:20261203T000000Z
+SUMMARY:Howdy Y'all Coffee at the Seattle Central Library
+LOCATION:Seattle Central Library\, 1000 4th Ave\, Seattle\, WA 98104\, Seat
+ tle\, WA
+DESCRIPTION:A matcha and hojicha counter inside the downtown library\, with
+  new corn and melon matcha this fall.\nMenu: corn matcha\, melon matcha\, 
+ cream top matcha latte\, hojicha\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/b1bd5bab9556/
+URL:https://matchamap-cu7.pages.dev/e/b1bd5bab9556/
+GEO:47.606714;-122.332698
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:2f2ca344f372@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261205T180000Z
 DTEND:20261205T200000Z
 SUMMARY:Frolic Cafe at Pipe & Row
@@ -105,9 +234,28 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:daee337501fa@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261205T180000Z
+DTEND:20261206T010000Z
+SUMMARY:Muni Cafe at Anh Oi Bake Shop
+LOCATION:Anh Oi Bake Shop\, 314 6th Ave S\, Seattle\, WA 98104\, Seattle\, 
+ WA
+DESCRIPTION:Muni Cafe is the resident drink counter at a Japantown bakery. 
+ Lattes come with matcha or espresso\, in Filipino-inspired flavors like bi
+ ko and ube.\nMenu: daydreamer\, biko latte\, sesame ube latte (matcha or e
+ spresso)\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/daee337501fa/
+URL:https://matchamap-cu7.pages.dev/e/daee337501fa/
+GEO:47.599507;-122.326189
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:70e684670149@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261205T190000Z
 DTEND:20261205T230000Z
 SUMMARY:Nicho's Matcha Saturday pop-up at Hiroshi's
@@ -124,8 +272,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:f38213be4726@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T020113Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261205T190000Z
 DTEND:20261206T000000Z
 SUMMARY:Aveda x Sabz Matcha
@@ -141,9 +289,47 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:663ab9a0cd8b@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261206T180000Z
+DTEND:20261207T010000Z
+SUMMARY:Muni Cafe at Anh Oi Bake Shop
+LOCATION:Anh Oi Bake Shop\, 314 6th Ave S\, Seattle\, WA 98104\, Seattle\, 
+ WA
+DESCRIPTION:Muni Cafe is the resident drink counter at a Japantown bakery. 
+ Lattes come with matcha or espresso\, in Filipino-inspired flavors like bi
+ ko and ube.\nMenu: daydreamer\, biko latte\, sesame ube latte (matcha or e
+ spresso)\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/663ab9a0cd8b/
+URL:https://matchamap-cu7.pages.dev/e/663ab9a0cd8b/
+GEO:47.599507;-122.326189
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:081baf1a4f9c@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261209T180000Z
+DTEND:20261210T010000Z
+SUMMARY:Muni Cafe at Anh Oi Bake Shop
+LOCATION:Anh Oi Bake Shop\, 314 6th Ave S\, Seattle\, WA 98104\, Seattle\, 
+ WA
+DESCRIPTION:Muni Cafe is the resident drink counter at a Japantown bakery. 
+ Lattes come with matcha or espresso\, in Filipino-inspired flavors like bi
+ ko and ube.\nMenu: daydreamer\, biko latte\, sesame ube latte (matcha or e
+ spresso)\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/081baf1a4f9c/
+URL:https://matchamap-cu7.pages.dev/e/081baf1a4f9c/
+GEO:47.599507;-122.326189
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:976646e44f86@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261212T180000Z
 DTEND:20261212T200000Z
 SUMMARY:Frolic Cafe at Pipe & Row
@@ -157,9 +343,28 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:c4a05be3c6a9@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261212T180000Z
+DTEND:20261213T010000Z
+SUMMARY:Muni Cafe at Anh Oi Bake Shop
+LOCATION:Anh Oi Bake Shop\, 314 6th Ave S\, Seattle\, WA 98104\, Seattle\, 
+ WA
+DESCRIPTION:Muni Cafe is the resident drink counter at a Japantown bakery. 
+ Lattes come with matcha or espresso\, in Filipino-inspired flavors like bi
+ ko and ube.\nMenu: daydreamer\, biko latte\, sesame ube latte (matcha or e
+ spresso)\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/c4a05be3c6a9/
+URL:https://matchamap-cu7.pages.dev/e/c4a05be3c6a9/
+GEO:47.599507;-122.326189
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:7e91e0e4253a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261212T190000Z
 DTEND:20261212T230000Z
 SUMMARY:Nicho's Matcha Saturday pop-up at Hiroshi's
@@ -171,6 +376,44 @@ DESCRIPTION:Saturdays in Beacon Hill: Nicho's serves signature matcha and h
  .pages.dev/e/7e91e0e4253a/
 URL:https://matchamap-cu7.pages.dev/e/7e91e0e4253a/
 GEO:47.580434;-122.313613
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:0ee8a18059de@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261212T200000Z
+DTEND:20261212T210000Z
+SUMMARY:Tsukime Matcha Bar at Occidental Flea Market
+LOCATION:Occidental Square Flea (Occidental Square)\, 117 S Washington St\,
+  Seattle\, WA 98104\, Seattle\, WA
+DESCRIPTION:Tsukime is a traveling Seattle matcha cart serving ceremonial-g
+ rade matcha drinks. This stop is at the quarterly Occidental Square flea i
+ n Pioneer Square\, a free outdoor market of handmade and vintage\nLikely\,
+  not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/0ee8a18059d
+ e/
+URL:https://matchamap-cu7.pages.dev/e/0ee8a18059de/
+GEO:47.600799;-122.333732
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:0907e06b72c8@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261213T180000Z
+DTEND:20261214T010000Z
+SUMMARY:Muni Cafe at Anh Oi Bake Shop
+LOCATION:Anh Oi Bake Shop\, 314 6th Ave S\, Seattle\, WA 98104\, Seattle\, 
+ WA
+DESCRIPTION:Muni Cafe is the resident drink counter at a Japantown bakery. 
+ Lattes come with matcha or espresso\, in Filipino-inspired flavors like bi
+ ko and ube.\nMenu: daydreamer\, biko latte\, sesame ube latte (matcha or e
+ spresso)\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/0907e06b72c8/
+URL:https://matchamap-cu7.pages.dev/e/0907e06b72c8/
+GEO:47.599507;-122.326189
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT

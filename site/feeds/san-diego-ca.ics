@@ -7,42 +7,8 @@ X-WR-CALNAME:Matcha Map: San Diego\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:d27a41ae179a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T005942Z
-DTSTART;VALUE=DATE:20261122
-DTEND;VALUE=DATE:20261123
-SUMMARY:magnaye pop-up at Home Ec
-LOCATION:San Diego\, CA
-DESCRIPTION:11/22 | Sunday evening is the last chance to order bottled latt
- es for pick up at Home Ec on Wednesday 11/25 for your holiday festivities.
-  Vanilla / Burnt Honey Orange Blossom with espresso or matcha\nMenu: latte
- \, vanilla\, honey\nDetails not confirmed yet. Check the brand's post befo
- re you go.\nMore: https://matchamap-cu7.pages.dev/e/d27a41ae179a/
-URL:https://matchamap-cu7.pages.dev/e/d27a41ae179a/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:fdcf04504b1b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261122T203115Z
-DTSTART;VALUE=DATE:20261122
-DTEND;VALUE=DATE:20261123
-SUMMARY:magnaye pop-up
-LOCATION:2361 30th St\, San Diego\, CA
-DESCRIPTION:South Park Sunday — full coffee & matcha menu available tomor
- row at originsgrocer from 10a-1p. Food by bik.lun. Mint Chip & Banana Vani
- lla are making an appearance!\nMenu: banana\, vanilla\nLikely\, not fully 
- confirmed.\nMore: https://matchamap-cu7.pages.dev/e/fdcf04504b1b/
-URL:https://matchamap-cu7.pages.dev/e/fdcf04504b1b/
-GEO:32.730232;-117.129474
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:4a9586dacab3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -58,7 +24,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:9fc3ea7a0140@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -75,7 +41,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:e8151f92bd15@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
@@ -91,8 +57,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:907bad3baf0e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
 SUMMARY:Espresso & Matcha Pop-Up at Patine
@@ -108,7 +74,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:b192ec8a7beb@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261123T054608Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
@@ -125,8 +91,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:9a6762c17c0d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261129T160000Z
 DTEND:20261129T180000Z
 SUMMARY:Pilates at The Ranch
@@ -140,7 +106,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:1cdd1761a275@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261122T235305Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
@@ -157,7 +123,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:c676cf3f543c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
+DTSTAMP:20261123T133648Z
 LAST-MODIFIED:20261122T202629Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
@@ -173,9 +139,26 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:d3a3eb0bdb3f@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T121327Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Kaphé Muna pop-up at goldenmakersmarket
+LOCATION:San Diego\, CA
+DESCRIPTION:meaning “coffee first” in Tagalog\, is a specialty coffee &
+  matcha pop-up that uses coffe…" Drawing inspiration from their Filipino
+  American upbringing\, they take a playful and intentional approach…\nPr
+ ice: free\nDetails not confirmed yet. Check the brand's post before you go
+ .\nMore: https://matchamap-cu7.pages.dev/e/d3a3eb0bdb3f/
+URL:https://matchamap-cu7.pages.dev/e/d3a3eb0bdb3f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:10d8b6b680e2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261206T190000Z
 DTEND:20261206T230000Z
 SUMMARY:San Diego Matcha Market at Day to Day Collective
@@ -193,9 +176,24 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:56fe399aee68@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T121327Z
+DTSTART:20261206T190000Z
+DTEND:20261206T230000Z
+SUMMARY:Friends' Matcha pop-up
+LOCATION:2310 Kettner Blvd\, San Diego\, CA
+DESCRIPTION:SAN DIEGO\, YOUR MATCHA MARKET IS BACK\nPrice: free\nLikely\, n
+ ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/56fe399aee68/
+URL:https://matchamap-cu7.pages.dev/e/56fe399aee68/
+GEO:32.728238;-117.171302
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:1706d7cc5fb3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261206T200000Z
 DTEND:20261207T010000Z
 SUMMARY:Kaphé Muna coffee and matcha pop-up at Golden Makers Market
@@ -206,6 +204,22 @@ DESCRIPTION:Kaphé Muna\, a Filipino-heritage specialty coffee and matcha p
  , matcha drinks\nDetails not confirmed yet. Check the brand's post before 
  you go.\nMore: https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
 URL:https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:b6b0697a0973@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T121327Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Kaphé Muna pop-up
+LOCATION:San Diego\, CA
+DESCRIPTION:A little vlog/recap from a wonderful Sunday with unigvintage & 
+ theeclovery We’ll be back in Mira Mesa again on 12/12!\nMenu: pastry\nDe
+ tails not confirmed yet. Check the brand's post before you go.\nMore: http
+ s://matchamap-cu7.pages.dev/e/b6b0697a0973/
+URL:https://matchamap-cu7.pages.dev/e/b6b0697a0973/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

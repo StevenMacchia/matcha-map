@@ -8,23 +8,23 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:90a3138f5a5b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261129T170000Z
 DTEND:20261129T190000Z
 SUMMARY:Pink Matcha & Thrift Finds
-LOCATION:Minneapolis\, MN
+LOCATION:Monarca Thrift Club\, 2400 N 2nd Street\, Minneapolis\, MN
 DESCRIPTION:Monarca Thrift Club hosts an all-girls Thrift & Matcha event wi
- th She's Invited.\nDetails not confirmed yet. Check the brand's post befor
- e you go.\nMore: https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
+ th She's Invited.\nMore: https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
 URL:https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
-STATUS:TENTATIVE
+GEO:45.003984;-93.279664
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:aa95372a56fa@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261205T150000Z
 DTEND:20261205T170000Z
 SUMMARY:Matcha Cultivars\, History\, and Preparation!
@@ -38,15 +38,15 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:3f80fb2ebff1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261213T150000Z
-DTEND:20261213T163000Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
 SUMMARY:Matcha Cultivars\, History\, and Preparation!
 LOCATION:Northeast Tea House\, 224 East Hennepin Avenue\, Minneapolis\, MN
 DESCRIPTION:Join us for a deep dive into the world of Matcha and its many c
- ultivars\, tasting\, learning\, and exploring together!\nPrice: $12\nMore:
-  https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
+ ultivars\, tasting\, learning\, and exploring together!\nLikely\, not full
+ y confirmed.\nMore: https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
 URL:https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
 GEO:44.987698;-93.256485
 STATUS:CONFIRMED

@@ -8,19 +8,19 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:0bfb519dbe1c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T132726Z
 DTSTART:20261128T150000Z
 DTEND:20261128T200000Z
 SUMMARY:Shop Small Saturday Market & Swap
-LOCATION:Audubon Park Church\, Orlando\, FL
+LOCATION:Orlando\, FL
 DESCRIPTION:Shop Small Saturday is a local vendor market featuring curated 
  vintage and Y2K vendors\, $5 bins\, art\, handmade goods\, decor\, matcha\
- , plants\, and treats.\nPrice: free\nLikely\, not fully confirmed.\nMore: 
- https://matchamap-cu7.pages.dev/e/0bfb519dbe1c/
+ , plants\, and treats.\nPrice: free\nDetails not confirmed yet. Check the 
+ brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/0bfb5
+ 19dbe1c/
 URL:https://matchamap-cu7.pages.dev/e/0bfb519dbe1c/
-GEO:28.563187;-81.342965
-STATUS:CONFIRMED
+STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 END:VCALENDAR

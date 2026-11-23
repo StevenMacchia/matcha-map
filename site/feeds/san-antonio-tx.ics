@@ -8,8 +8,8 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:eee4fae2e774@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:Matcha + Meetup: San Antonio | Benefits for The Birthday Party Proj
@@ -27,8 +27,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:703f38ec7253@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261201T170000Z
 DTEND:20261201T190000Z
 SUMMARY:MoonchildLand: Family & Friends
@@ -44,8 +44,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:e42e6bf48a5a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261202T170000Z
 DTEND:20261202T190000Z
 SUMMARY:MoonchildLand: Bring Your Moon Pup
@@ -60,8 +60,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:b036de5da0fa@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261204T000000Z
 DTEND:20261204T020000Z
 SUMMARY:MoonchildLand: Creator Day
@@ -76,8 +76,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:93c43f078e7b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261204T230000Z
 DTEND:20261205T010000Z
 SUMMARY:MoonchildLand: First Friday
@@ -93,8 +93,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:0d8fccb23e2e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261205T170000Z
 DTEND:20261205T190000Z
 SUMMARY:MoonchildLand: Local Love
@@ -108,8 +108,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:0e4806dcbc24@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
 DTSTART:20261206T170000Z
 DTEND:20261206T190000Z
 SUMMARY:MoonchildLand Grand Opening
@@ -118,6 +118,57 @@ DESCRIPTION:The sixth day closes the six-day MoonchildLand grand opening.\n
  Details not confirmed yet. Check the brand's post before you go.\nMore: ht
  tps://matchamap-cu7.pages.dev/e/0e4806dcbc24/
 URL:https://matchamap-cu7.pages.dev/e/0e4806dcbc24/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:288ec37d2e7d@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T132726Z
+DTSTART:20261219T150000Z
+DTEND:20261219T170000Z
+SUMMARY:Mats & Matcha
+LOCATION:San Antonio\, TX
+DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
+ The Creamery District. The class is $15\, and the ticket includes matcha. 
+ It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
+ t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
+ s.dev/e/288ec37d2e7d/
+URL:https://matchamap-cu7.pages.dev/e/288ec37d2e7d/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:e0ce95bc349a@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T132726Z
+DTSTART:20270116T150000Z
+DTEND:20270116T170000Z
+SUMMARY:Mats & Matcha
+LOCATION:San Antonio\, TX
+DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
+ The Creamery District. The class is $15\, and the ticket includes matcha. 
+ It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
+ t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
+ s.dev/e/e0ce95bc349a/
+URL:https://matchamap-cu7.pages.dev/e/e0ce95bc349a/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:ddb3d76440a3@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T132726Z
+DTSTART:20270220T150000Z
+DTEND:20270220T170000Z
+SUMMARY:Mats & Matcha
+LOCATION:San Antonio\, TX
+DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
+ The Creamery District. The class is $15\, and the ticket includes matcha. 
+ It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
+ t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
+ s.dev/e/ddb3d76440a3/
+URL:https://matchamap-cu7.pages.dev/e/ddb3d76440a3/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

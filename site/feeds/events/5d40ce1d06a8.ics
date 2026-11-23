@@ -8,12 +8,12 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:5d40ce1d06a8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T125252Z
 DTSTART;VALUE=DATE:20261219
 DTEND;VALUE=DATE:20261220
-SUMMARY:Matcha + Meetup: Austin | Film + Music Speed Networking Roulette
-LOCATION:Austin\, TX
+SUMMARY:Matcha + Meetup: Boston | Film + Music Speed Networking Roulette
+LOCATION:Boston\, MA
 DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
  for collaborations in this roulette edition of speed networking.\nDetails 
  not confirmed yet. Check the brand's post before you go.\nMore: https://ma

@@ -8,16 +8,17 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:a8b4b4445880@matchamap-cu7.pages.dev
-DTSTAMP:20261123T054608Z
-LAST-MODIFIED:20261123T054608Z
-DTSTART;VALUE=DATE:20261201
-DTEND;VALUE=DATE:20261202
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261202T000000Z
+DTEND:20261202T020000Z
 SUMMARY:Matcha & Mahjong
 LOCATION:Haraz Coffee House Fishtown\, 23 West Girard Avenue\, Philadelphia
  \, PA
-DESCRIPTION:Monthly Mahjong Game Night at Haraz Coffee House in Fishtown\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/a8b4
- b4445880/
+DESCRIPTION:Monthly beginner mahjong night with the Philly Mah-Jawn Mahjong
+  Club\; ticket includes a matcha drink and equipment.\nMenu: matcha drink\
+ nPrice: $20 incl. a drink\nMore: https://matchamap-cu7.pages.dev/e/a8b4b44
+ 45880/
 URL:https://matchamap-cu7.pages.dev/e/a8b4b4445880/
 GEO:39.968829;-75.135458
 STATUS:CONFIRMED
