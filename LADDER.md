@@ -1,5 +1,17 @@
 # Ladder
 
+## Lanes (Steven, 2026-11-23: five standing lanes, one named worker each; the next-level session owns the text of the Population and Events rows)
+
+| Lane | Worker | Current rung | State | Last report |
+|---|---|---|---|---|
+| Population (data) | next-level session | see its rows | - | - |
+| Events (ingest) | next-level session | see its rows | - | - |
+| Design | design (Sonnet, worktree `_wt/matcha-map-design`, branch `lane/design`) | Rung 1: audit at 390 and 1440, light and dark; top ten polish fixes; mocks for the one big change | starting | 2026-11-23 |
+| SEO | seo (Sonnet, worktree `_wt/matcha-map-seo`, branch `lane/seo`) | Rung 1: Event and Organization JSON-LD, city landing copy, titles and descriptions, sitemap, canonical, OG, internal links | starting | 2026-11-23 |
+| Profitability | revenue (Sonnet, worktree `_wt/matcha-map-revenue`, branch `lane/revenue`) | Rung 1: docs/REVENUE.md options memo with the numbers we can know; Featured request flow up to the payment step | starting | 2026-11-23 |
+
+Merge order for the site lanes: SEO, then Design, then Profitability (the hot files index.html, style.css, app.js, gen-pages.js conflict least that way). Budget: about one point per lane until the weekly reset on Friday 2026-11-28 09:00Z; combined stop 43%, ceiling 45%.
+
 The work on this repo is split into rungs. One worker per rung, run in order. This board is the one place to see who is on what and where it stands. States: pending / running / done / blocked.
 
 Budget for the whole build: under 10% of the weekly usage limit. Spend is noted after each rung as a share of that weekly limit.
