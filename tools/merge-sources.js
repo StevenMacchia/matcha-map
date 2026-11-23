@@ -14,7 +14,7 @@ const out = [...base];
 const report = [];
 const dir = process.argv[2] || "data/wave2";
 for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
-  const arr = JSON.parse(fs.readFileSync(dir + "/" + f, "utf8"));
+  let arr = JSON.parse(fs.readFileSync(dir + "/" + f, "utf8")); if (!Array.isArray(arr)) arr = arr.sources || [];
   let added = 0, dup = 0, bad = 0;
   for (const s of arr) {
     const missing = req.filter((k) => !(k in s));
