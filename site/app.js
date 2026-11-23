@@ -298,12 +298,17 @@
   // The approximate rings also shrink when zoomed out: zl under 6, zm from 6 to 9 (style.css). One class toggle, at most once a frame.
   // Below zoom 6 (the national and regional views) the map draws pop-ups only: city-only events join the same
   // clusters, and brands and storefronts wait until zoom 6, so a whole-country view reads as where things are on.
-  var LOW_Z = 6, lowZ = null;
+  var LOW_Z = 6, faceKey = null;
+  // Pop-ups come in three bands (2026-11-23, after "some states only show their top two or three cities"): under CITY_LO one
+  // clustered source, a pin per metro snapped onto its main city; from CITY_LO to CITY_HI one pin per city with a count,
+  // from citypins.js, recomputed at each whole zoom; from CITY_HI the places themselves.
+  var CITY_LO = 5, CITY_HI = 9;
+  function band(z) { return z < CITY_LO ? "far" : z < CITY_HI ? "city" : "near"; }
   function syncZoomFace() {
     var z = map.getZoom(), c = map.getContainer().classList;
     c.toggle("z9", z >= 9); c.toggle("zl", z < 6); c.toggle("zm", z >= 6 && z < 9);
-    var low = z < LOW_Z;
-    if (lowZ !== null && low !== lowZ) { lowZ = low; setSources(); } else lowZ = low;
+    var b = band(z), key = b + (b === "city" ? Math.floor(z) : "") + (z < LOW_Z ? "L" : "");
+    if (faceKey !== null && key !== faceKey) { faceKey = key; setSources(); } else faceKey = key;
     syncHawaii();
   }
   var zoomRaf = 0;
@@ -319,12 +324,14 @@
   // marker holding a character, synced from querySourceFeatures. The circle layers are invisible
   // and exist only so the sources load.
   function addData() {
-    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(mapEvents(false)), cluster: true, clusterRadius: 56, clusterMaxZoom: 13 });
+    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(mapEvents(false)), cluster: true, clusterRadius: 48, clusterMaxZoom: 13 });
     if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: featureColl(mapBrands()), cluster: true, clusterRadius: 44, clusterMaxZoom: 12 });
     if (!map.getSource("sh")) map.addSource("sh", { type: "geojson", data: featureColl(mapShops()), cluster: true, clusterRadius: 40, clusterMaxZoom: 13 });
     // City-only events: always clustered (points on one spot join at every zoom), never drawn as separate stacked pins.
     if (!map.getSource("ap")) map.addSource("ap", { type: "geojson", data: featureColl(mapEvents(true)), cluster: true, clusterRadius: 1, clusterMaxZoom: 17 });
-    ["ev", "br", "sh", "ap"].forEach(function (s) {
+    // City pins (zoom 5 to 9): already one feature per city or metro, so no clustering here.
+    if (!map.getSource("ct")) map.addSource("ct", { type: "geojson", data: cityColl() });
+    ["ev", "br", "sh", "ap", "ct"].forEach(function (s) {
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
     scheduleSync();
@@ -345,19 +352,19 @@
   var lastSyncZ = 0;
   function syncMarkers() {
     var seen = {}, fresh = [];
-    ["ev", "br", "sh", "ap"].forEach(function (src) {
+    ["ev", "br", "sh", "ap", "ct"].forEach(function (src) {
       if (!map.getSource(src) || !map.isSourceLoaded(src)) {
         Object.keys(live).forEach(function (id) { if (live[id].src === src) seen[id] = 1; });
         return;
       }
       map.querySourceFeatures(src).forEach(function (f) {
-        var p = f.properties, id = p.cluster ? src + "c" + p.cluster_id : p.key;
+        var p = f.properties, id = p.cluster ? src + "c" + p.cluster_id : p.key, grouped = p.cluster || p.ct;
         if (seen[id]) return;
-        if (!p.cluster && !items[id]) return;
+        if (!grouped && !items[id]) return;
         seen[id] = 1;
         var rec = live[id];
         if (!rec) fresh.push([src, id, f]);
-        else if (p.cluster && rec.count !== p.point_count) setCount(rec, p.point_count);
+        else if (grouped && (rec.count !== countOf(p) || rec.cities !== (p.cities || 0))) { rec.cities = p.cities || 0; setCount(rec, countOf(p)); }
       });
     });
     var z = map.getZoom(), zin = z > lastSyncZ + 0.001, parents = [];
@@ -370,7 +377,7 @@
     });
     fresh.forEach(function (x) {
       var src = x[0], id = x[1], f = x[2];
-      var rec = live[id] = f.properties.cluster ? makeCluster(src, id, f) : makePin(items[id]);
+      var rec = live[id] = f.properties.cluster || f.properties.ct ? makeCluster(src, id, f) : makePin(items[id]);
       rec.src = src;
       rec.marker.addTo(map);
       rec.el.setAttribute("aria-label", rec.label); // addTo writes "Map marker" over it
@@ -487,11 +494,12 @@
     });
   }
   map.on("sourcedata", function (e) { if (e.sourceId === "ap" && e.isSourceLoaded && e.sourceDataType !== "metadata") apLeaves = {}; });
+  function countOf(p) { return p.ct ? p.n : p.point_count; }
   function makeCluster(src, id, f) {
-    var n = f.properties.point_count;
+    var p = f.properties, n = countOf(p);
     var el = document.createElement("button");
     el.type = "button";
-    el.className = "mk mk-cl " + (src === "ev" ? "cl-ev" : src === "ap" ? "cl-ap" : src === "sh" ? "cl-sh" : "cl-br");
+    el.className = "mk mk-cl " + (src === "ev" ? "cl-ev" : src === "ct" ? "cl-ev cl-ct" : src === "ap" ? "cl-ap" : src === "sh" ? "cl-sh" : "cl-br");
     var inner = document.createElement("span");
     inner.className = "mk-in";
     if (src === "ap") { inner.appendChild(ringEl()); inner.appendChild(drawChar("m-base")); }
@@ -500,12 +508,17 @@
     num.className = "cl-n";
     inner.appendChild(num);
     el.appendChild(inner);
-    var rec = { marker: null, el: el, kind: "c", count: 0, num: num };
+    var rec = { marker: null, el: el, kind: "c", count: 0, num: num, city: src === "ct" ? p.city : "", cities: p.cities || 0 };
     setCount(rec, n, true);
     el.addEventListener("click", function (ev) {
       ev.stopPropagation();
       var cid = f.properties.cluster_id;
       if (src === "ap") { openApprox(cid, f); return; }
+      if (src === "ct") { // a metro splits two zooms in; one city goes straight to its places
+        var c0 = f.geometry.coordinates, z1 = rec.cities > 1 ? Math.min(CITY_HI - 0.3, map.getZoom() + 2) : CITY_HI + 0.3;
+        if (calm()) map.jumpTo({ center: c0, zoom: z1 }); else map.easeTo({ center: c0, zoom: z1, duration: 600 });
+        return;
+      }
       map.getSource(src).getClusterExpansionZoom(cid).then(function (z) {
         var c = f.geometry.coordinates;
         if (calm()) map.jumpTo({ center: c, zoom: z + 0.2 }); else map.easeTo({ center: c, zoom: z + 0.2, duration: 600 });
@@ -513,9 +526,9 @@
     });
     if (src === "ap") apInfo(f.properties.cluster_id).then(function (a) { if (a.ev) { rec.city = a.ev.city; setCount(rec, rec.count, true); } }).catch(function () { /* the label keeps the general wording */ });
     rec.marker = new maplibregl.Marker({ element: el, anchor: "center", offset: src === "br" ? [NUDGE, NUDGE] : [0, 0] }).setLngLat(f.geometry.coordinates);
-    if (src === "ev") el.style.zIndex = "3";
+    if (src === "ev" || src === "ct") el.style.zIndex = "3";
     if (src === "sh" || src === "ap") el.style.zIndex = "1";
-    if (src !== "ap") { // an approximate cluster sits exactly on its city's point; the snap is for the other sources
+    if (src !== "ap" && src !== "ct") { // approximate clusters and city pins already sit on their city; the snap is for the other sources
       rec.snap = function () { snapCluster(src, rec, f.properties.cluster_id); };
       rec.snap();
     }
@@ -550,10 +563,11 @@
     rec.count = n;
     if (!first && rec.snap) rec.snap();
     rec.num.textContent = n;
-    var ap = rec.el.classList.contains("cl-ap");
+    var ap = rec.el.classList.contains("cl-ap"), ct = rec.el.classList.contains("cl-ct");
     rec.label = ap ? n + " pop-ups, somewhere in " + (rec.city || "this area") + ", place not posted yet"
+      : ct ? n + (n === 1 ? " pop-up in " : " pop-ups in ") + rec.city + (rec.cities > 1 ? " and " + (rec.cities - 1) + (rec.cities === 2 ? " more place" : " more places") : "") + ", zoom in"
       : n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : rec.el.classList.contains("cl-sh") ? " shops" : " brands") + " here, zoom in";
-    if (ap) rec.el.title = rec.label;
+    if (ap || ct) rec.el.title = rec.label;
     rec.el.setAttribute("aria-label", rec.label);
     rec.el.classList.toggle("cl-m", n > 9);
     rec.el.classList.toggle("cl-l", n > 24);
@@ -1115,8 +1129,19 @@
   // and brands and storefronts wait.
   function isLow() { return map.getZoom() < LOW_Z; }
   function mapEvents(only) {
-    if (isLow()) return only ? [] : visibleEvents();
+    var b = band(map.getZoom());
+    if (b === "city") return []; // the city pins carry them
+    if (b === "far") return only ? [] : visibleEvents();
     return visibleEvents(only);
+  }
+  // One feature per city or metro (citypins.js). A pin holding one pop-up is that pop-up's own pin, at its own spot.
+  function cityColl() {
+    var z = map.getZoom(), CP = window.MatchaCityPins, none = { type: "FeatureCollection", features: [] };
+    if (band(z) !== "city" || !CP) return none;
+    return { type: "FeatureCollection", features: CP.cityPins(visibleEvents(), Math.floor(z), window.CITIES).map(function (p) {
+      if (p.n === 1) return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(items[p.keys[0]].ll) }, properties: { key: p.keys[0] } };
+      return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(p.ll) }, properties: { key: "ct:" + p.city + "|" + p.state, ct: 1, n: p.n, city: p.city, cities: p.cities.length } };
+    }) };
   }
   function mapBrands() { return isLow() ? [] : visibleBrands(); }
   function mapShops() { return isLow() ? [] : visibleShops(); }
@@ -1129,6 +1154,8 @@
     if (b) b.setData(featureColl(mapBrands()));
     var sh = map.getSource("sh");
     if (sh) sh.setData(featureColl(mapShops()));
+    var ct = map.getSource("ct");
+    if (ct) ct.setData(cityColl());
   }
   function refreshEvents(stagger) {
     setSources();
@@ -1936,13 +1963,25 @@
     // A phone with no saved zip and no link opens on its region: framed before the first list, so the list is built
     // once and not for the whole country first (N7c).
     var dl0 = window.MatchaDeepLink ? window.MatchaDeepLink.parse(location.search) : {};
-    var regionFirst = !wide.matches && !/^\d{5}$/.test(zs) && !(dl0.q || dl0.city || dl0.event || dl0.brand);
+    // ?at=lat,lng,zoom opens on that view (review screenshots, tests, a shared view); it wins over the zip and the region.
+    var at = viewParam(params.get("at"));
+    var regionFirst = !wide.matches && !at && !/^\d{5}$/.test(zs) && !(dl0.q || dl0.city || dl0.event || dl0.brand);
     if (regionFirst) { openRegion(); clearTimeout(moveT); }
+    if (at) { map.jumpTo({ center: [at[1], at[0]], zoom: at[2] }); clearTimeout(moveT); }
     go(); // sources added later by addData (style.load) start from the same lists
-    if (!regionFirst && !applyDeepLink()) { if (/^\d{5}$/.test(zs)) goZip(zs, true); else if (!wide.matches) openRegion(); }
+    if (!regionFirst && !at && !applyDeepLink()) { if (/^\d{5}$/.test(zs)) goZip(zs, true); else if (!wide.matches) openRegion(); }
     loadShops();
     loadExtras();
     mountSearchSoon(res[1] || []);
+  }
+
+  // "lat,lng,zoom" with the lower 48 and Hawaii in range and a zoom from 3 to 16, else null.
+  function viewParam(v) {
+    var m = /^(-?\d{1,2}(?:\.\d+)?),(-?\d{1,3}(?:\.\d+)?),(\d{1,2}(?:\.\d+)?)$/.exec(v || "");
+    if (!m) return null;
+    var lat = +m[1], lng = +m[2], z = +m[3];
+    if (lat < 15 || lat > 55 || lng < -165 || lng > -60 || z < 3 || z > 16) return null;
+    return [lat, lng, z];
   }
 
   // ---------- your region first (phones, rung 35) ----------

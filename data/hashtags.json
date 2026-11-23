@@ -39,15 +39,15 @@
       "runs": 2,
       "posts": 137,
       "kept": 4,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T08:33:15.837Z",
       "last_top": "2026-11-23T02:01:13.925Z",
-      "accounts": 29
+      "accounts": 28
     },
     "matchapopups": {
       "runs": 2,
       "posts": 35,
       "kept": 0,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T08:33:15.837Z",
       "last_top": "2026-11-23T02:01:13.925Z",
       "accounts": 0
     },
@@ -67,41 +67,41 @@
     },
     "matchacart": {
       "runs": 2,
-      "posts": 78,
+      "posts": 79,
       "kept": 0,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T08:33:15.837Z",
       "last_top": "2026-11-23T02:01:13.925Z",
-      "accounts": 8
+      "accounts": 9
     },
     "matchaevent": {
       "runs": 2,
       "posts": 54,
       "kept": 0,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T08:33:15.837Z",
       "last_top": "2026-11-23T02:01:13.925Z",
       "accounts": 1
     },
     "matchabar": {
       "runs": 2,
-      "posts": 138,
+      "posts": 143,
       "kept": 1,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T08:33:15.837Z",
       "last_top": "2026-11-23T02:01:13.925Z",
-      "accounts": 29
+      "accounts": 33
     },
     "popupmatcha": {
       "runs": 2,
       "posts": 53,
       "kept": 0,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T08:33:15.837Z",
       "last_top": "2026-11-23T02:01:13.925Z",
-      "accounts": 0
+      "accounts": 1
     },
     "matchafest": {
       "runs": 2,
-      "posts": 63,
+      "posts": 61,
       "kept": 1,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T08:33:15.837Z",
       "last_top": "2026-11-23T02:01:13.925Z",
       "accounts": 2
     },
@@ -109,7 +109,7 @@
       "runs": 2,
       "posts": 51,
       "kept": 1,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T08:33:15.837Z",
       "last_top": "2026-11-23T02:01:13.925Z",
       "accounts": 1
     },
@@ -258,7 +258,7 @@
       "posts": 73,
       "kept": 6,
       "accounts": 41,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
@@ -267,7 +267,7 @@
       "posts": 52,
       "kept": 0,
       "accounts": 22,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
@@ -276,7 +276,7 @@
       "posts": 52,
       "kept": 0,
       "accounts": 35,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
@@ -285,7 +285,7 @@
       "posts": 52,
       "kept": 0,
       "accounts": 24,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 1
     },
@@ -294,7 +294,7 @@
       "posts": 14,
       "kept": 0,
       "accounts": 8,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 1
     },
@@ -303,25 +303,25 @@
       "posts": 74,
       "kept": 5,
       "accounts": 41,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
     "htxmatcha": {
       "runs": 2,
       "posts": 51,
-      "kept": 1,
+      "kept": 2,
       "accounts": 28,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
-      "zero": 1
+      "zero": 0
     },
     "houstonmatcha": {
       "runs": 2,
       "posts": 71,
       "kept": 6,
       "accounts": 29,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
@@ -330,7 +330,7 @@
       "posts": 54,
       "kept": 0,
       "accounts": 35,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 1
     },
@@ -339,7 +339,7 @@
       "posts": 51,
       "kept": 1,
       "accounts": 39,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 1
     },
@@ -348,7 +348,7 @@
       "posts": 0,
       "kept": 0,
       "accounts": 0,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0,
       "parked": 1
@@ -358,7 +358,7 @@
       "posts": 53,
       "kept": 1,
       "accounts": 36,
-      "last_run": "2026-11-23T12:13:27.855Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 1
     }
