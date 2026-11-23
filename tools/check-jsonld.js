@@ -53,7 +53,7 @@ function checkNode(node, at, err, stats) {
     if (node[k] === undefined) continue;
     for (const u of [].concat(node[k])) if (!isAbs(typeof u === "object" && u ? u.url : u)) err(`${at}.${k}: not an absolute URL (${String(u).slice(0, 60)})`);
   }
-  if (t === "Event" && node.image === undefined && at.includes("itemListElement")) err(`${at}: list Event without image`);
+  if (t === "Event" && node.image === undefined && (at.includes("itemListElement") || at.startsWith("city/"))) err(`${at}: ${at.startsWith("city/") ? "city page" : "list"} Event without image`);
   for (const [k, v] of Object.entries(node)) if (k !== "@context") checkNode(v, `${at}.${k}`, err, stats);
 }
 

@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
+import { writeSlim } from "./slim-events.js";
 import { isUpcoming, isApprox, makeCityLocator, brandNameOf, timeText } from "./gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");

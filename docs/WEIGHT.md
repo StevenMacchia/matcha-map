@@ -44,3 +44,32 @@ figure overstates what a visitor downloads by about 3x.
 
 Biggest remaining lever is `events.json` (198 KB compressed): a trimmed list payload with details fetched on open
 would cut it, but that touches `site/app.js`. MapLibre (211 KB) is third party and out of scope.
+
+## Rung 3: a slim list for the first paint (2026-11-23)
+
+`tools/slim-events.js` writes `site/data/events-slim.json` (run by `npm run pages` and at the end of `npm run feeds`, the
+daily step). It keeps what a list row and a pin read: id, brand, handle, start, end, all_day, venue, city, state, lat,
+lng, status, confidence, kind, approx, series, menu names, the local photo path, plus tz, category, source_id, hours,
+geocode_source, title and address (the "today" words, the filter chips, the brand fallback and the approximate-pin rule
+need them). No description, posts, links, evidence, prices or remote photo URLs.
+
+| File | Raw bytes | gzip -9 bytes |
+|---|---:|---:|
+| data/events.json | 1,536,294 | 208,220 |
+| data/events-slim.json | 353,701 | 46,538 |
+
+The blocking list/map fetch drops 78 percent (compressed 208 KB to 47 KB; Brotli on the live site is about 198 KB to
+roughly 40 KB). `app.js` starts from the slim file and fetches the full `events.json` right after the first list; the
+full records replace the slim ones in place by id, and a card that is opened before they land waits for them.
+
+Lighthouse mobile, home page, local `tools/serve.js` (uncompressed, so the whole 1.5 MB shows as transferred in the
+"before" run; two runs each):
+
+| | Perf score | FCP | LCP | TBT |
+|---|---:|---:|---:|---:|
+| Before | 90 / 87 | 2.1 s | 2.1 s | 140 / 240 ms |
+| After | 91 / 87 | 2.0 s | 2.0 s | 120 / 250 ms |
+
+The run to run spread (TBT 120 to 250 ms) is larger than the difference: on this machine the gain is inside the noise,
+and the byte saving is where the win is (most for a phone on a slow link). The full file still downloads, just after
+the first paint.
