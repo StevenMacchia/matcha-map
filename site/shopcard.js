@@ -151,11 +151,24 @@ export function menuSectionHtml(menu, ctx = {}) {
   const label = items.length > shown.length ? `First ${shown.length} of ${items.length} menu items` : "Menu items";
   const count = items.length > shown.length ? `<span class="mm-menu-count">${items.length} items</span>` : "";
   const more = src ? `<a class="mm-menu-full" href="${esc(src)}" target="_blank" rel="noopener"><span>See the full menu</span>${ICON.out}</a>` : "";
-  const credit = host ? `<p class="mm-menu-credit">From ${esc(host)}${read ? ", read " + esc(read) : ""}</p>` : "";
+  const owner = menu.kind === "owner";
+  const credit = owner ? `<p class="mm-menu-credit">From the owner${host ? ", menu at " + esc(host) : ""}${read ? ", sent " + esc(read) : ""}</p>`
+    : host ? `<p class="mm-menu-credit">From ${esc(host)}${read ? ", read " + esc(read) : ""}</p>` : "";
+  const noteText = typeof menu.note === "string" && menu.note.trim() && !(owner && /^from the owner$/i.test(menu.note.trim())) ? menu.note : "";
   return `<section class="mm-sec mm-menu-sec" aria-label="Menu"><div class="mm-menu-top"><h4 class="mm-h">Menu</h4>${count}</div>` +
-    (typeof menu.note === "string" && menu.note.trim() ? `<p class="mm-menu-note">${esc(cut(menu.note, 160))}</p>` : "") +
+    (noteText ? `<p class="mm-menu-note">${esc(cut(noteText, 160))}</p>` : "") +
     `<ul class="mm-menu-list" tabindex="0" aria-label="${esc(label)}">${lines}</ul>` +
     (more || credit ? `<div class="mm-menu-foot">${more}${credit}</div>` : "") + `</section>`;
+}
+// An owner's menu (sent through the claim form, approved on the review page, served by GET /api/menus) for a shop id or
+// a brand handle: from ctx.ownerMenus ({ get(key) }) in tests, else window.MatchaOwnerMenus (site/ownermenus.js) in the app.
+export function ownerMenuFor(key, ctx) {
+  if (!key) return null;
+  const src = (ctx && ctx.ownerMenus) || (typeof window !== "undefined" ? window.MatchaOwnerMenus : null);
+  if (!src || typeof src.get !== "function") return null;
+  let m = null;
+  try { m = src.get(String(key)); } catch (e) { m = null; }
+  return m && Array.isArray(m.items) && m.items.length ? { ...m, kind: "owner" } : null;
 }
 // A brand's menu from data/menus.json ({ menus: { "<host without www>": menu } }), matched on the brand's website.
 export function menuForBrand(brand, menus) {
@@ -213,5 +226,5 @@ export function shopCardHtml(s, ctx = {}) {
   // Directions sits right under the hours: the phone sheet opens at half height with the rest a drag away, and a
   // 66-line menu above it would push it out of that first view.
   return `<article class="mm-card mm-shop" aria-label="${esc(name)}">${head}${hoursTodayHtml(s, now)}` +
-    (acts.length ? `<div class="mm-shop-acts">${acts.join("")}</div>` : "") + `${menuSectionHtml(s.menu, ctx)}${photoHtml(s, ctx)}${credit}</article>`;
+    (acts.length ? `<div class="mm-shop-acts">${acts.join("")}</div>` : "") + `${menuSectionHtml(s.menu || ownerMenuFor(s.id, ctx), ctx)}${photoHtml(s, ctx)}${credit}</article>`;
 }
