@@ -113,11 +113,11 @@ Opened 2026-11-23 00:50 by a second orchestrator (Fable) on its own worktree bra
 | N7 | Design and motion | Opus | running | Owns the shared site files on this branch; integrates N6 and N8: finish to consumer-app polish at 390 and 1440, opening moment, view transitions, fly-to, particles sparingly, empty states, light and dark, reduced motion, image warning, Lighthouse 90+. Mock one screen first. | |
 | N8 | Product | Sonnet | running | City weekend views, brand pages with drinks, search by brand or drink, PWA (merge rung 34 from `main` rather than redo). | |
 | N9 | Review and merge | Sonnet | pending | Browser pass on phone and desktop, README, merge `main`, tests, merge into `main` and deploy or open a PR; before/after per-city table. | |
-| N5-3 | Coverage sweep, third pass | 6 Sonnet | running | The new brands' own sites, Linktrees, schedule pages and market vendor lists for dates; , appends to ; 8 Tavily searches each. | |
-| N5b | Drinks and trending research | Sonnet | done |  (59 drinks, vocabulary, colours), , . | all-models 26% |
-| N5c | Watch-list seeding | Sonnet | running | Every new handle from wave4, the sweep notes and the trending doc, deduped against the watch list and sources, in ;  for the merge step. | |
-| N6b | Brand facts | Sonnet | running | Story, signature drinks, price range, pay, hours, links with evidence for every brand with an upcoming pop-up, in ;  for the merge step. | |
-| N9a | Rolling reviewer | Sonnet | running | Browser pass with headless Chrome at 390 and 1440 on every page as it lands, findings in , no code edits. | |
+| N5-3 | Coverage sweep, third pass | 6 Sonnet | running | The new brands' own sites, Linktrees, schedule pages and market vendor lists for dates; `data/review/sweep-<group>-3.json`, appends to `data/wave4/<group>.json`; 8 Tavily searches each. | |
+| N5b | Drinks and trending research | Sonnet | done | `data/drinks.json` (59 drinks, controlled vocabulary, hex colours, evidence), `docs/TRENDING-2026-11.md` (37 brands, patterns), `data/wave4/trending.json` (13 new brands). | all-models 26% |
+| N5c | Watch-list seeding | Sonnet | running | Every new handle from wave4, the sweep notes and the trending doc, deduped against the watch list and sources, in `data/review/watchlist-additions.json`; `npm run watchlist:apply` for the merge step. | |
+| N6b | Brand facts | Sonnet | running | Story, signature drinks, price range, pay, hours and links with evidence for every brand with an upcoming pop-up, in `data/review/brand-facts.json`; `npm run brands:apply` for the merge step. | |
+| N9a | Rolling reviewer | Sonnet | running | Browser pass with headless Chrome at 390 and 1440 on every page as it lands, findings in `docs/REVIEW-2026-11-23.md`, no code edits. | |
 
 ### Next-level log
 
