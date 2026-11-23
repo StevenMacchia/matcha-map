@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Caribe & Co. pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3c6de1a2a56f@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:Caribe & Co. pop-up at Big Feeling December
+LOCATION:Boston\, MA
+DESCRIPTION:A Big Feeling x Caribe & Co Pop-up is coming next month and thi
+ s one is for the plantain/maduro lovers\nMenu: pastry\, ice cream\nDetails
+  not confirmed yet. Check the brand's post before you go.\nMore: https://m
+ atchamap-cu7.pages.dev/e/3c6de1a2a56f/
+URL:https://matchamap-cu7.pages.dev/e/3c6de1a2a56f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

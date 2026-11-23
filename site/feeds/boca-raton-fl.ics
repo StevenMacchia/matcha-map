@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Boca Raton\, FL
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5fe726eea1d5@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T131640Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: Boca Raton | Creatives Edition
+LOCATION:Boca Raton\, FL
+DESCRIPTION:Join us for coffee\, latte\, or matcha at different cafes. Buil
+ d your creative community in your city with a fun day out!\nMenu: latte\nD
+ etails not confirmed yet. Check the brand's post before you go.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/5fe726eea1d5/
+URL:https://matchamap-cu7.pages.dev/e/5fe726eea1d5/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

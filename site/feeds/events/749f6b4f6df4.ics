@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Green Times Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:749f6b4f6df4@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261205T190000Z
+DTEND:20261205T230000Z
+SUMMARY:Mochi & Matcha Fest
+LOCATION:Japanese Cultural Center of Hawaii (first floor courtyard and bree
+ zeway)\, 2454 South Beretania Street\, Honolulu\, HI 96826\, Honolulu\, HI
+DESCRIPTION:JCCH hosts its first Mochi & Matcha Fest: mochitsuki (mochi pou
+ nding) alongside modern mochi products and matcha drinks. Vendors include 
+ Green Times Matcha and Aloha Matcha Hawaii\, plus Fujiya Hawaii\,\nPrice: 
+ Free admission\; drinks priced by each vendor\nMore: https://matchamap-cu7
+ .pages.dev/e/749f6b4f6df4/
+URL:https://matchamap-cu7.pages.dev/e/749f6b4f6df4/
+GEO:21.291700;-157.821300
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

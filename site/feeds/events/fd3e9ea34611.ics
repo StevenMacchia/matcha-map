@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Pottery with a Purpose x Wishing Cup pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:fd3e9ea34611@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261128T193000Z
+DTEND:20261128T220000Z
+SUMMARY:Matcha Tasting + Mug Making Workshop
+LOCATION:Wishing Cup\, 45 Court Street\, Boston\, MA 02203\, Boston\, MA
+DESCRIPTION:Tech-free pottery night: taste three Wishing Cup matcha flavors
+ \, write a wish\, then hand-build a mug. All clay and tools included\; opt
+ ional glaze and kiln upgrade.\nMenu: 20-minute tasting of three wishing cu
+ p m\nPrice: $113.89 (ticket\, lowest tier)\nMore: https://matchamap-cu7.pa
+ ges.dev/e/fd3e9ea34611/
+URL:https://matchamap-cu7.pages.dev/e/fd3e9ea34611/
+GEO:42.359168;-71.058723
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

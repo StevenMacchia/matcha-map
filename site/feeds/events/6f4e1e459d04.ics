@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha event pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6f4e1e459d04@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:Sculpted By HER
+LOCATION:1900 Hill Avenue\, Aurora\, IL
+DESCRIPTION:Your kind of wellness morning. Yoga with Nikki\, feel-good DJ b
+ eats\, coffee + matcha bar & giving back to Mutual Ground. The HER way.\nL
+ ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/6f4e
+ 1e459d04/
+URL:https://matchamap-cu7.pages.dev/e/6f4e1e459d04/
+GEO:41.729735;-88.284966
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Port Jefferson\, NY
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:17f394a5bfe9@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Paint and Sip - Grinch Wine Bottle
+LOCATION:The Spice & Tea Exchange of Port Jefferson\, Port Jefferson\, NY
+DESCRIPTION:Join us for a night of relaxation where we will sample a variet
+ y of green teas and matcha while we paint.\nLikely\, not fully confirmed.\
+ nMore: https://matchamap-cu7.pages.dev/e/17f394a5bfe9/
+URL:https://matchamap-cu7.pages.dev/e/17f394a5bfe9/
+GEO:40.946072;-73.069336
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:6e3949ab5d9e@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Friday Night Comedy and Open Mic at Roots Kava Bar\, Port Jefferson
+LOCATION:Roots Kava Bar\, 250 East Main Street\, Port Jefferson\, NY
+DESCRIPTION:Alcohol-free comedy night every Friday in Port Jeff. Sign-ups 7
+ :30\, open mic 8\, comedy 9. Kava\, coffee\, matcha and mocktails.\nLikely
+ \, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/6e3949ab5
+ d9e/
+URL:https://matchamap-cu7.pages.dev/e/6e3949ab5d9e/
+GEO:40.945446;-73.067637
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

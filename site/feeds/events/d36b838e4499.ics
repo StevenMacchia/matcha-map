@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Partea NYC pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:d36b838e4499@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T121327Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Partea NYC pop-up
+LOCATION:New York\, NY
+DESCRIPTION:Your next visit could be a lucky pull\nPrice: $20–60\nDetails
+  not confirmed yet. Check the brand's post before you go.\nMore: https://m
+ atchamap-cu7.pages.dev/e/d36b838e4499/
+URL:https://matchamap-cu7.pages.dev/e/d36b838e4499/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

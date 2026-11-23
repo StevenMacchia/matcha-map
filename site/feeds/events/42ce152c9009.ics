@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PIP coffee+clay pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:42ce152c9009@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261212T163000Z
+DTEND:20261212T183000Z
+SUMMARY:Matcha Making Workshop Part 2
+LOCATION:Phoenix\, AZ
+DESCRIPTION:Part two of a two-part matcha workshop with Neighbor Matcha at 
+ PIP coffee+clay - Phoenix. Participants make matcha using the bowl built a
+ nd decorated in part one on November 21.\nLikely\, not fully confirmed.\nM
+ ore: https://matchamap-cu7.pages.dev/e/42ce152c9009/
+URL:https://matchamap-cu7.pages.dev/e/42ce152c9009/
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

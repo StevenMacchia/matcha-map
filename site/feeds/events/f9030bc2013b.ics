@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Peninsula Town Center pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f9030bc2013b@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Small Business Saturday Market at Peninsula Town Center by SwapMeet
+  757
+LOCATION:Peninsula Town Center\, 2551 McMenamin Street\, Hampton\, VA
+DESCRIPTION:Come shop in the heart of Peninsula Town Center with local vend
+ ors\, holiday deals\, hot chocolate\, matcha\, great food\, music\, and mo
+ re!\nMenu: chocolate\nLikely\, not fully confirmed.\nMore: https://matcham
+ ap-cu7.pages.dev/e/f9030bc2013b/
+URL:https://matchamap-cu7.pages.dev/e/f9030bc2013b/
+GEO:37.044086;-76.393706
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

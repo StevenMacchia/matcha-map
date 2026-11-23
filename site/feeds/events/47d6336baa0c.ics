@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Caribe & Co. pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:47d6336baa0c@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261219T150000Z
+DTEND:20261220T030000Z
+SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
+LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA\, Boston\, 
+ MA
+DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
+ et\, serving cornmeal porridge matcha lattes and a carrot punch that can b
+ e made with matcha all holiday season.\nMenu: cornmeal porridge matcha lat
+ te\, carrot punch matcha (cold brew or matcha\nLikely\, not fully confirme
+ d.\nMore: https://matchamap-cu7.pages.dev/e/47d6336baa0c/
+URL:https://matchamap-cu7.pages.dev/e/47d6336baa0c/
+GEO:42.341119;-71.066017
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

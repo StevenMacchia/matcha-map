@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Norfolk\, VA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:44f68b560735@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T131640Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: Norfolk | Coffee Meets to Benefit Dream Foundation
+LOCATION:Norfolk\, VA
+DESCRIPTION:Make new friends in the community while supporting small busine
+ sses and giving back to a non-profit Dream Foundation!\nDetails not confir
+ med yet. Check the brand's post before you go.\nMore: https://matchamap-cu
+ 7.pages.dev/e/44f68b560735/
+URL:https://matchamap-cu7.pages.dev/e/44f68b560735/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

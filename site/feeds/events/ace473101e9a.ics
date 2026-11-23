@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:GATO DATES x More Than Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:ace473101e9a@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261205T190000Z
+DTEND:20261205T210000Z
+SUMMARY:GATO x More Than Matcha holiday pop-up at Westfield Century City
+LOCATION:Westfield Century City Holiday Market (in front of lululemon)\, 10
+ 250 Santa Monica Blvd\, Los Angeles\, CA 90067\, Los Angeles\, CA
+DESCRIPTION:A holiday pop-up from GATO DATES with More Than Matcha at the W
+ estfield Century City Holiday Market\, right in front of lululemon. Come f
+ or matcha and a sweet treat\, and do some gift shopping. It runs \nMenu: m
+ atcha drinks\, sweet treats and holiday gifts\nLikely\, not fully confirme
+ d.\nMore: https://matchamap-cu7.pages.dev/e/ace473101e9a/
+URL:https://matchamap-cu7.pages.dev/e/ace473101e9a/
+GEO:34.058579;-118.417811
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

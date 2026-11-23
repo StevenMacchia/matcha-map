@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha event pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c5771fa18607@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T123101Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Pink Pilates + Matcha & Social Hour
+LOCATION:Burnsville\, MN
+DESCRIPTION:Join Allform Club for Pink Pilates\, matcha\, and social hour! 
+ Enjoy a 45-minute beginner-friendly class. Wear pink and come connect!\nDe
+ tails not confirmed yet. Check the brand's post before you go.\nMore: http
+ s://matchamap-cu7.pages.dev/e/c5771fa18607/
+URL:https://matchamap-cu7.pages.dev/e/c5771fa18607/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

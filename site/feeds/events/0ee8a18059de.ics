@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Tsukime Matcha Bar pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:0ee8a18059de@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261212T200000Z
+DTEND:20261212T210000Z
+SUMMARY:Tsukime Matcha Bar at Occidental Flea Market
+LOCATION:Occidental Square Flea (Occidental Square)\, 117 S Washington St\,
+  Seattle\, WA 98104\, Seattle\, WA
+DESCRIPTION:Tsukime is a traveling Seattle matcha cart serving ceremonial-g
+ rade matcha drinks. This stop is at the quarterly Occidental Square flea i
+ n Pioneer Square\, a free outdoor market of handmade and vintage\nLikely\,
+  not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/0ee8a18059d
+ e/
+URL:https://matchamap-cu7.pages.dev/e/0ee8a18059de/
+GEO:47.600799;-122.333732
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays) pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:d48f1d45c2e5@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART:20261206T140000Z
+DTEND:20261206T190000Z
+SUMMARY:Ybor City Matcha & Mimosa Sundays
+LOCATION:Blind Tiger Coffee Roasters - Ybor City Cafe\, 1823 East 7th Avenu
+ e\, Tampa\, FL 33605\, Tampa\, FL
+DESCRIPTION:A recurring Sunday brunch at the Ybor City cafe with matcha nex
+ t to coffee\, mimosas and a full brunch menu.\nMenu: matcha\, espresso\, c
+ old brew\, nitro\, chai\, mimosas\, pancakes\, breakfast tacos\, avocado t
+ oast\nPrice: Free entry\nLikely\, not fully confirmed.\nMore: https://matc
+ hamap-cu7.pages.dev/e/d48f1d45c2e5/
+URL:https://matchamap-cu7.pages.dev/e/d48f1d45c2e5/
+GEO:27.960164;-82.438447
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

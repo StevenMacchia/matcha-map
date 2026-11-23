@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Caribe & Co. pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:b196e632dd64@matchamap-cu7.pages.dev
+DTSTAMP:20261123T133648Z
+LAST-MODIFIED:20261123T133648Z
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
+LOCATION:Boston\, MA
+DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
+ season??\nMenu: latte\nDetails not confirmed yet. Check the brand's post b
+ efore you go.\nMore: https://matchamap-cu7.pages.dev/e/b196e632dd64/
+URL:https://matchamap-cu7.pages.dev/e/b196e632dd64/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR
