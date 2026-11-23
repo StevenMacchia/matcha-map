@@ -15,7 +15,8 @@
 // ctx (every field optional): { now: Date, here: {lat,lng} | [lat,lng] | null, brands (brands.json: {brands:[]}, an array
 // or a map by handle), sources (sources.json array or map by id), places (places.json), art (site/art/index.json),
 // events (all events, for also-nearby), cityOf(e) -> string, distanceKm(a,b) with a,b = [lat,lng], base ("" in the app,
-// "/" on static pages: prefix for site paths), eventHref(id) (default "?event=<id>", "/e/<id>/" on static pages),
+// "/" on static pages: prefix for site paths), cityHref(e) -> path of that event's city page, or { href, name }, or "" (a quiet "More in <city>" link in the foot),
+// brandHref(handle) -> path of that brand's page or "" (the brand name links there), eventHref(id) (default "?event=<id>", "/e/<id>/" on static pages),
 // absolute: true (dates, never "Today", for pages built ahead), drawn (window.Drawn, for the drawn hero when there is no photo or event art), page: true (two-column page layout on wide
 // screens), document (for render* outside a browser), fmt: { miles(mi) -> string } }
 //
@@ -272,8 +273,9 @@ function avatarHtml(name, pic, cls = "mm-avatar") {
 }
 function brandRow(e, ctx, name, b) {
   const h = handleOf(e, ctx), kind = KIND[e.kind] || "";
+  const brandTo = h && typeof ctx.brandHref === "function" ? ctx.brandHref(h) : "";
   const meta = join([h ? `<a href="https://www.instagram.com/${encodeURIComponent(h)}/" target="_blank" rel="noopener">@${esc(h)}</a>` : "", kind ? `<span class="mm-kind">${esc(kind)}</span>` : ""]);
-  return `<div class="mm-brandrow">${avatarHtml(name, b && safeUrl(b.picture))}<div class="mm-btxt"><h3 class="mm-bname">${esc(name)}</h3>${meta ? `<p class="mm-bmeta">${meta}</p>` : ""}</div>${confBadge(e.confidence)}</div>`;
+  return `<div class="mm-brandrow">${avatarHtml(name, b && safeUrl(b.picture))}<div class="mm-btxt"><h3 class="mm-bname">${brandTo ? `<a class="mm-bname-link" href="${esc(brandTo)}">${esc(name)}</a>` : esc(name)}</h3>${meta ? `<p class="mm-bmeta">${meta}</p>` : ""}</div>${confBadge(e.confidence)}</div>`;
 }
 function chipsHtml(e, ctx) {
   const menu = (Array.isArray(e.menu) ? e.menu : []).filter((m) => typeof m === "string" && m.trim()).slice(0, 8);
@@ -378,7 +380,10 @@ export function cardHtml(e, ctx = {}) {
   const live = !/^(past|cancelled)$/.test(dayWord(e, ctx.now || new Date()).kind);
   // the foot: report, and for an upcoming pop-up the host kit (captions, counter QR, share card) at /promote/
   const promote = id && live ? `<a class="mm-report mm-promote" href="${esc(ctx.base || "")}promote/?event=${id}">${ICON.share}<span>Promote this pop-up</span></a>` : "";
-  const report = id ? `<p class="mm-foot">${promote}<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a></p>` : "";
+  const cityRef = typeof ctx.cityHref === "function" ? ctx.cityHref(e) : "";
+  const cityTo = (cityRef && cityRef.href) || (typeof cityRef === "string" ? cityRef : ""), cityName = (cityRef && cityRef.name) || cityOf(e, ctx);
+  const cityLink = cityTo && cityName ? `<a class="mm-report mm-morecity" href="${esc(cityTo)}"><span>More in ${esc(cityName)}</span></a>` : "";
+  const report = id || cityLink ? `<p class="mm-foot">${promote}${cityLink}${id ? `<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a>` : ""}</p>` : "";
   return `<article class="mm-card${ctx.page ? " mm-page" : ""}${compact ? " mm-compact" : ""} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>` +
     `<header class="mm-top"><p class="mm-verdict"><span class="mm-vday">${esc(v.day)}</span>${v.time ? ` <span class="mm-vtime">${esc(v.time)}</span>` : ""}${v.where ? `<span class="mm-vwhere">${esc(v.where)}</span>` : ""}</p></header>` +
     `<div class="mm-media">${heroHtml(e, ctx, v, name)}</div>` +

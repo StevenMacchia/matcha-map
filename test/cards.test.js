@@ -183,3 +183,15 @@ test("the desktop map pop-up is the compact card: fewer posts and neighbours; pa
   assert.doesNotMatch(cardHtml(me, { now: NOW, phone: true, events: [me, ...others] }), /mm-compact/);
   assert.doesNotMatch(cardHtml(me, { now: NOW }), /mm-compact/);
 });
+
+test("links in: the foot links to the city page and the brand name to its brand page, only when the page exists", () => {
+  const e = { id: "aaaaaa000001", brand: "Moonbee", handle: "moonbee", start: "2026-12-05T11:00:00-05:00", city: "Raleigh", state: "NC", lat: 35.8, lng: -78.6, menu: [] };
+  const on = cardHtml(e, { base: "/", page: true, cityHref: () => ({ href: "/city/nc/raleigh/", name: "Raleigh" }), brandHref: (h) => (h === "moonbee" ? "/brand/moonbee/" : "") });
+  assert.match(on, /<a class="mm-report mm-morecity" href="\/city\/nc\/raleigh\/"><span>More in Raleigh<\/span><\/a>/);
+  assert.match(on, /<a class="mm-bname-link" href="\/brand\/moonbee\/">Moonbee<\/a>/);
+  assert.match(on, /Report a problem/);
+  const plain = cardHtml(e, { base: "/", page: true, cityHref: () => "", brandHref: () => "" });
+  assert.doesNotMatch(plain, /mm-morecity|mm-bname-link/);
+  assert.doesNotMatch(cardHtml(e, { base: "/", page: true }), /mm-morecity|mm-bname-link/);
+  assert.match(cardHtml(e, { cityHref: () => "/city/nc/raleigh/" }), /More in Raleigh/, "a plain string works and takes the event's city name");
+});
