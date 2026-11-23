@@ -139,7 +139,7 @@
 .mm-report { align-self: center; display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 700; color: var(--muted, #6B5A4F) !important; text-decoration: none; padding: 6px 12px; border-radius: 999px; }
 .mm-report:hover { background: var(--mm-soft); text-decoration: underline; }
 .mm-morecity { font-weight: 600; }
-.mm-bname-link { color: inherit; text-decoration: none; }
+.mm-bname-link { color: inherit; text-decoration: none; display: inline-block; max-width: 100%; vertical-align: top; } /* inline-block: an inline link's font box ran 2 to 3 px past the heading's line box on long names (the card gate caught it) */
 .mm-bname-link:hover { text-decoration: underline; }
 .mm-report .mm-i { width: 16px; height: 16px; }
 
