@@ -206,6 +206,20 @@ export function mergeEvents(existing, candidates, { now = new Date(), liveSource
   return { events: out, decay: newDecay, stats };
 }
 
+// data/overrides.json entries with a city (and state) rename a stored event's city by id, for events the geocoder will not see
+// again (the geocoder applies the same override to fresh candidates). A renamed approximate pin then follows the new city centre.
+export function applyCityOverrides(events, overridesPath = "data/overrides.json") {
+  let o = {}; try { o = JSON.parse(fs.readFileSync(overridesPath, "utf8")); } catch { return { events, renamed: 0 }; }
+  let renamed = 0;
+  const out = events.map((e) => {
+    const ov = o[e.id];
+    if (!ov || typeof ov.city !== "string" || !ov.city || (e.city === ov.city && (!ov.state || e.state === ov.state))) return e;
+    renamed++;
+    return { ...e, city: ov.city, state: ov.state || e.state };
+  });
+  return { events: out, renamed };
+}
+
 // An event drawn at its city's centre (approx, geocode_source "none") follows that centre when the city file moves it
 // (San Francisco's Census point was 44 miles out to sea until tools/gen-cities.js gave it a land point).
 export function snapApprox(events, lookup = findCity) {
@@ -222,7 +236,7 @@ export function snapApprox(events, lookup = findCity) {
 
 // Write data/events.json and copy to site/data/events.json.
 export function writeEvents(events, { now = new Date(), dataPath = "data/events.json", sitePath = "site/data/events.json" } = {}) {
-  events = snapApprox(events).events;
+  events = snapApprox(applyCityOverrides(events).events).events;
   const body = JSON.stringify({ generated: new Date(now).toISOString(), events }, null, 2) + "\n";
   for (const p of [dataPath, sitePath]) {
     fs.mkdirSync(path.dirname(p), { recursive: true });

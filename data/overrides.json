@@ -21,5 +21,15 @@
   "city": "Washington",
   "state": "DC",
   "why": "After School Coffee House at 3222 M Street: Georgetown, Washington, DC, not Northern Virginia"
+ },
+ "7614a4a8d8e8": {
+  "city": "Arlington",
+  "state": "VA",
+  "why": "After School Coffee House: the source gave only \"Northern Virginia\", not a city; its home city Arlington until the venue's own city is known"
+ },
+ "04da6e3fd001": {
+  "city": "Arlington",
+  "state": "VA",
+  "why": "After School Coffee House: the source gave only \"Northern Virginia\", not a city; its home city Arlington until the venue's own city is known"
  }
 }
