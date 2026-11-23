@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T21:12:21.179Z",
+ "generated": "2026-11-23T21:25:48.211Z",
  "attribution": "© OpenStreetMap contributors, ODbL",
  "shops": [
   {
@@ -28,7 +28,7 @@
    "lng": -111.938952,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-magic-asu-tempe-az-tempe-922-e-apache-b-ab0ce8",
@@ -56,7 +56,7 @@
    "lng": -111.925196,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-premium-matcha-cafe-maiko-az-tempe-920-e-unive-754902",
@@ -73,7 +73,7 @@
    "image_url": "https://static.wixstatic.com/media/933178_d8a6c02e1083455e85a41e05f441c43c%7Emv2.png/v1/fit/w_2500,h_1330,al_c/933178_d8a6c02e1083455e85a41e05f441c43c%7Emv2.png",
    "image_credit": "Photo: Premium Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaaz.com/about",
@@ -84,7 +84,7 @@
    "lng": -111.925576,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cafe-matcha-ca-studio-city-12070-ventura-blvd-bfe519",
@@ -112,7 +112,7 @@
    "lng": -118.394965,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cafe-matcha-ca-los-angeles-705-n-alfred-st-ef0c5b",
@@ -140,7 +140,7 @@
    "lng": -118.375371,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-ca-venice-1401-abbot-kinney-blv-a10267",
@@ -168,7 +168,7 @@
    "lng": -118.465791,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-ca-los-angeles-510-n-robertson-fb56b7",
@@ -196,7 +196,7 @@
    "lng": -118.38503,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-ca-los-angeles-10250-santa-moni-94d473",
@@ -224,7 +224,7 @@
    "lng": -118.417811,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-ca-beverly-hills-475-north-beve-5d6435",
@@ -252,7 +252,7 @@
    "lng": -118.403475,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-chitchat-coffee-matcha-ca-los-angeles-1854-saw-1f45de",
@@ -280,7 +280,7 @@
    "lng": -118.444981,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-constance-tea-ca-san-francisco-3512-balboa-st-003ad5",
@@ -308,7 +308,7 @@
    "lng": -122.496512,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-de-matcha-ca-berkeley-2315-telegraph-ave-1b1dd9",
@@ -336,7 +336,7 @@
    "lng": -122.258938,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-de-matcha-buena-park-ca-buena-park-5444-beach-52cc28",
@@ -364,7 +364,7 @@
    "lng": -117.997466,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-de-matcha-del-amo-fashion-center-ca-torrance-2-b069fd",
@@ -392,7 +392,7 @@
    "lng": -118.350847,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-divina-matcha-ca-chula-vista-216-3rd-avenue-84ecfb",
@@ -420,7 +420,7 @@
    "lng": -117.081212,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-eight-grams-matcha-ca-berkeley-2440-bancroft-w-b87eef",
@@ -448,7 +448,7 @@
    "lng": -122.260385,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-forest-tea-bar-ca-berkeley-2628-shattuck-ave-c78da2",
@@ -476,7 +476,7 @@
    "lng": -122.267366,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-holy-matcha-ca-san-diego-3118-university-avenu-de0c63",
@@ -504,7 +504,7 @@
    "lng": -117.127136,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-izumi-matcha-ca-san-jose-3005-silver-creek-rd-210e9e",
@@ -532,7 +532,7 @@
    "lng": -121.814219,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-izumi-matcha-ca-cupertino-19740-stevens-creek-ae1770",
@@ -560,7 +560,7 @@
    "lng": -122.018106,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-matcha-tea-ca-livermore-3046-w-jack-lond-084985",
@@ -588,7 +588,7 @@
    "lng": -121.845352,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-kettl-ca-los-angeles-4677-hollywood-blvd-ab7e83",
@@ -616,7 +616,7 @@
    "lng": -118.291149,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-kiss-of-matcha-ca-san-francisco-612-broadway-30c3b4",
@@ -644,7 +644,7 @@
    "lng": -122.407355,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-kiss-of-matcha-ca-san-francisco-2127-irving-st-b9730a",
@@ -672,7 +672,7 @@
    "lng": -122.480853,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-kiss-of-matcha-ca-san-francisco-750-clement-st-f876bc",
@@ -700,7 +700,7 @@
    "lng": -122.467446,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-labora-ca-san-diego-8055-clairemont-mesa-blvd-4e7494",
@@ -728,7 +728,7 @@
    "lng": -117.149918,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -857,7 +857,7 @@
    "lng": -118.393181,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-maruwu-seicha-ca-palo-alto-250-university-ave-222cb6",
@@ -885,7 +885,7 @@
    "lng": -122.162011,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-maruwu-seicha-ca-san-francisco-1737-post-st-2cfdd4",
@@ -913,7 +913,7 @@
    "lng": -122.430729,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-maruwu-seicha-ca-san-jose-100-n-almaden-ave-fcf40d",
@@ -941,7 +941,7 @@
    "lng": -121.894955,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-cafe-maiko-ca-san-diego-8072-clairemont-f9a331",
@@ -958,7 +958,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ca&target=ca-sandiego",
@@ -969,7 +969,7 @@
    "lng": -117.163394,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -1104,7 +1104,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ca&target=ca-escondido",
@@ -1115,7 +1115,7 @@
    "lng": -117.096249,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -1261,7 +1261,7 @@
    "lng": -122.112842,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-ren-ca-san-jose-675-saratoga-ave-6e491e",
@@ -1289,7 +1289,7 @@
    "lng": -121.977867,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-town-ca-cupertino-10815-n-wolfe-rd-suit-4dfda0",
@@ -1317,7 +1317,7 @@
    "lng": -122.014654,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matsu-matcha-ca-santa-clara-3030-el-camino-rea-7d3462",
@@ -1345,7 +1345,7 @@
    "lng": -121.981221,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matsu-matcha-ca-los-angeles-547-s-western-ave-13aa5d",
@@ -1373,7 +1373,7 @@
    "lng": -118.309196,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-meccha-matcha-ca-artesia-11816-artesia-blvd-d90f05",
@@ -1401,7 +1401,7 @@
    "lng": -118.081816,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-meccha-matcha-ca-long-beach-2310-n-bellflower-03c072",
@@ -1429,7 +1429,7 @@
    "lng": -118.125205,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-midori-matcha-cafe-ca-los-angeles-123-astronau-bf1078",
@@ -1457,7 +1457,7 @@
    "lng": -118.242366,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-milli-matcha-ca-pasadena-20-union-street-suite-0affb3",
@@ -1485,7 +1485,7 @@
    "lng": -118.149878,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-nana-s-green-tea-ca-pasadena-45-n-raymond-ave-7ff42c",
@@ -1513,7 +1513,7 @@
    "lng": -118.149091,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-oishii-matcha-ca-san-francisco-2299-market-str-f6e94c",
@@ -1541,7 +1541,7 @@
    "lng": -122.432795,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-origin-lab-coffee-matcha-ca-san-francisco-211-c50681",
@@ -1569,7 +1569,7 @@
    "lng": -122.404268,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-stonemill-matcha-ca-san-francisco-561-valencia-e199bb",
@@ -1597,7 +1597,7 @@
    "lng": -122.421528,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-tea-master-matcha-cafe-green-tea-shop-ca-los-a-fcffef",
@@ -1625,7 +1625,7 @@
    "lng": -118.238615,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-urban-matcha-ca-san-diego-4698-convoy-street-176e18",
@@ -1653,7 +1653,7 @@
    "lng": -117.155865,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-whisk-d-matcha-ca-pasadena-20-e-colorado-blvd-2b7e2a",
@@ -1681,7 +1681,7 @@
    "lng": -118.150037,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-yume-mori-matcha-ca-berkeley-2319-shattuck-ave-0bb7db",
@@ -1709,7 +1709,7 @@
    "lng": -122.267278,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-the-sen-tea-and-coffee-house-dtc-co-greenwood-d40c2c",
@@ -1737,7 +1737,7 @@
    "lng": -104.883345,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-the-sen-tea-and-coffee-house-highland-co-denve-a73e73",
@@ -1765,7 +1765,7 @@
    "lng": -105.024839,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-bliss-matcha-beyond-new-haven-ct-new-haven-98-12cefe",
@@ -1793,7 +1793,7 @@
    "lng": -72.920101,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-bliss-matcha-beyond-west-hartford-ct-west-hart-cfead4",
@@ -1821,7 +1821,7 @@
    "lng": -72.744179,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-bliss-matcha-and-beyond-ct-new-haven-98-olive-505a40",
@@ -1849,7 +1849,7 @@
    "lng": -72.92003,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-coopertine-matcha-ct-granby-2-salmon-brook-st-e891fe",
@@ -1877,7 +1877,7 @@
    "lng": -72.79033,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-zen-cha-matcha-ct-darien-130-heights-rd-9c09f7",
@@ -1905,7 +1905,7 @@
    "lng": -73.497154,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-spot-of-tea-dc-washington-2101-p-street-nw-40f611",
@@ -1933,7 +1933,7 @@
    "lng": -77.046859,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-spot-of-tea-dc-washington-3210-grace-street-nw-0afc3d",
@@ -1961,7 +1961,7 @@
    "lng": -77.063511,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-spot-of-tea-dc-washington-1309-5th-street-ne-198ab4",
@@ -1989,7 +1989,7 @@
    "lng": -76.997405,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-alma-matcha-fl-fort-lauderdale-701-nw-5th-ave-522635",
@@ -2017,7 +2017,7 @@
    "lng": -80.148896,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-heal-cafe-fl-miami-3252-ne-1st-ave-suite-111-01f69b",
@@ -2045,7 +2045,7 @@
    "lng": -80.193386,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-honey-veil-fl-south-miami-5748-sunset-dr-d8f83c",
@@ -2073,7 +2073,7 @@
    "lng": -80.286214,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-lucky-s-espresso-matcha-bar-fl-north-miami-bea-be2c79",
@@ -2101,7 +2101,7 @@
    "lng": -80.154599,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/11007004668",
@@ -2126,6 +2126,7 @@
    "image_credit": "cafemaikoorl.com",
    "source_url": "https://cafemaikoorl.com",
    "read": "2026-11-23",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "menu": {
     "items": [
      {
@@ -2474,7 +2475,7 @@
    "image_url": "http://static1.squarespace.com/static/69d55f94971c866ea49bf3b8/t/69f37ea5cfa3e81e12d2a5c1/1777565349021/matcha-cafe-maiko-barista-whisking-ceremonial-matcha.jpg?format=1500w",
    "image_credit": "Photo: Matcha Cafe Maiko Orlando website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=fl&target=fl-millenia",
@@ -2485,7 +2486,7 @@
    "lng": -81.423672,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -2845,7 +2846,7 @@
    "lng": -80.143384,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-noble-brew-fl-tampa-2718-n-florida-ave-288001",
@@ -2887,7 +2888,7 @@
    "lng": -82.459536,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-saiko-fl-orlando-7059-s-orange-blossom-trl-10fdfe",
@@ -2915,7 +2916,7 @@
    "lng": -81.397005,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/7860016569",
@@ -2962,7 +2963,7 @@
    "lng": -157.842441,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-daily-whisk-matcha-hi-honolulu-1114-11th-ave-09574d",
@@ -2990,7 +2991,7 @@
    "lng": -157.801061,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-maruwu-seicha-hi-honolulu-260-beach-walk-10cacb",
@@ -3018,7 +3019,7 @@
    "lng": -157.831025,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-maruwu-seicha-hi-honolulu-2615-s-king-st-0e1dc5",
@@ -3046,7 +3047,7 @@
    "lng": -157.821989,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-cafe-maiko-hi-honolulu-2310-kuhio-ave-e82de2",
@@ -3063,7 +3064,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=hi&target=hi-honolulu-main-store",
@@ -3074,7 +3075,7 @@
    "lng": -157.825831,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -3220,7 +3221,7 @@
    "lng": -157.828017,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-yame-matcha-house-kaka-ako-hi-honolulu-961-kaw-617ccb",
@@ -3248,7 +3249,7 @@
    "lng": -157.853372,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-yame-matcha-house-uh-manoa-hi-honolulu-2500-do-01dd40",
@@ -3276,7 +3277,7 @@
    "lng": -157.81784,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-nana-s-green-tea-meridian-id-meridian-3075-e-u-87c676",
@@ -3304,7 +3305,7 @@
    "lng": -116.356061,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/11881628174",
@@ -3403,7 +3404,7 @@
    "lng": -87.64438,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/14101225652",
@@ -3450,7 +3451,7 @@
    "lng": -86.142187,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/13831193089",
@@ -3501,7 +3502,7 @@
    "lng": -90.156701,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-magic-la-new-orleans-2000-tulane-ave-99e730",
@@ -3529,7 +3530,7 @@
    "lng": -90.082936,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-bo-m-dough-ma-cambridge-1271-cambridge-street-43d551",
@@ -3587,7 +3588,7 @@
    "lng": -71.098536,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-bo-m-dough-ma-cambridge-1-canal-park-ffcbbd",
@@ -3645,7 +3646,7 @@
    "lng": -71.076793,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-bychae-ma-boston-222-newbury-street-0d3888",
@@ -3673,7 +3674,7 @@
    "lng": -71.08108,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/2458189474",
@@ -3713,7 +3714,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-imageEn.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=ma&target=ma-boston",
@@ -3724,7 +3725,7 @@
    "lng": -71.097061,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -3909,7 +3910,7 @@
    "lng": -71.081365,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-nana-s-green-tea-ma-boston-175-newbury-street-582869",
@@ -3937,7 +3938,7 @@
    "lng": -71.079287,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-sugi-matcha-ma-worcester-19-harrison-st-fdea76",
@@ -3965,7 +3966,7 @@
    "lng": -71.796933,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-equitea-matcha-studio-md-baltimore-311-w-28th-797739",
@@ -3993,7 +3994,7 @@
    "lng": -76.621891,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/12269407204",
@@ -4040,7 +4041,7 @@
    "lng": -76.601161,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/5376369821",
@@ -4095,7 +4096,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=mi&target=mi-troy",
@@ -4106,7 +4107,7 @@
    "lng": -83.12905,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -4252,7 +4253,7 @@
    "lng": -93.256485,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/13908302923",
@@ -4371,7 +4372,7 @@
    "lng": -80.844768,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-heirloom-brewshop-nc-raleigh-219-s-west-st-d599ca",
@@ -4417,7 +4418,7 @@
    "lng": -78.645939,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-littlefoot-matcha-nc-raleigh-234-fayetteville-808d26",
@@ -4445,7 +4446,7 @@
    "lng": -78.639574,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-littlefoot-matcha-nc-greensboro-1101-west-gate-3d9b6c",
@@ -4473,7 +4474,7 @@
    "lng": -79.809769,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-cafe-maiko-nc-charlotte-8128-providence-b266f1",
@@ -4490,7 +4491,7 @@
    "image_url": null,
    "image_credit": null,
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nc&target=nc-charlotte",
@@ -4501,7 +4502,7 @@
    "lng": -80.780137,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -4647,7 +4648,7 @@
    "lng": -74.048933,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-cafe-maiko-nj-fort-lee-1630-lemoine-ave-cb99bb",
@@ -4664,7 +4665,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=nj&target=usa-on-newjersey",
@@ -4675,7 +4676,7 @@
    "lng": -73.97039,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -4854,7 +4855,7 @@
    "lng": -106.646176,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-satellite-coffee-harvard-nob-hill-nm-albuquerq-7ce0ca",
@@ -4896,7 +4897,7 @@
    "lng": -106.620472,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-satellite-coffee-jefferson-nm-albuquerque-7600-363ae8",
@@ -4938,7 +4939,7 @@
    "lng": -106.591163,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-satellite-coffee-montgomery-nm-albuquerque-840-ef8908",
@@ -4980,7 +4981,7 @@
    "lng": -106.550054,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-satellite-coffee-university-blvd-nm-albuquerqu-9e0ad5",
@@ -5022,7 +5023,7 @@
    "lng": -106.62742,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/13781686401",
@@ -5069,7 +5070,7 @@
    "lng": -115.280223,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/14121437619",
@@ -5095,6 +5096,7 @@
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nv&target=nv-lv-store",
    "read": "2026-11-23",
    "confirmed_via": "own-site",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "menu": {
     "items": [
      {
@@ -5601,7 +5603,7 @@
    "lng": -115.260845,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -6009,7 +6011,7 @@
    "lng": -115.243646,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/12739827416",
@@ -6061,7 +6063,7 @@
    "lng": -73.771869,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-aoko-matcha-chinatown-ny-new-york-81-chrystie-18e59c",
@@ -6089,7 +6091,7 @@
    "lng": -73.994434,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-aoko-matcha-fidi-ny-new-york-40-gold-street-c71dc4",
@@ -6117,7 +6119,7 @@
    "lng": -74.005748,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-aoko-matcha-park-slope-ny-brooklyn-155-5th-ave-bed41d",
@@ -6145,7 +6147,7 @@
    "lng": -73.9792,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-aoko-matcha-west-village-ny-new-york-275-bleec-243904",
@@ -6173,7 +6175,7 @@
    "lng": -74.00301,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-dumbo-ny-brooklyn-55-water-stre-c04ae6",
@@ -6201,7 +6203,7 @@
    "lng": -73.991989,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/2555136029",
@@ -6251,7 +6253,7 @@
    "lng": -73.974632,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-moynihan-ny-new-york-421-8th-av-028f75",
@@ -6279,7 +6281,7 @@
    "lng": -73.996268,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:way/1149319923",
@@ -6351,7 +6353,7 @@
    "lng": -73.997693,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-isshiki-matcha-at-ace-hotel-ny-new-york-20-wes-146692",
@@ -6379,7 +6381,7 @@
    "lng": -73.98816,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-isshiki-matcha-at-loulou-ny-new-york-176-8th-a-d611cd",
@@ -6407,7 +6409,7 @@
    "lng": -74.000173,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/2268954021",
@@ -6459,7 +6461,7 @@
    "lng": -73.953918,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-kijitora-ny-brooklyn-151-north-7th-street-3c75b7",
@@ -6487,7 +6489,7 @@
    "lng": -73.957867,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -6722,7 +6724,7 @@
    "lng": -73.978839,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -6957,7 +6959,7 @@
    "lng": -73.944421,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -7192,7 +7194,7 @@
    "lng": -73.957205,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -7427,7 +7429,7 @@
    "lng": -73.912152,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -7660,6 +7662,7 @@
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ny&target=ny-ny",
    "read": "2026-11-23",
    "confirmed_via": "own-site",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "menu": {
     "items": [
      {
@@ -7794,7 +7797,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ny&target=ny-ta",
@@ -7805,7 +7808,7 @@
    "lng": -73.833802,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -7951,7 +7954,7 @@
    "lng": -73.986319,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -8066,7 +8069,7 @@
    "lng": -73.967974,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matchaful-midtown-east-inside-clean-market-ny-1cf4f2",
@@ -8094,7 +8097,7 @@
    "lng": -73.967486,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matchaful-nolita-ny-new-york-217-mulberry-stre-66f226",
@@ -8122,7 +8125,7 @@
    "lng": -73.996358,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matchaful-park-avenue-south-ny-new-york-337-pa-47b2d2",
@@ -8150,7 +8153,7 @@
    "lng": -73.985354,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matchaful-soho-ny-new-york-184-prince-street-c80e06",
@@ -8178,7 +8181,7 @@
    "lng": -74.002157,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matchaful-tribeca-ny-new-york-350-greenwich-st-796721",
@@ -8206,7 +8209,7 @@
    "lng": -74.010406,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/6550407925",
@@ -8258,7 +8261,7 @@
    "lng": -73.958345,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/11860537157",
@@ -8309,7 +8312,7 @@
    "lng": -73.771661,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-nippon-cha-williamsburg-ny-brooklyn-214-bedfor-5f988f",
@@ -8337,7 +8340,7 @@
    "lng": -73.958901,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/6916463756",
@@ -8452,7 +8455,7 @@
    "lng": -73.989712,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-sorate-soho-teahouse-ny-new-york-103-sullivan-692910",
@@ -8480,7 +8483,7 @@
    "lng": -74.002813,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-tokuyamatcha-onigirazu-bar-ny-new-york-115-e-2-35c391",
@@ -8508,7 +8511,7 @@
    "lng": -73.983682,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cinsei-oh-cincinnati-32-e-13th-st-aa615e",
@@ -8536,7 +8539,7 @@
    "lng": -84.513916,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -8601,7 +8604,7 @@
    "lng": -83.010082,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-behind-the-museum-cafe-or-portland-1229-sw-10t-36e275",
@@ -8647,7 +8650,7 @@
    "lng": -122.684281,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-matcha-or-portland-8007-se-13th-ave-3e00da",
@@ -8675,7 +8678,7 @@
    "lng": -122.653196,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/6377702634",
@@ -8719,6 +8722,7 @@
    "image_credit": "matchacafe-maiko.com",
    "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=or&target=or-portland",
    "read": "2026-11-23",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "menu": {
     "items": [
      {
@@ -8902,7 +8906,7 @@
    "lng": -75.159707,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/9659344789",
@@ -8953,7 +8957,7 @@
    "lng": -75.157443,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-cafe-maiko-pa-philadelphia-923-race-st-35969b",
@@ -8970,7 +8974,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=pa&target=pa-philadelphia-store",
@@ -8981,7 +8985,7 @@
    "lng": -75.155152,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -9192,7 +9196,7 @@
    "lng": -79.966307,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-mott-cha-tn-nashville-400-craighead-st-8f136c",
@@ -9220,7 +9224,7 @@
    "lng": -86.766019,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-ouri-matcha-tn-memphis-606-n-main-street-93310f",
@@ -9248,7 +9252,7 @@
    "lng": -90.046265,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-casa-matcha-tx-webster-1199-e-nasa-parkway-29c763",
@@ -9276,7 +9280,7 @@
    "lng": -95.103637,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-casa-matcha-tx-friendswood-1616-s-friendswood-aa6efe",
@@ -9304,7 +9308,7 @@
    "lng": -95.186289,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-greenova-tea-tx-frisco-3401-preston-rd-15-28fcb6",
@@ -9362,7 +9366,7 @@
    "lng": -96.806215,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-isa-matcha-tx-houston-1143-providence-st-7e3794",
@@ -9390,7 +9394,7 @@
    "lng": -95.357753,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-tx-cedar-park-202-walton-way-ste-120-b638cc",
@@ -9418,7 +9422,7 @@
    "lng": -97.832269,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-tx-arlington-1255-w-interstate-20-suite-e50438",
@@ -9446,7 +9450,7 @@
    "lng": -97.126206,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-tx-houston-9188-bellaire-blvd-ste-x-05134e",
@@ -9474,7 +9478,7 @@
    "lng": -95.545008,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-tx-katy-23015-colonial-parkway-suite-a-1-a1c87a",
@@ -9502,7 +9506,7 @@
    "lng": -95.771594,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-tx-richardson-326-w-campbell-rd-85bc68",
@@ -9530,7 +9534,7 @@
    "lng": -96.722701,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-kissa-matcha-tx-grand-prairie-2625-w-pioneer-p-ff33a4",
@@ -9558,7 +9562,7 @@
    "lng": -97.046137,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/12708690933",
@@ -9609,7 +9613,7 @@
    "lng": -97.750518,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160",
@@ -9637,7 +9641,7 @@
    "lng": -96.769177,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -9871,7 +9875,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-richardson",
@@ -9882,7 +9886,7 @@
    "lng": -96.73746,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -10017,7 +10021,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-san-antonio",
@@ -10028,7 +10032,7 @@
    "lng": -98.506202,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -10163,7 +10167,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-potranco",
@@ -10174,7 +10178,7 @@
    "lng": -98.714576,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -10309,7 +10313,7 @@
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
    "tier": "shop",
-   "note": null,
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-frisco",
@@ -10320,7 +10324,7 @@
    "lng": -96.802989,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z",
+   "fetched": "2026-11-23T21:25:48.211Z",
    "menu": {
     "items": [
      {
@@ -10466,7 +10470,7 @@
    "lng": -97.748146,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-mia-eldridge-tx-houston-1809-eldridge-p-8d5013",
@@ -10494,7 +10498,7 @@
    "lng": -95.624482,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-mira-matcha-tx-san-antonio-1931-north-new-brau-147356",
@@ -10522,7 +10526,7 @@
    "lng": -98.461029,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-cold-plunge-coffee-ut-salt-lake-city-457-e-300-e9c76e",
@@ -10568,7 +10572,7 @@
    "lng": -111.87765,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-guayoyo-cafe-ut-west-jordan-7173-s-redwood-rd-d495fd",
@@ -10626,7 +10630,7 @@
    "lng": -111.938338,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-ut-salt-lake-city-464-s-600-e-unit-a-dd7832",
@@ -10654,7 +10658,7 @@
    "lng": -111.873925,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-cafe-kyoto-ut-salt-lake-city-2223-s-hig-f6c99c",
@@ -10682,7 +10686,7 @@
    "lng": -111.853615,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "osm:node/11399205396",
@@ -10745,6 +10749,7 @@
    "image_credit": "matchacafe-maiko.com",
    "source_url": "https://www.matchacafe-maiko.com/eng/",
    "read": "2026-11-23",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "menu": {
     "items": [
      {
@@ -10887,6 +10892,7 @@
    "image_credit": "matchacafe-maiko.com",
    "source_url": "https://www.matchacafe-maiko.com/eng/",
    "read": "2026-11-23",
+   "note": "Reported rebranding to Matcha Toko in some locations; check before you go",
    "menu": {
     "items": [
      {
@@ -11032,7 +11038,7 @@
    "lng": -77.17745,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-atulea-wa-seattle-1715-12th-ave-0c850d",
@@ -11060,7 +11066,7 @@
    "lng": -122.317191,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-atulea-wa-seattle-7006-greenwood-ave-n-unit-10-e5d21f",
@@ -11088,7 +11094,7 @@
    "lng": -122.354993,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-grean-matcha-wa-seattle-4524-university-way-ne-ed6602",
@@ -11116,7 +11122,7 @@
    "lng": -122.312946,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-jin-jin-matcha-wa-tacoma-1019-pacific-ave-22ce46",
@@ -11144,7 +11150,7 @@
    "lng": -122.438448,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-junbi-matcha-wa-seattle-722-e-pike-st-ste-110-24dd24",
@@ -11172,7 +11178,7 @@
    "lng": -122.322296,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-magic-wa-redmond-7705-168th-ave-ne-ste-46515c",
@@ -11200,7 +11206,7 @@
    "lng": -122.116631,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-magic-wa-seattle-1530-11th-ave-a65bfe",
@@ -11228,7 +11234,7 @@
    "lng": -122.317975,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-matcha-magic-wa-seattle-500-fairview-ave-n-669aed",
@@ -11256,7 +11262,7 @@
    "lng": -122.334212,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-mina-s-matcha-wa-seattle-5200-roosevelt-way-ne-e52c76",
@@ -11284,7 +11290,7 @@
    "lng": -122.317086,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-miro-tea-wa-seattle-5405-ballard-ave-nw-fe8e92",
@@ -11338,7 +11344,7 @@
    "lng": -122.384936,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-nana-s-green-tea-wa-bellevue-16-103rd-ave-ne-a79dd4",
@@ -11366,7 +11372,7 @@
    "lng": -122.202686,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-taz-matcha-wa-seattle-1514-4th-ave-200a9c",
@@ -11394,7 +11400,7 @@
    "lng": -122.33668,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-vale-matcha-coffee-wa-seattle-2000-terry-ave-eb47db",
@@ -11422,7 +11428,7 @@
    "lng": -122.334857,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   },
   {
    "id": "brand:web-vale-matcha-bar-first-hill-wa-seattle-1101-mad-b12f37",
@@ -11450,7 +11456,7 @@
    "lng": -122.324269,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T21:12:21.179Z"
+   "fetched": "2026-11-23T21:25:48.211Z"
   }
  ]
 }
