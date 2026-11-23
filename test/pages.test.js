@@ -163,7 +163,7 @@ test("the home head: canonical, Open Graph, Twitter card, WebSite SearchAction w
 const DL = (() => { const ctx = { window: {}, URLSearchParams }; vm.runInNewContext(fs.readFileSync(new URL("../site/deeplink.js", import.meta.url), "utf8"), ctx); return ctx.window.MatchaDeepLink; })();
 test("deep links: ?q, ?city, ?event and ?brand parse and reject junk", () => {
   const { plan, ...rest } = DL.parse("?q=Raleigh%2C%20NC"); // plan is tested in social.test.js (vm arrays are not deep-equal to ours)
-  assert.deepEqual(rest, { q: "Raleigh, NC", city: "", event: "", brand: "" });
+  assert.deepEqual(rest, { q: "Raleigh, NC", city: "", event: "", shop: "", brand: "" });
   assert.equal(plan.length, 0);
   assert.equal(DL.parse("?city=Raleigh-NC").city, "raleigh-nc");
   assert.equal(DL.parse("?event=06792c4f00f5").event, "06792c4f00f5");

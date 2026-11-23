@@ -3,6 +3,7 @@
 //   ?city=<slug>-<st>  centres on a listed city, e.g. raleigh-nc
 //   ?event=<id>        opens that pop-up's card
 //   ?brand=<handle>    opens that brand's card
+//   ?shop=<id>         opens that storefront's card (the id in data/shops.json: osm:node/123, osm:way/123, brand:labora)
 //   ?plan=<id,id,...>  opens the Weekend tour on those pop-ups, in that order (a shared plan; at most 12)
 (function (root) {
   "use strict";
@@ -14,6 +15,7 @@
       q: clean(p.get("q"), 80),
       city: clean(p.get("city"), 80).toLowerCase(),
       event: /^[a-z0-9]{6,32}$/i.test(p.get("event") || "") ? p.get("event") : "",
+      shop: /^(?:osm:(?:node|way|relation)\/\d{1,15}|brand:[a-z0-9._-]{1,60})$/i.test(p.get("shop") || "") ? p.get("shop") : "",
       brand: clean(p.get("brand"), 60).replace(/^@/, "").toLowerCase(),
       plan: clean(p.get("plan"), 400).split(",").map(function (s) { return s.trim(); }).filter(function (s, i, a) { return /^[a-z0-9]{6,32}$/i.test(s) && a.indexOf(s) === i; }).slice(0, 12)
     };

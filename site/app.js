@@ -1865,6 +1865,7 @@
       if (pk.length) { widenFor(pk[0]); startTourWith(pk, true); return true; }
     }
     if (dl.event && items["e:" + dl.event]) { widenFor("e:" + dl.event); flyTo("e:" + dl.event); return true; }
+    if (dl.shop) { pendingShop = "s:" + dl.shop; return true; } // storefronts load after this: loadShops opens it
     var bk = dl.brand && brandKeyOf(dl.brand);
     if (bk) { widenFor(bk); flyTo(bk); return true; }
     var c = dl.city && DL.findCityBySlug(window.CITY_LIST, dl.city);
@@ -2008,7 +2009,7 @@
     var dl0 = window.MatchaDeepLink ? window.MatchaDeepLink.parse(location.search) : {};
     // ?at=lat,lng,zoom opens on that view (review screenshots, tests, a shared view); it wins over the zip and the region.
     var at = viewParam(params.get("at"));
-    var regionFirst = !wide.matches && !at && !/^\d{5}$/.test(zs) && !(dl0.q || dl0.city || dl0.event || dl0.brand);
+    var regionFirst = !wide.matches && !at && !/^\d{5}$/.test(zs) && !(dl0.q || dl0.city || dl0.event || dl0.brand || dl0.shop);
     if (regionFirst) { openRegion(); clearTimeout(moveT); }
     if (at) { map.jumpTo({ center: [at[1], at[0]], zoom: at[2] }); clearTimeout(moveT); }
     go(); // sources added later by addData (style.load) start from the same lists
@@ -2160,11 +2161,14 @@
     if (a) { a.classList.remove("maplibregl-compact-show"); a.removeAttribute("open"); }
   });
 
-  // Storefronts load after events and brands so the first paint never waits for them.
+  // Storefronts load after events and brands so the first paint never waits for them. ?shop=<id> waits here.
+  var pendingShop = "";
   function loadShops() {
     fetch("data/shops.json").then(function (r) { if (!r.ok) throw new Error("shops"); return r.json(); }).then(function (d) {
       buildShops(d.shops);
       refreshEvents(false);
+      if (pendingShop && items[pendingShop]) flyTo(pendingShop);
+      pendingShop = "";
     }).catch(function () { /* the storefront layer is optional */ });
   }
 

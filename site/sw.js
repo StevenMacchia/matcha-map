@@ -8,7 +8,7 @@ var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE 
 var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/rsvp.js", "/featured.js", "/pwa.js",
   "/cities.js", "/citypins.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",
   "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png", "/icons/favicon-32.png", "/shell.css",
-  "/cards.css", "/cards-app.js", "/cards.js", "/search.js", "/search.css", "/art.js", "/img-helper.js"];
+  "/cards.css", "/cards-app.js", "/cards.js", "/shopcard.js", "/shopcard.css", "/search.js", "/search.css", "/art.js", "/img-helper.js"];
 // Files from the next-level workers (N6, N8): cached too, but one that is missing never stops the install.
 var EXTRA = ["/weekend.css", "/weekend/", "/brand-extras.js"];
 // The map library is pinned and checked by SRI in index.html; the shell cannot draw a map without it.
