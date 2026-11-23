@@ -1762,12 +1762,39 @@
     for (var j = 0; j < state.events.length; j++) if (String(state.events[j].data.handle || "").toLowerCase() === h) return state.events[j].key;
     return "";
   }
+  // A link to one pop-up (or brand) that the saved Show or date choices hide: they widen for this visit, so the list
+  // beside its card has it, and one quiet line says so with an undo. Nothing is saved (N7c).
+  function widenFor(key) {
+    var it = items[key];
+    if (!it || (it.kind !== "e" && it.kind !== "b")) return;
+    var e = it.data, ev = it.kind === "e";
+    if (e.status === "cancelled" || (ev ? visibleEvents() : visibleBrands()).indexOf(it) >= 0) return;
+    var was = { chip: state.chip, day: state.day, recent: state.recent, only: state.only, show: JSON.stringify(show) };
+    var dates = false, kinds = false;
+    state.only = null;
+    var past = ev && e.status === "past";
+    if (ev ? (past ? state.day || state.chip !== "any" : !matchesChip(e)) : dated()) { state.chip = "any"; state.day = ""; dates = true; }
+    if (past && !state.recent) { state.recent = true; dates = true; }
+    if (!passesShow(e)) {
+      var k = e.kind || "popup";
+      if (show.po && k !== "popup") show.po = false;
+      show.k[k] = true; show.c[e.category || "matcha"] = true; kinds = true;
+    }
+    if (ev && !show.un && unplaced(e)) { show.un = true; kinds = true; }
+    syncChips(); syncShow(); refreshEvents(false);
+    var what = dates && kinds ? "every date and kind" : dates ? (past ? "recent pop-ups" : "every date") : "every kind";
+    oops("Showing " + what + " for this link.", ["Undo", function () {
+      state.chip = was.chip; state.day = was.day; state.recent = was.recent; state.only = was.only;
+      var sv = JSON.parse(was.show); show.po = sv.po; show.un = sv.un; show.k = sv.k; show.c = sv.c;
+      syncChips(); syncShow(); stage(700); refreshEvents(true);
+    }], "m-happy");
+  }
   function applyDeepLink() {
     var DL = window.MatchaDeepLink, dl = DL && DL.parse(location.search);
     if (!dl) return false;
-    if (dl.event && items["e:" + dl.event]) { flyTo("e:" + dl.event); return true; }
+    if (dl.event && items["e:" + dl.event]) { widenFor("e:" + dl.event); flyTo("e:" + dl.event); return true; }
     var bk = dl.brand && brandKeyOf(dl.brand);
-    if (bk) { flyTo(bk); return true; }
+    if (bk) { widenFor(bk); flyTo(bk); return true; }
     var c = dl.city && DL.findCityBySlug(window.CITY_LIST, dl.city);
     if (c) { landAt([c[2], c[3]], c[0] + ", " + c[1], "", false); return true; }
     if (dl.q) { goPlace(dl.q); return true; }
