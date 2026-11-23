@@ -2835,5 +2835,23 @@
   "wynwood marketplace miami fl": {
     "miss": true,
     "at": 1795371636237
+  },
+  "city:burlingame|ca": {
+    "lat": 37.5781,
+    "lng": -122.3473,
+    "source": "nominatim",
+    "at": "2026-11-23T04:38:49.155Z"
+  },
+  "city:sterling|va": {
+    "lat": 39.0037,
+    "lng": -77.4083,
+    "source": "nominatim",
+    "at": "2026-11-23T04:38:50.515Z"
+  },
+  "city:tustin|ca": {
+    "lat": 33.7459,
+    "lng": -117.8262,
+    "source": "nominatim",
+    "at": "2026-11-23T04:38:52.076Z"
   }
 }
