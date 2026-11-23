@@ -1,7 +1,8 @@
 // npm run loop:    watch every hour; discover and ingest every 6 hours (with a watch pass each time), while this process is open.
 // npm run refresh: discover -> watch -> ingest -> Yelp lead search once, then exit.
 // Each step is its own child process, so one crash never stops the cycle. Needs no keys (the lead search is off without YELP_API_KEY;
-// with one it keeps Yelp answers under 24 hours in .cache and stores no Yelp field: docs/YELP-TERMS.md, 290 calls a day).
+// with one it keeps Yelp answers under 24 hours in .cache and stores no Yelp field: docs/YELP-TERMS.md). The lead search runs once per
+// UTC day at most (stamp in .cache/yelp-leads-day.txt), 250 cities a run, so the lane keeps room under Yelp's 300-a-day plan.
 // Flags: --once (same as refresh) | --every <hours> for discover + ingest (default 6) | --watch-every <hours> (default 1) | --verbose (pass step output through)
 import fs from "node:fs";
 import path from "node:path";
@@ -18,7 +19,12 @@ if (!(hours > 0) || !(watchHours > 0)) { console.error("--every and --watch-ever
 
 const WATCH = ["watch", ["ingest/watch.js"]];
 // The full cycle (discover, watch, ingest) and the hourly one (watch alone).
-export const YELP_LEADS = ["yelp-leads", ["ingest/shops-keyed.js", "--provider", "yelp"]];
+export const YELP_LEADS = ["yelp-leads", ["ingest/shops-keyed.js", "--provider", "yelp", "--limit", "250"]];
+const DAY_STAMP = path.join(ROOT, ".cache", "yelp-leads-day.txt");
+const todayUTC = () => new Date().toISOString().slice(0, 10);
+// Once a UTC day, never twice: the stamp holds the day of the last completed run.
+export function yelpDue(read = (f) => fs.readFileSync(f, "utf8")) { try { return read(DAY_STAMP).trim() !== todayUTC(); } catch { return true; } }
+function stampYelp() { fs.mkdirSync(path.dirname(DAY_STAMP), { recursive: true }); fs.writeFileSync(DAY_STAMP, todayUTC()); }
 const FULL = [["discover", ["ingest/lib/discover.js"]], WATCH, ["ingest", ["ingest/run.js"]], YELP_LEADS];
 
 const stamp = () => new Date().toISOString().replace("T", " ").slice(0, 19);
@@ -58,7 +64,9 @@ async function cycle(STEPS = FULL) {
   const parts = [];
   for (const [name, args] of STEPS) {
     if (stopping) break;
+    if (name === YELP_LEADS[0] && !yelpDue()) { parts.push(`${name} skipped (ran today)`); continue; }
     const r = await runStep(args);
+    if (name === YELP_LEADS[0] && r.ok) stampYelp();
     parts.push(`${name} ${r.ok ? "ok" : "FAILED"} ${r.secs}s${r.note ? ` (${r.note})` : ""}`);
   }
   running = false;
