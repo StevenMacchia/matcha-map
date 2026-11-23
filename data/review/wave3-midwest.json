@@ -1,0 +1,123 @@
+{
+  "generated": "2026-11-23T12:20:45.082Z",
+  "group": "wave3-midwest",
+  "items": [
+    {
+      "brand": "HerCafe",
+      "handle": "hercafekc",
+      "source_id": "hercafe-kc",
+      "title": "HerCafe matcha cart at Overland Park Farmers Market (holiday market)",
+      "start": "2026-12-05T08:00:00-06:00",
+      "end": "2026-12-05T12:00:00-06:00",
+      "all_day": false,
+      "tz": "America/Chicago",
+      "venue": "Overland Park Farmers Market, Clock Tower Landing",
+      "address": "7950 Santa Fe St, Overland Park, KS 66204",
+      "city": "Overland Park",
+      "state": "KS",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://hercafekc.com",
+      "posts": [],
+      "evidence": [
+        "https://hercafekc.com",
+        "https://www.visitoverlandpark.com/things-to-do/attractions/overland-park-farmers-market/",
+        "https://www.kcur.org/arts-life/2026-10-10/kansas-city-coffee-shops-matcha-fall-menu-pumpkin"
+      ],
+      "menu": [
+        "banana pudding matcha",
+        "berry chantilly matcha",
+        "peach cobbler matcha",
+        "salted honey hojicha",
+        "vanilla matcha",
+        "maple matcha",
+        "hojicha"
+      ],
+      "price": "$7-8",
+      "hours": "8am-12pm",
+      "pay": null,
+      "description": "HerCafe is Kansas City's first mobile matcha cart, hand-whisking drinks with in-house syrups and cold foams. Its site lists the Overland Park Farmers Market as its pop-up location every Saturday. The market runs holiday Saturdays Dec 5, 12 and 19.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Brand site says 'every Saturday' at Overland Park Farmers Market with no specific dates; the city lists the market Dec 5-19 (none Nov 28, Dec 26, Jan 2). Winter attendance by HerCafe is not confirmed on any page, so unsure. Market page lists hours 8am-12pm."
+    },
+    {
+      "brand": "HerCafe",
+      "handle": "hercafekc",
+      "source_id": "hercafe-kc",
+      "title": "HerCafe matcha cart at Overland Park Farmers Market (holiday market)",
+      "start": "2026-12-12T08:00:00-06:00",
+      "end": "2026-12-12T12:00:00-06:00",
+      "all_day": false,
+      "tz": "America/Chicago",
+      "venue": "Overland Park Farmers Market, Clock Tower Landing",
+      "address": "7950 Santa Fe St, Overland Park, KS 66204",
+      "city": "Overland Park",
+      "state": "KS",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://hercafekc.com",
+      "posts": [],
+      "evidence": [
+        "https://hercafekc.com",
+        "https://www.visitoverlandpark.com/things-to-do/attractions/overland-park-farmers-market/",
+        "https://www.kcur.org/arts-life/2026-10-10/kansas-city-coffee-shops-matcha-fall-menu-pumpkin"
+      ],
+      "menu": [
+        "banana pudding matcha",
+        "berry chantilly matcha",
+        "peach cobbler matcha",
+        "salted honey hojicha",
+        "vanilla matcha",
+        "maple matcha",
+        "hojicha"
+      ],
+      "price": "$7-8",
+      "hours": "8am-12pm",
+      "pay": null,
+      "description": "HerCafe is Kansas City's first mobile matcha cart, hand-whisking drinks with in-house syrups and cold foams. Its site lists the Overland Park Farmers Market as its pop-up location every Saturday. The market runs holiday Saturdays Dec 5, 12 and 19.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Brand site says 'every Saturday' at Overland Park Farmers Market with no specific dates; the city lists the market Dec 5-19 (none Nov 28, Dec 26, Jan 2). Winter attendance by HerCafe is not confirmed on any page, so unsure. Market page lists hours 8am-12pm."
+    },
+    {
+      "brand": "HerCafe",
+      "handle": "hercafekc",
+      "source_id": "hercafe-kc",
+      "title": "HerCafe matcha cart at Overland Park Farmers Market (holiday market)",
+      "start": "2026-12-19T08:00:00-06:00",
+      "end": "2026-12-19T12:00:00-06:00",
+      "all_day": false,
+      "tz": "America/Chicago",
+      "venue": "Overland Park Farmers Market, Clock Tower Landing",
+      "address": "7950 Santa Fe St, Overland Park, KS 66204",
+      "city": "Overland Park",
+      "state": "KS",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://hercafekc.com",
+      "posts": [],
+      "evidence": [
+        "https://hercafekc.com",
+        "https://www.visitoverlandpark.com/things-to-do/attractions/overland-park-farmers-market/",
+        "https://www.kcur.org/arts-life/2026-10-10/kansas-city-coffee-shops-matcha-fall-menu-pumpkin"
+      ],
+      "menu": [
+        "banana pudding matcha",
+        "berry chantilly matcha",
+        "peach cobbler matcha",
+        "salted honey hojicha",
+        "vanilla matcha",
+        "maple matcha",
+        "hojicha"
+      ],
+      "price": "$7-8",
+      "hours": "8am-12pm",
+      "pay": null,
+      "description": "HerCafe is Kansas City's first mobile matcha cart, hand-whisking drinks with in-house syrups and cold foams. Its site lists the Overland Park Farmers Market as its pop-up location every Saturday. The market runs holiday Saturdays Dec 5, 12 and 19.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Brand site says 'every Saturday' at Overland Park Farmers Market with no specific dates; the city lists the market Dec 5-19 (none Nov 28, Dec 26, Jan 2). Winter attendance by HerCafe is not confirmed on any page, so unsure. Market page lists hours 8am-12pm."
+    }
+  ]
+}
