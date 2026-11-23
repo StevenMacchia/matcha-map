@@ -54,7 +54,9 @@
       if (value("end") && !value("start")) e.start = "Add the start time too.";
     }
     if (form.id === "report-form") { need("reason", "Pick what is wrong."); need("event", "Open this page from a pop-up card."); if (value("reason") === "other") need("details", "Tell us a little."); }
-    if (form.id === "claim-form") { need("brand", "Which brand?"); need("handle", "Add the handle."); need("role", "What is your role there?"); need("email", "We need an email to reply to."); need("proof", "Add a link that shows it is yours."); if (value("proof") && !/^https?:\/\/\S+\.\S+/i.test(value("proof"))) e.proof = "That link needs to start with https://"; }
+    if (form.id === "claim-form") { need("brand", "Which brand?"); need("handle", "Add the handle."); need("role", "What is your role there?"); need("email", "We need an email to reply to."); need("proof", "Add a link that shows it is yours."); if (value("proof") && !/^https?:\/\/\S+\.\S+/i.test(value("proof"))) e.proof = "That link needs to start with https://";
+      if (value("menu").split(/\n/).filter(function (l) { return l.trim(); }).length > 40) e.menu = "Up to 40 lines, please.";
+      if (value("menu_url") && !/^https?:\/\/\S+\.\S+/i.test(value("menu_url"))) e.menu_url = "That link needs to start with https://"; }
     if (form.id === "featured-form") { need("event", "Paste the pop-up's map link or its id."); need("brand", "Which brand?"); need("email", "We need an email to reply to."); need("week", "Pick the day your week starts."); need("plan", "Pick free or paid."); }
     if (form.id === "alerts-form") { need("email", "We need an email to write to."); need("city", "Pick a city."); if (!value("consent")) e.consent = "Tick the box so we know it is ok."; }
     if (value("email") && !email.test(value("email"))) e.email = "That email does not look right.";

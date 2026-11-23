@@ -22,3 +22,20 @@ test("cards-app: cityHref and brandHref use only pages that exist", async () => 
   assert.match(html, /href="\/city\/nc\/raleigh\/"/);
   assert.match(html, /mm-bname-link" href="\/brand\/moonbee\/"/);
 });
+
+test("cards-app: fetches data/menus.json once with the other files; the brand card shows its menu, and none when the file 404s", async () => {
+  const MENUS = { menus: { "example-matcha.com": { items: [{ name: "Usucha", price: "$6" }], source_url: "https://example-matcha.com/menu", read: "2026-11-20", kind: "html" } } };
+  const brand = { kind: "b", data: { id: "ex", brand: "Example Matcha", instagram: "examplematcha", website: "https://www.example-matcha.com/", home_city: "Seattle", home_state: "WA" } };
+  for (const has of [true, false]) {
+    const asked = [];
+    globalThis.window = {};
+    globalThis.document = { documentElement: {}, addEventListener: () => {} };
+    globalThis.fetch = async (u) => { asked.push(u); return { ok: has && /menus\.json$/.test(u), json: async () => MENUS }; };
+    await import("../site/cards-app.js?m=" + has + Date.now());
+    await globalThis.window.MatchaCards.ready;
+    assert.equal(asked.filter((u) => u === "data/menus.json").length, 1);
+    const html = globalThis.window.MatchaCards.render(brand, {});
+    if (has) { assert.match(html, /mm-menu-sec/); assert.match(html, /Usucha/); assert.match(html, /From example-matcha\.com, read Nov 20, 2026/); }
+    else assert.doesNotMatch(html, /mm-menu/);
+  }
+});

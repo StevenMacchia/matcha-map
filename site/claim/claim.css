@@ -1,0 +1,20 @@
+/* /claim/ explainer ("Get on the map"): sits on /style.css tokens, /pages.css and /add/add.css (.fm-card, .fm-btn). */
+.gm-sec { margin: 0 0 14px; }
+.gm-sec h2 { margin: 0 0 8px; font-size: 22px; }
+.gm-sec p { margin: 0; font-size: 16px; line-height: 1.5; }
+.gm-sec.fm-card p + p { margin-top: 8px; }
+.gm-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.gm-steps li { display: flex; gap: 12px; align-items: flex-start; padding: 14px; }
+.gm-n { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--edge); background: var(--accent); color: var(--accent-ink); font: 800 17px/30px var(--font); text-align: center; }
+.gm-steps h3 { margin: 2px 0 2px; font-size: 17px; }
+.gm-steps p { font-size: 15px; }
+.gm-steps div { min-width: 0; overflow-wrap: anywhere; }
+.gm-list { margin: 0; padding-left: 20px; line-height: 1.5; }
+.gm-list li { margin: 2px 0; overflow-wrap: anywhere; }
+.gm-sec a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.gm-go { margin: 18px 0 22px; text-align: center; }
+.gm-go .fm-note { margin: 10px 0 0; }
+.gm-formh { margin: 8px 0 10px; font-size: 24px; scroll-margin-top: 12px; }
+.gm-formh:focus { outline: none; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+.gm-go .fm-btn { text-decoration: none; }

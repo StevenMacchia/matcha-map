@@ -120,3 +120,17 @@ test("cards-app: render draws the storefront card for kind s", async () => {
   const h = globalThis.window.MatchaCards.render({ kind: "s", key: "s:osm:node/2268954021", data: byId("osm:node/2268954021") }, { phone: true });
   assert.match(h, /mm-card mm-shop/);
 });
+
+test("shopcard: an approved owner menu stands in when the shop has none, credited From the owner, never twice", async () => {
+  const { ownerMenuFor } = await import("../site/shopcard.js");
+  const owner = { items: [{ name: "Matcha Latte", price: "$6", note: null }, { name: "Usucha", price: null, note: "whisked" }], source_url: "https://example.com/menu", kind: "owner", read: "2026-11-23", note: "From the owner" };
+  const ctx = { now: WED_10_PT, ownerMenus: { get: (k) => (k === "osm:node/9" ? owner : null) } };
+  const html = shopCardHtml({ id: "osm:node/9", name: "Corner Tea", address: "1 Main St", city: "Reno", state: "NV", lat: 39.5, lng: -119.8 }, ctx);
+  assert.match(html, /mm-menu-sec/);
+  assert.match(html, /Matcha Latte/);
+  assert.match(html, /From the owner, menu at example\.com, sent/);
+  assert.equal((html.match(/From the owner/g) || []).length, 1, "the public read's note line is not repeated as a caveat");
+  assert.doesNotMatch(shopCardHtml({ id: "osm:node/10", name: "No Menu", address: "2 Main St", city: "Reno", state: "NV", lat: 39.5, lng: -119.8 }, ctx), /mm-menu-sec/);
+  assert.equal(ownerMenuFor("osm:node/9", { ownerMenus: { get: () => ({ items: [] }) } }), null, "an empty owner menu is nothing");
+  assert.equal(ownerMenuFor("", ctx), null);
+});

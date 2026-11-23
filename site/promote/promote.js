@@ -164,8 +164,8 @@
     var a2 = h("div", "pr-acts"); a2.appendChild(di); c.appendChild(a2);
 
     c = card("Get listed as the host", "A host page with edits and a Featured slot is coming.");
-    var hd = e.handle ? "?brand=" + encodeURIComponent(e.handle) : "";
-    c.appendChild(h("p", "", '<a class="fm-btn alt" href="/claim/' + hd + '">Claim your brand</a>'));
+    var hd = e.brand ? "?brand=" + encodeURIComponent(e.brand) + (e.handle ? "&handle=" + encodeURIComponent("@" + String(e.handle).replace(/^@/, "")) : "") : "";
+    c.appendChild(h("p", "", '<a class="fm-btn alt" href="/claim/' + hd + '">Claim your page</a>'));
     c.appendChild(h("p", "fm-note", 'Want a Featured spot? <a href="/featured/">See how it works</a>.'));
   }
 
