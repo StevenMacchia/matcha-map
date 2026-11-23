@@ -53,7 +53,7 @@
       "schedule_kind": "none",
       "adapter": "manual",
       "active": true,
-      "notes": "Dallas matcha pop-up running a weekend schedule at local shops and openings (e.g. Studio Inks grand opening, Sat 10am-4pm). Evidence: https://www.instagram.com/p/Df5U75EshMa",
+      "notes": "Dallas matcha pop-up running a weekend schedule at local shops and openings (e.g. Studio Inks grand opening, Sat 10am-4pm). Evidence: https://www.instagram.com/p/Df5U75EshMa Nov 3 2026 post says the Clawzania Sundays are their last pop-ups of the year before a break (https://www.instagram.com/p/DfS5HqEsnoO).",
       "added": "2026-11-23",
       "verified": null
     },
@@ -187,6 +187,25 @@
       "adapter": "manual",
       "active": true,
       "notes": "Coffee and matcha pop-up run by two sisters in Saginaw / north Fort Worth; Biscoff matcha latte, strawberry blush latte, cloud matcha latte. Evidence: https://www.tiktok.com/@michellenunezflores/video/7673575502577372430",
+      "added": "2026-11-23",
+      "verified": null
+    },
+    {
+      "id": "isa-matcha",
+      "brand": "isa matcha",
+      "kind": "popup",
+      "category": "matcha",
+      "kind_note": null,
+      "home_city": "Houston",
+      "home_state": "TX",
+      "website": null,
+      "instagram": "isamatcha.co",
+      "tiktok": null,
+      "schedule_url": null,
+      "schedule_kind": "none",
+      "adapter": "manual",
+      "active": true,
+      "notes": "Houston matcha pop-up (verified Instagram) that posted a carrot cake matcha for the weekend of Nov 21-22 2026. Dates on Instagram. Evidence: https://www.instagram.com/reel/Df7jHKXvchv",
       "added": "2026-11-23",
       "verified": null
     }
