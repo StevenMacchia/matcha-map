@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"oohmamimatcha","upcoming":[{"id":"9aa73726e33d","day":"Sunday, Nov 22","time":"All day","place":"Grant Park Market, Atlanta","url":"/e/9aa73726e33d/","map":"/?event=9aa73726e33d"}],"drinks":[],"price":null,"story":""});
+mmBrandExtra(null);

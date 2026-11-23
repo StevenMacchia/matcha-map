@@ -3,22 +3,21 @@ VERSION:2.0
 PRODID:-//Matcha Map//Pop-ups//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:magnaye pop-up
+X-WR-CALNAME:Magnaye pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:b192ec8a7beb@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
-LAST-MODIFIED:20261123T005942Z
-DTSTART;VALUE=DATE:20261127
-DTEND;VALUE=DATE:20261128
-SUMMARY:magnaye pop-up
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261127T180000Z
+DTEND:20261127T220000Z
+SUMMARY:Espresso & Matcha Pop-Up at Patine
 LOCATION:2722 Fifth Ave\, San Diego\, CA
 DESCRIPTION:Black Friday pop up in Bankers Hill Join us for an espresso + m
  atcha bar alongside pastry chef extraordinaire matcha.y.miel at cozy\, cul
- inary & cookbook shop patine.sd.\nMenu: espresso matcha\, pastry\nLikely\,
-  not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/b192ec8a7be
- b/
+ inary & cookbook shop patine.sd.\nMenu: espresso matcha\, pastry\nMore: ht
+ tps://matchamap-cu7.pages.dev/e/b192ec8a7beb/
 URL:https://matchamap-cu7.pages.dev/e/b192ec8a7beb/
 GEO:33.116063;-117.082913
 STATUS:CONFIRMED

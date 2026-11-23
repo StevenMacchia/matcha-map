@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Shogun Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f527a53f934a@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261212T210000Z
+DTEND:20261213T000000Z
+SUMMARY:Shogun Matcha pop-up at Nobu Hotel Atlanta
+LOCATION:Nobu Hotel Atlanta (lobby)\, 3520 Peachtree Rd NE\, Atlanta\, GA 3
+ 0326\, Atlanta\, GA
+DESCRIPTION:Shogun Matcha pours hand-whisked matcha from Uji in the lobby o
+ f Nobu Hotel Atlanta in Buckhead\, with art on display in the lobby. Walk-
+ ins welcome\; the hotel's own post lists these as upcoming matcha\nMenu: m
+ atcha latte\, new yorker matcha latte\, geisha blend\, hojicha\nLikely\, n
+ ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/f527a53f934a/
+URL:https://matchamap-cu7.pages.dev/e/f527a53f934a/
+GEO:33.854307;-84.363451
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

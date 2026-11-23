@@ -8,16 +8,20 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:af501e1d54a2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
-LAST-MODIFIED:20261122T203515Z
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
 DTSTART:20261201T160000Z
 DTEND:20261201T180000Z
 SUMMARY:Dream Tea NYC in Columbus Circle Holiday Market
-LOCATION:New York\, NY
-DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/af501e1d54a2/
+LOCATION:Columbus Circle Holiday Market by Urbanspace\, Central Park South\
+ , New York\, NY 10019\, New York\, NY
+DESCRIPTION:A booth at the Urbanspace Columbus Circle holiday market with m
+ atcha\, holiday sets and exclusive tea blends. The Eventbrite listing span
+ s Dec 1 to Dec 31\, 11am to 7pm.\nMenu: matcha\, holiday tea sets\, exclus
+ ive tea blends\nMore: https://matchamap-cu7.pages.dev/e/af501e1d54a2/
 URL:https://matchamap-cu7.pages.dev/e/af501e1d54a2/
-STATUS:TENTATIVE
+GEO:40.767690;-73.981717
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 END:VCALENDAR

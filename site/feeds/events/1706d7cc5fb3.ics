@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kaphé Muna pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:1706d7cc5fb3@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261206T200000Z
+DTEND:20261207T010000Z
+SUMMARY:Kaphé Muna coffee and matcha pop-up at Golden Makers Market
+LOCATION:San Diego\, CA
+DESCRIPTION:Kaphé Muna\, a Filipino-heritage specialty coffee and matcha p
+ op-up\, is a named vendor among 45+ makers at the Golden Makers holiday ma
+ rket in Point Loma. Free RSVP through the market.\nMenu: specialty coffee\
+ , matcha drinks\nDetails not confirmed yet. Check the brand's post before 
+ you go.\nMore: https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
+URL:https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

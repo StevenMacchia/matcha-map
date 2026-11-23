@@ -8,15 +8,14 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:418913353e26@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
-LAST-MODIFIED:20261123T005942Z
-DTSTART:20261212T170000Z
-DTEND:20261212T220000Z
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
 SUMMARY:Matcha Fest pop-up
 LOCATION:Miami\, FL
-DESCRIPTION:califiafarms is coming to MatchaFest Miami\nMenu: iced matcha l
- atte\nDetails not confirmed yet. Check the brand's post before you go.\nMo
- re: https://matchamap-cu7.pages.dev/e/418913353e26/
+DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
+ .\nMore: https://matchamap-cu7.pages.dev/e/418913353e26/
 URL:https://matchamap-cu7.pages.dev/e/418913353e26/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

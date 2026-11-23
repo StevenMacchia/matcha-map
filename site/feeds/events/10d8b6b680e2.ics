@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Thaiyo & Friends Matcha Market pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:10d8b6b680e2@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261206T190000Z
+DTEND:20261206T230000Z
+SUMMARY:San Diego Matcha Market at Day to Day Collective
+LOCATION:Day to Day Collective\, 2310 Kettner Blvd\, San Diego\, CA 92101\,
+  San Diego\, CA
+DESCRIPTION:The matcha market is back: several of San Diego's smaller match
+ a pop-ups gather in one place with DJs\, photobooths and vintage shopping.
+  emkari cafe is serving Filipino and Vietnamese inspired matcha \nMenu: fi
+ lipino and vietnamese inspired matcha \, matcha from several san diego pop
+ -ups\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev
+ /e/10d8b6b680e2/
+URL:https://matchamap-cu7.pages.dev/e/10d8b6b680e2/
+GEO:32.728238;-117.171302
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

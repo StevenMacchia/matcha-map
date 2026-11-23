@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"jessnajem","upcoming":[{"id":"c76b758b3944","day":"Sunday, Nov 22","time":"All day","place":"New York, NY","url":"/e/c76b758b3944/","map":"/?event=c76b758b3944"}],"drinks":[{"slug":"ceremonial","name":"Ceremonial","art":"/art/drinks/ceremonial.svg"}],"price":null,"story":""});
+mmBrandExtra({"v":1,"brand":"jessnajem","upcoming":[],"drinks":[{"slug":"ceremonial","name":"Ceremonial","art":"/art/drinks/ceremonial.svg"}],"price":null,"story":""});

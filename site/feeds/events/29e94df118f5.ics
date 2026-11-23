@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:For the Love of Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:29e94df118f5@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261205T170000Z
+DTEND:20261205T220000Z
+SUMMARY:For the Love of Matcha at Grand Lake Farmers Market
+LOCATION:Splash Pad Park\, 746 Grand Ave\, Oakland\, CA 94610\, Oakland\, C
+ A
+DESCRIPTION:A weekly matcha pop-up at the Grand Lake Farmers Market in Oakl
+ and that closes once it sells out\, so go early. Seasonal specials such as
+  sweet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\
+ nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/29
+ e94df118f5/
+URL:https://matchamap-cu7.pages.dev/e/29e94df118f5/
+GEO:37.811418;-122.248801
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

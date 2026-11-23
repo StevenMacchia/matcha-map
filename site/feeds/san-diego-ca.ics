@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:d27a41ae179a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261122
 DTEND;VALUE=DATE:20261123
@@ -25,7 +25,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:fdcf04504b1b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261122T203115Z
 DTSTART;VALUE=DATE:20261122
 DTEND;VALUE=DATE:20261123
@@ -42,7 +42,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:4a9586dacab3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -58,7 +58,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:9fc3ea7a0140@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -75,7 +75,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:e8151f92bd15@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
@@ -90,26 +90,8 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:b192ec8a7beb@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
-LAST-MODIFIED:20261123T005942Z
-DTSTART;VALUE=DATE:20261127
-DTEND;VALUE=DATE:20261128
-SUMMARY:magnaye pop-up
-LOCATION:2722 Fifth Ave\, San Diego\, CA
-DESCRIPTION:Black Friday pop up in Bankers Hill Join us for an espresso + m
- atcha bar alongside pastry chef extraordinaire matcha.y.miel at cozy\, cul
- inary & cookbook shop patine.sd.\nMenu: espresso matcha\, pastry\nLikely\,
-  not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/b192ec8a7be
- b/
-URL:https://matchamap-cu7.pages.dev/e/b192ec8a7beb/
-GEO:33.116063;-117.082913
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:907bad3baf0e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
@@ -125,9 +107,26 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:b192ec8a7beb@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261127T180000Z
+DTEND:20261127T220000Z
+SUMMARY:Espresso & Matcha Pop-Up at Patine
+LOCATION:2722 Fifth Ave\, San Diego\, CA
+DESCRIPTION:Black Friday pop up in Bankers Hill Join us for an espresso + m
+ atcha bar alongside pastry chef extraordinaire matcha.y.miel at cozy\, cul
+ inary & cookbook shop patine.sd.\nMenu: espresso matcha\, pastry\nMore: ht
+ tps://matchamap-cu7.pages.dev/e/b192ec8a7beb/
+URL:https://matchamap-cu7.pages.dev/e/b192ec8a7beb/
+GEO:33.116063;-117.082913
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:9a6762c17c0d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
 DTSTART:20261129T160000Z
 DTEND:20261129T180000Z
 SUMMARY:Pilates at The Ranch
@@ -141,7 +140,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:1cdd1761a275@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261122T235305Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
@@ -158,7 +157,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:c676cf3f543c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261122T202629Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
@@ -170,6 +169,43 @@ DESCRIPTION:Filipino & Vietnamese Matcha & Coffee Popup in San Diego | Dec
  onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
  ap-cu7.pages.dev/e/c676cf3f543c/
 URL:https://matchamap-cu7.pages.dev/e/c676cf3f543c/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:10d8b6b680e2@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261206T190000Z
+DTEND:20261206T230000Z
+SUMMARY:San Diego Matcha Market at Day to Day Collective
+LOCATION:Day to Day Collective\, 2310 Kettner Blvd\, San Diego\, CA 92101\,
+  San Diego\, CA
+DESCRIPTION:The matcha market is back: several of San Diego's smaller match
+ a pop-ups gather in one place with DJs\, photobooths and vintage shopping.
+  emkari cafe is serving Filipino and Vietnamese inspired matcha \nMenu: fi
+ lipino and vietnamese inspired matcha \, matcha from several san diego pop
+ -ups\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev
+ /e/10d8b6b680e2/
+URL:https://matchamap-cu7.pages.dev/e/10d8b6b680e2/
+GEO:32.728238;-117.171302
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:1706d7cc5fb3@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261206T200000Z
+DTEND:20261207T010000Z
+SUMMARY:Kaphé Muna coffee and matcha pop-up at Golden Makers Market
+LOCATION:San Diego\, CA
+DESCRIPTION:Kaphé Muna\, a Filipino-heritage specialty coffee and matcha p
+ op-up\, is a named vendor among 45+ makers at the Golden Makers holiday ma
+ rket in Point Loma. Free RSVP through the market.\nMenu: specialty coffee\
+ , matcha drinks\nDetails not confirmed yet. Check the brand's post before 
+ you go.\nMore: https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
+URL:https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

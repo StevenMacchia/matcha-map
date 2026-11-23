@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:For the Love of Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f6c4d24ddf8c@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261129T170000Z
+DTEND:20261129T210000Z
+SUMMARY:For the Love of Matcha at Temescal Farmers Market
+LOCATION:Temescal Farmers Market (DMV parking lot)\, 5300 Claremont Ave\, O
+ akland\, CA 94618\, Oakland\, CA
+DESCRIPTION:A weekly matcha pop-up at the Temescal Farmers Market in Oaklan
+ d that closes once it sells out\, so go early. Seasonal specials such as s
+ weet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\nL
+ ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/f6c4
+ d24ddf8c/
+URL:https://matchamap-cu7.pages.dev/e/f6c4d24ddf8c/
+GEO:37.839909;-122.259415
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

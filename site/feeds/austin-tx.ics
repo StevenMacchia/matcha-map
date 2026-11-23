@@ -7,8 +7,23 @@ X-WR-CALNAME:Matcha Map: Austin\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
+UID:5758a7f584fe@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Central Matcha pop-up at Mueller
+LOCATION:Mueller\, 2006 Philomena St\, Austin\, TX
+DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
+ .\nMore: https://matchamap-cu7.pages.dev/e/5758a7f584fe/
+URL:https://matchamap-cu7.pages.dev/e/5758a7f584fe/
+GEO:30.299843;-97.702653
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:946a1a0bba72@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261125
@@ -23,9 +38,23 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:1be5bbd59a47@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Central Matcha pop-up
+LOCATION:Austin\, TX
+DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
+ .\nMore: https://matchamap-cu7.pages.dev/e/1be5bbd59a47/
+URL:https://matchamap-cu7.pages.dev/e/1be5bbd59a47/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:72a79959a5ba@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
-LAST-MODIFIED:20261123T010415Z
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:Matcha + Meetup: Dallas | Benefits for The Birthday Party Project
@@ -41,7 +70,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:a61b00f0c51e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261128T190000Z
 DTEND:20261128T220000Z
@@ -56,8 +85,27 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:e515c047c297@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261129T160000Z
+DTEND:20261129T200000Z
+SUMMARY:Central Matcha at Texas Farmers' Market at Mueller
+LOCATION:Texas Farmers' Market at Mueller\, 2006 Philomena St\, Austin\, TX
+  78723\, Austin\, TX
+DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha 
+ from a market stand at the Sunday Mueller farmers market. Expect matcha sh
+ ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
+ tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
+ ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/e515c047c297/
+URL:https://matchamap-cu7.pages.dev/e/e515c047c297/
+GEO:30.299843;-97.702653
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:69a125250524@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261206T160000Z
 DTEND:20261206T180000Z
@@ -73,8 +121,46 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:cd6d451cf76d@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261206T160000Z
+DTEND:20261206T200000Z
+SUMMARY:Central Matcha at Texas Farmers' Market at Mueller
+LOCATION:Texas Farmers' Market at Mueller\, 2006 Philomena St\, Austin\, TX
+  78723\, Austin\, TX
+DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha 
+ from a market stand at the Sunday Mueller farmers market. Expect matcha sh
+ ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
+ tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
+ ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/cd6d451cf76d/
+URL:https://matchamap-cu7.pages.dev/e/cd6d451cf76d/
+GEO:30.299843;-97.702653
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:94d6fbf20396@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261213T160000Z
+DTEND:20261213T200000Z
+SUMMARY:Central Matcha at Texas Farmers' Market at Mueller
+LOCATION:Texas Farmers' Market at Mueller\, 2006 Philomena St\, Austin\, TX
+  78723\, Austin\, TX
+DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha 
+ from a market stand at the Sunday Mueller farmers market. Expect matcha sh
+ ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
+ tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
+ ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/94d6fbf20396/
+URL:https://matchamap-cu7.pages.dev/e/94d6fbf20396/
+GEO:30.299843;-97.702653
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:e80bdc32cf0b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261213T160000Z
 DTEND:20261213T180000Z
@@ -91,7 +177,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:5d40ce1d06a8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART;VALUE=DATE:20261219
 DTEND;VALUE=DATE:20261220
@@ -106,8 +192,27 @@ STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:0d1476a6d255@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261220T160000Z
+DTEND:20261220T200000Z
+SUMMARY:Central Matcha at Texas Farmers' Market at Mueller
+LOCATION:Texas Farmers' Market at Mueller\, 2006 Philomena St\, Austin\, TX
+  78723\, Austin\, TX
+DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha 
+ from a market stand at the Sunday Mueller farmers market. Expect matcha sh
+ ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
+ tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
+ ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/0d1476a6d255/
+URL:https://matchamap-cu7.pages.dev/e/0d1476a6d255/
+GEO:30.299843;-97.702653
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:38f84f886dd1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261220T180000Z
 DTEND:20261220T210000Z
@@ -123,7 +228,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:8fdccd95ec58@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T020113Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270202
@@ -138,7 +243,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:739788416f80@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T020113Z
 DTSTART;VALUE=DATE:20270322
 DTEND;VALUE=DATE:20270323

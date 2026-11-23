@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Latte Syndrome pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3dc79823194b@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261210T180000Z
+DTEND:20261211T000000Z
+SUMMARY:Latte Syndrome matcha and Vietnamese coffee pop-up at Me Va Con
+LOCATION:Me Va Con Vietnamese Kitchen (sidewalk pop-up)\, 6101 Telegraph Av
+ e\, Oakland\, CA 94609\, Oakland\, CA
+DESCRIPTION:A Vietnamese-owned matcha and coffee pop-up that sets up in fro
+ nt of Me Va Con on Telegraph Avenue. Reviewers recommend the banana matcha
+  and the strawberry einspanner\, about $8 each.\nMenu: strawberry matcha e
+ inspanner\, banana matcha\, caramelized banana matcha\, manila ube\, vietn
+ amese coffee\nPrice: $7-8\nLikely\, not fully confirmed.\nMore: https://ma
+ tchamap-cu7.pages.dev/e/3dc79823194b/
+URL:https://matchamap-cu7.pages.dev/e/3dc79823194b/
+GEO:37.847453;-122.261154
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

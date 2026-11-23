@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Nicho's Matcha Cafe pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:ac57cfc384f0@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261124T190000Z
+DTEND:20261125T020000Z
+SUMMARY:Nicho's Matcha weekly pop-up at Nakagawa
+LOCATION:Nakagawa Japanese Restaurant\, 1427 228th St SE #D6\, Bothell\, WA
+  98021\, Bothell\, WA
+DESCRIPTION:Nicho's takes over the Nakagawa dining room every Tuesday with 
+ signature matcha\, hojicha and a rotating seasonal menu.\nMenu: signature 
+ matcha\, hojicha\, rotating seasonal menu\, persimmon matcha\nLikely\, not
+  fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/ac57cfc384f0/
+URL:https://matchamap-cu7.pages.dev/e/ac57cfc384f0/
+GEO:47.791654;-122.213732
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

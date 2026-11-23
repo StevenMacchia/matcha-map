@@ -7,8 +7,27 @@ X-WR-CALNAME:Matcha Map: Boston\, MA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
+UID:a16e8bdfebdf@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261128T160000Z
+DTEND:20261128T210000Z
+SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
+LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA 02118\, Bos
+ ton\, MA
+DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
+ et\, with a matcha option on the drink menu. Open Tuesday to Sunday throug
+ h Dec 27.\nMenu: carrot punch (cold brew or matcha)\, matcha lattes\, cari
+ bbean-inspired coffee drinks\nLikely\, not fully confirmed.\nMore: https:/
+ /matchamap-cu7.pages.dev/e/a16e8bdfebdf/
+URL:https://matchamap-cu7.pages.dev/e/a16e8bdfebdf/
+GEO:42.341119;-71.066017
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:1ba6262317db@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261128T193000Z
 DTEND:20261128T220000Z
@@ -19,6 +38,44 @@ DESCRIPTION:Sip\, sculpt + unwind! Learn hand-building techniques and shape
  .89\nMore: https://matchamap-cu7.pages.dev/e/1ba6262317db/
 URL:https://matchamap-cu7.pages.dev/e/1ba6262317db/
 GEO:42.287990;-71.094442
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:9f4c1daa3f3f@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261205T160000Z
+DTEND:20261205T210000Z
+SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
+LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA 02118\, Bos
+ ton\, MA
+DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
+ et\, with a matcha option on the drink menu. Open Tuesday to Sunday throug
+ h Dec 27.\nMenu: carrot punch (cold brew or matcha)\, matcha lattes\, cari
+ bbean-inspired coffee drinks\nLikely\, not fully confirmed.\nMore: https:/
+ /matchamap-cu7.pages.dev/e/9f4c1daa3f3f/
+URL:https://matchamap-cu7.pages.dev/e/9f4c1daa3f3f/
+GEO:42.341119;-71.066017
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:b23d2b6828e3@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261212T160000Z
+DTEND:20261212T210000Z
+SUMMARY:Caribe & Co. pop-up cafe at SoWa Christmas Market
+LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA 02118\, Bos
+ ton\, MA
+DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
+ et\, with a matcha option on the drink menu. Open Tuesday to Sunday throug
+ h Dec 27.\nMenu: carrot punch (cold brew or matcha)\, matcha lattes\, cari
+ bbean-inspired coffee drinks\nLikely\, not fully confirmed.\nMore: https:/
+ /matchamap-cu7.pages.dev/e/b23d2b6828e3/
+URL:https://matchamap-cu7.pages.dev/e/b23d2b6828e3/
+GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT

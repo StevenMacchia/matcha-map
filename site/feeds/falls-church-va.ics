@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:54e0e844d352@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
+DTSTAMP:20261123T054608Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261205T170000Z
 DTEND:20261205T190000Z
@@ -24,18 +24,37 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:91ef4639fdab@matchamap-cu7.pages.dev
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261205T170000Z
+DTEND:20261205T190000Z
+SUMMARY:Matcha Tasting & Matcha Making Experience
+LOCATION:Dov & Company\, Ballston Quarter\, 4238 Wilson Blvd\, Unit 1240\, 
+ Arlington\, VA 22203\, Arlington\, VA
+DESCRIPTION:Kaphiy Coffee Roasters guides a tasting of several matcha culti
+ vars\, then you whisk and make your own latte. Seats are limited\; refunds
+  up to 7 days before.\nMenu: guided tasting of premium matcha cultiva\, yo
+ ur own matcha latte\, take-home amai'cha matcha bag\, kaphiy cold brew min
+ i\nPrice: $65\nMore: https://matchamap-cu7.pages.dev/e/91ef4639fdab/
+URL:https://matchamap-cu7.pages.dev/e/91ef4639fdab/
+GEO:38.879014;-77.110671
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:0994c21b5f64@matchamap-cu7.pages.dev
-DTSTAMP:20261123T033316Z
-LAST-MODIFIED:20261123T010415Z
-DTSTART;VALUE=DATE:20261206
-DTEND;VALUE=DATE:20261207
+DTSTAMP:20261123T054608Z
+LAST-MODIFIED:20261123T054608Z
+DTSTART:20261206T200000Z
+DTEND:20261206T213000Z
 SUMMARY:Yogalates + Matcha Pop Up
 LOCATION:Museum of Contemporary Art Arlington\, 3550 Wilson Blvd\, Arlingto
  n\, VA
-DESCRIPTION:Join yoga and pilates instructor\, Chelsea Estevez\, for an aft
- ernoon yogalates session followed by Matcha tasting! Register to attend.\n
- Likely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/099
- 4c21b5f64/
+DESCRIPTION:A 60-minute Yogalates class with Chelsea Estevez followed by a 
+ matcha pop-up from Preferred Matcha Tea Company and a gallery stroll. Brin
+ g a mat and water.\nMenu: preferred matcha tea company matcha\nMore: https
+ ://matchamap-cu7.pages.dev/e/0994c21b5f64/
 URL:https://matchamap-cu7.pages.dev/e/0994c21b5f64/
 GEO:38.881688;-77.102090
 STATUS:CONFIRMED
