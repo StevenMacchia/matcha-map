@@ -93,7 +93,7 @@ test("data/overrides.json drop: true removes an event by id", () => {
 });
 
 test("a matcha meetup that says 'brunch or coffee' once is not a brunch listing; two food words are", () => {
-  const meet = { id: "m1", brand: "Press Cafe", source_id: "eventbrite:press-cafe", title: "Matcha + Meetup: Fort Worth", state: "TX", description: "Make new friends over brunch or coffee while supporting small businesses.", menu: [] };
+  const meet = { id: "m1", brand: "Press Cafe", source_id: "eventbrite:press-cafe", title: "Matcha Friends Meetup: Fort Worth", state: "TX", description: "Make new friends over brunch or coffee while supporting small businesses.", menu: [] };
   assert.equal(keepEvent(meet), true);
   assert.equal(keepEvent({ ...meet, id: "m2", description: "Brunch buffet with mimosas." }), false);
 });

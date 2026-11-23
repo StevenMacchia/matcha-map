@@ -7,7 +7,7 @@
 // Share buttons, picture fallbacks and "Also nearby" links are handled by delegated listeners on the document, so the
 // app does not need to call anything after it sets innerHTML. Set window.MatchaCards.open = function (key) {...} to
 // open an also-nearby pop-up in place (key "e:<id>"); without it the link is a normal deep link (?event=<id>).
-import { cardHtml, rowHtml, brandCardHtml, wire } from "./cards.js";
+import { cardHtml, rowHtml, brandCardHtml, wire, fitQuotes } from "./cards.js";
 
 const data = { art: null, brands: null, sources: null, places: null };
 let pages = null; // data/pages.json: which city and brand pages exist (written by npm run pages)
@@ -73,6 +73,8 @@ function row(item, ctx) {
 
 window.MatchaCards = Object.assign(window.MatchaCards || {}, { render, row, ready });
 wire(document.documentElement);
+// the quote's "more" link shows only when the clamp really hid text: measure once the card is in the DOM
+document.addEventListener("mm:card", (ev) => { try { fitQuotes(ev.detail && ev.detail.root); } catch (e) { /* no quote */ } });
 document.addEventListener("click", (ev) => {
   const a = ev.target && ev.target.closest && ev.target.closest(".mm-card a[data-event], .mm-brand a[data-event]");
   const open = window.MatchaCards && window.MatchaCards.open;

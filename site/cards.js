@@ -415,11 +415,23 @@ function titleHtml(e, ctx, v, name) {
     `<h3 class="mm-bname">${brandTo ? `<a class="mm-bname-link" href="${esc(brandTo)}">${esc(name)}</a>` : esc(name)}</h3>` +
     `<p class="mm-bmeta">${meta}${confBadge(e.confidence)}</p></header>`;
 }
-// The quote: two lines in the sheet, one in the pop-up; in the sheet "more" goes to the full page when the text runs long.
+// The quote: two lines in the sheet, one in the pop-up. In the sheet "more" goes to the full page, shown only when text
+// was really cut: at render when cut() shortened it (data-cut), and after render when the two-line clamp hid a line
+// (fitQuotes measures it; until then the link stays hidden, so a short quote never says "more").
 function quoteHtml(plain, ctx, id, max) {
   if (!plain) return "";
-  const t = cut(plain, max), more = id && !ctx.compact && (t !== plain || plain.length > 60);
-  return `<div class="mm-q"><p class="mm-q-text">${esc(t)}</p>${more ? `<a class="mm-q-more" href="${esc(ctx.base || "")}e/${id}/">more</a>` : ""}</div>`;
+  const t = cut(plain, max), wasCut = t !== plain;
+  const more = id && !ctx.compact ? `<a class="mm-q-more" href="${esc(ctx.base || "")}e/${id}/"${wasCut ? " data-cut=\"1\"" : " hidden"}>more</a>` : "";
+  return `<div class="mm-q"><p class="mm-q-text">${esc(t)}</p>${more}</div>`;
+}
+// Shows a quote's "more" link only when the clamp hid part of the text (or cut() already did). Call after the card is in the DOM.
+export function fitQuotes(root) {
+  if (!root || !root.querySelectorAll) return;
+  root.querySelectorAll(".mm-q").forEach((q) => {
+    const t = q.querySelector(".mm-q-text"), a = q.querySelector(".mm-q-more");
+    if (!t || !a) return;
+    a.hidden = !(a.getAttribute("data-cut") === "1" || t.scrollHeight > t.clientHeight + 1);
+  });
 }
 // The buttons: one filled (Directions, or Map when the spot is approximate), then Calendar and Share.
 function actsHtml(e, ctx, name, live) {
