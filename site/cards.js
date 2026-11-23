@@ -16,7 +16,7 @@
 // or a map by handle), sources (sources.json array or map by id), places (places.json), art (site/art/index.json),
 // events (all events, for also-nearby), cityOf(e) -> string, distanceKm(a,b) with a,b = [lat,lng], base ("" in the app,
 // "/" on static pages: prefix for site paths), eventHref(id) (default "?event=<id>", "/e/<id>/" on static pages),
-// drawn (window.Drawn, for the drawn hero when there is no photo or event art), page: true (two-column page layout on wide
+// absolute: true (dates, never "Today", for pages built ahead), drawn (window.Drawn, for the drawn hero when there is no photo or event art), page: true (two-column page layout on wide
 // screens), document (for render* outside a browser), fmt: { miles(mi) -> string } }
 //
 // Dates are venue-local ISO strings with an offset; day and time are read from the string, never converted.
@@ -81,13 +81,15 @@ function endMs(e) {
   return !isNaN(en) && en > st ? en : st + (e.all_day ? 864e5 : 3 * 36e5);
 }
 export function dateLabel(s) { return `${DAYS[new Date(Date.UTC(s.y, s.mo - 1, s.d)).getUTCDay()]} ${MONTHS[s.mo - 1]} ${s.d}`; }
-// The day word: now, today, tomorrow, this weekend, a weekday this week, a date, or past.
-export function dayWord(e, now = new Date()) {
+// The day word: now, today, tomorrow, this weekend, a weekday this week, a date, or past. absolute: always the date
+// (static pages are built once and read for days, so "Today" would go stale).
+export function dayWord(e, now = new Date(), absolute = false) {
   const s = parts(e.start);
   if (!s) return { kind: "unknown", word: "Date to come" };
   const t = now.getTime(), st = Date.parse(e.start), en = endMs(e);
   if (e.status === "cancelled") return { kind: "cancelled", word: "Cancelled, " + dateLabel(s) };
   if (!isNaN(st) && en < t) return { kind: "past", word: "Was " + dateLabel(s) };
+  if (absolute) return { kind: "date", word: dateLabel(s) };
   if (!isNaN(st) && st <= t && !e.all_day) return { kind: "now", word: "Open now" };
   const dd = dayNum(s) - dayNum(todayAt(e, now, s));
   if (dd <= 0) return { kind: "today", word: "Today" };
@@ -130,7 +132,7 @@ function distanceText(e, ctx) {
 
 // The first line of every card and row.
 export function verdict(e, ctx = {}) {
-  const now = ctx.now || new Date(), dw = dayWord(e, now);
+  const now = ctx.now || new Date(), dw = dayWord(e, now, !!ctx.absolute);
   let time = "";
   if (dw.kind === "now") { const en = parts(e.end); time = en && en.timed && e.end && Date.parse(e.end) > now.getTime() ? "until " + clock(en) : ""; }
   else if (dw.kind !== "cancelled") time = timeRange(e) || (e.all_day && e.hours ? cut(e.hours, 24) : "");
@@ -454,7 +456,7 @@ export function wire(root, ctx = {}) {
   });
   root.addEventListener("error", (ev) => {
     const img = ev.target;
-    if (!img || img.tagName !== "IMG") return;
+    if (!img || img.tagName !== "IMG" || !img.closest(".mm-card, .mm-row, .mm-brand")) return;
     const remote = img.getAttribute("data-remote");
     if (remote) { img.removeAttribute("data-remote"); img.src = remote; return; }
     const hero = img.closest(".mm-hero-photo");

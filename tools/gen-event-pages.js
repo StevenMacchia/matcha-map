@@ -1,14 +1,16 @@
 // npm run event-pages: one tiny page per upcoming pop-up at site/e/<event-id>/index.html, so a shared link has its own
-// title, description and preview image. The page redirects people to the map card (/?event=<id>) with a meta refresh
-// and a plain link; crawlers and link unfurlers read the head. Runs at the end of `npm run ingest`, after pages.
+// title, description and preview image, and the full card from site/cards.js rendered server-side (verdict, picture,
+// drinks, hours, place, calendar and share, posts, brand story, also nearby), so the link works with no JavaScript. A
+// button opens the pop-up on the map (/?event=<id>). Runs at the end of `npm run ingest`, after pages.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
+import { cardHtml } from "../site/cards.js";
 import { esc, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf } from "./gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const CSP = "default-src 'none'; img-src 'self' https: data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'self'; form-action 'none'";
+const CSP = "default-src 'none'; script-src 'self'; img-src 'self' https: data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'self'; form-action 'none'";
 
 // og:image: the event's photo, else site/art/events/<id>.svg when it exists, else the shared card.
 export function ogImage(e, { hasArt = () => false } = {}) {
@@ -19,7 +21,8 @@ export function ogImage(e, { hasArt = () => false } = {}) {
   return `${SITE_URL}/og.png`;
 }
 
-export function eventPage(e, { sources = new Map(), hasArt = () => false } = {}) {
+// card: extra context for cardHtml ({ art, brands, events, now }); base, page layout and links are set here.
+export function eventPage(e, { sources = new Map(), hasArt = () => false, card = {} } = {}) {
   const brand = brandNameOf(e, sources);
   const place = [e.city, e.state].filter(Boolean).join(", ");
   const day = dayLabel(dayKey(Date.parse(e.start), e.tz || "America/New_York"));
@@ -36,12 +39,11 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false } = {})
   if (img.endsWith(".svg") || img.endsWith("/og.png")) { if (!(e.image && (e.image.local || e.image.url)) && !e.image_url) delete ld.image; }
   const go = `/?event=${e.id}`;
   return `<!doctype html>
-<html lang="en">
+<html lang="en" class="pg">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="${CSP}">
-<meta http-equiv="refresh" content="0;url=${go}">
 <title>${esc(title)} | Matcha Map</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${esc(canonical)}">
@@ -55,25 +57,32 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false } = {})
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${esc(img)}">
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/cards.css">
 ${ldScript(ld)}
 </head>
-<body style="font:500 17px/1.5 ui-rounded,'M PLUS Rounded 1c',sans-serif;background:#FBF6EA;color:#3B2E27;margin:0;padding:32px 20px;max-width:560px">
-<h1 style="font-size:24px;margin:0 0 8px">${esc(brand)}</h1>
-<p style="margin:0 0 4px"><b>${esc(day)}${e.all_day ? "" : ", " + esc(time)}</b></p>
-<p style="margin:0 0 16px">${esc(where)}</p>
-<p><a href="${go}" style="color:#3E6B33;font-weight:800">Open this pop-up on the map</a></p>
-<p><a href="/feeds/events/${esc(e.id)}.ics" style="color:#3E6B33">Add to calendar</a></p>
+<body class="pg">
+<header class="pg-top"><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="${go}">See it on the map</a></header>
+<main class="pg-main pg-card">
+<h1 class="pg-sr">${esc(title)}</h1>
+${cardHtml(e, { ...card, sources: card.sources || [...sources.values()], base: "/", page: true, absolute: true, eventHref: (id) => `/e/${id}/` })}
+</main>
+<script type="module" src="/cards-page.js"></script>
 </body>
 </html>
 `;
 }
 
-export function buildEventPages({ events, sources = [], now = new Date(), hasArt = () => false }) {
+export function buildEventPages({ events, sources = [], now = new Date(), hasArt = () => false, art = null, brands = null }) {
   const srcById = new Map(sources.map((s) => [s.id, s]));
+  const card = { now, art, brands, sources, events: events.filter((e) => isUpcoming(e, now.getTime())) };
   const files = new Map();
   for (const e of events) {
     if (!e.id || !/^[a-z0-9]{6,32}$/i.test(e.id) || !isUpcoming(e, now.getTime())) continue;
-    files.set(`e/${e.id}/index.html`, eventPage(e, { sources: srcById, hasArt }));
+    files.set(`e/${e.id}/index.html`, eventPage(e, { sources: srcById, hasArt, card }));
   }
   return { files, counts: { pages: files.size } };
 }
@@ -82,8 +91,9 @@ export function run({ root = ROOT, now = new Date() } = {}) {
   const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
   const ev = read("site/data/events.json");
   const sources = read("data/sources.json");
+  const opt = (p) => { try { return read(p); } catch { return null; } };
   const hasArt = (id) => fs.existsSync(path.join(root, "site", "art", "events", `${id}.svg`));
-  const out = buildEventPages({ events: ev.events, sources, now, hasArt });
+  const out = buildEventPages({ events: ev.events, sources, now, hasArt, art: opt("site/art/index.json"), brands: opt("site/data/brands.json") });
   const site = path.join(root, "site");
   fs.rmSync(path.join(site, "e"), { recursive: true, force: true });
   for (const [p, text] of out.files) { const f = path.join(site, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text); }

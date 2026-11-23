@@ -186,3 +186,8 @@
   .mm-acts { grid-template-columns: repeat(4, 1fr); }
 }
 .mm-top, .mm-media, .mm-nlist > li, .mm-sec { min-width: 0; }
+
+/* ---- static pop-up pages (/e/<id>/) ---- */
+.pg-main.pg-card { max-width: 1100px; }
+.pg-card > .mm-card { margin: 4px auto 0; border: 2px solid var(--line, #DCE7D0); box-shadow: var(--shadow, 0 8px 24px rgba(75,52,38,.10)); }
+.pg-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px !important; }

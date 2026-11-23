@@ -44,3 +44,67 @@ Cards are generated after pages in ingest, so a city's card is picked up from th
 
 ### Sitemap (tools/gen-sitemap-extras.js)
 Re-reads `site/sitemap.xml`, replaces everything under `/weekend/`, `/e/` and `/feeds/` (city and all `.ics`, not the per-event ones) from what is on disk, and re-writes it. Idempotent; runs last in ingest.
+
+## N6: rich cards (site/cards.js, cards.css, cards-app.js)
+
+`site/cards.js` draws the pop-up card, the list row and the brand card. `site/cards-app.js` is a small bridge that
+fills the `window.MatchaCards` hook `renderCard()` in app.js already reads, fetches the data the cards need and
+handles Share, picture fallbacks and also-nearby links with delegated listeners. No app.js change is needed for the
+card itself; two lines in index.html turn it on. Look first at `cards-demo.html` (12 sample cards and rows).
+
+### 1. index.html (two lines)
+
+In `<head>`, after `style.css` (and after `motion.css` if it styles `.card`):
+
+```html
+<link rel="stylesheet" href="cards.css">
+```
+
+At the end of `<body>`, after `app.js` (a module runs after classic scripts, so `window.__matcha` and `window.Drawn`
+exist by then):
+
+```html
+<script type="module" src="cards-app.js"></script>
+```
+
+The CSP needs nothing new: scripts are `'self'`, the drink and event art is `art/*.svg` on the same origin, and
+photos are the hosts already allowed for `img-src`. `sw.js` already lists `/cards.js` and `/cards.css`; add
+`/cards-app.js` there too.
+
+### 2. The three call sites in app.js
+
+| Today | Replace with | Notes |
+|---|---|---|
+| `renderCard(item, ctx)` (l.~626), called from `showCard(key, focusIt)` (l.~683): `C.render(item, ctx)` | nothing to change | `MatchaCards.render` returns the card HTML for kind `e` (`eventCard`) and `b` (`brandCard`), and `null` for shops, so `shopCard` stays the fallback. It is a string, so `body.innerHTML = html` and `setDOMContent(box)` keep working. |
+| `rowHTML(it)` (l.~862), event branch (`it.kind === "e"`) | `var r = window.MatchaCards && window.MatchaCards.row && window.MatchaCards.row(it, { events: state.events }); if (r) return r;` at the top of that branch | Returns `<button type="button" class="mm-row ..." data-key="e:<id>">`, so the `#list` click handler (`button[data-key]` -> `flyTo`) and `cardOpener` focus return work unchanged. Distance comes from `state.userLoc` through `window.__matcha.state`. Keep the shop and brand rows as they are. |
+| `photoHTML(e)` / `eventCard(e)` / `brandCard(b)` | keep as the fallback | Used when cards.js has not loaded (old browser, offline before the module is cached) or throws. |
+
+Optional: set `window.MatchaCards.open = function (key) { flyTo(key); }` after `flyTo` is defined, so an "Also nearby"
+mini row opens that pop-up in place instead of following its `?event=<id>` link.
+
+The card announces nothing itself; `announce("card", { root, ... })` and the motion choreography keep working on its
+sections: `.mm-top` (verdict), `.mm-media` (hero), `.mm-main` (brand row, description, `.mm-menu` chips, `.mm-facts`,
+`.mm-place` with `.mm-acts`), `.mm-more` (`.mm-posts`, `.mm-story`, `.mm-nearby`, `.mm-report`). The photo is
+`.mm-hero-img` over a blurred copy (`.mm-hero-blur`) over the event art, so the washi-tape frame can target
+`.mm-hero-photo`. `fillChars(body)` is harmless (cards.js uses no `data-char`).
+
+### 3. Data files
+
+`cards-app.js` loads, once, on its own: `art/index.json` (282 KB, drink and event art lookup), `data/brands.json`
+(picture, bio, followers, recent posts), `data/sources.json` (handle and TikTok fallback), `data/places.json`
+(reserved). Events come from the `ctx.events` app.js already passes (`state.events` items), and "you are here" from
+`window.__matcha.state.userLoc`. brands.json and places.json are fetched twice (once by `loadExtras`); both are
+small and cached for 10 minutes by `_headers`, so leave it unless it shows up in a profile.
+
+### 4. Direct use (other pages)
+
+```js
+import { cardHtml, rowHtml, brandCardHtml, renderCard, renderRow, renderBrandCard, wire, verdict } from "./cards.js";
+const ctx = { now: new Date(), here: [lat, lng] /* or {lat,lng} or null */, art, brands, sources, events,
+  drawn: window.Drawn, base: "" /* "/" on pages below the root */, eventHref: (id) => "?event=" + id,
+  page: false /* true: two columns from 900 px */, absolute: false /* true: dates, never "Today" */ };
+el.appendChild(renderCard(event, ctx));   // or el.innerHTML = cardHtml(event, ctx); wire(el);
+```
+
+`tools/gen-event-pages.js` uses `cardHtml` with `{ base: "/", page: true, absolute: true, eventHref: (id) => "/e/" + id + "/" }`
+and `site/cards-page.js` wires the static pages.

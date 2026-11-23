@@ -84,17 +84,21 @@ test("RSS 2.0: well formed, newest first, only the last 14 days, image enclosure
   assert.match(xml, /<pubDate>[A-Z][a-z]{2}, \d{2} [A-Z][a-z]{2} 2026 \d{2}:\d{2}:\d{2} GMT<\/pubDate>/);
 });
 
-test("event page: own title, canonical, og:image order, Event JSON-LD, refresh and link to the card", () => {
+test("event page: own title, canonical, og:image order, Event JSON-LD, the full card and a link to the map", () => {
   const html = eventPage(timed, { hasArt: () => false });
   assert.match(html, /<title>Moonbee matcha pop-up in Austin, TX/);
   assert.match(html, /<link rel="canonical" href="https:\/\/[^"]+\/e\/aaaaaa000001\/">/);
   assert.match(html, /<meta property="og:image" content="https:\/\/[^"]+\/og\.png">/);
-  assert.match(html, /<meta http-equiv="refresh" content="0;url=\/\?event=aaaaaa000001">/);
-  assert.match(html, /<a href="\/\?event=aaaaaa000001"/);
+  // The page carries the full card (site/cards.js), so it no longer bounces to the map; a button goes there.
+  assert.doesNotMatch(html, /http-equiv="refresh"/);
+  assert.match(html, /<a class="pg-map" href="\/\?event=aaaaaa000001"/);
+  assert.match(html, /<article class="mm-card mm-page[^]*href="\/feeds\/events\/aaaaaa000001\.ics"/);
+  assert.match(html, /<link rel="stylesheet" href="\/cards\.css">/);
+  assert.match(html, /<script type="module" src="\/cards-page\.js"><\/script>/);
   const ld = JSON.parse(/<script type="application\/ld\+json">(.*?)<\/script>/s.exec(html)[1]);
   assert.equal(ld["@type"], "Event");
   assert.equal(ld.startDate, "2026-12-05T11:00:00-06:00");
-  assert.ok(Buffer.byteLength(html) < 6000);
+  assert.ok(Buffer.byteLength(html) < 20000);
   assert.equal(ogImage(oldOne), "https://cdn.example/x.jpg");
   assert.match(ogImage(timed, { hasArt: () => true }), /\/art\/events\/aaaaaa000001\.svg$/);
   assert.match(ogImage({ ...timed, image: { local: "img/events/z.jpg" } }, { hasArt: () => true }), /\/img\/events\/z\.jpg$/);
