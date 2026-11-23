@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "brands.schema.json",
+  "title": "Brand facts",
+  "description": "site/data/brands.json: what the Instagram Graph API told us about each handle, for the card. Written by npm run watch and npm run brands.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["generated", "brands"],
+  "properties": {
+    "generated": { "type": "string" },
+    "brands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["handle", "name", "website", "followers", "bio", "picture", "home_city", "home_state", "kind", "recent"],
+        "properties": {
+          "handle": { "type": "string", "pattern": "^[A-Za-z0-9._]+$" },
+          "name": { "type": "string" },
+          "website": { "type": ["string", "null"] },
+          "followers": { "type": ["integer", "null"], "minimum": 0 },
+          "bio": { "type": "string", "maxLength": 160, "description": "First 160 characters; emails and phone numbers removed." },
+          "picture": { "type": ["string", "null"], "description": "profile_picture_url; Meta's urls expire and are refreshed on each read." },
+          "home_city": { "type": ["string", "null"] },
+          "home_state": { "type": ["string", "null"] },
+          "kind": { "type": ["string", "null"] },
+          "recent": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["permalink", "image_url", "timestamp", "caption"],
+              "properties": {
+                "permalink": { "type": "string", "pattern": "^https://" },
+                "image_url": { "type": "string", "pattern": "^https://" },
+                "timestamp": { "type": ["string", "null"] },
+                "caption": { "type": "string", "maxLength": 80 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

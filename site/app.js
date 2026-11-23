@@ -392,6 +392,14 @@
       if (!img || img.tagName !== "IMG") return;
       var remote = img.getAttribute("data-remote");
       if (remote) { img.removeAttribute("data-remote"); img.src = remote; return; }
+      var small = img.closest(".bpic, .rc, .yphoto");
+      if (small) {
+        if (small.classList.contains("bpic")) { small.innerHTML = SMALL_FACE; fillChars(small); }
+        else if (small.classList.contains("yphoto")) small.remove();
+        else if (window.Drawn) { var nm = img.getAttribute("data-bn") || "Matcha"; small.className = "rc rc-drawn"; small.innerHTML = window.Drawn.card({ id: "rc-" + nm, brand: nm }, { mode: "thumb" }); }
+        else { small.className = "rc rc-face"; small.innerHTML = THUMB_FACE; fillChars(small); }
+        return;
+      }
       var box = img.closest(".ph, .th");
       if (!box) return;
       var ev = eventById(img.getAttribute("data-eid"));
@@ -415,18 +423,109 @@
     if (m.length > 6) pills += "<span class=\"pill more\">+" + (m.length - 6) + " more</span>";
     return "<div class=\"menu\">" + (m.length ? "<span class=\"menu-label\">Menu</span>" : "") + pills + price + "</div>";
   }
+  // ---------- fuller card: brand facts (data/brands.json, from the Instagram Graph read) and Yelp places (data/places.json) ----------
+  var brandsBy = {}, placesBy = {}, sourceIg = {};
+  function squeeze(s) { return String(s == null ? "" : s).toLowerCase().replace(/[.,#]/g, " ").replace(/\s+/g, " ").trim(); }
+  // The same key ingest/lib/enrich/yelp.js writes: "venue|city|state", or the rounded position for a shop with no city.
+  function placeKey(name, city, state, lat, lng) {
+    if (!(city && state) && lat != null && lng != null && isFinite(lat) && isFinite(lng)) return squeeze(name) + "|" + (+lat).toFixed(2) + "," + (+lng).toFixed(2) + "|";
+    return [name, city, state].map(squeeze).join("|");
+  }
+  function igHandle(e) {
+    var h = e.handle || "";
+    if (!h) { var m = /instagram\.com\/([A-Za-z0-9._]+)/.exec((e.links && e.links.instagram) || ""); if (m) h = m[1]; }
+    if (!h && e.source_id) h = sourceIg[e.source_id] || "";
+    return String(h).replace(/^@/, "").toLowerCase();
+  }
+  function followersText(n) {
+    if (typeof n !== "number" || !isFinite(n) || n < 0) return "";
+    if (n >= 1000000) return (Math.round(n / 100000) / 10) + "M followers";
+    if (n >= 1000) return (Math.round(n / 100) / 10) + "k followers";
+    return n + (n === 1 ? " follower" : " followers");
+  }
+  function domainOf(u) { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return ""; } }
+  function igUrl(h) { return "https://www.instagram.com/" + encodeURIComponent(h) + "/"; }
+  function factsHTML(b) {
+    if (!b) return "";
+    var h = String(b.handle), web = safeUrl(b.website), dom = web ? domainOf(web) : "";
+    var pic = safeUrl(b.picture) ? "<img src=\"" + esc(b.picture) + "\" alt=\"\" loading=\"lazy\" decoding=\"async\" referrerpolicy=\"no-referrer\">" : SMALL_FACE;
+    var meta = ["<a href=\"" + esc(igUrl(h)) + "\" target=\"_blank\" rel=\"noopener\">@" + esc(h) + "</a>"];
+    var fol = followersText(b.followers);
+    if (fol) meta.push(esc(fol));
+    if (dom) meta.push("<a href=\"" + esc(web) + "\" target=\"_blank\" rel=\"noopener\">" + esc(dom) + "</a>");
+    var out = "<div class=\"brow\"><span class=\"bpic\">" + pic + "</span><div class=\"btxt\"><span class=\"bname\">" + esc(b.name || h) + "</span><span class=\"bmeta\">" + meta.join(" · ") + "</span></div></div>";
+    if (b.bio) out += "<p class=\"bio muted\">" + esc(b.bio) + "</p>";
+    var rec = (b.recent || []).filter(function (r) { return safeUrl(r.permalink) && safeUrl(r.image_url); }).slice(0, 3);
+    if (rec.length) {
+      out += "<div class=\"recent\"><p class=\"rlabel\">Latest from @" + esc(h) + "</p><div class=\"rgrid\">" + rec.map(function (r) {
+        var cap = r.caption ? r.caption : "Recent post";
+        return "<a class=\"rc\" href=\"" + esc(r.permalink) + "\" target=\"_blank\" rel=\"noopener\" aria-label=\"" + esc("Post by @" + h + ": " + cap) + "\"><img src=\"" + esc(r.image_url) + "\" alt=\"\" loading=\"lazy\" decoding=\"async\" referrerpolicy=\"no-referrer\" data-bn=\"" + esc(b.name || h) + "\"></a>";
+      }).join("") + "</div></div>";
+    }
+    return out;
+  }
+  function mapsUrl(what, city, state) {
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent([what, city, state].filter(Boolean).join(", "));
+  }
+  function clock12(hhmm) {
+    var h = +String(hhmm).slice(0, 2) % 24, m = String(hhmm).slice(2, 4), ap = h >= 12 ? "pm" : "am", h12 = h % 12 || 12;
+    return h12 + (m && m !== "00" ? ":" + m : "") + " " + ap;
+  }
+  // Today's hours at the venue, from Yelp's open array (day 0 is Monday), in the venue's time zone.
+  function hoursToday(p) {
+    if (!p.hours || !p.hours.length || !p.tz) return "";
+    var o = {};
+    try {
+      new Intl.DateTimeFormat("en-US", { timeZone: p.tz, weekday: "short", hour: "numeric", minute: "numeric", hourCycle: "h23" }).formatToParts(new Date()).forEach(function (x) { o[x.type] = x.value; });
+    } catch (err) { return ""; }
+    var dow = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(o.weekday), mins = (+o.hour % 24) * 60 + (+o.minute);
+    if (dow < 0) return "";
+    var toM = function (t) { return +String(t).slice(0, 2) * 60 + (+String(t).slice(2, 4)); };
+    var open = false, until = "", today = [];
+    p.hours.forEach(function (h) {
+      var st = toM(h.start), en = toM(h.end), over = h.is_overnight || en <= st;
+      if (h.day === dow) { today.push(h); if (mins >= st && (over || mins < en)) { open = true; until = h.end; } }
+      else if (over && h.day === (dow + 6) % 7 && mins < en) { open = true; until = h.end; }
+    });
+    if (open) return "Open now, until " + clock12(until);
+    if (!today.length) return "Closed today";
+    return "Closed now, today " + today.map(function (h) { return clock12(h.start) + " to " + clock12(h.end); }).join(", ");
+  }
+  function yelpHTML(p) {
+    if (!p || !safeUrl(p.url)) return "";
+    var line = [], r = typeof p.rating === "number" ? p.rating : null;
+    var stars = r === null ? "" : "<span class=\"stars s" + Math.max(0, Math.min(10, Math.round(r * 2))) + "\" role=\"img\" aria-label=\"" + r + " out of 5 stars\"><span class=\"stars-on\" aria-hidden=\"true\">★★★★★</span></span> <b>" + r + "</b>";
+    if (stars && typeof p.review_count === "number") stars += " <span class=\"muted\">(" + p.review_count + (p.review_count === 1 ? " review" : " reviews") + ")</span>";
+    if (stars) line.push(stars);
+    if (p.price && /^\$+$/.test(p.price)) line.push("<span class=\"yprice\">" + esc(p.price) + "</span>");
+    var hrs = hoursToday(p), phone = /^\+?[0-9]{7,15}$/.test(p.phone || "") ? p.phone : "";
+    var photo = safeUrl(p.image_url) ? "<span class=\"yphoto\"><img src=\"" + esc(p.image_url) + "\" alt=\"\" loading=\"lazy\" decoding=\"async\"></span>" : "";
+    return "<div class=\"yelp\">" + photo + "<div class=\"ytxt\">" +
+      (line.length ? "<p class=\"yline\">" + line.join(" · ") + "</p>" : "") +
+      (hrs ? "<p class=\"yhours\">" + esc(hrs) + "</p>" : "") +
+      (phone ? "<p class=\"yphone\"><a href=\"tel:" + esc(phone) + "\">" + esc(phone.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, "($1) $2-$3")) + "</a></p>" : "") +
+      "<p class=\"ycredit muted\">Details from <a class=\"ywm\" href=\"" + esc(p.url) + "\" target=\"_blank\" rel=\"noopener\">Yelp</a></p></div></div>";
+  }
+  function loadExtras() {
+    var get = function (u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); };
+    get("data/brands.json").then(function (d) { (d.brands || []).forEach(function (b) { if (b && b.handle) brandsBy[String(b.handle).toLowerCase()] = b; }); }).catch(function () { /* optional layer */ });
+    get("data/places.json").then(function (d) { (d.places || []).forEach(function (p) { if (p && p.key) placesBy[p.key] = p; }); }).catch(function () { /* optional layer */ });
+  }
   function eventCard(e) {
     var approx = isApprox(e), line2 = approx && !e.address ? placeLine(e) : [e.venue, e.address, cityLine(e)].filter(Boolean).join(" \u00b7 ");
     var tag = e.confidence && e.confidence !== "confirmed" ? " <span class=\"tag\">" + esc(e.confidence) + "</span>" : "";
-    var links = [], post = postUrl(e), L = e.links || {};
+    var links = [], post = postUrl(e), L = e.links || {}, where = e.venue || e.address;
+    if (where) links.push(["Open in Google Maps", mapsUrl(where, e.city, e.state)]);
+    if (!approx) links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng]);
     if (post) links.push(["Post", post]);
     if (safeUrl(L.instagram)) links.push(["Instagram", L.instagram]);
     if (safeUrl(L.tiktok)) links.push(["TikTok", L.tiktok]);
-    if (!approx) links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng]);
+    if (safeUrl(e.source_url) && e.source_url !== post) links.push(["Event page", e.source_url]);
     return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + "<span>" + esc(e.brand) + tag + "</span></h3>" + kindWord(e) +
       "<p class=\"when\">" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
       "<p class=\"muted\">" + esc(line2) + "</p>" + menuHTML(e) +
-      (e.description ? "<p class=\"desc muted\">" + esc(e.description) + "</p>" : "") + linksHTML(links) + "</div>";
+      (e.description ? "<p class=\"desc muted\">" + esc(e.description) + "</p>" : "") +
+      factsHTML(brandsBy[igHandle(e)]) + linksHTML(links) + (e.venue ? yelpHTML(placesBy[placeKey(e.venue, e.city, e.state)]) : "") + "</div>";
   }
   function brandCard(b) {
     var links = [];
@@ -436,7 +535,7 @@
     if (safeUrl(b.schedule_url) && b.schedule_url !== b.website) links.push(["Schedule", b.schedule_url]);
     return "<div class=\"card bcard\">" + (window.Drawn ? window.Drawn.block(b, { mode: "brand" }) : "") + "<h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3>" + kindWord(b) +
       "<p class=\"muted\">" + esc(b.home_city + ", " + b.home_state) + "</p>" +
-      "<p class=\"when\">No dates posted here yet</p>" + linksHTML(links) + "</div>";
+      "<p class=\"when\">No dates posted here yet</p>" + factsHTML(brandsBy[String(b.instagram || "").toLowerCase()]) + linksHTML(links) + "</div>";
   }
   // Hours: the raw OSM string, passed through; long ones are cut with the full text in a title.
   function hoursHTML(h) {
@@ -452,11 +551,12 @@
     var links = [];
     if (safeUrl(s.website)) links.push(["Website", s.website]);
     if (s.instagram) links.push(["Instagram", "https://www.instagram.com/" + encodeURIComponent(s.instagram) + "/"]);
+    links.unshift(["Open in Google Maps", mapsUrl(s.address ? s.name + ", " + s.address : s.name, s.city, s.state)]);
     links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + s.lat + "," + s.lng]);
     var credit = s.source === "osm" && safeUrl(s.osm_url) ? "<p class=\"credit-line\">Data: <a href=\"" + esc(s.osm_url) + "\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a></p>" : "";
     var art = window.Drawn ? window.Drawn.block({ id: s.id, brand: s.name, home_city: s.city, home_state: s.state }, { mode: "shop" }) : "";
     return "<div class=\"card scard\">" + art + "<h3><span class=\"card-shop\" data-char=\"s-shop\"></span><span>" + esc(s.name) + "</span></h3><span class=\"kindword\">Shop</span>" +
-      "<p class=\"muted\">" + esc(shopAddress(s)) + "</p>" + hoursHTML(s.opening_hours) + linksHTML(links) + credit + "</div>";
+      "<p class=\"muted\">" + esc(shopAddress(s)) + "</p>" + hoursHTML(s.opening_hours) + factsHTML(brandsBy[String(s.instagram || "").toLowerCase()]) + linksHTML(links) + yelpHTML(placesBy[placeKey(s.name, s.city, s.state, s.lat, s.lng)]) + credit + "</div>";
   }
   function cardHTML(item) { return item.kind === "e" ? eventCard(item.data) : item.kind === "s" ? shopCard(item.data) : brandCard(item.data); }
 
@@ -555,6 +655,7 @@
   function buildBrands(sources) {
     var byCity = {};
     sources.forEach(function (s) {
+      if (s.instagram) sourceIg[s.id] = s.instagram;
       if (s.active === false) return;
       var k = s.home_city + "|" + s.home_state;
       if (CITIES[k]) (byCity[k] = byCity[k] || []).push(s);
@@ -1081,6 +1182,32 @@
   }
   $("intro-skip").addEventListener("click", function () { endIntro(true); });
 
+  // ---------- deep links (?q= ?city= ?event= ?brand=; parsing lives in deeplink.js) ----------
+  (function () { // the home page is the only canonical address, whatever the query string
+    var l = document.querySelector("link[rel=canonical]");
+    if (!l) { l = document.createElement("link"); l.rel = "canonical"; document.head.appendChild(l); }
+    l.href = (l.href || location.origin + "/").split(/[?#]/)[0];
+  })();
+  function brandKeyOf(h) {
+    for (var i = 0; i < state.brands.length; i++) {
+      var d = state.brands[i].data;
+      if (String(d.instagram || "").replace(/^@/, "").toLowerCase() === h || d.id === h) return state.brands[i].key;
+    }
+    for (var j = 0; j < state.events.length; j++) if (String(state.events[j].data.handle || "").toLowerCase() === h) return state.events[j].key;
+    return "";
+  }
+  function applyDeepLink() {
+    var DL = window.MatchaDeepLink, dl = DL && DL.parse(location.search);
+    if (!dl) return false;
+    if (dl.event && items["e:" + dl.event]) { flyTo("e:" + dl.event); return true; }
+    var bk = dl.brand && brandKeyOf(dl.brand);
+    if (bk) { flyTo(bk); return true; }
+    var c = dl.city && DL.findCityBySlug(window.CITY_LIST, dl.city);
+    if (c) { landAt([c[2], c[3]], c[0] + ", " + c[1], "", false); return true; }
+    if (dl.q) { goPlace(dl.q); return true; }
+    return false;
+  }
+
   // ---------- load ----------
   function getJSON(u) { twirl(); return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
 
@@ -1120,8 +1247,9 @@
     var go = function () { syncZoomFace(); refreshEvents(false); };
     go(); // sources added later by addData (style.load) start from the same lists
     var zs = ""; try { zs = localStorage.getItem(ZIP_KEY) || ""; } catch (e) { /* ignore */ }
-    if (/^\d{5}$/.test(zs)) goZip(zs, true);
+    if (!applyDeepLink() && /^\d{5}$/.test(zs)) goZip(zs, true);
     loadShops();
+    loadExtras();
   }).catch(function () {
     oops("Could not load pop-ups. Try again in a moment.");
   }).then(function () { $("loading").hidden = true; });

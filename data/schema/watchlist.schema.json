@@ -27,7 +27,8 @@
           "hits": { "type": "integer", "minimum": 0, "description": "Dated pop-ups found." },
           "checks": { "type": "integer", "minimum": 0 },
           "cadence_hours": { "enum": [24, 72, 168], "description": "24 watching with a hit in 30 days; 72 watching with none or candidate; 168 quiet." },
-          "notes": { "type": "string" }
+          "notes": { "type": "string" },
+          "recent": { "type": "array", "maxItems": 3, "description": "Newest three posts from the last Graph read: {permalink, image_url, timestamp, caption}." }
         }
       }
     }

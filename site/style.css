@@ -520,3 +520,34 @@ dialog .credit { font-size: 14px; color: var(--muted); }
 .list li.apnote { margin: -4px 2px 8px; font-size: 14px; }
 .aplink { background: none; border: 0; padding: 0; color: var(--deep); font-weight: 700; text-decoration: underline; cursor: pointer; }
 .mk-cl.cl-ap .cl-n.morph { animation: none; }
+
+/* ---------- fuller card: brand facts and Yelp ---------- */
+.card .brow { display: flex; align-items: center; gap: 10px; margin: 12px 0 4px; min-width: 0; }
+.card .bpic { flex: none; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: var(--foam); border: 1.5px solid var(--line); }
+.card .bpic img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card .bpic .card-face { width: 30px; height: 30px; }
+.card .btxt { display: flex; flex-direction: column; min-width: 0; }
+.card .bname { font-size: 16px; font-weight: 800; color: var(--ink); line-height: 1.25; overflow-wrap: anywhere; }
+.card .bmeta { font-size: 14px; color: var(--muted); line-height: 1.4; overflow-wrap: anywhere; }
+.card .bmeta a, .card .ycredit a, .card .yphone a { color: var(--deep); font-weight: 700; }
+.card p.bio { margin: 4px 0 0; font-size: 14px; line-height: 1.4; }
+.card .recent { margin-top: 10px; }
+.card p.rlabel { margin: 0 0 6px; font-size: 14px; font-weight: 800; color: var(--muted); }
+.card .rgrid { display: flex; flex-wrap: wrap; gap: 6px; }
+.card .rc { display: block; width: 72px; height: 72px; border-radius: 12px; overflow: hidden; background: var(--foam); border: 1.5px solid var(--line); }
+.card .rc img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card .rc svg { display: block; width: 100%; height: 100%; }
+.card .rc-face { display: flex; align-items: center; justify-content: center; }
+.card .yelp { display: flex; align-items: flex-start; gap: 10px; margin-top: 12px; padding: 10px 12px; border-radius: 14px; background: var(--panel); border: 1.5px solid var(--line); }
+.card .ytxt { flex: 1; min-width: 0; }
+.card .ytxt p { margin: 2px 0; font-size: 15px; }
+.card .yphoto { order: 2; flex: none; width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: var(--foam); }
+.card .yphoto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card .yprice { font-weight: 800; color: var(--deep); }
+.card p.ycredit { font-size: 13px; }
+.stars { position: relative; display: inline-block; font-size: 16px; line-height: 1; letter-spacing: 1px; color: var(--line); vertical-align: -1px; }
+.stars::before { content: "\2605\2605\2605\2605\2605"; }
+.stars-on { position: absolute; left: 0; top: 0; overflow: hidden; white-space: nowrap; color: #E0A024; width: 0; }
+.stars.s1 .stars-on { width: 10%; } .stars.s2 .stars-on { width: 20%; } .stars.s3 .stars-on { width: 30%; } .stars.s4 .stars-on { width: 40%; }
+.stars.s5 .stars-on { width: 50%; } .stars.s6 .stars-on { width: 60%; } .stars.s7 .stars-on { width: 70%; } .stars.s8 .stars-on { width: 80%; }
+.stars.s9 .stars-on { width: 90%; } .stars.s10 .stars-on { width: 100%; }

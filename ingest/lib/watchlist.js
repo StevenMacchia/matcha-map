@@ -67,6 +67,7 @@ export function recordGraph(acc, facts, now = new Date()) {
   if (facts) {
     if (facts.name) acc.name = facts.name;
     for (const k of ["website", "profile_picture_url", "followers_count"]) if (facts[k] != null) acc[k] = facts[k];
+    if (Array.isArray(facts.recent) && facts.recent.length) acc.recent = facts.recent.slice(0, 3);
     if (facts.biography) acc.bio = String(facts.biography).slice(0, 300); // the harvest reads a home city out of it
   }
   return acc;

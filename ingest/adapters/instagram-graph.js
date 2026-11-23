@@ -99,7 +99,15 @@ export function mapBusinessDiscovery(json, handle) {
 export function mapAccountFacts(json) {
   const b = json?.business_discovery;
   if (!b) return null;
-  return { name: b.name || null, website: b.website || null, profile_picture_url: b.profile_picture_url || null, followers_count: Number.isFinite(b.followers_count) ? b.followers_count : null, biography: b.biography || null };
+  const recent = recentPosts(b.media?.data);
+  return { name: b.name || null, website: b.website || null, profile_picture_url: b.profile_picture_url || null, followers_count: Number.isFinite(b.followers_count) ? b.followers_count : null, biography: b.biography || null, ...(recent.length ? { recent } : {}) };
+}
+
+// The newest three posts that have a picture: {permalink, image_url, timestamp, caption (first 80 chars)}. Urls only, nothing downloaded.
+export function recentPosts(media) {
+  return (media || []).map((m) => ({ permalink: m.permalink, image_url: imageOf(m), timestamp: m.timestamp || null, caption: String(m.caption || "").replace(/\s+/g, " ").trim().slice(0, 80) }))
+    .filter((m) => m.permalink && m.image_url)
+    .sort((a, b) => String(b.timestamp || "").localeCompare(String(a.timestamp || ""))).slice(0, 3);
 }
 
 // Hashtag edge response -> RawItem[]. handle is null unless the API returned a username.

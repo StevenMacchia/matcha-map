@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "places.schema.json",
+  "title": "Yelp places",
+  "description": "site/data/places.json: Yelp Fusion matches for venues and shops, cached 7 days. Written by npm run yelp.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["generated", "places"],
+  "properties": {
+    "generated": { "type": "string" },
+    "places": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "name", "rating", "review_count", "price", "phone", "url", "image_url", "hours", "tz", "lat", "lng", "yelp_id", "fetched_at"],
+        "properties": {
+          "key": { "type": "string" },
+          "name": { "type": "string" },
+          "rating": { "type": ["number", "null"], "minimum": 0, "maximum": 5 },
+          "review_count": { "type": ["integer", "null"], "minimum": 0 },
+          "price": { "type": ["string", "null"] },
+          "phone": { "type": ["string", "null"] },
+          "url": { "type": ["string", "null"] },
+          "image_url": { "type": ["string", "null"] },
+          "hours": { "type": "array" },
+          "tz": { "type": ["string", "null"] },
+          "lat": { "type": "number" },
+          "lng": { "type": "number" },
+          "yelp_id": { "type": "string" },
+          "fetched_at": { "type": "string" }
+        }
+      }
+    }
+  }
+}

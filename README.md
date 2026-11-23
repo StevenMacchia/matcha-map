@@ -82,6 +82,15 @@ Set as environment variables. All are optional; the site and ingest work without
 | `INSTAGRAM_TOKEN` | Instagram Graph adapter (also reads `INSTAGRAM_USER_ID`). |
 | `TIKTOK_KEY` | TikTok API adapter. |
 | `INSTAGRAM_OEMBED_TOKEN` | Captions for pasted Instagram links. |
+| `YELP_API_KEY` | Yelp Fusion: rating, hours, phone and a photo on the card for venues and shops (free, no card, 500 calls a day; the adapter stops at 400). |
+
+## Richer place info
+
+The card shows what the Instagram Graph read already gave us (`site/data/brands.json`: picture, name, followers, website, bio, the latest three posts; rebuilt by every `npm run watch` or on its own by `npm run brands`) and, for a venue or shop Yelp knows, its rating, review count, price, hours today and phone (`site/data/places.json`, written by `npm run yelp` and by each watch run). Yelp is off until `YELP_API_KEY` is in `.env`; get one free at yelp.com/developers (no card). A venue counts as a match only when its name words are all in Yelp's name and it lies within 30 km; answers are cached 7 days in `data/yelp-cache.json`, which also counts the day's calls. When Yelp matches a venue that is still drawn at its city's centre, the pin moves to Yelp's coordinates (`geocode_source` "yelp"). The card shows Yelp's attribution and links to the Yelp page.
+
+Google Places would add a rating, opening hours, photos and reviews for almost every venue.
+It needs a Google Cloud billing account (a card on file), so it is not built.
+The Yelp and Instagram routes above are the no-card path; an "Open in Google Maps" link on every card with a venue covers the rest.
 
 ## Keep it fresh
 

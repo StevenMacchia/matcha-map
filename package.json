@@ -13,9 +13,13 @@
     "watch": "node ingest/watch.js",
     "loop": "node ingest/loop.js",
     "refresh": "node ingest/loop.js --once",
+    "brands": "node ingest/brands.js",
+    "yelp": "node ingest/yelp.js",
     "clean": "node ingest/clean.js",
     "regeocode": "node ingest/regeocode.js",
     "flyers": "node tools/flyers.js",
+    "pages": "node tools/gen-pages.js",
+    "og": "node tools/gen-og.js",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev"
   },
