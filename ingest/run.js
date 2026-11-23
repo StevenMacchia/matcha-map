@@ -137,6 +137,13 @@ async function main() {
   catch (e) { warn(`feeds not regenerated: ${e.message}`); }
   try { const { run } = await import("../tools/gen-event-pages.js"); const o = run(); info(`event pages: ${o.counts.pages}`); }
   catch (e) { warn(`event pages not regenerated: ${e.message}`); }
+  // "This weekend" pages and per-city preview cards, brand extras, then the sitemap additions (last: it reads what the others wrote).
+  try { const { generate } = await import("../tools/gen-weekend.js"); const o = await generate(); info(`weekend: ${o.counts.cities} city pages${o.cards ? `, ${o.cards.rendered} cards` : ""}`); }
+  catch (e) { warn(`weekend pages not regenerated: ${e.message}`); }
+  try { const { run } = await import("../tools/gen-brand-extras.js"); const o = run(); info(`brand extras: ${o.count}`); }
+  catch (e) { warn(`brand extras not regenerated: ${e.message}`); }
+  try { const { run } = await import("../tools/gen-sitemap-extras.js"); const o = run(); info(`sitemap: +${o.added} urls`); }
+  catch (e) { warn(`sitemap extras not added: ${e.message}`); }
 }
 
 main().catch((e) => { console.error("ingest crashed:", e); process.exit(1); });

@@ -1,0 +1,34 @@
+/* Weekend pages (tools/gen-weekend.js) and the brand extras block (site/brand-extras.js). Loads after style.css and pages.css. */
+.wk-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.wk-day { font-size: 19px !important; color: var(--deep); margin: 26px 0 10px !important; }
+.wk-list { display: grid; gap: 10px; }
+.wk-ev { display: flex; gap: 12px; align-items: flex-start; background: var(--panel); border: 2px solid var(--line); border-radius: var(--r); padding: 12px; box-shadow: var(--shadow); }
+.wk-pic { width: 84px; height: 84px; flex: none; border-radius: 14px; object-fit: cover; background: var(--foam); }
+.wk-mark { padding: 8px; box-sizing: border-box; }
+.wk-b { min-width: 0; flex: 1; }
+.wk-b h3 { margin: 0 0 2px; font-size: 18px; line-height: 1.2; }
+.wk-b p { margin: 2px 0; }
+.wk-when { font-weight: 800; color: var(--deep); font-size: 15px; }
+.wk-where { color: var(--muted); font-size: 15px; overflow-wrap: anywhere; }
+.wk-note { font-size: 13.5px; color: var(--muted); font-style: italic; }
+.wk-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 2px; padding: 0; }
+.wk-chip { display: inline-flex; align-items: center; gap: 4px; background: var(--foam); border: 1.5px solid var(--line); border-radius: var(--pill); padding: 2px 10px 2px 4px; font-size: 13.5px; font-weight: 700; }
+.wk-chip img { width: 22px; height: 26px; object-fit: contain; }
+.wk-chip:not(:has(img)) { padding-left: 10px; }
+.wk-links { display: flex; gap: 16px; margin-top: 8px !important; }
+.wk-links a { font-weight: 800; }
+.wk-cities li { font-size: 17px; font-weight: 800; }
+@media (min-width: 560px) { .wk-pic { width: 104px; height: 104px; } }
+
+/* brand extras block */
+.bx { margin: 8px 0 0; }
+.bx h2 { font-size: 22px; margin: 28px 0 10px; }
+.bx-story { max-width: 62ch; line-height: 1.55; margin: 0 0 6px; }
+.bx-meta { color: var(--muted); font-weight: 700; margin: 0 0 6px; }
+.bx-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.bx-list li { background: var(--panel); border: 2px solid var(--line); border-radius: var(--r); padding: 10px 14px; }
+.bx-list a { font-weight: 800; }
+.bx-dim { color: var(--muted); display: block; font-size: 14.5px; }
+.bx-drinks { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
+.bx-drinks li { display: flex; flex-direction: column; align-items: center; width: 92px; text-align: center; font-size: 13.5px; font-weight: 700; line-height: 1.25; }
+.bx-drinks img { width: 72px; height: 86px; object-fit: contain; }

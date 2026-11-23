@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Search demo | Matcha Map</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/search.css">
+<style>
+html { height: auto; overflow: auto; } body { height: auto; min-height: 100vh; overflow: visible; display: block; background: var(--canvas); background-image: var(--wash); }
+main { max-width: 600px; margin: 0 auto; padding: 20px 16px 60px; }
+h1 { font-size: 24px; margin: 0 0 14px; }
+#picked { margin: 18px 0 0; padding: 12px 14px; background: var(--panel); border: 2px solid var(--line); border-radius: var(--r); font-weight: 700; word-break: break-word; }
+#picked small { display: block; color: var(--muted); font-weight: 600; margin-top: 4px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Search demo</h1>
+<div id="search-slot"></div>
+<p id="picked" role="status">Pick a result to see what the map would do. Try <code>?q=matcha</code> or <code>?drink=ube-latte</code>.</p>
+</main>
+<script type="module">
+import { mountSearch, filterByBrand, filterByDrink } from "/search.js";
+const get = (u) => fetch(u).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+const [ev, src, art] = await Promise.all([get("/data/events.json"), get("/data/sources.json"), get("/art/index.json")]);
+const events = (ev && ev.events) || [];
+const out = document.getElementById("picked");
+function show(pick) {
+  let note = "";
+  if (pick.type === "brand") note = filterByBrand(events, pick.id).length + " events for this brand";
+  else if (pick.type === "drink") note = filterByDrink(events, pick.id, art).length + " events with this drink";
+  else if (pick.type === "city") note = "map would fly to ?city=" + pick.id;
+  else note = "map would open ?event=" + pick.id;
+  out.textContent = pick.type + ": " + pick.id;
+  const s = document.createElement("small"); s.textContent = note; out.appendChild(s);
+}
+window.search = mountSearch(document.getElementById("search-slot"), { events, sources: src || [], art, onPick: show });
+</script>
+</body>
+</html>
