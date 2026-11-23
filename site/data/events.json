@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T13:36:48.106Z",
+  "generated": "2026-11-23T15:08:02.488Z",
   "events": [
     {
       "id": "13650ade75dc",
@@ -18883,7 +18883,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T12:13:27.855Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": null,
@@ -19424,7 +19424,7 @@
       "description": "A matcha and hojicha counter inside the downtown library, with new corn and melon matcha this fall.",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/howdyyallcoffee/",
         "tiktok": null
       },
       "hours": "Mon-Sat 10am-4pm",
@@ -20224,7 +20224,7 @@
       "description": "A matcha and hojicha counter inside the downtown library, with new corn and melon matcha this fall.",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/howdyyallcoffee/",
         "tiktok": null
       },
       "hours": "Mon-Sat 10am-4pm",
@@ -22851,17 +22851,17 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T12:13:27.855Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/919114658_17956230012323125_7486542432152089631_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BvrnM1EbxgQQ7kNvwGKtnUO&_nc_oc=AdrPOq-0bS8niftWxG2GWnAsqRqAaMJXXL5VDbpLqDBfsWBk_jlRQWPWw5fKbGyCZ4E&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=gWuIV735seIpb390gc6GPA&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQTuto8iKnciFYgUmtt7az2c5-c8ruJTx96O9faMePTa_Q&oe=6B09FFC6",
+        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/919114658_17956230012323125_7486542432152089631_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BvrnM1EbxgQQ7kNvwGKtnUO&_nc_oc=AdrPOq-0bS8niftWxG2GWnAsqRqAaMJXXL5VDbpLqDBfsWBk_jlRQWPWw5fKbGyCZ4E&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=k1j0YxeOP_3PdZGjF1_ZqQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQS3wNzp6yL1eLY5Qf5nj48qC_HUE9xKOZwy-uDztpam4Q&oe=6B0A3806",
         "local": null,
         "credit": "instagram.com",
         "width": null,
         "height": null
       },
-      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/919114658_17956230012323125_7486542432152089631_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BvrnM1EbxgQQ7kNvwGKtnUO&_nc_oc=AdrPOq-0bS8niftWxG2GWnAsqRqAaMJXXL5VDbpLqDBfsWBk_jlRQWPWw5fKbGyCZ4E&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=gWuIV735seIpb390gc6GPA&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQTuto8iKnciFYgUmtt7az2c5-c8ruJTx96O9faMePTa_Q&oe=6B09FFC6",
+      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/919114658_17956230012323125_7486542432152089631_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BvrnM1EbxgQQ7kNvwGKtnUO&_nc_oc=AdrPOq-0bS8niftWxG2GWnAsqRqAaMJXXL5VDbpLqDBfsWBk_jlRQWPWw5fKbGyCZ4E&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=k1j0YxeOP_3PdZGjF1_ZqQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQS3wNzp6yL1eLY5Qf5nj48qC_HUE9xKOZwy-uDztpam4Q&oe=6B0A3806",
       "posts": {
         "instagram": "https://www.instagram.com/p/DgEH7tPm7Ke/",
         "tiktok": null,
@@ -23891,7 +23891,7 @@
       "description": "A matcha and hojicha counter inside the downtown library, with new corn and melon matcha this fall.",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/howdyyallcoffee/",
         "tiktok": null
       },
       "hours": "Mon-Sat 10am-4pm",
@@ -24106,7 +24106,7 @@
       "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs ",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/morethan.matcha/",
         "tiktok": null
       },
       "hours": "Westfield Century City mall hours",
@@ -25084,7 +25084,7 @@
       "lat": 40.0094,
       "lng": -75.1333,
       "geocode_source": "manual",
-      "approx": true,
+      "approx": false,
       "confidence": "likely",
       "status": "upcoming",
       "last_seen": "2026-11-23T13:36:48.106Z",
@@ -25357,17 +25357,17 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T12:13:27.855Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/919114658_17956230012323125_7486542432152089631_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BvrnM1EbxgQQ7kNvwGKtnUO&_nc_oc=AdrPOq-0bS8niftWxG2GWnAsqRqAaMJXXL5VDbpLqDBfsWBk_jlRQWPWw5fKbGyCZ4E&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=gWuIV735seIpb390gc6GPA&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQTuto8iKnciFYgUmtt7az2c5-c8ruJTx96O9faMePTa_Q&oe=6B09FFC6",
+        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/919114658_17956230012323125_7486542432152089631_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BvrnM1EbxgQQ7kNvwGKtnUO&_nc_oc=AdrPOq-0bS8niftWxG2GWnAsqRqAaMJXXL5VDbpLqDBfsWBk_jlRQWPWw5fKbGyCZ4E&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=k1j0YxeOP_3PdZGjF1_ZqQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQS3wNzp6yL1eLY5Qf5nj48qC_HUE9xKOZwy-uDztpam4Q&oe=6B0A3806",
         "local": null,
         "credit": "instagram.com",
         "width": null,
         "height": null
       },
-      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/919114658_17956230012323125_7486542432152089631_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BvrnM1EbxgQQ7kNvwGKtnUO&_nc_oc=AdrPOq-0bS8niftWxG2GWnAsqRqAaMJXXL5VDbpLqDBfsWBk_jlRQWPWw5fKbGyCZ4E&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=gWuIV735seIpb390gc6GPA&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQTuto8iKnciFYgUmtt7az2c5-c8ruJTx96O9faMePTa_Q&oe=6B09FFC6",
+      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/919114658_17956230012323125_7486542432152089631_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BvrnM1EbxgQQ7kNvwGKtnUO&_nc_oc=AdrPOq-0bS8niftWxG2GWnAsqRqAaMJXXL5VDbpLqDBfsWBk_jlRQWPWw5fKbGyCZ4E&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=k1j0YxeOP_3PdZGjF1_ZqQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQS3wNzp6yL1eLY5Qf5nj48qC_HUE9xKOZwy-uDztpam4Q&oe=6B0A3806",
       "posts": {
         "instagram": "https://www.instagram.com/p/DgEH7tPm7Ke/",
         "tiktok": null,
@@ -25851,17 +25851,17 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T12:13:27.855Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/902825761_17996136771075454_1654259137803794381_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=n0eKQ1NriBUQ7kNvwGk-rK5&_nc_oc=AdrwlVELU5SntdHYvpwTL8CtlmDmON54QOh2yPzDrqMIfEeA2p5grm2DAk1-9Avx-4E&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=gWuIV735seIpb390gc6GPA&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQQSsgWVqKHjDHLVtJww72L3k0cxIxe2mvdnTBi_Yn8wcg&oe=6B0A19BC",
+        "url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/902825761_17996136771075454_1654259137803794381_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=n0eKQ1NriBUQ7kNvwGk-rK5&_nc_oc=AdrwlVELU5SntdHYvpwTL8CtlmDmON54QOh2yPzDrqMIfEeA2p5grm2DAk1-9Avx-4E&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=k1j0YxeOP_3PdZGjF1_ZqQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQSKJFNk0WsTnOMV7RHNOofWdCQfhMWFz1qHfSBKf5o3OA&oe=6B0A19BC",
         "local": null,
         "credit": "instagram.com",
         "width": null,
         "height": null
       },
-      "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/902825761_17996136771075454_1654259137803794381_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=n0eKQ1NriBUQ7kNvwGk-rK5&_nc_oc=AdrwlVELU5SntdHYvpwTL8CtlmDmON54QOh2yPzDrqMIfEeA2p5grm2DAk1-9Avx-4E&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=gWuIV735seIpb390gc6GPA&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQQSsgWVqKHjDHLVtJww72L3k0cxIxe2mvdnTBi_Yn8wcg&oe=6B0A19BC",
+      "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/902825761_17996136771075454_1654259137803794381_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=n0eKQ1NriBUQ7kNvwGk-rK5&_nc_oc=AdrwlVELU5SntdHYvpwTL8CtlmDmON54QOh2yPzDrqMIfEeA2p5grm2DAk1-9Avx-4E&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=k1j0YxeOP_3PdZGjF1_ZqQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQSKJFNk0WsTnOMV7RHNOofWdCQfhMWFz1qHfSBKf5o3OA&oe=6B0A19BC",
       "posts": {
         "instagram": "https://www.instagram.com/p/DgEXHDRlVoG/",
         "tiktok": null,
@@ -26346,7 +26346,7 @@
       "description": "A matcha and hojicha counter inside the downtown library, with new corn and melon matcha this fall.",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/howdyyallcoffee/",
         "tiktok": null
       },
       "hours": "Mon-Sat 10am-4pm",
@@ -26379,7 +26379,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T12:13:27.855Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": null,
@@ -26719,7 +26719,7 @@
       "description": "A matcha and hojicha counter inside the downtown library, with new corn and melon matcha this fall.",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/howdyyallcoffee/",
         "tiktok": null
       },
       "hours": "Mon-Sat 10am-4pm",
@@ -27147,7 +27147,7 @@
       "description": "A matcha and hojicha counter inside the downtown library, with new corn and melon matcha this fall.",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/howdyyallcoffee/",
         "tiktok": null
       },
       "hours": "Mon-Sat 10am-4pm",
@@ -27661,7 +27661,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T12:13:27.855Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": null,
@@ -29305,7 +29305,7 @@
       "description": "JCCH hosts its first Mochi & Matcha Fest: mochitsuki (mochi pounding) alongside modern mochi products and matcha drinks. Vendors include Green Times Matcha and Aloha Matcha Hawaii, plus Fujiya Hawaii,",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/greentimes.matcha/",
         "tiktok": null
       },
       "hours": "9am-1pm",
@@ -29358,7 +29358,7 @@
       "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs ",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/morethan.matcha/",
         "tiktok": null
       },
       "hours": "Westfield Century City mall hours",
@@ -30942,17 +30942,17 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T12:13:27.855Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/926529169_18143390323633494_2471026305237608668_n.png?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=-k5sT3r7fFsQ7kNvwEkxGZv&_nc_oc=AdqpM6Tggjildmnaffvykb8bhZTBhtg1aAyyp0VIYlTabSDUHqQc44CRvETa9VHgWuw&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=65KHOBTy6JbVfbgx3BAtzg&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQTESSXgTmHYZ7jR4aNWbALCmjQd6sSvuFT1D4-gMJkH1Q&oe=6B0A18FB",
+        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/926529169_18143390323633494_2471026305237608668_n.png?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=-k5sT3r7fFsQ7kNvwEkxGZv&_nc_oc=AdqpM6Tggjildmnaffvykb8bhZTBhtg1aAyyp0VIYlTabSDUHqQc44CRvETa9VHgWuw&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=UibIXA5Y4_6kfE77HObPnQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQSERoOgPvcm0NMILpqH65wRIds5NjoJGjU5z7q_RSFTbQ&oe=6B0A18FB",
         "local": null,
         "credit": "instagram.com",
         "width": null,
         "height": null
       },
-      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/926529169_18143390323633494_2471026305237608668_n.png?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=-k5sT3r7fFsQ7kNvwEkxGZv&_nc_oc=AdqpM6Tggjildmnaffvykb8bhZTBhtg1aAyyp0VIYlTabSDUHqQc44CRvETa9VHgWuw&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=65KHOBTy6JbVfbgx3BAtzg&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQTESSXgTmHYZ7jR4aNWbALCmjQd6sSvuFT1D4-gMJkH1Q&oe=6B0A18FB",
+      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/926529169_18143390323633494_2471026305237608668_n.png?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=-k5sT3r7fFsQ7kNvwEkxGZv&_nc_oc=AdqpM6Tggjildmnaffvykb8bhZTBhtg1aAyyp0VIYlTabSDUHqQc44CRvETa9VHgWuw&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AEVBmj4EAAAA&_nc_gid=UibIXA5Y4_6kfE77HObPnQ&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQSERoOgPvcm0NMILpqH65wRIds5NjoJGjU5z7q_RSFTbQ&oe=6B0A18FB",
       "posts": {
         "instagram": "https://www.instagram.com/p/DgETgM-D2KL/",
         "tiktok": null,
@@ -31804,7 +31804,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T12:13:27.855Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": null,
@@ -32120,7 +32120,7 @@
       "lat": 33.5722,
       "lng": -112.0901,
       "geocode_source": "manual",
-      "approx": true,
+      "approx": false,
       "confidence": "likely",
       "status": "upcoming",
       "last_seen": "2026-11-23T13:36:48.106Z",
@@ -32777,7 +32777,7 @@
       "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs ",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/morethan.matcha/",
         "tiktok": null
       },
       "hours": "Westfield Century City mall hours",
@@ -34364,7 +34364,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:08:02.488Z",
       "first_seen": "2026-11-23T13:27:26.041Z",
       "extracted_by": "rule",
       "image": {
@@ -34436,8 +34436,8 @@
       "description": "A Caribbean-inspired pop-up cafe inside the SoWa Christmas Market, serving cornmeal porridge matcha lattes and a carrot punch that can be made with matcha all holiday season.",
       "links": {
         "website": null,
-        "instagram": null,
-        "tiktok": null
+        "instagram": "https://www.instagram.com/caribeandco/",
+        "tiktok": "https://www.tiktok.com/@caribeandco"
       },
       "hours": "Sat 10am-10pm",
       "pay": null,
@@ -34541,7 +34541,7 @@
       "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs ",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/morethan.matcha/",
         "tiktok": null
       },
       "hours": "Westfield Century City mall hours",
@@ -35282,8 +35282,8 @@
       "description": "A Caribbean-inspired pop-up cafe inside the SoWa Christmas Market, serving cornmeal porridge matcha lattes and a carrot punch that can be made with matcha all holiday season.",
       "links": {
         "website": null,
-        "instagram": null,
-        "tiktok": null
+        "instagram": "https://www.instagram.com/caribeandco/",
+        "tiktok": "https://www.tiktok.com/@caribeandco"
       },
       "hours": "Sat 10am-10pm",
       "pay": null,
@@ -35335,7 +35335,7 @@
       "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs ",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/morethan.matcha/",
         "tiktok": null
       },
       "hours": "Westfield Century City mall hours",
@@ -35712,8 +35712,8 @@
       "price": null,
       "description": "Austin's Central Matcha serves whisked ceremonial-grade matcha from a market stand at the Sunday Mueller farmers market. Expect matcha shots and iced lattes made to order, plus tins and kits to take h",
       "links": {
-        "website": null,
-        "instagram": null,
+        "website": "https://centralmatcha.com/",
+        "instagram": "https://www.instagram.com/centralmatcha/",
         "tiktok": null
       },
       "hours": "Sundays 10am-2pm",
@@ -35767,7 +35767,7 @@
       "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs ",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/morethan.matcha/",
         "tiktok": null
       },
       "hours": "Westfield Century City mall hours",
@@ -36494,8 +36494,8 @@
       "price": null,
       "description": "Austin's Central Matcha serves whisked ceremonial-grade matcha from a market stand at the Sunday Mueller farmers market. Expect matcha shots and iced lattes made to order, plus tins and kits to take h",
       "links": {
-        "website": null,
-        "instagram": null,
+        "website": "https://centralmatcha.com/",
+        "instagram": "https://www.instagram.com/centralmatcha/",
         "tiktok": null
       },
       "hours": "Sundays 10am-2pm",
