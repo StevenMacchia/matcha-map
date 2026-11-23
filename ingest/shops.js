@@ -3,7 +3,7 @@
 // whose own site shows a street address. One box per city of data/cities.json, biggest first; a run asks SHOP_BOXES_PER_RUN of them
 // (default 120) from a saved position (.cache/shops-cursor.json), so successive runs walk the whole country. Shops already in
 // data/shops.json from boxes not asked this run are kept; the ones inside a box asked again are replaced by what that box returns now.
-// Flags: --no-fetch (cache only) | --no-brands | --all (every box this run) | --only <city> | --verbose
+// Flags: --no-osm (skip Overpass; keep OSM rows already in data/shops.json) | --no-fetch (cache only) | --no-brands | --all (every box this run) | --only <city> | --verbose
 import { attachMenus } from "./lib/shops/menus.js";
 import "./lib/env.js";
 import fs from "node:fs";
@@ -13,6 +13,7 @@ import { setVerbose, warn, info } from "./lib/log.js";
 import { loadBoxes, nextBoxes, boxesPerRun } from "./lib/shops/boxes.js";
 import { buildQuery, runQuery, parseElements } from "./lib/shops/overpass.js";
 import { findAddress } from "./lib/shops/brandsites.js";
+import { curatedShops } from "./lib/shops/curated.js";
 import { dedupe, applyOverrides, fillState, legitimate } from "./lib/shops/merge.js";
 
 export const ATTRIBUTION = "© OpenStreetMap contributors, ODbL";
@@ -58,7 +59,7 @@ async function main() {
   let noCoords = 0, raw = 0, ran = 0, skipped = 0, fails = 0, stopped = false;
   const oi = process.argv.indexOf("--only"), only = oi > 0 ? process.argv[oi + 1] : null;
   const boxes = loadBoxes();
-  const plan = only ? { batch: boxes.filter((b) => b.name === only), commit() {} } : nextBoxes(boxes, { perRun: flags.has("all") ? boxes.length : boxesPerRun() });
+  const plan = only ? { batch: boxes.filter((b) => b.name === only), commit() {} } : flags.has("no-osm") ? { batch: [], commit() {} } : nextBoxes(boxes, { perRun: flags.has("all") ? boxes.length : boxesPerRun() });
   const asked = [];
   let attempted = 0;
   for (const box of plan.batch) {
@@ -93,7 +94,10 @@ async function main() {
     for (const m of brands.missing) warn("brand with no street address found, no point made:", m);
   }
   const cities = cityTable();
-  const leg = legitimate([...osm.values(), ...brands.shops]);
+  // Researched storefronts (data/shops-<region>-<part>.json): geocoded from their street address, verified by their own site.
+  let web = { shops: [], held: [] };
+  { const geocoder = createGeocoder({ noFetch }); web = await curatedShops({ geocoder, fetched }); geocoder.save(); for (const h of web.held) warn(`curated shop held: ${h.name} (${h.file}): ${h.why}`); }
+  const leg = legitimate([...osm.values(), ...brands.shops, ...web.shops]);
   let shops = dedupe(leg.kept);
   shops = applyOverrides(shops, read("data/shops-overrides.json", {})).map((s) => fillState(s, cities));
   shops = attachMenus(shops, read("data/menus.json", { menus: {} }).menus);
@@ -107,7 +111,7 @@ async function main() {
   const by = (f) => { const m = {}; shops.forEach((s) => { const k = f(s); m[k] = (m[k] || 0) + 1; }); return Object.entries(m).sort((a, b) => b[1] - a[1]); };
   info(`Dropped, no coordinates (no node position or way center): ${noCoords}. Only OSM coordinates and geocoded street addresses are ever used; nothing is spread or placed at a city centre.`);
   info(`Boxes run ${ran}, skipped ${skipped}${stopped ? " (stopped early)" : ""} of ${plan.batch.length} asked this run (${boxes.length} in all). Raw OSM hits ${raw}; dropped closed ${leg.dropped.closed}, no address ${leg.dropped.noAddress}, no name ${leg.dropped.noName}.`);
-  info(`${shops.length} kept (${site.length} verified, written to the site; ${shops.length - site.length} unverified, data/ only; ${brands.shops.length} brand sites) in ${Math.round((Date.now() - t0) / 1000)} s`);
+  info(`${shops.length} kept (${site.length} verified, written to the site; ${shops.length - site.length} unverified, data/ only; ${brands.shops.length} brand sites) in ${Math.round((Date.now() - t0) / 1000)} s; ${web.shops.length} researched rows kept, ${web.held.length} held`);
   info("By state: " + by((s) => s.state || "?").slice(0, 12).map(([k, n]) => `${k} ${n}`).join(", "));
   info("Top cities: " + by((s) => (s.city || "?") + (s.state ? ", " + s.state : "")).slice(0, 10).map(([k, n]) => `${k} ${n}`).join("; "));
 }

@@ -16,7 +16,8 @@ export function dedupe(list, within = 150) {
     const k = norm(s.name);
     const dup = out.find((o) => norm(o.name) === k && metres(o, s) <= within);
     if (!dup) { out.push({ ...s }); continue; }
-    for (const f of ["address", "city", "state", "zip", "website", "instagram", "phone", "opening_hours", "cuisine"]) if (!dup[f] && s[f]) dup[f] = s[f];
+    for (const f of ["address", "city", "state", "zip", "website", "instagram", "phone", "opening_hours", "cuisine", "menu_url", "image_url", "image_credit", "source_url", "read", "confirmed_via"]) if (!dup[f] && s[f]) dup[f] = s[f];
+    if (s.verified && !dup.verified) dup.verified = true;
     if (s.brand_id && !dup.brand_id) dup.brand_id = s.brand_id;
   }
   return out;
@@ -32,7 +33,7 @@ export function legitimate(list) {
     if (s.closed) { dropped.closed++; continue; }
     if (!String(s.address || "").trim()) { dropped.noAddress++; continue; }
     const { closed, ...rest } = s;
-    kept.push({ ...rest, verified: s.source === "brand" ? true : !!(s.website || s.opening_hours || s.phone) });
+    kept.push({ ...rest, verified: s.source === "brand" ? true : s.source === "web" ? !!s.verified : !!(s.website || s.opening_hours || s.phone) });
   }
   return { kept, dropped };
 }
