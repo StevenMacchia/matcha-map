@@ -973,6 +973,9 @@
   function showCard(key, focusIt) {
     var it = items[key];
     if (!it) return;
+    // The desktop card is a MapLibre popup, which needs the real map: a deep link (?event=) that lands while the stand-in
+    // is still up threw inside Popup.addTo (live, 2026-11-23). It waits for the real map; the stand-in hands the listener over.
+    if (wide.matches && map.isPre) { map.once("load", function () { showCard(key, focusIt); }); return; }
     finishClose();
     openKey = key;
     setSelected(key);
