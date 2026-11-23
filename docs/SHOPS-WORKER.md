@@ -39,7 +39,7 @@ Run `node tools/shop-read.js <shop website> --paths home,/contact,/locations,/vi
 ```
 
 - Required: name, address (starts with the street number), city, two-letter state, source_url (the public page where the address and the shop can be seen), read (the date you read it). `confirmed_via` is `own-site`, `instagram-bio` (a handle seen on its own site) or `press+site` (a press list plus the shop's own page). A row without `confirmed_via` is kept but not shown on the map.
-- `image_url`: the shop's own og:image or hero photo URL from its own site, with `image_credit` "Photo: <shop name> website". Null if the site has none; never take a photo from a press site, Google or Yelp.
+- `image_url`: the shop's own og:image or hero photo URL from its own site, with `image_credit` "Photo: <shop name> website". Null if the site has none; never take a photo from a press site, Google, Yelp or an Instagram/Facebook CDN (those links expire and are not ours to serve).
 - No coordinates in the file. The pipeline geocodes the address.
 - One row per location. A chain gets one row per store you can confirm on its own location page.
 - File shape: `{ "generated": "<ISO time>", "group": "<region>-<part>", "shops": [ ... ] }`. Write your own file only; never edit another file, `data/shops.json`, `site/` or `ingest/`.

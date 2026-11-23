@@ -94,3 +94,11 @@ Their terms forbid scraping and the pages need a login. TikTok's Display API ret
 
 - Eventbrite sitemap seeds: https://www.eventbrite.com/sitemap_xml/sitemap_index.xml (named in robots.txt) lists "top search pages"; the /d/<st>--<place>/matcha/ ones are read by the Eventbrite crawler on the default walk (about 30 places, cached a week in .cache/eventbrite-matcha-places.json; off with EVENTBRITE_SEEDS=0, skipped on --cities lists).
 - Probed and not used: Eventeny, Posh, Partiful, SweatPals sitemaps, Luma search, Meetup events sitemap. Reasons in docs/DISCOVERY-YIELD.md.
+
+## Researched storefronts (Population lane, P2, 2026-11-23)
+
+- Files `data/shops-<region>-<part>.json` (`{generated, group, shops[]}`) are written by research workers following `docs/SHOPS-WORKER.md`; the pipeline never rewrites them. `ingest/lib/shops/curated.js` keeps a row only with a name, a street address, a city, a two-letter state, a public `source_url` and a `read` date, geocodes the address through the committed Nominatim cache (coordinates are never taken from the file) and holds what does not geocode.
+- Shop rows gain optional fields: `source_url`, `read`, `menu_url`, `image_url`, `image_credit`, `confirmed_via` (`own-site`, `instagram-bio`, `press+site`); `source` is `web` beside `osm` and `brand`. `verified` for a `web` row means the shop was confirmed on its own site or its Instagram handle from its own site, never from press alone.
+- Ids are `web:<name>-<state>-<city>-<street>`, never an OSM id; the 150 m same-name dedupe in `ingest/lib/shops/merge.js` merges a researched row with an OSM or brand row (the first row keeps its id; the others fill gaps and a verified row makes the merged one verified).
+- `image_url` is the shop's own site photo only, with `image_credit`; never an Instagram CDN URL, never a press, Google or Yelp image. Hours are in OpenStreetMap `opening_hours` syntax so the card renders them.
+- `npm run shops -- --no-osm` rebuilds the layer from the existing OSM rows, the brand sites and these files without calling Overpass.
