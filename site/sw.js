@@ -3,7 +3,7 @@
 // network first and the cache only fills in offline, so a visitor never gets yesterday's style.css under today's index.html
 // (that happened on 2026-11-22 when rung 35 changed the shell under a worker that precached rung 34's). Never caches map
 // tiles or Instagram images.
-var VERSION = "mm-8147f12698";
+var VERSION = "mm-fd96258469";
 var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE = "mm-lib-maplibre-4.7.1";
 var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/pwa.js",
   "/cities.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",
@@ -59,9 +59,9 @@ function staleWhileRevalidate(req, name) {
 }
 
 function networkFirstPage(req) {
-  return fetch(req).then(function (r) {
+  return fetch(req, { cache: "no-cache" }).then(function (r) {
     tell("online");
-    if (r && r.ok) caches.open(SHELL_CACHE).then(function (c) { c.put(req, r.clone()); });
+    if (r && r.ok) { var copy = r.clone(); caches.open(SHELL_CACHE).then(function (c) { c.put(req, copy); }); } // clone before the body is read
     return r;
   }).catch(function () {
     tell("offline");
@@ -90,9 +90,10 @@ self.addEventListener("fetch", function (e) {
 
 // Shell files (css, js, svg, map styles, icons): the network copy when there is one, kept for offline; the cache only when there is not.
 function networkFirstAsset(req) {
-  return fetch(req).then(function (r) {
+  // cache: "no-cache" revalidates with the server instead of trusting the browser's HTTP cache (a 304 when nothing changed)
+  return fetch(req, { cache: "no-cache" }).then(function (r) {
     tell("online");
-    if (r && r.ok) caches.open(SHELL_CACHE).then(function (c) { c.put(req, r.clone()); });
+    if (r && r.ok) { var copy = r.clone(); caches.open(SHELL_CACHE).then(function (c) { c.put(req, copy); }); }
     return r;
   }).catch(function () {
     tell("offline");

@@ -23,7 +23,8 @@
     "icons": "node tools/gen-icons.js",
     "deploy": "node tools/sw-version.js && npx wrangler pages deploy site --project-name matchamap --branch main --commit-dirty=true",
     "preview": "wrangler dev",
-    "sw-version": "node tools/sw-version.js"
+    "sw-version": "node tools/sw-version.js",
+    "smoke": "node tools/smoke.js"
   },
   "license": "MIT",
   "devDependencies": {
