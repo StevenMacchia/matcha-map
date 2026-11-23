@@ -3,7 +3,7 @@ import { bearerOk, sha256, makeId, DAILY_LIMIT } from "./validate.js";
 
 export const json = (obj, status = 200, extra = {}) => new Response(JSON.stringify(obj), { status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store", ...extra } });
 
-export const NOT_SET_UP = "Submissions are not switched on yet (the storage is not connected). Please try again later.";
+export const NOT_SET_UP = "Mattie is napping. Try again in a little while.";
 export function kvOf(env) { return env && env.INTAKE && typeof env.INTAKE.put === "function" ? env.INTAKE : null; }
 
 export async function readBody(request) {
@@ -36,11 +36,11 @@ export async function storeForm({ request, env, validate, prefix, ttl, scope, th
   const kv = kvOf(env);
   if (!kv) return json({ error: NOT_SET_UP }, 503);
   const body = await readBody(request);
-  if (!body) return json({ error: "That did not look like a form." }, 400);
+  if (!body) return json({ error: "Hmm, that did not go through. Reload and try again." }, 400);
   const v = validate(body);
   if (v.bot) return json({ ok: true, id: "ok", message: thanks }); // look like success, store nothing
   if (!v.ok) return json({ ok: false, errors: v.errors }, 422);
-  if (!(await withinLimit(kv, request, scope))) return json({ error: "That is a lot for one day. Try again tomorrow." }, 429);
+  if (!(await withinLimit(kv, request, scope))) return json({ error: "That is plenty for today. Come back tomorrow." }, 429);
   const id = makeId();
   const key = keyOf ? await keyOf(v.clean, id) : `${prefix}:${id}`;
   const opts = ttl ? { expirationTtl: ttl } : {};

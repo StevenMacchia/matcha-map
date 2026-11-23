@@ -102,7 +102,7 @@ test("submit: stores pending:<id> with a 30 day TTL; honeypot stores nothing; mi
 
   const none = await submit({ request: post("/api/submit", body), env: {} });
   assert.equal(none.status, 503);
-  assert.match((await none.json()).error, /not switched on/);
+  assert.match((await none.json()).error, /napping/);
 });
 
 test("submit: 10 a day per IP", async () => {

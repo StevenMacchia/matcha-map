@@ -1,7 +1,7 @@
 // Pure validators shared by the Pages Functions (functions/api/*.js) and the tests. No I/O, no Cloudflare APIs.
 // Every function returns plain data: { ok, errors: {field: message}, clean } so the form can show errors per field.
 
-export const MIN_FILL_MS = 3000;          // a human cannot fill the form faster than this
+export const MIN_FILL_MS = 1500;          // phone autofill plus one tap can be quick, so this stays low; the honeypot does the real work
 export const MAX_FORM_AGE_MS = 24 * 36e5; // a form page open for a day is stale: ask to reload
 export const DAILY_LIMIT = 10;            // submissions per IP per day
 export const HONEYPOT = "company";        // hidden field; bots fill it, people never see it
@@ -76,7 +76,9 @@ export function botCheck(body, now = Date.now()) {
   if (str(String(b[HONEYPOT] == null ? "" : b[HONEYPOT]), 50)) return { bot: true };
   const t = Number(b.t);
   if (!isFinite(t) || t <= 0) return { bot: true };
-  const age = now - t;
+  // "n" is the phone's own clock at send time: n - t is the fill time with no clock skew. Fall back to the server clock.
+  const n = Number(b.n);
+  const age = isFinite(n) && n > t ? n - t : now - t;
   if (age < MIN_FILL_MS) return { bot: true };
   if (age > MAX_FORM_AGE_MS) return { stale: true };
   return {};
@@ -89,7 +91,7 @@ export function validateSubmission(body, { now = Date.now() } = {}) {
   const gate = botCheck(b, now);
   if (gate.bot) return { ok: false, bot: true, errors: {}, clean: null };
   const errors = {};
-  if (gate.stale) errors.form = "This form timed out. Reload the page and try again.";
+  if (gate.stale) errors.form = "This page has been open a while. Reload it and try again.";
   const clean = {};
   for (const k of FIELD_NAMES) clean[k] = FIELDS[k](b[k]);
   if (!clean.brand) errors.brand = "What is the brand called?";
@@ -113,7 +115,7 @@ export function validateReport(body, { now = Date.now() } = {}) {
   const gate = botCheck(b, now);
   if (gate.bot) return { ok: false, bot: true, errors: {}, clean: null };
   const errors = {};
-  if (gate.stale) errors.form = "This form timed out. Reload the page and try again.";
+  if (gate.stale) errors.form = "This page has been open a while. Reload it and try again.";
   const ev = str(String(b.event || ""), 40);
   const event = /^[a-z0-9]{6,32}$/i.test(ev) ? ev.toLowerCase() : "";
   const reason = REPORT_REASONS.includes(b.reason) ? b.reason : "";
@@ -130,7 +132,7 @@ export function validateClaim(body, { now = Date.now() } = {}) {
   const gate = botCheck(b, now);
   if (gate.bot) return { ok: false, bot: true, errors: {}, clean: null };
   const errors = {};
-  if (gate.stale) errors.form = "This form timed out. Reload the page and try again.";
+  if (gate.stale) errors.form = "This page has been open a while. Reload it and try again.";
   const clean = {
     brand: str(String(b.brand || ""), 80), handle: normHandle(b.handle), role: str(String(b.role || ""), 80),
     email: FIELDS.email(b.email), proof: FIELDS.url(b.proof),
@@ -148,7 +150,7 @@ export function validateAlert(body, { now = Date.now() } = {}) {
   const gate = botCheck(b, now);
   if (gate.bot) return { ok: false, bot: true, errors: {}, clean: null };
   const errors = {};
-  if (gate.stale) errors.form = "This form timed out. Reload the page and try again.";
+  if (gate.stale) errors.form = "This page has been open a while. Reload it and try again.";
   const city = str(String(b.city || ""), 60).toLowerCase();
   const clean = { email: FIELDS.email(b.email), city: /^[a-z0-9]+(?:-[a-z0-9]+)*-[a-z]{2}$/.test(city) ? city : "", consent: b.consent === true || b.consent === "true" || b.consent === "on" };
   if (!clean.email) errors.email = "We need an email to write to.";

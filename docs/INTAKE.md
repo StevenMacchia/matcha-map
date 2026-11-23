@@ -20,11 +20,11 @@ What was added: a public form (`/add/`), a moderation page (`/add/review.html`),
    `CLOUDFLARE_API_TOKEN` (Pages edit permission) and `CLOUDFLARE_ACCOUNT_ID` (the deploy step runs only when both exist).
 6. Locally, put `INTAKE_URL` and `INTAKE_TOKEN` in `.env` to run the pull by hand: `npm run ingest`.
 
-Until steps 1 to 4 are done, `/api/*` answers `503` with "not switched on yet" and the forms show that message.
+Until steps 1 to 4 are done, `/api/*` answers `503` with that kind message and the forms show "Mattie is napping. Try again in a little while."
 
 ## How a submission travels
 
-1. `/add/` posts to `POST /api/submit`. The function checks the honeypot field (`company`, hidden) and a load stamp (forms sent in under 3 seconds are treated as bots and get a fake success, nothing stored), validates the fields (`functions/_lib/validate.js`), limits each IP to 10 a day (a hash of the IP in KV, kept 2 days), and stores `pending:<id>` with a 30 day TTL.
+1. `/add/` posts to `POST /api/submit`. The function checks the honeypot field (`company`, hidden) and a load stamp (forms sent in under 1.5 seconds by the phone's own clock are treated as bots and get a fake success, nothing stored; the form also sends its send time `n` so a wrong phone clock cannot trip it), validates the fields (`functions/_lib/validate.js`), limits each IP to 10 a day (a hash of the IP in KV, kept 2 days), and stores `pending:<id>` with a 30 day TTL.
 2. `/add/review.html` (token once, kept in sessionStorage) lists `GET /api/queue` and calls `POST /api/approve` with `{id, action: approve|reject}`. `edit` takes a `patch` of fields. Approved items are kept 90 days, rejected 30.
 3. `npm run ingest` (the daily job) calls `pullApproved` (`ingest/lib/intake.js`) when `INTAKE_URL` and `INTAKE_TOKEN` are set: each approved item becomes `data/inbox/<city>-<brand>-<yyyymmdd>-<id8>.txt` in the manual format, then `POST /api/approve {action: "consume"}` moves it to `consumed:<id>`. The manual adapter and brand matcher take it from there. A failure never fails the run.
 4. A paste is matched to a source by @handle or brand name. A brand that is not in `data/sources.json` yet is reported as "no source matched" on every run; the file stays in `data/inbox/` until you add the brand. The daily job commits `data/inbox`.

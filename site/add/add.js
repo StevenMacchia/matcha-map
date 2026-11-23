@@ -1,6 +1,6 @@
 // One small script for every form page (add, report, claim, alerts). A form opts in with data-endpoint="/api/...".
 // Client-side checks are only for kindness: the function validates again. Bot checks: a hidden "company" field
-// (must stay empty) and a load stamp "t" (the server refuses forms sent in under 3 seconds).
+// (must stay empty) and a load stamp "t" (forms sent in under 1.5 seconds count as bots); "n" is the send time so phone clock drift cannot trip it.
 (function () {
   "use strict";
   var form = document.querySelector("form[data-endpoint]");
@@ -69,7 +69,7 @@
       var first = form.elements[names[0]]; if (first && first.focus) first.focus();
       return;
     }
-    var body = { t: loaded };
+    var body = { t: loaded, n: Date.now() };
     Array.prototype.forEach.call(form.elements, function (el) {
       if (!el.name || el.type === "submit") return;
       body[el.name] = el.type === "checkbox" ? el.checked : el.value;
@@ -88,11 +88,11 @@
         var errors = (res.j && res.j.errors) || {};
         var keys = Object.keys(errors);
         keys.forEach(function (k) { if (k === "form") { if (topErr) topErr.textContent = errors[k]; } else setErr(k, errors[k]); });
-        if (!keys.length && topErr) topErr.textContent = (res.j && res.j.error) || "Something went wrong. Please try again.";
+        if (!keys.length && topErr) topErr.textContent = (res.j && res.j.error) || (res.status >= 500 ? "Mattie is napping. Try again in a little while." : "Hmm, that did not go through. Try again.");
         btn.disabled = false; btn.textContent = label;
       })
       .catch(function () {
-        if (topErr) topErr.textContent = "Could not reach the server. Check your connection and try again.";
+        if (topErr) topErr.textContent = "No connection. Check your signal and try again.";
         btn.disabled = false; btn.textContent = label;
       });
   });

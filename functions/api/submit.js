@@ -10,11 +10,11 @@ export async function onRequestPost({ request, env }) {
   const kv = kvOf(env);
   if (!kv) return json({ error: NOT_SET_UP }, 503);
   const body = await readBody(request);
-  if (!body) return json({ error: "That did not look like a form." }, 400);
+  if (!body) return json({ error: "Hmm, that did not go through. Reload and try again." }, 400);
   const v = validateSubmission(body);
   if (v.bot) return json({ ok: true, id: "ok", message: THANKS }); // honeypot or too fast: fake success, store nothing
   if (!v.ok) return json({ ok: false, errors: v.errors }, 422);
-  if (!(await withinLimit(kv, request, "submit"))) return json({ error: "That is 10 for today. Try again tomorrow." }, 429);
+  if (!(await withinLimit(kv, request, "submit"))) return json({ error: "That is plenty for today. Come back tomorrow." }, 429);
   const id = makeId();
   const item = { id, status: "pending", at: new Date().toISOString(), fields: v.clean };
   await kv.put(`pending:${id}`, JSON.stringify(item), { expirationTtl: PENDING_TTL });
