@@ -345,8 +345,12 @@ body.show-list .list-panel { display: block; }
 .mk-br.sel .pn-br { transform: scale(1.3); }
 /* life (2026-11-23 mock): an idle bob on a slow random phase (--ph from pins.js), a hop on hover or tap, today's pulse,
    the selected pin bigger with a halo; Mattie at the card's foot turns toward the pin. Off under html.rm. */
-.pn-bob { animation: pn-bob 3.6s ease-in-out infinite alternate; animation-delay: var(--ph, 0s); will-change: transform; }
+.pn-bob { animation: pn-bob 3.6s ease-in-out infinite alternate; animation-delay: var(--ph, 0s); }
 @keyframes pn-bob { from { transform: translateY(0) rotate(0); } to { transform: translateY(-3px) rotate(1deg); } }
+/* frame time (tools/frame-time.js, 2026-11-23): the idle bob on every pin cost most of the frame once a view held a few dozen;
+   past PN_BUSY pins in view (app.js) the map rests still and only today's pulse and the hop on a touched pin move */
+.pn-busy .pn-bob { animation: none; }
+.pn-busy .mk:hover .pn-bob, .pn-busy .mk:active .pn-bob { animation: pn-hop .45s var(--spring); }
 .mk:hover .pn-bob, .mk:focus-visible .pn-bob, .mk:active .pn-bob { animation: pn-hop .45s var(--spring); }
 @keyframes pn-hop { 40% { transform: translateY(-8px) scale(1.08); } }
 .pn-pulse { animation: pn-pulse 2.2s ease-out infinite; }

@@ -417,13 +417,13 @@
       rec.el.setAttribute("aria-label", rec.label); // addTo writes "Map marker" over it
       if (parents.length) bloom(rec, parents);
     });
-    if (fresh.length || gone) { labelSoon(); goingSoon(); }
+    if (fresh.length || gone) { labelSoon(); goingSoon(); map.getContainer().classList.toggle("pn-busy", Object.keys(live).length > PN_BUSY); }
   }
   // Name labels (2026-11-23): from LABEL_Z, shops and placed pop-ups carry their name in a small plate beside the pin.
   // A label that would overlap one already placed, or any pin, tries the other side, then below, then stays hidden.
   // Pop-ups go first, then shops; inside each, by key, so the same view always labels the same pins. Laid out after the
   // markers change and after every move; hidden while a zoom runs.
-  var LABEL_Z = 13, lblRaf = 0;
+  var LABEL_Z = 13, lblRaf = 0, PN_BUSY = 40; // PN_BUSY: past this many markers the idle bob rests (style.css .pn-busy)
   function labelSoon() { if (!lblRaf) lblRaf = requestAnimationFrame(function () { lblRaf = 0; layoutLabels(); }); }
   function boxOf(el) {
     // the pin's own box, with what sticks out of it: a count badge, a day pill, the cup (class bx)

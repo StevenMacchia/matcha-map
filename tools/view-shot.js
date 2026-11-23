@@ -71,7 +71,7 @@ try {
   await Promise.all([s("Page.enable"), s("Runtime.enable")]);
   await s("Emulation.setDeviceMetricsOverride", { width: W, height: H, deviceScaleFactor: 1, mobile: W < 500 });
   if (DARK) await s("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "dark" }] });
-  await s("Page.navigate", { url: `${base}/?at=${AT}&motion=reduce` });
+  await s("Page.navigate", { url: `${base}/?at=${AT}${process.argv.includes("--motion") ? "" : "&motion=reduce"}` }); // --motion: leave the motion on (tools/frame-time.js)
   const probe = async () => (await s("Runtime.evaluate", { expression: PROBE, returnByValue: true })).result.value;
   const end = Date.now() + WAIT;
   let st = { pins: 0, rows: 0, loading: true };
