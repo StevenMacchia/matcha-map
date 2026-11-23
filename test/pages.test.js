@@ -241,3 +241,17 @@ test("the committed pages' JSON-LD is well formed (no undefined, NaN, bad dates)
   }
   assert.ok(n > 0);
 });
+
+// ---- SEO rung 2: titles and copy ----
+test("city, event and brand titles; the city intro and description come from the data; empty cities keep the honest copy", () => {
+  const out = buildSite(data([ev({}), ev({ brand: "Other Cup", handle: "othercup", source_id: "other", start: "2026-12-05T10:00:00-05:00", end: null }), ev({ brand: "Third", handle: "third", source_id: "third", start: "2026-12-06T10:00:00-05:00", end: null })]));
+  const h = page(out, "city/nc/raleigh/index.html");
+  assert.match(h, /<title>Matcha pop-ups in Raleigh, NC this weekend and beyond<\/title>/);
+  const desc = /name="description" content="([^"]*)"/.exec(h)[1];
+  assert.match(desc, /^3 matcha pop-ups in Raleigh, NC, next on Sat Nov 28: Moonbee, Other Cup and more\./);
+  assert.ok(desc.length <= 160);
+  assert.match(h, /<p class="pg-intro">3 matcha pop-ups are listed for Raleigh, NC, from 3 brands\. The next one is Moonbee on Sat Nov 28 at Books &amp; Co\./);
+  assert.match(page(out, "city/nc/quietton/index.html"), /<title>Matcha pop-ups in Quietton, NC this week \| Matcha Map<\/title>/);
+  assert.ok(!/pg-intro/.test(page(out, "city/nc/quietton/index.html")));
+  assert.match(page(out, "brand/moonbeematcha/index.html"), /<title>Moonbee matcha pop-ups: dates and places<\/title>/);
+});

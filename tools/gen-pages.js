@@ -214,6 +214,21 @@ function groupByDay(items, tzOf, todayKey) {
 
 const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 
+const shortDay = (k) => new Intl.DateTimeFormat("en-US", { timeZone: "UTC", weekday: "short", month: "short", day: "numeric" }).format(keyDate(k)).replace(",", "");
+export const shortDayOf = (e, tz) => shortDay(dayKey(Date.parse(e.start), e.tz || tz));
+const listJoin = (a) => (a.length < 2 ? a.join("") : a.join(" and "));
+export function cityIntro(c, ups, tz) {
+  if (!ups.length) return "";
+  const brands = [...new Set(ups.map((x) => x.brand))];
+  const next = ups[0];
+  const where = next.e.venue && !isApprox(next.e) ? " at " + next.e.venue : "";
+  return `${plural(ups.length, "matcha pop-up")} ${ups.length === 1 ? "is" : "are"} listed for ${c.name}, ${c.state}, from ${plural(brands.length, "brand")}. The next one is ${next.brand} on ${shortDayOf(next.e, tz)}${where}. Dates come from each brand's own posts, so check the post before you go.`;
+}
+export function cityDesc(c, ups, tz) {
+  const all = [...new Set(ups.map((x) => x.brand))];
+  return `${plural(ups.length, "matcha pop-up")} in ${c.name}, ${c.state}, next on ${shortDayOf(ups[0].e, tz)}: ${all.length > 2 ? all.slice(0, 2).join(", ") + " and more" : listJoin(all)}. Times, places and menus.`;
+}
+
 export function cityLead(c, wk, m30) {
   if (!m30) return `No matcha pop-ups are posted for ${c.name} right now. Brands usually post a few days ahead, so check back, or open the map to see the nearest ones.`;
   return `${wk ? wk + " this weekend" : "None this weekend"}, ${m30} in the next 30 days.`;
@@ -304,7 +319,8 @@ export function buildSite(d) {
     let body = `<nav class="pg-crumb" aria-label="Breadcrumb"><a href="/">Matcha Map</a> <span aria-hidden="true">\u203a</span> <span>${esc(label)}</span></nav>
 <h1>Matcha pop-ups in ${esc(label)}</h1>
 <p class="pg-lead">${esc(cityLead(c, wkN, m30))}</p>
-<p class="pg-sub">Updated ${esc(updatedText)}. ${mapLink("city=" + c.slug + "-" + c.state.toLowerCase(), "Open " + c.name + " on the map")}</p>
+${ups.length ? `<p class="pg-intro">${esc(cityIntro(c, ups, c.tz))}</p>
+` : ""}<p class="pg-sub">Updated ${esc(updatedText)}. ${mapLink("city=" + c.slug + "-" + c.state.toLowerCase(), "Open " + c.name + " on the map")}</p>
 `;
     if (ups.length) {
       body += `<section><h2>Upcoming pop-ups</h2>\n`;
@@ -344,8 +360,8 @@ export function buildSite(d) {
 ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[...credited].map(([n, h]) => (h ? `<a href="/brand/${esc(h)}/">${esc(n)}</a>` : esc(n))).join(", ")}.</p>` : ""}
 </section>`;
 
-    const title = `Matcha pop-ups in ${label} this week | Matcha Map`;
-    const desc = (m30 ? `${wkN ? wkN + " this weekend and " : ""}${m30} matcha pop-up${m30 === 1 ? "" : "s"} in the next 30 days in ${label}, with times, places and menus.` : `Matcha pop-ups in ${label}: none posted right now. Brands post a few days ahead; see nearby cities and the map.`).slice(0, 154);
+    const title = ups.length ? `Matcha pop-ups in ${label} this weekend and beyond` : `Matcha pop-ups in ${label} this week | Matcha Map`;
+    const desc = ups.length ? cityDesc(c, ups, c.tz).slice(0, 158) : (m30 ? `${wkN ? wkN + " this weekend and " : ""}${m30} matcha pop-up${m30 === 1 ? "" : "s"} in the next 30 days in ${label}, with times, places and menus.` : `Matcha pop-ups in ${label}: none posted right now. Brands post a few days ahead; see nearby cities and the map.`).slice(0, 154);
     const canonical = `${SITE_URL}/${cityPath(c)}`;
     const ld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
@@ -387,7 +403,7 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
     if (ups.length) body += `<section><h2>Upcoming pop-ups</h2>\n<ul class="pg-list">\n${cards(ups)}\n</ul></section>\n`;
     if (past.length) body += `<section><h2>Past pop-ups kept on file</h2>\n<ul class="pg-list">\n${cards(past)}\n</ul></section>\n`;
     body += `<section class="pg-how"><h2>About this page</h2><p>This page lists what ${esc(b.name)} has posted publicly. Everything here belongs to ${esc(b.name)}; follow the links above to see it from the source. Dates come from posts, so check the post before you go.</p></section>`;
-    const title = `${b.name} matcha pop-ups${home ? " (" + home + ")" : ""} | Matcha Map`;
+    const title = `${b.name} matcha pop-ups: dates and places`;
     const desc = `${b.name}${home ? ", " + home : ""}: ${ups.length ? plural(ups.length, "upcoming matcha pop-up") : "no upcoming pop-ups posted right now"}. Dates, places and links on Matcha Map.`.slice(0, 154);
     const canonical = `${SITE_URL}/brand/${b.slug}/`;
     const ld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [

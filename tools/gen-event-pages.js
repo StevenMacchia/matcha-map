@@ -7,7 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
 import { cardHtml } from "../site/cards.js";
-import { esc, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf } from "./gen-pages.js";
+import { esc, shortDayOf, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf } from "./gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CSP = "default-src 'none'; script-src 'self'; img-src 'self' https: data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'self'; form-action 'none'";
@@ -27,7 +27,7 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false, card =
   const place = [e.city, e.state].filter(Boolean).join(", ");
   const day = dayLabel(dayKey(Date.parse(e.start), e.tz || "America/New_York"));
   const time = timeText(e, e.tz);
-  const title = `${brand} matcha pop-up in ${place}, ${day}`;
+  const title = `${brand} matcha pop-up, ${shortDayOf(e, e.tz || "America/New_York")}, ${e.city || place}`;
   const where = isApprox(e) ? `${place} (place not posted yet)` : [e.venue, e.address, place].filter(Boolean).join(", ");
   const bits = [`${day}${e.all_day ? "" : ", " + time}`, where];
   if (e.menu && e.menu.length) bits.push(`Menu: ${e.menu.slice(0, 5).join(", ")}`);

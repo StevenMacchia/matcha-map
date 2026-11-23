@@ -94,7 +94,7 @@ test("RSS 2.0: well formed, newest first, only the last 14 days, image enclosure
 
 test("event page: own title, canonical, og:image order, Event JSON-LD, the full card and a link to the map", () => {
   const html = eventPage(timed, { hasArt: () => false });
-  assert.match(html, /<title>Moonbee matcha pop-up in Austin, TX/);
+  assert.match(html, /<title>Moonbee matcha pop-up, [A-Z][a-z]{2} [A-Z][a-z]{2} d+, Austin | Matcha Map</);
   assert.match(html, /<link rel="canonical" href="https:\/\/[^"]+\/e\/aaaaaa000001\/">/);
   assert.match(html, /<meta property="og:image" content="https:\/\/[^"]+\/og\.png">/);
   // The page carries the full card (site/cards.js), so it no longer bounces to the map; a button goes there.
