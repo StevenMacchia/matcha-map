@@ -130,7 +130,9 @@ export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stri
 // ---- html ----
 const CSP = "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'";
 
-export function shell({ title, desc, canonical, ld = [], body }) {
+// image: a page's own share card (a city card from `npm run weekend`); the site card otherwise.
+export function shell({ title, desc, canonical, ld = [], body, image }) {
+  const og = image || `${SITE_URL}/og.png`;
   return `<!doctype html>
 <html lang="en" class="pg">
 <head>
@@ -150,13 +152,13 @@ export function shell({ title, desc, canonical, ld = [], body }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${esc(canonical)}">
-<meta property="og:image" content="${SITE_URL}/og.png">
+<meta property="og:image" content="${esc(og)}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(desc)}">
-<meta name="twitter:image" content="${SITE_URL}/og.png">
+<meta name="twitter:image" content="${esc(og)}">
 <script src="/theme.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
 <link rel="stylesheet" href="/style.css">
@@ -338,7 +340,9 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
       { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
       { "@type": "ListItem", position: 2, name: label, item: canonical }] }];
     for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: it.insta }) });
-    files.set(cityPath(c) + "index.html", shell({ title, desc, canonical, ld, body }));
+    const ogKey = `city-${c.slug}-${c.state.toLowerCase()}`;
+    const image = d.cityOg && d.cityOg.has(ogKey) ? `${SITE_URL}/og/${ogKey}.png` : undefined;
+    files.set(cityPath(c) + "index.html", shell({ title, desc, canonical, ld, body, image }));
     urls.push({ loc: canonical });
   }
 
@@ -360,6 +364,9 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
 <h1>${esc(b.name)}</h1>
 <p class="pg-lead">${esc(KIND[b.kind] || "Matcha brand")}${home ? ` based in ${esc(home)}` : ""}. ${ups.length ? plural(ups.length, "upcoming pop-up") + " on the map." : "No upcoming pop-ups are posted right now."}</p>
 <p class="pg-sub">${links.join(" \u00b7 ")}${links.length ? "<br>" : ""}${mapLink("brand=" + encodeURIComponent(b.slug), "See " + b.name + " on the map")}${hc ? ` <a href="/${cityPath(hc)}">More in ${esc(hc.name)}</a>` : ""}</p>
+`;
+    // N8: next dates, drinks with art and the story, from extra.json when `npm run brand-extras` wrote one
+    body += `<div id="brand-extras" data-src="extra.json"></div><script src="/brand-extras.js" defer></script>
 `;
     if (ups.length) body += `<section><h2>Upcoming pop-ups</h2>\n<ul class="pg-list">\n${cards(ups)}\n</ul></section>\n`;
     if (past.length) body += `<section><h2>Past pop-ups kept on file</h2>\n<ul class="pg-list">\n${cards(past)}\n</ul></section>\n`;
@@ -427,6 +434,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     now, generated: ev.generated, events: ev.events,
     cities: read("data/cities.json").cities, sources: read("data/sources.json"),
     shops: read("site/data/shops.json").shops || [],
+    cityOg: new Set(fs.existsSync(path.join(root, "site/og")) ? fs.readdirSync(path.join(root, "site/og")).filter((n) => /^city-.*.png$/.test(n)).map((n) => n.slice(0, -4)) : []),
     watchlist: fs.existsSync(path.join(root, "data/watchlist.json")) ? read("data/watchlist.json") : { accounts: [] },
   };
   const out = buildSite(data);

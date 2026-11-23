@@ -22,6 +22,7 @@
     "flyers": "node tools/flyers.js",
     "pages": "node tools/gen-pages.js",
     "og": "node tools/gen-og.js",
+    "images": "node tools/shrink-images.js",
     "art": "node tools/illustrate/run.js",
     "feeds": "node tools/gen-feeds.js",
     "event-pages": "node tools/gen-event-pages.js",
