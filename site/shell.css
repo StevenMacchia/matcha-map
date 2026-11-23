@@ -90,7 +90,7 @@ body { background: var(--canvas); }
 .row .th { width: 60px; height: 60px; border-radius: 14px; }
 .row strong { font-size: 17px; line-height: 1.25; }
 .row .rt > span { font-size: 14.5px; }
-.list li.head { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.list li.head { font-size: 15px; color: var(--deep); }
 .list li.head::before { background: var(--accent); }
 
 /* the built-in card (cards.js replaces it when loaded): radii and buttons in the same family */
@@ -242,3 +242,8 @@ html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
   body.show-list .toasts { top: auto; bottom: calc(14px + env(safe-area-inset-bottom)); }
 }
 @media (min-width: 900px) { .filters { justify-content: flex-start; } #show-btn { margin-left: 0; } }
+/* the place box's clear button (rung 35) sits after the field, before Near me */
+.searchbar > .srch, .searchbar > .zip { order: 1; }
+.searchbar > .zip-clear { order: 2; position: relative; margin: 0; width: 40px; height: 40px; }
+.searchbar > .go { order: 3; }
+.searchbar > .near { order: 4; }

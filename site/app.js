@@ -938,18 +938,19 @@
   try {
     var sv = JSON.parse(localStorage.getItem("matchamap.show2") || "null");
     if (sv && Array.isArray(sv.k) && Array.isArray(sv.c)) {
-      show = { po: !!sv.po, k: {}, c: {} };
+      show = { po: !!sv.po, un: !!sv.un, k: {}, c: {} };
       sv.k.forEach(function (k) { if (KINDS.indexOf(k) >= 0) show.k[k] = true; });
       sv.c.forEach(function (c) { if (CATS.indexOf(c) >= 0) show.c[c] = true; });
     }
   } catch (e) { /* ignore */ }
+  function unplaced(e) { return e.confidence === "unsure" && !e.venue && !e.address; }
   function passesShow(o) {
     var k = o.kind || "popup";
     return (show.po ? k === "popup" : !!show.k[k]) && !!show.c[o.category || "matcha"];
   }
   // How many choices differ from the default (the badge number).
   function showDiff() {
-    var n = (show.po ? 1 : 0) + (shopsOn ? 0 : 1);
+    var n = (show.po ? 1 : 0) + (show.un ? 1 : 0) + (shopsOn ? 0 : 1);
     if (!show.po) KINDS.forEach(function (k) { if (!show.k[k]) n++; });
     CATS.forEach(function (c) { if (!!show.c[c] !== (c === "matcha")) n++; });
     return n;
@@ -966,6 +967,8 @@
       if (only !== undefined && !!it.approx !== only) return false;
       if (!passesShow(e)) return false;
       if (state.only && !state.only[e.id]) return false;
+      // Unsure and with no place at all ("Place not posted yet", "date unconfirmed"): off unless Show > Unconfirmed is on.
+      if (!show.un && unplaced(e)) return false;
       if (e.status === "cancelled") return false;
       if (e.status === "past") {
         if (!state.recent) return false;
@@ -1435,6 +1438,7 @@
   var showBtn = $("show-btn"), showPop = $("show-pop");
   function syncShow() {
     $("show-po").checked = show.po;
+    $("show-un").checked = !!show.un;
     $("show-shops").checked = shopsOn;
     showPop.querySelectorAll("[data-kind]").forEach(function (i) { i.checked = !!show.k[i.getAttribute("data-kind")]; i.disabled = show.po; i.parentNode.classList.toggle("off", show.po); });
     showPop.querySelectorAll("[data-cat]").forEach(function (i) { i.checked = !!show.c[i.getAttribute("data-cat")]; });
@@ -1457,7 +1461,7 @@
   showBtn.addEventListener("click", function () { if (showPop.hidden) openShow(); else closeShow(); });
   // Reset: every kind, matcha only, storefronts on (the defaults).
   $("show-reset").addEventListener("click", function () {
-    show = { po: false, k: {}, c: { matcha: true } };
+    show = { po: false, un: false, k: {}, c: { matcha: true } };
     KINDS.forEach(function (k) { show.k[k] = true; });
     shopsOn = true;
     try { localStorage.removeItem("matchamap.show2"); localStorage.setItem(SHOPS_KEY, "1"); } catch (e) { /* ignore */ }
@@ -1466,10 +1470,11 @@
   showPop.addEventListener("change", function (ev) {
     var t = ev.target, k = t.getAttribute("data-kind"), c = t.getAttribute("data-cat");
     if (t.id === "show-po") show.po = t.checked;
+    if (t.id === "show-un") show.un = t.checked;
     if (t.id === "show-shops") { shopsOn = t.checked; try { localStorage.setItem(SHOPS_KEY, shopsOn ? "1" : "0"); } catch (e) { /* ignore */ } }
     if (k) { if (t.checked) show.k[k] = true; else delete show.k[k]; }
     if (c) { if (t.checked) show.c[c] = true; else delete show.c[c]; }
-    try { localStorage.setItem("matchamap.show2", JSON.stringify({ po: show.po, k: Object.keys(show.k), c: Object.keys(show.c) })); } catch (e) { /* ignore */ }
+    try { localStorage.setItem("matchamap.show2", JSON.stringify({ po: show.po, un: !!show.un, k: Object.keys(show.k), c: Object.keys(show.c) })); } catch (e) { /* ignore */ }
     syncShow();
     closeCard(true);
     refreshEvents(true);

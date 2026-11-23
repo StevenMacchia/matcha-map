@@ -197,7 +197,8 @@ function groupByDay(items, tzOf, todayKey) {
   const groups = [];
   for (const it of items) {
     let k = dayKey(Date.parse(it.e.start), it.e.tz || tzOf);
-    const label = k < todayKey ? "Happening now" : k === todayKey ? `Today, ${dayLabel(k)}` : dayLabel(k);
+    // No "Today" in a static page: it is wrong after midnight. Weekday and date only; relative words belong to client code.
+    const label = k < todayKey ? "Started earlier, still on" : dayLabel(k);
     if (k < todayKey) k = "0";
     const g = groups[groups.length - 1];
     if (g && g.k === k) g.items.push(it); else groups.push({ k, label, items: [it] });
