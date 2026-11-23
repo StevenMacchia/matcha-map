@@ -191,6 +191,21 @@
 .mm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .mm-grid a { aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: var(--mm-t0); }
 .mm-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mm-stats > .mm-webpill { display: inline-flex; align-items: center; gap: 5px; min-width: 0; max-width: 100%; font-size: 14px; font-weight: 800; padding: 4px 12px; border-radius: 999px; background: var(--canvas, #FBF6EA); border: 2px solid var(--line, #DCE7D0); text-decoration: none; overflow-wrap: anywhere; }
+.mm-stats > .mm-webpill .mm-i { color: var(--deep, #3E6B33); }
+.mm-brand .mm-bio1 { text-align: center; font-size: 15px; line-height: 1.45; color: var(--ink, #3B2E27); }
+.mm-rposts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.mm-rposts > li { min-width: 0; }
+.mm-rpost { display: flex; flex-direction: column; gap: 4px; min-width: 0; text-decoration: none; }
+.mm-rpic { position: relative; display: block; aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: var(--mm-t0); }
+.mm-rpic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.mm-rsnip { position: absolute; inset: 0; display: grid; place-items: center; padding: 10px; text-align: center; font-size: 13px; font-weight: 700; line-height: 1.35; overflow: hidden; overflow-wrap: anywhere; color: var(--ink, #3B2E27); }
+.mm-rdate { font-size: 12.5px; font-weight: 800; color: var(--muted, #6B5A4F); }
+.mm-nodates { text-align: center; font-size: 13px; color: var(--muted, #6B5A4F); }
+/* the brand list row: the picture in a round frame, the initial when there is none */
+.mm-th-b { background: transparent; border-radius: 50%; width: 56px; height: 56px; }
+.mm-avatar-row { width: 56px; height: 56px; border-width: 2px; }
+.mm-avatar-row .mm-initial { font-size: 22px; }
 
 /* ---- dark: stickers keep their cream faces ---- */
 :root[data-theme="dark"] .mm-chip { --mm-cs: #86B077; border-color: var(--mm-cs); box-shadow: 0 2px 0 var(--mm-cs); }

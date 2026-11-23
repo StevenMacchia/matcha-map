@@ -27,6 +27,17 @@ export function brandEntry(acc, source) {
   };
 }
 
+// A brand that is only a record in sources.json (no Instagram read, often no Instagram at all) still gets a card record, so the map can
+// show its name, kind, city and bio. `handle` is its Instagram handle when it has one, else its source id with - made _ (a card key,
+// not a real handle); source_id and source_only say so. Nothing is guessed: picture and followers stay empty until a read gives them.
+export function sourceEntry(s) {
+  return {
+    handle: s.instagram ? String(s.instagram) : String(s.id).replace(/[^A-Za-z0-9._]+/g, "_"), name: s.auto_name || s.brand || s.id,
+    website: s.website || null, followers: null, bio: cleanBio(s.about), picture: null,
+    home_city: s.home_city || null, home_state: s.home_state || null, kind: s.kind || null, recent: [], source_id: s.id, source_only: true,
+  };
+}
+
 // accounts: watch list accounts; only Instagram ones Graph has read and that are not dropped.
 // Gaps of a card filled from the brand's own site and from the events we hold (data/brands-extra.json by handle, ingest/brands-deepen.js):
 // only empty fields are filled; last_dated_post_seen is always the latest date held.
@@ -55,6 +66,12 @@ export function buildBrands(wl, sources, now = new Date()) {
     if (a.platform !== "instagram" || a.status === "dropped" || !a.graph_checked_at) continue;
     if (!a.name && a.followers_count == null && !a.profile_picture_url) continue; // Graph returned nothing about it
     brands.push(brandEntry(a, bySource.get(a.source_id) || byHandle.get(a.handle.toLowerCase()) || null));
+  }
+  const have = new Set(brands.map((x) => x.handle.toLowerCase()));
+  for (const s of sources || []) {
+    if (s.active === false) continue;
+    const e = sourceEntry(s);
+    if (!have.has(e.handle.toLowerCase())) { brands.push(e); have.add(e.handle.toLowerCase()); }
   }
   brands.sort((x, y) => x.handle.toLowerCase().localeCompare(y.handle.toLowerCase()));
   brands.splice(0, brands.length, ...attachBrandExtras(brands, readExtras()));

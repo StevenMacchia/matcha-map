@@ -24,6 +24,8 @@
           "home_city": { "type": ["string", "null"] },
           "home_state": { "type": ["string", "null"] },
           "kind": { "type": ["string", "null"] },
+          "source_id": { "type": "string", "description": "The data/sources.json id, on records built from a source with no Graph read." },
+          "source_only": { "type": "boolean", "description": "True when the record comes from sources.json alone: handle is a card key, picture and followers are empty." },
           "bio_source": { "type": "string", "description": "The brand website the bio was read from when the Graph read gave none (npm run brands:deepen)." },
           "last_dated_post_seen": { "type": "string", "description": "Latest event date (YYYY-MM-DD) we hold for the handle." },
           "recent": {
