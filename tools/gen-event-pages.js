@@ -7,7 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
 import { cardHtml } from "../site/cards.js";
-import { esc, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf } from "./gen-pages.js";
+import { esc, shortDayOf, makeCityLocator, cityPath, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf } from "./gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CSP = "default-src 'none'; script-src 'self'; img-src 'self' https: data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'self'; form-action 'none'";
@@ -27,7 +27,7 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false, card =
   const place = [e.city, e.state].filter(Boolean).join(", ");
   const day = dayLabel(dayKey(Date.parse(e.start), e.tz || "America/New_York"));
   const time = timeText(e, e.tz);
-  const title = `${brand} matcha pop-up in ${place}, ${day}`;
+  const title = `${brand} matcha pop-up, ${shortDayOf(e, e.tz || "America/New_York")}, ${e.city || place}`;
   const where = isApprox(e) ? `${place} (place not posted yet)` : [e.venue, e.address, place].filter(Boolean).join(", ");
   const bits = [`${day}${e.all_day ? "" : ", " + time}`, where];
   if (e.menu && e.menu.length) bits.push(`Menu: ${e.menu.slice(0, 5).join(", ")}`);
@@ -36,7 +36,7 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false, card =
   const canonical = `${SITE_URL}/e/${e.id}/`;
   const img = ogImage(e, { hasArt });
   const ld = { "@context": "https://schema.org", ...eventLd(e, { brand, insta: e.handle ? `https://www.instagram.com/${e.handle}/` : "" }), url: canonical };
-  if (img.endsWith(".svg") || img.endsWith("/og.png")) { if (!(e.image && (e.image.local || e.image.url)) && !e.image_url) delete ld.image; }
+  if (img.endsWith("/og.png")) delete ld.image; else ld.image = [img];
   if (typeof ld.description === "string") { ld.description = ld.description.replace(/[*_`#>]+/g, " ").replace(/\s+/g, " ").trim(); if (!ld.description) delete ld.description; }
   const go = `/?event=${e.id}`;
   return `<!doctype html>
@@ -77,9 +77,14 @@ ${cardHtml(e, { ...card, sources: card.sources || [...sources.values()], base: "
 `;
 }
 
-export function buildEventPages({ events, sources = [], now = new Date(), hasArt = () => false, art = null, brands = null }) {
+// known: { cities: Set of "st/slug" for city pages that exist, brands: Set of handles with a brand page, locate(e) -> city or null }
+export function buildEventPages({ events, sources = [], now = new Date(), hasArt = () => false, art = null, brands = null, known = null }) {
   const srcById = new Map(sources.map((s) => [s.id, s]));
   const card = { now, art, brands, sources, events: events.filter((e) => isUpcoming(e, now.getTime())) };
+  if (known) {
+    card.cityHref = (e) => { const c = known.locate && known.locate(e); return c && known.cities.has(`${c.state.toLowerCase()}/${c.slug}`) ? { href: "/" + cityPath(c), name: c.name } : ""; };
+    card.brandHref = (h) => (known.brands.has(h) ? `/brand/${h}/` : "");
+  }
   const files = new Map();
   for (const e of events) {
     if (!e.id || !/^[a-z0-9]{6,32}$/i.test(e.id) || !isUpcoming(e, now.getTime())) continue;
@@ -94,7 +99,10 @@ export function run({ root = ROOT, now = new Date() } = {}) {
   const sources = read("data/sources.json");
   const opt = (p) => { try { return read(p); } catch { return null; } };
   const hasArt = (id) => fs.existsSync(path.join(root, "site", "art", "events", `${id}.svg`));
-  const out = buildEventPages({ events: ev.events, sources, now, hasArt, art: opt("site/art/index.json"), brands: opt("site/data/brands.json") });
+  const listDirs = (d) => (fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).filter((x) => x.isDirectory()).map((x) => x.name) : []);
+  const cityDirs = new Set(); for (const st of listDirs(path.join(root, "site", "city"))) for (const sl of listDirs(path.join(root, "site", "city", st))) cityDirs.add(`${st}/${sl}`);
+  const known = { cities: cityDirs, brands: new Set(listDirs(path.join(root, "site", "brand"))), locate: makeCityLocator(read("data/cities.json").cities) };
+  const out = buildEventPages({ events: ev.events, sources, now, hasArt, art: opt("site/art/index.json"), brands: opt("site/data/brands.json"), known });
   const site = path.join(root, "site");
   fs.rmSync(path.join(site, "e"), { recursive: true, force: true });
   for (const [p, text] of out.files) { const f = path.join(site, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text); }

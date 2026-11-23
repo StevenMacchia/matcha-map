@@ -39,9 +39,9 @@ export function extraPaths(siteDir) {
   return out.sort();
 }
 
-export function mergeSitemap(xml, paths, lastmod) {
+export function mergeSitemap(xml, paths, lastmod, lastmodOf = () => "") {
   const keep = parseSitemap(xml).filter((u) => !EXTRA_PREFIXES.some((p) => pathOf(u.loc).startsWith(p)));
-  const rows = keep.concat(paths.map((p) => ({ loc: SITE_URL + p, lastmod })));
+  const rows = keep.concat(paths.map((p) => ({ loc: SITE_URL + p, lastmod: lastmodOf(p) || lastmod })));
   if (rows.length > MAX_URLS) rows.length = MAX_URLS;
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${rows.map((u) => `<url><loc>${esc(u.loc)}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 }
@@ -53,7 +53,11 @@ export function run({ root = ROOT, now = new Date() } = {}) {
   const paths = extraPaths(site);
   // lastmod: the existing sitemap's date for its home entry (so a rerun on the same data is identical), else today
   const home = parseSitemap(xml)[0];
-  const next = mergeSitemap(xml, paths, (home && home.lastmod) || now.toISOString().slice(0, 10));
+  const base = (home && home.lastmod) || now.toISOString().slice(0, 10);
+  // an event page: the day its event was last seen (never after the sitemap's own date); weekend and feed pages: the sitemap's date
+  const seen = new Map();
+  try { for (const e of JSON.parse(fs.readFileSync(path.join(site, "data", "events.json"), "utf8")).events) { const d = String(e.last_seen || e.first_seen || "").slice(0, 10); if (e.id && /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(d) && d <= base) seen.set(e.id, d); } } catch { /* no data: every page gets the base date */ }
+  const next = mergeSitemap(xml, paths, base, (p) => { const m = /^[/]e[/]([^/]+)[/]$/.exec(p); return m ? seen.get(m[1]) || "" : ""; });
   if (next !== xml) fs.writeFileSync(file, next);
   return { added: paths.length, total: parseSitemap(next).length };
 }

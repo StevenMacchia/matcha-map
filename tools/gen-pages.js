@@ -100,6 +100,8 @@ export function eventHandle(e, srcById) {
 }
 
 // ---- JSON-LD ----
+const FREE = /^\s*(free|free entry|free admission|no cover|no charge)\s*[.!]?\s*$/i;
+export const isFree = (e) => typeof e.price === "string" && FREE.test(e.price);
 export function eventLd(e, ctx) {
   const approx = isApprox(e);
   const place = { "@type": "Place", name: approx || !e.venue ? [e.city, e.state].filter(Boolean).join(", ") : e.venue };
@@ -107,24 +109,31 @@ export function eventLd(e, ctx) {
   if (e.city) addr.addressLocality = e.city;
   if (e.state) addr.addressRegion = e.state;
   if (!approx && e.address) addr.streetAddress = e.address;
+  if (!approx && /^\d{5}(-\d{4})?$/.test(String(e.zip || ""))) addr.postalCode = String(e.zip);
   place.address = addr;
+  if (!approx && typeof e.lat === "number" && typeof e.lng === "number" && isFinite(e.lat) && isFinite(e.lng)) place.geo = { "@type": "GeoCoordinates", latitude: e.lat, longitude: e.lng };
   const ld = {
     "@type": "Event",
     name: e.title || `${ctx.brand} matcha pop-up`,
     startDate: e.all_day ? String(e.start).slice(0, 10) : e.start,
-    eventStatus: "https://schema.org/EventScheduled",
+    eventStatus: e.status === "cancelled" ? "https://schema.org/EventCancelled" : "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: place,
     organizer: { "@type": "Organization", name: ctx.brand },
   };
   if (e.end) ld.endDate = e.all_day ? String(e.end).slice(0, 10) : e.end;
   if (ctx.insta) ld.organizer.url = ctx.insta;
+  if (isFree(e)) ld.isAccessibleForFree = true, ld.offers = { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock" };
   const im = imgUrl(e);
   if (im) ld.image = [im];
   const d = String(e.description || "").slice(0, 200).trim();
   ld.description = d || `Matcha pop-up by ${ctx.brand}${e.city ? " in " + e.city : ""}.`;
   return ld;
 }
+// A page's lastmod: the newest day any of its events was seen, capped at the data's own date (never in the future).
+export const seenDay = (e) => { const d = String(e.last_seen || e.first_seen || "").slice(0, 10); return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(d) ? d : ""; };
+export const newestDay = (events, cap) => events.map(seenDay).filter((d) => d && d <= cap).sort().pop() || cap;
+export const eventPageId = (e) => (e.id && /^[a-z0-9]{6,32}$/i.test(e.id) ? e.id : "");
 export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
 // ---- html ----
@@ -207,6 +216,21 @@ function groupByDay(items, tzOf, todayKey) {
 }
 
 const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+
+const shortDay = (k) => new Intl.DateTimeFormat("en-US", { timeZone: "UTC", weekday: "short", month: "short", day: "numeric" }).format(keyDate(k)).replace(",", "");
+export const shortDayOf = (e, tz) => shortDay(dayKey(Date.parse(e.start), e.tz || tz));
+const listJoin = (a) => (a.length < 2 ? a.join("") : a.join(" and "));
+export function cityIntro(c, ups, tz) {
+  if (!ups.length) return "";
+  const brands = [...new Set(ups.map((x) => x.brand))];
+  const next = ups[0];
+  const where = next.e.venue && !isApprox(next.e) ? " at " + next.e.venue : "";
+  return `${plural(ups.length, "matcha pop-up")} ${ups.length === 1 ? "is" : "are"} listed for ${c.name}, ${c.state}, from ${plural(brands.length, "brand")}. The next one is ${next.brand} on ${shortDayOf(next.e, tz)}${where}. Dates come from each brand's own posts, so check the post before you go.`;
+}
+export function cityDesc(c, ups, tz) {
+  const all = [...new Set(ups.map((x) => x.brand))];
+  return `${plural(ups.length, "matcha pop-up")} in ${c.name}, ${c.state}, next on ${shortDayOf(ups[0].e, tz)}: ${all.length > 2 ? all.slice(0, 2).join(", ") + " and more" : listJoin(all)}. Times, places and menus.`;
+}
 
 export function cityLead(c, wk, m30) {
   if (!m30) return `No matcha pop-ups are posted for ${c.name} right now. Brands usually post a few days ahead, so check back, or open the map to see the nearest ones.`;
@@ -298,7 +322,8 @@ export function buildSite(d) {
     let body = `<nav class="pg-crumb" aria-label="Breadcrumb"><a href="/">Matcha Map</a> <span aria-hidden="true">\u203a</span> <span>${esc(label)}</span></nav>
 <h1>Matcha pop-ups in ${esc(label)}</h1>
 <p class="pg-lead">${esc(cityLead(c, wkN, m30))}</p>
-<p class="pg-sub">Updated ${esc(updatedText)}. ${mapLink("city=" + c.slug + "-" + c.state.toLowerCase(), "Open " + c.name + " on the map")}</p>
+${ups.length ? `<p class="pg-intro">${esc(cityIntro(c, ups, c.tz))}</p>
+` : ""}<p class="pg-sub">Updated ${esc(updatedText)}. ${mapLink("city=" + c.slug + "-" + c.state.toLowerCase(), "Open " + c.name + " on the map")}</p>
 `;
     if (ups.length) {
       body += `<section><h2>Upcoming pop-ups</h2>\n`;
@@ -338,17 +363,22 @@ export function buildSite(d) {
 ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[...credited].map(([n, h]) => (h ? `<a href="/brand/${esc(h)}/">${esc(n)}</a>` : esc(n))).join(", ")}.</p>` : ""}
 </section>`;
 
-    const title = `Matcha pop-ups in ${label} this week | Matcha Map`;
-    const desc = (m30 ? `${wkN ? wkN + " this weekend and " : ""}${m30} matcha pop-up${m30 === 1 ? "" : "s"} in the next 30 days in ${label}, with times, places and menus.` : `Matcha pop-ups in ${label}: none posted right now. Brands post a few days ahead; see nearby cities and the map.`).slice(0, 154);
+    const title = ups.length ? `Matcha pop-ups in ${label} this weekend and beyond` : `Matcha pop-ups in ${label} this week | Matcha Map`;
+    const desc = ups.length ? cityDesc(c, ups, c.tz).slice(0, 158) : (m30 ? `${wkN ? wkN + " this weekend and " : ""}${m30} matcha pop-up${m30 === 1 ? "" : "s"} in the next 30 days in ${label}, with times, places and menus.` : `Matcha pop-ups in ${label}: none posted right now. Brands post a few days ahead; see nearby cities and the map.`).slice(0, 154);
     const canonical = `${SITE_URL}/${cityPath(c)}`;
     const ld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
       { "@type": "ListItem", position: 2, name: label, item: canonical }] }];
     for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: it.insta }) });
+    const listed = ups.filter((it) => eventPageId(it.e));
+    if (listed.length) ld.push({ "@context": "https://schema.org", "@type": "ItemList", name: `Matcha pop-ups in ${label}`, numberOfItems: listed.length, itemListElement: listed.slice(0, 50).map((it, i) => {
+      const ev = eventLd(it.e, { brand: it.brand, insta: it.insta });
+      return { "@type": "ListItem", position: i + 1, url: `${SITE_URL}/e/${it.e.id}/`, item: { "@type": "Event", name: ev.name, startDate: ev.startDate, url: `${SITE_URL}/e/${it.e.id}/`, location: { "@type": "Place", name: ev.location.name, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
+    }) });
     const ogKey = `city-${c.slug}-${c.state.toLowerCase()}`;
     const image = d.cityOg && d.cityOg.has(ogKey) ? `${SITE_URL}/og/${ogKey}.png` : undefined;
     files.set(cityPath(c) + "index.html", shell({ title, desc, canonical, ld, body, image }));
-    urls.push({ loc: canonical });
+    urls.push({ loc: canonical, lastmod: newestDay(ups.map((x) => x.e), lastmod) });
   }
 
   // brand pages
@@ -376,15 +406,21 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
     if (ups.length) body += `<section><h2>Upcoming pop-ups</h2>\n<ul class="pg-list">\n${cards(ups)}\n</ul></section>\n`;
     if (past.length) body += `<section><h2>Past pop-ups kept on file</h2>\n<ul class="pg-list">\n${cards(past)}\n</ul></section>\n`;
     body += `<section class="pg-how"><h2>About this page</h2><p>This page lists what ${esc(b.name)} has posted publicly. Everything here belongs to ${esc(b.name)}; follow the links above to see it from the source. Dates come from posts, so check the post before you go.</p></section>`;
-    const title = `${b.name} matcha pop-ups${home ? " (" + home + ")" : ""} | Matcha Map`;
+    const title = `${b.name} matcha pop-ups: dates and places`;
     const desc = `${b.name}${home ? ", " + home : ""}: ${ups.length ? plural(ups.length, "upcoming matcha pop-up") : "no upcoming pop-ups posted right now"}. Dates, places and links on Matcha Map.`.slice(0, 154);
     const canonical = `${SITE_URL}/brand/${b.slug}/`;
     const ld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
       { "@type": "ListItem", position: 2, name: b.name, item: canonical }] }];
+    const org = { "@context": "https://schema.org", "@type": "Organization", name: b.name, url: canonical };
+    const same = [b.instagram ? `https://www.instagram.com/${b.instagram}/` : "", b.website, b.tiktok ? (safeUrl(b.tiktok) || "https://www.tiktok.com/@" + String(b.tiktok).replace(/^@/, "").replace(/[^A-Za-z0-9._]/g, "")) : ""].filter(Boolean);
+    if (same.length) org.sameAs = same;
+    const logo = d.brandPictures && d.brandPictures.get(b.slug);
+    if (logo) org.logo = logo;
+    ld.push(org);
     for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: b.instagram ? `https://www.instagram.com/${b.instagram}/` : "" }) });
     files.set(`brand/${b.slug}/index.html`, shell({ title, desc, canonical, ld, body }));
-    urls.push({ loc: canonical, thin: !b.events.length && !b.city, slug: b.slug });
+    urls.push({ loc: canonical, lastmod: newestDay(b.events.map((x) => x.e), lastmod), thin: !b.events.length && !b.city, slug: b.slug });
   }
 
   // size guard: drop brand pages with no events and no city first when close to a limit, then fail loudly
@@ -396,7 +432,7 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
   }
   if (files.size + OTHER > lim.files || sizeOf() > lim.bytes) throw new Error(`page set too large: ${files.size} files, ${sizeOf()} bytes (limits ${lim.files} files, ${lim.bytes} bytes)`);
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${esc(u.loc)}</loc><lastmod>${lastmod}</lastmod></url>`).join("\n")}\n</urlset>\n`;
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${esc(u.loc)}</loc><lastmod>${u.lastmod || lastmod}</lastmod></url>`).join("\n")}\n</urlset>\n`;
   const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   const pageBytes = sizeOf();
   files.set("sitemap.xml", sitemap);
@@ -441,6 +477,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     shops: read("site/data/shops.json").shops || [],
     cityFeeds: new Set(fs.existsSync(path.join(root, "site/feeds")) ? fs.readdirSync(path.join(root, "site/feeds")).filter((n) => n.endsWith(".ics")).map((n) => n.slice(0, -4)) : []),
     cityOg: new Set(fs.existsSync(path.join(root, "site/og")) ? fs.readdirSync(path.join(root, "site/og")).filter((n) => /^city-.*.png$/.test(n)).map((n) => n.slice(0, -4)) : []),
+    brandPictures: (() => { try { return new Map(read("site/data/brands.json").brands.filter((x) => String(x.picture || "").startsWith("https://")).map((x) => [handleSlug(x.handle), x.picture])); } catch { return new Map(); } })(),
     watchlist: fs.existsSync(path.join(root, "data/watchlist.json")) ? read("data/watchlist.json") : { accounts: [] },
   };
   const out = buildSite(data);

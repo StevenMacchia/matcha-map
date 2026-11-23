@@ -180,3 +180,120 @@ test("deep links: city slugs resolve to the biggest listed city, DC included, an
   const all = JSON.parse(fs.readFileSync(new URL("../data/cities.json", import.meta.url), "utf8")).cities;
   for (const c of all) if (c.state !== "DC") assert.equal(slugOf(c.name), c.slug, c.name);
 });
+
+// ---- SEO rung 1: JSON-LD shape ----
+const ISO = /^\d{4}-\d\d-\d\d(T\d\d:\d\d:\d\d([+-]\d\d:\d\d|Z))?$/;
+function checkShape(node, where) {
+  const walk = (v, p) => {
+    assert.ok(v !== undefined, `${where}: undefined at ${p}`);
+    if (typeof v === "number") assert.ok(Number.isFinite(v), `${where}: NaN at ${p}`);
+    if (typeof v === "string") assert.ok(!/undefined|NaN|\[object/.test(v), `${where}: bad text at ${p}: ${v}`);
+    if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) walk(x, p + "." + k);
+  };
+  walk(node, "$");
+  if (node["@type"] === "Event") {
+    for (const k of ["name", "startDate", "location", "eventStatus", "eventAttendanceMode", "organizer"]) assert.ok(node[k], `${where}: Event.${k}`);
+    assert.match(node.startDate, ISO);
+    if (node.endDate) assert.match(node.endDate, ISO);
+    assert.ok(node.location.name && node.location.address, `${where}: location`);
+  }
+  if (node["@type"] === "Organization") assert.ok(node.name && /^https?:\/\//.test(node.url), `${where}: Organization`);
+}
+
+test("Event JSON-LD: postal code, geo, free offers only when the data says free, cancelled status, approx stays city-level", () => {
+  const e = eventLd(ev({ zip: "27601", price: "Free entry" }), { brand: "Moonbee", insta: "https://www.instagram.com/moonbeematcha/" });
+  assert.equal(e.location.address.postalCode, "27601");
+  assert.deepEqual(e.location.geo, { "@type": "GeoCoordinates", latitude: 35.8, longitude: -78.6 });
+  assert.equal(e.offers.price, "0");
+  assert.equal(e.offers.availability, "https://schema.org/InStock");
+  assert.equal(eventLd(ev({ price: "$15" }), { brand: "M" }).offers, undefined, "no invented prices");
+  assert.equal(eventLd(ev({ price: null }), { brand: "M" }).offers, undefined);
+  assert.equal(eventLd(ev({ status: "cancelled" }), { brand: "M" }).eventStatus, "https://schema.org/EventCancelled");
+  const ap = eventLd(ev({ approx: true, venue: "", address: "", zip: "27601", geocode_source: "none" }), { brand: "M" });
+  assert.equal(ap.location.geo, undefined);
+  assert.equal(ap.location.address.postalCode, undefined);
+  assert.equal(ap.location.address.streetAddress, undefined);
+});
+
+test("city pages carry an ItemList of upcoming events; brand pages carry an Organization; every block is well formed", () => {
+  const out = buildSite(data([ev({}), ev({ start: "2026-12-05T10:00:00-05:00", end: null, price: "free" })], { brandPictures: new Map([["moonbeematcha", "https://img.example/m.jpg"]]) }));
+  const c = ldOf(page(out, "city/nc/raleigh/index.html"));
+  const list = c.find((x) => x["@type"] === "ItemList");
+  assert.equal(list.numberOfItems, 2);
+  assert.equal(list.itemListElement[0].item["@type"], "Event");
+  assert.match(list.itemListElement[0].url, /^https:\/\/.+\/e\/aaaaaa\d{6}\/$/);
+  assert.equal(list.itemListElement[0].item.location.address.addressLocality, "Raleigh");
+  const b = ldOf(page(out, "brand/moonbeematcha/index.html"));
+  const org = b.find((x) => x["@type"] === "Organization");
+  assert.equal(org.url, "https://matchamap-cu7.pages.dev/brand/moonbeematcha/");
+  assert.ok(org.sameAs.includes("https://www.instagram.com/moonbeematcha/") && org.sameAs.includes("https://moonbee.example"));
+  assert.equal(org.logo, "https://img.example/m.jpg");
+  for (const [p, html] of out.files) if (p.endsWith(".html")) for (const n of ldOf(html)) checkShape(n, p);
+});
+
+test("the committed pages' JSON-LD is well formed (no undefined, NaN, bad dates)", async () => {
+  const dir = new URL("../site/e/", import.meta.url);
+  let n = 0;
+  for (const d of fs.readdirSync(dir).slice(0, 400)) {
+    const f = new URL(`${d}/index.html`, dir);
+    if (!fs.existsSync(f)) continue;
+    for (const node of ldOf(fs.readFileSync(f, "utf8"))) { checkShape(node, d); n++; }
+  }
+  assert.ok(n > 0);
+});
+
+// ---- SEO rung 2: titles and copy ----
+test("city, event and brand titles; the city intro and description come from the data; empty cities keep the honest copy", () => {
+  const out = buildSite(data([ev({}), ev({ brand: "Other Cup", handle: "othercup", source_id: "other", start: "2026-12-05T10:00:00-05:00", end: null }), ev({ brand: "Third", handle: "third", source_id: "third", start: "2026-12-06T10:00:00-05:00", end: null })]));
+  const h = page(out, "city/nc/raleigh/index.html");
+  assert.match(h, /<title>Matcha pop-ups in Raleigh, NC this weekend and beyond<\/title>/);
+  const desc = /name="description" content="([^"]*)"/.exec(h)[1];
+  assert.match(desc, /^3 matcha pop-ups in Raleigh, NC, next on Sat Nov 28: Moonbee, Other Cup and more\./);
+  assert.ok(desc.length <= 160);
+  assert.match(h, /<p class="pg-intro">3 matcha pop-ups are listed for Raleigh, NC, from 3 brands\. The next one is Moonbee on Sat Nov 28 at Books &amp; Co\./);
+  assert.match(page(out, "city/nc/quietton/index.html"), /<title>Matcha pop-ups in Quietton, NC this week \| Matcha Map<\/title>/);
+  assert.ok(!/pg-intro/.test(page(out, "city/nc/quietton/index.html")));
+  assert.match(page(out, "brand/moonbeematcha/index.html"), /<title>Moonbee matcha pop-ups: dates and places<\/title>/);
+});
+
+// ---- SEO rung 3: sitemap lastmod, canonical, social tags ----
+test("sitemap lastmod is per page: the newest day its events were seen, never after the data date", () => {
+  const out = buildSite(data([ev({ last_seen: "2026-11-20T10:00:00Z" }), ev({ last_seen: "2026-11-22T10:00:00Z" }), ev({ city: "Cary", lat: 35.79, lng: -78.78, last_seen: "2027-01-01T00:00:00Z" })]));
+  const sm = page(out, "sitemap.xml");
+  const lm = (p) => new RegExp("<loc>[^<]*" + p + "</loc><lastmod>([^<]*)</lastmod>").exec(sm)[1];
+  assert.equal(lm("/city/nc/raleigh/"), "2026-11-22");
+  assert.equal(lm("/brand/moonbeematcha/"), "2026-11-22", "a future date is ignored");
+  assert.equal(lm("/city/nc/quietton/"), "2026-11-25", "no events: the data date");
+  assert.ok(!sm.includes("<url><loc>") || [...sm.matchAll(/<url>(.*?)<\/url>/g)].every((m) => m[1].includes("<lastmod>")));
+});
+
+test("every committed generated page has a canonical, Open Graph and Twitter tags with an absolute image and matching title and description", () => {
+  const site = new URL("../site/", import.meta.url);
+  const files = [];
+  const walk = (d) => { for (const x of fs.readdirSync(d, { withFileTypes: true })) { const p = new URL(x.name + (x.isDirectory() ? "/" : ""), d); if (x.isDirectory()) walk(p); else if (x.name === "index.html") files.push(p); } };
+  for (const dir of ["city/", "brand/", "e/", "weekend/"]) { const d = new URL(dir, site); if (fs.existsSync(d)) walk(d); }
+  assert.ok(files.length > 10);
+  const get = (h, re) => { const m = re.exec(h); return m ? m[1] : null; };
+  for (const f of files.slice(0, 1500)) {
+    const h = fs.readFileSync(f, "utf8");
+    const where = f.pathname.slice(-40);
+    const canon = get(h, /<link rel="canonical" href="([^"]*)"/);
+    assert.match(canon || "", /^https:[/][/]/, where + " canonical");
+    const t = get(h, /<meta property="og:title" content="([^"]*)"/), d = get(h, /<meta property="og:description" content="([^"]*)"/);
+    assert.ok(t && d, where + " og text");
+    assert.equal(get(h, /<meta name="twitter:title" content="([^"]*)"/), t, where);
+    assert.equal(get(h, /<meta name="twitter:description" content="([^"]*)"/), d, where);
+    assert.equal(get(h, /<meta name="description" content="([^"]*)"/), d, where + " description");
+    const oi = get(h, /<meta property="og:image" content="([^"]*)"/);
+    assert.match(oi || "", /^https:[/][/]/, where + " og:image absolute");
+    assert.equal(get(h, /<meta name="twitter:image" content="([^"]*)"/), oi, where);
+    assert.equal(get(h, /<meta name="twitter:card" content="([^"]*)"/), "summary_large_image", where);
+  }
+});
+
+test("robots allows everything and names the sitemap", () => {
+  const r = fs.readFileSync(new URL("../site/robots.txt", import.meta.url), "utf8");
+  assert.match(r, /User-agent: [*]/);
+  assert.doesNotMatch(r, /Disallow: *[^ \r\n]/);
+  assert.match(r, /Sitemap: https:[/][/][^ \r\n]+[/]sitemap[.]xml/);
+});
