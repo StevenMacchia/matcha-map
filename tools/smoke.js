@@ -2,6 +2,8 @@
 // and fail on any uncaught exception, any 4xx/5xx for a same-origin asset, or an empty home page. The home page also
 // loads in a 1 by 1 window and in a background tab (document.hidden, no size): a visitor's tab restored at launch or
 // opened behind another one. On 2026-11-23 the stand-in map's fit threw on NaN there and the page stayed on "Brewing".
+// At the end it runs the event card's gate (tools/card-gate.js) on a reduced matrix: 320, 390, 1024 and 1440 wide, light and
+// dark, 16 and 20 px fonts, the longest-strings, city-only, no-photo and unsure fixtures; any failure there fails the smoke.
 // Flags: --url <base>. Env: CHROME_PATH (Chrome binary), SMOKE_URL (reuse a running server instead of starting tools/serve.js).
 // Talks to Chrome over the DevTools protocol with Node's built-in WebSocket (Node 22+), no dependencies.
 import fs from "node:fs";
@@ -10,6 +12,7 @@ import path from "node:path";
 import net from "node:net";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { runCardGate } from "./card-gate.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = path.join(ROOT, "site");
@@ -153,6 +156,7 @@ if (!bin) { console.error("smoke: no Chrome found. Set CHROME_PATH."); process.e
 const server = await startServer(), chrome = await startChrome(bin);
 const cdp = new CDP(chrome.ws);
 const results = [];
+let gate = null;
 try {
   await cdp.open();
   for (const url of pages()) for (const size of SIZES) results.push(await checkPage(cdp, server.base, url, size, { staticOnly: server.staticOnly }));
@@ -160,6 +164,8 @@ try {
   // pins are not required (nothing is in a 1 px view, and a hidden tab gets no animation frames to place them)
   results.push(await checkPage(cdp, server.base, "/", [1, 1], { tag: "1x1 window", noPins: true, emptyOk: true, staticOnly: server.staticOnly }));
   results.push(await checkPage(cdp, server.base, "/", [0, 0], { tag: "background tab", background: true, noPins: true, emptyOk: true, staticOnly: server.staticOnly }));
+  console.log("\ncard gate (reduced matrix):");
+  gate = await runCardGate(cdp, server.base, { reduced: true });
 } finally { cdp.close(); chrome.stop(); server.stop(); }
 
 const pad = (v, n) => String(v).padEnd(n);
@@ -168,4 +174,5 @@ for (const r of results) console.log(`${pad(r.url, 40)}${pad(r.w, 7)}${pad(r.err
 const bad = results.filter((r) => r.errors.length);
 for (const r of bad) { console.log(`\nFAIL ${r.url} @${r.w}`); for (const e of r.errors) console.log("  " + e); }
 console.log(bad.length ? `\nsmoke: ${bad.length} of ${results.length} checks failed` : `\nsmoke: all ${results.length} checks passed`);
-process.exit(bad.length ? 1 : 0);
+console.log(gate ? `card gate: ${gate.cases - gate.failed} of ${gate.cases} cases passed${gate.failed ? " (screens in qa/cards/2026-11-23/fail/)" : ""}` : "card gate: did not run");
+process.exit(bad.length || !gate || gate.failed ? 1 : 0);

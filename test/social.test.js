@@ -76,8 +76,10 @@ test("card: the going strip renders hidden on an upcoming pop-up with the invite
   assert.match(html, /<button type="button" class="mm-going" data-mm-going="aaaaaa000001" aria-pressed="false">/);
   assert.match(html, /class="mm-invite" href="\?event=aaaaaa000001&amp;via=friend" data-mm-share data-title="Moonbee matcha pop-up" data-text="Moonbee, [^"]*Pine Street Market\. Come with me:"/);
   assert.match(html, /<span class="mm-gcount" aria-live="polite"><\/span>/);
-  // the strip comes right after the brand row, before the place
-  assert.ok(html.indexOf("mm-go") < html.indexOf("mm-place"));
+  // the pop-up: after When and Where, before the buttons; the sheet: pinned with the buttons, right above them
+  assert.ok(html.indexOf("mm-boxes") < html.indexOf("mm-go") && html.indexOf("mm-go") < html.indexOf("mm-dock"));
+  const sheet = cardHtml(ev(), { now: NOW, phone: true });
+  assert.ok(sheet.indexOf('class="mm-dock"') < sheet.indexOf('class="mm-go"') && sheet.indexOf('class="mm-go"') < sheet.indexOf('class="mm-acts"'));
   assert.doesNotMatch(cardHtml(ev({ start: "2026-11-01T11:00:00-05:00", end: "2026-11-01T15:00:00-05:00" }), { now: NOW }), /mm-go/, "past");
   assert.doesNotMatch(cardHtml(ev({ status: "cancelled" }), { now: NOW }), /mm-go/, "cancelled");
   assert.doesNotMatch(cardHtml(ev(), { now: NOW, page: true }), /mm-go/, "static pages cannot call the API");
