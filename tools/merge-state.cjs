@@ -1,5 +1,5 @@
 // Three-way-ish union of the generated state files: node merge-state.cjs <kind> <ours> <theirs> <out>
-// kinds: events (union by id, later last_seen wins), watchlist (union by platform|handle, later last_checked wins),
+// kinds: byid|sources|shops (records by id, ours' fields over theirs), events (union by id, later last_seen wins), watchlist (union by platform|handle, later last_checked wins),
 // review (union by brand|start|venue, ours wins), geocache (union keys, ours wins), budget (max used_month, later updated).
 const fs = require("fs");
 const [, , kind, oursF, theirsF, outF] = process.argv;
@@ -32,6 +32,17 @@ if (kind === "events") {
 } else if (kind === "budget") {
   out = { ...theirs, ...ours, used_month: Math.max(ours.used_month || 0, theirs.used_month || 0), updated: later(ours, theirs, "updated").updated };
   note = `budget: used_month ours ${ours.used_month} theirs ${theirs.used_month} -> ${out.used_month}`;
-} else throw new Error("kind?");
+} else if (kind === "byid" || kind === "sources" || kind === "shops") {
+  // A list of records with an id, either a bare array (data/sources.json) or under a key (data/shops.json {shops: [...]}).
+  // Theirs is the base; a record present on both sides takes ours' fields over theirs; records only on one side are kept.
+  const listKey = Array.isArray(theirs) ? null : Object.keys(theirs).find((k) => Array.isArray(theirs[k]) && theirs[k].length && theirs[k][0] && "id" in theirs[k][0]) || "shops";
+  const tl = Array.isArray(theirs) ? theirs : theirs[listKey] || [], ol = Array.isArray(ours) ? ours : ours[listKey] || [];
+  const m = new Map(tl.map((r) => [r.id, r]));
+  let added = 0, changed = 0;
+  for (const r of ol) { if (!m.has(r.id)) { m.set(r.id, r); added++; } else if (JSON.stringify(m.get(r.id)) !== JSON.stringify(r)) { m.set(r.id, { ...m.get(r.id), ...r }); changed++; } }
+  const list = [...m.values()];
+  out = Array.isArray(theirs) ? list : { ...theirs, ...(Array.isArray(ours) ? {} : ours), [listKey]: list };
+  note = `${kind}: theirs ${tl.length}, ours ${ol.length}, union ${list.length} (+${added} only ours, ${changed} ours' fields over theirs)`;
+} else throw new Error("kind? one of events, watchlist, review, geocache, budget, byid (sources, shops)");
 fs.writeFileSync(outF, JSON.stringify(out, null, kind === "events" || kind === "review" ? 2 : 1) + "\n");
 console.log(note);
