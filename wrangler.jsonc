@@ -1,7 +1,16 @@
 {
   // Cloudflare Pages project "matchamap": serves the site/ folder at https://matchamap-cu7.pages.dev
   // Deploy: npx wrangler pages deploy site --project-name matchamap --branch main
+  // The functions/ folder (next to site/) is deployed with it: /api/submit, /api/queue, /api/approve, /api/report, /api/claim, /api/alerts.
   "name": "matchamap",
   "compatibility_date": "2026-11-01",
   "pages_build_output_dir": "./site"
+
+  // Self-serve intake storage (docs/INTAKE.md). Step 1: `npx wrangler kv namespace create INTAKE` prints an id.
+  // Step 2: paste it below and remove the // marks (add a comma after "./site" above). It stays commented out because a
+  // placeholder id would make `wrangler pages deploy` fail. Until the binding exists every form answers 503
+  // "not switched on yet" and says so politely; nothing else breaks.
+  // , "kv_namespaces": [{ "binding": "INTAKE", "id": "PASTE_NAMESPACE_ID_HERE" }]
+  //
+  // INTAKE_TOKEN is a secret, not a var: `npx wrangler pages secret put INTAKE_TOKEN --project-name matchamap`.
 }

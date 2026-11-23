@@ -17,6 +17,7 @@ import manual, { parsePaste, readInbox, matchSource } from "./adapters/manual.js
 import instagram from "./adapters/instagram-graph.js";
 import tiktok from "./adapters/tiktok.js";
 import { oembed } from "./adapters/oembed.js";
+import { pullApproved } from "./lib/intake.js";
 
 const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual]; // first match reads a source
 const EXTRA = [instagram, tiktok];                    // wired, off without keys
@@ -44,6 +45,12 @@ async function main() {
   const ctx = { fetcher, now, env: process.env };
   const pasteOnly = a.flags.has("paste"), inboxOnly = a.flags.has("inbox");
   const crawl = !pasteOnly && !inboxOnly;
+
+  // 0. Approved self-serve submissions -> data/inbox (off unless INTAKE_URL and INTAKE_TOKEN are set; never fails the run).
+  if (!dry && process.env.INTAKE_URL && process.env.INTAKE_TOKEN) {
+    try { const r = await pullApproved({ baseUrl: process.env.INTAKE_URL, token: process.env.INTAKE_TOKEN, log: warn }); info(`intake: ${r.written.length} new paste file(s), ${r.consumed} consumed`); }
+    catch (e) { warn(`intake skipped: ${e.message}`); }
+  }
 
   const candidates = [];
   const live = [];
@@ -112,6 +119,11 @@ async function main() {
   // Keep the static city and brand pages in step with the data (never from watch).
   try { const { run } = await import("../tools/gen-pages.js"); const o = run(); info(`pages: ${o.counts.cities} city, ${o.counts.brands} brand`); }
   catch (e) { warn(`pages not regenerated: ${e.message}`); }
+  // Calendar and RSS feeds, and one shareable page per upcoming event.
+  try { const { run } = await import("../tools/gen-feeds.js"); const o = run(); info(`feeds: ${o.counts.cities} city, ${o.counts.events} event, ${o.counts.fresh} new`); }
+  catch (e) { warn(`feeds not regenerated: ${e.message}`); }
+  try { const { run } = await import("../tools/gen-event-pages.js"); const o = run(); info(`event pages: ${o.counts.pages}`); }
+  catch (e) { warn(`event pages not regenerated: ${e.message}`); }
 }
 
 main().catch((e) => { console.error("ingest crashed:", e); process.exit(1); });

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="pg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+<title>Add your pop-up | Matcha Map</title>
+<meta name="description" content="Tell Mattie about a matcha pop-up. We check it, then put it on the map.">
+<link rel="canonical" href="https://matchamap-cu7.pages.dev/add/">
+<meta name="theme-color" content="#FBF6EA">
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/add/add.css">
+</head>
+<body class="pg">
+<header class="pg-top"><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="/">Open the map</a></header>
+<main class="fm">
+<div class="fm-hero"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-wave"/></svg><h1>Add your pop-up</h1></div>
+<p class="fm-lead">Running a matcha pop-up? Tell Mattie.</p>
+<form id="add-form" class="fm-card" data-endpoint="/api/submit" novalidate>
+<div class="fm-hp" aria-hidden="true"><label>Company <input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
+<div class="fm-row"><label for="brand">Brand name</label><input type="text" id="brand" name="brand" autocomplete="organization" maxlength="80" required><span class="fm-err" data-err="brand" role="alert"></span></div>
+<div class="fm-row"><label for="handle">Instagram or TikTok<span class="fm-hint">Handle or profile link</span></label><input type="text" id="handle" name="handle" placeholder="@yourbrand" maxlength="200"><span class="fm-err" data-err="handle" role="alert"></span></div>
+<div class="fm-row"><label for="url">Post or event link<span class="fm-hint">Optional if you gave a handle</span></label><input type="url" id="url" name="url" placeholder="https://" maxlength="400" inputmode="url"><span class="fm-err" data-err="url" role="alert"></span></div>
+<div class="fm-row"><label for="date">Date</label><input type="date" id="date" name="date" required><span class="fm-err" data-err="date" role="alert"></span></div>
+<div class="fm-two"><div class="fm-row"><label for="start">Starts</label><input type="time" id="start" name="start"><span class="fm-err" data-err="start" role="alert"></span></div><div class="fm-row"><label for="end">Ends</label><input type="time" id="end" name="end"><span class="fm-err" data-err="end" role="alert"></span></div></div>
+<div class="fm-row"><label for="venue">Venue<span class="fm-hint">Shop, market or cafe name</span></label><input type="text" id="venue" name="venue" maxlength="100"><span class="fm-err" data-err="venue" role="alert"></span></div>
+<div class="fm-row"><label for="address">Street address</label><input type="text" id="address" name="address" autocomplete="street-address" maxlength="120"><span class="fm-err" data-err="address" role="alert"></span></div>
+<div class="fm-row"><label for="city">City and state</label><input type="text" id="city" name="city" placeholder="Austin, TX" autocomplete="address-level2" maxlength="80" required><span class="fm-err" data-err="city" role="alert"></span></div>
+<div class="fm-row"><label for="drinks">On the menu<span class="fm-hint">Separate with commas</span></label><input type="text" id="drinks" name="drinks" placeholder="strawberry matcha, hojicha latte" maxlength="200"><span class="fm-err" data-err="drinks" role="alert"></span></div>
+<div class="fm-row"><label for="price">Price range</label><input type="text" id="price" name="price" placeholder="$6-9" maxlength="40"><span class="fm-err" data-err="price" role="alert"></span></div>
+<div class="fm-row"><label for="notes">Anything else</label><textarea id="notes" name="notes" maxlength="600"></textarea><span class="fm-err" data-err="notes" role="alert"></span></div>
+<div class="fm-row"><label for="email">Your email<span class="fm-hint">Optional. Only so we can reply.</span></label><input type="email" id="email" name="email" autocomplete="email" maxlength="254"><span class="fm-err" data-err="email" role="alert"></span></div>
+<p class="fm-top" id="form-error" role="alert"></p>
+<button class="fm-btn" type="submit">Send to Mattie</button>
+<p class="fm-note">Public, real pop-ups only. We read every one before it goes live. <a href="/privacy/">What we keep</a>.</p>
+</form>
+<section id="done" class="fm-card fm-done" hidden>
+<svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-excited"/></svg>
+<h2>Mattie is on it</h2>
+<p id="done-msg">We will check it and put it on the map.</p>
+<a class="fm-btn alt" href="/">Back to the map</a>
+</section>
+</main>
+<footer class="pg-foot"><p><a href="/privacy/">Privacy</a> &middot; <a href="/data-deletion/">Remove my data</a></p></footer>
+<script src="/add/add.js"></script>
+</body>
+</html>

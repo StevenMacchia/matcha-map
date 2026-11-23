@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="pg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+<title>Review queue | Matcha Map</title>
+<meta name="description" content="Moderation queue.">
+<link rel="canonical" href="https://matchamap-cu7.pages.dev/add/review.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF6EA">
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/add/add.css">
+</head>
+<body class="pg">
+<header class="pg-top"><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="/">Open the map</a></header>
+<main class="fm rv-wide">
+<div class="fm-hero"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-whisk"/></svg><h1>Review queue</h1></div>
+<div id="gate" class="fm-card"><form id="token-form"><div class="fm-row"><label for="token">Token</label><input id="token" type="password" autocomplete="off"><span class="fm-hint">Kept in this tab only (sessionStorage).</span></div><button class="fm-btn" type="submit">Open queue</button></form></div>
+<p class="fm-top" id="msg" role="alert"></p>
+<section id="queue" hidden>
+<p><button class="fm-btn alt" id="reload" type="button">Reload</button> <button class="fm-btn alt" id="forget" type="button">Forget token</button></p>
+<h2>Pending</h2><div id="pending"></div>
+<h2>Approved, waiting for the next ingest</h2><div id="approved"></div>
+</section>
+</main>
+<footer class="pg-foot"><p><a href="/privacy/">Privacy</a> &middot; <a href="/data-deletion/">Remove my data</a></p></footer>
+<script src="/add/review.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="pg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+<title>Report a problem | Matcha Map</title>
+<meta name="description" content="Tell us what is wrong with a pop-up listing.">
+<link rel="canonical" href="https://matchamap-cu7.pages.dev/report/">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF6EA">
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/add/add.css">
+</head>
+<body class="pg">
+<header class="pg-top"><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="/">Open the map</a></header>
+<main class="fm">
+<div class="fm-hero"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-surprised"/></svg><h1>Report a problem</h1></div>
+<p class="fm-lead">Something off? Tell Mattie.</p>
+<form id="report-form" class="fm-card" data-endpoint="/api/report" novalidate>
+<div class="fm-hp" aria-hidden="true"><label>Company <input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="event" id="event">
+<div class="fm-row"><label for="reason">What is wrong?</label>
+<select id="reason" name="reason"><option value="">Pick one</option><option value="wrong-date">Wrong date or time</option><option value="wrong-place">Wrong place</option><option value="cancelled">It was cancelled</option><option value="not-matcha">Not a matcha pop-up</option><option value="other">Something else</option></select>
+<span class="fm-err" data-err="reason" role="alert"></span></div>
+<span class="fm-err" data-err="event" role="alert"></span>
+<div class="fm-row"><label for="details">Details<span class="fm-hint">What did you see? A link helps.</span></label><textarea id="details" name="details" maxlength="600"></textarea><span class="fm-err" data-err="details" role="alert"></span></div>
+<div class="fm-row"><label for="email">Your email<span class="fm-hint">Optional. Only so we can reply.</span></label><input type="email" id="email" name="email" autocomplete="email" maxlength="254"><span class="fm-err" data-err="email" role="alert"></span></div>
+<p class="fm-top" id="form-error" role="alert"></p>
+<button class="fm-btn" type="submit">Send</button>
+</form>
+<section id="done" class="fm-card fm-done" hidden>
+<svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-excited"/></svg>
+<h2>Mattie is on it</h2>
+<p id="done-msg">Thank you. Mattie will take a look.</p>
+<a class="fm-btn alt" href="/">Back to the map</a>
+</section>
+</main>
+<footer class="pg-foot"><p><a href="/privacy/">Privacy</a> &middot; <a href="/data-deletion/">Remove my data</a></p></footer>
+<script src="/add/add.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* Forms: add a pop-up, report, claim, alerts, review. Sits on top of /style.css tokens and /pages.css. Phone first. */
+.fm { max-width: 560px; margin: 0 auto; padding: 4px 16px 40px; }
+.fm-hero { display: flex; align-items: center; gap: 12px; margin: 4px 0 6px; }
+.fm-hero svg { width: 72px; height: 72px; flex: none; }
+.fm-hero h1 { margin: 0; }
+.fm-lead { font-size: 18px; font-weight: 700; margin: 0 0 14px; }
+.fm-card { background: var(--panel); border: 2px solid var(--line); border-radius: var(--r); padding: 16px; box-shadow: var(--shadow); }
+.fm-row { margin: 0 0 14px; }
+.fm-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fm label, .fm .fm-lab { display: block; font-weight: 800; font-size: 15px; margin: 0 0 4px; }
+.fm-hint { display: block; font-weight: 500; font-size: 13px; color: var(--muted); }
+.fm input, .fm select, .fm textarea { width: 100%; min-height: 46px; padding: 10px 14px; border: 2px solid var(--edge); border-radius: 14px; background: var(--btnfill); color: var(--ink); font: 500 16px/1.3 var(--font); }
+.fm textarea { min-height: 90px; resize: vertical; }
+.fm input[type="checkbox"] { width: 22px; min-height: 22px; accent-color: var(--edge); flex: none; margin-top: 2px; }
+.fm-check { display: flex; gap: 10px; align-items: flex-start; font-weight: 500 !important; font-size: 14px !important; }
+.fm [aria-invalid="true"] { border-color: var(--focus); }
+.fm-err { display: block; color: var(--focus); font-weight: 700; font-size: 14px; min-height: 0; margin-top: 4px; }
+.fm-err:empty { display: none; }
+.fm-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 24px; border: 2px solid var(--edge); border-radius: var(--pill); background: var(--accent); color: var(--accent-ink); font: 800 17px var(--font); cursor: pointer; }
+.fm-btn:hover { filter: brightness(1.05); }
+.fm-btn[disabled] { opacity: .6; cursor: wait; }
+.fm-btn.alt { background: var(--btnfill); color: var(--ink); }
+.fm-top { margin: 0 0 10px; color: var(--focus); font-weight: 700; }
+/* the honeypot: off screen, not display:none (some bots skip those) */
+.fm-hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+.fm-done { text-align: center; padding: 24px 16px; }
+.fm-done svg { width: 120px; height: 120px; }
+.fm-done h2 { margin: 6px 0; font-size: 26px; }
+.fm-done p { margin: 4px 0 14px; }
+.fm-note { color: var(--muted); font-size: 14px; margin-top: 14px; }
+/* review page */
+.rv-item { background: var(--panel); border: 2px solid var(--line); border-radius: var(--r); padding: 14px 16px; margin: 0 0 12px; box-shadow: var(--shadow); }
+.rv-item h3 { margin: 0 0 4px; }
+.rv-item p { margin: 2px 0; word-break: break-word; }
+.rv-meta { color: var(--muted); font-size: 13px; }
+.rv-act { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.rv-act .fm-btn { min-height: 40px; padding: 6px 18px; font-size: 15px; }
+.rv-wide { max-width: 760px; }
+@media (max-width: 380px) { .fm-two { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { .fm-done svg { animation: fm-pop .5s var(--spring); } @keyframes fm-pop { from { transform: scale(.7); opacity: 0; } to { transform: none; opacity: 1; } } }
