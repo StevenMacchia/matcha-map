@@ -105,6 +105,29 @@ export function dayWord(e, now = new Date(), absolute = false) {
   return { kind: "date", word: dateLabel(s) };
 }
 
+// ---- series --------------------------------------------------------------------------------------------------
+// A series (events.json `series`: weekdays 0 Sunday to 6 Saturday, until "YYYY-MM-DD" or null) in plain words:
+// "Every Tuesday", "Wed to Sun" (a run, read Monday first and round the week), "Sat and Sun", "Mon, Wed, Fri", "Every day".
+const MON_FIRST = [1, 2, 3, 4, 5, 6, 0];
+export function seriesWords(series) {
+  const raw = series && Array.isArray(series.weekdays) ? series.weekdays : [];
+  const set = new Set(raw.filter((d) => Number.isInteger(d) && d >= 0 && d <= 6));
+  const days = MON_FIRST.filter((d) => set.has(d));
+  if (!days.length) return "";
+  if (days.length === 7) return "Every day";
+  if (days.length === 1) return "Every " + DAYS_LONG[days[0]];
+  if (days.length === 2) return DAYS[days[0]] + " and " + DAYS[days[1]];
+  // a run: exactly one day in the set whose day before is not in it, read round the week (Fri to Mon)
+  const starts = days.filter((d) => !set.has((d + 6) % 7));
+  if (starts.length === 1) return DAYS[starts[0]] + " to " + DAYS[(starts[0] + days.length - 1) % 7];
+  return days.map((d) => DAYS[d]).join(", ");
+}
+// "until Jan 4" from series.until, or "".
+export function seriesUntil(series) {
+  const m = /^(\d{4})-(\d\d)-(\d\d)$/.exec(String((series && series.until) || ""));
+  return m && +m[2] >= 1 && +m[2] <= 12 ? `until ${MONTHS[+m[2] - 1]} ${+m[3]}` : "";
+}
+
 // ---- place and distance --------------------------------------------------------------------------------------
 export function isApprox(e) { return e.approx === true || (e.geocode_source === "none" && !e.address); }
 const hasLL = (e) => typeof e.lat === "number" && typeof e.lng === "number" && isFinite(e.lat) && isFinite(e.lng);
@@ -413,7 +436,8 @@ function titleHtml(e, ctx, v, name) {
   const h = handleOf(e, ctx), kind = KIND[e.kind] || "";
   const brandTo = h && typeof ctx.brandHref === "function" ? ctx.brandHref(h) : "";
   const meta = join([kind ? `<span class="mm-kind">${esc(kind)}</span>` : "", h ? `<a href="https://www.instagram.com/${encodeURIComponent(h)}/" target="_blank" rel="noopener">@${esc(h)}</a>` : ""], "");
-  return `<header class="mm-top"><p class="mm-dayline"><span class="mm-daypill">${esc(v.day)}</span>${v.time ? `<span class="mm-daytime">${esc(v.time)}</span>` : ""}</p>` +
+  const rule = seriesWords(e.series);
+  return `<header class="mm-top"><p class="mm-dayline"><span class="mm-daypill">${esc(v.day)}</span>${rule ? `<span class="mm-serpill">${esc(rule)}</span>` : ""}${v.time ? `<span class="mm-daytime">${esc(v.time)}</span>` : ""}</p>` +
     `<h3 class="mm-bname">${brandTo ? `<a class="mm-bname-link" href="${esc(brandTo)}">${esc(name)}</a>` : esc(name)}</h3>` +
     `<p class="mm-bmeta">${meta}${confBadge(e.confidence)}</p></header>`;
 }
@@ -511,20 +535,27 @@ function thumbHtml(e, ctx, name) {
   const img = photo ? `<img class="mm-th-img" src="${esc(photo.src)}" alt="" width="68" height="68" loading="lazy" decoding="async" referrerpolicy="no-referrer"${photo.remote ? ` data-remote="${esc(photo.remote)}"` : ""}>` : "";
   return `<span class="mm-th" aria-hidden="true">${under}${img}</span>`;
 }
+// ctx.series (a number, the dates it stands for): the row stands for the event's whole series (the list with no date
+// filter): "<rule> at <venue> · until <Mon D>" under the name and a "series" word in the day line; it opens this date.
 export function rowHtml(e, ctx = {}) {
   e = e || {};
   const id = safeId(e.id), b = brandOf(e, ctx), name = nameOf(e, b), v = verdict(e, { ...ctx, here: null });
   const dist = distanceText(e, ctx), approx = isApprox(e);
-  const place = approx ? "Near " + (cityOf(e, ctx) || "town") : join([e.venue, cityOf(e, ctx)]);
+  const rule = ctx.series ? seriesWords(e.series) : "";
+  const at = approx ? "Near " + (cityOf(e, ctx) || "town") : e.venue || cityOf(e, ctx);
+  const place = rule ? join([rule + (at ? (approx ? ", " + at.toLowerCase() : " at " + at) : ""), seriesUntil(e.series)]) : approx ? "Near " + (cityOf(e, ctx) || "town") : join([e.venue, cityOf(e, ctx)]);
   const menu = (Array.isArray(e.menu) ? e.menu : []).slice(0, 3);
   const kind = KIND[e.kind] && e.kind !== "popup" ? `<span class="mm-kind">${esc(KIND[e.kind])}</span>` : "";
-  const conf = e.confidence === "confirmed" ? `<span class="mm-dot mm-conf-confirmed" title="${esc(CONFIDENCE.confirmed[1])}"></span>` : e.confidence === "unsure" ? `<span class="mm-dot mm-conf-unsure" title="${esc(CONFIDENCE.unsure[1])}"></span>` : "";
+  // a projected series date (read from the rule, not posted on its own) keeps its "likely" dot on the expanded rows
+  const projected = !rule && e.confidence === "likely" && e.series && e.series.projected === true;
+  const conf = e.confidence === "confirmed" ? `<span class="mm-dot mm-conf-confirmed" title="${esc(CONFIDENCE.confirmed[1])}"></span>` : e.confidence === "unsure" ? `<span class="mm-dot mm-conf-unsure" title="${esc(CONFIDENCE.unsure[1])}"></span>` :
+    projected ? `<span class="mm-dot mm-conf-likely" title="${esc(CONFIDENCE.likely[1])}"></span>` : "";
   const inner = thumbHtml(e, ctx, name) +
-    `<span class="mm-rt"><span class="mm-rv">${esc(join([v.day, v.time], " "))}</span><span class="mm-rn"><span class="mm-rname">${esc(name)}</span>${conf}${kind}</span>` +
+    `<span class="mm-rt"><span class="mm-rv">${esc(join([v.day, v.time], " "))}${rule ? ` <span class="mm-rser">series</span>` : ""}</span><span class="mm-rn"><span class="mm-rname">${esc(name)}</span>${conf}${kind}</span>` +
     (place ? `<span class="mm-rp">${esc(place)}</span>` : "") +
     (menu.length && !ctx.mini ? `<span class="mm-rm">${menu.map((m) => `<span>${esc(titleCase(cut(m, 24)))}</span>`).join("")}</span>` : "") + `</span>` +
     (dist ? `<span class="mm-rd">${esc(dist)}</span>` : "");
-  const cls = `mm-row${ctx.mini ? " mm-mini" : ""} mm-v-${v.kind}`;
+  const cls = `mm-row${ctx.mini ? " mm-mini" : ""}${rule ? " mm-series" : ""} mm-v-${v.kind}`;
   if (ctx.rowTag === "a") {
     const href = id ? (typeof ctx.eventHref === "function" ? ctx.eventHref(id) : "?event=" + id) : "#";
     return `<a class="${cls}" href="${esc(href)}"${id ? ` data-event="${id}"` : ""}>${inner}</a>`;

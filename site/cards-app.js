@@ -70,7 +70,8 @@ function render(item, ctx) {
 }
 function row(item, ctx) {
   if (!item || item.kind !== "e" || !item.data) return null;
-  return rowHtml(item.data, context(ctx));
+  // ctx.series: the row stands for a series of that many dates (app.js, the list with no date filter)
+  return rowHtml(item.data, { ...context(ctx), series: ctx && ctx.series > 0 ? ctx.series : 0 });
 }
 
 window.MatchaCards = Object.assign(window.MatchaCards || {}, { render, row, ready });

@@ -25,12 +25,13 @@ import path from "node:path";
 import net from "node:net";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { seriesWords } from "../site/cards.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FAIL_DIR = path.join(ROOT, "qa", "cards", "2026-11-23", "fail");
 const HEIGHT = { 320: 568, 360: 740, 390: 844, 430: 932, 768: 1024, 1024: 768, 1280: 720, 1440: 900, 1920: 1080 };
 export const FULL = { widths: [320, 360, 390, 430, 768, 1024, 1280, 1440, 1920], fixtures: null };
-export const REDUCED = { widths: [320, 390, 1024, 1440], fixtures: ["longest brand", "city only", "no photo", "unsure", "brand menu"] };
+export const REDUCED = { widths: [320, 390, 1024, 1440], fixtures: ["longest brand", "city only", "no photo", "unsure", "brand menu", "series until"] };
 // Cut on purpose, and only here: the quote (two lines in the sheet, one in the popup); the whole text is on /e/<id>/,
 // one tap away through "more" or "Full details and photo".
 export const ALLOW = [".mm-q-text"];
@@ -69,7 +70,10 @@ export function pickFixtures(events, brands, now = Date.now()) {
     ["no photo", up.find((e) => !hasPhoto(e) && !brandPic(e))],
     ["sold out", up.find(soldOut)],
     ["unsure", up.find((e) => e.confidence === "unsure")],
-  ];
+    // the series pill beside the day (design rung 5): the longest rule words with an until date, and one without
+    ["series until", by((e) => (e.series && e.series.until ? seriesWords(e.series).length : -1))],
+    ["series no until", up.find((e) => e.series && !e.series.until && seriesWords(e.series))],
+  ].map(([n, e]) => [n, n === "series until" && !(e && e.series && e.series.until) ? null : e]);
   return list.map(([name, e]) => ({ name, id: e ? e.id : null, label: e ? `${e.brand} (${e.id})` : "none in the data" }));
 }
 
