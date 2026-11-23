@@ -29,7 +29,7 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false, card =
   const time = timeText(e, e.tz);
   const title = `${brand} matcha pop-up, ${shortDayOf(e, e.tz || "America/New_York")}, ${e.city || place}`;
   const where = isApprox(e) ? `${place} (place not posted yet)` : [e.venue, e.address, place].filter(Boolean).join(", ");
-  const bits = [`${day}${e.all_day ? "" : ", " + time}`, where];
+  const bits = [`${day}, ${e.all_day ? "all day" : time}`, where];
   if (e.menu && e.menu.length) bits.push(`Menu: ${e.menu.slice(0, 5).join(", ")}`);
   if (e.price) bits.push(`Price: ${e.price}`);
   const desc = bits.join(". ").slice(0, 280);

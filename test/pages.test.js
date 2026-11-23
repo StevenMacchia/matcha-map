@@ -297,3 +297,14 @@ test("robots allows everything and names the sitemap", () => {
   assert.doesNotMatch(r, /Disallow: *[^ \r\n]/);
   assert.match(r, /Sitemap: https:[/][/][^ \r\n]+[/]sitemap[.]xml/);
 });
+
+test("timeText: a zero-length or backwards range shows one time, an all-day event says all day", () => {
+  const tz = "America/New_York";
+  assert.equal(timeText(ev({ start: "2026-12-14T11:00:00-05:00", end: "2026-12-14T11:00:00-05:00" }), tz), "11 AM");
+  assert.equal(timeText(ev({ start: "2026-12-14T11:00:00-05:00", end: "2026-12-14T10:00:00-05:00" }), tz), "11 AM");
+  assert.equal(timeText(ev({ start: "2026-12-14T11:00:00-05:00", end: "2026-12-14T14:30:00-05:00" }), tz), "11 AM–2:30 PM");
+  assert.equal(timeText(ev({ start: "2026-12-14T09:00:00-05:00", end: "2026-12-14T11:00:00-05:00", all_day: true }), tz), "All day");
+  const same = ev({ start: "2026-12-14T11:00:00-05:00", end: "2026-12-14T11:00:00-05:00" });
+  const h = page(buildSite(data([same])), "e/" + same.id + "/index.html");
+  assert.ok(!/\b11–11\b/.test(h));
+});

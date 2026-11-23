@@ -47,7 +47,10 @@ export function timeText(e, tz) {
   const a = clock(st, zone);
   if (a.zero) return "Time not posted";
   if (!e.end || isNaN(Date.parse(e.end))) return a.text;
-  const b = clock(Date.parse(e.end), zone);
+  const en = Date.parse(e.end);
+  if (en <= st) return a.text; // zero-length or backwards range: one time, never "11-11 AM"
+  const b = clock(en, zone);
+  if (b.text === a.text) return a.text;
   const left = a.period === b.period ? (a.minute === "00" ? a.hour : `${a.hour}:${a.minute}`) : a.text;
   return `${left}\u2013${b.text}`;
 }
@@ -373,7 +376,7 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
     const listed = ups.filter((it) => eventPageId(it.e));
     if (listed.length) ld.push({ "@context": "https://schema.org", "@type": "ItemList", name: `Matcha pop-ups in ${label}`, numberOfItems: listed.length, itemListElement: listed.slice(0, 50).map((it, i) => {
       const ev = eventLd(it.e, { brand: it.brand, insta: it.insta });
-      return { "@type": "ListItem", position: i + 1, url: `${SITE_URL}/e/${it.e.id}/`, item: { "@type": "Event", name: ev.name, startDate: ev.startDate, url: `${SITE_URL}/e/${it.e.id}/`, location: { "@type": "Place", name: ev.location.name, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
+      return { "@type": "ListItem", position: i + 1, item: { "@type": "Event", name: ev.name, startDate: ev.startDate, url: `${SITE_URL}/e/${it.e.id}/`, image: (ev.image && ev.image[0]) || (d.eventArt && d.eventArt.has(it.e.id) ? `${SITE_URL}/art/events/${it.e.id}.svg` : `${SITE_URL}/og.png`), location: { "@type": "Place", name: ev.location.name, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
     }) });
     const ogKey = `city-${c.slug}-${c.state.toLowerCase()}`;
     const image = d.cityOg && d.cityOg.has(ogKey) ? `${SITE_URL}/og/${ogKey}.png` : undefined;
@@ -476,6 +479,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     cities: read("data/cities.json").cities, sources: read("data/sources.json"),
     shops: read("site/data/shops.json").shops || [],
     cityFeeds: new Set(fs.existsSync(path.join(root, "site/feeds")) ? fs.readdirSync(path.join(root, "site/feeds")).filter((n) => n.endsWith(".ics")).map((n) => n.slice(0, -4)) : []),
+    eventArt: new Set(fs.existsSync(path.join(root, "site/art/events")) ? fs.readdirSync(path.join(root, "site/art/events")).filter((n) => n.endsWith(".svg")).map((n) => n.slice(0, -4)) : []),
     cityOg: new Set(fs.existsSync(path.join(root, "site/og")) ? fs.readdirSync(path.join(root, "site/og")).filter((n) => /^city-.*.png$/.test(n)).map((n) => n.slice(0, -4)) : []),
     brandPictures: (() => { try { return new Map(read("site/data/brands.json").brands.filter((x) => String(x.picture || "").startsWith("https://")).map((x) => [handleSlug(x.handle), x.picture])); } catch { return new Map(); } })(),
     watchlist: fs.existsSync(path.join(root, "data/watchlist.json")) ? read("data/watchlist.json") : { accounts: [] },
