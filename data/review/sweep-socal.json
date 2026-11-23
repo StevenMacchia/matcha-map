@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T03:22:01.637Z",
+  "generated": "2026-11-23T03:28:18.117Z",
   "group": "socal",
   "items": [
     {
@@ -97,6 +97,425 @@
       "image_url": "https://cdn.evbuc.com/images/1171080798/2560545315651/1/original.20251116-155056",
       "confidence": "unsure",
       "notes": "Meetup, not a matcha pop-up (kind class/meetup in spirit): venue is a rotating placeholder, so not promotable. Listing shows only a generic 'Multiple dates' plus this Nov 29 12 PM slot; no street address."
+    },
+    {
+      "handle": "gatodates",
+      "source_id": "more-than-matcha",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "menu": [
+        "matcha drinks",
+        "sweet treats and holiday gifts"
+      ],
+      "price": null,
+      "hours": "mall hours, not stated in the post (11:00 start is a placeholder)",
+      "pay": null,
+      "image_url": null,
+      "brand": "GATO DATES x More Than Matcha",
+      "title": "GATO x More Than Matcha holiday pop-up at Westfield Century City",
+      "start": "2026-11-28T11:00:00-08:00",
+      "venue": "Westfield Century City Holiday Market (in front of lululemon)",
+      "address": "10250 Santa Monica Blvd, Los Angeles, CA 90067",
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/DgBsK6SEfT-",
+      "evidence": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs daily from Nov 21 to Dec 27.",
+      "confidence": "likely",
+      "notes": "Instagram snippet (Nov 21 2026): Westfield Century City Holiday Market, Los Angeles, November 21 - December 27. Run is daily; one item per Saturday plus closing day. Opening hour is a placeholder; street address is the mall's, not from the post."
+    },
+    {
+      "handle": "gatodates",
+      "source_id": "more-than-matcha",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "menu": [
+        "matcha drinks",
+        "sweet treats and holiday gifts"
+      ],
+      "price": null,
+      "hours": "mall hours, not stated in the post (11:00 start is a placeholder)",
+      "pay": null,
+      "image_url": null,
+      "brand": "GATO DATES x More Than Matcha",
+      "title": "GATO x More Than Matcha holiday pop-up at Westfield Century City",
+      "start": "2026-12-05T11:00:00-08:00",
+      "venue": "Westfield Century City Holiday Market (in front of lululemon)",
+      "address": "10250 Santa Monica Blvd, Los Angeles, CA 90067",
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/DgBsK6SEfT-",
+      "evidence": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs daily from Nov 21 to Dec 27.",
+      "confidence": "likely",
+      "notes": "Instagram snippet (Nov 21 2026): Westfield Century City Holiday Market, Los Angeles, November 21 - December 27. Run is daily; one item per Saturday plus closing day. Opening hour is a placeholder; street address is the mall's, not from the post."
+    },
+    {
+      "handle": "gatodates",
+      "source_id": "more-than-matcha",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "menu": [
+        "matcha drinks",
+        "sweet treats and holiday gifts"
+      ],
+      "price": null,
+      "hours": "mall hours, not stated in the post (11:00 start is a placeholder)",
+      "pay": null,
+      "image_url": null,
+      "brand": "GATO DATES x More Than Matcha",
+      "title": "GATO x More Than Matcha holiday pop-up at Westfield Century City",
+      "start": "2026-12-12T11:00:00-08:00",
+      "venue": "Westfield Century City Holiday Market (in front of lululemon)",
+      "address": "10250 Santa Monica Blvd, Los Angeles, CA 90067",
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/DgBsK6SEfT-",
+      "evidence": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs daily from Nov 21 to Dec 27.",
+      "confidence": "likely",
+      "notes": "Instagram snippet (Nov 21 2026): Westfield Century City Holiday Market, Los Angeles, November 21 - December 27. Run is daily; one item per Saturday plus closing day. Opening hour is a placeholder; street address is the mall's, not from the post."
+    },
+    {
+      "handle": "gatodates",
+      "source_id": "more-than-matcha",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "menu": [
+        "matcha drinks",
+        "sweet treats and holiday gifts"
+      ],
+      "price": null,
+      "hours": "mall hours, not stated in the post (11:00 start is a placeholder)",
+      "pay": null,
+      "image_url": null,
+      "brand": "GATO DATES x More Than Matcha",
+      "title": "GATO x More Than Matcha holiday pop-up at Westfield Century City",
+      "start": "2026-12-19T11:00:00-08:00",
+      "venue": "Westfield Century City Holiday Market (in front of lululemon)",
+      "address": "10250 Santa Monica Blvd, Los Angeles, CA 90067",
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/DgBsK6SEfT-",
+      "evidence": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs daily from Nov 21 to Dec 27.",
+      "confidence": "likely",
+      "notes": "Instagram snippet (Nov 21 2026): Westfield Century City Holiday Market, Los Angeles, November 21 - December 27. Run is daily; one item per Saturday plus closing day. Opening hour is a placeholder; street address is the mall's, not from the post."
+    },
+    {
+      "handle": "gatodates",
+      "source_id": "more-than-matcha",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "menu": [
+        "matcha drinks",
+        "sweet treats and holiday gifts"
+      ],
+      "price": null,
+      "hours": "mall hours, not stated in the post (11:00 start is a placeholder)",
+      "pay": null,
+      "image_url": null,
+      "brand": "GATO DATES x More Than Matcha",
+      "title": "GATO x More Than Matcha holiday pop-up at Westfield Century City",
+      "start": "2026-12-26T11:00:00-08:00",
+      "venue": "Westfield Century City Holiday Market (in front of lululemon)",
+      "address": "10250 Santa Monica Blvd, Los Angeles, CA 90067",
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/DgBsK6SEfT-",
+      "evidence": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs daily from Nov 21 to Dec 27.",
+      "confidence": "likely",
+      "notes": "Instagram snippet (Nov 21 2026): Westfield Century City Holiday Market, Los Angeles, November 21 - December 27. Run is daily; one item per Saturday plus closing day. Opening hour is a placeholder; street address is the mall's, not from the post."
+    },
+    {
+      "handle": "gatodates",
+      "source_id": "more-than-matcha",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "menu": [
+        "matcha drinks",
+        "sweet treats and holiday gifts"
+      ],
+      "price": null,
+      "hours": "mall hours, not stated in the post (11:00 start is a placeholder)",
+      "pay": null,
+      "image_url": null,
+      "brand": "GATO DATES x More Than Matcha",
+      "title": "GATO x More Than Matcha holiday pop-up at Westfield Century City",
+      "start": "2026-12-27T11:00:00-08:00",
+      "venue": "Westfield Century City Holiday Market (in front of lululemon)",
+      "address": "10250 Santa Monica Blvd, Los Angeles, CA 90067",
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/DgBsK6SEfT-",
+      "evidence": [
+        "https://www.instagram.com/p/DgBsK6SEfT-",
+        "https://www.instagram.com/p/Df-RDlqmLwC"
+      ],
+      "description": "A holiday pop-up from GATO DATES with More Than Matcha at the Westfield Century City Holiday Market, right in front of lululemon. Come for matcha and a sweet treat, and do some gift shopping. It runs daily from Nov 21 to Dec 27.",
+      "confidence": "likely",
+      "notes": "Instagram snippet (Nov 21 2026): Westfield Century City Holiday Market, Los Angeles, November 21 - December 27. Run is daily; one item per Saturday plus closing day. Opening hour is a placeholder; street address is the mall's, not from the post."
+    },
+    {
+      "handle": null,
+      "source_id": null,
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/reel/DgBbT8UO9lD",
+        "https://www.instagram.com/p/DgDS-_Oq57Q"
+      ],
+      "menu": [
+        "free matcha (1 ticket per $75 spent)"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Eve Beauty Koreatown",
+      "title": "Eve Beauty first-ever matcha pop-up (free matcha with $75 spend)",
+      "start": "2026-11-28T11:00:00-08:00",
+      "venue": "Eve Beauty Koreatown",
+      "address": null,
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/DgDS-_Oq57Q",
+      "evidence": [
+        "https://www.instagram.com/p/DgDS-_Oq57Q",
+        "https://www.instagram.com/reel/DgBbT8UO9lD"
+      ],
+      "description": "A K-beauty store in Koreatown hosts a one-day matcha pop-up inside the shop on Nov 28, during its Nov 27 to 29 sale. Every $75 spent earns a ticket for one free matcha.",
+      "confidence": "unsure",
+      "notes": "Snippet: Nov 28 ONLY | Special Matcha Pop-Up. A store promo, not a matcha-focused brand; matcha vendor not named, no time or street address in the snippet (11:00 is a placeholder)."
+    },
+    {
+      "handle": "thaiyoandfriends",
+      "source_id": "thaiyo-cafe",
+      "end": "2026-12-06T15:00:00-08:00",
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/reel/Df-kjlFyU-Z",
+        "https://www.instagram.com/reel/Df5ZRzOSeWX",
+        "https://www.tiktok.com/@emkari_cafe/video/7710008452852075807",
+        "https://www.tiktok.com/@thaiyoandfriends/video/7709766567315279134"
+      ],
+      "menu": [
+        "Filipino and Vietnamese inspired matcha and coffee (emkari cafe)",
+        "matcha from several San Diego pop-ups"
+      ],
+      "price": null,
+      "hours": "11 AM - 3 PM",
+      "pay": null,
+      "image_url": null,
+      "brand": "Thaiyo & Friends Matcha Market",
+      "title": "San Diego Matcha Market at Day to Day Collective",
+      "start": "2026-12-06T11:00:00-08:00",
+      "venue": "Day to Day Collective",
+      "address": "2310 Kettner Blvd, San Diego, CA 92101",
+      "city": "San Diego",
+      "source_url": "https://www.instagram.com/reel/Df-kjlFyU-Z",
+      "evidence": [
+        "https://www.instagram.com/reel/Df-kjlFyU-Z",
+        "https://www.instagram.com/reel/Df5ZRzOSeWX",
+        "https://www.tiktok.com/@emkari_cafe/video/7710008452852075807"
+      ],
+      "description": "The matcha market is back: several of San Diego's smaller matcha pop-ups gather in one place with DJs, photobooths and vintage shopping. emkari cafe is serving Filipino and Vietnamese inspired matcha and coffee.",
+      "confidence": "likely",
+      "notes": "Instagram caption (Thaiyo & Friends, Nov 20 2026) gives date, 11 AM-3 PM and 2310 Kettner Blvd; instagram not opened directly, so likely rather than confirmed. Already on map as Thaiyo/emkari entries."
+    },
+    {
+      "handle": "goldenguideorg",
+      "source_id": null,
+      "end": "2026-12-06T17:00:00-08:00",
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/Df2UcOavCwB"
+      ],
+      "menu": [
+        "coffee",
+        "matcha"
+      ],
+      "price": null,
+      "hours": "12-5 PM",
+      "pay": null,
+      "image_url": null,
+      "brand": "Golden Makers Market",
+      "title": "Golden Makers Market holiday edition (matcha vendors)",
+      "start": "2026-12-06T12:00:00-08:00",
+      "venue": "Brick 828",
+      "address": "Point Loma, San Diego, CA",
+      "city": "San Diego",
+      "source_url": "https://www.instagram.com/p/Df2UcOavCwB",
+      "evidence": [
+        "https://www.instagram.com/p/Df2UcOavCwB"
+      ],
+      "description": "A holiday maker's market in Point Loma with 45+ local vendors, coffee, matcha, mahjong and handmade gifts.",
+      "confidence": "unsure",
+      "notes": "Snippet: Sunday, December 6, 2026 from 12-5PM at @brick.828 in Point Loma, San Diego! 45+ vendors. Coffee. Matcha. General market, matcha vendor unnamed; no street number."
+    },
+    {
+      "handle": null,
+      "source_id": null,
+      "end": "2026-12-12T16:00:00-08:00",
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/DfiDn0JGbvJ"
+      ],
+      "menu": [
+        "matcha by Maikai Matcha"
+      ],
+      "price": null,
+      "hours": "11 AM - 4 PM",
+      "pay": null,
+      "image_url": null,
+      "brand": "Kapatid Kickback",
+      "title": "Kapatid Kickback, Pasko Edition (matcha by Maikai Matcha)",
+      "start": "2026-12-12T11:00:00-08:00",
+      "venue": null,
+      "address": null,
+      "city": "Torrance",
+      "source_url": "https://www.instagram.com/p/DfiDn0JGbvJ",
+      "evidence": [
+        "https://www.instagram.com/p/DfiDn0JGbvJ"
+      ],
+      "description": "A one-year-anniversary community kickback in Torrance with a holiday theme. Matcha is served by Maikai Matcha, a matcha cafe.",
+      "confidence": "unsure",
+      "notes": "Snippet: December 12 from 11a-4p in Torrance ... matcha by @maikaimatcha, a matcha cafe. Venue not in snippet; matcha is one of several vendors."
+    },
+    {
+      "handle": null,
+      "source_id": null,
+      "end": "2026-11-25T15:00:00-08:00",
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/Dflxf4fG_MD"
+      ],
+      "menu": [],
+      "price": null,
+      "hours": "9 AM - 3 PM",
+      "pay": null,
+      "image_url": null,
+      "brand": "No Jumper Cafe",
+      "title": "No Jumper Cafe matcha residency at Verci",
+      "start": "2026-11-25T09:00:00-08:00",
+      "venue": "Verci",
+      "address": null,
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/Dflxf4fG_MD",
+      "evidence": [
+        "https://www.instagram.com/p/Dflxf4fG_MD"
+      ],
+      "description": "An LA residency from No Jumper Cafe, set up every Wednesday at Verci. Tagged as a matcha and cafe pop-up.",
+      "confidence": "unsure",
+      "notes": "Snippet: setting up every Wednesday @verci.la 9am-3pm starting November 11th - December 4th. Menu not in snippet (tags include matcha); Verci street address not given; Nov 25 and Dec 2 are the Wednesdays in the window."
+    },
+    {
+      "handle": null,
+      "source_id": null,
+      "end": "2026-12-02T15:00:00-08:00",
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.instagram.com/p/Dflxf4fG_MD"
+      ],
+      "menu": [],
+      "price": null,
+      "hours": "9 AM - 3 PM",
+      "pay": null,
+      "image_url": null,
+      "brand": "No Jumper Cafe",
+      "title": "No Jumper Cafe matcha residency at Verci",
+      "start": "2026-12-02T09:00:00-08:00",
+      "venue": "Verci",
+      "address": null,
+      "city": "Los Angeles",
+      "source_url": "https://www.instagram.com/p/Dflxf4fG_MD",
+      "evidence": [
+        "https://www.instagram.com/p/Dflxf4fG_MD"
+      ],
+      "description": "An LA residency from No Jumper Cafe, set up every Wednesday at Verci. Tagged as a matcha and cafe pop-up.",
+      "confidence": "unsure",
+      "notes": "Snippet: setting up every Wednesday @verci.la 9am-3pm starting November 11th - December 4th. Menu not in snippet (tags include matcha); Verci street address not given; Nov 25 and Dec 2 are the Wednesdays in the window."
     }
   ]
 }
