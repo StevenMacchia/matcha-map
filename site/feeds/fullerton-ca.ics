@@ -7,26 +7,9 @@ X-WR-CALNAME:Matcha Map: Fullerton\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:aded07cb0287@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T063316Z
-DTSTART:20261128T210000Z
-DTEND:20261128T230000Z
-SUMMARY:Matcha + Meetup: Fullerton | Coffee Meets to Benefit Dream Foundati
- on
-LOCATION:Fullerton\, CA
-DESCRIPTION:Make new friends in the community while supporting small busine
- sses and giving back to a non-profit Dream Foundation!\nPrice: $17.35\nDet
- ails not confirmed yet. Check the brand's post before you go.\nMore: https
- ://matchamap-cu7.pages.dev/e/aded07cb0287/
-URL:https://matchamap-cu7.pages.dev/e/aded07cb0287/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:1e3675a352d5@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T182944Z
+DTSTAMP:20261123T230054Z
+LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T220000Z
 DTEND:20261129T233000Z
 SUMMARY:a very merry matcha workshop

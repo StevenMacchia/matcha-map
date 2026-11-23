@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UNLABELED Coffee and Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a3c338411d60@matchamap-cu7.pages.dev
+DTSTAMP:20261123T230054Z
+LAST-MODIFIED:20261123T230054Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:UNLABELED Coffee and Matcha pop-up at Kuns Park
+LOCATION:Kuns Park\, Los Angeles\, CA
+DESCRIPTION:Happy Thanksgiving! Here’s our schedule for 11/26–11/29 at 
+ Kuns Park in La Verne. Come hang out with us—we can’t wait to see you!
+ \nDetails not confirmed yet. Check the brand's post before you go.\nMore: 
+ https://matchamap-cu7.pages.dev/e/a3c338411d60/
+URL:https://matchamap-cu7.pages.dev/e/a3c338411d60/
+GEO:34.104221;-117.778071
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

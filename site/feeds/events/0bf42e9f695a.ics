@@ -8,15 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:0bf42e9f695a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T182944Z
+DTSTAMP:20261123T230054Z
+LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T170000Z
 DTEND:20261129T210000Z
-SUMMARY:Bloom & Brew Pop-Up Market
+SUMMARY:Mellobun Cafe x Matte Matcha Bar pop-up
 LOCATION:EOC Studio\, 411 18th St\, Sacramento\, CA
 DESCRIPTION:Bloom & Brew returns to EOC Studio with drinks\, baked goods\, 
  shopping\, a photo booth\, and hair blowouts.\nMenu: mochi\, pastry\, cook
- ie\, hojicha\nMore: https://matchamap-cu7.pages.dev/e/0bf42e9f695a/
+ ie\, hojicha\, chocolate\, banana\nMore: https://matchamap-cu7.pages.dev/e
+ /0bf42e9f695a/
 URL:https://matchamap-cu7.pages.dev/e/0bf42e9f695a/
 GEO:38.583600;-121.479765
 STATUS:CONFIRMED

@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Saikō Matcha House pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a42948012615@matchamap-cu7.pages.dev
+DTSTAMP:20261123T230054Z
+LAST-MODIFIED:20261123T230054Z
+DTSTART:20261127T150000Z
+DTEND:20261127T190000Z
+SUMMARY:Saikō Matcha House pop-up\, Black Friday weekend at MODE
+LOCATION:MODE at The Village District\, 2068 Clark Ave\, Raleigh\, NC
+DESCRIPTION:Raleigh-born matcha pop-up: ceremonial first-harvest matcha and
+  house-made syrups.\nMenu: ceremonial first-harvest matcha\, house-made sy
+ rups\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev
+ /e/a42948012615/
+URL:https://matchamap-cu7.pages.dev/e/a42948012615/
+GEO:35.789032;-78.658579
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

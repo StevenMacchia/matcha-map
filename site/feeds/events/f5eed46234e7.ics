@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Alma Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f5eed46234e7@matchamap-cu7.pages.dev
+DTSTAMP:20261123T230054Z
+LAST-MODIFIED:20261123T230054Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:Alma Matcha pop-up at Alma Matcha
+LOCATION:Fort Lauderdale\, FL
+DESCRIPTION:Thanksgiving week at Alma Matcha\nMenu: pumpkin\nDetails not co
+ nfirmed yet. Check the brand's post before you go.\nMore: https://matchama
+ p-cu7.pages.dev/e/f5eed46234e7/
+URL:https://matchamap-cu7.pages.dev/e/f5eed46234e7/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -7,130 +7,48 @@ X-WR-CALNAME:Matcha Map: Tampa\, FL
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:c2c10d21c465@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261123T180000Z
-DTEND:20261123T210000Z
-SUMMARY:Matcha + Meetup: Tampa | Creatives Edition
+UID:7dd84faaabf7@matchamap-cu7.pages.dev
+DTSTAMP:20261123T230054Z
+LAST-MODIFIED:20261123T230054Z
+DTSTART:20261127T220000Z
+DTEND:20261128T040000Z
+SUMMARY:Alive Coffee Matcha & More pop-up at BOXi Park
 LOCATION:Tampa\, FL
-DESCRIPTION:Join us for coffee\, latte\, or matcha at different cafes. Buil
- d your creative community in your city with a fun day out!\nMenu: latte\nP
- rice: $12.51–87.21\nDetails not confirmed yet. Check the brand's post be
- fore you go.\nMore: https://matchamap-cu7.pages.dev/e/c2c10d21c465/
-URL:https://matchamap-cu7.pages.dev/e/c2c10d21c465/
+DESCRIPTION:ORLANDO AND LAKE NONA AREA\, YOUR HOLIDAY DRINKS ARE CALLING!\n
+ Menu: chocolate\, latte\nDetails not confirmed yet. Check the brand's post
+  before you go.\nMore: https://matchamap-cu7.pages.dev/e/7dd84faaabf7/
+URL:https://matchamap-cu7.pages.dev/e/7dd84faaabf7/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:d48f1d45c2e5@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T182944Z
-DTSTART:20261206T140000Z
-DTEND:20261206T190000Z
-SUMMARY:Ybor City Matcha & Mimosa Sundays
-LOCATION:Blind Tiger Coffee Roasters - Ybor City Cafe\, 1823 East 7th Avenu
- e\, Tampa\, FL 33605\, Tampa\, FL
-DESCRIPTION:A recurring Sunday brunch at the Ybor City cafe with matcha nex
- t to coffee\, mimosas and a full brunch menu.\nMenu: matcha\, espresso\, c
- old brew\, nitro\, chai\, mimosas\, pancakes\, breakfast tacos\, avocado t
- oast\nPrice: Free entry\nLikely\, not fully confirmed.\nMore: https://matc
- hamap-cu7.pages.dev/e/d48f1d45c2e5/
-URL:https://matchamap-cu7.pages.dev/e/d48f1d45c2e5/
-GEO:27.960164;-82.438447
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:52a12a0a594a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261206T170000Z
-DTEND:20261206T200000Z
-SUMMARY:Matcha + Meetup: Tampa Creatives (Giving Back Edition)
+UID:8aa7d34aa033@matchamap-cu7.pages.dev
+DTSTAMP:20261123T230054Z
+LAST-MODIFIED:20261123T230054Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Alive Coffee Matcha & More pop-up at BOXi Park
 LOCATION:Tampa\, FL
-DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
- unity while supporting local businesses and giving back to people in need.
- \nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before 
- you go.\nMore: https://matchamap-cu7.pages.dev/e/52a12a0a594a/
-URL:https://matchamap-cu7.pages.dev/e/52a12a0a594a/
+DESCRIPTION:ORLANDO AND LAKE NONA AREA\, YOUR HOLIDAY DRINKS ARE CALLING!\n
+ Menu: chocolate\, latte\nDetails not confirmed yet. Check the brand's post
+  before you go.\nMore: https://matchamap-cu7.pages.dev/e/8aa7d34aa033/
+URL:https://matchamap-cu7.pages.dev/e/8aa7d34aa033/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:ef5517d06427@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T182944Z
-DTSTART:20261213T140000Z
-DTEND:20261213T190000Z
-SUMMARY:Ybor City Matcha & Mimosa Sundays
-LOCATION:Blind Tiger Coffee Roasters - Ybor City Cafe\, 1823 East 7th Avenu
- e\, Tampa\, FL 33605\, Tampa\, FL
-DESCRIPTION:A recurring Sunday brunch at the Ybor City cafe with matcha nex
- t to coffee\, mimosas and a full brunch menu.\nMenu: matcha\, espresso\, c
- old brew\, nitro\, chai\, mimosas\, pancakes\, breakfast tacos\, avocado t
- oast\nPrice: Free entry\nLikely\, not fully confirmed.\nMore: https://matc
- hamap-cu7.pages.dev/e/ef5517d06427/
-URL:https://matchamap-cu7.pages.dev/e/ef5517d06427/
-GEO:27.960164;-82.438447
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:97262145c90d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T182944Z
-DTSTART:20261220T140000Z
-DTEND:20261220T190000Z
-SUMMARY:Ybor City Matcha & Mimosa Sundays
-LOCATION:Blind Tiger Coffee Roasters - Ybor City Cafe\, 1823 East 7th Avenu
- e\, Tampa\, FL 33605\, Tampa\, FL
-DESCRIPTION:A recurring Sunday brunch at the Ybor City cafe with matcha nex
- t to coffee\, mimosas and a full brunch menu.\nMenu: matcha\, espresso\, c
- old brew\, nitro\, chai\, mimosas\, pancakes\, breakfast tacos\, avocado t
- oast\nPrice: Free entry\nLikely\, not fully confirmed.\nMore: https://matc
- hamap-cu7.pages.dev/e/97262145c90d/
-URL:https://matchamap-cu7.pages.dev/e/97262145c90d/
-GEO:27.960164;-82.438447
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:8864d4b089e8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T182944Z
-DTSTART:20261227T140000Z
-DTEND:20261227T190000Z
-SUMMARY:Ybor City Matcha & Mimosa Sundays
-LOCATION:Blind Tiger Coffee Roasters - Ybor City Cafe\, 1823 East 7th Avenu
- e\, Tampa\, FL 33605\, Tampa\, FL
-DESCRIPTION:A recurring Sunday brunch at the Ybor City cafe with matcha nex
- t to coffee\, mimosas and a full brunch menu.\nMenu: matcha\, espresso\, c
- old brew\, nitro\, chai\, mimosas\, pancakes\, breakfast tacos\, avocado t
- oast\nPrice: Free entry\nLikely\, not fully confirmed.\nMore: https://matc
- hamap-cu7.pages.dev/e/8864d4b089e8/
-URL:https://matchamap-cu7.pages.dev/e/8864d4b089e8/
-GEO:27.960164;-82.438447
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:d3309f124125@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T182944Z
-DTSTART:20270103T140000Z
-DTEND:20270103T190000Z
-SUMMARY:Ybor City Matcha & Mimosa Sundays
-LOCATION:Blind Tiger Coffee Roasters - Ybor City Cafe\, 1823 East 7th Avenu
- e\, Tampa\, FL 33605\, Tampa\, FL
-DESCRIPTION:A recurring Sunday brunch at the Ybor City cafe with matcha nex
- t to coffee\, mimosas and a full brunch menu.\nMenu: matcha\, espresso\, c
- old brew\, nitro\, chai\, mimosas\, pancakes\, breakfast tacos\, avocado t
- oast\nPrice: Free entry\nLikely\, not fully confirmed.\nMore: https://matc
- hamap-cu7.pages.dev/e/d3309f124125/
-URL:https://matchamap-cu7.pages.dev/e/d3309f124125/
-GEO:27.960164;-82.438447
-STATUS:CONFIRMED
+UID:c25ce99dd8a9@matchamap-cu7.pages.dev
+DTSTAMP:20261123T230054Z
+LAST-MODIFIED:20261123T230054Z
+DTSTART:20261129T170000Z
+DTEND:20261130T020000Z
+SUMMARY:Alive Coffee Matcha & More pop-up at BOXi Park
+LOCATION:Tampa\, FL
+DESCRIPTION:ORLANDO AND LAKE NONA AREA\, YOUR HOLIDAY DRINKS ARE CALLING!\n
+ Menu: chocolate\, latte\nDetails not confirmed yet. Check the brand's post
+  before you go.\nMore: https://matchamap-cu7.pages.dev/e/c25ce99dd8a9/
+URL:https://matchamap-cu7.pages.dev/e/c25ce99dd8a9/
+STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 END:VCALENDAR

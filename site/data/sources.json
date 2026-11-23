@@ -251,7 +251,8 @@
     "active": true,
     "notes": "Organizer of Raleigh matcha-vendor events (Matcha MayFest May 2026, Matcha Move Fest Aug 2026) on SweatPals; an event organizer, not a brand. Evidence a.",
     "added": "2026-11-22",
-    "verified": null
+    "verified": null,
+    "about": "Raleigh wellness organizer of matcha vendor events: Matcha MayFest (May 2026) and Matcha Move Fest (Aug 2026)."
   },
   {
     "id": "bearly-awake-cafe",
@@ -1449,7 +1450,8 @@
     "active": true,
     "notes": "Named matcha vendor at Matcha MayFest (BalancedAF Wellness, Raleigh, May 2026) on a fetched SweatPals page; no handle found. Evidence a.",
     "added": "2026-11-22",
-    "verified": null
+    "verified": null,
+    "about": "Matcha vendor at Matcha MayFest in Raleigh (May 2026)."
   },
   {
     "id": "hami-cafe",
@@ -2148,7 +2150,8 @@
     "active": true,
     "notes": "Named matcha vendor at Matcha MayFest (Raleigh, May 2026) on a fetched SweatPals page; no handle found. Evidence a.",
     "added": "2026-11-22",
-    "verified": null
+    "verified": null,
+    "about": "Matcha vendor at Matcha MayFest in Raleigh (May 2026)."
   },
   {
     "id": "little-matcha",
@@ -2776,7 +2779,8 @@
     "active": true,
     "notes": "Mobile matcha cart with South Asian flavors; 2-3 pop-ups a week in the Triangle (INDY Week). Handle not seen.",
     "added": "2026-11-22",
-    "verified": null
+    "verified": null,
+    "about": "Mobile matcha cart with South Asian flavors; two to three pop-ups a week around the Triangle (INDY Week)."
   },
   {
     "id": "mellobun-matte-matcha",
@@ -4640,5 +4644,24 @@
     "home_state": "IL",
     "instagram": "yujomatcha",
     "notes": "Chicago matcha pop-up: runs inside The Coco Shop and at farmers markets (Wicker Park Farmers Market, Sept 2025); vendor at The Center of Order and Experimentation 'All Things Matcha' pop-ups (Mar 21 and Dec 6 2025). Source: https://www.instagram.com/popular/yujo-matcha-chicago (snippet), https://www.eventbrite.com/e/all-things-matcha-pop-up-tickets-1964513975183. No 2026-27 dates found."
+  },
+  {
+    "id": "saiko-matcha-house",
+    "brand": "Saikō Matcha House",
+    "kind": "popup",
+    "category": "matcha",
+    "kind_note": null,
+    "home_city": "Raleigh",
+    "home_state": "NC",
+    "website": "https://www.saikomatchahouse.com/",
+    "instagram": "saikomatchahouse",
+    "tiktok": null,
+    "schedule_url": "https://www.saikomatchahouse.com/",
+    "schedule_kind": "website",
+    "adapter": "website",
+    "active": true,
+    "notes": "Raleigh-born matcha pop-up (ceremonial first-harvest matcha, house-made syrups); posts 'Upcoming Events' on its own site, e.g. Village District Nov 27 and Nov 28 2026. Instagram handle read from the site's footer link.",
+    "added": "2026-11-23",
+    "verified": "2026-11-23"
   }
 ]

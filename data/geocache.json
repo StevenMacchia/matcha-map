@@ -838,6 +838,11 @@
     "lng": -75.174681,
     "source": "nominatim"
   },
+  "2068 clark ave raleigh nc 27605": {
+    "lat": 35.789032,
+    "lng": -78.658579,
+    "source": "nominatim"
+  },
   "20812 international blvd seattle wa": {
     "miss": true,
     "at": 1795371603379
@@ -1682,9 +1687,17 @@
     "lng": -77.110671,
     "source": "nominatim"
   },
+  "4238 wilson blvd arlington va 22203 arlington va 22203": {
+    "miss": true,
+    "at": 1795474930677
+  },
   "4238 wilson blvd unit 1240 arlington va 22203 arlington va": {
     "miss": true,
     "at": 1795412792637
+  },
+  "4238 wilson blvd unit 1240 arlington va 22203 arlington va 22203": {
+    "miss": true,
+    "at": 1795474929677
   },
   "4238 wilson boulevard arlington va 22203": {
     "lat": 38.879014,
@@ -2390,6 +2403,10 @@
   "7795 s rainbow blvd suite 100 las vegas nv 89139": {
     "miss": true,
     "at": 1795467951211
+  },
+  "7950 santa fe st overland park ks 66204 overland park ks": {
+    "miss": true,
+    "at": 1795474931773
   },
   "7969 melrose avenue west hollywood ca 90046": {
     "lat": 34.083002,
@@ -4166,6 +4183,10 @@
     "miss": true,
     "at": 1795436158536
   },
+  "venue: alma matcha fort lauderdale fl": {
+    "miss": true,
+    "at": 1795474924503
+  },
   "venue: amatō at maynard crossing raleigh nc": {
     "miss": true,
     "at": 1795400466175
@@ -4217,6 +4238,10 @@
   "venue: books & matcha": {
     "miss": true,
     "at": 1795430121703
+  },
+  "venue: boxi park tampa fl": {
+    "miss": true,
+    "at": 1795474922379
   },
   "venue: brambleton farmers market washington dc": {
     "miss": true,
@@ -4396,6 +4421,11 @@
     "lng": -95.584672,
     "source": "nominatim-venue"
   },
+  "venue: kuns park los angeles ca": {
+    "lat": 34.104221,
+    "lng": -117.778071,
+    "source": "nominatim-venue"
+  },
   "venue: kyoto coast matcha – ocean beach san diego ca": {
     "miss": true,
     "at": 1795400438443
@@ -4415,6 +4445,10 @@
   "venue: matcha mrkt atlanta ga": {
     "miss": true,
     "at": 1795400416246
+  },
+  "venue: matcha panda cafe - rittenhouse philadelphia pa": {
+    "miss": true,
+    "at": 1795474935631
   },
   "venue: matchafest miami miami fl": {
     "miss": true,
@@ -4483,6 +4517,10 @@
   "venue: pip coffee+clay - phoenix phoenix az": {
     "miss": true,
     "at": 1795400411191
+  },
+  "venue: pip coffee+clay phoenix az": {
+    "miss": true,
+    "at": 1795474933711
   },
   "venue: pipe & row seattle wa": {
     "lat": 47.65046,
@@ -4616,6 +4654,11 @@
   "venue: vvv washington va": {
     "miss": true,
     "at": 1795400446502
+  },
+  "venue: wanyen salt lake city ut": {
+    "lat": 40.76307,
+    "lng": -111.901861,
+    "source": "nominatim-venue"
   },
   "venue: we'll meet outside of the cafe philadelphia pa": {
     "miss": true,
