@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T03:22:36.072Z",
+  "generated": "2026-11-23T03:27:14.037Z",
   "group": "texas",
   "items": [
     {
@@ -427,6 +427,216 @@
       "description": "Central Matcha sets up at an Austin-area Saturday farmers market, serving whisked ceremonial matcha shots and iced lattes. The brand's site says Saturdays alternate between the Barton Creek and Bell (Cedar Park) markets, so check its Instagram for which one.",
       "confidence": "unsure",
       "notes": "Brand lists both Barton Creek (2901 S Capital of Texas Hwy) and Texas Farmers' Market at Bell (200 S Bell Blvd, Cedar Park 78613) for Saturdays; which one on a given date is unknown. Holiday closures not checked."
+    },
+    {
+      "brand": "Mori Matcha",
+      "handle": "morimatcha",
+      "source_id": "mori-matcha",
+      "title": "Mori Matcha weekly Monday pop-up at 1 Hotel Austin",
+      "start": "2026-11-23T00:00:00-06:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/Chicago",
+      "venue": "1 Hotel Austin (Rainey Street)",
+      "address": "Rainey St, Austin, TX",
+      "city": "Austin",
+      "state": "TX",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+      "posts": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "evidence": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+        "https://www.axios.com/local/austin/2026/03/05/austin-pop-up-fuels-matcha-craze"
+      ],
+      "menu": [
+        "lychee matcha",
+        "Earl Grey matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Mori Matcha, Austin's roaming matcha pop-up, is reported to set up on Mondays at the new 1 Hotel on Rainey Street. Lychee and Earl Grey matcha drinks were named in a recent review.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "TikTok snippet: 'You can find Mori at the new 1 Hotel on Rainey on Mondays, but make sure to check their IG for their pop-up schedule.' Recurring, no per-week date or hours; street number and handle not verified."
+    },
+    {
+      "brand": "Mori Matcha",
+      "handle": "morimatcha",
+      "source_id": "mori-matcha",
+      "title": "Mori Matcha weekly Monday pop-up at 1 Hotel Austin",
+      "start": "2026-11-30T00:00:00-06:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/Chicago",
+      "venue": "1 Hotel Austin (Rainey Street)",
+      "address": "Rainey St, Austin, TX",
+      "city": "Austin",
+      "state": "TX",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+      "posts": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "evidence": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+        "https://www.axios.com/local/austin/2026/03/05/austin-pop-up-fuels-matcha-craze"
+      ],
+      "menu": [
+        "lychee matcha",
+        "Earl Grey matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Mori Matcha, Austin's roaming matcha pop-up, is reported to set up on Mondays at the new 1 Hotel on Rainey Street. Lychee and Earl Grey matcha drinks were named in a recent review.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "TikTok snippet: 'You can find Mori at the new 1 Hotel on Rainey on Mondays, but make sure to check their IG for their pop-up schedule.' Recurring, no per-week date or hours; street number and handle not verified."
+    },
+    {
+      "brand": "Mori Matcha",
+      "handle": "morimatcha",
+      "source_id": "mori-matcha",
+      "title": "Mori Matcha weekly Monday pop-up at 1 Hotel Austin",
+      "start": "2026-12-07T00:00:00-06:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/Chicago",
+      "venue": "1 Hotel Austin (Rainey Street)",
+      "address": "Rainey St, Austin, TX",
+      "city": "Austin",
+      "state": "TX",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+      "posts": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "evidence": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+        "https://www.axios.com/local/austin/2026/03/05/austin-pop-up-fuels-matcha-craze"
+      ],
+      "menu": [
+        "lychee matcha",
+        "Earl Grey matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Mori Matcha, Austin's roaming matcha pop-up, is reported to set up on Mondays at the new 1 Hotel on Rainey Street. Lychee and Earl Grey matcha drinks were named in a recent review.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "TikTok snippet: 'You can find Mori at the new 1 Hotel on Rainey on Mondays, but make sure to check their IG for their pop-up schedule.' Recurring, no per-week date or hours; street number and handle not verified."
+    },
+    {
+      "brand": "Mori Matcha",
+      "handle": "morimatcha",
+      "source_id": "mori-matcha",
+      "title": "Mori Matcha weekly Monday pop-up at 1 Hotel Austin",
+      "start": "2026-12-14T00:00:00-06:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/Chicago",
+      "venue": "1 Hotel Austin (Rainey Street)",
+      "address": "Rainey St, Austin, TX",
+      "city": "Austin",
+      "state": "TX",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+      "posts": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "evidence": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+        "https://www.axios.com/local/austin/2026/03/05/austin-pop-up-fuels-matcha-craze"
+      ],
+      "menu": [
+        "lychee matcha",
+        "Earl Grey matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Mori Matcha, Austin's roaming matcha pop-up, is reported to set up on Mondays at the new 1 Hotel on Rainey Street. Lychee and Earl Grey matcha drinks were named in a recent review.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "TikTok snippet: 'You can find Mori at the new 1 Hotel on Rainey on Mondays, but make sure to check their IG for their pop-up schedule.' Recurring, no per-week date or hours; street number and handle not verified."
+    },
+    {
+      "brand": "Mori Matcha",
+      "handle": "morimatcha",
+      "source_id": "mori-matcha",
+      "title": "Mori Matcha weekly Monday pop-up at 1 Hotel Austin",
+      "start": "2026-12-21T00:00:00-06:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/Chicago",
+      "venue": "1 Hotel Austin (Rainey Street)",
+      "address": "Rainey St, Austin, TX",
+      "city": "Austin",
+      "state": "TX",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+      "posts": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "evidence": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+        "https://www.axios.com/local/austin/2026/03/05/austin-pop-up-fuels-matcha-craze"
+      ],
+      "menu": [
+        "lychee matcha",
+        "Earl Grey matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Mori Matcha, Austin's roaming matcha pop-up, is reported to set up on Mondays at the new 1 Hotel on Rainey Street. Lychee and Earl Grey matcha drinks were named in a recent review.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "TikTok snippet: 'You can find Mori at the new 1 Hotel on Rainey on Mondays, but make sure to check their IG for their pop-up schedule.' Recurring, no per-week date or hours; street number and handle not verified."
+    },
+    {
+      "brand": "Mori Matcha",
+      "handle": "morimatcha",
+      "source_id": "mori-matcha",
+      "title": "Mori Matcha weekly Monday pop-up at 1 Hotel Austin",
+      "start": "2026-12-28T00:00:00-06:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/Chicago",
+      "venue": "1 Hotel Austin (Rainey Street)",
+      "address": "Rainey St, Austin, TX",
+      "city": "Austin",
+      "state": "TX",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+      "posts": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "evidence": [
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758",
+        "https://www.axios.com/local/austin/2026/03/05/austin-pop-up-fuels-matcha-craze"
+      ],
+      "menu": [
+        "lychee matcha",
+        "Earl Grey matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "Mori Matcha, Austin's roaming matcha pop-up, is reported to set up on Mondays at the new 1 Hotel on Rainey Street. Lychee and Earl Grey matcha drinks were named in a recent review.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "TikTok snippet: 'You can find Mori at the new 1 Hotel on Rainey on Mondays, but make sure to check their IG for their pop-up schedule.' Recurring, no per-week date or hours; street number and handle not verified."
     }
   ]
 }

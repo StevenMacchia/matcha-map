@@ -8,3 +8,12 @@
 | San Antonio | ~8 | 0 | 0/0/0 | Mira Matcha (ma.to, Moonchild opening Dec 1-6 already on map), Pearl farmers market | Mira is the main brand; no other dated stand found. |
 
 Tooling note: Tavily returned an invalid-API-key error on every call, so 0 Tavily calls succeeded. Instagram/TikTok snippet evidence was not available; all results came from WebSearch and direct page fetches. The map already holds most public-page events for Texas (ma.to, Eventbrite, Luma are ingested).
+
+## Second pass (Tavily via npm run search, 9 searches, ~9 credits)
+
+| metro | found | added c/l/u | note |
+|---|---|---|---|
+| Austin | 6 Mori Matcha Mondays | 0/0/6 | TikTok says Mori is at 1 Hotel on Rainey on Mondays; no hours or per-week dates. |
+| Dallas / Fort Worth | 0 in window | 0/0/0 | A TikTok creator (bribwillis) posts weekly "DFW Matcha Pop-Ups" roundups (Nov 12-15, Nov 19-22 found, all before 2026-11-23); the Nov 26+ roundups were not yet indexed. 8 new brands added to wave4 from those roundups (Mo Matcha, Chawan Collective, Tokicha, Matcha Cha Cha, Elvn, Pink Matcha Bar, Unity, Brew & Bloom). |
+| Houston | 0 | 0/0/0 | Only past items (Junbi Asiatown opening Nov 7-8, Pho Prime x Kizuna Nov 15). |
+| San Antonio | 0 | 0/0/0 | Snippets undated or past; Saint Cloud Matcha added as source. |
