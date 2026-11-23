@@ -141,6 +141,21 @@
   map.keyboard.disableRotation();
   if (wide.matches) map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
   map.getCanvas().setAttribute("aria-label", "Map of matcha pop-ups. Use arrow keys to pan, plus and minus to zoom.");
+  // Phone (N7): the map runs under the floating header and chips, and the list peeks from the bottom; the map's padding
+  // keeps the camera's centre in the open part between them. --chrome (the chips' bottom edge) places the toasts and list.
+  var pad = { top: 0, bottom: 0, left: 0, right: 0 };
+  function syncPad(refit) {
+    var f = document.querySelector(".filters"), g = $("list-grip");
+    var top = wide.matches || !f ? 0 : Math.round(f.getBoundingClientRect().bottom - map.getContainer().getBoundingClientRect().top);
+    pad = { top: Math.max(0, top), bottom: wide.matches || !g ? 0 : g.offsetHeight, left: 0, right: 0 };
+    document.documentElement.style.setProperty("--chrome", (wide.matches || !f ? 0 : Math.round(f.getBoundingClientRect().bottom)) + "px");
+    map.setPadding(pad);
+    if (refit) map.fitBounds(HOME, { padding: 16, animate: false });
+  }
+  syncPad(true);
+  var padT;
+  window.addEventListener("resize", function () { clearTimeout(padT); padT = setTimeout(function () { syncPad(false); }, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { syncPad(false); });
 
   // Brand mochi get eyes and blush from zoom 9 up (class z9 on the map container).
   function syncZoomFace() { map.getContainer().classList.toggle("z9", map.getZoom() >= 9); }
@@ -220,16 +235,18 @@
 
   // Arrival. Inside a scene window (the opening, a filter change) markers rise in a ripple from the centre of the map
   // out: eight rings, 30ms apart. Outside it, a quick pop as clusters split and join while zooming.
-  var stageUntil = 0;
-  function stage(ms) { stageUntil = Date.now() + ms; }
+  // The opening (N7) is a longer, continuous wave: each pin drops with a spring, 0 to 480 ms by its distance from the centre.
+  var stageUntil = 0, stageKind = "";
+  function stage(ms, kind) { stageUntil = Date.now() + ms; stageKind = kind || "scene"; }
   function ringDelay(rec) {
     var c = map.getContainer(), w = c.clientWidth / 2, h = c.clientHeight / 2;
     var p = map.project(rec.marker.getLngLat()), d = Math.sqrt((p.x - w) * (p.x - w) + (p.y - h) * (p.y - h));
-    return Math.min(7, Math.floor(d / (Math.sqrt(w * w + h * h) || 1) * 8)) * 30;
+    var f = Math.min(1, d / (Math.sqrt(w * w + h * h) || 1));
+    return stageKind === "open" ? Math.round(f * 480) : Math.min(7, Math.floor(f * 8)) * 30;
   }
   function entrance(rec, fallback) {
     var inner = rec.el.firstChild;
-    if (Date.now() < stageUntil) animOnce(inner, "rise", ringDelay(rec));
+    if (Date.now() < stageUntil) animOnce(inner, stageKind === "open" ? "drop-in" : "rise", ringDelay(rec));
     else animOnce(inner, fallback);
   }
   // A pop-up that is open right now has steam rising from the cup.
@@ -598,17 +615,49 @@
     return "<div class=\"card scard\">" + art + "<h3><span class=\"card-shop\" data-char=\"s-shop\"></span><span>" + esc(s.name) + "</span></h3><span class=\"kindword\">Shop</span>" +
       "<p class=\"muted\">" + esc(shopAddress(s)) + "</p>" + hoursHTML(s.opening_hours) + factsHTML(brandsBy[String(s.instagram || "").toLowerCase()]) + linksHTML(links) + yelpHTML(placesBy[placeKey(s.name, s.city, s.state, s.lat, s.lng)]) + credit + "</div>";
   }
+  // renderCard: the single card entry point (N7). cards.js (N6), when it is loaded, draws the rich card; the built-in
+  // card below is the fallback, so the site works without it.
+  function renderCard(item, ctx) {
+    var C = window.MatchaCards;
+    if (C && typeof C.render === "function") {
+      try { var h = C.render(item, ctx || {}); if (h) return h; } catch (e) { /* fall back to the built-in card */ }
+    }
+    return cardHTML(item);
+  }
   function cardHTML(item) { return item.kind === "e" ? eventCard(item.data) : item.kind === "s" ? shopCard(item.data) : brandCard(item.data); }
+
+  // Back gestures (N7): an open card, or the phone's full list, is one history step, so Back (and Escape) closes it.
+  function pushStep(kind) {
+    try {
+      if (history.state && history.state.mm) history.replaceState({ mm: kind }, "");
+      else history.pushState({ mm: kind }, "");
+    } catch (e) { /* ignore */ }
+  }
+  function dropStep(kind, user) {
+    try {
+      if (!history.state || history.state.mm !== kind) return;
+      if (user) history.back(); else history.replaceState(null, "");
+    } catch (e) { /* ignore */ }
+  }
+  window.addEventListener("popstate", function () {
+    var s = history.state && history.state.mm;
+    if (s !== "card" && openKey) { var back = cardOpener; closeCard(false, "pop"); refocus(back); }
+    if (s !== "list" && state.view === "list" && !wide.matches) setView("map", "pop");
+  });
 
   var popup = null, closeT = null;
   function finishClose() {
     clearTimeout(closeT); closeT = null;
+    document.body.classList.remove("card-open");
     $("sheet").hidden = true;
     $("sheet").classList.remove("out");
     if (popup) { popup.remove(); popup = null; }
   }
-  function closeCard(instant) {
+  // how: "user" (a close button, Escape, a tap on the map) steps history back; "pop" came from Back itself.
+  function closeCard(instant, how) {
     if (!openKey && !popup && $("sheet").hidden) return;
+    if (openKey && how !== "pop") dropStep("card", how === "user");
+    announce("cardclose", { key: openKey });
     openKey = null;
     setSelected(null);
     var sheetOpen = !$("sheet").hidden;
@@ -624,12 +673,13 @@
     finishClose();
     openKey = key;
     setSelected(key);
-    var html = cardHTML(it);
+    pushStep("card");
+    var html = renderCard(it, { phone: !wide.matches, dist: distOf(it), events: state.events, items: items });
     if (wide.matches) {
       var box = document.createElement("div");
       box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html;
       fillChars(box);
-      box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(); refocus(back); });
+      box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
       popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "340px", focusAfterOpen: false, className: "mm-pop",
         anchor: "bottom", offset: it.kind === "e" ? [0, -50] : it.kind === "s" ? [0, -18] : [NUDGE, NUDGE - 12] })
         .setLngLat(lngLat(it.ll)).setDOMContent(box).addTo(map);
@@ -646,6 +696,7 @@
       var sh = $("sheet");
       body.scrollTop = 0;
       sh.hidden = false;
+      document.body.classList.add("card-open");
       animOnce(sh, "in");
       if (focusIt) $("sheet-close").focus();
       announce("card", { root: body, phone: true, key: key });
@@ -658,18 +709,18 @@
     setTimeout(function () { var r = document.querySelector("#list [data-key=\"" + back + "\"]"); if (r) r.focus(); }, 0);
   }
   imgFallback(document);
-  $("sheet-close").addEventListener("click", function () { var back = cardOpener; closeCard(); refocus(back); });
+  $("sheet-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
   map.on("click", function (e) {
     var t = e.originalEvent && e.originalEvent.target;
     if (t && t.closest && t.closest(".maplibregl-marker, .maplibregl-popup")) return;
-    closeCard();
+    closeCard(false, "user");
   });
   // Escape closes the open card (the About dialog handles its own Escape) and hands focus back to the row that opened it.
   var cardOpener = null;
   document.addEventListener("keydown", function (ev) {
     if (ev.key !== "Escape" || !openKey || $("about").open) return;
     var back = cardOpener;
-    closeCard();
+    closeCard(false, "user");
     refocus(back);
   });
 
@@ -698,7 +749,7 @@
     // On a phone the sheet covers the lower part of the map, so the pin lands in the upper part;
     // on desktop the card opens above the pin, so the pin lands low.
     var h = map.getContainer().clientHeight;
-    var off = wide.matches ? [0, Math.round(h * 0.3)] : [0, -Math.round(h * 0.26)];
+    var off = wide.matches ? [0, Math.round(h * 0.3)] : [0, Math.round((pad.bottom - 0.52 * h) / 2)];
     moveMap({ center: lngLat(it.ll), zoom: z, offset: off }, function () { syncMarkers(); showCard(key, !!cardOpener); });
   }
 
@@ -962,8 +1013,12 @@
   }
 
   // ---------- view toggle ----------
-  function setView(v) {
+  // how: "user" (the grip or the toggle), "pop" (Back); otherwise a side effect of another action (N7).
+  function setView(v, how) {
+    var was = state.view;
     state.view = v;
+    $("list-grip").setAttribute("aria-expanded", String(v === "list"));
+    if (!wide.matches && how !== "pop" && v !== was) { if (v === "list") pushStep("list"); else dropStep("list", how === "user"); }
     document.body.classList.toggle("show-list", v === "list");
     var t = $("view-toggle");
     t.textContent = v === "list" ? "Map" : "List";
@@ -971,7 +1026,8 @@
     if (v === "map") setTimeout(function () { map.resize(); }, 0);
     else renderList(true);
   }
-  $("view-toggle").addEventListener("click", function () { setView(state.view === "list" ? "map" : "list"); });
+  $("view-toggle").addEventListener("click", function () { setView(state.view === "list" ? "map" : "list", "user"); });
+  $("list-grip").addEventListener("click", function () { if (!wide.matches) setView(state.view === "list" ? "map" : "list", "user"); });
   wide.addEventListener("change", function () { closeCard(true); setView("map"); });
 
   // Status line with Mattie looking surprised (sweat drop), for errors and denied location.
@@ -1196,73 +1252,55 @@
 
   function twirl() { var s = $("chasen").querySelector("svg"); if (s) animOnce(s, "twirl"); }
 
-  // ---------- opening moment ----------
-  var SEEN = "matchamap.opened";
-  var intro = $("intro");
-  var introDone = false, introTimers = [];
-  function endIntro(fast) {
+  // ---------- opening moment (N7) ----------
+  // First visit in a session: the map settles in (a fade and a slight zoom), the chrome slides down, Mattie hops into
+  // his disc and the pins drop in a wave from the centre out, with one puff of petals. About 1.5 s from the first map
+  // frame; any tap, key or wheel skips it; sessionStorage keeps it from replaying. Repeat visits and calm mode: a fade.
+  var SEEN = "matchamap.opened", rootEl = document.documentElement;
+  var firstVisit = params.get("intro") === "1";
+  try { firstVisit = firstVisit || !sessionStorage.getItem(SEEN); } catch (e) { firstVisit = false; }
+  var opening = firstVisit && !calm(), introDone = false, introStarted = false, introTimers = [];
+  rootEl.classList.add(opening ? "opening" : "fadein");
+  var SKIPS = ["pointerdown", "keydown", "wheel", "touchstart"];
+  function endIntro() {
     if (introDone) return;
     introDone = true;
     introTimers.forEach(clearTimeout);
-    skipOff();
+    SKIPS.forEach(function (t) { window.removeEventListener(t, skipNow, true); });
     try { sessionStorage.setItem(SEEN, "1"); } catch (e) { /* ignore */ }
-    intro.classList.add("gone");
-    setTimeout(function () { intro.hidden = true; $("petals").hidden = true; $("petals").innerHTML = ""; }, fast ? 160 : 320);
+    rootEl.classList.add("open-go");
+    rootEl.classList.remove("opening", "fadein");
+    setTimeout(function () { rootEl.classList.remove("open-go"); }, 700);
   }
-  // Any tap, key or scroll skips the opening; nothing waits on it.
-  var SKIPS = ["pointerdown", "keydown", "wheel", "touchstart"];
-  function skipNow() { endIntro(true); }
-  function skipOff() { SKIPS.forEach(function (t) { window.removeEventListener(t, skipNow, true); }); }
-  function petals() {
-    var box = $("petals");
-    box.hidden = false;
-    var n = 6;
-    for (var i = 0; i < n; i++) {
-      var p = document.createElement("span");
-      p.className = "petal";
-      p.style.left = (8 + i * (84 / n) + Math.random() * 8).toFixed(1) + "%";
-      p.style.animationDelay = Math.round(i * 24 + Math.random() * 40) + "ms";
-      p.style.animationDuration = Math.round(880 + Math.random() * 140) + "ms";
-      p.style.setProperty("--sway", (Math.random() * 40 - 20).toFixed(0) + "px");
-      p.style.setProperty("--spin", (Math.random() * 240 + 120).toFixed(0) + "deg");
-      p.appendChild(drawChar("c-petal"));
-      box.appendChild(p);
-    }
+  function skipNow() {
+    if (window.MatchaFX) window.MatchaFX.stop();
+    rootEl.classList.add("open-skip");
+    setTimeout(function () { rootEl.classList.remove("open-skip"); }, 60);
+    endIntro();
   }
-  // The pour (rung 32): Mattie rises with a pitcher (0 to 380ms), tilts it and pours (200 to 600ms); at 640ms the map
-  // opens out from where the matcha lands, the camera eases in a touch and the pins rise from the centre out.
-  // The cover is gone at 1100ms. Repeat visits and calm mode get a 300ms fade.
-  var firstVisit = params.get("intro") === "1";
-  try { firstVisit = firstVisit || !sessionStorage.getItem(SEEN); } catch (e) { firstVisit = false; }
-  function introQuick() { intro.classList.add("quick"); setTimeout(function () { endIntro(false); }, 0); }
-  // Nothing waits on the opening: repeat visits and calm mode fade the cover at once, and a first visit whose
-  // characters have not arrived within 900ms (a slow network) gets the plain fade too.
-  var introStarted = false;
-  if (!firstVisit || calm()) introQuick();
-  else introTimers.push(setTimeout(function () { if (!introStarted) introQuick(); }, 900));
   function playIntro() {
     if (introDone || introStarted) return;
     introStarted = true;
-    fillChars(intro);
-    intro.classList.add("play");
-    petals();
+    rootEl.classList.add("open-go");
+    if (!opening) { introTimers.push(setTimeout(endIntro, 320)); return; }
     SKIPS.forEach(function (t) { window.addEventListener(t, skipNow, { capture: true, passive: true }); });
+    stage(1300, "open");
+    Object.keys(live).forEach(function (id) { entrance(live[id], "pop"); });
+    if (!map.isMoving()) {
+      var z = map.getZoom();
+      map.jumpTo({ zoom: z - 0.35 });
+      map.easeTo({ zoom: z, duration: 900, easing: function (t) { return 1 - Math.pow(1 - t, 3); }, essential: false });
+    }
     introTimers.push(setTimeout(function () {
-      var m = intro.querySelector(".intro-mattie").getBoundingClientRect();
-      intro.style.setProperty("--ix", Math.round(m.left + m.width * 62 / 64) + "px");
-      intro.style.setProperty("--iy", Math.round(m.top + m.height * 57 / 64) + "px");
-      intro.classList.add("iris");
-      stage(800);
-      Object.keys(live).forEach(function (id) { entrance(live[id], "pop"); });
-      if (!map.isMoving()) {
-        var z = map.getZoom();
-        map.jumpTo({ zoom: z - 0.28 });
-        map.easeTo({ zoom: z, duration: 560, easing: function (t) { return 1 - Math.pow(1 - t, 3); }, essential: false });
-      }
-    }, 640));
-    introTimers.push(setTimeout(function () { endIntro(false); }, 1100));
+      var m = hdr.getBoundingClientRect();
+      if (window.MatchaFX && m.width) window.MatchaFX.burst(m.left + m.width / 2, m.top + m.height / 2, { n: 9, kind: "petal", spread: 1 });
+    }, 420));
+    introTimers.push(setTimeout(endIntro, 1500));
   }
-  $("intro-skip").addEventListener("click", function () { endIntro(true); });
+  // The opening starts on the map's first full frame, or after 1.2 s whatever happens (a slow network never waits).
+  map.once("load", function () { setTimeout(playIntro, 40); });
+  setTimeout(playIntro, 1200);
+  // Test switch: ?intro=1 replays the opening.
 
   // ---------- deep links (?q= ?city= ?event= ?brand=; parsing lives in deeplink.js) ----------
   (function () { // the home page is the only canonical address, whatever the query string
@@ -1306,7 +1344,6 @@
     fillChars($("about"));
     fillChars($("sheet"));
     fillChars($("hop"));
-    playIntro();
     blinkLoop();
     twirl();
   });
