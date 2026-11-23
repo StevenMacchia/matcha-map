@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:c8bfa7fb4908@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261213T190000Z
 DTEND:20261213T194500Z
@@ -18,9 +18,9 @@ LOCATION:Nichi Bei Kai Cultural Center\, 1759 Sutter Street\, San Francisco
  \, CA
 DESCRIPTION:Experience serenity with traditional Japanese art of Tea Ceremo
  ny. Join for a bowl of authentic Matcha and a bowl of Soba noodles.\nPrice
- : $47.73\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
- .dev/e/c8bfa7fb4908/
-URL:https://matchamap-cu7.pages.dev/e/c8bfa7fb4908/
+ : $47.73\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/c8b
+ fa7fb4908/
+URL:https://matchamap.app/e/c8bfa7fb4908/
 GEO:37.786377;-122.429188
 STATUS:CONFIRMED
 CATEGORIES:Matcha

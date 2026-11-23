@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:81d99d97c145@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261227T170000Z
 DTEND:20261227T210000Z
@@ -18,9 +18,8 @@ LOCATION:Temescal Farmers Market (DMV parking lot)\, 5300 Claremont Ave\, O
 DESCRIPTION:A weekly matcha pop-up at the Temescal Farmers Market in Oaklan
  d that closes once it sells out\, so go early. Seasonal specials such as s
  weet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/81d9
- 9d97c145/
-URL:https://matchamap-cu7.pages.dev/e/81d99d97c145/
+ ikely\, not fully confirmed.\nMore: https://matchamap.app/e/81d99d97c145/
+URL:https://matchamap.app/e/81d99d97c145/
 GEO:37.839909;-122.259415
 STATUS:CONFIRMED
 CATEGORIES:Matcha

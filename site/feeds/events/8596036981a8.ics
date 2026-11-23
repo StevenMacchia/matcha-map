@@ -8,16 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:8596036981a8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261231T180000Z
 DTEND:20270101T020000Z
 SUMMARY:Glimpse Matcha pop-up
 LOCATION:433 NW 10th Ave\, Portland\, OR
 DESCRIPTION:Korean and Burmese duo specialty matcha cafe in Portland\, OR\n
- Likely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/859
- 6036981a8/
-URL:https://matchamap-cu7.pages.dev/e/8596036981a8/
+ Likely\, not fully confirmed.\nMore: https://matchamap.app/e/8596036981a8/
+URL:https://matchamap.app/e/8596036981a8/
 GEO:45.526323;-122.681431
 STATUS:CONFIRMED
 CATEGORIES:Matcha

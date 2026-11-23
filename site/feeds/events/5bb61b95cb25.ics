@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:5bb61b95cb25@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
@@ -18,8 +18,8 @@ DESCRIPTION:Two more weeks until the Lemon-Huckleberry Matcha Sour leaves t
  he menu forever Stop by Pioneer Square before December 1st to taste it\, a
  nd swipe to slide three to get a sneak peek of what we’re…\nDetails no
  t confirmed yet. Check the brand's post before you go.\nMore: https://matc
- hamap-cu7.pages.dev/e/5bb61b95cb25/
-URL:https://matchamap-cu7.pages.dev/e/5bb61b95cb25/
+ hamap.app/e/5bb61b95cb25/
+URL:https://matchamap.app/e/5bb61b95cb25/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

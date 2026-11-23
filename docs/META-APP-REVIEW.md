@@ -9,8 +9,8 @@ From INSTAGRAM-SETUP.md: `instagram_basic`, `pages_show_list`, `pages_read_engag
 ## Before you apply
 
 - [ ] App icon (1024x1024) and the display name "Matcha Map".
-- [ ] **Privacy policy URL:** `https://matchamap-cu7.pages.dev/privacy/` (replace `STEVEN_EMAIL_HERE` on that page and on `/data-deletion/` first; use the final domain once it exists).
-- [ ] **Data deletion instructions URL:** `https://matchamap-cu7.pages.dev/data-deletion/`.
+- [ ] **Privacy policy URL:** `https://matchamap.app/privacy/` (replace `STEVEN_EMAIL_HERE` on that page and on `/data-deletion/` first; use the final domain once it exists).
+- [ ] **Data deletion instructions URL:** `https://matchamap.app/data-deletion/`.
 - [ ] App category (Utilities or Lifestyle) and a contact email on the app.
 - [ ] Business verification, if Meta asks for it.
 - [ ] A **test user** or reviewer access: add the reviewer under Roles, and make sure the connected Instagram account is a professional account linked to a Page. Give the reviewer a short note on where to click.

@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:2ee0f1c6fc8f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261216T230000Z
 DTEND:20261217T010000Z
@@ -18,8 +18,8 @@ DESCRIPTION:Founders and investors\, Join Leo AI\, B Capital\, MongoDB and
  Reitler for an evening of matcha\, mahjong\, and great conversation with a
   curated group of founders and investors. No panels. No pitches.\nDetails 
  not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/2ee0f1c6fc8f/
-URL:https://matchamap-cu7.pages.dev/e/2ee0f1c6fc8f/
+ tchamap.app/e/2ee0f1c6fc8f/
+URL:https://matchamap.app/e/2ee0f1c6fc8f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

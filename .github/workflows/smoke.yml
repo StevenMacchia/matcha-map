@@ -22,6 +22,6 @@ jobs:
           CHROME: /usr/bin/google-chrome
       - name: Smoke (live site)
         if: github.event_name == 'push'
-        run: node tools/smoke.js --url https://matchamap-cu7.pages.dev
+        run: node tools/smoke.js --url https://matchamap.app
         env:
           CHROME: /usr/bin/google-chrome

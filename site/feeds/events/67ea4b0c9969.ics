@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:67ea4b0c9969@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261205T210000Z
 DTEND:20261206T030000Z
@@ -16,8 +16,8 @@ SUMMARY:Ritual Grounds pop-up
 LOCATION:800 31st St\, St. Petersburg\, FL
 DESCRIPTION:Well slap a sleigh on a gator\, ‘cuz SPOOKY ISLAND MARKET is 
  back (AGAIN) for 2026!\nPrice: free\nLikely\, not fully confirmed.\nMore: 
- https://matchamap-cu7.pages.dev/e/67ea4b0c9969/
-URL:https://matchamap-cu7.pages.dev/e/67ea4b0c9969/
+ https://matchamap.app/e/67ea4b0c9969/
+URL:https://matchamap.app/e/67ea4b0c9969/
 GEO:27.780179;-82.675449
 STATUS:CONFIRMED
 CATEGORIES:Matcha

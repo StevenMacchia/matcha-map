@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:effda3422fd4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261219T210000Z
 DTEND:20261219T230000Z
@@ -16,8 +16,8 @@ SUMMARY:LA Dog Moms Holiday Brunch & Social
 LOCATION:Toastique\, 6255 Sunset Boulevard\, Los Angeles\, CA
 DESCRIPTION:Celebrate the holidays with Dog Moms LA at Toastique! Enjoy gou
  rmet toast or bowls\, coffee/matcha\, and holiday vibes.\nPrice: $81.88\nM
- ore: https://matchamap-cu7.pages.dev/e/effda3422fd4/
-URL:https://matchamap-cu7.pages.dev/e/effda3422fd4/
+ ore: https://matchamap.app/e/effda3422fd4/
+URL:https://matchamap.app/e/effda3422fd4/
 GEO:34.098586;-118.325436
 STATUS:CONFIRMED
 CATEGORIES:Matcha

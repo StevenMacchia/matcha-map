@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:bf0b5dfa104b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T153000Z
 DTEND:20261128T173000Z
@@ -16,9 +16,9 @@ SUMMARY:Saturday Morning Sips in Pinecrest
 LOCATION:Brewing Buddha Cafe & Arthouse\, 8219 SW 124th St\, Miami\, FL
 DESCRIPTION:Ease back into the weekend with us at **Brewing Buddha in Pinec
  rest**\, a cozy little cafe and art space\, for a laid-back morning of cof
- fee\, matcha\, and good conversation.\nMore: https://matchamap-cu7.pages.d
- ev/e/bf0b5dfa104b/
-URL:https://matchamap-cu7.pages.dev/e/bf0b5dfa104b/
+ fee\, matcha\, and good conversation.\nMore: https://matchamap.app/e/bf0b5
+ dfa104b/
+URL:https://matchamap.app/e/bf0b5dfa104b/
 GEO:25.655482;-80.326845
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:69a125250524@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261206T160000Z
 DTEND:20261206T180000Z
@@ -18,8 +18,8 @@ DESCRIPTION:The two-hour matcha-inspired pottery workshop covers throwing a
   matcha bowl on the pottery wheel with instructor guidance and painting a 
  premade ceramic whisk holder to complete the set.\nMenu: matcha bowl\nPric
  e: $85\nDetails not confirmed yet. Check the brand's post before you go.\n
- More: https://matchamap-cu7.pages.dev/e/69a125250524/
-URL:https://matchamap-cu7.pages.dev/e/69a125250524/
+ More: https://matchamap.app/e/69a125250524/
+URL:https://matchamap.app/e/69a125250524/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

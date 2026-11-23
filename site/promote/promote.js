@@ -2,7 +2,7 @@
 // nothing is posted, fetched from Instagram or TikTok, or sent anywhere. Pure builders first (tested in test/promote.test.js).
 (function () {
   "use strict";
-  var SITE = "https://matchamap-cu7.pages.dev";
+  var SITE = "https://matchamap.app";
   var FONT = "'M PLUS Rounded 1c', ui-rounded, 'Hiragino Maru Gothic ProN', 'Arial Rounded MT Bold', Arial, sans-serif";
   var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

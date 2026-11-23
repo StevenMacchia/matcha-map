@@ -4,7 +4,7 @@ Privacy-respecting: no cookies, no fingerprinting, no personal data, nothing to 
 
 ## Turn it on
 
-1. Cloudflare dashboard, Analytics and logs, **Web Analytics**, **Add a site**. Hostname `matchamap-cu7.pages.dev` (later the real domain). Pick "Manual" (not the automatic setup).
+1. Cloudflare dashboard, Analytics and logs, **Web Analytics**, **Add a site**. Hostname `matchamap.app` (later the real domain). Pick "Manual" (not the automatic setup).
 2. Copy the token it shows. The snippet is:
 
        <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>

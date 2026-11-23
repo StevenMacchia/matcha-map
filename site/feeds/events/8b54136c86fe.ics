@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:8b54136c86fe@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261128T160000Z
 DTEND:20261128T180000Z
@@ -16,9 +16,9 @@ SUMMARY:Matcha and Mats
 LOCATION:Ark of Safety Christian Church\, 2529 Charwood Street\, Saint Char
  les\, MO
 DESCRIPTION:Sip matcha\, stretch it out\, and hang with good people at this
-  in-person meetup.\nPrice: $8.24–55\nMore: https://matchamap-cu7.pages.d
- ev/e/8b54136c86fe/
-URL:https://matchamap-cu7.pages.dev/e/8b54136c86fe/
+  in-person meetup.\nPrice: $8.24–55\nMore: https://matchamap.app/e/8b541
+ 36c86fe/
+URL:https://matchamap.app/e/8b54136c86fe/
 GEO:38.779571;-90.514108
 STATUS:CONFIRMED
 CATEGORIES:Matcha

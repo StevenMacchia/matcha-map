@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:a30e23b7fe45@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261123T200000Z
 DTEND:20261124T010000Z
@@ -17,8 +17,8 @@ LOCATION:Honolulu\, HI
 DESCRIPTION:CU tomorrow morning! At nicetocuhawaii UNIVERSITY LOCATION! Ope
  n from 10AM-3PM excited to see some UH students come grab their matcha fix
  es!\nDetails not confirmed yet. Check the brand's post before you go.\nMor
- e: https://matchamap-cu7.pages.dev/e/a30e23b7fe45/
-URL:https://matchamap-cu7.pages.dev/e/a30e23b7fe45/
+ e: https://matchamap.app/e/a30e23b7fe45/
+URL:https://matchamap.app/e/a30e23b7fe45/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

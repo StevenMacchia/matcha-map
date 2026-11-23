@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"unlabeled.coffee","upcoming":[],"drinks":[{"slug":"pumpkin-spice","name":"Pumpkin Spice","art":"/art/drinks/pumpkin-spice.svg"}],"price":null,"story":""});
+mmBrandExtra({"v":1,"brand":"unlabeled.coffee","upcoming":[],"drinks":[{"slug":"pumpkin-spice","name":"Pumpkin Spice","art":"/art/drinks/pumpkin-spice.svg"}],"price":null,"story":"Initial inquiry form to create custom quote"});

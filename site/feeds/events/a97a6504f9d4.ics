@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:a97a6504f9d4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20270810
 DTEND;VALUE=DATE:20270811
@@ -16,8 +16,8 @@ SUMMARY:Buji Matcha pop-up
 LOCATION:Houston\, TX
 DESCRIPTION:Buji Matcha Pop Up in htx ! I’d give cinabuji 8/10 bujimatcha
   striptofficial\nDetails not confirmed yet. Check the brand's post before 
- you go.\nMore: https://matchamap-cu7.pages.dev/e/a97a6504f9d4/
-URL:https://matchamap-cu7.pages.dev/e/a97a6504f9d4/
+ you go.\nMore: https://matchamap.app/e/a97a6504f9d4/
+URL:https://matchamap.app/e/a97a6504f9d4/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

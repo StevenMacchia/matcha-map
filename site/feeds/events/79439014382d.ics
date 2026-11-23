@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:79439014382d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261127T150000Z
 DTEND:20261127T180000Z
 SUMMARY:Nails & Matcha: Black Friday at EMME Beauty Bar | Metairie
 LOCATION:EMME Beauty Bar\, 3500 Severn Avenue\, Metairie\, LA
 DESCRIPTION:Score Black Friday nail deals while sipping matcha at EMME Beau
- ty Bar in Metairie!\nPrice: free\nMore: https://matchamap-cu7.pages.dev/e/
- 79439014382d/
-URL:https://matchamap-cu7.pages.dev/e/79439014382d/
+ ty Bar in Metairie!\nPrice: free\nMore: https://matchamap.app/e/7943901438
+ 2d/
+URL:https://matchamap.app/e/79439014382d/
 GEO:30.012635;-90.159570
 STATUS:CONFIRMED
 CATEGORIES:Matcha

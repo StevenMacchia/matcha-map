@@ -10,7 +10,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { handleSlug } from "./gen-pages.js";
 
-export const SITE = "https://matchamap-cu7.pages.dev";
+export const SITE = "https://matchamap.app";
 const DAY = 86400000;
 const read = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
 const csvCell = (v) => { const s = v == null ? "" : String(v); return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };

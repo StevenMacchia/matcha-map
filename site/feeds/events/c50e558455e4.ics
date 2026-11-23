@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:c50e558455e4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261216T170000Z
 DTEND:20261216T190000Z
 SUMMARY:Pilates & Matcha
 LOCATION:Halo Venue\, 313 North State Street\, Orem\, UT
 DESCRIPTION:Enjoy a 45-minute Pilates class led by Annika followed by delic
- ious matcha from The Matcha Bar\nPrice: $81.88\nMore: https://matchamap-cu
- 7.pages.dev/e/c50e558455e4/
-URL:https://matchamap-cu7.pages.dev/e/c50e558455e4/
+ ious matcha from The Matcha Bar\nPrice: $81.88\nMore: https://matchamap.ap
+ p/e/c50e558455e4/
+URL:https://matchamap.app/e/c50e558455e4/
 GEO:40.302982;-111.697661
 STATUS:CONFIRMED
 CATEGORIES:Matcha

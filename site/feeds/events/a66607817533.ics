@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:a66607817533@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T170000Z
 DTEND:20261212T220000Z
@@ -18,9 +18,9 @@ LOCATION:Splash Pad Park\, 746 Grand Ave\, Oakland\, CA 94610\, Oakland\, C
 DESCRIPTION:A weekly matcha pop-up at the Grand Lake Farmers Market in Oakl
  and that closes once it sells out\, so go early. Seasonal specials such as
   sweet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\
- nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/a6
- 6607817533/
-URL:https://matchamap-cu7.pages.dev/e/a66607817533/
+ nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/a66607817533
+ /
+URL:https://matchamap.app/e/a66607817533/
 GEO:37.811418;-122.248801
 STATUS:CONFIRMED
 CATEGORIES:Matcha

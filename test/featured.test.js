@@ -7,7 +7,7 @@ import { onRequestPost as featured } from "../functions/api/featured.js";
 import { onRequestGet as queue } from "../functions/api/queue.js";
 
 const NOW = Date.parse("2026-11-25T15:00:00Z");
-const good = { t: NOW - 20000, company: "", event: "https://matchamap-cu7.pages.dev/?event=070b20cd9a53", brand: "Sunny Books Matcha", email: "a@b.co", week: "2026-12-07", plan: "paid", notes: "" };
+const good = { t: NOW - 20000, company: "", event: "https://matchamap.app/?event=070b20cd9a53", brand: "Sunny Books Matcha", email: "a@b.co", week: "2026-12-07", plan: "paid", notes: "" };
 
 function fakeKv() {
   const m = new Map();

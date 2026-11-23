@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:dda28c03d635@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261219T203000Z
 DTEND:20261219T230000Z
@@ -16,9 +16,8 @@ SUMMARY:Matcha & Matches: A Friendship Speed Dating Experience
 LOCATION:Padekwa Cafe\, 5841 Bellflower Boulevard\, Lakewood\, CA
 DESCRIPTION:Making friends as an adult can be hard. We're making it easier.
   Come meet new people during a daytime friendship speed dating in Long Bea
- ch.\nPrice: $45–60.54\nMore: https://matchamap-cu7.pages.dev/e/dda28c03d
- 635/
-URL:https://matchamap-cu7.pages.dev/e/dda28c03d635/
+ ch.\nPrice: $45–60.54\nMore: https://matchamap.app/e/dda28c03d635/
+URL:https://matchamap.app/e/dda28c03d635/
 GEO:33.861393;-118.125868
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:ae4fa6311e6b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261124T190000Z
 DTEND:20261124T203000Z
@@ -16,9 +16,9 @@ SUMMARY:Matcha & Movement with Tea
 LOCATION:Metanoia Toolbox Sacred Wellness Space\, 2150 East Brown Road\, Me
  sa\, AZ
 DESCRIPTION:Slow down\, soften and breathe with this loving combination of 
- Yin Yoga and Sound!\nPrice: $22.22\nMore: https://matchamap-cu7.pages.dev/
- e/ae4fa6311e6b/
-URL:https://matchamap-cu7.pages.dev/e/ae4fa6311e6b/
+ Yin Yoga and Sound!\nPrice: $22.22\nMore: https://matchamap.app/e/ae4fa631
+ 1e6b/
+URL:https://matchamap.app/e/ae4fa6311e6b/
 GEO:33.437584;-111.784732
 STATUS:CONFIRMED
 CATEGORIES:Matcha

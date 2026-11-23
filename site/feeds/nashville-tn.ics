@@ -7,24 +7,8 @@ X-WR-CALNAME:Matcha Map: Nashville\, TN
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:dcba96b79527@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T151342Z
-DTSTART:20261128T190000Z
-DTEND:20261128T220000Z
-SUMMARY:Matcha + Meetup: Nashville | Film + Music Speed Networking Roulette
-LOCATION:Nashville\, TN
-DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nPrice: $
- 25.44\nDetails not confirmed yet. Check the brand's post before you go.\nM
- ore: https://matchamap-cu7.pages.dev/e/dcba96b79527/
-URL:https://matchamap-cu7.pages.dev/e/dcba96b79527/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:d94abc07bdab@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T190000Z
 DTEND:20261205T194500Z
@@ -33,16 +17,15 @@ LOCATION:Bluestone Lane - Downtown Café\, 127 Rosa L Parks Boulevard\, Nas
  hville\, TN
 DESCRIPTION:Learn the art of matcha! Join us at Bluestone Lane for a hands-
  on latte art class featuring premium matcha\, expert tips & delicious sips
- .\nMenu: latte\nPrice: free\nMore: https://matchamap-cu7.pages.dev/e/d94ab
- c07bdab/
-URL:https://matchamap-cu7.pages.dev/e/d94abc07bdab/
+ .\nMenu: latte\nPrice: free\nMore: https://matchamap.app/e/d94abc07bdab/
+URL:https://matchamap.app/e/d94abc07bdab/
 GEO:36.159821;-86.782943
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:09f9bacfc164@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261209T003000Z
 DTEND:20261209T020000Z
@@ -51,8 +34,8 @@ LOCATION:Nashville\, TN
 DESCRIPTION:An evening matcha class that starts with the story of matcha an
  d moves to whisking your own\, hosted at Doma Coffee.\nMenu: matcha\, prep
  ared by hand\nDetails not confirmed yet. Check the brand's post before you
-  go.\nMore: https://matchamap-cu7.pages.dev/e/09f9bacfc164/
-URL:https://matchamap-cu7.pages.dev/e/09f9bacfc164/
+  go.\nMore: https://matchamap.app/e/09f9bacfc164/
+URL:https://matchamap.app/e/09f9bacfc164/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

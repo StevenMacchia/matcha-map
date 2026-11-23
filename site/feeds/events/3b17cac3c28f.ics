@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:3b17cac3c28f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261228T180000Z
 DTEND:20261229T000000Z
@@ -18,8 +18,8 @@ LOCATION:Seattle Central Library\, 1000 4th Ave\, Seattle\, WA 98104\, Seat
 DESCRIPTION:A matcha and hojicha counter inside the downtown library\, with
   new corn and melon matcha this fall.\nMenu: corn matcha\, melon matcha\, 
  cream top matcha latte\, hojicha\nLikely\, not fully confirmed.\nMore: htt
- ps://matchamap-cu7.pages.dev/e/3b17cac3c28f/
-URL:https://matchamap-cu7.pages.dev/e/3b17cac3c28f/
+ ps://matchamap.app/e/3b17cac3c28f/
+URL:https://matchamap.app/e/3b17cac3c28f/
 GEO:47.606714;-122.332698
 STATUS:CONFIRMED
 CATEGORIES:Matcha

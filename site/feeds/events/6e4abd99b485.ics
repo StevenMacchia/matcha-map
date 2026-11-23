@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:6e4abd99b485@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T190000Z
 DTEND:20261205T230000Z
@@ -16,8 +16,8 @@ SUMMARY:Mochi & Matcha Fest
 LOCATION:JCCH\, 2454 South Beretania Street\, Honolulu\, HI
 DESCRIPTION:The first Mochi & Matcha Fest in Mōʻiliʻili is a pet- and fa
  mily-friendly day of mochi and matcha with free admission.\nMenu: mochi\nP
- rice: free\nMore: https://matchamap-cu7.pages.dev/e/6e4abd99b485/
-URL:https://matchamap-cu7.pages.dev/e/6e4abd99b485/
+ rice: free\nMore: https://matchamap.app/e/6e4abd99b485/
+URL:https://matchamap.app/e/6e4abd99b485/
 GEO:21.294121;-157.823876
 STATUS:CONFIRMED
 CATEGORIES:Matcha

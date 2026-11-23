@@ -125,12 +125,12 @@ test("sitemap lists the home page, every city and brand page, with lastmod from 
   const out = buildSite(data([ev({})]));
   const sm = page(out, "sitemap.xml");
   const locs = [...sm.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-  assert.equal(locs[0], "https://matchamap-cu7.pages.dev/");
+  assert.equal(locs[0], "https://matchamap.app/");
   assert.equal(locs.length, out.counts.cities + out.counts.brands + 1);
-  assert.ok(locs.includes("https://matchamap-cu7.pages.dev/city/nc/raleigh/"));
-  assert.ok(locs.includes("https://matchamap-cu7.pages.dev/brand/moonbeematcha/"));
+  assert.ok(locs.includes("https://matchamap.app/city/nc/raleigh/"));
+  assert.ok(locs.includes("https://matchamap.app/brand/moonbeematcha/"));
   assert.match(sm, /<lastmod>2026-11-25<\/lastmod>/);
-  assert.match(page(out, "robots.txt"), /User-agent: \*\nAllow: \/\n\nSitemap: https:\/\/matchamap-cu7\.pages\.dev\/sitemap\.xml/);
+  assert.match(page(out, "robots.txt"), /User-agent: \*\nAllow: \/\n\nSitemap: https:\/\/matchamap\.app\/sitemap\.xml/);
 });
 
 test("size guard: thin brand pages go first near a limit, and an over-limit set throws", () => {
@@ -148,8 +148,8 @@ test("the home head: canonical, Open Graph, Twitter card, WebSite SearchAction w
   assert.match(head, /<title>Matcha Map: matcha pop-ups across America, by day<\/title>/);
   const desc = /name="description" content="([^"]*)"/.exec(head)[1];
   assert.ok(desc.length < 155, `${desc.length}`);
-  assert.match(head, /rel="canonical" href="https:\/\/matchamap-cu7\.pages\.dev\/"/);
-  assert.match(head, /og:image" content="https:\/\/matchamap-cu7\.pages\.dev\/og\.png"/);
+  assert.match(head, /rel="canonical" href="https:\/\/matchamap\.app\/"/);
+  assert.match(head, /og:image" content="https:\/\/matchamap\.app\/og\.png"/);
   assert.match(head, /twitter:card" content="summary_large_image"/);
   const ld = ldOf(head)[0];
   assert.equal(ld["@type"], "WebSite");
@@ -227,7 +227,7 @@ test("city pages carry an ItemList of upcoming events; brand pages carry an Orga
   assert.equal(list.itemListElement[0].item.location.address.addressLocality, "Raleigh");
   const b = ldOf(page(out, "brand/moonbeematcha/index.html"));
   const org = b.find((x) => x["@type"] === "Organization");
-  assert.equal(org.url, "https://matchamap-cu7.pages.dev/brand/moonbeematcha/");
+  assert.equal(org.url, "https://matchamap.app/brand/moonbeematcha/");
   assert.ok(org.sameAs.includes("https://www.instagram.com/moonbeematcha/") && org.sameAs.includes("https://moonbee.example"));
   assert.equal(org.logo, "https://img.example/m.jpg");
   for (const [p, html] of out.files) if (p.endsWith(".html")) for (const n of ldOf(html)) checkShape(n, p);

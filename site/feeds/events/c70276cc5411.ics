@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:c70276cc5411@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T140000Z
 DTEND:20261205T160000Z
@@ -16,8 +16,8 @@ SUMMARY:Matcha Mike Pop-Up at Landstown Middle School Holiday Market
 LOCATION:Landstown Middle School\, 2204 Recreation Dr\, Virginia Beach\, VA
 DESCRIPTION:Hey! I’m Mike\, the 13-year-old behind Matcha Mike\, our Fili
  pino-American matcha bar in Virginia Beach!\nLikely\, not fully confirmed.
- \nMore: https://matchamap-cu7.pages.dev/e/c70276cc5411/
-URL:https://matchamap-cu7.pages.dev/e/c70276cc5411/
+ \nMore: https://matchamap.app/e/c70276cc5411/
+URL:https://matchamap.app/e/c70276cc5411/
 GEO:36.773182;-76.107587
 STATUS:CONFIRMED
 CATEGORIES:Matcha

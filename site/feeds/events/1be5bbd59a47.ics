@@ -8,15 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:1be5bbd59a47@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:Central Matcha pop-up
 LOCATION:Austin\, TX
 DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/1be5bbd59a47/
-URL:https://matchamap-cu7.pages.dev/e/1be5bbd59a47/
+ .\nMore: https://matchamap.app/e/1be5bbd59a47/
+URL:https://matchamap.app/e/1be5bbd59a47/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

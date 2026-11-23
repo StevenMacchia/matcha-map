@@ -8,16 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:8523479f1766@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20271010
 DTEND;VALUE=DATE:20271011
 SUMMARY:Thelis Coffee pop-up
 LOCATION:Hoboken\, NJ
 DESCRIPTION:10/10 worst feeling\nDetails not confirmed yet. Check the brand
- 's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/8523479f17
- 66/
-URL:https://matchamap-cu7.pages.dev/e/8523479f1766/
+ 's post before you go.\nMore: https://matchamap.app/e/8523479f1766/
+URL:https://matchamap.app/e/8523479f1766/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

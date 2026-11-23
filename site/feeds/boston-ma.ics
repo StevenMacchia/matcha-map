@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:655f0758af3e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261127T150000Z
 DTEND:20261128T000000Z
@@ -16,15 +16,15 @@ SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
 DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
  season??\nMenu: latte\nLikely\, not fully confirmed.\nMore: https://matcha
- map-cu7.pages.dev/e/655f0758af3e/
-URL:https://matchamap-cu7.pages.dev/e/655f0758af3e/
+ map.app/e/655f0758af3e/
+URL:https://matchamap.app/e/655f0758af3e/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:a16e8bdfebdf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T160000Z
 DTEND:20261128T210000Z
@@ -35,15 +35,15 @@ DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
  et\, with a matcha option on the drink menu. Open Tuesday to Sunday throug
  h Dec 27.\nMenu: carrot punch (cold brew or matcha)\, matcha lattes\, cari
  bbean-inspired coffee drinks\nLikely\, not fully confirmed.\nMore: https:/
- /matchamap-cu7.pages.dev/e/a16e8bdfebdf/
-URL:https://matchamap-cu7.pages.dev/e/a16e8bdfebdf/
+ /matchamap.app/e/a16e8bdfebdf/
+URL:https://matchamap.app/e/a16e8bdfebdf/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:1ba6262317db@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261128T193000Z
 DTEND:20261128T220000Z
@@ -51,15 +51,15 @@ SUMMARY:Matcha Tasting + Mug Making Workshop
 LOCATION:Wishing Cup\, 45 Court\, Boston\, MA
 DESCRIPTION:Sip\, sculpt + unwind! Learn hand-building techniques and shape
   your own one-of-a-kind clay cup\, perfect for coffee or tea!\nPrice: $113
- .89\nMore: https://matchamap-cu7.pages.dev/e/1ba6262317db/
-URL:https://matchamap-cu7.pages.dev/e/1ba6262317db/
+ .89\nMore: https://matchamap.app/e/1ba6262317db/
+URL:https://matchamap.app/e/1ba6262317db/
 GEO:42.287990;-71.094442
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:fd3e9ea34611@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T193000Z
 DTEND:20261128T220000Z
@@ -68,16 +68,16 @@ LOCATION:Wishing Cup\, 45 Court Street\, Boston\, MA 02203\, Boston\, MA
 DESCRIPTION:Tech-free pottery night: taste three Wishing Cup matcha flavors
  \, write a wish\, then hand-build a mug. All clay and tools included\; opt
  ional glaze and kiln upgrade.\nMenu: 20-minute tasting of three wishing cu
- p m\nPrice: $113.89 (ticket\, lowest tier)\nMore: https://matchamap-cu7.pa
- ges.dev/e/fd3e9ea34611/
-URL:https://matchamap-cu7.pages.dev/e/fd3e9ea34611/
+ p m\nPrice: $113.89 (ticket\, lowest tier)\nMore: https://matchamap.app/e/
+ fd3e9ea34611/
+URL:https://matchamap.app/e/fd3e9ea34611/
 GEO:42.359168;-71.058723
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:7e5b7812a852@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261201T210000Z
 DTEND:20261202T020000Z
@@ -85,15 +85,15 @@ SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
 DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
  season??\nMenu: latte\nLikely\, not fully confirmed.\nMore: https://matcha
- map-cu7.pages.dev/e/7e5b7812a852/
-URL:https://matchamap-cu7.pages.dev/e/7e5b7812a852/
+ map.app/e/7e5b7812a852/
+URL:https://matchamap.app/e/7e5b7812a852/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:3c6de1a2a56f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
@@ -102,14 +102,14 @@ LOCATION:Boston\, MA
 DESCRIPTION:A Big Feeling x Caribe & Co Pop-up is coming next month and thi
  s one is for the plantain/maduro lovers\nMenu: pastry\, ice cream\nDetails
   not confirmed yet. Check the brand's post before you go.\nMore: https://m
- atchamap-cu7.pages.dev/e/3c6de1a2a56f/
-URL:https://matchamap-cu7.pages.dev/e/3c6de1a2a56f/
+ atchamap.app/e/3c6de1a2a56f/
+URL:https://matchamap.app/e/3c6de1a2a56f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:9f4c1daa3f3f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T160000Z
 DTEND:20261205T210000Z
@@ -120,15 +120,15 @@ DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
  et\, with a matcha option on the drink menu. Open Tuesday to Sunday throug
  h Dec 27.\nMenu: carrot punch (cold brew or matcha)\, matcha lattes\, cari
  bbean-inspired coffee drinks\nLikely\, not fully confirmed.\nMore: https:/
- /matchamap-cu7.pages.dev/e/9f4c1daa3f3f/
-URL:https://matchamap-cu7.pages.dev/e/9f4c1daa3f3f/
+ /matchamap.app/e/9f4c1daa3f3f/
+URL:https://matchamap.app/e/9f4c1daa3f3f/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:491a6a327f77@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
@@ -137,14 +137,14 @@ LOCATION:Boston\, MA
 DESCRIPTION:A Big Feeling x Caribe & Co Pop-up is coming next month and thi
  s one is for the plantain/maduro lovers\nMenu: pastry\, ice cream\nDetails
   not confirmed yet. Check the brand's post before you go.\nMore: https://m
- atchamap-cu7.pages.dev/e/491a6a327f77/
-URL:https://matchamap-cu7.pages.dev/e/491a6a327f77/
+ atchamap.app/e/491a6a327f77/
+URL:https://matchamap.app/e/491a6a327f77/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:b23d2b6828e3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T160000Z
 DTEND:20261212T210000Z
@@ -155,15 +155,15 @@ DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
  et\, with a matcha option on the drink menu. Open Tuesday to Sunday throug
  h Dec 27.\nMenu: carrot punch (cold brew or matcha)\, matcha lattes\, cari
  bbean-inspired coffee drinks\nLikely\, not fully confirmed.\nMore: https:/
- /matchamap-cu7.pages.dev/e/b23d2b6828e3/
-URL:https://matchamap-cu7.pages.dev/e/b23d2b6828e3/
+ /matchamap.app/e/b23d2b6828e3/
+URL:https://matchamap.app/e/b23d2b6828e3/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:47d6336baa0c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261219T150000Z
 DTEND:20261220T030000Z
@@ -174,31 +174,15 @@ DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
  et\, serving cornmeal porridge matcha lattes and a carrot punch that can b
  e made with matcha all holiday season.\nMenu: cornmeal porridge matcha lat
  te\, carrot punch matcha (cold brew or matcha\nLikely\, not fully confirme
- d.\nMore: https://matchamap-cu7.pages.dev/e/47d6336baa0c/
-URL:https://matchamap-cu7.pages.dev/e/47d6336baa0c/
+ d.\nMore: https://matchamap.app/e/47d6336baa0c/
+URL:https://matchamap.app/e/47d6336baa0c/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:5d40ce1d06a8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T125252Z
-DTSTART:20261219T180000Z
-DTEND:20261219T210000Z
-SUMMARY:Matcha + Meetup: Boston | Film + Music Speed Networking Roulette
-LOCATION:Boston\, MA
-DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nPrice: $
- 23.18\nDetails not confirmed yet. Check the brand's post before you go.\nM
- ore: https://matchamap-cu7.pages.dev/e/5d40ce1d06a8/
-URL:https://matchamap-cu7.pages.dev/e/5d40ce1d06a8/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:d09f2b6b2181@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261224T150000Z
 DTEND:20261224T210000Z
@@ -208,15 +192,15 @@ DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
  et\, serving cornmeal porridge matcha lattes and a carrot punch that can b
  e made with matcha all holiday season.\nMenu: latte\, cornmeal porridge ma
  tcha latte\, carrot punch matcha (cold brew or matcha\nLikely\, not fully 
- confirmed.\nMore: https://matchamap-cu7.pages.dev/e/d09f2b6b2181/
-URL:https://matchamap-cu7.pages.dev/e/d09f2b6b2181/
+ confirmed.\nMore: https://matchamap.app/e/d09f2b6b2181/
+URL:https://matchamap.app/e/d09f2b6b2181/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:551fdb4d6c75@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261226T150000Z
 DTEND:20261227T030000Z
@@ -227,15 +211,15 @@ DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
  et\, serving cornmeal porridge matcha lattes and a carrot punch that can b
  e made with matcha all holiday season.\nMenu: cornmeal porridge matcha lat
  te\, carrot punch matcha (cold brew or matcha\nLikely\, not fully confirme
- d.\nMore: https://matchamap-cu7.pages.dev/e/551fdb4d6c75/
-URL:https://matchamap-cu7.pages.dev/e/551fdb4d6c75/
+ d.\nMore: https://matchamap.app/e/551fdb4d6c75/
+URL:https://matchamap.app/e/551fdb4d6c75/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:103fe3817233@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261227
 DTEND;VALUE=DATE:20261228
@@ -243,15 +227,15 @@ SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market November
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
 DESCRIPTION:Are yall ready for Cornmeal Porridge Matcha Lattes all holiday 
  season??\nMenu: latte\nLikely\, not fully confirmed.\nMore: https://matcha
- map-cu7.pages.dev/e/103fe3817233/
-URL:https://matchamap-cu7.pages.dev/e/103fe3817233/
+ map.app/e/103fe3817233/
+URL:https://matchamap.app/e/103fe3817233/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:0f3691600007@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270102
 DTEND;VALUE=DATE:20270103
@@ -259,15 +243,14 @@ SUMMARY:Caribe & Co. pop-up
 LOCATION:Boston\, MA
 DESCRIPTION:The flavors of banana bread meet sweet plantain\nMenu: banana\,
   brown sugar\, cold foam\, vanilla\nDetails not confirmed yet. Check the b
- rand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/0f3691
- 600007/
-URL:https://matchamap-cu7.pages.dev/e/0f3691600007/
+ rand's post before you go.\nMore: https://matchamap.app/e/0f3691600007/
+URL:https://matchamap.app/e/0f3691600007/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:3a298bbff452@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270104
 DTEND;VALUE=DATE:20270105
@@ -275,15 +258,14 @@ SUMMARY:Caribe & Co. pop-up
 LOCATION:Boston\, MA
 DESCRIPTION:The flavors of banana bread meet sweet plantain\nMenu: banana\,
   brown sugar\, cold foam\, vanilla\nDetails not confirmed yet. Check the b
- rand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/3a298b
- bff452/
-URL:https://matchamap-cu7.pages.dev/e/3a298bbff452/
+ rand's post before you go.\nMore: https://matchamap.app/e/3a298bbff452/
+URL:https://matchamap.app/e/3a298bbff452/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:d7fcb7b462c0@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270305
@@ -291,23 +273,22 @@ SUMMARY:Caribe & Co. pop-up
 LOCATION:Boston\, MA
 DESCRIPTION:The flavors of banana bread meet sweet plantain\nMenu: banana\,
   brown sugar\, cold foam\, vanilla\nDetails not confirmed yet. Check the b
- rand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/d7fcb7
- b462c0/
-URL:https://matchamap-cu7.pages.dev/e/d7fcb7b462c0/
+ rand's post before you go.\nMore: https://matchamap.app/e/d7fcb7b462c0/
+URL:https://matchamap.app/e/d7fcb7b462c0/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:5a85e8ad2a0b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20271120
 DTEND;VALUE=DATE:20271121
 SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
 DESCRIPTION:Find us at SoWa Christmas Market all holiday season\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/5a85e8ad2a0b/
-URL:https://matchamap-cu7.pages.dev/e/5a85e8ad2a0b/
+ ot fully confirmed.\nMore: https://matchamap.app/e/5a85e8ad2a0b/
+URL:https://matchamap.app/e/5a85e8ad2a0b/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha

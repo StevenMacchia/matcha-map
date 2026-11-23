@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:16736091026a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T180000Z
 DTEND:20261129T000000Z
@@ -16,8 +16,8 @@ SUMMARY:Mellobun Cafe at Parkside Pharmacy
 LOCATION:Parkside Pharmacy\, Sacramento\, CA
 DESCRIPTION:Mellobun Cafe's weekend pop-up sets up at Parkside Pharmacy in 
  Sacramento.\nMenu: pastry\nLikely\, not fully confirmed.\nMore: https://ma
- tchamap-cu7.pages.dev/e/16736091026a/
-URL:https://matchamap-cu7.pages.dev/e/16736091026a/
+ tchamap.app/e/16736091026a/
+URL:https://matchamap.app/e/16736091026a/
 GEO:38.536845;-121.504759
 STATUS:CONFIRMED
 CATEGORIES:Matcha

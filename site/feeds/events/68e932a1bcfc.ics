@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:68e932a1bcfc@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T190000Z
 DTEND:20261128T230000Z
@@ -17,8 +17,8 @@ LOCATION:Cocobolo\, 626 St Helens Ave\, Tacoma\, WA
 DESCRIPTION:Sabz Matcha takes part in Small Business Saturday at Cocobolo\,
   626 St Helens Ave in Tacoma. The pop-up runs 11 AM-3 PM.\nMenu: berry swe
  et\, matcha afghani\, lavender fields\, pumpkin pie\, matcha vanille\nMore
- : https://matchamap-cu7.pages.dev/e/68e932a1bcfc/
-URL:https://matchamap-cu7.pages.dev/e/68e932a1bcfc/
+ : https://matchamap.app/e/68e932a1bcfc/
+URL:https://matchamap.app/e/68e932a1bcfc/
 GEO:47.257698;-122.442970
 STATUS:CONFIRMED
 CATEGORIES:Matcha

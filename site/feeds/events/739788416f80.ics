@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:739788416f80@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270322
 DTEND;VALUE=DATE:20270323
@@ -16,8 +16,8 @@ SUMMARY:Luanne's Coffee & Matcha pop-up
 LOCATION:Austin\, TX
 DESCRIPTION:***this menu has been replaced by our fall specials 9/19***\nMe
  nu: latte\nDetails not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/739788416f80/
-URL:https://matchamap-cu7.pages.dev/e/739788416f80/
+ .\nMore: https://matchamap.app/e/739788416f80/
+URL:https://matchamap.app/e/739788416f80/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

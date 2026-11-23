@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:518e3aeb446f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T190000Z
 DTEND:20261128T230000Z
@@ -16,9 +16,9 @@ SUMMARY:DECO DOLLS MARKET
 LOCATION:6207 Richmond Avenue\, Dallas\, TX
 DESCRIPTION:Come shop from our local vendors at our Curated Market where we
   will have matcha\, y2k\, trinkets art and DIY activities Decoden station\
- nPrice: Free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.p
- ages.dev/e/518e3aeb446f/
-URL:https://matchamap-cu7.pages.dev/e/518e3aeb446f/
+ nPrice: Free\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e
+ /518e3aeb446f/
+URL:https://matchamap.app/e/518e3aeb446f/
 GEO:32.816425;-96.758386
 STATUS:CONFIRMED
 CATEGORIES:Matcha

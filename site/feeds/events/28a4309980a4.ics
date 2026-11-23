@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:28a4309980a4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261206T180000Z
 DTEND:20261206T220000Z
 SUMMARY:333Matcha pop-up
 LOCATION:Dallas\, TX
 DESCRIPTION:a little holiday magic with 333\nDetails not confirmed yet. Che
- ck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/
- e/28a4309980a4/
-URL:https://matchamap-cu7.pages.dev/e/28a4309980a4/
+ ck the brand's post before you go.\nMore: https://matchamap.app/e/28a43099
+ 80a4/
+URL:https://matchamap.app/e/28a4309980a4/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

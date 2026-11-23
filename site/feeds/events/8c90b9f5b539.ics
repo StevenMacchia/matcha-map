@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:8c90b9f5b539@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART:20261129T160000Z
 DTEND:20261129T200000Z
@@ -17,9 +17,9 @@ LOCATION:Houston\, TX
 DESCRIPTION:Join us at CasaBunni for their grand opening weekend! Shop cute
   finds\, gifts for the holidays\, try out the photobooth\, and enjoy match
  a from yours truly!\nMenu: brown sugar matcha\nDetails not confirmed yet. 
- Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
- ev/e/8c90b9f5b539/
-URL:https://matchamap-cu7.pages.dev/e/8c90b9f5b539/
+ Check the brand's post before you go.\nMore: https://matchamap.app/e/8c90b
+ 9f5b539/
+URL:https://matchamap.app/e/8c90b9f5b539/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

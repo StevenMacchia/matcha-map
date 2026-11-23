@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:ca70d3bd5dcf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261212T180000Z
 DTEND:20261212T220000Z
@@ -16,8 +16,8 @@ SUMMARY:Live Music Saturday at Fresh Cups
 LOCATION:Fresh Cups\, 9924 Northeast 185th Street\, Bothell\, WA
 DESCRIPTION:Enjoy live local music with Vietnamese coffee\, ceremonial matc
  ha\, and fresh pastries at Fresh Cups Bothell.\nMenu: ceremonial\, pastry\
- nPrice: free\nMore: https://matchamap-cu7.pages.dev/e/ca70d3bd5dcf/
-URL:https://matchamap-cu7.pages.dev/e/ca70d3bd5dcf/
+ nPrice: free\nMore: https://matchamap.app/e/ca70d3bd5dcf/
+URL:https://matchamap.app/e/ca70d3bd5dcf/
 GEO:47.761816;-122.208452
 STATUS:CONFIRMED
 CATEGORIES:Matcha

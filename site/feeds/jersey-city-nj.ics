@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:f01add37f697@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20270102T140000Z
 DTEND:20270102T200000Z
@@ -17,8 +17,8 @@ LOCATION:Jersey City\, NJ
 DESCRIPTION:newcomers pink cloud & jasmine honey are available all month lo
  ng\nMenu: honey\, black sesame\, banana\, hojicha\, latte\, chocolate\, st
  rawberry\nDetails not confirmed yet. Check the brand's post before you go.
- \nMore: https://matchamap-cu7.pages.dev/e/f01add37f697/
-URL:https://matchamap-cu7.pages.dev/e/f01add37f697/
+ \nMore: https://matchamap.app/e/f01add37f697/
+URL:https://matchamap.app/e/f01add37f697/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

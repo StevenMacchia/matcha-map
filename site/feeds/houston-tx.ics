@@ -7,23 +7,8 @@ X-WR-CALNAME:Matcha Map: Houston\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:03f84cd4f4a2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T152119Z
-DTSTART:20261123T160000Z
-DTEND:20261123T230000Z
-SUMMARY:isa matcha pop-up
-LOCATION:Houston\, TX
-DESCRIPTION:your favorite cake just became your new matcha obsession.\nMenu
- : cake\nDetails not confirmed yet. Check the brand's post before you go.\n
- More: https://matchamap-cu7.pages.dev/e/03f84cd4f4a2/
-URL:https://matchamap-cu7.pages.dev/e/03f84cd4f4a2/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:54a9d3e5302e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261125T170000Z
 DTEND:20261125T190000Z
@@ -31,31 +16,31 @@ SUMMARY:Thanksgiving Eve Coffee Party ☕️ 🎉
 LOCATION:2520 Airline Dr\, Houston\, TX
 DESCRIPTION:Thanksgiving Eve Coffee Party Spend Thanksgiving Eve with Hey N
  eighbor! for coffee\, matcha\, house music\, and pickleball at Drop Shots!
- \nPrice: free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.
- pages.dev/e/54a9d3e5302e/
-URL:https://matchamap-cu7.pages.dev/e/54a9d3e5302e/
+ \nPrice: free\nLikely\, not fully confirmed.\nMore: https://matchamap.app/
+ e/54a9d3e5302e/
+URL:https://matchamap.app/e/54a9d3e5302e/
 GEO:29.810226;-95.381617
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:dea6a071bade@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261128T150000Z
 DTEND:20261128T170000Z
 SUMMARY:Creamed | HTX pop-up at ONLI
 LOCATION:Houston\, TX
 DESCRIPTION:Matcha & Corn Basque\, why nottt?\nDetails not confirmed yet. C
- heck the brand's post before you go.\nMore: https://matchamap-cu7.pages.de
- v/e/dea6a071bade/
-URL:https://matchamap-cu7.pages.dev/e/dea6a071bade/
+ heck the brand's post before you go.\nMore: https://matchamap.app/e/dea6a0
+ 71bade/
+URL:https://matchamap.app/e/dea6a071bade/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:00d0342f7e16@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART:20261128T160000Z
 DTEND:20261128T200000Z
@@ -64,47 +49,15 @@ LOCATION:Houston\, TX
 DESCRIPTION:Join us at CasaBunni for their grand opening weekend! Shop cute
   finds\, gifts for the holidays\, try out the photobooth\, and enjoy match
  a from yours truly!\nMenu: brown sugar matcha\nDetails not confirmed yet. 
- Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
- ev/e/00d0342f7e16/
-URL:https://matchamap-cu7.pages.dev/e/00d0342f7e16/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:8c810b81e76a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261128T190000Z
-DTEND:20261128T220000Z
-SUMMARY:Matcha + Meetup: Houston | Benefits for The Birthday Party Project
-LOCATION:The Sunrise House\, 1830 West Alabama Street\, Houston\, TX
-DESCRIPTION:Make new friends over brunch or coffee while supporting small b
- usinesses and giving back to non-profit\, The Birthday Party Project.\nPri
- ce: free\nMore: https://matchamap-cu7.pages.dev/e/8c810b81e76a/
-URL:https://matchamap-cu7.pages.dev/e/8c810b81e76a/
-GEO:29.738937;-95.405890
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:bdf78c93b2da@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261129T010000Z
-DTEND:20261129T040000Z
-SUMMARY:Matcha + Meetup: Houston | Creatives Edition
-LOCATION:Houston\, TX
-DESCRIPTION:Join us for coffee\, latte\, or matcha at different cafes. Buil
- d your creative community in your city with a fun day out!\nMenu: latte\nP
- rice: $13.54–94\nDetails not confirmed yet. Check the brand's post befor
- e you go.\nMore: https://matchamap-cu7.pages.dev/e/bdf78c93b2da/
-URL:https://matchamap-cu7.pages.dev/e/bdf78c93b2da/
+ Check the brand's post before you go.\nMore: https://matchamap.app/e/00d03
+ 42f7e16/
+URL:https://matchamap.app/e/00d0342f7e16/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:7b9142168116@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261129T160000Z
 DTEND:20261129T180000Z
@@ -113,15 +66,15 @@ LOCATION:Houston\, TX
 DESCRIPTION:Creamed returns to ONLI for a morning pop-up featuring a variet
  y of bakes.\nMenu: matcha\, corn basque cheesecakes\, mandarin\, chestnut 
  cinnamon rolls\, black sesame\, sweet potato pie\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/7b9142168116/
-URL:https://matchamap-cu7.pages.dev/e/7b9142168116/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/7b
+ 9142168116/
+URL:https://matchamap.app/e/7b9142168116/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:8c90b9f5b539@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART:20261129T160000Z
 DTEND:20261129T200000Z
@@ -130,15 +83,15 @@ LOCATION:Houston\, TX
 DESCRIPTION:Join us at CasaBunni for their grand opening weekend! Shop cute
   finds\, gifts for the holidays\, try out the photobooth\, and enjoy match
  a from yours truly!\nMenu: brown sugar matcha\nDetails not confirmed yet. 
- Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
- ev/e/8c90b9f5b539/
-URL:https://matchamap-cu7.pages.dev/e/8c90b9f5b539/
+ Check the brand's post before you go.\nMore: https://matchamap.app/e/8c90b
+ 9f5b539/
+URL:https://matchamap.app/e/8c90b9f5b539/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:804589d44554@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
@@ -146,46 +99,14 @@ SUMMARY:Ahry Matcha pop-up
 LOCATION:Houston\, TX
 DESCRIPTION:Our first farmers market at oldkatyfarmersmarket !\nDetails not
   confirmed yet. Check the brand's post before you go.\nMore: https://match
- amap-cu7.pages.dev/e/804589d44554/
-URL:https://matchamap-cu7.pages.dev/e/804589d44554/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:d7a48de6362a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261219T180000Z
-DTEND:20261219T210000Z
-SUMMARY:Matcha + Meetup: Houston Creatives (Giving Back Edition)
-LOCATION:Houston\, TX
-DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
- unity while supporting local businesses and giving back to people in need.
- \nPrice: $13.54\nDetails not confirmed yet. Check the brand's post before 
- you go.\nMore: https://matchamap-cu7.pages.dev/e/d7a48de6362a/
-URL:https://matchamap-cu7.pages.dev/e/d7a48de6362a/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:562f1c67c3cb@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T131640Z
-DTSTART:20261220T190000Z
-DTEND:20261220T220000Z
-SUMMARY:Matcha + Meetup: Houston | Entrepreneur Speed Networking Roulette
-LOCATION:Houston\, TX
-DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nPrice: $
- 25.09\nDetails not confirmed yet. Check the brand's post before you go.\nM
- ore: https://matchamap-cu7.pages.dev/e/562f1c67c3cb/
-URL:https://matchamap-cu7.pages.dev/e/562f1c67c3cb/
+ amap.app/e/804589d44554/
+URL:https://matchamap.app/e/804589d44554/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:a97a6504f9d4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20270810
 DTEND;VALUE=DATE:20270811
@@ -193,8 +114,8 @@ SUMMARY:Buji Matcha pop-up
 LOCATION:Houston\, TX
 DESCRIPTION:Buji Matcha Pop Up in htx ! I’d give cinabuji 8/10 bujimatcha
   striptofficial\nDetails not confirmed yet. Check the brand's post before 
- you go.\nMore: https://matchamap-cu7.pages.dev/e/a97a6504f9d4/
-URL:https://matchamap-cu7.pages.dev/e/a97a6504f9d4/
+ you go.\nMore: https://matchamap.app/e/a97a6504f9d4/
+URL:https://matchamap.app/e/a97a6504f9d4/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

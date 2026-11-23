@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:ec03ffb63cb6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T140000Z
 DTEND:20261129T160000Z
@@ -16,9 +16,9 @@ SUMMARY:Run\, Matcha & Fiesta
 LOCATION:Miami\, FL
 DESCRIPTION:El Patio Wynwood hosts a morning gathering of Miami Run Club\, 
  Miami Lakes Run Club and Runknown Run Club.\nPrice: $10\nDetails not confi
- rmed yet. Check the brand's post before you go.\nMore: https://matchamap-c
- u7.pages.dev/e/ec03ffb63cb6/
-URL:https://matchamap-cu7.pages.dev/e/ec03ffb63cb6/
+ rmed yet. Check the brand's post before you go.\nMore: https://matchamap.a
+ pp/e/ec03ffb63cb6/
+URL:https://matchamap.app/e/ec03ffb63cb6/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

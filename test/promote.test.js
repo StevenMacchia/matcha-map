@@ -18,7 +18,7 @@ test("captions name the brand, link the map with the id, mention the city, and u
   const c = P.captions(E, NOW);
   for (const t of [c.instagram, c.tiktok]) {
     assert.match(t, /Moonbee Matcha/);
-    assert.ok(t.includes("https://matchamap-cu7.pages.dev/?event=abc123def456"));
+    assert.ok(t.includes("https://matchamap.app/?event=abc123def456"));
     assert.match(t, /Raleigh/);
     assert.ok(!BANNED.test(t));
   }

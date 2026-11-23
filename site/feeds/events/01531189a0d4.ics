@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:01531189a0d4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261219T150000Z
 DTEND:20261219T170000Z
@@ -17,8 +17,8 @@ LOCATION:Postern Coffee\, Atlanta\, GA
 DESCRIPTION:Tea and Matcha is a two-hour workshop at Postern Coffee on Dece
  mber 19\, 2026\, from 10:00 to 12:00. It covers tea and matcha for people 
  interested in developing their home coffee and tea skills.\nLikely\, not f
- ully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/01531189a0d4/
-URL:https://matchamap-cu7.pages.dev/e/01531189a0d4/
+ ully confirmed.\nMore: https://matchamap.app/e/01531189a0d4/
+URL:https://matchamap.app/e/01531189a0d4/
 GEO:33.919381;-84.282066
 STATUS:CONFIRMED
 CATEGORIES:Matcha

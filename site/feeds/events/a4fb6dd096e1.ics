@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:a4fb6dd096e1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261220T160000Z
 DTEND:20261220T230000Z
@@ -16,9 +16,9 @@ SUMMARY:Dream Tea NYC pop-up at Timeout Market
 LOCATION:Timeout Market\, 83 Water Street\, Brooklyn\, NY
 DESCRIPTION:Dream Tea NYC at Timeout Market\, Dumbo! Monday\, December 14 t
  o Sunday\, December 20\, 2026\, 11 AM to 6 PM\, Empire Stores\, 53-83 Wate
- r Street\, Brooklyn\, NY 11201.\nMore: https://matchamap-cu7.pages.dev/e/a
- 4fb6dd096e1/
-URL:https://matchamap-cu7.pages.dev/e/a4fb6dd096e1/
+ r Street\, Brooklyn\, NY 11201.\nMore: https://matchamap.app/e/a4fb6dd096e
+ 1/
+URL:https://matchamap.app/e/a4fb6dd096e1/
 GEO:40.703310;-73.990971
 STATUS:CONFIRMED
 CATEGORIES:Matcha

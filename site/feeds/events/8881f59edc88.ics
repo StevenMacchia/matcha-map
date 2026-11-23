@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:8881f59edc88@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261202T010000Z
 DTEND:20261202T020000Z
@@ -17,8 +17,8 @@ LOCATION:Ponderosa Joint-Use Branch\, 240 East Orangewood Avenue\, Anaheim\
  , CA
 DESCRIPTION:Come learn a brief history of matcha\, techniques for making ma
  tcha & an opportunity to practice making it.\nPrice: Free\nLikely\, not fu
- lly confirmed.\nMore: https://matchamap-cu7.pages.dev/e/8881f59edc88/
-URL:https://matchamap-cu7.pages.dev/e/8881f59edc88/
+ lly confirmed.\nMore: https://matchamap.app/e/8881f59edc88/
+URL:https://matchamap.app/e/8881f59edc88/
 GEO:33.795391;-117.904133
 STATUS:CONFIRMED
 CATEGORIES:Matcha

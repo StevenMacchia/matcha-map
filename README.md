@@ -2,7 +2,7 @@
 
 ## What this is
 
-A map of matcha pop-ups across America, by day, so you can find one near you when you are free. Live at https://matchamap-cu7.pages.dev (the planned domain is matchamap.us; see "Site and domain").
+A map of matcha pop-ups across America, by day, so you can find one near you when you are free. Live at https://matchamap.app (the planned domain is matchamap.us; see "Site and domain").
 
 It is a plain HTML site on MapLibre GL over OpenFreeMap tiles (map data from OpenStreetMap contributors). A set of Node scripts finds pop-ups, writes `data/events.json` and builds the static pages. There is no server and no build step for the site. The only dynamic part is a few Cloudflare Pages Functions for the Add form. Node 20 or newer; no `npm install` is needed except for `wrangler` (deploy).
 
@@ -144,7 +144,7 @@ Look at the result at `/art/gallery.html` (light, dark, phone size, and a live b
 - Forms: `/add/`, `/report/?event=<id>`, `/claim/?brand=<id>`, `/alerts/` (collects an email; nothing mails it, no double opt-in yet), `/privacy/`, `/data-deletion/`. Empty-state strings are in `docs/COPY.md`.
 - Installable: manifest, icons and `site/sw.js`. Shell files are network-first. `tools/sw-version.js` stamps the version; `npm run deploy` runs it, so do not deploy by another route.
 - Domain switch: edit `SITE_URL` in `tools/site-url.js` to `https://matchamap.us`, run `npm run pages`, deploy. Canonicals, Open Graph, sitemap and JSON-LD follow. Then add the property in Search Console and submit `sitemap.xml`.
-- Calendar: `webcal://matchamap-cu7.pages.dev/feeds/all.ics`, or a city, for example `austin-tx.ics`.
+- Calendar: `webcal://matchamap.app/feeds/all.ics`, or a city, for example `austin-tx.ics`.
 
 ## Layout
 

@@ -8,16 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:bf42f04c153e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 SUMMARY:More Than Matcha pop-up
 LOCATION:Los Angeles\, CA
 DESCRIPTION:Full results at the end\nDetails not confirmed yet. Check the b
- rand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/bf42f0
- 4c153e/
-URL:https://matchamap-cu7.pages.dev/e/bf42f04c153e/
+ rand's post before you go.\nMore: https://matchamap.app/e/bf42f04c153e/
+URL:https://matchamap.app/e/bf42f04c153e/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

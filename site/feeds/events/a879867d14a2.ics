@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:a879867d14a2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T180000Z
 DTEND:20261206T020000Z
@@ -17,9 +17,9 @@ LOCATION:Glimpse Matcha pop-up storefront\, 433 NW 10th Ave\, Portland\, OR
   97209\, Portland\, OR
 DESCRIPTION:A temporary matcha storefront in the Pearl District\, open Nov 
  13 to Dec 31. Drop in for freshly whisked matcha drinks while the holiday 
- shop is up.\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pa
- ges.dev/e/a879867d14a2/
-URL:https://matchamap-cu7.pages.dev/e/a879867d14a2/
+ shop is up.\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/
+ a879867d14a2/
+URL:https://matchamap.app/e/a879867d14a2/
 GEO:45.526323;-122.681431
 STATUS:CONFIRMED
 CATEGORIES:Matcha

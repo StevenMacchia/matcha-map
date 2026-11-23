@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:a51c507e49ce@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
@@ -16,9 +16,9 @@ SUMMARY:Joon (Persian matcha and coffee) pop-up
 LOCATION:Miami\, FL
 DESCRIPTION:Who’s on Joon duty before Thanksgiving? Send this to the pers
  on who knows your order by heart.\nMenu: pistachio\nDetails not confirmed 
- yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.pa
- ges.dev/e/a51c507e49ce/
-URL:https://matchamap-cu7.pages.dev/e/a51c507e49ce/
+ yet. Check the brand's post before you go.\nMore: https://matchamap.app/e/
+ a51c507e49ce/
+URL:https://matchamap.app/e/a51c507e49ce/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

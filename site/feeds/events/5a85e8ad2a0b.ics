@@ -8,15 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:5a85e8ad2a0b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20271120
 DTEND;VALUE=DATE:20271121
 SUMMARY:Caribe & Co. pop-up at SoWa Christmas Market
 LOCATION:SoWa Christmas Market\, 550 Harrison Ave\, Boston\, MA
 DESCRIPTION:Find us at SoWa Christmas Market all holiday season\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/5a85e8ad2a0b/
-URL:https://matchamap-cu7.pages.dev/e/5a85e8ad2a0b/
+ ot fully confirmed.\nMore: https://matchamap.app/e/5a85e8ad2a0b/
+URL:https://matchamap.app/e/5a85e8ad2a0b/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha

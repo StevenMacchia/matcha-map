@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:b6b0697a0973@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
@@ -17,8 +17,8 @@ LOCATION:San Diego\, CA
 DESCRIPTION:A little vlog/recap from a wonderful Sunday with unigvintage & 
  theeclovery We’ll be back in Mira Mesa again on 12/12!\nMenu: pastry\nDe
  tails not confirmed yet. Check the brand's post before you go.\nMore: http
- s://matchamap-cu7.pages.dev/e/b6b0697a0973/
-URL:https://matchamap-cu7.pages.dev/e/b6b0697a0973/
+ s://matchamap.app/e/b6b0697a0973/
+URL:https://matchamap.app/e/b6b0697a0973/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

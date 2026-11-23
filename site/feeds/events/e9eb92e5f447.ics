@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:e9eb92e5f447@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T190000Z
 DTEND:20261212T210000Z
@@ -19,8 +19,8 @@ DESCRIPTION:A holiday pop-up from GATO DATES with More Than Matcha at the W
  estfield Century City Holiday Market\, right in front of lululemon. Come f
  or matcha and a sweet treat\, and do some gift shopping. It runs \nMenu: m
  atcha drinks\, sweet treats and holiday gifts\nLikely\, not fully confirme
- d.\nMore: https://matchamap-cu7.pages.dev/e/e9eb92e5f447/
-URL:https://matchamap-cu7.pages.dev/e/e9eb92e5f447/
+ d.\nMore: https://matchamap.app/e/e9eb92e5f447/
+URL:https://matchamap.app/e/e9eb92e5f447/
 GEO:34.058579;-118.417811
 STATUS:CONFIRMED
 CATEGORIES:Matcha

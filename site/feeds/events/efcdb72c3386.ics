@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:efcdb72c3386@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261223T180000Z
 DTEND:20261224T010000Z
@@ -18,9 +18,9 @@ LOCATION:Anh Oi Bake Shop\, 314 6th Ave S\, Seattle\, WA 98104\, Seattle\,
 DESCRIPTION:Muni Cafe is the resident drink counter at a Japantown bakery. 
  Lattes come with matcha or espresso\, in Filipino-inspired flavors like bi
  ko and ube.\nMenu: daydreamer\, biko latte\, sesame ube latte (matcha or e
- spresso)\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
- .dev/e/efcdb72c3386/
-URL:https://matchamap-cu7.pages.dev/e/efcdb72c3386/
+ spresso)\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/efc
+ db72c3386/
+URL:https://matchamap.app/e/efcdb72c3386/
 GEO:47.599507;-122.326189
 STATUS:CONFIRMED
 CATEGORIES:Matcha

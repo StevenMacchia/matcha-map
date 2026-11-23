@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:dcff41e4fa74@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T210000Z
 DTEND:20261205T230000Z
@@ -16,8 +16,8 @@ SUMMARY:Très Matcha! Très Fleur! (4 PM)
 LOCATION:Amore Mio Florals Studio\, 420 E Church St #115\, Orlando\, FL
 DESCRIPTION:Très Matcha! Très Fleur! is a one-day holiday workshop hosted
   by and at Amore Mio Florals Studio.\nMenu: macaron\, madeleine\nMore: htt
- ps://matchamap-cu7.pages.dev/e/dcff41e4fa74/
-URL:https://matchamap-cu7.pages.dev/e/dcff41e4fa74/
+ ps://matchamap.app/e/dcff41e4fa74/
+URL:https://matchamap.app/e/dcff41e4fa74/
 GEO:28.540125;-81.371571
 STATUS:CONFIRMED
 CATEGORIES:Matcha

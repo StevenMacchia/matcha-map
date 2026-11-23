@@ -7,37 +7,22 @@ X-WR-CALNAME:Matcha Map: New York\, NY
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:01bf0a830454@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T152119Z
-DTSTART:20261123T160000Z
-DTEND:20261123T180000Z
-SUMMARY:Isshiki Matcha pop-up at Togyushi
-LOCATION:New York\, NY
-DESCRIPTION:A special collaboration is here!\nMenu: strawberry\, sando\nDet
- ails not confirmed yet. Check the brand's post before you go.\nMore: https
- ://matchamap-cu7.pages.dev/e/01bf0a830454/
-URL:https://matchamap-cu7.pages.dev/e/01bf0a830454/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
 UID:117d9583b848@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261124T000000Z
 DTEND:20261124T023000Z
 SUMMARY:Florals & Friends hosted by @olastudionyc
 LOCATION:@olastudionyc\, 68 Jay St\, Brooklyn\, NY
-DESCRIPTION:More: https://matchamap-cu7.pages.dev/e/117d9583b848/
-URL:https://matchamap-cu7.pages.dev/e/117d9583b848/
+DESCRIPTION:More: https://matchamap.app/e/117d9583b848/
+URL:https://matchamap.app/e/117d9583b848/
 GEO:40.702847;-73.986828
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:ea06c1e9874b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261125
@@ -46,14 +31,14 @@ LOCATION:New York\, NY
 DESCRIPTION:usa has dropped a new drink that fixes all of that Their new Bi
  tter Matcha series drops nationwide soon on 11/24!!\nMenu: ice cream\, moc
  hi\, latte\nPrice: $1\nDetails not confirmed yet. Check the brand's post b
- efore you go.\nMore: https://matchamap-cu7.pages.dev/e/ea06c1e9874b/
-URL:https://matchamap-cu7.pages.dev/e/ea06c1e9874b/
+ efore you go.\nMore: https://matchamap.app/e/ea06c1e9874b/
+URL:https://matchamap.app/e/ea06c1e9874b/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:15bd41af6c62@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART:20261124T200000Z
 DTEND:20261124T220000Z
@@ -63,28 +48,28 @@ DESCRIPTION:heytea just opened a shop fully dedicated to matcha beverages a
  nd gelato i finally got to check it out while they were still running some
   grand opening deals and I got a free t-shirt and magnets…\nMenu: gelato
  \, einspanner\nDetails not confirmed yet. Check the brand's post before yo
- u go.\nMore: https://matchamap-cu7.pages.dev/e/15bd41af6c62/
-URL:https://matchamap-cu7.pages.dev/e/15bd41af6c62/
+ u go.\nMore: https://matchamap.app/e/15bd41af6c62/
+URL:https://matchamap.app/e/15bd41af6c62/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:b585043507e8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261125T000000Z
 DTEND:20261125T023000Z
 SUMMARY:Florals & Friends hosted by @olastudionyc
 LOCATION:@olastudionyc\, 68 Jay St\, Brooklyn\, NY
-DESCRIPTION:More: https://matchamap-cu7.pages.dev/e/b585043507e8/
-URL:https://matchamap-cu7.pages.dev/e/b585043507e8/
+DESCRIPTION:More: https://matchamap.app/e/b585043507e8/
+URL:https://matchamap.app/e/b585043507e8/
 GEO:40.702847;-73.986828
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:d36b838e4499@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
@@ -92,14 +77,14 @@ SUMMARY:Partea NYC pop-up
 LOCATION:New York\, NY
 DESCRIPTION:Your next visit could be a lucky pull\nPrice: $20–60\nDetails
   not confirmed yet. Check the brand's post before you go.\nMore: https://m
- atchamap-cu7.pages.dev/e/d36b838e4499/
-URL:https://matchamap-cu7.pages.dev/e/d36b838e4499/
+ atchamap.app/e/d36b838e4499/
+URL:https://matchamap.app/e/d36b838e4499/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:20dc29d34859@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261128T200000Z
 DTEND:20261128T220000Z
@@ -107,28 +92,28 @@ SUMMARY:Partea NYC pop-up
 LOCATION:New York\, NY
 DESCRIPTION:Your next visit could be a lucky pull\nPrice: $20–60\nDetails
   not confirmed yet. Check the brand's post before you go.\nMore: https://m
- atchamap-cu7.pages.dev/e/20dc29d34859/
-URL:https://matchamap-cu7.pages.dev/e/20dc29d34859/
+ atchamap.app/e/20dc29d34859/
+URL:https://matchamap.app/e/20dc29d34859/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:a5e40d21d935@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T150000Z
 DTEND:20261129T170000Z
 SUMMARY:Dream Tea NYC at Grand Bazaar UWS (Indoors)!
 LOCATION:Grand Bazaar NYC\, 100 West 77th Street\, New York\, NY
-DESCRIPTION:More: https://matchamap-cu7.pages.dev/e/a5e40d21d935/
-URL:https://matchamap-cu7.pages.dev/e/a5e40d21d935/
+DESCRIPTION:More: https://matchamap.app/e/a5e40d21d935/
+URL:https://matchamap.app/e/a5e40d21d935/
 GEO:40.780717;-73.977286
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:57d7e842a46b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T160000Z
 DTEND:20261129T164500Z
@@ -137,30 +122,30 @@ LOCATION:KINKA\, 63 East 7th Street\, New York\, NY
 DESCRIPTION:A 45-minute beginner class on matcha history\, choosing and sto
  ring it\, then whisking and drinking your own bowl with a dry sweet. Max 2
   guests per booking.\nMenu: whisked matcha bowl\, japanese dry sweet\nPric
- e: $44.52\nMore: https://matchamap-cu7.pages.dev/e/57d7e842a46b/
-URL:https://matchamap-cu7.pages.dev/e/57d7e842a46b/
+ e: $44.52\nMore: https://matchamap.app/e/57d7e842a46b/
+URL:https://matchamap.app/e/57d7e842a46b/
 GEO:40.727665;-73.986861
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:948cb993bc10@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T200000Z
 DTEND:20261129T220000Z
 SUMMARY:Matcha & Walk | The High Line
 LOCATION:Blue Bottle Coffee\, New York\, NY
 DESCRIPTION:Let's walk off the Thanksgiving Dinner!\nLikely\, not fully con
- firmed.\nMore: https://matchamap-cu7.pages.dev/e/948cb993bc10/
-URL:https://matchamap-cu7.pages.dev/e/948cb993bc10/
+ firmed.\nMore: https://matchamap.app/e/948cb993bc10/
+URL:https://matchamap.app/e/948cb993bc10/
 GEO:40.806297;-73.965491
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:af501e1d54a2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261201T160000Z
 DTEND:20261201T180000Z
@@ -170,15 +155,15 @@ LOCATION:Columbus Circle Holiday Market by Urbanspace\, Central Park South\
 DESCRIPTION:A booth at the Urbanspace Columbus Circle holiday market with m
  atcha\, holiday sets and exclusive tea blends. The Eventbrite listing span
  s Dec 1 to Dec 31\, 11am to 7pm.\nMenu: matcha\, holiday tea sets\, exclus
- ive tea blends\nMore: https://matchamap-cu7.pages.dev/e/af501e1d54a2/
-URL:https://matchamap-cu7.pages.dev/e/af501e1d54a2/
+ ive tea blends\nMore: https://matchamap.app/e/af501e1d54a2/
+URL:https://matchamap.app/e/af501e1d54a2/
 GEO:40.767690;-73.981717
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:ceaa6e572abf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
@@ -187,44 +172,43 @@ LOCATION:190 Court\, New York\, NY
 DESCRIPTION:Dream Tea NYC in Cobble Hill\, Brooklyn! Saturday\, December 5 
  to Sunday\, December 6\, 2026\, 11 AM to 6 PM\, 190 Court Street\, Brookly
  n\, NY 11201. "Join Dream Tea NYC with FAD Market in Cobble Hill!\nLikely\
- , not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/ceaa6e572a
- bf/
-URL:https://matchamap-cu7.pages.dev/e/ceaa6e572abf/
+ , not fully confirmed.\nMore: https://matchamap.app/e/ceaa6e572abf/
+URL:https://matchamap.app/e/ceaa6e572abf/
 GEO:43.242266;-77.611829
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:0d840c84643f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T140000Z
 DTEND:20261205T160000Z
 SUMMARY:Dream Tea NYC in Fort Greene
 LOCATION:Brooklyn\, NY
 DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/0d840c84643f/
-URL:https://matchamap-cu7.pages.dev/e/0d840c84643f/
+ .\nMore: https://matchamap.app/e/0d840c84643f/
+URL:https://matchamap.app/e/0d840c84643f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:b66a73e2858b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T160000Z
 DTEND:20261205T180000Z
 SUMMARY:Dream Tea NYC in Cobble Hill\, Brooklyn!
 LOCATION:190 Court St\, 190 Court\, Brooklyn\, NY
-DESCRIPTION:More: https://matchamap-cu7.pages.dev/e/b66a73e2858b/
-URL:https://matchamap-cu7.pages.dev/e/b66a73e2858b/
+DESCRIPTION:More: https://matchamap.app/e/b66a73e2858b/
+URL:https://matchamap.app/e/b66a73e2858b/
 GEO:40.595173;-73.932217
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:bca178768f03@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261206T160000Z
 DTEND:20261206T230000Z
@@ -233,16 +217,15 @@ LOCATION:190 Court\, New York\, NY
 DESCRIPTION:Dream Tea NYC in Cobble Hill\, Brooklyn! Saturday\, December 5 
  to Sunday\, December 6\, 2026\, 11 AM to 6 PM\, 190 Court Street\, Brookly
  n\, NY 11201. "Join Dream Tea NYC with FAD Market in Cobble Hill!\nLikely\
- , not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/bca178768f
- 03/
-URL:https://matchamap-cu7.pages.dev/e/bca178768f03/
+ , not fully confirmed.\nMore: https://matchamap.app/e/bca178768f03/
+URL:https://matchamap.app/e/bca178768f03/
 GEO:43.242266;-77.611829
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:e19faebb63be@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261212T170000Z
 DTEND:20261212T210000Z
@@ -250,30 +233,30 @@ SUMMARY:Design Matcha Demo
 LOCATION:New York\, NY
 DESCRIPTION:Join us for our first Design Matcha Demo\, a monthly afternoon 
  for people who love making things thoughtfully.\nDetails not confirmed yet
- . Check the brand's post before you go.\nMore: https://matchamap-cu7.pages
- .dev/e/e19faebb63be/
-URL:https://matchamap-cu7.pages.dev/e/e19faebb63be/
+ . Check the brand's post before you go.\nMore: https://matchamap.app/e/e19
+ faebb63be/
+URL:https://matchamap.app/e/e19faebb63be/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:f4cc086d259d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART;VALUE=DATE:20261213
 DTEND;VALUE=DATE:20261214
 SUMMARY:Matcha 101 'Whisk & Sip'
 LOCATION:KINKA\, 63 East 7th Street\, New York\, NY
 DESCRIPTION:Price: $44.52\nLikely\, not fully confirmed.\nMore: https://mat
- chamap-cu7.pages.dev/e/f4cc086d259d/
-URL:https://matchamap-cu7.pages.dev/e/f4cc086d259d/
+ chamap.app/e/f4cc086d259d/
+URL:https://matchamap.app/e/f4cc086d259d/
 GEO:40.727665;-73.986861
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:00eb146ceeae@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261214T160000Z
 DTEND:20261214T180000Z
@@ -282,15 +265,15 @@ LOCATION:Empire Stores\, 83 Water Street\, Brooklyn\, NY
 DESCRIPTION:Dream Tea NYC at Timeout Market\, Dumbo! Monday\, December 14 t
  o Sunday\, December 20\, 2026\, 11 AM to 6 PM\, Empire Stores\, 53-83 Wate
  r Street\, Brooklyn\, NY 11201.\nMenu: matcha\, tea blends\nPrice: free en
- try\nMore: https://matchamap-cu7.pages.dev/e/00eb146ceeae/
-URL:https://matchamap-cu7.pages.dev/e/00eb146ceeae/
+ try\nMore: https://matchamap.app/e/00eb146ceeae/
+URL:https://matchamap.app/e/00eb146ceeae/
 GEO:40.703310;-73.990971
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:2ee0f1c6fc8f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261216T230000Z
 DTEND:20261217T010000Z
@@ -300,14 +283,14 @@ DESCRIPTION:Founders and investors\, Join Leo AI\, B Capital\, MongoDB and
  Reitler for an evening of matcha\, mahjong\, and great conversation with a
   curated group of founders and investors. No panels. No pitches.\nDetails 
  not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/2ee0f1c6fc8f/
-URL:https://matchamap-cu7.pages.dev/e/2ee0f1c6fc8f/
+ tchamap.app/e/2ee0f1c6fc8f/
+URL:https://matchamap.app/e/2ee0f1c6fc8f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:31c135dfd4cf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261220T160000Z
 DTEND:20261220T164500Z
@@ -315,15 +298,15 @@ SUMMARY:Matcha 101 'Whisk & Sip'
 LOCATION:KINKA\, 63 East 7th Street\, New York\, NY
 DESCRIPTION:Join us Matcha 101! Learn about Matcha and How to whisk and dri
  nk.\nPrice: $44.52\nLikely\, not fully confirmed.\nMore: https://matchamap
- -cu7.pages.dev/e/31c135dfd4cf/
-URL:https://matchamap-cu7.pages.dev/e/31c135dfd4cf/
+ .app/e/31c135dfd4cf/
+URL:https://matchamap.app/e/31c135dfd4cf/
 GEO:40.727665;-73.986861
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:a4fb6dd096e1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261220T160000Z
 DTEND:20261220T230000Z
@@ -331,16 +314,16 @@ SUMMARY:Dream Tea NYC pop-up at Timeout Market
 LOCATION:Timeout Market\, 83 Water Street\, Brooklyn\, NY
 DESCRIPTION:Dream Tea NYC at Timeout Market\, Dumbo! Monday\, December 14 t
  o Sunday\, December 20\, 2026\, 11 AM to 6 PM\, Empire Stores\, 53-83 Wate
- r Street\, Brooklyn\, NY 11201.\nMore: https://matchamap-cu7.pages.dev/e/a
- 4fb6dd096e1/
-URL:https://matchamap-cu7.pages.dev/e/a4fb6dd096e1/
+ r Street\, Brooklyn\, NY 11201.\nMore: https://matchamap.app/e/a4fb6dd096e
+ 1/
+URL:https://matchamap.app/e/a4fb6dd096e1/
 GEO:40.703310;-73.990971
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:10f5f45423ee@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
@@ -348,15 +331,15 @@ SUMMARY:Isshiki Matcha pop-up at Togyushi
 LOCATION:New York\, NY
 DESCRIPTION:a little unexpected\, a little indulgent\nMenu: matcha wagyu ta
  llow financier\, sando\, matcha cocktails\nDetails not confirmed yet. Chec
- k the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e
- /10f5f45423ee/
-URL:https://matchamap-cu7.pages.dev/e/10f5f45423ee/
+ k the brand's post before you go.\nMore: https://matchamap.app/e/10f5f4542
+ 3ee/
+URL:https://matchamap.app/e/10f5f45423ee/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:9059d72984b8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261231T160000Z
 DTEND:20270101T000000Z
@@ -364,14 +347,14 @@ SUMMARY:Dream Tea NYC pop-up
 LOCATION:New York\, NY
 DESCRIPTION:Dream Tea NYC in Columbus Circle Holiday Market.\nDetails not c
  onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
- ap-cu7.pages.dev/e/9059d72984b8/
-URL:https://matchamap-cu7.pages.dev/e/9059d72984b8/
+ ap.app/e/9059d72984b8/
+URL:https://matchamap.app/e/9059d72984b8/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:99ada887a6d1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T023315Z
 DTSTART;VALUE=DATE:20270307
 DTEND;VALUE=DATE:20270308
@@ -379,15 +362,15 @@ SUMMARY:Teapulse Nyc matcha pop-up
 LOCATION:65 W 30th St\, New York\, NY
 DESCRIPTION:Tea Pulse [ NYC ] teapulse.nyc\nMenu: caramel cookie\, cheese c
  loud matcha oat\nPrice: $15\nLikely\, not fully confirmed.\nMore: https://
- matchamap-cu7.pages.dev/e/99ada887a6d1/
-URL:https://matchamap-cu7.pages.dev/e/99ada887a6d1/
+ matchamap.app/e/99ada887a6d1/
+URL:https://matchamap.app/e/99ada887a6d1/
 GEO:40.747081;-73.988924
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:3fdfa28d7a6f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20270910
 DTEND;VALUE=DATE:20270911
@@ -396,8 +379,8 @@ LOCATION:New York\, NY
 DESCRIPTION:Confirmed that the blackberry pie matcha latte from rhythmzeron
  yc is 100% worth the hype! Can’t wait to try their coffee drinks next.\n
  Menu: latte\nDetails not confirmed yet. Check the brand's post before you 
- go.\nMore: https://matchamap-cu7.pages.dev/e/3fdfa28d7a6f/
-URL:https://matchamap-cu7.pages.dev/e/3fdfa28d7a6f/
+ go.\nMore: https://matchamap.app/e/3fdfa28d7a6f/
+URL:https://matchamap.app/e/3fdfa28d7a6f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:2f2ca344f372@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T180000Z
 DTEND:20261205T200000Z
@@ -16,9 +16,8 @@ SUMMARY:Frolic Cafe at Pipe & Row
 LOCATION:Pipe & Row\, Seattle\, WA
 DESCRIPTION:A Seattle coffee and matcha pop-up with a new menu\, popping up
   at a Fremont makers market.\nMenu: new fall menu: matcha and coffee\nLike
- ly\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/2f2ca34
- 4f372/
-URL:https://matchamap-cu7.pages.dev/e/2f2ca344f372/
+ ly\, not fully confirmed.\nMore: https://matchamap.app/e/2f2ca344f372/
+URL:https://matchamap.app/e/2f2ca344f372/
 GEO:47.650460;-122.350803
 STATUS:CONFIRMED
 CATEGORIES:Matcha

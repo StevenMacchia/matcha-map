@@ -8,7 +8,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:e4f559361ec6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T180000Z
 DTEND:20261205T200000Z
@@ -18,8 +18,8 @@ LOCATION:Old Town Tustin Farmers Market\, Old Town Tustin\, Tustin\, CA\, T
 DESCRIPTION:Ruma Latte\, the Tustin matcha vendor\, celebrates its first bi
  rthday at the Old Town Tustin Farmers Market. The post asks guests to RSVP
   in advance to reserve a spot.\nLikely\, not fully confirmed.\nMore: https
- ://matchamap-cu7.pages.dev/e/e4f559361ec6/
-URL:https://matchamap-cu7.pages.dev/e/e4f559361ec6/
+ ://matchamap.app/e/e4f559361ec6/
+URL:https://matchamap.app/e/e4f559361ec6/
 GEO:33.739518;-117.827296
 STATUS:CONFIRMED
 CATEGORIES:Matcha
