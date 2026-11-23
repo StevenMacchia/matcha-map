@@ -78,3 +78,25 @@ test("detectSeries lists a repeated weekday at one place that is not recorded ye
   assert.equal(found[0].weekdays, "sat");
   assert.equal(detectSeries([ev("2026-12-05"), ev("2026-12-12"), ev("2026-12-19")], [{ source_id: "s1", venue: "Pier" }], "2026-11-23").length, 0);
 });
+
+import { seriesBlocked } from "../ingest/lib/series.js";
+import { keepEvent } from "../ingest/lib/write.js";
+
+test("a series is blocked by a series: or brand: override, or when it is an event-site brunch listing; blocked series project nothing and lose their held dates", () => {
+  const brunch = { ...base, id: "bt", brand: "Blind Tiger Coffee Roasters", source_url: "https://www.eventbrite.com/e/1982190772961", title: "Ybor City Matcha & Mimosa Sundays", description: "Sunday brunch favorites with mimosas and beer & wine." };
+  assert.equal(seriesBlocked(brunch, {}), true, "brunch listing from an event site");
+  assert.equal(seriesBlocked(base, {}), false);
+  assert.equal(seriesBlocked(base, { "series:t-sat": { drop: true } }), true);
+  assert.equal(seriesBlocked(base, { "brand:Test Matcha": { drop: true } }), true);
+  assert.equal(seriesBlocked({ ...base, brand: "Matcha Brunch Club", source_url: "https://www.eventbrite.com/e/1", description: "brunch with mimosas" }, {}), false, "a matcha brand is not blocked by the brunch words");
+  const blocked = seriesCandidates([base], [], { sources: [], now: NOW, overrides: { "series:t-sat": { drop: true } } });
+  assert.equal(blocked.candidates.length, 0);
+  const held = [{ id: "x", start: "2026-12-05T09:00:00-06:00", tz: "America/Chicago", series: { id: "t-sat", projected: false } }];
+  assert.deepEqual([...endedOccurrences(held, [base], NOW, { "series:t-sat": { drop: true } })], ["x"]);
+});
+
+test("the Matcha + Meetup networking series is never kept", () => {
+  const e = { id: "m1", brand: "Cafe of the Day", source_id: "eventbrite:x", title: "Matcha + Meetup: Boise (Giving Back Edition)", state: "ID", description: "networking", venue: "", menu: [] };
+  assert.equal(keepEvent(e), false);
+  assert.equal(keepEvent({ ...e, id: "m2", title: "Whisk Co matcha pop-up", brand: "Whisk Co", source_id: "whisk" }), true);
+});

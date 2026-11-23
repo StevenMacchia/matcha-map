@@ -4,6 +4,7 @@
 import fs from "node:fs";
 import { promote, normStart } from "./review.js";
 import { eventId } from "./write.js";
+import { brunchy, PSEUDO_ID } from "./quality.js";
 
 export const SERIES_PATH = "data/series.json";
 export const HORIZON_DAYS = 42;      // six weeks ahead by default
@@ -11,6 +12,22 @@ export const CONFIRM_MAX_DAYS = 28;  // an open-ended series is only extended wh
 const DAY = 86400000;
 const WD = ["Sundays", "Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays"];
 const WD3 = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+
+export function readOverrides(path = "data/overrides.json") {
+  try { return JSON.parse(fs.readFileSync(path, "utf8")); } catch { return {}; }
+}
+
+// A series is blocked (no dates are projected, its held future dates go) when data/overrides.json drops it by `series:<id>` or by
+// `brand:<brand>` (case and punctuation ignored), or when it is a brunch or bar listing from an event site that only borrows matcha
+// for its title: the same rule the writer applies to those listings (ingest/lib/quality.js).
+const slug = (b) => String(b || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+export function seriesBlocked(s, overrides = {}) {
+  if (overrides["series:" + s.id]?.drop === true) return true;
+  for (const [k, v] of Object.entries(overrides)) if (k.startsWith("brand:") && v?.drop === true && slug(k.slice(6)) === slug(s.brand)) return true;
+  const matchaBrand = /matcha|\btea\b|\bcha\b|cha$/i.test(String(s.brand || ""));
+  const eventSite = PSEUDO_ID.test(String(s.source_id || "")) || /(^|\.)(eventbrite|allevents|meetup)\./i.test(String(s.source_url || ""));
+  return eventSite && !matchaBrand && brunchy(`${s.title} ${s.description || ""}`);
+}
 
 export function readSeries(path = SERIES_PATH) {
   try { return JSON.parse(fs.readFileSync(path, "utf8")).series || []; } catch { return []; }
@@ -48,8 +65,8 @@ export function occurrences(s, today) {
 const dateOnlyTime = (t) => (/^\d{2}:\d{2}$/.test(t || "") ? t : null);
 
 // Review-shaped items (what ingest/lib/review.js promotes) for every occurrence of one series. Confidence is the series' own (default "likely").
-export function seriesItemsOf(s, now = new Date()) {
-  if (s.active === false) return [];
+export function seriesItemsOf(s, now = new Date(), overrides = readOverrides()) {
+  if (s.active === false || seriesBlocked(s, overrides)) return [];
   const today = localToday(now, s.tz);
   return occurrences(s, today).map((d) => {
     const t0 = dateOnlyTime(s.start_time), t1 = dateOnlyTime(s.end_time);
@@ -68,12 +85,12 @@ export function seriesItemsOf(s, now = new Date()) {
 
 // Series -> pipeline candidates (through the review promote rules, so an occurrence that is an event already held merges into it
 // and keeps its id), each carrying `series`. A held event on one of the series' dates is flagged even when nothing new is added.
-export function seriesCandidates(list, existing, { sources = [], now = new Date() } = {}) {
+export function seriesCandidates(list, existing, { sources = [], now = new Date(), overrides = readOverrides() } = {}) {
   const held = new Set(existing.map((e) => e.id));
   const out = [];
   const stats = { series: 0, flagged: 0, added: 0, dropped: {} };
   for (const s of list) {
-    const items = seriesItemsOf(s, now);
+    const items = seriesItemsOf(s, now, overrides);
     if (!items.length) continue;
     stats.series++;
     const r = promote(items, existing, { sources, now });
@@ -91,7 +108,7 @@ export function seriesCandidates(list, existing, { sources = [], now = new Date(
 
 // Held events that belong to a series that has since ended, been removed, or no longer lists that date: future occurrences go.
 // Past ones stay (the writer expires them on its own clock).
-export function endedOccurrences(existing, list, now = new Date()) {
+export function endedOccurrences(existing, list, now = new Date(), overrides = readOverrides()) {
   const byId = new Map(list.map((s) => [s.id, s]));
   const gone = new Set();
   for (const e of existing) {
@@ -101,6 +118,7 @@ export function endedOccurrences(existing, list, now = new Date()) {
     const today = localToday(now, tz);
     const day = String(e.start).slice(0, 10);
     if (day < today) continue;
+    if (s && seriesBlocked(s, overrides)) { gone.add(e.id); continue; }
     if (!s || s.active === false) { if (e.series.projected) gone.add(e.id); continue; }
     const limit = limitOf(s, today);
     const listed = s.weekdays.includes(weekdayOf(day)) && !(s.skip || []).includes(day) && (!s.from || day >= s.from);
