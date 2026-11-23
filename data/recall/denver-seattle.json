@@ -1,0 +1,609 @@
+{
+  "generated": "2026-11-23",
+  "metros": [
+    "denver",
+    "seattle"
+  ],
+  "method": "Brands found via WebSearch, newsletters, host calendars, MATO, local press; our data (events.json, sources.json, watchlist.json, review/*.md) checked only after selection. Instagram and Facebook pages not fetched.",
+  "caveats": [
+    "data/events.json earliest start is 2026-10-24: pop-ups before that cannot be found by design, so found_by_our_data=no for them is not an adapter miss.",
+    "Sample is biased toward brands already visible to the same search engine, the Let It Simmer newsletter and MATO, which our pipeline also ingests."
+  ],
+  "totals": {
+    "brands": 10,
+    "popups_found": 19,
+    "popups_in_our_data": 4,
+    "popups_inside_data_window": 6,
+    "popups_inside_window_in_our_data": 4,
+    "popups_found_per_channel": {
+      "local-press-or-newsletter": 12,
+      "own-instagram-post": 13,
+      "other": 3,
+      "market-organizer-vendor-list": 2,
+      "host-venue-web-calendar": 2,
+      "host-venue-instagram": 1,
+      "own-website": 1
+    }
+  },
+  "brands": [
+    {
+      "metro": "seattle",
+      "brand": "Nicho's Matcha Cafe",
+      "handle": null,
+      "website": null,
+      "why_independent": "Roaming matcha pop-up brand: weekly residencies and one-offs hosted inside other businesses (Nakagawa Japanese Restaurant Bothell, Hiroshi's Take-Out Beacon Hill, Seoul Bowl Seattle U, Snow Peak, The Remontant); no cafe of its own found. Handle never printed on the public pages I read (newsletter links Instagram posts only).",
+      "popups": [
+        {
+          "date": "2026-03-21",
+          "venue": "Hiroshi's Take-Out & Deli, Beacon Hill, Seattle",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-mar-327",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-mar-327",
+              "posted_at": "2026-03-19",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/p/DVzsI40kWnr",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "IG post link listed in the newsletter; not fetched by us (rule). Public post pages show a login wall after a few views and IG blocks crawling"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; this date predates it",
+          "missed_channel_that_would_catch": "n/a (outside retention); local-press-or-newsletter adapter would have caught it"
+        },
+        {
+          "date": "2026-05-28",
+          "venue": "Seoul Bowl Seattle University, Seattle",
+          "source_url": "https://ma.to/event/nichos-matcha-weekly-pop-up-28-may-2026",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/event/nichos-matcha-weekly-pop-up-28-may-2026",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "MATO (ma.to) third-party event aggregator page, public HTML, no posted date shown; host Instagram not linked on the page"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it. Weekly Thursday residency 11:00-16:00",
+          "missed_channel_that_would_catch": "n/a (outside retention); MATO venue/event pages"
+        },
+        {
+          "date": "2026-10-10",
+          "venue": "The Remontant, Kirkland (Fridays 11-5 also at solidcore Totem Lake)",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-october-876",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-october-876",
+              "posted_at": "2026-10-08",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/p/DeInLEZGlyu/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "IG post link listed in the newsletter; not fetched by us (rule). Public post pages show a login wall after a few views and IG blocks crawling"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it",
+          "missed_channel_that_would_catch": "n/a (outside retention)"
+        },
+        {
+          "date": "2026-10-31",
+          "venue": "Snow Peak (Fremont), Seattle, collab menu 11am-3pm",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-oct-88b",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-oct-88b",
+              "posted_at": "2026-10-29",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/p/DfBicBTlBYB",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "IG post link listed in the newsletter; not fetched by us (rule). Public post pages show a login wall after a few views and IG blocks crawling"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "INSIDE our window (after 2026-10-24) and absent from events.json: a true miss",
+          "missed_channel_that_would_catch": "local-press-or-newsletter: the Oct 29 Let It Simmer issue (our Nicho events cite the Nov 19 issue, so older issues were not parsed or were dropped)"
+        },
+        {
+          "date": "2026-11-24",
+          "venue": "Nakagawa Japanese Restaurant, Bothell (Tuesdays 11am-6pm)",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+              "posted_at": "2026-11-19",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/p/Dfaj8j6Blaw/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "IG post link listed in the newsletter; not fetched by us (rule). Public post pages show a login wall after a few views and IG blocks crawling"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "ac57cfc384f0",
+          "missed_channel_that_would_catch": null
+        },
+        {
+          "date": "2026-11-28",
+          "venue": "Hiroshi's Take-Out & Deli, Beacon Hill, Seattle (Saturdays 11am-3pm)",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+              "posted_at": "2026-11-19",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/p/DeInLEZGlyu/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "IG post link listed in the newsletter; not fetched by us (rule). Public post pages show a login wall after a few views and IG blocks crawling"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "f41c6892c9f8",
+          "missed_channel_that_would_catch": null
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": false
+      }
+    },
+    {
+      "metro": "seattle",
+      "brand": "Standard Matcha",
+      "handle": "standardmatcha",
+      "website": null,
+      "why_independent": "Matcha-only pop-up brand with no storefront: Tuesday and Friday-night residency at Orange Goose Coffee (Lower Queen Anne, Fridays billed as Goodnight Goose) plus one-off collabs and events.",
+      "popups": [
+        {
+          "date": "2026-10-31",
+          "venue": "Bill Wright Golf Course, Beacon Hill, Seattle (10:30am-2pm, First Tee Halloween)",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-oct-88b",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-oct-88b",
+              "posted_at": "2026-10-29",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/p/DfAt6Maki-F",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "IG post link listed in the newsletter; not fetched by us (rule). Public post pages show a login wall after a few views and IG blocks crawling"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "INSIDE our window and absent from events.json: a true miss",
+          "missed_channel_that_would_catch": "local-press-or-newsletter (Oct 29 issue) or own-instagram-post (post DfAt6Maki-F)"
+        },
+        {
+          "date": "2026-11-20",
+          "venue": "Orange Goose Coffee / Goodnight Goose, Lower Queen Anne, Seattle (6-10pm, matcha affogato with My Favorite Ice Cream Co.)",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+              "posted_at": "2026-11-19",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/standardmatcha",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Handle named in newsletter; profile not fetched (rule); IG login wall for deeper browsing"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "95783bfa9cfb",
+          "missed_channel_that_would_catch": null
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      }
+    },
+    {
+      "metro": "seattle",
+      "brand": "Saintcha Matcha",
+      "handle": "saintcha.co",
+      "website": null,
+      "why_independent": "Matcha pop-up brand with no storefront; appears as the matcha vendor at partner events (Chibi Tings, Inspire Seattle, Papa Kitchen).",
+      "popups": [
+        {
+          "date": "2026-11-21",
+          "venue": "Chibi Tings, Capitol Hill, Seattle (1-7pm, with ChopChop and N&J Kitchen)",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+              "posted_at": "2026-11-19",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/saintcha.co",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Handle named in newsletter; profile not fetched (rule); IG login wall"
+            }
+          ],
+          "found_by_our_data": "yes",
+          "event_id": "5128d027a985",
+          "missed_channel_that_would_catch": null
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      },
+      "note": "Only one Saintcha date was independently verified on a non-Instagram public page; our data holds 7 further Saintcha events sourced from Instagram that I did not check."
+    },
+    {
+      "metro": "seattle",
+      "brand": "Cafe 86",
+      "handle": "cafe86_wa",
+      "website": "https://cafe86wa.com",
+      "why_independent": "Matcha and hojicha cart plus online wholesale; no permanent storefront (Her Campus and Seattle Spectator); pop-ups at markets, First Thursday, Magnolia flea market, THE BLOCK.",
+      "popups": [
+        {
+          "date": "2026-05-17",
+          "venue": "Fairview Market Hall, Seattle (THE BLOCK mobile-cart gathering, 11am-3pm)",
+          "source_url": "https://seattlespectator.com/2026/05/20/the-block-pop-up-harbors-mobile-coffee-culture/",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://seattlespectator.com/2026/05/20/the-block-pop-up-harbors-mobile-coffee-culture/",
+              "posted_at": "2026-05-20",
+              "readable_without_login": "yes",
+              "why": "Seattle Spectator article, free, published after the event (a report, not an announcement)"
+            },
+            {
+              "channel": "market-organizer-vendor-list",
+              "url": "https://www.instagram.com/theblockseattle",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Organizer handle @theblockseattle named in the article; Instagram only, not fetched"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it",
+          "missed_channel_that_would_catch": "n/a (outside retention)"
+        },
+        {
+          "date": "2026-10-01",
+          "venue": "210 Seattle, Pioneer Square First Thursday Art Walk, 5pm",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-october",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-october",
+              "posted_at": "2026-10-01",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/cafe86_wa",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Handle linked in newsletter; not fetched (rule)"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it",
+          "missed_channel_that_would_catch": "n/a (outside retention)"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      },
+      "note": "Our data has an upcoming Cafe 86 event (2026-11-28 Renton, id dffd4fc5072d, Instagram reel) that I could not confirm on any non-Instagram public page, so it is not counted here. Oct 8 issue also lists Cafe 86 on Saturdays 10-4 at Magnolia Vintage Warehouse (recurring, no single date)."
+    },
+    {
+      "metro": "seattle",
+      "brand": "The Matcha Box",
+      "handle": null,
+      "website": null,
+      "why_independent": "Matcha pop-up brand with no known storefront; one-day takeovers at Pipe & Row, Fremont. Handle not printed on any public page I read.",
+      "popups": [
+        {
+          "date": "2026-03-21",
+          "venue": "Pipe and Row, Fremont, Seattle (12-4pm, with Roam Photobooth and Poppe Vintage Goods)",
+          "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-mar-327",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-mar-327",
+              "posted_at": "2026-03-19",
+              "readable_without_login": "yes",
+              "why": "Let It Simmer Substack weekly \"This Week in Seattle Pop-Ups\", free public post, plain HTML"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/p/DVtoCfsCbol",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "IG post link listed in the newsletter; not fetched by us (rule). Public post pages show a login wall after a few views and IG blocks crawling"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it",
+          "missed_channel_that_would_catch": "n/a (outside retention)"
+        },
+        {
+          "date": "2026-05-31",
+          "venue": "Pipe & Row, 611 N 35th St, Fremont, Seattle (10am-3pm, AAPI Heritage Month)",
+          "source_url": "https://ma.to/event/aapi-matcha-pop-up-pipe-and-row-31-may-2026",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://ma.to/event/aapi-matcha-pop-up-pipe-and-row-31-may-2026",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "MATO (ma.to) third-party event aggregator page, public HTML, no posted date shown; host Instagram not linked on the page"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it",
+          "missed_channel_that_would_catch": "n/a (outside retention)"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": false
+      },
+      "note": "Latest dated pop-up I found is 2026-05-31; nothing newer on any non-Instagram public page. Our sources entry has no handle, so it cannot be polled."
+    },
+    {
+      "metro": "denver",
+      "brand": "MatchaSanya",
+      "handle": "matcha.sanya",
+      "website": null,
+      "why_independent": "Small hand-whisked matcha and hojicha pop-up brand; both dated events found were guest pop-ups at Point Creative Supplies (RiNo); no storefront found.",
+      "popups": [
+        {
+          "date": "2025-10-25",
+          "venue": "Point Creative Supplies, 3377 Blake St, RiNo, Denver (11am-2pm)",
+          "source_url": "https://rinoartdistrict.org/do/matcha-pop-up-at-point-creative-supplies-with-matchsanya",
+          "channels": [
+            {
+              "channel": "host-venue-web-calendar",
+              "url": "https://rinoartdistrict.org/do/matcha-pop-up-at-point-creative-supplies-with-matchsanya",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "RiNo Art District public events calendar page; marked past; posting date not shown"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/matcha.sanya",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Handle named on the RiNo page; Instagram not fetched (rule)"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it by a year",
+          "missed_channel_that_would_catch": "host-venue-web-calendar (rinoartdistrict.org events page)"
+        },
+        {
+          "date": "2025-12-14",
+          "venue": "Point Creative Supplies, 3377 Blake St, RiNo, Denver (11am-2pm)",
+          "source_url": "https://rinoartdistrict.org/do/matchasanya-pop-up-at-point-creative-supplies",
+          "channels": [
+            {
+              "channel": "host-venue-web-calendar",
+              "url": "https://rinoartdistrict.org/do/matchasanya-pop-up-at-point-creative-supplies",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "RiNo Art District public events calendar page; marked past; posting date not shown"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it",
+          "missed_channel_that_would_catch": "host-venue-web-calendar (rinoartdistrict.org events page)"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      },
+      "note": "No dated 2026 pop-up found on any public page. Our sources notes cite these same two RiNo pages, so the pipeline already knows the brand."
+    },
+    {
+      "metro": "denver",
+      "brand": "Nakama Matcha Co",
+      "handle": "nakamamatchaco",
+      "website": null,
+      "why_independent": "Woman-owned mobile matcha truck and pop-up across the Denver metro (search snippets); events at community venues and a weekly stand at Ironworks on Fox.",
+      "popups": [
+        {
+          "date": null,
+          "venue": "Ironworks on Fox, 651 W 42nd Ave, Denver (Matcha Mondays, 2:30pm to 5:30 or 6:30pm; first announced as three Mondays in July)",
+          "source_url": "https://imginn.com/nakamamatchaco/",
+          "channels": [
+            {
+              "channel": "own-instagram-post",
+              "url": "https://imginn.com/nakamamatchaco/",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Seen only as search-result snippets of a third-party Instagram mirror (my fetch of it was blocked and I did not retry); captions undated, year not shown"
+            },
+            {
+              "channel": "host-venue-instagram",
+              "url": "https://www.instagram.com/liveironworks",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Host handle @liveironworks named in snippets; not fetched (rule)"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": "151817fd4fcb",
+          "data_window_note": "Our event for Nakama at Ironworks is stored as 2027-07-13 (a Tuesday); Monday 2026-07-13 exists, so the year looks mis-parsed. Treated as a miss for the right date. The date itself is unconfirmed on my side (no year on the pages I could see).",
+          "missed_channel_that_would_catch": "own-instagram-post (only channel); host-venue-instagram @liveironworks"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      },
+      "note": "Weakest evidence in the sample: no exact date verified on a fetchable page. Earlier sweeps in data/review mention Nakama at Clubhouse Studio Nov 6-8 and at DU, which I did not verify."
+    },
+    {
+      "metro": "denver",
+      "brand": "Vivid Minds Cafe",
+      "handle": null,
+      "website": null,
+      "why_independent": "Independent Platt Park cafe (1545 S Broadway, opened Aug 2025) that qualifies because it also runs dated off-site mobile activations; not a matcha-pop-up-first brand.",
+      "popups": [
+        {
+          "date": "2026-09-11",
+          "venue": "Denver Botanic Gardens Chatfield Farms, 8500 W Deer Creek Canyon Rd, Littleton (Denver Yoga Summit, Sept 11-13, 2026, Dining Lawn; vendor ran the full weekend)",
+          "source_url": "https://denveryogasummit2026.sched.com/exhibitor/vivid_minds_cafe.87an6df",
+          "channels": [
+            {
+              "channel": "other",
+              "url": "https://denveryogasummit2026.sched.com/exhibitor/vivid_minds_cafe.87an6df",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "Sched conference exhibitor page, public; my direct fetch returned HTTP 503 so wording is from a search snippet, event dates from the Sched and Eventbrite summit pages"
+            },
+            {
+              "channel": "market-organizer-vendor-list",
+              "url": "https://marketspread.com/vendor/241341/vivid-minds-cafe/",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "MarketSpread vendor profile, public, but lists no dates (only intent to apply to the 2026 Golden Farmers Market)"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it",
+          "missed_channel_that_would_catch": "other (conference exhibitor page, Sched)"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": false
+      },
+      "note": "Date shown is the first day of the 3-day summit; the exhibitor listing does not give per-day times. Sources entry is a cafe with an Eventbrite adapter, and its own notes say no matcha pop-up is dated."
+    },
+    {
+      "metro": "denver",
+      "brand": "Sandoitchi (Denver residency)",
+      "handle": "sando.itchi",
+      "website": "https://www.sandoitchi.com/pages/denver",
+      "why_independent": "Dallas-born Japanese sando brand that opens temporary residencies (Denver at The Source Hotel and RiNo ArtPark; Dallas and Houston locations also listed). Matcha is a drink option, not the focus, so this is a weak fit for \"matcha pop-up brand\".",
+      "popups": [
+        {
+          "date": "2026-02-26",
+          "venue": "The Source Hotel, RiNo, Denver, open through 2026-03-07, 10am-4pm",
+          "source_url": "https://denvergazette.com/2026/02/26/sandoitchi-pop-up-returns-to-denver-bringing-its-viral-japanese-sandos",
+          "channels": [
+            {
+              "channel": "local-press-or-newsletter",
+              "url": "https://denvergazette.com/2026/02/26/sandoitchi-pop-up-returns-to-denver-bringing-its-viral-japanese-sandos",
+              "posted_at": "2026-02-26",
+              "readable_without_login": "yes",
+              "why": "Denver Gazette article, free page (published Feb 26, updated Feb 27)"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "events.json holds only events starting 2026-10-24 or later; predates it",
+          "missed_channel_that_would_catch": "n/a (outside retention); local-press"
+        },
+        {
+          "date": null,
+          "venue": "RiNo ArtPark, 1950 35th St, Denver, \"limited 3-month residency through August 30th\" (year and start date not stated on the page)",
+          "source_url": "https://www.sandoitchi.com/pages/denver",
+          "channels": [
+            {
+              "channel": "own-website",
+              "url": "https://www.sandoitchi.com/pages/denver",
+              "posted_at": null,
+              "readable_without_login": "yes",
+              "why": "Brand page, public HTML; no year shown"
+            },
+            {
+              "channel": "own-instagram-post",
+              "url": "https://www.instagram.com/sando.itchi",
+              "posted_at": null,
+              "readable_without_login": "partial",
+              "why": "Linked from the brand site; not fetched (rule)"
+            }
+          ],
+          "found_by_our_data": "no",
+          "event_id": null,
+          "data_window_note": "Year unconfirmed; end date 08-30 predates our window either way",
+          "missed_channel_that_would_catch": "own-website"
+        }
+      ],
+      "known_to_us": {
+        "in_sources": false,
+        "in_watchlist": false
+      }
+    },
+    {
+      "metro": "denver",
+      "brand": "The Sen Tea and Coffee House",
+      "handle": "thesen.coffeetea_dtc",
+      "website": "https://linktr.ee/thesencoffeetea",
+      "why_independent": "Locally owned tea house (Greenwood Village / DTC) described by third-party profiles as hosting collab pop-ups at Denver boutiques. Qualifies only if it runs dated pop-ups elsewhere, which I could not confirm.",
+      "popups": [],
+      "known_to_us": {
+        "in_sources": true,
+        "in_watchlist": true
+      },
+      "note": "COULD NOT FIND A DATED POP-UP on any public page: the MATO venue page says \"No dates announced right now\", thesencafe.com lists no events, and the Linktree is not dated. Our data holds two Sen events (2026-11-02 and 2026-11-09, ids 8e9ea7cd2420 and c758c6227d95, from Instagram post DfLd2MvkeJO) that I cannot verify."
+    }
+  ]
+}
