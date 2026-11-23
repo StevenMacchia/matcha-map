@@ -2175,6 +2175,11 @@
     "miss": true,
     "at": 1795391918224
   },
+  "6905 stockton blvd sacramento ca": {
+    "lat": 38.500926,
+    "lng": -121.431256,
+    "source": "nominatim"
+  },
   "6925 s buffalo dr las vegas nv 89113": {
     "lat": 36.143668,
     "lng": -115.260845,
