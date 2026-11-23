@@ -143,13 +143,13 @@
   map.getCanvas().setAttribute("aria-label", "Map of matcha pop-ups. Use arrow keys to pan, plus and minus to zoom.");
   // Phone (N7): the map runs under the floating header and chips, and the list peeks from the bottom; the map's padding
   // keeps the camera's centre in the open part between them. --chrome (the chips' bottom edge) places the toasts and list.
-  var pad = { top: 0, bottom: 0, left: 0, right: 0 };
+  var mapPad = { top: 0, bottom: 0, left: 0, right: 0 };
   function syncPad(refit) {
     var f = document.querySelector(".filters"), g = $("list-grip");
     var top = wide.matches || !f ? 0 : Math.round(f.getBoundingClientRect().bottom - map.getContainer().getBoundingClientRect().top);
-    pad = { top: Math.max(0, top), bottom: wide.matches || !g ? 0 : g.offsetHeight, left: 0, right: 0 };
-    document.documentElement.style.setProperty("--chrome", (wide.matches || !f ? 0 : Math.round(f.getBoundingClientRect().bottom)) + "px");
-    map.setPadding(pad);
+    mapPad = { top: Math.max(0, top), bottom: wide.matches || !g ? 0 : g.offsetHeight, left: 0, right: 0 };
+    document.documentElement.style.setProperty("--chrome", (f ? Math.round(f.getBoundingClientRect().bottom) : 0) + "px");
+    map.setPadding(mapPad);
     if (refit) map.fitBounds(HOME, { padding: 16, animate: false });
   }
   syncPad(true);
@@ -755,7 +755,7 @@
     // On a phone the sheet covers the lower part of the map, so the pin lands in the upper part;
     // on desktop the card opens above the pin, so the pin lands low.
     var h = map.getContainer().clientHeight;
-    var off = wide.matches ? [0, Math.round(h * 0.3)] : [0, Math.round((pad.bottom - 0.52 * h) / 2)];
+    var off = wide.matches ? [0, Math.round(h * 0.3)] : [0, Math.round((mapPad.bottom - 0.52 * h) / 2)];
     moveMap({ center: lngLat(it.ll), zoom: z, offset: off }, function () { syncMarkers(); showCard(key, !!cardOpener); });
   }
 
@@ -897,8 +897,11 @@
     // Empty: nothing on for the chosen dates anywhere, or nothing in this part of the map. Sleepy Mattie, one line,
     // one button to the next range (motion.js also floats it over the map on a phone).
     var dated = !!state.day || state.chip !== "any", near = vis.length > 0 && !up.length && !past.length;
-    $("empty").hidden = !dated || !(vis.length === 0 || near);
-    if (!$("empty").hidden) emptyCopy(near);
+    // N7: an empty stretch of map (no dates chosen) gets the same card, with Zoom out as its one action.
+    var bare = !dated && !up.length && !past.length && !brands.length && !shopsIn.length;
+    $("empty").hidden = !(bare || (dated && (vis.length === 0 || near)));
+    if (!$("empty").hidden) emptyCopy(near, bare);
+    listCount(up.length, past.length, brands.length + shopsIn.length);
     var html = "";
     if (up.length) html += "<li class=\"head\">Pop-ups</li>" + up.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
     if (past.length) html += "<li class=\"head\">Recent</li>" + past.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
@@ -911,7 +914,6 @@
           (more > 0 ? "<li class=\"shopnote\">+" + more + " more \u00b7 zoom in</li>" : "");
       } else html += "<li class=\"head\">Shops</li><li class=\"shopnote\">" + shopsIn.length + " shops \u00b7 zoom in</li>";
     }
-    if (!html && $("empty").hidden) html = "<li class=\"head\">Nothing in this part of the map. Zoom out or pan.</li>";
     var list = $("list");
     list.innerHTML = html;
     fillChars(list);
@@ -922,10 +924,19 @@
   }
   var NEXT_RANGE = { today: ["weekend", "See this weekend"], weekend: ["week", "See next 7 days"], week: ["any", "See any date"] };
   var RANGE_WORDS = { today: "today", weekend: "this weekend", week: "in the next 7 days" };
-  function emptyCopy(near) {
+  // The count on the phone list's grip: verdict first, a few words.
+  function listCount(n, past, others) {
+    var words = state.day ? "on this day" : RANGE_WORDS[state.chip] || "in view", el = $("list-count");
+    el.textContent = n ? n + " pop-up" + (n === 1 ? "" : "s") + " " + words : past ? "Recent pop-ups here" : others ? "Brands and shops here" : "Nothing here yet";
+    document.body.classList.toggle("list-none", !n && !past && !others);
+  }
+  function emptyCopy(near, bare) {
     var words = state.day ? "on this day" : RANGE_WORDS[state.chip] || "on these dates";
     var next = (!state.day && NEXT_RANGE[state.chip]) || ["any", "See any date"];
-    $("empty").querySelector("p").textContent = (near ? "Nothing near here " : "Nothing ") + words + ".";
+    if (bare) next = ["zoomout", "Zoom out"];
+    var f = $("empty-feed");
+    if (state.feed) { f.href = state.feed.url; f.textContent = "Get " + state.feed.name + " on your calendar"; f.hidden = false; } else f.hidden = true;
+    $("empty").querySelector("p").textContent = bare ? "No pop-ups in this part of the map." : (near ? "Nothing near here " : "Nothing ") + words + ".";
     var b = $("empty-any");
     b.textContent = next[1];
     b.setAttribute("data-next", next[0]);
@@ -983,7 +994,11 @@
   $("recent").addEventListener("click", function () { state.recent = !state.recent; applyFilters(); });
   $("day").addEventListener("change", function () { state.day = $("day").value; applyFilters(); });
   $("day-clear").addEventListener("click", function () { state.chip = "any"; state.day = ""; applyFilters(); $("day").focus(); });
-  $("empty-any").addEventListener("click", function () { state.chip = this.getAttribute("data-next") || "any"; state.day = ""; applyFilters(); });
+  $("empty-any").addEventListener("click", function () {
+    var n = this.getAttribute("data-next") || "any";
+    if (n === "zoomout") { closeCard(true); if (calm()) map.fitBounds(HOME, { padding: 16, animate: false }); else map.fitBounds(HOME, { padding: 16, duration: 1200 }); return; }
+    state.chip = n; state.day = ""; applyFilters();
+  });
   window.addEventListener("resize", moveInk);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveInk);
 
@@ -1037,13 +1052,32 @@
   wide.addEventListener("change", function () { closeCard(true); setView("map"); });
 
   // Status line with Mattie looking surprised (sweat drop), for errors and denied location.
-  function oops(text) {
+  // N7: one clear next action on each note (act = [label, fn]), and a close button.
+  function oops(text, act, pose) {
     var note = $("note");
-    note.innerHTML = "<span class=\"oops\" data-char=\"m-surprised\"></span>";
+    note.innerHTML = "<span class=\"oops\" data-char=\"" + (pose || "m-surprised") + "\"></span>";
     fillChars(note);
-    note.appendChild(document.createTextNode(text));
+    var s = document.createElement("span");
+    s.className = "note-t";
+    s.textContent = text;
+    note.appendChild(s);
+    if (act) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "note-act"; b.textContent = act[0];
+      b.addEventListener("click", function () { note.hidden = true; act[1](); });
+      note.appendChild(b);
+    }
+    var x = document.createElement("button");
+    x.type = "button"; x.className = "note-x"; x.setAttribute("aria-label", "Dismiss"); x.textContent = "×";
+    x.addEventListener("click", function () { note.hidden = true; });
+    note.appendChild(x);
     note.hidden = false;
   }
+  function typeZip() { var z = $("zip"); z.focus(); z.select(); }
+  // Offline: Mattie naps and says so; the map and the last data stay usable (sw.js keeps them).
+  window.addEventListener("offline", function () { oops("You are offline. Showing what was saved.", null, "m-sleepy"); });
+  window.addEventListener("online", function () { var n = $("note"); if (/offline/.test(n.textContent)) n.hidden = true; });
+  if (navigator.onLine === false) setTimeout(function () { oops("You are offline. Showing what was saved.", null, "m-sleepy"); }, 0);
 
   // ---------- near me and zip ----------
   // One "you are here" marker: a dot for Near me, Chasen for a zip. Each clears the other.
@@ -1060,13 +1094,14 @@
   }
   function clearYou() {
     if (youMarker) { youMarker.remove(); youMarker = null; }
-    state.userLoc = null; state.zip = "";
+    state.userLoc = null; state.zip = ""; state.feed = null;
     $("nearrow").hidden = true;
+    $("near-feed").hidden = true;
     try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ }
   }
   $("near").addEventListener("click", function () {
     var note = $("note");
-    if (!navigator.geolocation) { oops("Location is off. Pan the map instead."); return; }
+    if (!navigator.geolocation) { oops("Location is off here.", ["Type a zip", typeZip]); return; }
     navigator.geolocation.getCurrentPosition(function (pos) {
       note.hidden = true;
       clearYou();
@@ -1075,7 +1110,7 @@
       if (state.view === "list") setView("map");
       moveMap({ center: lngLat(state.userLoc), zoom: 10 }, function () { animOnce(el, "ping"); renderList(true); });
     }, function () {
-      oops("Location is off. Pan the map instead.");
+      oops("Location is off.", ["Type a zip", typeZip]);
     }, { timeout: 10000, maximumAge: 300000 });
   });
 
@@ -1109,12 +1144,29 @@
     $("zip").value = label;
     var el = placeYou([c[0], c[1]], true);
     $("nearzip").textContent = label;
+    cityFeed(label);
     $("nearrow").hidden = false;
     if (zip) { try { localStorage.setItem(ZIP_KEY, zip); } catch (e) { /* ignore */ } }
     if (state.view === "list") setView("map");
     var opts = { center: lngLat(state.userLoc), zoom: 10 };
     if (quiet) { map.jumpTo(opts); animOnce(el, "ping"); renderList(false); }
     else moveMap(opts, function () { animOnce(el, "ping"); announce("land", { label: label }); renderList(true); });
+  }
+  // A landed city's calendar feed (/feeds/<city>-<st>.ics, written by npm run feeds), when there is one (N7).
+  var feedsP = null;
+  function cityFeed(label) {
+    var m = /^(.+), ([A-Z]{2})$/.exec(label || "");
+    if (!m) return;
+    var key = m[1].toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + "-" + m[2].toLowerCase();
+    if (!feedsP) feedsP = fetch("feeds/index.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; });
+    feedsP.then(function (ix) {
+      var u = ix && ix.cities && ix.cities[key];
+      if (!u || $("nearzip").textContent !== label) return;
+      state.feed = { url: u, name: m[1] };
+      var a = $("near-feed");
+      a.href = u; a.hidden = false;
+      if (!$("empty").hidden) renderList(false);
+    });
   }
   // Fly to a zip's centroid. quiet: a return visit, so no error and the map jumps there.
   function goZip(zip, quiet) {
@@ -1376,7 +1428,7 @@
     loadShops();
     loadExtras();
   }).catch(function () {
-    oops("Could not load pop-ups. Try again in a moment.");
+    oops(navigator.onLine === false ? "You are offline and nothing was saved yet." : "Could not load pop-ups.", ["Try again", function () { location.reload(); }], navigator.onLine === false ? "m-sleepy" : "");
   }).then(function () { $("loading").hidden = true; });
 
   // Storefronts load after events and brands so the first paint never waits for them.

@@ -1,0 +1,220 @@
+/* Matcha Map, round 2 (rung N7): the shell. docs/DESIGN-CINEMATIC.md, "Round 2 direction".
+   On a phone the map runs edge to edge and the chrome floats over it: Mattie's disc, one search pill, the theme disc,
+   one row of chips; the list is a sheet that peeks from the bottom. On a desktop the same pieces sit in a header bar.
+   Loads after style.css and motion.css and only overrides; remove it and the rung 32 layout comes back.
+   Scale: type 13 / 15 / 17 / 21 / 26; radii 26 (sheets), 18 (cards, pictures), pill; two shadows (resting, floating). */
+:root {
+  --e1: 0 1px 2px rgba(59,46,39,.08), 0 3px 10px rgba(59,46,39,.09);
+  --e2: 0 2px 6px rgba(59,46,39,.08), 0 12px 32px rgba(59,46,39,.16);
+  --r-sheet: 26px; --r-card: 18px;
+  --peek: calc(68px + env(safe-area-inset-bottom));
+  --chipline: #E4DCCB;
+  /* dates and numbers stay in the house font with even figures; the monospaced font of rung 32 never loaded */
+  --mono: var(--font);
+}
+:root[data-theme="dark"] {
+  --e1: 0 1px 2px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
+  --e2: 0 2px 6px rgba(0,0,0,.35), 0 12px 32px rgba(0,0,0,.45);
+  --chipline: #3A4E40;
+  --panel: #223026;
+}
+body { background: var(--canvas); }
+.sr, .brand-words.sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skiplink { position: absolute; left: 12px; top: -60px; z-index: 4000; padding: 10px 16px; border-radius: var(--pill); background: var(--panel); color: var(--deep); font-weight: 800; box-shadow: var(--e2); }
+.skiplink:focus { top: 12px; }
+
+/* ---------- pieces shared by both layouts ---------- */
+.disc { flex: none; width: 48px; height: 48px; padding: 0; border-radius: 50%; border: 0; background: var(--panel); color: var(--deep);
+  display: inline-grid; place-items: center; cursor: pointer; box-shadow: var(--e2); transition: transform .14s ease, background-color .15s ease; }
+.disc:hover { background: var(--foam); }
+.disc:active { transform: scale(.92); }
+.mark-btn .mark { width: 38px; height: 38px; margin-top: 2px; }
+.icon-btn.disc svg { width: 22px; height: 22px; }
+
+.searchbar { position: relative; display: flex; align-items: center; gap: 2px; min-width: 0; height: 48px; padding: 0 4px 0 14px;
+  border-radius: var(--pill); background: var(--panel); box-shadow: var(--e2); color: var(--muted); }
+.searchbar:focus-within { box-shadow: var(--e2), 0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent); }
+.s-ic { flex: none; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.searchbar .zip { flex: 1; min-width: 0; width: auto; height: 44px; min-height: 0; padding: 0 6px; border: 0; border-radius: 0; background: transparent;
+  font-size: 16px; font-weight: 700; letter-spacing: 0; color: var(--ink); outline: none; }
+.searchbar .zip::-webkit-search-cancel-button { display: none; }
+.searchbar .go, .searchbar .near { flex: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; min-width: 40px;
+  padding: 0; border: 0; border-radius: var(--pill); background: transparent; color: var(--deep); cursor: pointer; font-weight: 800; font-size: 15px;
+  transition: transform .12s ease, background-color .15s ease; }
+.searchbar .go::before, .searchbar .near::before { content: ""; position: absolute; inset: -2px; } /* 44 px of tap around a 40 px face */
+.searchbar .go, .searchbar .near { position: relative; }
+.searchbar .near { background: var(--foam); }
+.searchbar .go:hover, .searchbar .near:hover { background: color-mix(in srgb, var(--accent) 35%, var(--foam)); }
+.searchbar .go:active, .searchbar .near:active { transform: scale(.92); }
+.searchbar .go svg, .searchbar .near svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.searchbar .near svg .fill { fill: currentColor; stroke: none; }
+.searchbar:has(.zip:placeholder-shown) .go { display: none; }
+/* search.js (N8) mounts its own box inside the slot: the pill becomes its frame */
+.searchbar.has-search { padding: 0; background: none; box-shadow: none; height: auto; }
+.searchbar.has-search > .s-ic, .searchbar.has-search > .zip, .searchbar.has-search > .go { display: none; }
+
+.filters .chip { border: 1px solid var(--chipline); background: var(--panel); color: var(--ink); font-size: 15px; font-weight: 700; padding: 0 16px; }
+.filters .chip:hover { background: var(--foam); }
+.chip.show { display: inline-flex; align-items: center; gap: 6px; color: var(--deep); }
+.chip.show svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.chip[data-chip][aria-pressed="true"] { border-color: transparent; background: transparent; color: var(--accent-ink); font-weight: 800; }
+.chip[data-chip="today"][aria-pressed="true"] { color: #3B2E27; }
+#recent[aria-pressed="true"] { border-color: transparent; }
+.chip-ink { box-shadow: none; }
+.day { color: var(--muted); }
+.day input { border: 1px solid var(--chipline); background: var(--panel); color: var(--ink); }
+
+/* notes: floating toasts with Mattie, one action and a close */
+.toasts { position: absolute; z-index: 680; left: 12px; right: 12px; top: calc(var(--chrome, 120px) + 8px); display: flex; flex-direction: column; align-items: center; gap: 6px; pointer-events: none; }
+.toasts > * { pointer-events: auto; }
+.toasts .note { width: auto; max-width: 520px; min-height: 52px; padding: 6px 6px 6px 10px; border: 0; border-radius: var(--r-card); background: var(--panel); box-shadow: var(--e2);
+  font-size: 15px; font-weight: 700; animation: toast-in .32s var(--out) both; }
+@keyframes toast-in { from { transform: translateY(-10px); opacity: 0; } to { transform: none; opacity: 1; } }
+.note .note-t { flex: 1; min-width: 0; }
+.note .note-act, .nearrow .linkbtn { flex: none; min-height: 40px; padding: 0 14px; border: 0; border-radius: var(--pill); background: var(--deep); color: var(--canvas); font-weight: 800; font-size: 14.5px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+.nearrow .linkbtn { background: var(--foam); color: var(--deep); }
+.note .note-x { flex: none; width: 40px; height: 40px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); font-size: 22px; cursor: pointer; }
+.note .note-x:hover { background: var(--foam); }
+.nearrow { gap: 6px; }
+.nearrow .nr-t { flex: 1; padding-right: 4px; }
+.toasts .zip-err { position: fixed; }
+
+/* empty states: Mattie, one line, one clear action, then the quiet ways forward */
+.empty { text-align: center; border-radius: var(--r-card); }
+.empty .empty-more { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 14px; margin: 8px 0 2px; font-size: 14.5px; }
+.empty .empty-more a { display: inline-flex; align-items: center; min-height: 44px; color: var(--deep); font-weight: 800; }
+.mapempty .addlink { flex: none; color: var(--deep); font-weight: 800; font-size: 14px; }
+
+/* list rows: one product with the chips and the card */
+.row { border-radius: var(--r-card); border: 1px solid var(--chipline); background: var(--panel); box-shadow: var(--e1); }
+.row:not(.past):not(.brandrow) { border-left: 1px solid var(--chipline); }
+.row:not(.past):not(.brandrow) .th { box-shadow: 0 0 0 2px var(--peach); }
+.row.brandrow { box-shadow: none; }
+.row .th { width: 60px; height: 60px; border-radius: 14px; }
+.row strong { font-size: 17px; line-height: 1.25; }
+.row .rt > span { font-size: 14.5px; }
+.list li.head { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.list li.head::before { background: var(--accent); }
+
+/* the built-in card (cards.js replaces it when loaded): radii and buttons in the same family */
+.ph { border-radius: var(--r-card); }
+.card .links a { border-radius: var(--pill); }
+.card .links a:first-child { background: var(--deep); border-color: var(--deep); color: var(--canvas); }
+.card .links a:first-child:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.close { border: 0; background: var(--panel); box-shadow: var(--e1); }
+.mm-pop .maplibregl-popup-content { border-radius: var(--r-card); box-shadow: var(--e2); border: 0; }
+
+.geo { border: 0; background: var(--panel); box-shadow: var(--e2); border-radius: var(--pill); font-weight: 800; color: var(--deep); }
+.loading { border: 0; border-radius: var(--r-card); box-shadow: var(--e2); }
+
+/* ---------- phone and tablet: the map is the app ---------- */
+@media (max-width: 899px) {
+  .bar { position: absolute; z-index: 700; top: calc(env(safe-area-inset-top) + 10px); left: 12px; right: 12px; min-height: 0; padding: 0; gap: 8px;
+    background: none; border: 0; }
+  .brand { flex: none; display: flex; align-items: center; }
+  .brand-words { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .sidekick { display: none; }
+  .searchbar { flex: 1; }
+  .searchbar .near .lbl { display: none; }
+  .bar-actions { gap: 0; }
+  #view-toggle { display: none; }
+  .filters { position: absolute; z-index: 690; top: calc(env(safe-area-inset-top) + 66px); left: 0; right: 0; flex-direction: row; align-items: center;
+    gap: 8px; padding: 4px 12px 10px; overflow-x: auto; overflow-y: hidden; background: none; border: 0;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
+  .filters .chip, .day input { box-shadow: var(--e1); border-color: transparent; }
+  .chip-ink { box-shadow: var(--e1); }
+  .day > span { display: none; }
+  .filters::after { content: ""; flex: none; width: 16px; height: 1px; }
+  .note, .nearrow { border-bottom: 0; }
+
+  .main { position: absolute; inset: 0; }
+  .map-panel { inset: 0; }
+  .maplibregl-ctrl-bottom-left, .maplibregl-ctrl-bottom-right { bottom: var(--peek); }
+  .geo { top: auto; right: 12px; bottom: calc(var(--peek) + 12px); }
+  .hop { top: auto; bottom: calc(var(--peek) + 60px); }
+  .mapempty { bottom: calc(var(--peek) + 14px); }
+
+  /* the list: a sheet that peeks with its count; the grip (or Back) moves it */
+  .list-panel, body.show-list .list-panel { display: block; position: absolute; z-index: 600; left: 0; right: 0; bottom: 0; top: calc(var(--chrome, 124px) + 4px);
+    border-radius: var(--r-sheet) var(--r-sheet) 0 0; background: var(--panel); box-shadow: 0 -4px 24px rgba(59,46,39,.14);
+    overflow: hidden; overscroll-behavior: contain; transform: translateY(calc(100% - var(--peek))); transition: transform .46s var(--out), box-shadow .3s ease; }
+  :root[data-theme="dark"] .list-panel { box-shadow: 0 -4px 24px rgba(0,0,0,.45); }
+  body.show-list .list-panel { transform: none; overflow-y: auto; }
+  body.card-open .list-panel { transform: translateY(100%); transition-duration: .24s; }
+  .list-grip { position: sticky; top: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 7px;
+    width: 100%; height: var(--peek); min-height: 60px; padding: 9px 16px 0; border: 0; border-radius: var(--r-sheet) var(--r-sheet) 0 0;
+    background: var(--panel); color: var(--deep); font-size: 17px; font-weight: 800; cursor: pointer; }
+  .grip-bar { width: 40px; height: 5px; border-radius: var(--pill); background: var(--chipline); }
+  .list-grip:hover .grip-bar { background: var(--edge); }
+  .list-grip:focus-visible { outline-offset: -4px; }
+  body.show-list .list-grip { border-bottom: 1px solid var(--line); height: 60px; }
+  .list-panel .list { padding-top: 4px; padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
+  .list-panel .empty { margin-top: 4px; }
+  .sheet { border-radius: var(--r-sheet) var(--r-sheet) 0 0; max-height: calc(100% - var(--chrome, 124px) - 8px); box-shadow: 0 -6px 30px rgba(59,46,39,.18); }
+}
+@media (max-width: 380px) {
+  .disc { width: 44px; height: 44px; }
+  .mark-btn .mark { width: 34px; height: 34px; }
+  .searchbar { padding-left: 10px; }
+}
+
+/* ---------- desktop: one header bar ---------- */
+@media (min-width: 900px) {
+  .bar { min-height: 72px; padding: 10px 20px; gap: 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
+  .brand { flex: none; display: flex; align-items: center; gap: 12px; }
+  .brand-words h1 { margin: 0; font-size: 26px; line-height: 1.1; font-weight: 800; color: var(--deep); white-space: nowrap; }
+  .brand-words p { margin: 2px 0 0; font-size: 13.5px; color: var(--muted); white-space: nowrap; }
+  .mark-btn { width: 52px; height: 52px; box-shadow: var(--e1); }
+  .mark-btn .mark { width: 42px; height: 42px; }
+  .sidekick { margin-left: 0; }
+  .searchbar { flex: 0 1 480px; margin: 0 auto; box-shadow: none; border: 1px solid var(--chipline); background: var(--canvas); }
+  .searchbar .near { padding: 0 14px 0 10px; }
+  .bar-actions { margin-left: 0; }
+  .bar-actions .disc { box-shadow: none; border: 1px solid var(--chipline); width: 44px; height: 44px; }
+  .filters { padding: 10px 20px; gap: 8px; border-bottom: 1px solid var(--line); background: var(--panel); }
+  .list-grip { display: none; }
+  .list-panel { border-right: 1px solid var(--line); background: var(--canvas); }
+  .toasts { left: 420px; right: 20px; }
+}
+
+/* ---------- the opening (app.js: html.opening, then .open-go; .fadein on repeat visits and in calm mode) ---------- */
+html.opening #map, html.fadein #map { opacity: 0; }
+html.opening #map { transform: scale(1.05); }
+html.open-go #map { opacity: 1; transform: none; transition: opacity .7s ease, transform 1s var(--out); }
+html.fadein.open-go #map { transition: opacity .3s ease; }
+html.opening .bar > *, html.opening .filters { opacity: 0; transform: translateY(-16px); }
+html.open-go .bar > *, html.open-go .filters { transition: opacity .38s ease, transform .5s var(--out); }
+html.open-go .bar > :nth-child(2) { transition-delay: .06s; }
+html.open-go .bar > :nth-child(3) { transition-delay: .12s; }
+html.open-go .filters { transition-delay: .18s; }
+html.opening .mark-btn { transform: translateY(30px) scale(.3); }
+html.open-go .mark-btn { transition: transform .62s var(--spring) .14s; }
+@media (max-width: 899px) {
+  html.opening .list-panel { transform: translateY(100%); }
+  html.open-go .list-panel { transition-delay: .5s; }
+}
+/* a skipped opening lands at once; a stuck one (a script error) shows everything after 2.6 s */
+html.open-skip *, html.open-skip *::before { transition: none !important; }
+html.open-skip .mk-in { animation: none !important; }
+html.opening:not(.open-go) #map, html.opening:not(.open-go) .bar > *, html.opening:not(.open-go) .filters, html.opening:not(.open-go) .mark-btn,
+html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
+@keyframes mm-show { to { opacity: 1; transform: none; } }
+.rm.fadein.open-go #map { transition: opacity .3s ease !important; }
+
+/* pins drop in a wave from the centre (the opening): a spring down, a squash, a settle */
+.mk-in.drop-in { animation: pin-drop .62s cubic-bezier(.3, .7, .4, 1) both; transform-origin: 50% 100%; }
+@keyframes pin-drop {
+  0% { transform: translateY(-44px) scale(.86); opacity: 0; }
+  42% { transform: translateY(0) scale(1.14, .84); opacity: 1; }
+  64% { transform: translateY(-7px) scale(.95, 1.06); }
+  84% { transform: translateY(0) scale(1.03, .97); }
+  100% { transform: none; opacity: 1; }
+}
+
+/* the effects canvas (motion.js MatchaFX): one layer, only while something is drawn */
+.fx { position: fixed; inset: 0; z-index: 2500; pointer-events: none; }
+/* the pin that becomes the card's picture (motion.js) */
+.morph-ghost { position: fixed; z-index: 1200; left: 0; top: 0; pointer-events: none; overflow: hidden; background: var(--foam); transform-origin: 0 0; will-change: transform, border-radius, opacity; }
+.morph-ghost .ch { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; }
+.morph-hide { opacity: 0 !important; }
+.morph-show { transition: opacity .22s ease; }
