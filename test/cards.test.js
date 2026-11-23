@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { cardHtml, rowHtml, brandCardHtml, verdict, drinkArt, drinkSlug, alsoNearby, renderCard, esc } from "../site/cards.js";
+import { cardHtml, rowHtml, brandCardHtml, brandRowHtml, bioLine, citySlug, followersWord, verdict, drinkArt, drinkSlug, alsoNearby, renderCard, esc } from "../site/cards.js";
 
 // Thu 2026-11-26 12:30 in Houston (UTC-6).
 const NOW = new Date("2026-11-26T18:30:00Z");
@@ -17,6 +17,7 @@ const ART = {
   catalog: [{ slug: "iced-matcha-latte", name: "Iced matcha latte", aliases: ["iced matcha", "matcha latte"] }],
   families: {},
 };
+const rowText = (html) => html.replace(/<span class="mm-initial">[^<]*<\/span>/g, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 const text = (html) => html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
 test("verdict: today, now, tomorrow, this weekend, weekday, a date, past", () => {
@@ -163,7 +164,79 @@ test("brand card: next date, coming up, or no dates", () => {
   const html = brandCardHtml(b, [ev({ start: "2026-11-27T10:00:00-06:00", end: null })], { now: NOW });
   assert.match(text(html), /^Next: Tomorrow from 10am Houston/);
   assert.match(html, /Coming up/);
-  assert.match(text(brandCardHtml(b, [], { now: NOW })), /^No dates posted yet/);
+  assert.match(text(brandCardHtml(b, [], { now: NOW })), /No upcoming dates posted/);
+  assert.doesNotMatch(text(brandCardHtml(b, [], { now: NOW })), /^No dates/, "no dates is never the headline");
+});
+
+// brands.json records for the brand card and row (2026-11-23: the Raleigh list read as six blank faces)
+const FULL_B = { handle: "leafandwhisk", name: "Leaf & Whisk", website: "https://leafandwhisk.example/shop", followers: 12345, kind: "popup",
+  bio: "Ceremonial matcha pop-ups across the Triangle. Weekends at the farmers market, weekdays by order.", picture: "https://cdn.example/leaf.jpg",
+  home_city: "Raleigh", home_state: "NC",
+  recent: [
+    { permalink: "https://www.instagram.com/p/AAA/", image_url: "https://cdn.example/a.jpg", caption: "Oldest post", timestamp: "2026-10-01T15:00:00+0000" },
+    { permalink: "https://www.instagram.com/p/CCC/", image_url: "https://cdn.example/c.jpg", caption: "Newest post\nsecond line", timestamp: "2026-11-20T15:00:00+0000" },
+    { permalink: "https://www.instagram.com/p/BBB/", image_url: "https://cdn.example/b.jpg", caption: "Middle post", timestamp: "2026-11-02T15:00:00+0000" },
+  ] };
+const SRC_B = { id: "leaf-and-whisk", brand: "Leaf & Whisk", instagram: "leafandwhisk", kind: "popup", home_city: "Raleigh", home_state: "NC", website: null };
+const ctxB = (rec) => ({ now: NOW, brands: { brands: [rec] } });
+
+test("brand card with everything: picture, one bio line, kind, @handle, website pill, followers, two latest posts, alerts, claim", () => {
+  const html = brandCardHtml(SRC_B, [], ctxB(FULL_B)), t = text(html);
+  assert.match(html, /<img src="https:\/\/cdn\.example\/leaf\.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">/);
+  assert.match(t, /Leaf &amp; Whisk/);
+  assert.match(html, /<p class="mm-bio mm-bio1">Ceremonial matcha pop-ups across the Triangle\.<\/p>/, "the first sentence only");
+  assert.match(html, /<span class="mm-kind">pop-up<\/span>/);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/leafandwhisk\/"[^>]*>@leafandwhisk</);
+  assert.match(html, /class="mm-webpill" href="https:\/\/leafandwhisk\.example\/shop"[^>]*>.*leafandwhisk\.example</);
+  assert.match(t, /12\.3k followers/);
+  const posts = [...html.matchAll(/class="mm-rpost" href="([^"]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(posts, ["https://www.instagram.com/p/CCC/", "https://www.instagram.com/p/BBB/"], "the two most recent, newest first");
+  assert.match(t, /Nov 20/); assert.match(t, /Nov 2/);
+  assert.match(html, /<span class="mm-rsnip">Newest post<\/span>/, "a one-line snippet behind each picture");
+  assert.match(html, /href="\/alerts\/\?city=raleigh-nc"[^>]*>.*Get alerts/);
+  assert.match(html, /href="\/claim\/\?brand=Leaf%20%26%20Whisk&amp;handle=leafandwhisk"/);
+  assert.ok(html.indexOf("mm-recent") < html.indexOf("No upcoming dates posted"), "the no-dates line sits under the posts");
+  assert.doesNotMatch(t, /No dates posted here yet/);
+  const row = rowText(brandRowHtml(SRC_B, ctxB(FULL_B)));
+  assert.equal(row, "Leaf &amp; Whisk pop-up 12.3k followers");
+});
+
+test("brand with no picture: the initial, no image, no placeholder text", () => {
+  const rec = { ...FULL_B, picture: "", followers: 120 };
+  const html = brandCardHtml(SRC_B, [], ctxB(rec));
+  assert.doesNotMatch(html, /leaf\.jpg/);
+  assert.match(html, /<span class="mm-initial">L<\/span>/);
+  assert.doesNotMatch(text(html), /followers|undefined|null/, "120 followers is under the 500 floor");
+  const row = brandRowHtml(SRC_B, ctxB(rec));
+  assert.match(row, /mm-initial">L</); assert.doesNotMatch(row, /<img/);
+  assert.equal(rowText(row), "Leaf &amp; Whisk pop-up Ceremonial matcha pop-ups across the Triangle.", "the bio line when the followers word is empty");
+  // a sources.json record with no brands.json match at all
+  const bare = brandCardHtml({ id: "habibtea-raleigh", brand: "HabibTea", kind: "tea-brand", home_city: "Raleigh", home_state: "NC", instagram: null }, [], { now: NOW, brands: { brands: [] } });
+  assert.doesNotMatch(bare, /instagram\.com|<img|@/);
+  assert.match(bare, /href="\/claim\/\?brand=HabibTea"/);
+  assert.equal(rowText(brandRowHtml({ id: "habibtea-raleigh", brand: "HabibTea", kind: "tea-brand" }, {})), "HabibTea tea brand");
+});
+
+test("brand with no recent posts: no Latest posts section, the no-dates line once", () => {
+  const html = brandCardHtml(SRC_B, [], ctxB({ ...FULL_B, recent: [] }));
+  assert.doesNotMatch(html, /Latest posts|mm-rpost/);
+  assert.equal((text(html).match(/No upcoming dates posted/g) || []).length, 1);
+  const noImg = brandCardHtml(SRC_B, [], ctxB({ ...FULL_B, recent: [{ permalink: "https://www.instagram.com/p/X/", image_url: null }] }));
+  assert.doesNotMatch(noImg, /mm-rpost/, "a post without an image is left out");
+});
+
+test("brand with a long bio: one line, at most 14 words, cut on a word", () => {
+  const long = "We are a small family run matcha cart that pops up at markets breweries and bookstores all over the city every single weekend no matter the weather";
+  assert.equal(bioLine(long), "We are a small family run matcha cart that pops up at markets breweries…");
+  assert.equal(bioLine("Short one! Then more."), "Short one!");
+  assert.equal(bioLine(""), "");
+  assert.equal(bioLine("Ceremonial grade\n\nmatcha 🍵 | Austin"), "Ceremonial grade matcha 🍵 | Austin");
+  const html = brandCardHtml(SRC_B, [], ctxB({ ...FULL_B, bio: long }));
+  const line = /<p class="mm-bio mm-bio1">([^<]*)<\/p>/.exec(html)[1];
+  assert.ok(line.replace(/…$/, "").split(" ").length <= 14);
+  assert.equal(citySlug("St. Louis", "MO"), "st-louis-mo");
+  assert.equal(citySlug("Washington", "DC"), "washington-dc");
+  assert.equal(followersWord(501), "501 followers"); assert.equal(followersWord(500), ""); assert.equal(followersWord(1200000), "1.2M followers");
 });
 
 test("brand card: the menu from data/menus.json after the dates, only when the website host has one", async () => {
@@ -222,4 +295,32 @@ test("links in: the foot links to the city page and the brand name to its brand 
   assert.doesNotMatch(plain, /mm-morecity|mm-bname-link/);
   assert.doesNotMatch(cardHtml(e, { base: "/", page: true }), /mm-morecity|mm-bname-link/);
   assert.match(cardHtml(e, { cityHref: () => "/city/nc/raleigh/" }), /More in Raleigh/, "a plain string works and takes the event's city name");
+});
+
+test("brand section: Brands near here with the count, most followed first then by name, three rows until Show all", async () => {
+  const { brandSectionHtml, brandOrder } = await import("../site/cards.js");
+  const it = (id, brand, instagram) => ({ key: "b:" + id, data: { id, brand, instagram, kind: "popup" } });
+  const brands = { brands: [{ handle: "big", followers: 90000 }, { handle: "mid", followers: 4000 }, { handle: "mid2", followers: 4000 }, { handle: "small", followers: 300 }] };
+  const list = [it("z", "Zed", null), it("s", "Small", "small"), it("m2", "Bravo", "mid2"), it("b", "Big", "big"), it("m", "Alpha", "mid"), it("a", "Aaa", null)];
+  assert.deepEqual(brandOrder(list, { brands }).map((x) => x.data.brand), ["Big", "Alpha", "Bravo", "Small", "Aaa", "Zed"]);
+  const shut = brandSectionHtml(list, { brands });
+  assert.match(shut, /^<li class="head brhead">Brands near here <span class="n">6<\/span><\/li>/);
+  assert.equal((shut.match(/class="mm-row mm-brow"/g) || []).length, 3, "three rows");
+  assert.match(shut, /data-brands-all aria-expanded="false">Show all 6</);
+  const open = brandSectionHtml(list, { brands, open: true });
+  assert.equal((open.match(/class="mm-row mm-brow"/g) || []).length, 6);
+  assert.match(open, /aria-expanded="true">Show fewer</);
+  const three = brandSectionHtml(list.slice(0, 3), { brands });
+  assert.equal((three.match(/class="mm-row mm-brow"/g) || []).length, 3);
+  assert.doesNotMatch(three, /data-brands-all/, "no button for three or fewer");
+  assert.equal(brandSectionHtml([], { brands }), "");
+});
+
+test("the app's list puts brands after the pop-ups and the shops", async () => {
+  const fs = await import("node:fs");
+  const app = fs.readFileSync(new URL("../site/app.js", import.meta.url), "utf8");
+  const body = app.slice(app.indexOf("function renderList("), app.indexOf("var NEXT_RANGE"));
+  const shops = body.indexOf("shopsWords(shopsIn)"), brands = body.indexOf("MC.brandSection"), pops = body.indexOf("Pop-ups <span");
+  assert.ok(pops > 0 && shops > pops && brands > shops, "pop-ups, then shops, then brands");
+  assert.doesNotMatch(app, /Brands, no dates yet|No dates posted here yet/);
 });

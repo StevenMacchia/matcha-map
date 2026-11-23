@@ -10,8 +10,8 @@ import http from "node:http";
 import { spawn } from "node:child_process";
 
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
-const AT = arg("--at"), OUT = arg("--out"), SIZE = arg("--size", "1440x900"), URL_ARG = arg("--url"), WAIT = +arg("--wait", 15000), DARK = process.argv.includes("--dark"), CLICK = arg("--click");
-if (!AT || !OUT) { console.error("usage: node tools/view-shot.js --at lat,lng,zoom --out file.png [--size WxH] [--url base] [--wait ms] [--dark] [--click \"label text\"]"); process.exit(2); }
+const AT = arg("--at"), OUT = arg("--out"), SIZE = arg("--size", "1440x900"), URL_ARG = arg("--url"), WAIT = +arg("--wait", 15000), DARK = process.argv.includes("--dark"), CLICK = arg("--click"), LIST = process.argv.includes("--list"), OPEN = arg("--open");
+if (!AT || !OUT) { console.error("usage: node tools/view-shot.js --at lat,lng,zoom --out file.png [--size WxH] [--url base] [--wait ms] [--dark] [--click \"label text\"] [--list] [--open b:<id>]"); process.exit(2); }
 const [W, H] = SIZE.split("x").map(Number);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -56,7 +56,7 @@ class CDP {
 }
 
 const PROBE = `(() => { const q = (s) => document.querySelectorAll(s).length; const l = document.getElementById("loading");
-  return { rows: q("#list .row"), pins: q(".maplibregl-marker"), loading: !!l && !l.hidden && getComputedStyle(l).display !== "none" }; })()`;
+  return { rows: q("#list .row, #list .mm-row"), pins: q(".maplibregl-marker"), loading: !!l && !l.hidden && getComputedStyle(l).display !== "none" }; })()`;
 
 const bin = findChrome();
 if (!bin) { console.error("view-shot: no Chrome found. Set CHROME_PATH."); process.exit(2); }
@@ -84,6 +84,10 @@ try {
     if (!hit) { console.error(`view-shot: no marker labelled "${CLICK}"`); code = 1; }
     else { await sleep(2500); st = await probe(); const z = (await s("Runtime.evaluate", { returnByValue: true, expression: "window.__matcha && window.__matcha.map.getZoom()" })).result.value; console.log(`clicked "${hit}" -> zoom ${z && z.toFixed(2)}`); }
   }
+  // --list: the phone list view (the sheet pulled up), through the list grip the visitor taps
+  if (LIST) { await s("Runtime.evaluate", { expression: `(() => { const g = document.getElementById("list-grip"); if (g && !document.body.classList.contains("show-list")) g.click(); })()` }); await sleep(900); }
+  // --open <key>: open one card ("b:<source id>", "s:<id>", "e:<id>") the way a list row does
+  if (OPEN) { const ok = (await s("Runtime.evaluate", { returnByValue: true, expression: `(() => { const o = window.MatchaCards && window.MatchaCards.open; if (!o) return false; o(${JSON.stringify(OPEN)}); return true; })()` })).result.value; if (!ok) { console.error("view-shot: cannot open " + OPEN); code = 1; } await sleep(2500); }
   await sleep(1500); // tiles and the last marker animations
   const shot = await s("Page.captureScreenshot", { format: "png" });
   fs.mkdirSync(path.dirname(path.resolve(OUT)), { recursive: true });

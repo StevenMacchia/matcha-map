@@ -130,3 +130,17 @@ test("data/shops.json, when present, has the attribution and valid points", () =
   assert.match(d.attribution, /OpenStreetMap/);
   assert.ok(d.shops.every((s) => s.id && s.name && isFinite(s.lat) && isFinite(s.lng)));
 });
+
+// Shops at metro zoom (2026-11-23, the Triangle check): storefront pins draw from LOW_Z (zoom 6), with both Shops switches
+// on by default, so a metro view at zoom 10 and up always has them; Littlefoot Matcha stands at 234 Fayetteville St.
+test("shops draw from zoom 6 with the switches on by default, and Littlefoot Raleigh is placed downtown", () => {
+  const app = fs.readFileSync(path.resolve("site", "app.js"), "utf8");
+  assert.match(app, /var LOW_Z = 6\b/);
+  assert.match(app, /function mapShops\(\) \{ return isLow\(\) \? \[\] : visibleShops\(\); \}/);
+  assert.match(app, /shopsOn = true, SERVES_KEY = "matchamap\.serves", servesOn = true;/);
+  const shops = JSON.parse(fs.readFileSync(path.resolve("site", "data", "shops.json"), "utf8")).shops;
+  const lf = shops.find((s) => /littlefoot/i.test(s.name) && s.city === "Raleigh");
+  assert.ok(lf, "Littlefoot Matcha, Raleigh");
+  assert.match(lf.address, /^234 Fayetteville/);
+  assert.ok(Math.abs(lf.lat - 35.7771) < 0.005 && Math.abs(lf.lng - -78.6396) < 0.005, "at 234 Fayetteville St");
+});
