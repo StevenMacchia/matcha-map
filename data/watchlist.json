@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T15:08:02.488Z",
+  "updated": "2026-11-23T15:10:26.697Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -18063,7 +18063,7 @@
       "handle": "chicagomatcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/Cdw7NStLN81/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18072,14 +18072,17 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Chicago Matcha lover, where you at?? 🍵🤩\n\n#food #matcha #matchaicecream #matchalover #matchalove #chicagochinatown #chicagomatcha #vanillaicecream #redbean #fr",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "puddingmatcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/De-wMxLxSvZ/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18088,14 +18091,17 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Same amazing taste, with exciting new changes to our menu! 🤍✨\n\nYou asked, and we listened! 🫶🏼 We’re so excited to introduce Banana Pudding Matcha as a limite",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "chicagocoffeescene",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DALoV6txy3N/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18104,8 +18110,34 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Got matcha? 💚 #chicagocoffee #chicagocoffeescene #chicagocoffeeshop #chicagocoffee #coffeechicago #cafechicago #chicagomatcha #matcha",
-      "guess": true
+      "notes": "no matcha in last 25 posts",
+      "guess": true,
+      "graph_checked_at": "2026-11-23T15:10:26.697Z",
+      "name": "Chicago Coffee Scene ☕️",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/275095737_484775746685031_5600293767497697455_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=t1MpcvZcP34Q7kNvwHcXjgD&_nc_oc=AdoQPgIFTTZrz-zv7uvBFwuD6prJsC1xOnLjgiKNdX0w_vZovuf7HCxf5NRYco4bW6Q&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQTVvJLUr5Xt5rU_Pe8tqVTN2qcV6AbPSA3RforP8e0vpQ&oe=6B0A18A0",
+      "followers_count": 656,
+      "recent": [
+        {
+          "permalink": "https://www.instagram.com/p/Dd9w3YrEv2V/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/830444468_18074392487733435_5994487918397341045_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=aRaj6xB32cIQ7kNvwF_k3hj&_nc_oc=Adovlnxk87jmj33ZGl77rPpZzZ4Ik9SE2Rp6JY-7Bo8v0fqPiOM0mLkosq1pq4ya59w&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=AdYzAcd_KegJHN9n9e8Vfg&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQRV28ZhTP8ShpXBWLF2ixQHT-YpwIJigCtxNkrq-BuxrA&oe=6B0A1EE8",
+          "timestamp": "2026-10-01T20:25:47+0000",
+          "caption": "Morning coffee at the new loganinnchi ☕️ The coffee was great, the atmosphere wa"
+        },
+        {
+          "permalink": "https://www.instagram.com/p/Dci5RyfONWI/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/788462341_18069299993733435_4061691566151424820_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=90rj5VOOUPYQ7kNvwFhcufr&_nc_oc=AdoEXhRX550mUMNXYSKr0j1z_PHVtDjdnuQjpXKwyf7GjUwqVfHxrrKon09-VK1oGdw&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=AdYzAcd_KegJHN9n9e8Vfg&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQR0V2o5sSn4Atqc7nYp7dDqysbtt2pZAuOP8t6wFP7I8w&oe=6B0A2739",
+          "timestamp": "2026-08-27T13:31:50+0000",
+          "caption": "bitterpops is the ultimate day to night transition. From iced lattes and coworki"
+        },
+        {
+          "permalink": "https://www.instagram.com/reel/DXVqf28DpeP/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.71878-15/670932546_4349725038573878_3751545413888210004_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=tQXKhbKU218Q7kNvwFbWlEh&_nc_oc=AdpmAAuEL_sCUF--KUsLNuS9_XBmmp8kr05nRqxrsxiaZqPP9zztGZjMtLo4VXSFiSM&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=AdYzAcd_KegJHN9n9e8Vfg&_nc_tpa=Q5bMBQJl3fdP1_kvdTsc2MMl2Ykfz56WjmhIkAzR9vaQAxmimlw5ubTUFSkTrh219kBIgTG6rwVdH6IKcw&_nc_ct=RQosPBUKFQgAAAA&oh=00_AQRrWsPIKtnokiwDZsjvJLlk_zqWKxN3LIi_onjVy-4vCQ&oe=6B0A1A8C",
+          "timestamp": "2026-04-20T03:32:36+0000",
+          "caption": "A new Colombian coffee shop has entered Lakeview & of course we had to try (bein"
+        }
+      ],
+      "bio": "Sisters chasing down the best cups of coffee in Chicago ☕️🌇",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "saltmatcha",
@@ -18115,19 +18147,24 @@
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DayoYBtD7h9/",
       "first_seen": "2026-11-23T02:33:15.953Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "💌 Love Letter 003\n\n📍Match | A\n\nOrders:\n• Sea Salt Matcha\n• Strawberry Matcha\n\nTaste: ♡♡♡♡♡\nVibe: ♡♡♡♡\nService: ♡♡♡\n\nLove Notes:\n• Self-order kiosks\n• Expect a",
-      "guess": true
+      "guess": true,
+      "graph_checked_at": "2026-11-23T15:10:26.697Z",
+      "name": "chassy",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/82817339_615525842576988_8609233804206276608_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=0ahG6XXjiq4Q7kNvwFsjpwJ&_nc_oc=AdqjFZ8RS0aupw_nCYSFH9PeQ5PDCi3eCK93OeBXFYiuWmQeULlrUa2EKwJ4BRzuQoc&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQSggBU7fkeEx9_P6XDTy16Rfy37NCH6_MOLrVK-2ISj0Q&oe=6B0A2B70",
+      "followers_count": 18,
+      "bio": "hand's up! \nthe other side of @nickitaagsy__ \njangan remehkan saya hanya karena saya sedikit gila."
     },
     {
       "handle": "matchatok",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DZn6kFLmV-2/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18136,14 +18173,17 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "MATCHA MONDAY PART 4 ✨ Candor 📍 Wicker Park (followed by window shopping 🫣)\n\n#matchatok #chicagomatcha #chicagocafe #chicagoboutiques #wickerparkchicago",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "croissant",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DJSOna-yXCG/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18152,8 +18192,35 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "🍵\n\n#matcha #croissant #vegan #veganfoodlovers #fyp #fypage #chicago #chicagomatcha #chicagomatchacafe #chicagomatchalover",
-      "guess": true
+      "notes": "no matcha in last 25 posts",
+      "guess": true,
+      "graph_checked_at": "2026-11-23T15:10:26.697Z",
+      "name": "Croissant",
+      "website": "https://apple.co/3Sk6UBd",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/899356091_18084379301756673_2781045044469601878_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=aL34-e6z-KEQ7kNvwEKY_1d&_nc_oc=AdrxR6-_KNa8cBpO5Hf5WmsIWV62Nmawfmg5nAEERwo2y57PyBGEVBrHu84ncXUZeD0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=3k0bJBIXatk8vqpMVH5Yqw&oh=00_AQQBKSBS56o3LzcAXz0IFcOkREnO7DKZwfA-d1vCpk5hwQ&oe=6B0A4448",
+      "followers_count": 19218,
+      "recent": [
+        {
+          "permalink": "https://www.instagram.com/p/Df7lL1eDzKG/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/912274762_18086017847756673_7347336055141295240_n.png?stp=dst-jpg_e35_tt6&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=sS20HS12kxEQ7kNvwHkOM_r&_nc_oc=AdrYFtchMv35XUlcorjtQf4yzgLYv8IC_Sj-lzQasaXRZ-Be7WV56btMYvEB5cOmImE&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=3k0bJBIXatk8vqpMVH5Yqw&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQQLHcopITpCJ6bPmzqt7ipAa6M1qBDjh-2GtWQB3IRzuQ&oe=6B0A2A54",
+          "timestamp": "2026-11-19T17:08:06+0000",
+          "caption": "Remy reads your Pinterest board like a stylist would. The colors, the fabrics, t"
+        },
+        {
+          "permalink": "https://www.instagram.com/reel/Df7k1uXj40K/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/918732321_18086017490756673_7975253832022868561_n.png?stp=dst-jpg_e35_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=eByzS99ZQzAQ7kNvwHIBtCm&_nc_oc=Ado1nsxLNySEKZkEWk32f9-8sjzE__EyqIbO9hettWfPqIdVs9xWCks6ialoLrWTKXk&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=3k0bJBIXatk8vqpMVH5Yqw&_nc_tpa=Q5bMBQLtIQ-jvmKoog5WHgIVvXr5hzcWOLTRAFD6xbnYudKu2GVIxKk7mqelM5i_LYepq7aLxJcAPWl1jg&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQSNcBAgKUimt5OwK_HeqmOWpFIeiHzKdx6muW2Rn2XqsQ&oe=6B0A2180",
+          "timestamp": "2026-11-19T17:05:13+0000",
+          "caption": "Remy reads your Pinterest board, so you don’t have to scroll it, open 97 tabs, a"
+        },
+        {
+          "permalink": "https://www.instagram.com/p/Df55JGMDAtq/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/912206469_18085929920756673_5124889650860917065_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=wG7J7cU-jN4Q7kNvwGGc9uQ&_nc_oc=Ado5DpioQnvC8xCIofazanJqyV-k6wPOTWoOWzPZjpG3rfm9WRR-0OisEVLV3dt3HTw&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=3k0bJBIXatk8vqpMVH5Yqw&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQRfIbsVOzlRRC7IhI4cLlfKLHWwLuecpY1NsvAKQFQIow&oe=6B0A3A1A",
+          "timestamp": "2026-11-19T01:23:56+0000",
+          "caption": "Meet Remy, Croissant’s new AI personal shopper. Connect Gmail and Remy learns wh"
+        }
+      ],
+      "bio": "The smartest way to buy nice things. \nShop, Earn, Resell with Croissant. \n \nDownload the app:",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "mylaimatcha",
@@ -18200,7 +18267,7 @@
       "handle": "matchainchicago",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DbLk8ybkfxB/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18209,8 +18276,11 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "SAVE THIS FOR THE NEXT TIME YOU WANT MATCHA IN CHICAGO! We have had our far share of matcha in Chicago so here is a guide to our favorites! ⭐️ next to our top c",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "coolestcoffeeshop",
@@ -18273,7 +18343,7 @@
       "handle": "matchacafe",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/CdZ37mBOnJs/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18282,8 +18352,11 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Super excited to check out this recently opened Matcha Cafe. The mixed Matcha parfait was good, wasn't a fan of sugarly corn flakes thou, will def go back to tr",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "cafepic",
@@ -18327,7 +18400,7 @@
       "handle": "lincolnparkchicago",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DN34nIGE_nz/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18336,14 +18409,17 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "T-Recs | noblefat \nIf they look familiar, it’s because they’ve been killing it at the Logan Square Farmers Market and now have a brand new storefront in Lincoln",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "chicagosaturdays",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DXAQCmDlS4d/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18352,8 +18428,11 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Matcha date w/ auuttuummn 🍵✨ \n.\nWe tried noblefat !! \n.\nAutumn got a strawberry matcha🍵🍓 & I got a banana matcha🍌🍵 \n.\nLook at that color🤩🤩 \n.\n#chicagofoo",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "matchacitachi",
@@ -18602,19 +18681,45 @@
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/BsJV6sCAn0f/",
       "first_seen": "2026-11-23T02:33:15.953Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "#matchalatte #revolucionhtx #almondmilk #hotorcolddrinks #htxmatcha",
-      "guess": true
+      "guess": true,
+      "graph_checked_at": "2026-11-23T15:10:26.697Z",
+      "name": "Revolucion Coffee + Juice HTX",
+      "website": "http://www.revolucionhtx.com/cleanses",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/10655112_1465944850341644_75878790_a.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=4jeacbaWHzAQ7kNvwHhsOxb&_nc_oc=AdqL10817qZEhtB1eIfhv1HkZkKKUY81fZpJx9oIdipUWqJtbY8Z4dLdCKQKNHCyWRk&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQThA4b2pKSmRVwqkhxXa5wMgDviGJDzhMLXEZGm7bG6PA&oe=6B0A398C",
+      "followers_count": 3289,
+      "recent": [
+        {
+          "permalink": "https://www.instagram.com/p/C9ViROQpuNY/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t39.30808-6/473780615_18487238974018958_1303032416537932853_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=AABm4AFgUqgQ7kNvwHFmhqN&_nc_oc=AdroqQHdOiPeC0XL81gA294qUy698TgIOJDfS7koYWxtMYsPAQrAw5OqLXRzYu9WGJk&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=mcko4c_YY_rkiB40kYLrAw&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQQs64irnt_h4OMCZqflWzI4kQ4qpuO1svnFwoTwacrXew&oe=6B0A4144",
+          "timestamp": "2024-07-12T20:44:01+0000",
+          "caption": "Let me know if you or anyone you know might be interested in this juicer, thanks"
+        },
+        {
+          "permalink": "https://www.instagram.com/reel/C9Sc5GnpMlB/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.71878-15/496957512_733526859334629_7355312579649162509_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=YzZtFpTEpe8Q7kNvwE2ZYAR&_nc_oc=AdonGgvZVO_TYjE0lhW0GZ0PwxpwjeYjvab5OvvO6Fl_q2ubtlhGmo5YJ7hPOEqx5vo&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=mcko4c_YY_rkiB40kYLrAw&_nc_tpa=Q5bMBQJzlj8kqe5HWhp78chBnIbSGGFyCViSyVGnlkQQ30QeAFojlCVl6KCRqbiEDY_x5flVWgvrutnBmA&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQTiaCHwoTd-yd0Kht8n9DRRiahlEWvBYJSWR0QGdNQlSA&oe=6B0A2819",
+          "timestamp": "2024-07-11T15:59:38+0000",
+          "caption": ""
+        },
+        {
+          "permalink": "https://www.instagram.com/p/C8N_aA4JHJ8/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t39.30808-6/473426470_18486762838018958_511582597329565295_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=EYupfdnqZ_UQ7kNvwGAEoO7&_nc_oc=AdpAqytQJ4TDh3RlQmmtS465CTSoG_EzPbPNiTzW5_MXtZ2U1zf4HN4snzLNsyGeJGs&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=mcko4c_YY_rkiB40kYLrAw&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQQiGeDUReBBVDHgsFTtpf9XAljyUTnMHrzRQvF_NMm_nQ&oe=6B0A17B8",
+          "timestamp": "2024-06-15T01:53:18+0000",
+          "caption": "#revolucionhtx #heightsjuicebar #heightscoffeeshop"
+        }
+      ],
+      "bio": "Handcrafted juices🍊, smoothie bowls, Espresso☕️ & Homemade nut milks\n📍The Heights, Houston\n@favor, @postmates"
     },
     {
       "handle": "softservemagic",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DHKO4T9tBCk/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18623,8 +18728,11 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "I love you so matcha 💚\n\nThis matcha soft serve was so refreshing and umami. Highly recommend > \n\n•\n•\n•\n•\n•\n\n#HoustonEats #HTXFoodie #MatchaLovers #SoftServeMag",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "station8",
@@ -18634,13 +18742,37 @@
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/CufhbZagDMT/",
       "first_seen": "2026-11-23T02:33:15.953Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "Matcha + oat milk + vanilla \n3/10 really isn’t any matcha in here, super milky you can tell from the color it isn’t ceremonial grade matcha which is ok! \n\n-But ",
-      "guess": true
+      "guess": true,
+      "graph_checked_at": "2026-11-23T15:10:26.697Z",
+      "name": "F - Station",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/96355775_692651204817431_4117475259936931840_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=zO_TVxAeIAQQ7kNvwFZmePC&_nc_oc=AdpwU5XoqJvNr6kkaunUIcy_t-q2Rktkk7PvozO2s7LBquRMm2-SmsQZEsxeWPry8a0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQQrqqeBxHbZFpyJjFeHjy_jtWllSEStBBSrrU6pUjjZ2A&oe=6B0A210E",
+      "followers_count": 74,
+      "recent": [
+        {
+          "permalink": "https://www.instagram.com/p/CCgX8rUHoxs/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.71878-15/527512533_1058659343019325_4202968026268996000_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=GeXTSsiFoUoQ7kNvwHL0ixq&_nc_oc=Adq-Ye_3tKPmawiAVew6hGdwJ3G6vEoVcMb8SbgleQ05VBHRgqWxkXLZhSxYwQe1wN8&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=pttImANraNdHAlsM1HvfSQ&_nc_tpa=Q5bMBQKvRjibcdSAMxCsp1JR0_o7klw2DUsE1ulZDn-h0cExMIHOjIneRWHqFPgnw7PcJSjl_92Io2jGHw&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQRV0HJMA6Pip8oMDl5a8R9lfRuza_M0WpEHuzHT-EiWoA&oe=6B0A1792",
+          "timestamp": "2020-07-11T14:54:42+0000",
+          "caption": ""
+        },
+        {
+          "permalink": "https://www.instagram.com/p/CBUe9QqA_G4/",
+          "image_url": "https://scontent-atl3-1.cdninstagram.com/v/t51.71878-15/527984246_1265388465052325_7056557075386004225_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Q467VwSUg_AQ7kNvwHOqpac&_nc_oc=AdquUS6wdxdJ8FMnrEbFhS49JvicBqZJdtWPMm8hZMzdsAc5CIM5MFS246okWkZ6usg&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=pttImANraNdHAlsM1HvfSQ&_nc_tpa=Q5bMBQKRpwnm9EsK53X1OS1zSP_WKtP9snTu5DdvFGrRzQ-eLsuTYKR2lfz2MH181t6WwoSRFciMwWsAJg&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQQCDvzP_kpUMSH_EKilD3iC1_6Jj8ofMPorTLV7yahVeA&oe=6B0A3C5A",
+          "timestamp": "2020-06-12T03:32:47+0000",
+          "caption": ""
+        },
+        {
+          "permalink": "https://www.instagram.com/p/B__t6OMg8ST/",
+          "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.71878-15/529767116_2234970520341641_2411035360733176705_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=cmsezXUPXGIQ7kNvwFJoQX7&_nc_oc=AdreeEDReMlFVRPQUkKp_Jv2zg4TCEVX2O4eyOYnBQeCpp5dMjvoOTZQEzAqddcH1WA&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=pttImANraNdHAlsM1HvfSQ&_nc_tpa=Q5bMBQJ1k0Pnt4C_XqfupsFjFjFwwoUBsnrMJghMUS8QZrytxvBMZZv4maiKvxU3i0qZy0i9jJP1dx9e4A&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQRkXZtrT9t2tqLrbkm6mus_QPkwO_miRRcjvDpYiUUTyg&oe=6B0A2A02",
+          "timestamp": "2020-05-10T05:28:01+0000",
+          "caption": ""
+        }
+      ]
     },
     {
       "handle": "cozyinhouston",
@@ -18690,19 +18822,24 @@
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DXxZMwaAaeP/",
       "first_seen": "2026-11-23T02:33:15.953Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "#houstoncoffeeshop #houstonmatcha",
-      "guess": true
+      "guess": true,
+      "graph_checked_at": "2026-11-23T15:10:26.697Z",
+      "name": "Houston Coffee",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/450731942_835448458567353_5503183563241750706_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=n0yBv59LznkQ7kNvwFmpjWq&_nc_oc=AdrmqeUzyYw2BdRlxpiKHxiAt8ehlyNKdBDWvAam_1AKMEGbppUq68YrrWUIgu99VXI&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQTm00ePTToWSEMmaG-IUDefztVHm5o91YiMvqJ4z1LSqg&oe=6B0A3E98",
+      "followers_count": 17,
+      "bio": "Coffee Trailer |  Southwest Houston 📍\nBrewing quality coffee to the community"
     },
     {
       "handle": "matchagreentea",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/C0KLeL8x1e3/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18711,8 +18848,11 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "matcha made in heaven 💚🩷\n•\n•\nhellomatchamia is one of our new favorite matcha spots in Houston! We loved the bluetiful matcha and the guava matcha, and they a",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T15:10:26.697Z",
+      "dropped_at": "2026-11-23T15:10:26.697Z"
     },
     {
       "handle": "duomatcha",
@@ -23863,10 +24003,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T06:33:16.343Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha popup Louisville this weekend\"; city=Louisville"
     },
@@ -23878,10 +24018,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T06:33:16.343Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha popup Louisville this weekend\"; city=Louisville"
     },
@@ -23893,10 +24033,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T06:33:16.343Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha popup Louisville this weekend\"; city=Louisville"
     },
@@ -23908,10 +24048,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T06:33:16.343Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha popup Louisville this weekend\"; city=Louisville"
     },
@@ -23923,10 +24063,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T06:33:16.343Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T15:10:26.697Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha popup Louisville this weekend\"; city=Louisville"
     },
