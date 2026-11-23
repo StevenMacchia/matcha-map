@@ -84,6 +84,9 @@ export async function curatedShops({ geocoder, fetched, dir = "data" }) {
     seen.add(s.id);
     const ev = { id: s.id, address: s.address, city: s.city, state: s.state, zip: s.zip, confidence: "confirmed" };
     await geocoder.geocode(ev);
+    // A suite or unit number often defeats Nominatim: ask again with the street alone.
+    const bare = s.address.replace(/[,\s]+(?:suite|ste\.?|unit|#|space|bldg|building)\s*[\w-]+.*$/i, "").replace(/\s*\(.*$/, "").trim();
+    if (ev.lat == null && bare && bare !== s.address) { ev.address = bare; await geocoder.geocode(ev); }
     if (ev.lat == null || !["nominatim", "mapbox", "manual"].includes(ev.geocode_source)) { held.push({ file, name: s.name, why: "address not geocoded" }); continue; }
     shops.push({ ...s, lat: ev.lat, lng: ev.lng, geocode_source: ev.geocode_source, osm_url: null, fetched });
   }

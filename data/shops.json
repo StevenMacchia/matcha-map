@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T19:20:20.937Z",
+ "generated": "2026-11-23T19:41:20.781Z",
  "attribution": "© OpenStreetMap contributors, ODbL",
  "shops": [
   {
@@ -16,6 +16,8 @@
    "menu_url": "https://www.matchadarlin.com/menu",
    "image_url": "http://static1.squarespace.com/static/697d731b724fc67d6cba4368/t/6a2039ec9f01c2613d5ea310/1780496876373/Matcha+%283+x+3+in%29+%2810+x+10+in%29+%2810+x+8+in%29-2.png?format=1500w",
    "image_credit": "Photo: Matcha Darlin' Cafe website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchadarlin.com/contact",
@@ -26,7 +28,7 @@
    "lng": -111.938952,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-matcha-magic-asu-tempe-az-tempe-922-e-apache-b-ab0ce8",
@@ -42,6 +44,8 @@
    "menu_url": "https://www.itsmatchamagic.com/menus/",
    "image_url": "https://images.getbento.com/accounts/ee5aaf463e6eb3ed06b018bc15172199/media/images/40260MMagic_PrimaryLogoDark.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100",
    "image_credit": "Photo: Matcha Magic website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.itsmatchamagic.com/location/asutempe/",
@@ -52,7 +56,7 @@
    "lng": -111.925196,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-premium-matcha-cafe-maiko-az-tempe-920-e-unive-754902",
@@ -68,6 +72,8 @@
    "menu_url": "https://www.matchaaz.com/menu",
    "image_url": "https://static.wixstatic.com/media/933178_d8a6c02e1083455e85a41e05f441c43c%7Emv2.png/v1/fit/w_2500,h_1330,al_c/933178_d8a6c02e1083455e85a41e05f441c43c%7Emv2.png",
    "image_credit": "Photo: Premium Matcha Cafe Maiko website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaaz.com/about",
@@ -78,7 +84,7 @@
    "lng": -111.925576,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-cafe-matcha-ca-studio-city-12070-ventura-blvd-bfe519",
@@ -94,6 +100,8 @@
    "menu_url": "https://cafe-matcha.com/pages/menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://cafe-matcha.com/",
@@ -104,7 +112,7 @@
    "lng": -118.394965,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-cafe-matcha-ca-los-angeles-705-n-alfred-st-ef0c5b",
@@ -120,6 +128,8 @@
    "menu_url": "https://cafe-matcha.com/pages/menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://cafe-matcha.com/",
@@ -130,7 +140,7 @@
    "lng": -118.375371,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-ca-venice-1401-abbot-kinney-blv-a10267",
@@ -146,6 +156,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://chachamatcha.com/pages/location/venice",
@@ -156,7 +168,7 @@
    "lng": -118.465791,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-ca-los-angeles-510-n-robertson-fb56b7",
@@ -172,6 +184,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://chachamatcha.com/pages/location/we-ho",
@@ -182,7 +196,7 @@
    "lng": -118.38503,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-ca-los-angeles-10250-santa-moni-94d473",
@@ -198,6 +212,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://chachamatcha.com/pages/location/century-city",
@@ -208,7 +224,7 @@
    "lng": -118.417811,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-ca-beverly-hills-475-north-beve-5d6435",
@@ -224,6 +240,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://chachamatcha.com/pages/location/beverly-hills",
@@ -234,7 +252,7 @@
    "lng": -118.403475,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-holy-matcha-ca-san-diego-3118-university-avenu-de0c63",
@@ -250,6 +268,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://holymatchasd.com/",
@@ -260,7 +280,7 @@
    "lng": -117.127136,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-kettl-ca-los-angeles-4677-hollywood-blvd-ab7e83",
@@ -276,6 +296,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://kettl.co/pages/locations",
@@ -286,7 +308,7 @@
    "lng": -118.291149,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-labora-ca-san-diego-8055-clairemont-mesa-blvd-4e7494",
@@ -302,6 +324,8 @@
    "menu_url": "https://www.laboracafe.com/menu",
    "image_url": "https://laboracafe.com/assets/og-image.jpg",
    "image_credit": "Photo: Labora website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.laboracafe.com/locations",
@@ -312,7 +336,7 @@
    "lng": -117.149918,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z",
+   "fetched": "2026-11-23T19:41:20.781Z",
    "menu": {
     "items": [
      {
@@ -415,6 +439,8 @@
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=ca&target=ca-sandiego",
@@ -425,7 +451,7 @@
    "lng": -117.163394,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z",
+   "fetched": "2026-11-23T19:41:20.781Z",
    "menu": {
     "items": [
      {
@@ -559,6 +585,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.mecchamatcha.com/locations",
@@ -569,7 +597,7 @@
    "lng": -118.081816,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-meccha-matcha-ca-long-beach-2310-n-bellflower-03c072",
@@ -585,6 +613,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.mecchamatcha.com/locations",
@@ -595,7 +625,7 @@
    "lng": -118.125205,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-midori-matcha-cafe-ca-los-angeles-123-astronau-bf1078",
@@ -611,6 +641,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.timeout.com/los-angeles/restaurants/midori-matcha",
@@ -621,7 +653,7 @@
    "lng": -118.242366,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-nana-s-green-tea-ca-pasadena-45-n-raymond-ave-7ff42c",
@@ -637,6 +669,8 @@
    "menu_url": "https://nanasgreenteausa.com/menu/",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://nanasgreenteausa.com/pages/pasadena",
@@ -647,7 +681,203 @@
    "lng": -118.149091,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-bliss-matcha-and-beyond-ct-new-haven-98-olive-505a40",
+   "name": "BLISS: Matcha and Beyond",
+   "address": "98 Olive Street",
+   "city": "New Haven",
+   "state": "CT",
+   "zip": "06511",
+   "website": null,
+   "instagram": "bliss_98_olive",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.ctbites.com/blog/2025/12/10/guide-to-the-matcha-shops-in-connecticut",
+   "read": "2026-11-23",
+   "confirmed_via": null,
+   "verified": false,
+   "lat": 41.305038,
+   "lng": -72.92003,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-spot-of-tea-dc-washington-2101-p-street-nw-40f611",
+   "name": "Spot of Tea",
+   "address": "2101 P Street NW",
+   "city": "Washington",
+   "state": "DC",
+   "zip": "20037",
+   "website": "https://www.drinkspotoftea.com",
+   "instagram": null,
+   "phone": "+1 844 567 9632",
+   "opening_hours": null,
+   "menu_url": "https://www.drinkspotoftea.com/order",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.drinkspotoftea.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 38.909761,
+   "lng": -77.046859,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-spot-of-tea-dc-washington-3210-grace-street-nw-0afc3d",
+   "name": "Spot of Tea",
+   "address": "3210 Grace Street NW",
+   "city": "Washington",
+   "state": "DC",
+   "zip": "20007",
+   "website": "https://www.drinkspotoftea.com",
+   "instagram": null,
+   "phone": "+1 833 264 9009",
+   "opening_hours": null,
+   "menu_url": "https://www.drinkspotoftea.com/order",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.drinkspotoftea.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 38.903827,
+   "lng": -77.063511,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-spot-of-tea-dc-washington-1309-5th-street-ne-198ab4",
+   "name": "Spot of Tea",
+   "address": "1309 5th Street NE",
+   "city": "Washington",
+   "state": "DC",
+   "zip": "20002",
+   "website": "https://www.drinkspotoftea.com",
+   "instagram": null,
+   "phone": "+1 833 322 1754",
+   "opening_hours": null,
+   "menu_url": "https://www.drinkspotoftea.com/order",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.drinkspotoftea.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 38.90861,
+   "lng": -76.997405,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-alma-matcha-fl-fort-lauderdale-701-nw-5th-ave-522635",
+   "name": "Alma Matcha",
+   "address": "701 NW 5th Ave",
+   "city": "Fort Lauderdale",
+   "state": "FL",
+   "zip": "33311",
+   "website": "https://www.almamatcha.com",
+   "instagram": "almamatcha",
+   "phone": null,
+   "opening_hours": "Mo-Su 07:00-19:00",
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.almamatcha.com/locations",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 26.131492,
+   "lng": -80.148896,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-heal-cafe-fl-miami-3252-ne-1st-ave-suite-111-01f69b",
+   "name": "HEAL Cafe",
+   "address": "3252 NE 1st Ave Suite 111",
+   "city": "Miami",
+   "state": "FL",
+   "zip": "33137",
+   "website": "https://www.healcafemia.com",
+   "instagram": "heal.mia",
+   "phone": null,
+   "opening_hours": "Mo-Fr 07:30-17:00; Sa-Su 08:00-17:00",
+   "menu_url": "https://www.healcafemia.com/menu",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.healcafemia.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 25.807301,
+   "lng": -80.193386,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-honey-veil-fl-south-miami-5748-sunset-dr-d8f83c",
+   "name": "Honey Veil",
+   "address": "5748 Sunset Dr",
+   "city": "South Miami",
+   "state": "FL",
+   "zip": null,
+   "website": "https://honeyveil.com",
+   "instagram": "honeyveilco",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://honeyveil.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "press+site",
+   "verified": true,
+   "lat": 25.704203,
+   "lng": -80.286214,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/11007004668",
@@ -1001,6 +1231,436 @@
    }
   },
   {
+   "id": "brand:web-matcha-cafe-maiko-millenia-fl-orlando-4693-gar-2e0c58",
+   "name": "Matcha Cafe Maiko (Millenia)",
+   "address": "4693 Gardens Park Blvd Suite 117",
+   "city": "Orlando",
+   "state": "FL",
+   "zip": "32839",
+   "website": "https://www.cafemaikoorl.com",
+   "instagram": "matchacafemaikoorlando",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": "https://www.cafemaikoorl.com/menu",
+   "image_url": "http://static1.squarespace.com/static/69d55f94971c866ea49bf3b8/t/69f37ea5cfa3e81e12d2a5c1/1777565349021/matcha-cafe-maiko-barista-whisking-ceremonial-matcha.jpg?format=1500w",
+   "image_credit": "Photo: Matcha Cafe Maiko Orlando website",
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=fl&target=fl-millenia",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 28.49462,
+   "lng": -81.423672,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z",
+   "menu": {
+    "items": [
+     {
+      "name": "SOFT-SERVE",
+      "price": "$6.25",
+      "note": "Choose your soft-serve flavor"
+     },
+     {
+      "name": "MAIKO SPECIAL",
+      "price": "$9.25",
+      "note": "Choice of soft-serve with mochi balls, Japanese chestnut, adzuki red beans, sponge cake, corn flake, & agar jelly"
+     },
+     {
+      "name": "KAKIGORI",
+      "price": "$7.50",
+      "note": "Shaved ice with matcha syrup, condensed milk, mochi balls, and Adzuki red beans"
+     },
+     {
+      "name": "STRAWBERRY SHAVED ICE",
+      "price": "$9.50",
+      "note": "Shaved ice with homemade strawberry purée and choice of soft-serve"
+     },
+     {
+      "name": "UJI-KINTOKI",
+      "price": "$9.50",
+      "note": "Shaved ice with matcha syrup, adzuki red beans, mochi balls, Japanese chestnut and choice of soft-serve"
+     },
+     {
+      "name": "BOBA SUNDAE",
+      "price": "$7.25",
+      "note": "Choice of soft-serve with boba"
+     },
+     {
+      "name": "AFFOGATO",
+      "price": "$7.50",
+      "note": "Choice of soft-serve with a shot of espresso"
+     },
+     {
+      "name": "STRAWBERRY SUNDAE",
+      "price": "$7.50",
+      "note": "Choice of soft-serve with strawberry purée"
+     },
+     {
+      "name": "MATCHA TEA FLOAT",
+      "price": "M $6.50 · L $7.00",
+      "note": null
+     },
+     {
+      "name": "MATCHA LATTE FLOAT",
+      "price": "M $7.00 · L $7.75",
+      "note": null
+     },
+     {
+      "name": "MATCHA KUROMITSU KINAKO FLOAT",
+      "price": "M $7.25 · L $8.00",
+      "note": null
+     },
+     {
+      "name": "HOJICHA TEA FLOAT",
+      "price": "M $6.35 · L $6.85",
+      "note": null
+     },
+     {
+      "name": "HOJICHA LATTE FLOAT",
+      "price": "M $6.85 · L $7.50",
+      "note": null
+     },
+     {
+      "name": "BLACK SESAME FLOAT",
+      "price": "M $7.25 · L $8.00",
+      "note": null
+     },
+     {
+      "name": "AMERICANO FLOAT",
+      "price": "L $6.75",
+      "note": null
+     },
+     {
+      "name": "COFFEE LATTE FLOAT",
+      "price": "L $7.75",
+      "note": null
+     },
+     {
+      "name": "MATCHA FRAPPE",
+      "price": "M $6.00 · L $6.50",
+      "note": null
+     },
+     {
+      "name": "HOJICHA FRAPPE",
+      "price": "M $5.75 · L $6.25",
+      "note": null
+     },
+     {
+      "name": "MATCHA OREO FRAPPE",
+      "price": "M $6.85 · L $7.50",
+      "note": null
+     },
+     {
+      "name": "HOJICHA OREO FRAPPE",
+      "price": "M $6.50 · L $7.00",
+      "note": null
+     },
+     {
+      "name": "MATCHA LATTE",
+      "price": "M $5.25 · L $5.75",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "ROSE MATCHA LATTE",
+      "price": "L $6.50",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "HONEYCOMB MATCHA LATTE",
+      "price": "M $6.50 · L $7.00",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "KOKUTO MATCHA LATTE CREAM",
+      "price": "M $6.25 · L $6.75",
+      "note": null
+     },
+     {
+      "name": "KOKUTO MATCHA KUROMITSU KINAKO CREAM",
+      "price": "M $6.50 · L $7.00",
+      "note": null
+     },
+     {
+      "name": "HOJICHA LATTE",
+      "price": "M $5.00 · L $5.50",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "BLACK SESAME LATTE",
+      "price": "M $5.75 · L $6.50",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "STRAWBERRY MATCHA LATTE",
+      "price": "M $6.25 · L $6.75",
+      "note": null
+     },
+     {
+      "name": "BLACK SESAME ESPRESSO LATTE",
+      "price": "L $7.25",
+      "note": null
+     },
+     {
+      "name": "MATCHA ESPRESSO LATTE",
+      "price": "L $7.25",
+      "note": null
+     },
+     {
+      "name": "MATCHA TEA",
+      "price": "M $4.75 · L $5.25",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "HOJICHA TEA",
+      "price": "M $4.70 · L $5.20",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "YUZU MATCHA TEA",
+      "price": "M $5.25 · L $5.75",
+      "note": null
+     },
+     {
+      "name": "MATCHA LATTE CHEESE/ UBE FOAM",
+      "price": "M $6.25 · L $6.75",
+      "note": null
+     },
+     {
+      "name": "HOJICHA LATTE CHEESE/ UBE FOAM",
+      "price": "M $5.75 · L $6.50",
+      "note": null
+     },
+     {
+      "name": "BLACK SESAME LATTE CHEESE/ UBE FOAM",
+      "price": "M $6.75 · L $7.50",
+      "note": null
+     },
+     {
+      "name": "COFFEE LATTE CHEESE/ UBE FOAM",
+      "price": "L $6.75",
+      "note": null
+     },
+     {
+      "name": "STRAWBERRY SPRITZ",
+      "price": "$6.00",
+      "note": null
+     },
+     {
+      "name": "MATCHA TEA SPRITZ",
+      "price": "$6.00",
+      "note": null
+     },
+     {
+      "name": "YUZU TEA SPRITZ",
+      "price": "$6.00",
+      "note": null
+     },
+     {
+      "name": "YUZU MATCHA TEA SPRITZ",
+      "price": "$6.75",
+      "note": null
+     },
+     {
+      "name": "ESPRESSO",
+      "price": "$3.50",
+      "note": "Hot"
+     },
+     {
+      "name": "AMERICANO",
+      "price": "$4.25",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "COFFEE LATTE",
+      "price": "$5.75",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "CARAMEL MACHIATO",
+      "price": "$6.25",
+      "note": "Cold"
+     },
+     {
+      "name": "HONEYCOMB COFFEE LATTE",
+      "price": "$6.00",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "BROWN SUGAR SHAKEN ESPRESSO",
+      "price": "$6.00",
+      "note": "Cold"
+     },
+     {
+      "name": "ROSE COFFEE LATTE",
+      "price": "$6.00",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "LAVENDER COFFEE LATTE",
+      "price": "$6.00",
+      "note": "Hot / Cold"
+     },
+     {
+      "name": "VIETNAMESE COFFEE",
+      "price": "$6.00",
+      "note": "Cold"
+     },
+     {
+      "name": "BOBA",
+      "price": "$1.00",
+      "note": null
+     },
+     {
+      "name": "24K GOLD LEAF",
+      "price": "$5.00",
+      "note": null
+     },
+     {
+      "name": "RED BEANS",
+      "price": "$0.50",
+      "note": null
+     },
+     {
+      "name": "CRUSHED OREOS",
+      "price": "$1.00",
+      "note": null
+     },
+     {
+      "name": "WHIPPED CREAM",
+      "price": "$0.75",
+      "note": null
+     },
+     {
+      "name": "CORNFLAKES",
+      "price": "$0.75",
+      "note": null
+     },
+     {
+      "name": "STRAWBERRY PURÉE",
+      "price": "$1.25",
+      "note": null
+     },
+     {
+      "name": "JAPANESE CHESTNUT",
+      "price": "$0.75",
+      "note": null
+     },
+     {
+      "name": "MATCHA SPONGE CAKE",
+      "price": "$0.75",
+      "note": null
+     },
+     {
+      "name": "HONEYCOMB",
+      "price": "$1.50",
+      "note": null
+     },
+     {
+      "name": "ADD ICE CREAM",
+      "price": "$3.50",
+      "note": null
+     },
+     {
+      "name": "KOKUTO JELLY",
+      "price": "$0.75",
+      "note": null
+     },
+     {
+      "name": "SOY MILK",
+      "price": "$0.75",
+      "note": null
+     },
+     {
+      "name": "OAT MILK",
+      "price": "$0.75",
+      "note": null
+     },
+     {
+      "name": "ALMOND MILK",
+      "price": "$0.75",
+      "note": null
+     }
+    ],
+    "source_url": "https://cafemaikoorl.com/menu",
+    "read": "2026-11-23",
+    "kind": "html"
+   }
+  },
+  {
+   "id": "brand:web-noble-brew-fl-tampa-2718-n-florida-ave-288001",
+   "name": "Noble Brew",
+   "address": "2718 N Florida Ave",
+   "city": "Tampa",
+   "state": "FL",
+   "zip": "33602",
+   "website": "https://noblebrewtampa.com",
+   "instagram": "noblebrew.tampa",
+   "phone": "+1-813-733-6353",
+   "opening_hours": "Mo,Tu,We,Su 07:00-22:30; Th-Sa 07:00-23:00",
+   "menu_url": "https://noblebrewtampa.com/#menu",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Iced Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Colada",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    }
+   ],
+   "note": "Coffee house in Tampa Heights with a three-drink matcha menu",
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://noblebrewtampa.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 27.968291,
+   "lng": -82.459536,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-saiko-fl-orlando-7059-s-orange-blossom-trl-10fdfe",
+   "name": "Saikō",
+   "address": "7059 S Orange Blossom Trl",
+   "city": "Orlando",
+   "state": "FL",
+   "zip": "32809",
+   "website": "https://enter.saikocafe.com/orlando",
+   "instagram": null,
+   "phone": "407-864-2555",
+   "opening_hours": null,
+   "menu_url": "https://enter.saikocafe.com/orlando",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": "Matcha, hojicha and coffee counter inside Orlando Racket Sports",
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://enter.saikocafe.com/orlando",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 28.507341,
+   "lng": -81.397005,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
    "id": "osm:node/7860016569",
    "name": "Baladi Coffee & Matcha",
    "lat": 34.033494,
@@ -1096,6 +1756,8 @@
    "menu_url": "https://www.noblefat.com/cafe-menu-1",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.noblefat.com/cafe-menu-1",
@@ -1106,7 +1768,7 @@
    "lng": -87.64438,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/14101225652",
@@ -1128,6 +1790,34 @@
    "verified": false
   },
   {
+   "id": "brand:web-recess-in-indianapolis-902-e-17th-st-3b9691",
+   "name": "Recess",
+   "address": "902 E 17th St",
+   "city": "Indianapolis",
+   "state": "IN",
+   "zip": "46202",
+   "website": null,
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.indianapolismonthly.com/food-and-drinks/the-feed-ginas-juice-bar-returns-and-recess-puts-matcha-on-the-map/",
+   "read": "2026-11-23",
+   "confirmed_via": null,
+   "verified": false,
+   "lat": 39.790485,
+   "lng": -86.142187,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
    "id": "osm:node/13831193089",
    "name": "Little Matcha",
    "lat": 39.087672,
@@ -1147,6 +1837,150 @@
    "verified": true
   },
   {
+   "id": "brand:web-bo-m-dough-ma-cambridge-1271-cambridge-street-43d551",
+   "name": "bōm dough",
+   "address": "1271 Cambridge Street",
+   "city": "Cambridge",
+   "state": "MA",
+   "zip": "02139",
+   "website": "https://www.bomdough.com",
+   "instagram": "bom.dough",
+   "phone": null,
+   "opening_hours": "Mo-Fr 08:00-15:00; Sa,Su 08:00-16:00",
+   "menu_url": "https://www.bomdough.com/matcha/",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Strawberry matcha",
+     "price": "$6.00"
+    },
+    {
+     "name": "Golden banana matcha",
+     "price": "$6.25"
+    },
+    {
+     "name": "Mother earth matcha",
+     "price": "$6.25"
+    },
+    {
+     "name": "Vanilla bean matcha",
+     "price": "$6.00"
+    },
+    {
+     "name": "Salted caramel matcha",
+     "price": "$6.00"
+    },
+    {
+     "name": "Matcha latte",
+     "price": "$5.50"
+    },
+    {
+     "name": "Matcha tea",
+     "price": "$4.75"
+    }
+   ],
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.bomdough.com/matcha/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 42.373543,
+   "lng": -71.098536,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-bo-m-dough-ma-cambridge-1-canal-park-ffcbbd",
+   "name": "bōm dough",
+   "address": "1 Canal Park",
+   "city": "Cambridge",
+   "state": "MA",
+   "zip": "02141",
+   "website": "https://www.bomdough.com",
+   "instagram": "bom.dough",
+   "phone": null,
+   "opening_hours": "Mo-Fr 08:00-15:00; Sa,Su 08:00-16:00",
+   "menu_url": "https://www.bomdough.com/matcha/",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Strawberry matcha",
+     "price": "$6.00"
+    },
+    {
+     "name": "Golden banana matcha",
+     "price": "$6.25"
+    },
+    {
+     "name": "Mother earth matcha",
+     "price": "$6.25"
+    },
+    {
+     "name": "Vanilla bean matcha",
+     "price": "$6.00"
+    },
+    {
+     "name": "Salted caramel matcha",
+     "price": "$6.00"
+    },
+    {
+     "name": "Matcha latte",
+     "price": "$5.50"
+    },
+    {
+     "name": "Matcha tea",
+     "price": "$4.75"
+    }
+   ],
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.bomdough.com/matcha/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 42.369553,
+   "lng": -71.076793,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-bychae-ma-boston-222-newbury-street-0d3888",
+   "name": "byChae",
+   "address": "222 Newbury Street",
+   "city": "Boston",
+   "state": "MA",
+   "zip": null,
+   "website": "https://bychae.com",
+   "instagram": "bychaeofficial",
+   "phone": null,
+   "opening_hours": "Mo-Sa 08:00-20:00; Su 11:00-19:00",
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://bychae.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 42.349758,
+   "lng": -71.08108,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
    "id": "osm:node/2458189474",
    "name": "Kyo Matcha",
    "lat": 42.346282,
@@ -1155,15 +1989,165 @@
    "city": "Brookline",
    "state": "MA",
    "zip": "02446",
-   "website": null,
-   "instagram": null,
+   "website": "https://www.kyotomatcha.us",
+   "instagram": "kyomatchausa",
    "phone": null,
    "opening_hours": null,
    "cuisine": null,
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/2458189474",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": false
+   "verified": true,
+   "menu_url": "https://www.kyotomatcha.us/menu",
+   "source_url": "https://www.ubereats.com/store/kyo-matcha-boston-1010-beacon-street/4xDjqkRXWUqAgmFatMVxPA",
+   "read": "2026-11-23",
+   "confirmed_via": "press+site"
+  },
+  {
+   "id": "brand:web-matcha-cafe-maiko-ma-boston-115-jersey-street-47608b",
+   "name": "Matcha Cafe Maiko",
+   "address": "115 Jersey Street",
+   "city": "Boston",
+   "state": "MA",
+   "zip": "02215",
+   "website": "https://www.matchacafe-maiko.com",
+   "instagram": "matchamaikobos",
+   "phone": "617-322-5360",
+   "opening_hours": null,
+   "menu_url": "https://www.matchacafe-maiko.com/eng/menu/",
+   "image_url": "https://www.matchacafe-maiko.com/assets/img/og-imageEn.png",
+   "image_credit": "Photo: Matcha Cafe Maiko website",
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=ma&target=ma-boston",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 42.342715,
+   "lng": -71.097061,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z",
+   "menu": {
+    "items": [
+     {
+      "name": "Uji Kintoki",
+      "price": null,
+      "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and condensed milk for that very traditional taste"
+     },
+     {
+      "name": "Shaved Ice (Matcha)",
+      "price": null,
+      "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with matcha cream"
+     },
+     {
+      "name": "Shaved Ice (Mixed)",
+      "price": null,
+      "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with matcha and vanilla cream"
+     },
+     {
+      "name": "Shaved Ice (Vanilla)",
+      "price": null,
+      "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with vanilla cream"
+     },
+     {
+      "name": "Soft serve (Matcha)",
+      "price": null,
+      "note": "Our homemade matcha soft serve and a crispy cone that we make fresh every day"
+     },
+     {
+      "name": "Soft serve (Mix)",
+      "price": null,
+      "note": "Our homemade matcha & vanilla soft serve and a crispy cone that we make fresh every day"
+     },
+     {
+      "name": "Soft serve (Vanilla)",
+      "price": null,
+      "note": "Our thick, homemade vanilla soft serve and a crispy cone that we make fresh every day"
+     },
+     {
+      "name": "Maiko Special (Matcha)",
+      "price": null,
+      "note": "Our specialty containing matcha cream, matcha chiffon, chestnuts, and shiratama mochi"
+     },
+     {
+      "name": "Maiko Special (Mixed)",
+      "price": null,
+      "note": "Both matcha and vanilla cream together along with matcha chiffon, chestnuts, and shiratama mochi"
+     },
+     {
+      "name": "Maiko Special (Vanilla)",
+      "price": null,
+      "note": "Contains the perfect balance of vanilla cream, matcha ice, matcha chiffon, and azuki beans"
+     },
+     {
+      "name": "Matcha",
+      "price": null,
+      "note": "The most basic matcha drink still delivers an outstanding taste"
+     },
+     {
+      "name": "Matcha Lemon",
+      "price": null,
+      "note": "Enjoy the refreshing taste of matcha mixed with lemons"
+     },
+     {
+      "name": "Hojicha",
+      "price": null,
+      "note": "A different tea, hojicha will give you a mellow spicy taste"
+     },
+     {
+      "name": "Matcha Latte",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Latte",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Matcha Frappe",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Frappe",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Matcha Tea Float",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Matcha Latte Float",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Matcha Tea Lemon Float",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Tea Float",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Latte Float",
+      "price": null,
+      "note": "Nutrition information"
+     }
+    ],
+    "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
+    "read": "2026-11-23",
+    "kind": "html",
+    "note": "Main menu of the Hawaii store; items and prices vary by location"
+   }
   },
   {
    "id": "osm:node/13762175477",
@@ -1202,6 +2186,90 @@
    "osm_url": "https://www.openstreetmap.org/node/9741839042",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": false
+  },
+  {
+   "id": "brand:web-mizu-matcha-ma-boston-217-newbury-street-e37643",
+   "name": "Mizu Matcha",
+   "address": "217 Newbury Street",
+   "city": "Boston",
+   "state": "MA",
+   "zip": "02116",
+   "website": "https://www.mizumatchaus.com/",
+   "instagram": "mizumatcha_bos",
+   "phone": null,
+   "opening_hours": "Mo-Su 12:00-22:00",
+   "menu_url": null,
+   "image_url": "https://static.wixstatic.com/media/76facf_4372dbcc792b4b99acc3845add925ed4~mv2.png/v1/fit/w_2500,h_1330,al_c/76facf_4372dbcc792b4b99acc3845add925ed4~mv2.png",
+   "image_credit": "Photo: Mizu Matcha website",
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://bostonrestaurants.blogspot.com/2025/12/mizu-matcha-opens-in-bostons-back-bay.html",
+   "read": "2026-11-23",
+   "confirmed_via": "press+site",
+   "verified": true,
+   "lat": 42.35012,
+   "lng": -71.081365,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-nana-s-green-tea-ma-boston-175-newbury-street-582869",
+   "name": "nana's green tea",
+   "address": "175 Newbury Street",
+   "city": "Boston",
+   "state": "MA",
+   "zip": "02116",
+   "website": "https://nanasgreenteausa.com",
+   "instagram": "nanasgreentea_usa",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": "https://nanasgreenteausa.com/menu/",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://nanasgreenteausa.com/boston",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 42.350695,
+   "lng": -71.079287,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-equitea-matcha-studio-md-baltimore-311-w-28th-797739",
+   "name": "Equitea Matcha Studio",
+   "address": "311 W 28th Street",
+   "city": "Baltimore",
+   "state": "MD",
+   "zip": "21211",
+   "website": "https://equitea.com",
+   "instagram": "equiteastudio",
+   "phone": "+1 443 255 0994",
+   "opening_hours": "We-Sa 09:00-16:00; Su 10:00-15:00",
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://equitea.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 39.320892,
+   "lng": -76.621891,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/12269407204",
@@ -1259,6 +2327,34 @@
    "osm_url": "https://www.openstreetmap.org/node/3224246961",
    "fetched": "2026-11-22T20:30:14.907Z",
    "verified": true
+  },
+  {
+   "id": "brand:web-northeast-tea-house-mn-minneapolis-224-e-henne-822c8f",
+   "name": "Northeast Tea House",
+   "address": "224 E Hennepin Ave",
+   "city": "Minneapolis",
+   "state": "MN",
+   "zip": "55414",
+   "website": "https://northeastteahouse.com",
+   "instagram": null,
+   "phone": "(612) 321-8215",
+   "opening_hours": null,
+   "menu_url": "https://northeastteahouse.com/pages/tea-menu",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://old-town-mpls.squarespace.com/business-directory-blog/northeastteahouse",
+   "read": "2026-11-23",
+   "confirmed_via": "press+site",
+   "verified": true,
+   "lat": 44.987698,
+   "lng": -93.256485,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/13908302923",
@@ -1347,6 +2443,52 @@
    }
   },
   {
+   "id": "brand:web-heirloom-brewshop-nc-raleigh-219-s-west-st-d599ca",
+   "name": "Heirloom Brewshop",
+   "address": "219 S West St",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27603",
+   "website": "https://heirloom-raleigh.com",
+   "instagram": "heirloomraleigh",
+   "phone": "919-594-7029",
+   "opening_hours": null,
+   "menu_url": "https://heirloom-raleigh.com/weddings",
+   "image_url": "https://irp.cdn-website.com/b105e58d/dms3rep/multi/opt/wvPBkBJQy9IDBvFOYpFXuU1AFyZe9G7z-1920w.png",
+   "image_credit": "Photo: Heirloom Brewshop website",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": "$7"
+    },
+    {
+     "name": "Matcha Tonic",
+     "price": "$7"
+    },
+    {
+     "name": "Matcha Lemonade",
+     "price": "$7"
+    },
+    {
+     "name": "Matcha Cloud",
+     "price": "$8"
+    }
+   ],
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://heirloom-raleigh.com/contact",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 35.777546,
+   "lng": -78.645939,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
    "id": "brand:web-littlefoot-matcha-nc-raleigh-234-fayetteville-808d26",
    "name": "Littlefoot Matcha",
    "address": "234 Fayetteville Street",
@@ -1360,17 +2502,19 @@
    "menu_url": null,
    "image_url": "https://littlefootmatcha.com/cdn/shop/files/Untitled_design_037a6d53-fd56-4f97-a779-e9426ce87637.png?v=1773972028",
    "image_credit": "Photo: Littlefoot Matcha website",
+   "tier": "shop",
+   "note": "Pop-up window at Maison Neue",
    "cuisine": null,
    "source": "web",
    "source_url": "https://littlefootmatcha.com/pages/find-us",
    "read": "2026-11-23",
-   "confirmed_via": null,
-   "verified": false,
+   "confirmed_via": "own-site",
+   "verified": true,
    "lat": 35.777134,
    "lng": -78.639574,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-littlefoot-matcha-nc-greensboro-1101-west-gate-3d9b6c",
@@ -1386,6 +2530,8 @@
    "menu_url": null,
    "image_url": "https://littlefootmatcha.com/cdn/shop/files/Untitled_design_037a6d53-fd56-4f97-a779-e9426ce87637.png?v=1773972028",
    "image_credit": "Photo: Littlefoot Matcha website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://littlefootmatcha.com/pages/find-us",
@@ -1396,7 +2542,153 @@
    "lng": -79.809769,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-matcha-cafe-maiko-nc-charlotte-8128-providence-b266f1",
+   "name": "Matcha Cafe Maiko",
+   "address": "8128 Providence Rd Suite 900",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28277",
+   "website": "https://www.matchacafe-maiko.com/eng/",
+   "instagram": "matchastand_maiko",
+   "phone": "980-430-3918",
+   "opening_hours": null,
+   "menu_url": "https://www.matchacafe-maiko.com/eng/menu/",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=nc&target=nc-charlotte",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 35.096012,
+   "lng": -80.780137,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z",
+   "menu": {
+    "items": [
+     {
+      "name": "Uji Kintoki",
+      "price": null,
+      "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and condensed milk for that very traditional taste"
+     },
+     {
+      "name": "Shaved Ice (Matcha)",
+      "price": null,
+      "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with matcha cream"
+     },
+     {
+      "name": "Shaved Ice (Mixed)",
+      "price": null,
+      "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with matcha and vanilla cream"
+     },
+     {
+      "name": "Shaved Ice (Vanilla)",
+      "price": null,
+      "note": "Shaved ice with matcha syrup, adzuki beans, shiratama, and topped with vanilla cream"
+     },
+     {
+      "name": "Soft serve (Matcha)",
+      "price": null,
+      "note": "Our homemade matcha soft serve and a crispy cone that we make fresh every day"
+     },
+     {
+      "name": "Soft serve (Mix)",
+      "price": null,
+      "note": "Our homemade matcha & vanilla soft serve and a crispy cone that we make fresh every day"
+     },
+     {
+      "name": "Soft serve (Vanilla)",
+      "price": null,
+      "note": "Our thick, homemade vanilla soft serve and a crispy cone that we make fresh every day"
+     },
+     {
+      "name": "Maiko Special (Matcha)",
+      "price": null,
+      "note": "Our specialty containing matcha cream, matcha chiffon, chestnuts, and shiratama mochi"
+     },
+     {
+      "name": "Maiko Special (Mixed)",
+      "price": null,
+      "note": "Both matcha and vanilla cream together along with matcha chiffon, chestnuts, and shiratama mochi"
+     },
+     {
+      "name": "Maiko Special (Vanilla)",
+      "price": null,
+      "note": "Contains the perfect balance of vanilla cream, matcha ice, matcha chiffon, and azuki beans"
+     },
+     {
+      "name": "Matcha",
+      "price": null,
+      "note": "The most basic matcha drink still delivers an outstanding taste"
+     },
+     {
+      "name": "Matcha Lemon",
+      "price": null,
+      "note": "Enjoy the refreshing taste of matcha mixed with lemons"
+     },
+     {
+      "name": "Hojicha",
+      "price": null,
+      "note": "A different tea, hojicha will give you a mellow spicy taste"
+     },
+     {
+      "name": "Matcha Latte",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Latte",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Matcha Frappe",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Frappe",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Matcha Tea Float",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Matcha Latte Float",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Matcha Tea Lemon Float",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Tea Float",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Latte Float",
+      "price": null,
+      "note": "Nutrition information"
+     }
+    ],
+    "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
+    "read": "2026-11-23",
+    "kind": "html",
+    "note": "Main menu of the Hawaii store; items and prices vary by location"
+   }
   },
   {
    "id": "osm:node/6006320286",
@@ -2005,6 +3297,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.aokomatcha.com/location",
@@ -2015,7 +3309,7 @@
    "lng": -73.771869,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-aoko-matcha-chinatown-ny-new-york-81-chrystie-18e59c",
@@ -2031,6 +3325,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.aokomatcha.com/location",
@@ -2041,7 +3337,7 @@
    "lng": -73.994434,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-aoko-matcha-fidi-ny-new-york-40-gold-street-c71dc4",
@@ -2057,6 +3353,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.aokomatcha.com/location",
@@ -2067,7 +3365,7 @@
    "lng": -74.005748,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-aoko-matcha-park-slope-ny-brooklyn-155-5th-ave-bed41d",
@@ -2083,6 +3381,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.aokomatcha.com/location",
@@ -2093,7 +3393,7 @@
    "lng": -73.9792,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-aoko-matcha-west-village-ny-new-york-275-bleec-243904",
@@ -2109,6 +3409,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.aokomatcha.com/location",
@@ -2119,7 +3421,7 @@
    "lng": -74.00301,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-dumbo-ny-brooklyn-55-water-stre-c04ae6",
@@ -2135,6 +3437,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://chachamatcha.com/pages/locations",
@@ -2145,7 +3449,7 @@
    "lng": -73.991989,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/2555136029",
@@ -2183,6 +3487,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://chachamatcha.com/pages/locations",
@@ -2193,7 +3499,7 @@
    "lng": -73.974632,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-cha-cha-matcha-moynihan-ny-new-york-421-8th-av-028f75",
@@ -2209,6 +3515,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://chachamatcha.com/pages/locations",
@@ -2219,7 +3527,7 @@
    "lng": -73.996268,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:way/1149319923",
@@ -2279,6 +3587,8 @@
    "menu_url": "https://isshikimatcha.com/pages/cafe-menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://isshikimatcha.com/pages/locations",
@@ -2289,7 +3599,7 @@
    "lng": -73.997693,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-isshiki-matcha-at-ace-hotel-ny-new-york-20-wes-146692",
@@ -2305,6 +3615,8 @@
    "menu_url": "https://isshikimatcha.com/pages/cafe-menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://isshikimatcha.com/pages/locations",
@@ -2315,7 +3627,7 @@
    "lng": -73.98816,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-isshiki-matcha-at-loulou-ny-new-york-176-8th-a-d611cd",
@@ -2331,6 +3643,8 @@
    "menu_url": "https://isshikimatcha.com/pages/cafe-menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://isshikimatcha.com/pages/locations",
@@ -2341,7 +3655,7 @@
    "lng": -74.000173,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/2268954021",
@@ -2379,6 +3693,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://kettl.co/pages/locations",
@@ -2389,7 +3705,7 @@
    "lng": -73.953918,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-kijitora-ny-brooklyn-151-north-7th-street-3c75b7",
@@ -2405,6 +3721,8 @@
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2415,7 +3733,7 @@
    "lng": -73.957867,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-kijitora-e14th-ny-new-york-534-east-14th-stree-1ea3c2",
@@ -2431,6 +3749,8 @@
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2441,7 +3761,7 @@
    "lng": -73.978839,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-kijitora-east-ny-brooklyn-309-graham-avenue-fbe6cc",
@@ -2457,6 +3777,8 @@
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2467,7 +3789,7 @@
    "lng": -73.944421,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-kijitora-mini-ny-brooklyn-578-driggs-avenue-d6bfc7",
@@ -2483,6 +3805,8 @@
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2493,7 +3817,7 @@
    "lng": -73.957205,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-kijitora-ridgewood-ny-ridgewood-279-st-nichola-791f76",
@@ -2509,6 +3833,8 @@
    "menu_url": "https://www.kijitorabrooklyn.com/menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.kijitorabrooklyn.com/locations",
@@ -2519,7 +3845,7 @@
    "lng": -73.912152,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/10756703060",
@@ -2678,6 +4004,8 @@
    "menu_url": "https://matchahousenyc.com/menu-page",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://matchahousenyc.com/",
@@ -2688,7 +4016,7 @@
    "lng": -73.986319,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z",
+   "fetched": "2026-11-23T19:41:20.781Z",
    "menu": {
     "items": [
      {
@@ -2791,6 +4119,8 @@
    "menu_url": null,
    "image_url": "http://www.matchaful.com/cdn/shop/files/matchaful-organic-matcha-website-hero.jpg?v=1780489902",
    "image_credit": "Photo: Matchaful website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaful.com/pages/cafes",
@@ -2801,7 +4131,7 @@
    "lng": -73.967974,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-matchaful-midtown-east-inside-clean-market-ny-1cf4f2",
@@ -2817,6 +4147,8 @@
    "menu_url": null,
    "image_url": "http://www.matchaful.com/cdn/shop/files/matchaful-organic-matcha-website-hero.jpg?v=1780489902",
    "image_credit": "Photo: Matchaful website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaful.com/pages/cafes",
@@ -2827,7 +4159,7 @@
    "lng": -73.967486,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-matchaful-nolita-ny-new-york-217-mulberry-stre-66f226",
@@ -2843,6 +4175,8 @@
    "menu_url": null,
    "image_url": "http://www.matchaful.com/cdn/shop/files/matchaful-organic-matcha-website-hero.jpg?v=1780489902",
    "image_credit": "Photo: Matchaful website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaful.com/pages/cafes",
@@ -2853,7 +4187,7 @@
    "lng": -73.996358,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-matchaful-park-avenue-south-ny-new-york-337-pa-47b2d2",
@@ -2869,6 +4203,8 @@
    "menu_url": null,
    "image_url": "http://www.matchaful.com/cdn/shop/files/matchaful-organic-matcha-website-hero.jpg?v=1780489902",
    "image_credit": "Photo: Matchaful website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaful.com/pages/cafes",
@@ -2879,7 +4215,7 @@
    "lng": -73.985354,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-matchaful-soho-ny-new-york-184-prince-street-c80e06",
@@ -2895,6 +4231,8 @@
    "menu_url": null,
    "image_url": "http://www.matchaful.com/cdn/shop/files/matchaful-organic-matcha-website-hero.jpg?v=1780489902",
    "image_credit": "Photo: Matchaful website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaful.com/pages/cafes",
@@ -2905,7 +4243,7 @@
    "lng": -74.002157,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-matchaful-tribeca-ny-new-york-350-greenwich-st-796721",
@@ -2921,6 +4259,8 @@
    "menu_url": null,
    "image_url": "http://www.matchaful.com/cdn/shop/files/matchaful-organic-matcha-website-hero.jpg?v=1780489902",
    "image_credit": "Photo: Matchaful website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaful.com/pages/cafes",
@@ -2931,7 +4271,7 @@
    "lng": -74.010406,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/6550407925",
@@ -2971,6 +4311,8 @@
    "menu_url": null,
    "image_url": "http://www.matchaful.com/cdn/shop/files/matchaful-organic-matcha-website-hero.jpg?v=1780489902",
    "image_credit": "Photo: Matchaful website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaful.com/pages/cafes",
@@ -2981,7 +4323,7 @@
    "lng": -73.958345,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/11860537157",
@@ -3020,6 +4362,8 @@
    "menu_url": null,
    "image_url": "http://nipponcha.us/cdn/shop/files/uberEats_store_background_1.jpg?v=1701233426",
    "image_credit": "Photo: Nippon Cha website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://nipponcha.us/pages/locations",
@@ -3030,7 +4374,7 @@
    "lng": -73.771661,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-nippon-cha-williamsburg-ny-brooklyn-214-bedfor-5f988f",
@@ -3046,6 +4390,8 @@
    "menu_url": null,
    "image_url": "http://nipponcha.us/cdn/shop/files/uberEats_store_background_1.jpg?v=1701233426",
    "image_credit": "Photo: Nippon Cha website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://nipponcha.us/pages/locations",
@@ -3056,7 +4402,7 @@
    "lng": -73.958901,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/6916463756",
@@ -3153,6 +4499,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://sorate.co/pages/flatiron-teahouse",
@@ -3163,7 +4511,7 @@
    "lng": -73.989712,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-sorate-soho-teahouse-ny-new-york-103-sullivan-692910",
@@ -3179,6 +4527,8 @@
    "menu_url": null,
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://sorate.co/pages/soho-teahouse",
@@ -3189,7 +4539,100 @@
    "lng": -74.002813,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-cinsei-oh-cincinnati-32-e-13th-st-aa615e",
+   "name": "CinSei",
+   "address": "32 E. 13th St.",
+   "city": "Cincinnati",
+   "state": "OH",
+   "zip": "45202",
+   "website": "https://cinsei.com",
+   "instagram": "cin.sei",
+   "phone": "+1-513-331-2875",
+   "opening_hours": "Sa 11:00-17:00; Su 12:00-16:00",
+   "menu_url": null,
+   "image_url": "http://cinsei.com/cdn/shop/files/cinsei_manga_cafe_matcha-1.jpg?v=1787141569",
+   "image_credit": "Photo: CinSei website",
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://cinsei.com/",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 39.109744,
+   "lng": -84.513916,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z",
+   "menu": {
+    "items": [
+     {
+      "name": "Assorted Pastries",
+      "price": null,
+      "note": null
+     },
+     {
+      "name": "Hojicha Latte w/ French Vanilla",
+      "price": null,
+      "note": "Oat Milk / Whole Milk"
+     },
+     {
+      "name": "Matcha Latte",
+      "price": null,
+      "note": "Oat Milk / Whole Milk"
+     },
+     {
+      "name": "Pistachio Matcha Latte",
+      "price": null,
+      "note": "Oat Milk / Whole Milk"
+     },
+     {
+      "name": "Strawberry Matcha",
+      "price": null,
+      "note": "Oat Milk / Whole Milk"
+     },
+     {
+      "name": "Usucha",
+      "price": null,
+      "note": "A traditional Japanese method of preparing matcha"
+     }
+    ],
+    "source_url": "https://cinsei.com/",
+    "read": "2026-11-23",
+    "kind": "html"
+   }
+  },
+  {
+   "id": "brand:web-matcha-me-oh-columbus-2348-n-high-street-20d228",
+   "name": "Matcha Me",
+   "address": "2348 N High Street",
+   "city": "Columbus",
+   "state": "OH",
+   "zip": "43202",
+   "website": "https://www.matchamecafe.com",
+   "instagram": "matchamecafe",
+   "phone": "(614) 960-8972",
+   "opening_hours": "Mo-Th 08:00-18:00; Fr 08:00-19:00; Sa 09:00-19:00; Su 09:00-18:00",
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://www.matchamecafe.com/contact",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 40.010253,
+   "lng": -83.010082,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/6377702634",
@@ -3394,15 +4837,19 @@
    "city": "Pittsburgh",
    "state": "PA",
    "zip": "15217",
-   "website": "https://www.kyotomatcha.us/",
-   "instagram": null,
+   "website": "https://www.kyotomatcha.us",
+   "instagram": "kyomatchausa",
    "phone": null,
    "opening_hours": "12:00-22:30",
    "cuisine": "japanese;coffee_shop",
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/9659344789",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
+   "verified": true,
+   "menu_url": "https://www.kyotomatcha.us/menu",
+   "source_url": "https://order.online/store/-31450475",
+   "read": "2026-11-23",
+   "confirmed_via": "press+site"
   },
   {
    "id": "brand:web-matcha-cafe-maiko-pa-philadelphia-923-race-st-35969b",
@@ -3418,6 +4865,8 @@
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=pa&target=pa-philadelphia-store",
@@ -3428,7 +4877,7 @@
    "lng": -75.155152,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z",
+   "fetched": "2026-11-23T19:41:20.781Z",
    "menu": {
     "items": [
      {
@@ -3598,9 +5047,9 @@
    "lat": 40.434597,
    "lng": -79.923012,
    "address": "2000 Murray Avenue",
-   "city": null,
+   "city": "Pittsburgh",
    "state": "PA",
-   "zip": null,
+   "zip": "15217",
    "website": null,
    "instagram": null,
    "phone": null,
@@ -3609,7 +5058,65 @@
    "source": "osm",
    "osm_url": "https://www.openstreetmap.org/node/1371572679",
    "fetched": "2026-11-22T20:30:14.907Z",
-   "verified": true
+   "verified": true,
+   "source_url": "https://order.online/store/-31306211/",
+   "read": "2026-11-23"
+  },
+  {
+   "id": "brand:web-mikkusu-matcha-tea-house-pa-pittsburgh-3511-bu-ba0f6c",
+   "name": "Mikkusu Matcha Tea House",
+   "address": "3511 Butler Street",
+   "city": "Pittsburgh",
+   "state": "PA",
+   "zip": "15201",
+   "website": "https://mikkusutea.com",
+   "instagram": "mikkusutea",
+   "phone": null,
+   "opening_hours": "We-Sa 10:00-18:00; Su 10:00-16:00",
+   "menu_url": null,
+   "image_url": "https://mikkusutea.com/cdn/shop/files/charge_focus_revive_-_top_down_40g_jars_on_white.jpg?v=1718051715",
+   "image_credit": "Photo: Mikkusu website",
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://mikkusutea.com/pages/mikkusu-matcha-tea-house",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 40.464376,
+   "lng": -79.966307,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
+  },
+  {
+   "id": "brand:web-mott-cha-tn-nashville-400-craighead-st-8f136c",
+   "name": "Mott Cha",
+   "address": "400 Craighead St",
+   "city": "Nashville",
+   "state": "TN",
+   "zip": "37204",
+   "website": "https://mottcha.co",
+   "instagram": "mottchanashville",
+   "phone": null,
+   "opening_hours": "Mo-Su 11:00-19:00",
+   "menu_url": "https://www.clover.com/online-ordering/mott-cha-nashville",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://mottcha.co/contact",
+   "read": "2026-11-23",
+   "confirmed_via": null,
+   "verified": false,
+   "lat": 36.125889,
+   "lng": -86.766019,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/12708690933",
@@ -3644,6 +5151,8 @@
    "menu_url": "https://www.matchaandcreme.com/#menu",
    "image_url": null,
    "image_credit": null,
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchaandcreme.com/",
@@ -3654,7 +5163,7 @@
    "lng": -96.769177,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-matcha-cafe-maiko-tx-richardson-100-s-central-6cbcd1",
@@ -3670,6 +5179,8 @@
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-richardson",
@@ -3680,7 +5191,7 @@
    "lng": -96.73746,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z",
+   "fetched": "2026-11-23T19:41:20.781Z",
    "menu": {
     "items": [
      {
@@ -3814,6 +5325,8 @@
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-san-antonio",
@@ -3824,7 +5337,7 @@
    "lng": -98.506202,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z",
+   "fetched": "2026-11-23T19:41:20.781Z",
    "menu": {
     "items": [
      {
@@ -3958,6 +5471,8 @@
    "menu_url": "https://www.matchacafe-maiko.com/menu/",
    "image_url": "https://www.matchacafe-maiko.com/assets/img/og-image.png",
    "image_credit": "Photo: Matcha Cafe Maiko website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=tx&target=tx-potranco",
@@ -3968,7 +5483,7 @@
    "lng": -98.714576,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z",
+   "fetched": "2026-11-23T19:41:20.781Z",
    "menu": {
     "items": [
      {
@@ -4102,6 +5617,8 @@
    "menu_url": "https://www.hellomatchamia.com/menu",
    "image_url": "http://static1.squarespace.com/static/67613db6e67a0e5a35a7fc5e/t/6775d627ffc5395d231926ff/1735775783080/logo+website.png?format=1500w",
    "image_credit": "Photo: Matcha Mia website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.hellomatchamia.com/",
@@ -4112,7 +5629,7 @@
    "lng": -95.624482,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "brand:web-mira-matcha-tx-san-antonio-1931-north-new-brau-147356",
@@ -4128,6 +5645,8 @@
    "menu_url": "https://www.miramatcha.com/matcha-menu",
    "image_url": "https://static.wixstatic.com/media/f8272c_57b4322222794ed9b30de762c262654f%7Emv2.png/v1/fit/w_2500,h_1330,al_c/f8272c_57b4322222794ed9b30de762c262654f%7Emv2.png",
    "image_credit": "Photo: Mira Matcha website",
+   "tier": "shop",
+   "note": null,
    "cuisine": null,
    "source": "web",
    "source_url": "https://www.miramatcha.com/",
@@ -4138,7 +5657,7 @@
    "lng": -98.461029,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:20:20.937Z"
+   "fetched": "2026-11-23T19:41:20.781Z"
   },
   {
    "id": "osm:node/11399205396",
@@ -4451,6 +5970,34 @@
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
+  },
+  {
+   "id": "brand:web-midori-tea-house-va-falls-church-450-w-broad-s-ac2082",
+   "name": "Midori Tea House",
+   "address": "450 W Broad Street, Suite 120",
+   "city": "Falls Church",
+   "state": "VA",
+   "zip": "22046",
+   "website": "https://midoriteahouse.com",
+   "instagram": "midoriteahouse",
+   "phone": null,
+   "opening_hours": "Mo,We,Th 12:00-21:00; Fr 12:00-22:00; Sa 10:00-22:00; Su 10:00-21:00",
+   "menu_url": "https://order.toasttab.com/online/midori-tea-house",
+   "image_url": "https://midoriteahouse.com/cdn/shop/files/Space_30_2.png?height=628&pad_color=ffffff&v=1754342333&width=1200",
+   "image_credit": "Photo: Midori Tea House website",
+   "tier": "shop",
+   "note": null,
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://midoriteahouse.com/pages/store-location",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 38.886584,
+   "lng": -77.17745,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-23T19:41:20.781Z"
   }
  ]
 }

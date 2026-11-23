@@ -1,4 +1,9 @@
 {
+  "1 canal park cambridge ma 02141": {
+    "lat": 42.369553,
+    "lng": -71.076793,
+    "source": "nominatim"
+  },
   "100 s central expy richardson tx 75080": {
     "lat": 32.948394,
     "lng": -96.73746,
@@ -16,6 +21,11 @@
   "1000 4th ave seattle wa 98104 seattle wa": {
     "lat": 47.606714,
     "lng": -122.332698,
+    "source": "nominatim"
+  },
+  "1010 beacon street brookline ma 02446": {
+    "lat": 42.346282,
+    "lng": -71.10738,
     "source": "nominatim"
   },
   "1010 ne 66th st seattle wa": {
@@ -120,6 +130,11 @@
     "lng": -95.357761,
     "source": "nominatim"
   },
+  "115 jersey street boston ma 02215": {
+    "lat": 42.342715,
+    "lng": -71.097061,
+    "source": "nominatim"
+  },
   "1158 broadway new york ny 10001": {
     "lat": 40.744771,
     "lng": -73.988715,
@@ -202,6 +217,11 @@
     "lng": -86.782943,
     "source": "nominatim"
   },
+  "1271 cambridge street cambridge ma 02139": {
+    "lat": 42.373543,
+    "lng": -71.098536,
+    "source": "nominatim"
+  },
   "1283 nw maynard rd cary nc": {
     "lat": 35.785461,
     "lng": -78.810009,
@@ -219,6 +239,11 @@
   "1300 alden rd orlando fl 32803": {
     "lat": 28.562518,
     "lng": -81.372121,
+    "source": "nominatim"
+  },
+  "1309 5th street ne washington dc 20002": {
+    "lat": 38.90861,
+    "lng": -76.997405,
     "source": "nominatim"
   },
   "132 bowery new york ny 10013": {
@@ -338,6 +363,11 @@
   "1744 rinehart rd orlando fl": {
     "miss": true,
     "at": 1795378393269
+  },
+  "175 newbury street boston ma 02116": {
+    "lat": 42.350695,
+    "lng": -71.079287,
+    "source": "nominatim"
   },
   "1759 sutter street san francisco ca 94115": {
     "lat": 37.786377,
@@ -524,6 +554,11 @@
     "lng": -97.822722,
     "source": "nominatim"
   },
+  "2000 murray avenue pittsburgh pa 15217": {
+    "lat": 40.434597,
+    "lng": -79.923012,
+    "source": "nominatim"
+  },
   "2001 concert dr virginia beach va 23456": {
     "lat": 36.779469,
     "lng": -76.100936,
@@ -595,6 +630,11 @@
     "miss": true,
     "at": 1795374278023
   },
+  "2101 p street nw washington dc 20037": {
+    "lat": 38.909761,
+    "lng": -77.046859,
+    "source": "nominatim"
+  },
   "2124 northwest expressway oklahoma city ok 73112": {
     "lat": 35.525184,
     "lng": -97.558852,
@@ -613,6 +653,16 @@
   "217 mulberry street new york ny 10012": {
     "lat": 40.722233,
     "lng": -73.996358,
+    "source": "nominatim"
+  },
+  "217 newbury street boston ma 02116": {
+    "lat": 42.35012,
+    "lng": -71.081365,
+    "source": "nominatim"
+  },
+  "219 s west st raleigh nc 27603": {
+    "lat": 35.777546,
+    "lng": -78.645939,
     "source": "nominatim"
   },
   "22 713 lorimer st new york ny": {
@@ -639,6 +689,11 @@
     "lng": -86.084667,
     "source": "nominatim"
   },
+  "222 newbury street boston ma": {
+    "lat": 42.349758,
+    "lng": -71.08108,
+    "source": "nominatim"
+  },
   "2220 gratiot ave detroit mi": {
     "lat": 42.350887,
     "lng": -83.032985,
@@ -647,6 +702,11 @@
   "2221 n lincoln ave chicago il 60614": {
     "lat": 41.922555,
     "lng": -87.64438,
+    "source": "nominatim"
+  },
+  "224 e hennepin ave minneapolis mn 55414": {
+    "lat": 44.987698,
+    "lng": -93.256485,
     "source": "nominatim"
   },
   "224 east hennepin avenue minneapolis mn": {
@@ -696,6 +756,11 @@
   "234 fayetteville street raleigh nc 27601": {
     "lat": 35.777134,
     "lng": -78.639574,
+    "source": "nominatim"
+  },
+  "2348 n high street columbus oh 43202": {
+    "lat": 40.010253,
+    "lng": -83.010082,
     "source": "nominatim"
   },
   "2360 india st san diego ca": {
@@ -815,6 +880,11 @@
   "2700 wilshire blvd los angeles ca": {
     "lat": 34.060826,
     "lng": -118.282549,
+    "source": "nominatim"
+  },
+  "2718 n florida ave tampa fl 33602": {
+    "lat": 27.968291,
+    "lng": -82.459536,
     "source": "nominatim"
   },
   "2722 fifth ave san diego ca": {
@@ -939,6 +1009,11 @@
     "lng": -73.944421,
     "source": "nominatim"
   },
+  "311 w 28th street baltimore md 21211": {
+    "lat": 39.320892,
+    "lng": -76.621891,
+    "source": "nominatim"
+  },
   "3118 university avenue san diego ca 92104": {
     "lat": 32.74855,
     "lng": -117.127136,
@@ -964,6 +1039,11 @@
     "lng": -74.002704,
     "source": "nominatim"
   },
+  "3210 grace street nw washington dc 20007": {
+    "lat": 38.903827,
+    "lng": -77.063511,
+    "source": "nominatim"
+  },
   "3222 m street northern virginia va": {
     "miss": true,
     "at": 1795379634330
@@ -972,6 +1052,15 @@
     "lat": 38.875875,
     "lng": -76.960072,
     "source": "nominatim"
+  },
+  "3252 ne 1st ave miami fl 33137": {
+    "lat": 25.807301,
+    "lng": -80.193386,
+    "source": "nominatim"
+  },
+  "3252 ne 1st ave suite 111 miami fl 33137": {
+    "miss": true,
+    "at": 1795462853750
   },
   "326 se mlk blvd portland or": {
     "lat": 45.520546,
@@ -1024,6 +1113,11 @@
   "3500 severn avenue metairie la 70002": {
     "lat": 30.012635,
     "lng": -90.15957,
+    "source": "nominatim"
+  },
+  "3511 butler street pittsburgh pa 15201": {
+    "lat": 40.464376,
+    "lng": -79.966307,
     "source": "nominatim"
   },
   "3520 peachtree rd ne atlanta ga 30326 atlanta ga": {
@@ -1102,6 +1196,11 @@
   "400 bonnet springs blvd lakeland fl 33815": {
     "miss": true,
     "at": 1795379602619
+  },
+  "400 craighead st nashville tn 37204": {
+    "lat": 36.125889,
+    "lng": -86.766019,
+    "source": "nominatim"
   },
   "400 s orlando ave winter park fl 32789": {
     "lat": 28.584065,
@@ -1240,6 +1339,15 @@
     "lng": -80.079273,
     "source": "nominatim"
   },
+  "450 w broad street falls church va 22046": {
+    "lat": 38.886584,
+    "lng": -77.17745,
+    "source": "nominatim"
+  },
+  "450 w broad street suite 120 falls church va 22046": {
+    "miss": true,
+    "at": 1795462825058
+  },
   "4522 fredericksburg rd": {
     "lat": 29.49262,
     "lng": -98.551027,
@@ -1282,6 +1390,15 @@
     "lat": 34.100927,
     "lng": -118.291149,
     "source": "nominatim"
+  },
+  "4693 gardens park blvd orlando fl 32839": {
+    "lat": 28.49462,
+    "lng": -81.423672,
+    "source": "nominatim"
+  },
+  "4693 gardens park blvd suite 117 orlando fl 32839": {
+    "miss": true,
+    "at": 1795462848012
   },
   "475 north beverly drive beverly hills ca 90210": {
     "lat": 34.071373,
@@ -1376,6 +1493,10 @@
     "lng": -122.259415,
     "source": "nominatim"
   },
+  "5306 buford hwy ne atlanta ga 30340": {
+    "miss": true,
+    "at": 1795462845070
+  },
   "534 east 14th street new york ny 10009": {
     "lat": 40.729531,
     "lng": -73.978839,
@@ -1416,6 +1537,11 @@
     "lng": -81.514301,
     "source": "nominatim"
   },
+  "5748 sunset dr south miami fl": {
+    "lat": 25.704203,
+    "lng": -80.286214,
+    "source": "nominatim"
+  },
   "578 driggs avenue brooklyn ny 11211": {
     "lat": 40.716466,
     "lng": -73.957205,
@@ -1424,6 +1550,11 @@
   "5841 bellflower boulevard lakewood ca 90713": {
     "lat": 33.861393,
     "lng": -118.125868,
+    "source": "nominatim"
+  },
+  "5864 forbes avenue pittsburgh pa 15217": {
+    "lat": 40.437913,
+    "lng": -79.920395,
     "source": "nominatim"
   },
   "6 olive street avondale estates ga 30002": {
@@ -1561,6 +1692,11 @@
   "705 n alfred st los angeles ca 90069": {
     "lat": 34.083789,
     "lng": -118.375371,
+    "source": "nominatim"
+  },
+  "7059 s orange blossom trl orlando fl 32809": {
+    "lat": 28.507341,
+    "lng": -81.397005,
     "source": "nominatim"
   },
   "7115 blanco rd san antonio tx 78216": {
@@ -1712,6 +1848,15 @@
     "lng": -90.346306,
     "source": "nominatim"
   },
+  "8128 providence rd charlotte nc 28277": {
+    "lat": 35.096012,
+    "lng": -80.780137,
+    "source": "nominatim"
+  },
+  "8128 providence rd suite 900 charlotte nc 28277": {
+    "miss": true,
+    "at": 1795462845989
+  },
   "819 bridgeport ave shelton ct": {
     "lat": 41.270173,
     "lng": -73.129288,
@@ -1735,6 +1880,11 @@
   "87 christopher street new york ny 10014": {
     "lat": 40.733616,
     "lng": -74.003939,
+    "source": "nominatim"
+  },
+  "902 e 17th st indianapolis in 46202": {
+    "lat": 39.790485,
+    "lng": -86.142187,
     "source": "nominatim"
   },
   "903 marietta st atlanta ga": {
@@ -1803,6 +1953,11 @@
   "9639 e stockton blvd elk grove ca": {
     "lat": 38.407831,
     "lng": -121.384719,
+    "source": "nominatim"
+  },
+  "98 olive street new haven ct 06511": {
+    "lat": 41.305038,
+    "lng": -72.92003,
     "source": "nominatim"
   },
   "9924 northeast 185th street bothell wa 98011": {
