@@ -6,6 +6,7 @@ import { SOCIAL_POST } from "./extract.js";
 import { hasMatcha } from "../adapters/mato.js";
 import { SITE_ORDER } from "./sites/common.js";
 import { PLACEHOLDER_VENUE } from "./names.js";
+import { judge } from "./quality.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 const DAY = 86400000;
@@ -34,10 +35,10 @@ export function computeStatus(e, now) {
 const stepDown = (c, n) => CONF[Math.max(0, CONF.indexOf(c) - n)];
 
 // Fields of the schema, in a stable order, so candidates carry no extra keys.
-const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "approx", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "image_url", "posts", "menu", "price", "description", "links"];
+const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "approx", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "image_url", "posts", "menu", "price", "description", "links", "hours", "pay", "evidence"];
 const emptyPosts = () => ({ instagram: null, tiktok: null, other: null });
 const emptyLinks = () => ({ website: null, instagram: null, tiktok: null });
-const DEFAULTS = { approx: () => false, menu: () => [], posts: emptyPosts, links: emptyLinks, kind: () => "popup", category: () => "matcha" };
+const DEFAULTS = { approx: () => false, menu: () => [], posts: emptyPosts, links: emptyLinks, kind: () => "popup", category: () => "matcha", evidence: () => [] };
 export function clean(e) {
   const o = {};
   for (const k of FIELDS) {
@@ -47,6 +48,7 @@ export function clean(e) {
   o.posts = { ...emptyPosts(), ...o.posts };
   o.links = { ...emptyLinks(), ...o.links };
   o.menu = (Array.isArray(o.menu) ? o.menu : []).slice(0, 8);
+  o.evidence = [...new Set((Array.isArray(o.evidence) ? o.evidence : []).filter((u) => String(u || "").startsWith("http")))].slice(0, 8);
   return o;
 }
 
@@ -113,6 +115,8 @@ export const isWatchPseudo = (e, sourceIds) => !isPseudoId(e.source_id) && !Stri
 // Keep or drop one event. ctx.sourceIds (optional) switches on the watch-list rule.
 export function keepEvent(e, { sourceIds = null } = {}) {
   if (!keepMatoEvent(e)) return false;
+  // Site and web finds (pseudo sources) must name matcha as the point: hotel, craft-class and generic listings go (ingest/lib/quality.js).
+  if (isPseudoId(e.source_id) && !judge(e).keep) return false;
   if (!e.state) return false; // no state, no place on the map (the schema needs one)
   if (GENERIC_TITLE.test(String(e.title || "").trim()) && hasNoBrand(e)) return false;
   if (sourceIds && isWatchPseudo(e, sourceIds) && !passesWatchRule([e.title, e.description, e.brand, e.venue, (e.menu || []).join(" ")], e)) return false;

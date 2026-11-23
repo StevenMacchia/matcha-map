@@ -152,10 +152,10 @@ test("bluesky: posts need matcha, a pop-up word, recency, and a US place with a 
   assert.ok(c.some((x) => x.start.startsWith("2026-12-05T11:00")));
 });
 
-test("bluesky: 403 on the search stops the site", async () => {
+test("bluesky: 403 on the search stops the site quietly (skipped this run, not an error)", async () => {
   const f = fake({ "https://api.bsky.app/robots.txt": "" }, { status: { "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts*": 403 } });
   const r = await bsky.discover({ fetcher: f, now, sources: [], queries: ["a", "b"] });
-  assert.equal(r.stats.stopped, 403);
+  assert.match(r.stats.skipped, /HTTP 403; skipped this run/);
   assert.equal(f.seen.filter((u) => u.includes("searchPosts")).length, 1);
 });
 

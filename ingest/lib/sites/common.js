@@ -32,7 +32,7 @@ const STATE_SET = new Set(STATES);
 
 // Prefixes of pseudo-source ids. Events under them stay only while a matcha word is in their text (write.js).
 // The order is the duplicate priority: when two sites list the same event, the lower rank wins.
-export const SITE_ORDER = ["mato", "luma", "eventbrite", "dostuff", "meetup", "linktree", "allevents", "markets", "permits", "feeds", "bluesky", "tiktok", "instagram"];
+export const SITE_ORDER = ["mato", "luma", "eventbrite", "ticketmaster", "dostuff", "meetup", "linktree", "allevents", "markets", "permits", "feeds", "bluesky", "gnews", "yelpevents", "mastodon", "reddit", "review", "tiktok", "instagram"];
 
 export const slugify = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 export const looksLikeHandle = (s) => /^[A-Za-z0-9._]{3,30}$/.test(s || "") && /[A-Za-z]/.test(s) && !/\.$/.test(s) && !/\.\./.test(s);

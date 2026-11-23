@@ -19,7 +19,13 @@ import { crawlCities, searchLabels } from "./cities.js";
 import { createGeocoder } from "./geocode.js";
 import { processItems, finalize } from "./pipeline.js";
 import { readEvents } from "./write.js";
-import { runSites, parseFlags, siteOn, summaryLine, dedupeItems, skipDominated, capConfidence, NAMES } from "./sites/index.js";
+import { runSites, parseFlags, siteOn, summaryLine, dedupeItems, skipDominated, capConfidence, NAMES, REVIEW_ONLY } from "./sites/index.js";
+import { pseudoSource } from "./sites/common.js";
+import { matchaPopup } from "./sites/textfind.js";
+import { cityFromText } from "./sites/bluesky.js";
+import { judge } from "./quality.js";
+import { toItem, writeReview, PROMOTE } from "./review.js";
+import { newRow, table, writeReport } from "./yield.js";
 
 // ---- @mentions -------------------------------------------------------------------------------
 const POPUP_WORDS = /pop[\s-]?ups?\b|\bcart\b|\bmarket\b|\bcollab|take[\s-]?over|matcha/i;
@@ -77,6 +83,26 @@ export function fromBraveResults(json, city = null) {
     else leads.push({ url: r.url, found_via: "search", found_from: city ? `brave: ${city}` : "brave", evidence });
   }
   return { candidates, leads };
+}
+
+// Brave results that are posts announcing a matcha pop-up -> RawItems (the snippet is the text; page_age is the post date, without
+// it relative words are not used). They join the instagram: pseudo-source path, so capConfidence keeps them likely at most.
+export function braveItems(json, city = null) {
+  const out = [];
+  for (const r of json?.web?.results || []) {
+    const hit = parseSearchUrl(r.url);
+    if (!hit || hit.type !== "post") continue;
+    const title = String(r.title || "").replace(/<[^>]+>/g, ""), desc = String(r.description || "").replace(/<[^>]+>/g, "");
+    const handle = hit.handle || /\(@([A-Za-z0-9._]+)\)/.exec(title)?.[1] || null;
+    if (!handle || !matchaPopup(title, desc)) continue;
+    const place = cityFromText(`${title} ${desc}`) || cityFromText(city || "");
+    const age = Date.parse(r.page_age || "");
+    out.push({
+      source_url: r.url.split("?")[0], text: `${title}. ${desc}`, handle, organizer: { name: handle, url: null }, hints: place ? { city: place.city, state: place.state } : {},
+      published_at: Number.isFinite(age) ? new Date(age).toISOString() : null, noRelative: !Number.isFinite(age), maxAheadDays: 60, evidence: [r.url],
+    });
+  }
+  return out;
 }
 
 // ---- MATO and Luma data helpers (the crawls themselves: mato-city.js and sites/luma.js) ---------------------------
@@ -137,7 +163,7 @@ export function citiesForRun(cities, now = new Date(), perRun = 10) {
 }
 
 async function discoverBrave(env, now, { perRun = 10, http = fetch, wait = (ms) => new Promise((r) => setTimeout(r, ms)) } = {}) {
-  const out = { candidates: [], leads: [] };
+  const out = { candidates: [], leads: [], items: [] };
   if (!env.BRAVE_API_KEY) { warnOnce("brave", "Brave search: off (set BRAVE_API_KEY to search instagram.com for pop-up accounts)"); return out; }
   const cities = searchLabels();
   if (!cities.length) warn("data/cities.json missing");
@@ -147,8 +173,9 @@ async function discoverBrave(env, now, { perRun = 10, http = fetch, wait = (ms) 
       const r = await http(`https://api.search.brave.com/res/v1/web/search?q=${encodeURIComponent(q)}&count=20&country=US`, { headers: { "X-Subscription-Token": env.BRAVE_API_KEY, Accept: "application/json" }, signal: AbortSignal.timeout(15000) });
       if (r.status === 429) { warn("Brave search: rate limited, stopping"); break; }
       if (!r.ok) { warn(`Brave search "${city}": HTTP ${r.status}`); continue; }
-      const f = fromBraveResults(await r.json(), city);
-      out.candidates.push(...f.candidates); out.leads.push(...f.leads);
+      const json = await r.json();
+      const f = fromBraveResults(json, city);
+      out.candidates.push(...f.candidates); out.leads.push(...f.leads); out.items.push(...braveItems(json, city));
     } catch (e) { warn(`Brave search "${city}": ${e.message}`); }
     await wait(1100); // free plan: 1 request per second
   }
@@ -213,12 +240,14 @@ async function main() {
   try { wlib.seedFromSources(JSON.parse(fs.readFileSync("data/sources.json", "utf8")), wl, now); } catch { /* no sources yet */ }
 
   const found = [], leads = [], counts = {};
+  const report = argv.includes("--report");
+  let brave = { items: [] };
   const take = (name, list) => { counts[name] = list.length; found.push(...list); };
 
   if (!flags.only) {
     take("inbox mentions", fromInbox());
     take("cache mentions", fromCache());
-    const brave = await discoverBrave(env, now, { perRun: 10 });
+    brave = await discoverBrave(env, now, { perRun: 10 });
     take("brave search", brave.candidates); leads.push(...brave.leads);
   }
   let sources = [];
@@ -228,19 +257,22 @@ async function main() {
   const cities = crawlCities();
 
   // Events found on the sites, as [{source, raw}] in priority order: MATO first, then ingest/lib/sites/index.js order.
-  let list = [];
+  let list = [], matoFetches = null;
   if (siteOn("mato", flags, noFetch)) {
     try {
       const mato = await discoverMato(fetcher, { now, sources });
       take("ma.to", mato.candidates);
+      matoFetches = mato.stats.fetches || 0;
       list.push(...mato.items);
     } catch (e) { warn(`ma.to: ${e.message}`); counts["ma.to"] = 0; }
   }
   const results = await runSites({ fetcher, now, sources, cities, searchCities: searchLabels(), env }, flags);
   for (const r of results) {
     take(r.name, r.candidates); leads.push(...r.leads);
-    for (const raw of r.items) list.push({ source: raw.source_hint, raw });
+    for (const raw of r.items) list.push({ source: raw.source_hint, raw, site: r.name });
   }
+  for (const raw of brave.items || []) { raw.source_hint = pseudoSource("instagram", raw, sources); list.push({ source: raw.source_hint, raw, site: "brave" }); }
+  for (const x of list) x.site = x.site || "mato";
   list = dedupeItems(list);
 
   const added = addAll(wl, found, now);
@@ -251,19 +283,55 @@ ${added.length} new candidates (${wl.accounts.length} accounts on the list), ${l
   if (added.length > 40) info(`  ... and ${added.length - 40} more`);
   if (dry) { for (const r of results) info(summaryLine(r)); info("(dry run: nothing written)"); return; }
   wlib.save(wl, { now });
+  const rows = new Map();
+  const row = (site) => { if (!rows.has(site)) rows.set(site, newRow(site)); return rows.get(site); };
+  if (matoFetches !== null) row("mato").fetched = matoFetches;
+  for (const r of results) Object.assign(row(r.name), { fetched: r.stats.fetches || 0, note: r.stats.skipped || "" });
+  if (env.BRAVE_API_KEY) row("brave");
   if (list.length) {
     // Every matcha event the sites listed goes through the same extractor, geocoder and writer as every other source.
     const bySource = new Map();
-    for (const { source, raw } of list) { if (!bySource.has(source.id)) bySource.set(source.id, { source, items: [] }); bySource.get(source.id).items.push(raw); }
+    for (const { source, raw, site } of list) { const k = `${site}|${source.id}`; if (!bySource.has(k)) bySource.set(k, { source, site, items: [] }); bySource.get(k).items.push(raw); }
     let cands = [];
-    for (const { source, items } of bySource.values()) cands.push(...(await processItems(items, source, { now, handle: source.instagram })).candidates);
-    cands = skipDominated(cands.map(capConfidence), readEvents());
+    for (const { source, site, items } of bySource.values()) for (const c of (await processItems(items, source, { now, handle: source.instagram })).candidates) cands.push({ ...c, _site: site });
+    cands = cands.map(capConfidence);
+    // Quality rules (ingest/lib/quality.js): a listing that does not name matcha as its point is dropped, with the reason counted.
+    const geocoder = createGeocoder({ noFetch });
+    const today = now.getTime() - 86400000, kept = [];
+    for (const c of cands) {
+      const r = row(c._site);
+      r.candidates++;
+      if (Date.parse(c.end || c.start) >= today) r.dated++;
+      const q = judge(c);
+      if (!q.keep) { r.dropped[q.reason] = (r.dropped[q.reason] || 0) + 1; continue; }
+      if (q.kind) c.kind = "organizer";
+      if (!c.state) { r.dropped["no state"] = (r.dropped["no state"] || 0) + 1; continue; }
+      await geocoder.geocode(c);
+      if (c.lat != null && !c.approx) r.geocoded++;
+      kept.push(c);
+    }
+    // Every kept candidate goes to today's review file; the review-only crawlers stop there (ingest promotes their confirmed and likely finds).
+    const rev = writeReview(kept.map((c) => toItem(c, c._site)), { now });
+    info(`review: ${kept.length} candidates written to ${rev.file} (${rev.count} in the file)`);
+    const direct = kept.filter((c) => !REVIEW_ONLY.has(c._site));
+    const held = skipDominated(direct, readEvents());
+    const heldSet = new Set(held);
+    for (const c of direct) if (!heldSet.has(c)) { const r = row(c._site); r.dropped["better source has it"] = (r.dropped["better source has it"] || 0) + 1; }
+    for (const c of kept.filter((x) => REVIEW_ONLY.has(x._site))) if (PROMOTE.has(c.confidence)) row(c._site).promoted++;
     const before = new Set(readEvents().map((e) => e.id));
-    const { merged, final } = await finalize(cands, { now, geocoder: createGeocoder({ noFetch }), fetcher, liveSourceIds: [], dry: false });
-    const fresh = (prefix) => final.filter((c) => (prefix === "social-search:" ? /^(tiktok|instagram):/ : new RegExp(`^${prefix}`)).test(String(c.source_id)) && !before.has(c.id)).length;
+    const { merged, final } = await finalize(held, { now, geocoder, fetcher, liveSourceIds: [], dry: false });
+    const ids = new Set(merged.events.map((e) => e.id));
+    for (const c of final) if (ids.has(c.id) && PROMOTE.has(c.confidence)) row(c._site).promoted++;
+    const fresh = (name) => final.filter((c) => c._site === name && !before.has(c.id)).length;
     info(`site events: ${cands.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);
-    for (const r of results) info(summaryLine(r, { new: fresh(`${r.name}:`) }));
+    for (const r of results) info(summaryLine(r, { new: fresh(r.name) }));
   } else for (const r of results) info(summaryLine(r, { new: 0 }));
+  if (report) {
+    const all = [...rows.values()];
+    info("\n" + table(all));
+    const tot = (k) => all.reduce((n, r) => n + r[k], 0);
+    info(`wrote ${writeReport(all, { now, totals: { fetched: tot("fetched"), candidates: tot("candidates"), dated: tot("dated"), geocoded: tot("geocoded"), promoted: tot("promoted") } })}`);
+  }
   if (leads.length) {
     const file = "data/discover-leads.json";
     let old = []; try { old = JSON.parse(fs.readFileSync(file, "utf8")).leads || []; } catch { /* first */ }

@@ -204,8 +204,10 @@
           "enum": [
             "rule",
             "llm",
-            "manual"
-          ]
+            "manual",
+            "sweep"
+          ],
+          "description": "sweep: promoted from a hand-researched data/review/sweep-*.json file."
         },
         "image": {
           "description": "The post or page photo, with credit; null when the source gives none.",
@@ -356,6 +358,29 @@
               "format": "uri"
             }
           }
+        },
+        "hours": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Opening hours as stated (\"11am-3pm\", \"until sold out\"); null when not given."
+        },
+        "pay": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "How to pay as stated (\"cash and Venmo\", \"card only\"); null when not given."
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "URLs that back the listing (the page read, plus any post or article it came with). Written by write.js; records written before it was added lack it until their next merge, so it is not in required."
         }
       }
     }

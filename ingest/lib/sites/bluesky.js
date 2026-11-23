@@ -13,12 +13,16 @@
 import { siteBudget, gate, finish, CAP, CITY_STATE, TEXT_CITY_STATE } from "./common.js";
 import { matchaPopup, usable, tagKinds } from "./textfind.js";
 import { slugify } from "./common.js";
+import { METROS, rotate } from "./metros.js";
 
 export const name = "bluesky";
 export const host = "api.bsky.app";
 
 export const QUERIES = ["matcha pop up", "#matchapopup", "matcha popup", "matcha cart"];
-export const searchUrl = (q) => `https://${host}/xrpc/app.bsky.feed.searchPosts?q=${encodeURIComponent(q)}&limit=100&sort=latest`;
+// Per-city queries, rotated over the 40 metros (metros.js; 6 a run, a new window every 6 h).
+export const CITY_QUERIES = (label) => [`matcha pop up ${label}`, `matcha bar ${label}`];
+export const queriesFor = (now = new Date(), perRun = 6) => [...QUERIES, ...rotate(METROS, now, perRun, { salt: 3 }).flatMap((m) => CITY_QUERIES(m.label))];
+export const searchUrl =(q) => `https://${host}/xrpc/app.bsky.feed.searchPosts?q=${encodeURIComponent(q)}&limit=100&sort=latest`;
 const MAX_AGE_DAYS = 45;
 const ALIASES = { NYC: ["New York", "NY"], LA: ["Los Angeles", "CA"], SF: ["San Francisco", "CA"], DC: ["Washington", "DC"], ATX: ["Austin", "TX"], PDX: ["Portland", "OR"], CHI: ["Chicago", "IL"], "San Fran": ["San Francisco", "CA"], "D.C.": ["Washington", "DC"] };
 const STATE_NAMES = { California: "CA", "New York": "NY", Texas: "TX", Washington: "WA", Florida: "FL", Illinois: "IL", Georgia: "GA", Oregon: "OR", Colorado: "CO", Massachusetts: "MA", Pennsylvania: "PA", "North Carolina": "NC" };
@@ -57,7 +61,8 @@ export function postsToRaw(json, now = new Date()) {
 }
 
 export async function discover(ctx) {
-  const { fetcher, sources = [], now = new Date(), cap = CAP, queries = QUERIES } = ctx;
+  const { fetcher, sources = [], now = new Date(), cap = CAP } = ctx;
+  const queries = ctx.queries || queriesFor(now, ctx.perRun ?? 6);
   const b = siteBudget(fetcher, name, cap);
   const g = await gate(b, host);
   const stats = { queries: 0, posts: 0, popupPosts: 0, kept: 0 };
@@ -66,9 +71,11 @@ export async function discover(ctx) {
   for (const q of queries) {
     if (b.st.stopped || b.left() <= 0) break;
     const r = await b.get(searchUrl(q));
-    if (!r.ok) continue;
+    // A 403 (or an HTML page in place of JSON) means search is closed to us from this network today: stop quietly, not an error.
+    let j = null; try { j = JSON.parse(r.text); } catch { /* not JSON */ }
+    if (r.status === 403 || (r.ok && !j)) { stats.closed = r.status === 403 ? "search answered HTTP 403" : "search answered non-JSON"; break; }
+    if (!r.ok || !j) continue;
     stats.queries++;
-    let j; try { j = JSON.parse(r.text); } catch { continue; }
     stats.posts += (j.posts || []).length;
     for (const raw of postsToRaw(j, now)) {
       if (seen.has(raw.source_url)) continue;
@@ -87,7 +94,8 @@ export async function discover(ctx) {
   // The pseudo-source id is the handle, not the display name (finish() slugs the organizer name).
   for (const r of out.items) { r.source_hint.id = `${name}:${slugify(r.bsky.handle)}`; r.source_hint.brand = r.organizer.name; }
   for (const c of out.candidates) c.found_from = name;
-  return { ...out, stats: { ...stats, fetches: b.st.used, pages: b.st.pages, hitCap: b.st.hitCap, stopped: b.st.stopped } };
+  const closed = stats.closed && !stats.queries ? { skipped: `${stats.closed}; skipped this run` } : {};
+  return { ...out, stats: { ...stats, ...closed, fetches: b.st.used, pages: b.st.pages, hitCap: b.st.hitCap, stopped: stats.closed ? null : b.st.stopped } };
 }
 
 export default { name, host, discover };

@@ -91,7 +91,9 @@ export const capConfidence = (c) => {
   // Search-snippet finds (a tiktok.com or instagram.com post URL): "likely" at most, "unsure" without a time or an address.
   if (/^https?:\/\/(?:www\.)?(?:tiktok|instagram)\.com\//i.test(c.source_url || "") && c.confidence !== "unsure") return { ...c, confidence: c.timed && c.hasAddress ? "likely" : "unsure" };
   // Aggregator, feed, permit and Bluesky finds: "likely" at most (no human-checked time or address).
-  return /^(allevents|feeds|bluesky|embed|permits):/.test(String(c.source_id)) && c.confidence === "confirmed" ? { ...c, confidence: "likely" } : c;
+  // Reddit, Mastodon and news finds the source gave no brand for ("r/nyc post") stay unsure: a human reads them in data/review/.
+  if (/^(reddit|mastodon|gnews):/.test(String(c.source_id)) && String(c.brand || "").startsWith("r/")) return { ...c, confidence: "unsure" };
+  return /^(allevents|feeds|bluesky|embed|permits|reddit|mastodon|gnews|yelpevents):/.test(String(c.source_id)) && c.confidence === "confirmed" ? { ...c, confidence: "likely" } : c;
 };
 
 void info;
@@ -104,3 +106,18 @@ import * as feeds from "./feeds.js";
 import * as bluesky from "./bluesky.js";
 SITES.push(permits, markets, feeds, bluesky);
 NAMES.push(permits.name, markets.name, feeds.name, bluesky.name);
+
+// Rung N2 (web discovery engine): keyless social and news crawlers, then key-gated official APIs (each skips with "off (set ...)"
+// until its key is in .env). Pseudo-source prefixes: reddit:, mastodon:, gnews:, ticketmaster:, yelpevents:; eventbrite-api files
+// under eventbrite:. Their finds are written to data/review/ only (REVIEW_ONLY); `npm run ingest` promotes the confirmed and
+// likely ones. Reddit's robots.txt disallows everything, so reddit runs only with REDDIT_CLIENT_ID/SECRET (official OAuth API).
+import * as reddit from "./reddit.js";
+import * as mastodon from "./mastodon.js";
+import * as gnews from "./gnews.js";
+import * as ticketmaster from "./ticketmaster.js";
+import * as eventbriteApi from "./eventbrite-api.js";
+import * as yelpEvents from "./yelp-events.js";
+const N2 = [reddit, mastodon, gnews, ticketmaster, eventbriteApi, yelpEvents];
+SITES.push(...N2);
+NAMES.push(...N2.map((s) => s.name));
+export const REVIEW_ONLY = new Set(["reddit", "mastodon", "gnews", "yelpevents"]);

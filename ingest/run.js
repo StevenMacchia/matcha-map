@@ -17,6 +17,8 @@ import manual, { parsePaste, readInbox, matchSource } from "./adapters/manual.js
 import instagram from "./adapters/instagram-graph.js";
 import tiktok from "./adapters/tiktok.js";
 import { oembed } from "./adapters/oembed.js";
+import { readReview, promote } from "./lib/review.js";
+import { readEvents } from "./lib/write.js";
 import { pullApproved } from "./lib/intake.js";
 
 const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual]; // first match reads a source
@@ -100,6 +102,15 @@ async function main() {
       raw.handle = raw.handle || m.handle;
       for (const c of await itemToCandidates(raw, m.source, now, m.handle)) { candidates.push(c); row.kept++; }
     } catch (e) { row.note = `failed: ${e.message}`; warn(`${name}: ${e.message}`); }
+  }
+
+  // 2b. The review folder (data/review/: every crawler's finds and the hand-written sweep files): confirmed and likely items that pass
+  // the quality rules; one that is an event already held merges into it (ingest/lib/review.js). --no-review skips it.
+  if (crawl && !a.source && !a.flags.has("no-review")) {
+    const rv = promote(readReview(), readEvents(), { sources, now });
+    candidates.push(...rv.candidates);
+    const d = Object.entries(rv.stats.dropped).map(([k, n]) => `${k} ${n}`).join(", ") || "none";
+    info(`review: ${rv.stats.read} items, ${rv.stats.promoted} new, ${rv.stats.merged} merged into events held, ${rv.stats.duplicates} duplicates, ${rv.stats.unsure} left for a human (${rv.stats.hedged} hedged in notes), ${rv.stats.past} past, dropped: ${d}`);
   }
 
   // 3 and 4. Dedupe, geocode, merge, write (shared with `npm run watch`).

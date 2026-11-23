@@ -1,0 +1,46 @@
+{
+ "events": [
+  {
+   "name": {
+    "text": "Matcha Pop-up at The Plant Shop"
+   },
+   "summary": "Matcha lattes and plants",
+   "url": "https://www.eventbrite.com/e/matcha-pop-up-123456789",
+   "start": {
+    "utc": "2026-12-06T17:00:00Z",
+    "timezone": "America/Chicago"
+   },
+   "end": {
+    "utc": "2026-12-06T21:00:00Z",
+    "timezone": "America/Chicago"
+   },
+   "venue_id": "555",
+   "organizer_id": "987654321",
+   "is_free": true,
+   "venue": {
+    "id": "555",
+    "name": "The Plant Shop",
+    "address": {
+     "address_1": "200 Main St",
+     "city": "Houston",
+     "region": "TX",
+     "postal_code": "77002"
+    }
+   }
+  },
+  {
+   "name": {
+    "text": "Online matcha class"
+   },
+   "url": "https://www.eventbrite.com/e/2",
+   "online_event": true,
+   "start": {
+    "utc": "2026-12-06T17:00:00Z",
+    "timezone": "America/Chicago"
+   },
+   "venue": {
+    "address": {}
+   }
+  }
+ ]
+}

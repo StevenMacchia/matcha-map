@@ -1,0 +1,98 @@
+{
+ "_embedded": {
+  "events": [
+   {
+    "name": "Matcha & Mochi Night Market",
+    "url": "https://www.ticketmaster.com/event/ABC",
+    "info": "A night market of matcha drinks and mochi.",
+    "dates": {
+     "start": {
+      "localDate": "2026-12-12",
+      "localTime": "18:00:00"
+     },
+     "timezone": "America/Los_Angeles",
+     "status": {
+      "code": "onsale"
+     }
+    },
+    "priceRanges": [
+     {
+      "min": 10,
+      "max": 25
+     }
+    ],
+    "images": [
+     {
+      "url": "https://s1.ticketm.net/a.jpg",
+      "width": 640
+     }
+    ],
+    "_embedded": {
+     "venues": [
+      {
+       "name": "The Shrine Expo Hall",
+       "address": {
+        "line1": "700 W 32nd St"
+       },
+       "city": {
+        "name": "Los Angeles"
+       },
+       "state": {
+        "stateCode": "CA"
+       },
+       "postalCode": "90007",
+       "location": {
+        "latitude": "34.0234",
+        "longitude": "-118.2810"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "name": "Coffee Expo",
+    "url": "https://www.ticketmaster.com/event/DEF",
+    "dates": {
+     "start": {
+      "localDate": "2026-12-12"
+     }
+    },
+    "_embedded": {
+     "venues": [
+      {
+       "name": "X",
+       "city": {
+        "name": "Austin"
+       },
+       "state": {
+        "stateCode": "TX"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "name": "Matcha Fest Toronto",
+    "url": "https://www.ticketmaster.ca/event/GHI",
+    "dates": {
+     "start": {
+      "localDate": "2026-12-12"
+     }
+    },
+    "_embedded": {
+     "venues": [
+      {
+       "name": "Y",
+       "city": {
+        "name": "Toronto"
+       },
+       "state": {
+        "stateCode": "ON"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,31 @@
+[
+ {
+  "id": "1",
+  "uri": "https://mastodon.social/users/kettlnyc/statuses/1",
+  "url": "https://mastodon.social/@kettlnyc/1",
+  "created_at": "2026-11-19T15:00:00.000Z",
+  "content": "<p>Our matcha pop-up is back! Sunday December 7, 11am&ndash;4pm at Hester Street Fair, 135 Hester St, New York, NY 10002.</p><p>Hojicha lattes too <a href=\"https://mastodon.social/tags/matchapopup\">#<span>matchapopup</span></a></p>",
+  "account": {
+   "acct": "kettlnyc",
+   "display_name": "Kettl Tea",
+   "url": "https://mastodon.social/@kettlnyc"
+  },
+  "media_attachments": [
+   {
+    "type": "image",
+    "url": "https://files.mastodon.social/x.jpg"
+   }
+  ]
+ },
+ {
+  "id": "2",
+  "uri": "https://mastodon.social/users/bob/statuses/2",
+  "url": "https://mastodon.social/@bob/2",
+  "created_at": "2026-11-19T15:00:00.000Z",
+  "content": "<p>I love matcha</p>",
+  "account": {
+   "acct": "bob",
+   "display_name": "Bob"
+  }
+ }
+]

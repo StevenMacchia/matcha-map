@@ -9,6 +9,7 @@
     "ingest": "node ingest/run.js",
     "test": "node --test",
     "discover": "node ingest/lib/discover.js",
+    "review": "node ingest/review.js",
     "shops": "node ingest/shops.js",
     "watch": "node ingest/watch.js",
     "loop": "node ingest/loop.js",

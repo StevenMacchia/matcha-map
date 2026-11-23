@@ -443,5 +443,24 @@ export function richFields(raw, source = {}) {
     image, posts, menu: menuFromText(text), price,
     description: descSrc ? descriptionFromText(descSrc) : null,
     links: { website: source.website || null, instagram: socialProfile("instagram", source.instagram), tiktok: socialProfile("tiktok", source.tiktok) },
+    pay: raw.pay_hint || payFromText(text), hours: raw.hours_hint || hoursFromText(text),
+    evidence: [...new Set([raw.source_url, ...(raw.evidence || [])].filter((u) => String(u || "").startsWith("http")))],
   };
+}
+
+// How to pay, as the text says it: "cash, Venmo", "card only". -> string|null
+const PAY = [["cash only", /\bcash[\s-]only\b/i], ["card only", /\b(?:card|cashless)[\s-]only\b/i], ["cash", /\bcash\b(?! ?app)/i], ["card", /\b(?:credit|debit) cards?\b|\bcards? (?:accepted|welcome)\b|\bwe take cards?\b/i], ["Venmo", /\bvenmo\b/i], ["Zelle", /\bzelle\b/i], ["Cash App", /\bcash ?app\b/i], ["Apple Pay", /\bapple ?pay\b/i], ["PayPal", /\bpaypal\b/i], ["tap to pay", /\btap to pay\b/i]];
+export function payFromText(text) {
+  const t = String(text || "");
+  const found = PAY.filter(([, re]) => re.test(t)).map(([w]) => w);
+  if (found.includes("cash only")) return "cash only";
+  if (found.includes("card only")) return "card only";
+  return found.length ? found.join(", ") : null;
+}
+// Opening hours, only when the text labels them ("Hours: 11am-3pm", "open 10 to 2", "until sold out"). -> string|null
+export function hoursFromText(text) {
+  const t = String(text || "").replace(/\s+/g, " ");
+  const m = /\b(?:hours|open)\s*[:\-–]?\s*((?:from\s+)?\d{1,2}(?::\d{2})?\s*(?:am|pm)?\s*(?:-|–|to|until|till)\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|sold out|close))/i.exec(t);
+  if (m) return m[1].trim().slice(0, 40);
+  return /\buntil (?:we )?sell out\b|\buntil sold out\b|\bwhile supplies last\b/i.test(t) ? "until sold out" : null;
 }
