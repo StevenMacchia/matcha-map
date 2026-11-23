@@ -58,6 +58,35 @@
     if (defs.length) box.appendChild(act);
     return box;
   }
+  // Claims (kind "claim"): brand, handle, role, proof link, email, and the owner's menu lines when there are some.
+  function claimCard(item) {
+    var box = el("div", "rv-item");
+    box.appendChild(el("h3", "", (item.brand || "(no brand)") + (item.handle ? "  @" + item.handle : "")));
+    box.appendChild(el("p", "rv-meta", "id " + item.id + " - sent " + (item.at || "").slice(0, 16).replace("T", " ")));
+    line(box, "Role", item.role); line(box, "Email", item.email); line(box, "Shop", item.shop);
+    if (item.proof) { var p = el("p"), a = el("a", "", item.proof); a.href = /^https?:/.test(item.proof) ? item.proof : "#"; a.rel = "noopener noreferrer"; a.target = "_blank"; p.appendChild(document.createTextNode("Proof: ")); p.appendChild(a); box.appendChild(p); }
+    var m = item.menu;
+    if (m && m.items && m.items.length) {
+      box.appendChild(el("p", "rv-meta", "Menu (" + m.items.length + " lines) - will show as from the owner on " + (item.shop || "@" + item.handle)));
+      var ul = el("ul", "rv-menu");
+      m.items.forEach(function (x) { ul.appendChild(el("li", "", x.name + (x.price ? " - " + x.price : "") + (x.note ? " (" + x.note + ")" : ""))); });
+      box.appendChild(ul);
+      if (m.source_url) { var p2 = el("p"), a2 = el("a", "", m.source_url); a2.href = /^https?:/.test(m.source_url) ? m.source_url : "#"; a2.rel = "noopener noreferrer"; a2.target = "_blank"; p2.appendChild(document.createTextNode("Menu page: ")); p2.appendChild(a2); box.appendChild(p2); }
+    }
+    var act = el("div", "rv-act");
+    [["Approve", "", "approve"], ["Reject", "alt", "reject"]].forEach(function (d) {
+      var btn = el("button", "fm-btn " + d[1], d[0]); btn.type = "button";
+      btn.addEventListener("click", function () { post({ id: item.id, kind: "claim", action: d[2] }, btn); });
+      act.appendChild(btn);
+    });
+    box.appendChild(act);
+    return box;
+  }
+  function fillClaims(items) {
+    var c = document.getElementById("claims"); c.textContent = "";
+    if (!items.length) c.appendChild(el("p", "fm-note", "Nothing here."));
+    items.forEach(function (i) { c.appendChild(claimCard(i)); });
+  }
   function fillFeat(id, items, approved) {
     var c = document.getElementById(id); c.textContent = "";
     if (!items.length) c.appendChild(el("p", "fm-note", "Nothing here."));
@@ -74,6 +103,8 @@
       gate.hidden = true; queue.hidden = false;
       fill("pending", j.pending || [], true); fill("approved", j.approved || [], false);
       fillFeat("feat-pending", j.featured || [], false); fillFeat("feat-ok", j["featured-ok"] || [], true);
+      // claims come in their own request: each request has its own small budget of KV reads
+      api("/api/queue?kinds=claim").then(function (c) { fillClaims(c.claim || []); if (c.claim_more) msg.textContent = "More than 40 claims waiting: handle these, then reload."; }).catch(function (e) { msg.textContent = e.message; });
       if (j.pending_more || j.approved_more || j.featured_more || j["featured-ok_more"]) msg.textContent = "More than 40 waiting: handle these, then reload.";
     }).catch(function (e) {
       queue.hidden = true; gate.hidden = false; msg.textContent = e.message;

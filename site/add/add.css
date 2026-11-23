@@ -46,3 +46,10 @@
 @media (max-width: 480px) { .fm-hero { gap: 10px; } .fm-hero svg { width: 56px; height: 56px; } .fm-hero h1 { font-size: clamp(24px, 7.4vw, 30px); } }
 /* the content column lines up with the header's left edge (the header is 760 wide, the forms 560) */
 @media (min-width: 800px) { .fm, .pr { max-width: 760px; padding-right: 216px; } }
+/* claim form: optional owner menu */
+.fm-menu { border: 2px dashed var(--line); border-radius: var(--r); padding: 12px 14px 4px; margin: 0 0 14px; min-width: 0; }
+.fm-menu legend { font-weight: 800; font-size: 15px; padding: 0 6px; }
+.fm-menu legend .fm-hint { display: inline; }
+.fm-menu > .fm-hint { margin: 0 0 10px; }
+.rv-menu { margin: 4px 0 6px; padding-left: 20px; }
+.rv-menu li { word-break: break-word; }

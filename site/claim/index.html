@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
-<title>Claim your brand | Matcha Map</title>
-<meta name="description" content="Own a matcha brand? Claim its page so we keep it right.">
+<title>Get on the map | Matcha Map</title>
+<meta name="description" content="Matcha Map is a free map of matcha pop-ups across the US. Claim your page and get your dates on it.">
 <link rel="canonical" href="https://matchamap-cu7.pages.dev/claim/">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#FBF6EA">
@@ -14,12 +14,44 @@
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/pages.css">
 <link rel="stylesheet" href="/add/add.css">
+<link rel="stylesheet" href="/claim/claim.css">
 </head>
 <body class="pg">
 <header class="pg-top"><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="/">Open the map</a></header>
 <main class="fm">
-<div class="fm-hero"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-point"/></svg><h1>Claim your brand</h1></div>
-<p class="fm-lead">Your brand, your page.</p>
+<div class="fm-hero"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-point"/></svg><h1>Get your matcha pop-up on the map</h1></div>
+<p class="fm-lead">Matcha Map is a free map of matcha pop-ups across the US. People use it to find one near them on a given day. If you run pop-ups, cafes or a market, your dates belong on it.</p>
+<section class="gm-sec" aria-labelledby="gm-how">
+<h2 id="gm-how">How it works</h2>
+<ol class="gm-steps">
+<li class="fm-card"><span class="gm-n" aria-hidden="true">1</span><div><h3>Claim your page</h3><p>Tell us your brand and your Instagram or TikTok, and your email so we can write back. We check it is really you before anything changes.</p></div></li>
+<li class="fm-card"><span class="gm-n" aria-hidden="true">2</span><div><h3>Send your dates</h3><p>Post them on your own account as you always do, or send them to us. We read public posts and pages only, never anything behind a login.</p></div></li>
+<li class="fm-card"><span class="gm-n" aria-hidden="true">3</span><div><h3>Your pop-up shows up</h3><p>On the map, on your city's page and on your own brand page, with your photo and a link back to you.</p></div></li>
+</ol>
+</section>
+<section class="gm-sec fm-card" aria-labelledby="gm-get">
+<h2 id="gm-get">What you get</h2>
+<ul class="gm-list">
+<li>A page for your brand</li>
+<li>Your pop-ups in front of people looking in your city that week</li>
+<li>The right name, place and time, because you can fix them</li>
+<li>A link back to your account</li>
+</ul>
+</section>
+<section class="gm-sec fm-card" aria-labelledby="gm-cost">
+<h2 id="gm-cost">What it costs</h2>
+<p>Nothing. (A paid <a href="/featured/">Featured</a> spot exists for brands that want one; it is never needed to be listed.)</p>
+</section>
+<section class="gm-sec fm-card" aria-labelledby="gm-not">
+<h2 id="gm-not">What we will not do</h2>
+<p>We do not sell your data, send you spam, or post for you. We never copy your photos without credit and a link back. If you want your page changed or taken down, say so and <a href="/data-deletion/">it is done that day</a>.</p>
+</section>
+<section class="gm-sec fm-card" aria-labelledby="gm-who">
+<h2 id="gm-who">Who it is for</h2>
+<p>Pop-up brands, cafes that run matcha events, and market and festival organizers with matcha vendors.</p>
+</section>
+<div class="gm-go"><a class="fm-btn" href="#claim-title">Claim your page</a><p class="fm-note">We write back by email once we have checked it. Questions: reply to the message that brought you here.</p></div>
+<h2 id="claim-title" class="gm-formh" tabindex="-1">Claim your page</h2>
 <form id="claim-form" class="fm-card" data-endpoint="/api/claim" novalidate>
 <div class="fm-hp" aria-hidden="true"><label>Company <input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
 <div class="fm-row"><label for="brand">Brand</label><input type="text" id="brand" name="brand" placeholder="Your shop or pop-up name" autocomplete="organization" maxlength="80" required><span class="fm-err" data-err="brand" role="alert"></span></div>
@@ -27,6 +59,12 @@
 <div class="fm-row"><label for="role">Your role</label><input type="text" id="role" name="role" placeholder="Owner, manager, social" maxlength="80" required><span class="fm-err" data-err="role" role="alert"></span></div>
 <div class="fm-row"><label for="email">Your email</label><input type="email" id="email" name="email" placeholder="you@yourbrand.com" autocomplete="email" maxlength="254" required><span class="fm-err" data-err="email" role="alert"></span></div>
 <div class="fm-row"><label for="proof">Proof link<span class="fm-hint">Your bio page or site that links to this handle</span></label><input type="url" id="proof" name="proof" placeholder="https://" maxlength="400" inputmode="url" required><span class="fm-err" data-err="proof" role="alert"></span></div>
+<fieldset class="fm-menu"><legend>Your menu <span class="fm-hint">Optional</span></legend>
+<p class="fm-hint">Shown on your card after we check it, marked as from the owner.</p>
+<div class="fm-row"><label for="menu">Menu lines<span class="fm-hint">One per line, like: Ceremonial latte, $7. Up to 40 lines.</span></label><textarea id="menu" name="menu" rows="6" maxlength="5000" placeholder="Ceremonial latte, $7&#10;Strawberry matcha, $8.50"></textarea><span class="fm-err" data-err="menu" role="alert"></span></div>
+<div class="fm-row"><label for="menu_url">Link to your menu page</label><input type="url" id="menu_url" name="menu_url" placeholder="https://" maxlength="400" inputmode="url"><span class="fm-err" data-err="menu_url" role="alert"></span></div>
+<div class="fm-row"><label for="shop">Which shop on the map<span class="fm-hint">Paste the link from its card on the map. Leave empty if it is a pop-up brand.</span></label><input type="text" id="shop" name="shop" placeholder="https://.../?shop=..." maxlength="400" inputmode="url"><span class="fm-err" data-err="shop" role="alert"></span></div>
+</fieldset>
 <p class="fm-top" id="form-error" role="alert"></p>
 <button class="fm-btn" type="submit">Send claim</button>
 <p class="fm-note">We write back by email once we have checked it.</p>
