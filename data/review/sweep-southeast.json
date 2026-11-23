@@ -69,7 +69,7 @@
       "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha. checked 2026-11-23: cfmatl.org/grantpark shows Sundays 9am-1pm year-round, closed Dec 28 2026, and does not name Oohmami; a web search found no dated Oohmami post for this date."
     },
     {
       "brand": "Oohmami Matcha",
@@ -103,7 +103,7 @@
       "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha. checked 2026-11-23: cfmatl.org/grantpark shows Sundays 9am-1pm year-round, closed Dec 28 2026, and does not name Oohmami; a web search found no dated Oohmami post for this date."
     },
     {
       "brand": "Oohmami Matcha",
@@ -137,7 +137,7 @@
       "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha. checked 2026-11-23: cfmatl.org/grantpark shows Sundays 9am-1pm year-round, closed Dec 28 2026, and does not name Oohmami; a web search found no dated Oohmami post for this date."
     },
     {
       "brand": "Oohmami Matcha",
@@ -171,7 +171,7 @@
       "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha. checked 2026-11-23: cfmatl.org/grantpark shows Sundays 9am-1pm year-round, closed Dec 28 2026, and does not name Oohmami; a web search found no dated Oohmami post for this date."
     },
     {
       "brand": "Oohmami Matcha",
@@ -205,16 +205,16 @@
       "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha. checked 2026-11-23: cfmatl.org/grantpark shows Sundays 9am-1pm year-round, closed Dec 28 2026, and does not name Oohmami; a web search found no dated Oohmami post for this date."
     },
     {
       "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
       "handle": null,
       "source_id": "blind-tiger-ybor-matcha",
       "title": "Ybor City Matcha & Mimosa Sundays",
-      "start": "2026-12-06T00:00:00-05:00",
-      "end": null,
-      "all_day": true,
+      "start": "2026-12-06T09:00:00-05:00",
+      "end": "2026-12-06T14:00:00-05:00",
+      "all_day": false,
       "tz": "America/New_York",
       "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
       "address": "1823 East 7th Avenue, Tampa, FL 33605",
@@ -235,22 +235,22 @@
         "mimosas",
         "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
       ],
-      "price": null,
-      "hours": null,
+      "price": "Free entry",
+      "hours": "Sundays 9am-2pm",
       "pay": null,
       "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
       "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
-      "confidence": "unsure",
-      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+      "confidence": "likely",
+      "notes": "verified 2026-11-23 on https://www.eventbrite.com/e/1982190772961: Eventbrite lists a weekly Sunday series, 9am-2pm, running to 2027-01-31, free, at 1823 East 7th Avenue, Tampa. Matcha is in the event title; the page text describes brunch, mimosas and coffee, so matcha is one drink among several."
     },
     {
       "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
       "handle": null,
       "source_id": "blind-tiger-ybor-matcha",
       "title": "Ybor City Matcha & Mimosa Sundays",
-      "start": "2026-12-13T00:00:00-05:00",
-      "end": null,
-      "all_day": true,
+      "start": "2026-12-13T09:00:00-05:00",
+      "end": "2026-12-13T14:00:00-05:00",
+      "all_day": false,
       "tz": "America/New_York",
       "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
       "address": "1823 East 7th Avenue, Tampa, FL 33605",
@@ -271,22 +271,22 @@
         "mimosas",
         "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
       ],
-      "price": null,
-      "hours": null,
+      "price": "Free entry",
+      "hours": "Sundays 9am-2pm",
       "pay": null,
       "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
       "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
-      "confidence": "unsure",
-      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+      "confidence": "likely",
+      "notes": "verified 2026-11-23 on https://www.eventbrite.com/e/1982190772961: Eventbrite lists a weekly Sunday series, 9am-2pm, running to 2027-01-31, free, at 1823 East 7th Avenue, Tampa. Matcha is in the event title; the page text describes brunch, mimosas and coffee, so matcha is one drink among several."
     },
     {
       "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
       "handle": null,
       "source_id": "blind-tiger-ybor-matcha",
       "title": "Ybor City Matcha & Mimosa Sundays",
-      "start": "2026-12-20T00:00:00-05:00",
-      "end": null,
-      "all_day": true,
+      "start": "2026-12-20T09:00:00-05:00",
+      "end": "2026-12-20T14:00:00-05:00",
+      "all_day": false,
       "tz": "America/New_York",
       "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
       "address": "1823 East 7th Avenue, Tampa, FL 33605",
@@ -307,22 +307,22 @@
         "mimosas",
         "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
       ],
-      "price": null,
-      "hours": null,
+      "price": "Free entry",
+      "hours": "Sundays 9am-2pm",
       "pay": null,
       "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
       "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
-      "confidence": "unsure",
-      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+      "confidence": "likely",
+      "notes": "verified 2026-11-23 on https://www.eventbrite.com/e/1982190772961: Eventbrite lists a weekly Sunday series, 9am-2pm, running to 2027-01-31, free, at 1823 East 7th Avenue, Tampa. Matcha is in the event title; the page text describes brunch, mimosas and coffee, so matcha is one drink among several."
     },
     {
       "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
       "handle": null,
       "source_id": "blind-tiger-ybor-matcha",
       "title": "Ybor City Matcha & Mimosa Sundays",
-      "start": "2026-12-27T00:00:00-05:00",
-      "end": null,
-      "all_day": true,
+      "start": "2026-12-27T09:00:00-05:00",
+      "end": "2026-12-27T14:00:00-05:00",
+      "all_day": false,
       "tz": "America/New_York",
       "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
       "address": "1823 East 7th Avenue, Tampa, FL 33605",
@@ -343,22 +343,22 @@
         "mimosas",
         "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
       ],
-      "price": null,
-      "hours": null,
+      "price": "Free entry",
+      "hours": "Sundays 9am-2pm",
       "pay": null,
       "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
       "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
-      "confidence": "unsure",
-      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+      "confidence": "likely",
+      "notes": "verified 2026-11-23 on https://www.eventbrite.com/e/1982190772961: Eventbrite lists a weekly Sunday series, 9am-2pm, running to 2027-01-31, free, at 1823 East 7th Avenue, Tampa. Matcha is in the event title; the page text describes brunch, mimosas and coffee, so matcha is one drink among several."
     },
     {
       "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
       "handle": null,
       "source_id": "blind-tiger-ybor-matcha",
       "title": "Ybor City Matcha & Mimosa Sundays",
-      "start": "2027-01-03T00:00:00-05:00",
-      "end": null,
-      "all_day": true,
+      "start": "2027-01-03T09:00:00-05:00",
+      "end": "2027-01-03T14:00:00-05:00",
+      "all_day": false,
       "tz": "America/New_York",
       "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
       "address": "1823 East 7th Avenue, Tampa, FL 33605",
@@ -379,13 +379,13 @@
         "mimosas",
         "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
       ],
-      "price": null,
-      "hours": null,
+      "price": "Free entry",
+      "hours": "Sundays 9am-2pm",
       "pay": null,
       "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
       "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
-      "confidence": "unsure",
-      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+      "confidence": "likely",
+      "notes": "verified 2026-11-23 on https://www.eventbrite.com/e/1982190772961: Eventbrite lists a weekly Sunday series, 9am-2pm, running to 2027-01-31, free, at 1823 East 7th Avenue, Tampa. Matcha is in the event title; the page text describes brunch, mimosas and coffee, so matcha is one drink among several."
     },
     {
       "brand": "Ceremony",
@@ -420,8 +420,8 @@
         "https://www.instagram.com/p/Dfz-7iSlMT1"
       ],
       "description": "A two-hour hands-on matcha class with Ceremony: learn traditional preparation, make your own, and taste several Ceremony drinks. The ticket covers one handcrafted latte.",
-      "confidence": "likely",
-      "notes": "kind: class (ticketed, not walk-in). Snippet quotes: 'Join us Wednesday, November 25th, from 6-8 PM for a matcha class experience with Ceremony!' ... '370 Herron Dr, Suite 8, Nashville, TN'; ticket $65 includes a hands-on matcha-making experience, one handcrafted latte, samples. Post is by a host venue whose name the snippet does not show. Year inferred from posts dated Nov 2026."
+      "confidence": "unsure",
+      "notes": "kind: class (ticketed, not walk-in). Snippet quotes: 'Join us Wednesday, November 25th, from 6-8 PM for a matcha class experience with Ceremony!' ... '370 Herron Dr, Suite 8, Nashville, TN'; ticket $65 includes a hands-on matcha-making experience, one handcrafted latte, samples. Post is by a host venue whose name the snippet does not show. Year inferred from posts dated Nov 2026. checked 2026-11-23: Instagram not opened; a web search found no public listing of this class (Ceremony runs pop-ups at Gladly Gather, 370 Herron Dr Ste 8, but no Nov 25 date on any public page)."
     },
     {
       "brand": "Ceremony",

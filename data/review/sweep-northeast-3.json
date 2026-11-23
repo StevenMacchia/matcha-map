@@ -35,7 +35,7 @@
       "description": "Kyru, a Virginia-based specialty cafe pop-up, serves matcha and cafe drinks inside the Vintage Vintage Vintage vintage shop near Union Market. Kyru ran the same collab in November, so expect a small drink menu and a browse through the racks.",
       "image_url": null,
       "confidence": "likely",
-      "notes": "MATO lists Sat 2 Jan 2027 with the venue but no time and no street address; start time 11:00 is a PLACEHOLDER. Address is the shop's address from a web search (shop listed at 1348 4th St NE), not from the MATO page. Kyru's Nov 2026 pop-up at the same shop is on instagram.com/p/Df5yacRpXrJ."
+      "notes": "verified 2026-11-23 on https://ma.to/event/kyru-at-vintage-vintage-vintage-02-jan-2027: MATO lists Sat 2 Jan 2027 at Vintage Vintage Vintage DC, with start 11:00 in its event data and a pop-up where cafe drinks are served. The street address comes from a web search of the shop, not the MATO page. Kyru's earlier Nov 2026 pop-up at the shop is on instagram.com/p/Df5yacRpXrJ."
     },
     {
       "brand": "Longevity Cities (Matcha Walk)",
@@ -97,7 +97,7 @@
       "description": "Eve Beauty's first matcha pop-up, with freshly served matcha from Partea NYC while you shop Black Friday deals in the Koreatown store.",
       "image_url": null,
       "confidence": "unsure",
-      "notes": "Snippet says first-ever Matcha Pop-Up for Black Friday; date inferred as Fri 27 Nov 2026, time is a placeholder, no street address in the snippet. Not found on any other page. Needs a human check."
+      "notes": "Snippet says first-ever Matcha Pop-Up for Black Friday; date inferred as Fri 27 Nov 2026, time is a placeholder, no street address in the snippet. Not found on any other page. Needs a human check. checked 2026-11-23: a web search found no public page naming Partea NYC or a Black Friday matcha pop-up at Eve Beauty Koreatown (store is at 306 5th Ave); only the Instagram reel mentions it."
     }
   ]
 }
