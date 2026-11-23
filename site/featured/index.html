@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="pg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+<title>Get featured | Matcha Map</title>
+<meta name="description" content="Ask for a Featured spot on the map. One free pick a week, or a paid extra week.">
+<link rel="canonical" href="https://matchamap-cu7.pages.dev/featured/">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF6EA">
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/add/add.css">
+</head>
+<body class="pg">
+<header class="pg-top"><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="/">Open the map</a></header>
+<main class="fm">
+<div class="fm-hero"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-excited"/></svg><h1>Get featured</h1></div>
+<p class="fm-lead">Put your pop-up at the top of its city.</p>
+<section class="fm-card" aria-labelledby="how">
+<h2 id="how">Two ways in</h2>
+<p><strong>Free:</strong> one pop-up per city each week is picked by hand. Ask here and we will look at yours. Paying never changes the free pick.</p>
+<p><strong>Paid:</strong> $25 for one extra week, or $60 for four weeks. It is labeled Featured on the map and does not push anyone else out.</p>
+</section>
+<form id="featured-form" class="fm-card" data-endpoint="/api/featured" novalidate>
+<div class="fm-hp" aria-hidden="true"><label>Company <input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
+<div class="fm-row"><label for="event">Your pop-up<span class="fm-hint">Its map link, or its id</span></label><input type="text" id="event" name="event" placeholder="https://matchamap-cu7.pages.dev/?event=..." maxlength="400" required><span class="fm-err" data-err="event" role="alert"></span></div>
+<div class="fm-row"><label for="brand">Brand</label><input type="text" id="brand" name="brand" maxlength="80" required><span class="fm-err" data-err="brand" role="alert"></span></div>
+<div class="fm-row"><label for="email">Your email</label><input type="email" id="email" name="email" autocomplete="email" maxlength="254" required><span class="fm-err" data-err="email" role="alert"></span></div>
+<div class="fm-row"><label for="week">Week starting<span class="fm-hint">Pick the Monday you want</span></label><input type="date" id="week" name="week" required><span class="fm-err" data-err="week" role="alert"></span></div>
+<div class="fm-row"><label for="plan">Which one</label><select id="plan" name="plan" required><option value="">Pick one</option><option value="free">Free weekly pick</option><option value="paid">Paid, from $25 a week</option></select><span class="fm-err" data-err="plan" role="alert"></span></div>
+<div class="fm-row"><label for="notes">Anything we should know<span class="fm-hint">Optional</span></label><textarea id="notes" name="notes" rows="3" maxlength="400"></textarea></div>
+<p class="fm-top" id="form-error" role="alert"></p>
+<button class="fm-btn" type="submit">Send request</button>
+<p class="fm-note">We reply by email. Nothing is charged by this form.</p>
+</form>
+<section class="fm-card" aria-labelledby="pay">
+<h2 id="pay">Pay</h2>
+<!-- Stripe: when Payment Links exist, replace this disabled button with <a class="fm-btn" href="https://buy.stripe.com/..."> (one link for $25, one for $60). No script needed. -->
+<button class="fm-btn" type="button" disabled aria-describedby="pay-note">Pay</button>
+<p class="fm-note" id="pay-note">Payments open once Stripe is connected.</p>
+</section>
+<section id="done" class="fm-card fm-done" hidden>
+<svg viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-excited"/></svg>
+<h2>Mattie is on it</h2>
+<p id="done-msg">Got it. We will check the pop-up and write back.</p>
+<a class="fm-btn alt" href="/">Back to the map</a>
+</section>
+</main>
+<footer class="pg-foot"><p><a href="/privacy/">Privacy</a> &middot; <a href="/promote/">Promote your pop-up</a></p></footer>
+<script src="/add/add.js"></script>
+</body>
+</html>
