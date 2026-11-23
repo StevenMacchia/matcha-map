@@ -127,6 +127,37 @@ export function validateReport(body, { now = Date.now() } = {}) {
   return { ok: Object.keys(errors).length === 0, errors, clean };
 }
 
+// ---- owner menus (claim form) ----
+export const MENU_MAX_LINES = 40, MENU_NAME = 40, MENU_PRICE = 12, MENU_NOTE = 60;
+// "Which shop on the map": a shop id (osm:node/123, osm:way/123, brand:labora) or a map link with ?shop=<id>. "" when it is neither.
+export function shopIdOf(v) {
+  let s = str(String(v == null ? "" : v), 400);
+  if (/^https?:\/\//i.test(s)) { try { s = new URL(s).searchParams.get("shop") || ""; } catch { return ""; } }
+  s = s.trim();
+  return /^(?:osm:(?:node|way|relation)\/\d{1,15}|brand:[a-z0-9-]{1,40})$/.test(s) ? s : "";
+}
+// Lines "name, price" or "name, price, note" -> { items, error }. Text only: no markup, no empty names, caps per part.
+export function parseMenuLines(v) {
+  if (v == null || v === "") return { items: [] };
+  if (typeof v !== "string") return { items: [], error: "Put the menu in as lines of text." };
+  const lines = v.replace(/\r/g, "").split("\n").map((l) => str(l, 400)).filter(Boolean);
+  if (lines.length > MENU_MAX_LINES) return { items: [], error: `Up to ${MENU_MAX_LINES} lines, please.` };
+  const items = [];
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i], at = `Line ${i + 1}: `;
+    if (/[<>]/.test(l)) return { items: [], error: at + "plain text only." };
+    const [name = "", price = "", ...rest] = l.split(",").map((p) => p.trim());
+    const note = rest.join(", ").trim();
+    if (!/[A-Za-z0-9]/.test(name)) return { items: [], error: at + "start with the item's name." };
+    if (name.length > MENU_NAME) return { items: [], error: at + `the name is over ${MENU_NAME} characters.` };
+    if (price.length > MENU_PRICE) return { items: [], error: at + `the price is over ${MENU_PRICE} characters. Use "name, price".` };
+    if (note.length > MENU_NOTE) return { items: [], error: at + `the note is over ${MENU_NOTE} characters.` };
+    const it = { name }; if (price) it.price = price; if (note) it.note = note;
+    items.push(it);
+  }
+  return { items };
+}
+
 export function validateClaim(body, { now = Date.now() } = {}) {
   const b = body && typeof body === "object" ? body : {};
   const gate = botCheck(b, now);
@@ -142,6 +173,14 @@ export function validateClaim(body, { now = Date.now() } = {}) {
   if (!clean.role) errors.role = "What is your role there?";
   if (!clean.email) errors.email = "We need an email to reply to.";
   if (!clean.proof) errors.proof = "Add a link that shows it is yours, like your bio page.";
+  // Optional owner menu: lines, a link to the menu page, and which shop on the map it belongs to.
+  const shopRaw = str(String(b.shop == null ? "" : b.shop), 400);
+  if (shopRaw) { const shop = shopIdOf(shopRaw); if (shop) clean.shop = shop; else errors.shop = "Paste the shop's map link or leave this empty."; }
+  const ml = parseMenuLines(b.menu), murl = str(String(b.menu_url == null ? "" : b.menu_url), 400);
+  if (ml.error) errors.menu = ml.error;
+  if (murl && !isUrl(murl)) errors.menu_url = "That link needs to start with https://";
+  if (!ml.error && ml.items.length) clean.menu = { items: ml.items, source_url: murl && isUrl(murl) ? murl : "", kind: "owner", read: new Date(now).toISOString().slice(0, 10) };
+  else if (!ml.error && murl && isUrl(murl)) errors.menu = "Add a few menu lines too, or clear the link.";
   return { ok: Object.keys(errors).length === 0, errors, clean };
 }
 

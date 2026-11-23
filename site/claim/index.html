@@ -27,6 +27,12 @@
 <div class="fm-row"><label for="role">Your role</label><input type="text" id="role" name="role" placeholder="Owner, manager, social" maxlength="80" required><span class="fm-err" data-err="role" role="alert"></span></div>
 <div class="fm-row"><label for="email">Your email</label><input type="email" id="email" name="email" placeholder="you@yourbrand.com" autocomplete="email" maxlength="254" required><span class="fm-err" data-err="email" role="alert"></span></div>
 <div class="fm-row"><label for="proof">Proof link<span class="fm-hint">Your bio page or site that links to this handle</span></label><input type="url" id="proof" name="proof" placeholder="https://" maxlength="400" inputmode="url" required><span class="fm-err" data-err="proof" role="alert"></span></div>
+<fieldset class="fm-menu"><legend>Your menu <span class="fm-hint">Optional</span></legend>
+<p class="fm-hint">Shown on your card after we check it, marked as from the owner.</p>
+<div class="fm-row"><label for="menu">Menu lines<span class="fm-hint">One per line, like: Ceremonial latte, $7. Up to 40 lines.</span></label><textarea id="menu" name="menu" rows="6" maxlength="5000" placeholder="Ceremonial latte, $7&#10;Strawberry matcha, $8.50"></textarea><span class="fm-err" data-err="menu" role="alert"></span></div>
+<div class="fm-row"><label for="menu_url">Link to your menu page</label><input type="url" id="menu_url" name="menu_url" placeholder="https://" maxlength="400" inputmode="url"><span class="fm-err" data-err="menu_url" role="alert"></span></div>
+<div class="fm-row"><label for="shop">Which shop on the map<span class="fm-hint">Paste the link from its card on the map. Leave empty if it is a pop-up brand.</span></label><input type="text" id="shop" name="shop" placeholder="https://.../?shop=..." maxlength="400" inputmode="url"><span class="fm-err" data-err="shop" role="alert"></span></div>
+</fieldset>
 <p class="fm-top" id="form-error" role="alert"></p>
 <button class="fm-btn" type="submit">Send claim</button>
 <p class="fm-note">We write back by email once we have checked it.</p>
