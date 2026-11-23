@@ -1,0 +1,316 @@
+{
+  "generated": "2026-11-23T15:09:45.697Z",
+  "group": "wave4-runcheck",
+  "items": [
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Virginia Beach (Giving Back Edition)",
+      "start": "2026-11-23T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Virginia Beach",
+      "state": "VA",
+      "lat": 36.7795,
+      "lng": -76.0291,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-virginia-beach-giving-back-edition-tickets-1988717775401",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-virginia-beach-giving-back-edition-tickets-1988717775401"
+      },
+      "description": "Join us for coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-virginia-beach-giving-back-edition-tickets-1988717775401"
+      ],
+      "notes": "dropped: rotating-cafe Eventbrite meetup; the page says the map pin is a placeholder and each week is a different restaurant, no fixed venue; checked 2026-11-23 on https://www.eventbrite.com/e/matcha-meetup-virginia-beach-giving-back-edition-tickets-1988717775401"
+    },
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Boise (Giving Back Edition)",
+      "start": "2026-11-27T00:00:00-07:00",
+      "tz": "America/Boise",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Boise",
+      "state": "ID",
+      "lat": 43.5993,
+      "lng": -116.2298,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-boise-giving-back-edition-tickets-1985218351530",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-boise-giving-back-edition-tickets-1985218351530"
+      },
+      "description": "Join us for coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-boise-giving-back-edition-tickets-1985218351530"
+      ],
+      "notes": "dropped: rotating-cafe Eventbrite meetup; the page says the pin is a placeholder and the cafe changes each week; checked 2026-11-23 on https://www.eventbrite.com/e/matcha-meetup-boise-giving-back-edition-tickets-1985218351530"
+    },
+    {
+      "brand": "Restaurant of the Week",
+      "title": "Matcha + Meetup: Boca Raton | Creatives Edition",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Restaurant of the Week",
+      "city": "Boca Raton",
+      "state": "FL",
+      "lat": 26.3727,
+      "lng": -80.1037,
+      "approx": true,
+      "source_id": "eventbrite:restaurant-of-the-week",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400"
+      },
+      "menu": [
+        "latte"
+      ],
+      "description": "Join us for coffee, latte, or matcha at different cafes. Build your creative community in your city with a fun day out!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400"
+      ],
+      "notes": "dropped: rotating-cafe Eventbrite meetup; the page says the pin is a placeholder and the cafe changes each week; checked 2026-11-23 on https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400"
+    },
+    {
+      "brand": "Cafe of the Week",
+      "title": "Matcha + Meetup: Norfolk | Coffee Meets to Benefit Dream Foundation",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Week",
+      "city": "Norfolk",
+      "state": "VA",
+      "lat": 36.923,
+      "lng": -76.2446,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-week",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation-tickets-2004914882384",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation-tickets-2004914882384"
+      },
+      "description": "Make new friends in the community while supporting small businesses and giving back to a non-profit Dream Foundation!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation-tickets-2004914882384"
+      ],
+      "notes": "dropped: rotating-cafe Eventbrite meetup; the page says the pin is a placeholder and the cafe changes each week; checked 2026-11-23 on https://www.eventbrite.com/e/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation-tickets-2004914882384"
+    },
+    {
+      "brand": "Chitchat Coffee + Matcha",
+      "title": "Matcha + Meetup: Chatsworth (Giving Back Edition)",
+      "start": "2026-11-29T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "Chitchat Coffee + Matcha",
+      "city": "Chatsworth",
+      "state": "CA",
+      "lat": 34.25725,
+      "lng": -118.601702,
+      "approx": true,
+      "source_id": "eventbrite:chitchat-coffee-matcha",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-chatsworth-giving-back-edition-tickets-1990214991615",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-chatsworth-giving-back-edition-tickets-1990214991615"
+      },
+      "description": "Join us for coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-chatsworth-giving-back-edition-tickets-1990214991615"
+      ],
+      "notes": "dropped: rotating-cafe Eventbrite meetup; the page says the pin is a placeholder and the cafe changes each week; checked 2026-11-23 on https://www.eventbrite.com/e/matcha-meetup-chatsworth-giving-back-edition-tickets-1990214991615"
+    },
+    {
+      "brand": "Restaurant of the Week",
+      "title": "Matcha + Meetup: Thousand Oaks (Giving Back Edition)",
+      "start": "2026-11-29T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "Restaurant of the Week",
+      "city": "Thousand Oaks",
+      "state": "CA",
+      "lat": 34.1933,
+      "lng": -118.8742,
+      "approx": true,
+      "source_id": "eventbrite:restaurant-of-the-week",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-thousand-oaks-giving-back-edition-tickets-1990215113981",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-thousand-oaks-giving-back-edition-tickets-1990215113981"
+      },
+      "description": "Join us for coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-thousand-oaks-giving-back-edition-tickets-1990215113981"
+      ],
+      "notes": "dropped: rotating-cafe Eventbrite meetup; the page says the pin is a placeholder and the cafe changes each week; checked 2026-11-23 on https://www.eventbrite.com/e/matcha-meetup-thousand-oaks-giving-back-edition-tickets-1990215113981"
+    },
+    {
+      "brand": "We'll meet outside of the cafe, right at the entrance. Look for a girl holding a red sign",
+      "title": "Matcha Walk | First Longevity Philly Event",
+      "start": "2026-11-29T10:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "We'll meet outside of the cafe",
+      "city": "Philadelphia",
+      "state": "PA",
+      "lat": 40.0094,
+      "lng": -75.1333,
+      "approx": true,
+      "source_id": "allevents:we-ll-meet-outside-of-the-cafe-right-at-the-entrance-look-fo",
+      "kind": "popup",
+      "source_url": "https://allevents.in/philadelphia/matcha-walk-first-longevity-philly-event/4700031093813141",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://allevents.in/philadelphia/matcha-walk-first-longevity-philly-event/4700031093813141"
+      },
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://allevents.in/philadelphia/matcha-walk-first-longevity-philly-event/4700031093813141"
+      ],
+      "notes": "dropped: registration-based group matcha walk that meets at Matcha Panda Cafe Rittenhouse, not a pop-up serving walk-ins; checked 2026-11-23 on https://allevents.in/philadelphia/matcha-walk-first-longevity-philly-event/4700031093813141"
+    },
+    {
+      "brand": "STILLROOM Presents:",
+      "title": "Moss & Matcha",
+      "start": "2026-11-29T12:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "STILLROOM",
+      "city": "Irvington",
+      "state": "NY",
+      "lat": 41.039866,
+      "lng": -73.872717,
+      "approx": true,
+      "source_id": "meetup:stillroom-presents",
+      "kind": "popup",
+      "source_url": "https://www.meetup.com/irvington-small-business-marketing-strategy-meetup-group/events/317332294/",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.meetup.com/irvington-small-business-marketing-strategy-meetup-group/events/317332294/"
+      },
+      "price": "$75",
+      "description": "A little moss, a little matcha, and something green to bring home.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.meetup.com/irvington-small-business-marketing-strategy-meetup-group/events/317332294/"
+      ],
+      "notes": "dropped: ticketed $75 moss-art workshop (one matcha included), not a walk-in matcha pop-up; the Meetup page also has stray dates (Nov 1); checked 2026-11-23 on https://www.meetup.com/irvington-small-business-marketing-strategy-meetup-group/events/317332294/"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Pink Pilates + Matcha & Social Hour",
+      "start": "2026-12-06T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "city": "Burnsville",
+      "state": "MN",
+      "lat": 44.7644,
+      "lng": -93.2794,
+      "approx": true,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921"
+      },
+      "description": "Join Allform Club for Pink Pilates, matcha, and social hour! Enjoy a 45-minute beginner-friendly class. Wear pink and come connect!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921"
+      ],
+      "notes": "dropped: ticketed Pink Pilates class with a matcha social hour (Allform Club, Sun Dec 6 4-6pm, 2030 Burnsville Center), not a matcha pop-up; checked 2026-11-23 on https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921"
+    },
+    {
+      "brand": "PIP coffee+clay",
+      "handle": "pipcoffeeclay",
+      "title": "Matcha Making Workshop Part 2",
+      "start": "2026-12-12T09:30:00-07:00",
+      "tz": "America/Phoenix",
+      "all_day": false,
+      "venue": "PIP coffee+clay - Phoenix",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lat": 33.5722,
+      "lng": -112.0901,
+      "approx": true,
+      "source_id": "mato:pipcoffeeclay",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/matcha-making-workshop-part-2-12-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-making-workshop-part-2-12-dec-2026"
+      },
+      "description": "Part two of a two-part matcha workshop with Neighbor Matcha at PIP coffee+clay - Phoenix. Participants make matcha using the bowl built and decorated in part one on November 21.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-making-workshop-part-2-12-dec-2026"
+      ],
+      "notes": "dropped: ticketed two-part matcha-making workshop (Neighbor Matcha at PIP coffee+clay), not a walk-in pop-up; checked 2026-11-23 on https://ma.to/event/matcha-making-workshop-part-2-12-dec-2026"
+    },
+    {
+      "brand": "Matcha mrkt",
+      "title": "Matcha Crawl",
+      "start": "2027-03-03T11:30:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Matcha mrkt",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": 33.7629,
+      "lng": -84.4227,
+      "approx": true,
+      "source_id": "allevents:matcha-mrkt",
+      "kind": "popup",
+      "source_url": "https://allevents.in/atlanta/matcha-crawl/4600030716361338",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://allevents.in/atlanta/matcha-crawl/4600030716361338"
+      },
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://allevents.in/atlanta/matcha-crawl/4600030716361338"
+      ],
+      "notes": "checked 2026-11-23 on https://allevents.in/atlanta/matcha-crawl/4600030716361338: allevents listing shows Wed 2027-03-03 11:30am-3:30pm at \"Matcha mrkt\", Atlanta, with no street address, organizer or ticket page; three months out, left unsure"
+    }
+  ]
+}
