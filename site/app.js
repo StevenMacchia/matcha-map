@@ -1375,7 +1375,7 @@
   // Where distances are measured from: the visitor's place, else the middle of the map.
   function refPoint() { if (state.userLoc) return state.userLoc; var c = map.getCenter(); return [c.lat, c.lng]; }
 
-  var apOpen = {};
+  var apOpen = {}, brandsAll = false;
   // Series rows (site/series.js, design rung 5): with no date filter one row stands for a whole series, at its next date;
   // seriesN holds those rows' keys and how many dates each stands for. A date filter lists every date, as before.
   var seriesN = {};
@@ -1396,7 +1396,7 @@
     var cmp = state.userLoc ? function (a, b) { return (distOf(a) - distOf(b)) || byStart(a, b); } : byStart;
     past.sort(state.userLoc ? cmp : function (a, b) { return -byStart(a, b); });
     var brands = visibleBrands().filter(function (it) { return inView(it.ll); });
-    brands.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
+    brands.sort(function (a, b) { return a.name.localeCompare(b.name); }); // cards.js orders by followers when it is loaded
     var shopsIn = visibleShops().filter(function (it) { return inView(it.ll); });
     shopsIn.sort(state.userLoc ? cmp : function (a, b) { return a.name.localeCompare(b.name); });
 
@@ -1421,12 +1421,16 @@
       html += "<li class=\"apgroup\"><button type=\"button\" class=\"aprow\" data-ap-open=\"" + esc(k) + "\" aria-expanded=\"" + open + "\"><span class=\"apl\">" + (placed.length ? g.length + " more" : g.length + " pop-up" + (g.length === 1 ? "" : "s")) + " in " + esc(city) + "</span><span class=\"apq\">place not posted yet</span></button></li>" + (open ? rowsHTML(g, true) : "");
     });
     if (past.length) html += headHTML("Recent") + rowsHTML(past);
-    if (brands.length) html += headHTML("Brands, no dates yet") + rowsHTML(brands);
     if (shopsIn.length) {
       if (map.getZoom() >= 8) {
         var cap = 80, more = shopsIn.length - cap;
         html += headHTML(shopsWords(shopsIn), 0, "shophead") + rowsHTML(shopsIn.slice(0, cap)) + (more > 0 ? "<li class=\"shopnote\">+" + more + " more · zoom in</li>" : "");
       } else html += headHTML(shopsWords(shopsIn), 0, "shophead") + "<li class=\"shopnote\">Zoom in to see them</li>";
+    }
+    // Brands last, never above a shop (2026-11-23): most followed first, three rows until "Show all".
+    if (brands.length) {
+      var MC = window.MatchaCards, bs = MC && MC.brandSection && MC.brandSection(brands, { open: brandsAll, row: function (it) { return rowHTML(it); } });
+      html += bs || headHTML("Brands near here", brands.length, "brhead") + rowsHTML(brands);
     }
 
     // Empty: nothing on for the chosen dates anywhere, or nothing in this part of the map. Sleepy Mattie, one line, the
@@ -1495,6 +1499,7 @@
   }
   $("list").addEventListener("click", function (ev) {
     if (ev.target.closest("[data-clear-ap]")) { state.apCity = ""; renderList(false); return; }
+    if (ev.target.closest("[data-brands-all]")) { brandsAll = !brandsAll; renderList(false); var ba = document.querySelector("#list [data-brands-all]"); if (ba) ba.focus(); return; }
     var ap = ev.target.closest("[data-ap-open]");
     if (ap) { var k = ap.getAttribute("data-ap-open"); apOpen[k] = !apOpen[k]; renderList(false); var again = document.querySelector("#list [data-ap-open=\"" + k.replace(/"/g, "") + "\"]"); if (again) again.focus(); return; }
     var b = ev.target.closest("button[data-key]");

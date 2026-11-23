@@ -648,6 +648,24 @@ export function brandRowHtml(brand, ctx = {}) {
   return `<button type="button" class="mm-row mm-brow"${id ? ` data-key="b:${esc(id)}"` : ""}>${inner}</button>`;
 }
 
+// The list's brand section (2026-11-23): "Brands near here" with the count, after the pop-ups and the shops, most
+// followed first (brands.json), then by name; three rows until "Show all N" is pressed (ctx.open). items: the app's
+// brand items ({ key, data: sources.json record }); ctx.row(item) draws a row (the app passes its own, with distance).
+export const BRANDS_SHOWN = 3;
+export function brandOrder(items, ctx = {}) {
+  const fol = (it) => { const h = String((it.data && (it.data.instagram || it.data.handle)) || "").replace(/^@/, "").toLowerCase(), b = h && byKey(ctx.brands, h, "handle"); return b && typeof b.followers === "number" ? b.followers : -1; };
+  const nm = (it) => String((it.data && (it.data.brand || it.data.name)) || "").toLowerCase();
+  return items.map((it) => [it, fol(it), nm(it)]).sort((a, b) => b[1] - a[1] || (a[2] < b[2] ? -1 : a[2] > b[2] ? 1 : 0)).map((x) => x[0]);
+}
+export function brandSectionHtml(items, ctx = {}) {
+  if (!Array.isArray(items) || !items.length) return "";
+  const list = brandOrder(items, ctx), n = list.length, open = !!ctx.open || n <= BRANDS_SHOWN;
+  const row = typeof ctx.row === "function" ? ctx.row : (it) => brandRowHtml(it.data, ctx);
+  return `<li class="head brhead">Brands near here <span class="n">${n}</span></li>` +
+    (open ? list : list.slice(0, BRANDS_SHOWN)).map((it) => `<li>${row(it)}</li>`).join("") +
+    (n > BRANDS_SHOWN ? `<li class="brmore"><button type="button" class="brall" data-brands-all aria-expanded="${open}">${open ? "Show fewer" : "Show all " + n}</button></li>` : "");
+}
+
 // ---- DOM forms -----------------------------------------------------------------------------------------------
 function toEl(html, ctx) {
   const doc = ctx.document || (typeof document !== "undefined" ? document : null);

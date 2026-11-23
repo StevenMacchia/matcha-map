@@ -7,7 +7,7 @@
 // Share buttons, picture fallbacks and "Also nearby" links are handled by delegated listeners on the document, so the
 // app does not need to call anything after it sets innerHTML. Set window.MatchaCards.open = function (key) {...} to
 // open an also-nearby pop-up in place (key "e:<id>"); without it the link is a normal deep link (?event=<id>).
-import { cardHtml, rowHtml, brandCardHtml, brandRowHtml, wire, fitQuotes } from "./cards.js";
+import { cardHtml, rowHtml, brandCardHtml, brandRowHtml, brandSectionHtml, wire, fitQuotes } from "./cards.js";
 import { shopCardHtml, menuForBrand } from "./shopcard.js"; // the storefront card ("s:<id>"); the brand card's menu
 
 const data = { art: null, brands: null, sources: null, places: null, menus: null };
@@ -75,7 +75,9 @@ function row(item, ctx) {
   return rowHtml(item.data, { ...context(ctx), series: ctx && ctx.series > 0 ? ctx.series : 0 });
 }
 
-window.MatchaCards = Object.assign(window.MatchaCards || {}, { render, row, ready });
+// The list's "Brands near here" section (app.js renderList): ctx { open, row(item) }.
+function brandSection(list, ctx) { return brandSectionHtml(list, { ...context(ctx), ...(ctx || {}) }); }
+window.MatchaCards = Object.assign(window.MatchaCards || {}, { render, row, ready, brandSection });
 wire(document.documentElement);
 // the quote's "more" link shows only when the clamp really hid text: measure once the card is in the DOM
 document.addEventListener("mm:card", (ev) => { try { fitQuotes(ev.detail && ev.detail.root); } catch (e) { /* no quote */ } });

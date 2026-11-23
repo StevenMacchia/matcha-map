@@ -296,3 +296,31 @@ test("links in: the foot links to the city page and the brand name to its brand 
   assert.doesNotMatch(cardHtml(e, { base: "/", page: true }), /mm-morecity|mm-bname-link/);
   assert.match(cardHtml(e, { cityHref: () => "/city/nc/raleigh/" }), /More in Raleigh/, "a plain string works and takes the event's city name");
 });
+
+test("brand section: Brands near here with the count, most followed first then by name, three rows until Show all", async () => {
+  const { brandSectionHtml, brandOrder } = await import("../site/cards.js");
+  const it = (id, brand, instagram) => ({ key: "b:" + id, data: { id, brand, instagram, kind: "popup" } });
+  const brands = { brands: [{ handle: "big", followers: 90000 }, { handle: "mid", followers: 4000 }, { handle: "mid2", followers: 4000 }, { handle: "small", followers: 300 }] };
+  const list = [it("z", "Zed", null), it("s", "Small", "small"), it("m2", "Bravo", "mid2"), it("b", "Big", "big"), it("m", "Alpha", "mid"), it("a", "Aaa", null)];
+  assert.deepEqual(brandOrder(list, { brands }).map((x) => x.data.brand), ["Big", "Alpha", "Bravo", "Small", "Aaa", "Zed"]);
+  const shut = brandSectionHtml(list, { brands });
+  assert.match(shut, /^<li class="head brhead">Brands near here <span class="n">6<\/span><\/li>/);
+  assert.equal((shut.match(/class="mm-row mm-brow"/g) || []).length, 3, "three rows");
+  assert.match(shut, /data-brands-all aria-expanded="false">Show all 6</);
+  const open = brandSectionHtml(list, { brands, open: true });
+  assert.equal((open.match(/class="mm-row mm-brow"/g) || []).length, 6);
+  assert.match(open, /aria-expanded="true">Show fewer</);
+  const three = brandSectionHtml(list.slice(0, 3), { brands });
+  assert.equal((three.match(/class="mm-row mm-brow"/g) || []).length, 3);
+  assert.doesNotMatch(three, /data-brands-all/, "no button for three or fewer");
+  assert.equal(brandSectionHtml([], { brands }), "");
+});
+
+test("the app's list puts brands after the pop-ups and the shops", async () => {
+  const fs = await import("node:fs");
+  const app = fs.readFileSync(new URL("../site/app.js", import.meta.url), "utf8");
+  const body = app.slice(app.indexOf("function renderList("), app.indexOf("var NEXT_RANGE"));
+  const shops = body.indexOf("shopsWords(shopsIn)"), brands = body.indexOf("MC.brandSection"), pops = body.indexOf("Pop-ups <span");
+  assert.ok(pops > 0 && shops > pops && brands > shops, "pop-ups, then shops, then brands");
+  assert.doesNotMatch(app, /Brands, no dates yet|No dates posted here yet/);
+});
