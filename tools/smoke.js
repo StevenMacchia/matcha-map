@@ -26,6 +26,8 @@ function pages() {
   if (city) list.push(`/city/${st}/${city}/`);
   if (brand) list.push(`/brand/${brand}/`);
   list.push("/add/");
+  if (ev) list.push(`/promote/?event=${ev}`);
+  list.push("/promote/");
   if (ev) list.push(`/e/${ev}/`, `/?event=${ev}`, `/?plan=${ev}`); // the shared-link forms: the card on the map (sometimes before the real map exists), a one-stop plan
   list.push("/weekend/", "/art/gallery.html");
   return list;
