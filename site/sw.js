@@ -3,10 +3,10 @@
 // network first and the cache only fills in offline, so a visitor never gets yesterday's style.css under today's index.html
 // (that happened on 2026-11-22 when rung 35 changed the shell under a worker that precached rung 34's). Never caches map
 // tiles or Instagram images.
-var VERSION = "mm-ef613b7e6f";
+var VERSION = "mm-46a2ada65e";
 var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE = "mm-lib-maplibre-4.7.1";
 var SHELL = ["/", "/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/pwa.js",
-  "/cities.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",
+  "/cities.js", "/citypins.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest",
   "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png", "/icons/favicon-32.png", "/shell.css",
   "/cards.css", "/cards-app.js", "/cards.js", "/search.js", "/search.css", "/art.js", "/img-helper.js"];
 // Files from the next-level workers (N6, N8): cached too, but one that is missing never stops the install.
