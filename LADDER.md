@@ -229,3 +229,29 @@ The 33 upcoming events with no matcha signal survived because they come from sou
 - Spend for this ladder: weekly all-models 23% -> 30%, Fable 16% -> 23% (ceiling 45%). About 30 workers over three waves.
 - Honest state of Steven's asks: design and motion at consumer-app polish on phone and desktop (Lighthouse mobile 86, desktop 98, accessibility 100); every card rich (verdict, photo or drawn art, chips with drink art, hours, pay, place, buttons, source posts, brand story, nearby, report link); drink art for 174 drinks and 410 events with the loop in ingest; discovery engine built with the review-to-promote path and daily cron; submit form, claim, alerts, feeds, share pages and weekend pages live; 274 upcoming pop-ups (target was 150+), but "5+ in every metro over 1M" is not met: Denver 1, Phoenix 2, Las Vegas 2, Charlotte 1, Minneapolis 3, Detroit 2. The open web does not carry those dates; the Instagram Graph read over the 952 watched accounts is the lever, and it was off for this run.
 - Only Steven can do: the KV namespace and `INTAKE_TOKEN` for the Add form, the GitHub Actions secrets (daily job and deploy), the Meta app password prompt, the Tavily sign-in on his Chrome tab, the contact email on `/privacy/` and `/data-deletion/`, the Cloudflare Web Analytics snippet. All listed in README "Steven's steps".
+
+## Wave 3 (branch `claude/next-level-32bb5d`, 2026-11-23 07:10 ET)
+
+Steven: "Yes, wave 3". Coverage shortfalls from the gap list and the per-city table: thin metros, December and January dates, held review items, the paste inbox and the keyed adapters that have keys. Ceiling 45% of weekly usage, stop launching at 43%. Open at 31% all models, 25% Fable.
+
+| Rung | Owner | Files | State | Spend after |
+|---|---|---|---|---|
+| W3-S1 sweep mountain (Denver, Phoenix, Las Vegas, SLC, ABQ, Tucson, Boise) | Sonnet | `data/review/wave3-mountain.*`, `data/wave5/mountain.json` | running | |
+| W3-S2 sweep southeast (Charlotte, Raleigh, Nashville, Jacksonville, Tampa, Richmond, New Orleans, Birmingham, Memphis, Louisville, Charleston) | Sonnet | `wave3-southeast.*` | running | |
+| W3-S3 sweep midwest (Chicago, Detroit, Twin Cities, Columbus, Indy, Cleveland, Cincinnati, Milwaukee, KC, St. Louis, Omaha) | Sonnet | `wave3-midwest.*` | running | |
+| W3-S4 sweep northeast (Boston, Baltimore, Providence, Hartford, Buffalo, Pittsburgh, Philadelphia, DC suburbs, North Jersey) | Sonnet | `wave3-northeast.*` | running | |
+| W3-S5 sweep texas (Fort Worth, OKC, Tulsa, El Paso, Dallas, Houston, San Antonio, Austin: Dec and Jan dates) | Sonnet | `wave3-texas.*` | running | |
+| W3-S6 sweep west (South Bay, Sacramento, Orange County, Long Beach, Inland Empire, Honolulu, Portland, Seattle suburbs) | Sonnet | `wave3-west.*` | running | |
+| W3-S7 sweep markets (holiday and winter market vendor lists nationwide, Dec 1 to Jan 31; brand schedule pages) | Sonnet | `wave3-markets.*` | running | |
+| W3-V1 verify held items, west (sweep-west, sweep-socal) | Sonnet | those files, in place | running | |
+| W3-V2 verify held items, texas (sweep-texas, -3, sweep-midwest) | Sonnet | those files, in place | running | |
+| W3-V3 verify held items, east (sweep-southeast, -3, sweep-northeast, -3) | Sonnet | those files, in place | running | |
+| W3-V4 verify the crawlers' run file (50 unsure) into a new file | Sonnet | `data/review/wave3-runcheck.json` | running | |
+| W3-P1 pipeline: Instagram Graph read (no loop was running; 370 of 952 accounts never read), then Eventbrite, Luma, Allevents, Meetup, MATO crawlers past the cursor | Sonnet | `watchlist.json`, run file, `sources.json` pseudo-sources, caches | running | |
+| W3-M merge wave5, ingest with promote, quality audit, tests, smoke 1440/390, gate, merge main, deploy, before/after table | Fable (this session) | everything after the workers | pending | |
+
+Blocked, Steven only (not worked around): Facebook sign-in for the Meta app review, Tavily sign-in on his Chrome tab, the Windows scheduled-task command (`tools/windows-task.ps1`), and the free API keys that need an account (Ticketmaster, Eventbrite API, Yelp, Reddit).
+
+### Wave 3 log
+
+- 07:10 Baseline for the table: 565 events, 272 upcoming by end date (session scratchpad `w3/before.json`). Tavily month: 737 of 900 credits used; each sweep worker capped at 8 searches, verifiers at 6.
