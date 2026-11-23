@@ -1,0 +1,396 @@
+{
+  "generated": "2026-11-23T20:01:08.123Z",
+  "group": "west-b2-mountain",
+  "shops": [
+    {
+      "address": "2223 S Highland Dr Ste E5",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84106",
+      "website": "https://matchacafekyoto.com",
+      "instagram": "matchacafekyoto",
+      "phone": null,
+      "opening_hours": "Su-Th 11:00-21:00; Fr-Sa 11:00-22:00",
+      "menu_url": "https://www.matchacafekyoto.com/copy-of-menu-1",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://matchacafekyoto.com/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "name": "Matcha Cafe Kyoto",
+      "notes": "Menu prints no prices."
+    },
+    {
+      "address": "4940 S Yosemite St Ste E6B",
+      "city": "Greenwood Village",
+      "state": "CO",
+      "zip": "80111",
+      "website": "https://www.thesencafe.com",
+      "instagram": "thesen.coffeetea_dtc",
+      "phone": "720-353-4648",
+      "opening_hours": "Mo-Th 08:00-21:00; Fr 08:00-21:30; Sa 09:00-21:30; Su 09:00-21:00",
+      "menu_url": null,
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.thesencafe.com/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "name": "The Sen Tea and Coffee House (DTC)",
+      "notes": "Hand-whisked ceremonial matcha from Uji, Yame and Shizuoka."
+    },
+    {
+      "address": "2990 N Speer Blvd Unit 1",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80211",
+      "website": "https://www.thesencafe.com",
+      "instagram": null,
+      "phone": "720-210-9121",
+      "opening_hours": "Mo-Fr 09:00-20:00; Sa-Su 09:00-21:00",
+      "menu_url": "https://the-sen-highland-denver.cloveronline.com/menu/all",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.thesencafe.com/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "name": "The Sen Tea and Coffee House (Highland)",
+      "notes": "Hand-whisked ceremonial matcha from Uji, Yame and Shizuoka."
+    },
+    {
+      "address": "3400 South Jones Boulevard",
+      "city": "Las Vegas",
+      "state": "NV",
+      "zip": "89146",
+      "website": "https://urbanmatchastore.com",
+      "instagram": "urban.matcha",
+      "phone": "702-247-1779",
+      "opening_hours": "Tu-Su 12:00-22:00",
+      "menu_url": null,
+      "image_url": "https://static.wixstatic.com/media/8711a4_4c4c1865965c411892db6025b24e6ca9~mv2.jpg/v1/fill/w_2500,h_2115,al_c/8711a4_4c4c1865965c411892db6025b24e6ca9~mv2.jpg",
+      "image_credit": "Photo: Urban Matcha website",
+      "source_url": "https://urbanmatchastore.com/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "name": "Urban Matcha"
+    },
+    {
+      "address": "4545 Spring Mountain Rd Ste 109",
+      "city": "Las Vegas",
+      "state": "NV",
+      "zip": "89102",
+      "website": "https://www.matchacafe-maiko.com",
+      "instagram": "matchastand_maiko",
+      "phone": "(702)640-0033",
+      "opening_hours": null,
+      "menu_url": "https://www.matchacafe-maiko.com/menu/",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.matchacafe-maiko.com/store/index.html?country=usa&region=nv&target=nv-lv-store",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "name": "Matcha Cafe Maiko",
+      "notes": "Store page says to call for current hours."
+    },
+    {
+      "address": "6925 S Buffalo Dr Unit 140",
+      "city": "Las Vegas",
+      "state": "NV",
+      "zip": "89113",
+      "website": "https://nanasgreentealasvegas.com",
+      "instagram": null,
+      "phone": null,
+      "opening_hours": null,
+      "menu_url": "https://nanasgreentealasvegas.com/menu.html",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://nanasgreentealasvegas.com/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "name": "Nana's Green Tea Las Vegas",
+      "notes": "Site prints a placeholder phone and conflicting hours, so both are left blank."
+    },
+    {
+      "address": "7565 Norman Rockwell Lane Unit 120",
+      "city": "Las Vegas",
+      "state": "NV",
+      "zip": "89143",
+      "website": null,
+      "instagram": "leev_matcha",
+      "phone": null,
+      "opening_hours": null,
+      "menu_url": null,
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://neon.reviewjournal.com/?p=3332667",
+      "read": "2026-11-23",
+      "name": "Leev Matcha Atelier",
+      "notes": "No own site found; address and Instagram handle from the Review-Journal feature."
+    },
+    {
+      "address": "3075 E Ustick Rd Ste 120",
+      "city": "Meridian",
+      "state": "ID",
+      "zip": null,
+      "website": "https://www.nanasgreentea.com",
+      "instagram": "nanasgreentea_official",
+      "phone": null,
+      "opening_hours": null,
+      "menu_url": null,
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://idahonews.com/news/local/first-look-inside-nanas-green-tea-before-it-opens-in-meridian",
+      "read": "2026-11-23",
+      "name": "Nana's Green Tea Meridian",
+      "notes": "Press address (KTVB, opened summer 2026); chain site has no US store page."
+    },
+    {
+      "address": "457 E 300 S Suite D",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84111",
+      "website": "https://coldplungecoffee.com",
+      "instagram": "coldplungecoffee",
+      "phone": "+1-206-920-6147",
+      "opening_hours": "Mo-Fr 07:00-19:00; Sa 08:00-15:00; Su 09:00-15:00",
+      "menu_url": "https://coldplungecoffee.com/menu.html",
+      "image_url": "https://www.coldplungecoffee.com/hero-pic-new.png",
+      "image_credit": "Photo: Cold Plunge Coffee website",
+      "source_url": "https://coldplungecoffee.com/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "tier": "serves",
+      "name": "Cold Plunge Coffee",
+      "menu_matcha": [
+        {
+          "name": "Vanilla Matcha Latte",
+          "price": "$6"
+        },
+        {
+          "name": "Blueberry Matcha Latte",
+          "price": "$6"
+        },
+        {
+          "name": "Ceremonial Matcha Latte",
+          "price": "$7"
+        },
+        {
+          "name": "Strawberry Fields of MATCHA",
+          "price": "$7.50"
+        }
+      ]
+    },
+    {
+      "address": "7173 S Redwood Rd Ste 101",
+      "city": "West Jordan",
+      "state": "UT",
+      "zip": "84084",
+      "website": "https://guayoyocafe.com",
+      "instagram": "guayoyocafeutah",
+      "phone": "+1-801-890-1921",
+      "opening_hours": "Mo-Th 08:00-21:00; Fr-Sa 08:00-22:00; Su 08:00-18:00",
+      "menu_url": "https://guayoyocafe.com/menu",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://guayoyocafe.com/menu",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "tier": "serves",
+      "name": "Guayoyo Cafe",
+      "menu_matcha": [
+        {
+          "name": "Matcha Latte Iced",
+          "price": "$5.95"
+        },
+        {
+          "name": "Matcha Latte Hot",
+          "price": "$5.45"
+        },
+        {
+          "name": "Matcha on Matcha",
+          "price": "$6.95"
+        },
+        {
+          "name": "El Banamatcha",
+          "price": "$6.95"
+        },
+        {
+          "name": "Matcha Rosé",
+          "price": "$6.95"
+        },
+        {
+          "name": "Dubai Matcha",
+          "price": "$6.95"
+        },
+        {
+          "name": "Matcha Colada",
+          "price": "$7.95"
+        }
+      ]
+    },
+    {
+      "address": "1642 Alameda Blvd NW",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87114",
+      "website": "https://www.satellitecoffee.com",
+      "instagram": "satellitecoffee",
+      "phone": "505-899-1001",
+      "opening_hours": "Mo-Su 07:00-16:00",
+      "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.satellitecoffee.com/findus/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "tier": "serves",
+      "name": "Satellite Coffee Alameda",
+      "menu_matcha": [
+        {
+          "name": "Cozy Cardamom Matcha",
+          "price": "$5.75"
+        },
+        {
+          "name": "Super Matcha Frio",
+          "price": "$6.95"
+        },
+        {
+          "name": "Super Matcha Latte",
+          "price": "$6.25"
+        }
+      ],
+      "notes": "Seasonal menu; chain menu page, not a per-store menu."
+    },
+    {
+      "address": "8405 Montgomery Blvd NE",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87111",
+      "website": "https://www.satellitecoffee.com",
+      "instagram": "satellitecoffee",
+      "phone": "505-296-7654",
+      "opening_hours": "Mo-Su 06:00-18:00",
+      "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.satellitecoffee.com/findus/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "tier": "serves",
+      "name": "Satellite Coffee Montgomery",
+      "menu_matcha": [
+        {
+          "name": "Cozy Cardamom Matcha",
+          "price": "$5.75"
+        },
+        {
+          "name": "Super Matcha Frio",
+          "price": "$6.95"
+        },
+        {
+          "name": "Super Matcha Latte",
+          "price": "$6.25"
+        }
+      ],
+      "notes": "Seasonal menu; chain menu page, not a per-store menu."
+    },
+    {
+      "address": "1131 University Blvd NE Ste A-B",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87102",
+      "website": "https://www.satellitecoffee.com",
+      "instagram": "satellitecoffee",
+      "phone": "505-247-0662",
+      "opening_hours": "Mo-Fr 07:00-17:00",
+      "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.satellitecoffee.com/findus/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "tier": "serves",
+      "name": "Satellite Coffee University Blvd",
+      "menu_matcha": [
+        {
+          "name": "Cozy Cardamom Matcha",
+          "price": "$5.75"
+        },
+        {
+          "name": "Super Matcha Frio",
+          "price": "$6.95"
+        },
+        {
+          "name": "Super Matcha Latte",
+          "price": "$6.25"
+        }
+      ],
+      "notes": "Seasonal menu; chain menu page, not a per-store menu."
+    },
+    {
+      "address": "2300 Central Ave SE",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87106",
+      "website": "https://www.satellitecoffee.com",
+      "instagram": "satellitecoffee",
+      "phone": "505-254-3800",
+      "opening_hours": "Mo-Sa 07:30-18:00",
+      "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.satellitecoffee.com/findus/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "tier": "serves",
+      "name": "Satellite Coffee Harvard (Nob Hill)",
+      "menu_matcha": [
+        {
+          "name": "Cozy Cardamom Matcha",
+          "price": "$5.75"
+        },
+        {
+          "name": "Super Matcha Frio",
+          "price": "$6.95"
+        },
+        {
+          "name": "Super Matcha Latte",
+          "price": "$6.25"
+        }
+      ],
+      "notes": "Seasonal menu; chain menu page, not a per-store menu."
+    },
+    {
+      "address": "7600 Jefferson St NE",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87109",
+      "website": "https://www.satellitecoffee.com",
+      "instagram": "satellitecoffee",
+      "phone": "505-433-5052",
+      "opening_hours": "Mo-Fr 07:00-14:00; Sa 07:00-12:00",
+      "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
+      "image_url": null,
+      "image_credit": null,
+      "source_url": "https://www.satellitecoffee.com/findus/",
+      "read": "2026-11-23",
+      "confirmed_via": "own-site",
+      "tier": "serves",
+      "name": "Satellite Coffee Jefferson",
+      "menu_matcha": [
+        {
+          "name": "Cozy Cardamom Matcha",
+          "price": "$5.75"
+        },
+        {
+          "name": "Super Matcha Frio",
+          "price": "$6.95"
+        },
+        {
+          "name": "Super Matcha Latte",
+          "price": "$6.25"
+        }
+      ],
+      "notes": "Seasonal menu; chain menu page, not a per-store menu."
+    }
+  ]
+}
