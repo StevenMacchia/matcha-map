@@ -46,3 +46,12 @@ Featured agrees with the expected answer, but not because the money is big: at 5
 - No ad scripts. The pages' Content-Security-Policy blocks them anyway.
 - Paid cards are labeled "Featured". The free weekly pick is never hidden or demoted.
 - No tracking beyond the beacon. Prices are plain numbers on the page.
+
+## How Featured runs
+
+1. **Request.** A host fills in `/featured/` (map link or pop-up id, brand, email, the day the week starts, free or paid). `POST /api/featured` stores `featured:<id>` for 90 days with `paid: false`; ten requests a day per IP.
+2. **Approve.** Open `/add/review.html`, enter the token, and use the Featured requests panel. Approve moves the item to `featured-ok:<id>` with `approved_at`, `week`, `paid` and `until` (the end of the chosen week, UTC). Reject moves it to `featured-no:<id>` for 30 days. Both go through `POST /api/approve` with `kind: "featured"`. Nothing is shown to visitors before this step.
+3. **Mark paid.** For a paid request, send the host the payment link by hand. When the Stripe payment arrives, press Mark paid on the approved item (`edit` with `patch: {paid: true}`, which stamps `paid_at`). Free requests need nothing.
+4. **Show.** `GET /api/featured` returns `{picks: [{event, brand, until, paid}]}` for approved items whose `until` is still in the future (50 at most, no emails). `site/featured.js` fetches it once and adds a one-word "Featured" pill to those pop-ups in the list and on the opened card. Paid and free look the same. The pill disappears by itself when `until` passes; a worker keeps a 60 second copy, so a new approval can take about a minute to show.
+
+Still manual: the Stripe step. There is no checkout and no webhook yet. The Pay button on `/featured/` stays disabled, and "Mark paid" is the stand-in for the webhook. When the webhook exists it should call the same `edit` path.
