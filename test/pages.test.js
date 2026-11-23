@@ -255,3 +255,45 @@ test("city, event and brand titles; the city intro and description come from the
   assert.ok(!/pg-intro/.test(page(out, "city/nc/quietton/index.html")));
   assert.match(page(out, "brand/moonbeematcha/index.html"), /<title>Moonbee matcha pop-ups: dates and places<\/title>/);
 });
+
+// ---- SEO rung 3: sitemap lastmod, canonical, social tags ----
+test("sitemap lastmod is per page: the newest day its events were seen, never after the data date", () => {
+  const out = buildSite(data([ev({ last_seen: "2026-11-20T10:00:00Z" }), ev({ last_seen: "2026-11-22T10:00:00Z" }), ev({ city: "Cary", lat: 35.79, lng: -78.78, last_seen: "2027-01-01T00:00:00Z" })]));
+  const sm = page(out, "sitemap.xml");
+  const lm = (p) => new RegExp("<loc>[^<]*" + p + "</loc><lastmod>([^<]*)</lastmod>").exec(sm)[1];
+  assert.equal(lm("/city/nc/raleigh/"), "2026-11-22");
+  assert.equal(lm("/brand/moonbeematcha/"), "2026-11-22", "a future date is ignored");
+  assert.equal(lm("/city/nc/quietton/"), "2026-11-25", "no events: the data date");
+  assert.ok(!sm.includes("<url><loc>") || [...sm.matchAll(/<url>(.*?)<\/url>/g)].every((m) => m[1].includes("<lastmod>")));
+});
+
+test("every committed generated page has a canonical, Open Graph and Twitter tags with an absolute image and matching title and description", () => {
+  const site = new URL("../site/", import.meta.url);
+  const files = [];
+  const walk = (d) => { for (const x of fs.readdirSync(d, { withFileTypes: true })) { const p = new URL(x.name + (x.isDirectory() ? "/" : ""), d); if (x.isDirectory()) walk(p); else if (x.name === "index.html") files.push(p); } };
+  for (const dir of ["city/", "brand/", "e/", "weekend/"]) { const d = new URL(dir, site); if (fs.existsSync(d)) walk(d); }
+  assert.ok(files.length > 10);
+  const get = (h, re) => { const m = re.exec(h); return m ? m[1] : null; };
+  for (const f of files.slice(0, 1500)) {
+    const h = fs.readFileSync(f, "utf8");
+    const where = f.pathname.slice(-40);
+    const canon = get(h, /<link rel="canonical" href="([^"]*)"/);
+    assert.match(canon || "", /^https:[/][/]/, where + " canonical");
+    const t = get(h, /<meta property="og:title" content="([^"]*)"/), d = get(h, /<meta property="og:description" content="([^"]*)"/);
+    assert.ok(t && d, where + " og text");
+    assert.equal(get(h, /<meta name="twitter:title" content="([^"]*)"/), t, where);
+    assert.equal(get(h, /<meta name="twitter:description" content="([^"]*)"/), d, where);
+    assert.equal(get(h, /<meta name="description" content="([^"]*)"/), d, where + " description");
+    const oi = get(h, /<meta property="og:image" content="([^"]*)"/);
+    assert.match(oi || "", /^https:[/][/]/, where + " og:image absolute");
+    assert.equal(get(h, /<meta name="twitter:image" content="([^"]*)"/), oi, where);
+    assert.equal(get(h, /<meta name="twitter:card" content="([^"]*)"/), "summary_large_image", where);
+  }
+});
+
+test("robots allows everything and names the sitemap", () => {
+  const r = fs.readFileSync(new URL("../site/robots.txt", import.meta.url), "utf8");
+  assert.match(r, /User-agent: [*]/);
+  assert.doesNotMatch(r, /Disallow: *[^ \r\n]/);
+  assert.match(r, /Sitemap: https:[/][/][^ \r\n]+[/]sitemap[.]xml/);
+});

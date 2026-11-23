@@ -130,6 +130,9 @@ export function eventLd(e, ctx) {
   ld.description = d || `Matcha pop-up by ${ctx.brand}${e.city ? " in " + e.city : ""}.`;
   return ld;
 }
+// A page's lastmod: the newest day any of its events was seen, capped at the data's own date (never in the future).
+export const seenDay = (e) => { const d = String(e.last_seen || e.first_seen || "").slice(0, 10); return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(d) ? d : ""; };
+export const newestDay = (events, cap) => events.map(seenDay).filter((d) => d && d <= cap).sort().pop() || cap;
 export const eventPageId = (e) => (e.id && /^[a-z0-9]{6,32}$/i.test(e.id) ? e.id : "");
 export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
@@ -375,7 +378,7 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
     const ogKey = `city-${c.slug}-${c.state.toLowerCase()}`;
     const image = d.cityOg && d.cityOg.has(ogKey) ? `${SITE_URL}/og/${ogKey}.png` : undefined;
     files.set(cityPath(c) + "index.html", shell({ title, desc, canonical, ld, body, image }));
-    urls.push({ loc: canonical });
+    urls.push({ loc: canonical, lastmod: newestDay(ups.map((x) => x.e), lastmod) });
   }
 
   // brand pages
@@ -417,7 +420,7 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
     ld.push(org);
     for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: b.instagram ? `https://www.instagram.com/${b.instagram}/` : "" }) });
     files.set(`brand/${b.slug}/index.html`, shell({ title, desc, canonical, ld, body }));
-    urls.push({ loc: canonical, thin: !b.events.length && !b.city, slug: b.slug });
+    urls.push({ loc: canonical, lastmod: newestDay(b.events.map((x) => x.e), lastmod), thin: !b.events.length && !b.city, slug: b.slug });
   }
 
   // size guard: drop brand pages with no events and no city first when close to a limit, then fail loudly
@@ -429,7 +432,7 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
   }
   if (files.size + OTHER > lim.files || sizeOf() > lim.bytes) throw new Error(`page set too large: ${files.size} files, ${sizeOf()} bytes (limits ${lim.files} files, ${lim.bytes} bytes)`);
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${esc(u.loc)}</loc><lastmod>${lastmod}</lastmod></url>`).join("\n")}\n</urlset>\n`;
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${esc(u.loc)}</loc><lastmod>${u.lastmod || lastmod}</lastmod></url>`).join("\n")}\n</urlset>\n`;
   const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   const pageBytes = sizeOf();
   files.set("sitemap.xml", sitemap);
