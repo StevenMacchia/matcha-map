@@ -271,6 +271,9 @@ html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
 .list > li.head, .list > li.apnote { contain-intrinsic-size: auto 28px; }
 /* "on now" in a list row: the deeper rose reads at 4.5:1 on the cream (the focus pink was 3.4:1) (N7c) */
 :root:not([data-theme="dark"]) .mm-row.mm-v-now .mm-rv { color: #B0405D; }
-/* a long name beside its tags and the distance lost most of itself at 390 ("Dream Te..."): two lines, then the ellipsis (N7c) */
-.mm-row .mm-rn { flex-wrap: wrap; white-space: normal; row-gap: 2px; }
-.mm-row .mm-rname { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
+/* a long name beside its tags and the distance lost most of itself at 390 ("Dream Te..."): two lines, then the ellipsis (N7c).
+   Phones only: the desktop column has the room, and a two-line row there outgrew the title as the largest paint. */
+@media (max-width: 899px) {
+  .mm-row .mm-rn { flex-wrap: wrap; white-space: normal; row-gap: 2px; }
+  .mm-row .mm-rname { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
+}
