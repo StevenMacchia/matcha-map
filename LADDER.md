@@ -395,3 +395,15 @@ Blocked, Steven only: Facebook sign-in for the Meta app review, Tavily sign-in o
 - Next lever, not done: about 90 calls of each run stay unspent while 120 guessed handles wait past the 15-a-run cap; letting guessed handles use that spare room would clear the backlog in 2 runs instead of 9. Real Graph read not run in this branch.
 - 09:35 Compact pop-up card on the desktop map (Steven, from a screenshot of a card running past a 1494 px pane: "look how big this card is"): cards.js marks the map pop-up (ctx.phone false, not a page) `mm-compact`: hero capped at 150 px, four actions in one row, two posts and two neighbours, the brand bio at 140 characters, no Hours box for a bare all-day flag (anywhere); cards.css has the compact rules; the popup's content box caps at the window height minus 190 px and scrolls inside with the close button fixed. Moment of Tea in Austin: about 1700 px to 918 px at 1440x900 (744 shown), 612 px at 1024x768, map no longer pans to the Arctic. Phone sheet and /e/ pages unchanged. 411 tests, smoke 18 of 18.
 - 09:39 Shared links: a `?event=` link that landed while the stand-in map was still up threw inside MapLibre's Popup.addTo (uncaught, every load in the app's pane; present since 2026-11-22). showCard now waits for the real map's load; the smoke loads the shared-link page at both widths (20 checks). Found while checking the compact card live.
+
+## Wave 4 (branch `claude/next-level-32bb5d`, 2026-11-23 10:05 ET)
+
+Steven after wave 3: "big improvements but population and upcoming events etc are not there yet", 6 of 10; wave 4 is volume only (more pop-ups, more upcoming dates, more cities), nothing on design or shell. Ceiling 45%, stop line 43%; open at 34% all models, 29% Fable. `main` merged at fe6af83 (the Graph planner branch 2cddd97 was already merged into main by the first session; 419 tests green).
+
+| Rung | Owner | Files | State | Spend after |
+|---|---|---|---|---|
+| W4-G hourly Graph read with the new planner: never-read accounts first, hashtags capped; 4 runs an hour apart, events committed after each, per-hour yield logged | this session (background loop) | `watchlist.json`, `events.json`, `hashtags.json`, caches | running | |
+| W4-V review queue: the held items nobody has opened yet (crawler run file after the wave-3 check, wave-3 sweep unsure items) verified against their pages | Sonnet | `data/review/wave4-runcheck.json`, `wave3-texas/midwest/northeast.json` in place | running | |
+| W4-C thin metros through the pipeline: a `--cities` flag for `npm run discover`, then Eventbrite, Allevents, Meetup, Luma and MATO for Denver, Las Vegas, Phoenix, Charlotte, Nashville, Columbus, Indianapolis, Jacksonville, Fort Worth, OKC and their suburbs | Sonnet | `ingest/lib/discover.js`, `crawl-state.js`, tests, run file | running | |
+| W4-K keyed adapters | none | | nothing new has a key (Ticketmaster, Eventbrite API, Yelp, Reddit, Brave stay off) | |
+| W4-M ingest, audit, tests, smoke, gate, merge, deploy, table | this session | | pending | |
