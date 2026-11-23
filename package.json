@@ -46,7 +46,8 @@
     "sw-version": "node tools/sw-version.js",
     "search": "node tools/search.js",
     "brands:apply": "node tools/apply-brand-facts.js",
-    "outreach": "node tools/outreach.js"
+    "outreach": "node tools/outreach.js",
+    "shops:keyed": "node ingest/shops-keyed.js"
   },
   "license": "MIT",
   "devDependencies": {
