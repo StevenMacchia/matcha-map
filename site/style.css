@@ -369,6 +369,8 @@ body.show-list .list-panel { display: block; }
 .mm-pop { z-index: 900; }
 .mm-pop .maplibregl-popup-content { position: relative; padding: 16px 18px; border-radius: var(--r); background: var(--pat), var(--panel); color: var(--ink); border: 1.5px solid var(--line); box-shadow: var(--shadow); font-family: var(--font); width: 320px; max-width: 100%;
   transform-origin: 50% 100%; animation: pop-in .28s var(--soft) both; }
+/* the card never outgrows the window: past this height it scrolls inside (the close button stays put, it is positioned on the content box) */
+.mm-pop .maplibregl-popup-content > div { max-height: calc(100vh - 190px); overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: thin; }
 .mm-pop.maplibregl-popup-anchor-top .maplibregl-popup-content, .mm-pop.maplibregl-popup-anchor-top-left .maplibregl-popup-content, .mm-pop.maplibregl-popup-anchor-top-right .maplibregl-popup-content { transform-origin: 50% 0; }
 .mm-pop.maplibregl-popup-anchor-left .maplibregl-popup-content { transform-origin: 0 50%; }
 .mm-pop.maplibregl-popup-anchor-right .maplibregl-popup-content { transform-origin: 100% 50%; }

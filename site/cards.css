@@ -172,6 +172,36 @@
 :root[data-theme="dark"] .mm-chip.mm-t0 { background: #DCEBC9; } :root[data-theme="dark"] .mm-chip.mm-t1 { background: #F6CFDA; } :root[data-theme="dark"] .mm-chip.mm-t2 { background: #F4D6BC; }
 :root[data-theme="dark"] .mm-hero-photo { border-color: #2B3D2F; }
 
+/* ---- compact: the desktop map pop-up (.mm-compact, set by cards.js) ---- */
+.mm-card.mm-compact { padding: 0; gap: 10px; }
+.mm-compact .mm-main, .mm-compact .mm-more { gap: 10px; }
+.mm-compact .mm-sec { gap: 6px; }
+.mm-compact .mm-verdict { font-size: 19px; }
+.mm-compact .mm-vwhere { font-size: 13px; }
+.mm-compact .mm-hero, .mm-compact .mm-hero-photo { aspect-ratio: 2 / 1; max-height: 150px; border-radius: 16px; }
+.mm-compact .mm-cupbox { width: 64px; height: 76px; }
+.mm-compact .mm-sticker { font-size: 16px; }
+.mm-compact .mm-avatar { width: 40px; height: 40px; }
+.mm-compact .mm-initial { font-size: 17px; }
+.mm-compact .mm-bname { font-size: 17px; }
+.mm-compact .mm-desc { font-size: 14.5px; padding: 8px 12px 8px 30px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.mm-compact .mm-chip { font-size: 13.5px; }
+.mm-compact .mm-chip-art, .mm-compact .mm-chip .mm-cup { width: 28px; height: 28px; }
+.mm-compact .mm-fact { padding: 6px 10px 7px; }
+.mm-compact .mm-pname { font-size: 15.5px; }
+.mm-compact .mm-acts { grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.mm-compact .mm-act { font-size: 12px; gap: 3px; padding: 2px 0; }
+.mm-compact .mm-act .mm-i { width: 20px; height: 20px; padding: 9px; }
+.mm-compact .mm-h { font-size: 12px; }
+.mm-compact .mm-post { font-size: 13.5px; padding: 3px 11px 3px 3px; }
+.mm-compact .mm-pthumb { width: 32px; height: 32px; }
+.mm-compact .mm-story { padding: 10px 12px; border-radius: 16px; }
+.mm-compact .mm-bio { font-size: 14px; line-height: 1.4; }
+.mm-compact .mm-mini .mm-th { width: 40px; height: 40px; border-radius: 10px; }
+.mm-compact .mm-mini .mm-rn { font-size: 14.5px; }
+.mm-compact .mm-mini .mm-rv, .mm-compact .mm-mini .mm-rp { font-size: 12.5px; }
+.mm-compact .mm-report { font-size: 13px; padding: 4px 10px; }
+
 /* ---- page view: two columns on wide screens ---- */
 @media (min-width: 900px) {
   .mm-card.mm-page { max-width: 1080px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); grid-template-areas: "media top" "media main" "more main"; grid-template-rows: auto auto 1fr; column-gap: 28px; row-gap: 16px; padding: 24px; }

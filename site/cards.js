@@ -280,7 +280,8 @@ function chipsHtml(e, ctx) {
     `<li class="mm-chip mm-t${(hash(m) + i) % 3}">${drinkThumb(m, i, ctx)}<span>${esc(titleCase(cut(m, 40)))}</span></li>`).join("")}</ul></section>`;
 }
 function factsHtml(e) {
-  const hours = (e.hours && cut(e.hours, 48)) || timeRange(e).replace(/^from /, "From ") || (e.all_day ? "All day" : "");
+  // an all-day flag alone gets no box: the verdict already carries the day, and most such flags are ingest fallbacks
+  const hours = (e.hours && cut(e.hours, 48)) || timeRange(e).replace(/^from /, "From ");
   const f = [];
   if (hours) f.push(["clock", "Hours", hours]);
   if (e.price) f.push(["tag", "Price", cut(e.price, 32)]);
@@ -312,7 +313,7 @@ function postsHtml(e, ctx, b) {
   });
   if (!list.length) return "";
   const firstSocial = list.find((u) => /instagram\.com|tiktok\.com/.test(u));
-  return `<section class="mm-sec mm-posts"><h4 class="mm-h">Where we saw it</h4><ul class="mm-plist">${list.slice(0, 4).map((u) => {
+  return `<section class="mm-sec mm-posts"><h4 class="mm-h">Where we saw it</h4><ul class="mm-plist">${list.slice(0, ctx.compact ? 2 : 4).map((u) => {
     const [ic, label] = postKind(u), th = recent.get(u) || (u === firstSocial && photo ? photo.src : "");
     return `<li><a class="mm-post mm-post-${ic}" href="${esc(u)}" target="_blank" rel="noopener">${th ? `<span class="mm-pthumb"><img src="${esc(th)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>` : ""}<span class="mm-picon">${ICON[ic]}</span><span>${esc(label)}</span></a></li>`;
   }).join("")}</ul></section>`;
@@ -323,7 +324,7 @@ function followers(n) {
 }
 function storyHtml(e, ctx, name, b) {
   const s = sourceOf(e, ctx) || {}, L = e.links || {};
-  const text = cut((b && b.bio) || s.about || s.bio || "", 240);
+  const text = cut((b && b.bio) || s.about || s.bio || "", ctx.compact ? 140 : 240);
   const home = join([(b && b.home_city) || s.home_city, (b && b.home_state) || s.home_state], ", ");
   const meta = join([home ? "Based in " + home : "", followers(b && b.followers)]);
   const links = [];
@@ -344,7 +345,7 @@ export function alsoNearby(e, ctx = {}) {
     .slice(0, 3).map((x) => x.o);
 }
 function nearbyHtml(e, ctx) {
-  const near = alsoNearby(e, ctx);
+  const near = alsoNearby(e, ctx).slice(0, ctx.compact ? 2 : 3);
   if (!near.length) return "";
   return `<section class="mm-sec mm-nearby"><h4 class="mm-h">Also nearby</h4><ul class="mm-nlist">${near.map((o) => `<li>${rowHtml(o, { ...ctx, rowTag: "a", mini: true })}</li>`).join("")}</ul></section>`;
 }
@@ -353,11 +354,15 @@ const nameOf = (e, b) => cut(e.brand || (b && b.name) || "Matcha pop-up", 60);
 // ---- the card ------------------------------------------------------------------------------------------------
 export function cardHtml(e, ctx = {}) {
   e = e || {};
+  // The desktop map's pop-up (ctx.phone false, not a page) is the compact card: on a tall window the full card ran past
+  // the screen and the map panned itself to the Arctic to make room (Steven, 2026-11-23). Same frames, less of each.
+  const compact = ctx.compact === true || (!ctx.page && ctx.phone === false);
+  ctx = { ...ctx, compact };
   const v = verdict(e, ctx), b = brandOf(e, ctx), name = nameOf(e, b), id = safeId(e.id);
   const plain = String(e.description || "").replace(/[*_`#>]+/g, " ").replace(/\s+/g, " ").trim();
   const desc = plain ? `<p class="mm-desc">${esc(cut(plain, 200))}</p>` : "";
   const report = id ? `<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a>` : "";
-  return `<article class="mm-card${ctx.page ? " mm-page" : ""} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>` +
+  return `<article class="mm-card${ctx.page ? " mm-page" : ""}${compact ? " mm-compact" : ""} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>` +
     `<header class="mm-top"><p class="mm-verdict"><span class="mm-vday">${esc(v.day)}</span>${v.time ? ` <span class="mm-vtime">${esc(v.time)}</span>` : ""}${v.where ? `<span class="mm-vwhere">${esc(v.where)}</span>` : ""}</p></header>` +
     `<div class="mm-media">${heroHtml(e, ctx, v, name)}</div>` +
     `<div class="mm-main">${brandRow(e, ctx, name, b)}${desc}${chipsHtml(e, ctx)}${factsHtml(e)}${placeHtml(e, ctx, name)}</div>` +

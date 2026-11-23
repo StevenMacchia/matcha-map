@@ -20,6 +20,7 @@ function context(ctx) {
   const items = (ctx && ctx.events) || (st && st.events) || [];
   return {
     now: new Date(),
+    phone: !!(ctx && ctx.phone), // the desktop pop-up renders the compact card; the phone sheet the full one
     here: (st && st.userLoc) || null,
     events: items.map((it) => (it && it.data ? it.data : it)).filter(Boolean),
     drawn: window.Drawn || null,

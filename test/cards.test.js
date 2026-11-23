@@ -80,7 +80,7 @@ test("a card with only a date and a city still has every frame", () => {
   assert.match(html, /href="feeds\/events\/cccccc000003\.ics"/);
   assert.match(html, /href="e\/cccccc000003\/" data-mm-share/);
   assert.match(html, /href="report\/\?event=cccccc000003"/);
-  assert.match(t, /Hours All day/);
+  assert.doesNotMatch(t, /Hours/); // an all-day flag alone is no fact box
   for (const k of ["mm-menu", "mm-posts", "mm-story", "mm-nearby", "mm-desc", "undefined", "null", "NaN"]) assert.doesNotMatch(html, new RegExp(k), k);
   assert.doesNotMatch(cardHtml({}, {}), /undefined|NaN/);
   assert.match(rowHtml(bare, { now: NOW }), /Sun Dec 6/);
@@ -169,4 +169,17 @@ test("description loses markdown markers; list row name sits in its own ellipsis
   assert.ok(!html.includes("**"));
   assert.match(html, /<p class="mm-desc">Event Details menu x<\/p>/);
   assert.match(rowHtml(ev(), { now: NOW }), /<span class="mm-rname">Moonbee<\/span>/);
+});
+
+
+test("the desktop map pop-up is the compact card: fewer posts and neighbours; pages and the phone sheet are not", () => {
+  const me = ev({ lat: 40.7, lng: -74 });
+  const others = [1, 2, 3].map((i) => ev({ id: "dddddd00000" + i, lat: 40.7 + i * 0.001, lng: -74, brand: "Other " + i, posts: {} }));
+  const html = cardHtml(me, { now: NOW, phone: false, events: [me, ...others] });
+  assert.match(html, /class="mm-card mm-compact /);
+  assert.ok((html.match(/class="mm-row mm-mini/g) || []).length <= 2, "two neighbours at most");
+  assert.ok((html.match(/class="mm-post /g) || []).length <= 2, "two posts at most");
+  assert.doesNotMatch(cardHtml(me, { now: NOW, page: true, events: [me, ...others] }), /mm-compact/);
+  assert.doesNotMatch(cardHtml(me, { now: NOW, phone: true, events: [me, ...others] }), /mm-compact/);
+  assert.doesNotMatch(cardHtml(me, { now: NOW }), /mm-compact/);
 });
