@@ -2,6 +2,7 @@
 //   approve: pending:<id> -> approved:<id> (90 days)       reject: pending:<id> -> rejected:<id> (30 days)
 //   kind "featured": approve: featured:<id> -> featured-ok:<id> {approved_at, week, paid, until}   reject: -> featured-no:<id> (30 days)
 //                    edit: {patch:{paid:true}} on featured-ok (or featured) sets paid and paid_at (Steven, by hand, after a Stripe payment)
+//   kind "claim": approve: claim:<id> -> claim-ok:<id> (90 days), and when the claim carries a menu also menu-ok:<shop id or handle> (a year); reject: -> claim-no:<id> (30 days)
 //   edit:    patch fields on pending:<id> (or approved:<id>)  consume: approved:<id> -> consumed:<id> (ingest uses this)
 import { sanitizePatch, isId } from "../_lib/validate.js";
 import { json, kvOf, readBody, guard, methodNot, NOT_SET_UP } from "../_lib/http.js";
@@ -46,6 +47,34 @@ async function featuredAction(kv, body) {
   return json({ ok: true, id, status: "featured-ok", until });
 }
 
+// The key an owner menu is kept and read under: the shop id when the claim named one, else the brand's handle.
+export const menuKeyOf = (item) => (item && item.shop) || (item && item.handle) || "";
+
+async function claimAction(kv, body) {
+  const { id, action } = body;
+  if (action !== "approve" && action !== "reject") return json({ error: "Claims take approve or reject." }, 400);
+  const key = `claim:${id}`, raw = await kv.get(key);
+  if (!raw) return json({ error: "Not found (it may have expired or already moved)." }, 404);
+  let item;
+  try { item = JSON.parse(raw); } catch { return json({ error: "Stored item is unreadable." }, 500); }
+  const now = new Date().toISOString();
+  if (action === "reject") {
+    await kv.put(`claim-no:${id}`, JSON.stringify({ ...item, status: "rejected", rejected_at: now }), { expirationTtl: 30 * DAY });
+    await kv.delete(key);
+    return json({ ok: true, id, status: "claim-no" });
+  }
+  await kv.put(`claim-ok:${id}`, JSON.stringify({ ...item, status: "approved", approved_at: now }), { expirationTtl: 90 * DAY });
+  let menu = false;
+  const mk = menuKeyOf(item);
+  if (mk && item.menu && Array.isArray(item.menu.items) && item.menu.items.length) {
+    // Only what visitors may see, plus who it is from. Never the email or the proof link.
+    await kv.put(`menu-ok:${mk}`, JSON.stringify({ ...item.menu, kind: "owner", brand: item.brand, handle: item.handle, approved_at: now }), { expirationTtl: 365 * DAY });
+    menu = true;
+  }
+  await kv.delete(key);
+  return json({ ok: true, id, status: "claim-ok", menu });
+}
+
 export async function onRequestPost({ request, env }) {
   const denied = guard(request, env);
   if (denied) return denied;
@@ -55,6 +84,7 @@ export async function onRequestPost({ request, env }) {
   if (!body || !isId(body.id) || !["approve", "reject", "edit", "consume"].includes(body.action)) return json({ error: "Need {id, action: approve|reject|edit|consume}." }, 400);
   const { id, action } = body;
   if (body.kind === "featured") return featuredAction(kv, body);
+  if (body.kind === "claim") return claimAction(kv, body);
   let key = `${action === "consume" ? "approved" : "pending"}:${id}`;
   let raw = await kv.get(key);
   if (!raw && action === "edit") { key = `approved:${id}`; raw = await kv.get(key); }

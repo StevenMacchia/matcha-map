@@ -51,3 +51,5 @@
 .fm-menu legend { font-weight: 800; font-size: 15px; padding: 0 6px; }
 .fm-menu legend .fm-hint { display: inline; }
 .fm-menu > .fm-hint { margin: 0 0 10px; }
+.rv-menu { margin: 4px 0 6px; padding-left: 20px; }
+.rv-menu li { word-break: break-word; }
