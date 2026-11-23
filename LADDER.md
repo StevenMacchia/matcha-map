@@ -396,7 +396,6 @@ Blocked, Steven only: Facebook sign-in for the Meta app review, Tavily sign-in o
 - 09:35 Compact pop-up card on the desktop map (Steven, from a screenshot of a card running past a 1494 px pane: "look how big this card is"): cards.js marks the map pop-up (ctx.phone false, not a page) `mm-compact`: hero capped at 150 px, four actions in one row, two posts and two neighbours, the brand bio at 140 characters, no Hours box for a bare all-day flag (anywhere); cards.css has the compact rules; the popup's content box caps at the window height minus 190 px and scrolls inside with the close button fixed. Moment of Tea in Austin: about 1700 px to 918 px at 1440x900 (744 shown), 612 px at 1024x768, map no longer pans to the Arctic. Phone sheet and /e/ pages unchanged. 411 tests, smoke 18 of 18.
 - 09:39 Shared links: a `?event=` link that landed while the stand-in map was still up threw inside MapLibre's Popup.addTo (uncaught, every load in the app's pane; present since 2026-11-22). showCard now waits for the real map's load; the smoke loads the shared-link page at both widths (20 checks). Found while checking the compact card live.
 
-<<<<<<< HEAD
 ## Wave 4 (branch `claude/next-level-32bb5d`, 2026-11-23 10:05 ET)
 
 Steven after wave 3: "big improvements but population and upcoming events etc are not there yet", 6 of 10; wave 4 is volume only (more pop-ups, more upcoming dates, more cities), nothing on design or shell. Ceiling 45%, stop line 43%; open at 34% all models, 29% Fable. `main` merged at fe6af83 (the Graph planner branch 2cddd97 was already merged into main by the first session; 419 tests green).
@@ -514,7 +513,6 @@ Per-hour Graph yield, measured: run 1 read the never-read backlog first (72 call
 What moved: the thin-metro crawler runs and the review queue (Denver 1 to 3, Overland Park 0 to 3, Fort Worth 1 to 2, Columbus 2 to 3, Nashville 2 to 3, Jacksonville and Scottsdale 0 to 1, Aurora CO 0 to 1); Brooklyn, New York, Washington and Baltimore lost a date each as events passed or merged.
 
 Blocked, Steven only, with what each unlocks: Facebook sign-in for the Meta app review (advanced access: a higher Graph call rate and hashtag reads beyond 30 unique a week); Tavily sign-in on his Chrome tab (a paid tier past the 900 free credits a month, 125 left); `tools/windows-task.ps1` (the Windows scheduled refresh on his machine, if the first session's scheduled task is not the one he wants); free API keys that need an account: Ticketmaster (Discovery events by city), Eventbrite API (organizer and search endpoints without the 429s the public pages give), Yelp (events by location, 500 calls a day), Reddit (city-subreddit posts through the official API).
-=======
 ## Social wave (main checkout session, worktree `_wt/matcha-map-live-fix`, 2026-11-23 afternoon ET)
 
 Steven's direction, verbatim: "RSVP to things", "Promote your own matcha pop up", "think things that will take this to the next social level for events". Budget: this wave at most 5 points of the weekly window, wave 4 (data, next-level session) at most 3, hard stop at 43% combined; 35% all models at the open.
@@ -539,4 +537,3 @@ Rules Steven will judge by: no fake users, counts or reviews; rate limits and a 
 
 ### Social wave log
 - 10:11 Wave open. Explorer pass done (the repo map above), production probed (503 on every API route), budget agreed with the next-level session (3 points for wave 4). Building S1 to S4; S4 in a Sonnet worktree `_wt/matcha-map-promote`.
->>>>>>> origin/main
