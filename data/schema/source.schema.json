@@ -131,6 +131,51 @@
       ],
       "format": "date",
       "description": "Date a human last checked the handles."
+    },
+    "about": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Two-sentence brand story for the rich card."
+    },
+    "signature_drinks": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "description": "Drink names as the menu spells them."
+    },
+    "price_range": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "For example \"$6 to $9\"."
+    },
+    "pay": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Payment methods when stated."
+    },
+    "hours_note": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Typical pop-up hours when stated."
+    },
+    "linktree": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Linktree or link-in-bio URL."
     }
   }
 }
