@@ -199,32 +199,49 @@ export function addressLine(s, ctx) {
   const tail = [city, s.state].filter(Boolean).join(", ");
   return [s.address, tail].filter(Boolean).join(", ");
 }
-// A picture the shop's record carries (the same { local, url, credit } shape events use). None do today.
+// A picture the shop's record carries: image_url with image_credit ("Photo: <shop> website", from the pipeline), the
+// credit as a caption under the photo; neither shows unless both are there. The older { local, url, credit } shape that
+// events use still works, credit on the photo.
 function photoHtml(s, ctx) {
+  // the page only loads https pictures (CSP img-src): an http address is asked for over https
+  const url = safeUrl(typeof s.image_url === "string" ? s.image_url.replace(/^http:\/\//i, "https://") : ""), credit = typeof s.image_credit === "string" ? s.image_credit.trim() : "";
+  if (url && credit) {
+    return `<figure class="mm-shop-fig"><div class="mm-shop-photo"><img src="${esc(url)}" alt="${esc("Photo of " + s.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>` +
+      `<figcaption class="mm-shop-cap">${esc(credit)}</figcaption></figure>`;
+  }
   const im = s.image || {};
   const src = im.local && /^img\/[A-Za-z0-9._/-]+$/.test(im.local) ? (ctx.base || "") + im.local : safeUrl(im.url);
   if (!src) return "";
-  const credit = im.credit ? `<span class="mm-shop-credit">${esc(cut(im.credit, 40))}</span>` : "";
-  return `<div class="mm-shop-photo"><img src="${esc(src)}" alt="${esc("Photo of " + s.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${credit}</div>`;
+  const cr = im.credit ? `<span class="mm-shop-credit">${esc(cut(im.credit, 40))}</span>` : "";
+  return `<div class="mm-shop-photo"><img src="${esc(src)}" alt="${esc("Photo of " + s.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${cr}</div>`;
 }
 const isNum = (x) => typeof x === "number" && isFinite(x);
+// A "serves" shop (a coffee or tea shop with matcha on the menu) carries menu_matcha [{ name, price|null }] and menu_url:
+// the card's Menu section, names and prices as written, credited to the menu's host. Only when the shop has no menu
+// object and no owner menu of its own.
+export function servesMenu(s) {
+  const items = Array.isArray(s && s.menu_matcha) ? s.menu_matcha.filter(goodItem).map((x) => ({ name: x.name, price: typeof x.price === "string" ? x.price : null })) : [];
+  return items.length ? { items, source_url: s.menu_url, kind: "serves" } : null;
+}
+export const isServes = (s) => !!s && s.tier === "serves";
 export function shopCardHtml(s, ctx = {}) {
   if (!s || !s.name) return "";
   const now = ctx.now instanceof Date ? ctx.now : new Date();
-  const name = String(s.name), addr = addressLine(s, ctx);
-  const head = `<div class="mm-shop-head"><span class="mm-shop-art" data-char="s-shop" aria-hidden="true"></span><div class="mm-shop-id">` +
-    `<h3 class="mm-shop-name">${esc(cut(name, 80))}</h3><p class="mm-shop-kind">Matcha shop</p></div></div>` +
-    (addr ? `<p class="mm-shop-addr">${esc(cut(addr, 140))}</p>` : "");
+  const name = String(s.name), addr = addressLine(s, ctx), serves = isServes(s);
+  const head = `<div class="mm-shop-head"><span class="mm-shop-art${serves ? " mm-shop-art-sv" : ""}" data-char="s-shop" aria-hidden="true"></span><div class="mm-shop-id">` +
+    `<h3 class="mm-shop-name">${esc(cut(name, 80))}</h3>` + (serves ? `<div class="mm-shop-kinds"><p class="mm-shop-kind">Cafe</p><p class="mm-shop-sv">Matcha on the menu</p></div>` : `<p class="mm-shop-kind">Matcha shop</p>`) + `</div></div>` +
+    (addr ? `<p class="mm-shop-addr">${esc(cut(addr, 140))}</p>` : "") +
+    (typeof s.note === "string" && s.note.trim() ? `<p class="mm-shop-note">${esc(cut(s.note, 120))}</p>` : "");
   const acts = [];
   if (isNum(s.lat) && isNum(s.lng)) acts.push(`<a class="mm-shop-go" href="https://www.google.com/maps/dir/?api=1&amp;destination=${s.lat},${s.lng}" target="_blank" rel="noopener">${ICON.go}<span>Directions</span></a>`);
   const web = safeUrl(s.website), ig = typeof s.instagram === "string" ? s.instagram.replace(/^@/, "").trim() : "";
   if (web) acts.push(`<a class="mm-shop-pill" href="${esc(web)}" target="_blank" rel="noopener" aria-label="Website">${ICON.web}<span>Website</span></a>`);
   else if (/^[A-Za-z0-9._]{1,30}$/.test(ig)) acts.push(`<a class="mm-shop-pill" href="https://www.instagram.com/${encodeURIComponent(ig)}/" target="_blank" rel="noopener" aria-label="Instagram">${ICON.ig}<span>Instagram</span></a>`);
   const share = typeof ctx.shareHref === "function" ? ctx.shareHref(s) : (ctx.base || "") + "?shop=" + encodeURIComponent(String(s.id || ""));
-  if (s.id) acts.push(`<a class="mm-shop-pill mm-shop-share" href="${esc(share)}" data-mm-share data-title="${esc(name + ", matcha shop")}" aria-label="Share">${ICON.share}<span>Share</span></a>`);
+  if (s.id) acts.push(`<a class="mm-shop-pill mm-shop-share" href="${esc(share)}" data-mm-share data-title="${esc(name + (serves ? ", matcha on the menu" : ", matcha shop"))}" aria-label="Share">${ICON.share}<span>Share</span></a>`);
   const credit = s.source === "osm" && safeUrl(s.osm_url) ? `<p class="mm-shop-data">Shop details: <a href="${esc(s.osm_url)}" target="_blank" rel="noopener">OpenStreetMap</a></p>` : "";
   // Directions sits right under the hours: the phone sheet opens at half height with the rest a drag away, and a
   // 66-line menu above it would push it out of that first view.
   return `<article class="mm-card mm-shop" aria-label="${esc(name)}">${head}${hoursTodayHtml(s, now)}` +
-    (acts.length ? `<div class="mm-shop-acts">${acts.join("")}</div>` : "") + `${menuSectionHtml(s.menu || ownerMenuFor(s.id, ctx), ctx)}${photoHtml(s, ctx)}${credit}</article>`;
+    (acts.length ? `<div class="mm-shop-acts">${acts.join("")}</div>` : "") + `${menuSectionHtml(s.menu || ownerMenuFor(s.id, ctx) || servesMenu(s), ctx)}${photoHtml(s, ctx)}${credit}</article>`;
 }

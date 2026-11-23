@@ -498,6 +498,22 @@ dialog .credit { font-size: 14px; color: var(--muted); }
 .cl-sh .cl-n.morph { animation: morph-sh .32s var(--spring); }
 @keyframes morph-sh { from { transform: scale(.4); opacity: .2; } to { transform: none; opacity: 1; } }
 .row.shoprow { border-left: 4px solid var(--shmint); min-height: 72px; }
+/* "Matcha on the menu" (tier serves: coffee and tea shops that serve matcha): the same shop pin, lighter. Paler fills, a
+   thinner and softer outline, a lighter shadow, so it reads as the same family and steps back beside a matcha shop. */
+:root { --sv-c: #FFFEFA; --sv-f: #EEF6E6; --sv-win: #E2F1F3; --sv-o: #8A7566; }
+:root[data-theme="dark"] { --sv-c: #E9E4D6; --sv-f: #C9DDB8; --sv-win: #C9E0E3; --sv-o: #4B3426; }
+.mk-sh.mk-sv { width: 26px; height: 26px; }
+.mk-sh.mk-sv .mk-in { filter: drop-shadow(0 1px 1.5px rgba(75,52,38,.18)); }
+.mk-sv .m-o, .mk-sv .m-l { stroke: var(--sv-o); stroke-width: 1.4; }
+.mk-sv .m-c { fill: var(--sv-c); }
+.mk-sv .m-f { fill: var(--sv-f); }
+.mk-sv .sh-win { fill: var(--sv-win); }
+.row.shoprow.shoprow-sv { border-left-color: var(--shmint-pale); border-left-style: dashed; }
+.row.shoprow-sv .th.th-shop { background: transparent; }
+.row.shoprow-sv .th-shop .m-o, .row.shoprow-sv .th-shop .m-l { stroke: var(--sv-o); stroke-width: 1.4; }
+.row.shoprow-sv .th-shop .m-c { fill: var(--sv-c); }
+.row.shoprow-sv .th-shop .m-f { fill: var(--sv-f); }
+.row.shoprow-sv .th-shop .sh-win { fill: var(--sv-win); }
 .row .th.th-shop { background: var(--shmint-pale); border-color: var(--shmint-edge); }
 .th-shop .ch { display: block; width: 40px; height: 40px; }
 .list li.shopnote { margin: 0 2px; padding: 10px 14px; border-radius: var(--r); border: 1.5px dashed var(--shmint-edge); color: var(--muted); font-weight: 700; font-size: 15px; }
@@ -603,6 +619,8 @@ dialog .credit { font-size: 14px; color: var(--muted); }
 .show-pop .sp-h:first-child { margin-top: 4px; }
 .show-pop .sp-cats { display: grid; grid-template-columns: 1fr 1fr; }
 .show-pop .sp-foot { margin: 6px 0 0; padding-top: 4px; border-top: 1px solid var(--line); text-align: right; }
+/* a phone the height of a 390x844 one fits the whole list, Reset included, with the "Matcha on the menu" switch added */
+@media (max-height: 900px) { .show-pop label { min-height: 40px; } .show-pop .sp-h { margin-top: 8px; } }
 
 /* list: counts on the headings, city-only pop-ups gathered under one dashed heading per city */
 .list li.head .n { font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }

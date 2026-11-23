@@ -182,19 +182,34 @@ export async function runCardGate(cdp, base, opts = {}) {
       await s("Emulation.setDeviceMetricsOverride", { width: w, height: h, deviceScaleFactor: 1, mobile: w < 500 });
       await s("Page.setFontSizes", { fontSizes: { standard: font, fixed: font === 16 ? 13 : 20 } });
       await s("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem("matchamap.theme","light");localStorage.setItem("mm.seen","1")}catch(e){}` });
-      await s("Page.navigate", { url: `${base}/?${brand ? "brand" : "event"}=${encodeURIComponent(f.id)}&motion=reduce` });
-      let ok = false;
-      for (const end = Date.now() + 20000; Date.now() < end;) { await sleep(250); try { if (await ev(READY(card))) { ok = true; break; } } catch { /* navigating */ } }
+      const url = `${base}/?${brand ? "brand" : "event"}=${encodeURIComponent(f.id)}&motion=reduce`;
+      const load = async () => {
+        await s("Page.navigate", { url });
+        for (const end = Date.now() + 20000; Date.now() < end;) { await sleep(250); try { if (await ev(READY(card))) return true; } catch { /* navigating */ } }
+        return false;
+      };
+      let ok = await load(), opened2 = false;
+      // a card that never opened gets one more load after 400 ms before its cases count (a busy machine once timed one out)
+      if (!ok) { await sleep(400); ok = opened2 = await load(); }
       if (ok) { await ev(`document.fonts ? document.fonts.ready.then(() => 1) : 1`); await sleep(700); }
       for (const [theme, feat] of [["light", false], ["dark", false], ["light", true]]) {
-        const row = { fixture: f.name, w, theme: theme + (feat ? "+featured" : ""), font, fails: [] };
-        if (!ok) row.fails.push("the card never opened");
-        else {
+        const row = { fixture: f.name, w, theme: theme + (feat ? "+featured" : ""), font, fails: [], retried: false };
+        const measure = async () => {
+          const fails = [];
           await ev(SET_THEME(theme)); await ev(FORCE_GOING); if (feat) await ev(ADD_FEATURED);
           await ev(FRAMES);
-          if (w < 900) { if ((await ev(SNAP("peek"))) === "peek" && !brand) { await ev(FRAMES); row.fails.push(...((await ev(PEEK)) || [])); } await ev(SNAP("full")); await ev(FRAMES); }
+          if (w < 900) { if ((await ev(SNAP("peek"))) === "peek" && !brand) { await ev(FRAMES); fails.push(...((await ev(PEEK)) || [])); } await ev(SNAP("full")); await ev(FRAMES); }
           const r = await ev(CHECK(ALLOW, card));
-          if (!r || r.error) row.fails.push((r && r.error) || "checker did not run"); else row.fails.push(...r.fails);
+          if (!r || r.error) fails.push((r && r.error) || "checker did not run"); else fails.push(...r.fails);
+          return fails;
+        };
+        if (!ok) row.fails.push("the card never opened");
+        else {
+          row.fails = await measure();
+          if (opened2 && !row.fails.length) row.retried = true;
+          // one retry after a short wait before a case counts as failed: a live run once failed one case of 144 (city-only,
+          // 390, light, 20 px) that passed on the rerun, a frame caught mid-layout
+          if (row.fails.length) { await sleep(400); const again = await measure(); if (!again.length) { row.fails = []; row.retried = true; } }
         }
         if (row.fails.length) {
           fs.mkdirSync(FAIL_DIR, { recursive: true });
@@ -206,10 +221,10 @@ export async function runCardGate(cdp, base, opts = {}) {
   }
   const pad = (v, n) => String(v).padEnd(n);
   log(`\n${pad("fixture", 22)}${pad("width", 7)}${pad("theme", 16)}${pad("font", 6)}${pad("result", 8)}first failures`);
-  for (const r of rows) log(`${pad(r.fixture, 22)}${pad(r.w, 7)}${pad(r.theme, 16)}${pad(r.font, 6)}${pad(r.fails.length ? "FAIL" : "pass", 8)}${r.fails.slice(0, 3).join(" | ")}`);
-  const failed = rows.filter((r) => r.fails.length).length;
-  log(`\ncard gate: ${rows.length} cases, ${failed} failed${skipped.length ? `; skipped: ${skipped.map((f) => f.name).join(", ")} (none in the data)` : ""}`);
-  return { cases: rows.length, failed, rows, skipped: skipped.map((f) => f.name) };
+  for (const r of rows) log(`${pad(r.fixture, 22)}${pad(r.w, 7)}${pad(r.theme, 16)}${pad(r.font, 6)}${pad(r.fails.length ? "FAIL" : "pass", 8)}${r.retried ? "(retried) " : ""}${r.fails.slice(0, 3).join(" | ")}`);
+  const failed = rows.filter((r) => r.fails.length).length, retried = rows.filter((r) => r.retried).length;
+  log(`\ncard gate: ${rows.length} cases, ${failed} failed${retried ? ", " + retried + " passed on the retry" : ""}${skipped.length ? `; skipped: ${skipped.map((f) => f.name).join(", ")} (none in the data)` : ""}`);
+  return { cases: rows.length, failed, retried, rows, skipped: skipped.map((f) => f.name) };
 }
 
 // ---- standalone ----------------------------------------------------------------------------------------------------

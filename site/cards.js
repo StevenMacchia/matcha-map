@@ -649,6 +649,8 @@ export function wire(root, ctx = {}) {
     const hero = img.closest(".mm-hero-photo");
     if (hero) { hero.querySelectorAll(".mm-hero-img, .mm-hero-blur, .mm-credit").forEach((x) => x.remove()); hero.classList.remove("mm-hero-photo"); hero.classList.add("mm-hero-art"); return; }
     if (img.matches(".mm-chip-art, .mm-cup-art")) { const s = img.ownerDocument.createElement("span"); s.innerHTML = CUP(TINTS[1]); img.replaceWith(s.firstChild); return; }
+    const fig = img.closest(".mm-shop-fig"); // a shop photo that will not load takes its caption with it
+    if (fig) { fig.remove(); return; }
     const pt = img.closest(".mm-pthumb");
     if (pt) { pt.remove(); return; }
     img.remove();
