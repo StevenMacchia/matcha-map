@@ -91,3 +91,22 @@ test("brunch listing from an event site with matcha only in the title is dropped
 test("data/overrides.json drop: true removes an event by id", () => {
   assert.equal(keepEvent(ev({ id: "539dec8897e6" })), false);
 });
+
+test("a matcha meetup that says 'brunch or coffee' once is not a brunch listing; two food words are", () => {
+  const meet = { id: "m1", brand: "Press Cafe", source_id: "eventbrite:press-cafe", title: "Matcha + Meetup: Fort Worth", state: "TX", description: "Make new friends over brunch or coffee while supporting small businesses.", menu: [] };
+  assert.equal(keepEvent(meet), true);
+  assert.equal(keepEvent({ ...meet, id: "m2", description: "Brunch buffet with mimosas." }), false);
+});
+test("finds that are not a source need a matcha signal in brand or text; a source in sources.json is the signal itself", () => {
+  const ids = new Set(["sunny"]);
+  const find = ev({ id: "f1", source_id: "tiktok:somebody", brand: "Somebody", title: "Somebody pop-up", description: "come by for lattes" });
+  assert.equal(keepEvent(find, { sourceIds: ids }), false, "no matcha anywhere");
+  assert.equal(keepEvent({ ...find, id: "f2", description: "hojicha lattes and a ceremonial grade bar" }, { sourceIds: ids }), true);
+  assert.equal(keepEvent({ ...find, id: "f3", description: "try our banana matcha latte" }, { sourceIds: ids }), true);
+  assert.equal(keepEvent({ ...find, id: "f4", source_id: "sunny", description: "terse caption" }, { sourceIds: ids }), true, "a brand record counts as the signal");
+});
+test("a handle brand is written as a name (tidy), a written name is left alone", () => {
+  assert.equal(tidy(ev({ brand: "bujimatcha", source_id: "tiktok:bujimatcha" })).brand, "Buji Matcha");
+  assert.equal(tidy(ev({ brand: "mrs.stript", source_id: "tiktok:mrs.stript" })).brand, "Mrs Stript");
+  assert.equal(tidy(ev({ brand: "Cube Tea Studio", source_id: "x" })).brand, "Cube Tea Studio");
+});

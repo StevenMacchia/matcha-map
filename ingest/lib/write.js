@@ -6,7 +6,8 @@ import { SOCIAL_POST } from "./extract.js";
 import { hasMatcha } from "../adapters/mato.js";
 import { SITE_ORDER } from "./sites/common.js";
 import { PLACEHOLDER_VENUE } from "./names.js";
-import { judge } from "./quality.js";
+import { judge, hasSignal } from "./quality.js";
+import { displayName } from "./names.js";
 
 const CONF = ["unsure", "likely", "confirmed"];
 const DAY = 86400000;
@@ -123,6 +124,9 @@ export function keepEvent(e, { sourceIds = null } = {}) {
   if (!keepMatoEvent(e)) return false;
   // Site and web finds (pseudo sources) must name matcha as the point: hotel, craft-class and generic listings go (ingest/lib/quality.js).
   if (isPseudoId(e.source_id) && !judge(e).keep) return false;
+  // Any find that is not a source of its own (watch-list accounts, hashtag finds, review items) needs a matcha signal in brand or text.
+  // A source in data/sources.json is a brand record (kind popup, category matcha) and is the signal itself.
+  if (sourceIds && !isPseudoId(e.source_id) && !sourceIds.has(e.source_id) && !hasSignal(e.brand, e.title, e.description, e.venue, (e.menu || []).join(" "))) return false;
   if (!e.state) return false; // no state, no place on the map (the schema needs one)
   if (GENERIC_TITLE.test(String(e.title || "").trim()) && hasNoBrand(e)) return false;
   if (sourceIds && isWatchPseudo(e, sourceIds) && !passesWatchRule([e.title, e.description, e.brand, e.venue, (e.menu || []).join(" ")], e)) return false;
@@ -134,6 +138,8 @@ const SITE_LISTING = /^(eventbrite|allevents|meetup):/;
 // unsure; a listing whose only matcha word sits inside a long run of vendor names is an organizer event, unsure.
 export function tidy(e) {
   let o = e;
+  // A handle is not a brand name: "bujimatcha" reads as "Buji Matcha" (ingest/lib/names.js).
+  if (o.brand && displayName(o.brand) !== o.brand) o = { ...o, brand: displayName(o.brand) };
   if (PLACEHOLDER_VENUE.test(String(o.venue || "").trim())) o = { ...o, venue: "", confidence: "unsure" };
   if (SITE_LISTING.test(String(o.source_id || ""))) {
     const d = String(o.description || "");

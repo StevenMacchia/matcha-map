@@ -18,6 +18,7 @@
     "brands": "node ingest/brands.js",
     "yelp": "node ingest/yelp.js",
     "clean": "node ingest/clean.js",
+    "audit": "node tools/audit-events.js",
     "regeocode": "node ingest/regeocode.js",
     "smoke": "node tools/smoke.js",
     "flyers": "node tools/flyers.js",
