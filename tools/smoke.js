@@ -24,7 +24,7 @@ const first = (dir) => {
   try { return fs.readdirSync(path.join(SITE, dir), { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort()[0]; } catch { return null; }
 };
 function pages() {
-  const list = ["/", "/?city=new-york-ny"];
+  const list = ["/", "/?city=new-york-ny", "/?city=seattle-wa"]; // Seattle: the most series rows (design rung 5)
   const st = first("city"), city = st && first("city/" + st);
   const brand = first("brand"), ev = first("e");
   if (city) list.push(`/city/${st}/${city}/`);

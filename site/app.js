@@ -1210,7 +1210,7 @@
     var dist = distHTML(it.approx ? null : distOf(it));
     if (it.kind === "e") {
       // N6: the rich row from cards.js when it is loaded (same card system as the sheet)
-      var r = window.MatchaCards && window.MatchaCards.row && window.MatchaCards.row(it, { events: state.events });
+      var r = window.MatchaCards && window.MatchaCards.row && window.MatchaCards.row(it, { events: state.events, series: seriesN[it.key] || 0 });
       if (r) return r;
       var e = it.data, unc = e.confidence === "unsure" ? "<span class=\"unc\">date unconfirmed</span>" : "";
       var src = imgSrc(e), m = menuOf(e).slice(0, 3).join(" · "), apx = isCityOnly(it);
@@ -1236,12 +1236,21 @@
   function refPoint() { if (state.userLoc) return state.userLoc; var c = map.getCenter(); return [c.lat, c.lng]; }
 
   var apOpen = {};
+  // Series rows (site/series.js, design rung 5): with no date filter one row stands for a whole series, at its next date;
+  // seriesN holds those rows' keys and how many dates each stands for. A date filter lists every date, as before.
+  var seriesN = {};
   function renderList(stagger) {
     var vis = visibleEvents();
+    seriesN = {};
     if (state.apCity) return renderApproxList(vis, stagger);
     // the open card's pop-up counts as in view: a tall card can push its own pin off the map (N7c)
     var evs = vis.filter(function (it) { return it.key === openKey || inView(it.ll); });
     var up = evs.filter(function (it) { return it.data.status !== "past"; });
+    var dates = up.length, MS = window.MatchaSeries;
+    if (!dated() && MS) {
+      up = MS.group(up).map(function (g) { if (g.series) seriesN[g.it.key] = g.n; return g.it; });
+    }
+    var datesNote = up.length < dates ? " (" + dates + " dates)" : "";
     var past = evs.filter(function (it) { return it.data.status === "past"; });
     var byStart = function (a, b) { return a.data.start < b.data.start ? -1 : 1; };
     var cmp = state.userLoc ? function (a, b) { return (distOf(a) - distOf(b)) || byStart(a, b); } : byStart;
@@ -1266,7 +1275,7 @@
     var ref = refPoint();
     order.sort(metro ? function (a, b) { return miles(ref, groups[a][0].ll) - miles(ref, groups[b][0].ll); } : function (a, b) { return byStart(groups[a][0], groups[b][0]); });
     var unplacedN = up.length - placed.length;
-    if (up.length) html += "<li class=\"head\">Pop-ups <span class=\"n\">" + up.length + "</span>" + (unplacedN ? "<span class=\"n-q\"> · " + unplacedN + " without a place yet</span>" : "") + "</li>" + rowsHTML(placed);
+    if (up.length) html += "<li class=\"head\">Pop-ups <span class=\"n\">" + up.length + "</span>" + (datesNote ? "<span class=\"n-q\">" + datesNote + "</span>" : "") + (unplacedN ? "<span class=\"n-q\"> · " + unplacedN + " without a place yet</span>" : "") + "</li>" + rowsHTML(placed);
     order.forEach(function (k) {
       var g = groups[k], open = !!apOpen[k], city = g[0].data.city || "this city";
       html += "<li class=\"apgroup\"><button type=\"button\" class=\"aprow\" data-ap-open=\"" + esc(k) + "\" aria-expanded=\"" + open + "\"><span class=\"apl\">" + (placed.length ? g.length + " more" : g.length + " pop-up" + (g.length === 1 ? "" : "s")) + " in " + esc(city) + "</span><span class=\"apq\">place not posted yet</span></button></li>" + (open ? rowsHTML(g, true) : "");
@@ -1285,7 +1294,7 @@
     var near = vis.length > 0 && !up.length && !past.length;
     $("empty").hidden = !(dated() ? (vis.length === 0 || near) : !html);
     if (!$("empty").hidden) emptyCopy(near, vis);
-    listCount(up.length, past.length, brands.length + (typeof shopsIn !== "undefined" ? shopsIn.length : 0));
+    listCount(up.length, past.length, brands.length + (typeof shopsIn !== "undefined" ? shopsIn.length : 0), datesNote);
     if (state.feed && html) html += "<li class=\"feedrow\"><a class=\"feedlink\" href=\"" + esc(state.feed.url) + "\">Get " + esc(state.feed.name) + " pop-ups on your calendar</a></li>";
     var list = $("list");
     list.innerHTML = html;
@@ -1300,9 +1309,9 @@
   var NEXT_RANGE = { today: ["weekend", "See this weekend"], sat: ["weekend", "See this weekend"], sun: ["week", "See next 7 days"], weekend: ["week", "See next 7 days"], week: ["any", "See any date"] };
   var RANGE_WORDS = { today: "today", sat: "on Saturday", sun: "on Sunday", weekend: "this weekend", week: "in the next 7 days" };
   // The count on the phone list's grip: verdict first, a few words.
-  function listCount(n, past, others) {
+  function listCount(n, past, others, note) {
     var words = state.day ? "on this day" : RANGE_WORDS[state.chip] || "in view", el = $("list-count");
-    el.textContent = n ? n + " pop-up" + (n === 1 ? "" : "s") + " " + words : past ? "Recent pop-ups here" : others ? "Brands and shops here" : "Nothing here yet";
+    el.textContent = n ? n + " pop-up" + (n === 1 ? "" : "s") + " " + words + (note || "") : past ? "Recent pop-ups here" : others ? "Brands and shops here" : "Nothing here yet";
     document.body.classList.toggle("list-none", !n && !past && !others);
   }
   var nearestKey = "";

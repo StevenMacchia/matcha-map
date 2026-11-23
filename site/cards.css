@@ -169,6 +169,10 @@
 .mm-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; border: 0; padding: 0; }
 .mm-dot.mm-conf-confirmed { background: var(--accent, #8CBF7A); }
 .mm-dot.mm-conf-unsure { background: transparent; border: 2px dashed var(--mm-t1e); }
+.mm-dot.mm-conf-likely { background: var(--mm-t2e); }
+/* series rows (the list with no date filter): a small "series" word in the day line; the rule line may wrap, so "until" is never cut */
+.mm-rser { display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 999px; font-size: 11px; font-weight: 800; line-height: 1.45; background: var(--foam, #E6F2DC); color: var(--deep, #3E6B33); border: 1px solid var(--line, #DCE7D0); vertical-align: 1px; white-space: nowrap; }
+.mm-series .mm-rp { white-space: normal; overflow-wrap: anywhere; }
 .mm-row .mm-kind { font-size: 11px; }
 .mm-mini { padding: 6px 10px 6px 6px; border-radius: 16px; background: var(--canvas, #FBF6EA); }
 .mm-mini .mm-th { width: 48px; height: 48px; border-radius: 12px; }
@@ -234,6 +238,7 @@
 .mm-daypill { display: inline-flex; align-items: center; padding: .1875rem .75rem; border-radius: 999px; background: var(--pink, #F6B7C7); color: #3B2228; font-size: .8125rem; font-weight: 800; line-height: 1.3; white-space: nowrap; }
 .mm-v-now .mm-daypill { background: var(--focus, #D9667F); color: #FFFDF7; }
 .mm-v-past .mm-daypill, .mm-v-cancelled .mm-daypill { background: var(--mm-soft); color: var(--muted, #6B5A4F); }
+.mm-serpill { display: inline-flex; align-items: center; padding: .0625rem .625rem; border-radius: 999px; border: 1.5px solid var(--line, #DCE7D0); color: var(--deep, #3E6B33); font-size: .75rem; font-weight: 800; line-height: 1.3; white-space: nowrap; }
 .mm-daytime { font-size: .9375rem; font-weight: 700; color: var(--ink, #3B2E27); line-height: 1.3; overflow-wrap: anywhere; min-width: 0; }
 .mm-sheet .mm-bname, .mm-compact .mm-bname { font-size: 1.3125rem; line-height: 1.2; color: var(--deep, #3E6B33); overflow-wrap: anywhere; }
 .mm-sheet .mm-bname .mm-feat, .mm-compact .mm-bname .mm-feat { position: relative; top: -.125rem; font-size: .6875rem; }
