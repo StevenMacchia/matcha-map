@@ -1177,7 +1177,8 @@
   function renderList(stagger) {
     var vis = visibleEvents();
     if (state.apCity) return renderApproxList(vis, stagger);
-    var evs = vis.filter(function (it) { return inView(it.ll); });
+    // the open card's pop-up counts as in view: a tall card can push its own pin off the map (N7c)
+    var evs = vis.filter(function (it) { return it.key === openKey || inView(it.ll); });
     var up = evs.filter(function (it) { return it.data.status !== "past"; });
     var past = evs.filter(function (it) { return it.data.status === "past"; });
     var byStart = function (a, b) { return a.data.start < b.data.start ? -1 : 1; };
@@ -1818,6 +1819,13 @@
     state.only = {};
     (evs || []).forEach(function (e) { state.only[e.id] = true; });
     stage(700); refreshEvents(true);
+    // none of them in view (ube from New York): the map goes to where they are, so the list is not empty (N7c)
+    var shown = visibleEvents().filter(function (it) { return !isCityOnly(it); });
+    if (shown.length && !shown.some(function (it) { return inView(it.ll); })) {
+      var b = new maplibregl.LngLatBounds();
+      shown.forEach(function (it) { b.extend(lngLat(it.ll)); });
+      map.fitBounds(b, { padding: 48, maxZoom: 11, duration: calm() ? 0 : 1400 });
+    }
     oops("Showing " + (label || "one drink") + ": " + (evs || []).length + " pop-up" + ((evs || []).length === 1 ? "" : "s") + ".", ["Show all", clearOnly], "m-happy");
   }
   function clearOnly() { if (!state.only) return; state.only = null; stage(700); refreshEvents(true); if (window.mmSearch && window.mmSearch.clear) window.mmSearch.clear(); }

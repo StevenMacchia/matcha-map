@@ -127,7 +127,8 @@ body { background: var(--canvas); }
   .main { position: absolute; inset: 0; }
   .map-panel { inset: 0; }
   .maplibregl-ctrl-bottom-left, .maplibregl-ctrl-bottom-right { bottom: var(--peek); }
-  .geo { top: auto; right: 12px; bottom: calc(var(--peek) + 56px); } /* above the attribution toggle (N7c) */
+  .geo { top: auto; right: 12px; bottom: calc(var(--peek) + 66px); } /* above the attribution toggle and the region line (N7c) */
+  .geo.tour-btn { right: auto; } /* the tour pill hugs its words at the left; Hawaii keeps the right */
   .hop { top: auto; bottom: calc(var(--peek) + 60px); }
   .mapempty { bottom: calc(var(--peek) + 14px); }
 
@@ -250,8 +251,9 @@ html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
 .searchbar > .near { order: 4; }
 /* the map's attribution toggle gets a full tap target */
 @media (max-width: 899px) {
-  .maplibregl-ctrl-attrib.maplibregl-compact:not(.maplibregl-compact-show) { min-height: 44px; min-width: 44px; }
-  .maplibregl-ctrl-attrib-button { width: 44px !important; height: 44px !important; background-position: center !important; }
+  .maplibregl-ctrl-attrib.maplibregl-compact:not(.maplibregl-compact-show) { min-height: 44px; min-width: 44px; padding: 0; border-radius: 50%; box-shadow: var(--e1); }
+  .maplibregl-ctrl-attrib-button { width: 44px !important; height: 44px !important; background-position: center !important;
+    background-repeat: no-repeat !important; background-size: 22px 22px !important; background-color: transparent !important; border-radius: 50%; } /* one icon, not a tiled 44 px square (N7c) */
 }
 
 /* pop-ups without a place: one quiet, dashed row per city that opens on tap */
@@ -269,3 +271,6 @@ html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
 .list > li.head, .list > li.apnote { contain-intrinsic-size: auto 28px; }
 /* "on now" in a list row: the deeper rose reads at 4.5:1 on the cream (the focus pink was 3.4:1) (N7c) */
 :root:not([data-theme="dark"]) .mm-row.mm-v-now .mm-rv { color: #B0405D; }
+/* a long name beside its tags and the distance lost most of itself at 390 ("Dream Te..."): two lines, then the ellipsis (N7c) */
+.mm-row .mm-rn { flex-wrap: wrap; white-space: normal; row-gap: 2px; }
+.mm-row .mm-rname { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
