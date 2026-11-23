@@ -1,0 +1,381 @@
+{
+  "generated": "2026-11-23T03:24:49.269Z",
+  "group": "northeast",
+  "items": [
+    {
+      "handle": null,
+      "source_id": "dream-tea-nyc",
+      "end": null,
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/dream-tea-nyc-at-grand-bazaar-uws-indoors-tickets-2004635149696"
+      ],
+      "menu": [
+        "matcha",
+        "holiday tea sets",
+        "exclusive tea blends"
+      ],
+      "price": "free entry",
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Dream Tea NYC",
+      "title": "Dream Tea NYC at Grand Bazaar UWS",
+      "start": "2026-11-29T10:00:00-05:00",
+      "venue": "Grand Bazaar NYC",
+      "address": "100 West 77th Street, New York, NY 10024",
+      "city": "New York",
+      "state": "NY",
+      "source_url": "https://www.eventbrite.com/e/dream-tea-nyc-at-grand-bazaar-uws-indoors-tickets-2004635149696",
+      "evidence": [
+        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+      ],
+      "description": "Dream Tea NYC sets up an indoor booth at the Upper West Side Sunday market with matcha and holiday tea gift sets. Free to drop in.",
+      "confidence": "confirmed",
+      "notes": "Already on map (Eventbrite ingest). Re-verified on organizer page 2026-11-23; end time not listed."
+    },
+    {
+      "handle": null,
+      "source_id": "dream-tea-nyc",
+      "end": "2026-12-01T19:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/dream-tea-nyc-in-columbus-circle-holiday-market-tickets-2004635604055"
+      ],
+      "menu": [
+        "matcha",
+        "holiday tea sets",
+        "exclusive tea blends"
+      ],
+      "price": null,
+      "hours": "11am-7pm",
+      "pay": null,
+      "image_url": "https://cdn.evbuc.com/images/1197657458/2891855102831/1/original.20261110-053225",
+      "brand": "Dream Tea NYC",
+      "title": "Dream Tea NYC in Columbus Circle Holiday Market",
+      "start": "2026-12-01T11:00:00-05:00",
+      "venue": "Columbus Circle Holiday Market by Urbanspace",
+      "address": "Central Park South, New York, NY 10019",
+      "city": "New York",
+      "state": "NY",
+      "source_url": "https://www.eventbrite.com/e/dream-tea-nyc-in-columbus-circle-holiday-market-tickets-2004635604055",
+      "evidence": [
+        "https://www.eventbrite.com/e/dream-tea-nyc-in-columbus-circle-holiday-market-tickets-2004635604055"
+      ],
+      "description": "A booth at the Urbanspace Columbus Circle holiday market with matcha, holiday sets and exclusive tea blends. The Eventbrite listing spans Dec 1 to Dec 31, 11am to 7pm.",
+      "confidence": "confirmed",
+      "notes": "Already on map for Dec 1. Listing covers Dec 1-31 daily; only Dec 1 listed here. Whether the booth is staffed every day is not stated."
+    },
+    {
+      "handle": null,
+      "source_id": "dream-tea-nyc",
+      "end": null,
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960"
+      ],
+      "menu": [
+        "matcha",
+        "tea blends"
+      ],
+      "price": "free entry",
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Dream Tea NYC",
+      "title": "Dream Tea NYC at The Artisans Bazaar, Fort Greene Park",
+      "start": "2026-12-05T09:00:00-05:00",
+      "venue": "The Artisans Bazaar at Fort Greene Park",
+      "address": "Fort Greene Park, Brooklyn, NY 11205",
+      "city": "Brooklyn",
+      "state": "NY",
+      "source_url": "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960",
+      "evidence": [
+        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+      ],
+      "description": "Dream Tea NYC at the Saturday Artisans Bazaar in Fort Greene Park with matcha and tea.",
+      "confidence": "likely",
+      "notes": "Already on map. Date and time confirmed; no street address on page (park market), so likely."
+    },
+    {
+      "handle": null,
+      "source_id": "dream-tea-nyc",
+      "end": null,
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966"
+      ],
+      "menu": [
+        "matcha",
+        "tea blends"
+      ],
+      "price": "free entry",
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Dream Tea NYC",
+      "title": "Dream Tea NYC in Cobble Hill",
+      "start": "2026-12-05T11:00:00-05:00",
+      "venue": "190 Court St",
+      "address": "190 Court St, Brooklyn, NY 11201",
+      "city": "Brooklyn",
+      "state": "NY",
+      "source_url": "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966",
+      "evidence": [
+        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+      ],
+      "description": "A Dream Tea NYC pop-up on Court Street in Cobble Hill with matcha and tea.",
+      "confidence": "confirmed",
+      "notes": "Already on map."
+    },
+    {
+      "handle": null,
+      "source_id": "dream-tea-nyc",
+      "end": null,
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/dream-tea-nyc-at-timeout-market-dumbo-tickets-2004635514788"
+      ],
+      "menu": [
+        "matcha",
+        "tea blends"
+      ],
+      "price": "free entry",
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Dream Tea NYC",
+      "title": "Dream Tea NYC at Timeout Market, Dumbo",
+      "start": "2026-12-14T11:00:00-05:00",
+      "venue": "Empire Stores (Time Out Market)",
+      "address": "53 Water St, Brooklyn, NY 11201",
+      "city": "Brooklyn",
+      "state": "NY",
+      "source_url": "https://www.eventbrite.com/e/dream-tea-nyc-at-timeout-market-dumbo-tickets-2004635514788",
+      "evidence": [
+        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+      ],
+      "description": "Dream Tea NYC pops up at Time Out Market in Dumbo with matcha and tea.",
+      "confidence": "likely",
+      "notes": "Already on map. Street address added from general knowledge of Empire Stores; page shows venue name only."
+    },
+    {
+      "handle": null,
+      "source_id": "kinka-nyc",
+      "end": "2026-11-29T11:45:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/matcha-101-whisk-sip-tickets-2004290027426"
+      ],
+      "menu": [
+        "whisked matcha bowl",
+        "Japanese dry sweet"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "KinKa",
+      "title": "Matcha 101 'Whisk & Sip'",
+      "start": "2026-11-29T11:00:00-05:00",
+      "venue": "KINKA",
+      "address": "63 East 7th Street, New York, NY 10003",
+      "city": "New York",
+      "state": "NY",
+      "source_url": "https://www.eventbrite.com/e/matcha-101-whisk-sip-tickets-2004290027426",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-101-whisk-sip-tickets-2004290027426"
+      ],
+      "description": "A 45-minute beginner class on matcha history, choosing and storing it, then whisking and drinking your own bowl with a dry sweet. Max 2 guests per booking.",
+      "confidence": "confirmed",
+      "notes": "kind: class (ticketed, not walk-in). Already on map. No refunds."
+    },
+    {
+      "handle": null,
+      "source_id": null,
+      "end": "2026-11-28T17:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/matcha-tasting-mug-making-workshop-tickets-2003747660191"
+      ],
+      "menu": [
+        "20-minute tasting of three Wishing Cup matcha flavors"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Pottery with a Purpose x Wishing Cup",
+      "title": "Matcha Tasting + Mug Making Workshop",
+      "start": "2026-11-28T14:30:00-05:00",
+      "venue": "Wishing Cup",
+      "address": "45 Court Street, Boston, MA 02203",
+      "city": "Boston",
+      "state": "MA",
+      "source_url": "https://www.eventbrite.com/e/matcha-tasting-mug-making-workshop-tickets-2003747660191",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-tasting-mug-making-workshop-tickets-2003747660191",
+        "https://www.eventbrite.com/d/ma--boston/matcha/"
+      ],
+      "description": "Tech-free pottery night: taste three Wishing Cup matcha flavors, write a wish, then hand-build a mug. All clay and tools included; optional glaze and kiln upgrade.",
+      "confidence": "confirmed",
+      "notes": "kind: class (ticketed). Already on map. Year inferred from weekday. Price not shown on page."
+    },
+    {
+      "handle": null,
+      "source_id": null,
+      "end": "2026-12-01T21:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/matcha-mahjong-tickets-2004917386875"
+      ],
+      "menu": [
+        "matcha drink"
+      ],
+      "price": "$20 incl. a drink",
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Haraz Coffee House Fishtown",
+      "title": "Matcha & Mahjong",
+      "start": "2026-12-01T19:00:00-05:00",
+      "venue": "Haraz Coffee House Fishtown",
+      "address": "23 West Girard Avenue, Philadelphia, PA 19123",
+      "city": "Philadelphia",
+      "state": "PA",
+      "source_url": "https://www.eventbrite.com/e/matcha-mahjong-tickets-2004917386875",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-mahjong-tickets-2004917386875"
+      ],
+      "description": "Monthly beginner mahjong night with the Philly Mah-Jawn Mahjong Club; ticket includes a matcha drink and equipment.",
+      "confidence": "confirmed",
+      "notes": "kind: class/event (ticketed). Already on map. Year inferred from weekday."
+    },
+    {
+      "handle": null,
+      "source_id": null,
+      "end": "2026-12-12T15:30:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/mat-moov-matcha-tickets-2004888657946"
+      ],
+      "menu": [
+        "matcha from Kyn"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Mat & Moov",
+      "title": "Mat, Moov & Matcha",
+      "start": "2026-12-12T14:00:00-05:00",
+      "venue": "Sculpt'd Philly",
+      "address": "950 N 2nd St, Philadelphia, PA 19123",
+      "city": "Philadelphia",
+      "state": "PA",
+      "source_url": "https://www.eventbrite.com/e/mat-moov-matcha-tickets-2004888657946",
+      "evidence": [
+        "https://www.eventbrite.com/e/mat-moov-matcha-tickets-2004888657946"
+      ],
+      "description": "A 45-minute hot barre sculpt class followed by a matcha social with Kyn matcha, vendors and photo moments.",
+      "confidence": "confirmed",
+      "notes": "kind: class (ticketed), matcha served after class. Already on map. Year inferred from weekday."
+    },
+    {
+      "handle": null,
+      "source_id": "dov-and-company",
+      "end": "2026-12-05T14:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/matcha-tasting-matcha-making-experience-at-dov-company-in-arlington-va-tickets-2004527071431"
+      ],
+      "menu": [
+        "guided tasting of premium matcha cultivars",
+        "your own matcha latte",
+        "take-home Amai'cha matcha bag",
+        "Kaphiy cold brew mini"
+      ],
+      "price": "$65",
+      "hours": null,
+      "pay": null,
+      "image_url": null,
+      "brand": "Dov & Company",
+      "title": "Matcha Tasting & Matcha Making Experience",
+      "start": "2026-12-05T12:00:00-05:00",
+      "venue": "Dov & Company, Ballston Quarter",
+      "address": "4238 Wilson Blvd, Unit 1240, Arlington, VA 22203",
+      "city": "Arlington",
+      "state": "VA",
+      "source_url": "https://www.eventbrite.com/e/matcha-tasting-matcha-making-experience-at-dov-company-in-arlington-va-tickets-2004527071431",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-tasting-matcha-making-experience-at-dov-company-in-arlington-va-tickets-2004527071431"
+      ],
+      "description": "Kaphiy Coffee Roasters guides a tasting of several matcha cultivars, then you whisk and make your own latte. Seats are limited; refunds up to 7 days before.",
+      "confidence": "confirmed",
+      "notes": "kind: class (ticketed). Already on map."
+    },
+    {
+      "handle": null,
+      "source_id": null,
+      "end": "2026-12-06T16:30:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "lat": null,
+      "lng": null,
+      "posts": [
+        "https://www.eventbrite.com/e/yogalates-matcha-pop-up-tickets-1999541815396"
+      ],
+      "menu": [
+        "Preferred Matcha Tea Company matcha"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "image_url": "https://cdn.evbuc.com/images/1192622442/55303883129/1/original.20260903-205717?crop=focalpoint&fit=crop&w=1880&auto=format,compress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=ecd1c079d5fc62ad61a7ff25220b6b3a",
+      "brand": "Museum of Contemporary Art Arlington",
+      "title": "Yogalates + Matcha Pop Up",
+      "start": "2026-12-06T15:00:00-05:00",
+      "venue": "Museum of Contemporary Art Arlington",
+      "address": "3550 Wilson Blvd, Arlington, VA 22205",
+      "city": "Arlington",
+      "state": "VA",
+      "source_url": "https://www.eventbrite.com/e/yogalates-matcha-pop-up-tickets-1999541815396",
+      "evidence": [
+        "https://www.eventbrite.com/e/yogalates-matcha-pop-up-tickets-1999541815396"
+      ],
+      "description": "A 60-minute Yogalates class with Chelsea Estevez followed by a matcha pop-up from Preferred Matcha Tea Company and a gallery stroll. Bring a mat and water.",
+      "confidence": "confirmed",
+      "notes": "kind: class (ticketed), matcha pop-up after. Already on map. Listed almost full."
+    }
+  ]
+}
