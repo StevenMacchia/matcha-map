@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T15:10:26.697Z",
+  "generated": "2026-11-23T15:17:24.362Z",
   "events": [
     {
       "id": "13650ade75dc",
@@ -4401,7 +4401,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -6263,7 +6263,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -10902,7 +10902,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -12560,7 +12560,7 @@
       "source_id": "filo-cafe",
       "kind": "venue",
       "category": "matcha",
-      "handle": null,
+      "handle": "filocaferockville",
       "source_url": "https://ma.to/event/mika-matcha-birthday-pop-up-21-nov-2026-1",
       "title": "Mika Matcha Birthday Pop-Up",
       "start": "2026-11-21T10:00:00-05:00",
@@ -12569,16 +12569,16 @@
       "all_day": false,
       "venue": "Filo Cafe",
       "address": "",
-      "city": "North Bethesda",
+      "city": "Washington",
       "state": "MD",
       "zip": null,
-      "lat": 39.04065,
-      "lng": -77.123387,
+      "lat": 39.58935,
+      "lng": -77.710254,
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -13408,7 +13408,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -18760,17 +18760,17 @@
       "tz": "America/New_York",
       "all_day": false,
       "venue": "TRESSE",
-      "address": "1661 Wisconsin Ave NW, Georgetown",
+      "address": "",
       "city": "Washington",
       "state": "DC",
       "zip": null,
-      "lat": 38.912017,
-      "lng": -77.065593,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "confirmed",
+      "lat": 38.9042,
+      "lng": -77.0165,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -19140,7 +19140,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:16:53.667Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19194,7 +19194,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
+      "last_seen": "2026-11-23T15:13:42.796Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19220,7 +19220,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-moondays-ceremony-tickets-2000651451347"
+      ]
     },
     {
       "id": "ea06c1e9874b",
@@ -19511,7 +19513,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
+      "last_seen": "2026-11-23T15:13:42.796Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19537,7 +19539,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004183657270"
+      ]
     },
     {
       "id": "15bd41af6c62",
@@ -20033,7 +20037,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -20517,7 +20521,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:13:42.796Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -20995,7 +20999,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -22533,7 +22537,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -22907,7 +22911,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:16:00.244Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -22965,7 +22969,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -23211,58 +23215,6 @@
       ]
     },
     {
-      "id": "4bb3cf17ced6",
-      "brand": "Ermantourage Europe & US",
-      "source_id": "eventbrite:ermantourage-europe-us",
-      "kind": "organizer",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-baltimore-giving-back-edition-tickets-1974540666286",
-      "title": "Matcha + Meetup: Baltimore (Giving Back Edition)",
-      "start": "2026-11-28T12:00:00-05:00",
-      "end": "2026-11-28T15:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "",
-      "address": "",
-      "city": "Baltimore",
-      "state": "MD",
-      "zip": null,
-      "lat": 39.3,
-      "lng": -76.6105,
-      "geocode_source": "none",
-      "approx": true,
-      "confidence": "unsure",
-      "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
-      "first_seen": "2026-11-22T18:58:18.157Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171303217%2F2590974569761%2F1%2Foriginal.20251119-033729?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.482&fp-y=0.914&s=8d689a29fa33da75c3cc28dcfd9a91de",
-        "local": "img/events/4bb3cf17ced6.jpg",
-        "credit": "eventbrite.com",
-        "width": 940,
-        "height": 998
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-baltimore-giving-back-edition-tickets-1974540666286"
-      },
-      "menu": [],
-      "price": "$12.51",
-      "description": "Join us for brunch or coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": []
-    },
-    {
       "id": "72e8ff9613b6",
       "brand": "Matcha + Meetup (ADDVentures)",
       "source_id": "addventures-matcha-meetup",
@@ -23363,60 +23315,6 @@
       "description": "Join us for coffee, latte, or matcha at different coffee shops each gathering. Build your community in your city while sipping + socializing",
       "links": {
         "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": []
-    },
-    {
-      "id": "dc98ba192282",
-      "brand": "Matcha + Meetup (ADDVentures)",
-      "source_id": "addventures-matcha-meetup",
-      "kind": "organizer",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-brooklyn-tickets-1971965880031",
-      "title": "Matcha + Meetup: Brooklyn",
-      "start": "2026-11-28T12:00:00-05:00",
-      "end": "2026-11-28T15:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "",
-      "address": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "zip": null,
-      "lat": 40.6526,
-      "lng": -73.9497,
-      "geocode_source": "none",
-      "approx": true,
-      "confidence": "unsure",
-      "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
-      "first_seen": "2026-11-22T18:58:18.157Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171081073%2F2560545315651%2F1%2Foriginal.20251116-155621?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.533&fp-y=0.943&s=9ac842c831d64f890f0a3edfe347dfd0",
-        "local": "img/events/dc98ba192282.jpg",
-        "credit": "eventbrite.com",
-        "width": 940,
-        "height": 998
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-brooklyn-tickets-1971965880031"
-      },
-      "menu": [
-        "latte"
-      ],
-      "price": "$12.51",
-      "description": "Join us for coffee, latte, or matcha! Each gathering is at a different coffee shop. Build your community in your city with a fun day out!",
-      "links": {
-        "website": "https://www.eventbrite.com/o/105305487311",
         "instagram": null,
         "tiktok": null
       },
@@ -23587,48 +23485,48 @@
       ]
     },
     {
-      "id": "4702e4caf21b",
+      "id": "4bb3cf17ced6",
       "brand": "Ermantourage Europe & US",
       "source_id": "eventbrite:ermantourage-europe-us",
       "kind": "organizer",
       "category": "matcha",
       "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-nyc-film-music-industry-monthly-mingle-tickets-1992288908757",
-      "title": "Matcha + Meetup: NYC | Film + Music Industry Monthly Mingle",
-      "start": "2026-11-28T13:00:00-05:00",
-      "end": "2026-11-28T16:00:00-05:00",
-      "tz": "America/New_York",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-fort-worth-giving-back-edition-tickets-1974546231933",
+      "title": "Matcha + Meetup: Fort Worth (Giving Back Edition)",
+      "start": "2026-11-28T12:00:00-06:00",
+      "end": "2026-11-28T15:00:00-06:00",
+      "tz": "America/Chicago",
       "all_day": false,
       "venue": "",
       "address": "",
-      "city": "Brooklyn",
-      "state": "NY",
+      "city": "Fort Worth",
+      "state": "TX",
       "zip": null,
-      "lat": 40.6526,
-      "lng": -73.9497,
+      "lat": 32.782,
+      "lng": -97.3486,
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
+      "last_seen": "2026-11-23T15:13:42.796Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1187319385%2F2590974569761%2F1%2Foriginal.20260620-153835?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=624371b6927eaa361c34d67e7b1e146e",
-        "local": "img/events/4702e4caf21b.jpg",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171303217%2F2590974569761%2F1%2Foriginal.20251119-033729?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.482&fp-y=0.914&s=8d689a29fa33da75c3cc28dcfd9a91de",
+        "local": "img/events/4bb3cf17ced6.jpg",
         "credit": "eventbrite.com",
         "width": 940,
-        "height": 705
+        "height": 998
       },
       "image_url": null,
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-nyc-film-music-industry-monthly-mingle-tickets-1992288908757"
+        "other": "https://www.eventbrite.com/e/matcha-meetup-fort-worth-giving-back-edition-tickets-1974546231933"
       },
       "menu": [],
-      "price": "$17.85",
-      "description": "Life can be lonely for creatives when you're busy with your passions. Meet us at a different cafe each month for coffee and conversation!",
+      "price": "$12.51",
+      "description": "Join us for brunch or coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
       "links": {
         "website": null,
         "instagram": null,
@@ -23636,7 +23534,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-fort-worth-giving-back-edition-tickets-1974546231933"
+      ]
     },
     {
       "id": "6b0572eb6ae9",
@@ -23796,58 +23696,6 @@
       ]
     },
     {
-      "id": "dcba96b79527",
-      "brand": "Ermantourage by ADDVentures",
-      "source_id": "eventbrite:ermantourage-by-addventures",
-      "kind": "organizer",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-nyc-film-music-speed-networking-roulette-tickets-1994110056860",
-      "title": "Matcha + Meetup: NYC | Film + Music Speed Networking Roulette",
-      "start": "2026-11-28T13:00:00-05:00",
-      "end": "2026-11-28T16:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "",
-      "address": "",
-      "city": "New York",
-      "state": "NY",
-      "zip": null,
-      "lat": 40.6627,
-      "lng": -73.9387,
-      "geocode_source": "none",
-      "approx": true,
-      "confidence": "unsure",
-      "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
-      "first_seen": "2026-11-22T18:58:18.157Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1188973321%2F935412228013%2F1%2Foriginal.20260716-022147?w=940&auto=format%2Ccompress&q=75&sharp=10&s=922ec1278ddfcf0e76631548206f1c90",
-        "local": "img/events/dcba96b79527.jpg",
-        "credit": "eventbrite.com",
-        "width": 940,
-        "height": 534
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-nyc-film-music-speed-networking-roulette-tickets-1994110056860"
-      },
-      "menu": [],
-      "price": "$23.18",
-      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": []
-    },
-    {
       "id": "e9872d4702ae",
       "brand": "Howdy Y'all Coffee",
       "source_id": "howdy-yall-coffee",
@@ -23924,7 +23772,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -24114,6 +23962,114 @@
       "evidence": [
         "https://www.instagram.com/p/DgBsK6SEfT-",
         "https://www.instagram.com/p/Df-RDlqmLwC"
+      ]
+    },
+    {
+      "id": "dc98ba192282",
+      "brand": "Matcha + Meetup (ADDVentures)",
+      "source_id": "addventures-matcha-meetup",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-aurora-tickets-1971971830830",
+      "title": "Matcha + Meetup: Aurora",
+      "start": "2026-11-28T12:00:00-07:00",
+      "end": "2026-11-28T15:00:00-07:00",
+      "tz": "America/Denver",
+      "all_day": false,
+      "venue": "",
+      "address": "",
+      "city": "Aurora",
+      "state": "CO",
+      "zip": null,
+      "lat": 39.7095,
+      "lng": -104.7205,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T15:13:42.796Z",
+      "first_seen": "2026-11-22T18:58:18.157Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171081073%2F2560545315651%2F1%2Foriginal.20251116-155621?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.533&fp-y=0.943&s=9ac842c831d64f890f0a3edfe347dfd0",
+        "local": "img/events/dc98ba192282.jpg",
+        "credit": "eventbrite.com",
+        "width": 940,
+        "height": 998
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-aurora-tickets-1971971830830"
+      },
+      "menu": [],
+      "price": "$12.51",
+      "description": "Sip and socialize at Matcha + Meetup. Looking to connect with more people in your community? Join us for a laid back gathering!",
+      "links": {
+        "website": "https://www.eventbrite.com/o/105305487311",
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-aurora-tickets-1971971830830"
+      ]
+    },
+    {
+      "id": "dcba96b79527",
+      "brand": "Ermantourage by ADDVentures",
+      "source_id": "eventbrite:ermantourage-by-addventures",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-nashville-film-music-speed-networking-roulette-tickets-1994330290585",
+      "title": "Matcha + Meetup: Nashville | Film + Music Speed Networking Roulette",
+      "start": "2026-11-28T13:00:00-06:00",
+      "end": "2026-11-28T16:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "",
+      "address": "",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": null,
+      "lat": 36.1718,
+      "lng": -86.785,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T15:13:42.796Z",
+      "first_seen": "2026-11-22T18:58:18.157Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1188973321%2F935412228013%2F1%2Foriginal.20260716-022147?w=940&auto=format%2Ccompress&q=75&sharp=10&s=922ec1278ddfcf0e76631548206f1c90",
+        "local": "img/events/dcba96b79527.jpg",
+        "credit": "eventbrite.com",
+        "width": 940,
+        "height": 534
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-nashville-film-music-speed-networking-roulette-tickets-1994330290585"
+      },
+      "menu": [],
+      "price": "$25.44",
+      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-nashville-film-music-speed-networking-roulette-tickets-1994330290585"
       ]
     },
     {
@@ -24328,6 +24284,60 @@
       ]
     },
     {
+      "id": "4702e4caf21b",
+      "brand": "Ermantourage Europe & US",
+      "source_id": "eventbrite:ermantourage-europe-us",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-denver-film-music-industry-monthly-mingle-tickets-1992441033767",
+      "title": "Matcha + Meetup: Denver | Film + Music Industry Monthly Mingle",
+      "start": "2026-11-28T13:00:00-07:00",
+      "end": "2026-11-28T16:00:00-07:00",
+      "tz": "America/Denver",
+      "all_day": false,
+      "venue": "",
+      "address": "",
+      "city": "Denver",
+      "state": "CO",
+      "zip": null,
+      "lat": 39.7619,
+      "lng": -104.8811,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T15:13:42.796Z",
+      "first_seen": "2026-11-22T18:58:18.157Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1187319385%2F2590974569761%2F1%2Foriginal.20260620-153835?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=624371b6927eaa361c34d67e7b1e146e",
+        "local": "img/events/4702e4caf21b.jpg",
+        "credit": "eventbrite.com",
+        "width": 940,
+        "height": 705
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-denver-film-music-industry-monthly-mingle-tickets-1992441033767"
+      },
+      "menu": [],
+      "price": "$17.85",
+      "description": "Life can be lonely for creatives when you're busy with your passions. Meet us at a different cafe each month for coffee and conversation!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-denver-film-music-industry-monthly-mingle-tickets-1992441033767"
+      ]
+    },
+    {
       "id": "aded07cb0287",
       "brand": "Ermantourage UK",
       "source_id": "allevents:ermantourage-uk",
@@ -24459,7 +24469,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T01:04:15.523Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:29:32.330Z",
       "extracted_by": "rule",
       "image": {
@@ -24485,7 +24495,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://ma.to/event/weekly-matcha-workshop-28-nov-2026"
+      ]
     },
     {
       "id": "bdf78c93b2da",
@@ -24565,7 +24577,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -24985,7 +24997,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-23T00:33:14.962Z",
       "extracted_by": "rule",
       "image": {
@@ -25566,17 +25578,17 @@
       "tz": "America/Los_Angeles",
       "all_day": false,
       "venue": "EOC Studio",
-      "address": "411 18th St",
+      "address": "",
       "city": "Sacramento",
       "state": "CA",
       "zip": null,
-      "lat": 38.5836,
-      "lng": -121.479765,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "confirmed",
+      "lat": 38.5677,
+      "lng": -121.4682,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -25612,6 +25624,60 @@
       ]
     },
     {
+      "id": "3224f68e0c9e",
+      "brand": "Matcha + Meetup (ADDVentures)",
+      "source_id": "addventures-matcha-meetup",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-jacksonville-giving-back-edition-tickets-1990216355695",
+      "title": "Matcha + Meetup: Jacksonville (Giving Back Edition)",
+      "start": "2026-11-29T12:00:00-05:00",
+      "end": "2026-11-29T15:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "",
+      "address": "",
+      "city": "Jacksonville",
+      "state": "FL",
+      "zip": null,
+      "lat": 30.3369,
+      "lng": -81.6616,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T15:13:42.796Z",
+      "first_seen": "2026-11-23T15:13:42.796Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171081073%2F2560545315651%2F1%2Foriginal.20251116-155621?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.533&fp-y=0.943&s=9ac842c831d64f890f0a3edfe347dfd0",
+        "local": "img/events/3224f68e0c9e.jpg",
+        "credit": "eventbrite.com",
+        "width": 940,
+        "height": 998
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-jacksonville-giving-back-edition-tickets-1990216355695"
+      },
+      "menu": [],
+      "price": "$19.19",
+      "description": "Join us for coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
+      "links": {
+        "website": "https://www.eventbrite.com/o/105305487311",
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-jacksonville-giving-back-edition-tickets-1990216355695"
+      ]
+    },
+    {
       "id": "90a3138f5a5b",
       "brand": "She’s Invited",
       "source_id": "mato:shesinvited",
@@ -25625,17 +25691,17 @@
       "tz": "America/Chicago",
       "all_day": false,
       "venue": "Monarca Thrift Club",
-      "address": "2400 N 2nd Street",
+      "address": "",
       "city": "Minneapolis",
       "state": "MN",
       "zip": null,
-      "lat": 45.003984,
-      "lng": -93.279664,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "confirmed",
+      "lat": 44.9633,
+      "lng": -93.2683,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -28234,7 +28300,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:16:53.667Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -29392,7 +29458,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
+      "last_seen": "2026-11-23T15:13:42.796Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -29420,7 +29486,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://www.eventbrite.com/e/whisk-bloom-the-art-of-matcha-class-2499-tickets-1994691663461"
+      ]
     },
     {
       "id": "ebb6255487c0",
@@ -29504,7 +29572,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -29606,17 +29674,17 @@
       "tz": "America/New_York",
       "all_day": false,
       "venue": "Amore Mio Florals Studio",
-      "address": "420 E Church St #115",
+      "address": "",
       "city": "Orlando",
       "state": "FL",
       "zip": null,
-      "lat": 28.540125,
-      "lng": -81.371571,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "confirmed",
+      "lat": 28.4087,
+      "lng": -81.2548,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -29646,8 +29714,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://ma.to/event/tres-matcha-tres-fleur-4-pm-05-dec-2026",
-        "https://ma.to/event/tres-matcha-tres-fleur-1-pm-05-dec-2026"
+        "https://ma.to/event/tres-matcha-tres-fleur-4-pm-05-dec-2026"
       ]
     },
     {
@@ -29674,7 +29741,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -29921,60 +29988,6 @@
       "pay": null,
       "evidence": [
         "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921"
-      ]
-    },
-    {
-      "id": "1baa72e3355b",
-      "brand": "Leev Matcha Atelier",
-      "source_id": "eventbrite:leev-matcha-atelier",
-      "kind": "organizer",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663",
-      "title": "The Art of Matcha I A Founder- Led Tasting at LEEV",
-      "start": "2026-12-06T00:00:00-08:00",
-      "end": null,
-      "tz": "America/Los_Angeles",
-      "all_day": true,
-      "venue": "Leev Matcha Atelier",
-      "address": "7565 Norman Rockwell Lane",
-      "city": "Las Vegas",
-      "state": "NV",
-      "zip": "89143",
-      "lat": 36.298678,
-      "lng": -115.280223,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
-      "first_seen": "2026-11-22T18:58:18.157Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198257337%2F2223858023603%2F1%2Foriginal.20261118-172909?crop=focalpoint&fit=crop&h=200&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=400fa230363e8c52cc899fe8bd592bf2",
-        "local": "img/events/1baa72e3355b.jpg",
-        "credit": "eventbrite.com",
-        "width": 352,
-        "height": 200
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663"
-      },
-      "menu": [],
-      "price": null,
-      "description": "Discover the art of Japanese matcha through guided tastings, hands-on whisking, and an intimate experience hosted by LEEV's founder.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663"
       ]
     },
     {
@@ -30250,7 +30263,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -30306,7 +30319,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T01:04:15.523Z",
+      "last_seen": "2026-11-23T15:16:00.244Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -30335,7 +30348,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://www.meetup.com/columbus-tea-lovers/events/317474944/"
+      ]
     },
     {
       "id": "8f19fb53fba0",
@@ -31050,7 +31065,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
+      "last_seen": "2026-11-23T15:13:42.796Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -31076,7 +31091,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-mesa-tickets-1974526090690"
+      ]
     },
     {
       "id": "0994c21b5f64",
@@ -31184,6 +31201,60 @@
       "evidence": [
         "https://www.instagram.com/p/Df8vzvKm5-C",
         "https://www.instagram.com/p/Df2UcOavCwB"
+      ]
+    },
+    {
+      "id": "1baa72e3355b",
+      "brand": "Leev Matcha Atelier",
+      "source_id": "eventbrite:leev-matcha-atelier",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663",
+      "title": "The Art of Matcha I A Founder- Led Tasting at LEEV",
+      "start": "2026-12-06T14:00:00-08:00",
+      "end": "2026-12-06T15:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Leev Matcha Atelier",
+      "address": "7565 Norman Rockwell Lane",
+      "city": "Las Vegas",
+      "state": "NV",
+      "zip": "89143",
+      "lat": 36.298678,
+      "lng": -115.280223,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "confirmed",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T15:13:42.796Z",
+      "first_seen": "2026-11-22T18:58:18.157Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198257337%2F2223858023603%2F1%2Foriginal.20261118-172909?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=81f05772e475cc085a4a8dcfb0a9a76d",
+        "local": "img/events/1baa72e3355b.jpg",
+        "credit": "eventbrite.com",
+        "width": 940,
+        "height": 1670
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663"
+      },
+      "menu": [],
+      "price": "$44.52",
+      "description": "Discover the art of Japanese matcha through guided tastings, hands-on whisking, and an intimate experience hosted by LEEV's founder.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663"
       ]
     },
     {
@@ -32225,7 +32296,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -32279,7 +32350,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
+      "last_seen": "2026-11-23T15:13:42.796Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -32305,7 +32376,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-charlotte-creatives-giving-back-edition-tickets-1988352720512"
+      ]
     },
     {
       "id": "6b2e645ce7fd",
@@ -33348,7 +33421,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -34310,7 +34383,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:36:48.106Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -34364,7 +34437,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:08:02.488Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-23T13:27:26.041Z",
       "extracted_by": "rule",
       "image": {
@@ -35085,24 +35158,24 @@
       "kind": "organizer",
       "category": "matcha",
       "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-dc-entrepreneur-speed-networking-roulette-tickets-1994362321390",
-      "title": "Matcha + Meetup: D.C. | Entrepreneur Speed Networking Roulette",
-      "start": "2026-12-20T13:00:00-05:00",
-      "end": "2026-12-20T16:00:00-05:00",
-      "tz": "America/New_York",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-scottsdale-entrepreneur-speed-networking-roulette-tickets-1994341105934",
+      "title": "Matcha + Meetup: Scottsdale | Entrepreneur Speed Networking Roulette",
+      "start": "2026-12-20T13:00:00-07:00",
+      "end": "2026-12-20T16:00:00-07:00",
+      "tz": "America/Phoenix",
       "all_day": false,
       "venue": "",
       "address": "",
-      "city": "Washington",
-      "state": "DC",
+      "city": "Scottsdale",
+      "state": "AZ",
       "zip": null,
-      "lat": 38.9042,
-      "lng": -77.0165,
+      "lat": 33.6843,
+      "lng": -111.8614,
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T00:33:14.962Z",
+      "last_seen": "2026-11-23T15:13:42.796Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -35116,10 +35189,10 @@
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-dc-entrepreneur-speed-networking-roulette-tickets-1994362321390"
+        "other": "https://www.eventbrite.com/e/matcha-meetup-scottsdale-entrepreneur-speed-networking-roulette-tickets-1994341105934"
       },
       "menu": [],
-      "price": "$24.57",
+      "price": "$23.18",
       "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
       "links": {
         "website": null,
@@ -35128,7 +35201,9 @@
       },
       "hours": null,
       "pay": null,
-      "evidence": []
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-scottsdale-entrepreneur-speed-networking-roulette-tickets-1994341105934"
+      ]
     },
     {
       "id": "acc6fad9fa1e",
@@ -35726,6 +35801,60 @@
       ]
     },
     {
+      "id": "37bc9c1b4180",
+      "brand": "Matcha + Meetup (ADDVentures)",
+      "source_id": "addventures-matcha-meetup",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-columbus-tickets-1974524772748",
+      "title": "Matcha + Meetup: Columbus",
+      "start": "2026-12-27T12:00:00-05:00",
+      "end": "2026-12-27T15:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "",
+      "address": "",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": null,
+      "lat": 39.9839,
+      "lng": -82.9849,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T15:13:42.796Z",
+      "first_seen": "2026-11-23T15:13:42.796Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171081073%2F2560545315651%2F1%2Foriginal.20251116-155621?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.533&fp-y=0.943&s=9ac842c831d64f890f0a3edfe347dfd0",
+        "local": "img/events/37bc9c1b4180.jpg",
+        "credit": "eventbrite.com",
+        "width": 940,
+        "height": 998
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-columbus-tickets-1974524772748"
+      },
+      "menu": [],
+      "price": "$12.51",
+      "description": "Join us for coffee at different cafes each gathering. Build your community in your city with a fun day out! Meetup. Matcha. Support local!",
+      "links": {
+        "website": "https://www.eventbrite.com/o/105305487311",
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-columbus-tickets-1974524772748"
+      ]
+    },
+    {
       "id": "0d4f9752d35d",
       "brand": "GATO DATES x More Than Matcha",
       "source_id": "more-than-matcha",
@@ -35775,6 +35904,60 @@
       "evidence": [
         "https://www.instagram.com/p/DgBsK6SEfT-",
         "https://www.instagram.com/p/Df-RDlqmLwC"
+      ]
+    },
+    {
+      "id": "011861913f1f",
+      "brand": "Ermantourage by ADDVentures",
+      "source_id": "eventbrite:ermantourage-by-addventures",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-denver-entrepreneur-speed-networking-roulette-tickets-1994346345606",
+      "title": "Matcha + Meetup: Denver | Entrepreneur Speed Networking Roulette",
+      "start": "2026-12-27T13:00:00-07:00",
+      "end": "2026-12-27T16:00:00-07:00",
+      "tz": "America/Denver",
+      "all_day": false,
+      "venue": "",
+      "address": "",
+      "city": "Denver",
+      "state": "CO",
+      "zip": null,
+      "lat": 39.7619,
+      "lng": -104.8811,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T15:13:42.796Z",
+      "first_seen": "2026-11-23T15:13:42.796Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1188973321%2F935412228013%2F1%2Foriginal.20260716-022147?w=940&auto=format%2Ccompress&q=75&sharp=10&s=922ec1278ddfcf0e76631548206f1c90",
+        "local": "img/events/011861913f1f.jpg",
+        "credit": "eventbrite.com",
+        "width": 940,
+        "height": 534
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-denver-entrepreneur-speed-networking-roulette-tickets-1994346345606"
+      },
+      "menu": [],
+      "price": "$23.18",
+      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-denver-entrepreneur-speed-networking-roulette-tickets-1994346345606"
       ]
     },
     {
@@ -36693,7 +36876,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-23T13:27:26.041Z",
       "extracted_by": "rule",
       "image": {
@@ -36855,7 +37038,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T13:27:26.041Z",
+      "last_seen": "2026-11-23T15:17:24.362Z",
       "first_seen": "2026-11-23T13:27:26.041Z",
       "extracted_by": "rule",
       "image": {
