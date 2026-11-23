@@ -113,7 +113,13 @@ export const passesWatchRule = (parts, place) => hasMatcha(...parts) && hasPopup
 export const isWatchPseudo = (e, sourceIds) => !isPseudoId(e.source_id) && !String(e.source_id).startsWith("hashtag:") && !sourceIds.has(e.source_id);
 
 // Keep or drop one event. ctx.sourceIds (optional) switches on the watch-list rule.
+let DROPS = null; // data/overrides.json entries with drop: true are removed by id (a human call)
+function dropped(id) {
+  if (!DROPS) { try { const o = JSON.parse(fs.readFileSync("data/overrides.json", "utf8")); DROPS = new Set(Object.keys(o).filter((k) => o[k] && o[k].drop === true)); } catch { DROPS = new Set(); } }
+  return DROPS.has(id);
+}
 export function keepEvent(e, { sourceIds = null } = {}) {
+  if (dropped(e.id)) return false;
   if (!keepMatoEvent(e)) return false;
   // Site and web finds (pseudo sources) must name matcha as the point: hotel, craft-class and generic listings go (ingest/lib/quality.js).
   if (isPseudoId(e.source_id) && !judge(e).keep) return false;

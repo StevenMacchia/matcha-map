@@ -4,11 +4,9 @@
    Only transform and opacity move. The one overshoot (--spring) is Mattie's.
    Calm mode (html.rm: prefers-reduced-motion or ?motion=reduce) switches every animation and transition off
    through the rule at the end of style.css; nothing here is needed to use the site. */
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@500;600&display=swap");
 :root {
   --out: cubic-bezier(.2, .8, .2, 1);   /* the house ease: fast start, long gentle landing */
   --in: cubic-bezier(.4, 0, 1, 1);      /* exits */
-  --mono: "M PLUS 1 Code", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --shadow-soft: 0 1px 1px rgba(75,52,38,.05), 0 4px 14px rgba(75,52,38,.07);
 }
 :root[data-theme="dark"] { --shadow-soft: 0 1px 2px rgba(0,0,0,.3), 0 6px 16px rgba(0,0,0,.22); }
@@ -87,7 +85,7 @@
 @keyframes breathe1 { 40% { transform: scale(1.09); } }
 .mk-ring { animation: ringpulse 4.8s ease-in-out infinite alternate; }
 @keyframes ringpulse { from { transform: none; opacity: .85; } to { transform: scale(1.07); opacity: .5; } }
-.cl-n { font-family: var(--mono); font-weight: 600; letter-spacing: -.02em; }
+.cl-n { font-weight: 800; font-variant-numeric: tabular-nums; }
 /* petals drifting across the map on a filter change (motion.js) */
 .drift { position: absolute; inset: 0; z-index: 450; pointer-events: none; overflow: hidden; }
 .drift span { position: absolute; top: 0; left: 0; width: 16px; height: 16px; opacity: 0; animation: drift .9s var(--out) forwards; }
@@ -149,9 +147,9 @@
 .btn, .chip.near, .chip.show, .chip.go, .card .links a, .geo, .skip, .dc-save, .linkbtn, .zip, #recent[aria-pressed="true"], .chip[data-chip][aria-pressed="true"] { font-weight: 700; }
 .chip { font-weight: 700; border-color: color-mix(in srgb, var(--edge) 62%, var(--line)); }
 .chip[data-chip][aria-pressed="true"] { border-color: var(--accent); }
-.card p.when, .row .rt > span.when { font-family: var(--mono); font-weight: 500; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.card p.when, .row .rt > span.when { font-weight: 700; font-variant-numeric: tabular-nums; }
 .card p.when { font-size: 15px; } .row .rt > span.when { font-size: 14px; }
-.row .dist, .card .price, .show-n, .stars + b { font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+.row .dist, .card .price, .show-n, .stars + b { font-weight: 800; font-variant-numeric: tabular-nums; }
 .list { padding: 10px 14px 28px; }
 .list li { margin: 0 0 8px; }
 .row { min-height: 74px; padding: 12px 14px 12px 12px; gap: 14px; border-width: 1px; box-shadow: var(--shadow-soft); }
@@ -207,3 +205,16 @@
 .list.side .row-in { animation-name: row-side; }
 @keyframes row-side { from { transform: translateX(-16px); opacity: 0; } to { transform: none; opacity: 1; } }
 .row-in { animation-duration: .34s; animation-timing-function: var(--out); }
+
+/* ---------- rung 35 ---------- */
+/* clusters open outward: a marker that replaces a split cluster starts at the cluster's spot (app.js sets --bx, --by) */
+.mk-in.bloom { animation: bloom .38s var(--out) both; }
+@keyframes bloom { from { transform: translate(var(--bx, 0), var(--by, 0)) scale(.55); opacity: .25; } to { transform: none; opacity: 1; } }
+/* the phone date bar steps aside while a card is open, and comes back after */
+@media (max-width: 640px) { .frow1 { transition: transform .3s var(--out), opacity .24s ease, visibility 0s; } body.card-open .frow1 { transition: transform .2s var(--in), opacity .2s ease, visibility 0s linear .2s; } }
+/* the tour bar and the region line arrive from the top; a step gives the counter a small nudge */
+.tour-bar:not([hidden]), .region-hint { animation: drop-in .32s var(--out) both; }
+@keyframes drop-in { from { transform: translate(-50%, -10px); opacity: 0; } to { transform: translateX(-50%); opacity: 1; } }
+.tour-bar.nudge .tb-at { animation: nudge .3s var(--out); }
+@keyframes nudge { from { transform: translateY(6px); opacity: .3; } to { transform: none; opacity: 1; } }
+.card .act.share.done svg { animation: nudge .3s var(--out); }

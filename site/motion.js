@@ -338,23 +338,35 @@
   function syncMapEmpty() {
     var show = empty && !empty.hidden && !wide.matches && !document.body.classList.contains("show-list");
     if (!show) { if (mapEmpty) { mapEmpty.remove(); mapEmpty = null; } return; }
-    var p = empty.querySelector("p"), b = $("empty-any");
+    var p = empty.querySelector("p");
     if (!mapEmpty) {
       mapEmpty = document.createElement("div");
       mapEmpty.className = "mapempty";
       mapEmpty.setAttribute("role", "status");
       var wrap = empty.querySelector(".sleepy-wrap");
       if (wrap) mapEmpty.appendChild(wrap.cloneNode(true));
-      mapEmpty.appendChild(document.createElement("p"));
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "linkbtn";
-      btn.addEventListener("click", function () { var o = $("empty-any"); if (o) o.click(); });
-      mapEmpty.appendChild(btn);
+      var txt = document.createElement("div");
+      txt.className = "me-txt";
+      txt.appendChild(document.createElement("p"));
+      var acts = document.createElement("div");
+      acts.className = "me-acts";
+      txt.appendChild(acts);
+      mapEmpty.appendChild(txt);
       $("map-panel").appendChild(mapEmpty);
     }
     mapEmpty.querySelector("p").textContent = p ? p.textContent : "";
-    mapEmpty.querySelector("button").textContent = b ? b.textContent : "Show any date";
+    // the same buttons as the list's empty card (Go to the nearest, the next range), each one clicking its original
+    var acts = mapEmpty.querySelector(".me-acts");
+    acts.innerHTML = "";
+    empty.querySelectorAll(".empty-acts button").forEach(function (o) {
+      if (o.hidden) return;
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = o.className;
+      b.textContent = o.textContent;
+      b.addEventListener("click", function () { o.click(); });
+      acts.appendChild(b);
+    });
   }
   if (empty) {
     new MutationObserver(syncMapEmpty).observe(empty, { attributes: true, childList: true, subtree: true, characterData: true });

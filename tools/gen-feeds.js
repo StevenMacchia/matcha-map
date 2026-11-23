@@ -11,6 +11,24 @@ import { isUpcoming, isApprox, makeCityLocator, brandNameOf, timeText } from "./
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const NEW_DAYS = 14;
+export const NEW_MAX = 100;
+export const UID_DOMAIN = "matchamap-cu7.pages.dev";
+// Calendar feeds: the end (or the start, if no end) is today or later, by the event's own calendar day.
+export function inCalendar(e, now = new Date()) {
+  if (!e || !e.id || e.status === "cancelled") return false;
+  const ref = e.end && !isNaN(Date.parse(e.end)) ? e.end : e.start;
+  if (isNaN(Date.parse(ref))) return false;
+  let today;
+  try { today = new Intl.DateTimeFormat("en-CA", { timeZone: e.tz || "UTC" }).format(now); } catch { today = now.toISOString().slice(0, 10); }
+  return String(ref).slice(0, 10) >= today;
+}
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+export function dayLabel(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso));
+  if (!m) return "";
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  return `${DAYS[d.getUTCDay()]} ${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}`;
+}
 const slugOf = (s) => String(s || "").toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const pad = (n, w = 2) => String(n).padStart(w, "0");
 
@@ -67,7 +85,7 @@ export function descriptionText(e, brand) {
 // One VEVENT as an array of unfolded lines.
 export function veventLines(e, { stampIso } = {}) {
   const brand = e.brand || "Matcha";
-  const lines = ["BEGIN:VEVENT", `UID:${e.id}`];
+  const lines = ["BEGIN:VEVENT", `UID:${e.id}@${UID_DOMAIN}`];
   const stamp = utcStamp(stampIso) || utcStamp(e.last_seen) || utcStamp(new Date().toISOString());
   lines.push(`DTSTAMP:${stamp}`);
   const mod = utcStamp(e.last_seen);
@@ -115,11 +133,10 @@ export function enclosureOf(e, root = ROOT) {
 }
 export function rss(events, { now = new Date(), root = ROOT } = {}) {
   const fresh = events.filter((e) => e.first_seen && now - Date.parse(e.first_seen) <= NEW_DAYS * 864e5 && !isNaN(Date.parse(e.first_seen)))
-    .sort((a, b) => Date.parse(b.first_seen) - Date.parse(a.first_seen) || (a.id < b.id ? -1 : 1));
+    .sort((a, b) => Date.parse(b.first_seen) - Date.parse(a.first_seen) || (a.id < b.id ? -1 : 1)).slice(0, NEW_MAX);
   const items = fresh.map((e) => {
     const brand = e.brand || "A matcha brand";
-    const when = e.all_day ? String(e.start).slice(0, 10) : `${String(e.start).slice(0, 10)}, ${timeText(e)}`;
-    const title = `${brand}: ${[e.city, e.state].filter(Boolean).join(", ")} on ${when}`;
+    const title = `${brand}, ${dayLabel(e.start)}, ${e.city || [e.state].filter(Boolean).join("")}`;
     const enc = enclosureOf(e, root);
     return `<item>
 <title>${xesc(title)}</title>
@@ -148,7 +165,7 @@ ${items.join("\n")}
 // ---- the whole set ----
 export function buildFeeds({ events, cities = [], now = new Date(), generated = null }) {
   const nowMs = now.getTime();
-  const up = events.filter((e) => e.id && isUpcoming(e, nowMs)).sort((a, b) => Date.parse(a.start) - Date.parse(b.start) || (a.id < b.id ? -1 : 1));
+  const up = events.filter((e) => e.id && isUpcoming(e, nowMs) && inCalendar(e, now)).sort((a, b) => Date.parse(a.start) - Date.parse(b.start) || (a.id < b.id ? -1 : 1));
   const locate = makeCityLocator(cities);
   const stampIso = generated || now.toISOString();
   const files = new Map();
@@ -167,7 +184,7 @@ export function buildFeeds({ events, cities = [], now = new Date(), generated = 
     cityIndex[key] = `/feeds/${key}.ics`; names[key] = `${v.name}, ${v.state}`;
   }
   for (const e of up) files.set(`events/${e.id}.ics`, calendar(`${e.brand || "Matcha"} pop-up`, [e], { stampIso }));
-  files.set("new.xml", rss(events.filter((e) => e.status !== "cancelled" && e.id && isUpcoming(e, nowMs)), { now }));
+  files.set("new.xml", rss(events.filter((e) => e.status !== "cancelled" && e.id && isUpcoming(e, nowMs) && inCalendar(e, now)), { now }));
   const freshCount = (files.get("new.xml").match(/<item>/g) || []).length;
   files.set("index.json", JSON.stringify({ generated: stampIso, all: "/feeds/all.ics", new: "/feeds/new.xml", cities: cityIndex, names }, null, 1) + "\n");
   return { files, counts: { cities: byCity.size, events: up.length, fresh: freshCount } };

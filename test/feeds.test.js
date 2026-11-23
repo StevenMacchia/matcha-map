@@ -20,7 +20,7 @@ test("UTC conversion uses the offset in the ISO string", () => {
 
 test("timed event: DTSTART/DTEND in UTC, UID is the event id, LAST-MODIFIED from last_seen", () => {
   const l = veventLines(timed).join("\n");
-  assert.match(l, /^UID:aaaaaa000001$/m);
+  assert.match(l, /^UID:aaaaaa000001@matchamap-cu7.pages.dev$/m);
   assert.match(l, /^DTSTART:20261205T170000Z$/m);
   assert.match(l, /^DTEND:20261205T210000Z$/m);
   assert.match(l, /^LAST-MODIFIED:20261125T100000Z$/m);
@@ -107,4 +107,18 @@ test("event page: own title, canonical, og:image order, Event JSON-LD, the full 
 test("buildEventPages: one page per upcoming event, none for past", () => {
   const out = buildEventPages({ events: [timed, allDay, past], sources: [], now: NOW });
   assert.deepEqual([...out.files.keys()].sort(), ["e/aaaaaa000001/index.html", "e/aaaaaa000002/index.html"]);
+});
+
+test("feeds: UID has a domain, RSS title reads like prose and is capped, calendars drop past events", () => {
+  assert.match(veventLines(timed).join("\n"), /^UID:aaaaaa000001@matchamap-cu7\.pages\.dev$/m);
+  const xml = rss([timed], { now: NOW });
+  assert.match(xml, /<title>Moonbee, Sat Dec 5, Austin<\/title>/);
+  const many = Array.from({ length: 130 }, (_, i) => ({ ...timed, id: "m" + String(i).padStart(11, "0"), first_seen: new Date(Date.parse("2026-11-20T00:00:00Z") + i * 6e4).toISOString() }));
+  const x2 = rss(many, { now: NOW });
+  assert.equal((x2.match(/<item>/g) || []).length, 100);
+  assert.ok(x2.indexOf("m00000000129") < x2.indexOf("m00000000100"), "newest first");
+  const ended = { ...timed, id: "aaaaaa000009", start: "2026-11-24T10:00:00-06:00", end: "2026-11-24T12:00:00-06:00" };
+  const { files } = buildFeeds({ events: [timed, ended], cities, now: NOW, generated: "2026-11-25T14:00:00Z" });
+  assert.doesNotMatch(files.get("all.ics"), /aaaaaa000009/);
+  assert.match(files.get("all.ics"), /aaaaaa000001/);
 });

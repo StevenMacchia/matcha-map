@@ -21,6 +21,11 @@ import { readReview, promote } from "./lib/review.js";
 import { readEvents } from "./lib/write.js";
 import { pullApproved } from "./lib/intake.js";
 
+if (process.argv.slice(2).some((x) => x === "--help" || x === "-h")) {
+  console.log(["npm run ingest [-- flags]", "  --source <id>   one source only", "  --paste [--file <path>]   read pasted text", "  --inbox   data/inbox/*.txt only", "  --no-fetch   no network", "  --dry   write nothing", "  --verbose   more logging", "  --no-art   skip illustration", "  --help, -h   this text"].join("\n"));
+  process.exit(0);
+}
+
 const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual]; // first match reads a source
 const EXTRA = [instagram, tiktok];                    // wired, off without keys
 

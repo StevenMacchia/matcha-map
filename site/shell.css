@@ -241,3 +241,4 @@ html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
   /* with the list up, notes move to the bottom so the grip stays readable */
   body.show-list .toasts { top: auto; bottom: calc(14px + env(safe-area-inset-bottom)); }
 }
+@media (min-width: 900px) { .filters { justify-content: flex-start; } #show-btn { margin-left: 0; } }

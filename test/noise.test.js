@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { judge } from "../ingest/lib/quality.js";
 import { mergeEvents, keepEvent, tidy, passesWatchRule, hasPopupIntent, isWatchPseudo } from "../ingest/lib/write.js";
 import { downloadImages } from "../ingest/lib/images.js";
 
@@ -77,4 +78,16 @@ test("the schema declares image_url (string or null, required) and every event o
   assert.deepEqual(schema.properties.image_url.type, ["string", "null"]);
   assert.ok(schema.required.includes("image_url"));
   for (const e of JSON.parse(fs.readFileSync("data/events.json", "utf8")).events) assert.ok(e.image_url === null || typeof e.image_url === "string", e.id);
+});
+
+test("brunch listing from an event site with matcha only in the title is dropped (Blind Tiger, Ybor City)", () => {
+  const blind = { id: "539dec8897e6", brand: "Blind Tiger Coffee Roasters", source_id: "eventbrite:blind-tiger-coffee-roasters", title: "Ybor City Matcha & Mimosa Sundays", venue: "Blind Tiger Coffee Roasters- Ybor City Cafe", state: "FL", description: "Sunday Brunch at Blind Tiger Coffee Roasters with brunch favorites, mimosas, Cutwaters, and beer & wine—served with laid-back vibes.", menu: [] };
+  assert.equal(judge(blind).reason, "brunch");
+  assert.equal(keepEvent(blind), false);
+  assert.equal(keepEvent({ ...blind, id: "2515797d489c", source_id: "allevents:blind-tiger-coffee-roasters" }), false);
+  assert.equal(keepEvent({ ...blind, id: "zzzzzzzzzzzz", brand: "Cha Cha Matcha" }), true, "a matcha brand is not judged by this rule");
+  assert.equal(keepEvent({ ...blind, id: "zzzzzzzzzzzy", source_id: "sunny" }), true, "only event-site finds");
+});
+test("data/overrides.json drop: true removes an event by id", () => {
+  assert.equal(keepEvent(ev({ id: "539dec8897e6" })), false);
 });
