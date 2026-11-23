@@ -199,13 +199,20 @@ export function addressLine(s, ctx) {
   const tail = [city, s.state].filter(Boolean).join(", ");
   return [s.address, tail].filter(Boolean).join(", ");
 }
-// A picture the shop's record carries (the same { local, url, credit } shape events use). None do today.
+// A picture the shop's record carries: image_url with image_credit ("Photo: <shop> website", from the pipeline), the
+// credit as a caption under the photo; neither shows unless both are there. The older { local, url, credit } shape that
+// events use still works, credit on the photo.
 function photoHtml(s, ctx) {
+  const url = safeUrl(s.image_url), credit = typeof s.image_credit === "string" ? s.image_credit.trim() : "";
+  if (url && credit) {
+    return `<figure class="mm-shop-fig"><div class="mm-shop-photo"><img src="${esc(url)}" alt="${esc("Photo of " + s.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>` +
+      `<figcaption class="mm-shop-cap">${esc(credit)}</figcaption></figure>`;
+  }
   const im = s.image || {};
   const src = im.local && /^img\/[A-Za-z0-9._/-]+$/.test(im.local) ? (ctx.base || "") + im.local : safeUrl(im.url);
   if (!src) return "";
-  const credit = im.credit ? `<span class="mm-shop-credit">${esc(cut(im.credit, 40))}</span>` : "";
-  return `<div class="mm-shop-photo"><img src="${esc(src)}" alt="${esc("Photo of " + s.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${credit}</div>`;
+  const cr = im.credit ? `<span class="mm-shop-credit">${esc(cut(im.credit, 40))}</span>` : "";
+  return `<div class="mm-shop-photo"><img src="${esc(src)}" alt="${esc("Photo of " + s.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${cr}</div>`;
 }
 const isNum = (x) => typeof x === "number" && isFinite(x);
 export function shopCardHtml(s, ctx = {}) {
