@@ -10,9 +10,33 @@
 import { cardHtml, rowHtml, brandCardHtml, wire } from "./cards.js";
 
 const data = { art: null, brands: null, sources: null, places: null };
+let pages = null; // data/pages.json: which city and brand pages exist (written by npm run pages)
 const get = (u) => fetch(u).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-const ready = Promise.all([get("art/index.json"), get("data/brands.json"), get("data/sources.json"), get("data/places.json")])
-  .then(([art, brands, sources, places]) => { Object.assign(data, { art, brands, sources, places }); });
+const ready = Promise.all([get("art/index.json"), get("data/brands.json"), get("data/sources.json"), get("data/places.json"), get("data/pages.json")])
+  .then(([art, brands, sources, places, idx]) => { Object.assign(data, { art, brands, sources, places }); pages = idx && Array.isArray(idx.cities) ? { cities: idx.cities, brands: new Set(idx.brands || []) } : null; });
+
+// "More in <city>" and the brand name link only to a page that exists, by the same rules as tools/gen-pages.js: the city
+// page by name and state, else the nearest one in the state within 25 km; the brand page by handle.
+const norm = (x) => String(x || "").toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, " ").trim();
+function km(a, la, lo) {
+  const rad = Math.PI / 180, dl = (a.la - la) * rad, dn = (a.lo - lo) * rad;
+  const h = Math.sin(dl / 2) ** 2 + Math.cos(la * rad) * Math.cos(a.la * rad) * Math.sin(dn / 2) ** 2;
+  return 12742 * Math.asin(Math.sqrt(h));
+}
+export function cityHref(e) {
+  if (!pages || !e) return "";
+  const same = pages.cities.filter((c) => c.s === e.state);
+  let hit = same.find((c) => norm(c.n) === norm(e.city));
+  if (!hit && isFinite(e.lat) && isFinite(e.lng) && e.lat != null && e.lng != null) {
+    let bd = 25;
+    for (const c of same) { const d = km(c, e.lat, e.lng); if (d < bd) { bd = d; hit = c; } }
+  }
+  return hit ? { href: "/city/" + hit.p + "/", name: hit.n } : "";
+}
+export function brandHref(h) {
+  const slug = String(h || "").replace(/^@/, "").toLowerCase().replace(/[^a-z0-9._-]/g, "");
+  return pages && slug && pages.brands.has(slug) ? "/brand/" + slug + "/" : "";
+}
 
 function hook() { return window.__matcha && window.__matcha.state ? window.__matcha.state : null; }
 function context(ctx) {
@@ -25,6 +49,8 @@ function context(ctx) {
     events: items.map((it) => (it && it.data ? it.data : it)).filter(Boolean),
     drawn: window.Drawn || null,
     eventHref: (id) => "?event=" + id,
+    cityHref,
+    brandHref,
     ...data,
   };
 }

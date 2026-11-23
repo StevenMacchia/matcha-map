@@ -45,7 +45,7 @@ function checkNode(node, at, err, stats) {
     if (!node.name) err(`${at}: Organization without name`);
     // an Event organizer with no known site is fine (Google only recommends a url there); a standalone Organization needs one
     if (node.url !== undefined && !isAbs(node.url)) err(`${at}: Organization url not absolute`);
-    else if (node.url === undefined && !/.organizer$/.test(at)) err(`${at}: Organization url missing`);
+    else if (node.url === undefined && !/\.organizer$/.test(at)) err(`${at}: Organization url missing`);
   }
   if (t === "ListItem" && node.url !== undefined && node.item !== undefined) err(`${at}: ListItem has both url and item`);
   if (t === "ListItem") stats.listItems++;

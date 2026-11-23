@@ -439,6 +439,10 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
   const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   const pageBytes = sizeOf();
   files.set("sitemap.xml", sitemap);
+  // which city and brand pages exist, for the live app (site/cards-app.js links "More in <city>" and the brand name only to a page that is there)
+  const hasPage = (c) => files.has(cityPath(c) + "index.html");
+  const pagesIndex = { cities: d.cities.filter(hasPage).map((c) => ({ p: `${c.state.toLowerCase()}/${c.slug}`, n: c.name, s: c.state, la: c.lat, lo: c.lng })), brands: [...files.keys()].filter((p) => /^brand\/[^/]+\/index\.html$/.test(p)).map((p) => p.split("/")[1]).sort() };
+  files.set("data/pages.json", JSON.stringify(pagesIndex));
   files.set("robots.txt", robots);
   const nCity = [...files.keys()].filter((p) => p.startsWith("city/")).length;
   return { files, urls, counts: { cities: nCity, brands: [...files.keys()].filter((p) => p.startsWith("brand/")).length, bytes: pageBytes + Buffer.byteLength(sitemap) + robots.length } };
