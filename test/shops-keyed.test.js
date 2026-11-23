@@ -49,12 +49,9 @@ test("confirmCandidate: a serves row needs the site's own address and three matc
   assert.equal(ok.row.tier, "serves");
   assert.equal(ok.row.confirmed_via, "own-site");
   assert.equal(ok.row.menu_matcha.length, 3);
-  assert.equal(ok.row.provider_id, "f1");
-  assert.match(ok.row.attribution, /Foursquare/);
-  // Yelp: nothing from Yelp is stored, not even its id
-  const yb = await confirmCandidate({ ...f, provider: "yelp", provider_id: "y9", website: "https://teahill.example" }, siteGet({ "/": page("hello", addr), "/menu": menu }));
-  assert.equal(yb.row.provider_id, undefined);
-  assert.equal(yb.row.attribution, undefined);
+  assert.equal(ok.row.provider_id, undefined, "no provider id on a stored row (docs/YELP-TERMS.md)");
+  assert.equal(ok.row.attribution, undefined);
+  assert.equal(ok.row.provider, undefined);
   assert.equal(ok.row.opening_hours, "Mo-Su 08:00-18:00");
   assert.equal(checkRow({ ...ok.row }).shop.tier, "serves", "the researched-row loader accepts it");
   // a different street number on the site: held
@@ -85,7 +82,7 @@ test("providers: no key means no calls; a key searches once and a second ask is 
   assert.equal((await on.search("foursquare", "Durham", "NC")).skipped, "stopped");
 });
 
-test("the keyed run writes only confirmed rows, keeps provider ids, and does nothing without keys", async () => {
+test("the keyed run writes only confirmed rows, keeps no provider id, and does nothing without keys", async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "keyed-run-"));
   const cwd = process.cwd();
   process.chdir(dir);
@@ -98,7 +95,8 @@ test("the keyed run writes only confirmed rows, keeps provider ids, and does not
     assert.equal(s.foursquare.serves, 1);
     const file = JSON.parse(fs.readFileSync(path.join(dir, "k-foursquare.json"), "utf8"));
     assert.equal(file.shops.length, 1);
-    assert.equal(file.shops[0].provider_id, "f1");
+    assert.equal(file.shops[0].provider_id, undefined);
+    assert.equal(file.shops[0].attribution, undefined);
     assert.equal(file.shops[0].rating, undefined);
   } finally { process.chdir(cwd); }
 });

@@ -1,6 +1,7 @@
 // npm run loop:    watch every hour; discover and ingest every 6 hours (with a watch pass each time), while this process is open.
-// npm run refresh: discover -> watch -> ingest once, then exit.
-// Each step is its own child process, so one crash never stops the cycle. Needs no keys.
+// npm run refresh: discover -> watch -> ingest -> Yelp lead search once, then exit.
+// Each step is its own child process, so one crash never stops the cycle. Needs no keys (the lead search is off without YELP_API_KEY;
+// with one it keeps Yelp answers under 24 hours in .cache and stores no Yelp field: docs/YELP-TERMS.md, 290 calls a day).
 // Flags: --once (same as refresh) | --every <hours> for discover + ingest (default 6) | --watch-every <hours> (default 1) | --verbose (pass step output through)
 import fs from "node:fs";
 import path from "node:path";
@@ -17,7 +18,8 @@ if (!(hours > 0) || !(watchHours > 0)) { console.error("--every and --watch-ever
 
 const WATCH = ["watch", ["ingest/watch.js"]];
 // The full cycle (discover, watch, ingest) and the hourly one (watch alone).
-const FULL = [["discover", ["ingest/lib/discover.js"]], WATCH, ["ingest", ["ingest/run.js"]]];
+export const YELP_LEADS = ["yelp-leads", ["ingest/shops-keyed.js", "--provider", "yelp"]];
+const FULL = [["discover", ["ingest/lib/discover.js"]], WATCH, ["ingest", ["ingest/run.js"]], YELP_LEADS];
 
 const stamp = () => new Date().toISOString().replace("T", " ").slice(0, 19);
 const say = (m) => console.log(`[${stamp()}] ${m}`);

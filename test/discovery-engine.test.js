@@ -149,11 +149,17 @@ test("bluesky: per-city queries rotate over the metros; a 403 or an HTML reply i
 });
 
 // ---- key-gated APIs ----------------------------------------------------------------------------
-test("ticketmaster, yelp events and the Eventbrite API are off without their keys", async () => {
-  for (const m of [ticketmaster, yelpEvents, ebApi]) {
+test("ticketmaster and the Eventbrite API are off without their keys; yelp events is off even with one (docs/YELP-TERMS.md)", async () => {
+  for (const m of [ticketmaster, ebApi]) {
     const f = fake(() => null);
     const r = await m.discover({ fetcher: f, now, env: {} });
     assert.match(r.stats.skipped, /^off \(set [A-Z_]+/, m.name);
+    assert.equal(f.calls.length, 0);
+  }
+  for (const env of [{}, { YELP_API_KEY: "k" }]) {
+    const f = fake(() => null);
+    const r = await yelpEvents.discover({ fetcher: f, now, env });
+    assert.match(r.stats.skipped, /YELP-TERMS/);
     assert.equal(f.calls.length, 0);
   }
 });

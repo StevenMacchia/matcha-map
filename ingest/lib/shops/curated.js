@@ -59,8 +59,7 @@ export function checkRow(r, file = "") {
       name, address, city, state, zip,
       website: http(r.website), instagram: handle(r.instagram), phone: str(r.phone), opening_hours: str(r.opening_hours),
       menu_url: http(r.menu_url), image_url: http(r.image_url), image_credit: str(r.image_credit),
-      tier, ...(menu_matcha ? { menu_matcha } : {}),
-      ...(str(r.provider_id) ? { provider: str(r.provider), provider_id: str(r.provider_id), attribution: str(r.attribution) } : {}), note: str(r.note) ? str(r.note).slice(0, 120) : null,
+      tier, ...(menu_matcha ? { menu_matcha } : {}), note: str(r.note) ? str(r.note).slice(0, 120) : null,
       cuisine: null, source: "web", source_url, read: r.read, confirmed_via: via, verified: !!via && via !== "public-page",
     },
   };

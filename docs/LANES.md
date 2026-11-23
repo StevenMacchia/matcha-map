@@ -5,6 +5,7 @@ For the Population and Events lane sessions (started from the command center on 
 ## Hard rules
 
 - Public pages and official APIs only; robots.txt respected (`ctx.fetcher.get` does it); no login-wall or cookie scraping; no bot-check evasion; no headless browser against third-party sites.
+- Yelp: leads only, nothing stored, never in a worker's brief or a model prompt; the rule and why are in `docs/YELP-TERMS.md`. The same reading applies to any provider whose terms bar storage: read the terms before the first keyed run.
 - No invented events: every event needs a public URL on which a person can see the date. A guessed date is `confidence: "unsure"` with the reason in notes.
 - Never put a question to Steven in a next-step box or a closing message. End every turn with a recap only. Anything that needs his word (a key, a sign-in, money, a product call) goes to the command center as one message with the question in the first line; his answer comes back quoted. If the app forces a click only he can make, send the command center one line with exactly what it says and where.
 - Commit as `git -c user.name="Steven Macchia" -c user.email="64022630+StevenMacchia@users.noreply.github.com" commit -m "..."`. Add paths by name, never `-A`, never `git stash`. A worktree has no `.env`: copy it from the plain checkout root (gitignored; it holds the Tavily and Instagram keys).

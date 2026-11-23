@@ -3,14 +3,12 @@
 // a run (metros.js rotation). Official API ({robots:false}; yelp.com pages themselves stay unread, robots.txt disallows them).
 // Yelp has narrowed the events endpoint on some plans: a 403 or 404 ends this crawler for the run and says so in its stats.
 // Pseudo-source `yelpevents:<business or event slug>`, confidence capped at likely (events are user-submitted).
-import { siteBudget, finish, skipped, CAP } from "./common.js";
-import { BASE } from "../enrich/yelp.js";
+import { skipped } from "./common.js";
+const BASE = "https://api.yelp.com/v3";
 import { STATES } from "../tz.js";
-import { METROS, rotate } from "./metros.js";
 
 export const name = "yelpevents";
 export const host = "api.yelp.com";
-const PER_RUN = 6;
 export const eventsUrl = (m, now = new Date()) => `${BASE}/events?term=matcha&location=${encodeURIComponent(`${m.city}, ${m.state}`)}&limit=50&sort_on=time_start&sort_by=asc&start_date=${Math.floor(new Date(now).getTime() / 1000)}`;
 
 // One events response -> [RawItem]. Pure.
@@ -31,22 +29,10 @@ export function eventsToRaw(json) {
   return out;
 }
 
-export async function discover(ctx) {
-  const { fetcher, sources = [], env = {}, now = new Date(), cap = CAP } = ctx;
-  if (!env.YELP_API_KEY) return skipped("off (set YELP_API_KEY; free at yelp.com/developers)");
-  const b = siteBudget(fetcher, name, cap);
-  const raws = [];
-  const stats = { cities: 0 };
-  for (const m of rotate(METROS, now, ctx.perRun ?? PER_RUN, { salt: 4 })) {
-    if (b.st.stopped) break;
-    const r = await b.get(eventsUrl(m, now), { robots: false, headers: { Authorization: `Bearer ${env.YELP_API_KEY}`, Accept: "application/json" } });
-    if (r.status === 404) { stats.closed = "events endpoint answered 404"; break; }
-    if (!r.ok) continue;
-    stats.cities++;
-    try { raws.push(...eventsToRaw(JSON.parse(r.text))); } catch { /* not JSON */ }
-  }
-  const out = finish(name, raws, sources);
-  return { ...out, stats: { ...stats, listed: raws.length, fetches: b.st.used, pages: b.st.pages, stopped: b.st.stopped } };
+// Off with or without a key since 2026-11-23: event listings are Yelp Content, which may not be stored past 24 hours or put in a
+// listings database (docs/YELP-TERMS.md). eventsToRaw stays for the parser test. The crawl loop that read PER_RUN metros is gone.
+export async function discover() {
+  return skipped("off (set YELP_API_KEY changes nothing: Yelp content is leads-only under docs/YELP-TERMS.md; the events endpoint is not read)");
 }
 
 export default { name, host, discover };
