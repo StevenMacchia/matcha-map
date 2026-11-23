@@ -354,7 +354,7 @@ const nameOf = (e, b) => cut(e.brand || (b && b.name) || "Matcha pop-up", 60);
 export function cardHtml(e, ctx = {}) {
   e = e || {};
   const v = verdict(e, ctx), b = brandOf(e, ctx), name = nameOf(e, b), id = safeId(e.id);
-  const plain = String(e.description || "").replace(/[*_`#>]+/g, " ").replace(/s+/g, " ").trim();
+  const plain = String(e.description || "").replace(/[*_`#>]+/g, " ").replace(/\s+/g, " ").trim();
   const desc = plain ? `<p class="mm-desc">${esc(cut(plain, 200))}</p>` : "";
   const report = id ? `<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a>` : "";
   return `<article class="mm-card${ctx.page ? " mm-page" : ""} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>` +
