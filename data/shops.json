@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-23T19:00:36.400Z",
+ "generated": "2026-11-23T19:20:20.937Z",
  "attribution": "© OpenStreetMap contributors, ODbL",
  "shops": [
   {
-   "id": "web:matcha-darlin-cafe-az-tempe-43-e-broadway",
+   "id": "brand:web-matcha-darlin-cafe-az-tempe-43-e-broadway-91851d",
    "name": "Matcha Darlin' Cafe",
    "address": "43 E Broadway",
    "city": "Tempe",
@@ -26,10 +26,10 @@
    "lng": -111.938952,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:matcha-magic-asu-tempe-az-tempe-922-e-apache-blvd-",
+   "id": "brand:web-matcha-magic-asu-tempe-az-tempe-922-e-apache-b-ab0ce8",
    "name": "Matcha Magic (ASU Tempe)",
    "address": "922 E Apache Blvd #105",
    "city": "Tempe",
@@ -52,10 +52,10 @@
    "lng": -111.925196,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:premium-matcha-cafe-maiko-az-tempe-920-e-university-d",
+   "id": "brand:web-premium-matcha-cafe-maiko-az-tempe-920-e-unive-754902",
    "name": "Premium Matcha Cafe Maiko",
    "address": "920 E University Dr Suite 106",
    "city": "Tempe",
@@ -78,10 +78,10 @@
    "lng": -111.925576,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:cafe-matcha-ca-studio-city-12070-ventura-blvd",
+   "id": "brand:web-cafe-matcha-ca-studio-city-12070-ventura-blvd-bfe519",
    "name": "Cafe Matcha",
    "address": "12070 Ventura Blvd",
    "city": "Studio City",
@@ -104,10 +104,10 @@
    "lng": -118.394965,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:cafe-matcha-ca-los-angeles-705-n-alfred-st",
+   "id": "brand:web-cafe-matcha-ca-los-angeles-705-n-alfred-st-ef0c5b",
    "name": "Cafe Matcha",
    "address": "705 N Alfred St",
    "city": "Los Angeles",
@@ -130,10 +130,10 @@
    "lng": -118.375371,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:cha-cha-matcha-ca-venice-1401-abbot-kinney-",
+   "id": "brand:web-cha-cha-matcha-ca-venice-1401-abbot-kinney-blv-a10267",
    "name": "Cha Cha Matcha",
    "address": "1401 Abbot Kinney Blvd",
    "city": "Venice",
@@ -156,10 +156,10 @@
    "lng": -118.465791,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:cha-cha-matcha-ca-los-angeles-510-n-robertson-bl",
+   "id": "brand:web-cha-cha-matcha-ca-los-angeles-510-n-robertson-fb56b7",
    "name": "Cha Cha Matcha",
    "address": "510 N Robertson Blvd",
    "city": "Los Angeles",
@@ -182,10 +182,10 @@
    "lng": -118.38503,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:cha-cha-matcha-ca-los-angeles-10250-santa-monica",
+   "id": "brand:web-cha-cha-matcha-ca-los-angeles-10250-santa-moni-94d473",
    "name": "Cha Cha Matcha",
    "address": "10250 Santa Monica Blvd Suite 1625",
    "city": "Los Angeles",
@@ -208,10 +208,10 @@
    "lng": -118.417811,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:cha-cha-matcha-ca-beverly-hills-475-north-beverly-",
+   "id": "brand:web-cha-cha-matcha-ca-beverly-hills-475-north-beve-5d6435",
    "name": "Cha Cha Matcha",
    "address": "475 North Beverly Drive",
    "city": "Beverly Hills",
@@ -234,10 +234,10 @@
    "lng": -118.403475,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:holy-matcha-ca-san-diego-3118-university-av",
+   "id": "brand:web-holy-matcha-ca-san-diego-3118-university-avenu-de0c63",
    "name": "Holy Matcha",
    "address": "3118 University Avenue",
    "city": "San Diego",
@@ -260,10 +260,10 @@
    "lng": -117.127136,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:kettl-ca-los-angeles-4677-hollywood-blv",
+   "id": "brand:web-kettl-ca-los-angeles-4677-hollywood-blvd-ab7e83",
    "name": "Kettl",
    "address": "4677 Hollywood Blvd",
    "city": "Los Angeles",
@@ -286,10 +286,10 @@
    "lng": -118.291149,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:labora-ca-san-diego-8055-clairemont-me",
+   "id": "brand:web-labora-ca-san-diego-8055-clairemont-mesa-blvd-4e7494",
    "name": "Labora",
    "address": "8055 Clairemont Mesa Blvd Suite 101",
    "city": "San Diego",
@@ -312,7 +312,7 @@
    "lng": -117.149918,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z",
+   "fetched": "2026-11-23T19:20:20.937Z",
    "menu": {
     "items": [
      {
@@ -402,7 +402,7 @@
    }
   },
   {
-   "id": "web:matcha-cafe-maiko-ca-san-diego-8072-clairemont-me",
+   "id": "brand:web-matcha-cafe-maiko-ca-san-diego-8072-clairemont-f9a331",
    "name": "Matcha Cafe Maiko",
    "address": "8072 Clairemont Mesa Blvd",
    "city": "San Diego",
@@ -425,7 +425,7 @@
    "lng": -117.163394,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z",
+   "fetched": "2026-11-23T19:20:20.937Z",
    "menu": {
     "items": [
      {
@@ -546,7 +546,7 @@
    }
   },
   {
-   "id": "web:meccha-matcha-ca-artesia-11816-artesia-blvd",
+   "id": "brand:web-meccha-matcha-ca-artesia-11816-artesia-blvd-d90f05",
    "name": "Meccha Matcha",
    "address": "11816 Artesia Blvd",
    "city": "Artesia",
@@ -569,10 +569,10 @@
    "lng": -118.081816,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:meccha-matcha-ca-long-beach-2310-n-bellflower-",
+   "id": "brand:web-meccha-matcha-ca-long-beach-2310-n-bellflower-03c072",
    "name": "Meccha Matcha",
    "address": "2310 N Bellflower Blvd Ste 103",
    "city": "Long Beach",
@@ -595,10 +595,10 @@
    "lng": -118.125205,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:midori-matcha-cafe-ca-los-angeles-123-astronaut-elli",
+   "id": "brand:web-midori-matcha-cafe-ca-los-angeles-123-astronau-bf1078",
    "name": "Midori Matcha Cafe",
    "address": "123 Astronaut Ellison S Onizuka St Suite 101-C",
    "city": "Los Angeles",
@@ -621,10 +621,10 @@
    "lng": -118.242366,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:nana-s-green-tea-ca-pasadena-45-n-raymond-ave",
+   "id": "brand:web-nana-s-green-tea-ca-pasadena-45-n-raymond-ave-7ff42c",
    "name": "Nana's Green Tea",
    "address": "45 N Raymond Ave",
    "city": "Pasadena",
@@ -647,7 +647,7 @@
    "lng": -118.149091,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/11007004668",
@@ -1083,7 +1083,7 @@
    "verified": true
   },
   {
-   "id": "web:noble-fat-il-chicago-2221-n-lincoln-ave",
+   "id": "brand:web-noble-fat-il-chicago-2221-n-lincoln-ave-8602cc",
    "name": "Noble Fat",
    "address": "2221 N Lincoln Ave",
    "city": "Chicago",
@@ -1106,7 +1106,7 @@
    "lng": -87.64438,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/14101225652",
@@ -1347,7 +1347,7 @@
    }
   },
   {
-   "id": "web:littlefoot-matcha-nc-raleigh-234-fayetteville-s",
+   "id": "brand:web-littlefoot-matcha-nc-raleigh-234-fayetteville-808d26",
    "name": "Littlefoot Matcha",
    "address": "234 Fayetteville Street",
    "city": "Raleigh",
@@ -1370,10 +1370,10 @@
    "lng": -78.639574,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:littlefoot-matcha-nc-greensboro-1101-west-gate-cit",
+   "id": "brand:web-littlefoot-matcha-nc-greensboro-1101-west-gate-3d9b6c",
    "name": "Littlefoot Matcha",
    "address": "1101 West Gate City Boulevard",
    "city": "Greensboro",
@@ -1396,7 +1396,7 @@
    "lng": -79.809769,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/6006320286",
@@ -1992,7 +1992,7 @@
    "confirmed_via": "own-site"
   },
   {
-   "id": "web:aoko-matcha-bayside-ny-bayside-38-35-bell-bouleva",
+   "id": "brand:web-aoko-matcha-bayside-ny-bayside-38-35-bell-boul-5c39e4",
    "name": "Aoko Matcha Bayside",
    "address": "38-35 Bell Boulevard",
    "city": "Bayside",
@@ -2015,10 +2015,10 @@
    "lng": -73.771869,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:aoko-matcha-chinatown-ny-new-york-81-chrystie-street",
+   "id": "brand:web-aoko-matcha-chinatown-ny-new-york-81-chrystie-18e59c",
    "name": "Aoko Matcha Chinatown",
    "address": "81 Chrystie Street",
    "city": "New York",
@@ -2041,10 +2041,10 @@
    "lng": -73.994434,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:aoko-matcha-fidi-ny-new-york-40-gold-street",
+   "id": "brand:web-aoko-matcha-fidi-ny-new-york-40-gold-street-c71dc4",
    "name": "Aoko Matcha FiDi",
    "address": "40 Gold Street",
    "city": "New York",
@@ -2067,10 +2067,10 @@
    "lng": -74.005748,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:aoko-matcha-park-slope-ny-brooklyn-155-5th-avenue",
+   "id": "brand:web-aoko-matcha-park-slope-ny-brooklyn-155-5th-ave-bed41d",
    "name": "Aoko Matcha Park Slope",
    "address": "155 5th Avenue",
    "city": "Brooklyn",
@@ -2093,10 +2093,10 @@
    "lng": -73.9792,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:aoko-matcha-west-village-ny-new-york-275-bleecker-stree",
+   "id": "brand:web-aoko-matcha-west-village-ny-new-york-275-bleec-243904",
    "name": "Aoko Matcha West Village",
    "address": "275 Bleecker Street",
    "city": "New York",
@@ -2119,10 +2119,10 @@
    "lng": -74.00301,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:cha-cha-matcha-dumbo-ny-brooklyn-55-water-street",
+   "id": "brand:web-cha-cha-matcha-dumbo-ny-brooklyn-55-water-stre-c04ae6",
    "name": "Cha Cha Matcha Dumbo",
    "address": "55 Water Street",
    "city": "Brooklyn",
@@ -2145,7 +2145,7 @@
    "lng": -73.991989,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/2555136029",
@@ -2170,7 +2170,7 @@
    "confirmed_via": "own-site"
   },
   {
-   "id": "web:cha-cha-matcha-madison-ny-new-york-477-madison-avenue",
+   "id": "brand:web-cha-cha-matcha-madison-ny-new-york-477-madison-138a75",
    "name": "Cha Cha Matcha Madison",
    "address": "477 Madison Avenue",
    "city": "New York",
@@ -2193,10 +2193,10 @@
    "lng": -73.974632,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:cha-cha-matcha-moynihan-ny-new-york-421-8th-avenue-sui",
+   "id": "brand:web-cha-cha-matcha-moynihan-ny-new-york-421-8th-av-028f75",
    "name": "Cha Cha Matcha Moynihan",
    "address": "421 8th Avenue Suite 40",
    "city": "New York",
@@ -2219,7 +2219,7 @@
    "lng": -73.996268,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:way/1149319923",
@@ -2266,7 +2266,7 @@
    "confirmed_via": "own-site"
   },
   {
-   "id": "web:isshiki-matcha-ny-new-york-183-grand-street",
+   "id": "brand:web-isshiki-matcha-ny-new-york-183-grand-street-6af484",
    "name": "Isshiki Matcha",
    "address": "183 Grand Street",
    "city": "New York",
@@ -2289,10 +2289,10 @@
    "lng": -73.997693,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:isshiki-matcha-at-ace-hotel-ny-new-york-20-west-29th-stree",
+   "id": "brand:web-isshiki-matcha-at-ace-hotel-ny-new-york-20-wes-146692",
    "name": "Isshiki Matcha at Ace Hotel",
    "address": "20 West 29th Street",
    "city": "New York",
@@ -2315,10 +2315,10 @@
    "lng": -73.98816,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:isshiki-matcha-at-loulou-ny-new-york-176-8th-avenue",
+   "id": "brand:web-isshiki-matcha-at-loulou-ny-new-york-176-8th-a-d611cd",
    "name": "Isshiki Matcha at LOULOU",
    "address": "176 8th Avenue",
    "city": "New York",
@@ -2341,7 +2341,7 @@
    "lng": -74.000173,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/2268954021",
@@ -2366,7 +2366,7 @@
    "confirmed_via": "own-site"
   },
   {
-   "id": "web:kettl-matcha-sen-mon-ten-ny-brooklyn-38-norman-avenue",
+   "id": "brand:web-kettl-matcha-sen-mon-ten-ny-brooklyn-38-norman-05a9ef",
    "name": "Kettl Matcha Sen Mon Ten",
    "address": "38 Norman Avenue",
    "city": "Brooklyn",
@@ -2389,10 +2389,10 @@
    "lng": -73.953918,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:kijitora-ny-brooklyn-151-north-7th-stre",
+   "id": "brand:web-kijitora-ny-brooklyn-151-north-7th-street-3c75b7",
    "name": "Kijitora",
    "address": "151 North 7th Street",
    "city": "Brooklyn",
@@ -2415,10 +2415,10 @@
    "lng": -73.957867,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:kijitora-e14th-ny-new-york-534-east-14th-stre",
+   "id": "brand:web-kijitora-e14th-ny-new-york-534-east-14th-stree-1ea3c2",
    "name": "Kijitora E14th",
    "address": "534 East 14th Street",
    "city": "New York",
@@ -2441,10 +2441,10 @@
    "lng": -73.978839,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:kijitora-east-ny-brooklyn-309-graham-avenue",
+   "id": "brand:web-kijitora-east-ny-brooklyn-309-graham-avenue-fbe6cc",
    "name": "Kijitora East",
    "address": "309 Graham Avenue",
    "city": "Brooklyn",
@@ -2467,10 +2467,10 @@
    "lng": -73.944421,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:kijitora-mini-ny-brooklyn-578-driggs-avenue",
+   "id": "brand:web-kijitora-mini-ny-brooklyn-578-driggs-avenue-d6bfc7",
    "name": "Kijitora mini",
    "address": "578 Driggs Avenue",
    "city": "Brooklyn",
@@ -2493,10 +2493,10 @@
    "lng": -73.957205,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:kijitora-ridgewood-ny-ridgewood-279-st-nicholas-av",
+   "id": "brand:web-kijitora-ridgewood-ny-ridgewood-279-st-nichola-791f76",
    "name": "Kijitora Ridgewood",
    "address": "279 St Nicholas Avenue",
    "city": "Ridgewood",
@@ -2519,7 +2519,7 @@
    "lng": -73.912152,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/10756703060",
@@ -2665,7 +2665,7 @@
    }
   },
   {
-   "id": "web:matcha-house-ny-new-york-203-east-10th-stre",
+   "id": "brand:web-matcha-house-ny-new-york-203-east-10th-street-1f82de",
    "name": "Matcha House",
    "address": "203 East 10th Street",
    "city": "New York",
@@ -2688,7 +2688,7 @@
    "lng": -73.986319,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z",
+   "fetched": "2026-11-23T19:20:20.937Z",
    "menu": {
     "items": [
      {
@@ -2778,7 +2778,7 @@
    "verified": true
   },
   {
-   "id": "web:matchaful-clinton-hill-culinary-lab-ny-brooklyn-44-washington-aven",
+   "id": "brand:web-matchaful-clinton-hill-culinary-lab-ny-brookly-fb4266",
    "name": "Matchaful Clinton Hill Culinary Lab",
    "address": "44 Washington Avenue",
    "city": "Brooklyn",
@@ -2801,10 +2801,10 @@
    "lng": -73.967974,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:matchaful-midtown-east-inside-clean-market-ny-new-york-240-east-54th-stre",
+   "id": "brand:web-matchaful-midtown-east-inside-clean-market-ny-1cf4f2",
    "name": "Matchaful Midtown East (inside Clean Market)",
    "address": "240 East 54th Street",
    "city": "New York",
@@ -2827,10 +2827,10 @@
    "lng": -73.967486,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:matchaful-nolita-ny-new-york-217-mulberry-stree",
+   "id": "brand:web-matchaful-nolita-ny-new-york-217-mulberry-stre-66f226",
    "name": "Matchaful Nolita",
    "address": "217 Mulberry Street",
    "city": "New York",
@@ -2853,10 +2853,10 @@
    "lng": -73.996358,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:matchaful-park-avenue-south-ny-new-york-337-park-avenue-so",
+   "id": "brand:web-matchaful-park-avenue-south-ny-new-york-337-pa-47b2d2",
    "name": "Matchaful Park Avenue South",
    "address": "337 Park Avenue South",
    "city": "New York",
@@ -2879,10 +2879,10 @@
    "lng": -73.985354,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:matchaful-soho-ny-new-york-184-prince-street",
+   "id": "brand:web-matchaful-soho-ny-new-york-184-prince-street-c80e06",
    "name": "Matchaful SoHo",
    "address": "184 Prince Street",
    "city": "New York",
@@ -2905,10 +2905,10 @@
    "lng": -74.002157,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:matchaful-tribeca-ny-new-york-350-greenwich-stre",
+   "id": "brand:web-matchaful-tribeca-ny-new-york-350-greenwich-st-796721",
    "name": "Matchaful Tribeca",
    "address": "350 Greenwich Street",
    "city": "New York",
@@ -2931,7 +2931,7 @@
    "lng": -74.010406,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/6550407925",
@@ -2958,7 +2958,7 @@
    "confirmed_via": "own-site"
   },
   {
-   "id": "web:matchaful-williamsburg-ny-brooklyn-92-berry-street",
+   "id": "brand:web-matchaful-williamsburg-ny-brooklyn-92-berry-st-b5a202",
    "name": "Matchaful Williamsburg",
    "address": "92 Berry Street",
    "city": "Brooklyn",
@@ -2981,7 +2981,7 @@
    "lng": -73.958345,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/11860537157",
@@ -3007,7 +3007,7 @@
    "confirmed_via": "own-site"
   },
   {
-   "id": "web:nippon-cha-bayside-ny-bayside-39-34-bell-bouleva",
+   "id": "brand:web-nippon-cha-bayside-ny-bayside-39-34-bell-boule-dfc920",
    "name": "Nippon Cha Bayside",
    "address": "39-34 Bell Boulevard",
    "city": "Bayside",
@@ -3030,10 +3030,10 @@
    "lng": -73.771661,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:nippon-cha-williamsburg-ny-brooklyn-214-bedford-avenue",
+   "id": "brand:web-nippon-cha-williamsburg-ny-brooklyn-214-bedfor-5f988f",
    "name": "Nippon Cha Williamsburg",
    "address": "214 Bedford Avenue",
    "city": "Brooklyn",
@@ -3056,7 +3056,7 @@
    "lng": -73.958901,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/6916463756",
@@ -3140,7 +3140,7 @@
    }
   },
   {
-   "id": "web:sorate-flatiron-teahouse-ny-new-york-30-east-18th-stree",
+   "id": "brand:web-sorate-flatiron-teahouse-ny-new-york-30-east-1-781dff",
    "name": "Sorate Flatiron Teahouse",
    "address": "30 East 18th Street",
    "city": "New York",
@@ -3163,10 +3163,10 @@
    "lng": -73.989712,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:sorate-soho-teahouse-ny-new-york-103-sullivan-stree",
+   "id": "brand:web-sorate-soho-teahouse-ny-new-york-103-sullivan-692910",
    "name": "Sorate Soho Teahouse",
    "address": "103 Sullivan Street",
    "city": "New York",
@@ -3189,7 +3189,7 @@
    "lng": -74.002813,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/6377702634",
@@ -3405,7 +3405,7 @@
    "verified": true
   },
   {
-   "id": "web:matcha-cafe-maiko-pa-philadelphia-923-race-st",
+   "id": "brand:web-matcha-cafe-maiko-pa-philadelphia-923-race-st-35969b",
    "name": "Matcha Cafe Maiko",
    "address": "923 Race St",
    "city": "Philadelphia",
@@ -3428,7 +3428,7 @@
    "lng": -75.155152,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z",
+   "fetched": "2026-11-23T19:20:20.937Z",
    "menu": {
     "items": [
      {
@@ -3631,7 +3631,7 @@
    "verified": true
   },
   {
-   "id": "web:matcha-creme-tx-dallas-10455-n-central-ex",
+   "id": "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160",
    "name": "Matcha & Creme",
    "address": "10455 N Central Expy",
    "city": "Dallas",
@@ -3654,10 +3654,10 @@
    "lng": -96.769177,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:matcha-cafe-maiko-tx-richardson-100-s-central-expy",
+   "id": "brand:web-matcha-cafe-maiko-tx-richardson-100-s-central-6cbcd1",
    "name": "Matcha Cafe Maiko",
    "address": "100 S Central Expy Ste 15",
    "city": "Richardson",
@@ -3680,7 +3680,7 @@
    "lng": -96.73746,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z",
+   "fetched": "2026-11-23T19:20:20.937Z",
    "menu": {
     "items": [
      {
@@ -3801,7 +3801,7 @@
    }
   },
   {
-   "id": "web:matcha-cafe-maiko-tx-san-antonio-7115-blanco-rd-ste",
+   "id": "brand:web-matcha-cafe-maiko-tx-san-antonio-7115-blanco-r-cb4a18",
    "name": "Matcha Cafe Maiko",
    "address": "7115 Blanco Rd Ste 112",
    "city": "San Antonio",
@@ -3824,7 +3824,7 @@
    "lng": -98.506202,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z",
+   "fetched": "2026-11-23T19:20:20.937Z",
    "menu": {
     "items": [
      {
@@ -3945,7 +3945,7 @@
    }
   },
   {
-   "id": "web:matcha-cafe-maiko-tx-san-antonio-11330-potranco-rd-",
+   "id": "brand:web-matcha-cafe-maiko-tx-san-antonio-11330-potranc-5c0c2f",
    "name": "Matcha Cafe Maiko",
    "address": "11330 Potranco Rd #101",
    "city": "San Antonio",
@@ -3968,7 +3968,7 @@
    "lng": -98.714576,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z",
+   "fetched": "2026-11-23T19:20:20.937Z",
    "menu": {
     "items": [
      {
@@ -4089,7 +4089,7 @@
    }
   },
   {
-   "id": "web:matcha-mia-eldridge-tx-houston-1809-eldridge-park",
+   "id": "brand:web-matcha-mia-eldridge-tx-houston-1809-eldridge-p-8d5013",
    "name": "Matcha Mia (Eldridge)",
    "address": "1809 Eldridge Parkway Suite 104",
    "city": "Houston",
@@ -4112,10 +4112,10 @@
    "lng": -95.624482,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
-   "id": "web:mira-matcha-tx-san-antonio-1931-north-new-bra",
+   "id": "brand:web-mira-matcha-tx-san-antonio-1931-north-new-brau-147356",
    "name": "Mira Matcha",
    "address": "1931 North New Braunfels Avenue",
    "city": "San Antonio",
@@ -4138,7 +4138,7 @@
    "lng": -98.461029,
    "geocode_source": "nominatim",
    "osm_url": null,
-   "fetched": "2026-11-23T19:00:36.400Z"
+   "fetched": "2026-11-23T19:20:20.937Z"
   },
   {
    "id": "osm:node/11399205396",

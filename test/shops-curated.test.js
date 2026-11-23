@@ -16,6 +16,7 @@ test("curated rows need a street address, state, public source and read date; ve
   assert.equal(ok.shop.instagram, "isshikimatcha");
   assert.equal(ok.shop.verified, true);
   assert.equal(ok.shop.source, "web");
+  assert.match(ok.shop.id, /^brand:web-[a-z0-9-]{1,55}$/);
   assert.equal(checkRow({ ...row, address: "Grand Street" }).held, "no street address");
   assert.equal(checkRow({ ...row, source_url: "" }).held, "no public source_url");
   assert.equal(checkRow({ ...row, read: "yesterday" }).held, "no read date");

@@ -6,6 +6,7 @@
 // is held with the reason. verified = the worker confirmed the shop on its own site or Instagram bio (confirmed_via), never a press list alone.
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 
 export const STATES = new Set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split(" "));
 export const CONFIRMED_VIA = new Set(["own-site", "instagram-bio", "press+site"]);
@@ -13,6 +14,14 @@ const http = (u) => (typeof u === "string" && /^https?:\/\/[^\s]+$/i.test(u.trim
 const str = (v) => (typeof v === "string" && v.trim() ? v.trim() : null);
 const handle = (v) => { const s = str(v); if (!s) return null; const m = /instagram\.com\/([A-Za-z0-9._]+)/i.exec(s); return (m ? m[1] : s.replace(/^@/, "")).toLowerCase().replace(/[^a-z0-9._]/g, "") || null; };
 const slug = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 50);
+
+// Ids are "brand:web-<slug>-<hash>" (at most 60 characters after "brand:"): the site's ?shop= deep link accepts only osm:<type>/<n> and
+// brand:<[a-z0-9._-]{1,60}>, and a "web-" id never equals an OSM id, so only the 150 m same-name dedupe merges a researched row with another.
+export function shopId(name, state, city, address) {
+  const full = `${slug(name)}-${state.toLowerCase()}-${slug(city)}-${slug(address)}`;
+  const h = createHash("sha1").update(full).digest("hex").slice(0, 6);
+  return `brand:web-${full.slice(0, 46).replace(/-+$/, "")}-${h}`;
+}
 
 // One raw row -> { shop } (without coordinates) or { held: reason }.
 export function checkRow(r, file = "") {
@@ -27,7 +36,7 @@ export function checkRow(r, file = "") {
   const zip = /^\d{5}/.test(String(r.zip || "")) ? String(r.zip).slice(0, 5) : null;
   return {
     shop: {
-      id: `web:${slug(name)}-${state.toLowerCase()}-${slug(city)}-${slug(address).slice(0, 18)}`,
+      id: shopId(name, state, city, address),
       name, address, city, state, zip,
       website: http(r.website), instagram: handle(r.instagram), phone: str(r.phone), opening_hours: str(r.opening_hours),
       menu_url: http(r.menu_url), image_url: http(r.image_url), image_credit: str(r.image_credit),
