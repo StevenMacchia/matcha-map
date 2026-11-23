@@ -115,6 +115,11 @@
     "lng": -81.209856,
     "source": "nominatim"
   },
+  "1512 edison street dallas tx 75207": {
+    "lat": 32.792977,
+    "lng": -96.817925,
+    "source": "nominatim"
+  },
   "15317 broadway avenue maple heights oh 15317": {
     "lat": 41.418808,
     "lng": -81.574369,
@@ -123,6 +128,11 @@
   "15557 union avenue los gatos ca 15557": {
     "lat": 37.242212,
     "lng": -121.931288,
+    "source": "nominatim"
+  },
+  "15557 union avenue los gatos ca 95032": {
+    "lat": 37.238039,
+    "lng": -121.931172,
     "source": "nominatim"
   },
   "1600 bonita ave la verne ca 91750": {
@@ -139,6 +149,11 @@
     "miss": true,
     "at": 1795378393269
   },
+  "1759 sutter street san francisco ca 94115": {
+    "lat": 37.786377,
+    "lng": -122.429188,
+    "source": "nominatim"
+  },
   "176 nw 25th st miami fl 33127": {
     "lat": 25.800662,
     "lng": -80.198562,
@@ -152,6 +167,11 @@
   "1770 w berteau ave suite 407 chicago il": {
     "miss": true,
     "at": 1795379585349
+  },
+  "1797 clearwater largo rd clearwater fl": {
+    "lat": 27.937356,
+    "lng": -82.796467,
+    "source": "nominatim"
   },
   "1803 broadway st san antonio tx": {
     "miss": true,
@@ -186,6 +206,11 @@
     "lng": -79.984783,
     "source": "nominatim"
   },
+  "1823 east 7th avenue tampa fl": {
+    "lat": 27.960164,
+    "lng": -82.438447,
+    "source": "nominatim"
+  },
   "1823 east 7th avenue tampa fl 33605": {
     "lat": 27.960164,
     "lng": -82.438447,
@@ -208,6 +233,11 @@
   "1850 k st washington va": {
     "lat": 38.928884,
     "lng": -77.010306,
+    "source": "nominatim"
+  },
+  "19 n tejon st colorado springs co 80903": {
+    "lat": 38.834691,
+    "lng": -104.822976,
     "source": "nominatim"
   },
   "190 court brooklyn ny": {
@@ -240,6 +270,11 @@
     "lng": -77.010741,
     "source": "nominatim"
   },
+  "2001 concert dr virginia beach va 23456": {
+    "lat": 36.779469,
+    "lng": -76.100936,
+    "source": "nominatim"
+  },
   "201 f street washington dc": {
     "lat": 38.897122,
     "lng": -77.003297,
@@ -267,6 +302,11 @@
     "miss": true,
     "at": 1795374278023
   },
+  "2124 northwest expressway oklahoma city ok 73112": {
+    "lat": 35.525184,
+    "lng": -97.558852,
+    "source": "nominatim"
+  },
   "2150 east brown road mesa az 85213": {
     "lat": 33.437584,
     "lng": -111.784732,
@@ -275,6 +315,11 @@
   "22 713 lorimer st new york ny": {
     "miss": true,
     "at": 1795379570006
+  },
+  "2204 recreation dr virginia beach va 23456": {
+    "lat": 36.773182,
+    "lng": -76.107587,
+    "source": "nominatim"
   },
   "2211 16th st sacramento ca": {
     "lat": 38.56473,
@@ -306,6 +351,11 @@
     "lng": -75.135458,
     "source": "nominatim"
   },
+  "2301 north o'connor road irving tx 75062": {
+    "lat": 32.83944,
+    "lng": -96.952121,
+    "source": "nominatim"
+  },
   "2360 india st san diego ca": {
     "lat": 32.729086,
     "lng": -117.170919,
@@ -314,6 +364,11 @@
   "2361 30th st san diego ca": {
     "lat": 32.730232,
     "lng": -117.129474,
+    "source": "nominatim"
+  },
+  "240 east orangewood avenue anaheim ca": {
+    "lat": 33.795391,
+    "lng": -117.904133,
     "source": "nominatim"
   },
   "2400 14th street washington dc": {
@@ -438,6 +493,11 @@
     "lng": -76.622293,
     "source": "nominatim"
   },
+  "307 east franklin avenue el paso tx 79901": {
+    "lat": 31.761973,
+    "lng": -106.487608,
+    "source": "nominatim"
+  },
   "307 kamani st honolulu hi": {
     "lat": 21.296565,
     "lng": -157.85636,
@@ -461,6 +521,11 @@
   "3222 m street northern virginia va": {
     "miss": true,
     "at": 1795379634330
+  },
+  "3333 bristol st costa mesa ca 92626": {
+    "lat": 33.690956,
+    "lng": -117.888582,
+    "source": "nominatim"
   },
   "3350 reynolds blvd ste 204 atlanta ga": {
     "miss": true,
@@ -514,6 +579,14 @@
     "lat": 40.770345,
     "lng": -111.871849,
     "source": "nominatim"
+  },
+  "3901 we pl 111 newport beach ca 92660": {
+    "miss": true,
+    "at": 1795396417835
+  },
+  "3901 westerly pl 111 newport beach ca 92660": {
+    "miss": true,
+    "at": 1795396416687
   },
   "400 bonnet springs blvd lakeland fl 33815": {
     "miss": true,
@@ -591,6 +664,11 @@
     "lng": -76.796642,
     "source": "nominatim"
   },
+  "4801 edwards ranch road fort worth tx 76109": {
+    "lat": 32.706937,
+    "lng": -97.394244,
+    "source": "nominatim"
+  },
   "4836 boiling brook pkwy north bethesda md": {
     "lat": 39.046508,
     "lng": -77.097352,
@@ -614,6 +692,16 @@
   "519 memorial dr atlanta ga": {
     "lat": 33.746513,
     "lng": -84.371126,
+    "source": "nominatim"
+  },
+  "52 e 8th st new york ny 10003": {
+    "lat": 40.730982,
+    "lng": -73.993659,
+    "source": "nominatim"
+  },
+  "530 technology dr irvine ca 92618": {
+    "lat": 33.674353,
+    "lng": -117.760403,
     "source": "nominatim"
   },
   "560 berne st atlanta ga": {
@@ -644,6 +732,11 @@
   "600 n shepherd dr ste 134 houston tx 77007": {
     "miss": true,
     "at": 1795391920886
+  },
+  "6207 richmond avenue dallas tx 75214": {
+    "lat": 32.816425,
+    "lng": -96.758386,
+    "source": "nominatim"
   },
   "6255 sunset boulevard los angeles ca 90028": {
     "lat": 34.098586,
@@ -741,6 +834,11 @@
   "713 lorimer street new york ny": {
     "lat": 40.718158,
     "lng": -73.950215,
+    "source": "nominatim"
+  },
+  "713 south alamo street san antonio tx 78205": {
+    "lat": 29.416973,
+    "lng": -98.488581,
     "source": "nominatim"
   },
   "718 w 18th st houston tx 77008": {
@@ -863,6 +961,11 @@
   "91 east 3rd street new york ny 10003": {
     "lat": 40.724843,
     "lng": -73.987808,
+    "source": "nominatim"
+  },
+  "922 s staples st corpus christi tx 78404": {
+    "lat": 27.783043,
+    "lng": -97.401795,
     "source": "nominatim"
   },
   "950 n 2nd st philadelphia pa": {
@@ -1046,6 +1149,10 @@
     "miss": true,
     "at": 1795374299642
   },
+  "cafe of the day fort lauderdale fl": {
+    "miss": true,
+    "at": 1795396431264
+  },
   "cafe of the day houston tx": {
     "miss": true,
     "at": 1795374303494
@@ -1066,17 +1173,49 @@
     "miss": true,
     "at": 1795374294332
   },
+  "cafe of the day new york ny": {
+    "miss": true,
+    "at": 1795396400105
+  },
+  "cafe of the day newport news va": {
+    "miss": true,
+    "at": 1795396431971
+  },
+  "cafe of the day omaha ne": {
+    "miss": true,
+    "at": 1795396422836
+  },
   "cafe of the day pittsburgh pa": {
     "miss": true,
     "at": 1795374301654
+  },
+  "cafe of the day san francisco ca": {
+    "miss": true,
+    "at": 1795396402053
   },
   "cafe of the day tampa fl": {
     "miss": true,
     "at": 1795374286190
   },
+  "cafe of the day tucson az": {
+    "miss": true,
+    "at": 1795396401132
+  },
+  "cafe of the day tulsa ok": {
+    "miss": true,
+    "at": 1795396426098
+  },
+  "cafe of the month austin tx": {
+    "miss": true,
+    "at": 1795396402919
+  },
   "cafe of the month brooklyn ny": {
     "miss": true,
     "at": 1795374297557
+  },
+  "cafe of the month houston tx": {
+    "miss": true,
+    "at": 1795396404289
   },
   "cafe of the month los angeles ca": {
     "miss": true,
@@ -1090,6 +1229,10 @@
     "miss": true,
     "at": 1795374376257
   },
+  "cafe of the month seattle wa": {
+    "miss": true,
+    "at": 1795396422134
+  },
   "cafe of the month washington dc": {
     "miss": true,
     "at": 1795374282031
@@ -1101,6 +1244,10 @@
   "cafe of the week miami fl": {
     "miss": true,
     "at": 1795374290022
+  },
+  "cafe of the week san francisco ca": {
+    "miss": true,
+    "at": 1795396408481
   },
   "cafenookiee cleveland oh": {
     "miss": true,
@@ -1532,6 +1679,10 @@
     "lng": -83.04664,
     "source": "nominatim"
   },
+  "dintaifungusa los angeles ca": {
+    "miss": true,
+    "at": 1795394291270
+  },
   "driehaus museum chicago il": {
     "lat": 41.894285,
     "lng": -87.626503,
@@ -1669,6 +1820,10 @@
     "lat": 29.758938,
     "lng": -95.367697,
     "source": "nominatim"
+  },
+  "ifellinlovehere el paso tx": {
+    "miss": true,
+    "at": 1795396433815
   },
   "in the pink providence ri": {
     "lat": 41.827411,
@@ -1842,6 +1997,10 @@
     "miss": true,
     "at": 1795374383451
   },
+  "matchabygianna jackson ms": {
+    "miss": true,
+    "at": 1795396433178
+  },
   "matchafest miami miami fl": {
     "miss": true,
     "at": 1795379644565
@@ -1927,6 +2086,11 @@
   "new york ny": {
     "lat": 40.712728,
     "lng": -74.006015,
+    "source": "nominatim"
+  },
+  "newport beach ca": {
+    "lat": 33.617009,
+    "lng": -117.92944,
     "source": "nominatim"
   },
   "nola's ice cream orlando fl": {
@@ -2039,6 +2203,10 @@
     "lng": -75.06918,
     "source": "nominatim"
   },
+  "plum's cooking company sioux falls sd": {
+    "miss": true,
+    "at": 1795396429895
+  },
   "portland or": {
     "lat": 45.520247,
     "lng": -122.674194,
@@ -2083,6 +2251,10 @@
   "restaurant of the week houston tx": {
     "miss": true,
     "at": 1795374291033
+  },
+  "restaurant of the week tucson az": {
+    "miss": true,
+    "at": 1795396396911
   },
   "richmond va": {
     "lat": 37.538509,

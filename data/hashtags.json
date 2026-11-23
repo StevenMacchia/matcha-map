@@ -67,8 +67,238 @@
       "matchapopuphonolulu"
     ]
   ],
-  "ids": {},
-  "stats": {},
+  "ids": {
+    "matchapopup": "17842220296028831",
+    "matchapopups": "17859970288253080",
+    "matchapopupnyc": "18005808359554266",
+    "matchapopupla": "18468586720096506",
+    "matchacart": "17961073084270292",
+    "matchaevent": "17843797387051631",
+    "matchabar": "17842729753037044",
+    "popupmatcha": "17843883949048773",
+    "matchafest": "17841526243126375",
+    "matchamarket": "17856514429008922",
+    "matchapopupshop": "18014319761397801",
+    "matchatruck": "17844054949188838",
+    "matchastand": "17841523387115122",
+    "matchapopuphouston": "17861166183374570",
+    "matchapopupdallas": "18602478724036634",
+    "matchapopupatl": "18049802261211277",
+    "matchapopuporlando": "18414319717092620",
+    "matchapopupraleigh": "18051589607247477"
+  },
+  "stats": {
+    "matchapopup": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopups": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupnyc": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupla": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchacart": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchaevent": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchabar": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "popupmatcha": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchafest": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchamarket": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupshop": {
+      "runs": 1,
+      "posts": 0,
+      "kept": 0,
+      "last_run": "2026-11-23T00:59:42.578Z",
+      "last_top": "2026-11-23T00:59:42.578Z"
+    },
+    "matchatruck": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchastand": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupchicago": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopuphouston": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupdallas": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupatl": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupmiami": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopuphonolulu": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupsanantonio": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupsacramento": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopuptampa": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopuporlando": {
+      "runs": 1,
+      "posts": 0,
+      "kept": 0,
+      "last_run": "2026-11-23T00:59:42.578Z",
+      "last_top": "2026-11-23T00:59:42.578Z"
+    },
+    "matchapopupnashville": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupminneapolis": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupdetroit": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupportland": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupcharlotte": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupraleigh": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    },
+    "matchapopupphoenix": {
+      "runs": 0,
+      "posts": 0,
+      "kept": 0,
+      "last_run": null,
+      "last_top": null
+    }
+  },
   "candidates": [
     "matchapopupnewyork",
     "matchapopuplosangeles",
