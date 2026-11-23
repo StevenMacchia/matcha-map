@@ -64,11 +64,11 @@ export function checkRow(r, file = "") {
 }
 
 export function readCuratedFiles(dir = "data") {
-  const files = fs.readdirSync(dir).filter((f) => /^shops-.+\.json$/.test(f) && f !== "shops-overrides.json").sort();
+  const files = fs.readdirSync(dir).filter((f) => /^shops-.+\.json$/.test(f) && !["shops-overrides.json", "shops-extra.json"].includes(f)).sort();
   const rows = [];
   for (const f of files) {
     let j; try { j = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")); } catch { continue; }
-    for (const r of j.shops || []) rows.push({ file: f, row: r });
+    for (const r of Array.isArray(j.shops) ? j.shops : []) rows.push({ file: f, row: r });
   }
   return rows;
 }

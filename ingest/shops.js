@@ -4,7 +4,7 @@
 // (default 120) from a saved position (.cache/shops-cursor.json), so successive runs walk the whole country. Shops already in
 // data/shops.json from boxes not asked this run are kept; the ones inside a box asked again are replaced by what that box returns now.
 // Flags: --no-osm (skip Overpass; keep OSM rows already in data/shops.json) | --no-fetch (cache only) | --no-brands | --all (every box this run) | --only <city> | --verbose
-import { attachMenus } from "./lib/shops/menus.js";
+import { attachMenus, attachExtras } from "./lib/shops/menus.js";
 import "./lib/env.js";
 import fs from "node:fs";
 import { createFetcher } from "./lib/fetch.js";
@@ -101,6 +101,7 @@ async function main() {
   let shops = dedupe(leg.kept);
   shops = applyOverrides(shops, read("data/shops-overrides.json", {})).map((s) => fillState(s, cities));
   shops = attachMenus(shops, read("data/menus.json", { menus: {} }).menus);
+  shops = attachExtras(shops, read("data/shops-extra.json", { shops: {} }).shops);
   shops.sort((a, b) => (a.state || "~").localeCompare(b.state || "~") || a.name.localeCompare(b.name));
   const out = { generated: fetched, attribution: ATTRIBUTION, shops };
   // "serves" rows (coffee and tea shops with matcha on the menu) stay in data/shops.json; the site layer gets them only with SHOPS_SERVES=1

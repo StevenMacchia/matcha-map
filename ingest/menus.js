@@ -47,6 +47,21 @@ function nameDescPrice(lines, from, to) {
   return out;
 }
 
+// "Name / [one-sentence description ending in a full stop] / $ price": title-case names with section headings between items.
+function nameSentencePrice(lines, from, to) {
+  const out = []; let buf = [];
+  for (const l of lines.slice(from, to)) {
+    if (isPrice(l)) {
+      const last = buf[buf.length - 1];
+      const hasDesc = buf.length >= 2 && /[.!]$/.test(last);
+      const name = hasDesc ? buf[buf.length - 2] : last;
+      if (name && name.length <= 70 && !/[.!]$/.test(name)) out.push(item(name, priceOf(l), hasDesc ? last : ""));
+      buf = [];
+    } else buf.push(l);
+  }
+  return out;
+}
+
 // "$ p / name / [desc] / $ p": the price is printed before and after each item (Squarespace menu blocks).
 function priceBracket(lines, from, to) {
   const out = []; const seen = new Set(); let i = from;
@@ -139,6 +154,8 @@ export const SITES = [
   // The Hawaii store's menu: the page says prices apply to Hawaii only and vary by location, so other stores get the names without prices.
   { host: "matchacafe-maiko.com", urls: ["https://www.matchacafe-maiko.com/eng/menu/"], mode: "namePriceDesc", start: /^Shaved Ice Selection/, end: /^(Copyright|©)/i, stripPrices: true, note: "Main menu of the Hawaii store; items and prices vary by location" },
   { host: "cafemaikoorl.com", urls: ["https://cafemaikoorl.com/menu"], mode: "priceBracket", start: /^OUR MENU/, end: /^(Free Parking|Parking|©)/i },
+  { host: "kijitorabrooklyn.com", urls: ["https://www.kijitorabrooklyn.com/menu"], mode: "priceBracket", start: /^MENU$/ },
+  { host: "matchaandcreme.com", urls: ["https://www.matchaandcreme.com/"], mode: "nameSentencePrice", start: /^FALL SPECIAL$/, end: /^Our Gallery$/ },
   { host: "cinsei.com", urls: ["https://cinsei.com/"], mode: "jsonld" },
 ];
 
@@ -154,7 +171,7 @@ export async function readSite(f, site, now = new Date().toISOString().slice(0, 
       const a = site.start ? idx(lines, site.start) : 0;
       if (a < 0) continue;
       let b = site.end ? idx(lines, site.end, a + 1) : -1; if (b < 0) b = lines.length;
-      const fn = { nameDescPrice, priceBracket, nameThenPrice, namePriceDesc, inlineRange }[site.mode];
+      const fn = { nameDescPrice, priceBracket, nameThenPrice, namePriceDesc, inlineRange, nameSentencePrice }[site.mode];
       items = fn(lines, a + 1, b);
     }
     const seen = new Set();
