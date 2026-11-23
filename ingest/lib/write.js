@@ -5,7 +5,7 @@ import path from "node:path";
 import { SOCIAL_POST, postsFrom } from "./extract.js";
 import { hasMatcha } from "../adapters/mato.js";
 import { SITE_ORDER } from "./sites/common.js";
-import { PLACEHOLDER_VENUE } from "./names.js";
+import { PLACEHOLDER_VENUE, tidyCity } from "./names.js";
 import { judge, hasSignal } from "./quality.js";
 import { displayName } from "./names.js";
 
@@ -46,6 +46,7 @@ export function clean(e) {
     const v = e[k];
     o[k] = v === undefined || v === null ? (DEFAULTS[k] ? DEFAULTS[k]() : null) : v;
   }
+  o.city = tidyCity(o.city); // "philadelphia" from a listing prints and groups as Philadelphia
   o.posts = { ...emptyPosts(), ...(Array.isArray(o.posts) ? postsFrom(o.posts) : o.posts) };
   o.links = { ...emptyLinks(), ...o.links };
   o.menu = (Array.isArray(o.menu) ? o.menu : []).slice(0, 8);

@@ -135,6 +135,9 @@ export function createGeocoder({ noFetch = false, cachePath = "data/geocache.jso
 
   // Fill lat/lng/geocode_source on an event candidate; may lower confidence.
   async function geocode(ev) {
+    // An override by id may name the real city when the source only gave a region ("Northern Virginia") for a venue in another city.
+    const ov0 = overrides[ev.id];
+    if (ov0 && typeof ov0.city === "string" && ov0.city) { ev.city = ov0.city; if (ov0.state) ev.state = ov0.state; }
     const addrKey = normKey([ev.address, ev.city, ev.state].filter(Boolean).join(" "));
     const ov = overrides[ev.id] || overrides[addrKey];
     if (ov && typeof ov.lat === "number") {

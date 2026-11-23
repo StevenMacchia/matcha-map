@@ -40,3 +40,12 @@ export function placeOf(e) {
   const bad = !v || PLACEHOLDER_VENUE.test(v) || v.startsWith("@") || (isHandleShaped(v) && /[._]/.test(v)) || v.toLowerCase() === cleanHandle(e.handle).toLowerCase();
   return bad ? [e.city, e.state].filter(Boolean).join(", ") : v;
 }
+
+// A city name as a crawler gave it -> as the map should print it. All-lower-case input ("philadelphia", "st. louis", "winston-salem")
+// is title-cased word by word; anything that already carries a capital letter (McLean, DeKalb, LaGrange) is left alone. Empty -> null.
+export function tidyCity(city) {
+  const s = String(city ?? "").replace(/\s+/g, " ").trim();
+  if (!s) return null;
+  if (/[A-Z]/.test(s)) return s;
+  return s.replace(/(^|[\s\-'’.(])([a-z])/g, (m, pre, ch) => pre + ch.toUpperCase());
+}
