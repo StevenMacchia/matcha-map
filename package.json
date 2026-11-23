@@ -20,8 +20,11 @@
     "flyers": "node tools/flyers.js",
     "pages": "node tools/gen-pages.js",
     "og": "node tools/gen-og.js",
+    "feeds": "node tools/gen-feeds.js",
+    "event-pages": "node tools/gen-event-pages.js",
     "deploy": "wrangler deploy",
-    "preview": "wrangler dev"
+    "preview": "wrangler dev",
+    "search": "node tools/search.js"
   },
   "license": "MIT",
   "devDependencies": {
