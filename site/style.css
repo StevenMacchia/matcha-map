@@ -504,3 +504,19 @@ dialog .credit { font-size: 14px; color: var(--muted); }
 .card .hours { margin: 3px 0; font-size: 15px; font-weight: 700; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .card .credit-line { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
 .card .credit-line a { color: var(--muted); }
+
+/* ---------- approximate pins: a pop-up whose place is not posted yet (city-only). A dashed ring, lower opacity, no shadow:
+   "around here", not "right here". ---------- */
+.mk-ap, .mk-cl.cl-ap { width: 46px; height: 46px; }
+.mk-ap::after { display: none; }
+.mk-ap .mk-in, .mk-cl.cl-ap .mk-in { height: 46px; filter: none; }
+.mk-ap .ch, .mk-cl.cl-ap .ch { position: absolute; left: 7px; top: 7px; width: 32px; height: 32px; filter: none; transform: none; opacity: .72; }
+.mk-ring { position: absolute; inset: 1px; border-radius: 50%; border: 2px dashed var(--edge); background: color-mix(in srgb, var(--panel) 55%, transparent); opacity: .85; }
+.mk-ap:hover .mk-in, .mk-ap:focus-visible .mk-in, .mk-cl.cl-ap:hover .mk-in, .mk-cl.cl-ap:focus-visible .mk-in { transform: scale(1.06); }
+.mk-ap.sel .mk-in { transform: scale(1.12); }
+.mk-ap.sel .mk-ring { border-style: solid; opacity: 1; }
+.mk-cl.cl-ap .cl-n { top: auto; bottom: -4px; left: 50%; right: auto; transform: translateX(-50%); width: auto; min-width: 20px; padding: 1px 6px; box-sizing: border-box; border-radius: 999px; font-size: 13px; background: var(--panel); border: 2px dashed var(--edge); text-shadow: none; color: var(--ink); }
+.mk-cl.cl-ap.cl-m, .mk-cl.cl-ap.cl-l { width: 46px; height: 46px; }
+.list li.apnote { margin: -4px 2px 8px; font-size: 14px; }
+.aplink { background: none; border: 0; padding: 0; color: var(--deep); font-weight: 700; text-decoration: underline; cursor: pointer; }
+.mk-cl.cl-ap .cl-n.morph { animation: none; }

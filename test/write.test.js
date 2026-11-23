@@ -71,7 +71,7 @@ test("status and 30-day expiry", () => {
 test("output is sorted by start and has only schema keys", () => {
   const r = mergeEvents([], [cand({ start: "2026-12-20T10:00:00-08:00", end: null, venue: "B" }), cand({ venue: "A" })], { now });
   assert.deepEqual(r.events.map((e) => e.venue), ["A", "B"]);
-  assert.equal(Object.keys(r.events[0]).length, 32);
+  assert.equal(Object.keys(r.events[0]).length, 33);
 });
 
 test("robots rules: longest match wins, wildcards", () => {
@@ -118,4 +118,17 @@ test("the MATO pseudo-source is an organizer and candidates carry the source kin
   const raw = { source_url: "https://e.com/p", text: "Matcha pop-up Sat Dec 6 11am-3pm at Sunny Books, 1 Main St, Los Angeles CA", title: "Matcha pop-up", published_at: "2026-11-20T00:00:00Z", handle: "x", images: [] };
   const cs = await itemToCandidates(raw, { id: "s1", brand: "B", kind: "festival", category: "dessert" }, now, "x");
   for (const c of cs) { assert.equal(c.kind, "festival"); assert.equal(c.category, "dessert"); }
+});
+
+test("approx: migration sets it for city-centre events, clean() defaults it to false, the schema declares it", async () => {
+  const { migrateEvent, clean } = await import("../ingest/lib/write.js");
+  const fs = await import("node:fs");
+  assert.equal(migrateEvent(cand({ geocode_source: "none" })).approx, true);
+  assert.equal(migrateEvent(cand({ geocode_source: "none", lat: null, lng: null })).approx, false);
+  assert.equal(migrateEvent(cand({ geocode_source: "nominatim-venue", approx: true })).approx, false);
+  assert.equal(clean(cand()).approx, false);
+  const def = JSON.parse(fs.readFileSync("data/schema/event.schema.json", "utf8")).$defs.event;
+  assert.equal(def.properties.approx.type, "boolean");
+  assert.ok(def.required.includes("approx"));
+  assert.ok(def.properties.geocode_source.enum.includes("nominatim-venue"));
 });

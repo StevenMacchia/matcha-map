@@ -12,6 +12,8 @@ const RE_MD = new RegExp(`\\b${MON}\\.?\\s+(\\d{1,2})(?:st|nd|rd|th)?\\b${NOT_TI
 const RE_DM = new RegExp(`\\b(\\d{1,2})(?:st|nd|rd|th)?(?:\\s*(-|\\u2013|\\u2014|to|&|and)\\s*(\\d{1,2})(?:st|nd|rd|th)?)?\\s+(?:of\\s+)?${MON}\\b\\.?(?:,?\\s*(20\\d\\d)\\b)?`, "gi");
 const RE_NUM = /(?<![\d/$.:])(\d{1,2})\/(\d{1,2})(?:\/(\d{4}|\d{2}))?(?:\s*[-–]\s*(\d{1,2}))?(?![\d/])/g;
 const RE_REL = /\b(today|tonight|tomorrow|this weekend|next weekend|(?:this|next|on)?\s*(?:sun|mon|tues|wednes|thurs|fri|satur)day(?!s))\b/gi;
+// Recurring talk: "weekly", "every Saturday", "each week", "every other weekend"; "every single time" is not.
+const RECURRING = /\bweekly\b|\b(?:every|each)\s+(?:other\s+|single\s+)?(?:sun|mon|tue|wed|thu|fri|sat|week|day|weekend|month|first|second|third|fourth|last|1st|2nd|3rd|4th)/i;
 
 const pad = (n) => String(n).padStart(2, "0");
 const daysIn = (y, m) => new Date(Date.UTC(y, m, 0)).getUTCDate();
@@ -74,7 +76,7 @@ export function findDates(text, ref) {
   }
   // Relative words only count when there is no explicit date elsewhere in the text.
   // Recurring talk ("every Saturday", "weekly") is not one dated event.
-  if (!found.length && !/\b(every|weekly|each)\b/i.test(text)) {
+  if (!found.length && !RECURRING.test(text)) {
     for (const m of text.matchAll(RE_REL)) {
       if (/every\s*$/i.test(text.slice(Math.max(0, m.index - 8), m.index))) continue;
       const w = m[1].trim().toLowerCase();

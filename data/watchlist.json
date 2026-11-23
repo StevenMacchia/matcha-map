@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T01:04:15.523Z",
+  "updated": "2026-11-23T02:01:13.925Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -951,12 +951,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "homebody",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/840663982_17961060996216687_1916572182320736418_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=zUDWdqLDDtoQ7kNvwE1iWCL&_nc_oc=AdqI0goD8DlWPciw7e6c8Byn5uHV7nnoeZ2X2Oecu_ltr08mXd09BS264u1H0jJeUA8&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=TgU0Jly1lnvhwslNCPGjew&oh=00_AQQvu4fpCYXdcLxBw5p_0ZJ_ncHW1-N0IwiY-rN2wUNaLw&oe=6B09886D",
+      "followers_count": 5352
     },
     {
       "handle": "janesmatcha",
@@ -966,12 +970,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-07-29T15:32:05.000Z",
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "jane’s matcha",
+      "website": "https://janesmatcha.com",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.75761-15/497708335_17925248508064412_3379978048070607809_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=ppwfEvFhyzgQ7kNvwHN0kv6&_nc_oc=AdoxWyKlCxXXcLZt4MKg00Tdsamlv4VdudnBtCL5S9wRke7_uH7cZ07Exhgt3d7NZmo&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=i1ilyEa8jJvDL7188MWY7g&oh=00_AQQhOdmYHu1rTS8Ysx9HhyJ0RdrHEKdlag3krQYxibSWpQ&oe=6B09632F",
+      "followers_count": 6943
     },
     {
       "handle": "junbistlouis",
@@ -981,12 +990,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-18T13:04:27.000Z",
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "website": "http://www.junbishop.com",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/616178309_17842180791682473_7795503010468948012_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=_iQZ3K8xphMQ7kNvwH7-52d&_nc_oc=Adox3PeGLzI4xIMbPYbKUwpTpz7lFDnirBC7Vbz0lB7j1rPEPkMXlgsPdWBn3-bcczQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=EjkZ2rdFGHaF5Mtoq2zWOw&oh=00_AQTUTjSlanFXT8olQ_LnR-YVn6EoGhhTQKQY_CFQbDsTWg&oe=6B095E43",
+      "followers_count": 1139
     },
     {
       "handle": "justasipco",
@@ -996,12 +1009,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-01T21:08:52.000Z",
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Just a Sip | NJ Matcha & Coffee Pop Up",
+      "website": "https://tally.so/r/Gx0oAk",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/544154062_17859286065490070_1908246167146089708_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=3s9AkXxDzeoQ7kNvwHBTkcr&_nc_oc=AdoesfBUNuSm275Ppt3ykEUxJanvM8UdunjOfVO7Z8DzrvYGKLmHpNfbBsJnJjE5q1s&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=mrStRvGdeAjJHVKSVI8roQ&oh=00_AQS8mY9GJgig2gvthwS5W6VS8e8kDqQ55u0trfDYVdOeJg&oe=6B095B0A",
+      "followers_count": 961
     },
     {
       "handle": "ladonna.cafe",
@@ -1011,12 +1029,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-13T15:52:23.000Z",
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "La Donna Cafe Coffee Cart | NJ",
+      "website": "https://www.ladonnacafe.com/",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/528267793_17842010553557535_1380473082010944265_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Rat1wf06JDkQ7kNvwEHQUOb&_nc_oc=AdqOEX1xoGaLbpyBu_hPhEsM2ZMmueS0vkMAHnOBmQ06IqSsY9spNgt_1q9SE4ebBhA&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=ctQTWX1KMJdhZp3RB_FmPA&oh=00_AQSWQ51KwEz5eFjjF5erNSK7kyh_AtxO3VkvuIBDHZy0xQ&oe=6B096FBC",
+      "followers_count": 1081
     },
     {
       "handle": "laborasd",
@@ -1043,12 +1066,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-07-28T01:39:44.000Z",
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Luanne’s Coffee & Matcha",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/774512087_17908449267463310_8309310911669208241_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=whKRuR1kTmgQ7kNvwH5bi9B&_nc_oc=Adr2VEfOPr44AWNgQTm6tnPilwmeptxtXOYucZY2fe9pVV_la_MaYEhIDE6OSyzTGrQ&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=_myu2_MTFS1bqeeZ_cLbqg&oh=00_AQQlz6OYwwKeA-7UOoMOZkKcjcTVyMytN9Bsxvuy2vu_wg&oe=6B096282",
+      "followers_count": 3901
     },
     {
       "handle": "matcha.amor.ct",
@@ -1058,12 +1085,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-15T18:35:53.000Z",
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Matcha Amor || Pati 🌱",
+      "website": "https://linktr.ee/matcha.amor.ct",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.75761-15/497515682_17845780590475395_8736093583275784068_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=EnX0AfZ0_jEQ7kNvwGXPRYl&_nc_oc=AdpEdIoOsP7S-GAdibMau4fc6zq5t2buiPXMmoqtKRgu7QM9OInJ4UORsx7CDTkOhSY&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=1CLyZLugDqXmHVqGpEXCiQ&oh=00_AQQ63ivEGHAg8EErR2zh6QBCx4qgx7h570_phYefokvvXA&oe=6B097CE4",
+      "followers_count": 3163
     },
     {
       "handle": "matchabeatsclub",
@@ -1073,12 +1105,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-04T19:55:43.000Z",
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Matcha Beats Club",
+      "website": "https://luma.com/8fxxh71b",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/540460192_17844815289557759_5815420561698170508_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=XPyTby9bJzoQ7kNvwFhdgk6&_nc_oc=AdqMp7eacDKW9Ba3TExQ5cu3Z19aYt8USnvMP0QrTMUtqFUhkO0IgBgHG1kzOWlPmyo&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=YuzsBjtMykTsI2T9n7DuDQ&oh=00_AQToWOGqUyIYVZ2AgyRe3oZ5qa04jO_HnZa8531BY0Lkpw&oe=6B097354",
+      "followers_count": 522
     },
     {
       "handle": "matchaluv.dsm",
@@ -1088,12 +1125,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-16T17:30:04.000Z",
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Matcha Luv💚",
+      "website": "https://www.tiktok.com/@matchaluv.dsm?_t=ZP-90Q5kSTIwQh&_r=1",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/606599611_17973705713969816_3758414972771927053_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=qD2ilCygybAQ7kNvwFFz3Jm&_nc_oc=AdrB_Fh1UEHPOEyM8j2WzJ9XEuaqTcAPtzmhJ3VKy4Fv5j6DaaEAmvMq4oymPNAdrHM&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=rGZblUlMczVxgvU4tJ1L7w&oh=00_AQSwtZBXAc1JOHtWkZsH6aaRw6f3yixtglo0Dm8kLBEkJw&oe=6B096071",
+      "followers_count": 4150
     },
     {
       "handle": "matchamootea",
@@ -1103,12 +1145,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-22T14:39:54.000Z",
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Matcha Moo 📍Chicago, IL, 60632",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/455031549_1580795465801587_8753381900349082969_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=S83DKPMPiIQQ7kNvwFb5WXc&_nc_oc=Adqdl0ceHoFsiHStTwMo_yXviO0_3Y2B4YpvBvfPPmfw99uCCDsqpkBJUoCX-toq5rU&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQQaJ1oeK5Qi75h-rQm-iPnbHfUjBE9Fe0W1MYcxc7vvXQ&oe=6B0988B8",
+      "followers_count": 6237
     },
     {
       "handle": "drinkmatchapop",
@@ -1118,12 +1164,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Hawaii’s First Luxury Mobile Matcha Bar",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/730274548_18091185791246660_3568379785071689720_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Pv6padDV6t4Q7kNvwHC4JRF&_nc_oc=AdqEtqW_tZD8uXoRNDTn7iWEDDG7Qnn1MSuRehZ9etWOzK7Sl9ma4yf955viXJpzOQc&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=wS0tw0DlICz83l_vnTnTfA&oh=00_AQSbOR52xK8qwfYDUG8vIZf8qYTBo5X_jqv-EVI_grGP4Q&oe=6B096015",
+      "followers_count": 935
     },
     {
       "handle": "matcha.sanya",
@@ -1133,12 +1183,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Matchasanya",
+      "website": "http://www.matchasanya.com/",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/122238594_777290383117385_2865148773561297079_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=zEJafrPiiEIQ7kNvwENjW5b&_nc_oc=AdqjXRkz_dNTL6PbEXHQ4aAK9sdY3Tkfe2Vec2b4koIrLJkIiZQRGjbQDXamyu_rva8&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQQbJWfcb2mlLlDIYy38if9gfEc4HU_mQtdeHVG3Jxjp2g&oe=6B0978B3",
+      "followers_count": 801
     },
     {
       "handle": "matcha.valley",
@@ -1148,12 +1203,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Matcha Valley",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/751915696_18090997550322281_7843551515089082254_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=WsGlEHgjri8Q7kNvwHR4Zkf&_nc_oc=AdpL35IWFRCvl8vy9-4YwADWE7m66z2bSEFkcNH8R34p32MuXLPJ9Scbq5dhWQ8S5fA&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=kwJusjdznCwpYeneooPs8A&oh=00_AQR2EiUQGu_NE_9AFCjBGrphNfRK_bb_4riS7JpNVFp7Ow&oe=6B097771",
+      "followers_count": 264
     },
     {
       "handle": "matchaful",
@@ -1163,12 +1222,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-10-30T16:00:55.000Z",
       "hits": 0,
-      "checks": 3,
+      "checks": 4,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "MATCHAFUL",
+      "website": "http://matchaful.com",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/83407289_733237650534139_8402460463530508288_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=w0xqPwZTATUQ7kNvwFP5mfQ&_nc_oc=AdrhxqdlrDMp6s7g_8G-B8Z8MG1cmqeZCHltl0MdYzQE0GMNj5AGZbbdZTfJmIzQqvg&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQSADyia2nOX4CmGwof4OavlV1ha21PkRYtnYfWHLpWA_Q&oe=6B09867F",
+      "followers_count": 65467
     },
     {
       "handle": "mellobunbakery",
@@ -1178,12 +1242,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-21T18:43:55.000Z",
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Elk Grove / Sacramento Salt Bread and Cinnamon Rolls",
+      "website": "https://mellobunbakery.com",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/771000389_17928597360389994_2097360651637144434_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=fJbNWpNvzwsQ7kNvwGofzEw&_nc_oc=AdpIJ63rYHvi3btIFTLghmp6WNvNfacBvDlehzfq9NYLR1AXgUlUskwb7X5Uk53mCvc&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=Z2cqnoQMRKBUuHYclu-Rcw&oh=00_AQSMgigjeqVUAKOZDDQJuhUwCcaZIVed_8WxRye_i_LZVw&oe=6B097130",
+      "followers_count": 4137
     },
     {
       "handle": "mizubateaco",
@@ -1213,12 +1282,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Mucho Matcha | Specialty Tea Albany NY",
+      "website": "https://linktr.ee/Muchomatcha",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/617994992_17848858680664554_7599096271328289304_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=GKuy5prqOZMQ7kNvwF2OTGD&_nc_oc=Adqmxj0_svT_1IkPJT95SpotrFXhMaagIajRQdSd2dRXBikMaGPWuib0i-IlOcYUtTA&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=YbdGO-Q3YIjf0XzuUEHRzA&oh=00_AQT_XMYF98m3YIUhqoRSQ3NYXpcyXzI5ETEFpZrFowa11g&oe=6B09711D",
+      "followers_count": 771
     },
     {
       "handle": "mudmobilecoffee",
@@ -1228,12 +1302,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "MUD mobile coffee",
+      "website": "http://mudmobilecoffee.com",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/559271710_17850187050561538_2305776080577206369_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=kt8nycdPOk0Q7kNvwFOYWfv&_nc_oc=AdpQUTu2vtd8XybPCkgb2dT4-gCz1VPFcOKvUsYyzZ1bxI8HPWebqXmDSrkABekcBDY&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=4Pk82N1_xHmi_go2iiBlUA&oh=00_AQRRd4YsDiojnGNt66SmHU7_i9q9mS7e_eiUpFREhpgSDw&oe=6B098A80",
+      "followers_count": 551
     },
     {
       "handle": "nakamamatchaco",
@@ -1299,12 +1378,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
-      "last_post_with_popup": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
+      "last_post_with_popup": "2026-11-23T02:01:13.925Z",
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Peko Peko",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/877821135_17996998482018441_932981688892016241_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=HAk17j1D1W0Q7kNvwFA10MT&_nc_oc=AdoteTEi6E8s4XxHu4IiJdwtJGzyuN1jL_zuaenkQk1K9G9EHyssEev-pFCxdZ0w2uY&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=Qf6DDbtNeyy60l_feqnhHA&oh=00_AQS4jOhNWgRiRImENlvXSUBUPtud5i6wTwoNKsm369QOEw&oe=6B0955FA",
+      "followers_count": 3977
     },
     {
       "handle": "plenteamatcha",
@@ -1314,12 +1397,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "plentea matcha",
+      "website": "https://linktr.ee/plenteamatcha",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/837039670_18111470063173386_1935338883714224845_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=BoPAXO9bG40Q7kNvwEAbeep&_nc_oc=Adr9E7pOodZOv0-AtlH-2r-L3H8CnODwlTM87ksRl0hWbOtwrmcKnzcOIEpWCQxMGI0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=R_-59u8wa7hhZ34nFIfcFw&oh=00_AQSBI2yuHO9rpcPOCfF5Od9xsmFnMpj-a5xRbT0kDRhrNg&oe=6B098408",
+      "followers_count": 22155
     },
     {
       "handle": "projectlatte",
@@ -1329,12 +1417,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "website": "http://hoo.be/projectlatte",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/491442124_464622796674650_5218947497441731586_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=uP71kUnKSxgQ7kNvwH5f1xG&_nc_oc=AdqO3fZy9s6a1KCWcEThbNqpPF8NezNQjiKOV8SbPa_sHZs-nhMJfSOLCmS2Nm2F3bA&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQTR74LEfYCb_KmDzZLo1atENJq2vhNZlp2GbCdBuPbG5A&oe=6B09697E",
+      "followers_count": 1409
     },
     {
       "handle": "ritualgroundscafe",
@@ -1383,12 +1475,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 2,
+      "checks": 3,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Matcha Sunday",
+      "website": "https://linktr.ee/matchasunday",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/445826999_25517368774544312_2771507384037187714_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=fa1dIEXGC9QQ7kNvwGy0xr-&_nc_oc=AdqG3dd6TcByP3-X4JI4lMvWHgUD52e8oZB02j82cP8UPxtAhrHtwlNegKdApB9-dGQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQRlX9gSpwqYtRwDmBHIpO0j-_Xs5_kLZqqi50c3_HRMkA&oe=6B095A48",
+      "followers_count": 4465
     },
     {
       "handle": "tealoftshop",
@@ -1438,10 +1535,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T01:33:16.164Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "",
       "graph_error": "Graph API HTTP 400: Invalid user id",
@@ -1455,12 +1552,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 5,
+      "checks": 6,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "THEY SAY THAT",
+      "website": "https://maps.app.goo.gl/zdu5ZUF9rfLq4LSU7?g_st=ic",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/606024824_17910752787272923_5508283859747585537_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Nv9gOIpjaLsQ7kNvwHMvmWH&_nc_oc=AdqQ5u8JVeDPkmmVxg9yaggbWiDtwdqj6xMAL4WXojgP73K7Ewr7R1E-K_Gw90XTTEo&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=ErR6CrvOK64ehNkDI2M1Rw&oh=00_AQQsiLcGzDwX9_bL3p7RJ9ixUg3MlkS3uIo3gSJm_X3O2A&oe=6B0960FB",
+      "followers_count": 2966
     },
     {
       "handle": "wanyen.slc",
@@ -2125,12 +2227,17 @@
       "found_via": "search",
       "found_from": "ma.to/seattle",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-10-08T23:10:20.000Z",
       "hits": 0,
-      "checks": 4,
+      "checks": 5,
       "cadence_hours": 72,
-      "notes": "mato_venue=sabzmatcha; home=Seattle, WA; brand=Sabz Matcha; e.g. Sabz Matcha at HAISA X Good Company"
+      "notes": "mato_venue=sabzmatcha; home=Seattle, WA; brand=Sabz Matcha; e.g. Sabz Matcha at HAISA X Good Company",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Sabz Matcha",
+      "website": "https://linktr.ee/Sabzmatcha",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/710461094_17906994825493934_636699672655295714_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=CthphLMXJsAQ7kNvwHHwgTv&_nc_oc=AdrfTciEota6gXsMFBWJ_KC5RoFfF4ayjm88wAlM1HQp3GF3mzc5z6tNKArCz4KgibQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=bNxfJdQWeDhQ_XEh12PrKQ&oh=00_AQQK5qPrm9zr-s7IAW5eMz7oWO-8CTKpXXC5xjsuTRCPdA&oe=6B097E69",
+      "followers_count": 1055
     },
     {
       "handle": "cookbookcourtyard",
@@ -2299,12 +2406,17 @@
       "found_via": "search",
       "found_from": "ma.to/san-francisco",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-07-01T00:24:46.000Z",
       "hits": 0,
-      "checks": 4,
+      "checks": 5,
       "cadence_hours": 72,
-      "notes": "mato_venue=moodymatcharitual; home=San Francisco, CA; brand=Moody Matcha Ritual; e.g. Moody Matcha Workshop"
+      "notes": "mato_venue=moodymatcharitual; home=San Francisco, CA; brand=Moody Matcha Ritual; e.g. Moody Matcha Workshop",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Moody Matcha Ritual",
+      "website": "https://www.jiarencafe.com/eventcalendar",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/587291781_17848367811612023_6375177011962160605_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=pzuuHfu6_WMQ7kNvwF87JEq&_nc_oc=Adp_hDEkzPnG8gE4b9NzqmgT-KSNRb8Gjq7VCmjCrquHUu8pW9bJaC-wJbWeD6Ce41M&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=CK1enLwvV85KEiH2jVQrcw&oh=00_AQREMqKosF2OR62KdHmpXxf7TIct6299WZ_g6wBOapDQiw&oe=6B098D0D",
+      "followers_count": 74
     },
     {
       "handle": "shesinvited",
@@ -2633,12 +2745,17 @@
       "found_via": "search",
       "found_from": "ma.to/orlando",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-07-12T00:32:26.000Z",
       "hits": 0,
-      "checks": 4,
+      "checks": 5,
       "cadence_hours": 72,
-      "notes": "mato_venue=diablicos.coffee; home=Orlando, FL; brand=Diablicos Coffee; e.g. Matcha Party 2.0"
+      "notes": "mato_venue=diablicos.coffee; home=Orlando, FL; brand=Diablicos Coffee; e.g. Matcha Party 2.0",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Diablicos Coffee",
+      "website": "http://Diablicos.Coffee",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/762276462_17944878495264319_4652704878913163754_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Ttfy5q2h8WUQ7kNvwEGupdF&_nc_oc=AdphBU47nHPlnZV_FpATKgoBMfICz-QTQzPvDNpR2zFZ7heMvu7RQCPXDkCajwBLI6Y&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=r1pwbshuhjyAjnWWOV8DPA&oh=00_AQRunNSZAKwptYHDWxrtmYYY2STdFvCjbbj7NvMPx54nfg&oe=6B097353",
+      "followers_count": 3472
     },
     {
       "handle": "merrimatcha",
@@ -3238,12 +3355,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": "2026-11-21T03:00:14.000Z",
       "hits": 0,
-      "checks": 4,
+      "checks": 5,
       "cadence_hours": 24,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Eat Bubbles | Tea Shop",
+      "website": "https://vote.nashvillescene.com",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/168937427_500027257842123_8077717643288011591_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=3sFDmlCSzYUQ7kNvwGRv-4r&_nc_oc=Adp35XCqd4kVnnwTotftFlc_RTop1_8skybMSTJ2G6KhcWIl0fdKTnuQGB50ZJnTt-k&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQQoNLt9QG8wdoChfMLLBQjaBjk2_b9tqUUYRjj7s6gNqw&oe=6B098468",
+      "followers_count": 5876
     },
     {
       "handle": "gemoramatcha",
@@ -3253,12 +3375,16 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 4,
+      "checks": 5,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Gemora Matcha",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/754143252_18074255741414424_3949600118785977335_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=t8VYPuj-ItwQ7kNvwFGWjls&_nc_oc=Adr5p1SBg4_8iSzXv50I2EBNuLgIxeM0bS1GyvvmQ1W3Z1Ga405hotsgp6hogKUyMgA&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=ykb18HcuHBnr7BAU_2t2xw&oh=00_AQR6c03Dp1OApT1mkGkjPmwe71NGCFaY1DIurv00Ygm-JQ&oe=6B097340",
+      "followers_count": 11
     },
     {
       "handle": "iriscoffeelab",
@@ -3268,12 +3394,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 2,
+      "checks": 3,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "IRIS COFFEE LAB + CAFE",
+      "website": "https://www.iriscoffeelab.com",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/866827100_18338202601276974_8398013400859449804_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=v-Uiay5yOe8Q7kNvwGseDS0&_nc_oc=AdpWL7JV3ObNkKoLXtTTpZR7hxSccNxoq7aAmj2OyNNtSVwDg66E0iGkin43Z_ITBBI&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=hevDhQo8CudUqX2sEDaZ9w&oh=00_AQT1i9U1D7UYcw6GNTUykxInXa9mNJMN5WFTN1IQHV3zAQ&oe=6B0965AD",
+      "followers_count": 10639
     },
     {
       "handle": "matchahouse.nyc",
@@ -3303,12 +3434,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 4,
+      "checks": 5,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Min's Matcha",
+      "website": "http://www.minsmatcha.com",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/13827479_723081394517017_7084169429398847488_a.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=yfCQQ6njR_MQ7kNvwGhWDce&_nc_oc=Adps9ueeD1dCDelr0m70PqJZUsMhlrZjw8nFKE39FPNmI_UiHTqcA8JoNqi90gkrPjk&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQSZdlhmECa4_ySUizIbpH13eFj7YHzGsdl9sZ6Ta8NhtA&oe=6B09558B",
+      "followers_count": 3164
     },
     {
       "handle": "nok108matcha",
@@ -3338,10 +3474,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T01:33:16.164Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "",
       "graph_error": "Graph API HTTP 400: Invalid user id",
@@ -3415,12 +3551,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 2,
+      "checks": 3,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "UNOVA",
+      "website": "https://linktr.ee/unovatea",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/463356159_449649030949789_1651695034412975299_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=EvTY_4czo2QQ7kNvwHZlFUR&_nc_oc=AdowsM0ZxFCiWgVV1m2o-gDEzcVEMh67AK27QtfYLMIsQgr19rhQhQBNVxMhBzZg2oQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQS3CeI5p1R4aKzbDPkf4-9fRy96BwBkZi6j4JrwyynHYg&oe=6B0985AD",
+      "followers_count": 410
     },
     {
       "handle": "drinkwakari",
@@ -3430,12 +3571,17 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-22T23:56:32.160Z",
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 2,
+      "checks": 3,
       "cadence_hours": 72,
-      "notes": ""
+      "notes": "",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "SUPER PREMIUM MATCHA",
+      "website": "http://drinkwakari.com",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/685947966_17928909195268195_9076480198711286870_n.jpg?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=cg_aJLf0IkQQ7kNvwHCPI85&_nc_oc=AdpA_5cTNl9yLXVLVm5yRmIEIrzFhURfzypvbaK8IEjJto4j3hS9KNVq_jEajGdVTvI&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=W92RcY33zhxk14L88N5dog&oh=00_AQRgqo7bMmbORkBQuYcrofo82M_iHPJiE_kvBXGajtUBhg&oe=6B098844",
+      "followers_count": 1056
     },
     {
       "handle": "jinniesmalls",
@@ -8129,7 +8275,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "q=\"Columbus matcha cart OR matcha stand\"; city=Columbus"
+      "notes": "q=\"Columbus matcha cart OR matcha stand\"; city=Columbus",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "stargirlmeg111",
@@ -8174,7 +8322,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "q=\"Indianapolis matcha cart OR matcha stand\"; city=Indianapolis"
+      "notes": "q=\"Indianapolis matcha cart OR matcha stand\"; city=Indianapolis",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "sandeedra",
@@ -8280,7 +8430,7 @@
       "handle": "project_barkada",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "mention",
       "found_from": "https://ma.to/events/new-york",
       "first_seen": "2026-11-23T00:33:14.962Z",
@@ -8289,7 +8439,13 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "y market with 60+ AAPI small-business brands and weekly pop-ups. Markets 22 Nov 2026 BARKADA MARKET @project_barkada Filipino DJs, performances, creatives, chef"
+      "notes": "no matcha in last 25 posts",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "✪ PROJECT BARKADA ✪",
+      "website": "https://linktr.ee/projectbarkada",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/98441364_941402939621476_3672288649732423680_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=hv_KvVbiAdwQ7kNvwH4fS08&_nc_oc=AdoIhzoJDHrOEPCZ8xp9gfwtiV3Fo54YOu-crVYxM1pV1_6FpvTZpFfqegfAa5lQG6s&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQQ4WtBoA_wYfsfyM-DF7TMHIxAiJ4SC7pdgyEimbBhFAw&oe=6B096FEE",
+      "followers_count": 16675,
+      "dropped_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "michellesnyc",
@@ -8310,16 +8466,21 @@
       "handle": "rubykissescosmetics",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "watching",
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
-      "last_post_with_popup": null,
-      "hits": 0,
-      "checks": 0,
-      "cadence_hours": 72,
-      "notes": "q=\"matcha pop up New York\"; city=New York"
+      "last_checked": "2026-11-23T02:01:13.925Z",
+      "last_post_with_popup": "2026-11-08T15:04:36.000Z",
+      "hits": 1,
+      "checks": 1,
+      "cadence_hours": 24,
+      "notes": "q=\"matcha pop up New York\"; city=New York",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Ruby Kisses",
+      "website": "https://linktr.ee/rubykissescosmetics_official",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/645997741_18573166534021588_47250467925539008_n.jpg?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=N34zNudfEtkQ7kNvwHRf14F&_nc_oc=Adqm1ALE7XwDlHMD5c2LfdAH5d5-MTEyPNJco3H5nDSsbgZRKelCCzm9vNjFObRiU2s&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=JtgiEL8oXyjpUM3akPWoDw&oh=00_AQQiEqFBEwVHy4nyWv7xvKO92tCsReQiTZT-dSj7KFEQIQ&oe=6B095CBF",
+      "followers_count": 172206
     },
     {
       "handle": "cravematcha",
@@ -8344,12 +8505,17 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "q=\"matcha pop up New York\"; city=New York"
+      "notes": "q=\"matcha pop up New York\"; city=New York",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "belly🪽",
+      "website": "https://linktr.ee/Bellymayme",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.75761-15/499253497_18503594314058980_1480678729850078582_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=btOGxv9oWpUQ7kNvwHVAO09&_nc_oc=Adp4PjQYsoNVkqHJ57jXDvgK0pQIxw5SG3jotUkBIvEmnsjuATxOdb7XgilzG_BG0IA&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=A-2_CT_WbQgmKXs9DGJ3wQ&oh=00_AQQuvOT76bA7CP-djayZx_wcUrVKriSJE3rqO5U_WHd3lQ&oe=6B0969E4",
+      "followers_count": 15531
     },
     {
       "handle": "havenwellwithin",
@@ -8359,12 +8525,17 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "q=\"matcha pop up New York\"; city=New York"
+      "notes": "q=\"matcha pop up New York\"; city=New York",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Haven Well Within",
+      "website": "https://likeshop.me/havenwellwithin",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/465153617_3862773463992793_7846367127927595919_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=U06wnwaJZu0Q7kNvwGsNrQd&_nc_oc=AdrOPEZwOF-R3U8nVat-kwqYGdvCcrO8i1hKz3fGp1YGh2L_ZK-ujz80a1JYacc3Y-k&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQSUsO7sTA-Zvv4PQJD4ieas89LAbwjKzxfpA0R2iCVG9g&oe=6B098CB6",
+      "followers_count": 182859
     },
     {
       "handle": "thepeoplesmatcha",
@@ -8374,12 +8545,17 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "q=\"matcha pop up New York\"; city=New York"
+      "notes": "q=\"matcha pop up New York\"; city=New York",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "The People’s Matcha",
+      "website": "https://linktr.ee/thepeoplesmatcha",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.75761-15/503172065_18024062537703521_6288524569275549479_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=U9wsPs-KmDUQ7kNvwFt8coN&_nc_oc=Adpmf6dzsw46kA6Q19wo_MuWaRPNGbOAyV0b8agfVNvCQ45r6OtQphyH7nn3b_N-ats&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=Kwv5C4jzydN3shJ35L5SvQ&oh=00_AQTz-jx-b3oIP-ju5wAo8tcWPcXCS5VRcJvAkJwkJjmDog&oe=6B0983B5",
+      "followers_count": 2901
     },
     {
       "handle": "thebetterlisa",
@@ -8389,12 +8565,17 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "q=\"matcha popup New York this weekend\"; city=New York"
+      "notes": "q=\"matcha popup New York this weekend\"; city=New York",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Lisa Li",
+      "website": "http://the-qi.com",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/481488558_614268891352121_1756766337953039849_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=N5_SJEV4BIAQ7kNvwEauiTg&_nc_oc=Adon2DZ882S6NpkSss0k8GKhcWtCPEYs48Ep9YG1BGTHkdIdJOPsMOSWX1IVJWSIpYU&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQT0QuUxErhukr6LGuuyBwgiDmm8w4CqCEgQrIei_QL8yw&oe=6B096C2A",
+      "followers_count": 23439
     },
     {
       "handle": "dezmatcha",
@@ -8404,12 +8585,17 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "q=\"matcha popup New York this weekend\"; city=New York"
+      "notes": "q=\"matcha popup New York this weekend\"; city=New York",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "dez matcha 🪸🌊🐚🪼🦀🐬",
+      "website": "http://dezmatcha.com",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/650057043_18034742948606160_5003562709470547431_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=psC7srffOmoQ7kNvwEkxcTY&_nc_oc=Adr4iSe-Pj0Yznvsv_8SwsEAnVAzN16XALMZLMFS8xR9gth8oPeGen34pqnNVECERr0&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=Y7CiKxsi67hRRsk8YM83Mg&oh=00_AQQsOasG1A5YWWmk7R3wn-GUYXI3JKTpeZp_xIl6T9h0CQ&oe=6B098602",
+      "followers_count": 430
     },
     {
       "handle": "publicgoods",
@@ -8419,12 +8605,17 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "q=\"matcha popup New York this weekend\"; city=New York"
+      "notes": "q=\"matcha popup New York this weekend\"; city=New York",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Public Goods",
+      "website": "http://www.publicgoods.com",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/671189506_18542325256070058_194223484913191385_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=w9nwUkNK3nwQ7kNvwFyC0tO&_nc_oc=AdpiIR56xcVJph7MUYGaIU7n-zNoUjYA05q5HsTtjr42O_OcQrIt6MtH6uJ-lZfcbtA&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=Q8W0qRLMI8ey-eDoXzzj7A&oh=00_AQRSN0dqpi15wED_ecUyAGgqDkH0QHZaHTnePq0RZ5JyyQ&oe=6B095562",
+      "followers_count": 211783
     },
     {
       "handle": "kkat.dawg",
@@ -8524,10 +8715,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T01:33:16.164Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha pop up Los Angeles\"; city=Los Angeles"
     },
@@ -8539,12 +8730,17 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "q=\"matcha pop up Los Angeles\"; city=Los Angeles"
+      "notes": "q=\"matcha pop up Los Angeles\"; city=Los Angeles",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "Pour & Pulse",
+      "website": "https://linktr.ee/pourandpulse",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/650887217_17877001836515376_2344876545368208749_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=2JXL9URA2NIQ7kNvwGRZKjQ&_nc_oc=AdpAV56jXcrJx9SubAlVCfciZxwLUxRMNnDGtqA3VGyV-m5piqUKv6ZmaGpdoT-upfU&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=_9v9miLfr1H2Vu8VT4SSzA&oh=00_AQRfSdbuvrLlOomZs-XBd6H5IQ4jfEVbnOTNgUu5Bn78Bg&oe=6B096058",
+      "followers_count": 8114
     },
     {
       "handle": "thehumblelush_mobilebar",
@@ -8554,12 +8750,17 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "q=\"matcha pop up Los Angeles\"; city=Los Angeles"
+      "notes": "q=\"matcha pop up Los Angeles\"; city=Los Angeles",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "The humble lush mobile bar",
+      "website": "http://thehumblelush@gmail.com",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/522679208_17900519631231383_9177542859158095929_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=vZTam7vSQVsQ7kNvwFWlf6-&_nc_oc=AdoW1UJwBjE4INuJsWx7i98JuLad-6uokvtaL0CViF26tNNPrfGuOiE0BBosVimxH3I&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=c8UfSEQkz8OiWinb5Qspxw&oh=00_AQSy87Uh8cAOYvSKfmmJ5sVz4EI9Oti9XRQ5-_HtDTB5iA&oe=6B09586B",
+      "followers_count": 849
     },
     {
       "handle": "emily.lorem",
@@ -8569,10 +8770,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T00:33:14.962Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T01:33:16.164Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha popup Los Angeles this weekend\"; city=Los Angeles"
     },
@@ -8580,7 +8781,7 @@
       "handle": "yfnlucci",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "mention",
       "found_from": "https://ma.to/events/chicago/anytime/markets",
       "first_seen": "2026-11-23T01:04:15.523Z",
@@ -8589,13 +8790,19 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "p Towne and Oak Seasonal popup opens for the holiday season. Markets 25 Nov 2026 Album Signing with @yfnlucci Shuga Records Entry with purchase of the new album"
+      "notes": "no matcha in last 25 posts",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "650Lucci",
+      "website": "https://yfnlucci.lnk.to/ESIAESSI",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/833261197_18639751366032469_2602871994795720497_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=7d201b&_nc_ohc=XPhSCrdmT6UQ7kNvwF1Qlgj&_nc_oc=AdpcLEyEQWj6-qxFyEXvDVily0rc4tVULLLuPJIFy15ZD2ZRUJbbBSz5O3Tt3PFrzz8&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=s-bV3kloxNReozODyRBH7w&oh=00_AQSiOS_KtjQTW7OhojkBLEk5XJdHWgVEGREb4J3i--8BgQ&oe=6B096E95",
+      "followers_count": 6107295,
+      "dropped_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "northmarketbridgepark",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "mention",
       "found_from": "https://ma.to/events/columbus/anytime/markets",
       "first_seen": "2026-11-23T01:04:15.523Z",
@@ -8604,13 +8811,19 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "or market with holiday disco and donations Markets Party 3 Dec 2026 Disco + Donations Makers Market @northmarketbridgepark Evening market with local makers, don"
+      "notes": "no matcha in last 25 posts",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "North Market Bridge Park",
+      "website": "https://sprout.link/northmarketbridgepark",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/649433095_18098690648511124_8530230526909005551_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=FgAa5N9RerEQ7kNvwF3fNPK&_nc_oc=AdohEEjkpR582nx_kPb3JoO48uVVvIA-e_0ClId0-K5LaHC-CZ1AHsuvC1FjSJ-EKeU&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=CvOkqw72OIczgrwW2xP6Fw&oh=00_AQSL8bBLXpaxtWetcEaci-gNv0MZ7p9j6i2VkwlfW_h6AA&oe=6B098564",
+      "followers_count": 19404,
+      "dropped_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "thewaterconservationgarden",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "mention",
       "found_from": "https://ma.to/events/san-diego/anytime/markets",
       "first_seen": "2026-11-23T01:04:15.523Z",
@@ -8619,7 +8832,13 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "ators with DJ sets and a local holiday marketplace. Markets Party 28 Nov 2026 Holiday Makers Market @thewaterconservationgarden New earrings made from recycled "
+      "notes": "no matcha in last 25 posts",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "The Water Conservation Garden",
+      "website": "https://linktr.ee/twcg",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/572928138_18375071305150734_5254132251817535055_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=vQ849ykGenwQ7kNvwEusBe5&_nc_oc=Adp_Rs_Vm8sr1bTZyZPwQpJ5NaPeUnjMkzyUbJmAT0OPee319cO9xVpmpaXPWIBYz4k&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=9BKarV0zpMowfh_7rgZnQg&oh=00_AQRW9oY3HY4n3j8LNjGnL555ibJlQQjTkJIcC4C3v5GmXg&oe=6B097B4D",
+      "followers_count": 7741,
+      "dropped_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "restaurant_of_the_week",
@@ -8634,13 +8853,15 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=restaurant-of-the-week; home=Tucson, AZ; brand=Restaurant of the Week; e.g. Matcha + Meetup: Tucson | Creatives Edition"
+      "notes": "site=eventbrite; org=restaurant-of-the-week; home=Tucson, AZ; brand=Restaurant of the Week; e.g. Matcha + Meetup: Tucson | Creatives Edition",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "cafe_of_the_day",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "search",
       "found_from": "eventbrite",
       "first_seen": "2026-11-23T01:04:15.523Z",
@@ -8649,7 +8870,13 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=cafe-of-the-day; home=Brooklyn, NY; brand=Cafe of the Day; e.g. Matcha + Meetup: Brooklyn"
+      "notes": "no matcha in last 25 posts",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "/ 카페, 오브더데이",
+      "website": "https://m.booking.naver.com/booking/6/bizes/1010037/items/7325652?theme=place&lang=ko&area=plt",
+      "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/41679797_2271977696422643_1787613926020612096_n.jpg?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=zuIDZXIpB3cQ7kNvwGOncLj&_nc_oc=AdrqFmzCLUjOTfbkBr2V83mi1hVr3MYoFhx9oiQrjaVNMjdzxzNWYXShCKK8riQOu1s&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQQlGIUzV1xoMIOR8sFKhDfM5ow0rPMl6R43P8uD9Y0lAA&oe=6B09899E",
+      "followers_count": 533,
+      "dropped_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "cafe_of_the_month",
@@ -8664,7 +8891,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=cafe-of-the-month; home=New York, NY; brand=Cafe of the Month; e.g. Matcha + Meetup: NYC | Film + Music Speed Networking Roulette"
+      "notes": "site=eventbrite; org=cafe-of-the-month; home=New York, NY; brand=Cafe of the Month; e.g. Matcha + Meetup: NYC | Film + Music Speed Networking Roulette",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "the_sunrise_house",
@@ -8679,7 +8908,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=the-sunrise-house; home=Houston, TX; brand=The Sunrise House; e.g. Matcha + Meetup: Houston | Benefits for The Birthday Party Project"
+      "notes": "site=eventbrite; org=the-sunrise-house; home=Houston, TX; brand=The Sunrise House; e.g. Matcha + Meetup: Houston | Benefits for The Birthday Party Project",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "blush_restaurant_bakery",
@@ -8694,7 +8925,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=blush-restaurant-bakery; home=San Antonio, TX; brand=Blush Restaurant & Bakery; e.g. Matcha + Meetup: San Antonio | Benefits for The Birthd"
+      "notes": "site=eventbrite; org=blush-restaurant-bakery; home=San Antonio, TX; brand=Blush Restaurant & Bakery; e.g. Matcha + Meetup: San Antonio | Benefits for The Birthd",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "press_cafe",
@@ -8709,7 +8942,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=press-cafe; home=Fort Worth, TX; brand=Press Café; e.g. Matcha + Meetup: Fort Worth | Benefits for The Birthday Party Project"
+      "notes": "site=eventbrite; org=press-cafe; home=Fort Worth, TX; brand=Press Café; e.g. Matcha + Meetup: Fort Worth | Benefits for The Birthday Party Project",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "golden_hour_cafe_wine_bar",
@@ -8724,7 +8959,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=golden-hour-cafe-wine-bar; home=Austin, TX; brand=Golden Hour Cafe & Wine Bar; e.g. Matcha + Meetup: Austin | Benefits for The Birthday Par"
+      "notes": "site=eventbrite; org=golden-hour-cafe-wine-bar; home=Austin, TX; brand=Golden Hour Cafe & Wine Bar; e.g. Matcha + Meetup: Austin | Benefits for The Birthday Par",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "cafe_of_the_week",
@@ -8739,7 +8976,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=cafe-of-the-week; home=San Francisco, CA; brand=Cafe of the Week; e.g. Matcha + Meetup: San Francisco |  Small Business Owners Edition"
+      "notes": "site=eventbrite; org=cafe-of-the-week; home=San Francisco, CA; brand=Cafe of the Week; e.g. Matcha + Meetup: San Francisco |  Small Business Owners Edition",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "oak_okc",
@@ -8749,12 +8988,17 @@
       "found_via": "search",
       "found_from": "eventbrite",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T02:01:13.925Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=oak-okc; home=Oklahoma City, OK; brand=OAK OKC; e.g. Pilates & Pores"
+      "notes": "site=eventbrite; org=oak-okc; home=Oklahoma City, OK; brand=OAK OKC; e.g. Pilates & Pores",
+      "graph_checked_at": "2026-11-23T02:01:13.925Z",
+      "name": "OAK OKC",
+      "website": "https://linktr.ee/oak_okc",
+      "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/66403125_2409780202631261_3416014711458627584_n.jpg?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=H3INCxjjZkMQ7kNvwEjTbsL&_nc_oc=AdruXWmtqTcIXq849_RVq2RHF6wpyjYxM8h5vgYs8KeXYg7ZO4mTVii4fhYzFoQrWKc&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQQLUfn3Gow7nMhJ5Ea8SauyyyLXN553Kr0JQ81xFQh7Hg&oe=6B098AF6",
+      "followers_count": 33789
     },
     {
       "handle": "cafe_rose_the_pink_cafe_el_paso",
@@ -8769,7 +9013,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=cafe-rose-the-pink-cafe-el-paso; home=El Paso, TX; brand=Café Rosé the Pink Cafe El Paso; e.g. Matcha + Meetup: El Paso | Benefits for The "
+      "notes": "site=eventbrite; org=cafe-rose-the-pink-cafe-el-paso; home=El Paso, TX; brand=Café Rosé the Pink Cafe El Paso; e.g. Matcha + Meetup: El Paso | Benefits for The ",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "wishing_cup",
@@ -8784,7 +9030,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=wishing-cup; home=Boston, MA; brand=Wishing Cup; e.g. Matcha Tasting + Mug Making Workshop"
+      "notes": "site=eventbrite; org=wishing-cup; home=Boston, MA; brand=Wishing Cup; e.g. Matcha Tasting + Mug Making Workshop",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "hastings_market_vanguard",
@@ -8799,7 +9047,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=hastings-market-vanguard; home=Detroit, MI; brand=Hastings Market @ Vanguard; e.g. Music and Matcha - Hastings Market"
+      "notes": "site=eventbrite; org=hastings-market-vanguard; home=Detroit, MI; brand=Hastings Market @ Vanguard; e.g. Music and Matcha - Hastings Market",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "beacon_park",
@@ -8814,7 +9064,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=beacon-park; home=Detroit, MI; brand=Beacon Park; e.g. Pure Barre Detroit x Beacon Park Pop-Up"
+      "notes": "site=eventbrite; org=beacon-park; home=Detroit, MI; brand=Beacon Park; e.g. Pure Barre Detroit x Beacon Park Pop-Up",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "chai_khana",
@@ -8829,7 +9081,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=chai-khana; home=Detroit, MI; brand=Chai Khana; e.g. Matcha & Me: After Hours (Friendsgiving Edition)"
+      "notes": "site=eventbrite; org=chai-khana; home=Detroit, MI; brand=Chai Khana; e.g. Matcha & Me: After Hours (Friendsgiving Edition)",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "columbus_circle_holiday_market_by_urbanspace",
@@ -8844,7 +9098,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=columbus-circle-holiday-market-by-urbanspace; home=New York, NY; brand=Columbus Circle Holiday Market by Urbanspace; e.g. Dream Tea NYC in "
+      "notes": "site=eventbrite; org=columbus-circle-holiday-market-by-urbanspace; home=New York, NY; brand=Columbus Circle Holiday Market by Urbanspace; e.g. Dream Tea NYC in ",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "bluestone_lane_downtown_cafe",
@@ -8859,7 +9115,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=bluestone-lane-downtown-cafe; home=Nashville, TN; brand=Bluestone Lane - Downtown Café; e.g. Whisk & Bloom: The Art of Matcha Class ($24.99"
+      "notes": "site=eventbrite; org=bluestone-lane-downtown-cafe; home=Nashville, TN; brand=Bluestone Lane - Downtown Café; e.g. Whisk & Bloom: The Art of Matcha Class ($24.99",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "ballston_quarter",
@@ -8874,7 +9132,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=ballston-quarter; home=Arlington, VA; brand=Ballston Quarter; e.g. Matcha Tasting & Matcha Making Experience at Dov & Company in Arlington,"
+      "notes": "site=eventbrite; org=ballston-quarter; home=Arlington, VA; brand=Ballston Quarter; e.g. Matcha Tasting & Matcha Making Experience at Dov & Company in Arlington,",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "the_royal_sonesta_washington_dc_capitol_hill",
@@ -8889,7 +9149,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=the-royal-sonesta-washington-dc-capitol-hill; home=Washington, DC; brand=The Royal Sonesta Washington, DC Capitol Hill; e.g. The Royal Sone"
+      "notes": "site=eventbrite; org=the-royal-sonesta-washington-dc-capitol-hill; home=Washington, DC; brand=The Royal Sonesta Washington, DC Capitol Hill; e.g. The Royal Sone",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "resobox_east_village",
@@ -8904,7 +9166,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=resobox-east-village; home=New York, NY; brand=RESOBOX East Village; e.g. Japanese Tea Ceremony workshop at the Table"
+      "notes": "site=eventbrite; org=resobox-east-village; home=New York, NY; brand=RESOBOX East Village; e.g. Japanese Tea Ceremony workshop at the Table",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "metanoia_toolbox_sacred_wellness_space",
@@ -8919,7 +9183,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=metanoia-toolbox-sacred-wellness-space; home=Mesa, AZ; brand=Metanoia Toolbox Sacred Wellness Space; e.g. Matcha & Movement with Tea"
+      "notes": "site=eventbrite; org=metanoia-toolbox-sacred-wellness-space; home=Mesa, AZ; brand=Metanoia Toolbox Sacred Wellness Space; e.g. Matcha & Movement with Tea",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "alder_sage",
@@ -8934,7 +9200,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=alder-sage; home=Long Beach, CA; brand=Alder & Sage; e.g. Make a Matcha Set"
+      "notes": "site=eventbrite; org=alder-sage; home=Long Beach, CA; brand=Alder & Sage; e.g. Make a Matcha Set",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "sculpt_d_philly",
@@ -8949,7 +9217,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=sculpt-d-philly; home=philadelphia, PA; brand=Sculpt'd Philly; e.g. Mat, Moov & Matcha"
+      "notes": "site=eventbrite; org=sculpt-d-philly; home=philadelphia, PA; brand=Sculpt'd Philly; e.g. Mat, Moov & Matcha",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "nichi_bei_kai_cultural_center",
@@ -8964,7 +9234,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=nichi-bei-kai-cultural-center; home=San Francisco, CA; brand=Nichi Bei Kai Cultural Center; e.g. Winter Japanese Tea Ceremony at KansoAn (H"
+      "notes": "site=eventbrite; org=nichi-bei-kai-cultural-center; home=San Francisco, CA; brand=Nichi Bei Kai Cultural Center; e.g. Winter Japanese Tea Ceremony at KansoAn (H",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "empire_stores",
@@ -8979,7 +9251,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=empire-stores; home=Brooklyn, NY; brand=Empire Stores; e.g. Dream Tea NYC at Timeout Market, Dumbo!"
+      "notes": "site=eventbrite; org=empire-stores; home=Brooklyn, NY; brand=Empire Stores; e.g. Dream Tea NYC at Timeout Market, Dumbo!",
+      "graph_error": "Graph API HTTP 400: Invalid user id",
+      "graph_error_at": "2026-11-23T02:01:13.925Z"
     },
     {
       "handle": "padekwa_cafe",
@@ -9199,10 +9473,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T01:33:16.164Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"Nashville matcha cart OR matcha stand\"; city=Nashville"
     },
@@ -9229,10 +9503,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T01:33:16.164Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha pop up Washington DC\"; city=Washington DC"
     },
@@ -9244,10 +9518,10 @@
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-23T01:04:15.523Z",
-      "last_checked": null,
+      "last_checked": "2026-11-23T01:33:16.164Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 0,
+      "checks": 1,
       "cadence_hours": 72,
       "notes": "q=\"matcha pop up Washington DC\"; city=Washington DC"
     },

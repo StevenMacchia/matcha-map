@@ -421,6 +421,11 @@
     "lng": -117.082913,
     "source": "nominatim"
   },
+  "275 bleecker st": {
+    "lat": 40.73165,
+    "lng": -74.00301,
+    "source": "nominatim"
+  },
   "279 broome st new york ny": {
     "lat": 40.718367,
     "lng": -73.991332,
@@ -2463,6 +2468,277 @@
     "lat": 47.617271,
     "lng": -122.334857,
     "source": "nominatim"
+  },
+  "venue: amatō at maynard crossing raleigh nc": {
+    "miss": true,
+    "at": 1795400466175
+  },
+  "venue: amore mio florals studio orlando fl": {
+    "miss": true,
+    "at": 1795400399094
+  },
+  "venue: atlanta chinatown atlanta ga": {
+    "lat": 33.890544,
+    "lng": -84.299625,
+    "source": "nominatim-venue"
+  },
+  "venue: aveda store at bellevue square seattle wa": {
+    "miss": true,
+    "at": 1795400397067
+  },
+  "venue: binchoyaki sacramento ca": {
+    "miss": true,
+    "at": 1795400469201
+  },
+  "venue: boo song road cambridge ma": {
+    "miss": true,
+    "at": 1795400434417
+  },
+  "venue: brambleton farmers market washington dc": {
+    "miss": true,
+    "at": 1795400461136
+  },
+  "venue: cafe monet art & clay studio austin tx": {
+    "miss": true,
+    "at": 1795400405244
+  },
+  "venue: chengdu teahouse lansing mi": {
+    "miss": true,
+    "at": 1795400366809
+  },
+  "venue: columbus circle holiday market by urbanspace new york ny": {
+    "miss": true,
+    "at": 1795400388996
+  },
+  "venue: druid hills farmers market atlanta ga": {
+    "miss": true,
+    "at": 1795400432442
+  },
+  "venue: eat loco farmers market washington dc": {
+    "miss": true,
+    "at": 1795400420283
+  },
+  "venue: el patio wynwood miami fl": {
+    "miss": true,
+    "at": 1795400377932
+  },
+  "venue: eoc studio sacramento ca": {
+    "miss": true,
+    "at": 1795400384964
+  },
+  "venue: fathom gallery washington dc": {
+    "miss": true,
+    "at": 1795400443482
+  },
+  "venue: filo cafe north bethesda md": {
+    "miss": true,
+    "at": 1795400367813
+  },
+  "venue: filo cafe washington md": {
+    "miss": true,
+    "at": 1795400459145
+  },
+  "venue: forager crafts los angeles ca": {
+    "miss": true,
+    "at": 1795400481346
+  },
+  "venue: frequency austin tx": {
+    "miss": true,
+    "at": 1795400422301
+  },
+  "venue: frsh by aroma360 miami fl": {
+    "miss": true,
+    "at": 1795400381962
+  },
+  "venue: gardens studio orlando fl": {
+    "miss": true,
+    "at": 1795400456243
+  },
+  "venue: home ec san diego ca": {
+    "miss": true,
+    "at": 1795400352698
+  },
+  "venue: ifellinlovehere el paso tx": {
+    "miss": true,
+    "at": 1795400362792
+  },
+  "venue: isshiki matcha soho new york ny": {
+    "miss": true,
+    "at": 1795400424318
+  },
+  "venue: isshiki new york ny": {
+    "miss": true,
+    "at": 1795400463151
+  },
+  "venue: jaide atl atlanta ga": {
+    "miss": true,
+    "at": 1795400471221
+  },
+  "venue: jcch honolulu hi": {
+    "miss": true,
+    "at": 1795400395045
+  },
+  "venue: jiaren cafe san francisco ca": {
+    "miss": true,
+    "at": 1795400375894
+  },
+  "venue: joy flower pot new york ny": {
+    "miss": true,
+    "at": 1795400475257
+  },
+  "venue: kaiser farmers market san francisco ca": {
+    "miss": true,
+    "at": 1795400360752
+  },
+  "venue: kohiko coffee house houston tx": {
+    "lat": 29.578986,
+    "lng": -95.584672,
+    "source": "nominatim-venue"
+  },
+  "venue: kyoto coast matcha – ocean beach san diego ca": {
+    "miss": true,
+    "at": 1795400438443
+  },
+  "venue: lindt fairfield ct": {
+    "miss": true,
+    "at": 1795400428392
+  },
+  "venue: lucky girl market rva washington dc": {
+    "miss": true,
+    "at": 1795400426339
+  },
+  "venue: matcha mrkt atlanta ga": {
+    "miss": true,
+    "at": 1795400416246
+  },
+  "venue: matchafest miami miami fl": {
+    "miss": true,
+    "at": 1795400409229
+  },
+  "venue: momoko mart @ chinatown atlanta ga": {
+    "miss": true,
+    "at": 1795400441463
+  },
+  "venue: monarca thrift club minneapolis mn": {
+    "miss": true,
+    "at": 1795400386979
+  },
+  "venue: moonchild san antonio tx": {
+    "miss": true,
+    "at": 1795400391013
+  },
+  "venue: nola's ice cream orlando fl": {
+    "miss": true,
+    "at": 1795400477274
+  },
+  "venue: olastudionyc brooklyn ny": {
+    "miss": true,
+    "at": 1795400358741
+  },
+  "venue: onli houston tx": {
+    "miss": true,
+    "at": 1795400369835
+  },
+  "venue: paint your heart out washington va": {
+    "miss": true,
+    "at": 1795400467183
+  },
+  "venue: pho gago san diego ca": {
+    "miss": true,
+    "at": 1795400430375
+  },
+  "venue: pip coffee+clay - phoenix phoenix az": {
+    "miss": true,
+    "at": 1795400411191
+  },
+  "venue: plum's cooking company sioux falls sd": {
+    "miss": true,
+    "at": 1795400403150
+  },
+  "venue: postern coffee atlanta ga": {
+    "lat": 33.919381,
+    "lng": -84.282066,
+    "source": "nominatim-venue"
+  },
+  "venue: resident company club - flatiron new york ny": {
+    "miss": true,
+    "at": 1795400413212
+  },
+  "venue: roots it miami fl": {
+    "miss": true,
+    "at": 1795400418266
+  },
+  "venue: salvatore galateria sacramento ca": {
+    "miss": true,
+    "at": 1795400371861
+  },
+  "venue: sandy springs farmers market atlanta ga": {
+    "miss": true,
+    "at": 1795400458309
+  },
+  "venue: south block northern virginia va": {
+    "miss": true,
+    "at": 1795400439443
+  },
+  "venue: st noir cafe new orleans la": {
+    "miss": true,
+    "at": 1795400364791
+  },
+  "venue: stillroom irvington ny": {
+    "miss": true,
+    "at": 1795400383017
+  },
+  "venue: stonemill matcha our japanese san francisco ca": {
+    "miss": true,
+    "at": 1795400436508
+  },
+  "venue: the anime edit miami fl": {
+    "miss": true,
+    "at": 1795400401120
+  },
+  "venue: the artisans bazaar at fort greene park brooklyn ny": {
+    "miss": true,
+    "at": 1795400393029
+  },
+  "venue: the malin washington dc": {
+    "miss": true,
+    "at": 1795400445495
+  },
+  "venue: the paper heart unwind washington dc": {
+    "miss": true,
+    "at": 1795400448520
+  },
+  "venue: the pottery loop chicago il": {
+    "miss": true,
+    "at": 1795400373929
+  },
+  "venue: the well studio san francisco ca": {
+    "miss": true,
+    "at": 1795400473241
+  },
+  "venue: togyushi new york ny": {
+    "miss": true,
+    "at": 1795400354752
+  },
+  "venue: tresse washington dc": {
+    "miss": true,
+    "at": 1795400356722
+  },
+  "venue: tulip cafe | coffee shop | catering service for weddings | catering service for special events columbus oh": {
+    "miss": true,
+    "at": 1795400407185
+  },
+  "venue: vvv washington va": {
+    "miss": true,
+    "at": 1795400446502
+  },
+  "venue: we'll meet outside of the cafe philadelphia pa": {
+    "miss": true,
+    "at": 1795400379967
+  },
+  "venue: we'll meet outside of the cafe washington dc": {
+    "miss": true,
+    "at": 1795400479358
   },
   "vintage vintage vintage dc washington va": {
     "miss": true,

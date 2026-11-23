@@ -31,6 +31,7 @@ export function newAccount(o, now = new Date()) {
     status: o.status || "candidate", found_via: o.found_via || "manual", found_from: o.found_from ?? null,
     first_seen: new Date(now).toISOString(), last_checked: null, last_post_with_popup: null,
     hits: 0, checks: 0, cadence_hours: 72, notes: o.notes || "",
+    ...(o.guess ? { guess: true } : {}),
   };
 }
 
@@ -66,6 +67,7 @@ export function recordGraph(acc, facts, now = new Date()) {
   if (facts) {
     if (facts.name) acc.name = facts.name;
     for (const k of ["website", "profile_picture_url", "followers_count"]) if (facts[k] != null) acc[k] = facts[k];
+    if (facts.biography) acc.bio = String(facts.biography).slice(0, 300); // the harvest reads a home city out of it
   }
   return acc;
 }

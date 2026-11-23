@@ -10,7 +10,7 @@
   var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  var state = { chip: "any", day: "", recent: false, userLoc: null, zip: "", events: [], brands: [], shops: [], view: "map" };
+  var state = { chip: "any", day: "", recent: false, apCity: "", userLoc: null, zip: "", events: [], brands: [], shops: [], view: "map" };
   var items = {};     // key -> item { kind, key, ll:[lat,lng], data, past, name }
   var live = {};      // marker id -> { marker, el, kind, key, count }
   var openKey = null;
@@ -116,6 +116,11 @@
     return 2 * R * Math.asin(Math.sqrt(h));
   }
   function lngLat(ll) { return [ll[1], ll[0]]; }
+  // City-only events (no place was found, the pin sits on the city's centre) are drawn as approximate markers.
+  function isApprox(e) { return e.approx === true || (e.geocode_source === "none" && !e.address); }
+  function cityLine(e) { return [e.city, e.state].filter(Boolean).join(", "); }
+  function placeLine(e) { return "Place not posted yet" + (cityLine(e) ? " \u00b7 " + cityLine(e) : ""); }
+  function approxLabel(e) { return e.brand + ", somewhere in " + (e.city || "the city") + ", place not posted yet"; }
 
   // ---------- map ----------
   var HOME = [[-125, 24.5], [-66.5, 49.5]], HI = [-157.95, 21.4];
@@ -144,10 +149,12 @@
   // marker holding a character, synced from querySourceFeatures. The circle layers are invisible
   // and exist only so the sources load.
   function addData() {
-    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(visibleEvents()), cluster: true, clusterRadius: 56, clusterMaxZoom: 13 });
+    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(visibleEvents(false)), cluster: true, clusterRadius: 56, clusterMaxZoom: 13 });
     if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: featureColl(visibleBrands()), cluster: true, clusterRadius: 44, clusterMaxZoom: 12 });
     if (!map.getSource("sh")) map.addSource("sh", { type: "geojson", data: featureColl(visibleShops()), cluster: true, clusterRadius: 40, clusterMaxZoom: 13 });
-    ["ev", "br", "sh"].forEach(function (s) {
+    // City-only events: always clustered (points on one spot join at every zoom), never drawn as separate stacked pins.
+    if (!map.getSource("ap")) map.addSource("ap", { type: "geojson", data: featureColl(visibleEvents(true)), cluster: true, clusterRadius: 1, clusterMaxZoom: 24 });
+    ["ev", "br", "sh", "ap"].forEach(function (s) {
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
     scheduleSync();
@@ -165,7 +172,7 @@
   var NUDGE = 12; // px: brand mochi sit down-right of their spot so an event pin on top does not hide them
   function syncMarkers() {
     var seen = {};
-    ["ev", "br", "sh"].forEach(function (src) {
+    ["ev", "br", "sh", "ap"].forEach(function (src) {
       if (!map.getSource(src) || !map.isSourceLoaded(src)) {
         Object.keys(live).forEach(function (id) { if (live[id].src === src) seen[id] = 1; });
         return;
@@ -207,19 +214,22 @@
   }
 
   function pinLabel(it) {
+    if (it.kind === "e" && it.approx) return approxLabel(it.data);
     if (it.kind === "s") return it.data.name + ", shop" + (it.data.city ? ", " + it.data.city : "");
     return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) : it.data.brand + ", " + it.data.home_city + ", no dates yet";
   }
   function makePin(it) {
     var el = document.createElement("button");
     el.type = "button";
-    el.className = "mk " + (it.kind === "e" ? "mk-ev" : it.kind === "s" ? "mk-sh" : "mk-br") + (it.past ? " past" : "") + (it.key === openKey ? " sel" : "");
+    el.className = "mk " + (it.kind === "e" ? "mk-ev" : it.kind === "s" ? "mk-sh" : "mk-br") + (it.approx ? " mk-ap" : "") + (it.past ? " past" : "") + (it.key === openKey ? " sel" : "");
     el.setAttribute("aria-label", pinLabel(it));
+    if (it.approx) el.title = pinLabel(it);
     var inner = document.createElement("span");
     inner.className = "mk-in";
     if (it.kind === "e") {
+      if (it.approx) inner.appendChild(ringEl());
       inner.appendChild(drawChar("m-base"));
-      if (!it.past) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
+      if (!it.past && !it.approx) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
     } else if (it.kind === "s") {
       inner.appendChild(drawChar("s-shop"));
     } else {
@@ -227,21 +237,35 @@
     }
     el.appendChild(inner);
     el.addEventListener("click", function (ev) { ev.stopPropagation(); cardOpener = null; pinOpener = el; showCard(it.key, ev.detail === 0); });
-    var marker = new maplibregl.Marker({ element: el, anchor: it.kind === "e" ? "bottom" : "center", offset: it.kind === "e" || it.kind === "s" ? [0, 0] : [NUDGE, NUDGE] }).setLngLat(lngLat(it.ll));
+    var marker = new maplibregl.Marker({ element: el, anchor: it.kind === "e" && !it.approx ? "bottom" : "center", offset: it.kind === "e" || it.kind === "s" ? [0, 0] : [NUDGE, NUDGE] }).setLngLat(lngLat(it.ll));
     var rec = { marker: marker, el: el, kind: it.kind, key: it.key, label: pinLabel(it) };
-    if (it.kind === "e") el.style.zIndex = "2";
+    if (it.kind === "e") el.style.zIndex = it.approx ? "1" : "2";
     if (it.kind === "s") el.style.zIndex = "1";
     entrance(rec, it.kind === "e" || it.kind === "s" ? "pop" : "jiggle");
     return rec;
   }
+  function ringEl() { var r = document.createElement("span"); r.className = "mk-ring"; return r; }
+  // The events behind an approximate cluster, and the one city they share (empty when it spans cities).
+  var apLeaves = {};
+  function apInfo(cid) {
+    if (apLeaves[cid]) return Promise.resolve(apLeaves[cid]);
+    return Promise.resolve(map.getSource("ap").getClusterLeaves(cid, 400, 0)).then(function (leaves) {
+      var keys = (leaves || []).map(function (l) { return l.properties.key; }), cities = {};
+      keys.forEach(function (k) { var e = items[k] && items[k].data; if (e) cities[e.city + "|" + e.state] = e; });
+      var ck = Object.keys(cities);
+      return (apLeaves[cid] = { keys: keys, city: ck.length === 1 ? ck[0] : "", ev: ck.length === 1 ? cities[ck[0]] : null });
+    });
+  }
+  map.on("sourcedata", function (e) { if (e.sourceId === "ap" && e.isSourceLoaded && e.sourceDataType !== "metadata") apLeaves = {}; });
   function makeCluster(src, id, f) {
     var n = f.properties.point_count;
     var el = document.createElement("button");
     el.type = "button";
-    el.className = "mk mk-cl " + (src === "ev" ? "cl-ev" : src === "sh" ? "cl-sh" : "cl-br");
+    el.className = "mk mk-cl " + (src === "ev" ? "cl-ev" : src === "ap" ? "cl-ap" : src === "sh" ? "cl-sh" : "cl-br");
     var inner = document.createElement("span");
     inner.className = "mk-in";
-    inner.appendChild(drawChar(src === "sh" ? "s-shop" : "c-dango"));
+    if (src === "ap") { inner.appendChild(ringEl()); inner.appendChild(drawChar("m-base")); }
+    else inner.appendChild(drawChar(src === "sh" ? "s-shop" : "c-dango"));
     var num = document.createElement("span");
     num.className = "cl-n";
     inner.appendChild(num);
@@ -251,16 +275,20 @@
     el.addEventListener("click", function (ev) {
       ev.stopPropagation();
       var cid = f.properties.cluster_id;
+      if (src === "ap") { openApprox(cid, f); return; }
       map.getSource(src).getClusterExpansionZoom(cid).then(function (z) {
         var c = f.geometry.coordinates;
         if (calm()) map.jumpTo({ center: c, zoom: z + 0.2 }); else map.easeTo({ center: c, zoom: z + 0.2, duration: 600 });
       }).catch(function () { map.easeTo({ center: f.geometry.coordinates, zoom: map.getZoom() + 2 }); });
     });
+    if (src === "ap") apInfo(f.properties.cluster_id).then(function (a) { if (a.ev) { rec.city = a.ev.city; setCount(rec, rec.count, true); } }).catch(function () { /* the label keeps the general wording */ });
     rec.marker = new maplibregl.Marker({ element: el, anchor: "center", offset: src === "br" ? [NUDGE, NUDGE] : [0, 0] }).setLngLat(f.geometry.coordinates);
     if (src === "ev") el.style.zIndex = "3";
-    if (src === "sh") el.style.zIndex = "1";
-    rec.snap = function () { snapCluster(src, rec, f.properties.cluster_id); };
-    rec.snap();
+    if (src === "sh" || src === "ap") el.style.zIndex = "1";
+    if (src !== "ap") { // an approximate cluster sits exactly on its city's point; the snap is for the other sources
+      rec.snap = function () { snapCluster(src, rec, f.properties.cluster_id); };
+      rec.snap();
+    }
     entrance(rec, "pop");
     return rec;
   }
@@ -292,11 +320,32 @@
     rec.count = n;
     if (!first && rec.snap) rec.snap();
     rec.num.textContent = n;
-    rec.label = n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : rec.el.classList.contains("cl-sh") ? " shops" : " brands") + " here, zoom in";
+    var ap = rec.el.classList.contains("cl-ap");
+    rec.label = ap ? n + " pop-ups, somewhere in " + (rec.city || "this area") + ", place not posted yet"
+      : n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : rec.el.classList.contains("cl-sh") ? " shops" : " brands") + " here, zoom in";
+    if (ap) rec.el.title = rec.label;
     rec.el.setAttribute("aria-label", rec.label);
     rec.el.classList.toggle("cl-m", n > 9);
     rec.el.classList.toggle("cl-l", n > 24);
     if (!first) animOnce(rec.num, "morph");
+  }
+  // A cluster of city-only events: when they share one city, open the list filtered to that city's approximate events;
+  // when it spans several (zoomed far out), zoom in like any cluster.
+  function openApprox(cid, f) {
+    apInfo(cid).then(function (a) {
+      if (a.city && a.keys.length > 1) {
+        state.apCity = a.city;
+        closeCard(true);
+        var c = f.geometry.coordinates, z = Math.max(map.getZoom(), 10.5);
+        if (!wide.matches) setView("list");
+        else if (calm()) map.jumpTo({ center: c, zoom: z }); else map.easeTo({ center: c, zoom: z, duration: 600 });
+        renderList(true);
+      } else {
+        map.getSource("ap").getClusterExpansionZoom(cid).then(function (z) {
+          if (calm()) map.jumpTo({ center: f.geometry.coordinates, zoom: z + 0.2 }); else map.easeTo({ center: f.geometry.coordinates, zoom: z + 0.2, duration: 600 });
+        });
+      }
+    }).catch(function () { map.easeTo({ center: f.geometry.coordinates, zoom: map.getZoom() + 2 }); });
   }
   function setSelected(key) {
     Object.keys(live).forEach(function (id) {
@@ -367,13 +416,13 @@
     return "<div class=\"menu\">" + (m.length ? "<span class=\"menu-label\">Menu</span>" : "") + pills + price + "</div>";
   }
   function eventCard(e) {
-    var line2 = [e.venue, e.address, [e.city, e.state].filter(Boolean).join(", ")].filter(Boolean).join(" · ");
+    var approx = isApprox(e), line2 = approx && !e.address ? placeLine(e) : [e.venue, e.address, cityLine(e)].filter(Boolean).join(" \u00b7 ");
     var tag = e.confidence && e.confidence !== "confirmed" ? " <span class=\"tag\">" + esc(e.confidence) + "</span>" : "";
     var links = [], post = postUrl(e), L = e.links || {};
     if (post) links.push(["Post", post]);
     if (safeUrl(L.instagram)) links.push(["Instagram", L.instagram]);
     if (safeUrl(L.tiktok)) links.push(["TikTok", L.tiktok]);
-    links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng]);
+    if (!approx) links.push(["Directions", "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng]);
     return "<div class=\"card ecard\">" + photoHTML(e) + "<h3>" + SMALL_FACE + "<span>" + esc(e.brand) + tag + "</span></h3>" + kindWord(e) +
       "<p class=\"when\">" + esc(whenText(e)) + (e.status === "past" ? " <span class=\"muted\">(past)</span>" : "") + "</p>" +
       "<p class=\"muted\">" + esc(line2) + "</p>" + menuHTML(e) +
@@ -494,7 +543,7 @@
     cardOpener = ae && ae.closest && ae.closest("#list") ? ae.getAttribute("data-key") : null;
     if (state.view === "list") setView("map");
     map.resize();
-    var z = Math.max(map.getZoom(), it.kind === "e" ? 14 : it.kind === "s" ? 15 : 13.2);
+    var z = Math.max(map.getZoom(), it.kind === "e" ? (it.approx ? 11 : 14) : it.kind === "s" ? 15 : 13.2);
     // On a phone the sheet covers the lower part of the map, so the pin lands in the upper part;
     // on desktop the card opens above the pin, so the pin lands low.
     var h = map.getContainer().clientHeight;
@@ -567,9 +616,11 @@
   function kindWord(o) { return KIND_WORD[o.kind] ? "<span class=\"kindword\">" + KIND_WORD[o.kind] + "</span>" : ""; }
   function visibleBrands() { return state.brands.filter(function (it) { return passesShow(it.data); }); }
 
-  function visibleEvents() {
+  // only: true for the city-only events, false for the precise ones, omitted for both.
+  function visibleEvents(only) {
     return state.events.filter(function (it) {
       var e = it.data;
+      if (only !== undefined && !!it.approx !== only) return false;
       if (!passesShow(e)) return false;
       if (e.status === "cancelled") return false;
       if (e.status === "past") {
@@ -583,7 +634,9 @@
 
   function refreshEvents(stagger) {
     var src = map.getSource("ev");
-    if (src) src.setData(featureColl(visibleEvents()));
+    if (src) src.setData(featureColl(visibleEvents(false)));
+    var ap = map.getSource("ap");
+    if (ap) ap.setData(featureColl(visibleEvents(true)));
     var b = map.getSource("br");
     if (b) b.setData(featureColl(visibleBrands()));
     var sh = map.getSource("sh");
@@ -604,7 +657,7 @@
         ? "<span class=\"th\"><img src=\"" + esc(src) + "\" alt=\"\" width=\"56\" height=\"56\" data-eid=\"" + esc(e.id) + "\" loading=\"lazy\" decoding=\"async\"" + remoteAttr(e) + "></span>"
         : (window.Drawn ? "<span class=\"th th-drawn\">" + window.Drawn.card(e, { mode: "thumb" }) + "</span>" : "<span class=\"th th-face\">" + THUMB_FACE + "</span>");
       return "<button type=\"button\" class=\"row erow" + (e.status === "past" ? " past" : "") + "\" data-key=\"" + esc(it.key) + "\">" + thumb + "<span class=\"rt\"><strong>" + esc(e.brand) + tag + "</strong>" + kindWord(e) + "<span class=\"when\">" +
-        esc(whenText(e)) + "</span><span>" + esc([e.venue, e.city + ", " + e.state].filter(Boolean).join(" · ")) + "</span>" +
+        esc(whenText(e)) + "</span><span>" + esc(it.approx && !e.address ? placeLine(e) : [e.venue, e.city + ", " + e.state].filter(Boolean).join(" \u00b7 ")) + "</span>" +
         (m ? "<span class=\"menu-prev\">" + esc(m) + "</span>" : "") + dist + "</span></button>";
     }
     if (it.kind === "s") {
@@ -618,6 +671,7 @@
 
   function renderList(stagger) {
     var vis = visibleEvents();
+    if (state.apCity) return renderApproxList(vis, stagger);
     var evs = vis.filter(function (it) { return inView(it.ll); });
     var up = evs.filter(function (it) { return it.data.status !== "past"; });
     var past = evs.filter(function (it) { return it.data.status === "past"; });
@@ -653,7 +707,21 @@
       for (var i = 0; i < rows.length && i < 12; i++) animOnce(rows[i], "row-in", i * 30);
     }
   }
+  // The list for one city's approximate events (opened from an approximate cluster), with a way back to the usual list.
+  function renderApproxList(vis, stagger) {
+    var rows = vis.filter(function (it) { return it.approx && it.data.city + "|" + it.data.state === state.apCity; });
+    rows.sort(function (a, b) { return a.data.start < b.data.start ? -1 : 1; });
+    if (!rows.length) { state.apCity = ""; return renderList(stagger); }
+    var e0 = rows[0].data;
+    $("empty").hidden = true;
+    var list = $("list");
+    list.innerHTML = "<li class=\"head\">Place not posted yet \u00b7 " + esc(cityLine(e0)) + "</li><li class=\"apnote\"><button type=\"button\" class=\"aplink\" data-clear-ap>Show everything in view</button></li>" +
+      rows.map(function (it) { return "<li>" + rowHTML(it) + "</li>"; }).join("");
+    fillChars(list);
+    if (stagger && !calm()) { var kids = list.children; for (var i = 0; i < kids.length && i < 12; i++) animOnce(kids[i], "row-in", i * 30); }
+  }
   $("list").addEventListener("click", function (ev) {
+    if (ev.target.closest("[data-clear-ap]")) { state.apCity = ""; renderList(false); return; }
     var b = ev.target.closest("button[data-key]");
     if (b) flyTo(b.getAttribute("data-key"));
   });
@@ -1043,7 +1111,7 @@
     }
     state.events = (data.events || []).filter(function (e) { return e.lat != null && e.lng != null; }).map(function (e) {
       e.status = liveStatus(e);
-      var it = { kind: "e", key: "e:" + e.id, ll: [e.lat, e.lng], data: e, past: e.status === "past", name: e.brand };
+      var it = { kind: "e", key: "e:" + e.id, ll: [e.lat, e.lng], data: e, past: e.status === "past", name: e.brand, approx: isApprox(e) };
       items[it.key] = it;
       return it;
     });

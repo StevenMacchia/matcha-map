@@ -48,6 +48,7 @@
         "lat",
         "lng",
         "geocode_source",
+        "approx",
         "confidence",
         "status",
         "last_seen",
@@ -166,10 +167,15 @@
         "geocode_source": {
           "enum": [
             "nominatim",
+            "nominatim-venue",
             "mapbox",
             "manual",
             "none"
           ]
+        },
+        "approx": {
+          "type": "boolean",
+          "description": "True when no place was found and the pin sits at the city's centre; the site draws it as an approximate marker."
         },
         "confidence": {
           "enum": [

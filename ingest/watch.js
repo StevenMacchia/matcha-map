@@ -12,7 +12,7 @@ import { createFetcher } from "./lib/fetch.js";
 import { createGeocoder } from "./lib/geocode.js";
 import { processItems, dedupeCandidates, finalize } from "./lib/pipeline.js";
 import { readEvents, passesWatchRule, hasPopupIntent } from "./lib/write.js";
-import { harvest, RUN_CALLS } from "./lib/hashtags.js";
+import { harvest, RUN_CALLS, funnelLine } from "./lib/hashtags.js";
 import { hasMatcha } from "./adapters/mato.js";
 import { setVerbose, warn, info } from "./lib/log.js";
 import * as wlib from "./lib/watchlist.js";
@@ -64,7 +64,7 @@ async function main() {
     const h = await harvest({ now, env, rate: counted, room: () => spent < Math.min(allowance, RUN_CALLS), wl, sources, events: readEvents(), dry });
     tagStats = h.stats;
     candidates.push(...h.candidates);
-    for (const a of h.accounts) wlib.addCandidate(wl, { handle: a.handle, found_via: a.found_via, found_from: a.found_from, notes: a.evidence }, now);
+    for (const a of h.accounts) wlib.addCandidate(wl, { handle: a.handle, found_via: a.found_via, found_from: a.found_from, notes: a.evidence, guess: a.guess }, now);
   }
 
   const due = wl.accounts.filter((a) => (only ? a.handle.toLowerCase() === only : all ? a.status !== "dropped" : wlib.isDue(a, now, { graphOn: igOn })));
@@ -110,7 +110,7 @@ async function main() {
       if (adapter && adapter !== manual) { items = items.concat(await adapter.fetch(source, ctx)); ran = true; searchOnly = false; }
     } catch (e) {
       // Meta answered no for this account (personal, deleted, renamed): remember it and leave Graph alone for a week.
-      if (inGraph && e.api) { wlib.recordGraphError(acc, e.message, now); graphErrors++; notes.set(acc.handle, `graph error: ${e.message}`); inGraph = false; continue; }
+      if (inGraph && e.api) { wlib.recordGraphError(acc, e.message, now); graphErrors++; if (acc.guess) { acc.status = "dropped"; acc.dropped_at = new Date(now).toISOString(); acc.notes = "guessed handle, Graph does not know it"; } notes.set(acc.handle, `graph error: ${e.message}`); inGraph = false; continue; }
       inGraph = false;
       warn(`${acc.handle}: ${e.message}`); notes.set(acc.handle, `failed: ${e.message}`); continue;
     }
@@ -140,7 +140,7 @@ async function main() {
   saveBudget(budget, undefined, now); // credits are spent even on --dry
   const { merged } = await finalize(candidates, { now, geocoder, fetcher, liveSourceIds: live, dry, sourceIds });
   for (const k of ["instagram", "tiktok"]) info(`by-handle ${k}: ${stat[k].checked} accounts checked, ${stat[k].posts} posts of theirs seen, ${stat[k].events} dated events, ${stat[k].credits} credits`);
-  info(`graph: ${spent} of ${allowance} calls this run${tagStats ? ` (hashtags: ${tagStats.tags} tags, ${tagStats.posts} posts, ${tagStats.kept} dated US posts)` : ""}; ${graphErrors} accounts with a Graph error (skipped for ${wlib.GRAPH_RETRY_DAYS} days), ${dropped} dropped for no matcha, ${namesSet} names set`);
+  info(`graph: ${spent} of ${allowance} calls this run${tagStats ? ` (hashtags: ${tagStats.tags} tags, ${funnelLine(tagStats.funnel)})` : ""}; ${graphErrors} accounts with a Graph error (skipped for ${wlib.GRAPH_RETRY_DAYS} days), ${dropped} dropped for no matcha, ${namesSet} names set`);
   if (waiting) info(`${waiting} accounts wait for the next hour`);
   info(budgetLine(budget));
   info(`${candidates.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);

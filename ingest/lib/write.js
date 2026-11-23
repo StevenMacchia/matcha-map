@@ -34,10 +34,10 @@ export function computeStatus(e, now) {
 const stepDown = (c, n) => CONF[Math.max(0, CONF.indexOf(c) - n)];
 
 // Fields of the schema, in a stable order, so candidates carry no extra keys.
-const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "image_url", "posts", "menu", "price", "description", "links"];
+const FIELDS = ["id", "brand", "source_id", "kind", "category", "handle", "source_url", "title", "start", "end", "tz", "all_day", "venue", "address", "city", "state", "zip", "lat", "lng", "geocode_source", "approx", "confidence", "status", "last_seen", "first_seen", "extracted_by", "image", "image_url", "posts", "menu", "price", "description", "links"];
 const emptyPosts = () => ({ instagram: null, tiktok: null, other: null });
 const emptyLinks = () => ({ website: null, instagram: null, tiktok: null });
-const DEFAULTS = { menu: () => [], posts: emptyPosts, links: emptyLinks, kind: () => "popup", category: () => "matcha" };
+const DEFAULTS = { approx: () => false, menu: () => [], posts: emptyPosts, links: emptyLinks, kind: () => "popup", category: () => "matcha" };
 export function clean(e) {
   const o = {};
   for (const k of FIELDS) {
@@ -75,6 +75,8 @@ export function migrateEvent(e, source = null) {
   // kind and category come from the source; MATO finds with no source record are organizers, anything else unknown is a matcha pop-up.
   if (isMatoSource(e.source_id, source)) { m.kind = matoKind(e.title); m.category = "matcha"; }
   else { m.kind = source?.kind || e.kind || "popup"; m.category = source?.category || e.category || "matcha"; }
+  // approx: drawn at the city's centre because no place was found (the geocoder's last resort); false for anything geocoded.
+  m.approx = m.geocode_source === "none" && m.lat != null;
   return clean(m);
 }
 

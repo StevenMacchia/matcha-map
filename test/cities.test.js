@@ -152,18 +152,19 @@ test("site/cities.js: every listed city is there, in the old shape, with the bra
   assert.ok(fs.statSync("site/cities.js").size < 250 * 1024);
 });
 
-test("candidateTags: top 60 city tags plus nicknames, minus the active ones", () => {
+test("candidateTags: <city>matcha for the top 60 cities (nickname forms), then matcha<city>, minus the general tags", () => {
   const cities = loadCities();
-  const tags = candidateTags(cities, ["matchapopupchicago"]);
-  assert.ok(!tags.includes("matchapopupchicago"));
-  assert.ok(tags.includes("matchapopupnewyork") && tags.includes("matchapopupfortworth") && tags.includes("matchapopupoklahomacity"));
-  assert.ok(tags.includes("matchapopuppdx") && tags.includes("matchapopupnola") && tags.includes("matchapopupkc"));
-  assert.ok(tags.every((t) => /^matchapopup[a-z]+$/.test(t)));
+  const tags = candidateTags(cities, ["matchabar"]);
+  assert.ok(!tags.includes("matchabar"));
+  for (const t of ["nycmatcha", "lamatcha", "atlmatcha", "htxmatcha", "dfwmatcha", "dmvmatcha", "bayareamatcha", "ocmatcha", "sdmatcha", "pdxmatcha", "chimatcha", "phillymatcha", "bostonmatcha", "seattlematcha", "miamimatcha", "denvermatcha", "vegasmatcha", "phoenixmatcha", "austinmatcha", "houstonmatcha", "chimatcha", "fortworthmatcha", "okcmatcha", "nolamatcha", "kcmatcha", "stlmatcha", "njmatcha", "ctmatcha", "hawaiimatcha", "honolulumatcha", "matchaaustin", "matchaboston"]) assert.ok(tags.includes(t), t);
+  assert.ok(tags.every((t) => /^[a-z]+$/.test(t) && /matcha/.test(t) && !/^matchapopup/.test(t)));
   assert.equal(new Set(tags).size, tags.length);
+  assert.ok(tags.indexOf("nycmatcha") < tags.indexOf("bostonmatcha") && tags.indexOf("bostonmatcha") < tags.indexOf("matchaaustin"), "biggest first, <city>matcha before matcha<city>");
   const h = JSON.parse(fs.readFileSync("data/hashtags.json", "utf8"));
-  assert.ok(Array.isArray(h.candidates) && h.candidates.length > 30);
-  assert.equal(h.active.length, 30); // the weekly budget is untouched
-  assert.ok(h.candidates.every((t) => !h.active.includes(t)));
+  assert.equal(h.general.length, 8);
+  assert.ok(Array.isArray(h.cities) && h.cities.length > 60);
+  assert.ok(h.cities.every((t) => !h.general.includes(t)));
+  assert.ok(h.general.length + 22 === 30, "8 general tags and 22 city slots make the weekly 30");
 });
 
 // ---- B: what derives from the list --------------------------------------------------------------
@@ -371,4 +372,67 @@ test("cities.json has no leftover discover list and every part reads the one fil
   assert.ok(!fs.existsSync("data/cities-discover.json"));
   for (const f of ["ingest/lib/discover.js", "ingest/lib/sites/common.js", "ingest/lib/shops/boxes.js"]) assert.ok(!/cities-discover/.test(fs.readFileSync(f, "utf8").replace(/\/\/.*$/gm, "")), f);
   assert.equal(loadCities().length, JSON.parse(fs.readFileSync("data/cities.json", "utf8")).cities.length);
+});
+
+// ---- geocode: venue lookups (rung 30) ---------------------------------------------------------------
+test("geocode venue: plausible hit within 60 km is kept as nominatim-venue and cached; far or unrelated hits are refused", async () => {
+  const dir = path.dirname(tmp("x"));
+  const cachePath = path.join(dir, "gcv.json");
+  fs.rmSync(cachePath, { force: true });
+  const atl = findCity("Atlanta", "GA");
+  const calls = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (u) => {
+    calls.push(decodeURIComponent(String(u)));
+    const q = calls.at(-1);
+    const hits = /Creators Kitchen/.test(q)
+      ? [{ lat: "33.80", lon: "-84.30", name: "Creator's Kitchen", display_name: "Creator's Kitchen, Decatur, GA" }]
+      : /Far Cafe/.test(q) ? [{ lat: "40.7", lon: "-74.0", name: "Far Cafe", display_name: "Far Cafe, New York" }]
+      : [{ lat: String(atl.lat), lon: String(atl.lng), name: "Some Bank", display_name: "Some Bank, Atlanta" }];
+    return { ok: true, status: 200, json: async () => hits };
+  };
+  try {
+    const g = createGeocoder({ cachePath, overridesPath: path.join(dir, "ov.json"), env: {} });
+    const a = await g.geocode({ id: "v1", venue: "Creators Kitchen", city: "Atlanta", state: "GA", confidence: "confirmed" });
+    assert.deepEqual([a.geocode_source, a.approx, a.confidence], ["nominatim-venue", false, "likely"]);
+    assert.ok(/nominatim\.openstreetmap\.org/.test(calls[0]) && /q=Creators Kitchen&viewbox=.*&bounded=1/.test(calls[0])); // the bare name in a box around the city first
+    const b = await g.geocode({ id: "v2", venue: "Far Cafe", city: "Atlanta", state: "GA", confidence: "likely" });
+    assert.deepEqual([b.geocode_source, b.approx, b.lat], ["none", true, atl.lat]); // 900 km away
+    const c = await g.geocode({ id: "v3", venue: "Totally Different Name", city: "Atlanta", state: "GA", confidence: "likely" });
+    assert.equal(c.geocode_source, "none"); // name shares no word with the hit
+    // The same venue again costs no request, and the cache file holds it under a venue key.
+    const n = calls.length;
+    await g.geocode({ id: "v4", venue: "creators kitchen", city: "Atlanta", state: "GA" });
+    await g.geocode({ id: "v5", venue: "Far Cafe", city: "Atlanta", state: "GA" });
+    assert.equal(calls.length, n);
+    g.save();
+    assert.ok(Object.keys(JSON.parse(fs.readFileSync(cachePath, "utf8"))).some((k) => k.startsWith("venue: creators kitchen")));
+    // Handles and placeholders are never looked up.
+    for (const v of ["@shogunmatcha", "shogun_matcha", "shogun.matcha", "Cafe of the Month"]) {
+      await g.geocode({ id: "h", venue: v, city: "Atlanta", state: "GA" });
+    }
+    assert.equal(calls.length, n);
+  } finally { globalThis.fetch = realFetch; }
+});
+
+test("geocode venue: a 429 stops venue lookups for the run and is not cached as a miss; maxRemote caps requests", async () => {
+  const dir = path.dirname(tmp("x"));
+  const cachePath = path.join(dir, "gc429.json");
+  fs.rmSync(cachePath, { force: true });
+  let n = 0;
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => { n++; return { ok: false, status: 429, json: async () => [] }; };
+  try {
+    const g = createGeocoder({ cachePath, overridesPath: path.join(dir, "ov.json"), env: {} });
+    await g.lookupVenue("Blue Door Cafe", "Atlanta", "GA");
+    await g.lookupVenue("Red Door Cafe", "Atlanta", "GA");
+    assert.equal(n, 1);
+    g.save();
+    assert.ok(!fs.existsSync(cachePath) || !/Blue Door/i.test(fs.readFileSync(cachePath, "utf8")));
+    n = 0;
+    globalThis.fetch = async () => { n++; return { ok: true, status: 200, json: async () => [] }; };
+    const g2 = createGeocoder({ cachePath, overridesPath: path.join(dir, "ov.json"), env: {}, maxRemote: 2 });
+    for (const v of ["One Place", "Two Place", "Three Place"]) await g2.lookupVenue(v, "Atlanta", "GA");
+    assert.equal(n, 2);
+  } finally { globalThis.fetch = realFetch; }
 });
