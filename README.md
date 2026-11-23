@@ -37,7 +37,7 @@ The rest, in the order you will want them:
 - `npm run clean`: applies the noise rules to events already on file.
 - `npm run regeocode`: looks up venues that sit at their city centre on Nominatim (150 requests a run, cached in `data/geocache.json`).
 - `npm run shops`: builds permanent matcha storefronts from OpenStreetMap (`data/shops.json`). Slow; run it now and then. Not part of refresh.
-- `npm run yelp`: Yelp rating, hours, phone and photo for venues and shops. Off without `YELP_API_KEY`.
+- `npm run yelp`: refuses to run. Yelp's API terms rule out storing or showing Yelp content; Yelp answers are storefront leads only (`npm run shops:keyed -- --provider yelp`, in `npm run refresh`). See `docs/YELP-TERMS.md`.
 - `npm run brands`: rebuilds `site/data/brands.json` from the watch list and sources (no network).
 - `npm run brands:apply`: merges `data/review/brand-facts.json` into `data/sources.json` where a field is empty.
 - `npm run watchlist:apply`: merges `data/review/watchlist-additions.json` into `data/watchlist.json`.
@@ -74,7 +74,7 @@ Only public pages and official APIs. Per-source detail is in [docs/SOURCES.md](d
 | GDELT news | Open news API, local press pages | nothing | 0 (host did not answer in time) | Google News RSS is closed by robots; Bing is personal use only |
 | Reddit | Official API only | `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET` (off) | 0, skipped | `reddit.com` robots disallows crawling |
 | DoStuff, permits, markets, city feeds | Event pages, open-data permit tables, vendor lists, RSS | nothing | 0 each on 11-23 | Kept because a hit is worth having |
-| Ticketmaster, Eventbrite API, Yelp events | Official APIs | `TICKETMASTER_API_KEY`, `EVENTBRITE_TOKEN`, `YELP_API_KEY` (all off) | Off | Free keys; see "Keys" |
+| Ticketmaster, Eventbrite API | Official APIs | `TICKETMASTER_API_KEY`, `EVENTBRITE_TOKEN` (off) | Off | Free keys; see "Keys". Yelp events is off for good (`docs/YELP-TERMS.md`) |
 
 Across all keyless crawlers on 2026-11-23: 944 fetches, 212 candidates, 199 dated, 60 geocoded, 40 promoted.
 
@@ -101,7 +101,7 @@ In `.env` today: `TAVILY_API_KEY`, `INSTAGRAM_TOKEN`, `INSTAGRAM_APP_ID`, `INSTA
 | `INSTAGRAM_APP_ID`, `INSTAGRAM_APP_SECRET` | Same Meta app | Token refresh with `tools/ig-token.js`. Local only, never in CI | yes |
 | `TAVILY_API_KEY` | tavily.com, about 1,000 credits a month | Snippet search of TikTok and Instagram; `npm run search`; the MCP server in `.mcp.json` | yes |
 | `BRAVE_API_KEY` | api.search.brave.com, 1 query a second | Instagram snippets, new watch-list candidates | off |
-| `YELP_API_KEY` | yelp.com/developers, no card, 500 calls a day (we stop at 400) | Rating, hours, phone on cards; Yelp events | off |
+| `YELP_API_KEY` | yelp.com/developers, no card | Storefront leads only, held under 24 hours, nothing stored (`docs/YELP-TERMS.md`) | leads |
 | `TICKETMASTER_API_KEY` | developer.ticketmaster.com, 5000 calls a day | Ticketmaster matcha events | off |
 | `EVENTBRITE_TOKEN` | eventbrite.com/platform/api-keys, 1000 calls an hour | Organizers of known brands and their venues | off |
 | `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET` | A "script" app at reddit.com/prefs/apps | Reddit through the official API | off |

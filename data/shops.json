@@ -734,9 +734,6 @@
      "price": null
     }
    ],
-   "provider": "yelp",
-   "provider_id": "kZioltu8Yt2P4Urz-ICdFg",
-   "attribution": "Places found with Yelp Fusion",
    "note": null,
    "cuisine": null,
    "source": "web",

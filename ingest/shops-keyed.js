@@ -11,6 +11,8 @@ import { createProviders, confirmCandidate, knownSites, nameKey } from "./lib/sh
 import { info, warn } from "./lib/log.js";
 
 const CURSOR = ".cache/keyed-cursor.json";
+// Stored rows carry no provider id (docs/YELP-TERMS.md); the same shop is the same name at the same street number (or zip).
+export const rowKey = (r) => `${nameKey(r.name)}|${(String(r.address || "").match(/^\d+/) || [r.zip || ""])[0]}`;
 const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(f, "utf8")); } catch { return d; } };
 
 export async function run({ argv = process.argv.slice(2), env = process.env, http = fetch, fetcher = createFetcher({}), out = (p) => `data/shops-keyed-${p}.json` } = {}) {
@@ -36,7 +38,7 @@ export async function run({ argv = process.argv.slice(2), env = process.env, htt
     if (!prov.enabled(p)) { info(`${p}: off (no key in .env)`); continue; }
     const file = out(p);
     const prev = readJson(file, { shops: [] }).shops;
-    const rows = new Map(prev.map((r) => [`${r.provider_id}`, r]));
+    const rows = new Map(prev.map((r) => [rowKey(r), r]));
     for (const city of batch) {
       const res = await prov.search(p, city.name, city.state);
       if (res.skipped) { warn(`${p}: ${res.skipped} at ${city.name}, ${city.state}; stopping this provider`); break; }
@@ -47,7 +49,7 @@ export async function run({ argv = process.argv.slice(2), env = process.env, htt
         if (!c.website && known.get(nameKey(c.name))) c.website = known.get(nameKey(c.name));
         const r = await confirmCandidate(c, (u) => fetcher.get(u));
         if (r.held) { summary[p].held[r.held] = (summary[p].held[r.held] || 0) + 1; (leads[p] ||= []).push({ provider: p, provider_id: c.provider_id, name: c.name, address: c.address, city: c.city, state: c.state, zip: c.zip, phone: c.phone, categories: c.categories, hint: c.hint, why: r.held }); continue; }
-        rows.set(String(c.provider_id), r.row);
+        rows.set(rowKey(r.row), r.row);
         summary[p][r.row.tier === "serves" ? "serves" : "core"]++;
       }
     }

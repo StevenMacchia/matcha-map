@@ -28,7 +28,6 @@ import { recheckTiktok, recheckInstagram, loadBudget, saveBudget, budgetLine } f
 import graph, { creds, createRate, runAllowance } from "./adapters/instagram-graph.js";
 import { brandOf } from "./lib/names.js";
 import { buildBrands, writeBrands } from "./lib/enrich/brands.js";
-import { enrich as yelpEnrich, fillApproxFromYelp, createYelp, PLACES_FILE } from "./lib/enrich/yelp.js";
 
 const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual];
 const pad = (s, n) => String(s).padEnd(n).slice(0, n);
@@ -178,23 +177,10 @@ async function main() {
   wlib.save(wl, { now });
   if (namesSet) fs.writeFileSync("data/sources.json", JSON.stringify(sources, null, 2) + "\n");
   info("wrote data/watchlist.json");
-  // Brand facts for the cards (site/data/brands.json), then Yelp places and the coordinates they give approximate pins (off without YELP_API_KEY).
+  // Brand facts for the cards (site/data/brands.json). Card enrichment from review sites is off for good (docs, terms note).
   const brandData = buildBrands(wl, sources, now);
   writeBrands(brandData);
   info(`wrote site/data/brands.json (${brandData.brands.length} accounts)`);
-  await yelpStep();
-}
-
-async function yelpStep() {
-  let shops = [];
-  try { shops = JSON.parse(fs.readFileSync("site/data/shops.json", "utf8")).shops || []; } catch { /* none */ }
-  const yelp = createYelp();
-  const events = readEvents();
-  const r = await yelpEnrich({ events, shops, yelp });
-  let places = yelp.places();
-  if (!r.on) { try { places = JSON.parse(fs.readFileSync(PLACES_FILE, "utf8")).places || []; } catch { places = []; } }
-  const moved = fillApproxFromYelp(events, places);
-  if (moved.length) { writeEvents(events); info(`Yelp: ${moved.length} approximate pin(s) moved to the venue`); }
 }
 
 main().catch((e) => { console.error("watch crashed:", e); process.exit(1); });

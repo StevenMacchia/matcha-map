@@ -632,7 +632,7 @@
     "schedule_kind": "manual",
     "adapter": "manual",
     "active": true,
-    "notes": "Cafe with 12 matcha drinks and ten einspanner variants; best public price list for new matcha formats. Evidence: https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "notes": "Cafe with 12 matcha drinks and ten einspanner variants; best public price list for new matcha formats. (a Yelp menu page was the first pointer and is not kept, docs/YELP-TERMS.md)",
     "added": "2026-11-22",
     "verified": null
   },

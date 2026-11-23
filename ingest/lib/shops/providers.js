@@ -3,7 +3,7 @@
 // How the terms are respected: a provider answer is used to FIND a candidate (name, address, website, phone, categories), and is kept only in
 // the gitignored cache for 24 hours. A row reaches data/ only after the shop's own public site confirms it (confirmCandidate: the site prints
 // the same street number and the shop's menu or name says matcha), so what we store comes from the shop's own pages; from the provider we
-// keep only its place id (yelp_id / fsq_id) and the attribution line the terms require. No rating, review text, photo or provider URL is stored.
+// keep nothing from the provider: no id, rating, review text, photo, URL or attribution line (docs/YELP-TERMS.md). Leads live in .cache for 24 hours.
 // Yelp Fusion gives no website, so a Yelp candidate stays in the cache for a worker to confirm by name (it never becomes a row on its own).
 //
 //   Yelp:       GET https://api.yelp.com/v3/businesses/search?term=matcha&location=<city, ST>&categories=<aliases>&limit=50   (Bearer key; free 500 calls a day)
@@ -18,7 +18,6 @@ import { readPage } from "../../../tools/shop-read.js";
 export const YELP_BASE = "https://api.yelp.com/v3/businesses/search";
 export const FSQ_BASE = "https://places-api.foursquare.com/places/search";
 export const FSQ_VERSION = "2025-06-17";
-export const ATTRIBUTION = { yelp: "Places found with Yelp Fusion", foursquare: "Places found with Foursquare" };
 export const DAILY_CAP = { yelp: 290, foursquare: 300 }; // Yelp Base plan: 5,000 calls a month, 300 a day
 const TTL_MS = 24 * 3600 * 1000;
 const CACHE = ".cache/keyed-places.json";
@@ -120,7 +119,6 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
       opening_hours: rd("hours_osm"), menu_url: tier === "serves" && menuPage ? menuPage.url : rd("menu_url"),
       image_url: rd("image"), image_credit: rd("image") ? `Photo: ${c.name} website` : null,
       source_url: sameSpot.url || pages[0].url, read, confirmed_via: "own-site", tier, ...(menu_matcha ? { menu_matcha } : {}),
-      provider: c.provider, provider_id: c.provider_id, attribution: ATTRIBUTION[c.provider],
     },
   };
 }
