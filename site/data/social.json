@@ -1,4 +1,4 @@
 {
-  "rsvp": false,
-  "note": "rsvp turns the going strip on once the INTAKE KV namespace is bound on the Pages project (docs/INTAKE.md). Off, the page never calls /api/rsvp."
+  "rsvp": true,
+  "note": "rsvp is on: the INTAKE KV namespace is bound on the Pages project (wrangler.jsonc). Set it false to hide the going strip without a code change."
 }
