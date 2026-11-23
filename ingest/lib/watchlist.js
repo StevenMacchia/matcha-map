@@ -199,11 +199,13 @@ export function promote(wl, sources, { now = new Date(), graphOn = false } = {})
 
 // Order for the by-handle search checks (rung 22): accounts that have had a hit first, then "watching", then candidates, then quiet;
 // inside a group the oldest last_checked first (never checked first). Returns a new array.
+// Guessed handles (a brand hashtag or a name run together, from the hashtag harvest) read last: on 2026-11-22 they were 67 of
+// one hour's 108 Graph calls, nearly all "Invalid user id", while real brands waited.
 export function priority(acc) {
   if ((acc.hits || 0) > 0) return 0;
   if (acc.status === "watching") return 1;
-  if (acc.status === "candidate") return 2;
-  return 3;
+  if (acc.status === "candidate") return acc.guess ? 3 : 2;
+  return 4;
 }
 export function prioritize(accounts) {
   const t = (a) => (a.last_checked ? Date.parse(a.last_checked) : 0);
