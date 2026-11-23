@@ -81,11 +81,13 @@ async function main() {
   const order = new Map(wlib.prioritize(due).map((a, i) => [a, i]));
   due.sort((a, b) => order.get(a) - order.get(b));
   const known = new Set(readEvents().map((e) => e.id));
-  let waiting = 0, graphErrors = 0, dropped = 0, namesSet = 0, inGraph = false;
+  let waiting = 0, graphErrors = 0, dropped = 0, namesSet = 0, inGraph = false, guessReads = 0;
+  const GUESS_CAP = +(env.WATCH_GUESS_CAP ?? 15); // guessed handles read per run; the rest wait so real brands get the hour's calls
   for (const acc of due) {
     const real = sources.find((s) => s.id === acc.source_id);
     let source = real || wlib.pseudoSource(acc);
-    const wantsGraph = acc.platform === "instagram" && igOn && !noFetch && !wlib.graphSkipped(acc, now);
+    let wantsGraph = acc.platform === "instagram" && igOn && !noFetch && !wlib.graphSkipped(acc, now);
+    if (wantsGraph && acc.guess) { if (guessReads >= GUESS_CAP) { waiting++; continue; } guessReads++; }
     // Past the Graph budget, or Meta said stop: the account stays due and is not marked checked.
     if (wantsGraph && (ctx.rateStopped || !room())) { waiting++; continue; }
     let items = [], ran = false, searchOnly = false, facts = null;

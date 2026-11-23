@@ -636,6 +636,11 @@
     "lng": -77.110671,
     "source": "nominatim"
   },
+  "4325 n ravenswood ave chicago il": {
+    "lat": 41.960281,
+    "lng": -87.673498,
+    "source": "nominatim"
+  },
   "4416 burnet rd austin tx 78756": {
     "lat": 30.315236,
     "lng": -97.741971,
@@ -649,6 +654,11 @@
   "450 northeast 20th street boca raton fl 33431": {
     "lat": 26.367455,
     "lng": -80.079273,
+    "source": "nominatim"
+  },
+  "4522 fredericksburg rd san antonio tx": {
+    "lat": 29.492145,
+    "lng": -98.551253,
     "source": "nominatim"
   },
   "4524 university way ne seattle wa 98105": {
@@ -770,6 +780,11 @@
   "638 north highland avenue atlanta ga": {
     "lat": 33.771628,
     "lng": -84.353032,
+    "source": "nominatim"
+  },
+  "65 w 30th st new york ny 10001": {
+    "lat": 40.747081,
+    "lng": -73.988924,
     "source": "nominatim"
   },
   "651 w 42nd ave denver co 80216": {
@@ -2260,6 +2275,11 @@
   "restaurant of the week tucson az": {
     "miss": true,
     "at": 1795396396911
+  },
+  "richmond tx": {
+    "lat": 29.582181,
+    "lng": -95.760783,
+    "source": "nominatim"
   },
   "richmond va": {
     "lat": 37.538509,
