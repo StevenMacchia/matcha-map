@@ -134,3 +134,17 @@ test("shopcard: an approved owner menu stands in when the shop has none, credite
   assert.equal(ownerMenuFor("osm:node/9", { ownerMenus: { get: () => ({ items: [] }) } }), null, "an empty owner menu is nothing");
   assert.equal(ownerMenuFor("", ctx), null);
 });
+
+test("shopcard: image_url shows the photo with image_credit under it, escaped; neither without both", () => {
+  const base = { id: "brand:web-x", name: "Leaf & Cup", lat: 1, lng: 2 };
+  const h = shopCardHtml({ ...base, image_url: "https://example.com/p.png?a=1&b=2", image_credit: "Photo: Leaf & Cup <website>" });
+  assert.match(h, /<figure class="mm-shop-fig"><div class="mm-shop-photo"><img src="https:\/\/example\.com\/p\.png\?a=1&amp;b=2" alt="Photo of Leaf &amp; Cup"/);
+  assert.match(h, /<figcaption class="mm-shop-cap">Photo: Leaf &amp; Cup &lt;website&gt;<\/figcaption><\/figure>/);
+  assert.ok(h.indexOf("mm-shop-photo") < h.indexOf("mm-shop-cap"), "the credit sits under the photo");
+  for (const part of [{ image_url: "https://example.com/p.png" }, { image_credit: "Photo: Leaf website" }, { image_url: "javascript:alert(1)", image_credit: "Photo: x" }, { image_url: "https://example.com/p.png", image_credit: "  " }]) {
+    assert.doesNotMatch(shopCardHtml({ ...base, ...part }), /mm-shop-photo|mm-shop-cap|Photo:/, JSON.stringify(part));
+  }
+  assert.match(shopCardHtml({ ...base, image_url: "http://example.com/p.png", image_credit: "Photo: x" }), /<img src="https:\/\/example\.com\/p\.png"/, "http is asked for over https (CSP)");
+  const withPic = SHOPS.find((s) => s.image_url && s.image_credit);
+  if (withPic) assert.ok(shopCardHtml(withPic).includes(`<figcaption class="mm-shop-cap">${withPic.image_credit.replace(/&/g, "&amp;").replace(/'/g, "&#39;")}</figcaption>`), withPic.name);
+});
