@@ -4,6 +4,11 @@
     "lng": -73.977286,
     "source": "nominatim"
   },
+  "1010 ne 66th st seattle wa": {
+    "lat": 47.676698,
+    "lng": -122.316763,
+    "source": "nominatim"
+  },
   "1011 k st atlanta ga": {
     "lat": 33.727995,
     "lng": -84.415269,
@@ -43,6 +48,11 @@
     "lng": -121.945813,
     "source": "nominatim"
   },
+  "120 ives st": {
+    "lat": 41.821431,
+    "lng": -71.392142,
+    "source": "nominatim"
+  },
   "12058 collegiate way orlando fl 32817": {
     "miss": true,
     "at": 1795379593217
@@ -65,6 +75,16 @@
   "1217 trinity woods lane orlando fl": {
     "miss": true,
     "at": 1795379600461
+  },
+  "1233 se stark st portland or 97214": {
+    "lat": 45.51946,
+    "lng": -122.652912,
+    "source": "nominatim"
+  },
+  "12375 sw 5th st beaverton or 97005": {
+    "lat": 45.484122,
+    "lng": -122.804062,
+    "source": "nominatim"
   },
   "127 rosa l parks boulevard nashville tn 37203": {
     "lat": 36.159821,
@@ -309,6 +329,11 @@
     "lng": -96.817101,
     "source": "nominatim"
   },
+  "203 roy st seattle wa": {
+    "lat": 47.62533,
+    "lng": -122.352589,
+    "source": "nominatim"
+  },
   "20327 exchange st ashburn va 20147": {
     "miss": true,
     "at": 1795379614430
@@ -355,6 +380,11 @@
     "lng": -121.490898,
     "source": "nominatim"
   },
+  "22140 ford rd dearborn heights mi 48127": {
+    "lat": 42.327296,
+    "lng": -83.254668,
+    "source": "nominatim"
+  },
   "222 main street beech grove in 46107": {
     "lat": 39.722049,
     "lng": -86.084667,
@@ -385,6 +415,11 @@
     "lng": -96.952121,
     "source": "nominatim"
   },
+  "2310 kettner blvd san diego ca 92101": {
+    "lat": 32.728238,
+    "lng": -117.171302,
+    "source": "nominatim"
+  },
   "2310 kettner blvd san diego ca 92101 san diego ca": {
     "lat": 32.728238,
     "lng": -117.171302,
@@ -405,9 +440,19 @@
     "lng": -117.904133,
     "source": "nominatim"
   },
+  "240 east orangewood avenue anaheim ca 92802": {
+    "lat": 33.795391,
+    "lng": -117.904133,
+    "source": "nominatim"
+  },
   "2400 14th street washington dc": {
     "lat": 38.921153,
     "lng": -77.032284,
+    "source": "nominatim"
+  },
+  "241 third ave san diego ca": {
+    "lat": 32.643382,
+    "lng": -117.080348,
     "source": "nominatim"
   },
   "2456 w 8th ct hialeah fl 33010 hialeah fl": {
@@ -443,6 +488,11 @@
   "2535 3rd st los angeles ca": {
     "lat": 34.003478,
     "lng": -118.482419,
+    "source": "nominatim"
+  },
+  "2551 mcmenamin street hampton va 23666": {
+    "lat": 37.044086,
+    "lng": -76.393706,
     "source": "nominatim"
   },
   "2638 lynch st st louis mo 63118": {
@@ -571,6 +621,11 @@
     "miss": true,
     "at": 1795379634330
   },
+  "326 se mlk blvd portland or": {
+    "lat": 45.52054,
+    "lng": -122.661661,
+    "source": "nominatim"
+  },
   "327 nw 10th ave portland or 97209 portland or": {
     "lat": 45.525697,
     "lng": -122.681434,
@@ -622,6 +677,11 @@
   "3574 2nd avenue detroit mi 48201": {
     "lat": 42.34542,
     "lng": -83.063155,
+    "source": "nominatim"
+  },
+  "360 e 2nd st new york ny": {
+    "lat": 40.642467,
+    "lng": -73.978438,
     "source": "nominatim"
   },
   "3611 juniata st st louis mo 63116": {
@@ -685,6 +745,14 @@
     "miss": true,
     "at": 1795379452914
   },
+  "42201 n 41st dr anthem az 85086": {
+    "miss": true,
+    "at": 1795415641893
+  },
+  "42201 n 41st dr suite 148 anthem az 85086": {
+    "miss": true,
+    "at": 1795415640745
+  },
   "4238 wilson blvd arlington va 22203 arlington va": {
     "lat": 38.879014,
     "lng": -77.110671,
@@ -704,6 +772,11 @@
     "lng": -87.673498,
     "source": "nominatim"
   },
+  "433 nw 10th ave portland or": {
+    "lat": 45.526323,
+    "lng": -122.681431,
+    "source": "nominatim"
+  },
   "433 nw 10th ave portland or 97209 portland or": {
     "lat": 45.526323,
     "lng": -122.681431,
@@ -714,6 +787,11 @@
     "lng": -97.741971,
     "source": "nominatim"
   },
+  "444 north harbor boulevard fullerton ca 92832": {
+    "lat": 33.873639,
+    "lng": -117.924166,
+    "source": "nominatim"
+  },
   "45 court boston ma": {
     "lat": 42.28799,
     "lng": -71.094442,
@@ -722,6 +800,11 @@
   "450 northeast 20th street boca raton fl 33431": {
     "lat": 26.367455,
     "lng": -80.079273,
+    "source": "nominatim"
+  },
+  "4522 fredericksburg rd": {
+    "lat": 29.49262,
+    "lng": -98.551027,
     "source": "nominatim"
   },
   "4522 fredericksburg rd san antonio tx": {
@@ -742,9 +825,24 @@
     "lng": -76.997552,
     "source": "nominatim"
   },
+  "46 hester st": {
+    "lat": 40.715567,
+    "lng": -73.990283,
+    "source": "nominatim"
+  },
+  "46 hester street": {
+    "lat": 40.715567,
+    "lng": -73.990283,
+    "source": "nominatim"
+  },
   "4770 owings mills blvd baltimore md": {
     "lat": 39.402802,
     "lng": -76.796642,
+    "source": "nominatim"
+  },
+  "4800 crystal springs drive los angeles ca 90027": {
+    "lat": 34.119264,
+    "lng": -118.273421,
     "source": "nominatim"
   },
   "4801 edwards ranch road fort worth tx 76109": {
@@ -755,6 +853,20 @@
   "4836 boiling brook pkwy north bethesda md": {
     "lat": 39.046508,
     "lng": -77.097352,
+    "source": "nominatim"
+  },
+  "501 e pine st seattle wa": {
+    "lat": 47.615086,
+    "lng": -122.325137,
+    "source": "nominatim"
+  },
+  "501 e pine st ste 101 seattle wa": {
+    "miss": true,
+    "at": 1795422934345
+  },
+  "5013 newport ave san diego ca": {
+    "lat": 32.746935,
+    "lng": -117.251361,
     "source": "nominatim"
   },
   "5023 n florida ave tampa fl": {
@@ -795,6 +907,11 @@
   "5300 claremont ave oakland ca 94618 oakland ca": {
     "lat": 37.839909,
     "lng": -122.259415,
+    "source": "nominatim"
+  },
+  "550 harrison ave boston ma": {
+    "lat": 42.341119,
+    "lng": -71.066017,
     "source": "nominatim"
   },
   "550 harrison ave boston ma 02118 boston ma": {
@@ -1022,6 +1139,11 @@
     "lng": -82.675449,
     "source": "nominatim"
   },
+  "800 north central expressway plano tx 75074": {
+    "lat": 33.003557,
+    "lng": -96.707415,
+    "source": "nominatim"
+  },
   "801 14th st sacramento ca": {
     "lat": 38.580645,
     "lng": -121.486478,
@@ -1145,6 +1267,11 @@
   "andaz miami beach resort & spa miami fl": {
     "lat": 25.812731,
     "lng": -80.12237,
+    "source": "nominatim"
+  },
+  "anthem az": {
+    "lat": 33.85389,
+    "lng": -112.113291,
     "source": "nominatim"
   },
   "ashburn va": {
@@ -1413,6 +1540,11 @@
   "charlottesville va": {
     "lat": 38.029306,
     "lng": -78.476678,
+    "source": "nominatim"
+  },
+  "chatsworth ca": {
+    "lat": 34.25725,
+    "lng": -118.601702,
     "source": "nominatim"
   },
   "chengdu teahouse lansing mi": {
@@ -2615,6 +2747,14 @@
     "lng": -122.334857,
     "source": "nominatim"
   },
+  "venue: admari miami fl": {
+    "miss": true,
+    "at": 1795416221528
+  },
+  "venue: adobo shack vancouver wa": {
+    "miss": true,
+    "at": 1795422920852
+  },
   "venue: amatō at maynard crossing raleigh nc": {
     "miss": true,
     "at": 1795400466175
@@ -2628,9 +2768,17 @@
     "lng": -84.299625,
     "source": "nominatim-venue"
   },
+  "venue: audubon park church orlando fl": {
+    "miss": true,
+    "at": 1795416216392
+  },
   "venue: aveda store at bellevue square seattle wa": {
     "miss": true,
     "at": 1795400397067
+  },
+  "venue: big feeling december boston ma": {
+    "miss": true,
+    "at": 1795415634202
   },
   "venue: binchoyaki sacramento ca": {
     "miss": true,
@@ -2645,6 +2793,10 @@
     "miss": true,
     "at": 1795400434417
   },
+  "venue: books & matcha": {
+    "miss": true,
+    "at": 1795430121703
+  },
   "venue: brambleton farmers market washington dc": {
     "miss": true,
     "at": 1795400461136
@@ -2657,13 +2809,30 @@
     "miss": true,
     "at": 1795400405244
   },
+  "venue: casabunni houston tx": {
+    "miss": true,
+    "at": 1795422918788
+  },
+  "venue: central park": {
+    "lat": 40.782773,
+    "lng": -73.965363,
+    "source": "nominatim-venue"
+  },
   "venue: chengdu teahouse lansing mi": {
     "miss": true,
     "at": 1795400366809
   },
+  "venue: chitchat coffee + matcha chatsworth ca": {
+    "miss": true,
+    "at": 1795416232629
+  },
   "venue: columbus circle holiday market by urbanspace new york ny": {
     "miss": true,
     "at": 1795400388996
+  },
+  "venue: curvlife's pop-up new york ny": {
+    "miss": true,
+    "at": 1795416218287
   },
   "venue: doma coffee nashville tn": {
     "miss": true,
@@ -2718,6 +2887,15 @@
     "lng": -81.209008,
     "source": "nominatim-venue"
   },
+  "venue: goodnight goose seattle wa": {
+    "miss": true,
+    "at": 1795422931513
+  },
+  "venue: great falls park washington dc": {
+    "lat": 38.990455,
+    "lng": -77.251843,
+    "source": "nominatim-venue"
+  },
   "venue: home ec san diego ca": {
     "miss": true,
     "at": 1795400352698
@@ -2725,6 +2903,10 @@
   "venue: ifellinlovehere el paso tx": {
     "miss": true,
     "at": 1795400362792
+  },
+  "venue: inspire seattle seattle wa": {
+    "miss": true,
+    "at": 1795422936597
   },
   "venue: isshiki matcha soho new york ny": {
     "miss": true,
@@ -2737,6 +2919,10 @@
   "venue: jaide atl atlanta ga": {
     "miss": true,
     "at": 1795400471221
+  },
+  "venue: japan village new york ny": {
+    "miss": true,
+    "at": 1795416227711
   },
   "venue: jcch honolulu hi": {
     "miss": true,
@@ -2772,6 +2958,10 @@
     "miss": true,
     "at": 1795400428392
   },
+  "venue: littlehaus pop-up": {
+    "miss": true,
+    "at": 1795422938658
+  },
   "venue: lucky girl market rva washington dc": {
     "miss": true,
     "at": 1795400426339
@@ -2783,6 +2973,11 @@
   "venue: matchafest miami miami fl": {
     "miss": true,
     "at": 1795400409229
+  },
+  "venue: mills park": {
+    "lat": 39.662077,
+    "lng": -77.710877,
+    "source": "nominatim-venue"
   },
   "venue: momoko mart @ chinatown atlanta ga": {
     "miss": true,
@@ -2796,6 +2991,10 @@
     "miss": true,
     "at": 1795400391013
   },
+  "venue: nagomi bento": {
+    "miss": true,
+    "at": 1795430120511
+  },
   "venue: nola's ice cream orlando fl": {
     "miss": true,
     "at": 1795400477274
@@ -2803,6 +3002,10 @@
   "venue: olastudionyc brooklyn ny": {
     "miss": true,
     "at": 1795400358741
+  },
+  "venue: old katy farmers market": {
+    "miss": true,
+    "at": 1795415639854
   },
   "venue: onli houston tx": {
     "miss": true,
@@ -2825,6 +3028,11 @@
   "venue: pho gago san diego ca": {
     "miss": true,
     "at": 1795400430375
+  },
+  "venue: pilot knob austin tx": {
+    "lat": 30.164169,
+    "lng": -97.693215,
+    "source": "nominatim-venue"
   },
   "venue: pip coffee+clay - phoenix phoenix az": {
     "miss": true,
@@ -2864,6 +3072,10 @@
     "miss": true,
     "at": 1795400439443
   },
+  "venue: sowa christmas market november boston ma": {
+    "miss": true,
+    "at": 1795415636287
+  },
   "venue: st noir cafe new orleans la": {
     "miss": true,
     "at": 1795400364791
@@ -2875,6 +3087,14 @@
   "venue: stonemill matcha our japanese san francisco ca": {
     "miss": true,
     "at": 1795400436508
+  },
+  "venue: studio bubby los angeles ca": {
+    "miss": true,
+    "at": 1795416225671
+  },
+  "venue: the acre tampa fl": {
+    "miss": true,
+    "at": 1795416450031
   },
   "venue: the anime edit miami fl": {
     "miss": true,
@@ -2895,6 +3115,14 @@
   "venue: the pottery loop chicago il": {
     "miss": true,
     "at": 1795400373929
+  },
+  "venue: the rim saturday nov san antonio tx": {
+    "miss": true,
+    "at": 1795422924815
+  },
+  "venue: the shop by potters union washington va": {
+    "miss": true,
+    "at": 1795416223753
   },
   "venue: the well studio san francisco ca": {
     "miss": true,

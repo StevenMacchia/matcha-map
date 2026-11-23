@@ -36,18 +36,20 @@
   },
   "stats": {
     "matchapopup": {
-      "runs": 1,
-      "posts": 94,
-      "kept": 1,
-      "last_run": "2026-11-23T02:01:13.925Z",
-      "last_top": "2026-11-23T02:01:13.925Z"
+      "runs": 2,
+      "posts": 137,
+      "kept": 4,
+      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_top": "2026-11-23T02:01:13.925Z",
+      "accounts": 28
     },
     "matchapopups": {
-      "runs": 1,
+      "runs": 2,
       "posts": 35,
       "kept": 0,
-      "last_run": "2026-11-23T02:01:13.925Z",
-      "last_top": "2026-11-23T02:01:13.925Z"
+      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_top": "2026-11-23T02:01:13.925Z",
+      "accounts": 0
     },
     "matchapopupnyc": {
       "runs": 1,
@@ -64,46 +66,52 @@
       "last_top": "2026-11-23T02:01:13.925Z"
     },
     "matchacart": {
-      "runs": 1,
-      "posts": 63,
+      "runs": 2,
+      "posts": 79,
       "kept": 0,
-      "last_run": "2026-11-23T02:01:13.925Z",
-      "last_top": "2026-11-23T02:01:13.925Z"
+      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_top": "2026-11-23T02:01:13.925Z",
+      "accounts": 9
     },
     "matchaevent": {
-      "runs": 1,
-      "posts": 52,
+      "runs": 2,
+      "posts": 54,
       "kept": 0,
-      "last_run": "2026-11-23T02:01:13.925Z",
-      "last_top": "2026-11-23T02:01:13.925Z"
+      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_top": "2026-11-23T02:01:13.925Z",
+      "accounts": 1
     },
     "matchabar": {
-      "runs": 1,
-      "posts": 96,
-      "kept": 0,
-      "last_run": "2026-11-23T02:01:13.925Z",
-      "last_top": "2026-11-23T02:01:13.925Z"
+      "runs": 2,
+      "posts": 143,
+      "kept": 1,
+      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_top": "2026-11-23T02:01:13.925Z",
+      "accounts": 33
     },
     "popupmatcha": {
-      "runs": 1,
-      "posts": 52,
+      "runs": 2,
+      "posts": 53,
       "kept": 0,
-      "last_run": "2026-11-23T02:01:13.925Z",
-      "last_top": "2026-11-23T02:01:13.925Z"
+      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_top": "2026-11-23T02:01:13.925Z",
+      "accounts": 1
     },
     "matchafest": {
-      "runs": 1,
-      "posts": 55,
-      "kept": 0,
-      "last_run": "2026-11-23T02:01:13.925Z",
-      "last_top": "2026-11-23T02:01:13.925Z"
+      "runs": 2,
+      "posts": 61,
+      "kept": 1,
+      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_top": "2026-11-23T02:01:13.925Z",
+      "accounts": 2
     },
     "matchamarket": {
-      "runs": 1,
-      "posts": 50,
-      "kept": 0,
-      "last_run": "2026-11-23T02:01:13.925Z",
-      "last_top": "2026-11-23T02:01:13.925Z"
+      "runs": 2,
+      "posts": 51,
+      "kept": 1,
+      "last_run": "2026-11-23T08:33:15.837Z",
+      "last_top": "2026-11-23T02:01:13.925Z",
+      "accounts": 1
     },
     "matchapopupshop": {
       "runs": 1,
@@ -246,112 +254,113 @@
       "last_top": null
     },
     "nycmatcha": {
-      "runs": 1,
-      "posts": 61,
-      "kept": 3,
-      "accounts": 40,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "runs": 2,
+      "posts": 73,
+      "kept": 6,
+      "accounts": 41,
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
     "newyorkmatcha": {
-      "runs": 1,
-      "posts": 51,
+      "runs": 2,
+      "posts": 52,
       "kept": 0,
-      "accounts": 21,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "accounts": 22,
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
     "lamatcha": {
-      "runs": 1,
-      "posts": 49,
+      "runs": 2,
+      "posts": 52,
       "kept": 0,
-      "accounts": 32,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "accounts": 35,
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
     "losangelesmatcha": {
-      "runs": 1,
-      "posts": 51,
+      "runs": 2,
+      "posts": 52,
       "kept": 0,
       "accounts": 24,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
-      "zero": 0
+      "zero": 1
     },
     "chimatcha": {
-      "runs": 1,
+      "runs": 2,
       "posts": 14,
       "kept": 0,
       "accounts": 8,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
-      "zero": 0
+      "zero": 1
     },
     "chicagomatcha": {
-      "runs": 1,
-      "posts": 61,
-      "kept": 3,
-      "accounts": 40,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "runs": 2,
+      "posts": 74,
+      "kept": 5,
+      "accounts": 41,
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
     "htxmatcha": {
-      "runs": 1,
-      "posts": 50,
-      "kept": 1,
+      "runs": 2,
+      "posts": 51,
+      "kept": 2,
       "accounts": 28,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
     "houstonmatcha": {
-      "runs": 1,
-      "posts": 60,
-      "kept": 4,
+      "runs": 2,
+      "posts": 71,
+      "kept": 6,
       "accounts": 29,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 0
     },
     "phoenixmatcha": {
-      "runs": 1,
-      "posts": 52,
+      "runs": 2,
+      "posts": 54,
       "kept": 0,
       "accounts": 35,
-      "last_run": "2026-11-23T02:33:15.953Z",
-      "last_top": "2026-11-23T02:33:15.953Z",
-      "zero": 0
-    },
-    "phillymatcha": {
-      "runs": 1,
-      "posts": 50,
-      "kept": 1,
-      "accounts": 39,
-      "last_run": "2026-11-23T02:33:15.953Z",
-      "last_top": "2026-11-23T02:33:15.953Z",
-      "zero": 0
-    },
-    "philadelphiamatcha": {
-      "runs": 1,
-      "posts": 0,
-      "kept": 0,
-      "accounts": 0,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
       "zero": 1
     },
+    "phillymatcha": {
+      "runs": 2,
+      "posts": 51,
+      "kept": 1,
+      "accounts": 39,
+      "last_run": "2026-11-23T10:33:15.919Z",
+      "last_top": "2026-11-23T02:33:15.953Z",
+      "zero": 1
+    },
+    "philadelphiamatcha": {
+      "runs": 2,
+      "posts": 0,
+      "kept": 0,
+      "accounts": 0,
+      "last_run": "2026-11-23T10:33:15.919Z",
+      "last_top": "2026-11-23T02:33:15.953Z",
+      "zero": 0,
+      "parked": 1
+    },
     "sanantoniomatcha": {
-      "runs": 1,
-      "posts": 52,
+      "runs": 2,
+      "posts": 53,
       "kept": 1,
       "accounts": 36,
-      "last_run": "2026-11-23T02:33:15.953Z",
+      "last_run": "2026-11-23T10:33:15.919Z",
       "last_top": "2026-11-23T02:33:15.953Z",
-      "zero": 0
+      "zero": 1
     }
   },
   "missing": [],
@@ -376,7 +385,6 @@
     "houstonmatcha",
     "phoenixmatcha",
     "phillymatcha",
-    "philadelphiamatcha",
     "sanantoniomatcha",
     "sdmatcha",
     "sandiegomatcha",
@@ -511,9 +519,10 @@
     "matchaanaheim",
     "matchaorlando",
     "matchalexington",
-    "matchastockton"
+    "matchastockton",
+    "philadelphiamatcha"
   ],
-  "cursor": 12,
+  "cursor": 11,
   "week": {
     "id": 1,
     "tags": [
