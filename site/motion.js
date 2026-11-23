@@ -388,7 +388,7 @@
     box.addEventListener("pointerover", glance);
     box.addEventListener("focusin", glance);
     var ready = function () {
-      addVeil(map);
+      addVeil(api().map); // the real map: app.js starts on a stand-in camera (N7c)
     };
     if (map.loaded()) ready(); else map.once("load", ready);
   }

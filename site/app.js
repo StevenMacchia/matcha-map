@@ -137,15 +137,143 @@
   var HOME = [[-125, 24.5], [-66.5, 49.5]], HI = [-157.95, 21.4];
   function isDark() { return document.documentElement.getAttribute("data-theme") === "dark"; }
   function styleUrl() { return isDark() ? "map-style-dark.json" : "map-style.json"; }
-  var map = new maplibregl.Map({
-    container: "map", style: styleUrl(), bounds: HOME, fitBoundsOptions: { padding: 16 },
-    minZoom: 2.5, maxZoom: 18, dragRotate: false, pitchWithRotate: false, touchPitch: false,
-    attributionControl: { compact: true }, fadeDuration: 200
-  });
-  map.touchZoomRotate.disableRotation();
-  map.keyboard.disableRotation();
-  if (wide.matches) map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
-  map.getCanvas().setAttribute("aria-label", "Map of matcha pop-ups. Use arrow keys to pan, plus and minus to zoom.");
+  // N7c (performance): MapLibre's first setup blocks the main thread for a third of a second while the GPU is still
+  // busy with the page's own first frames (Lighthouse mobile put 1.2 s of blocking time there). So the page starts on a
+  // stand-in camera (PreMap: the same calls, web mercator maths, no drawing) and the real map is made once a worker's
+  // WebGL probe answers: a few milliseconds on a phone with a free GPU, under a second on a busy one. The header, the
+  // chips and the list render from the data on the stand-in; its listeners, padding, camera and controls move over to
+  // the real map. Without WebGL the stand-in stays and the list, the cards and search still work.
+  var MAP_OPTS = { minZoom: 2.5, maxZoom: 18, dragRotate: false, pitchWithRotate: false, touchPitch: false,
+    attributionControl: { compact: true }, fadeDuration: 200 };
+  function mx(lng) { return (lng + 180) / 360; }
+  function my(lat) { var s = Math.sin(Math.max(-85, Math.min(85, lat)) * Math.PI / 180); return 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI); }
+  function ux(x) { return x * 360 - 180; }
+  function uy(y) { return 360 / Math.PI * Math.atan(Math.exp((1 - 2 * y) * Math.PI)) - 90; }
+  function toLL(v) { return maplibregl.LngLat.convert(v); }
+  function PreMap(el) {
+    this.el = el; this.c = toLL([-96, 38]); this.z = 3; this.pad = { top: 0, bottom: 0, left: 0, right: 0 };
+    this.ls = []; this.ctrls = []; this.isPre = true; this.s = null;
+    var self = this;
+    window.addEventListener("resize", function () { self.s = null; });
+  }
+  PreMap.prototype = {
+    // read once (and again after a resize): reading it after the list renders would force a layout each time
+    size: function () { return this.s || (this.s = [this.el.clientWidth || innerWidth, this.el.clientHeight || innerHeight]); },
+    ws: function () { return 512 * Math.pow(2, this.z); },
+    mid: function () { var s = this.size(), p = this.pad; return [(s[0] + p.left - p.right) / 2, (s[1] + p.top - p.bottom) / 2]; },
+    project: function (v) {
+      var ll = toLL(v), w = this.ws(), m = this.mid();
+      return { x: (mx(ll.lng) - mx(this.c.lng)) * w + m[0], y: (my(ll.lat) - my(this.c.lat)) * w + m[1] };
+    },
+    unproject: function (x, y) { var w = this.ws(), m = this.mid(); return toLL([ux(mx(this.c.lng) + (x - m[0]) / w), uy(my(this.c.lat) + (y - m[1]) / w)]); },
+    getBounds: function () { var s = this.size(); return new maplibregl.LngLatBounds(this.unproject(0, s[1]), this.unproject(s[0], 0)); },
+    getCenter: function () { return this.c; },
+    getZoom: function () { return this.z; },
+    getContainer: function () { return this.el; },
+    getPadding: function () { return this.pad; },
+    setPadding: function (p) { this.pad = { top: p.top || 0, bottom: p.bottom || 0, left: p.left || 0, right: p.right || 0 }; return this; },
+    cameraForBounds: function (b, o) {
+      b = maplibregl.LngLatBounds.convert(b); o = o || {};
+      var n = o.padding, q = typeof n === "number" ? { top: n, bottom: n, left: n, right: n } : (n || {});
+      var s = this.size(), p = this.pad;
+      var l = (q.left || 0) + p.left, r = (q.right || 0) + p.right, t = (q.top || 0) + p.top, bt = (q.bottom || 0) + p.bottom;
+      var x0 = mx(b.getWest()), x1 = mx(b.getEast()), y0 = my(b.getNorth()), y1 = my(b.getSouth());
+      var z = Math.log2(Math.min((s[0] - l - r) / Math.max(1e-9, (x1 - x0) * 512), (s[1] - t - bt) / Math.max(1e-9, (y1 - y0) * 512)));
+      z = Math.max(MAP_OPTS.minZoom, Math.min(o.maxZoom || MAP_OPTS.maxZoom, z));
+      var w = 512 * Math.pow(2, z);
+      var cx = (x0 + x1) / 2 - ((q.left || 0) - (q.right || 0)) / 2 / w, cy = (y0 + y1) / 2 - ((q.top || 0) - (q.bottom || 0)) / 2 / w;
+      return { center: toLL([ux(cx), uy(cy)]), zoom: z };
+    },
+    fitBounds: function (b, o) { return this.jumpTo(this.cameraForBounds(b, o)); },
+    jumpTo: function (o) {
+      var z0 = this.z;
+      if (o.zoom != null) this.z = Math.max(MAP_OPTS.minZoom, Math.min(MAP_OPTS.maxZoom, o.zoom));
+      if (o.center) {
+        var ll = toLL(o.center), off = o.offset || [0, 0], w = this.ws();
+        this.c = toLL([ux(mx(ll.lng) - off[0] / w), uy(my(ll.lat) - off[1] / w)]);
+      }
+      this.fire("move"); if (this.z !== z0) this.fire("zoom");
+      this.fire("moveend"); if (this.z !== z0) this.fire("zoomend");
+      return this;
+    },
+    easeTo: function (o) { return this.jumpTo(o); },
+    flyTo: function (o) { return this.jumpTo(o); },
+    panBy: function () { return this; },
+    resize: function () { return this; },
+    isMoving: function () { return false; },
+    loaded: function () { return false; },
+    getSource: function () { return undefined; },
+    getLayer: function () { return undefined; },
+    isSourceLoaded: function () { return false; },
+    querySourceFeatures: function () { return []; },
+    setStyle: function () { return this; },
+    addControl: function (c, at) { this.ctrls.push([c, at]); return this; },
+    on: function (t, f) { this.ls.push({ t: t, f: f }); return this; },
+    once: function (t, f) { this.ls.push({ t: t, f: f, once: true }); return this; },
+    off: function (t, f) { this.ls = this.ls.filter(function (l) { return l.t !== t || l.f !== f; }); return this; },
+    fire: function (t) {
+      var self = this, ev = { type: t, target: this };
+      this.ls.filter(function (l) { return l.t === t; }).forEach(function (l) { if (l.once) self.off(t, l.f); l.f.call(self, ev); });
+    }
+  };
+  var map = new PreMap($("map"));
+  map.size();
+  function makeMap() {
+    if (!map.isPre) return;
+    var pre = map, real;
+    try {
+      real = new maplibregl.Map(Object.assign({ container: "map", style: styleUrl(), center: pre.c, zoom: pre.z }, MAP_OPTS));
+    } catch (e) { // no WebGL
+      document.documentElement.classList.add("nomap");
+      playIntro();
+      return;
+    }
+    real.setPadding(pre.pad);
+    real.touchZoomRotate.disableRotation();
+    real.keyboard.disableRotation();
+    if (wide.matches) real.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+    pre.ctrls.forEach(function (c) { real.addControl(c[0], c[1]); });
+    real.getCanvas().setAttribute("aria-label", "Map of matcha pop-ups. Use arrow keys to pan, plus and minus to zoom.");
+    pre.ls.forEach(function (l) { if (l.once) real.once(l.t, l.f); else real.on(l.t, l.f); });
+    map = real;
+    // The opening starts on the map's first full frame, or 1.2 s after the map is made whatever happens.
+    setTimeout(playIntro, 1200);
+  }
+  // The map waits for a worker's WebGL probe to come back quickly (the GPU is free); 2.5 s at most. No OffscreenCanvas
+  // (older Safari): at once, after the first paint.
+  function whenGpu(cb) {
+    var done = false, go = function () { if (!done) { done = true; setTimeout(cb, 0); } };
+    setTimeout(go, 2500);
+    afterPaint(function () { probe(go); });
+  }
+  // The page's own first frame goes first: the probe has to queue behind its raster to tell anything.
+  function afterPaint(f) {
+    try {
+      var types = window.PerformanceObserver && PerformanceObserver.supportedEntryTypes;
+      if (!types || types.indexOf("paint") < 0 || performance.getEntriesByName("first-contentful-paint").length) return f();
+      new PerformanceObserver(function (l, o) { if (l.getEntriesByName("first-contentful-paint").length) { o.disconnect(); f(); } }).observe({ type: "paint", buffered: true });
+    } catch (e) { f(); }
+  }
+  // A probe makes a 1x1 WebGL context in a worker, clears it, reads it back and drops it (making the context is the
+  // step that queues behind the page's raster). It repeats until two in a row come back in under 30 ms, eight at most.
+  function probe(go) {
+    try {
+      if (typeof OffscreenCanvas === "undefined" || !window.Worker || !window.Blob) throw new Error("no probe");
+      var src = "onmessage=function(){try{var g=new OffscreenCanvas(1,1).getContext('webgl2');" +
+        "if(g){g.clear(g.COLOR_BUFFER_BIT);g.readPixels(0,0,1,1,g.RGBA,g.UNSIGNED_BYTE,new Uint8Array(4));var x=g.getExtension('WEBGL_lose_context');if(x)x.loseContext();}}catch(e){}postMessage(1);};";
+      var url = URL.createObjectURL(new Blob([src], { type: "text/javascript" })), w = new Worker(url), n = 0, fast = 0, t0 = performance.now();
+      var end = function () { w.terminate(); URL.revokeObjectURL(url); go(); };
+      w.onerror = end;
+      w.onmessage = function () {
+        var dt = performance.now() - t0;
+        fast = dt < 30 ? fast + 1 : 0;
+        if (fast >= 2 || ++n >= 8) return end();
+        t0 = performance.now(); w.postMessage(1);
+      };
+      w.postMessage(1);
+    } catch (e) { go(); }
+  }
+  whenGpu(makeMap);
   // Phone (N7): the map runs under the floating header and chips, and the list peeks from the bottom; the map's padding
   // keeps the camera's centre in the open part between them. --chrome (the chips' bottom edge) places the toasts and list.
   var mapPad = { top: 0, bottom: 0, left: 0, right: 0 };
@@ -268,8 +396,8 @@
 
   function animOnce(el, cls, delay) {
     if (calm()) return;
-    el.classList.remove(cls);
-    void el.offsetWidth;
+    // restart only a running animation: the reflow that restarts it, done for every new pin, was a layout per pin (N7c)
+    if (el.classList.contains(cls)) { el.classList.remove(cls); void el.offsetWidth; }
     if (delay) el.style.animationDelay = delay + "ms";
     el.classList.add(cls);
     el.addEventListener("animationend", function done(ev) {
@@ -283,8 +411,12 @@
   // The opening (N7) is a longer, continuous wave: each pin drops with a spring, 0 to 480 ms by its distance from the centre.
   var stageUntil = 0, stageKind = "";
   function stage(ms, kind) { stageUntil = Date.now() + ms; stageKind = kind || "scene"; }
+  var boxSz = null;
+  window.addEventListener("resize", function () { boxSz = null; });
   function ringDelay(rec) {
-    var c = map.getContainer(), w = c.clientWidth / 2, h = c.clientHeight / 2;
+    var c = map.getContainer();
+    if (!boxSz) boxSz = [c.clientWidth, c.clientHeight];
+    var w = boxSz[0] / 2, h = boxSz[1] / 2;
     var p = map.project(rec.marker.getLngLat()), d = Math.sqrt((p.x - w) * (p.x - w) + (p.y - h) * (p.y - h));
     var f = Math.min(1, d / (Math.sqrt(w * w + h * h) || 1));
     return stageKind === "open" ? Math.round(f * 480) : Math.min(7, Math.floor(f * 8)) * 30;
@@ -1612,9 +1744,8 @@
     }, 420));
     introTimers.push(setTimeout(endIntro, 1500));
   }
-  // The opening starts on the map's first full frame, or after 1.2 s whatever happens (a slow network never waits).
+  // The opening starts on the map's first full frame, or 1.2 s after the map is made whatever happens (makeMap).
   map.once("load", function () { setTimeout(playIntro, 40); });
-  setTimeout(playIntro, 1200);
   // Test switch: ?intro=1 replays the opening.
 
   // ---------- deep links (?q= ?city= ?event= ?brand=; parsing lives in deeplink.js) ----------
@@ -1663,34 +1794,63 @@
     oops("Showing " + (label || "one drink") + ": " + (evs || []).length + " pop-up" + ((evs || []).length === 1 ? "" : "s") + ".", ["Show all", clearOnly], "m-happy");
   }
   function clearOnly() { if (!state.only) return; state.only = null; stage(700); refreshEvents(true); if (window.mmSearch && window.mmSearch.clear) window.mmSearch.clear(); }
-  function mountSearch(sources) {
+  // N7c: search.js and the drink-art index load when the page goes idle; the box itself is built on the first focus of
+  // the place box (its index is a long task on a phone, so not at load), or at once for a ?drink= link. If the module
+  // is not in yet at that focus, the zip-or-city field carries on and search takes over when it loses focus.
+  var searchMod = null, searchUp = false;
+  function idle(f) { if (window.requestIdleCallback) requestIdleCallback(f, { timeout: 4000 }); else setTimeout(f, 2000); }
+  function mountSearchSoon(sources) {
     var slot = $("search-slot");
     if (!slot) return;
-    Promise.all([import("./search.js"), loadArt()]).then(function (r) {
-      var S = r[0];
-      if (!S || typeof S.mountSearch !== "function") return;
-      addCss("search.css");
-      var events = state.events.map(function (it) { return it.data; });
-      var mm = S.mountSearch(slot, {
-        events: events, sources: sources, art: r[1], cities: window.CITY_LIST, readUrl: false,
-        onPick: function (p) {
-          if (p.type === "event") { if (items["e:" + p.id]) flyTo("e:" + p.id); }
-          else if (p.type === "city") { var c = window.MatchaDeepLink && window.MatchaDeepLink.findCityBySlug(window.CITY_LIST, p.id); if (c) landAt([c[2], c[3]], c[0] + ", " + c[1], "", false); }
-          else if (p.type === "brand") { var k = brandKeyOf(String(p.id).toLowerCase()); if (k) flyTo(k); }
-          else if (p.type === "drink") showOnly(S.filterByDrink(events, p.id, r[1]), String(p.id).replace(/-/g, " "));
-        }
-      });
-      window.mmSearch = mm;
-      slot.classList.add("has-search");
-      // the box sits in the pill after the magnifier, before Near me
-      var box = slot.querySelector(".srch"), near = $("near");
-      if (box && near) slot.insertBefore(box, near);
-      var inp = slot.querySelector(".srch-in");
-      if (inp) inp.placeholder = wide.matches ? "Search brands, drinks, cities or a zip" : "Brand, drink, city";
-      if (inp) inp.addEventListener("keydown", function (ev) { if (ev.key === "Enter" && /^\d{5}$/.test(inp.value.trim())) { ev.preventDefault(); goZip(inp.value.trim(), false); } });
-      var drink = params.get("drink");
-      if (drink && mm && mm.applyQuery) mm.applyQuery({ drink: drink });
-    }).catch(function () { /* search.js not there: the zip-or-city field stays */ });
+    var load = function () {
+      if (!load.p) load.p = Promise.all([import("./search.js"), loadArt()]).then(function (r) { addCss("search.css"); searchMod = r; return r; });
+      return load.p;
+    };
+    var up = function (focusIt) {
+      if (searchUp || !searchMod) return;
+      var zi = $("zip");
+      if (!focusIt && document.activeElement === zi) { zi.addEventListener("blur", function () { up(false); }, { once: true }); return; }
+      searchUp = true;
+      mountSearch(slot, sources, searchMod, focusIt);
+    };
+    slot.addEventListener("focusin", function (ev) {
+      if (searchMod) up(ev.target === $("zip"));
+      else load().then(function () { up(false); }).catch(function () { /* the zip-or-city field stays */ });
+    });
+    if (params.get("drink")) load().then(function () { up(false); }).catch(function () { /* as above */ });
+    else idle(function () { load().catch(function () { /* as above */ }); });
+  }
+  function mountSearch(slot, sources, r, focusIt) {
+    var S = r[0];
+    if (!S || typeof S.mountSearch !== "function") return;
+    addCss("search.css");
+    var events = state.events.map(function (it) { return it.data; });
+    var mm = S.mountSearch(slot, {
+      events: events, sources: sources, art: r[1], cities: window.CITY_LIST, readUrl: false,
+      onPick: function (p) {
+        if (p.type === "event") { if (items["e:" + p.id]) flyTo("e:" + p.id); }
+        else if (p.type === "city") { var c = window.MatchaDeepLink && window.MatchaDeepLink.findCityBySlug(window.CITY_LIST, p.id); if (c) landAt([c[2], c[3]], c[0] + ", " + c[1], "", false); }
+        else if (p.type === "brand") { var k = brandKeyOf(String(p.id).toLowerCase()); if (k) flyTo(k); }
+        else if (p.type === "drink") showOnly(S.filterByDrink(events, p.id, r[1]), String(p.id).replace(/-/g, " "));
+      }
+    });
+    window.mmSearch = mm;
+    slot.classList.add("has-search");
+    // the box sits in the pill after the magnifier, before Near me
+    var box = slot.querySelector(".srch"), near = $("near");
+    if (box && near) slot.insertBefore(box, near);
+    var inp = slot.querySelector(".srch-in");
+    if (inp) inp.placeholder = wide.matches ? "Search brands, drinks, cities or a zip" : "Brand, drink, city";
+    if (inp) inp.addEventListener("keydown", function (ev) { if (ev.key === "Enter" && /^\d{5}$/.test(inp.value.trim())) { ev.preventDefault(); goZip(inp.value.trim(), false); } });
+    var drink = params.get("drink");
+    if (drink && mm && mm.applyQuery) mm.applyQuery({ drink: drink });
+    // the tap that focused the zip field lands in the search box, with anything typed so far
+    if (focusIt && inp) {
+      var zi = $("zip");
+      if (zi && zi.value) inp.value = zi.value;
+      inp.focus();
+      if (inp.value) inp.dispatchEvent(new Event("input", { bubbles: true }));
+    }
   }
 
   // ---------- load ----------
@@ -1730,12 +1890,17 @@
     buildBrands(res[1] || []);
     setupHawaii();
     var go = function () { syncZoomFace(); refreshEvents(false); };
-    go(); // sources added later by addData (style.load) start from the same lists
     var zs = ""; try { zs = localStorage.getItem(ZIP_KEY) || ""; } catch (e) { /* ignore */ }
-    if (!applyDeepLink()) { if (/^\d{5}$/.test(zs)) goZip(zs, true); else if (!wide.matches) openRegion(); }
+    // A phone with no saved zip and no link opens on its region: framed before the first list, so the list is built
+    // once and not for the whole country first (N7c).
+    var dl0 = window.MatchaDeepLink ? window.MatchaDeepLink.parse(location.search) : {};
+    var regionFirst = !wide.matches && !/^\d{5}$/.test(zs) && !(dl0.q || dl0.city || dl0.event || dl0.brand);
+    if (regionFirst) { openRegion(); clearTimeout(moveT); }
+    go(); // sources added later by addData (style.load) start from the same lists
+    if (!regionFirst && !applyDeepLink()) { if (/^\d{5}$/.test(zs)) goZip(zs, true); else if (!wide.matches) openRegion(); }
     loadShops();
     loadExtras();
-    mountSearch(res[1] || []);
+    mountSearchSoon(res[1] || []);
   }).catch(function () {
     oops(navigator.onLine === false ? "You are offline and nothing was saved yet." : "Could not load pop-ups.", ["Try again", function () { location.reload(); }], navigator.onLine === false ? "m-sleepy" : "");
   }).then(function () { $("loading").hidden = true; });
@@ -1866,5 +2031,5 @@
   }
 
   // Exposed for tests only.
-  window.__matcha = { state: state, shopsOn: function () { return shopsOn; }, matchesChip: matchesChip, whenText: whenText, map: map, live: live };
+  window.__matcha = { state: state, shopsOn: function () { return shopsOn; }, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
 })();
