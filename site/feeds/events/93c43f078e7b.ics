@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Mira Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:93c43f078e7b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261204T230000Z
+DTEND:20261205T010000Z
+SUMMARY:MoonchildLand: First Friday
+LOCATION:San Antonio\, TX
+DESCRIPTION:First Friday is a night of tattoos\, curated vendors\, coffee a
+ nd shopping. Local tattoo artist creates an exclusive flash tattoo sheet i
+ nspired by the Moonchild logo and Moonchild world.\nDetails not confirmed 
+ yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.pa
+ ges.dev/e/93c43f078e7b/
+URL:https://matchamap-cu7.pages.dev/e/93c43f078e7b/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

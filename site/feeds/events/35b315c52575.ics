@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cafe of the Day pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:35b315c52575
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: Manhattan
+LOCATION:New York\, NY
+DESCRIPTION:Join us for coffee\, latte\, or matcha at different cafes each 
+ gathering. Build your community in your city with a fun day out!\nMenu: la
+ tte\nDetails not confirmed yet. Check the brand's post before you go.\nMor
+ e: https://matchamap-cu7.pages.dev/e/35b315c52575/
+URL:https://matchamap-cu7.pages.dev/e/35b315c52575/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

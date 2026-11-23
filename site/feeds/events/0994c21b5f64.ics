@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Museum of Contemporary Art Arlington pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:0994c21b5f64
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Yogalates + Matcha Pop Up
+LOCATION:Museum of Contemporary Art Arlington\, 3550 Wilson Blvd\, Arlingto
+ n\, VA
+DESCRIPTION:Join yoga and pilates instructor\, Chelsea Estevez\, for an aft
+ ernoon yogalates session followed by Matcha tasting! Register to attend.\n
+ Likely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/099
+ 4c21b5f64/
+URL:https://matchamap-cu7.pages.dev/e/0994c21b5f64/
+GEO:38.881688;-77.102090
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ermantourage LA Team pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a61b00f0c51e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261128T190000Z
+DTEND:20261128T220000Z
+SUMMARY:Matcha + Meetup: Austin | Benefits for The Birthday Party Project
+LOCATION:Golden Hour Cafe & Wine Bar\, 7731 Menchaca Road\, Austin\, TX
+DESCRIPTION:Make new friends over brunch or coffee while supporting small b
+ usinesses and giving back to non-profit\, The Birthday Party Project.\nPri
+ ce: free\nMore: https://matchamap-cu7.pages.dev/e/a61b00f0c51e/
+URL:https://matchamap-cu7.pages.dev/e/a61b00f0c51e/
+GEO:30.193816;-97.810912
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

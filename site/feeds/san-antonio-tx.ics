@@ -1,0 +1,124 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: San Antonio\, TX
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:eee4fae2e774
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: San Antonio | Benefits for The Birthday Party Proj
+ ect
+LOCATION:Blush Restaurant & Bakery\, 713 South Alamo Street\, San Antonio\,
+  TX
+DESCRIPTION:Make new friends over brunch or coffee while supporting small b
+ usinesses and giving back to non-profit\, The Birthday Party Project.\nLik
+ ely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/eee4fa
+ e2e774/
+URL:https://matchamap-cu7.pages.dev/e/eee4fae2e774/
+GEO:29.416973;-98.488581
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:703f38ec7253
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261201T170000Z
+DTEND:20261201T190000Z
+SUMMARY:MoonchildLand: Family & Friends
+LOCATION:San Antonio\, TX
+DESCRIPTION:Family & Friends begins the six-day MoonchildLand grand opening
+ \, welcoming the people who have been part of Moonchild's journey to the f
+ irst San Antonio storefront.\nDetails not confirmed yet. Check the brand's
+  post before you go.\nMore: https://matchamap-cu7.pages.dev/e/703f38ec7253
+ /
+URL:https://matchamap-cu7.pages.dev/e/703f38ec7253/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:e42e6bf48a5a
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261202T170000Z
+DTEND:20261202T190000Z
+SUMMARY:MoonchildLand: Bring Your Moon Pup
+LOCATION:San Antonio\, TX
+DESCRIPTION:Bring Your Moon Pup dedicates the day to four-legged Moon Babie
+ s and marks the official launch of Moon-Pups.\nDetails not confirmed yet. 
+ Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
+ ev/e/e42e6bf48a5a/
+URL:https://matchamap-cu7.pages.dev/e/e42e6bf48a5a/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:b036de5da0fa
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261204T000000Z
+DTEND:20261204T020000Z
+SUMMARY:MoonchildLand: Creator Day
+LOCATION:San Antonio\, TX
+DESCRIPTION:Creator Day is an intimate evening with local creators\, person
+ alized pieces and Moonchild magic. Local content creators can reach out fo
+ r an invite.\nDetails not confirmed yet. Check the brand's post before you
+  go.\nMore: https://matchamap-cu7.pages.dev/e/b036de5da0fa/
+URL:https://matchamap-cu7.pages.dev/e/b036de5da0fa/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:93c43f078e7b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261204T230000Z
+DTEND:20261205T010000Z
+SUMMARY:MoonchildLand: First Friday
+LOCATION:San Antonio\, TX
+DESCRIPTION:First Friday is a night of tattoos\, curated vendors\, coffee a
+ nd shopping. Local tattoo artist creates an exclusive flash tattoo sheet i
+ nspired by the Moonchild logo and Moonchild world.\nDetails not confirmed 
+ yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.pa
+ ges.dev/e/93c43f078e7b/
+URL:https://matchamap-cu7.pages.dev/e/93c43f078e7b/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:0d8fccb23e2e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261205T170000Z
+DTEND:20261205T190000Z
+SUMMARY:MoonchildLand: Local Love
+LOCATION:San Antonio\, TX
+DESCRIPTION:Local Love celebrates small businesses\, local creatives\, good
+  food and matcha.\nDetails not confirmed yet. Check the brand's post befor
+ e you go.\nMore: https://matchamap-cu7.pages.dev/e/0d8fccb23e2e/
+URL:https://matchamap-cu7.pages.dev/e/0d8fccb23e2e/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:0e4806dcbc24
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261206T170000Z
+DTEND:20261206T190000Z
+SUMMARY:MoonchildLand Grand Opening
+LOCATION:San Antonio\, TX
+DESCRIPTION:The sixth day closes the six-day MoonchildLand grand opening.\n
+ Details not confirmed yet. Check the brand's post before you go.\nMore: ht
+ tps://matchamap-cu7.pages.dev/e/0e4806dcbc24/
+URL:https://matchamap-cu7.pages.dev/e/0e4806dcbc24/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

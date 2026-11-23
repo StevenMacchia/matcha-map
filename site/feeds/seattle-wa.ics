@@ -1,0 +1,107 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Seattle\, WA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:7787585c24b7
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T235632Z
+DTSTART:20261123T000000Z
+DTEND:20261123T050000Z
+SUMMARY:Sabz Matcha at HAISA X Good Company
+LOCATION:Seattle\, WA
+DESCRIPTION:Sabz Matcha sets up at HAISA X Good Company\, 20812 Internation
+ al Blvd in SeaTac. The pop-up runs 4-9 PM.\nMenu: berry sweet\, matcha afg
+ hani\, lavender fields\, pumpkin pie\, matcha vanille\nDetails not confirm
+ ed yet. Check the brand's post before you go.\nMore: https://matchamap-cu7
+ .pages.dev/e/7787585c24b7/
+URL:https://matchamap-cu7.pages.dev/e/7787585c24b7/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:feeb3c6099c5
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Howdy Y'all Coffee pop-up
+LOCATION:Seattle\, WA
+DESCRIPTION:CORN MATCHA + MELON MATCHA\nMenu: melon matcha\nDetails not con
+ firmed yet. Check the brand's post before you go.\nMore: https://matchamap
+ -cu7.pages.dev/e/feeb3c6099c5/
+URL:https://matchamap-cu7.pages.dev/e/feeb3c6099c5/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:68e932a1bcfc
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART:20261128T190000Z
+DTEND:20261128T230000Z
+SUMMARY:Sabz Matcha at Cocobolo
+LOCATION:Seattle\, WA
+DESCRIPTION:Sabz Matcha takes part in Small Business Saturday at Cocobolo\,
+  626 St Helens Ave in Tacoma. The pop-up runs 11 AM-3 PM.\nMenu: berry swe
+ et\, matcha afghani\, lavender fields\, pumpkin pie\, matcha vanille\nDeta
+ ils not confirmed yet. Check the brand's post before you go.\nMore: https:
+ //matchamap-cu7.pages.dev/e/68e932a1bcfc/
+URL:https://matchamap-cu7.pages.dev/e/68e932a1bcfc/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:c022c6dc7550
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261128T210000Z
+DTEND:20261128T230000Z
+SUMMARY:Matcha + Meetup: Seattle | Film + Music Industry Monthly Mingle
+LOCATION:Seattle\, WA
+DESCRIPTION:Price: $17.85\nDetails not confirmed yet. Check the brand's pos
+ t before you go.\nMore: https://matchamap-cu7.pages.dev/e/c022c6dc7550/
+URL:https://matchamap-cu7.pages.dev/e/c022c6dc7550/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:5bb61b95cb25
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Vale Matcha pop-up
+LOCATION:Seattle\, WA
+DESCRIPTION:Two more weeks until the Lemon-Huckleberry Matcha Sour leaves t
+ he menu forever Stop by Pioneer Square before December 1st to taste it\, a
+ nd swipe to slide three to get a sneak peek of what we’re…\nDetails no
+ t confirmed yet. Check the brand's post before you go.\nMore: https://matc
+ hamap-cu7.pages.dev/e/5bb61b95cb25/
+URL:https://matchamap-cu7.pages.dev/e/5bb61b95cb25/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:f38213be4726
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART:20261205T190000Z
+DTEND:20261206T000000Z
+SUMMARY:Aveda x Sabz Matcha
+LOCATION:Seattle\, WA
+DESCRIPTION:Sabz Matcha and Aveda hold a collaboration pop-up at the Aveda 
+ Store at Bellevue Square. The pop-up runs 11 AM-4 PM. A seasonal flavor is
+  planned for the December pop-up.\nMenu: berry sweet\, matcha afghani\, la
+ vender fields\, pumpkin pie\, matcha vanille\nDetails not confirmed yet. C
+ heck the brand's post before you go.\nMore: https://matchamap-cu7.pages.de
+ v/e/f38213be4726/
+URL:https://matchamap-cu7.pages.dev/e/f38213be4726/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

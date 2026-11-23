@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ritual Grounds pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a06d4795918d
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Ritual Grounds pop-up
+LOCATION:St. Petersburg\, FL
+DESCRIPTION:MATCHA (USUCHA OR LATTE)\nMenu: usucha\, vanilla\, blueberry\, 
+ strawberry\, cold foam\, cold brew\, einspanner\, hojicha latte\nDetails n
+ ot confirmed yet. Check the brand's post before you go.\nMore: https://mat
+ chamap-cu7.pages.dev/e/a06d4795918d/
+URL:https://matchamap-cu7.pages.dev/e/a06d4795918d/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

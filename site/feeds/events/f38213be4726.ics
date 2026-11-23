@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sabz Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f38213be4726
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART:20261205T190000Z
+DTEND:20261206T000000Z
+SUMMARY:Aveda x Sabz Matcha
+LOCATION:Seattle\, WA
+DESCRIPTION:Sabz Matcha and Aveda hold a collaboration pop-up at the Aveda 
+ Store at Bellevue Square. The pop-up runs 11 AM-4 PM. A seasonal flavor is
+  planned for the December pop-up.\nMenu: berry sweet\, matcha afghani\, la
+ vender fields\, pumpkin pie\, matcha vanille\nDetails not confirmed yet. C
+ heck the brand's post before you go.\nMore: https://matchamap-cu7.pages.de
+ v/e/f38213be4726/
+URL:https://matchamap-cu7.pages.dev/e/f38213be4726/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

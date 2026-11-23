@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ricky Ly pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:dcff41e4fa74
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261205T210000Z
+DTEND:20261205T230000Z
+SUMMARY:Très Matcha! Très Fleur! (4 PM)
+LOCATION:Orlando\, FL
+DESCRIPTION:Très Matcha! Très Fleur! is a one-day holiday workshop hosted
+  by and at Amore Mio Florals Studio.\nMenu: macaron\, madeleine\nDetails n
+ ot confirmed yet. Check the brand's post before you go.\nMore: https://mat
+ chamap-cu7.pages.dev/e/dcff41e4fa74/
+URL:https://matchamap-cu7.pages.dev/e/dcff41e4fa74/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

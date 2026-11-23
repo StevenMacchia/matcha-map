@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Caffeine Depot pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:739ed546ab41
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261206T190000Z
+DTEND:20261206T210000Z
+SUMMARY:Tats & Totes Holiday Art Market
+LOCATION:San Francisco\, CA
+DESCRIPTION:The Tats & Totes Holiday Art Market presents Vendor Showcase Pa
+ rt 4\, with food and drink vendors taking part. Admission is free. PARALLA
+ X hosts at 1827 Houret Court in Milpitas.\nPrice: free\nDetails not confir
+ med yet. Check the brand's post before you go.\nMore: https://matchamap-cu
+ 7.pages.dev/e/739ed546ab41/
+URL:https://matchamap-cu7.pages.dev/e/739ed546ab41/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:magnaye pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:b192ec8a7beb
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:magnaye pop-up
+LOCATION:2722 Fifth Ave\, San Diego\, CA
+DESCRIPTION:Black Friday pop up in Bankers Hill Join us for an espresso + m
+ atcha bar alongside pastry chef extraordinaire matcha.y.miel at cozy\, cul
+ inary & cookbook shop patine.sd.\nMenu: espresso matcha\, pastry\nLikely\,
+  not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/b192ec8a7be
+ b/
+URL:https://matchamap-cu7.pages.dev/e/b192ec8a7beb/
+GEO:33.116063;-117.082913
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

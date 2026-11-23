@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Mira Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:b036de5da0fa
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261204T000000Z
+DTEND:20261204T020000Z
+SUMMARY:MoonchildLand: Creator Day
+LOCATION:San Antonio\, TX
+DESCRIPTION:Creator Day is an intimate evening with local creators\, person
+ alized pieces and Moonchild magic. Local content creators can reach out fo
+ r an invite.\nDetails not confirmed yet. Check the brand's post before you
+  go.\nMore: https://matchamap-cu7.pages.dev/e/b036de5da0fa/
+URL:https://matchamap-cu7.pages.dev/e/b036de5da0fa/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

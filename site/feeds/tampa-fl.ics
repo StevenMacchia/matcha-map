@@ -1,0 +1,74 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Tampa\, FL
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:52419d05e6bf
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T193450Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:mrs.stript pop-up
+LOCATION:Tampa\, FL
+DESCRIPTION:BUJI x Striptofficial Matcha Pop-Ups — 5 Cities Weekend (Nov 
+ 21–22) 2569 Likes\, 94 Comments. TikTok video from mrs.stript ( ): “Fi
+ nd BUJI x Striptofficial matcha pop-ups in Tampa\, Orlando\, Houston\nDeta
+ ils not confirmed yet. Check the brand's post before you go.\nMore: https:
+ //matchamap-cu7.pages.dev/e/52419d05e6bf/
+URL:https://matchamap-cu7.pages.dev/e/52419d05e6bf/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:c2c10d21c465
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261123T180000Z
+DTEND:20261123T210000Z
+SUMMARY:Matcha + Meetup: Tampa | Creatives Edition
+LOCATION:Tampa\, FL
+DESCRIPTION:Join us for coffee\, latte\, or matcha at different cafes. Buil
+ d your creative community in your city with a fun day out!\nMenu: latte\nP
+ rice: $12.51–87.21\nDetails not confirmed yet. Check the brand's post be
+ fore you go.\nMore: https://matchamap-cu7.pages.dev/e/c2c10d21c465/
+URL:https://matchamap-cu7.pages.dev/e/c2c10d21c465/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:2515797d489c
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261129T140000Z
+DTEND:20261129T160000Z
+SUMMARY:Ybor City Matcha & Mimosa Sundays
+LOCATION:Blind Tiger Coffee Roasters- Ybor City Cafe\, 1823 East 7th Avenue
+ \, Tampa\, FL
+DESCRIPTION:Likely\, not fully confirmed.\nMore: https://matchamap-cu7.page
+ s.dev/e/2515797d489c/
+URL:https://matchamap-cu7.pages.dev/e/2515797d489c/
+GEO:27.960164;-82.438447
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:52a12a0a594a
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261206T170000Z
+DTEND:20261206T200000Z
+SUMMARY:Matcha + Meetup: Tampa Creatives (Giving Back Edition)
+LOCATION:Tampa\, FL
+DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
+ unity while supporting local businesses and giving back to people in need.
+ \nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before 
+ you go.\nMore: https://matchamap-cu7.pages.dev/e/52a12a0a594a/
+URL:https://matchamap-cu7.pages.dev/e/52a12a0a594a/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

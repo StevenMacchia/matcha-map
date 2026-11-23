@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Vale Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5bb61b95cb25
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Vale Matcha pop-up
+LOCATION:Seattle\, WA
+DESCRIPTION:Two more weeks until the Lemon-Huckleberry Matcha Sour leaves t
+ he menu forever Stop by Pioneer Square before December 1st to taste it\, a
+ nd swipe to slide three to get a sneak peek of what we’re…\nDetails no
+ t confirmed yet. Check the brand's post before you go.\nMore: https://matc
+ hamap-cu7.pages.dev/e/5bb61b95cb25/
+URL:https://matchamap-cu7.pages.dev/e/5bb61b95cb25/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

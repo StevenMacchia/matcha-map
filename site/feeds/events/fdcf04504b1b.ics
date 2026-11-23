@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:magnaye pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:fdcf04504b1b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203115Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:magnaye pop-up
+LOCATION:2361 30th St\, San Diego\, CA
+DESCRIPTION:South Park Sunday — full coffee & matcha menu available tomor
+ row at originsgrocer from 10a-1p. Food by bik.lun. Mint Chip & Banana Vani
+ lla are making an appearance!\nMenu: banana\, vanilla\nLikely\, not fully 
+ confirmed.\nMore: https://matchamap-cu7.pages.dev/e/fdcf04504b1b/
+URL:https://matchamap-cu7.pages.dev/e/fdcf04504b1b/
+GEO:32.730232;-117.129474
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

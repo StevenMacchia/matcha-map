@@ -1,0 +1,57 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Elk Grove\, CA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:1e68ec626cc5
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Mellobun Cafe x Matte Matcha Bar pop-up
+LOCATION:9630 Bruceville Rd #130\, Elk Grove\, CA
+DESCRIPTION:Cozy up with your fave pastry and matcha\nMenu: pastry\, strawb
+ erry\, banana\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.
+ pages.dev/e/1e68ec626cc5/
+URL:https://matchamap-cu7.pages.dev/e/1e68ec626cc5/
+GEO:38.408122;-121.420479
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:a2410da89e39
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Mellobun Cafe x Matte Matcha Bar pop-up
+LOCATION:9630 Bruceville Rd #103\, Elk Grove\, CA
+DESCRIPTION:Pre-order and skip the line\nMenu: cookie\, pastry\, banana\nLi
+ kely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/a2410
+ da89e39/
+URL:https://matchamap-cu7.pages.dev/e/a2410da89e39/
+GEO:38.408122;-121.420479
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:9f87731c11ea
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART:20261125T170000Z
+DTEND:20261125T210000Z
+SUMMARY:Mellobun Cafe x Matte Matcha Bar pop-up
+LOCATION:7419 Laguna Blvd Unit 180\, Elk Grove\, CA
+DESCRIPTION:Closing soon… PRE-ORDER YOUR SALT BREAD & CINNAMON ROLLS!\nMe
+ nu: hojicha\, latte\, cookie\nMore: https://matchamap-cu7.pages.dev/e/9f87
+ 731c11ea/
+URL:https://matchamap-cu7.pages.dev/e/9f87731c11ea/
+GEO:38.423510;-121.416552
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

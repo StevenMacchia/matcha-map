@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Dream Tea NYC pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:bca178768f03
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261206T160000Z
+DTEND:20261206T230000Z
+SUMMARY:Dream Tea NYC pop-up
+LOCATION:190 Court\, New York\, NY
+DESCRIPTION:Dream Tea NYC in Cobble Hill\, Brooklyn! Saturday\, December 5 
+ to Sunday\, December 6\, 2026\, 11 AM to 6 PM\, 190 Court Street\, Brookly
+ n\, NY 11201. "Join Dream Tea NYC with FAD Market in Cobble Hill!\nLikely\
+ , not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/bca178768f
+ 03/
+URL:https://matchamap-cu7.pages.dev/e/bca178768f03/
+GEO:43.242266;-77.611829
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

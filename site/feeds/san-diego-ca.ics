@@ -1,0 +1,176 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: San Diego\, CA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:d27a41ae179a
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:magnaye pop-up at Home Ec
+LOCATION:San Diego\, CA
+DESCRIPTION:11/22 | Sunday evening is the last chance to order bottled latt
+ es for pick up at Home Ec on Wednesday 11/25 for your holiday festivities.
+  Vanilla / Burnt Honey Orange Blossom with espresso or matcha\nMenu: latte
+ \, vanilla\, honey\nDetails not confirmed yet. Check the brand's post befo
+ re you go.\nMore: https://matchamap-cu7.pages.dev/e/d27a41ae179a/
+URL:https://matchamap-cu7.pages.dev/e/d27a41ae179a/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:fdcf04504b1b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203115Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:magnaye pop-up
+LOCATION:2361 30th St\, San Diego\, CA
+DESCRIPTION:South Park Sunday — full coffee & matcha menu available tomor
+ row at originsgrocer from 10a-1p. Food by bik.lun. Mint Chip & Banana Vani
+ lla are making an appearance!\nMenu: banana\, vanilla\nLikely\, not fully 
+ confirmed.\nMore: https://matchamap-cu7.pages.dev/e/fdcf04504b1b/
+URL:https://matchamap-cu7.pages.dev/e/fdcf04504b1b/
+GEO:32.730232;-117.129474
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:4a9586dacab3
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Prosperitea pop-up
+LOCATION:San Diego\, CA
+DESCRIPTION:Happy Thanksgiving week yall! We're so thankful that we get to 
+ make silly\, delicious little drinks for all of yall and add to your day's
+  whimsy & joy\nDetails not confirmed yet. Check the brand's post before yo
+ u go.\nMore: https://matchamap-cu7.pages.dev/e/4a9586dacab3/
+URL:https://matchamap-cu7.pages.dev/e/4a9586dacab3/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:9fc3ea7a0140
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:magnaye pop-up at Home Ec
+LOCATION:San Diego\, CA
+DESCRIPTION:11/22 | Sunday evening is the last chance to order bottled latt
+ es for pick up at Home Ec on Wednesday 11/25 for your holiday festivities.
+  Vanilla / Burnt Honey Orange Blossom with espresso or matcha\nMenu: latte
+ \, vanilla\, honey\nDetails not confirmed yet. Check the brand's post befo
+ re you go.\nMore: https://matchamap-cu7.pages.dev/e/9fc3ea7a0140/
+URL:https://matchamap-cu7.pages.dev/e/9fc3ea7a0140/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:e8151f92bd15
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:Prosperitea pop-up
+LOCATION:San Diego\, CA
+DESCRIPTION:Happy Thanksgiving week yall! We're so thankful that we get to 
+ make silly\, delicious little drinks for all of yall and add to your day's
+  whimsy & joy\nDetails not confirmed yet. Check the brand's post before yo
+ u go.\nMore: https://matchamap-cu7.pages.dev/e/e8151f92bd15/
+URL:https://matchamap-cu7.pages.dev/e/e8151f92bd15/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:b192ec8a7beb
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:magnaye pop-up
+LOCATION:2722 Fifth Ave\, San Diego\, CA
+DESCRIPTION:Black Friday pop up in Bankers Hill Join us for an espresso + m
+ atcha bar alongside pastry chef extraordinaire matcha.y.miel at cozy\, cul
+ inary & cookbook shop patine.sd.\nMenu: espresso matcha\, pastry\nLikely\,
+  not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/b192ec8a7be
+ b/
+URL:https://matchamap-cu7.pages.dev/e/b192ec8a7beb/
+GEO:33.116063;-117.082913
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:907bad3baf0e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261127T180000Z
+DTEND:20261127T220000Z
+SUMMARY:Espresso & Matcha Pop-Up at Patine
+LOCATION:Patine\, 2722 Fifth Ave\, San Diego\, CA
+DESCRIPTION:A Black Friday pop-up brings an espresso bar and a matcha bar t
+ o Patine\, a culinary and cookbook shop in Bankers Hill. miel provides pas
+ tries. m. m. at 2722 Fifth Ave.\nMenu: pastry\nMore: https://matchamap-cu7
+ .pages.dev/e/907bad3baf0e/
+URL:https://matchamap-cu7.pages.dev/e/907bad3baf0e/
+GEO:33.116063;-117.082913
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:9a6762c17c0d
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261129T160000Z
+DTEND:20261129T180000Z
+SUMMARY:Pilates at The Ranch
+LOCATION:The Ranch\, 2501 Sunset Avenue\, San Diego\, CA
+DESCRIPTION:Price: $44.52–81.88\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/9a6762c17c0d/
+URL:https://matchamap-cu7.pages.dev/e/9a6762c17c0d/
+GEO:32.558121;-117.082009
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:1cdd1761a275
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T235305Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:emkari_cafe pop-up at Thaiyo
+LOCATION:San Diego\, CA
+DESCRIPTION:Filipino & Vietnamese Matcha & Coffee Popup in San Diego | Dec 
+ 6th | TikTok emkari cafe a little glimpse of our last emkari pop-up ☆ co
+ me try our filipino + vietnamese inspired matcha & coffee at…\nDetails n
+ ot confirmed yet. Check the brand's post before you go.\nMore: https://mat
+ chamap-cu7.pages.dev/e/1cdd1761a275/
+URL:https://matchamap-cu7.pages.dev/e/1cdd1761a275/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:c676cf3f543c
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T202629Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:emkari_cafe pop-up
+LOCATION:San Diego\, CA
+DESCRIPTION:Filipino & Vietnamese Matcha & Coffee Popup in San Diego | Dec 
+ 6th A new popup event is set to take place on December 6th at the Day to D
+ ay Collective\, offering a special taste of Filipino and…\nDetails not c
+ onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
+ ap-cu7.pages.dev/e/c676cf3f543c/
+URL:https://matchamap-cu7.pages.dev/e/c676cf3f543c/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

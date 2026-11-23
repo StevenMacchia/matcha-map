@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Restaurant of the Week pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:56e9a6d7fc57
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Matcha + Meetup: Tucson | Creatives Edition
+LOCATION:Tucson\, AZ
+DESCRIPTION:Join us for coffee\, latte\, or matcha at different cafes. Buil
+ d your creative community in your city with a fun day out!\nMenu: latte\nD
+ etails not confirmed yet. Check the brand's post before you go.\nMore: htt
+ ps://matchamap-cu7.pages.dev/e/56e9a6d7fc57/
+URL:https://matchamap-cu7.pages.dev/e/56e9a6d7fc57/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

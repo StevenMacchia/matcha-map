@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sabz Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:7787585c24b7
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T235632Z
+DTSTART:20261123T000000Z
+DTEND:20261123T050000Z
+SUMMARY:Sabz Matcha at HAISA X Good Company
+LOCATION:Seattle\, WA
+DESCRIPTION:Sabz Matcha sets up at HAISA X Good Company\, 20812 Internation
+ al Blvd in SeaTac. The pop-up runs 4-9 PM.\nMenu: berry sweet\, matcha afg
+ hani\, lavender fields\, pumpkin pie\, matcha vanille\nDetails not confirm
+ ed yet. Check the brand's post before you go.\nMore: https://matchamap-cu7
+ .pages.dev/e/7787585c24b7/
+URL:https://matchamap-cu7.pages.dev/e/7787585c24b7/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

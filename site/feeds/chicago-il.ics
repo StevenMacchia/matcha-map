@@ -1,0 +1,266 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Chicago\, IL
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:37d32f5abdf9
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Chicagoland matcha pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:To everyone who came out to support our pop-up yesterday and ev
+ eryone who placed an order for today’s pickups\, we truly cannot thank y
+ ou enough.\nDetails not confirmed yet. Check the brand's post before you g
+ o.\nMore: https://matchamap-cu7.pages.dev/e/37d32f5abdf9/
+URL:https://matchamap-cu7.pages.dev/e/37d32f5abdf9/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:1bef3e9e4461
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Chicagoland matcha pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:To everyone who came out to support our pop-up yesterday and ev
+ eryone who placed an order for today’s pickups\, we truly cannot thank y
+ ou enough.\nDetails not confirmed yet. Check the brand's post before you g
+ o.\nMore: https://matchamap-cu7.pages.dev/e/1bef3e9e4461/
+URL:https://matchamap-cu7.pages.dev/e/1bef3e9e4461/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:2d6e4989ca5c
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Chicagoland matcha pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:To everyone who came out to support our pop-up yesterday and ev
+ eryone who placed an order for today’s pickups\, we truly cannot thank y
+ ou enough.\nDetails not confirmed yet. Check the brand's post before you g
+ o.\nMore: https://matchamap-cu7.pages.dev/e/2d6e4989ca5c/
+URL:https://matchamap-cu7.pages.dev/e/2d6e4989ca5c/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:392cd3a402b6
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Pottery Chicago pop-up
+LOCATION:1770 W Berteau Ave Suite 407\, Chicago\, IL
+DESCRIPTION:Chicago Girls Who Walk takes the wheel!\nMenu: matcha bowl\nPri
+ ce: $60\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.
+ dev/e/392cd3a402b6/
+URL:https://matchamap-cu7.pages.dev/e/392cd3a402b6/
+GEO:41.958336;-87.673665
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:6869f2e22e38
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Hawa matcha pop-up
+LOCATION:4325 N. Ravenswood Ave\, Chicago\, IL
+DESCRIPTION:Come support us for Small Business Saturday\nMenu: black sesame
+ \, pistachio\, caramel\, ube\, vanilla\nPrice: free\nLikely\, not fully co
+ nfirmed.\nMore: https://matchamap-cu7.pages.dev/e/6869f2e22e38/
+URL:https://matchamap-cu7.pages.dev/e/6869f2e22e38/
+GEO:41.960281;-87.673498
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:baa87dabe49c
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261128T200000Z
+DTEND:20261128T213000Z
+SUMMARY:The Perfect Matcha Bowl
+LOCATION:Chicago\, IL
+DESCRIPTION:A 90-minute matcha-bowl wheel session at The Pottery Loop with 
+ Chicago Girls Who Walk on Small Business Saturday.\nMenu: matcha bowl\nPri
+ ce: $60\nDetails not confirmed yet. Check the brand's post before you go.\
+ nMore: https://matchamap-cu7.pages.dev/e/baa87dabe49c/
+URL:https://matchamap-cu7.pages.dev/e/baa87dabe49c/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:c410d293ae86
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Matcha Moo Tea pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:a little treat after thanksgiving our november sourdough drop i
+ s here and we’re bringing back some of y’all’s favorite!\nMenu: chil
+ i oil\, scallions\, cheddar\, brown sugar\, cookies\nDetails not confirmed
+  yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.p
+ ages.dev/e/c410d293ae86/
+URL:https://matchamap-cu7.pages.dev/e/c410d293ae86/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:91d2263da73d
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART:20261129T170000Z
+DTEND:20261129T230000Z
+SUMMARY:Hawa matcha pop-up
+LOCATION:4325 N. Ravenswood Ave\, Chicago\, IL
+DESCRIPTION:Come support us for Small Business Saturday\nMenu: black sesame
+ \, pistachio\, caramel\, ube\, vanilla\nPrice: free\nLikely\, not fully co
+ nfirmed.\nMore: https://matchamap-cu7.pages.dev/e/91d2263da73d/
+URL:https://matchamap-cu7.pages.dev/e/91d2263da73d/
+GEO:41.960281;-87.673498
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:26327257a9b3
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Matcha Moo Tea pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:a little treat after thanksgiving our november sourdough drop i
+ s here and we’re bringing back some of y’all’s favorite!\nMenu: chil
+ i oil\, scallions\, cheddar\, brown sugar\, cookies\nDetails not confirmed
+  yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.p
+ ages.dev/e/26327257a9b3/
+URL:https://matchamap-cu7.pages.dev/e/26327257a9b3/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:95667819fcbb
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261206T170000Z
+DTEND:20261206T190000Z
+SUMMARY:Pottery Chicago pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:Good morning! It’s Sunday morning\, which means we’re 2 wee
+ ks away from the start of our December Matcha Lovers Pottery Course\nMenu:
+  matcha bowl\nPrice: $150\nDetails not confirmed yet. Check the brand's po
+ st before you go.\nMore: https://matchamap-cu7.pages.dev/e/95667819fcbb/
+URL:https://matchamap-cu7.pages.dev/e/95667819fcbb/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:3c5aa5959798
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261211T000000Z
+DTEND:20261211T020000Z
+SUMMARY:Pottery Chicago pop-up
+LOCATION:1770 W Berteau Ave Suite 407\, Chicago\, IL
+DESCRIPTION:Chicago Girls Who Walk takes the wheel!\nMenu: matcha bowl\nPri
+ ce: $60\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.
+ dev/e/3c5aa5959798/
+URL:https://matchamap-cu7.pages.dev/e/3c5aa5959798/
+GEO:41.958336;-87.673665
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:9d933e85f7fd
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261211T000000Z
+DTEND:20261211T020000Z
+SUMMARY:BYOB Glaze Social
+LOCATION:Chicago\, IL
+DESCRIPTION:The glaze social is the second part of the Small Business Satur
+ day Wheel Social hosted by The Pottery Loop with Chicago Girls Who Walk.\n
+ Menu: matcha bowl\nPrice: $60\nDetails not confirmed yet. Check the brand'
+ s post before you go.\nMore: https://matchamap-cu7.pages.dev/e/9d933e85f7f
+ d/
+URL:https://matchamap-cu7.pages.dev/e/9d933e85f7fd/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:887df2fc61a4
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261227T170000Z
+DTEND:20261227T190000Z
+SUMMARY:Pottery Chicago pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:Good morning! It’s Sunday morning\, which means we’re 2 wee
+ ks away from the start of our December Matcha Lovers Pottery Course\nMenu:
+  matcha bowl\nPrice: $150\nDetails not confirmed yet. Check the brand's po
+ st before you go.\nMore: https://matchamap-cu7.pages.dev/e/887df2fc61a4/
+URL:https://matchamap-cu7.pages.dev/e/887df2fc61a4/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:28c02a923fe2
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20270105T003000Z
+DTEND:20270105T023000Z
+SUMMARY:Pottery Chicago pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:Good morning! It’s Sunday morning\, which means we’re 2 wee
+ ks away from the start of our December Matcha Lovers Pottery Course\nMenu:
+  matcha bowl\nPrice: $150\nDetails not confirmed yet. Check the brand's po
+ st before you go.\nMore: https://matchamap-cu7.pages.dev/e/28c02a923fe2/
+URL:https://matchamap-cu7.pages.dev/e/28c02a923fe2/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:3545de64f3dd
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20270126T003000Z
+DTEND:20270126T023000Z
+SUMMARY:Pottery Chicago pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:Good morning! It’s Sunday morning\, which means we’re 2 wee
+ ks away from the start of our December Matcha Lovers Pottery Course\nMenu:
+  matcha bowl\nPrice: $150\nDetails not confirmed yet. Check the brand's po
+ st before you go.\nMore: https://matchamap-cu7.pages.dev/e/3545de64f3dd/
+URL:https://matchamap-cu7.pages.dev/e/3545de64f3dd/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:f1e70b788111
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20271010
+DTEND;VALUE=DATE:20271011
+SUMMARY:Coffeereview matcha pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
+ .\nMore: https://matchamap-cu7.pages.dev/e/f1e70b788111/
+URL:https://matchamap-cu7.pages.dev/e/f1e70b788111/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

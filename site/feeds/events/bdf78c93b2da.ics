@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha + Meetup (ADDVentures) pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:bdf78c93b2da
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261129T010000Z
+DTEND:20261129T040000Z
+SUMMARY:Matcha + Meetup: Houston | Creatives Edition
+LOCATION:Houston\, TX
+DESCRIPTION:Join us for coffee\, latte\, or matcha at different cafes. Buil
+ d your creative community in your city with a fun day out!\nMenu: latte\nP
+ rice: $13.54–94\nDetails not confirmed yet. Check the brand's post befor
+ e you go.\nMore: https://matchamap-cu7.pages.dev/e/bdf78c93b2da/
+URL:https://matchamap-cu7.pages.dev/e/bdf78c93b2da/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

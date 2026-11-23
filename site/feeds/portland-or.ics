@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Portland\, OR
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:8b656dfe2798
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Tea Loft pop-up
+LOCATION:Portland\, OR
+DESCRIPTION:A little childhood nostalgia\, a little holiday magic.\nMenu: l
+ atte\, caramel\nDetails not confirmed yet. Check the brand's post before y
+ ou go.\nMore: https://matchamap-cu7.pages.dev/e/8b656dfe2798/
+URL:https://matchamap-cu7.pages.dev/e/8b656dfe2798/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

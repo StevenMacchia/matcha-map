@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Tempo by Hilton Nashville Downtown pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:d94abc07bdab
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261205T190000Z
+DTEND:20261205T194500Z
+SUMMARY:Whisk & Bloom: The Art of Matcha Class ($24.99)
+LOCATION:Bluestone Lane - Downtown Café\, 127 Rosa L Parks Boulevard\, Nas
+ hville\, TN
+DESCRIPTION:Learn the art of matcha! Join us at Bluestone Lane for a hands-
+ on latte art class featuring premium matcha\, expert tips & delicious sips
+ .\nMenu: latte\nPrice: free\nMore: https://matchamap-cu7.pages.dev/e/d94ab
+ c07bdab/
+URL:https://matchamap-cu7.pages.dev/e/d94abc07bdab/
+GEO:36.159821;-86.782943
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

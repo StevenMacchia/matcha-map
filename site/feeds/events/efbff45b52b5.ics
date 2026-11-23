@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:theclubinspired pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:efbff45b52b5
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T202747Z
+DTSTART:20261205T180000Z
+DTEND:20261205T200000Z
+SUMMARY:theclubinspired pop-up at madewithmax
+LOCATION:@madewithmax\, 420 E Church St Suite 115\, Orlando\, FL
+DESCRIPTION:Orlando matcha lovers\, your ultimate holiday afternoon is here
+ .\nMenu: pastry\, macaron\, madeleine\nMore: https://matchamap-cu7.pages.d
+ ev/e/efbff45b52b5/
+URL:https://matchamap-cu7.pages.dev/e/efbff45b52b5/
+GEO:28.540125;-81.371571
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

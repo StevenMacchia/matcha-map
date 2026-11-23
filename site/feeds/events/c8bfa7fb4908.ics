@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Nichi Bei Kai Cultural Center pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c8bfa7fb4908
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Winter Japanese Tea Ceremony at KansoAn (Hokka Nichi Bei Kai) 12/13
+ /2026
+LOCATION:Nichi Bei Kai Cultural Center\, 1759 Sutter Street\, San Francisco
+ \, CA
+DESCRIPTION:Experience serenity with traditional Japanese art of Tea Ceremo
+ ny. Join for a bowl of authentic Matcha and a bowl of Soba noodles.\nLikel
+ y\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/c8bfa7fb
+ 4908/
+URL:https://matchamap-cu7.pages.dev/e/c8bfa7fb4908/
+GEO:37.786377;-122.429188
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

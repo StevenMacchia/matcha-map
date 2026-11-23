@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Cleveland\, OH
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6d03b1c876e8
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T234959Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:letsgograbmatcha pop-up at cafenookiee
+LOCATION:Cleveland\, OH
+DESCRIPTION:first of all\, THANK YOU! i stumbled across ... - Instagram we 
+ are back for ROUND 2! matcha pop-up the hidden bar 2.0 268b cleveland st\,
+  surry hills sunday\, 22 november 2026\nDetails not confirmed yet. Check t
+ he brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/6d
+ 03b1c876e8/
+URL:https://matchamap-cu7.pages.dev/e/6d03b1c876e8/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:834a539a877b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261205T173000Z
+DTEND:20261205T000000Z
+SUMMARY:December 2026 Spicy Sculpt with Goldies x Energi
+LOCATION:Energi Studios\, 4126 Lorain Avenue\, Cleveland\, OH
+DESCRIPTION:Join us for Spicy Sculpt\, a feel-good sculpt pilates class set
+  to a Latin playlist\, followed by coffee and matcha at Goldie's!\nPrice: 
+ $33.85\nMore: https://matchamap-cu7.pages.dev/e/834a539a877b/
+URL:https://matchamap-cu7.pages.dev/e/834a539a877b/
+GEO:41.480215;-81.714069
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:da33035a8ef2
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T193450Z
+DTSTART:20270111T200000Z
+DTEND:20270111T220000Z
+SUMMARY:evefanysens123 pop-up
+LOCATION:Cleveland\, OH
+DESCRIPTION:Pop-up Matcha Shop in Sydney — 268B Cleveland St (1/11 until 
+ 3pm) 203 Likes\, TikTok video from Evefanysens ( ): “Limited-time pop-up
+  matcha shop at 268B Cleveland Street\, Sydney — open 1/11\nDetails not 
+ confirmed yet. Check the brand's post before you go.\nMore: https://matcha
+ map-cu7.pages.dev/e/da33035a8ef2/
+URL:https://matchamap-cu7.pages.dev/e/da33035a8ef2/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

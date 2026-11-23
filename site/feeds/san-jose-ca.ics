@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: San Jose\, CA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:bf43e3d0a13c
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:riri x wellness x Restore Hyper Wellness run/walk club
+LOCATION:Restore Hyper Wellness\, 15557 Union Avenue\, Los Gatos\, CA
+DESCRIPTION:Join riri x wellness x Restore Hyper Wellness for a 5K run/walk
+ \, matcha\, coffee\, wellness vendors\, exclusive offers\, giveaways & new
+  friends\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
+ .dev/e/bf43e3d0a13c/
+URL:https://matchamap-cu7.pages.dev/e/bf43e3d0a13c/
+GEO:37.238039;-121.931172
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

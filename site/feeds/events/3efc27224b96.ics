@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Shikisand Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3efc27224b96
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Shikisand Matcha pop-up
+LOCATION:Gallup\, NM
+DESCRIPTION:Thank you Gallup for showing up for our Sunday pop-up\nDetails 
+ not confirmed yet. Check the brand's post before you go.\nMore: https://ma
+ tchamap-cu7.pages.dev/e/3efc27224b96/
+URL:https://matchamap-cu7.pages.dev/e/3efc27224b96/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

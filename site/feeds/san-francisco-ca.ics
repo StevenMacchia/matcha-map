@@ -1,0 +1,158 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: San Francisco\, CA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:ede3fdab3788
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261124T160000Z
+DTEND:20261124T210000Z
+SUMMARY:Kaiser Farmers Market Pop-Up
+LOCATION:San Francisco\, CA
+DESCRIPTION:Caffeine Depot sets up at the Kaiser Farmers Market in San Jose
+  every Tuesday in November. The pop-up runs 8 AM–1 PM.\nDetails not conf
+ irmed yet. Check the brand's post before you go.\nMore: https://matchamap-
+ cu7.pages.dev/e/ede3fdab3788/
+URL:https://matchamap-cu7.pages.dev/e/ede3fdab3788/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:44f68b560735
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: San Francisco |  Small Business Owners Edition
+LOCATION:San Francisco\, CA
+DESCRIPTION:Join us for coffee\, latte\, or matcha! Each gathering is at a 
+ different coffee shop. Sip and socialize while building community.\nMenu: 
+ latte\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/44f68b560735/
+URL:https://matchamap-cu7.pages.dev/e/44f68b560735/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:68f970aee5d8
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART:20261129T000000Z
+DTEND:20261129T020000Z
+SUMMARY:Weekly Matcha Workshop
+LOCATION:San Francisco\, CA
+DESCRIPTION:The workshop explores Japanese tea culture through a look at ma
+ tcha production from farm to cup\, behind-the-scenes photos from a 2026 Ja
+ pan tea journey and a shared matcha tasting.\nDetails not confirmed yet. C
+ heck the brand's post before you go.\nMore: https://matchamap-cu7.pages.de
+ v/e/68f970aee5d8/
+URL:https://matchamap-cu7.pages.dev/e/68f970aee5d8/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:e1430cf00a5f
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261129T000000Z
+DTEND:20261129T020000Z
+SUMMARY:Weekly Matcha Workshop
+LOCATION:San Francisco\, CA
+DESCRIPTION:The workshop explores Japanese tea culture through a look at ma
+ tcha production from farm to cup\, behind-the-scenes photos from a 2026 Ja
+ pan tea journey and a shared matcha tasting.\nDetails not confirmed yet. C
+ heck the brand's post before you go.\nMore: https://matchamap-cu7.pages.de
+ v/e/e1430cf00a5f/
+URL:https://matchamap-cu7.pages.dev/e/e1430cf00a5f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:64410e59c7c7
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261206T000000Z
+DTEND:20261206T020000Z
+SUMMARY:Moody Matcha Workshop
+LOCATION:San Francisco\, CA
+DESCRIPTION:The workshop explores Japanese tea culture through a look at ma
+ tcha production from farm to cup\, behind-the-scenes photos from a 2026 Ja
+ pan tea journey\, and a shared matcha tasting.\nDetails not confirmed yet.
+  Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.
+ dev/e/64410e59c7c7/
+URL:https://matchamap-cu7.pages.dev/e/64410e59c7c7/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:739ed546ab41
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261206T190000Z
+DTEND:20261206T210000Z
+SUMMARY:Tats & Totes Holiday Art Market
+LOCATION:San Francisco\, CA
+DESCRIPTION:The Tats & Totes Holiday Art Market presents Vendor Showcase Pa
+ rt 4\, with food and drink vendors taking part. Admission is free. PARALLA
+ X hosts at 1827 Houret Court in Milpitas.\nPrice: free\nDetails not confir
+ med yet. Check the brand's post before you go.\nMore: https://matchamap-cu
+ 7.pages.dev/e/739ed546ab41/
+URL:https://matchamap-cu7.pages.dev/e/739ed546ab41/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:78743c0635f5
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261208T170000Z
+DTEND:20261208T190000Z
+SUMMARY:Matcha Mornings - Founder + Investor Meetup
+LOCATION:San Francisco\, CA
+DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
+ .\nMore: https://matchamap-cu7.pages.dev/e/78743c0635f5/
+URL:https://matchamap-cu7.pages.dev/e/78743c0635f5/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:c8bfa7fb4908
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Winter Japanese Tea Ceremony at KansoAn (Hokka Nichi Bei Kai) 12/13
+ /2026
+LOCATION:Nichi Bei Kai Cultural Center\, 1759 Sutter Street\, San Francisco
+ \, CA
+DESCRIPTION:Experience serenity with traditional Japanese art of Tea Ceremo
+ ny. Join for a bowl of authentic Matcha and a bowl of Soba noodles.\nLikel
+ y\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/c8bfa7fb
+ 4908/
+URL:https://matchamap-cu7.pages.dev/e/c8bfa7fb4908/
+GEO:37.786377;-122.429188
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:e6af7f5696a6
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:Matcha + Meetup: San Francisco (Giving Back Edition)
+LOCATION:San Francisco\, CA
+DESCRIPTION:Join us for coffee at different cafe. Build your community whil
+ e supporting local businesses\, and giving back to people in need.\nDetail
+ s not confirmed yet. Check the brand's post before you go.\nMore: https://
+ matchamap-cu7.pages.dev/e/e6af7f5696a6/
+URL:https://matchamap-cu7.pages.dev/e/e6af7f5696a6/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

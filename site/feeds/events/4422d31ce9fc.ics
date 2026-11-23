@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sofia Moussier pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:4422d31ce9fc
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261129T220000Z
+DTEND:20261130T010000Z
+SUMMARY:Matcha & Me: After Hours (Friendsgiving Edition)
+LOCATION:Chai Khana\, 3574 2nd Avenue\, Detroit\, MI
+DESCRIPTION:Join us for the last Matcha & Me of the year. Meet new people\,
+  enjoy great music and matcha. Slow down and reflect.\nPrice: $0–35\nMor
+ e: https://matchamap-cu7.pages.dev/e/4422d31ce9fc/
+URL:https://matchamap-cu7.pages.dev/e/4422d31ce9fc/
+GEO:42.345420;-83.063155
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

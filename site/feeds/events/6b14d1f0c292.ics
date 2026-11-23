@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Jiaren Cafe pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6b14d1f0c292
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha Magic Workshop: A Whiskful Journey
+LOCATION:Jiaren Cafe\, 1171 Homestead Road\, Santa Clara\, CA
+DESCRIPTION:Join us for a hands-on Matcha Magic Workshop where we'll whisk 
+ our way through the art of making delicious matcha beverages!\nLikely\, no
+ t fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/6b14d1f0c292/
+URL:https://matchamap-cu7.pages.dev/e/6b14d1f0c292/
+GEO:37.348403;-121.945813
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -204,3 +204,13 @@ A one-page map cannot be found by search, so `npm run pages` (`tools/gen-pages.j
 Domain switch: edit `SITE_URL` in `tools/site-url.js` to `https://matchamap.us`, run `npm run pages`, deploy. Canonicals, Open Graph, the sitemap, robots and JSON-LD all follow.
 
 Search Console, once the domain exists: add it as a property (domain verification by DNS), open Sitemaps, submit `sitemap.xml`. Bing Webmaster Tools can import the same property.
+
+## Self-serve, feeds and the daily job
+
+Details and the one-time setup commands are in `docs/INTAKE.md`.
+
+- **Add a pop-up from the site.** `/add/` is a public form (Cloudflare Pages Function `POST /api/submit`, stored in KV `INTAKE` as `pending:<id>`). You approve items at `/add/review.html` with the `INTAKE_TOKEN`. `npm run ingest` pulls approved ones into `data/inbox/` (only when `INTAKE_URL` and `INTAKE_TOKEN` are set) and marks them consumed. The functions never write `data/events.json`.
+- **Calendar and RSS feeds.** `npm run feeds` writes `site/feeds/`: `all.ics`, `<city>-<st>.ics` (for example `austin-tx.ics`), `events/<event-id>.ics` (add to calendar), `new.xml` (RSS, pop-ups first seen in the last 14 days) and `index.json` (city to feed path). Subscribe with `webcal://<site host>/feeds/all.ics` or `webcal://<site host>/feeds/austin-tx.ics`, for example `webcal://matchamap-cu7.pages.dev/feeds/all.ics`. Times are UTC, all-day events are dates, UID is the event id.
+- **Shareable event pages.** `npm run event-pages` writes `site/e/<event-id>/index.html` with its own title, preview image and Event JSON-LD, redirecting to `/?event=<id>`. Both feeds and event pages run at the end of `npm run ingest`. `sitemap.xml` is written by `tools/gen-pages.js`, so the event pages are not listed there yet.
+- **Other forms.** `/report/?event=<id>`, `/claim/?brand=<id>`, `/alerts/` (no double opt-in yet, nothing mails the list), plus `/privacy/` and `/data-deletion/` (put your email in place of `STEVEN_EMAIL_HERE`). Analytics notes: `docs/ANALYTICS.md`. Meta App Review checklist: `docs/META-APP-REVIEW.md`.
+- **Daily job.** `.github/workflows/daily.yml` (09:17 UTC): discover, art if present, ingest, feeds, event pages, commit, then deploy to Cloudflare Pages when the secrets exist. Secrets to add in GitHub: `INSTAGRAM_TOKEN`, `INSTAGRAM_BUSINESS_ID`, `TAVILY_API_KEY`, `YELP_API_KEY`, `CLAUDE_API_KEY`, `INTAKE_URL`, `INTAKE_TOKEN`, `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.

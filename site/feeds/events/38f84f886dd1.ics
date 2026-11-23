@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ermantourage Europe & US pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:38f84f886dd1
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261220T180000Z
+DTEND:20261220T210000Z
+SUMMARY:Matcha + Meetup: Austin Creatives (Giving Back Edition)
+LOCATION:Austin\, TX
+DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
+ unity while supporting local businesses and giving back to people in need.
+ \nPrice: $13.54\nDetails not confirmed yet. Check the brand's post before 
+ you go.\nMore: https://matchamap-cu7.pages.dev/e/38f84f886dd1/
+URL:https://matchamap-cu7.pages.dev/e/38f84f886dd1/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

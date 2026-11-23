@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Mira Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:e42e6bf48a5a
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T203515Z
+DTSTART:20261202T170000Z
+DTEND:20261202T190000Z
+SUMMARY:MoonchildLand: Bring Your Moon Pup
+LOCATION:San Antonio\, TX
+DESCRIPTION:Bring Your Moon Pup dedicates the day to four-legged Moon Babie
+ s and marks the official launch of Moon-Pups.\nDetails not confirmed yet. 
+ Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
+ ev/e/e42e6bf48a5a/
+URL:https://matchamap-cu7.pages.dev/e/e42e6bf48a5a/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

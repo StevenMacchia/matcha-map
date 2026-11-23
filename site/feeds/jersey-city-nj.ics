@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Jersey City\, NJ
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f01add37f697
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART:20270102T140000Z
+DTEND:20270102T200000Z
+SUMMARY:Jane's Matcha (Jersey City) pop-up
+LOCATION:Jersey City\, NJ
+DESCRIPTION:newcomers pink cloud & jasmine honey are available all month lo
+ ng\nMenu: honey\, black sesame\, banana\, hojicha\, latte\, chocolate\, st
+ rawberry\nDetails not confirmed yet. Check the brand's post before you go.
+ \nMore: https://matchamap-cu7.pages.dev/e/f01add37f697/
+URL:https://matchamap-cu7.pages.dev/e/f01add37f697/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

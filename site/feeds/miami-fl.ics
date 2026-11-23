@@ -1,0 +1,149 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Miami\, FL
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:bf0b5dfa104b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261128T153000Z
+DTEND:20261128T173000Z
+SUMMARY:Saturday Morning Sips in Pinecrest
+LOCATION:Brewing Buddha Cafe & Arthouse\, 8219 SW 124th St\, Miami\, FL
+DESCRIPTION:Ease back into the weekend with us at **Brewing Buddha in Pinec
+ rest**\, a cozy little cafe and art space\, for a laid-back morning of cof
+ fee\, matcha\, and good conversation.\nMore: https://matchamap-cu7.pages.d
+ ev/e/bf0b5dfa104b/
+URL:https://matchamap-cu7.pages.dev/e/bf0b5dfa104b/
+GEO:25.655482;-80.326845
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:72e8ff9613b6
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261128T170000Z
+DTEND:20261128T200000Z
+SUMMARY:Matcha + Meetup: Miami | Creatives Edition
+LOCATION:Miami\, FL
+DESCRIPTION:Join us for coffee\, latte\, or matcha! Each gathering is at a 
+ different coffee shop. Sip and socialize while building community.\nMenu: 
+ latte\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post be
+ fore you go.\nMore: https://matchamap-cu7.pages.dev/e/72e8ff9613b6/
+URL:https://matchamap-cu7.pages.dev/e/72e8ff9613b6/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:ec03ffb63cb6
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261129T140000Z
+DTEND:20261129T160000Z
+SUMMARY:Run\, Matcha & Fiesta
+LOCATION:Miami\, FL
+DESCRIPTION:El Patio Wynwood hosts a morning gathering of Miami Run Club\, 
+ Miami Lakes Run Club and Runknown Run Club.\nPrice: $10\nDetails not confi
+ rmed yet. Check the brand's post before you go.\nMore: https://matchamap-c
+ u7.pages.dev/e/ec03ffb63cb6/
+URL:https://matchamap-cu7.pages.dev/e/ec03ffb63cb6/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:24fd141b695f
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261129T153000Z
+DTEND:20261129T170000Z
+SUMMARY:PILATES SCULPT BY STARR HAWKINS
+LOCATION:Miami\, FL
+DESCRIPTION:Pilates sculpt at FRSH with Starr Hawkins\, PLUS matcha\, smoot
+ hies\, and fresh bites after class. Only 20 spots!\nPrice: $41.85\nDetails
+  not confirmed yet. Check the brand's post before you go.\nMore: https://m
+ atchamap-cu7.pages.dev/e/24fd141b695f/
+URL:https://matchamap-cu7.pages.dev/e/24fd141b695f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:b91746053805
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261205T153000Z
+DTEND:20261205T180000Z
+SUMMARY:Pilates & Matcha: with The Ethereal x JETSET Pilates
+LOCATION:Flow Wynwood\, 176 NW 25th St\, Miami\, FL
+DESCRIPTION:More: https://matchamap-cu7.pages.dev/e/b91746053805/
+URL:https://matchamap-cu7.pages.dev/e/b91746053805/
+GEO:25.800662;-80.198562
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:f305c9affc63
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:The Matcha Edit pop-up at The Anime Edit
+LOCATION:Miami\, FL
+DESCRIPTION:The Anime Edit Date Drop: 12/06/2026\nDetails not confirmed yet
+ . Check the brand's post before you go.\nMore: https://matchamap-cu7.pages
+ .dev/e/f305c9affc63/
+URL:https://matchamap-cu7.pages.dev/e/f305c9affc63/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:b0cea107b5c1
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Matcha Fest pop-up at MatchaFest Miami
+LOCATION:Miami\, FL
+DESCRIPTION:lotusbiscoffus IS COMING TO MIAMI!\nDetails not confirmed yet. 
+ Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
+ ev/e/b0cea107b5c1/
+URL:https://matchamap-cu7.pages.dev/e/b0cea107b5c1/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:418913353e26
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261212T170000Z
+DTEND:20261212T220000Z
+SUMMARY:Matcha Fest pop-up
+LOCATION:Miami\, FL
+DESCRIPTION:califiafarms is coming to MatchaFest Miami\nMenu: iced matcha l
+ atte\nDetails not confirmed yet. Check the brand's post before you go.\nMo
+ re: https://matchamap-cu7.pages.dev/e/418913353e26/
+URL:https://matchamap-cu7.pages.dev/e/418913353e26/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:0ef41c2ed3f8
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20270813
+DTEND;VALUE=DATE:20270814
+SUMMARY:The Matcha Edit pop-up at Roots. It
+LOCATION:Miami\, FL
+DESCRIPTION:Starbucks put “The Matcha Edit” on a matcha ad. That’s th
+ e name of the business I built in my hometown of Liberty City\, Miami.\nDe
+ tails not confirmed yet. Check the brand's post before you go.\nMore: http
+ s://matchamap-cu7.pages.dev/e/0ef41c2ed3f8/
+URL:https://matchamap-cu7.pages.dev/e/0ef41c2ed3f8/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

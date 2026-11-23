@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Irvine\, CA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:db6d550c1f4b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261211T010000Z
+DTEND:20261211T030000Z
+SUMMARY:Matcha Latte Candle DIY Workshop
+LOCATION:530 Technology Drive\, 530 Technology Dr\, Irvine\, CA
+DESCRIPTION:Looking for a fun\, social evening in Irvine? Come make a match
+ a latte–inspired candle — and make some new friends while you're at it
+ !\nMenu: latte\nPrice: $36\nMore: https://matchamap-cu7.pages.dev/e/db6d55
+ 0c1f4b/
+URL:https://matchamap-cu7.pages.dev/e/db6d550c1f4b/
+GEO:33.674353;-117.760403
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,57 @@
+# Daily refresh at 09:17 UTC: discover, ingest, feeds, event pages, commit, deploy to Cloudflare Pages.
+# watch.yml (every 6 hours) stays as it is. Every key-gated step logs "off" when its secret is missing.
+# Secrets to add under Settings > Secrets and variables > Actions: see docs/INTAKE.md.
+name: daily
+on:
+  schedule:
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+      INSTAGRAM_BUSINESS_ID: ${{ secrets.INSTAGRAM_BUSINESS_ID }}
+      TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+      YELP_API_KEY: ${{ secrets.YELP_API_KEY }}
+      CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+      INTAKE_URL: ${{ secrets.INTAKE_URL }}
+      INTAKE_TOKEN: ${{ secrets.INTAKE_TOKEN }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run discover
+      - run: npm run art --if-present
+      - run: npm run ingest
+      - run: npm run feeds
+      - run: npm run event-pages
+      - name: Commit changes
+        run: |
+          git config user.name "matcha-map bot"
+          git config user.email "matcha-map-bot@users.noreply.github.com"
+          git add -A data/events.json data/review data/geocache.json data/inbox site/data site/art site/feeds site/e site/city site/brand site/sitemap.xml
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "daily: refresh events, feeds and pages"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          fi
+      - name: Deploy to Cloudflare Pages
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != '' }}
+        run: npx wrangler pages deploy site --project-name matchamap --branch main

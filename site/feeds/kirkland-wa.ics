@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Kirkland\, WA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:90cd2d2ec67e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261128T180000Z
+DTEND:20261128T193000Z
+SUMMARY:Japanese MatchaTea Ceremony Experience
+LOCATION:733 7th Avenue\, Kirkland\, WA
+DESCRIPTION:Experience the beauty of Japanese tea ceremony! Prepare your ow
+ n matcha\, enjoy seasonal sweets\, and discover Japanese traditions.\nPric
+ e: $49.87\nMore: https://matchamap-cu7.pages.dev/e/90cd2d2ec67e/
+URL:https://matchamap-cu7.pages.dev/e/90cd2d2ec67e/
+GEO:47.680243;-122.193928
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

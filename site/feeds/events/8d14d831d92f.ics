@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:momokomart pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:8d14d831d92f
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T235305Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:momokomart pop-up at shogunmatcha
+LOCATION:Atlanta\, GA
+DESCRIPTION:TikTok - Make Your Day Shogun Matcha x Momoko Mart We’re host
+ ing another pop-up with SUNDAY\, October 25th !\nMenu: hojicha\, black ses
+ ame\, ube\, strawberry\nPrice: free\nDetails not confirmed yet. Check the 
+ brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/8d14d
+ 831d92f/
+URL:https://matchamap-cu7.pages.dev/e/8d14d831d92f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

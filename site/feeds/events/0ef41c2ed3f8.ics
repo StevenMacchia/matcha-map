@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Matcha Edit pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:0ef41c2ed3f8
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20270813
+DTEND;VALUE=DATE:20270814
+SUMMARY:The Matcha Edit pop-up at Roots. It
+LOCATION:Miami\, FL
+DESCRIPTION:Starbucks put “The Matcha Edit” on a matcha ad. That’s th
+ e name of the business I built in my hometown of Liberty City\, Miami.\nDe
+ tails not confirmed yet. Check the brand's post before you go.\nMore: http
+ s://matchamap-cu7.pages.dev/e/0ef41c2ed3f8/
+URL:https://matchamap-cu7.pages.dev/e/0ef41c2ed3f8/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

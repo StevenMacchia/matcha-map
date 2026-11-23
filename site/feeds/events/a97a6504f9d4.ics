@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Buji Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a97a6504f9d4
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20270810
+DTEND;VALUE=DATE:20270811
+SUMMARY:Buji Matcha pop-up
+LOCATION:Houston\, TX
+DESCRIPTION:Buji Matcha Pop Up in htx ! I’d give cinabuji 8/10 bujimatcha
+  striptofficial\nDetails not confirmed yet. Check the brand's post before 
+ you go.\nMore: https://matchamap-cu7.pages.dev/e/a97a6504f9d4/
+URL:https://matchamap-cu7.pages.dev/e/a97a6504f9d4/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

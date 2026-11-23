@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Mellobun Cafe x Matte Matcha Bar pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:0bf42e9f695a
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART:20261129T170000Z
+DTEND:20261129T210000Z
+SUMMARY:Bloom & Brew Pop-Up Market
+LOCATION:Sacramento\, CA
+DESCRIPTION:Bloom & Brew returns to EOC Studio with drinks\, baked goods\, 
+ shopping\, a photo booth\, and hair blowouts.\nMenu: mochi\, pastry\, cook
+ ie\, hojicha\nDetails not confirmed yet. Check the brand's post before you
+  go.\nMore: https://matchamap-cu7.pages.dev/e/0bf42e9f695a/
+URL:https://matchamap-cu7.pages.dev/e/0bf42e9f695a/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

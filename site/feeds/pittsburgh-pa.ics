@@ -1,0 +1,56 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Pittsburgh\, PA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:9da038c597d6
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261128T150000Z
+DTEND:20261128T170000Z
+SUMMARY:Matcha & Walk | Heritage Trail with Longevity Pittsburgh
+LOCATION:Novaria coffee co.\, 1812 Penn Avenue\, Pittsburgh\, PA
+DESCRIPTION:We’re excited to host our very first Longevity Pittsburgh eve
+ nt. Let's grab matcha to-go and go for a walk along the heritage trail!\nP
+ rice: free\nMore: https://matchamap-cu7.pages.dev/e/9da038c597d6/
+URL:https://matchamap-cu7.pages.dev/e/9da038c597d6/
+GEO:40.450443;-79.984783
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:b747a3db5628
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261128T150000Z
+DTEND:20261128T170000Z
+SUMMARY:Matcha & Walk | Heritage Trail
+LOCATION:Novaria coffee co.\, 1812 Penn Ave\, Pittsburgh\, PA
+DESCRIPTION:​*Let's walk off the Thanksgiving Dinner!*\nMore: https://mat
+ chamap-cu7.pages.dev/e/b747a3db5628/
+URL:https://matchamap-cu7.pages.dev/e/b747a3db5628/
+GEO:40.450443;-79.984783
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:7083b97b5cc2
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261213T170000Z
+DTEND:20261213T200000Z
+SUMMARY:Matcha + Meetup: Pittsburgh Creatives (Giving Back Edition)
+LOCATION:Pittsburgh\, PA
+DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
+ unity while supporting local businesses and giving back to people in need.
+ \nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before 
+ you go.\nMore: https://matchamap-cu7.pages.dev/e/7083b97b5cc2/
+URL:https://matchamap-cu7.pages.dev/e/7083b97b5cc2/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

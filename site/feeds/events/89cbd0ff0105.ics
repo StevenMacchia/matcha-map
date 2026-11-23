@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:OAK OKC pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:89cbd0ff0105
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Pilates & Pores
+LOCATION:OAK OKC\, 2124 Northwest Expressway\, Oklahoma City\, OK
+DESCRIPTION:MOVE\, SIP and GLOW: enjoy a mat Pilates class with The Rouge M
+ ethod\, matcha from Arise Matcha\, and a mini facial with FACE FOUNDRIÉ a
+ t OAK.\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.d
+ ev/e/89cbd0ff0105/
+URL:https://matchamap-cu7.pages.dev/e/89cbd0ff0105/
+GEO:35.525184;-97.558852
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

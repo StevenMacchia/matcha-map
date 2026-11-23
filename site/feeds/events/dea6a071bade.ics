@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Creamed | HTX pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:dea6a071bade
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261128T150000Z
+DTEND:20261128T170000Z
+SUMMARY:Creamed | HTX pop-up at ONLI
+LOCATION:Houston\, TX
+DESCRIPTION:Matcha & Corn Basque\, why nottt?\nDetails not confirmed yet. C
+ heck the brand's post before you go.\nMore: https://matchamap-cu7.pages.de
+ v/e/dea6a071bade/
+URL:https://matchamap-cu7.pages.dev/e/dea6a071bade/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

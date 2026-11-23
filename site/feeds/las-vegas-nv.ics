@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Las Vegas\, NV
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:1be84bce42cf
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261124T030000Z
+DTEND:20261124T060000Z
+SUMMARY:MATCHA MOONDAYS CEREMONY
+LOCATION:Las Vegas\, NV
+DESCRIPTION:Chill out with some zen vibes and tasty matcha in a cozy moonda
+ ys hangout you don’t wanna miss.\nPrice: $88–144\nDetails not confirme
+ d yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.
+ pages.dev/e/1be84bce42cf/
+URL:https://matchamap-cu7.pages.dev/e/1be84bce42cf/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:1baa72e3355b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:The Art of Matcha I A Founder- Led Tasting at LEEV
+LOCATION:Leev Matcha Atelier\, 7565 Norman Rockwell Lane\, Las Vegas\, NV
+DESCRIPTION:Discover the art of Japanese matcha through guided tastings\, h
+ ands-on whisking\, and an intimate experience hosted by LEEV's founder.\nL
+ ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/1baa
+ 72e3355b/
+URL:https://matchamap-cu7.pages.dev/e/1baa72e3355b/
+GEO:36.298678;-115.280223
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

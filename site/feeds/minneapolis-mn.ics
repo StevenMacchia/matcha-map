@@ -1,0 +1,71 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Minneapolis\, MN
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:90a3138f5a5b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261129T170000Z
+DTEND:20261129T190000Z
+SUMMARY:Pink Matcha & Thrift Finds
+LOCATION:Minneapolis\, MN
+DESCRIPTION:Monarca Thrift Club hosts an all-girls Thrift & Matcha event wi
+ th She's Invited.\nDetails not confirmed yet. Check the brand's post befor
+ e you go.\nMore: https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
+URL:https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:aa95372a56fa
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261205T150000Z
+DTEND:20261205T170000Z
+SUMMARY:Matcha Cultivars\, History\, and Preparation!
+LOCATION:Northeast Tea House\, 224 East Hennepin Avenue\, Minneapolis\, MN
+DESCRIPTION:Price: $12\nLikely\, not fully confirmed.\nMore: https://matcha
+ map-cu7.pages.dev/e/aa95372a56fa/
+URL:https://matchamap-cu7.pages.dev/e/aa95372a56fa/
+GEO:44.987698;-93.256485
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:5bf35cdfc683
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261212T160000Z
+DTEND:20261212T180000Z
+SUMMARY:Coffee and Clay: Pinch Pot Mug or Matcha Bowl Clay Workshop at Fixx
+  Coffee
+LOCATION:Fixx Coffee\, 4028 Central Ave\, Minneapolis\, MN
+DESCRIPTION:Menu: matcha bowl\nLikely\, not fully confirmed.\nMore: https:/
+ /matchamap-cu7.pages.dev/e/5bf35cdfc683/
+URL:https://matchamap-cu7.pages.dev/e/5bf35cdfc683/
+GEO:45.011310;-93.247308
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:3f80fb2ebff1
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261213T150000Z
+DTEND:20261213T163000Z
+SUMMARY:Matcha Cultivars\, History\, and Preparation!
+LOCATION:Northeast Tea House\, 224 East Hennepin Avenue\, Minneapolis\, MN
+DESCRIPTION:Join us for a deep dive into the world of Matcha and its many c
+ ultivars\, tasting\, learning\, and exploring together!\nPrice: $12\nMore:
+  https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
+URL:https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
+GEO:44.987698;-93.256485
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

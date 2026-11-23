@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Moo Tea pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c410d293ae86
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T020113Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Matcha Moo Tea pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:a little treat after thanksgiving our november sourdough drop i
+ s here and we’re bringing back some of y’all’s favorite!\nMenu: chil
+ i oil\, scallions\, cheddar\, brown sugar\, cookies\nDetails not confirmed
+  yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.p
+ ages.dev/e/c410d293ae86/
+URL:https://matchamap-cu7.pages.dev/e/c410d293ae86/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

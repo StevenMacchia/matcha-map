@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sunday Culture pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:59a5e8272139
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261125T000000Z
+DTEND:20261125T020000Z
+SUMMARY:Sunday Culture pop-up at Olastudionyc
+LOCATION:Brooklyn\, NY
+DESCRIPTION:our next floral atelier is coming up on\nDetails not confirmed 
+ yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.pa
+ ges.dev/e/59a5e8272139/
+URL:https://matchamap-cu7.pages.dev/e/59a5e8272139/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

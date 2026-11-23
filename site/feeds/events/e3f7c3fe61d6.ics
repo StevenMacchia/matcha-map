@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Press Café pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:e3f7c3fe61d6
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: Fort Worth | Benefits for The Birthday Party Proje
+ ct
+LOCATION:Press Café\, 4801 Edwards Ranch Road\, Fort Worth\, TX
+DESCRIPTION:Make new friends over brunch or coffee while supporting small b
+ usinesses and giving back to non-profit\, The Birthday Party Project.\nLik
+ ely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/e3f7c3
+ fe61d6/
+URL:https://matchamap-cu7.pages.dev/e/e3f7c3fe61d6/
+GEO:32.706937;-97.394244
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

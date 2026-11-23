@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Dog Moms of Los Angeles pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:effda3422fd4
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261219T210000Z
+DTEND:20261219T230000Z
+SUMMARY:LA Dog Moms Holiday Brunch & Social
+LOCATION:Toastique\, 6255 Sunset Boulevard\, Los Angeles\, CA
+DESCRIPTION:Celebrate the holidays with Dog Moms LA at Toastique! Enjoy gou
+ rmet toast or bowls\, coffee/matcha\, and holiday vibes.\nPrice: $81.88\nM
+ ore: https://matchamap-cu7.pages.dev/e/effda3422fd4/
+URL:https://matchamap-cu7.pages.dev/e/effda3422fd4/
+GEO:34.098586;-118.325436
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

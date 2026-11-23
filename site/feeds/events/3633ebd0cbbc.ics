@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Columbus Tea Lovers pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3633ebd0cbbc
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261128T160000Z
+DTEND:20261128T180000Z
+SUMMARY:Enchantea after Thanksgiving refresh
+LOCATION:Enchantea\, 811 Bethel Rd\, Columbus\, OH
+DESCRIPTION:Come decompress after Thanksgiving with some matcha. ) and chee
+ se foam. They do sampling platters. They also have pastries.\nMenu: strawb
+ erry\, pumpkin\, pastry\nMore: https://matchamap-cu7.pages.dev/e/3633ebd0c
+ bbc/
+URL:https://matchamap-cu7.pages.dev/e/3633ebd0cbbc/
+GEO:40.063090;-83.040925
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

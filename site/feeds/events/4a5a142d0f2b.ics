@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:333Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:4a5a142d0f2b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:333Matcha pop-up
+LOCATION:Dallas\, TX
+DESCRIPTION:we were closed yesterday to celebrate some of our friends and t
+ eammates’ wedding. it was such a sweet time. congrats logan and caroline
+ \nDetails not confirmed yet. Check the brand's post before you go.\nMore: 
+ https://matchamap-cu7.pages.dev/e/4a5a142d0f2b/
+URL:https://matchamap-cu7.pages.dev/e/4a5a142d0f2b/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

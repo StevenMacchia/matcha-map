@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Blush Restaurant & Bakery pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:eee4fae2e774
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: San Antonio | Benefits for The Birthday Party Proj
+ ect
+LOCATION:Blush Restaurant & Bakery\, 713 South Alamo Street\, San Antonio\,
+  TX
+DESCRIPTION:Make new friends over brunch or coffee while supporting small b
+ usinesses and giving back to non-profit\, The Birthday Party Project.\nLik
+ ely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/eee4fa
+ e2e774/
+URL:https://matchamap-cu7.pages.dev/e/eee4fae2e774/
+GEO:29.416973;-98.488581
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

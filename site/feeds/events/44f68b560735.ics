@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cafe of the Week pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:44f68b560735
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha + Meetup: San Francisco |  Small Business Owners Edition
+LOCATION:San Francisco\, CA
+DESCRIPTION:Join us for coffee\, latte\, or matcha! Each gathering is at a 
+ different coffee shop. Sip and socialize while building community.\nMenu: 
+ latte\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/44f68b560735/
+URL:https://matchamap-cu7.pages.dev/e/44f68b560735/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

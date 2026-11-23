@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ermantourage by ADDVentures pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:421ce11a73bc
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261220T180000Z
+DTEND:20261220T210000Z
+SUMMARY:Matcha + Meetup: D.C. | Entrepreneur Speed Networking Roulette
+LOCATION:Washington\, DC
+DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
+ for collaborations in this roulette edition of speed networking.\nPrice: $
+ 24.57\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/421ce11a73bc/
+URL:https://matchamap-cu7.pages.dev/e/421ce11a73bc/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

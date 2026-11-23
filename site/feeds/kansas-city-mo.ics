@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Kansas City\, MO
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c4629a2c9968
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261205T180000Z
+DTEND:20261205T210000Z
+SUMMARY:Matcha + Meetup: Kansas City
+LOCATION:Kansas City\, MO
+DESCRIPTION:Join us for coffee at different cafes each gathering. Build you
+ r community in your city with a fun day out! Meetup. Matcha. Support local
+ !\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before
+  you go.\nMore: https://matchamap-cu7.pages.dev/e/c4629a2c9968/
+URL:https://matchamap-cu7.pages.dev/e/c4629a2c9968/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

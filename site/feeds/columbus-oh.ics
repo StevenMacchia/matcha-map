@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Columbus\, OH
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3633ebd0cbbc
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261128T160000Z
+DTEND:20261128T180000Z
+SUMMARY:Enchantea after Thanksgiving refresh
+LOCATION:Enchantea\, 811 Bethel Rd\, Columbus\, OH
+DESCRIPTION:Come decompress after Thanksgiving with some matcha. ) and chee
+ se foam. They do sampling platters. They also have pastries.\nMenu: strawb
+ erry\, pumpkin\, pastry\nMore: https://matchamap-cu7.pages.dev/e/3633ebd0c
+ bbc/
+URL:https://matchamap-cu7.pages.dev/e/3633ebd0cbbc/
+GEO:40.063090;-83.040925
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:7195ba9f3d6b
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261206T160000Z
+DTEND:20261206T180000Z
+SUMMARY:Tulip Cafe Turkish hospitality
+LOCATION:Columbus\, OH
+DESCRIPTION:Lots of drinks\, snacks\, and desserts for whether you want jus
+ t a bite to eat or a whole meal with your chai or matcha latte\nMenu: chai
+ \, latte\nDetails not confirmed yet. Check the brand's post before you go.
+ \nMore: https://matchamap-cu7.pages.dev/e/7195ba9f3d6b/
+URL:https://matchamap-cu7.pages.dev/e/7195ba9f3d6b/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

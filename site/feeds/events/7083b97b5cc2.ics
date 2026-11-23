@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ermantourage Europe & US pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:7083b97b5cc2
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261213T170000Z
+DTEND:20261213T200000Z
+SUMMARY:Matcha + Meetup: Pittsburgh Creatives (Giving Back Edition)
+LOCATION:Pittsburgh\, PA
+DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
+ unity while supporting local businesses and giving back to people in need.
+ \nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before 
+ you go.\nMore: https://matchamap-cu7.pages.dev/e/7083b97b5cc2/
+URL:https://matchamap-cu7.pages.dev/e/7083b97b5cc2/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

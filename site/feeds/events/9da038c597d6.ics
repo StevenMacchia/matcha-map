@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Longevity Cities pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:9da038c597d6
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261128T150000Z
+DTEND:20261128T170000Z
+SUMMARY:Matcha & Walk | Heritage Trail with Longevity Pittsburgh
+LOCATION:Novaria coffee co.\, 1812 Penn Avenue\, Pittsburgh\, PA
+DESCRIPTION:We’re excited to host our very first Longevity Pittsburgh eve
+ nt. Let's grab matcha to-go and go for a walk along the heritage trail!\nP
+ rice: free\nMore: https://matchamap-cu7.pages.dev/e/9da038c597d6/
+URL:https://matchamap-cu7.pages.dev/e/9da038c597d6/
+GEO:40.450443;-79.984783
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

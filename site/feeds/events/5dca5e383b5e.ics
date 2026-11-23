@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:More Than Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5dca5e383b5e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:More Than Matcha pop-up
+LOCATION:Los Angeles\, CA
+DESCRIPTION:BOO-BE MATCHA LATTE\nMenu: latte\, ube\, brown sugar\, matcha l
+ ayer\nDetails not confirmed yet. Check the brand's post before you go.\nMo
+ re: https://matchamap-cu7.pages.dev/e/5dca5e383b5e/
+URL:https://matchamap-cu7.pages.dev/e/5dca5e383b5e/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:333Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3365ce9f985a
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:333Matcha pop-up
+LOCATION:Dallas\, TX
+DESCRIPTION:333 hits the road later this month! our co-owner\, sababamoore\
+ , is making his way from dallas to lumacoffeeroasters in louisiana to spre
+ ad a little matcha magic.\nDetails not confirmed yet. Check the brand's po
+ st before you go.\nMore: https://matchamap-cu7.pages.dev/e/3365ce9f985a/
+URL:https://matchamap-cu7.pages.dev/e/3365ce9f985a/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

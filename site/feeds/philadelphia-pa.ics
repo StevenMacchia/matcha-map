@@ -1,0 +1,102 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Philadelphia\, PA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5365df033d04
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261128T160000Z
+DTEND:20261128T180000Z
+SUMMARY:Matcha + Meetup: Philadelphia
+LOCATION:Philadelphia\, Philadelphia\, PA
+DESCRIPTION:Matcha + Meetup: Philadelphia is a social meetup centered on ma
+ tcha in Philadelphia.\nLikely\, not fully confirmed.\nMore: https://matcha
+ map-cu7.pages.dev/e/5365df033d04/
+URL:https://matchamap-cu7.pages.dev/e/5365df033d04/
+GEO:39.952724;-75.163526
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:2af246a08639
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261129T150000Z
+DTEND:20261129T170000Z
+SUMMARY:Matcha Walk | First Longevity Philly Event
+LOCATION:Philadelphia\, PA
+DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
+ .\nMore: https://matchamap-cu7.pages.dev/e/2af246a08639/
+URL:https://matchamap-cu7.pages.dev/e/2af246a08639/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:a8b4b4445880
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Matcha & Mahjong
+LOCATION:Haraz Coffee House Fishtown\, 23 West Girard Avenue\, Philadelphia
+ \, PA
+DESCRIPTION:Monthly Mahjong Game Night at Haraz Coffee House in Fishtown\nL
+ ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/a8b4
+ b4445880/
+URL:https://matchamap-cu7.pages.dev/e/a8b4b4445880/
+GEO:39.968829;-75.135458
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:443e0028d390
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261212T190000Z
+DTEND:20261212T203000Z
+SUMMARY:Mat\, Moov & Matcha
+LOCATION:Sculpt'd Philly\, 950 N 2nd St\, philadelphia\, PA
+DESCRIPTION:Come join Mat & Moov for an evening of Hot Barre Sculpt & match
+ a!\nPrice: $44.52–129.89\nMore: https://matchamap-cu7.pages.dev/e/443e00
+ 28d390/
+URL:https://matchamap-cu7.pages.dev/e/443e0028d390/
+GEO:39.965414;-75.140539
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:a78a24b5f0fa
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261213T170000Z
+DTEND:20261213T190000Z
+SUMMARY:Movement\, Matcha & Bloom
+LOCATION:1810 County Line Road\, Upper Moreland Township\, PA
+DESCRIPTION:Matcha\, flowers\, Pilates & good vibes? SAY LESS!\nPrice: $55\
+ nMore: https://matchamap-cu7.pages.dev/e/a78a24b5f0fa/
+URL:https://matchamap-cu7.pages.dev/e/a78a24b5f0fa/
+GEO:40.165890;-75.062115
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:c9223b337bf2
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20271010
+DTEND;VALUE=DATE:20271011
+SUMMARY:Buji Matcha pop-up
+LOCATION:Philadelphia\, PA
+DESCRIPTION:Matcha Monday | EP 2: BUJI Matcha\nMenu: raspberry\nDetails not
+  confirmed yet. Check the brand's post before you go.\nMore: https://match
+ amap-cu7.pages.dev/e/c9223b337bf2/
+URL:https://matchamap-cu7.pages.dev/e/c9223b337bf2/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

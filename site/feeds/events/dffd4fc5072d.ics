@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cafe 86 pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:dffd4fc5072d
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20261128T220000Z
+DTEND:20261129T040000Z
+SUMMARY:Cafe 86 pop-up
+LOCATION:Renton\, WA
+DESCRIPTION:Join cafe86_wa at biyaheworld grand opening next Saturday (11/2
+ 8) in Renton!!\nDetails not confirmed yet. Check the brand's post before y
+ ou go.\nMore: https://matchamap-cu7.pages.dev/e/dffd4fc5072d/
+URL:https://matchamap-cu7.pages.dev/e/dffd4fc5072d/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

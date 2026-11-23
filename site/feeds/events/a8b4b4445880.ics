@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Haraz Coffee House Fishtown pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a8b4b4445880
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Matcha & Mahjong
+LOCATION:Haraz Coffee House Fishtown\, 23 West Girard Avenue\, Philadelphia
+ \, PA
+DESCRIPTION:Monthly Mahjong Game Night at Haraz Coffee House in Fishtown\nL
+ ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/a8b4
+ b4445880/
+URL:https://matchamap-cu7.pages.dev/e/a8b4b4445880/
+GEO:39.968829;-75.135458
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

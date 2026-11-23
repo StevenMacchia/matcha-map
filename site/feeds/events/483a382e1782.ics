@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cafe of the Day pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:483a382e1782
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Matcha + Meetup: Marina del Rey (Giving Back Edition)
+LOCATION:Marina del Rey\, CA
+DESCRIPTION:Join us for coffee at different cafe. Build your community whil
+ e supporting local businesses\, and giving back to people in need.\nDetail
+ s not confirmed yet. Check the brand's post before you go.\nMore: https://
+ matchamap-cu7.pages.dev/e/483a382e1782/
+URL:https://matchamap-cu7.pages.dev/e/483a382e1782/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

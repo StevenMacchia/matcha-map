@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Oohmami Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:9aa73726e33d
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Oohmami Matcha pop-up at Grant Park Market
+LOCATION:Grant Park Market\, 519 Memorial Dr\, Atlanta\, GA
+DESCRIPTION:Oohmami Matcha will be pouring matcha at Grant Park Market this
+  Sunday 11/22\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.
+ pages.dev/e/9aa73726e33d/
+URL:https://matchamap-cu7.pages.dev/e/9aa73726e33d/
+GEO:33.746513;-84.371126
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

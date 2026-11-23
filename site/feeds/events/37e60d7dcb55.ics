@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UNLABELED Coffee and Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:37e60d7dcb55
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:UNLABELED Coffee and Matcha pop-up
+LOCATION:Los Angeles\, CA
+DESCRIPTION:It’s the last week for our Pumpkin Spice Make sure to stop by
+  Kuns Park this Thursday through Sunday to grab yours before they‘re gon
+ e.\nMenu: pumpkin spice\nDetails not confirmed yet. Check the brand's post
+  before you go.\nMore: https://matchamap-cu7.pages.dev/e/37e60d7dcb55/
+URL:https://matchamap-cu7.pages.dev/e/37e60d7dcb55/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

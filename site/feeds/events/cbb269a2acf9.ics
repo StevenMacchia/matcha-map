@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Creamed | HTX pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:cbb269a2acf9
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Creamed | HTX pop-up
+LOCATION:Houston\, TX
+DESCRIPTION:Heyy y’all!! One of your favorites this week was our Hojicha 
+ Banana Bread Pudding\, and I’m not even surprised because hojicha and ba
+ nana are literally the perfect duo!!\nMenu: hojicha\, banana\, caramel\, v
+ anilla\, ice cream\nDetails not confirmed yet. Check the brand's post befo
+ re you go.\nMore: https://matchamap-cu7.pages.dev/e/cbb269a2acf9/
+URL:https://matchamap-cu7.pages.dev/e/cbb269a2acf9/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

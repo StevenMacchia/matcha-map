@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chengdu Teahouse pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:833368044402
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha Workshop
+LOCATION:Lansing\, MI
+DESCRIPTION:Learn how to create an authentic matcha the traditional way wit
+ h bamboo whisk and ceramic bowl which you get to keep. Also includes snack
+ s.\nDetails not confirmed yet. Check the brand's post before you go.\nMore
+ : https://matchamap-cu7.pages.dev/e/833368044402/
+URL:https://matchamap-cu7.pages.dev/e/833368044402/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

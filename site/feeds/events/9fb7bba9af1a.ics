@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:NextUP 313 pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:9fb7bba9af1a
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261128T160000Z
+DTEND:20261128T180000Z
+SUMMARY:Music and Matcha - Hastings Market
+LOCATION:Hastings Market @ Vanguard\, 2795 East Grand Boulevard\, Detroit\,
+  MI
+DESCRIPTION:Meet the NextUP313 market vendors - explore their products. Enj
+ oy a relaxing morning of music\, beverages\, snacks and business networkin
+ g\nPrice: free\nMore: https://matchamap-cu7.pages.dev/e/9fb7bba9af1a/
+URL:https://matchamap-cu7.pages.dev/e/9fb7bba9af1a/
+GEO:42.376913;-83.055792
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

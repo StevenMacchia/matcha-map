@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FUJIYA HAWAIʻI | MOCHI in HONOLULU 🍡 pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6e4abd99b485
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261205T190000Z
+DTEND:20261205T230000Z
+SUMMARY:Mochi & Matcha Fest
+LOCATION:Honolulu\, HI
+DESCRIPTION:The first Mochi & Matcha Fest in Mōʻiliʻili is a pet- and fa
+ mily-friendly day of mochi and matcha with free admission.\nMenu: mochi\nP
+ rice: free\nDetails not confirmed yet. Check the brand's post before you g
+ o.\nMore: https://matchamap-cu7.pages.dev/e/6e4abd99b485/
+URL:https://matchamap-cu7.pages.dev/e/6e4abd99b485/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

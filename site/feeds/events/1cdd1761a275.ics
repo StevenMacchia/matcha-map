@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:emkari_cafe pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:1cdd1761a275
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T235305Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:emkari_cafe pop-up at Thaiyo
+LOCATION:San Diego\, CA
+DESCRIPTION:Filipino & Vietnamese Matcha & Coffee Popup in San Diego | Dec 
+ 6th | TikTok emkari cafe a little glimpse of our last emkari pop-up ☆ co
+ me try our filipino + vietnamese inspired matcha & coffee at…\nDetails n
+ ot confirmed yet. Check the brand's post before you go.\nMore: https://mat
+ chamap-cu7.pages.dev/e/1cdd1761a275/
+URL:https://matchamap-cu7.pages.dev/e/1cdd1761a275/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

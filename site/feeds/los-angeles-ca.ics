@@ -1,0 +1,245 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Los Angeles\, CA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:37e60d7dcb55
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:UNLABELED Coffee and Matcha pop-up
+LOCATION:Los Angeles\, CA
+DESCRIPTION:It’s the last week for our Pumpkin Spice Make sure to stop by
+  Kuns Park this Thursday through Sunday to grab yours before they‘re gon
+ e.\nMenu: pumpkin spice\nDetails not confirmed yet. Check the brand's post
+  before you go.\nMore: https://matchamap-cu7.pages.dev/e/37e60d7dcb55/
+URL:https://matchamap-cu7.pages.dev/e/37e60d7dcb55/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:aded07cb0287
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261128T210000Z
+DTEND:20261128T230000Z
+SUMMARY:Matcha + Meetup: SFV | Coffee Meets to Benefit Dream Foundation
+LOCATION:Los Angeles\, CA
+DESCRIPTION:Price: $17.35\nDetails not confirmed yet. Check the brand's pos
+ t before you go.\nMore: https://matchamap-cu7.pages.dev/e/aded07cb0287/
+URL:https://matchamap-cu7.pages.dev/e/aded07cb0287/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:483a382e1782
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Matcha + Meetup: Marina del Rey (Giving Back Edition)
+LOCATION:Marina del Rey\, CA
+DESCRIPTION:Join us for coffee at different cafe. Build your community whil
+ e supporting local businesses\, and giving back to people in need.\nDetail
+ s not confirmed yet. Check the brand's post before you go.\nMore: https://
+ matchamap-cu7.pages.dev/e/483a382e1782/
+URL:https://matchamap-cu7.pages.dev/e/483a382e1782/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:e499ad0219d3
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261129T230000Z
+DTEND:20261130T010000Z
+SUMMARY:emily.lorem pop-up at dintaifungusa
+LOCATION:Los Angeles\, CA
+DESCRIPTION:Satirical Free Matcha & Coffee Popup in Los Angeles: Overnight 
+ Line | TikTok Title: Satirical Free Matcha & Coffee Popup in Los Angeles: 
+ Overnight Line | TikTok thinking about this drink still .\nMenu: ube ice c
+ ream\nPrice: $100\nDetails not confirmed yet. Check the brand's post befor
+ e you go.\nMore: https://matchamap-cu7.pages.dev/e/e499ad0219d3/
+URL:https://matchamap-cu7.pages.dev/e/e499ad0219d3/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:8af28062e823
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Daylight Matcha pop-up
+LOCATION:Los Angeles\, CA
+DESCRIPTION:Our Black Friday Event is officially live\nDetails not confirme
+ d yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.
+ pages.dev/e/8af28062e823/
+URL:https://matchamap-cu7.pages.dev/e/8af28062e823/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:073c024a73fa
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:Matcha Bowl Pottery Class - Handbuilding Ceramics Workshop
+LOCATION:Two Faced Ceramics\, 7969 Melrose Avenue\, West Hollywood\, CA
+DESCRIPTION:Join us in the pottery studio to create your very own ceramic m
+ atcha bowl! Perfect for beginners!\nMenu: matcha bowl\nLikely\, not fully 
+ confirmed.\nMore: https://matchamap-cu7.pages.dev/e/073c024a73fa/
+URL:https://matchamap-cu7.pages.dev/e/073c024a73fa/
+GEO:34.083002;-118.374330
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:01d7d4e8c272
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:Winter Inspired Matcha Bowl Pottery Class - Handbuilding Ceramics W
+ orkshop
+LOCATION:Two Faced Ceramics\, 7969 Melrose Avenue\, West Hollywood\, CA
+DESCRIPTION:Join us in the pottery studio to create your very own ceramic m
+ atcha bowl! Perfect for beginners!\nMenu: matcha bowl\nLikely\, not fully 
+ confirmed.\nMore: https://matchamap-cu7.pages.dev/e/01d7d4e8c272/
+URL:https://matchamap-cu7.pages.dev/e/01d7d4e8c272/
+GEO:34.083002;-118.374330
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:bf42f04c153e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:More Than Matcha pop-up
+LOCATION:Los Angeles\, CA
+DESCRIPTION:Full results at the end\nDetails not confirmed yet. Check the b
+ rand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/bf42f0
+ 4c153e/
+URL:https://matchamap-cu7.pages.dev/e/bf42f04c153e/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:c01a2475ed3e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:Morning Matcha Bowl Pottery Class - Beginner Ceramics Workshop
+LOCATION:Two Faced Ceramics\, 7969 Melrose Avenue\, West Hollywood\, CA
+DESCRIPTION:Join us in the pottery studio to create your very own ceramic m
+ atcha bowl! Perfect for beginners!\nMenu: matcha bowl\nLikely\, not fully 
+ confirmed.\nMore: https://matchamap-cu7.pages.dev/e/c01a2475ed3e/
+URL:https://matchamap-cu7.pages.dev/e/c01a2475ed3e/
+GEO:34.083002;-118.374330
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:8ad806714a90
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261219T210000Z
+DTEND:20261220T000000Z
+SUMMARY:Matcha + Meetup: LA | Film + Music Speed Networking Roulette
+LOCATION:Los Angeles\, CA
+DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
+ for collaborations in this roulette edition of speed networking.\nPrice: $
+ 23.18\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/8ad806714a90/
+URL:https://matchamap-cu7.pages.dev/e/8ad806714a90/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:effda3422fd4
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261219T210000Z
+DTEND:20261219T230000Z
+SUMMARY:LA Dog Moms Holiday Brunch & Social
+LOCATION:Toastique\, 6255 Sunset Boulevard\, Los Angeles\, CA
+DESCRIPTION:Celebrate the holidays with Dog Moms LA at Toastique! Enjoy gou
+ rmet toast or bowls\, coffee/matcha\, and holiday vibes.\nPrice: $81.88\nM
+ ore: https://matchamap-cu7.pages.dev/e/effda3422fd4/
+URL:https://matchamap-cu7.pages.dev/e/effda3422fd4/
+GEO:34.098586;-118.325436
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:1e9680c3c66f
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+SUMMARY:Matcha + Meetup: LA Creatives (Giving Back Edition)
+LOCATION:Los Angeles\, CA
+DESCRIPTION:Join us for brunch or coffee at different cafe. Build your comm
+ unity while supporting local businesses and giving back to people in need.
+ \nDetails not confirmed yet. Check the brand's post before you go.\nMore: 
+ https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
+URL:https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:bd5fcff23a34
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+SUMMARY:Matcha + Meetup: LA | Entrepreneur Speed Networking Roulette
+LOCATION:Los Angeles\, CA
+DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
+ for collaborations in this roulette edition of speed networking.\nDetails 
+ not confirmed yet. Check the brand's post before you go.\nMore: https://ma
+ tchamap-cu7.pages.dev/e/bd5fcff23a34/
+URL:https://matchamap-cu7.pages.dev/e/bd5fcff23a34/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:5dca5e383b5e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:More Than Matcha pop-up
+LOCATION:Los Angeles\, CA
+DESCRIPTION:BOO-BE MATCHA LATTE\nMenu: latte\, ube\, brown sugar\, matcha l
+ ayer\nDetails not confirmed yet. Check the brand's post before you go.\nMo
+ re: https://matchamap-cu7.pages.dev/e/5dca5e383b5e/
+URL:https://matchamap-cu7.pages.dev/e/5dca5e383b5e/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:fda962f32610
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270105
+SUMMARY:More Than Matcha pop-up
+LOCATION:Los Angeles\, CA
+DESCRIPTION:BOO-BE MATCHA LATTE\nMenu: latte\, ube\, brown sugar\, matcha l
+ ayer\nDetails not confirmed yet. Check the brand's post before you go.\nMo
+ re: https://matchamap-cu7.pages.dev/e/fda962f32610/
+URL:https://matchamap-cu7.pages.dev/e/fda962f32610/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

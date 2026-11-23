@@ -1,0 +1,170 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Atlanta\, GA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:070b20cd9a53
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Bearly Awake Cafe pop-up
+LOCATION:Atlanta\, GA
+DESCRIPTION:banana bread tiramisu only 11/22\nMenu: banana\, tiramisu\nDeta
+ ils not confirmed yet. Check the brand's post before you go.\nMore: https:
+ //matchamap-cu7.pages.dev/e/070b20cd9a53/
+URL:https://matchamap-cu7.pages.dev/e/070b20cd9a53/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:0e589a93f30e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T202629Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:momokomart pop-up
+LOCATION:Atlanta\, GA
+DESCRIPTION:Shogun Matcha Pop-Up in Atlanta: Nov 22nd & Chasen ... - TikTok
+  **Event Details** **Location:** Momoko Mart\, 5389G New Peachtree rd.\, C
+ hamblee\, GA **Date:** Sunday\, November 22nd **Time:** 11 AM - 3\nDetails
+  not confirmed yet. Check the brand's post before you go.\nMore: https://m
+ atchamap-cu7.pages.dev/e/0e589a93f30e/
+URL:https://matchamap-cu7.pages.dev/e/0e589a93f30e/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:1b8f191fb8c9
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T235305Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:momokomart pop-up at Atlanta Chinatown
+LOCATION:Atlanta Chinatown\, Atlanta\, GA
+DESCRIPTION:Shogun Matcha Pop-Up in Atlanta: Nov 22nd & Chasen Charm Worksh
+ op! ] We will also be hosting a chasen charm workshop !\nMenu: strawberry\
+ nPrice: free\nDetails not confirmed yet. Check the brand's post before you
+  go.\nMore: https://matchamap-cu7.pages.dev/e/1b8f191fb8c9/
+URL:https://matchamap-cu7.pages.dev/e/1b8f191fb8c9/
+GEO:33.890544;-84.299625
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:3547255523a6
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:ReClaimed ATL: Vintage & Artisan 1 Year Anniversary Market
+LOCATION:The Supermarket\, 638 North Highland Avenue\, Atlanta\, GA
+DESCRIPTION:A monthly curated marketplace experience rooted in creativity\,
+  community and sustainability. Featuring 20+ vendors\, music\, matcha & mo
+ re!\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/
+ e/3547255523a6/
+URL:https://matchamap-cu7.pages.dev/e/3547255523a6/
+GEO:33.771628;-84.353032
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:8d14d831d92f
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261122T235305Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:momokomart pop-up at shogunmatcha
+LOCATION:Atlanta\, GA
+DESCRIPTION:TikTok - Make Your Day Shogun Matcha x Momoko Mart We’re host
+ ing another pop-up with SUNDAY\, October 25th !\nMenu: hojicha\, black ses
+ ame\, ube\, strawberry\nPrice: free\nDetails not confirmed yet. Check the 
+ brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/8d14d
+ 831d92f/
+URL:https://matchamap-cu7.pages.dev/e/8d14d831d92f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:9aa73726e33d
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Oohmami Matcha pop-up at Grant Park Market
+LOCATION:Grant Park Market\, 519 Memorial Dr\, Atlanta\, GA
+DESCRIPTION:Oohmami Matcha will be pouring matcha at Grant Park Market this
+  Sunday 11/22\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.
+ pages.dev/e/9aa73726e33d/
+URL:https://matchamap-cu7.pages.dev/e/9aa73726e33d/
+GEO:33.746513;-84.371126
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:01531189a0d4
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261219T150000Z
+DTEND:20261219T170000Z
+SUMMARY:Tea and Matcha Workshop
+LOCATION:Postern Coffee\, Atlanta\, GA
+DESCRIPTION:Tea and Matcha is a two-hour workshop at Postern Coffee on Dece
+ mber 19\, 2026\, from 10:00 to 12:00. It covers tea and matcha for people 
+ interested in developing their home coffee and tea skills.\nDetails not co
+ nfirmed yet. Check the brand's post before you go.\nMore: https://matchama
+ p-cu7.pages.dev/e/01531189a0d4/
+URL:https://matchamap-cu7.pages.dev/e/01531189a0d4/
+GEO:33.919381;-84.282066
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:73d7d369378c
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:Bearly Awake Cafe pop-up
+LOCATION:Atlanta\, GA
+DESCRIPTION:MOMOKO MART 11/08\nMenu: strawberry\nDetails not confirmed yet.
+  Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.
+ dev/e/73d7d369378c/
+URL:https://matchamap-cu7.pages.dev/e/73d7d369378c/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:dff4bcf1b2e1
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20270123T190000Z
+DTEND:20270123T210000Z
+SUMMARY:Matcha Making Workshop. 🍵🎀
+LOCATION:Creator’s Kitchen\, 1331 Metropolitan Pkwy\, Atlanta\, GA
+DESCRIPTION:Likely\, not fully confirmed.\nMore: https://matchamap-cu7.page
+ s.dev/e/dff4bcf1b2e1/
+URL:https://matchamap-cu7.pages.dev/e/dff4bcf1b2e1/
+GEO:33.718507;-84.408352
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:62b886870d67
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20270303T163000Z
+DTEND:20270303T183000Z
+SUMMARY:Matcha Crawl
+LOCATION:Atlanta\, GA
+DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
+ .\nMore: https://matchamap-cu7.pages.dev/e/62b886870d67/
+URL:https://matchamap-cu7.pages.dev/e/62b886870d67/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

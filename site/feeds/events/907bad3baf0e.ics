@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:magnaye pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:907bad3baf0e
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261127T180000Z
+DTEND:20261127T220000Z
+SUMMARY:Espresso & Matcha Pop-Up at Patine
+LOCATION:Patine\, 2722 Fifth Ave\, San Diego\, CA
+DESCRIPTION:A Black Friday pop-up brings an espresso bar and a matcha bar t
+ o Patine\, a culinary and cookbook shop in Bankers Hill. miel provides pas
+ tries. m. m. at 2722 Fifth Ave.\nMenu: pastry\nMore: https://matchamap-cu7
+ .pages.dev/e/907bad3baf0e/
+URL:https://matchamap-cu7.pages.dev/e/907bad3baf0e/
+GEO:33.116063;-117.082913
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

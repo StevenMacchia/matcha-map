@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cookbook Courtyard | DC Events & Food Community pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:648438ff34d7
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART:20261123T180000Z
+DTEND:20261123T200000Z
+SUMMARY:Dimatchai Matcha Pop-Up
+LOCATION:Washington\, DC
+DESCRIPTION:dimatchai hosts a one-day matcha pop-up at TRESSE in Georgetown
+ .\nMenu: yame: okumidori matcha latte\, earl grey fig matcha\, coconut dat
+ e matcha\, cardamom crème brûlée matcha\nDetails not confirmed yet. Che
+ ck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/
+ e/648438ff34d7/
+URL:https://matchamap-cu7.pages.dev/e/648438ff34d7/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

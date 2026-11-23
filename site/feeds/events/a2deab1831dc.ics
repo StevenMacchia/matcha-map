@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cafe of the Day pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a2deab1831dc
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:Matcha + Meetup: Tucson (Giving Back Edition)
+LOCATION:Tucson\, AZ
+DESCRIPTION:Join us for coffee at different cafe. Build your community whil
+ e supporting local businesses\, and giving back to people in need.\nDetail
+ s not confirmed yet. Check the brand's post before you go.\nMore: https://
+ matchamap-cu7.pages.dev/e/a2deab1831dc/
+URL:https://matchamap-cu7.pages.dev/e/a2deab1831dc/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

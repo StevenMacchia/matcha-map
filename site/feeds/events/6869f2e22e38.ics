@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Hawa pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6869f2e22e38
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Hawa matcha pop-up
+LOCATION:4325 N. Ravenswood Ave\, Chicago\, IL
+DESCRIPTION:Come support us for Small Business Saturday\nMenu: black sesame
+ \, pistachio\, caramel\, ube\, vanilla\nPrice: free\nLikely\, not fully co
+ nfirmed.\nMore: https://matchamap-cu7.pages.dev/e/6869f2e22e38/
+URL:https://matchamap-cu7.pages.dev/e/6869f2e22e38/
+GEO:41.960281;-87.673498
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Jasmine Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:16f8fb9eb39d
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20270910
+DTEND;VALUE=DATE:20270911
+SUMMARY:Jasmine Matcha pop-up
+LOCATION:Richmond\, TX
+DESCRIPTION:Next up: Le' Drip in Richmond\, TX (OG location is in Bellaire)
+ \nMenu: lychee\, caramel latte\nDetails not confirmed yet. Check the brand
+ 's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/16f8fb9eb3
+ 9d/
+URL:https://matchamap-cu7.pages.dev/e/16f8fb9eb39d/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

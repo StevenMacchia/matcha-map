@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chicagoland pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:2d6e4989ca5c
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T023315Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Chicagoland matcha pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:To everyone who came out to support our pop-up yesterday and ev
+ eryone who placed an order for today’s pickups\, we truly cannot thank y
+ ou enough.\nDetails not confirmed yet. Check the brand's post before you g
+ o.\nMore: https://matchamap-cu7.pages.dev/e/2d6e4989ca5c/
+URL:https://matchamap-cu7.pages.dev/e/2d6e4989ca5c/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

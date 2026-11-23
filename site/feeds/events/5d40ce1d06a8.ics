@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cafe of the Month pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5d40ce1d06a8
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:Matcha + Meetup: Austin | Film + Music Speed Networking Roulette
+LOCATION:Austin\, TX
+DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
+ for collaborations in this roulette edition of speed networking.\nDetails 
+ not confirmed yet. Check the brand's post before you go.\nMore: https://ma
+ tchamap-cu7.pages.dev/e/5d40ce1d06a8/
+URL:https://matchamap-cu7.pages.dev/e/5d40ce1d06a8/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

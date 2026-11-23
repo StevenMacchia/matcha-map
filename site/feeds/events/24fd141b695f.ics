@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:SORA by Hotel Collection pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:24fd141b695f
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T003314Z
+DTSTART:20261129T153000Z
+DTEND:20261129T170000Z
+SUMMARY:PILATES SCULPT BY STARR HAWKINS
+LOCATION:Miami\, FL
+DESCRIPTION:Pilates sculpt at FRSH with Starr Hawkins\, PLUS matcha\, smoot
+ hies\, and fresh bites after class. Only 20 spots!\nPrice: $41.85\nDetails
+  not confirmed yet. Check the brand's post before you go.\nMore: https://m
+ atchamap-cu7.pages.dev/e/24fd141b695f/
+URL:https://matchamap-cu7.pages.dev/e/24fd141b695f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

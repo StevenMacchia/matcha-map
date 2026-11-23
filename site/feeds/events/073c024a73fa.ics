@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Two Faced Ceramics pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:073c024a73fa
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T010415Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:Matcha Bowl Pottery Class - Handbuilding Ceramics Workshop
+LOCATION:Two Faced Ceramics\, 7969 Melrose Avenue\, West Hollywood\, CA
+DESCRIPTION:Join us in the pottery studio to create your very own ceramic m
+ atcha bowl! Perfect for beginners!\nMenu: matcha bowl\nLikely\, not fully 
+ confirmed.\nMore: https://matchamap-cu7.pages.dev/e/073c024a73fa/
+URL:https://matchamap-cu7.pages.dev/e/073c024a73fa/
+GEO:34.083002;-118.374330
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

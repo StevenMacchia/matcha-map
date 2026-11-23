@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Pottery Chicago pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:28c02a923fe2
+DTSTAMP:20261123T030315Z
+LAST-MODIFIED:20261123T005942Z
+DTSTART:20270105T003000Z
+DTEND:20270105T023000Z
+SUMMARY:Pottery Chicago pop-up
+LOCATION:Chicago\, IL
+DESCRIPTION:Good morning! It’s Sunday morning\, which means we’re 2 wee
+ ks away from the start of our December Matcha Lovers Pottery Course\nMenu:
+  matcha bowl\nPrice: $150\nDetails not confirmed yet. Check the brand's po
+ st before you go.\nMore: https://matchamap-cu7.pages.dev/e/28c02a923fe2/
+URL:https://matchamap-cu7.pages.dev/e/28c02a923fe2/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR
