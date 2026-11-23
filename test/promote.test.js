@@ -18,7 +18,7 @@ test("captions name the brand, link the map with the id, mention the city, and u
   const c = P.captions(E, NOW);
   for (const t of [c.instagram, c.tiktok]) {
     assert.match(t, /Moonbee Matcha/);
-    assert.ok(t.includes("https://matchamap-cu7.pages.dev/?event=abc123def456"));
+    assert.ok(t.includes("https://matchamap.app/?event=abc123def456"));
     assert.match(t, /Raleigh/);
     assert.ok(!BANNED.test(t));
   }
@@ -46,7 +46,7 @@ test("share card is plain SVG with no outside references and escapes the brand",
 test("page: own CSP with unpkg in script-src, no inline script, handler or style, pinned QR script, no banned words", () => {
   const m = html.match(/Content-Security-Policy" content="([^"]+)"/);
   assert.ok(m, "CSP meta");
-  assert.match(m[1], /^default-src 'none'; script-src 'self' https:\/\/unpkg\.com;/);
+  assert.match(m[1], /^default-src 'none'; script-src 'self' https:\/\/unpkg\.com https:\/\/static\.cloudflareinsights\.com;/);
   assert.match(m[1], /form-action 'none'/);
   assert.match(m[1], /img-src 'self' data: blob:/);
   const scripts = [...html.matchAll(/<script\b([^>]*)>/g)].map((x) => x[1]);

@@ -13,8 +13,9 @@ import { isUpcoming, isApprox, makeCityLocator, brandNameOf, timeText } from "./
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const NEW_DAYS = 14;
 export const NEW_MAX = 100;
-// UID = <event id>@<site host>: the host from tools/site-url.js, so a domain change moves it too.
-export const UID_DOMAIN = SITE_HOST;
+// UID = <event id>@matchamap-cu7.pages.dev, fixed on purpose: a UID is an identity, and calendars that subscribed before the
+// domain move (2026-11-23) would show every event twice if it changed. SITE_HOST stays the public host for links.
+export const UID_DOMAIN = "matchamap-cu7.pages.dev";
 // Calendar feeds: the end (or the start, if no end) is today or later, by the event's own calendar day.
 export function inCalendar(e, now = new Date()) {
   if (!e || !e.id || e.status === "cancelled") return false;

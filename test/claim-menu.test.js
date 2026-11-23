@@ -16,7 +16,7 @@ test("a claim without a menu keeps its old shape", () => {
 });
 
 test("menu lines parse into items: name, optional price, optional note; stored as an owner menu with the claim date", () => {
-  const r = v({ menu: "Ceremonial latte, $7\nStrawberry matcha, $8.50, with oat milk\r\n\nHojicha\n", menu_url: "https://sunny.co/menu", shop: "https://matchamap-cu7.pages.dev/?shop=osm%3Anode%2F13159184974" });
+  const r = v({ menu: "Ceremonial latte, $7\nStrawberry matcha, $8.50, with oat milk\r\n\nHojicha\n", menu_url: "https://sunny.co/menu", shop: "https://matchamap.app/?shop=osm%3Anode%2F13159184974" });
   assert.equal(r.ok, true);
   assert.deepEqual(r.clean.menu, { items: [{ name: "Ceremonial latte", price: "$7" }, { name: "Strawberry matcha", price: "$8.50", note: "with oat milk" }, { name: "Hojicha" }], source_url: "https://sunny.co/menu", kind: "owner", read: "2026-11-23" });
   assert.equal(r.clean.shop, "osm:node/13159184974");

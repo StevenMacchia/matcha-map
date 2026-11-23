@@ -17,5 +17,5 @@ test("site/index.html carries no Search Console tag with a placeholder value", (
 
 test("the Search Console doc names the property, the sitemap and where the tag goes", () => {
   const md = fs.readFileSync("docs/SEARCH-CONSOLE.md", "utf8");
-  for (const s of ["https://matchamap-cu7.pages.dev/", "sitemap.xml", "site/index.html", "google-site-verification"]) assert.ok(md.includes(s), s);
+  for (const s of ["https://matchamap.app/", "sitemap.xml", "site/index.html", "google-site-verification"]) assert.ok(md.includes(s), s);
 });
