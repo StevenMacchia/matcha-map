@@ -312,10 +312,14 @@
   }
   try { syncPad(true); } catch (e) { /* the padding is cosmetic; never abort the page over it */ }
   var padT;
-  window.addEventListener("resize", function () {
+  function padSoon() {
     clearTimeout(padT);
     padT = setTimeout(function () { try { syncPad(false); if (refitLater && wide.matches) refitHome(); } catch (e) { /* same */ } }, 120);
-  });
+  }
+  window.addEventListener("resize", padSoon);
+  // a tab that loaded hidden is sized when it is first shown, and not every browser fires a resize for that:
+  // the same pass runs on the visibility change, so the visitor finds the page ready when they switch to it
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) padSoon(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { syncPad(false); });
 
   // Brand mochi get eyes and blush from zoom 9 up (class z9 on the map container).
