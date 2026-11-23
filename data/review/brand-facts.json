@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-23T03:53:56.640Z",
-  "note": "Partial: researched through search snippets and press; fields left null rather than guessed. Brands not listed were not researched.",
+  "generated": "2026-11-23T03:55:06.309Z",
+  "note": "Partial: pass 1 from search snippets and press, pass 2 from brands' own sites. Fields left null rather than guessed. Brands not listed were not researched.",
   "brands": {
     "mira-matcha": {
       "story": "Mira Matcha is a San Antonio matcha shop that began as a once-a-week pop-up at a market. It grew into a weekend trailer and then a cafe, and is known for ceremonial-grade matcha with Latin-inspired flavors.",
@@ -138,17 +138,18 @@
       ],
       "price_range": null,
       "pay": null,
-      "typical_hours": null,
+      "typical_hours": "Cafes daily, about 8am to 6pm (Nomad 7:30am to 5pm)",
       "founded": null,
       "home_city": "New York",
-      "website": null,
+      "website": "https://isshikimatcha.com",
       "linktree": null,
       "tiktok": null,
       "evidence": [
         "https://www.snackpass.co/snack/isshiki-matcha-where-tradition-meets-modern-tranquility-in-nyc",
-        "https://www.opentable.com/r/isshiki-matcha-new-york"
+        "https://www.opentable.com/r/isshiki-matcha-new-york",
+        "https://isshikimatcha.com"
       ],
-      "confidence": "medium"
+      "confidence": "high"
     },
     "caffeine-depot": {
       "story": "Caffeine Depot is a San Francisco pop-up and catering business serving handcrafted Vietnamese coffee and premium matcha, with no fixed storefront. It shows up at farmers markets and events around the Bay Area.",
@@ -237,30 +238,36 @@
       "typical_hours": null,
       "founded": null,
       "home_city": "Portland",
-      "website": null,
+      "website": "https://tealoftshop.com",
       "linktree": null,
       "tiktok": null,
       "evidence": [
-        "https://www.toasttab.com/local/order/tealoft"
+        "https://www.toasttab.com/local/order/tealoft",
+        "https://tealoftshop.com"
       ],
       "confidence": "medium"
     },
     "central-matcha": {
       "story": "Central Matcha is an Austin small business built on 100% ceremonial matcha sourced directly from Kagoshima, Japan. The founder's college barista job inspired it, and Austin cafes also buy its matcha.",
-      "signature_drinks": null,
+      "signature_drinks": [
+        "Classic Matcha",
+        "Iced Matcha Latte",
+        "Matcha Shot"
+      ],
       "price_range": null,
-      "pay": null,
-      "typical_hours": null,
+      "pay": "card, Apple Pay, Google Pay",
+      "typical_hours": "Saturdays at Bell and Barton Creek farmers markets; Sundays at Mueller farmers market",
       "founded": null,
       "home_city": "Austin",
-      "website": null,
+      "website": "https://centralmatcha.com/",
       "linktree": null,
       "tiktok": null,
       "evidence": [
         "https://texasfarmersmarket.org/vendors-central-matcha",
-        "https://www.austinchronicle.com/food/the-best-matcha-in-austin/"
+        "https://www.austinchronicle.com/food/the-best-matcha-in-austin/",
+        "https://centralmatcha.com/"
       ],
-      "confidence": "medium"
+      "confidence": "high"
     },
     "cha-cha-matcha": {
       "story": "Cha Cha Matcha is a New York-born matcha cafe brand co-founded by Matthew Morton and Conrad Sandelman. It opened its first Los Angeles shop on Robertson Boulevard and aims to make matcha fun and quick.",
@@ -280,9 +287,10 @@
       "tiktok": null,
       "evidence": [
         "https://chachamatcha.com/pages/our-story",
-        "https://www.retailbrew.com/stories/2019/09/06/cha-cha-matcha-takes-namesake-tea-ecommerce"
+        "https://www.retailbrew.com/stories/2019/09/06/cha-cha-matcha-takes-namesake-tea-ecommerce",
+        "https://www.chachamatcha.com/pages/our-story"
       ],
-      "confidence": "medium"
+      "confidence": "high"
     },
     "333-matcha": {
       "story": "333Matcha is a Latino-owned matcha cart that sets up on weekends at CommonRags Studio in Oak Cliff, Dallas.",
@@ -304,19 +312,23 @@
     },
     "mellobun-matte-matcha": {
       "story": "Mellobun is a pop-up sourdough bakery near Sacramento that sells walk-up only, first come first served. It teams up with Matte Matcha Bar for matcha and hojicha lattes.",
-      "signature_drinks": null,
+      "signature_drinks": [
+        "Matcha Latte",
+        "Hojicha Latte"
+      ],
       "price_range": null,
       "pay": null,
       "typical_hours": "Saturdays 9am to 1pm",
       "founded": null,
-      "home_city": null,
-      "website": null,
+      "home_city": "Elk Grove",
+      "website": "https://mellobunbakery.com",
       "linktree": null,
       "tiktok": null,
       "evidence": [
-        "https://ma.to/venue/mellobunbakery"
+        "https://ma.to/venue/mellobunbakery",
+        "https://mellobunbakery.com"
       ],
-      "confidence": "medium"
+      "confidence": "high"
     },
     "dream-tea-nyc": {
       "story": "Dream Tea NYC is a woman-owned tea company that sells loose-leaf and plastic-free tea bags plus ceremonial matcha from Japan. It runs holiday market stands around New York.",
@@ -332,6 +344,83 @@
       "evidence": [
         "https://www.thecraftmap.com/fair/dream-tea-nyc-in-columbus-circle-holiday-market-new-york-ny",
         "https://aob-directory.alumni.nyu.edu/directory/dream-tea-nyc"
+      ],
+      "confidence": "medium"
+    },
+    "daylight-matcha": {
+      "story": "Daylight Matcha is a Los Angeles brand inspired by Japanese tea rituals, selling premium Uji matcha and hojicha sourced from Kyoto. It also makes matcha kits with HARIO.",
+      "signature_drinks": null,
+      "price_range": null,
+      "pay": null,
+      "typical_hours": null,
+      "founded": null,
+      "home_city": null,
+      "website": "https://daylightmatcha.com",
+      "linktree": null,
+      "tiktok": null,
+      "evidence": [
+        "https://daylightmatcha.com"
+      ],
+      "confidence": "high"
+    },
+    "thelis-coffee": {
+      "story": "Thelis Coffee is a mobile coffee and matcha service for New Jersey and NYC events. The name comes from the founders' grandfather asking passing motorcyclists \"Thelis cup?\" in the Greek mountains.",
+      "signature_drinks": [
+        "Matcha Latte",
+        "Freddo Matcha",
+        "Rose Loukoumi Matcha",
+        "Sweet Greek Honey Latte",
+        "Greek Frappe"
+      ],
+      "price_range": null,
+      "pay": null,
+      "typical_hours": null,
+      "founded": null,
+      "home_city": null,
+      "website": "https://theliscoffee.com",
+      "linktree": null,
+      "tiktok": "thelis.coffee",
+      "evidence": [
+        "https://theliscoffee.com"
+      ],
+      "confidence": "high"
+    },
+    "big-wiss-matcha": {
+      "story": "Big Wiss Matcha is Wiss's own matcha cart in Dearborn, Michigan, serving handcrafted matcha at weekend pop-ups, restaurant nights and private events. It is known for a new dessert flavor at every pop-up and a red heart on every lid.",
+      "signature_drinks": [
+        "Tiramisu Matcha",
+        "Strawberry Shortcake Matcha",
+        "Coconut Vanilla Matcha",
+        "Banana Pudding Matcha",
+        "Cereal Milk Matcha",
+        "Ube Matcha"
+      ],
+      "price_range": null,
+      "pay": null,
+      "typical_hours": null,
+      "founded": null,
+      "home_city": "Dearborn",
+      "website": "https://bigwissmatcha.com/",
+      "linktree": null,
+      "tiktok": null,
+      "evidence": [
+        "https://bigwissmatcha.com/"
+      ],
+      "confidence": "high"
+    },
+    "vale-matcha": {
+      "story": "Vale Matcha is a Seattle matcha brand, \"Seattle's Matcha on Tap\", with a cafe at 2000 Terry Ave. It is planting its own tea farm, Vale Farms, on Whidbey Island.",
+      "signature_drinks": null,
+      "price_range": null,
+      "pay": null,
+      "typical_hours": null,
+      "founded": null,
+      "home_city": "Seattle",
+      "website": null,
+      "linktree": "https://linktr.ee/valematcha",
+      "tiktok": "valematcha",
+      "evidence": [
+        "https://linktr.ee/valematcha"
       ],
       "confidence": "medium"
     }
