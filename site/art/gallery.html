@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drink Illustrator · Matcha Map</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --canvas:#FBF6EA;--panel:#FFFDF7;--ink:#3B2E27;--muted:#6B5A4F;--deep:#3E6B33;--accent:#8CBF7A;--line:#DCE7D0;--foam:#E6F2DC;
+  --pink:#F6B7C7;--pink-edge:#D98CA2;--edge:#4B3426;--tile:#FFFDF7;--chip:#F4F8EA;
+  --shadow:0 1px 2px rgba(75,52,38,.12),0 8px 24px rgba(75,52,38,.10);
+  --font:"M PLUS Rounded 1c",ui-rounded,"Hiragino Maru Gothic ProN","Arial Rounded MT Bold",Nunito,Arial,sans-serif;
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --canvas:#17211A;--panel:#1F2B22;--ink:#F3EADB;--muted:#C9BBA8;--deep:#B5D39F;--accent:#8CBF7A;--line:#33453A;--foam:#26372B;
+  --edge:#0E1510;--tile:#223026;--chip:#2A3A2E;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--canvas);color:var(--ink);font-family:var(--font);font-weight:700;line-height:1.4;
+  background-image:radial-gradient(120% 60% at 10% 0%,var(--foam) 0,transparent 60%),radial-gradient(80% 50% at 100% 100%,rgba(246,183,199,.25) 0,transparent 60%);
+  background-attachment:fixed;min-height:100vh}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 64px}
+header.top{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.mascot{width:76px;height:76px;flex:none;filter:drop-shadow(0 6px 8px rgba(75,52,38,.18))}
+.mascot svg{width:100%;height:100%}
+h1{font-size:clamp(26px,5vw,40px);font-weight:800;margin:0;letter-spacing:-.5px;line-height:1.05}
+.sub{color:var(--muted);margin:6px 0 0;max-width:60ch;font-size:15px}
+.bar{position:sticky;top:0;z-index:5;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px -16px 8px;padding:10px 16px;
+  background:color-mix(in srgb,var(--canvas) 88%,transparent);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
+.seg{display:inline-flex;border:2.5px solid var(--ink);border-radius:999px;overflow:hidden;background:var(--panel)}
+.seg button{font:inherit;font-weight:800;font-size:13px;color:var(--ink);background:none;border:0;padding:7px 13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#1F2E1B}
+.seg button+button{border-left:2px solid var(--ink)}
+input[type=search]{font:inherit;font-weight:700;font-size:14px;color:var(--ink);background:var(--panel);border:2.5px solid var(--ink);border-radius:999px;padding:7px 14px;min-width:0;flex:1 1 160px;max-width:280px}
+.count{color:var(--muted);font-size:13px;margin-left:auto}
+section{margin-top:28px}
+h2{font-size:22px;font-weight:800;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+h2 .pill{font-size:12px;background:var(--pink);color:#3B2E27;border:2px solid var(--ink);border-radius:999px;padding:1px 10px}
+.hint{color:var(--muted);font-size:14px;margin:0 0 14px}
+
+/* try it */
+.try{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:18px;align-items:center;background:var(--panel);border:3px solid var(--ink);border-radius:24px;padding:18px;box-shadow:6px 6px 0 var(--ink)}
+.try label{font-size:14px;color:var(--muted)}
+.try input{display:block;width:100%;margin-top:6px;font:inherit;font-size:20px;font-weight:800;color:var(--ink);background:var(--canvas);border:2.5px solid var(--ink);border-radius:16px;padding:10px 14px}
+.try .eg{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.try .eg button{font:inherit;font-size:12px;font-weight:800;color:var(--ink);background:var(--chip);border:2px solid var(--line);border-radius:999px;padding:3px 10px;cursor:pointer}
+.try .out{width:220px}
+.try .out svg{width:100%;height:auto;display:block}
+.parts{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:12px}
+.parts span{background:var(--chip);border:2px solid var(--line);border-radius:999px;padding:2px 9px;display:inline-flex;align-items:center;gap:5px}
+.sw{width:12px;height:12px;border-radius:50%;border:1.5px solid #4B3426;display:inline-block}
+@media (max-width:599px){.bar{position:static}.try{grid-template-columns:1fr}.try .out{width:200px;margin:0 auto}}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.grid.ev{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.tile{background:var(--tile);border:2.5px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
+.tile:hover{transform:translateY(-2px) rotate(-.4deg)}
+.tile[hidden]{display:none}
+.panes{display:grid;grid-template-columns:1fr}
+.pane{padding:8px;display:flex;justify-content:center;align-items:center}
+.pane.l{background:#FBF6EA}
+.pane.d{background:#17211A}
+.pane img,.pane svg{width:100%;height:auto;display:block}
+.both .panes{grid-template-columns:1fr 1fr}
+.both .grid:not(.ev){grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.both .grid.ev{grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}
+@media (max-width:599px){.both .grid.ev{grid-template-columns:1fr}}
+:root:not(.both)[data-theme="dark"] .pane.l,:root:not(.both):not([data-theme="dark"]) .pane.d{display:none}
+.phone .grid:not(.ev) .pane img,.phone .grid:not(.ev) .pane svg{width:120px}
+.phone .grid.ev .pane img{width:240px}
+.cap{padding:8px 12px 12px;border-top:2px dashed var(--line);font-size:13px}
+.cap q{display:block;font-weight:800;quotes:"\201C" "\201D"}
+.cap small{display:block;color:var(--muted);font-weight:700;font-size:11.5px;margin-top:2px}
+.more{display:block;margin:18px auto 0;font:inherit;font-weight:800;color:var(--ink);background:var(--pink);border:2.5px solid var(--ink);border-radius:999px;padding:9px 20px;box-shadow:4px 4px 0 var(--ink);cursor:pointer}
+.empty{color:var(--muted);padding:18px;border:2px dashed var(--line);border-radius:16px;text-align:center}
+footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}.tile:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="mascot" id="mascot" aria-hidden="true"></div>
+    <div>
+      <h1>Drink illustrator</h1>
+      <p class="sub">Every matcha on a menu gets a cartoon, even when nobody posted a photo. A drink is built from parts (cup, layers, ice, foam, toppings, straw, garnish, Mattie) read from its name, so the same drink always looks the same.</p>
+    </div>
+  </header>
+
+  <div class="bar" role="toolbar" aria-label="View">
+    <div class="seg" id="theme" aria-label="Background">
+      <button data-v="light">Light</button><button data-v="dark">Dark</button><button data-v="both">Both</button>
+    </div>
+    <div class="seg" id="size" aria-label="Size">
+      <button data-v="full">Big</button><button data-v="phone">Phone size</button>
+    </div>
+    <input type="search" id="q" placeholder="Filter: ube, boba, tonic…" aria-label="Filter drinks">
+    <span class="count" id="count"></span>
+  </div>
+
+  <section>
+    <h2>Try a drink <span class="pill">live</span></h2>
+    <p class="hint">Type any drink the way a menu says it. This is the same code the map and <code>npm run art</code> use.</p>
+    <div class="try">
+      <div>
+        <label for="t">Drink description</label>
+        <input id="t" value="iced strawberry matcha latte with boba" autocomplete="off" spellcheck="false">
+        <div class="eg" id="eg"></div>
+        <div class="parts" id="parts"></div>
+      </div>
+      <div class="out" id="out" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The test menu <span class="pill">12</span></h2>
+    <p class="hint">The looks the illustrator has to get right, drawn live in your browser.</p>
+    <div class="grid" id="tests"></div>
+  </section>
+
+  <section>
+    <h2>From the menus <span class="pill" id="nd">0</span></h2>
+    <p class="hint">Every distinct drink and sweet on a pop-up menu, as committed in <code>site/art/drinks/</code>.</p>
+    <div class="grid" id="drinks"></div>
+  </section>
+
+  <section>
+    <h2>Event scenes <span class="pill" id="ne">0</span></h2>
+    <p class="hint">One 16:10 scene for each pop-up without a downloaded photo: its signature drinks, Mattie and the brand.</p>
+    <div class="grid ev" id="events"></div>
+    <button class="more" id="more" hidden>Show more scenes</button>
+  </section>
+
+  <footer>Matcha Map · art generator <span id="ver"></span></footer>
+</div>
+
+<script type="module">
+import { specFromText, drawDrink, parseSymbols, TEST_DRINKS, VERSION } from "../art.js";
+
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const root = document.documentElement;
+const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+$("#ver").textContent = VERSION;
+
+// view toggles
+function setTheme(v) {
+  root.classList.toggle("both", v === "both");
+  root.dataset.theme = v === "dark" ? "dark" : v === "both" ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : "light";
+  for (const b of $("#theme").children) b.setAttribute("aria-pressed", String(b.dataset.v === v));
+  store.set("matchamap.gallery.theme", v);
+}
+function setSize(v) {
+  root.classList.toggle("phone", v === "phone");
+  for (const b of $("#size").children) b.setAttribute("aria-pressed", String(b.dataset.v === v));
+}
+$("#theme").addEventListener("click", (e) => e.target.dataset.v && setTheme(e.target.dataset.v));
+$("#size").addEventListener("click", (e) => e.target.dataset.v && setSize(e.target.dataset.v));
+setTheme(store.get("matchamap.gallery.theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+setSize("full");
+
+let symbols = {};
+try { symbols = parseSymbols(await (await fetch("../characters.svg")).text()); } catch {}
+if (symbols["m-wave"]) $("#mascot").innerHTML = `<svg viewBox="${symbols["m-wave"].vb}">${symbols["m-wave"].body}</svg>`;
+
+const partsOf = (s) => {
+  if (!s) return `<span>not a drink or sweet</span>`;
+  const out = [`<span>${esc(s.vessel)}${s.item ? " · " + esc(s.item) : ""}</span>`];
+  for (const l of (s.layers || [])) out.push(`<span><i class="sw" style="background:${l.c}"></i>${esc(l.n)}</span>`);
+  for (const c of (s.kind === "sweet" ? s.colors : [])) out.push(`<span><i class="sw" style="background:${c}"></i></span>`);
+  if (s.ice) out.push(`<span>${s.ice} ice</span>`);
+  if (s.top) out.push(`<span>${esc(s.top.type)}</span>`);
+  for (const t of s.toppings) out.push(`<span>${esc(t)}</span>`);
+  for (const g of s.garnish) out.push(`<span>${esc(g.type)}</span>`);
+  if (s.straw) out.push(`<span><i class="sw" style="background:${s.straw.c}"></i>straw</span>`);
+  return out.join("");
+};
+const tile = (art, text, small) => `<figure class="tile" data-q="${esc(text.toLowerCase())}" style="margin:0"><div class="panes"><div class="pane l">${art}</div><div class="pane d">${art}</div></div><figcaption class="cap"><q>${esc(text)}</q>${small ? `<small>${esc(small)}</small>` : ""}</figcaption></figure>`;
+
+// try it
+function tryIt() {
+  const t = $("#t").value, s = specFromText(t);
+  $("#out").innerHTML = s ? drawDrink(s, { symbols, uid: "try" }) : `<div class="empty">Not a drink or sweet I know yet.</div>`;
+  $("#parts").innerHTML = partsOf(s);
+}
+$("#t").addEventListener("input", tryIt);
+$("#eg").innerHTML = ["hot hojicha latte to go", "canned yuzu sparkling matcha", "ube soft serve", "usucha", "matcha cookie", "dirty matcha with cold foam", "mango matcha with mochi", "strawberry daifuku"]
+  .map((x) => `<button type="button">${esc(x)}</button>`).join("");
+$("#eg").addEventListener("click", (e) => { if (e.target.tagName === "BUTTON") { $("#t").value = e.target.textContent; tryIt(); } });
+tryIt();
+
+// test menu, drawn live
+$("#tests").innerHTML = TEST_DRINKS.map((t, i) => { const s = specFromText(t); return tile(drawDrink(s, { symbols, uid: "t" + i }), t, `${s.vessel}${s.item ? " · " + s.item : ""}`); }).join("");
+
+// committed art
+let index = { drinks: {}, events: {} };
+try { index = await (await fetch("index.json", { cache: "no-cache" })).json(); } catch {}
+const drinks = Object.entries(index.drinks || {});
+$("#nd").textContent = drinks.length;
+$("#drinks").innerHTML = drinks.length ? drinks.map(([slug, d]) => tile(`<img src="${esc(d.file)}" alt="${esc(d.text)}" width="200" height="240" loading="lazy" decoding="async">`, d.text, d.spec ? `${d.spec.vessel}${d.spec.item ? " · " + d.spec.item : ""}` : "")).join("") : `<div class="empty">Run <code>npm run art</code> to draw the menus.</div>`;
+const events = Object.entries(index.events || {});
+$("#ne").textContent = events.length;
+let shown = 0;
+function moreEvents(all) {
+  const next = all ? events.length : Math.min(events.length, shown + 24);
+  $("#events").insertAdjacentHTML("beforeend", events.slice(shown, next).map(([id, d]) => tile(`<img src="${esc(d.file)}" alt="${esc(d.brand)}" width="640" height="400" loading="lazy" decoding="async">`, d.brand, (d.drinks || []).join(", ").replace(/-/g, " "))).join(""));
+  shown = next; $("#more").hidden = shown >= events.length; filter();
+}
+$("#more").addEventListener("click", () => moreEvents(false));
+moreEvents(false);
+
+// filter
+function filter() {
+  const q = $("#q").value.trim().toLowerCase(); let n = 0;
+  for (const f of document.querySelectorAll(".grid .tile")) { const hit = !q || f.dataset.q.includes(q); f.hidden = !hit; if (hit) n++; }
+  $("#count").textContent = q ? `${n} match${n === 1 ? "" : "es"}` : `${drinks.length} drinks · ${events.length} scenes`;
+}
+$("#q").addEventListener("input", () => { if ($("#q").value && shown < events.length) moreEvents(true); filter(); });
+filter();
+</script>
+</body>
+</html>
