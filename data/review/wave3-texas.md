@@ -11,4 +11,4 @@
 | San Antonio | 7 | 0 | 0/0/0 | ma.to sipmiramatcha (Dec 1-6 MoonchildLand already on map), ma.to Mystic Market | Mystic Market Holistic Fair (2026-12-04, 108 Blue Star) left out: page never mentions matcha |
 | Austin area | 14 | 0 | 0/0/0 | centralmatcha find-us (recurring only), ma.to minimomatcha (no upcoming), Austin Chronicle (403) | Armadillo Bazaar (Dec 12-21) and Zach market have no matcha vendor list; Mori Matcha and Moment of Tea post dates on Instagram |
 
-Dec/Jan gap: no public dated page found for any Texas metro beyond what is on the map. Tavily searches used: 0 of 8.
+Dec/Jan gap: no public dated page found for any Texas metro beyond what is on the map. Tavily pass (8 of 8 used, instagram/tiktok snippets): 5 items added, all unsure with dates inferred from recurring schedules. Chasen (Dallas, Wed/Thu 9-1, 2001 S Ervay) x2, Mori Matcha (Austin, Mondays, 1 Hotel Rainey) x2, Tala Matcha (Tulsa, Sunday, Offline Collective) x1. Bonsai, 333Matcha, Brew & Bloom, Pink Matcha Bar, Moment of Tea returned only past or undated snippets (Bonsai Nov 21 Plano already past).

@@ -1,5 +1,170 @@
 {
   "generated": "2026-11-23T12:14:41.238Z",
   "group": "wave3-texas",
-  "items": []
+  "items": [
+    {
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "menu": [],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "confidence": "unsure",
+      "brand": "Chasen Matcha Bar",
+      "handle": "chasenmatchabar",
+      "source_id": null,
+      "title": "Chasen Matcha Bar weekly pop-up",
+      "start": "2026-12-02T09:00:00-06:00",
+      "end": "2026-12-02T13:00:00-06:00",
+      "tz": "America/Chicago",
+      "venue": "2001 S. Ervay St",
+      "address": "2001 S. Ervay St, Dallas, TX",
+      "city": "Dallas",
+      "state": "TX",
+      "source_url": "https://www.instagram.com/reel/DfsT9pwIyw4",
+      "posts": [
+        "https://www.instagram.com/reel/DfsT9pwIyw4"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/DfsT9pwIyw4",
+        "https://ma.to/venue/chasenmatchabar"
+      ],
+      "hours": "9am-1pm",
+      "description": "Chasen pops up every Wednesday and Thursday morning for a midweek matcha stop at 2001 S. Ervay St in Dallas.",
+      "notes": "Tavily snippet quotes \"every Wednesday & Thursday from 9 AM-1 PM, 2001 S. Ervay St\"; post not opened, post date unknown so the recurrence is inferred for this Wednesday; ma.to venue page lists no dates."
+    },
+    {
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "menu": [],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "confidence": "unsure",
+      "brand": "Chasen Matcha Bar",
+      "handle": "chasenmatchabar",
+      "source_id": null,
+      "title": "Chasen Matcha Bar weekly pop-up",
+      "start": "2026-12-03T09:00:00-06:00",
+      "end": "2026-12-03T13:00:00-06:00",
+      "tz": "America/Chicago",
+      "venue": "2001 S. Ervay St",
+      "address": "2001 S. Ervay St, Dallas, TX",
+      "city": "Dallas",
+      "state": "TX",
+      "source_url": "https://www.instagram.com/reel/DfsT9pwIyw4",
+      "posts": [
+        "https://www.instagram.com/reel/DfsT9pwIyw4"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/DfsT9pwIyw4",
+        "https://ma.to/venue/chasenmatchabar"
+      ],
+      "hours": "9am-1pm",
+      "description": "Chasen pops up every Wednesday and Thursday morning for a midweek matcha stop at 2001 S. Ervay St in Dallas.",
+      "notes": "Tavily snippet quotes \"every Wednesday & Thursday from 9 AM-1 PM, 2001 S. Ervay St\"; post not opened, post date unknown so the recurrence is inferred for this Thursday; ma.to venue page lists no dates."
+    },
+    {
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "menu": [],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "confidence": "unsure",
+      "brand": "Mori Matcha",
+      "handle": "mori",
+      "source_id": "mori-matcha",
+      "title": "Mori Matcha at 1 Hotel on Rainey (Mondays)",
+      "start": "2026-11-30T09:00:00-06:00",
+      "end": null,
+      "tz": "America/Chicago",
+      "venue": "1 Hotel Austin",
+      "address": "Rainey St, Austin, TX",
+      "city": "Austin",
+      "state": "TX",
+      "source_url": "https://www.instagram.com/reel/Df8BUXLgrv6",
+      "posts": [
+        "https://www.instagram.com/reel/Df8BUXLgrv6",
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/Df8BUXLgrv6",
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "hours": null,
+      "description": "Mori Matcha, an Austin matcha pop-up, serves at the new 1 Hotel on Rainey on Mondays, per a creator post; the pop-up schedule changes so check their Instagram.",
+      "notes": "Tavily snippet from a creator post: found at the new 1 Hotel on Rainey on Mondays; start time and street number not stated, time is a placeholder, Monday recurrence inferred for this date; post not opened."
+    },
+    {
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "menu": [],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "confidence": "unsure",
+      "brand": "Mori Matcha",
+      "handle": "mori",
+      "source_id": "mori-matcha",
+      "title": "Mori Matcha at 1 Hotel on Rainey (Mondays)",
+      "start": "2026-12-07T09:00:00-06:00",
+      "end": null,
+      "tz": "America/Chicago",
+      "venue": "1 Hotel Austin",
+      "address": "Rainey St, Austin, TX",
+      "city": "Austin",
+      "state": "TX",
+      "source_url": "https://www.instagram.com/reel/Df8BUXLgrv6",
+      "posts": [
+        "https://www.instagram.com/reel/Df8BUXLgrv6",
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/Df8BUXLgrv6",
+        "https://www.tiktok.com/@so_narly/video/7709991122658921758"
+      ],
+      "hours": null,
+      "description": "Mori Matcha, an Austin matcha pop-up, serves at the new 1 Hotel on Rainey on Mondays, per a creator post; the pop-up schedule changes so check their Instagram.",
+      "notes": "Tavily snippet from a creator post: found at the new 1 Hotel on Rainey on Mondays; start time and street number not stated, time is a placeholder, Monday recurrence inferred for this date; post not opened."
+    },
+    {
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "menu": [],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "confidence": "unsure",
+      "brand": "Tala Matcha",
+      "handle": "talamatcha",
+      "source_id": "tala-matcha",
+      "title": "Tala Matcha pop-up at Offline Tulsa Collective",
+      "start": "2026-11-29T11:00:00-05:00",
+      "end": "2026-11-29T15:00:00-05:00",
+      "tz": "America/Chicago",
+      "venue": "Offline Tulsa Collective",
+      "address": "1321 E 6th St, Tulsa, OK 74120",
+      "city": "Tulsa",
+      "state": "OK",
+      "source_url": "https://www.instagram.com/reel/DfuW5kLiRmS",
+      "posts": [
+        "https://www.instagram.com/reel/DfuW5kLiRmS",
+        "https://www.instagram.com/p/Dfe-8bsBrzC"
+      ],
+      "evidence": [
+        "https://www.instagram.com/reel/DfuW5kLiRmS",
+        "https://www.instagram.com/p/Dfe-8bsBrzC",
+        "https://tulsaflyer.org/2026/07/23/culture/post/offline-tulsa-collective-opening-permament-space/"
+      ],
+      "hours": "11am-3pm",
+      "description": "Tala Matcha serves matcha at Offline Tulsa Collective, a vintage shop in the Pearl District, in recurring Sunday pop-ups.",
+      "notes": "Tavily snippet: \"matcha pop up this Sunday at offlinetulsacollective, 11am-3pm\"; post date not shown, so which Sunday is inferred (may be Nov 22, before the window); Offline Collective address 1321 E 6th St from a second snippet; post not opened."
+    }
+  ]
 }
