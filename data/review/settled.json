@@ -1,0 +1,432 @@
+{
+  "about": "Review items a person has settled; npm run review hides them. Keyed by page URL plus event day (a run file is rewritten, notes on its items do not survive). verdict: promoted | dropped | past.",
+  "settled": [
+    {
+      "url": "https://ma.to/event/japanese-bread-making-matcha-workshop-6-sept-2026",
+      "day": "2026-09-06",
+      "verdict": "past",
+      "why": "past: 2026-09-06 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/silver-matcha-ceremony-13-sep-2026-10am",
+      "day": "2026-09-13",
+      "verdict": "past",
+      "why": "past: 2026-09-13 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/matcha-matcha-matcha-27-sep-2026-1",
+      "day": "2026-09-27",
+      "verdict": "past",
+      "why": "past: 2026-09-27 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/isshiki-matcha-x-curvlife-pop-up-oct-11-2026",
+      "day": "2026-10-11",
+      "verdict": "past",
+      "why": "past: 2026-10-11 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/matcha-paint-n-sip-workshop-potters-union-18-oct-2026-0900",
+      "day": "2026-10-18",
+      "verdict": "past",
+      "why": "past: 2026-10-18 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/pumpkin-pie-pancake-matcha-launch-01-nov-2026-1",
+      "day": "2026-11-01",
+      "verdict": "past",
+      "why": "past: 2026-11-01 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/blissd-whiskd-matcha-workshop-2026-11-07-12pm",
+      "day": "2026-11-07",
+      "verdict": "past",
+      "why": "past: 2026-11-07 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/matcha-party-20-19-nov-2026-1",
+      "day": "2026-11-19",
+      "verdict": "past",
+      "why": "past: 2026-11-19 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/mika-matcha-birthday-pop-up-21-nov-2026-1",
+      "day": "2026-11-21",
+      "verdict": "past",
+      "why": "past: 2026-11-21 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/moody-matcha-workshop-21-nov-2026-1",
+      "day": "2026-11-21",
+      "verdict": "past",
+      "why": "past: 2026-11-21 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-tucson-creatives-edition-tickets-1986770817999",
+      "day": "2026-11-22",
+      "verdict": "past",
+      "why": "past: 2026-11-22 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/pembroke-pines/matcha-meetup-pembroke-pines/100001972097801612",
+      "day": "2026-11-22",
+      "verdict": "past",
+      "why": "past: 2026-11-22 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/newport-news/matcha-meetup-newport-news/100001972075256178",
+      "day": "2026-11-22",
+      "verdict": "past",
+      "why": "past: 2026-11-22 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/tulsa/matcha-meetup-tulsa-benefit-for-hope-connections-for-cancer/100001998619207852",
+      "day": "2026-11-22",
+      "verdict": "past",
+      "why": "past: 2026-11-22 has passed",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-virginia-beach-giving-back-edition-tickets-1988717775401",
+      "day": "2026-11-23",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-moondays-ceremony-tickets-2000651451347",
+      "day": "2026-11-23",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-boise-giving-back-edition-tickets-1985218351530",
+      "day": "2026-11-27",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-chesapeake-tickets-1971930946544",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-detroit-film-music-industry-monthly-mingle-tickets-1992446498111",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation-tickets-2004914882384",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-workshop-tickets-2004866195761",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/shop-small-saturday-28-nov-2026-2",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "a general vendor market (vintage, art, plants) where matcha is one item among many; no matcha brand is named on the page",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-jacksonville-tickets-1971968729554",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-fort-worth-giving-back-edition-tickets-1974546231933",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/norfolk/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation/100002004914315689",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-nashville-film-music-speed-networking-roulette-tickets-1994330290585",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-nashville-film-music-industry-monthly-mingle-tickets-1992383963067",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/salt-lake-city/matcha-meetup-slc-film-music-industry-monthly-mingle/100001992441471075",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/weekly-matcha-workshop-28-nov-2026",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/moody-matcha-workshop-28-nov-2026",
+      "day": "2026-11-28",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-northridge-giving-back-edition-tickets-1990215054804",
+      "day": "2026-11-29",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-chatsworth-giving-back-edition-tickets-1990214991615",
+      "day": "2026-11-29",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-thousand-oaks-giving-back-edition-tickets-1990215113981",
+      "day": "2026-11-29",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/run-matcha-fiesta-29-nov-2026",
+      "day": "2026-11-29",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/philadelphia/matcha-walk-first-longevity-philly-event/4700031093813141",
+      "day": "2026-11-29",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.meetup.com/irvington-small-business-marketing-strategy-meetup-group/events/317332294/",
+      "day": "2026-11-29",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-fort-worth-giving-back-edition-tickets-1990218172128",
+      "day": "2026-11-29",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/tres-matcha-tres-fleur-1-pm-05-dec-2026",
+      "day": "2026-12-05",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/weekly-matcha-workshop-05-dec-2026",
+      "day": "2026-12-05",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921",
+      "day": "2026-12-06",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/matcha-bowl-whisk-holder-workshop-06-dec-2026",
+      "day": "2026-12-06",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/sioux-falls/chai-and-matcha-class/200031001517241",
+      "day": "2026-12-06",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.meetup.com/columbus-tea-lovers/events/317474944/",
+      "day": "2026-12-06",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-mesa-tickets-1974526090690",
+      "day": "2026-12-06",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/san-francisco/matcha-mornings-founder-investor-meetup/4700031096727833",
+      "day": "2026-12-08",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/new-york/design-matcha-demo/4700031093557131",
+      "day": "2026-12-12",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/matcha-making-workshop-part-2-12-dec-2026",
+      "day": "2026-12-12",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-charlotte-creatives-giving-back-edition-tickets-1988352720512",
+      "day": "2026-12-12",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/matcha-bowl-whisk-holder-workshop-13-dec-2026",
+      "day": "2026-12-13",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/new-york/matcha-mahjong-cocktail-evening/4700031099938445",
+      "day": "2026-12-16",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/mats-matcha-19-dec-2026",
+      "day": "2026-12-19",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-virginia-beach-entrepreneur-speed-networking-roulette-tickets-1994355378624",
+      "day": "2026-12-20",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-charlotte-entrepreneur-speed-networking-roulette-tickets-1994335305585",
+      "day": "2026-12-20",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-newport-news-tickets-1972075719564",
+      "day": "2026-12-27",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-austin-entrepreneur-speed-networking-roulette-tickets-1994332032796",
+      "day": "2026-12-27",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-columbus-tickets-1974524772748",
+      "day": "2026-12-27",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/matcha-meetup-nashville-entrepreneur-speed-networking-roulette-tickets-1994320726980",
+      "day": "2026-12-27",
+      "verdict": "dropped",
+      "why": "networking meetup series (ADDVentures): the venue reads Cafe of the Day, Week or Month until RSVP, so there is no place, and it is not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/mats-matcha-16-jan-2027",
+      "day": "2027-01-16",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/mats-matcha-20-feb-2027",
+      "day": "2027-02-20",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://allevents.in/atlanta/matcha-crawl/4600030716361338",
+      "day": "2027-03-03",
+      "verdict": "dropped",
+      "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
+      "on": "2026-11-23"
+    }
+  ]
+}
