@@ -7,7 +7,7 @@ X-WR-CALNAME:Alive Coffee Matcha & More pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:c25ce99dd8a9@matchamap-cu7.pages.dev
+UID:c25ce99dd8a9@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T170000Z
@@ -16,8 +16,8 @@ SUMMARY:Alive Coffee Matcha & More pop-up at BOXi Park
 LOCATION:Tampa\, FL
 DESCRIPTION:ORLANDO AND LAKE NONA AREA\, YOUR HOLIDAY DRINKS ARE CALLING!\n
  Menu: chocolate\, latte\nDetails not confirmed yet. Check the brand's post
-  before you go.\nMore: https://matchamap-cu7.pages.dev/e/c25ce99dd8a9/
-URL:https://matchamap-cu7.pages.dev/e/c25ce99dd8a9/
+  before you go.\nMore: https://matchamap.app/e/c25ce99dd8a9/
+URL:https://matchamap.app/e/c25ce99dd8a9/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

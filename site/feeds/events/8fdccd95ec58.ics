@@ -7,7 +7,7 @@ X-WR-CALNAME:Luanne's Coffee & Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:8fdccd95ec58@matchamap-cu7.pages.dev
+UID:8fdccd95ec58@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20270201
@@ -15,9 +15,9 @@ DTEND;VALUE=DATE:20270202
 SUMMARY:Luanne's Coffee & Matcha pop-up
 LOCATION:Austin\, TX
 DESCRIPTION:**GIVEAWAY CLOSED**\nPrice: free\nDetails not confirmed yet. Ch
- eck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev
- /e/8fdccd95ec58/
-URL:https://matchamap-cu7.pages.dev/e/8fdccd95ec58/
+ eck the brand's post before you go.\nMore: https://matchamap.app/e/8fdccd9
+ 5ec58/
+URL:https://matchamap.app/e/8fdccd95ec58/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

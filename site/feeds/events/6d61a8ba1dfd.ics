@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha event pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:6d61a8ba1dfd@matchamap-cu7.pages.dev
+UID:6d61a8ba1dfd@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261212T233000Z
@@ -17,8 +17,8 @@ LOCATION:11 Green Pond Road\, Rockaway\, NJ
 DESCRIPTION:Sip\, create\, and celebrate! Join us December 12 for a festive
   Matcha Latte & Latte Candle Making Class. Handmade gifts\, holiday fun & 
  memori\nMenu: latte\nPrice: $49.87\nLikely\, not fully confirmed.\nMore: h
- ttps://matchamap-cu7.pages.dev/e/6d61a8ba1dfd/
-URL:https://matchamap-cu7.pages.dev/e/6d61a8ba1dfd/
+ ttps://matchamap.app/e/6d61a8ba1dfd/
+URL:https://matchamap.app/e/6d61a8ba1dfd/
 GEO:40.911908;-74.501272
 STATUS:CONFIRMED
 CATEGORIES:Matcha

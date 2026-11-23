@@ -7,7 +7,7 @@ X-WR-CALNAME:Crème Coffee & Social pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:288ec37d2e7d@matchamap-cu7.pages.dev
+UID:288ec37d2e7d@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261219T150000Z
@@ -17,9 +17,9 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
  The Creamery District. The class is $15\, and the ticket includes matcha. 
  It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/288ec37d2e7d/
-URL:https://matchamap-cu7.pages.dev/e/288ec37d2e7d/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/28
+ 8ec37d2e7d/
+URL:https://matchamap.app/e/288ec37d2e7d/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

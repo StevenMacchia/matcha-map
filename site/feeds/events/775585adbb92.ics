@@ -7,7 +7,7 @@ X-WR-CALNAME:HerCafe pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:775585adbb92@matchamap-cu7.pages.dev
+UID:775585adbb92@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T140000Z
@@ -21,8 +21,8 @@ DESCRIPTION:HerCafe is Kansas City's first mobile matcha cart\, hand-whiski
  nana pudding matcha\, berry chantilly matcha\, peach cobbler matcha\, salt
  ed honey hojicha\, vanilla matcha\, maple matcha\, hojicha\nPrice: $7-8\nD
  etails not confirmed yet. Check the brand's post before you go.\nMore: htt
- ps://matchamap-cu7.pages.dev/e/775585adbb92/
-URL:https://matchamap-cu7.pages.dev/e/775585adbb92/
+ ps://matchamap.app/e/775585adbb92/
+URL:https://matchamap.app/e/775585adbb92/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

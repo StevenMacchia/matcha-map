@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: West Des Moines\, IA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:9c596b6663f7@matchamap-cu7.pages.dev
+UID:9c596b6663f7@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261206
@@ -16,9 +16,8 @@ SUMMARY:Matcha LUV pop-up
 LOCATION:West Des Moines\, IA
 DESCRIPTION:OUR NOVEMBER MATCHA MENU IS HERE!\nMenu: raspberry\, cheesecake
  \, chocolate\, vanilla cold foam\nDetails not confirmed yet. Check the bra
- nd's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/9c596b66
- 63f7/
-URL:https://matchamap-cu7.pages.dev/e/9c596b6663f7/
+ nd's post before you go.\nMore: https://matchamap.app/e/9c596b6663f7/
+URL:https://matchamap.app/e/9c596b6663f7/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

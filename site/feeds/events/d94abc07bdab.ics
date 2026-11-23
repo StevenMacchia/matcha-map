@@ -7,7 +7,7 @@ X-WR-CALNAME:Tempo by Hilton Nashville Downtown pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:d94abc07bdab@matchamap-cu7.pages.dev
+UID:d94abc07bdab@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T190000Z
@@ -17,9 +17,8 @@ LOCATION:Bluestone Lane - Downtown Café\, 127 Rosa L Parks Boulevard\, Nas
  hville\, TN
 DESCRIPTION:Learn the art of matcha! Join us at Bluestone Lane for a hands-
  on latte art class featuring premium matcha\, expert tips & delicious sips
- .\nMenu: latte\nPrice: free\nMore: https://matchamap-cu7.pages.dev/e/d94ab
- c07bdab/
-URL:https://matchamap-cu7.pages.dev/e/d94abc07bdab/
+ .\nMenu: latte\nPrice: free\nMore: https://matchamap.app/e/d94abc07bdab/
+URL:https://matchamap.app/e/d94abc07bdab/
 GEO:36.159821;-86.782943
 STATUS:CONFIRMED
 CATEGORIES:Matcha

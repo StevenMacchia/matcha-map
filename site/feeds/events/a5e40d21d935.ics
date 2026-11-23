@@ -7,15 +7,15 @@ X-WR-CALNAME:Dream Tea NYC pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:a5e40d21d935@matchamap-cu7.pages.dev
+UID:a5e40d21d935@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T150000Z
 DTEND:20261129T170000Z
 SUMMARY:Dream Tea NYC at Grand Bazaar UWS (Indoors)!
 LOCATION:Grand Bazaar NYC\, 100 West 77th Street\, New York\, NY
-DESCRIPTION:More: https://matchamap-cu7.pages.dev/e/a5e40d21d935/
-URL:https://matchamap-cu7.pages.dev/e/a5e40d21d935/
+DESCRIPTION:More: https://matchamap.app/e/a5e40d21d935/
+URL:https://matchamap.app/e/a5e40d21d935/
 GEO:40.780717;-73.977286
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -7,7 +7,7 @@ X-WR-CALNAME:Goldie's Donuts & Bakery pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:834a539a877b@matchamap-cu7.pages.dev
+UID:834a539a877b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261205T173000Z
@@ -16,8 +16,8 @@ SUMMARY:December 2026 Spicy Sculpt with Goldies x Energi
 LOCATION:Energi Studios\, 4126 Lorain Avenue\, Cleveland\, OH
 DESCRIPTION:Join us for Spicy Sculpt\, a feel-good sculpt pilates class set
   to a Latin playlist\, followed by coffee and matcha at Goldie's!\nPrice: 
- $33.85\nMore: https://matchamap-cu7.pages.dev/e/834a539a877b/
-URL:https://matchamap-cu7.pages.dev/e/834a539a877b/
+ $33.85\nMore: https://matchamap.app/e/834a539a877b/
+URL:https://matchamap.app/e/834a539a877b/
 GEO:41.480215;-81.714069
 STATUS:CONFIRMED
 CATEGORIES:Matcha

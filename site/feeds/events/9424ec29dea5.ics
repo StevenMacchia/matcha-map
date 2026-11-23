@@ -7,7 +7,7 @@ X-WR-CALNAME:St. Noir Cafe pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:9424ec29dea5@matchamap-cu7.pages.dev
+UID:9424ec29dea5@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261122T182606Z
 DTSTART:20261127T230000Z
@@ -17,8 +17,8 @@ LOCATION:New Orleans\, LA
 DESCRIPTION:Pause & Pour: Bayou Classic Edition brings a Bayou Classic kick
  back to St. Noir Cafe on Friday\, November 27\, from 5 to 10 pm.\nDetails 
  not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/9424ec29dea5/
-URL:https://matchamap-cu7.pages.dev/e/9424ec29dea5/
+ tchamap.app/e/9424ec29dea5/
+URL:https://matchamap.app/e/9424ec29dea5/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

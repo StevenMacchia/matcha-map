@@ -7,7 +7,7 @@ X-WR-CALNAME:Cafe Monet Art & Clay Studio pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e80bdc32cf0b@matchamap-cu7.pages.dev
+UID:e80bdc32cf0b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261213T160000Z
@@ -18,8 +18,8 @@ DESCRIPTION:The two-hour matcha-inspired pottery workshop covers throwing a
   matcha bowl on the pottery wheel with instructor guidance and painting a 
  premade ceramic whisk holder to complete the set.\nMenu: matcha bowl\nPric
  e: $85\nDetails not confirmed yet. Check the brand's post before you go.\n
- More: https://matchamap-cu7.pages.dev/e/e80bdc32cf0b/
-URL:https://matchamap-cu7.pages.dev/e/e80bdc32cf0b/
+ More: https://matchamap.app/e/e80bdc32cf0b/
+URL:https://matchamap.app/e/e80bdc32cf0b/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

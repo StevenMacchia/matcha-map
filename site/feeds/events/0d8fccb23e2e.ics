@@ -7,7 +7,7 @@ X-WR-CALNAME:Mira Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:0d8fccb23e2e@matchamap-cu7.pages.dev
+UID:0d8fccb23e2e@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T170000Z
@@ -16,8 +16,8 @@ SUMMARY:MoonchildLand: Local Love
 LOCATION:San Antonio\, TX
 DESCRIPTION:Local Love celebrates small businesses\, local creatives\, good
   food and matcha.\nDetails not confirmed yet. Check the brand's post befor
- e you go.\nMore: https://matchamap-cu7.pages.dev/e/0d8fccb23e2e/
-URL:https://matchamap-cu7.pages.dev/e/0d8fccb23e2e/
+ e you go.\nMore: https://matchamap.app/e/0d8fccb23e2e/
+URL:https://matchamap.app/e/0d8fccb23e2e/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

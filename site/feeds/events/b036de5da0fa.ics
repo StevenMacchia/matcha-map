@@ -7,7 +7,7 @@ X-WR-CALNAME:Mira Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:b036de5da0fa@matchamap-cu7.pages.dev
+UID:b036de5da0fa@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261204T000000Z
@@ -17,8 +17,8 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:Creator Day is an intimate evening with local creators\, person
  alized pieces and Moonchild magic. Local content creators can reach out fo
  r an invite.\nDetails not confirmed yet. Check the brand's post before you
-  go.\nMore: https://matchamap-cu7.pages.dev/e/b036de5da0fa/
-URL:https://matchamap-cu7.pages.dev/e/b036de5da0fa/
+  go.\nMore: https://matchamap.app/e/b036de5da0fa/
+URL:https://matchamap.app/e/b036de5da0fa/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

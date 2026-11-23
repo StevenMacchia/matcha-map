@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Austin\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:946a1a0bba72@matchamap-cu7.pages.dev
+UID:946a1a0bba72@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261124
@@ -16,14 +16,14 @@ SUMMARY:Moment of Tea pop-up at Casa
 LOCATION:Casa\, Austin\, TX
 DESCRIPTION:The Scorpio New Moon Circle Monday\, November 9 6:30 to 8 p.m. 
  Tea is included.\nDetails not confirmed yet. Check the brand's post before
-  you go.\nMore: https://matchamap-cu7.pages.dev/e/946a1a0bba72/
-URL:https://matchamap-cu7.pages.dev/e/946a1a0bba72/
+  you go.\nMore: https://matchamap.app/e/946a1a0bba72/
+URL:https://matchamap.app/e/946a1a0bba72/
 GEO:30.326656;-97.689551
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:1be5bbd59a47@matchamap-cu7.pages.dev
+UID:1be5bbd59a47@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261128
@@ -31,13 +31,13 @@ DTEND;VALUE=DATE:20261129
 SUMMARY:Central Matcha pop-up
 LOCATION:Austin\, TX
 DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/1be5bbd59a47/
-URL:https://matchamap-cu7.pages.dev/e/1be5bbd59a47/
+ .\nMore: https://matchamap.app/e/1be5bbd59a47/
+URL:https://matchamap.app/e/1be5bbd59a47/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:e515c047c297@matchamap-cu7.pages.dev
+UID:e515c047c297@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T160000Z
@@ -49,14 +49,14 @@ DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha
  from a market stand at the Sunday Mueller farmers market. Expect matcha sh
  ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
  tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/e515c047c297/
-URL:https://matchamap-cu7.pages.dev/e/e515c047c297/
+ ot fully confirmed.\nMore: https://matchamap.app/e/e515c047c297/
+URL:https://matchamap.app/e/e515c047c297/
 GEO:30.299843;-97.702653
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:69a125250524@matchamap-cu7.pages.dev
+UID:69a125250524@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261206T160000Z
@@ -67,13 +67,13 @@ DESCRIPTION:The two-hour matcha-inspired pottery workshop covers throwing a
   matcha bowl on the pottery wheel with instructor guidance and painting a 
  premade ceramic whisk holder to complete the set.\nMenu: matcha bowl\nPric
  e: $85\nDetails not confirmed yet. Check the brand's post before you go.\n
- More: https://matchamap-cu7.pages.dev/e/69a125250524/
-URL:https://matchamap-cu7.pages.dev/e/69a125250524/
+ More: https://matchamap.app/e/69a125250524/
+URL:https://matchamap.app/e/69a125250524/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:cd6d451cf76d@matchamap-cu7.pages.dev
+UID:cd6d451cf76d@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261206T160000Z
@@ -85,14 +85,14 @@ DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha
  from a market stand at the Sunday Mueller farmers market. Expect matcha sh
  ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
  tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/cd6d451cf76d/
-URL:https://matchamap-cu7.pages.dev/e/cd6d451cf76d/
+ ot fully confirmed.\nMore: https://matchamap.app/e/cd6d451cf76d/
+URL:https://matchamap.app/e/cd6d451cf76d/
 GEO:30.299843;-97.702653
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:94d6fbf20396@matchamap-cu7.pages.dev
+UID:94d6fbf20396@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261213T160000Z
@@ -104,14 +104,14 @@ DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha
  from a market stand at the Sunday Mueller farmers market. Expect matcha sh
  ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
  tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/94d6fbf20396/
-URL:https://matchamap-cu7.pages.dev/e/94d6fbf20396/
+ ot fully confirmed.\nMore: https://matchamap.app/e/94d6fbf20396/
+URL:https://matchamap.app/e/94d6fbf20396/
 GEO:30.299843;-97.702653
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:e80bdc32cf0b@matchamap-cu7.pages.dev
+UID:e80bdc32cf0b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261213T160000Z
@@ -122,13 +122,13 @@ DESCRIPTION:The two-hour matcha-inspired pottery workshop covers throwing a
   matcha bowl on the pottery wheel with instructor guidance and painting a 
  premade ceramic whisk holder to complete the set.\nMenu: matcha bowl\nPric
  e: $85\nDetails not confirmed yet. Check the brand's post before you go.\n
- More: https://matchamap-cu7.pages.dev/e/e80bdc32cf0b/
-URL:https://matchamap-cu7.pages.dev/e/e80bdc32cf0b/
+ More: https://matchamap.app/e/e80bdc32cf0b/
+URL:https://matchamap.app/e/e80bdc32cf0b/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:0d1476a6d255@matchamap-cu7.pages.dev
+UID:0d1476a6d255@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261220T160000Z
@@ -140,14 +140,14 @@ DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha
  from a market stand at the Sunday Mueller farmers market. Expect matcha sh
  ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
  tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/0d1476a6d255/
-URL:https://matchamap-cu7.pages.dev/e/0d1476a6d255/
+ ot fully confirmed.\nMore: https://matchamap.app/e/0d1476a6d255/
+URL:https://matchamap.app/e/0d1476a6d255/
 GEO:30.299843;-97.702653
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:ed61ad4bc54a@matchamap-cu7.pages.dev
+UID:ed61ad4bc54a@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261227T160000Z
@@ -159,14 +159,14 @@ DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha
  from a market stand at the Sunday Mueller farmers market. Expect matcha sh
  ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
  tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/ed61ad4bc54a/
-URL:https://matchamap-cu7.pages.dev/e/ed61ad4bc54a/
+ ot fully confirmed.\nMore: https://matchamap.app/e/ed61ad4bc54a/
+URL:https://matchamap.app/e/ed61ad4bc54a/
 GEO:30.299843;-97.702653
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:558b04e798b5@matchamap-cu7.pages.dev
+UID:558b04e798b5@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20270103T160000Z
@@ -178,14 +178,14 @@ DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha
  from a market stand at the Sunday Mueller farmers market. Expect matcha sh
  ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
  tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/558b04e798b5/
-URL:https://matchamap-cu7.pages.dev/e/558b04e798b5/
+ ot fully confirmed.\nMore: https://matchamap.app/e/558b04e798b5/
+URL:https://matchamap.app/e/558b04e798b5/
 GEO:30.299843;-97.702653
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:8fdccd95ec58@matchamap-cu7.pages.dev
+UID:8fdccd95ec58@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20270201
@@ -193,14 +193,14 @@ DTEND;VALUE=DATE:20270202
 SUMMARY:Luanne's Coffee & Matcha pop-up
 LOCATION:Austin\, TX
 DESCRIPTION:**GIVEAWAY CLOSED**\nPrice: free\nDetails not confirmed yet. Ch
- eck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev
- /e/8fdccd95ec58/
-URL:https://matchamap-cu7.pages.dev/e/8fdccd95ec58/
+ eck the brand's post before you go.\nMore: https://matchamap.app/e/8fdccd9
+ 5ec58/
+URL:https://matchamap.app/e/8fdccd95ec58/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:739788416f80@matchamap-cu7.pages.dev
+UID:739788416f80@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20270322
@@ -209,8 +209,8 @@ SUMMARY:Luanne's Coffee & Matcha pop-up
 LOCATION:Austin\, TX
 DESCRIPTION:***this menu has been replaced by our fall specials 9/19***\nMe
  nu: latte\nDetails not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/739788416f80/
-URL:https://matchamap-cu7.pages.dev/e/739788416f80/
+ .\nMore: https://matchamap.app/e/739788416f80/
+URL:https://matchamap.app/e/739788416f80/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

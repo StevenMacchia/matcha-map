@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Fest pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:b0cea107b5c1@matchamap-cu7.pages.dev
+UID:b0cea107b5c1@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261212
@@ -15,9 +15,9 @@ DTEND;VALUE=DATE:20261213
 SUMMARY:Matcha Fest pop-up at MatchaFest Miami
 LOCATION:Miami\, FL
 DESCRIPTION:lotusbiscoffus IS COMING TO MIAMI!\nDetails not confirmed yet. 
- Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
- ev/e/b0cea107b5c1/
-URL:https://matchamap-cu7.pages.dev/e/b0cea107b5c1/
+ Check the brand's post before you go.\nMore: https://matchamap.app/e/b0cea
+ 107b5c1/
+URL:https://matchamap.app/e/b0cea107b5c1/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

@@ -7,7 +7,7 @@ X-WR-CALNAME:Saikō Matcha House pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:4fe324a46814@matchamap-cu7.pages.dev
+UID:4fe324a46814@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261128T160000Z
@@ -16,9 +16,9 @@ SUMMARY:Saikō Matcha House pop-up at Maeve
 LOCATION:Maeve at The Village District\, 2068 Clark Ave\, Raleigh\, NC
 DESCRIPTION:Raleigh-born matcha pop-up: ceremonial first-harvest matcha and
   house-made syrups.\nMenu: ceremonial first-harvest matcha\, house-made sy
- rups\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev
- /e/4fe324a46814/
-URL:https://matchamap-cu7.pages.dev/e/4fe324a46814/
+ rups\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/4fe324a
+ 46814/
+URL:https://matchamap.app/e/4fe324a46814/
 GEO:35.789032;-78.658579
 STATUS:CONFIRMED
 CATEGORIES:Matcha

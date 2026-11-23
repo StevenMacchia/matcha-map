@@ -7,7 +7,7 @@ X-WR-CALNAME:Moment of Tea pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:946a1a0bba72@matchamap-cu7.pages.dev
+UID:946a1a0bba72@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261124
@@ -16,8 +16,8 @@ SUMMARY:Moment of Tea pop-up at Casa
 LOCATION:Casa\, Austin\, TX
 DESCRIPTION:The Scorpio New Moon Circle Monday\, November 9 6:30 to 8 p.m. 
  Tea is included.\nDetails not confirmed yet. Check the brand's post before
-  you go.\nMore: https://matchamap-cu7.pages.dev/e/946a1a0bba72/
-URL:https://matchamap-cu7.pages.dev/e/946a1a0bba72/
+  you go.\nMore: https://matchamap.app/e/946a1a0bba72/
+URL:https://matchamap.app/e/946a1a0bba72/
 GEO:30.326656;-97.689551
 STATUS:TENTATIVE
 CATEGORIES:Matcha

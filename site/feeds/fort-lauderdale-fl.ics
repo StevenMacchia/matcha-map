@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Fort Lauderdale\, FL
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:f5eed46234e7@matchamap-cu7.pages.dev
+UID:f5eed46234e7@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261126
@@ -16,13 +16,13 @@ SUMMARY:Alma Matcha pop-up at Alma Matcha
 LOCATION:Fort Lauderdale\, FL
 DESCRIPTION:Thanksgiving week at Alma Matcha\nMenu: pumpkin\nDetails not co
  nfirmed yet. Check the brand's post before you go.\nMore: https://matchama
- p-cu7.pages.dev/e/f5eed46234e7/
-URL:https://matchamap-cu7.pages.dev/e/f5eed46234e7/
+ p.app/e/f5eed46234e7/
+URL:https://matchamap.app/e/f5eed46234e7/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:6bb7a6058331@matchamap-cu7.pages.dev
+UID:6bb7a6058331@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261127
@@ -30,14 +30,13 @@ DTEND;VALUE=DATE:20261128
 SUMMARY:Alma Matcha pop-up
 LOCATION:Fort Lauderdale\, FL
 DESCRIPTION:What’s in your cart?\nDetails not confirmed yet. Check the br
- and's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/6bb7a60
- 58331/
-URL:https://matchamap-cu7.pages.dev/e/6bb7a6058331/
+ and's post before you go.\nMore: https://matchamap.app/e/6bb7a6058331/
+URL:https://matchamap.app/e/6bb7a6058331/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:399e314cdfbd@matchamap-cu7.pages.dev
+UID:399e314cdfbd@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261130
@@ -46,13 +45,13 @@ SUMMARY:Alma Matcha pop-up at Alma Matcha
 LOCATION:Fort Lauderdale\, FL
 DESCRIPTION:Thanksgiving week at Alma Matcha\nMenu: pumpkin\nDetails not co
  nfirmed yet. Check the brand's post before you go.\nMore: https://matchama
- p-cu7.pages.dev/e/399e314cdfbd/
-URL:https://matchamap-cu7.pages.dev/e/399e314cdfbd/
+ p.app/e/399e314cdfbd/
+URL:https://matchamap.app/e/399e314cdfbd/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:b7b6b21460eb@matchamap-cu7.pages.dev
+UID:b7b6b21460eb@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261201
@@ -61,13 +60,13 @@ SUMMARY:Alma Matcha pop-up at Alma Matcha
 LOCATION:Fort Lauderdale\, FL
 DESCRIPTION:Thanksgiving week at Alma Matcha\nMenu: pumpkin\nDetails not co
  nfirmed yet. Check the brand's post before you go.\nMore: https://matchama
- p-cu7.pages.dev/e/b7b6b21460eb/
-URL:https://matchamap-cu7.pages.dev/e/b7b6b21460eb/
+ p.app/e/b7b6b21460eb/
+URL:https://matchamap.app/e/b7b6b21460eb/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:fe7c2a232624@matchamap-cu7.pages.dev
+UID:fe7c2a232624@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261206
@@ -75,9 +74,8 @@ DTEND;VALUE=DATE:20261207
 SUMMARY:Alma Matcha pop-up
 LOCATION:Fort Lauderdale\, FL
 DESCRIPTION:What’s in your cart?\nDetails not confirmed yet. Check the br
- and's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/fe7c2a2
- 32624/
-URL:https://matchamap-cu7.pages.dev/e/fe7c2a232624/
+ and's post before you go.\nMore: https://matchamap.app/e/fe7c2a232624/
+URL:https://matchamap.app/e/fe7c2a232624/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

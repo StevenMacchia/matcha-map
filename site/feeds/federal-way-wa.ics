@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Federal Way\, WA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:ad18f7388ca1@matchamap-cu7.pages.dev
+UID:ad18f7388ca1@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T010000Z
@@ -17,9 +17,9 @@ LOCATION:Pilates by Siren Curves MAT STUDIO\, 1109 South 348th Street\, Fed
  eral Way\, WA
 DESCRIPTION:Celebrate the holidays with Pilates\, festive matcha\, Poppi\, 
  flowers\, fragrance-making\, and a cozy girls' night!\nPrice: $49.87 to $7
- 6.54\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev
- /e/ad18f7388ca1/
-URL:https://matchamap-cu7.pages.dev/e/ad18f7388ca1/
+ 6.54\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/ad18f73
+ 88ca1/
+URL:https://matchamap.app/e/ad18f7388ca1/
 GEO:47.289773;-122.319894
 STATUS:CONFIRMED
 CATEGORIES:Matcha

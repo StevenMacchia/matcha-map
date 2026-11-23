@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Dallas\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:3365ce9f985a@matchamap-cu7.pages.dev
+UID:3365ce9f985a@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261128
@@ -17,13 +17,13 @@ LOCATION:Dallas\, TX
 DESCRIPTION:333 hits the road later this month! our co-owner\, sababamoore\
  , is making his way from dallas to lumacoffeeroasters in louisiana to spre
  ad a little matcha magic.\nDetails not confirmed yet. Check the brand's po
- st before you go.\nMore: https://matchamap-cu7.pages.dev/e/3365ce9f985a/
-URL:https://matchamap-cu7.pages.dev/e/3365ce9f985a/
+ st before you go.\nMore: https://matchamap.app/e/3365ce9f985a/
+URL:https://matchamap.app/e/3365ce9f985a/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:518e3aeb446f@matchamap-cu7.pages.dev
+UID:518e3aeb446f@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261128T190000Z
@@ -32,15 +32,15 @@ SUMMARY:DECO DOLLS MARKET
 LOCATION:6207 Richmond Avenue\, Dallas\, TX
 DESCRIPTION:Come shop from our local vendors at our Curated Market where we
   will have matcha\, y2k\, trinkets art and DIY activities Decoden station\
- nPrice: Free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.p
- ages.dev/e/518e3aeb446f/
-URL:https://matchamap-cu7.pages.dev/e/518e3aeb446f/
+ nPrice: Free\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e
+ /518e3aeb446f/
+URL:https://matchamap.app/e/518e3aeb446f/
 GEO:32.816425;-96.758386
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:25d9142b97ad@matchamap-cu7.pages.dev
+UID:25d9142b97ad@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261204T180000Z
@@ -48,14 +48,14 @@ DTEND:20261204T220000Z
 SUMMARY:333Matcha pop-up
 LOCATION:Dallas\, TX
 DESCRIPTION:a little holiday magic with 333\nDetails not confirmed yet. Che
- ck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/
- e/25d9142b97ad/
-URL:https://matchamap-cu7.pages.dev/e/25d9142b97ad/
+ ck the brand's post before you go.\nMore: https://matchamap.app/e/25d9142b
+ 97ad/
+URL:https://matchamap.app/e/25d9142b97ad/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:5c8851ad1635@matchamap-cu7.pages.dev
+UID:5c8851ad1635@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T180000Z
@@ -63,14 +63,14 @@ DTEND:20261205T220000Z
 SUMMARY:333Matcha pop-up
 LOCATION:Dallas\, TX
 DESCRIPTION:a little holiday magic with 333\nDetails not confirmed yet. Che
- ck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/
- e/5c8851ad1635/
-URL:https://matchamap-cu7.pages.dev/e/5c8851ad1635/
+ ck the brand's post before you go.\nMore: https://matchamap.app/e/5c8851ad
+ 1635/
+URL:https://matchamap.app/e/5c8851ad1635/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:28a4309980a4@matchamap-cu7.pages.dev
+UID:28a4309980a4@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261206T180000Z
@@ -78,14 +78,14 @@ DTEND:20261206T220000Z
 SUMMARY:333Matcha pop-up
 LOCATION:Dallas\, TX
 DESCRIPTION:a little holiday magic with 333\nDetails not confirmed yet. Che
- ck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/
- e/28a4309980a4/
-URL:https://matchamap-cu7.pages.dev/e/28a4309980a4/
+ ck the brand's post before you go.\nMore: https://matchamap.app/e/28a43099
+ 80a4/
+URL:https://matchamap.app/e/28a4309980a4/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:02df4c1fbcc8@matchamap-cu7.pages.dev
+UID:02df4c1fbcc8@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261218T010000Z
@@ -94,8 +94,8 @@ SUMMARY:Worship Night: Matcha + Mercy
 LOCATION:1512 Edison Street\, Dallas\, TX
 DESCRIPTION:Soulful worship\, prayer\, matcha sips\, and mercy all night lo
  ng. Come as you are and bring a friend.\nPrice: Free\nLikely\, not fully c
- onfirmed.\nMore: https://matchamap-cu7.pages.dev/e/02df4c1fbcc8/
-URL:https://matchamap-cu7.pages.dev/e/02df4c1fbcc8/
+ onfirmed.\nMore: https://matchamap.app/e/02df4c1fbcc8/
+URL:https://matchamap.app/e/02df4c1fbcc8/
 GEO:32.792977;-96.817925
 STATUS:CONFIRMED
 CATEGORIES:Matcha

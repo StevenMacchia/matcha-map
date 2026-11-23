@@ -7,7 +7,7 @@ X-WR-CALNAME:Anaheim Public Library pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1ea3a2bd66ba@matchamap-cu7.pages.dev
+UID:1ea3a2bd66ba@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261202T010000Z
@@ -17,8 +17,8 @@ LOCATION:Ponderosa Joint-Use Branch\, 240 East Orangewood Avenue\, Anaheim\
  , CA
 DESCRIPTION:Come learn a brief history of matcha\, techniques for making ma
  tcha & an opportunity to practice making it.\nPrice: Free\nLikely\, not fu
- lly confirmed.\nMore: https://matchamap-cu7.pages.dev/e/1ea3a2bd66ba/
-URL:https://matchamap-cu7.pages.dev/e/1ea3a2bd66ba/
+ lly confirmed.\nMore: https://matchamap.app/e/1ea3a2bd66ba/
+URL:https://matchamap.app/e/1ea3a2bd66ba/
 GEO:33.795391;-117.904133
 STATUS:CONFIRMED
 CATEGORIES:Matcha

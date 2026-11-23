@@ -7,7 +7,7 @@ X-WR-CALNAME:Longevity Cities (Matcha Walk) pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1308b166827f@matchamap-cu7.pages.dev
+UID:1308b166827f@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T150000Z
@@ -19,8 +19,8 @@ DESCRIPTION:A Sunday-after-Thanksgiving meetup at Matcha Panda Cafe: meet f
  or matcha\, short welcome\, then an easy flat walk on the Schuylkill River
   Trail with a talk on matcha. Free to join\; you buy your own drin\nPrice:
   matcha at your own expense\nLikely\, not fully confirmed.\nMore: https://
- matchamap-cu7.pages.dev/e/1308b166827f/
-URL:https://matchamap-cu7.pages.dev/e/1308b166827f/
+ matchamap.app/e/1308b166827f/
+URL:https://matchamap.app/e/1308b166827f/
 GEO:39.952320;-75.174681
 STATUS:CONFIRMED
 CATEGORIES:Matcha

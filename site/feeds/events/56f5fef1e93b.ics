@@ -7,7 +7,7 @@ X-WR-CALNAME:Nicho's Matcha Cafe pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:56f5fef1e93b@matchamap-cu7.pages.dev
+UID:56f5fef1e93b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261226T190000Z
@@ -17,9 +17,9 @@ LOCATION:Hiroshi's Take-Out & Deli\, 2521 15th Ave S\, Seattle\, WA 98144\,
   Seattle\, WA
 DESCRIPTION:Saturdays in Beacon Hill: Nicho's serves signature matcha and h
  ojicha from inside Hiroshi's.\nMenu: signature matcha\, hojicha\, rotating
-  seasonal menu\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7
- .pages.dev/e/56f5fef1e93b/
-URL:https://matchamap-cu7.pages.dev/e/56f5fef1e93b/
+  seasonal menu\nLikely\, not fully confirmed.\nMore: https://matchamap.app
+ /e/56f5fef1e93b/
+URL:https://matchamap.app/e/56f5fef1e93b/
 GEO:47.580434;-122.313613
 STATUS:CONFIRMED
 CATEGORIES:Matcha

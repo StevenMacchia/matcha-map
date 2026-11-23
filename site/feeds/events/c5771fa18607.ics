@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha event pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:c5771fa18607@matchamap-cu7.pages.dev
+UID:c5771fa18607@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T123101Z
 DTSTART:20261206T220000Z
@@ -17,8 +17,8 @@ LOCATION:Burnsville\, MN
 DESCRIPTION:Join Allform Club for Pink Pilates\, matcha\, and social hour! 
  Enjoy a 45-minute beginner-friendly class. Wear pink and come connect!\nPr
  ice: $33.85\nDetails not confirmed yet. Check the brand's post before you 
- go.\nMore: https://matchamap-cu7.pages.dev/e/c5771fa18607/
-URL:https://matchamap-cu7.pages.dev/e/c5771fa18607/
+ go.\nMore: https://matchamap.app/e/c5771fa18607/
+URL:https://matchamap.app/e/c5771fa18607/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

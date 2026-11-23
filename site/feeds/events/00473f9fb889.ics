@@ -7,7 +7,7 @@ X-WR-CALNAME:Staykyuurious pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:00473f9fb889@matchamap-cu7.pages.dev
+UID:00473f9fb889@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART;VALUE=DATE:20261205
@@ -16,9 +16,8 @@ SUMMARY:Staykyuurious matcha pop-up
 LOCATION:Detroit\, MI
 DESCRIPTION:Mariah has officially defrosted… and Kyuu is next. Christmas 
  collection drops December 5th!\nDetails not confirmed yet. Check the brand
- 's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/00473f9fb8
- 89/
-URL:https://matchamap-cu7.pages.dev/e/00473f9fb889/
+ 's post before you go.\nMore: https://matchamap.app/e/00473f9fb889/
+URL:https://matchamap.app/e/00473f9fb889/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

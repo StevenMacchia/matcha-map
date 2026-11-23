@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Salt Lake City\, UT
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:ff51c1b8c3d0@matchamap-cu7.pages.dev
+UID:ff51c1b8c3d0@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261213T010000Z
@@ -15,8 +15,8 @@ DTEND:20261213T030000Z
 SUMMARY:ARTISTICO
 LOCATION:Café on 1st\, 39 I Street\, Salt Lake City\, UT
 DESCRIPTION:Art gallery\, dj\, matcha\, tea\, coffee\, incense\, vibes\nPri
- ce: free\nMore: https://matchamap-cu7.pages.dev/e/ff51c1b8c3d0/
-URL:https://matchamap-cu7.pages.dev/e/ff51c1b8c3d0/
+ ce: free\nMore: https://matchamap.app/e/ff51c1b8c3d0/
+URL:https://matchamap.app/e/ff51c1b8c3d0/
 GEO:40.770345;-111.871849
 STATUS:CONFIRMED
 CATEGORIES:Matcha

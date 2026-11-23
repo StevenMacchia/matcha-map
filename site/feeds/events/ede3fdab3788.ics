@@ -7,7 +7,7 @@ X-WR-CALNAME:Caffeine Depot pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:ede3fdab3788@matchamap-cu7.pages.dev
+UID:ede3fdab3788@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261124T160000Z
@@ -16,9 +16,9 @@ SUMMARY:Kaiser Farmers Market Pop-Up
 LOCATION:San Francisco\, CA
 DESCRIPTION:Caffeine Depot sets up at the Kaiser Farmers Market in San Jose
   every Tuesday in November. The pop-up runs 8 AM–1 PM.\nDetails not conf
- irmed yet. Check the brand's post before you go.\nMore: https://matchamap-
- cu7.pages.dev/e/ede3fdab3788/
-URL:https://matchamap-cu7.pages.dev/e/ede3fdab3788/
+ irmed yet. Check the brand's post before you go.\nMore: https://matchamap.
+ app/e/ede3fdab3788/
+URL:https://matchamap.app/e/ede3fdab3788/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

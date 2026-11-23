@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: San Francisco\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:ede3fdab3788@matchamap-cu7.pages.dev
+UID:ede3fdab3788@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261124T160000Z
@@ -16,14 +16,14 @@ SUMMARY:Kaiser Farmers Market Pop-Up
 LOCATION:San Francisco\, CA
 DESCRIPTION:Caffeine Depot sets up at the Kaiser Farmers Market in San Jose
   every Tuesday in November. The pop-up runs 8 AM–1 PM.\nDetails not conf
- irmed yet. Check the brand's post before you go.\nMore: https://matchamap-
- cu7.pages.dev/e/ede3fdab3788/
-URL:https://matchamap-cu7.pages.dev/e/ede3fdab3788/
+ irmed yet. Check the brand's post before you go.\nMore: https://matchamap.
+ app/e/ede3fdab3788/
+URL:https://matchamap.app/e/ede3fdab3788/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:e1430cf00a5f@matchamap-cu7.pages.dev
+UID:e1430cf00a5f@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261129T000000Z
@@ -33,14 +33,14 @@ LOCATION:San Francisco\, CA
 DESCRIPTION:The workshop explores Japanese tea culture through a look at ma
  tcha production from farm to cup\, behind-the-scenes photos from a 2026 Ja
  pan tea journey and a shared matcha tasting.\nDetails not confirmed yet. C
- heck the brand's post before you go.\nMore: https://matchamap-cu7.pages.de
- v/e/e1430cf00a5f/
-URL:https://matchamap-cu7.pages.dev/e/e1430cf00a5f/
+ heck the brand's post before you go.\nMore: https://matchamap.app/e/e1430c
+ f00a5f/
+URL:https://matchamap.app/e/e1430cf00a5f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:68f970aee5d8@matchamap-cu7.pages.dev
+UID:68f970aee5d8@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T030000Z
@@ -50,14 +50,14 @@ LOCATION:San Francisco\, CA
 DESCRIPTION:A weekly public matcha workshop from Moody Matcha Ritual at Jia
  ren Cafe. The workshop is presented as a creative session\, and advance si
  gn-up is requested. The workshop recurs weekly.\nDetails not confirmed yet
- . Check the brand's post before you go.\nMore: https://matchamap-cu7.pages
- .dev/e/68f970aee5d8/
-URL:https://matchamap-cu7.pages.dev/e/68f970aee5d8/
+ . Check the brand's post before you go.\nMore: https://matchamap.app/e/68f
+ 970aee5d8/
+URL:https://matchamap.app/e/68f970aee5d8/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:64410e59c7c7@matchamap-cu7.pages.dev
+UID:64410e59c7c7@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261206T000000Z
@@ -67,14 +67,14 @@ LOCATION:San Francisco\, CA
 DESCRIPTION:The workshop explores Japanese tea culture through a look at ma
  tcha production from farm to cup\, behind-the-scenes photos from a 2026 Ja
  pan tea journey\, and a shared matcha tasting.\nDetails not confirmed yet.
-  Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.
- dev/e/64410e59c7c7/
-URL:https://matchamap-cu7.pages.dev/e/64410e59c7c7/
+  Check the brand's post before you go.\nMore: https://matchamap.app/e/6441
+ 0e59c7c7/
+URL:https://matchamap.app/e/64410e59c7c7/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:739ed546ab41@matchamap-cu7.pages.dev
+UID:739ed546ab41@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261206T190000Z
@@ -84,14 +84,14 @@ LOCATION:San Francisco\, CA
 DESCRIPTION:The Tats & Totes Holiday Art Market presents Vendor Showcase Pa
  rt 4\, with food and drink vendors taking part. Admission is free. PARALLA
  X hosts at 1827 Houret Court in Milpitas.\nPrice: free\nDetails not confir
- med yet. Check the brand's post before you go.\nMore: https://matchamap-cu
- 7.pages.dev/e/739ed546ab41/
-URL:https://matchamap-cu7.pages.dev/e/739ed546ab41/
+ med yet. Check the brand's post before you go.\nMore: https://matchamap.ap
+ p/e/739ed546ab41/
+URL:https://matchamap.app/e/739ed546ab41/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:78743c0635f5@matchamap-cu7.pages.dev
+UID:78743c0635f5@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261208T170000Z
@@ -100,14 +100,14 @@ SUMMARY:Matcha Mornings - Founder + Investor Meetup
 LOCATION:San Francisco\, CA
 DESCRIPTION:Tech Week 2026 may already feel like a distant memory\, but the
   conversations it sparked don’t have to stop.\nDetails not confirmed yet
- . Check the brand's post before you go.\nMore: https://matchamap-cu7.pages
- .dev/e/78743c0635f5/
-URL:https://matchamap-cu7.pages.dev/e/78743c0635f5/
+ . Check the brand's post before you go.\nMore: https://matchamap.app/e/787
+ 43c0635f5/
+URL:https://matchamap.app/e/78743c0635f5/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:c8bfa7fb4908@matchamap-cu7.pages.dev
+UID:c8bfa7fb4908@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261213T190000Z
@@ -118,9 +118,9 @@ LOCATION:Nichi Bei Kai Cultural Center\, 1759 Sutter Street\, San Francisco
  \, CA
 DESCRIPTION:Experience serenity with traditional Japanese art of Tea Ceremo
  ny. Join for a bowl of authentic Matcha and a bowl of Soba noodles.\nPrice
- : $47.73\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
- .dev/e/c8bfa7fb4908/
-URL:https://matchamap-cu7.pages.dev/e/c8bfa7fb4908/
+ : $47.73\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/c8b
+ fa7fb4908/
+URL:https://matchamap.app/e/c8bfa7fb4908/
 GEO:37.786377;-122.429188
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -7,7 +7,7 @@ X-WR-CALNAME:Kinka pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:57d7e842a46b@matchamap-cu7.pages.dev
+UID:57d7e842a46b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T160000Z
@@ -17,8 +17,8 @@ LOCATION:KINKA\, 63 East 7th Street\, New York\, NY
 DESCRIPTION:A 45-minute beginner class on matcha history\, choosing and sto
  ring it\, then whisking and drinking your own bowl with a dry sweet. Max 2
   guests per booking.\nMenu: whisked matcha bowl\, japanese dry sweet\nPric
- e: $44.52\nMore: https://matchamap-cu7.pages.dev/e/57d7e842a46b/
-URL:https://matchamap-cu7.pages.dev/e/57d7e842a46b/
+ e: $44.52\nMore: https://matchamap.app/e/57d7e842a46b/
+URL:https://matchamap.app/e/57d7e842a46b/
 GEO:40.727665;-73.986861
 STATUS:CONFIRMED
 CATEGORIES:Matcha

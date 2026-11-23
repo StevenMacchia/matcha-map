@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Tampa\, FL
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:7dd84faaabf7@matchamap-cu7.pages.dev
+UID:7dd84faaabf7@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261127T220000Z
@@ -16,13 +16,13 @@ SUMMARY:Alive Coffee Matcha & More pop-up at BOXi Park
 LOCATION:Tampa\, FL
 DESCRIPTION:ORLANDO AND LAKE NONA AREA\, YOUR HOLIDAY DRINKS ARE CALLING!\n
  Menu: chocolate\, latte\nDetails not confirmed yet. Check the brand's post
-  before you go.\nMore: https://matchamap-cu7.pages.dev/e/7dd84faaabf7/
-URL:https://matchamap-cu7.pages.dev/e/7dd84faaabf7/
+  before you go.\nMore: https://matchamap.app/e/7dd84faaabf7/
+URL:https://matchamap.app/e/7dd84faaabf7/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:8aa7d34aa033@matchamap-cu7.pages.dev
+UID:8aa7d34aa033@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261128
@@ -31,13 +31,13 @@ SUMMARY:Alive Coffee Matcha & More pop-up at BOXi Park
 LOCATION:Tampa\, FL
 DESCRIPTION:ORLANDO AND LAKE NONA AREA\, YOUR HOLIDAY DRINKS ARE CALLING!\n
  Menu: chocolate\, latte\nDetails not confirmed yet. Check the brand's post
-  before you go.\nMore: https://matchamap-cu7.pages.dev/e/8aa7d34aa033/
-URL:https://matchamap-cu7.pages.dev/e/8aa7d34aa033/
+  before you go.\nMore: https://matchamap.app/e/8aa7d34aa033/
+URL:https://matchamap.app/e/8aa7d34aa033/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:c25ce99dd8a9@matchamap-cu7.pages.dev
+UID:c25ce99dd8a9@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T170000Z
@@ -46,8 +46,8 @@ SUMMARY:Alive Coffee Matcha & More pop-up at BOXi Park
 LOCATION:Tampa\, FL
 DESCRIPTION:ORLANDO AND LAKE NONA AREA\, YOUR HOLIDAY DRINKS ARE CALLING!\n
  Menu: chocolate\, latte\nDetails not confirmed yet. Check the brand's post
-  before you go.\nMore: https://matchamap-cu7.pages.dev/e/c25ce99dd8a9/
-URL:https://matchamap-cu7.pages.dev/e/c25ce99dd8a9/
+  before you go.\nMore: https://matchamap.app/e/c25ce99dd8a9/
+URL:https://matchamap.app/e/c25ce99dd8a9/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

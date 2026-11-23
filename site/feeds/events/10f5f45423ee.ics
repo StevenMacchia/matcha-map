@@ -7,7 +7,7 @@ X-WR-CALNAME:Isshiki Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:10f5f45423ee@matchamap-cu7.pages.dev
+UID:10f5f45423ee@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261231
@@ -16,9 +16,9 @@ SUMMARY:Isshiki Matcha pop-up at Togyushi
 LOCATION:New York\, NY
 DESCRIPTION:a little unexpected\, a little indulgent\nMenu: matcha wagyu ta
  llow financier\, sando\, matcha cocktails\nDetails not confirmed yet. Chec
- k the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e
- /10f5f45423ee/
-URL:https://matchamap-cu7.pages.dev/e/10f5f45423ee/
+ k the brand's post before you go.\nMore: https://matchamap.app/e/10f5f4542
+ 3ee/
+URL:https://matchamap.app/e/10f5f45423ee/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

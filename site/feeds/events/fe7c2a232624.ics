@@ -7,7 +7,7 @@ X-WR-CALNAME:Alma Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:fe7c2a232624@matchamap-cu7.pages.dev
+UID:fe7c2a232624@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261206
@@ -15,9 +15,8 @@ DTEND;VALUE=DATE:20261207
 SUMMARY:Alma Matcha pop-up
 LOCATION:Fort Lauderdale\, FL
 DESCRIPTION:What’s in your cart?\nDetails not confirmed yet. Check the br
- and's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/fe7c2a2
- 32624/
-URL:https://matchamap-cu7.pages.dev/e/fe7c2a232624/
+ and's post before you go.\nMore: https://matchamap.app/e/fe7c2a232624/
+URL:https://matchamap.app/e/fe7c2a232624/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

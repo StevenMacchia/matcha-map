@@ -7,7 +7,7 @@ X-WR-CALNAME:Lumamatchabarep pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:82f03ca2ae46@matchamap-cu7.pages.dev
+UID:82f03ca2ae46@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART;VALUE=DATE:20261129
@@ -17,9 +17,9 @@ LOCATION:El Paso\, TX
 DESCRIPTION:NOVEMBER 27-29 It's Black Friday at Ifellinlovehere! Shop 25% o
  ff ... Matcha Pop-Up by on Friday\, November 27 from 12-4PM Shop til you d
  rop at El Paso's hottest place to shop 90s & Y2K\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/82f03ca2ae46/
-URL:https://matchamap-cu7.pages.dev/e/82f03ca2ae46/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/82
+ f03ca2ae46/
+URL:https://matchamap.app/e/82f03ca2ae46/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

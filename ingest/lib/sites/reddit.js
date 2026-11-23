@@ -4,7 +4,7 @@
 // (www.reddit.com/r/<sub>/search.json?q=matcha+popup&restrict_sr=1&sort=new&t=month) are NOT read: the gate skips the site.
 // The official route is Reddit's Data API with an app-only OAuth token: set REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET (a free
 // "script" app at reddit.com/prefs/apps; 100 queries a minute). Then the same search runs on oauth.reddit.com/r/<sub>/search.
-// Either way: User-Agent `matcha-map/0.1 (+https://matchamap-cu7.pages.dev)`, one request every 2 s, an HTTP 429 stops the run.
+// Either way: User-Agent `matcha-map/0.1 (+<SITE_URL from tools/site-url.js>)`, one request every 2 s, an HTTP 429 stops the run.
 // A post is kept when its title + selftext name matcha and a pop-up word, it is under 45 days old, and the extractor finds a future
 // date and a US place (a city sub supplies its city when the text names none). A post that links an Instagram, TikTok or
 // Eventbrite URL also yields a lead with that URL. Pseudo-source `reddit:<brand slug>`; confidence capped at likely, and unsure
@@ -14,10 +14,11 @@ import { matchaPopup, usable, tagKinds } from "./textfind.js";
 import { cityFromText } from "./bluesky.js";
 import { brandFromTitle } from "./feeds.js";
 import { METROS, rotate, metroOfSub } from "./metros.js";
+import { SITE_URL } from "../../../tools/site-url.js";
 
 export const name = "reddit";
 export const host = "www.reddit.com";
-export const UA = "matcha-map/0.1 (+https://matchamap-cu7.pages.dev)";
+export const UA = `matcha-map/0.1 (+${SITE_URL})`;
 export const GLOBAL_SUBS = ["matcha", "tea"];
 export const SUBS = [...GLOBAL_SUBS, ...METROS.map((m) => m.sub)];
 export const QUERY = "matcha popup";

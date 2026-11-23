@@ -16,7 +16,7 @@ What was added: a public form (`/add/`), a moderation page (`/add/review.html`),
 4. Deploy (`npx wrangler pages deploy site --project-name matchamap --branch main`). Try `/add/`, then open `/add/review.html` and paste the token.
 5. GitHub repo secrets (Settings, Secrets and variables, Actions) for `.github/workflows/daily.yml`. All optional; a missing one turns its step off:
    `INSTAGRAM_TOKEN`, `INSTAGRAM_BUSINESS_ID`, `TAVILY_API_KEY`, `YELP_API_KEY`, `CLAUDE_API_KEY`,
-   `INTAKE_URL` (the site, e.g. `https://matchamap-cu7.pages.dev`), `INTAKE_TOKEN` (same value as step 3),
+   `INTAKE_URL` (the site, `https://matchamap.app`), `INTAKE_TOKEN` (same value as step 3),
    `CLOUDFLARE_API_TOKEN` (Pages edit permission) and `CLOUDFLARE_ACCOUNT_ID` (the deploy step runs only when both exist).
 6. Locally, put `INTAKE_URL` and `INTAKE_TOKEN` in `.env` to run the pull by hand: `npm run ingest`.
 

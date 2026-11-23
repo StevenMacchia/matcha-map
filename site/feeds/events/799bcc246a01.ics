@@ -7,7 +7,7 @@ X-WR-CALNAME:More Than Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:799bcc246a01@matchamap-cu7.pages.dev
+UID:799bcc246a01@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261123
@@ -15,9 +15,8 @@ DTEND;VALUE=DATE:20261124
 SUMMARY:More Than Matcha pop-up
 LOCATION:Los Angeles\, CA
 DESCRIPTION:Forever choosing up!!\nDetails not confirmed yet. Check the bra
- nd's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/799bcc24
- 6a01/
-URL:https://matchamap-cu7.pages.dev/e/799bcc246a01/
+ nd's post before you go.\nMore: https://matchamap.app/e/799bcc246a01/
+URL:https://matchamap.app/e/799bcc246a01/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha event pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:02df4c1fbcc8@matchamap-cu7.pages.dev
+UID:02df4c1fbcc8@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261218T010000Z
@@ -16,8 +16,8 @@ SUMMARY:Worship Night: Matcha + Mercy
 LOCATION:1512 Edison Street\, Dallas\, TX
 DESCRIPTION:Soulful worship\, prayer\, matcha sips\, and mercy all night lo
  ng. Come as you are and bring a friend.\nPrice: Free\nLikely\, not fully c
- onfirmed.\nMore: https://matchamap-cu7.pages.dev/e/02df4c1fbcc8/
-URL:https://matchamap-cu7.pages.dev/e/02df4c1fbcc8/
+ onfirmed.\nMore: https://matchamap.app/e/02df4c1fbcc8/
+URL:https://matchamap.app/e/02df4c1fbcc8/
 GEO:32.792977;-96.817925
 STATUS:CONFIRMED
 CATEGORIES:Matcha

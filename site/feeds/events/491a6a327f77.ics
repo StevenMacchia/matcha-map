@@ -7,7 +7,7 @@ X-WR-CALNAME:Caribe & Co. pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:491a6a327f77@matchamap-cu7.pages.dev
+UID:491a6a327f77@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261211
@@ -17,8 +17,8 @@ LOCATION:Boston\, MA
 DESCRIPTION:A Big Feeling x Caribe & Co Pop-up is coming next month and thi
  s one is for the plantain/maduro lovers\nMenu: pastry\, ice cream\nDetails
   not confirmed yet. Check the brand's post before you go.\nMore: https://m
- atchamap-cu7.pages.dev/e/491a6a327f77/
-URL:https://matchamap-cu7.pages.dev/e/491a6a327f77/
+ atchamap.app/e/491a6a327f77/
+URL:https://matchamap.app/e/491a6a327f77/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

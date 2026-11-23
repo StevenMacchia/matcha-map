@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: San Antonio\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:703f38ec7253@matchamap-cu7.pages.dev
+UID:703f38ec7253@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261201T170000Z
@@ -17,14 +17,13 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:Family & Friends begins the six-day MoonchildLand grand opening
  \, welcoming the people who have been part of Moonchild's journey to the f
  irst San Antonio storefront.\nDetails not confirmed yet. Check the brand's
-  post before you go.\nMore: https://matchamap-cu7.pages.dev/e/703f38ec7253
- /
-URL:https://matchamap-cu7.pages.dev/e/703f38ec7253/
+  post before you go.\nMore: https://matchamap.app/e/703f38ec7253/
+URL:https://matchamap.app/e/703f38ec7253/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:e42e6bf48a5a@matchamap-cu7.pages.dev
+UID:e42e6bf48a5a@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261202T170000Z
@@ -33,14 +32,14 @@ SUMMARY:MoonchildLand: Bring Your Moon Pup
 LOCATION:San Antonio\, TX
 DESCRIPTION:Bring Your Moon Pup dedicates the day to four-legged Moon Babie
  s and marks the official launch of Moon-Pups.\nDetails not confirmed yet. 
- Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
- ev/e/e42e6bf48a5a/
-URL:https://matchamap-cu7.pages.dev/e/e42e6bf48a5a/
+ Check the brand's post before you go.\nMore: https://matchamap.app/e/e42e6
+ bf48a5a/
+URL:https://matchamap.app/e/e42e6bf48a5a/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:b036de5da0fa@matchamap-cu7.pages.dev
+UID:b036de5da0fa@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261204T000000Z
@@ -50,13 +49,13 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:Creator Day is an intimate evening with local creators\, person
  alized pieces and Moonchild magic. Local content creators can reach out fo
  r an invite.\nDetails not confirmed yet. Check the brand's post before you
-  go.\nMore: https://matchamap-cu7.pages.dev/e/b036de5da0fa/
-URL:https://matchamap-cu7.pages.dev/e/b036de5da0fa/
+  go.\nMore: https://matchamap.app/e/b036de5da0fa/
+URL:https://matchamap.app/e/b036de5da0fa/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:93c43f078e7b@matchamap-cu7.pages.dev
+UID:93c43f078e7b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261204T230000Z
@@ -66,14 +65,14 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:First Friday is a night of tattoos\, curated vendors\, coffee a
  nd shopping. Local tattoo artist creates an exclusive flash tattoo sheet i
  nspired by the Moonchild logo and Moonchild world.\nDetails not confirmed 
- yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.pa
- ges.dev/e/93c43f078e7b/
-URL:https://matchamap-cu7.pages.dev/e/93c43f078e7b/
+ yet. Check the brand's post before you go.\nMore: https://matchamap.app/e/
+ 93c43f078e7b/
+URL:https://matchamap.app/e/93c43f078e7b/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:0d8fccb23e2e@matchamap-cu7.pages.dev
+UID:0d8fccb23e2e@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T170000Z
@@ -82,13 +81,13 @@ SUMMARY:MoonchildLand: Local Love
 LOCATION:San Antonio\, TX
 DESCRIPTION:Local Love celebrates small businesses\, local creatives\, good
   food and matcha.\nDetails not confirmed yet. Check the brand's post befor
- e you go.\nMore: https://matchamap-cu7.pages.dev/e/0d8fccb23e2e/
-URL:https://matchamap-cu7.pages.dev/e/0d8fccb23e2e/
+ e you go.\nMore: https://matchamap.app/e/0d8fccb23e2e/
+URL:https://matchamap.app/e/0d8fccb23e2e/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:0e4806dcbc24@matchamap-cu7.pages.dev
+UID:0e4806dcbc24@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261206T170000Z
@@ -97,13 +96,13 @@ SUMMARY:MoonchildLand Grand Opening
 LOCATION:San Antonio\, TX
 DESCRIPTION:The sixth day closes the six-day MoonchildLand grand opening.\n
  Details not confirmed yet. Check the brand's post before you go.\nMore: ht
- tps://matchamap-cu7.pages.dev/e/0e4806dcbc24/
-URL:https://matchamap-cu7.pages.dev/e/0e4806dcbc24/
+ tps://matchamap.app/e/0e4806dcbc24/
+URL:https://matchamap.app/e/0e4806dcbc24/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:288ec37d2e7d@matchamap-cu7.pages.dev
+UID:288ec37d2e7d@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261219T150000Z
@@ -113,14 +112,14 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
  The Creamery District. The class is $15\, and the ticket includes matcha. 
  It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/288ec37d2e7d/
-URL:https://matchamap-cu7.pages.dev/e/288ec37d2e7d/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/28
+ 8ec37d2e7d/
+URL:https://matchamap.app/e/288ec37d2e7d/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:e0ce95bc349a@matchamap-cu7.pages.dev
+UID:e0ce95bc349a@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20270116T150000Z
@@ -130,14 +129,14 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
  The Creamery District. The class is $15\, and the ticket includes matcha. 
  It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/e0ce95bc349a/
-URL:https://matchamap-cu7.pages.dev/e/e0ce95bc349a/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/e0
+ ce95bc349a/
+URL:https://matchamap.app/e/e0ce95bc349a/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:ddb3d76440a3@matchamap-cu7.pages.dev
+UID:ddb3d76440a3@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20270220T150000Z
@@ -147,9 +146,9 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
  The Creamery District. The class is $15\, and the ticket includes matcha. 
  It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/ddb3d76440a3/
-URL:https://matchamap-cu7.pages.dev/e/ddb3d76440a3/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/dd
+ b3d76440a3/
+URL:https://matchamap.app/e/ddb3d76440a3/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

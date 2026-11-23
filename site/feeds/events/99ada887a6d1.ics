@@ -7,7 +7,7 @@ X-WR-CALNAME:Teapulse Nyc pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:99ada887a6d1@matchamap-cu7.pages.dev
+UID:99ada887a6d1@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T023315Z
 DTSTART;VALUE=DATE:20270307
@@ -16,8 +16,8 @@ SUMMARY:Teapulse Nyc matcha pop-up
 LOCATION:65 W 30th St\, New York\, NY
 DESCRIPTION:Tea Pulse [ NYC ] teapulse.nyc\nMenu: caramel cookie\, cheese c
  loud matcha oat\nPrice: $15\nLikely\, not fully confirmed.\nMore: https://
- matchamap-cu7.pages.dev/e/99ada887a6d1/
-URL:https://matchamap-cu7.pages.dev/e/99ada887a6d1/
+ matchamap.app/e/99ada887a6d1/
+URL:https://matchamap.app/e/99ada887a6d1/
 GEO:40.747081;-73.988924
 STATUS:CONFIRMED
 CATEGORIES:Matcha

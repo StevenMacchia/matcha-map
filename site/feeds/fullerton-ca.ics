@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Fullerton\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1e3675a352d5@matchamap-cu7.pages.dev
+UID:1e3675a352d5@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T220000Z
@@ -16,9 +16,8 @@ SUMMARY:a very merry matcha workshop
 LOCATION:Saegé Studios\, 444 North Harbor Boulevard\, Fullerton\, CA
 DESCRIPTION:Join us for a festive Christmas afternoon learning to make the 
  perfect matcha latte at home!\nMenu: latte\nPrice: $44.52 to $76.54\nLikel
- y\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/1e3675a3
- 52d5/
-URL:https://matchamap-cu7.pages.dev/e/1e3675a352d5/
+ y\, not fully confirmed.\nMore: https://matchamap.app/e/1e3675a352d5/
+URL:https://matchamap.app/e/1e3675a352d5/
 GEO:33.873639;-117.924166
 STATUS:CONFIRMED
 CATEGORIES:Matcha

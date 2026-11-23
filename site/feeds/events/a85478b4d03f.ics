@@ -7,7 +7,7 @@ X-WR-CALNAME:Matte Matcha Bar pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:a85478b4d03f@matchamap-cu7.pages.dev
+UID:a85478b4d03f@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261212T190000Z
@@ -18,9 +18,8 @@ LOCATION:Scottish Rite Masonic Center (Makers Mart)\, 6151 H Street\, Sacra
 DESCRIPTION:Sacramento's holiday craft fair with 70+ artisans\, a DJ and a 
  raffle. Matte Matcha Bar\, the mobile matcha cafe\, serves specialty match
  a drinks alongside Mellobun's pastries. Admission is a $5 suggeste\nMenu: 
- specialty matcha drinks\nMore: https://matchamap-cu7.pages.dev/e/a85478b4d
- 03f/
-URL:https://matchamap-cu7.pages.dev/e/a85478b4d03f/
+ specialty matcha drinks\nMore: https://matchamap.app/e/a85478b4d03f/
+URL:https://matchamap.app/e/a85478b4d03f/
 GEO:38.569003;-121.426618
 STATUS:CONFIRMED
 CATEGORIES:Matcha

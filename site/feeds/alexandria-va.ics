@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Alexandria\, VA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:91ef4639fdab@matchamap-cu7.pages.dev
+UID:91ef4639fdab@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T170000Z
@@ -20,8 +20,8 @@ DESCRIPTION:Kaphiy Coffee Roasters guides a tasting of several matcha culti
   up to 7 days before.\nMenu: guided tasting of premium matcha cultiva\, yo
  ur own matcha latte\, take-home amai'cha matcha bag\, kaphiy cold brew min
  i\, latte\nPrice: $71.21\nDetails not confirmed yet. Check the brand's pos
- t before you go.\nMore: https://matchamap-cu7.pages.dev/e/91ef4639fdab/
-URL:https://matchamap-cu7.pages.dev/e/91ef4639fdab/
+ t before you go.\nMore: https://matchamap.app/e/91ef4639fdab/
+URL:https://matchamap.app/e/91ef4639fdab/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

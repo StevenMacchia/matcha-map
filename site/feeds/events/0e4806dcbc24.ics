@@ -7,7 +7,7 @@ X-WR-CALNAME:Mira Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:0e4806dcbc24@matchamap-cu7.pages.dev
+UID:0e4806dcbc24@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261206T170000Z
@@ -16,8 +16,8 @@ SUMMARY:MoonchildLand Grand Opening
 LOCATION:San Antonio\, TX
 DESCRIPTION:The sixth day closes the six-day MoonchildLand grand opening.\n
  Details not confirmed yet. Check the brand's post before you go.\nMore: ht
- tps://matchamap-cu7.pages.dev/e/0e4806dcbc24/
-URL:https://matchamap-cu7.pages.dev/e/0e4806dcbc24/
+ tps://matchamap.app/e/0e4806dcbc24/
+URL:https://matchamap.app/e/0e4806dcbc24/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

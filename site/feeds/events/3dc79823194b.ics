@@ -7,7 +7,7 @@ X-WR-CALNAME:Latte Syndrome pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:3dc79823194b@matchamap-cu7.pages.dev
+UID:3dc79823194b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261210T180000Z
@@ -20,8 +20,8 @@ DESCRIPTION:A Vietnamese-owned matcha and coffee pop-up that sets up in fro
   and the strawberry einspanner\, about $8 each.\nMenu: strawberry matcha e
  inspanner\, banana matcha\, caramelized banana matcha\, manila ube\, vietn
  amese coffee\nPrice: $7-8\nLikely\, not fully confirmed.\nMore: https://ma
- tchamap-cu7.pages.dev/e/3dc79823194b/
-URL:https://matchamap-cu7.pages.dev/e/3dc79823194b/
+ tchamap.app/e/3dc79823194b/
+URL:https://matchamap.app/e/3dc79823194b/
 GEO:37.847453;-122.261154
 STATUS:CONFIRMED
 CATEGORIES:Matcha

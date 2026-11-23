@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: New Orleans\, LA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:9424ec29dea5@matchamap-cu7.pages.dev
+UID:9424ec29dea5@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261122T182606Z
 DTSTART:20261127T230000Z
@@ -17,13 +17,13 @@ LOCATION:New Orleans\, LA
 DESCRIPTION:Pause & Pour: Bayou Classic Edition brings a Bayou Classic kick
  back to St. Noir Cafe on Friday\, November 27\, from 5 to 10 pm.\nDetails 
  not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/9424ec29dea5/
-URL:https://matchamap-cu7.pages.dev/e/9424ec29dea5/
+ tchamap.app/e/9424ec29dea5/
+URL:https://matchamap.app/e/9424ec29dea5/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:8f19fb53fba0@matchamap-cu7.pages.dev
+UID:8f19fb53fba0@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261206T160000Z
@@ -32,8 +32,8 @@ SUMMARY:Movement & Matcha at Kinfolk Coffee: The Biweekly Flow
 LOCATION:Kinfolk Coffee\, 1208 Saint Charles Avenue\, New Orleans\, LA
 DESCRIPTION:Get your body moving and your mind flowing with fresh matcha vi
  bes at this chill biweekly flow session.\nPrice: $28.52–44.52\nMore: htt
- ps://matchamap-cu7.pages.dev/e/8f19fb53fba0/
-URL:https://matchamap-cu7.pages.dev/e/8f19fb53fba0/
+ ps://matchamap.app/e/8f19fb53fba0/
+URL:https://matchamap.app/e/8f19fb53fba0/
 GEO:29.941002;-90.073782
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -7,7 +7,7 @@ X-WR-CALNAME:Demo Spot pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:5c522a699b41@matchamap-cu7.pages.dev
+UID:5c522a699b41@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261122T193450Z
 DTSTART:20261128T010000Z
@@ -17,8 +17,8 @@ LOCATION:2211 16th St\, Sacramento\, CA
 DESCRIPTION:TEA TIME? is back on Black Friday Night Friday\, Nov 27 ... - I
  nstagram Friday\, Nov 27\, 2026 (2211 16th St\, Sacramento\, CA) Matcha St
  and: 5:00 – 9:00 PM.\nLikely\, not fully confirmed.\nMore: https://match
- amap-cu7.pages.dev/e/5c522a699b41/
-URL:https://matchamap-cu7.pages.dev/e/5c522a699b41/
+ amap.app/e/5c522a699b41/
+URL:https://matchamap.app/e/5c522a699b41/
 GEO:38.564730;-121.490898
 STATUS:CONFIRMED
 CATEGORIES:Matcha

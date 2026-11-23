@@ -7,7 +7,7 @@ X-WR-CALNAME:NOK108 pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:039858e8113b@matchamap-cu7.pages.dev
+UID:039858e8113b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261128
@@ -17,8 +17,8 @@ LOCATION:Charlottesville\, VA
 DESCRIPTION:Thank you everyone who came out today! We will be closed for th
  e next 5 days for Thanksgiving break See you guys on Saturday!\nDetails no
  t confirmed yet. Check the brand's post before you go.\nMore: https://matc
- hamap-cu7.pages.dev/e/039858e8113b/
-URL:https://matchamap-cu7.pages.dev/e/039858e8113b/
+ hamap.app/e/039858e8113b/
+URL:https://matchamap.app/e/039858e8113b/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

@@ -7,7 +7,7 @@ X-WR-CALNAME:Molly Garcia pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:42dcce4fd361@matchamap-cu7.pages.dev
+UID:42dcce4fd361@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261216T210000Z
@@ -16,8 +16,8 @@ SUMMARY:Christmas Mat Pilates and matcha
 LOCATION:15317 Broadway Avenue\, Maple Heights\, OH
 DESCRIPTION:Join us for a festive afternoon of movement\, matcha\, treats\,
   and Christmas fun! wear green and red workout sets!\nPrice: $33.85\nMore:
-  https://matchamap-cu7.pages.dev/e/42dcce4fd361/
-URL:https://matchamap-cu7.pages.dev/e/42dcce4fd361/
+  https://matchamap.app/e/42dcce4fd361/
+URL:https://matchamap.app/e/42dcce4fd361/
 GEO:41.418808;-81.574369
 STATUS:CONFIRMED
 CATEGORIES:Matcha

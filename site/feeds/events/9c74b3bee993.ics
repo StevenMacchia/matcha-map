@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Mike pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:9c74b3bee993@matchamap-cu7.pages.dev
+UID:9c74b3bee993@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261212T140000Z
@@ -16,8 +16,8 @@ SUMMARY:Matcha Mike Pop-Up at Landstown High School PTSA Craft Fair
 LOCATION:Landstown High School\, 2001 Concert Dr\, Virginia Beach\, VA
 DESCRIPTION:Hey! I’m Mike\, the 13-year-old behind Matcha Mike\, our Fili
  pino-American matcha bar in Virginia Beach!\nLikely\, not fully confirmed.
- \nMore: https://matchamap-cu7.pages.dev/e/9c74b3bee993/
-URL:https://matchamap-cu7.pages.dev/e/9c74b3bee993/
+ \nMore: https://matchamap.app/e/9c74b3bee993/
+URL:https://matchamap.app/e/9c74b3bee993/
 GEO:36.779469;-76.100936
 STATUS:CONFIRMED
 CATEGORIES:Matcha

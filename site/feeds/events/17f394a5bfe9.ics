@@ -7,7 +7,7 @@ X-WR-CALNAME:The Spice & Tea Exchange of Port Jefferson pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:17f394a5bfe9@matchamap-cu7.pages.dev
+UID:17f394a5bfe9@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261125T233000Z
@@ -16,8 +16,8 @@ SUMMARY:Paint and Sip - Grinch Wine Bottle
 LOCATION:The Spice & Tea Exchange of Port Jefferson\, Port Jefferson\, NY
 DESCRIPTION:Join us for a night of relaxation where we will sample a variet
  y of green teas and matcha while we paint.\nPrice: $39.19\nLikely\, not fu
- lly confirmed.\nMore: https://matchamap-cu7.pages.dev/e/17f394a5bfe9/
-URL:https://matchamap-cu7.pages.dev/e/17f394a5bfe9/
+ lly confirmed.\nMore: https://matchamap.app/e/17f394a5bfe9/
+URL:https://matchamap.app/e/17f394a5bfe9/
 GEO:40.946072;-73.069336
 STATUS:CONFIRMED
 CATEGORIES:Matcha

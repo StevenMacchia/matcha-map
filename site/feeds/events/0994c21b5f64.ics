@@ -7,7 +7,7 @@ X-WR-CALNAME:Museum of Contemporary Art Arlington pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:0994c21b5f64@matchamap-cu7.pages.dev
+UID:0994c21b5f64@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261206T200000Z
@@ -18,8 +18,8 @@ LOCATION:Museum of Contemporary Art Arlington\, 3550 Wilson Blvd\, Arlingto
 DESCRIPTION:A 60-minute Yogalates class with Chelsea Estevez followed by a 
  matcha pop-up from Preferred Matcha Tea Company and a gallery stroll. Brin
  g a mat and water.\nMenu: preferred matcha tea company matcha\nPrice: $23.
- 18 to $25\nMore: https://matchamap-cu7.pages.dev/e/0994c21b5f64/
-URL:https://matchamap-cu7.pages.dev/e/0994c21b5f64/
+ 18 to $25\nMore: https://matchamap.app/e/0994c21b5f64/
+URL:https://matchamap.app/e/0994c21b5f64/
 GEO:38.881688;-77.102090
 STATUS:CONFIRMED
 CATEGORIES:Matcha

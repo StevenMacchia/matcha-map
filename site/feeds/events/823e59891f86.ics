@@ -7,7 +7,7 @@ X-WR-CALNAME:The Royal Sonesta Capitol Hill pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:823e59891f86@matchamap-cu7.pages.dev
+UID:823e59891f86@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261206T170000Z
@@ -17,8 +17,8 @@ LOCATION:The Royal Sonesta Washington\, 20 Massachusetts Avenue\, Washingto
  n\, DC
 DESCRIPTION:Join us at The Royal Sonesta Capitol Hill for a holiday vintage
   pop-up featuring local DC vendors\, curated finds\, and seasonal matcha!\
- nPrice: free\nMore: https://matchamap-cu7.pages.dev/e/823e59891f86/
-URL:https://matchamap-cu7.pages.dev/e/823e59891f86/
+ nPrice: free\nMore: https://matchamap.app/e/823e59891f86/
+URL:https://matchamap.app/e/823e59891f86/
 GEO:38.897705;-77.010741
 STATUS:CONFIRMED
 CATEGORIES:Matcha

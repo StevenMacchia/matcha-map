@@ -7,7 +7,7 @@ X-WR-CALNAME:Kyru Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:37508a683bf8@matchamap-cu7.pages.dev
+UID:37508a683bf8@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20270102T160000Z
@@ -18,9 +18,9 @@ LOCATION:Vintage Vintage Vintage DC\, 1348 4th St NE\, Washington\, DC 2000
 DESCRIPTION:Kyru\, a Virginia-based specialty cafe pop-up\, serves matcha a
  nd cafe drinks inside the Vintage Vintage Vintage vintage shop near Union 
  Market. Kyru ran the same collab in November\, so expect a small d\nMenu: 
- banana matcha\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.
- pages.dev/e/37508a683bf8/
-URL:https://matchamap-cu7.pages.dev/e/37508a683bf8/
+ banana matcha\nLikely\, not fully confirmed.\nMore: https://matchamap.app/
+ e/37508a683bf8/
+URL:https://matchamap.app/e/37508a683bf8/
 GEO:38.910063;-76.998807
 STATUS:CONFIRMED
 CATEGORIES:Matcha

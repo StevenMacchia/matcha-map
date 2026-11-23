@@ -7,7 +7,7 @@ X-WR-CALNAME:JETSET Pilates PA/NJ/DE pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:a78a24b5f0fa@matchamap-cu7.pages.dev
+UID:a78a24b5f0fa@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261213T170000Z
@@ -15,8 +15,8 @@ DTEND:20261213T190000Z
 SUMMARY:Movement\, Matcha & Bloom
 LOCATION:1810 County Line Road\, Upper Moreland Township\, PA
 DESCRIPTION:Matcha\, flowers\, Pilates & good vibes? SAY LESS!\nPrice: $55\
- nMore: https://matchamap-cu7.pages.dev/e/a78a24b5f0fa/
-URL:https://matchamap-cu7.pages.dev/e/a78a24b5f0fa/
+ nMore: https://matchamap.app/e/a78a24b5f0fa/
+URL:https://matchamap.app/e/a78a24b5f0fa/
 GEO:40.165890;-75.062115
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Oakland\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e751d0528825@matchamap-cu7.pages.dev
+UID:e751d0528825@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261128T170000Z
@@ -18,15 +18,15 @@ LOCATION:Splash Pad Park\, 746 Grand Ave\, Oakland\, CA 94610\, Oakland\, C
 DESCRIPTION:A weekly matcha pop-up at the Grand Lake Farmers Market in Oakl
  and that closes once it sells out\, so go early. Seasonal specials such as
   sweet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\
- nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/e7
- 51d0528825/
-URL:https://matchamap-cu7.pages.dev/e/e751d0528825/
+ nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/e751d0528825
+ /
+URL:https://matchamap.app/e/e751d0528825/
 GEO:37.811418;-122.248801
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:f6c4d24ddf8c@matchamap-cu7.pages.dev
+UID:f6c4d24ddf8c@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261129T170000Z
@@ -37,15 +37,14 @@ LOCATION:Temescal Farmers Market (DMV parking lot)\, 5300 Claremont Ave\, O
 DESCRIPTION:A weekly matcha pop-up at the Temescal Farmers Market in Oaklan
  d that closes once it sells out\, so go early. Seasonal specials such as s
  weet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/f6c4
- d24ddf8c/
-URL:https://matchamap-cu7.pages.dev/e/f6c4d24ddf8c/
+ ikely\, not fully confirmed.\nMore: https://matchamap.app/e/f6c4d24ddf8c/
+URL:https://matchamap.app/e/f6c4d24ddf8c/
 GEO:37.839909;-122.259415
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:fe4893d609ce@matchamap-cu7.pages.dev
+UID:fe4893d609ce@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261203T180000Z
@@ -58,14 +57,14 @@ DESCRIPTION:A Vietnamese-owned matcha and coffee pop-up that sets up in fro
   and the strawberry einspanner\, about $8 each.\nMenu: strawberry matcha e
  inspanner\, banana matcha\, caramelized banana matcha\, manila ube\, vietn
  amese coffee\nPrice: $7-8\nLikely\, not fully confirmed.\nMore: https://ma
- tchamap-cu7.pages.dev/e/fe4893d609ce/
-URL:https://matchamap-cu7.pages.dev/e/fe4893d609ce/
+ tchamap.app/e/fe4893d609ce/
+URL:https://matchamap.app/e/fe4893d609ce/
 GEO:37.847453;-122.261154
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:29e94df118f5@matchamap-cu7.pages.dev
+UID:29e94df118f5@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T170000Z
@@ -76,15 +75,15 @@ LOCATION:Splash Pad Park\, 746 Grand Ave\, Oakland\, CA 94610\, Oakland\, C
 DESCRIPTION:A weekly matcha pop-up at the Grand Lake Farmers Market in Oakl
  and that closes once it sells out\, so go early. Seasonal specials such as
   sweet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\
- nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/29
- e94df118f5/
-URL:https://matchamap-cu7.pages.dev/e/29e94df118f5/
+ nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/29e94df118f5
+ /
+URL:https://matchamap.app/e/29e94df118f5/
 GEO:37.811418;-122.248801
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:2f5ee981fa69@matchamap-cu7.pages.dev
+UID:2f5ee981fa69@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261206T170000Z
@@ -95,15 +94,14 @@ LOCATION:Temescal Farmers Market (DMV parking lot)\, 5300 Claremont Ave\, O
 DESCRIPTION:A weekly matcha pop-up at the Temescal Farmers Market in Oaklan
  d that closes once it sells out\, so go early. Seasonal specials such as s
  weet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/2f5e
- e981fa69/
-URL:https://matchamap-cu7.pages.dev/e/2f5ee981fa69/
+ ikely\, not fully confirmed.\nMore: https://matchamap.app/e/2f5ee981fa69/
+URL:https://matchamap.app/e/2f5ee981fa69/
 GEO:37.839909;-122.259415
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:3dc79823194b@matchamap-cu7.pages.dev
+UID:3dc79823194b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261210T180000Z
@@ -116,14 +114,14 @@ DESCRIPTION:A Vietnamese-owned matcha and coffee pop-up that sets up in fro
   and the strawberry einspanner\, about $8 each.\nMenu: strawberry matcha e
  inspanner\, banana matcha\, caramelized banana matcha\, manila ube\, vietn
  amese coffee\nPrice: $7-8\nLikely\, not fully confirmed.\nMore: https://ma
- tchamap-cu7.pages.dev/e/3dc79823194b/
-URL:https://matchamap-cu7.pages.dev/e/3dc79823194b/
+ tchamap.app/e/3dc79823194b/
+URL:https://matchamap.app/e/3dc79823194b/
 GEO:37.847453;-122.261154
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:a66607817533@matchamap-cu7.pages.dev
+UID:a66607817533@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261212T170000Z
@@ -134,15 +132,15 @@ LOCATION:Splash Pad Park\, 746 Grand Ave\, Oakland\, CA 94610\, Oakland\, C
 DESCRIPTION:A weekly matcha pop-up at the Grand Lake Farmers Market in Oakl
  and that closes once it sells out\, so go early. Seasonal specials such as
   sweet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\
- nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/a6
- 6607817533/
-URL:https://matchamap-cu7.pages.dev/e/a66607817533/
+ nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/a66607817533
+ /
+URL:https://matchamap.app/e/a66607817533/
 GEO:37.811418;-122.248801
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:d721dab1182b@matchamap-cu7.pages.dev
+UID:d721dab1182b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261213T170000Z
@@ -153,15 +151,14 @@ LOCATION:Temescal Farmers Market (DMV parking lot)\, 5300 Claremont Ave\, O
 DESCRIPTION:A weekly matcha pop-up at the Temescal Farmers Market in Oaklan
  d that closes once it sells out\, so go early. Seasonal specials such as s
  weet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/d721
- dab1182b/
-URL:https://matchamap-cu7.pages.dev/e/d721dab1182b/
+ ikely\, not fully confirmed.\nMore: https://matchamap.app/e/d721dab1182b/
+URL:https://matchamap.app/e/d721dab1182b/
 GEO:37.839909;-122.259415
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:d1d4a86fe418@matchamap-cu7.pages.dev
+UID:d1d4a86fe418@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261217T180000Z
@@ -174,14 +171,14 @@ DESCRIPTION:A Vietnamese-owned matcha and coffee pop-up that sets up in fro
   and the strawberry einspanner\, about $8 each.\nMenu: strawberry matcha e
  inspanner\, banana matcha\, caramelized banana matcha\, manila ube\, vietn
  amese coffee\nPrice: $7-8\nLikely\, not fully confirmed.\nMore: https://ma
- tchamap-cu7.pages.dev/e/d1d4a86fe418/
-URL:https://matchamap-cu7.pages.dev/e/d1d4a86fe418/
+ tchamap.app/e/d1d4a86fe418/
+URL:https://matchamap.app/e/d1d4a86fe418/
 GEO:37.847453;-122.261154
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:8babd4f43f42@matchamap-cu7.pages.dev
+UID:8babd4f43f42@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261219T170000Z
@@ -192,15 +189,15 @@ LOCATION:Splash Pad Park\, 746 Grand Ave\, Oakland\, CA 94610\, Oakland\, C
 DESCRIPTION:A weekly matcha pop-up at the Grand Lake Farmers Market in Oakl
  and that closes once it sells out\, so go early. Seasonal specials such as
   sweet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\
- nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/8b
- abd4f43f42/
-URL:https://matchamap-cu7.pages.dev/e/8babd4f43f42/
+ nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/8babd4f43f42
+ /
+URL:https://matchamap.app/e/8babd4f43f42/
 GEO:37.811418;-122.248801
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:bbc4a813fcc1@matchamap-cu7.pages.dev
+UID:bbc4a813fcc1@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261220T170000Z
@@ -211,15 +208,14 @@ LOCATION:Temescal Farmers Market (DMV parking lot)\, 5300 Claremont Ave\, O
 DESCRIPTION:A weekly matcha pop-up at the Temescal Farmers Market in Oaklan
  d that closes once it sells out\, so go early. Seasonal specials such as s
  weet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/bbc4
- a813fcc1/
-URL:https://matchamap-cu7.pages.dev/e/bbc4a813fcc1/
+ ikely\, not fully confirmed.\nMore: https://matchamap.app/e/bbc4a813fcc1/
+URL:https://matchamap.app/e/bbc4a813fcc1/
 GEO:37.839909;-122.259415
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:1e1fdabb9ead@matchamap-cu7.pages.dev
+UID:1e1fdabb9ead@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261226T170000Z
@@ -230,15 +226,15 @@ LOCATION:Splash Pad Park\, 746 Grand Ave\, Oakland\, CA 94610\, Oakland\, C
 DESCRIPTION:A weekly matcha pop-up at the Grand Lake Farmers Market in Oakl
  and that closes once it sells out\, so go early. Seasonal specials such as
   sweet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\
- nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/1e
- 1fdabb9ead/
-URL:https://matchamap-cu7.pages.dev/e/1e1fdabb9ead/
+ nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/1e1fdabb9ead
+ /
+URL:https://matchamap.app/e/1e1fdabb9ead/
 GEO:37.811418;-122.248801
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:81d99d97c145@matchamap-cu7.pages.dev
+UID:81d99d97c145@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261227T170000Z
@@ -249,15 +245,14 @@ LOCATION:Temescal Farmers Market (DMV parking lot)\, 5300 Claremont Ave\, O
 DESCRIPTION:A weekly matcha pop-up at the Temescal Farmers Market in Oaklan
  d that closes once it sells out\, so go early. Seasonal specials such as s
  weet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/81d9
- 9d97c145/
-URL:https://matchamap-cu7.pages.dev/e/81d99d97c145/
+ ikely\, not fully confirmed.\nMore: https://matchamap.app/e/81d99d97c145/
+URL:https://matchamap.app/e/81d99d97c145/
 GEO:37.839909;-122.259415
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:52c43b6b1a6b@matchamap-cu7.pages.dev
+UID:52c43b6b1a6b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20270102T170000Z
@@ -268,15 +263,15 @@ LOCATION:Splash Pad Park\, 746 Grand Ave\, Oakland\, CA 94610\, Oakland\, C
 DESCRIPTION:A weekly matcha pop-up at the Grand Lake Farmers Market in Oakl
  and that closes once it sells out\, so go early. Seasonal specials such as
   sweet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\
- nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/52
- c43b6b1a6b/
-URL:https://matchamap-cu7.pages.dev/e/52c43b6b1a6b/
+ nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/52c43b6b1a6b
+ /
+URL:https://matchamap.app/e/52c43b6b1a6b/
 GEO:37.811418;-122.248801
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:63c23416ddd4@matchamap-cu7.pages.dev
+UID:63c23416ddd4@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20270103T170000Z
@@ -287,9 +282,8 @@ LOCATION:Temescal Farmers Market (DMV parking lot)\, 5300 Claremont Ave\, O
 DESCRIPTION:A weekly matcha pop-up at the Temescal Farmers Market in Oaklan
  d that closes once it sells out\, so go early. Seasonal specials such as s
  weet potato matcha rotate in.\nMenu: matcha latte\, sweet potato matcha\nL
- ikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/63c2
- 3416ddd4/
-URL:https://matchamap-cu7.pages.dev/e/63c23416ddd4/
+ ikely\, not fully confirmed.\nMore: https://matchamap.app/e/63c23416ddd4/
+URL:https://matchamap.app/e/63c23416ddd4/
 GEO:37.839909;-122.259415
 STATUS:CONFIRMED
 CATEGORIES:Matcha

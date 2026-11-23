@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha event pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:762776aff9cf@matchamap-cu7.pages.dev
+UID:762776aff9cf@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261128T180000Z
@@ -16,9 +16,9 @@ SUMMARY:Brews & Botox
 LOCATION:Nspire\, 455 Kehoe Boulevard\, Carol Stream\, IL
 DESCRIPTION:Ticket includes your choice of matcha\, coffee or a mocktail\, 
  a professional consult\, a lip flip and $50 toward your next service at Ns
- pire.\nPrice: $50\nLikely\, not fully confirmed.\nMore: https://matchamap-
- cu7.pages.dev/e/762776aff9cf/
-URL:https://matchamap-cu7.pages.dev/e/762776aff9cf/
+ pire.\nPrice: $50\nLikely\, not fully confirmed.\nMore: https://matchamap.
+ app/e/762776aff9cf/
+URL:https://matchamap.app/e/762776aff9cf/
 GEO:41.909637;-88.107625
 STATUS:CONFIRMED
 CATEGORIES:Matcha

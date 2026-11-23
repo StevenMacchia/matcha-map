@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Dearborn\, MI
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:beb676c333db@matchamap-cu7.pages.dev
+UID:beb676c333db@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261128
@@ -15,8 +15,8 @@ DTEND;VALUE=DATE:20261129
 SUMMARY:Big Wiss Matcha pop-up
 LOCATION:Dearborn\, MI
 DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/beb676c333db/
-URL:https://matchamap-cu7.pages.dev/e/beb676c333db/
+ .\nMore: https://matchamap.app/e/beb676c333db/
+URL:https://matchamap.app/e/beb676c333db/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

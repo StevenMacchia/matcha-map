@@ -7,7 +7,7 @@ X-WR-CALNAME:Emily Lorem pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e499ad0219d3@matchamap-cu7.pages.dev
+UID:e499ad0219d3@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261129T230000Z
@@ -18,8 +18,8 @@ DESCRIPTION:Satirical Free Matcha & Coffee Popup in Los Angeles: Overnight
  Line | TikTok Title: Satirical Free Matcha & Coffee Popup in Los Angeles: 
  Overnight Line | TikTok thinking about this drink still .\nMenu: ube ice c
  ream\nPrice: $100\nDetails not confirmed yet. Check the brand's post befor
- e you go.\nMore: https://matchamap-cu7.pages.dev/e/e499ad0219d3/
-URL:https://matchamap-cu7.pages.dev/e/e499ad0219d3/
+ e you go.\nMore: https://matchamap.app/e/e499ad0219d3/
+URL:https://matchamap.app/e/e499ad0219d3/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

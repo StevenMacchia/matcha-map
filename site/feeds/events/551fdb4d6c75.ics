@@ -7,7 +7,7 @@ X-WR-CALNAME:Caribe & Co. pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:551fdb4d6c75@matchamap-cu7.pages.dev
+UID:551fdb4d6c75@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261226T150000Z
@@ -19,8 +19,8 @@ DESCRIPTION:A Caribbean-inspired pop-up cafe inside the SoWa Christmas Mark
  et\, serving cornmeal porridge matcha lattes and a carrot punch that can b
  e made with matcha all holiday season.\nMenu: cornmeal porridge matcha lat
  te\, carrot punch matcha (cold brew or matcha\nLikely\, not fully confirme
- d.\nMore: https://matchamap-cu7.pages.dev/e/551fdb4d6c75/
-URL:https://matchamap-cu7.pages.dev/e/551fdb4d6c75/
+ d.\nMore: https://matchamap.app/e/551fdb4d6c75/
+URL:https://matchamap.app/e/551fdb4d6c75/
 GEO:42.341119;-71.066017
 STATUS:CONFIRMED
 CATEGORIES:Matcha

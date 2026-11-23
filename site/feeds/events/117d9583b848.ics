@@ -7,7 +7,7 @@ X-WR-CALNAME:Sunday Culture pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:117d9583b848@matchamap-cu7.pages.dev
+UID:117d9583b848@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261124T000000Z
@@ -15,8 +15,8 @@ DTEND:20261124T023000Z
 SUMMARY:Florals & Friends hosted by @olastudionyc
 LOCATION:@olastudionyc\, 68 Jay St\, Brooklyn\, NY
 DESCRIPTION:spend your Friendsgiving with us at a floral atelier\nMore: htt
- ps://matchamap-cu7.pages.dev/e/117d9583b848/
-URL:https://matchamap-cu7.pages.dev/e/117d9583b848/
+ ps://matchamap.app/e/117d9583b848/
+URL:https://matchamap.app/e/117d9583b848/
 GEO:40.702847;-73.986828
 STATUS:CONFIRMED
 CATEGORIES:Matcha

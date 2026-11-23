@@ -7,7 +7,7 @@ X-WR-CALNAME:Dream Tea NYC pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:9059d72984b8@matchamap-cu7.pages.dev
+UID:9059d72984b8@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261231T160000Z
@@ -16,8 +16,8 @@ SUMMARY:Dream Tea NYC pop-up
 LOCATION:New York\, NY
 DESCRIPTION:Dream Tea NYC in Columbus Circle Holiday Market.\nDetails not c
  onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
- ap-cu7.pages.dev/e/9059d72984b8/
-URL:https://matchamap-cu7.pages.dev/e/9059d72984b8/
+ ap.app/e/9059d72984b8/
+URL:https://matchamap.app/e/9059d72984b8/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

@@ -7,7 +7,7 @@ X-WR-CALNAME:Metanoia Toolbox Sacred Wellness Space pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:74b5fa2190b2@matchamap-cu7.pages.dev
+UID:74b5fa2190b2@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261215T190000Z
@@ -17,8 +17,8 @@ LOCATION:Metanoia Toolbox Sacred Wellness Space\, 2150 East Brown Road\, Me
  sa\, AZ
 DESCRIPTION:Slow down\, soften and breathe with this loving combination of 
  Yin Yoga and Sound!\nPrice: $22.22\nLikely\, not fully confirmed.\nMore: h
- ttps://matchamap-cu7.pages.dev/e/74b5fa2190b2/
-URL:https://matchamap-cu7.pages.dev/e/74b5fa2190b2/
+ ttps://matchamap.app/e/74b5fa2190b2/
+URL:https://matchamap.app/e/74b5fa2190b2/
 GEO:33.437584;-111.784732
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -7,7 +7,7 @@ X-WR-CALNAME:Mystic Moon pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:39470a524d45@matchamap-cu7.pages.dev
+UID:39470a524d45@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261205T150000Z
@@ -16,9 +16,9 @@ SUMMARY:mystic moon Vintage + Art Market
 LOCATION:Audubon Park\, Orlando\, FL
 DESCRIPTION:The mystic moon Vintage + Art Market brings curated vintage and
   Y2K\, local art\, handmade goods\, matcha\, sourdough and treats to Audub
- on Park.\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
- .dev/e/39470a524d45/
-URL:https://matchamap-cu7.pages.dev/e/39470a524d45/
+ on Park.\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/394
+ 70a524d45/
+URL:https://matchamap.app/e/39470a524d45/
 GEO:28.564601;-81.342718
 STATUS:CONFIRMED
 CATEGORIES:Matcha

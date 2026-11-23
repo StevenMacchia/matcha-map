@@ -7,7 +7,7 @@ X-WR-CALNAME:Dream Tea NYC pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:0d840c84643f@matchamap-cu7.pages.dev
+UID:0d840c84643f@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261205T140000Z
@@ -15,8 +15,8 @@ DTEND:20261205T160000Z
 SUMMARY:Dream Tea NYC in Fort Greene
 LOCATION:Brooklyn\, NY
 DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/0d840c84643f/
-URL:https://matchamap-cu7.pages.dev/e/0d840c84643f/
+ .\nMore: https://matchamap.app/e/0d840c84643f/
+URL:https://matchamap.app/e/0d840c84643f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

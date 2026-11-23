@@ -7,7 +7,7 @@ X-WR-CALNAME:evefanysens123 pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:da33035a8ef2@matchamap-cu7.pages.dev
+UID:da33035a8ef2@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261122T193450Z
 DTSTART:20270111T200000Z
@@ -18,8 +18,8 @@ DESCRIPTION:Pop-up Matcha Shop in Sydney — 268B Cleveland St (1/11 until
  3pm) 203 Likes\, TikTok video from Evefanysens ( ): “Limited-time pop-up
   matcha shop at 268B Cleveland Street\, Sydney — open 1/11\nDetails not 
  confirmed yet. Check the brand's post before you go.\nMore: https://matcha
- map-cu7.pages.dev/e/da33035a8ef2/
-URL:https://matchamap-cu7.pages.dev/e/da33035a8ef2/
+ map.app/e/da33035a8ef2/
+URL:https://matchamap.app/e/da33035a8ef2/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

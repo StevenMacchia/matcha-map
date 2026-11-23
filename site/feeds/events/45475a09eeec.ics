@@ -7,7 +7,7 @@ X-WR-CALNAME:Muracha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:45475a09eeec@matchamap-cu7.pages.dev
+UID:45475a09eeec@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART:20261212T160000Z
@@ -19,8 +19,8 @@ DESCRIPTION:A holiday-season matcha bar at the Buckhead Village shop Bella
  Cucina\, with Muracha serving matcha and selling its tins and tools. A lim
  ited Collector's Set made with artist Kristen Giorgi is on sale.\nMenu: ma
  tcha served from the bar\, collector's set: yame no. 89 and uji no.\nMore:
-  https://matchamap-cu7.pages.dev/e/45475a09eeec/
-URL:https://matchamap-cu7.pages.dev/e/45475a09eeec/
+  https://matchamap.app/e/45475a09eeec/
+URL:https://matchamap.app/e/45475a09eeec/
 GEO:33.838303;-84.378234
 STATUS:CONFIRMED
 CATEGORIES:Matcha

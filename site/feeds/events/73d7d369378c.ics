@@ -7,7 +7,7 @@ X-WR-CALNAME:Bearly Awake Cafe pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:73d7d369378c@matchamap-cu7.pages.dev
+UID:73d7d369378c@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20270102
@@ -15,9 +15,9 @@ DTEND;VALUE=DATE:20270103
 SUMMARY:Bearly Awake Cafe pop-up
 LOCATION:Atlanta\, GA
 DESCRIPTION:MOMOKO MART 11/08\nMenu: strawberry\nDetails not confirmed yet.
-  Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.
- dev/e/73d7d369378c/
-URL:https://matchamap-cu7.pages.dev/e/73d7d369378c/
+  Check the brand's post before you go.\nMore: https://matchamap.app/e/73d7
+ d369378c/
+URL:https://matchamap.app/e/73d7d369378c/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

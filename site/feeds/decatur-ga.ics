@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Decatur\, GA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1592600cd51b@matchamap-cu7.pages.dev
+UID:1592600cd51b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20270515
@@ -17,9 +17,9 @@ LOCATION:Wonderful World Coffee and Tea\, 6 Olive Street\, Avondale Estates
  \, GA
 DESCRIPTION:Enjoy coffee and matcha\, wellness sessions\, games\, creative 
  activities\, & local vendors with good food\, music\, and even better comp
- any!\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev
- /e/1592600cd51b/
-URL:https://matchamap-cu7.pages.dev/e/1592600cd51b/
+ any!\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/1592600
+ cd51b/
+URL:https://matchamap.app/e/1592600cd51b/
 GEO:33.775965;-84.273568
 STATUS:CONFIRMED
 CATEGORIES:Matcha

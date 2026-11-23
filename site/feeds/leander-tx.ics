@@ -7,7 +7,7 @@ X-WR-CALNAME:Matcha Map: Leander\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:fdd5d1d2e525@matchamap-cu7.pages.dev
+UID:fdd5d1d2e525@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20261128
@@ -15,8 +15,8 @@ DTEND;VALUE=DATE:20261129
 SUMMARY:Central Matcha pop-up at Bell
 LOCATION:Bell\, 200 S Bell Blvd\, Cedar Park\, TX
 DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/fdd5d1d2e525/
-URL:https://matchamap-cu7.pages.dev/e/fdd5d1d2e525/
+ .\nMore: https://matchamap.app/e/fdd5d1d2e525/
+URL:https://matchamap.app/e/fdd5d1d2e525/
 GEO:30.508265;-97.822722
 STATUS:TENTATIVE
 CATEGORIES:Matcha

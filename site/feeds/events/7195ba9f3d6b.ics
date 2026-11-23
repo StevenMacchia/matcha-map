@@ -7,7 +7,7 @@ X-WR-CALNAME:Columbus Tea Lovers pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:7195ba9f3d6b@matchamap-cu7.pages.dev
+UID:7195ba9f3d6b@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T151600Z
 DTSTART:20261206T160000Z
@@ -17,8 +17,8 @@ LOCATION:Columbus\, OH
 DESCRIPTION:Lots of drinks\, snacks\, and desserts for whether you want jus
  t a bite to eat or a whole meal with your chai or matcha latte\nMenu: chai
  \, latte\nDetails not confirmed yet. Check the brand's post before you go.
- \nMore: https://matchamap-cu7.pages.dev/e/7195ba9f3d6b/
-URL:https://matchamap-cu7.pages.dev/e/7195ba9f3d6b/
+ \nMore: https://matchamap.app/e/7195ba9f3d6b/
+URL:https://matchamap.app/e/7195ba9f3d6b/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

@@ -7,7 +7,7 @@ X-WR-CALNAME:Caribe & Co. pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:3a298bbff452@matchamap-cu7.pages.dev
+UID:3a298bbff452@matchamap.app
 DTSTAMP:20261123T230054Z
 LAST-MODIFIED:20261123T230054Z
 DTSTART;VALUE=DATE:20270104
@@ -16,9 +16,8 @@ SUMMARY:Caribe & Co. pop-up
 LOCATION:Boston\, MA
 DESCRIPTION:The flavors of banana bread meet sweet plantain\nMenu: banana\,
   brown sugar\, cold foam\, vanilla\nDetails not confirmed yet. Check the b
- rand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/3a298b
- bff452/
-URL:https://matchamap-cu7.pages.dev/e/3a298bbff452/
+ rand's post before you go.\nMore: https://matchamap.app/e/3a298bbff452/
+URL:https://matchamap.app/e/3a298bbff452/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
