@@ -1,5 +1,5 @@
 // npm run ingest: sources -> adapters -> extractor -> geocoder -> writer.
-// Flags: --source <id> | --paste [--file <path>] | --inbox | --no-fetch | --dry | --verbose
+// Flags: --source <id> | --paste [--file <path>] | --inbox | --no-fetch | --dry | --verbose | --no-art
 // Default run = every active source, then data/inbox/*.txt. Exit non-zero only on a crash.
 import "./lib/env.js";
 import fs from "node:fs";
@@ -116,6 +116,8 @@ async function main() {
     return;
   }
   info("wrote data/events.json and site/data/events.json");
+  // Draw a cartoon for new drinks and photo-less events (tools/illustrate; never fails the ingest).
+  if (!a.flags.has("no-art")) { const o = await (await import("./lib/art.js")).renderMissingArt({ events: merged.events, sources }); if (o) info(o.line); }
   // Keep the static city and brand pages in step with the data (never from watch).
   try { const { run } = await import("../tools/gen-pages.js"); const o = run(); info(`pages: ${o.counts.cities} city, ${o.counts.brands} brand`); }
   catch (e) { warn(`pages not regenerated: ${e.message}`); }

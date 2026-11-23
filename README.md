@@ -83,6 +83,8 @@ Set as environment variables. All are optional; the site and ingest work without
 | `TIKTOK_KEY` | TikTok API adapter. |
 | `INSTAGRAM_OEMBED_TOKEN` | Captions for pasted Instagram links. |
 | `YELP_API_KEY` | Yelp Fusion: rating, hours, phone and a photo on the card for venues and shops (free, no card, 500 calls a day; the adapter stops at 400). |
+| `OPENAI_API_KEY` | Optional: `npm run art -- --image-api` lets OpenAI's gpt-image-1 draw a PNG of a menu drink beside its SVG (quality low, about $0.01 to $0.02 an image; 5 a run). Key at platform.openai.com/api-keys. Never used by tests or the ingest. |
+| `STABILITY_API_KEY` | Same, through Stability's Stable Image Core (3 credits, about $0.03 an image). Key at platform.stability.ai/account/keys. OpenAI wins when both are set. |
 
 ## Richer place info
 
@@ -157,6 +159,12 @@ A third map layer shows permanent matcha shops as little storefront icons, on by
 - It is its own command and is not part of `npm run refresh`: the public Overpass servers are shared and can be slow, so a run takes many minutes. Run it now and then.
 - The data is © OpenStreetMap contributors, ODbL; the file carries the attribution and each card links to its OpenStreetMap page.
 
+
+## Drink art
+
+When a menu names a drink nobody has a photo of, the map draws one. `npm run art` (tools/illustrate/run.js) reads every menu in `data/events.json`, turns each distinct drink or sweet into a cartoon in the house style and writes `site/art/drinks/<slug>.svg`, plus one 16:10 scene per event without a downloaded photo (`site/art/events/<event id>.svg`: its signature drinks, Mattie and the brand). `site/art/index.json` records the file, the parts, the text it came from and the generator version; a second run with the same text and code draws nothing. `npm run ingest` runs the same step after it writes events (skip it with `--no-art`); a failure there is only a warning.
+
+The drawing code is `tools/illustrate/drink.js` (no dependencies; `specFromText(text)` reads cup, layers, ice, foam, toppings, straw, garnish and size from the words, `drawDrink(spec)` draws them). `site/art.js` is the same file for the browser; `npm run art` refreshes it and a test checks they match. To teach it a flavour, add a colour to `FLAVORS` in drink.js. Review the art at `/art/gallery.html` (light and dark, phone size, a live box to try any drink). The SVG path is the default and stays free; `--image-api` with an `OPENAI_API_KEY` or `STABILITY_API_KEY` adds PNGs (see Optional keys).
 ## Posts
 
 `npm run flyers` makes flyer-style Instagram posts for the @matchamap.us account, in the house style (cream canvas, petal pattern, Mattie, azuki outlines). It reads `data/events.json` and writes to `tools/brand/outbox/<yyyy-mm-dd>/`:
