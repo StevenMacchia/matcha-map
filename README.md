@@ -190,3 +190,17 @@ Four more sources run inside `npm run discover` (`--only permits|markets|feeds|b
 ### Embed captions for pasted links
 
 `ingest/lib/embed-captions.js` reads the public embed page of an Instagram post or TikTok video that you pasted into `data/inbox/`, never anything found by search. Both hosts' robots.txt disallow the embed path today, so it makes no request; paste the caption as before. Rung 22's manual adapter can call `enrichFromEmbed(raw, { fetcher, file, state: newEmbedState() })` once per inbox file.
+
+## Pages and SEO
+
+A one-page map cannot be found by search, so `npm run pages` (`tools/gen-pages.js`) writes a static layer into `site/`, and `npm run ingest` runs it at the end of every ingest (never from `watch`).
+
+- `site/city/<state>/<slug>/index.html`: one page per city of `data/cities.json` that has an upcoming pop-up, a brand based there with one coming, or a verified storefront within 25 km, plus the top 100 cities by population. Upcoming pop-ups by day, nearby shops, brands based there, the 6 nearest cities with pages, JSON-LD (BreadcrumbList and one Event per pop-up).
+- `site/brand/<handle>/index.html`: one page per source and per named watch-list account, with upcoming and past pop-ups.
+- `site/sitemap.xml`, `site/robots.txt`, and the SEO head of `site/index.html` (between the `seo:start` and `seo:end` markers; do not edit by hand).
+- The pages load no map and no app script. They link in with `/?city=<slug>-<st>`, `/?event=<id>`, `/?brand=<handle>`; `/?q=` runs the Zip-or-city box (the WebSite SearchAction). Parsing is in `site/deeplink.js`. A guard stops the build if the page set nears 20,000 files or 15 MB (thin brand pages are dropped first).
+- `site/og.png` is the shared link-preview card; `npm run og` re-renders it with headless Chrome. `site/_headers` sets caching for Cloudflare Pages. Per-city redirects without the state are not done: a slug can belong to several states.
+
+Domain switch: edit `SITE_URL` in `tools/site-url.js` to `https://matchamap.us`, run `npm run pages`, deploy. Canonicals, Open Graph, the sitemap, robots and JSON-LD all follow.
+
+Search Console, once the domain exists: add it as a property (domain verification by DNS), open Sitemaps, submit `sitemap.xml`. Bing Webmaster Tools can import the same property.

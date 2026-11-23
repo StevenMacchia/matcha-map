@@ -1,0 +1,28 @@
+/* Static city and brand pages (tools/gen-pages.js). Tokens come from style.css; this file undoes its full-screen app layout. */
+html.pg, html.pg body.pg { height: auto; min-height: 100%; overflow: visible; display: block; background: var(--canvas); background-image: var(--wash); background-attachment: fixed; }
+.pg-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 760px; margin: 0 auto; padding: 14px 16px; }
+.pg-home { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: 18px; color: var(--ink); text-decoration: none; }
+.pg-mark { width: 36px; height: 36px; flex: none; }
+.pg-map, .pg-btn { display: inline-block; padding: 8px 16px; border: 2px solid var(--edge); border-radius: var(--pill); background: var(--btnfill); color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; }
+.pg-map:hover, .pg-btn:hover { background: var(--foam); }
+.pg-main { max-width: 760px; margin: 0 auto; padding: 8px 16px 32px; }
+.pg-main h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.15; margin: 8px 0 10px; }
+.pg-main h2 { font-size: 22px; margin: 32px 0 10px; }
+.pg-main h3 { font-size: 17px; margin: 0 0 4px; }
+.pg-crumb { font-size: 14px; color: var(--muted); }
+.pg-crumb a { color: var(--muted); }
+.pg-lead { font-size: 19px; font-weight: 700; margin: 0 0 8px; }
+.pg-sub { color: var(--muted); margin: 0 0 8px; line-height: 2.1; }
+.pg-day { margin: 22px 0 8px !important; font-size: 18px !important; color: var(--deep); }
+.pg-list, .pg-chips { list-style: none; margin: 0; padding: 0; }
+.pg-ev, .pg-shops li { background: var(--panel); border: 2px solid var(--line); border-radius: var(--r); padding: 14px 16px; margin: 0 0 10px; box-shadow: var(--shadow); }
+.pg-ev p { margin: 2px 0; }
+.pg-when { font-weight: 800; }
+.pg-menu, .pg-dim { color: var(--muted); }
+.pg-note { font-size: 14px; color: var(--muted); font-style: italic; }
+.pg-links { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-top: 10px !important; }
+.pg-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.pg-chips li { background: var(--panel); border: 2px solid var(--line); border-radius: var(--pill); padding: 6px 14px; }
+.pg-how p { max-width: 62ch; line-height: 1.55; }
+.pg-credit { color: var(--muted); font-size: 15px; }
+.pg-foot { max-width: 760px; margin: 0 auto; padding: 8px 16px 40px; color: var(--muted); font-size: 14px; }

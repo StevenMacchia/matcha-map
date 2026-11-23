@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matchamap-cu7.pages.dev/sitemap.xml

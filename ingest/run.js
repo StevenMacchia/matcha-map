@@ -109,6 +109,9 @@ async function main() {
     return;
   }
   info("wrote data/events.json and site/data/events.json");
+  // Keep the static city and brand pages in step with the data (never from watch).
+  try { const { run } = await import("../tools/gen-pages.js"); const o = run(); info(`pages: ${o.counts.cities} city, ${o.counts.brands} brand`); }
+  catch (e) { warn(`pages not regenerated: ${e.message}`); }
 }
 
 main().catch((e) => { console.error("ingest crashed:", e); process.exit(1); });
