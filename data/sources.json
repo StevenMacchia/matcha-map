@@ -17,7 +17,12 @@
     "notes": "Pop-up matcha cart at CommonRags Studio in Oak Cliff, weekends noon to 4 per Visit Dallas. Dates on Instagram only; no website found.",
     "added": "2026-11-22",
     "verified": "2026-11-22",
-    "auto_name": "333Matcha"
+    "auto_name": "333Matcha",
+    "about": "333Matcha is a Latino-owned matcha cart that sets up on weekends at CommonRags Studio in Oak Cliff, Dallas.",
+    "signature_drinks": [
+      "Strawberry Matcha"
+    ],
+    "hours_note": "Weekends, noon to 4pm"
   },
   {
     "id": "addventures-matcha-meetup",
@@ -265,7 +270,16 @@
     "instagram": "whatatastematcha",
     "schedule_kind": "website",
     "adapter": "website",
-    "notes": "Founder-run matcha cart in Dearborn and Dearborn Heights: weekend pop-ups, restaurant nights, private events and catering. Rotating dessert-flavor matchas (tiramisu, strawberry shortcake, coconut vanilla, banana pudding, cereal milk, honey whip, ube). Prices and payment not listed. Site listed Oct 24-25 2026 (Dearborn Heights) as the latest; no Nov-Jan dates found. Dates also on Instagram @whatatastematcha. Evidence: https://bigwissmatcha.com/"
+    "notes": "Founder-run matcha cart in Dearborn and Dearborn Heights: weekend pop-ups, restaurant nights, private events and catering. Rotating dessert-flavor matchas (tiramisu, strawberry shortcake, coconut vanilla, banana pudding, cereal milk, honey whip, ube). Prices and payment not listed. Site listed Oct 24-25 2026 (Dearborn Heights) as the latest; no Nov-Jan dates found. Dates also on Instagram @whatatastematcha. Evidence: https://bigwissmatcha.com/",
+    "about": "Big Wiss Matcha is Wiss's own matcha cart in Dearborn, Michigan, serving handcrafted matcha at weekend pop-ups, restaurant nights and private events. It is known for a new dessert flavor at every pop-up and a red heart on every lid.",
+    "signature_drinks": [
+      "Tiramisu Matcha",
+      "Strawberry Shortcake Matcha",
+      "Coconut Vanilla Matcha",
+      "Banana Pudding Matcha",
+      "Cereal Milk Matcha",
+      "Ube Matcha"
+    ]
   },
   {
     "id": "blind-tiger-ybor-matcha",
@@ -513,7 +527,12 @@
     "active": true,
     "notes": "Mobile matcha and Vietnamese coffee brand; Bay Area farmers markets and pop-ups (SF, Oakland Kaiser market, San Jose). MATO page lists upcoming dates (22, 24 Nov, 6 Dec 2026).",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Caffeine Depot is a San Francisco pop-up and catering business serving handcrafted Vietnamese coffee and premium matcha, with no fixed storefront. It shows up at farmers markets and events around the Bay Area.",
+    "signature_drinks": [
+      "Vietnamese Coffee",
+      "Matcha Latte"
+    ]
   },
   {
     "id": "caribe-and-co",
@@ -569,7 +588,15 @@
     "active": true,
     "notes": "Austin small business selling 100% ceremonial-grade matcha from Japan (shade grown, hand picked, stone ground). Stands at Texas Farmers' Market at Mueller on Sundays (10am-2pm) and Barton Creek or Bell (Cedar Park) on Saturdays; also retail at Local Pastures and wholesale/catering. Signature: matcha shot, iced matcha latte. Price and payment not published. Evidence: https://centralmatcha.com/pages/find-us",
     "added": "2026-11-23",
-    "verified": null
+    "verified": null,
+    "about": "Central Matcha is an Austin small business built on 100% ceremonial matcha sourced directly from Kagoshima, Japan. The founder's college barista job inspired it, and Austin cafes also buy its matcha.",
+    "signature_drinks": [
+      "Classic Matcha",
+      "Iced Matcha Latte",
+      "Matcha Shot"
+    ],
+    "pay": "card, Apple Pay, Google Pay",
+    "hours_note": "Saturdays at Bell and Barton Creek farmers markets; Sundays at Mueller farmers market"
   },
   {
     "id": "cere-tea",
@@ -626,7 +653,14 @@
     "active": true,
     "notes": "LA and NYC matcha cafe chain; brand collabs such as the MALK banana cream matcha latte pop-up (Apr 2 to 5 2026); rotates seasonal menus. Evidence: https://malkorganics.com/blogs/news/malk-x-cha-cha-matcha-a-limited-time-banana-cream-matcha-latte-nyc-la-pop-up https://www.instagram.com/p/Dfr0Vi-FWgL",
     "added": "2026-11-22",
-    "verified": null
+    "verified": null,
+    "about": "Cha Cha Matcha is a New York-born matcha cafe brand co-founded by Matthew Morton and Conrad Sandelman. It opened its first Los Angeles shop on Robertson Boulevard and aims to make matcha fun and quick.",
+    "signature_drinks": [
+      "Draft Matcha Latte",
+      "Matcha Lemonade",
+      "Pink Lemonade Matcha",
+      "Oat Milk Matcha"
+    ]
   },
   {
     "id": "chai-and-cha",
@@ -854,7 +888,8 @@
     "active": true,
     "notes": "LA brand that hosts anniversary and collab pop-ups (Venice, June 2026). Website has no events page; dates on Instagram and Luma host pages.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Daylight Matcha is a Los Angeles brand inspired by Japanese tea rituals, selling premium Uji matcha and hojicha sourced from Kyoto. It also makes matcha kits with HARIO."
   },
   {
     "id": "dew-caffeine",
@@ -948,7 +983,8 @@
     "active": true,
     "notes": "Tea brand (loose leaf, ceremonial matcha, matcha gift sets) that runs weekly holiday-market stands across NYC; Eventbrite organizer page lists dated stands (Columbus Circle Dec 1-31, Cobble Hill Dec 5-6, Dumbo Dec 14-20, Fort Greene Dec 5). Instagram handle not found on the Eventbrite pages and not guessed. The manual inbox matcher needs a handle in the URL or text, so these pastes will not match until a handle is added or the matcher also tries the brand name.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Dream Tea NYC is a woman-owned tea company that sells loose-leaf and plastic-free tea bags plus ceremonial matcha from Japan. It runs holiday market stands around New York."
   },
   {
     "id": "duo-donuts-matcha",
@@ -1366,7 +1402,16 @@
     "active": true,
     "notes": "4 to 5 pop-ups a month; monthly schedule posted on Instagram (Star-Advertiser, Aloha State Daily). No website found.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Green Times Matcha is a Honolulu matcha business run by founder Jinie Ho, who started it in July 2025 as a mobile cart for company events. It does pop-ups around Oahu and is known for fruity cold-foam matcha lattes.",
+    "signature_drinks": [
+      "Mango Matcha",
+      "Strawberry Matcha",
+      "Earl Grey Matcha",
+      "Banana Cream Matcha",
+      "Ube Condensed Milk Matcha"
+    ],
+    "price_range": "$9 to $10"
   },
   {
     "id": "habibtea-raleigh",
@@ -1690,7 +1735,15 @@
     "active": true,
     "notes": "Brand pop-ups with retail partners (GU Soho July 2026); MATO page lists dates. Also lists unrelated community events.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Isshiki Matcha is a New York matcha cafe in the East Village founded by Angel Zheng, who sources from a third-generation family farm in Uji, Kyoto. Its best seller is the strawberry matcha latte.",
+    "signature_drinks": [
+      "Strawberry Matcha Latte",
+      "Brown Sugar Matcha Latte",
+      "Matcha Coconut",
+      "Matcha Lemonade"
+    ],
+    "hours_note": "Cafes daily, about 8am to 6pm (Nomad 7:30am to 5pm)"
   },
   {
     "id": "izumi-matcha",
@@ -1747,7 +1800,13 @@
     "active": true,
     "notes": "Started as a market stand, now has a shop at 93 Franklin St but still pops up (The Alps, Riverview Farmers Market Sundays per Hoboken Girl). Schedule on Instagram. Not the DC brand Jane Coffee and Matcha.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Jane's Matcha was founded by Jersey City Heights resident Jane Yang, who started it as a farmers market pop-up in May 2024. It now has a shop at 93 Franklin Street and is known for the Honeycomb Latte.",
+    "signature_drinks": [
+      "Honeycomb Latte",
+      "Hojicha Latte"
+    ],
+    "hours_note": "Shop 7am to 4pm Mon, Wed to Fri; 9am to 4pm weekends; closed Tue"
   },
   {
     "kind": "popup",
@@ -2699,7 +2758,13 @@
     "active": true,
     "notes": "Sourdough bakery pop-up cafe with Matte Matcha Bar matcha and hojicha lattes; MATO lists upcoming 2026-11-22, 11-28, 11-29 stops.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Mellobun is a pop-up sourdough bakery near Sacramento that sells walk-up only, first come first served. It teams up with Matte Matcha Bar for matcha and hojicha lattes.",
+    "signature_drinks": [
+      "Matcha Latte",
+      "Hojicha Latte"
+    ],
+    "hours_note": "Saturdays 9am to 1pm"
   },
   {
     "id": "merri-matcha",
@@ -2831,7 +2896,14 @@
     "active": true,
     "notes": "Started as market pop-up, now has a shop; hosts dated events (Matcha 101, summer party) listed on MATO venue sipmiramatcha. Handle not seen.",
     "added": "2026-11-22",
-    "verified": null
+    "verified": null,
+    "about": "Mira Matcha is a San Antonio matcha shop that began as a once-a-week pop-up at a market. It grew into a weekend trailer and then a cafe, and is known for ceremonial-grade matcha with Latin-inspired flavors.",
+    "signature_drinks": [
+      "Coconut Horchata Matcha",
+      "Lavender Agave Matcha",
+      "Mexican Vanilla Matcha",
+      "Hojicha Latte"
+    ]
   },
   {
     "id": "mizuba-tea-co",
@@ -2983,7 +3055,14 @@
     "active": true,
     "notes": "LA brand; Viceroy Santa Monica pop-up May 2026 (first hotel partnership) with Partiful RSVP. Dates on Instagram; no website found.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "More Than Matcha is a woman-owned Los Angeles brand founded by LA native Rosie Goldwasser. It uses organic ceremonial matcha from Kagoshima, Japan and is known for its cream-top Summer Cloud drinks.",
+    "signature_drinks": [
+      "Classic Matcha Cloud",
+      "Lavender Matcha",
+      "Strawberry Matcha",
+      "Tropical Mango Matcha"
+    ]
   },
   {
     "id": "mori-matcha",
@@ -3174,7 +3253,13 @@
     "notes": "Matcha truck started by UVA students; MarketSpread lists Charlottesville City Market, Farmers in the Park, Holiday Market, Farmers Market at IX; weekly spots on Instagram. Evidence a.",
     "added": "2026-11-22",
     "verified": "2026-11-22",
-    "auto_name": "NOK108"
+    "auto_name": "NOK108",
+    "about": "NOK108 is a Charlottesville matcha truck run by UVA alumna Yuna Park with her mother and sister, drawing on their family's matcha business in Japan. It is known for inventive flavors and pastel de nata egg tarts.",
+    "signature_drinks": [
+      "Strawberry Matcha Cloud",
+      "Yuzu Sparkling Matcha",
+      "Raspberry Earl Grey Matcha Latte"
+    ]
   },
   {
     "id": "nomu-boston",
@@ -3270,7 +3355,9 @@
     "active": true,
     "notes": "Sunday Grant Park Farmers Market plus wellness-venue pop-ups. Website has no events page; dates on Instagram.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Oohmami Matcha is an Atlanta direct-to-consumer matcha brand founded by Chanel Allen, who set out to make a less processed matcha at home. She sells powder and drinks at the Grant Park Farmers Market on Sundays.",
+    "hours_note": "Sundays at Grant Park Farmers Market"
   },
   {
     "id": "ouri-matcha",
@@ -3479,7 +3566,13 @@
     "active": true,
     "notes": "Playful matcha pop-up cart; Matcha Fest at Cuban Club, Ybor; I Love the Burg collab. Instagram for locations.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Ritual Grounds is a playful matcha and coffee pop-up in St. Petersburg, Florida, run by Jonathan Villafane and his partner Ian. It serves single-origin Uji matcha in creative drinks.",
+    "signature_drinks": [
+      "Sunshine City Matcha",
+      "Banana Creme Brulee Matcha",
+      "Wasabi Matcha"
+    ]
   },
   {
     "id": "rockys-matcha",
@@ -3878,7 +3971,15 @@
     "active": true,
     "notes": "Matcha tea house on Mississippi Ave that hosts dated matcha events and pop-ups (Pilates + Matcha 2026-08-09, Butter Coop pop-up). MATO page: none upcoming.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Tea Loft is a Portland matcha and tea house at 4214 N Mississippi Ave. It serves ceremonial matcha lattes, hojicha, fruit and milk teas, and pastries from a partner bakery.",
+    "signature_drinks": [
+      "Strawberry Matcha",
+      "Matcha Riot Latte",
+      "Uji Premium Matcha",
+      "Osmanthus Oolong Milk Tea"
+    ],
+    "price_range": "$6.50 to $8.75"
   },
   {
     "id": "tees-matcha",
@@ -3992,7 +4093,9 @@
     "active": true,
     "notes": "Matcha pop-up inside Roots bookstore, Liberty City, Tue-Sat from 8am (Infatuation). Instagram for changes.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "The Matcha Edit is a matcha and coffee pop-up inside Roots Bookstore, a Black-owned bookshop in Liberty City, Miami. It runs on an 'Edit Your Energy' idea of slowing down and sipping mindfully.",
+    "hours_note": "Roots Bookstore is open Tue to Sat, noon to 6pm; pop-up days reported as Thu and Sat"
   },
   {
     "id": "the-matcha-market-atl",
@@ -4061,14 +4164,22 @@
     "home_state": "NJ",
     "website": "https://theliscoffee.com",
     "instagram": "theliscoffee",
-    "tiktok": null,
+    "tiktok": "thelis.coffee",
     "schedule_url": null,
     "schedule_kind": "manual",
     "adapter": "manual",
     "active": true,
     "notes": "Mobile lattes and matcha with pop-ups in NJ and NYC (Hoboken Girl coffee carts guide, class a). Home town not stated; Hoboken is a guess from the guide. Matcha is one of two menu lines.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Thelis Coffee is a mobile coffee and matcha service for New Jersey and NYC events. The name comes from the founders' grandfather asking passing motorcyclists \"Thelis cup?\" in the Greek mountains.",
+    "signature_drinks": [
+      "Matcha Latte",
+      "Freddo Matcha",
+      "Rose Loukoumi Matcha",
+      "Sweet Greek Honey Latte",
+      "Greek Frappe"
+    ]
   },
   {
     "id": "they-say-that",
@@ -4251,14 +4362,16 @@
     "home_state": "WA",
     "website": null,
     "instagram": "valematcha",
-    "tiktok": null,
+    "tiktok": "valematcha",
     "schedule_url": "https://ma.to/venue/valematcha",
     "schedule_kind": "website",
     "adapter": "website",
     "active": true,
     "notes": "Cafe plus pop-ups (Seattle Center waterfront, May 2026). MATO page shows recent events, none upcoming. Linktree: linktr.ee/valematcha.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "Vale Matcha is a Seattle matcha brand, \"Seattle's Matcha on Tap\", with a cafe at 2000 Terry Ave. It is planting its own tea farm, Vale Farms, on Whidbey Island.",
+    "linktree": "https://linktr.ee/valematcha"
   },
   {
     "tiktok": null,
@@ -4354,7 +4467,9 @@
     "active": true,
     "notes": "Matcha pop-ups at Loudoun-area farmers markets (Brambleton, Ashbrook, Met Park) and events; 27 MATO listings, new dates weekly (next: Brambleton 2026-11-22). Home city unconfirmed, set to DC metro.",
     "added": "2026-11-22",
-    "verified": "2026-11-22"
+    "verified": "2026-11-22",
+    "about": "whisk'd is a mobile creative collective that runs pop-up drink events around the Washington, DC area. It serves handcrafted matcha and specialty coffee at farmers markets and with local bars and community spaces.",
+    "hours_note": "Farmers markets about 9am to 1pm on Saturdays"
   },
   {
     "id": "wild-orchard",
