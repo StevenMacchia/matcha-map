@@ -21,8 +21,9 @@
     "pages": "node tools/gen-pages.js",
     "og": "node tools/gen-og.js",
     "icons": "node tools/gen-icons.js",
-    "deploy": "wrangler deploy",
-    "preview": "wrangler dev"
+    "deploy": "node tools/sw-version.js && npx wrangler pages deploy site --project-name matchamap --branch main --commit-dirty=true",
+    "preview": "wrangler dev",
+    "sw-version": "node tools/sw-version.js"
   },
   "license": "MIT",
   "devDependencies": {
