@@ -7,8 +7,8 @@ X-WR-CALNAME:Hey Tea pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:15bd41af6c62@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:15bd41af6c62@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART:20261124T200000Z
 DTEND:20261124T220000Z
@@ -18,8 +18,8 @@ DESCRIPTION:heytea just opened a shop fully dedicated to matcha beverages a
  nd gelato i finally got to check it out while they were still running some
   grand opening deals and I got a free t-shirt and magnets…\nMenu: gelato
  \, einspanner\nDetails not confirmed yet. Check the brand's post before yo
- u go.\nMore: https://matchamap-cu7.pages.dev/e/15bd41af6c62/
-URL:https://matchamap-cu7.pages.dev/e/15bd41af6c62/
+ u go.\nMore: https://matchamap.app/e/15bd41af6c62/
+URL:https://matchamap.app/e/15bd41af6c62/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

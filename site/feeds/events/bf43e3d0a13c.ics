@@ -7,8 +7,8 @@ X-WR-CALNAME:Restore Hyper Wellness pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:bf43e3d0a13c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:bf43e3d0a13c@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T173000Z
 DTEND:20261128T193000Z
@@ -17,8 +17,8 @@ LOCATION:Restore Hyper Wellness\, 15557 Union Avenue\, Los Gatos\, CA
 DESCRIPTION:Join riri x wellness x Restore Hyper Wellness for a 5K run/walk
  \, matcha\, coffee\, wellness vendors\, exclusive offers\, giveaways & new
   friends\nPrice: Free\nLikely\, not fully confirmed.\nMore: https://matcha
- map-cu7.pages.dev/e/bf43e3d0a13c/
-URL:https://matchamap-cu7.pages.dev/e/bf43e3d0a13c/
+ map.app/e/bf43e3d0a13c/
+URL:https://matchamap.app/e/bf43e3d0a13c/
 GEO:37.238039;-121.931172
 STATUS:CONFIRMED
 CATEGORIES:Matcha

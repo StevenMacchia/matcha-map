@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: El Paso\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:482d3529460e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:482d3529460e@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
@@ -17,15 +17,15 @@ LOCATION:El Paso\, TX
 DESCRIPTION:NOVEMBER 27-29 It's Black Friday at Ifellinlovehere! Shop 25% o
  ff ... Matcha Pop-Up by on Friday\, November 27 from 12-4PM Shop til you d
  rop at El Paso's hottest place to shop 90s & Y2K\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/482d3529460e/
-URL:https://matchamap-cu7.pages.dev/e/482d3529460e/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/48
+ 2d3529460e/
+URL:https://matchamap.app/e/482d3529460e/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:409c8969df3d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:409c8969df3d@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
@@ -34,33 +34,15 @@ LOCATION:El Paso\, TX
 DESCRIPTION:NOVEMBER 27-29 It's Black Friday at Ifellinlovehere! Shop 25% o
  ff ... Matcha Pop-Up by on Friday\, November 27 from 12-4PM Shop til you d
  rop at El Paso's hottest place to shop 90s & Y2K\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/409c8969df3d/
-URL:https://matchamap-cu7.pages.dev/e/409c8969df3d/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/40
+ 9c8969df3d/
+URL:https://matchamap.app/e/409c8969df3d/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:7ada222a1c49@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T182944Z
-DTSTART:20261128T200000Z
-DTEND:20261128T230000Z
-SUMMARY:Matcha + Meetup: El Paso | Benefits for The Birthday Party Project
-LOCATION:Café Rosé the Pink Cafe El Paso\, 307 East Franklin Avenue\, El 
- Paso\, TX
-DESCRIPTION:Make new friends over brunch or coffee while supporting small b
- usinesses and giving back to non-profit\, The Birthday Party Project.\nPri
- ce: Free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
- .dev/e/7ada222a1c49/
-URL:https://matchamap-cu7.pages.dev/e/7ada222a1c49/
-GEO:31.761973;-106.487608
-STATUS:CONFIRMED
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:82f03ca2ae46@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:82f03ca2ae46@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
@@ -69,9 +51,9 @@ LOCATION:El Paso\, TX
 DESCRIPTION:NOVEMBER 27-29 It's Black Friday at Ifellinlovehere! Shop 25% o
  ff ... Matcha Pop-Up by on Friday\, November 27 from 12-4PM Shop til you d
  rop at El Paso's hottest place to shop 90s & Y2K\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/82f03ca2ae46/
-URL:https://matchamap-cu7.pages.dev/e/82f03ca2ae46/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/82
+ f03ca2ae46/
+URL:https://matchamap.app/e/82f03ca2ae46/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

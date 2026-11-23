@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Atlanta\, GA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:8510155e1e6b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:8510155e1e6b@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T160000Z
 DTEND:20261205T190000Z
@@ -19,15 +19,15 @@ DESCRIPTION:Shogun Matcha pours hand-whisked matcha from Uji in the lobby o
  f Nobu Hotel Atlanta in Buckhead\, with art on display in the lobby. Walk-
  ins welcome\; the hotel's own post lists these as upcoming matcha\nMenu: m
  atcha latte\, new yorker matcha latte\, geisha blend\, hojicha\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/8510155e1e6b/
-URL:https://matchamap-cu7.pages.dev/e/8510155e1e6b/
+ ot fully confirmed.\nMore: https://matchamap.app/e/8510155e1e6b/
+URL:https://matchamap.app/e/8510155e1e6b/
 GEO:33.854307;-84.363451
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:45475a09eeec@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:45475a09eeec@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T160000Z
 DTEND:20261212T190000Z
@@ -38,15 +38,15 @@ DESCRIPTION:A holiday-season matcha bar at the Buckhead Village shop Bella
  Cucina\, with Muracha serving matcha and selling its tins and tools. A lim
  ited Collector's Set made with artist Kristen Giorgi is on sale.\nMenu: ma
  tcha served from the bar\, collector's set: yame no. 89 and uji no.\nMore:
-  https://matchamap-cu7.pages.dev/e/45475a09eeec/
-URL:https://matchamap-cu7.pages.dev/e/45475a09eeec/
+  https://matchamap.app/e/45475a09eeec/
+URL:https://matchamap.app/e/45475a09eeec/
 GEO:33.838303;-84.378234
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:f527a53f934a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:f527a53f934a@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T210000Z
 DTEND:20261213T000000Z
@@ -57,15 +57,15 @@ DESCRIPTION:Shogun Matcha pours hand-whisked matcha from Uji in the lobby o
  f Nobu Hotel Atlanta in Buckhead\, with art on display in the lobby. Walk-
  ins welcome\; the hotel's own post lists these as upcoming matcha\nMenu: m
  atcha latte\, new yorker matcha latte\, geisha blend\, hojicha\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/f527a53f934a/
-URL:https://matchamap-cu7.pages.dev/e/f527a53f934a/
+ ot fully confirmed.\nMore: https://matchamap.app/e/f527a53f934a/
+URL:https://matchamap.app/e/f527a53f934a/
 GEO:33.854307;-84.363451
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:01531189a0d4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:01531189a0d4@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261219T150000Z
 DTEND:20261219T170000Z
@@ -74,15 +74,15 @@ LOCATION:Postern Coffee\, Atlanta\, GA
 DESCRIPTION:Tea and Matcha is a two-hour workshop at Postern Coffee on Dece
  mber 19\, 2026\, from 10:00 to 12:00. It covers tea and matcha for people 
  interested in developing their home coffee and tea skills.\nLikely\, not f
- ully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/01531189a0d4/
-URL:https://matchamap-cu7.pages.dev/e/01531189a0d4/
+ ully confirmed.\nMore: https://matchamap.app/e/01531189a0d4/
+URL:https://matchamap.app/e/01531189a0d4/
 GEO:33.919381;-84.282066
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:d26ffe3e6493@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:d26ffe3e6493@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261220T160000Z
 DTEND:20261220T190000Z
@@ -93,30 +93,30 @@ DESCRIPTION:Shogun Matcha pours hand-whisked matcha from Uji in the lobby o
  f Nobu Hotel Atlanta in Buckhead\, with art on display in the lobby. Walk-
  ins welcome\; the hotel's own post lists these as upcoming matcha\nMenu: m
  atcha latte\, new yorker matcha latte\, geisha blend\, hojicha\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/d26ffe3e6493/
-URL:https://matchamap-cu7.pages.dev/e/d26ffe3e6493/
+ ot fully confirmed.\nMore: https://matchamap.app/e/d26ffe3e6493/
+URL:https://matchamap.app/e/d26ffe3e6493/
 GEO:33.854307;-84.363451
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:73d7d369378c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:73d7d369378c@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270102
 DTEND;VALUE=DATE:20270103
 SUMMARY:Bearly Awake Cafe pop-up
 LOCATION:Atlanta\, GA
 DESCRIPTION:MOMOKO MART 11/08\nMenu: strawberry\nDetails not confirmed yet.
-  Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.
- dev/e/73d7d369378c/
-URL:https://matchamap-cu7.pages.dev/e/73d7d369378c/
+  Check the brand's post before you go.\nMore: https://matchamap.app/e/73d7
+ d369378c/
+URL:https://matchamap.app/e/73d7d369378c/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:dff4bcf1b2e1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:dff4bcf1b2e1@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20270123T190000Z
 DTEND:20270123T210000Z
@@ -124,15 +124,15 @@ SUMMARY:Matcha Making Workshop. 🍵🎀
 LOCATION:Creator’s Kitchen\, 1331 Metropolitan Pkwy\, Atlanta\, GA
 DESCRIPTION:Come Downstairs for an afternoon of matcha\, connection\, and a
   little creativity.\nLikely\, not fully confirmed.\nMore: https://matchama
- p-cu7.pages.dev/e/dff4bcf1b2e1/
-URL:https://matchamap-cu7.pages.dev/e/dff4bcf1b2e1/
+ p.app/e/dff4bcf1b2e1/
+URL:https://matchamap.app/e/dff4bcf1b2e1/
 GEO:33.718507;-84.408352
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:62b886870d67@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:62b886870d67@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20270303T163000Z
 DTEND:20270303T183000Z
@@ -141,8 +141,8 @@ LOCATION:Atlanta\, GA
 DESCRIPTION:We gathered Atlanta best matcha vendors all in one place so you
   can enjoy them all at once! This matcha crawl will have you buzzing & see
  ing green!\nDetails not confirmed yet. Check the brand's post before you g
- o.\nMore: https://matchamap-cu7.pages.dev/e/62b886870d67/
-URL:https://matchamap-cu7.pages.dev/e/62b886870d67/
+ o.\nMore: https://matchamap.app/e/62b886870d67/
+URL:https://matchamap.app/e/62b886870d67/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

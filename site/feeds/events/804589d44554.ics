@@ -7,8 +7,8 @@ X-WR-CALNAME:Ahry Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:804589d44554@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:804589d44554@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
@@ -16,8 +16,8 @@ SUMMARY:Ahry Matcha pop-up
 LOCATION:Houston\, TX
 DESCRIPTION:Our first farmers market at oldkatyfarmersmarket !\nDetails not
   confirmed yet. Check the brand's post before you go.\nMore: https://match
- amap-cu7.pages.dev/e/804589d44554/
-URL:https://matchamap-cu7.pages.dev/e/804589d44554/
+ amap.app/e/804589d44554/
+URL:https://matchamap.app/e/804589d44554/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

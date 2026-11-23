@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Morgan Hill\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:7bf0e1d0d8bc@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:7bf0e1d0d8bc@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261213T200000Z
 DTEND:20261213T213000Z
@@ -16,9 +16,8 @@ SUMMARY:Holiday Sip & Sculpt
 LOCATION:The 5th Element Fitness\, 16195 Condit Road\, Morgan Hill\, CA
 DESCRIPTION:Join Softgirl Society for a fun Holiday inspired Pilates pop-up
  — sweat\, socialize and sip your Matcha or Coffee!\nPrice: $55\nLikely\,
-  not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/7bf0e1d0d8b
- c/
-URL:https://matchamap-cu7.pages.dev/e/7bf0e1d0d8bc/
+  not fully confirmed.\nMore: https://matchamap.app/e/7bf0e1d0d8bc/
+URL:https://matchamap.app/e/7bf0e1d0d8bc/
 GEO:37.122847;-121.626139
 STATUS:CONFIRMED
 CATEGORIES:Matcha

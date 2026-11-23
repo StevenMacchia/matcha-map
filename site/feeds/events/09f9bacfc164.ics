@@ -7,8 +7,8 @@ X-WR-CALNAME:Ceremony pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:09f9bacfc164@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:09f9bacfc164@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261209T003000Z
 DTEND:20261209T020000Z
@@ -17,8 +17,8 @@ LOCATION:Nashville\, TN
 DESCRIPTION:An evening matcha class that starts with the story of matcha an
  d moves to whisking your own\, hosted at Doma Coffee.\nMenu: matcha\, prep
  ared by hand\nDetails not confirmed yet. Check the brand's post before you
-  go.\nMore: https://matchamap-cu7.pages.dev/e/09f9bacfc164/
-URL:https://matchamap-cu7.pages.dev/e/09f9bacfc164/
+  go.\nMore: https://matchamap.app/e/09f9bacfc164/
+URL:https://matchamap.app/e/09f9bacfc164/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

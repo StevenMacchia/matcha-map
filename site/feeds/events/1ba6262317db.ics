@@ -7,8 +7,8 @@ X-WR-CALNAME:Pottery with a Purpose pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1ba6262317db@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:1ba6262317db@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261128T193000Z
 DTEND:20261128T220000Z
@@ -16,8 +16,8 @@ SUMMARY:Matcha Tasting + Mug Making Workshop
 LOCATION:Wishing Cup\, 45 Court\, Boston\, MA
 DESCRIPTION:Sip\, sculpt + unwind! Learn hand-building techniques and shape
   your own one-of-a-kind clay cup\, perfect for coffee or tea!\nPrice: $113
- .89\nMore: https://matchamap-cu7.pages.dev/e/1ba6262317db/
-URL:https://matchamap-cu7.pages.dev/e/1ba6262317db/
+ .89\nMore: https://matchamap.app/e/1ba6262317db/
+URL:https://matchamap.app/e/1ba6262317db/
 GEO:42.287990;-71.094442
 STATUS:CONFIRMED
 CATEGORIES:Matcha

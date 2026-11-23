@@ -7,8 +7,8 @@ X-WR-CALNAME:Creamed | HTX pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:7b9142168116@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:7b9142168116@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261129T160000Z
 DTEND:20261129T180000Z
@@ -17,9 +17,9 @@ LOCATION:Houston\, TX
 DESCRIPTION:Creamed returns to ONLI for a morning pop-up featuring a variet
  y of bakes.\nMenu: matcha\, corn basque cheesecakes\, mandarin\, chestnut 
  cinnamon rolls\, black sesame\, sweet potato pie\nDetails not confirmed ye
- t. Check the brand's post before you go.\nMore: https://matchamap-cu7.page
- s.dev/e/7b9142168116/
-URL:https://matchamap-cu7.pages.dev/e/7b9142168116/
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/7b
+ 9142168116/
+URL:https://matchamap.app/e/7b9142168116/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

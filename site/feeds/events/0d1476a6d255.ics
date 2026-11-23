@@ -7,8 +7,8 @@ X-WR-CALNAME:Central Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:0d1476a6d255@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:0d1476a6d255@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261220T160000Z
 DTEND:20261220T200000Z
@@ -19,8 +19,8 @@ DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha
  from a market stand at the Sunday Mueller farmers market. Expect matcha sh
  ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
  tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/0d1476a6d255/
-URL:https://matchamap-cu7.pages.dev/e/0d1476a6d255/
+ ot fully confirmed.\nMore: https://matchamap.app/e/0d1476a6d255/
+URL:https://matchamap.app/e/0d1476a6d255/
 GEO:30.299843;-97.702653
 STATUS:CONFIRMED
 CATEGORIES:Matcha

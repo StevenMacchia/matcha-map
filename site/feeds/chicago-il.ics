@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Chicago\, IL
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1bef3e9e4461@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:1bef3e9e4461@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
@@ -17,14 +17,14 @@ LOCATION:Chicago\, IL
 DESCRIPTION:To everyone who came out to support our pop-up yesterday and ev
  eryone who placed an order for today’s pickups\, we truly cannot thank y
  ou enough.\nDetails not confirmed yet. Check the brand's post before you g
- o.\nMore: https://matchamap-cu7.pages.dev/e/1bef3e9e4461/
-URL:https://matchamap-cu7.pages.dev/e/1bef3e9e4461/
+ o.\nMore: https://matchamap.app/e/1bef3e9e4461/
+URL:https://matchamap.app/e/1bef3e9e4461/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:2d6e4989ca5c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:2d6e4989ca5c@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
@@ -33,14 +33,14 @@ LOCATION:Chicago\, IL
 DESCRIPTION:To everyone who came out to support our pop-up yesterday and ev
  eryone who placed an order for today’s pickups\, we truly cannot thank y
  ou enough.\nDetails not confirmed yet. Check the brand's post before you g
- o.\nMore: https://matchamap-cu7.pages.dev/e/2d6e4989ca5c/
-URL:https://matchamap-cu7.pages.dev/e/2d6e4989ca5c/
+ o.\nMore: https://matchamap.app/e/2d6e4989ca5c/
+URL:https://matchamap.app/e/2d6e4989ca5c/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:6869f2e22e38@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:6869f2e22e38@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T023315Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
@@ -48,32 +48,15 @@ SUMMARY:Hawa matcha pop-up
 LOCATION:4325 N. Ravenswood Ave\, Chicago\, IL
 DESCRIPTION:Come support us for Small Business Saturday\nMenu: black sesame
  \, pistachio\, caramel\, ube\, vanilla\nPrice: free\nLikely\, not fully co
- nfirmed.\nMore: https://matchamap-cu7.pages.dev/e/6869f2e22e38/
-URL:https://matchamap-cu7.pages.dev/e/6869f2e22e38/
+ nfirmed.\nMore: https://matchamap.app/e/6869f2e22e38/
+URL:https://matchamap.app/e/6869f2e22e38/
 GEO:41.960281;-87.673498
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:35b315c52575@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T131640Z
-DTSTART:20261128T180000Z
-DTEND:20261128T210000Z
-SUMMARY:Matcha + Meetup: Chicago | Creative Minds Edition
-LOCATION:Chicago\, IL
-DESCRIPTION:Join us for coffee\, latte\, or matcha! Each gathering is at a 
- different coffee shop. Build your community in your city with a fun day ou
- t!\nMenu: latte\nPrice: $12.51\nDetails not confirmed yet. Check the brand
- 's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/35b315c525
- 75/
-URL:https://matchamap-cu7.pages.dev/e/35b315c52575/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:c410d293ae86@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:c410d293ae86@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
@@ -82,15 +65,15 @@ LOCATION:Chicago\, IL
 DESCRIPTION:a little treat after thanksgiving our november sourdough drop i
  s here and we’re bringing back some of y’all’s favorite!\nMenu: chil
  i oil\, scallions\, cheddar\, brown sugar\, cookies\nDetails not confirmed
-  yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.p
- ages.dev/e/c410d293ae86/
-URL:https://matchamap-cu7.pages.dev/e/c410d293ae86/
+  yet. Check the brand's post before you go.\nMore: https://matchamap.app/e
+ /c410d293ae86/
+URL:https://matchamap.app/e/c410d293ae86/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:91d2263da73d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:91d2263da73d@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T023315Z
 DTSTART:20261129T170000Z
 DTEND:20261129T230000Z
@@ -98,15 +81,15 @@ SUMMARY:Hawa matcha pop-up
 LOCATION:4325 N. Ravenswood Ave\, Chicago\, IL
 DESCRIPTION:Come support us for Small Business Saturday\nMenu: black sesame
  \, pistachio\, caramel\, ube\, vanilla\nPrice: free\nLikely\, not fully co
- nfirmed.\nMore: https://matchamap-cu7.pages.dev/e/91d2263da73d/
-URL:https://matchamap-cu7.pages.dev/e/91d2263da73d/
+ nfirmed.\nMore: https://matchamap.app/e/91d2263da73d/
+URL:https://matchamap.app/e/91d2263da73d/
 GEO:41.960281;-87.673498
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:26327257a9b3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:26327257a9b3@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
@@ -115,23 +98,23 @@ LOCATION:Chicago\, IL
 DESCRIPTION:a little treat after thanksgiving our november sourdough drop i
  s here and we’re bringing back some of y’all’s favorite!\nMenu: chil
  i oil\, scallions\, cheddar\, brown sugar\, cookies\nDetails not confirmed
-  yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.p
- ages.dev/e/26327257a9b3/
-URL:https://matchamap-cu7.pages.dev/e/26327257a9b3/
+  yet. Check the brand's post before you go.\nMore: https://matchamap.app/e
+ /26327257a9b3/
+URL:https://matchamap.app/e/26327257a9b3/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:f1e70b788111@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:f1e70b788111@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20271010
 DTEND;VALUE=DATE:20271011
 SUMMARY:Coffeereview matcha pop-up
 LOCATION:Chicago\, IL
 DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/f1e70b788111/
-URL:https://matchamap-cu7.pages.dev/e/f1e70b788111/
+ .\nMore: https://matchamap.app/e/f1e70b788111/
+URL:https://matchamap.app/e/f1e70b788111/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

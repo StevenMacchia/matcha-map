@@ -7,8 +7,8 @@ X-WR-CALNAME:The Matcha Edit pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:0ef41c2ed3f8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:0ef41c2ed3f8@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270813
 DTEND;VALUE=DATE:20270814
@@ -17,8 +17,8 @@ LOCATION:Miami\, FL
 DESCRIPTION:Starbucks put “The Matcha Edit” on a matcha ad. That’s th
  e name of the business I built in my hometown of Liberty City\, Miami.\nDe
  tails not confirmed yet. Check the brand's post before you go.\nMore: http
- s://matchamap-cu7.pages.dev/e/0ef41c2ed3f8/
-URL:https://matchamap-cu7.pages.dev/e/0ef41c2ed3f8/
+ s://matchamap.app/e/0ef41c2ed3f8/
+URL:https://matchamap.app/e/0ef41c2ed3f8/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

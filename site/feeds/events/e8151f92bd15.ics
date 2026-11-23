@@ -7,8 +7,8 @@ X-WR-CALNAME:Prosperitea pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e8151f92bd15@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:e8151f92bd15@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
@@ -17,8 +17,8 @@ LOCATION:San Diego\, CA
 DESCRIPTION:Happy Thanksgiving week yall! We're so thankful that we get to 
  make silly\, delicious little drinks for all of yall and add to your day's
   whimsy & joy\nDetails not confirmed yet. Check the brand's post before yo
- u go.\nMore: https://matchamap-cu7.pages.dev/e/e8151f92bd15/
-URL:https://matchamap-cu7.pages.dev/e/e8151f92bd15/
+ u go.\nMore: https://matchamap.app/e/e8151f92bd15/
+URL:https://matchamap.app/e/e8151f92bd15/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

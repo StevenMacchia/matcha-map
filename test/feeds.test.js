@@ -3,6 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { icsEscape, fold, utcStamp, dateValue, veventLines, calendar, rss, buildFeeds } from "../tools/gen-feeds.js";
 import { buildEventPages, eventPage, ogImage } from "../tools/gen-event-pages.js";
+import { SITE_HOST } from "../tools/site-url.js";
 
 const NOW = new Date("2026-11-25T15:00:00Z");
 const cities = [{ name: "Austin", state: "TX", slug: "austin", lat: 30.27, lng: -97.74, pop: 900000 }, { name: "Raleigh", state: "NC", slug: "raleigh", lat: 35.8, lng: -78.6, pop: 500000 }];
@@ -20,7 +21,7 @@ test("UTC conversion uses the offset in the ISO string", () => {
 
 test("timed event: DTSTART/DTEND in UTC, UID is the event id, LAST-MODIFIED from last_seen", () => {
   const l = veventLines(timed).join("\n");
-  assert.match(l, /^UID:aaaaaa000001@matchamap-cu7.pages.dev$/m);
+  assert.ok(l.split("\n").includes(`UID:aaaaaa000001@${SITE_HOST}`));
   assert.match(l, /^DTSTART:20261205T170000Z$/m);
   assert.match(l, /^DTEND:20261205T210000Z$/m);
   assert.match(l, /^LAST-MODIFIED:20261125T100000Z$/m);
@@ -118,7 +119,7 @@ test("buildEventPages: one page per upcoming event, none for past", () => {
 });
 
 test("feeds: UID has a domain, RSS title reads like prose and is capped, calendars drop past events", () => {
-  assert.match(veventLines(timed).join("\n"), /^UID:aaaaaa000001@matchamap-cu7\.pages\.dev$/m);
+  assert.ok(veventLines(timed).includes(`UID:aaaaaa000001@${SITE_HOST}`));
   const xml = rss([timed], { now: NOW });
   assert.match(xml, /<title>Moonbee, Sat Dec 5, Austin<\/title>/);
   const many = Array.from({ length: 130 }, (_, i) => ({ ...timed, id: "m" + String(i).padStart(11, "0"), first_seen: new Date(Date.parse("2026-11-20T00:00:00Z") + i * 6e4).toISOString() }));

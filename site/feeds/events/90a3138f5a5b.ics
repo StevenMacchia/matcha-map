@@ -7,16 +7,16 @@ X-WR-CALNAME:She’s Invited pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:90a3138f5a5b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:90a3138f5a5b@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T170000Z
 DTEND:20261129T190000Z
 SUMMARY:Pink Matcha & Thrift Finds
 LOCATION:Monarca Thrift Club\, 2400 N 2nd Street\, Minneapolis\, MN
 DESCRIPTION:Monarca Thrift Club hosts an all-girls Thrift & Matcha event wi
- th She's Invited.\nMore: https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
-URL:https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
+ th She's Invited.\nMore: https://matchamap.app/e/90a3138f5a5b/
+URL:https://matchamap.app/e/90a3138f5a5b/
 GEO:45.003984;-93.279664
 STATUS:CONFIRMED
 CATEGORIES:Matcha

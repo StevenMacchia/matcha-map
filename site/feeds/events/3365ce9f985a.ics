@@ -7,8 +7,8 @@ X-WR-CALNAME:333Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:3365ce9f985a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:3365ce9f985a@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
@@ -17,8 +17,8 @@ LOCATION:Dallas\, TX
 DESCRIPTION:333 hits the road later this month! our co-owner\, sababamoore\
  , is making his way from dallas to lumacoffeeroasters in louisiana to spre
  ad a little matcha magic.\nDetails not confirmed yet. Check the brand's po
- st before you go.\nMore: https://matchamap-cu7.pages.dev/e/3365ce9f985a/
-URL:https://matchamap-cu7.pages.dev/e/3365ce9f985a/
+ st before you go.\nMore: https://matchamap.app/e/3365ce9f985a/
+URL:https://matchamap.app/e/3365ce9f985a/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

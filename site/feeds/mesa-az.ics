@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Mesa\, AZ
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:ae4fa6311e6b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:ae4fa6311e6b@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261124T190000Z
 DTEND:20261124T203000Z
@@ -16,32 +16,16 @@ SUMMARY:Matcha & Movement with Tea
 LOCATION:Metanoia Toolbox Sacred Wellness Space\, 2150 East Brown Road\, Me
  sa\, AZ
 DESCRIPTION:Slow down\, soften and breathe with this loving combination of 
- Yin Yoga and Sound!\nPrice: $22.22\nMore: https://matchamap-cu7.pages.dev/
- e/ae4fa6311e6b/
-URL:https://matchamap-cu7.pages.dev/e/ae4fa6311e6b/
+ Yin Yoga and Sound!\nPrice: $22.22\nMore: https://matchamap.app/e/ae4fa631
+ 1e6b/
+URL:https://matchamap.app/e/ae4fa6311e6b/
 GEO:33.437584;-111.784732
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:8f28cd0d40e1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T151342Z
-DTSTART:20261206T190000Z
-DTEND:20261206T220000Z
-SUMMARY:Matcha + Meetup: Mesa
-LOCATION:Mesa\, AZ
-DESCRIPTION:Join us for coffee at different cafes each gathering. Build you
- r community in your city with a fun day out! Meetup. Matcha. Support local
- !\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before
-  you go.\nMore: https://matchamap-cu7.pages.dev/e/8f28cd0d40e1/
-URL:https://matchamap-cu7.pages.dev/e/8f28cd0d40e1/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:adf5e4822337@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:adf5e4822337@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261208T190000Z
 DTEND:20261208T203000Z
@@ -50,15 +34,15 @@ LOCATION:Metanoia Toolbox Sacred Wellness Space\, 2150 East Brown Road\, Me
  sa\, AZ
 DESCRIPTION:Slow down\, soften and breathe with this loving combination of 
  Yin Yoga and Sound!\nPrice: $22.22\nLikely\, not fully confirmed.\nMore: h
- ttps://matchamap-cu7.pages.dev/e/adf5e4822337/
-URL:https://matchamap-cu7.pages.dev/e/adf5e4822337/
+ ttps://matchamap.app/e/adf5e4822337/
+URL:https://matchamap.app/e/adf5e4822337/
 GEO:33.437584;-111.784732
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:74b5fa2190b2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:74b5fa2190b2@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261215T190000Z
 DTEND:20261215T203000Z
@@ -67,8 +51,8 @@ LOCATION:Metanoia Toolbox Sacred Wellness Space\, 2150 East Brown Road\, Me
  sa\, AZ
 DESCRIPTION:Slow down\, soften and breathe with this loving combination of 
  Yin Yoga and Sound!\nPrice: $22.22\nLikely\, not fully confirmed.\nMore: h
- ttps://matchamap-cu7.pages.dev/e/74b5fa2190b2/
-URL:https://matchamap-cu7.pages.dev/e/74b5fa2190b2/
+ ttps://matchamap.app/e/74b5fa2190b2/
+URL:https://matchamap.app/e/74b5fa2190b2/
 GEO:33.437584;-111.784732
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -7,8 +7,8 @@ X-WR-CALNAME:Ritual Grounds pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:c81b1aa9180d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:c81b1aa9180d@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20270102T210000Z
 DTEND:20270103T030000Z
@@ -16,8 +16,8 @@ SUMMARY:Ritual Grounds pop-up
 LOCATION:St. Petersburg\, FL
 DESCRIPTION:WIN A YEAR SUPPLY OF MATCHA\nMenu: matcha whisk ritualgroundsca
  fe\, macaron\nPrice: $2\nDetails not confirmed yet. Check the brand's post
-  before you go.\nMore: https://matchamap-cu7.pages.dev/e/c81b1aa9180d/
-URL:https://matchamap-cu7.pages.dev/e/c81b1aa9180d/
+  before you go.\nMore: https://matchamap.app/e/c81b1aa9180d/
+URL:https://matchamap.app/e/c81b1aa9180d/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

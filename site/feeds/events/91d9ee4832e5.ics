@@ -7,17 +7,17 @@ X-WR-CALNAME:Green Times Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:91d9ee4832e5@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:91d9ee4832e5@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270713
 DTEND;VALUE=DATE:20270714
 SUMMARY:Green Times Matcha pop-up
 LOCATION:Honolulu\, HI
 DESCRIPTION:WE GOT A FULLY BOOKED WEEK AHEAD OF US\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/91d9ee4832e5/
-URL:https://matchamap-cu7.pages.dev/e/91d9ee4832e5/
+ et. Check the brand's post before you go.\nMore: https://matchamap.app/e/9
+ 1d9ee4832e5/
+URL:https://matchamap.app/e/91d9ee4832e5/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Hampton\, VA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:f9030bc2013b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:f9030bc2013b@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T160000Z
 DTEND:20261128T210000Z
@@ -18,8 +18,8 @@ LOCATION:Peninsula Town Center\, 2551 McMenamin Street\, Hampton\, VA
 DESCRIPTION:Come shop in the heart of Peninsula Town Center with local vend
  ors\, holiday deals\, hot chocolate\, matcha\, great food\, music\, and mo
  re!\nMenu: chocolate\nPrice: Free\nLikely\, not fully confirmed.\nMore: ht
- tps://matchamap-cu7.pages.dev/e/f9030bc2013b/
-URL:https://matchamap-cu7.pages.dev/e/f9030bc2013b/
+ tps://matchamap.app/e/f9030bc2013b/
+URL:https://matchamap.app/e/f9030bc2013b/
 GEO:37.044086;-76.393706
 STATUS:CONFIRMED
 CATEGORIES:Matcha

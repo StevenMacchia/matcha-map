@@ -7,8 +7,8 @@ X-WR-CALNAME:Heyteausa pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:ea06c1e9874b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:ea06c1e9874b@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261125
@@ -17,8 +17,8 @@ LOCATION:New York\, NY
 DESCRIPTION:usa has dropped a new drink that fixes all of that Their new Bi
  tter Matcha series drops nationwide soon on 11/24!!\nMenu: ice cream\, moc
  hi\, latte\nPrice: $1\nDetails not confirmed yet. Check the brand's post b
- efore you go.\nMore: https://matchamap-cu7.pages.dev/e/ea06c1e9874b/
-URL:https://matchamap-cu7.pages.dev/e/ea06c1e9874b/
+ efore you go.\nMore: https://matchamap.app/e/ea06c1e9874b/
+URL:https://matchamap.app/e/ea06c1e9874b/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

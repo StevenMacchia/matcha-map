@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Honolulu\, HI
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:a30e23b7fe45@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:a30e23b7fe45@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261123T200000Z
 DTEND:20261124T010000Z
@@ -17,14 +17,14 @@ LOCATION:Honolulu\, HI
 DESCRIPTION:CU tomorrow morning! At nicetocuhawaii UNIVERSITY LOCATION! Ope
  n from 10AM-3PM excited to see some UH students come grab their matcha fix
  es!\nDetails not confirmed yet. Check the brand's post before you go.\nMor
- e: https://matchamap-cu7.pages.dev/e/a30e23b7fe45/
-URL:https://matchamap-cu7.pages.dev/e/a30e23b7fe45/
+ e: https://matchamap.app/e/a30e23b7fe45/
+URL:https://matchamap.app/e/a30e23b7fe45/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:6e4abd99b485@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:6e4abd99b485@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T190000Z
 DTEND:20261205T230000Z
@@ -32,15 +32,15 @@ SUMMARY:Mochi & Matcha Fest
 LOCATION:JCCH\, 2454 South Beretania Street\, Honolulu\, HI
 DESCRIPTION:The first Mochi & Matcha Fest in Mōʻiliʻili is a pet- and fa
  mily-friendly day of mochi and matcha with free admission.\nMenu: mochi\nP
- rice: free\nMore: https://matchamap-cu7.pages.dev/e/6e4abd99b485/
-URL:https://matchamap-cu7.pages.dev/e/6e4abd99b485/
+ rice: free\nMore: https://matchamap.app/e/6e4abd99b485/
+URL:https://matchamap.app/e/6e4abd99b485/
 GEO:21.294121;-157.823876
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:749f6b4f6df4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:749f6b4f6df4@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T190000Z
 DTEND:20261205T230000Z
@@ -51,69 +51,69 @@ DESCRIPTION:JCCH hosts its first Mochi & Matcha Fest: mochitsuki (mochi pou
  nding) alongside modern mochi products and matcha drinks. Vendors include 
  Green Times Matcha and Aloha Matcha Hawaii\, plus Fujiya Hawaii\,\nMenu: m
  ochi\nPrice: Free admission\; drinks priced by each vendor\nMore: https://
- matchamap-cu7.pages.dev/e/749f6b4f6df4/
-URL:https://matchamap-cu7.pages.dev/e/749f6b4f6df4/
+ matchamap.app/e/749f6b4f6df4/
+URL:https://matchamap.app/e/749f6b4f6df4/
 GEO:21.294121;-157.823876
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:d228b55bd3dc@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:d228b55bd3dc@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270711
 DTEND;VALUE=DATE:20270712
 SUMMARY:Green Times Matcha pop-up
 LOCATION:Honolulu\, HI
 DESCRIPTION:WE GOT A FULLY BOOKED WEEK AHEAD OF US\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/d228b55bd3dc/
-URL:https://matchamap-cu7.pages.dev/e/d228b55bd3dc/
+ et. Check the brand's post before you go.\nMore: https://matchamap.app/e/d
+ 228b55bd3dc/
+URL:https://matchamap.app/e/d228b55bd3dc/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:1eafd17b3833@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:1eafd17b3833@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270712
 DTEND;VALUE=DATE:20270713
 SUMMARY:Green Times Matcha pop-up
 LOCATION:Honolulu\, HI
 DESCRIPTION:WE GOT A FULLY BOOKED WEEK AHEAD OF US\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/1eafd17b3833/
-URL:https://matchamap-cu7.pages.dev/e/1eafd17b3833/
+ et. Check the brand's post before you go.\nMore: https://matchamap.app/e/1
+ eafd17b3833/
+URL:https://matchamap.app/e/1eafd17b3833/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:91d9ee4832e5@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:91d9ee4832e5@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270713
 DTEND;VALUE=DATE:20270714
 SUMMARY:Green Times Matcha pop-up
 LOCATION:Honolulu\, HI
 DESCRIPTION:WE GOT A FULLY BOOKED WEEK AHEAD OF US\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/91d9ee4832e5/
-URL:https://matchamap-cu7.pages.dev/e/91d9ee4832e5/
+ et. Check the brand's post before you go.\nMore: https://matchamap.app/e/9
+ 1d9ee4832e5/
+URL:https://matchamap.app/e/91d9ee4832e5/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:9996a79b72b7@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:9996a79b72b7@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270714
 DTEND;VALUE=DATE:20270715
 SUMMARY:Green Times Matcha pop-up
 LOCATION:Honolulu\, HI
 DESCRIPTION:WE GOT A FULLY BOOKED WEEK AHEAD OF US\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/9996a79b72b7/
-URL:https://matchamap-cu7.pages.dev/e/9996a79b72b7/
+ et. Check the brand's post before you go.\nMore: https://matchamap.app/e/9
+ 996a79b72b7/
+URL:https://matchamap.app/e/9996a79b72b7/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

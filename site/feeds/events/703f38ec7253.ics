@@ -7,8 +7,8 @@ X-WR-CALNAME:Mira Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:703f38ec7253@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:703f38ec7253@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261201T170000Z
 DTEND:20261201T190000Z
@@ -17,9 +17,8 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:Family & Friends begins the six-day MoonchildLand grand opening
  \, welcoming the people who have been part of Moonchild's journey to the f
  irst San Antonio storefront.\nDetails not confirmed yet. Check the brand's
-  post before you go.\nMore: https://matchamap-cu7.pages.dev/e/703f38ec7253
- /
-URL:https://matchamap-cu7.pages.dev/e/703f38ec7253/
+  post before you go.\nMore: https://matchamap.app/e/703f38ec7253/
+URL:https://matchamap.app/e/703f38ec7253/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

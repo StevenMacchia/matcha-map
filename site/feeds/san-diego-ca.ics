@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: San Diego\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:4a9586dacab3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:4a9586dacab3@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -17,14 +17,14 @@ LOCATION:San Diego\, CA
 DESCRIPTION:Happy Thanksgiving week yall! We're so thankful that we get to 
  make silly\, delicious little drinks for all of yall and add to your day's
   whimsy & joy\nDetails not confirmed yet. Check the brand's post before yo
- u go.\nMore: https://matchamap-cu7.pages.dev/e/4a9586dacab3/
-URL:https://matchamap-cu7.pages.dev/e/4a9586dacab3/
+ u go.\nMore: https://matchamap.app/e/4a9586dacab3/
+URL:https://matchamap.app/e/4a9586dacab3/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:9fc3ea7a0140@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:9fc3ea7a0140@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
@@ -34,14 +34,14 @@ DESCRIPTION:11/22 | Sunday evening is the last chance to order bottled latt
  es for pick up at Home Ec on Wednesday 11/25 for your holiday festivities.
   Vanilla / Burnt Honey Orange Blossom with espresso or matcha\nMenu: latte
  \, vanilla\, honey\nDetails not confirmed yet. Check the brand's post befo
- re you go.\nMore: https://matchamap-cu7.pages.dev/e/9fc3ea7a0140/
-URL:https://matchamap-cu7.pages.dev/e/9fc3ea7a0140/
+ re you go.\nMore: https://matchamap.app/e/9fc3ea7a0140/
+URL:https://matchamap.app/e/9fc3ea7a0140/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:e8151f92bd15@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:e8151f92bd15@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
@@ -50,14 +50,14 @@ LOCATION:San Diego\, CA
 DESCRIPTION:Happy Thanksgiving week yall! We're so thankful that we get to 
  make silly\, delicious little drinks for all of yall and add to your day's
   whimsy & joy\nDetails not confirmed yet. Check the brand's post before yo
- u go.\nMore: https://matchamap-cu7.pages.dev/e/e8151f92bd15/
-URL:https://matchamap-cu7.pages.dev/e/e8151f92bd15/
+ u go.\nMore: https://matchamap.app/e/e8151f92bd15/
+URL:https://matchamap.app/e/e8151f92bd15/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:907bad3baf0e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:907bad3baf0e@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
@@ -66,15 +66,15 @@ LOCATION:Patine\, 2722 Fifth Ave\, San Diego\, CA
 DESCRIPTION:Black Friday pop up in Bankers Hill Join us for an espresso + m
  atcha bar alongside pastry chef extraordinaire matcha.y.miel at cozy\, cul
  inary & cookbook shop patine.sd.\nMenu: pastry\, espresso matcha\nMore: ht
- tps://matchamap-cu7.pages.dev/e/907bad3baf0e/
-URL:https://matchamap-cu7.pages.dev/e/907bad3baf0e/
+ tps://matchamap.app/e/907bad3baf0e/
+URL:https://matchamap.app/e/907bad3baf0e/
 GEO:33.116063;-117.082913
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:9a6762c17c0d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:9a6762c17c0d@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T160000Z
 DTEND:20261129T180000Z
@@ -83,15 +83,15 @@ LOCATION:The Ranch\, 2501 Sunset Avenue\, San Diego\, CA
 DESCRIPTION:Pilates lead by Pilates Instructor Kari from ViGlo Wellness \, 
  join us for a refreshing session at the ranch with live music and vendors\
  nPrice: $44.52–81.88\nLikely\, not fully confirmed.\nMore: https://match
- amap-cu7.pages.dev/e/9a6762c17c0d/
-URL:https://matchamap-cu7.pages.dev/e/9a6762c17c0d/
+ amap.app/e/9a6762c17c0d/
+URL:https://matchamap.app/e/9a6762c17c0d/
 GEO:32.558121;-117.082009
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:1cdd1761a275@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:1cdd1761a275@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261122T235305Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
@@ -101,14 +101,14 @@ DESCRIPTION:Filipino & Vietnamese Matcha & Coffee Popup in San Diego | Dec
  6th | TikTok emkari cafe a little glimpse of our last emkari pop-up ☆ co
  me try our filipino + vietnamese inspired matcha & coffee at…\nDetails n
  ot confirmed yet. Check the brand's post before you go.\nMore: https://mat
- chamap-cu7.pages.dev/e/1cdd1761a275/
-URL:https://matchamap-cu7.pages.dev/e/1cdd1761a275/
+ chamap.app/e/1cdd1761a275/
+URL:https://matchamap.app/e/1cdd1761a275/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:10d8b6b680e2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:10d8b6b680e2@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261206T190000Z
 DTEND:20261206T230000Z
@@ -119,31 +119,31 @@ DESCRIPTION:The matcha market is back: several of San Diego's smaller match
  a pop-ups gather in one place with DJs\, photobooths and vintage shopping.
   emkari cafe is serving Filipino and Vietnamese inspired matcha \nMenu: fi
  lipino and vietnamese inspired matcha \, matcha from several san diego pop
- -ups\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev
- /e/10d8b6b680e2/
-URL:https://matchamap-cu7.pages.dev/e/10d8b6b680e2/
+ -ups\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/10d8b6b
+ 680e2/
+URL:https://matchamap.app/e/10d8b6b680e2/
 GEO:32.728238;-117.171302
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:56fe399aee68@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:56fe399aee68@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART:20261206T190000Z
 DTEND:20261206T230000Z
 SUMMARY:Friends' Matcha pop-up
 LOCATION:2310 Kettner Blvd\, San Diego\, CA
 DESCRIPTION:SAN DIEGO\, YOUR MATCHA MARKET IS BACK\nPrice: free\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/56fe399aee68/
-URL:https://matchamap-cu7.pages.dev/e/56fe399aee68/
+ ot fully confirmed.\nMore: https://matchamap.app/e/56fe399aee68/
+URL:https://matchamap.app/e/56fe399aee68/
 GEO:32.728238;-117.171302
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:1706d7cc5fb3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:1706d7cc5fb3@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261206T200000Z
 DTEND:20261207T010000Z
@@ -153,15 +153,15 @@ DESCRIPTION:meaning “coffee first” in Tagalog\, is a specialty coffee &
   matcha pop-up that uses coffe…" Drawing inspiration from their Filipino
   American upbringing\, they take a playful and intentional approach…\nMe
  nu: specialty coffee\, matcha drinks\nPrice: free\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/1706d7cc5fb3/
-URL:https://matchamap-cu7.pages.dev/e/1706d7cc5fb3/
+ et. Check the brand's post before you go.\nMore: https://matchamap.app/e/1
+ 706d7cc5fb3/
+URL:https://matchamap.app/e/1706d7cc5fb3/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:b6b0697a0973@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:b6b0697a0973@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
@@ -170,8 +170,8 @@ LOCATION:San Diego\, CA
 DESCRIPTION:A little vlog/recap from a wonderful Sunday with unigvintage & 
  theeclovery We’ll be back in Mira Mesa again on 12/12!\nMenu: pastry\nDe
  tails not confirmed yet. Check the brand's post before you go.\nMore: http
- s://matchamap-cu7.pages.dev/e/b6b0697a0973/
-URL:https://matchamap-cu7.pages.dev/e/b6b0697a0973/
+ s://matchamap.app/e/b6b0697a0973/
+URL:https://matchamap.app/e/b6b0697a0973/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

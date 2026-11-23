@@ -7,23 +7,23 @@ X-WR-CALNAME:Matcha Map: Minneapolis\, MN
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:90a3138f5a5b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:90a3138f5a5b@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T170000Z
 DTEND:20261129T190000Z
 SUMMARY:Pink Matcha & Thrift Finds
 LOCATION:Monarca Thrift Club\, 2400 N 2nd Street\, Minneapolis\, MN
 DESCRIPTION:Monarca Thrift Club hosts an all-girls Thrift & Matcha event wi
- th She's Invited.\nMore: https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
-URL:https://matchamap-cu7.pages.dev/e/90a3138f5a5b/
+ th She's Invited.\nMore: https://matchamap.app/e/90a3138f5a5b/
+URL:https://matchamap.app/e/90a3138f5a5b/
 GEO:45.003984;-93.279664
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:aa95372a56fa@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:aa95372a56fa@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T150000Z
 DTEND:20261205T170000Z
@@ -31,16 +31,15 @@ SUMMARY:Matcha Cultivars\, History\, and Preparation!
 LOCATION:Northeast Tea House\, 224 East Hennepin Avenue\, Minneapolis\, MN
 DESCRIPTION:Join us for a deep dive into the world of Matcha and its many c
  ultivars\, tasting\, learning\, and exploring together!\nPrice: $12\nLikel
- y\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/aa95372a
- 56fa/
-URL:https://matchamap-cu7.pages.dev/e/aa95372a56fa/
+ y\, not fully confirmed.\nMore: https://matchamap.app/e/aa95372a56fa/
+URL:https://matchamap.app/e/aa95372a56fa/
 GEO:44.987698;-93.256485
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:3f80fb2ebff1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:3f80fb2ebff1@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261213T150000Z
 DTEND:20261213T163000Z
@@ -48,9 +47,9 @@ SUMMARY:Matcha Cultivars\, History\, and Preparation!
 LOCATION:Northeast Tea House\, 224 East Hennepin Avenue\, Minneapolis\, MN
 DESCRIPTION:Join us for a deep dive into the world of Matcha and its many c
  ultivars\, tasting\, learning\, and exploring together!\nPrice: $12.50 to 
- $25\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/
- e/3f80fb2ebff1/
-URL:https://matchamap-cu7.pages.dev/e/3f80fb2ebff1/
+ $25\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/3f80fb2e
+ bff1/
+URL:https://matchamap.app/e/3f80fb2ebff1/
 GEO:44.987698;-93.256485
 STATUS:CONFIRMED
 CATEGORIES:Matcha

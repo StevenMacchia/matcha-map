@@ -7,16 +7,16 @@ X-WR-CALNAME:Friends' Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:56fe399aee68@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:56fe399aee68@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART:20261206T190000Z
 DTEND:20261206T230000Z
 SUMMARY:Friends' Matcha pop-up
 LOCATION:2310 Kettner Blvd\, San Diego\, CA
 DESCRIPTION:SAN DIEGO\, YOUR MATCHA MARKET IS BACK\nPrice: free\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/56fe399aee68/
-URL:https://matchamap-cu7.pages.dev/e/56fe399aee68/
+ ot fully confirmed.\nMore: https://matchamap.app/e/56fe399aee68/
+URL:https://matchamap.app/e/56fe399aee68/
 GEO:32.728238;-117.171302
 STATUS:CONFIRMED
 CATEGORIES:Matcha

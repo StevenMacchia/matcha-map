@@ -7,8 +7,8 @@ X-WR-CALNAME:Lush pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:20f9b45d2242@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:20f9b45d2242@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART:20261129T180000Z
 DTEND:20261129T210000Z
@@ -16,8 +16,8 @@ SUMMARY:Lush matcha pop-up
 LOCATION:Albuquerque\, NM
 DESCRIPTION:Lush x Grinch Collection is stealing the holidays\nMenu: latte\
  nDetails not confirmed yet. Check the brand's post before you go.\nMore: h
- ttps://matchamap-cu7.pages.dev/e/20f9b45d2242/
-URL:https://matchamap-cu7.pages.dev/e/20f9b45d2242/
+ ttps://matchamap.app/e/20f9b45d2242/
+URL:https://matchamap.app/e/20f9b45d2242/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

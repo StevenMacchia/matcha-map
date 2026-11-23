@@ -7,8 +7,8 @@ X-WR-CALNAME:Jiaren Cafe: Coffee\, Boba & Events pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e1430cf00a5f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:e1430cf00a5f@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261129T000000Z
 DTEND:20261129T020000Z
@@ -17,9 +17,9 @@ LOCATION:San Francisco\, CA
 DESCRIPTION:The workshop explores Japanese tea culture through a look at ma
  tcha production from farm to cup\, behind-the-scenes photos from a 2026 Ja
  pan tea journey and a shared matcha tasting.\nDetails not confirmed yet. C
- heck the brand's post before you go.\nMore: https://matchamap-cu7.pages.de
- v/e/e1430cf00a5f/
-URL:https://matchamap-cu7.pages.dev/e/e1430cf00a5f/
+ heck the brand's post before you go.\nMore: https://matchamap.app/e/e1430c
+ f00a5f/
+URL:https://matchamap.app/e/e1430cf00a5f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

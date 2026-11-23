@@ -7,8 +7,8 @@ X-WR-CALNAME:Emkari Cafe pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1cdd1761a275@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:1cdd1761a275@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261122T235305Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
@@ -18,8 +18,8 @@ DESCRIPTION:Filipino & Vietnamese Matcha & Coffee Popup in San Diego | Dec
  6th | TikTok emkari cafe a little glimpse of our last emkari pop-up ☆ co
  me try our filipino + vietnamese inspired matcha & coffee at…\nDetails n
  ot confirmed yet. Check the brand's post before you go.\nMore: https://mat
- chamap-cu7.pages.dev/e/1cdd1761a275/
-URL:https://matchamap-cu7.pages.dev/e/1cdd1761a275/
+ chamap.app/e/1cdd1761a275/
+URL:https://matchamap.app/e/1cdd1761a275/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

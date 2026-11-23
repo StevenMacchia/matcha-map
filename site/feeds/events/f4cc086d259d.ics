@@ -7,16 +7,16 @@ X-WR-CALNAME:KinKa pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:f4cc086d259d@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:f4cc086d259d@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART;VALUE=DATE:20261213
 DTEND;VALUE=DATE:20261214
 SUMMARY:Matcha 101 'Whisk & Sip'
 LOCATION:KINKA\, 63 East 7th Street\, New York\, NY
 DESCRIPTION:Price: $44.52\nLikely\, not fully confirmed.\nMore: https://mat
- chamap-cu7.pages.dev/e/f4cc086d259d/
-URL:https://matchamap-cu7.pages.dev/e/f4cc086d259d/
+ chamap.app/e/f4cc086d259d/
+URL:https://matchamap.app/e/f4cc086d259d/
 GEO:40.727665;-73.986861
 STATUS:CONFIRMED
 CATEGORIES:Matcha

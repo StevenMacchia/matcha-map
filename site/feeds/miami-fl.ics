@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Miami\, FL
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:a51c507e49ce@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:a51c507e49ce@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
@@ -16,15 +16,15 @@ SUMMARY:Joon (Persian matcha and coffee) pop-up
 LOCATION:Miami\, FL
 DESCRIPTION:Who’s on Joon duty before Thanksgiving? Send this to the pers
  on who knows your order by heart.\nMenu: pistachio\nDetails not confirmed 
- yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.pa
- ges.dev/e/a51c507e49ce/
-URL:https://matchamap-cu7.pages.dev/e/a51c507e49ce/
+ yet. Check the brand's post before you go.\nMore: https://matchamap.app/e/
+ a51c507e49ce/
+URL:https://matchamap.app/e/a51c507e49ce/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:bf0b5dfa104b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:bf0b5dfa104b@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T153000Z
 DTEND:20261128T173000Z
@@ -32,32 +32,16 @@ SUMMARY:Saturday Morning Sips in Pinecrest
 LOCATION:Brewing Buddha Cafe & Arthouse\, 8219 SW 124th St\, Miami\, FL
 DESCRIPTION:Ease back into the weekend with us at **Brewing Buddha in Pinec
  rest**\, a cozy little cafe and art space\, for a laid-back morning of cof
- fee\, matcha\, and good conversation.\nMore: https://matchamap-cu7.pages.d
- ev/e/bf0b5dfa104b/
-URL:https://matchamap-cu7.pages.dev/e/bf0b5dfa104b/
+ fee\, matcha\, and good conversation.\nMore: https://matchamap.app/e/bf0b5
+ dfa104b/
+URL:https://matchamap.app/e/bf0b5dfa104b/
 GEO:25.655482;-80.326845
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:72e8ff9613b6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T003314Z
-DTSTART:20261128T170000Z
-DTEND:20261128T200000Z
-SUMMARY:Matcha + Meetup: Miami | Creatives Edition
-LOCATION:Miami\, FL
-DESCRIPTION:Join us for coffee\, latte\, or matcha! Each gathering is at a 
- different coffee shop. Sip and socialize while building community.\nMenu: 
- latte\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post be
- fore you go.\nMore: https://matchamap-cu7.pages.dev/e/72e8ff9613b6/
-URL:https://matchamap-cu7.pages.dev/e/72e8ff9613b6/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:ec03ffb63cb6@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:ec03ffb63cb6@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T140000Z
 DTEND:20261129T160000Z
@@ -65,30 +49,30 @@ SUMMARY:Run\, Matcha & Fiesta
 LOCATION:Miami\, FL
 DESCRIPTION:El Patio Wynwood hosts a morning gathering of Miami Run Club\, 
  Miami Lakes Run Club and Runknown Run Club.\nPrice: $10\nDetails not confi
- rmed yet. Check the brand's post before you go.\nMore: https://matchamap-c
- u7.pages.dev/e/ec03ffb63cb6/
-URL:https://matchamap-cu7.pages.dev/e/ec03ffb63cb6/
+ rmed yet. Check the brand's post before you go.\nMore: https://matchamap.a
+ pp/e/ec03ffb63cb6/
+URL:https://matchamap.app/e/ec03ffb63cb6/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:9b0831582f08@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:9b0831582f08@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:MatchaFest®️ matcha pop-up
 LOCATION:Miami\, FL
 DESCRIPTION:MATCHAFEST GA TICKETS GIVEAWAY!\nDetails not confirmed yet. Che
- ck the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/
- e/9b0831582f08/
-URL:https://matchamap-cu7.pages.dev/e/9b0831582f08/
+ ck the brand's post before you go.\nMore: https://matchamap.app/e/9b083158
+ 2f08/
+URL:https://matchamap.app/e/9b0831582f08/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:b91746053805@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:b91746053805@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T153000Z
 DTEND:20261205T180000Z
@@ -97,45 +81,45 @@ LOCATION:Flow Wynwood\, 176 NW 25th St\, Miami\, FL
 DESCRIPTION:Pilates & Matcha: with The Ethereal x JETSET Pilates on the Mat
   with JETSET Pilates Downtown Miami is an exclusive wellness\, beauty\, an
  d lifestyle experience curated for creators\, models…\nPrice: $50\nMore:
-  https://matchamap-cu7.pages.dev/e/b91746053805/
-URL:https://matchamap-cu7.pages.dev/e/b91746053805/
+  https://matchamap.app/e/b91746053805/
+URL:https://matchamap.app/e/b91746053805/
 GEO:25.800662;-80.198562
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:f305c9affc63@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:f305c9affc63@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
 SUMMARY:The Matcha Edit pop-up at The Anime Edit
 LOCATION:Miami\, FL
 DESCRIPTION:The Anime Edit Date Drop: 12/06/2026\nDetails not confirmed yet
- . Check the brand's post before you go.\nMore: https://matchamap-cu7.pages
- .dev/e/f305c9affc63/
-URL:https://matchamap-cu7.pages.dev/e/f305c9affc63/
+ . Check the brand's post before you go.\nMore: https://matchamap.app/e/f30
+ 5c9affc63/
+URL:https://matchamap.app/e/f305c9affc63/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:b0cea107b5c1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:b0cea107b5c1@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
 SUMMARY:Matcha Fest pop-up at MatchaFest Miami
 LOCATION:Miami\, FL
 DESCRIPTION:lotusbiscoffus IS COMING TO MIAMI!\nDetails not confirmed yet. 
- Check the brand's post before you go.\nMore: https://matchamap-cu7.pages.d
- ev/e/b0cea107b5c1/
-URL:https://matchamap-cu7.pages.dev/e/b0cea107b5c1/
+ Check the brand's post before you go.\nMore: https://matchamap.app/e/b0cea
+ 107b5c1/
+URL:https://matchamap.app/e/b0cea107b5c1/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:0ef41c2ed3f8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:0ef41c2ed3f8@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270813
 DTEND;VALUE=DATE:20270814
@@ -144,8 +128,8 @@ LOCATION:Miami\, FL
 DESCRIPTION:Starbucks put “The Matcha Edit” on a matcha ad. That’s th
  e name of the business I built in my hometown of Liberty City\, Miami.\nDe
  tails not confirmed yet. Check the brand's post before you go.\nMore: http
- s://matchamap-cu7.pages.dev/e/0ef41c2ed3f8/
-URL:https://matchamap-cu7.pages.dev/e/0ef41c2ed3f8/
+ s://matchamap.app/e/0ef41c2ed3f8/
+URL:https://matchamap.app/e/0ef41c2ed3f8/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

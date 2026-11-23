@@ -7,8 +7,8 @@ X-WR-CALNAME:Cristalesdelrio pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:fa9d8aa63c91@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:fa9d8aa63c91@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261122T202747Z
 DTSTART:20261129T170000Z
 DTEND:20261129T210000Z
@@ -17,8 +17,8 @@ LOCATION:@sugarflourandmilk\, 411 18th St\, Sacramento\, CA
 DESCRIPTION:Mochi • Salt Bread\, Cookies\, & Cinnamon Rolls ... Matcha\, 
  Hojicha\, & Vietnamese Coffee. Crystal & Silversmith Jewelry … 11/29 fro
  m 9AM-1PM (411 18th St\, Sacramento)\nMenu: mochi\, cookie\, hojicha\nMore
- : https://matchamap-cu7.pages.dev/e/fa9d8aa63c91/
-URL:https://matchamap-cu7.pages.dev/e/fa9d8aa63c91/
+ : https://matchamap.app/e/fa9d8aa63c91/
+URL:https://matchamap.app/e/fa9d8aa63c91/
 GEO:38.583600;-121.479765
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -7,48 +7,16 @@ X-WR-CALNAME:Matcha Map: Denver\, CO
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:4702e4caf21b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T151342Z
-DTSTART:20261128T200000Z
-DTEND:20261128T230000Z
-SUMMARY:Matcha + Meetup: Denver | Film + Music Industry Monthly Mingle
-LOCATION:Denver\, CO
-DESCRIPTION:Life can be lonely for creatives when you're busy with your pas
- sions. Meet us at a different cafe each month for coffee and conversation!
- \nPrice: $17.85\nDetails not confirmed yet. Check the brand's post before 
- you go.\nMore: https://matchamap-cu7.pages.dev/e/4702e4caf21b/
-URL:https://matchamap-cu7.pages.dev/e/4702e4caf21b/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:011861913f1f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
-LAST-MODIFIED:20261123T151342Z
-DTSTART:20261227T200000Z
-DTEND:20261227T230000Z
-SUMMARY:Matcha + Meetup: Denver | Entrepreneur Speed Networking Roulette
-LOCATION:Denver\, CO
-DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nPrice: $
- 23.18\nDetails not confirmed yet. Check the brand's post before you go.\nM
- ore: https://matchamap-cu7.pages.dev/e/011861913f1f/
-URL:https://matchamap-cu7.pages.dev/e/011861913f1f/
-STATUS:TENTATIVE
-CATEGORIES:Matcha
-END:VEVENT
-BEGIN:VEVENT
-UID:151817fd4fcb@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:151817fd4fcb@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270713
 DTEND;VALUE=DATE:20270714
 SUMMARY:Nakama Matcha pop-up at Ironworks
 LOCATION:Ironworks\, 651 W 42nd Ave\, Denver\, CO
 DESCRIPTION:MATCHA MONDAYS ARE HERE!! | see you today!\nLikely\, not fully 
- confirmed.\nMore: https://matchamap-cu7.pages.dev/e/151817fd4fcb/
-URL:https://matchamap-cu7.pages.dev/e/151817fd4fcb/
+ confirmed.\nMore: https://matchamap.app/e/151817fd4fcb/
+URL:https://matchamap.app/e/151817fd4fcb/
 GEO:39.774893;-104.995811
 STATUS:CONFIRMED
 CATEGORIES:Matcha

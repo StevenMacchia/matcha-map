@@ -7,8 +7,8 @@ X-WR-CALNAME:Filo Cafe pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:d6309e5860ca@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:d6309e5860ca@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261122T182606Z
 DTSTART:20261128T150000Z
 DTEND:20261128T190000Z
@@ -17,9 +17,9 @@ LOCATION:North Bethesda\, MD
 DESCRIPTION:kai Adornments brings permanent jewelry and handmade pieces to 
  FILO CAFE for a pop-up. Visitors can shop handmade pieces for holiday gift
  s\, and brunch is also part of the visit.\nDetails not confirmed yet. Chec
- k the brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e
- /d6309e5860ca/
-URL:https://matchamap-cu7.pages.dev/e/d6309e5860ca/
+ k the brand's post before you go.\nMore: https://matchamap.app/e/d6309e586
+ 0ca/
+URL:https://matchamap.app/e/d6309e5860ca/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

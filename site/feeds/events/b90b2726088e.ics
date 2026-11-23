@@ -7,8 +7,8 @@ X-WR-CALNAME:Portland Matcha & Coffee pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:b90b2726088e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:b90b2726088e@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261213T180000Z
 DTEND:20261213T230000Z
@@ -17,9 +17,8 @@ LOCATION:Pearl District Culinary Farmers Market\, 327 NW 10th Ave\, Portlan
  d\, OR 97209\, Portland\, OR
 DESCRIPTION:A matcha and coffee stand at the Sunday holiday edition of the 
  Pearl District farmers market. Grab a matcha to sip while you browse.\nLik
- ely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/b90b27
- 26088e/
-URL:https://matchamap-cu7.pages.dev/e/b90b2726088e/
+ ely\, not fully confirmed.\nMore: https://matchamap.app/e/b90b2726088e/
+URL:https://matchamap.app/e/b90b2726088e/
 GEO:45.525697;-122.681434
 STATUS:CONFIRMED
 CATEGORIES:Matcha

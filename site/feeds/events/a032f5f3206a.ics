@@ -7,8 +7,8 @@ X-WR-CALNAME:Michelle Samper pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:a032f5f3206a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:a032f5f3206a@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261202T220000Z
 DTEND:20261202T230000Z
@@ -16,8 +16,8 @@ SUMMARY:The Manifestation Club Gratitude Walk
 LOCATION:Águila Coffee\, 1215 North Orange Avenue\, Orlando\, FL
 DESCRIPTION:Connect with community\, grab a coffee/matcha\, tap into gratit
  ude\, and move your body as we walk together into our highest timeline.\nP
- rice: free\nMore: https://matchamap-cu7.pages.dev/e/a032f5f3206a/
-URL:https://matchamap-cu7.pages.dev/e/a032f5f3206a/
+ rice: free\nMore: https://matchamap.app/e/a032f5f3206a/
+URL:https://matchamap.app/e/a032f5f3206a/
 GEO:28.588406;-81.362137
 STATUS:CONFIRMED
 CATEGORIES:Matcha

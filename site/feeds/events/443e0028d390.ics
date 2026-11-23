@@ -7,8 +7,8 @@ X-WR-CALNAME:Mat & Moov pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:443e0028d390@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:443e0028d390@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T190000Z
 DTEND:20261212T203000Z
@@ -16,8 +16,8 @@ SUMMARY:Mat\, Moov & Matcha
 LOCATION:Sculpt'd Philly\, 950 N 2nd St\, Philadelphia\, PA
 DESCRIPTION:A 45-minute hot barre sculpt class followed by a matcha social 
  with Kyn matcha\, vendors and photo moments.\nMenu: matcha from kyn\nPrice
- : $44.52 (ticket)\nMore: https://matchamap-cu7.pages.dev/e/443e0028d390/
-URL:https://matchamap-cu7.pages.dev/e/443e0028d390/
+ : $44.52 (ticket)\nMore: https://matchamap.app/e/443e0028d390/
+URL:https://matchamap.app/e/443e0028d390/
 GEO:39.965414;-75.140539
 STATUS:CONFIRMED
 CATEGORIES:Matcha

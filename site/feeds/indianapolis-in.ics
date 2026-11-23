@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Indianapolis\, IN
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:bd54ec09c610@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:bd54ec09c610@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
@@ -16,9 +16,9 @@ SUMMARY:Katsumi's Kakkoii Cafe – A Japanese Food & Culture Experience
 LOCATION:222 Main Street\, Beech Grove\, IN
 DESCRIPTION:Experience Japanese food and culture\, a fun two-hour Japanese 
  cafe experience featuring authentic dishes\, matcha\, crafts and activitie
- s.\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e
- /bd54ec09c610/
-URL:https://matchamap-cu7.pages.dev/e/bd54ec09c610/
+ s.\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/bd54ec09c
+ 610/
+URL:https://matchamap.app/e/bd54ec09c610/
 GEO:39.722049;-86.084667
 STATUS:CONFIRMED
 CATEGORIES:Matcha

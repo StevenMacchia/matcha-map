@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha event pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e19faebb63be@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:e19faebb63be@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261212T170000Z
 DTEND:20261212T210000Z
@@ -16,9 +16,9 @@ SUMMARY:Design Matcha Demo
 LOCATION:New York\, NY
 DESCRIPTION:Join us for our first Design Matcha Demo\, a monthly afternoon 
  for people who love making things thoughtfully.\nDetails not confirmed yet
- . Check the brand's post before you go.\nMore: https://matchamap-cu7.pages
- .dev/e/e19faebb63be/
-URL:https://matchamap-cu7.pages.dev/e/e19faebb63be/
+ . Check the brand's post before you go.\nMore: https://matchamap.app/e/e19
+ faebb63be/
+URL:https://matchamap.app/e/e19faebb63be/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

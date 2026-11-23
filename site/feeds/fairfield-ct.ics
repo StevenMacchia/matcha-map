@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Fairfield\, CT
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:ebb6255487c0@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:ebb6255487c0@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART:20261205T190000Z
 DTEND:20261205T210000Z
@@ -16,8 +16,8 @@ SUMMARY:Matcha Amor pop-up at Blue
 LOCATION:Blue\, Fairfield\, CT
 DESCRIPTION:WHISK\, SIP & SWAP!\nMenu: iced matcha latte\, sando\, madelein
  e\nPrice: $20–65\nDetails not confirmed yet. Check the brand's post befo
- re you go.\nMore: https://matchamap-cu7.pages.dev/e/ebb6255487c0/
-URL:https://matchamap-cu7.pages.dev/e/ebb6255487c0/
+ re you go.\nMore: https://matchamap.app/e/ebb6255487c0/
+URL:https://matchamap.app/e/ebb6255487c0/
 GEO:41.355001;-73.353545
 STATUS:TENTATIVE
 CATEGORIES:Matcha

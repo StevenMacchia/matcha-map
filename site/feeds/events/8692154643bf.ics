@@ -7,8 +7,8 @@ X-WR-CALNAME:B Social Event Space pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:8692154643bf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:8692154643bf@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261206T150000Z
 DTEND:20261206T170000Z
@@ -16,8 +16,8 @@ SUMMARY:The Pilates Social: Holiday Edition
 LOCATION:B Social Event Space\, 20 Willett Avenue\, Port Chester\, NY
 DESCRIPTION:A women-only holiday morning of mat Pilates\, B12 shots\, a cof
  fee and matcha bar\, gifting and a vendor market.\nPrice: $65\nLikely\, no
- t fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/8692154643bf/
-URL:https://matchamap-cu7.pages.dev/e/8692154643bf/
+ t fully confirmed.\nMore: https://matchamap.app/e/8692154643bf/
+URL:https://matchamap.app/e/8692154643bf/
 GEO:41.002062;-73.660956
 STATUS:CONFIRMED
 CATEGORIES:Matcha

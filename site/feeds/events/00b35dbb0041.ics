@@ -7,8 +7,8 @@ X-WR-CALNAME:Mellobun Cafe x Matte Matcha Bar pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:00b35dbb0041@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:00b35dbb0041@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T170000Z
 DTEND:20261128T210000Z
@@ -16,9 +16,9 @@ SUMMARY:Mellobun Cafe: Salvatore Galateria
 LOCATION:Sacramento\, CA
 DESCRIPTION:Mellobun Cafe's Elk Grove pop-up at Salvatore Galateria offers 
  salt breads and sourdough pastries.\nMenu: pastry\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/00b35dbb0041/
-URL:https://matchamap-cu7.pages.dev/e/00b35dbb0041/
+ et. Check the brand's post before you go.\nMore: https://matchamap.app/e/0
+ 0b35dbb0041/
+URL:https://matchamap.app/e/00b35dbb0041/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

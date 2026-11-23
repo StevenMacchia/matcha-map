@@ -7,16 +7,16 @@ X-WR-CALNAME:Longevity Pittsburgh pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:b747a3db5628@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:b747a3db5628@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T150000Z
 DTEND:20261128T170000Z
 SUMMARY:Matcha & Walk | Heritage Trail
 LOCATION:Novaria coffee co.\, 1812 Penn Ave\, Pittsburgh\, PA
 DESCRIPTION:​*Let's walk off the Thanksgiving Dinner!*\nMore: https://mat
- chamap-cu7.pages.dev/e/b747a3db5628/
-URL:https://matchamap-cu7.pages.dev/e/b747a3db5628/
+ chamap.app/e/b747a3db5628/
+URL:https://matchamap.app/e/b747a3db5628/
 GEO:40.450443;-79.984783
 STATUS:CONFIRMED
 CATEGORIES:Matcha

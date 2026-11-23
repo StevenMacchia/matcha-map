@@ -7,8 +7,8 @@ X-WR-CALNAME:Roots Kava Bar pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:6e3949ab5d9e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:6e3949ab5d9e@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T003000Z
 DTEND:20261128T030000Z
@@ -16,9 +16,9 @@ SUMMARY:Friday Night Comedy and Open Mic at Roots Kava Bar\, Port Jefferson
 LOCATION:Roots Kava Bar\, 250 East Main Street\, Port Jefferson\, NY
 DESCRIPTION:Alcohol-free comedy night every Friday in Port Jeff. Sign-ups 7
  :30\, open mic 8\, comedy 9. Kava\, coffee\, matcha and mocktails.\nPrice:
-  Free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.de
- v/e/6e3949ab5d9e/
-URL:https://matchamap-cu7.pages.dev/e/6e3949ab5d9e/
+  Free\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/6e3949
+ ab5d9e/
+URL:https://matchamap.app/e/6e3949ab5d9e/
 GEO:40.945446;-73.067637
 STATUS:CONFIRMED
 CATEGORIES:Matcha

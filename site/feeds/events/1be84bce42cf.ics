@@ -7,8 +7,8 @@ X-WR-CALNAME:Infinitema pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1be84bce42cf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:1be84bce42cf@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T151342Z
 DTSTART:20261124T030000Z
 DTEND:20261124T060000Z
@@ -16,9 +16,9 @@ SUMMARY:MATCHA MOONDAYS CEREMONY
 LOCATION:Las Vegas\, NV
 DESCRIPTION:Chill out with some zen vibes and tasty matcha in a cozy moonda
  ys hangout you don’t wanna miss.\nPrice: $88–144\nDetails not confirme
- d yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.
- pages.dev/e/1be84bce42cf/
-URL:https://matchamap-cu7.pages.dev/e/1be84bce42cf/
+ d yet. Check the brand's post before you go.\nMore: https://matchamap.app/
+ e/1be84bce42cf/
+URL:https://matchamap.app/e/1be84bce42cf/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

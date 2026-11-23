@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Sacramento\, CA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:293aa797fb54@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:293aa797fb54@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261125T170000Z
 DTEND:20261125T210000Z
@@ -16,16 +16,16 @@ SUMMARY:Mellobun Cafe x Matte Matcha Bar pop-up
 LOCATION:Journey to the Dumpling\, Sacramento\, CA
 DESCRIPTION:Mellobun Cafe hosts a one-day holiday pop-up at Journey to the 
  Dumpling in Elk Grove.\nMenu: dumpling\, hojicha\, latte\, cookie\, pastry
- \nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/2
- 93aa797fb54/
-URL:https://matchamap-cu7.pages.dev/e/293aa797fb54/
+ \nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/293aa797fb5
+ 4/
+URL:https://matchamap.app/e/293aa797fb54/
 GEO:38.568504;-121.482258
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:5c522a699b41@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:5c522a699b41@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261122T193450Z
 DTSTART:20261128T010000Z
 DTEND:20261128T050000Z
@@ -34,15 +34,15 @@ LOCATION:2211 16th St\, Sacramento\, CA
 DESCRIPTION:TEA TIME? is back on Black Friday Night Friday\, Nov 27 ... - I
  nstagram Friday\, Nov 27\, 2026 (2211 16th St\, Sacramento\, CA) Matcha St
  and: 5:00 – 9:00 PM.\nLikely\, not fully confirmed.\nMore: https://match
- amap-cu7.pages.dev/e/5c522a699b41/
-URL:https://matchamap-cu7.pages.dev/e/5c522a699b41/
+ amap.app/e/5c522a699b41/
+URL:https://matchamap.app/e/5c522a699b41/
 GEO:38.564730;-121.490898
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:00b35dbb0041@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:00b35dbb0041@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T170000Z
 DTEND:20261128T210000Z
@@ -50,15 +50,15 @@ SUMMARY:Mellobun Cafe: Salvatore Galateria
 LOCATION:Sacramento\, CA
 DESCRIPTION:Mellobun Cafe's Elk Grove pop-up at Salvatore Galateria offers 
  salt breads and sourdough pastries.\nMenu: pastry\nDetails not confirmed y
- et. Check the brand's post before you go.\nMore: https://matchamap-cu7.pag
- es.dev/e/00b35dbb0041/
-URL:https://matchamap-cu7.pages.dev/e/00b35dbb0041/
+ et. Check the brand's post before you go.\nMore: https://matchamap.app/e/0
+ 0b35dbb0041/
+URL:https://matchamap.app/e/00b35dbb0041/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:16736091026a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:16736091026a@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261128T180000Z
 DTEND:20261129T000000Z
@@ -66,15 +66,15 @@ SUMMARY:Mellobun Cafe at Parkside Pharmacy
 LOCATION:Parkside Pharmacy\, Sacramento\, CA
 DESCRIPTION:Mellobun Cafe's weekend pop-up sets up at Parkside Pharmacy in 
  Sacramento.\nMenu: pastry\nLikely\, not fully confirmed.\nMore: https://ma
- tchamap-cu7.pages.dev/e/16736091026a/
-URL:https://matchamap-cu7.pages.dev/e/16736091026a/
+ tchamap.app/e/16736091026a/
+URL:https://matchamap.app/e/16736091026a/
 GEO:38.536845;-121.504759
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:0bf42e9f695a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:0bf42e9f695a@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T170000Z
 DTEND:20261129T210000Z
@@ -82,15 +82,15 @@ SUMMARY:Bloom & Brew Pop-Up Market
 LOCATION:EOC Studio\, 411 18th St\, Sacramento\, CA
 DESCRIPTION:Bloom & Brew returns to EOC Studio with drinks\, baked goods\, 
  shopping\, a photo booth\, and hair blowouts.\nMenu: mochi\, pastry\, cook
- ie\, hojicha\nMore: https://matchamap-cu7.pages.dev/e/0bf42e9f695a/
-URL:https://matchamap-cu7.pages.dev/e/0bf42e9f695a/
+ ie\, hojicha\nMore: https://matchamap.app/e/0bf42e9f695a/
+URL:https://matchamap.app/e/0bf42e9f695a/
 GEO:38.583600;-121.479765
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:fa9d8aa63c91@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:fa9d8aa63c91@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261122T202747Z
 DTSTART:20261129T170000Z
 DTEND:20261129T210000Z
@@ -99,15 +99,15 @@ LOCATION:@sugarflourandmilk\, 411 18th St\, Sacramento\, CA
 DESCRIPTION:Mochi • Salt Bread\, Cookies\, & Cinnamon Rolls ... Matcha\, 
  Hojicha\, & Vietnamese Coffee. Crystal & Silversmith Jewelry … 11/29 fro
  m 9AM-1PM (411 18th St\, Sacramento)\nMenu: mochi\, cookie\, hojicha\nMore
- : https://matchamap-cu7.pages.dev/e/fa9d8aa63c91/
-URL:https://matchamap-cu7.pages.dev/e/fa9d8aa63c91/
+ : https://matchamap.app/e/fa9d8aa63c91/
+URL:https://matchamap.app/e/fa9d8aa63c91/
 GEO:38.583600;-121.479765
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:a85478b4d03f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:a85478b4d03f@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T190000Z
 DTEND:20261213T010000Z
@@ -117,9 +117,8 @@ LOCATION:Scottish Rite Masonic Center (Makers Mart)\, 6151 H Street\, Sacra
 DESCRIPTION:Sacramento's holiday craft fair with 70+ artisans\, a DJ and a 
  raffle. Matte Matcha Bar\, the mobile matcha cafe\, serves specialty match
  a drinks alongside Mellobun's pastries. Admission is a $5 suggeste\nMenu: 
- specialty matcha drinks\nMore: https://matchamap-cu7.pages.dev/e/a85478b4d
- 03f/
-URL:https://matchamap-cu7.pages.dev/e/a85478b4d03f/
+ specialty matcha drinks\nMore: https://matchamap.app/e/a85478b4d03f/
+URL:https://matchamap.app/e/a85478b4d03f/
 GEO:38.569003;-121.426618
 STATUS:CONFIRMED
 CATEGORIES:Matcha

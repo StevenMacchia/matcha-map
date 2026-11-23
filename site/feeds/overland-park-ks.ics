@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Overland Park\, KS
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:775585adbb92@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:775585adbb92@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T140000Z
 DTEND:20261205T180000Z
@@ -21,14 +21,14 @@ DESCRIPTION:HerCafe is Kansas City's first mobile matcha cart\, hand-whiski
  nana pudding matcha\, berry chantilly matcha\, peach cobbler matcha\, salt
  ed honey hojicha\, vanilla matcha\, maple matcha\, hojicha\nPrice: $7-8\nD
  etails not confirmed yet. Check the brand's post before you go.\nMore: htt
- ps://matchamap-cu7.pages.dev/e/775585adbb92/
-URL:https://matchamap-cu7.pages.dev/e/775585adbb92/
+ ps://matchamap.app/e/775585adbb92/
+URL:https://matchamap.app/e/775585adbb92/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:69fc4df280c2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:69fc4df280c2@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T140000Z
 DTEND:20261212T180000Z
@@ -41,14 +41,14 @@ DESCRIPTION:HerCafe is Kansas City's first mobile matcha cart\, hand-whiski
  nana pudding matcha\, berry chantilly matcha\, peach cobbler matcha\, salt
  ed honey hojicha\, vanilla matcha\, maple matcha\, hojicha\nPrice: $7-8\nD
  etails not confirmed yet. Check the brand's post before you go.\nMore: htt
- ps://matchamap-cu7.pages.dev/e/69fc4df280c2/
-URL:https://matchamap-cu7.pages.dev/e/69fc4df280c2/
+ ps://matchamap.app/e/69fc4df280c2/
+URL:https://matchamap.app/e/69fc4df280c2/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:43904e5a6230@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:43904e5a6230@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261219T140000Z
 DTEND:20261219T180000Z
@@ -61,8 +61,8 @@ DESCRIPTION:HerCafe is Kansas City's first mobile matcha cart\, hand-whiski
  nana pudding matcha\, berry chantilly matcha\, peach cobbler matcha\, salt
  ed honey hojicha\, vanilla matcha\, maple matcha\, hojicha\nPrice: $7-8\nD
  etails not confirmed yet. Check the brand's post before you go.\nMore: htt
- ps://matchamap-cu7.pages.dev/e/43904e5a6230/
-URL:https://matchamap-cu7.pages.dev/e/43904e5a6230/
+ ps://matchamap.app/e/43904e5a6230/
+URL:https://matchamap.app/e/43904e5a6230/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

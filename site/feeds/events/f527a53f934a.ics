@@ -7,8 +7,8 @@ X-WR-CALNAME:Shogun Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:f527a53f934a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:f527a53f934a@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T210000Z
 DTEND:20261213T000000Z
@@ -19,8 +19,8 @@ DESCRIPTION:Shogun Matcha pours hand-whisked matcha from Uji in the lobby o
  f Nobu Hotel Atlanta in Buckhead\, with art on display in the lobby. Walk-
  ins welcome\; the hotel's own post lists these as upcoming matcha\nMenu: m
  atcha latte\, new yorker matcha latte\, geisha blend\, hojicha\nLikely\, n
- ot fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/f527a53f934a/
-URL:https://matchamap-cu7.pages.dev/e/f527a53f934a/
+ ot fully confirmed.\nMore: https://matchamap.app/e/f527a53f934a/
+URL:https://matchamap.app/e/f527a53f934a/
 GEO:33.854307;-84.363451
 STATUS:CONFIRMED
 CATEGORIES:Matcha

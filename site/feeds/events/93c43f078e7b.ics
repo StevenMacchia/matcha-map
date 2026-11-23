@@ -7,8 +7,8 @@ X-WR-CALNAME:Mira Matcha pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:93c43f078e7b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:93c43f078e7b@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261204T230000Z
 DTEND:20261205T010000Z
@@ -17,9 +17,9 @@ LOCATION:San Antonio\, TX
 DESCRIPTION:First Friday is a night of tattoos\, curated vendors\, coffee a
  nd shopping. Local tattoo artist creates an exclusive flash tattoo sheet i
  nspired by the Moonchild logo and Moonchild world.\nDetails not confirmed 
- yet. Check the brand's post before you go.\nMore: https://matchamap-cu7.pa
- ges.dev/e/93c43f078e7b/
-URL:https://matchamap-cu7.pages.dev/e/93c43f078e7b/
+ yet. Check the brand's post before you go.\nMore: https://matchamap.app/e/
+ 93c43f078e7b/
+URL:https://matchamap.app/e/93c43f078e7b/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

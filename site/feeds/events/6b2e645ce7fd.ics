@@ -7,8 +7,8 @@ X-WR-CALNAME:Sistahs’Sweets Cupcakes🧁 pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:6b2e645ce7fd@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:6b2e645ce7fd@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261212T170000Z
 DTEND:20261212T230000Z
@@ -16,8 +16,8 @@ SUMMARY:Sistahs’Sweets Cupcakes🧁 pop-up
 LOCATION:4770 Owings Mills Blvd\, Baltimore\, MD
 DESCRIPTION:2nd LOCATION?!\nMenu: gourmet cupcakes\, iced matcha lattes\, c
  ookie flavor of the week\nLikely\, not fully confirmed.\nMore: https://mat
- chamap-cu7.pages.dev/e/6b2e645ce7fd/
-URL:https://matchamap-cu7.pages.dev/e/6b2e645ce7fd/
+ chamap.app/e/6b2e645ce7fd/
+URL:https://matchamap.app/e/6b2e645ce7fd/
 GEO:39.402802;-76.796642
 STATUS:CONFIRMED
 CATEGORIES:Matcha

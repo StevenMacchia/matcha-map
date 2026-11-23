@@ -7,17 +7,17 @@ X-WR-CALNAME:Matcha Map: Vancouver\, WA
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:faa56768b874@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:faa56768b874@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T150802Z
 DTSTART:20261123T190000Z
 DTEND:20261124T020000Z
 SUMMARY:Lunti Matcha pop-up at Adobo Shack
 LOCATION:Vancouver\, WA
 DESCRIPTION:Okayyy\, ONE MORE DAY!\nMenu: cookie\, ube\nDetails not confirm
- ed yet. Check the brand's post before you go.\nMore: https://matchamap-cu7
- .pages.dev/e/faa56768b874/
-URL:https://matchamap-cu7.pages.dev/e/faa56768b874/
+ ed yet. Check the brand's post before you go.\nMore: https://matchamap.app
+ /e/faa56768b874/
+URL:https://matchamap.app/e/faa56768b874/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

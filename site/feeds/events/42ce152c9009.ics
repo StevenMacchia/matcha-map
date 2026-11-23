@@ -7,8 +7,8 @@ X-WR-CALNAME:PIP coffee+clay pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:42ce152c9009@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:42ce152c9009@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T163000Z
 DTEND:20261212T183000Z
@@ -18,8 +18,8 @@ DESCRIPTION:Part two of a two-part matcha workshop with Neighbor Matcha at
  PIP coffee+clay - Phoenix. Participants make matcha using the bowl built a
  nd decorated in part one on November 21.\nMenu: matcha bowl\nDetails not c
  onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
- ap-cu7.pages.dev/e/42ce152c9009/
-URL:https://matchamap-cu7.pages.dev/e/42ce152c9009/
+ ap.app/e/42ce152c9009/
+URL:https://matchamap.app/e/42ce152c9009/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

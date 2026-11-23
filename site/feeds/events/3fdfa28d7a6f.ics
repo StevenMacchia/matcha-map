@@ -7,8 +7,8 @@ X-WR-CALNAME:Rhythmzero pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:3fdfa28d7a6f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:3fdfa28d7a6f@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T121327Z
 DTSTART;VALUE=DATE:20270910
 DTEND;VALUE=DATE:20270911
@@ -17,8 +17,8 @@ LOCATION:New York\, NY
 DESCRIPTION:Confirmed that the blackberry pie matcha latte from rhythmzeron
  yc is 100% worth the hype! Can’t wait to try their coffee drinks next.\n
  Menu: latte\nDetails not confirmed yet. Check the brand's post before you 
- go.\nMore: https://matchamap-cu7.pages.dev/e/3fdfa28d7a6f/
-URL:https://matchamap-cu7.pages.dev/e/3fdfa28d7a6f/
+ go.\nMore: https://matchamap.app/e/3fdfa28d7a6f/
+URL:https://matchamap.app/e/3fdfa28d7a6f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

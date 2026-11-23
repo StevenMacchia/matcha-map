@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha Map: Orlando\, FL
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e1056c059388@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:e1056c059388@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261127T150000Z
 DTEND:20261127T200000Z
@@ -17,15 +17,15 @@ LOCATION:GEEK'D\, Orlando\, FL
 DESCRIPTION:Peko Peko's drinks-only pop-up at GEEK'D\, featuring cloud matc
  has and Vietnamese coffee. This is the final day to enjoy the November men
  u. Open from 10:00 AM to 3:00 PM.\nLikely\, not fully confirmed.\nMore: ht
- tps://matchamap-cu7.pages.dev/e/e1056c059388/
-URL:https://matchamap-cu7.pages.dev/e/e1056c059388/
+ tps://matchamap.app/e/e1056c059388/
+URL:https://matchamap.app/e/e1056c059388/
 GEO:28.554945;-81.209008
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:0bfb519dbe1c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:0bfb519dbe1c@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T151724Z
 DTSTART:20261128T150000Z
 DTEND:20261128T200000Z
@@ -34,15 +34,14 @@ LOCATION:Orlando\, FL
 DESCRIPTION:Shop Small Saturday is a local vendor market featuring curated 
  vintage and Y2K vendors\, $5 bins\, art\, handmade goods\, decor\, matcha\
  , plants\, and treats.\nPrice: free\nDetails not confirmed yet. Check the 
- brand's post before you go.\nMore: https://matchamap-cu7.pages.dev/e/0bfb5
- 19dbe1c/
-URL:https://matchamap-cu7.pages.dev/e/0bfb519dbe1c/
+ brand's post before you go.\nMore: https://matchamap.app/e/0bfb519dbe1c/
+URL:https://matchamap.app/e/0bfb519dbe1c/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:a032f5f3206a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:a032f5f3206a@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261202T220000Z
 DTEND:20261202T230000Z
@@ -50,15 +49,15 @@ SUMMARY:The Manifestation Club Gratitude Walk
 LOCATION:Águila Coffee\, 1215 North Orange Avenue\, Orlando\, FL
 DESCRIPTION:Connect with community\, grab a coffee/matcha\, tap into gratit
  ude\, and move your body as we walk together into our highest timeline.\nP
- rice: free\nMore: https://matchamap-cu7.pages.dev/e/a032f5f3206a/
-URL:https://matchamap-cu7.pages.dev/e/a032f5f3206a/
+ rice: free\nMore: https://matchamap.app/e/a032f5f3206a/
+URL:https://matchamap.app/e/a032f5f3206a/
 GEO:28.588406;-81.362137
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:39470a524d45@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:39470a524d45@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261205T150000Z
 DTEND:20261205T170000Z
@@ -66,48 +65,48 @@ SUMMARY:mystic moon Vintage + Art Market
 LOCATION:Audubon Park\, Orlando\, FL
 DESCRIPTION:The mystic moon Vintage + Art Market brings curated vintage and
   Y2K\, local art\, handmade goods\, matcha\, sourdough and treats to Audub
- on Park.\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages
- .dev/e/39470a524d45/
-URL:https://matchamap-cu7.pages.dev/e/39470a524d45/
+ on Park.\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/394
+ 70a524d45/
+URL:https://matchamap.app/e/39470a524d45/
 GEO:28.564601;-81.342718
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:06fdf68f4174@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:06fdf68f4174@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261122T202747Z
 DTSTART:20261205T180000Z
 DTEND:20261205T200000Z
 SUMMARY:madewithmax pop-up at theclubinspired
 LOCATION:@theclubinspired\, 420 E Church St Suite 115\, Orlando\, FL
 DESCRIPTION:Orlando matcha lovers\, your ultimate holiday afternoon is here
- .\nMenu: pastry\, macaron\, madeleine\nMore: https://matchamap-cu7.pages.d
- ev/e/06fdf68f4174/
-URL:https://matchamap-cu7.pages.dev/e/06fdf68f4174/
+ .\nMenu: pastry\, macaron\, madeleine\nMore: https://matchamap.app/e/06fdf
+ 68f4174/
+URL:https://matchamap.app/e/06fdf68f4174/
 GEO:28.540125;-81.371571
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:efbff45b52b5@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:efbff45b52b5@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261122T202747Z
 DTSTART:20261205T180000Z
 DTEND:20261205T200000Z
 SUMMARY:theclubinspired pop-up at madewithmax
 LOCATION:@madewithmax\, 420 E Church St Suite 115\, Orlando\, FL
 DESCRIPTION:Orlando matcha lovers\, your ultimate holiday afternoon is here
- .\nMenu: pastry\, macaron\, madeleine\nMore: https://matchamap-cu7.pages.d
- ev/e/efbff45b52b5/
-URL:https://matchamap-cu7.pages.dev/e/efbff45b52b5/
+ .\nMenu: pastry\, macaron\, madeleine\nMore: https://matchamap.app/e/efbff
+ 45b52b5/
+URL:https://matchamap.app/e/efbff45b52b5/
 GEO:28.540125;-81.371571
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
-UID:dcff41e4fa74@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:dcff41e4fa74@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T210000Z
 DTEND:20261205T230000Z
@@ -115,8 +114,8 @@ SUMMARY:Très Matcha! Très Fleur! (4 PM)
 LOCATION:Amore Mio Florals Studio\, 420 E Church St #115\, Orlando\, FL
 DESCRIPTION:Très Matcha! Très Fleur! is a one-day holiday workshop hosted
   by and at Amore Mio Florals Studio.\nMenu: macaron\, madeleine\nMore: htt
- ps://matchamap-cu7.pages.dev/e/dcff41e4fa74/
-URL:https://matchamap-cu7.pages.dev/e/dcff41e4fa74/
+ ps://matchamap.app/e/dcff41e4fa74/
+URL:https://matchamap.app/e/dcff41e4fa74/
 GEO:28.540125;-81.371571
 STATUS:CONFIRMED
 CATEGORIES:Matcha

@@ -7,8 +7,8 @@ X-WR-CALNAME:Matcha mrkt pop-up
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:62b886870d67@matchamap-cu7.pages.dev
-DTSTAMP:20261123T182944Z
+UID:62b886870d67@matchamap.app
+DTSTAMP:20261123T183925Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20270303T163000Z
 DTEND:20270303T183000Z
@@ -17,8 +17,8 @@ LOCATION:Atlanta\, GA
 DESCRIPTION:We gathered Atlanta best matcha vendors all in one place so you
   can enjoy them all at once! This matcha crawl will have you buzzing & see
  ing green!\nDetails not confirmed yet. Check the brand's post before you g
- o.\nMore: https://matchamap-cu7.pages.dev/e/62b886870d67/
-URL:https://matchamap-cu7.pages.dev/e/62b886870d67/
+ o.\nMore: https://matchamap.app/e/62b886870d67/
+URL:https://matchamap.app/e/62b886870d67/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
