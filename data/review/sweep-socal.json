@@ -1,0 +1,102 @@
+{
+  "generated": "2026-11-23T03:22:01.637Z",
+  "group": "socal",
+  "items": [
+    {
+      "brand": "Matcha + Meetup (ADDVentures)",
+      "handle": null,
+      "source_id": "addventures-matcha-meetup",
+      "title": "Matcha + Meetup: DTLA (Giving Back Edition)",
+      "start": "2026-11-29T12:00:00-08:00",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "venue": "Cafe of the Day (rotating cafe)",
+      "address": "East 3rd Street, Los Angeles, CA 90013",
+      "city": "Los Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-dtla-giving-back-edition-tickets-1990215970543",
+      "posts": [],
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-dtla-giving-back-edition-tickets-1990215970543",
+        "https://www.eventbrite.com/o/105305487311"
+      ],
+      "menu": [
+        "coffee, latte or matcha (bought separately)"
+      ],
+      "price": null,
+      "hours": "12:00 PM start per Eventbrite listing",
+      "pay": "ticket via Eventbrite; drinks bought at the cafe",
+      "description": "A small friendship meetup of 4 to 6 strangers over coffee or matcha at a local cafe, with proceeds supporting The Comeunity Project. The cafe is different each time and shared with attendees by email.",
+      "image_url": "https://cdn.evbuc.com/images/1171080798/2560545315651/1/original.20251116-155056",
+      "confidence": "unsure",
+      "notes": "Meetup, not a matcha pop-up (kind class/meetup in spirit): venue is a rotating placeholder, so not promotable. Listing shows only a generic 'Multiple dates' plus this Nov 29 12 PM slot; no street address."
+    },
+    {
+      "brand": "Matcha + Meetup (ADDVentures)",
+      "handle": null,
+      "source_id": "addventures-matcha-meetup",
+      "title": "Matcha + Meetup: Marina del Rey (Giving Back Edition)",
+      "start": "2026-11-29T12:00:00-08:00",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "venue": "Cafe of the Day (rotating cafe)",
+      "address": "Marina del Rey, CA",
+      "city": "Marina del Rey",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-marina-del-rey-giving-back-edition-tickets-1990215290509",
+      "posts": [],
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-marina-del-rey-giving-back-edition-tickets-1990215290509",
+        "https://www.eventbrite.com/o/105305487311"
+      ],
+      "menu": [
+        "coffee, latte or matcha (bought separately)"
+      ],
+      "price": null,
+      "hours": "12:00 PM start per Eventbrite listing",
+      "pay": "ticket via Eventbrite; drinks bought at the cafe",
+      "description": "A small friendship meetup of 4 to 6 strangers over coffee or matcha at a local cafe, with proceeds supporting The Comeunity Project. The cafe is different each time and shared with attendees by email.",
+      "image_url": "https://cdn.evbuc.com/images/1171080798/2560545315651/1/original.20251116-155056",
+      "confidence": "unsure",
+      "notes": "Meetup, not a matcha pop-up (kind class/meetup in spirit): venue is a rotating placeholder, so not promotable. Listing shows only a generic 'Multiple dates' plus this Nov 29 12 PM slot; no street address."
+    },
+    {
+      "brand": "Matcha + Meetup (ADDVentures)",
+      "handle": null,
+      "source_id": "addventures-matcha-meetup",
+      "title": "Matcha + Meetup: Northridge (Giving Back Edition)",
+      "start": "2026-11-29T12:00:00-08:00",
+      "end": null,
+      "all_day": false,
+      "tz": "America/Los_Angeles",
+      "venue": "Cafe of the Day (rotating cafe)",
+      "address": "Northridge, Los Angeles, CA",
+      "city": "Los Angeles",
+      "state": "CA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-northridge-giving-back-edition-tickets-1990215005657",
+      "posts": [],
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-northridge-giving-back-edition-tickets-1990215005657",
+        "https://www.eventbrite.com/o/105305487311"
+      ],
+      "menu": [
+        "coffee, latte or matcha (bought separately)"
+      ],
+      "price": null,
+      "hours": "12:00 PM start per Eventbrite listing",
+      "pay": "ticket via Eventbrite; drinks bought at the cafe",
+      "description": "A small friendship meetup of 4 to 6 strangers over coffee or matcha at a local cafe, with proceeds supporting The Comeunity Project. The cafe is different each time and shared with attendees by email.",
+      "image_url": "https://cdn.evbuc.com/images/1171080798/2560545315651/1/original.20251116-155056",
+      "confidence": "unsure",
+      "notes": "Meetup, not a matcha pop-up (kind class/meetup in spirit): venue is a rotating placeholder, so not promotable. Listing shows only a generic 'Multiple dates' plus this Nov 29 12 PM slot; no street address."
+    }
+  ]
+}
