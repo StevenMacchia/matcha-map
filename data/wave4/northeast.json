@@ -1,3 +1,23 @@
 {
-  "sources": []
+  "sources": [
+    {
+      "id": "caribe-and-co",
+      "brand": "Caribe & Co.",
+      "kind": "cafe",
+      "category": "coffee",
+      "kind_note": "Caribbean-inspired cafe pop-up; matcha is one drink option, not the focus.",
+      "home_city": "Boston",
+      "home_state": "MA",
+      "website": null,
+      "instagram": "caribeandco",
+      "tiktok": "caribeandco",
+      "schedule_url": "https://www.instagram.com/p/Df7bmg1IZ3O",
+      "schedule_kind": "manual",
+      "adapter": "manual",
+      "active": true,
+      "notes": "Pop-up cafe at SoWa Christmas Market (550 Harrison Ave, Boston), Nov 20-Dec 27 2026, Tue-Sun, hours vary. Signature: Carrot Punch served with cold brew or matcha, plus Caribbean-inspired coffee drinks. Price and payment not stated. Evidence: instagram.com/p/Df7bmg1IZ3O, tiktok.com/@caribeandco/video/7709241458439490846.",
+      "added": "2026-11-23",
+      "verified": null
+    }
+  ]
 }

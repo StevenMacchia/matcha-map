@@ -376,6 +376,126 @@
       "description": "A 60-minute Yogalates class with Chelsea Estevez followed by a matcha pop-up from Preferred Matcha Tea Company and a gallery stroll. Bring a mat and water.",
       "confidence": "confirmed",
       "notes": "kind: class (ticketed), matcha pop-up after. Already on map. Listed almost full."
+    },
+    {
+      "brand": "Caribe & Co.",
+      "handle": "caribeandco",
+      "source_id": null,
+      "title": "Caribe & Co. pop-up cafe at SoWa Christmas Market",
+      "start": "2026-11-28T11:00:00-05:00",
+      "end": "2026-11-28T16:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "SoWa Christmas Market",
+      "address": "550 Harrison Ave, Boston, MA 02118",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/p/Df7bmg1IZ3O",
+      "posts": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.tiktok.com/@caribeandco/video/7704379540914670878",
+        "https://www.tiktok.com/@caribeandco/video/7709241458439490846"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.tiktok.com/@caribeandco/video/7704379540914670878",
+        "https://www.tiktok.com/@caribeandco/video/7709241458439490846",
+        "https://www.instagram.com/reel/DfcgPNMCqeY"
+      ],
+      "menu": [
+        "Carrot Punch (cold brew or matcha)",
+        "matcha lattes",
+        "Caribbean-inspired coffee drinks"
+      ],
+      "price": null,
+      "hours": "Tue-Sun, hours vary (a TikTok snippet says 11-4)",
+      "pay": null,
+      "description": "A Caribbean-inspired pop-up cafe inside the SoWa Christmas Market, with a matcha option on the drink menu. Open Tuesday to Sunday through Dec 27.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Tavily snippet: \"TOMORROW our pop-up cafe at SoWa Christmas Market opens for the season November 20-December 27, 550 Harrison Ave, Boston\"; TikTok: \"Open Tuesday-Sunday, hours vary, Sowa Christmas Market\". Matcha is one menu option, not the brand focus, and daily hours vary, so likely not confirmed. The same run applies to every Tue-Sun date to Dec 27; three Saturdays listed."
+    },
+    {
+      "brand": "Caribe & Co.",
+      "handle": "caribeandco",
+      "source_id": null,
+      "title": "Caribe & Co. pop-up cafe at SoWa Christmas Market",
+      "start": "2026-12-05T11:00:00-05:00",
+      "end": "2026-12-05T16:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "SoWa Christmas Market",
+      "address": "550 Harrison Ave, Boston, MA 02118",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/p/Df7bmg1IZ3O",
+      "posts": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.tiktok.com/@caribeandco/video/7704379540914670878",
+        "https://www.tiktok.com/@caribeandco/video/7709241458439490846"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.tiktok.com/@caribeandco/video/7704379540914670878",
+        "https://www.tiktok.com/@caribeandco/video/7709241458439490846",
+        "https://www.instagram.com/reel/DfcgPNMCqeY"
+      ],
+      "menu": [
+        "Carrot Punch (cold brew or matcha)",
+        "matcha lattes",
+        "Caribbean-inspired coffee drinks"
+      ],
+      "price": null,
+      "hours": "Tue-Sun, hours vary (a TikTok snippet says 11-4)",
+      "pay": null,
+      "description": "A Caribbean-inspired pop-up cafe inside the SoWa Christmas Market, with a matcha option on the drink menu. Open Tuesday to Sunday through Dec 27.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Tavily snippet: \"TOMORROW our pop-up cafe at SoWa Christmas Market opens for the season November 20-December 27, 550 Harrison Ave, Boston\"; TikTok: \"Open Tuesday-Sunday, hours vary, Sowa Christmas Market\". Matcha is one menu option, not the brand focus, and daily hours vary, so likely not confirmed. The same run applies to every Tue-Sun date to Dec 27; three Saturdays listed."
+    },
+    {
+      "brand": "Caribe & Co.",
+      "handle": "caribeandco",
+      "source_id": null,
+      "title": "Caribe & Co. pop-up cafe at SoWa Christmas Market",
+      "start": "2026-12-12T11:00:00-05:00",
+      "end": "2026-12-12T16:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "SoWa Christmas Market",
+      "address": "550 Harrison Ave, Boston, MA 02118",
+      "city": "Boston",
+      "state": "MA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.instagram.com/p/Df7bmg1IZ3O",
+      "posts": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.tiktok.com/@caribeandco/video/7704379540914670878",
+        "https://www.tiktok.com/@caribeandco/video/7709241458439490846"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Df7bmg1IZ3O",
+        "https://www.tiktok.com/@caribeandco/video/7704379540914670878",
+        "https://www.tiktok.com/@caribeandco/video/7709241458439490846",
+        "https://www.instagram.com/reel/DfcgPNMCqeY"
+      ],
+      "menu": [
+        "Carrot Punch (cold brew or matcha)",
+        "matcha lattes",
+        "Caribbean-inspired coffee drinks"
+      ],
+      "price": null,
+      "hours": "Tue-Sun, hours vary (a TikTok snippet says 11-4)",
+      "pay": null,
+      "description": "A Caribbean-inspired pop-up cafe inside the SoWa Christmas Market, with a matcha option on the drink menu. Open Tuesday to Sunday through Dec 27.",
+      "image_url": null,
+      "confidence": "likely",
+      "notes": "Tavily snippet: \"TOMORROW our pop-up cafe at SoWa Christmas Market opens for the season November 20-December 27, 550 Harrison Ave, Boston\"; TikTok: \"Open Tuesday-Sunday, hours vary, Sowa Christmas Market\". Matcha is one menu option, not the brand focus, and daily hours vary, so likely not confirmed. The same run applies to every Tue-Sun date to Dec 27; three Saturdays listed."
     }
   ]
 }
