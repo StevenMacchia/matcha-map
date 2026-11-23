@@ -112,7 +112,7 @@ Opened 2026-11-23 00:50 by a second orchestrator (Fable) on its own worktree bra
 | N6 | Rich cards | Opus | done | `site/cards.js` + `cards.css` + demo page, wired by N7: card and page layout with photos or art, drink chips, price, hours, directions, source posts, brand story, also nearby; few words per line, phone first. | |
 | N7 | Design and motion | Opus | done | Owns the shared site files on this branch; integrates N6 and N8: finish to consumer-app polish at 390 and 1440, opening moment, view transitions, fly-to, particles sparingly, empty states, light and dark, reduced motion, image warning, Lighthouse 90+. Mock one screen first. | |
 | N8 | Product | Sonnet | done | City weekend views, brand pages with drinks, search by brand or drink, PWA (merge rung 34 from `main` rather than redo). | |
-| N9 | Final ingest, gate, merge | Sonnet + orchestrator | running | Browser pass on phone and desktop, README, merge `main`, tests, merge into `main` and deploy or open a PR; before/after per-city table. | |
+| N9 | Final ingest, gate, merge | Sonnet + orchestrator | done | Browser pass on phone and desktop, README, merge `main`, tests, merge into `main` and deploy or open a PR; before/after per-city table. | all-models 30%, Fable 23% |
 | N5-3 | Coverage sweep, third pass | 6 Sonnet | done | The new brands' own sites, Linktrees, schedule pages and market vendor lists for dates; `data/review/sweep-<group>-3.json`, appends to `data/wave4/<group>.json`; 8 Tavily searches each. | |
 | N5b | Drinks and trending research | Sonnet | done | `data/drinks.json` (59 drinks, controlled vocabulary, hex colours, evidence), `docs/TRENDING-2026-11.md` (37 brands, patterns), `data/wave4/trending.json` (13 new brands). | all-models 26% |
 | N5c | Watch-list seeding | Sonnet | done | Every new handle from wave4, the sweep notes and the trending doc, deduped against the watch list and sources, in `data/review/watchlist-additions.json`; `npm run watchlist:apply` for the merge step. | |
@@ -220,3 +220,11 @@ after:  565 total, 274 upcoming
 ```
 
 The 33 upcoming events with no matcha signal survived because they come from sources held as matcha-only brands (for example 333Matcha, Amato, After School Coffee House) whose pop-up posts do not repeat the word; the writer drops none of them.
+
+### Close, 2026-11-23 10:50
+
+- Merged: `claude/next-level-32bb5d` fast-forwarded into `origin/main` (83c7fe1 -> 908c51f, clean; the plain checkout's local `main` needs `git pull --ff-only`). Deployed with `npm run deploy`; live shell version `mm-3598065e43`; `node tools/smoke.js --url https://matchamap-cu7.pages.dev` passes 16 of 16.
+- Gate (`qa/gate/`): 19 routes at 390 and 1440, light and dark, no blockers. Minor items left: the install nudge overlaps an open card at 390, the brand popup's "Next:" line clips at 1440, a "sando" menu item has no drawing, the gallery page ignores the site theme.
+- Spend for this ladder: weekly all-models 23% -> 30%, Fable 16% -> 23% (ceiling 45%). About 30 workers over three waves.
+- Honest state of Steven's asks: design and motion at consumer-app polish on phone and desktop (Lighthouse mobile 86, desktop 98, accessibility 100); every card rich (verdict, photo or drawn art, chips with drink art, hours, pay, place, buttons, source posts, brand story, nearby, report link); drink art for 174 drinks and 410 events with the loop in ingest; discovery engine built with the review-to-promote path and daily cron; submit form, claim, alerts, feeds, share pages and weekend pages live; 274 upcoming pop-ups (target was 150+), but "5+ in every metro over 1M" is not met: Denver 1, Phoenix 2, Las Vegas 2, Charlotte 1, Minneapolis 3, Detroit 2. The open web does not carry those dates; the Instagram Graph read over the 952 watched accounts is the lever, and it was off for this run.
+- Only Steven can do: the KV namespace and `INTAKE_TOKEN` for the Add form, the GitHub Actions secrets (daily job and deploy), the Meta app password prompt, the Tavily sign-in on his Chrome tab, the contact email on `/privacy/` and `/data-deletion/`, the Cloudflare Web Analytics snippet. All listed in README "Steven's steps".
