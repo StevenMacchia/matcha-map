@@ -94,6 +94,14 @@ export function parseGazetteer(text) {
   return out;
 }
 
+// A city whose Census internal point falls in water gets a land point instead (the point is the centre of the city's whole area,
+// islands and bay included: San Francisco's sits 44 miles out to sea because the city includes the Farallon Islands). City-only
+// pop-ups, the city rings and the ?city= link all use this point, so it must be somewhere a person would stand. Checked with a
+// Nominatim reverse lookup of every listed city's point (tools notes, 2026-11-23); add a row when a check flags another one.
+export const LAND_POINTS = {
+  "San Francisco|CA": { lat: 37.7793, lng: -122.4193, why: "Census point 37.7272,-123.0322 is in the Pacific (Farallon Islands); City Hall instead" },
+};
+export const landPoint = (c) => { const p = LAND_POINTS[`${c.name}|${c.state}`]; return p ? { ...c, lat: p.lat, lng: p.lng } : c; };
 // The two files -> the entries: top PER_STATE per state by population, ranked in the state and in the country.
 export function buildCities(places, gaz, perState = PER_STATE) {
   const byState = new Map();
@@ -120,6 +128,7 @@ export function buildCities(places, gaz, perState = PER_STATE) {
       });
     });
   }
+  for (let i = 0; i < picked.length; i++) picked[i] = landPoint(picked[i]);
   picked.sort((a, b) => b.pop - a.pop || a.state.localeCompare(b.state) || a.name.localeCompare(b.name));
   picked.forEach((c, i) => { c.rank_us = i + 1; });
   return picked;
@@ -210,7 +219,11 @@ async function main() {
   const di = argv.indexOf("--dir");
   const dir = di > 0 ? argv[di + 1] : path.join(os.tmpdir(), "matcha-census");
   let cities;
-  if (argv.includes("--site-only")) cities = JSON.parse(fs.readFileSync("data/cities.json", "utf8")).cities;
+  if (argv.includes("--site-only")) {
+    const j = JSON.parse(fs.readFileSync("data/cities.json", "utf8"));
+    cities = j.cities.map(landPoint);
+    if (JSON.stringify(cities) !== JSON.stringify(j.cities)) { fs.writeFileSync("data/cities.json", citiesFileText(cities, j.source)); console.log("data/cities.json: land points applied"); }
+  }
   else {
     fs.mkdirSync(dir, { recursive: true });
     const subFile = path.join(dir, "sub-est2024.csv"), zipFile = path.join(dir, "2024_Gaz_place_national.zip");

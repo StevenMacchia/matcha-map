@@ -17,7 +17,7 @@
   {"name":"Charlotte","state":"NC","pop":943476,"lat":35.209,"lng":-80.831,"slug":"charlotte","rank_in_state":1,"rank_us":14,"tz":"America/New_York"},
   {"name":"Columbus","state":"OH","pop":933263,"lat":39.9839,"lng":-82.9849,"slug":"columbus","rank_in_state":1,"rank_us":15,"tz":"America/New_York"},
   {"name":"Indianapolis","state":"IN","pop":891484,"lat":39.7767,"lng":-86.1459,"slug":"indianapolis","rank_in_state":1,"rank_us":16,"tz":"America/Indiana/Indianapolis"},
-  {"name":"San Francisco","state":"CA","pop":827526,"lat":37.7272,"lng":-123.0322,"slug":"san-francisco","rank_in_state":4,"rank_us":17,"tz":"America/Los_Angeles"},
+  {"name":"San Francisco","state":"CA","pop":827526,"lat":37.7793,"lng":-122.4193,"slug":"san-francisco","rank_in_state":4,"rank_us":17,"tz":"America/Los_Angeles"},
   {"name":"Seattle","state":"WA","pop":780995,"lat":47.6193,"lng":-122.3515,"slug":"seattle","rank_in_state":1,"rank_us":18,"tz":"America/Los_Angeles"},
   {"name":"Denver","state":"CO","pop":729019,"lat":39.7619,"lng":-104.8811,"slug":"denver","rank_in_state":1,"rank_us":19,"tz":"America/Denver"},
   {"name":"Oklahoma City","state":"OK","pop":712919,"lat":35.4671,"lng":-97.5137,"slug":"oklahoma-city","rank_in_state":1,"rank_us":20,"tz":"America/Chicago"},

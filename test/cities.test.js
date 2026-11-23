@@ -436,3 +436,13 @@ test("geocode venue: a 429 stops venue lookups for the run and is not cached as 
     assert.equal(n, 2);
   } finally { globalThis.fetch = realFetch; }
 });
+
+test("a city whose Census point is in water carries a land point (San Francisco)", async () => {
+  const { LAND_POINTS, landPoint } = await import("../tools/gen-cities.js");
+  const sf = landPoint({ name: "San Francisco", state: "CA", lat: 37.7272, lng: -123.0322 });
+  assert.ok(sf.lng > -122.6 && sf.lat > 37.7 && sf.lat < 37.85, `San Francisco point must be on the peninsula, got ${sf.lat},${sf.lng}`);
+  assert.equal(landPoint({ name: "Oakland", state: "CA", lat: 1, lng: 2 }).lat, 1);
+  assert.ok(LAND_POINTS["San Francisco|CA"].why);
+  const listed = loadCities().find((c) => c.name === "San Francisco" && c.state === "CA");
+  assert.ok(listed && listed.lng > -122.6, `data/cities.json San Francisco must be on land, got ${listed && listed.lng}`);
+});
