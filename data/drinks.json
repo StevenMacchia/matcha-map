@@ -1,0 +1,2325 @@
+{
+ "generated": "2026-11-23T03:42:46.725Z",
+ "note": "Illustrator controlled vocabulary: components use only these words. popularity 1-5; where evidence is thin the note says so. Layer colours are suggestions (name + hex), bottom to top.",
+ "vocabulary": {
+  "families": [
+   "latte",
+   "layered-fruit",
+   "foam-top",
+   "tonic",
+   "dessert",
+   "hot",
+   "seasonal",
+   "tea-forward",
+   "specialty"
+  ],
+  "bases": [
+   "coconut milk",
+   "coconut water",
+   "horchata",
+   "lemonade",
+   "none",
+   "oat milk",
+   "sparkling water",
+   "tonic",
+   "water",
+   "whole milk"
+  ],
+  "tops": [
+   "cloud foam",
+   "cold foam",
+   "sweet cream",
+   "whipped cream",
+   "espuma",
+   "einspanner cream",
+   "coconut cream",
+   "none"
+  ],
+  "toppings": [
+   "boba",
+   "strawberry pieces",
+   "banana slices",
+   "mango pieces",
+   "mochi",
+   "crumble",
+   "oreo",
+   "matcha dust",
+   "cinnamon",
+   "honeycomb",
+   "sakura",
+   "black sesame",
+   "coconut flakes",
+   "crushed pistachio"
+  ],
+  "serves": [
+   "iced tall glass",
+   "hot mug",
+   "bowl",
+   "can",
+   "bottle",
+   "cup with lid",
+   "soft-serve cone",
+   "dessert cup"
+  ],
+  "layer_colors": {
+   "matcha": "#7fb069",
+   "strawberry": "#e8647a",
+   "ube purple": "#7b5ea7",
+   "banana cream": "#f6e7b4",
+   "mango": "#f6b64b",
+   "blueberry": "#6a6fb5",
+   "black sesame": "#4a4a4a",
+   "hojicha": "#a9744f",
+   "coconut cream": "#f5f0e1",
+   "sweet cream": "#fbf3e0",
+   "brown sugar": "#8b5a2b",
+   "taro lilac": "#b9a3d6",
+   "espresso": "#3b2a20",
+   "chai spice": "#c08a4e",
+   "lavender": "#b79ad8",
+   "rose pink": "#f2a7b8",
+   "honey": "#e6a817",
+   "pistachio": "#a8c686",
+   "salted caramel": "#c68642",
+   "peppermint red": "#d94a4a",
+   "mint": "#98e0c0",
+   "gingerbread": "#9a5b2e",
+   "pumpkin": "#d9822b",
+   "sakura pink": "#f7c6d4",
+   "peach": "#f9b48a",
+   "lychee": "#f3dfe2",
+   "passionfruit": "#f2c230",
+   "white chocolate": "#f3ebd9",
+   "yuzu": "#f0e060",
+   "lemonade": "#f7e26b",
+   "tonic": "#e9f1ee",
+   "milk": "#f4efe6",
+   "cookie crumb": "#5a4a42",
+   "thai tea orange": "#e0793a",
+   "horchata": "#efe1c6",
+   "cheese foam": "#f7ecd0",
+   "vanilla ice cream": "#f6ecd0",
+   "earl grey": "#8a8fa8",
+   "guava": "#f08a96",
+   "raspberry": "#c2185b",
+   "rasmalai": "#f1dca6",
+   "cinnamon cookie butter": "#b8793e",
+   "sparkling water": "#eaf6f4"
+  }
+ },
+ "drinks": [
+  {
+   "slug": "banana-matcha",
+   "name": "Banana matcha",
+   "aliases": [
+    "banana matcha latte",
+    "banana cream matcha",
+    "banana bread matcha"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "banana cream",
+      "hex": "#f6e7b4"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [
+     "banana slices"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "banana chip"
+   },
+   "typical_price": "no US menu price found; banana pudding matcha einspanner $9.99 (Cere Tea)",
+   "popularity": 5,
+   "evidence": [
+    "https://abc7news.com/post/how-banana-cream-pie-latte-bay-areas-academic-coffee-made-world-go-bananas/18071297/",
+    "https://malkorganics.com/blogs/news/malk-x-cha-cha-matcha-a-limited-time-banana-cream-matcha-latte-nyc-la-pop-up",
+    "https://www.blogto.com/eat_drink/2025/04/forget-me-not-cafe-banana-bread-matcha/",
+    "https://www.instagram.com/p/Dfr0Vi-FWgL"
+   ],
+   "note": "Banana cream pie latte went viral from Academic Coffee, San Jose; banana matcha followed (MALK x Cha Cha Matcha pop-up, April 2026)."
+  },
+  {
+   "slug": "cloud-foam-matcha",
+   "name": "Cloud foam matcha",
+   "aliases": [
+    "matcha cloud",
+    "cloud matcha",
+    "matcha cold foam latte"
+   ],
+   "family": "foam-top",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cloud foam",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "matcha dust"
+   },
+   "typical_price": "no plain price found; cloud drinks $9.49 (Cere Tea)",
+   "popularity": 5,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://www.instagram.com/reel/DfD7NaYSBTB"
+   ],
+   "note": "Cloud foam is the 2026 topping; one report cites searches for cloud matcha up several hundred percent."
+  },
+  {
+   "slug": "matcha-latte-iced",
+   "name": "Iced matcha latte",
+   "aliases": [
+    "iced matcha",
+    "matcha latte",
+    "iced matcha latte"
+   ],
+   "family": "latte",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "$7.99 (Cere Tea, Burlingame CA); about $7 typical (LA Magazine)",
+   "popularity": 5,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://lamag.com/food/whats-up-with-the-l-a-matcha-craze-of-2026/",
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html"
+   ],
+   "note": "The baseline every pop-up sells; every other drink here is a variation on it."
+  },
+  {
+   "slug": "strawberry-cloud-matcha",
+   "name": "Strawberry cloud matcha",
+   "aliases": [
+    "strawberry matcha cloud",
+    "strawberry cold foam matcha",
+    "strawberry fields matcha"
+   ],
+   "family": "foam-top",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cloud foam",
+    "toppings": [
+     "strawberry pieces"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "strawberry slice"
+   },
+   "typical_price": "$9.49 Strawberry Cloud Matcha (Cere Tea)",
+   "popularity": 5,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://www.instagram.com/p/DfTz1Ahvgjl",
+    "https://lamag.com/food/whats-up-with-the-l-a-matcha-craze-of-2026/"
+   ],
+   "note": "Strawberry Clouds Matcha Latte appears at the Beverly Hills Hotel (La La Land Kind Cafe) and on cafe menus."
+  },
+  {
+   "slug": "strawberry-matcha",
+   "name": "Strawberry matcha",
+   "aliases": [
+    "strawb matcha latte",
+    "ichigo matcha",
+    "strawberry matcha latte"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "strawberry",
+      "hex": "#e8647a"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "strawberry pieces"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "strawberry slice"
+   },
+   "typical_price": "$6.50 (Brew Point menu); $8.49 (Cere Tea)",
+   "popularity": 5,
+   "evidence": [
+    "https://brewpointcoffee.order.tryperdiem.com/products/strawberry-matcha",
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Named by 2026 flavour reports as a lead matcha pairing; the red-over-green layered look is the most photographed pop-up drink."
+  },
+  {
+   "slug": "ube-matcha",
+   "name": "Ube matcha",
+   "aliases": [
+    "purple matcha",
+    "ube matcha latte",
+    "matcha ube",
+    "snowy ube matcha"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "ube purple",
+      "hex": "#7b5ea7"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "$9.99 Snowy Ube Matcha (Cere Tea)",
+   "popularity": 5,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://www.foodnavigator.com/Article/2026/04/23/ube-the-next-matcha/",
+    "https://www.countryandtownhouse.com/food-and-drink/ube-trend/"
+   ],
+   "note": "Ube is the 2026 press pick as the next matcha; Starbucks ran an ube lineup in spring 2026; purple under green is the signature look."
+  },
+  {
+   "slug": "banana-pudding-matcha",
+   "name": "Banana pudding matcha",
+   "aliases": [
+    "banana pudding matcha latte",
+    "banana pudding matcha einspanner"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "banana cream",
+      "hex": "#f6e7b4"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "whipped cream",
+    "toppings": [
+     "banana slices",
+     "crumble"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "cookie crumb"
+   },
+   "typical_price": "$9.99 (Cere Tea einspanner); S$9.50 at Haus Coffee, Singapore",
+   "popularity": 4,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://eatbook.sg/haus-coffee/",
+    "https://www.tiktok.com/discover/sen-cha-emperors-matcha-review"
+   ],
+   "note": "Dessert-pudding matcha seen at Cere Tea and overseas viral cafes (Big Wiss Matcha also lists it)."
+  },
+  {
+   "slug": "black-sesame-matcha",
+   "name": "Black sesame matcha",
+   "aliases": [
+    "sesame matcha",
+    "kurogoma matcha",
+    "black sesame matcha einspanner"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "einspanner cream",
+    "toppings": [
+     "black sesame"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "black sesame"
+   },
+   "typical_price": "$9.49 black sesame matcha einspanner (Cere Tea)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://in-sight.symrise.com/article/rise-of-matcha-a-flavorful-east-asian-influence"
+   ],
+   "note": "Symrise expects brands to move toward ube, black sesame and hojicha after matcha and yuzu."
+  },
+  {
+   "slug": "brown-sugar-boba-matcha",
+   "name": "Brown sugar boba matcha",
+   "aliases": [
+    "boba matcha",
+    "brown sugar matcha latte",
+    "tiger matcha"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "brown sugar",
+      "hex": "#8b5a2b"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "boba"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found (a brown sugar matcha latte with mascarpone is on Junbi menus, price unread)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Boba is the long-running pairing; no 2026 price found, popularity is from category reports."
+  },
+  {
+   "slug": "coconut-cloud-matcha",
+   "name": "Coconut cloud matcha",
+   "aliases": [
+    "coconut water matcha cloud",
+    "coco cloud matcha"
+   ],
+   "family": "foam-top",
+   "components": {
+    "base": "coconut water",
+    "layers": [
+     {
+      "name": "coconut cream",
+      "hex": "#f5f0e1"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cloud foam",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 4,
+   "evidence": [
+    "https://www.instagram.com/reel/DfD7NaYSBTB",
+    "https://www.instagram.com/reel/DfQU4GZg8eY",
+    "https://www.trendhunter.com/trends/matcha-cloud-smoothie"
+   ],
+   "note": "Coconut Cloud Matcha is a named drink in an Instagram menu reveal; coconut cream clouds are rising."
+  },
+  {
+   "slug": "coconut-matcha",
+   "name": "Coconut matcha",
+   "aliases": [
+    "coco matcha",
+    "coconut cream matcha",
+    "coco cream matcha"
+   ],
+   "family": "latte",
+   "components": {
+    "base": "coconut milk",
+    "layers": [
+     {
+      "name": "coconut cream",
+      "hex": "#f5f0e1"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "coconut cream",
+    "toppings": [
+     "coconut flakes"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "coconut flakes"
+   },
+   "typical_price": "$8.99 Coco Cream Matcha (Cere Tea)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://lamag.com/food/whats-up-with-the-l-a-matcha-craze-of-2026/",
+    "https://www.instagram.com/reel/DfD7NaYSBTB"
+   ],
+   "note": "Coconut matcha is a signature at LA cafes such as Damo Tea House."
+  },
+  {
+   "slug": "gingerbread-matcha",
+   "name": "Gingerbread matcha",
+   "aliases": [
+    "gingerbread latte matcha",
+    "gingerbread cinnamon roll matcha"
+   ],
+   "family": "seasonal",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "gingerbread",
+      "hex": "#9a5b2e"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "whipped cream",
+    "toppings": [
+     "cinnamon"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "gingerbread cookie"
+   },
+   "typical_price": "not found",
+   "popularity": 4,
+   "evidence": [
+    "https://www.instagram.com/reel/DfciuSQx6J_",
+    "https://www.instagram.com/reel/Dfmz3MEN2yu",
+    "https://www.instagram.com/reel/Df5VFulTQ4G"
+   ],
+   "note": "Appears on multiple Nov 2026 holiday menus including a cinnamon roll variant."
+  },
+  {
+   "slug": "hojicha-latte",
+   "name": "Hojicha latte",
+   "aliases": [
+    "roasted green tea latte",
+    "hojicha",
+    "houjicha latte"
+   ],
+   "family": "tea-forward",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "hojicha",
+      "hex": "#a9744f"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "$7.99 (Cere Tea)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://in-sight.symrise.com/article/rise-of-matcha-a-flavorful-east-asian-influence",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Roasted, caffeine-lighter alternative; gaining in 2026 reports."
+  },
+  {
+   "slug": "matcha-latte-hot",
+   "name": "Hot matcha latte",
+   "aliases": [
+    "hot matcha",
+    "steamed matcha",
+    "hot matcha latte"
+   ],
+   "family": "hot",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "hot mug",
+    "hot": true,
+    "garnish": "latte art"
+   },
+   "typical_price": "no hot-specific price found; iced is $7.99 (Cere Tea)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://lamag.com/food/whats-up-with-the-l-a-matcha-craze-of-2026/"
+   ],
+   "note": "Winter default at holiday markets; no hot-specific trend source found, popularity is inferred from menus."
+  },
+  {
+   "slug": "mango-matcha",
+   "name": "Mango matcha",
+   "aliases": [
+    "mango matcha latte",
+    "mango sticky matcha"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "coconut milk",
+    "layers": [
+     {
+      "name": "mango",
+      "hex": "#f6b64b"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "mango pieces"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "$8.49 (Cere Tea)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Tropical fruit layer; on the Cere Tea menu and in flavour roundups."
+  },
+  {
+   "slug": "matcha-einspanner",
+   "name": "Matcha einspanner",
+   "aliases": [
+    "einspanner matcha",
+    "vienna matcha",
+    "matcha einspaenner"
+   ],
+   "family": "foam-top",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "einspanner cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "matcha dust"
+   },
+   "typical_price": "$8.99 (Cere Tea)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://www.barandrestaurant.com/food-beverage/matcha-nitro-and-beyond-coffee-and-tea-trends-will-have-customers-sipping-forward"
+   ],
+   "note": "Cream-capped Vienna style; Cere Tea sells ten einspanner variants."
+  },
+  {
+   "slug": "matcha-lemonade",
+   "name": "Matcha lemonade",
+   "aliases": [
+    "lemon matcha",
+    "matcha lemonade cooler"
+   ],
+   "family": "tonic",
+   "components": {
+    "base": "lemonade",
+    "layers": [
+     {
+      "name": "lemonade",
+      "hex": "#f7e26b"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "lemon wheel"
+   },
+   "typical_price": "not found",
+   "popularity": 4,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Named with matcha lemonade cookies in the AOL roundup of 2026 matcha products."
+  },
+  {
+   "slug": "matcha-soft-serve",
+   "name": "Matcha soft serve",
+   "aliases": [
+    "matcha ice cream cone",
+    "matcha swirl",
+    "kyoto-style soft serve"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "none",
+    "layers": [
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "matcha dust"
+    ],
+    "serve": "soft-serve cone",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 4,
+   "evidence": [
+    "https://lamag.com/food/whats-up-with-the-l-a-matcha-craze-of-2026/",
+    "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose"
+   ],
+   "note": "Kyoto-style soft serve anchors LA matcha cafes such as Midori and Tea Master (Instagram city guide cited in search)."
+  },
+  {
+   "slug": "matcha-tiramisu",
+   "name": "Matcha tiramisu",
+   "aliases": [
+    "tiramisu matcha",
+    "matcha tiramisu cup"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "none",
+    "layers": [
+     {
+      "name": "sweet cream",
+      "hex": "#fbf3e0"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     },
+     {
+      "name": "cookie crumb",
+      "hex": "#5a4a42"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "matcha dust"
+    ],
+    "serve": "dessert cup",
+    "hot": false,
+    "garnish": "matcha dust"
+   },
+   "typical_price": "not found",
+   "popularity": 4,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://lamag.com/food/whats-up-with-the-l-a-matcha-craze-of-2026/"
+   ],
+   "note": "Named in a 2026 matcha dessert roundup; Big Wiss Matcha also runs tiramisu matcha."
+  },
+  {
+   "slug": "peppermint-matcha",
+   "name": "Peppermint or candy cane matcha",
+   "aliases": [
+    "candy cane matcha",
+    "white peppermint matcha",
+    "peppermint crumble cloud"
+   ],
+   "family": "seasonal",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "peppermint red",
+      "hex": "#d94a4a"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cloud foam",
+    "toppings": [
+     "crumble"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "candy cane piece"
+   },
+   "typical_price": "not found",
+   "popularity": 4,
+   "evidence": [
+    "https://www.instagram.com/reel/Df5VFulTQ4G",
+    "https://www.instagram.com/reel/Dfxey3UBc9t",
+    "https://www.instagram.com/reel/DfiQx2Vhwck",
+    "https://www.instagram.com/p/Dfr0Vi-FWgL"
+   ],
+   "note": "Holiday menus on Instagram in Nov 2026 list candy cane and peppermint matcha; Cha Cha Matcha ran White Peppermint Matcha."
+  },
+  {
+   "slug": "ube-cloud-matcha",
+   "name": "Ube cloud matcha",
+   "aliases": [
+    "ube cold foam matcha",
+    "ube foam latte",
+    "ube cream cold foam matcha"
+   ],
+   "family": "foam-top",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cloud foam",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "no matcha price found; snowy ube $8.49 (Cere Tea)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.instagram.com/p/DfhIbcVIJt0",
+    "https://www.instagram.com/reel/DfIs-7LhjK5",
+    "https://www.instagram.com/reel/DfGZvgVCI9X"
+   ],
+   "note": "Instagram captions in Nov 2026 show ube foam and cold foam over matcha at pop-ups and cafes; Starbucks ran ube cold foam."
+  },
+  {
+   "slug": "vanilla-sweet-cream-matcha",
+   "name": "Vanilla sweet cream matcha",
+   "aliases": [
+    "sweet cream matcha",
+    "vanilla cold foam matcha",
+    "vanilla matcha"
+   ],
+   "family": "foam-top",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 4,
+   "evidence": [
+    "https://tastewise.io/blog/matcha-trends",
+    "https://www.innovamarketinsights.com/trends/matcha-trends-global-market-overview/"
+   ],
+   "note": "Tastewise lists vanilla and sweet cream among the top 2026 matcha flavour directions."
+  },
+  {
+   "slug": "yuzu-matcha",
+   "name": "Yuzu matcha",
+   "aliases": [
+    "sparkling yuzu matcha",
+    "yuzu matcha latte",
+    "citrus matcha"
+   ],
+   "family": "tonic",
+   "components": {
+    "base": "sparkling water",
+    "layers": [
+     {
+      "name": "yuzu",
+      "hex": "#f0e060"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "yuzu slice"
+   },
+   "typical_price": "$8.99 Sparkling Yuzu Matcha (Cere Tea)",
+   "popularity": 4,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026",
+    "https://in-sight.symrise.com/article/rise-of-matcha-a-flavorful-east-asian-influence"
+   ],
+   "note": "Yuzu-matcha is one of three 2026 named gainers with strawberry and banana."
+  },
+  {
+   "slug": "blueberry-matcha",
+   "name": "Blueberry matcha",
+   "aliases": [
+    "blueberry matcha latte",
+    "blueberry cream matcha"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "blueberry",
+      "hex": "#6a6fb5"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "blueberries"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026",
+    "https://tastewise.io/blog/matcha-trends"
+   ],
+   "note": "Berry pairings are named by flavour reports; no blueberry-specific menu or caption found, so popularity is a category inference."
+  },
+  {
+   "slug": "cheese-foam-matcha",
+   "name": "Cheese foam matcha",
+   "aliases": [
+    "cheese tea matcha",
+    "salted cheese foam matcha",
+    "matcha cheese tea"
+   ],
+   "family": "foam-top",
+   "components": {
+    "base": "water",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cold foam",
+    "toppings": [],
+    "serve": "cup with lid",
+    "hot": false,
+    "garnish": "matcha dust"
+   },
+   "typical_price": "no matcha price found; strawberry cheese foam drink $8.49 (Cere Tea)",
+   "popularity": 3,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://www.instagram.com/reel/DfGZvgVCI9X"
+   ],
+   "note": "A pop-up in Nov 2026 offered matcha ube cheese tea as its fall drink."
+  },
+  {
+   "slug": "cinnamon-cookie-butter-matcha",
+   "name": "Cinnamon cookie butter matcha",
+   "aliases": [
+    "biscoff matcha",
+    "cookie butter matcha",
+    "speculoos matcha"
+   ],
+   "family": "seasonal",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "cinnamon cookie butter",
+      "hex": "#b8793e"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [
+     "crumble"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "cookie"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.instagram.com/p/Dfr0Vi-FWgL",
+    "https://www.tiktok.com/discover/sen-cha-emperors-matcha-review"
+   ],
+   "note": "Cha Cha Matcha winter menu lists a Cinnamon Cookie Butter Latte (Nov 2026); Biscoff matcha is viral overseas."
+  },
+  {
+   "slug": "dirty-matcha",
+   "name": "Dirty matcha",
+   "aliases": [
+    "matcha espresso",
+    "espresso matcha",
+    "matcha shot latte"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "espresso",
+      "hex": "#3b2a20"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Hybrid matcha and espresso named in 2026 trend coverage."
+  },
+  {
+   "slug": "earl-grey-matcha",
+   "name": "Earl Grey matcha",
+   "aliases": [
+    "double earl grey matcha",
+    "earl grey cloud matcha"
+   ],
+   "family": "tea-forward",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "earl grey",
+      "hex": "#8a8fa8"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cloud foam",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "matcha salt"
+   },
+   "typical_price": "$8.49 (Cere Tea)",
+   "popularity": 3,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://indyweek.com/news/culture/food/character-studies-hayaa-hyder-mazay-ka-matcha/"
+   ],
+   "note": "Earl Grey syrup with matcha cold foam at Mazay ka Matcha."
+  },
+  {
+   "slug": "guava-matcha",
+   "name": "Guava matcha",
+   "aliases": [
+    "guava matcha latte",
+    "pink guava matcha"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "guava",
+      "hex": "#f08a96"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Named in the AOL 2026 roundup."
+  },
+  {
+   "slug": "honey-matcha",
+   "name": "Honey matcha",
+   "aliases": [
+    "whipped honey matcha",
+    "honey cloud matcha",
+    "honey latte matcha"
+   ],
+   "family": "latte",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "honey",
+      "hex": "#e6a817"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "honeycomb"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.instagram.com/reel/Df7sBHgvssK",
+    "https://tastewise.io/blog/matcha-trends"
+   ],
+   "note": "Whipped honey is a customer favourite at Pop Up Matcha Slow Bar per its Instagram caption."
+  },
+  {
+   "slug": "lavender-matcha",
+   "name": "Lavender matcha",
+   "aliases": [
+    "lavender honey matcha",
+    "lavender matcha latte"
+   ],
+   "family": "latte",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "lavender",
+      "hex": "#b79ad8"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "lavender buds"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://tastewise.io/blog/matcha-trends",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Floral matcha blends are listed by Tastewise; no named menu found."
+  },
+  {
+   "slug": "matcha-affogato",
+   "name": "Matcha affogato",
+   "aliases": [
+    "affogato matcha",
+    "matcha ice cream float"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "none",
+    "layers": [
+     {
+      "name": "vanilla ice cream",
+      "hex": "#f6ecd0"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "dessert cup",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://lamag.com/food/whats-up-with-the-l-a-matcha-craze-of-2026/"
+   ],
+   "note": "Listed in a 2026 matcha dessert roundup."
+  },
+  {
+   "slug": "matcha-chai",
+   "name": "Matcha chai",
+   "aliases": [
+    "chai matcha",
+    "dirty chai matcha"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "chai spice",
+      "hex": "#c08a4e"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "cinnamon"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "cinnamon"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://indyweek.com/news/culture/food/character-studies-hayaa-hyder-mazay-ka-matcha/",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Spiced-tea pairing; Mazay ka Matcha builds drinks on chai and Earl Grey syrups."
+  },
+  {
+   "slug": "matcha-frappe",
+   "name": "Matcha frappe",
+   "aliases": [
+    "matcha frappuccino",
+    "blended matcha",
+    "matcha smoothie"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "whipped cream",
+    "toppings": [],
+    "serve": "cup with lid",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.trendhunter.com/trends/matcha-cloud-smoothie",
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html"
+   ],
+   "note": "Frutta Bowls added a Matcha Cloud Smoothie in spring 2026; blended format has chain evidence."
+  },
+  {
+   "slug": "matcha-hojicha-swirl",
+   "name": "Matcha hojicha swirl",
+   "aliases": [
+    "hojicha matcha",
+    "matcha hojicha latte",
+    "half and half matcha"
+   ],
+   "family": "tea-forward",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "hojicha",
+      "hex": "#a9744f"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://in-sight.symrise.com/article/rise-of-matcha-a-flavorful-east-asian-influence",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Two-tone drink; evidence only from general hojicha coverage, so popularity is moderate."
+  },
+  {
+   "slug": "matcha-horchata",
+   "name": "Matcha horchata",
+   "aliases": [
+    "horchata matcha",
+    "cinnamon rice milk matcha"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "horchata",
+    "layers": [
+     {
+      "name": "horchata",
+      "hex": "#efe1c6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "cinnamon"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "cinnamon"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Named in the AOL 2026 roundup."
+  },
+  {
+   "slug": "matcha-milk-tea",
+   "name": "Matcha milk tea",
+   "aliases": [
+    "matcha bubble tea",
+    "matcha boba milk tea"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "boba"
+    ],
+    "serve": "cup with lid",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Boba-shop matcha; evidence is category-level."
+  },
+  {
+   "slug": "matcha-mochi",
+   "name": "Matcha mochi or dango",
+   "aliases": [
+    "mochi matcha",
+    "matcha daifuku",
+    "matcha dango"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "none",
+    "layers": [
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     },
+     {
+      "name": "sweet cream",
+      "hex": "#fbf3e0"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "mochi"
+    ],
+    "serve": "dessert cup",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://lamag.com/food/whats-up-with-the-l-a-matcha-craze-of-2026/"
+   ],
+   "note": "Pop-up bake-table staple; no price or direct trend source found."
+  },
+  {
+   "slug": "matcha-tonic",
+   "name": "Matcha tonic",
+   "aliases": [
+    "tonic matcha",
+    "espresso tonic matcha",
+    "matcha tonic water"
+   ],
+   "family": "tonic",
+   "components": {
+    "base": "tonic",
+    "layers": [
+     {
+      "name": "tonic",
+      "hex": "#e9f1ee"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "lemon wheel"
+   },
+   "typical_price": "no US price found (sold at Berlin cafe Moya)",
+   "popularity": 3,
+   "evidence": [
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/",
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html"
+   ],
+   "note": "Sparkling matcha is a named 2026 hybrid; no US price or US menu found."
+  },
+  {
+   "slug": "pistachio-matcha",
+   "name": "Pistachio matcha",
+   "aliases": [
+    "pistachio cream matcha",
+    "pistachio latte matcha"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "pistachio",
+      "hex": "#a8c686"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [
+     "crumble"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "crushed pistachio"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://indyweek.com/news/culture/food/character-studies-hayaa-hyder-mazay-ka-matcha/",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Mazay ka Matcha makes pistachio kulfi and rasmalai matchas; pistachio is a broader dessert-drink trend."
+  },
+  {
+   "slug": "pumpkin-matcha",
+   "name": "Pumpkin matcha",
+   "aliases": [
+    "pumpkin spice matcha",
+    "pumpkin cream matcha"
+   ],
+   "family": "seasonal",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "pumpkin",
+      "hex": "#d9822b"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cold foam",
+    "toppings": [
+     "cinnamon"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "cinnamon"
+   },
+   "typical_price": "no matcha price found; pumpkin pie einspanner $9.99 (Cere Tea)",
+   "popularity": 3,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://www.instagram.com/reel/DfEWH_mOgZj"
+   ],
+   "note": "Fall seasonal; out of season in late November, so lower rank."
+  },
+  {
+   "slug": "rasmalai-matcha",
+   "name": "Rasmalai matcha",
+   "aliases": [
+    "rasmalai cloud",
+    "rasmalai latte"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "rasmalai",
+      "hex": "#f1dca6"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "cloud foam",
+    "toppings": [
+     "crushed pistachio"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "saffron"
+   },
+   "typical_price": "not published",
+   "popularity": 3,
+   "evidence": [
+    "https://indyweek.com/news/culture/food/character-studies-hayaa-hyder-mazay-ka-matcha/",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Bestseller at Mazay ka Matcha (Durham NC cart); South Asian dessert matchas are a pop-up niche."
+  },
+  {
+   "slug": "raspberry-matcha",
+   "name": "Raspberry cream matcha",
+   "aliases": [
+    "raspberry matcha",
+    "raspberry cloud matcha"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "raspberry",
+      "hex": "#c2185b"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "raspberry"
+   },
+   "typical_price": "$9.49 (Cere Tea)",
+   "popularity": 3,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "On the Cere Tea menu; berry direction."
+  },
+  {
+   "slug": "rose-matcha",
+   "name": "Rose matcha",
+   "aliases": [
+    "rose matcha latte",
+    "rose cream matcha"
+   ],
+   "family": "latte",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "rose pink",
+      "hex": "#f2a7b8"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "rose petals"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://tastewise.io/blog/matcha-trends",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Floral direction; no direct menu evidence, popularity kept at 3."
+  },
+  {
+   "slug": "salted-caramel-matcha",
+   "name": "Salted caramel matcha",
+   "aliases": [
+    "caramel matcha",
+    "salted caramel matcha latte"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "salted caramel",
+      "hex": "#c68642"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "sea salt"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://tastewise.io/blog/matcha-trends"
+   ],
+   "note": "Dessert-flavour matcha; evidence is category-level only."
+  },
+  {
+   "slug": "sparkling-matcha",
+   "name": "Sparkling matcha soda",
+   "aliases": [
+    "matcha soda",
+    "matcha spritz",
+    "fizzy matcha"
+   ],
+   "family": "tonic",
+   "components": {
+    "base": "sparkling water",
+    "layers": [
+     {
+      "name": "sparkling water",
+      "hex": "#eaf6f4"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "mint"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/",
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame"
+   ],
+   "note": "Fizzy format; thin direct evidence."
+  },
+  {
+   "slug": "taro-matcha",
+   "name": "Taro matcha",
+   "aliases": [
+    "taro matcha latte",
+    "purple taro matcha"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "taro lilac",
+      "hex": "#b9a3d6"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [
+     "boba"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://www.foodnavigator.com/Article/2026/04/23/ube-the-next-matcha/",
+    "https://in-sight.symrise.com/article/rise-of-matcha-a-flavorful-east-asian-influence"
+   ],
+   "note": "Taro rides the ube wave; no menu price or direct evidence found."
+  },
+  {
+   "slug": "thai-tea-matcha",
+   "name": "Thai tea matcha",
+   "aliases": [
+    "thai tea matcha latte",
+    "orange matcha"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "thai tea orange",
+      "hex": "#e0793a"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 3,
+   "evidence": [
+    "https://indyweek.com/news/culture/food/character-studies-hayaa-hyder-mazay-ka-matcha/",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Mazay ka Matcha sells Earl Grey and Thai tea fusions."
+  },
+  {
+   "slug": "usucha",
+   "name": "Usucha (thin ceremonial matcha)",
+   "aliases": [
+    "ceremonial matcha",
+    "whisked matcha",
+    "traditional matcha"
+   ],
+   "family": "tea-forward",
+   "components": {
+    "base": "water",
+    "layers": [
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "hot mug",
+    "hot": true,
+    "garnish": "none"
+   },
+   "typical_price": "$4.50 hot matcha tea (San Diego cafe, search snippet only)",
+   "popularity": 3,
+   "evidence": [
+    "https://www.pdxmonthly.com/eat-and-drink/2025/07/project-matcha-portland",
+    "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose"
+   ],
+   "note": "Hand-whisked service is the draw at Project Matcha, Portland, per press."
+  },
+  {
+   "slug": "white-chocolate-matcha",
+   "name": "White chocolate matcha",
+   "aliases": [
+    "white mocha matcha",
+    "white chocolate matcha latte"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "white chocolate",
+      "hex": "#f3ebd9"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "whipped cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "white chocolate shavings"
+   },
+   "typical_price": "plain not found; strawberry matcha with white mocha is $6.50 (Brew Point)",
+   "popularity": 3,
+   "evidence": [
+    "https://brewpointcoffee.order.tryperdiem.com/products/strawberry-matcha",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "White mocha base appears in the Brew Point strawberry matcha recipe; standalone evidence thin."
+  },
+  {
+   "slug": "cookies-and-cream-matcha",
+   "name": "Cookies and cream matcha",
+   "aliases": [
+    "oreo matcha",
+    "cookies n cream matcha"
+   ],
+   "family": "dessert",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "cookie crumb",
+      "hex": "#5a4a42"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "whipped cream",
+    "toppings": [
+     "oreo"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "oreo crumb"
+   },
+   "typical_price": "not found",
+   "popularity": 2,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "No direct evidence found; included from the required list."
+  },
+  {
+   "slug": "dalgona-matcha",
+   "name": "Cream-top matcha (Dalgona style)",
+   "aliases": [
+    "dalgona matcha",
+    "whipped matcha",
+    "matcha whip"
+   ],
+   "family": "foam-top",
+   "components": {
+    "base": "whole milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "whipped cream",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "matcha dust"
+   },
+   "typical_price": "not found",
+   "popularity": 2,
+   "evidence": [
+    "https://www.aol.com/articles/matcha-demand-210-see-wildest-140000896.html",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Whipped matcha cap; little 2026 evidence found."
+  },
+  {
+   "slug": "koicha",
+   "name": "Koicha (thick ceremonial matcha)",
+   "aliases": [
+    "thick matcha",
+    "double matcha"
+   ],
+   "family": "tea-forward",
+   "components": {
+    "base": "water",
+    "layers": [
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "hot mug",
+    "hot": true,
+    "garnish": "none"
+   },
+   "typical_price": "$9.49 Double Matcha (Cere Tea, closest item)",
+   "popularity": 2,
+   "evidence": [
+    "https://www.yelp.com/menu/cer%C3%A9-tea-burlingame",
+    "https://www.pdxmonthly.com/eat-and-drink/2025/07/project-matcha-portland"
+   ],
+   "note": "Niche tea-ceremony item; Double Matcha is the closest US menu item."
+  },
+  {
+   "slug": "lychee-matcha",
+   "name": "Lychee matcha",
+   "aliases": [
+    "lychee rose matcha",
+    "lychee matcha cooler"
+   ],
+   "family": "tonic",
+   "components": {
+    "base": "sparkling water",
+    "layers": [
+     {
+      "name": "lychee",
+      "hex": "#f3dfe2"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 2,
+   "evidence": [
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "No direct evidence found; popularity low."
+  },
+  {
+   "slug": "matcha-protein-shake",
+   "name": "Matcha protein shake",
+   "aliases": [
+    "protein matcha",
+    "proffee matcha",
+    "matcha protein latte"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "cup with lid",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 2,
+   "evidence": [
+    "https://www.barandrestaurant.com/food-beverage/matcha-nitro-and-beyond-coffee-and-tea-trends-will-have-customers-sipping-forward",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "Functional beverage direction; no menu found."
+  },
+  {
+   "slug": "mint-matcha",
+   "name": "Mint matcha",
+   "aliases": [
+    "mint chip matcha",
+    "mint matcha latte"
+   ],
+   "family": "specialty",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "mint",
+      "hex": "#98e0c0"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [
+     "crumble"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "mint leaf"
+   },
+   "typical_price": "not found",
+   "popularity": 2,
+   "evidence": [
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "No direct evidence found."
+  },
+  {
+   "slug": "passionfruit-matcha",
+   "name": "Passionfruit matcha",
+   "aliases": [
+    "passion fruit matcha",
+    "passion matcha tonic"
+   ],
+   "family": "tonic",
+   "components": {
+    "base": "sparkling water",
+    "layers": [
+     {
+      "name": "passionfruit",
+      "hex": "#f2c230"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "none"
+   },
+   "typical_price": "not found",
+   "popularity": 2,
+   "evidence": [
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/",
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026"
+   ],
+   "note": "Tropical hybrid; no direct evidence found."
+  },
+  {
+   "slug": "peach-matcha",
+   "name": "Peach matcha",
+   "aliases": [
+    "peach matcha latte",
+    "peach oolong matcha"
+   ],
+   "family": "layered-fruit",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "peach",
+      "hex": "#f9b48a"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "none",
+    "toppings": [],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "peach slice"
+   },
+   "typical_price": "not found",
+   "popularity": 2,
+   "evidence": [
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026",
+    "https://www.foodnavigator.com/Article/2026/04/14/flavour-trends-coming-for-coffee-sector/"
+   ],
+   "note": "No direct evidence found; included from the required list, popularity low."
+  },
+  {
+   "slug": "sakura-matcha",
+   "name": "Sakura matcha",
+   "aliases": [
+    "cherry blossom matcha",
+    "sakura latte matcha"
+   ],
+   "family": "seasonal",
+   "components": {
+    "base": "oat milk",
+    "layers": [
+     {
+      "name": "sakura pink",
+      "hex": "#f7c6d4"
+     },
+     {
+      "name": "milk",
+      "hex": "#f4efe6"
+     },
+     {
+      "name": "matcha",
+      "hex": "#7fb069"
+     }
+    ],
+    "top": "sweet cream",
+    "toppings": [
+     "sakura"
+    ],
+    "serve": "iced tall glass",
+    "hot": false,
+    "garnish": "sakura blossom"
+   },
+   "typical_price": "not found",
+   "popularity": 2,
+   "evidence": [
+    "https://foodnavigator.com/Article/2026/04/09/flavour-trends-2026",
+    "https://tastewise.io/blog/matcha-trends"
+   ],
+   "note": "Spring seasonal; no US evidence found in this research, so popularity is low."
+  }
+ ]
+}
