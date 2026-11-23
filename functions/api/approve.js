@@ -1,10 +1,50 @@
 // POST /api/approve  { id, action: approve | reject | edit | consume, patch? }  with "Authorization: Bearer <INTAKE_TOKEN>".
 //   approve: pending:<id> -> approved:<id> (90 days)       reject: pending:<id> -> rejected:<id> (30 days)
+//   kind "featured": approve: featured:<id> -> featured-ok:<id> {approved_at, week, paid, until}   reject: -> featured-no:<id> (30 days)
+//                    edit: {patch:{paid:true}} on featured-ok (or featured) sets paid and paid_at (Steven, by hand, after a Stripe payment)
 //   edit:    patch fields on pending:<id> (or approved:<id>)  consume: approved:<id> -> consumed:<id> (ingest uses this)
 import { sanitizePatch, isId } from "../_lib/validate.js";
 import { json, kvOf, readBody, guard, methodNot, NOT_SET_UP } from "../_lib/http.js";
 
 const DAY = 86400;
+
+// End of the chosen week (start day + 7 days, minus a second), ISO. "" when the week is missing.
+export function weekEnd(week) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(week || ""));
+  if (!m) return "";
+  return new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]) + 7 * 864e5 - 1000).toISOString();
+}
+
+async function featuredAction(kv, body) {
+  const { id, action } = body;
+  if (action === "consume") return json({ error: "Not for featured items." }, 400);
+  let key = `featured:${id}`, raw = await kv.get(key);
+  if (!raw && action === "edit") { key = `featured-ok:${id}`; raw = await kv.get(key); }
+  if (!raw) return json({ error: "Not found (it may have expired or already moved)." }, 404);
+  let item;
+  try { item = JSON.parse(raw); } catch { return json({ error: "Stored item is unreadable." }, 500); }
+  const now = new Date().toISOString();
+  if (action === "edit") {
+    const p = body.patch && typeof body.patch === "object" ? body.patch : {};
+    if (p.paid !== true && p.paid !== false) return json({ error: "Featured edit takes {patch: {paid: true|false}}." }, 400);
+    const next = { ...item, paid: p.paid, paid_at: p.paid ? now : null, edited_at: now };
+    const ok = key.startsWith("featured-ok:");
+    const ttl = ok ? Math.max(86400, Math.ceil((Date.parse(item.until || "") - Date.now()) / 1000) + 30 * DAY) : 90 * DAY;
+    await kv.put(key, JSON.stringify(next), { expirationTtl: ttl });
+    return json({ ok: true, id, status: ok ? "featured-ok" : "featured", paid: next.paid });
+  }
+  if (action === "reject") {
+    await kv.put(`featured-no:${id}`, JSON.stringify({ ...item, status: "rejected", rejected_at: now }), { expirationTtl: 30 * DAY });
+    await kv.delete(key);
+    return json({ ok: true, id, status: "featured-no" });
+  }
+  const until = weekEnd(item.week);
+  if (!until) return json({ error: "That request has no valid week." }, 422);
+  const ttl = Math.max(86400, Math.ceil((Date.parse(until) - Date.now()) / 1000) + 30 * DAY);
+  await kv.put(`featured-ok:${id}`, JSON.stringify({ ...item, status: "approved", approved_at: now, paid: item.paid === true, until }), { expirationTtl: ttl });
+  await kv.delete(key);
+  return json({ ok: true, id, status: "featured-ok", until });
+}
 
 export async function onRequestPost({ request, env }) {
   const denied = guard(request, env);
@@ -14,6 +54,7 @@ export async function onRequestPost({ request, env }) {
   const body = await readBody(request);
   if (!body || !isId(body.id) || !["approve", "reject", "edit", "consume"].includes(body.action)) return json({ error: "Need {id, action: approve|reject|edit|consume}." }, 400);
   const { id, action } = body;
+  if (body.kind === "featured") return featuredAction(kv, body);
   let key = `${action === "consume" ? "approved" : "pending"}:${id}`;
   let raw = await kv.get(key);
   if (!raw && action === "edit") { key = `approved:${id}`; raw = await kv.get(key); }
