@@ -8,6 +8,7 @@
 // app does not need to call anything after it sets innerHTML. Set window.MatchaCards.open = function (key) {...} to
 // open an also-nearby pop-up in place (key "e:<id>"); without it the link is a normal deep link (?event=<id>).
 import { cardHtml, rowHtml, brandCardHtml, wire } from "./cards.js";
+import { shopCardHtml } from "./shopcard.js"; // the storefront card ("s:<id>")
 
 const data = { art: null, brands: null, sources: null, places: null };
 let pages = null; // data/pages.json: which city and brand pages exist (written by npm run pages)
@@ -63,6 +64,7 @@ function render(item, ctx) {
     const b = item.data;
     return brandCardHtml({ ...b, handle: b.instagram || b.handle }, c.events.filter((e) => e.source_id === b.id), c);
   }
+  if (item.kind === "s") return shopCardHtml(item.data, c);
   return null;
 }
 function row(item, ctx) {
