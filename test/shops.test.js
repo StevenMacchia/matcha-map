@@ -131,12 +131,12 @@ test("data/shops.json, when present, has the attribution and valid points", () =
   assert.ok(d.shops.every((s) => s.id && s.name && isFinite(s.lat) && isFinite(s.lng)));
 });
 
-// Shops at metro zoom (2026-11-23, the Triangle check): storefront pins draw from LOW_Z (zoom 6), with both Shops switches
-// on by default, so a metro view at zoom 10 and up always has them; Littlefoot Matcha stands at 234 Fayetteville St.
-test("shops draw from zoom 6 with the switches on by default, and Littlefoot Raleigh is placed downtown", () => {
+// Shops at every zoom (2026-11-23, the Triangle check, then the national tier): below zoom 10 every shop is in its city's
+// pin (ntColl), from 10 each stands on its own; both Shops switches are on by default; Littlefoot Matcha is at 234 Fayetteville St.
+test("shops draw at every zoom with the switches on by default, and Littlefoot Raleigh is placed downtown", () => {
   const app = fs.readFileSync(path.resolve("site", "app.js"), "utf8");
-  assert.match(app, /var LOW_Z = 6\b/);
-  assert.match(app, /function mapShops\(\) \{ return isLow\(\) \? \[\] : visibleShops\(\); \}/);
+  assert.match(app, /function mapShops\(\) \{ return map\.getZoom\(\) < DENSE_Z \? \[\] : visibleShops\(\); \}/);
+  assert.match(app, /visibleShops\(\)\.forEach\(function \(it\) \{ add\(it, it\.data\.city, it\.data\.state\); \}\);/, "the national tier holds every shop");
   assert.match(app, /shopsOn = true, SERVES_KEY = "matchamap\.serves", servesOn = true;/);
   const shops = JSON.parse(fs.readFileSync(path.resolve("site", "data", "shops.json"), "utf8")).shops;
   const lf = shops.find((s) => /littlefoot/i.test(s.name) && s.city === "Raleigh");

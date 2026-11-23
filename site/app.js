@@ -135,6 +135,9 @@
 
   // ---------- map ----------
   var HOME = [[-125, 24.5], [-66.5, 49.5]], HI = [-157.95, 21.4];
+  // Max range (2026-11-23, "a usa map of matcha"): the view stays on the USA, Hawaii and Alaska with a margin, and cannot
+  // zoom out past the contiguous states filling the frame (lockRange, on load and on resize).
+  var USA_BOUNDS = [[-170, 16], [-60, 63]]; // Hawaii to Maine, the Keys to Anchorage
   function isDark() { return document.documentElement.getAttribute("data-theme") === "dark"; }
   function styleUrl() { return isDark() ? "map-style-dark.json" : "map-style.json"; }
   // N7c (performance): MapLibre's first setup blocks the main thread for a third of a second while the GPU is still
@@ -143,7 +146,7 @@
   // WebGL probe answers: a few milliseconds on a phone with a free GPU, under a second on a busy one. The header, the
   // chips and the list render from the data on the stand-in; its listeners, padding, camera and controls move over to
   // the real map. Without WebGL the stand-in stays and the list, the cards and search still work.
-  var MAP_OPTS = { minZoom: 2.5, maxZoom: 18, dragRotate: false, pitchWithRotate: false, touchPitch: false,
+  var MAP_OPTS = { minZoom: 2.5, maxZoom: 18, maxBounds: USA_BOUNDS, dragRotate: false, pitchWithRotate: false, touchPitch: false,
     attributionControl: { compact: true }, fadeDuration: 200 };
   function mx(lng) { return (lng + 180) / 360; }
   function my(lat) { var s = Math.sin(Math.max(-85, Math.min(85, lat)) * Math.PI / 180); return 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI); }
@@ -293,6 +296,14 @@
   // launch, the pane still opening) cannot fit anything: the camera stays where it is and the fit runs again on the
   // first resize that has a size, on a wide screen; a narrow one keeps the region the phone path opened in the meantime.
   // Whatever happens in here, the rest of the page goes on (the "nothing broken" rule).
+  function lockRange() {
+    if (map.isPre || !map.cameraForBounds || !map.setMinZoom) return;
+    try {
+      var cam = map.cameraForBounds(HOME, { padding: 16 });
+      if (cam && isFinite(cam.zoom)) map.setMinZoom(Math.max(1, Math.min(4, cam.zoom - 0.25)));
+    } catch (e) { /* keep the fixed floor */ }
+  }
+  window.addEventListener("resize", function () { setTimeout(lockRange, 150); });
   function refitHome() {
     var el = map.getContainer();
     if (!(el.clientWidth || innerWidth) || !(el.clientHeight || innerHeight)) { refitLater = true; return; }
@@ -331,6 +342,10 @@
   // clustered source, a pin per metro snapped onto its main city; from CITY_LO to CITY_HI one pin per city with a count,
   // from citypins.js, recomputed at each whole zoom; from CITY_HI the places themselves.
   var CITY_LO = 5, CITY_HI = 9;
+  // The national tier (2026-11-23, "the country view must look full"): below DENSE_Z every pop-up, shop and brand is drawn
+  // as one small pin per city (ntColl), merged only where two would overlap; no layer waits for a zoom. The pins grow
+  // with the zoom (NT_SIZE: 20 px to zoom 5, 24 to 7, 28 to 10) and from zoom 5 the biggest cities carry their name.
+  var NT_SIZE = function (z) { return z < 5 ? 20 : z < 7 ? 24 : 28; };
   // Brands (2026-11-23, after the Triangle's brand faces piled on Raleigh's centre): from LOW_Z to DENSE_Z one pin per
   // city with the count, from citypins.js; from DENSE_Z each brand on its own, stacks from density.js spreading on tap.
   var DENSE_Z = 10;
@@ -338,7 +353,8 @@
   function syncZoomFace() {
     var z = map.getZoom(), c = map.getContainer().classList;
     c.toggle("z9", z >= 9); c.toggle("zl", z < 6); c.toggle("zm", z >= 6 && z < 9);
-    var b = band(z), key = b + (b === "city" ? Math.floor(z) : "") + (z < LOW_Z ? "L" : "") + (z >= LOW_Z && z < DENSE_Z ? "b" + Math.floor(z) : z >= DENSE_Z ? "d" + Math.floor(z * 2) : "");
+    c.toggle("nz0", z < 5); c.toggle("nz1", z >= 5 && z < 7); c.toggle("nz2", z >= 7 && z < DENSE_Z);
+    var b = band(z), key = b + (b === "city" ? Math.floor(z) : "") + (z < LOW_Z ? "L" : "") + (z < DENSE_Z ? "n" + Math.floor(z) : "d" + Math.floor(z * 2));
     if (faceKey !== null && key !== faceKey) { faceKey = key; setSources(); } else faceKey = key;
     syncHawaii();
   }
@@ -355,17 +371,20 @@
   // marker holding a character, synced from querySourceFeatures. The circle layers are invisible
   // and exist only so the sources load.
   function addData() {
+    lockRange(); // the real map is here (style.load)
     // ev and sh: MapLibre's clusters up to zoom DENSE_Z - 1; from DENSE_Z the features are density.js groups (denseAll)
     if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: evColl(), cluster: true, clusterRadius: 48, clusterMaxZoom: DENSE_Z - 1 });
     if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: brandColl() });
     // brand city pins (LOW_Z to DENSE_Z): already one feature per city, so no clustering here
     if (!map.getSource("bc")) map.addSource("bc", { type: "geojson", data: brandCityColl() });
+    // the national tier: one feature per city pin, already merged
+    if (!map.getSource("nt")) map.addSource("nt", { type: "geojson", data: ntColl() });
     if (!map.getSource("sh")) map.addSource("sh", { type: "geojson", data: shColl(), cluster: true, clusterRadius: 40, clusterMaxZoom: DENSE_Z - 1 });
     // City-only events: always clustered (points on one spot join at every zoom), never drawn as separate stacked pins.
     if (!map.getSource("ap")) map.addSource("ap", { type: "geojson", data: featureColl(mapEvents(true)), cluster: true, clusterRadius: 1, clusterMaxZoom: 17 });
     // City pins (zoom 5 to 9): already one feature per city or metro, so no clustering here.
     if (!map.getSource("ct")) map.addSource("ct", { type: "geojson", data: cityColl() });
-    ["ev", "br", "sh", "ap", "ct", "bc"].forEach(function (s) {
+    ["ev", "br", "sh", "ap", "ct", "bc", "nt"].forEach(function (s) {
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
     scheduleSync();
@@ -386,13 +405,13 @@
   var lastSyncZ = 0;
   function syncMarkers() {
     var seen = {}, fresh = [];
-    ["ev", "br", "sh", "ap", "ct", "bc"].forEach(function (src) {
+    ["ev", "br", "sh", "ap", "ct", "bc", "nt"].forEach(function (src) {
       if (!map.getSource(src) || !map.isSourceLoaded(src)) {
         Object.keys(live).forEach(function (id) { if (live[id].src === src) seen[id] = 1; });
         return;
       }
       map.querySourceFeatures(src).forEach(function (f) {
-        var p = f.properties, id = p.cluster ? src + "c" + p.cluster_id : p.key, grouped = p.cluster || p.ct || p.bc || p.dg;
+        var p = f.properties, id = p.cluster ? src + "c" + p.cluster_id : p.key, grouped = p.cluster || p.ct || p.bc || p.dg || p.nt;
         if (seen[id]) return;
         if (!grouped && !items[id]) return;
         seen[id] = 1;
@@ -411,32 +430,44 @@
     });
     fresh.forEach(function (x) {
       var src = x[0], id = x[1], f = x[2];
-      var fp = f.properties, rec = live[id] = fp.cluster || fp.ct || fp.bc || fp.dg ? makeCluster(src, id, f) : makePin(items[id]);
+      var fp = f.properties, rec = live[id] = fp.cluster || fp.ct || fp.bc || fp.dg || fp.nt ? makeCluster(src, id, f) : makePin(items[id]);
       rec.src = src;
       rec.marker.addTo(map);
       rec.el.setAttribute("aria-label", rec.label); // addTo writes "Map marker" over it
       if (parents.length) bloom(rec, parents);
     });
-    if (fresh.length || gone) labelSoon();
+    if (fresh.length || gone) { labelSoon(); goingSoon(); map.getContainer().classList.toggle("pn-busy", Object.keys(live).length > PN_BUSY); }
   }
   // Name labels (2026-11-23): from LABEL_Z, shops and placed pop-ups carry their name in a small plate beside the pin.
   // A label that would overlap one already placed, or any pin, tries the other side, then below, then stays hidden.
   // Pop-ups go first, then shops; inside each, by key, so the same view always labels the same pins. Laid out after the
   // markers change and after every move; hidden while a zoom runs.
-  var LABEL_Z = 13, lblRaf = 0;
+  var LABEL_Z = 13, lblRaf = 0, PN_BUSY = 40; // PN_BUSY: past this many markers the idle bob rests (style.css .pn-busy)
   function labelSoon() { if (!lblRaf) lblRaf = requestAnimationFrame(function () { lblRaf = 0; layoutLabels(); }); }
   function boxOf(el) {
-    var r = el.getBoundingClientRect(), b = { l: r.left, t: r.top, r: r.right, b: r.bottom }, n = el.querySelector(".cl-n");
-    if (n) { var q = n.getBoundingClientRect(); b = { l: Math.min(b.l, q.left), t: Math.min(b.t, q.top), r: Math.max(b.r, q.right), b: Math.max(b.b, q.bottom) }; }
+    // the pin's own box, with what sticks out of it: a count badge, a day pill, the cup (class bx)
+    var r = el.getBoundingClientRect(), b = { l: r.left, t: r.top, r: r.right, b: r.bottom };
+    el.querySelectorAll(".cl-n, .bx").forEach(function (n) {
+      if (!n.getClientRects().length) return;
+      var q = n.getBoundingClientRect(); b = { l: Math.min(b.l, q.left), t: Math.min(b.t, q.top), r: Math.max(b.r, q.right), b: Math.max(b.b, q.bottom) };
+    });
     return b;
   }
-  function hits(a, b) { return Math.min(a.r, b.r) - Math.max(a.l, b.l) > 1 && Math.min(a.b, b.b) - Math.max(a.t, b.t) > 1; }
+  // overlap, or closer than gap px (labels keep 2 px from each other and from every pin)
+  function hits(a, b, gap) { var g = gap || 0; return Math.min(a.r, b.r) - Math.max(a.l, b.l) > -g && Math.min(a.b, b.b) - Math.max(a.t, b.t) > -g; }
+  // the bigger shop: a matcha shop over one that serves matcha, then a photo, posted hours, a checked place
+  function shopRank(it) {
+    if (!it) return 0;
+    var s = it.data;
+    return (it.serves ? 0 : 8) + (s.image_url ? 4 : 0) + (s.opening_hours ? 2 : 0) + (s.verified ? 1 : 0);
+  }
   function layoutLabels() {
     var on = map.getZoom() >= LABEL_Z, recs = [];
     Object.keys(live).forEach(function (id) { recs.push(live[id]); });
     if (fan) recs = recs.concat(fan.pins);
     recs = recs.filter(function (r) { return r.marker && r.el.isConnected && !r.el.classList.contains("leaving"); });
-    var want = on ? recs.filter(function (r) { return (r.kind === "s" || (r.kind === "e" && !r.el.classList.contains("mk-ap"))) && !r.el.classList.contains("fanned"); }) : [];
+    var natOn = map.getZoom() >= 5 && map.getZoom() < DENSE_Z;
+    var want = natOn ? recs.filter(function (r) { return r.nt && r.count >= 3 && r.city; }) : on ? recs.filter(function (r) { return (r.kind === "s" || (r.kind === "e" && !r.el.classList.contains("mk-ap")) || (r.dg && r.el.classList.contains("cl-stack"))) && !r.el.classList.contains("fanned"); }) : [];
     recs.forEach(function (r) { if (r.lbl && want.indexOf(r) < 0) r.lbl.hidden = true; });
     if (!want.length) return;
     var pins = recs.map(function (r) { return { r: r, b: boxOf(r.el) }; }), placed = [];
@@ -446,26 +477,33 @@
       if (c.hidden || !c.getClientRects().length) return;
       var q = c.getBoundingClientRect(); pins.push({ r: null, b: { l: q.left, t: q.top, r: q.right, b: q.bottom } });
     });
-    want.sort(function (a, b) { return (a.kind === b.kind ? 0 : a.kind === "e" ? -1 : 1) || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0); });
+    // pop-ups first, then stacks, then shops, the bigger shop first (Flatiron rule below)
+    want.forEach(function (r) { r.lk = r.dg ? (densG[r.dg] || {}).lead : r.nt ? r.el.getAttribute("data-key") : r.key; r.rank = r.nt ? r.count : r.kind === "e" ? 1e6 : r.dg ? 5e5 : shopRank(items[r.key]); });
+    want.sort(function (a, b) { return b.rank - a.rank || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0); });
+    var z14 = map.getZoom() >= 14;
     want.forEach(function (r) {
-      var it = items[r.key];
+      var it = items[r.lk];
       if (!it) return;
       if (!r.lbl) {
+        var nm = r.nt ? r.city : it.kind === "s" ? it.data.name : it.data.brand, more = r.dg ? ((densG[r.dg] || {}).keys || []).length - 1 : 0;
         r.lbl = document.createElement("span");
-        r.lbl.className = "mk-lbl";
+        r.lbl.className = "mk-lbl lb-" + (r.nt ? "c" : it.kind) + (r.dg ? " lb-g" : "");
         r.lbl.setAttribute("aria-hidden", "true");
-        r.lbl.textContent = it.kind === "s" ? it.data.name : it.data.brand;
+        r.lbl.textContent = nm + (more > 0 ? " +" + more : "");
         r.el.appendChild(r.lbl);
       }
       var L = r.lbl;
       L.hidden = false; L.style.visibility = "hidden"; L.style.left = "0px"; L.style.top = "0px";
-      var w = L.offsetWidth, h = L.offsetHeight, mb = boxOf(r.el), er = r.el.getBoundingClientRect(), midY = it.kind === "e" ? mb.t + 13 : (mb.t + mb.b) / 2;
+      var w = L.offsetWidth, h = L.offsetHeight, mb = boxOf(r.el), er = r.el.getBoundingClientRect(), midY = (mb.t + mb.b) / 2;
       var tries = [{ l: mb.r + 3, t: midY - h / 2 }, { l: mb.l - 3 - w, t: midY - h / 2 }, { l: (mb.l + mb.r) / 2 - w / 2, t: mb.b + 2 }], spot = null;
       for (var i = 0; i < tries.length && !spot; i++) {
-        var c = { l: tries[i].l, t: tries[i].t, r: tries[i].l + w, b: tries[i].t + h }, clear = c.l >= area.l && c.t >= area.t && c.r <= area.r && c.b <= area.b;
-        for (var j = 0; j < placed.length && clear; j++) if (hits(c, placed[j])) clear = false;
-        for (var k = 0; k < pins.length && clear; k++) if (pins[k].r !== r && hits(c, pins[k].b)) clear = false;
+        var c = { l: tries[i].l, t: tries[i].t, r: tries[i].l + w, b: tries[i].t + h }, clear = c.l >= area.l && c.t >= area.t && c.r <= area.r && c.b <= area.b, byLabel = false;
+        for (var j = 0; j < placed.length && clear; j++) if (hits(c, placed[j], 2)) { clear = false; byLabel = true; }
+        for (var k = 0; k < pins.length && clear; k++) if (pins[k].r !== r && hits(c, pins[k].b, 2)) clear = false;
         if (clear) spot = c;
+        // the Flatiron rule: below zoom 14 a shop whose label would touch a bigger one's stays unlabelled (no hunting
+        // for another side, which crowds a busy corner); from zoom 14 it may take another side
+        else if (byLabel && it.kind === "s" && !r.dg && !z14) break;
       }
       if (!spot) { L.hidden = true; L.style.visibility = ""; return; }
       placed.push(spot);
@@ -553,30 +591,101 @@
     if (it.approx) el.title = pinLabel(it);
     var inner = document.createElement("span");
     inner.className = "mk-in";
-    if (it.kind === "e") {
+    if (it.kind === "e" && !it.approx && window.MatchaPins) {
+      var today = !it.past && isToday(it.data);
+      inner.innerHTML = window.MatchaPins.popPin({ photo: imgSrc(it.data), drawn: artFor(it), pill: window.MatchaPins.dayPill(it.data.start), today: today, going: goingN[it.data.id] || 0 });
+      if (today) el.classList.add("today");
+    } else if (it.kind === "e") {
       if (it.approx) inner.appendChild(ringEl());
       inner.appendChild(drawChar(it.key === openKey && !it.approx ? "m-point" : "m-base"));
       if (!it.past && !it.approx && isToday(it.data)) { var dot = document.createElement("span"); dot.className = "mk-new"; inner.appendChild(dot); }
       if (it.now) inner.appendChild(steamEl());
     } else if (it.kind === "s") {
-      inner.appendChild(drawChar("s-shop"));
+      inner.innerHTML = window.MatchaPins ? window.MatchaPins.shopPin({ photo: it.data.image_url, serves: it.serves, open: shopOpen(it.data), drawn: SHOP_ART }) : "";
+      if (!window.MatchaPins) inner.appendChild(drawChar("s-shop"));
+      fillChars(inner);
     } else {
-      inner.innerHTML = "<span class=\"mochi\"></span>";
-      brandPic(inner.firstChild, it);
+      inner.innerHTML = brandPinHTML(it);
     }
     el.appendChild(inner);
+    el.setAttribute("data-key", it.key);
+    bobPhase(inner, it.key);
     el.addEventListener("click", function (ev) { ev.stopPropagation(); cardOpener = null; pinOpener = el; showCard(it.key, ev.detail === 0); });
     var marker = new maplibregl.Marker({ element: el, anchor: it.kind === "e" && !it.approx ? "bottom" : "center", offset: it.kind === "e" || it.kind === "s" ? [0, 0] : [NUDGE, NUDGE] }).setLngLat(lngLat(it.ll));
     var rec = { marker: marker, el: el, kind: it.kind, key: it.key, label: pinLabel(it) };
     if (it.kind === "e") el.style.zIndex = it.approx ? "1" : "2";
     if (it.kind === "s") el.style.zIndex = "1";
-    entrance(rec, it.kind === "e" || it.kind === "s" ? "pop" : "jiggle");
+    entrance(rec, it.approx ? "pop" : "drop-in");
     return rec;
   }
   function ringEl() { var r = document.createElement("span"); r.className = "mk-ring"; return r; }
+  // Going badges on pop-up pins: the server's count (GET /api/rsvp through rsvp.js, the same counts the list rows show),
+  // drawn only when it is one or more; nothing is shown while the feature is off or the API does not answer.
+  var goingN = {}, goingT = 0;
+  function goingSoon() { clearTimeout(goingT); goingT = setTimeout(paintGoing, 400); }
+  function paintGoing() {
+    var R = window.MatchaRsvp, PN = window.MatchaPins;
+    if (!R || !R.pinCounts || !PN) return;
+    var ids = [];
+    Object.keys(live).forEach(function (id) { var r = live[id], it = items[id]; if (r.kind === "e" && it && !it.past && !it.approx) ids.push(it.data.id); });
+    if (!ids.length) return;
+    R.pinCounts(ids).then(function (c) {
+      var moved = false;
+      Object.keys(c || {}).forEach(function (id) {
+        var n = Math.floor(+c[id] || 0);
+        if ((goingN[id] || 0) !== n) { if ((goingN[id] || 0) >= 1 !== n >= 1) moved = true; goingN[id] = n; }
+        var r = live["e:" + id], pu = r && r.el.querySelector(".pn-pu");
+        if (!pu) return;
+        var old = pu.querySelector(".pn-going");
+        if (old) old.remove();
+        if (n >= 1) pu.insertAdjacentHTML("beforeend", PN.goingHTML(n));
+      });
+      if (moved) setSources(); // a badge widens the pin: the groups are worked out again
+    }).catch(function () { /* no badges */ });
+  }
+  // ---- the pin look (site/pins.js, 2026-11-23 mock) ----
+  var SHOP_ART = "<span class=\"pn-draw\" data-char=\"s-shop\"></span>";
+  // open now from the shop's own hours (shopcard.js through cards-app.js); false until that module is in
+  function shopOpen(s) { var C = window.MatchaCards; try { return !!(C && C.openNow && C.openNow(s)); } catch (e) { return false; } }
+  function bobPhase(inner, key) { var b = inner.querySelector(".pn-bob"); if (b && window.MatchaPins) b.style.setProperty("--ph", window.MatchaPins.phase(key) + "s"); }
+  // a picture that fails steps aside for the drawn art of its kind
+  function artFor(it) {
+    if (!it) return "";
+    if (it.kind === "s") return SHOP_ART;
+    var D = window.Drawn;
+    return D ? D.card(it.kind === "e" ? it.data : { brand: it.data.brand || "", id: "b-" + it.data.id, kind: it.data.kind }, { mode: "thumb" }) : "";
+  }
+  map.getContainer().addEventListener("error", function (ev) {
+    var im = ev.target;
+    if (!im || im.tagName !== "IMG" || !im.closest(".pn")) return;
+    var ph = im.closest(".pn-ph"), face = im.closest("[data-fkey]"), mk = im.closest(".maplibregl-marker");
+    var it = items[(face && face.getAttribute("data-fkey")) || (mk && mk.getAttribute("data-key")) || ""];
+    if (ph) { ph.innerHTML = artFor(it); fillChars(ph); }
+  }, true);
+  // a group's faces: members with a picture first, then the rest
+  function faceOf(k) {
+    var it = items[k];
+    if (!it) return null;
+    var photo = it.kind === "s" ? it.data.image_url : it.kind === "e" ? imgSrc(it.data) : brandPicUrl(it);
+    return { key: k, kind: it.kind, photo: photo, drawn: artFor(it) };
+  }
+  function facesOf(keys, n) {
+    var all = keys.map(faceOf).filter(Boolean), withPic = all.filter(function (f) { return window.MatchaPins.src(f.photo); });
+    return withPic.concat(all.filter(function (f) { return withPic.indexOf(f) < 0; })).slice(0, n);
+  }
   // The brand's picture (brands.json) inside its mochi, round and cropped to fill; the mochi face stays when there is none
   // or the image fails. brands.json lands after the first pins, so brandsLanded() fills the ones already on the map.
-  function brandPicUrl(it) { var b = it && it.data && brandsBy[String(it.data.instagram || "").replace(/^@/, "").toLowerCase()]; return b ? safeUrl(b.picture) : ""; }
+  // the brand's own copy on this site (picture_local, site/brand/<handle>/avatar.jpg) first, then the Instagram picture
+  function brandPicUrl(it) {
+    var b = it && it.data && brandsBy[String(it.data.instagram || "").replace(/^@/, "").toLowerCase()], P = window.MatchaPins;
+    return b ? (P && P.src(b.picture_local)) || safeUrl(b.picture) : "";
+  }
+  // a brand pin: the picture in the sage mochi frame, else the drawn card art with the brand's initial
+  function brandPinHTML(it) {
+    var P = window.MatchaPins;
+    if (!P) return "<span class=\"mochi\"></span>";
+    return P.brandPin({ photo: brandPicUrl(it), drawn: artFor(it) });
+  }
   function brandPic(mochi, it) {
     var u = brandPicUrl(it);
     if (!u || !mochi || mochi.querySelector("img")) return;
@@ -589,7 +698,7 @@
   }
   function brandsLanded() {
     // brand pins and groups are drawn again: a group shows its most followed brand with a picture
-    Object.keys(live).forEach(function (id) { var r = live[id]; if (r.src === "br" || r.src === "bc") { r.marker.remove(); delete live[id]; } });
+    Object.keys(live).forEach(function (id) { var r = live[id]; if (r.src === "br" || r.src === "bc" || r.src === "sh" || r.dg) { r.marker.remove(); delete live[id]; } });
     setSources();
     scheduleSync();
     var C = window.MatchaCards;
@@ -607,7 +716,7 @@
     });
   }
   map.on("sourcedata", function (e) { if (e.sourceId === "ap" && e.isSourceLoaded && e.sourceDataType !== "metadata") apLeaves = {}; });
-  function countOf(p) { return p.ct || p.bc || p.dg ? p.n : p.point_count; }
+  function countOf(p) { return p.ct || p.bc || p.dg || p.nt ? p.n : p.point_count; }
   function makeCluster(src, id, f) {
     var p = f.properties, n = countOf(p);
     var el = document.createElement("button");
@@ -617,16 +726,35 @@
     var inner = document.createElement("span");
     inner.className = "mk-in";
     if (src === "ap") { inner.appendChild(ringEl()); inner.appendChild(drawChar("m-base")); }
-    else if (src === "br" || src === "bc") { // a brand stack or a city's brands: the mochi, with the first brand's picture
-      var mo = document.createElement("span"), first = items[p.dg ? (densG[p.key] || {}).lead : p.lead];
-      mo.className = "mochi"; inner.appendChild(mo); if (first) brandPic(mo, first);
+    else if (src === "br" || src === "bc") { // a city's brands: the pin of its most followed brand with a picture, and the count
+      var first = items[p.dg ? (densG[p.key] || {}).lead : p.lead];
+      inner.innerHTML = first ? brandPinHTML(first) : "";
+      if (first) el.setAttribute("data-key", first.key);
     }
     else inner.appendChild(drawChar(src === "sh" ? "s-shop" : "c-dango"));
     var num = document.createElement("span");
     num.className = "cl-n";
     inner.appendChild(num);
+    var dgg = p.dg && densG[p.key], PN = window.MatchaPins;
+    if (p.nt && PN) {
+      var lead = items[p.lead];
+      inner.innerHTML = PN.cityPin({ kind: p.kind, photo: lead ? photoOf(lead) : "", drawn: lead ? natArt(lead) : "", n: p.n });
+      fillChars(inner);
+      num = inner.querySelector(".pn-cn") || document.createElement("span");
+      el.className = "mk mk-cl cl-nt k-" + p.kind;
+      if (lead) el.setAttribute("data-key", lead.key);
+    }
+    if (dgg && PN) {
+      var hood = map.getZoom() < 12, pops = dgg.keys.filter(function (k) { return items[k] && items[k].kind === "e"; }).length, faces = facesOf(dgg.keys, hood ? 3 : 2);
+      inner.innerHTML = hood ? PN.hoodPin(faces, dgg.keys.length, pops) : PN.stackPin(faces, dgg.keys.length);
+      inner.querySelectorAll(".pn-av, .pn-st").forEach(function (fe, i) { if (faces[i]) fe.setAttribute("data-fkey", faces[i].key); });
+      fillChars(inner);
+      num = inner.querySelector(".hd-n, .pn-fan");
+      el.className = "mk mk-cl cl-dg " + (hood ? "cl-hood" : "cl-stack") + (p.fan ? " cl-fan" : " cl-cell");
+      bobPhase(inner, p.key);
+    }
     el.appendChild(inner);
-    var rec = { marker: null, el: el, kind: "c", count: 0, num: num, city: src === "ct" || src === "bc" ? p.city : "", cities: p.cities || 0, dg: p.dg ? p.key : "" };
+    var rec = { marker: null, el: el, kind: "c", count: 0, num: num, city: src === "ct" || src === "bc" || src === "nt" ? p.city : "", cities: p.cities || 0, dg: p.dg ? p.key : "", nt: !!p.nt };
     if (p.dg && p.fan) el.setAttribute("aria-expanded", "false");
     setCount(rec, n, true);
     el.addEventListener("click", function (ev) {
@@ -642,6 +770,11 @@
         var cam = map.cameraForBounds(b0, { padding: 80, maxZoom: 15 }), zz = Math.max(DENSE_Z + 2.2, Math.min(15, cam && isFinite(cam.zoom) ? cam.zoom : map.getZoom() + 2));
         var cc = cam && cam.center ? cam.center : f.geometry.coordinates;
         if (calm()) map.jumpTo({ center: cc, zoom: zz }); else map.easeTo({ center: cc, zoom: zz, duration: 600 });
+        return;
+      }
+      if (src === "nt") { // a city pin: in by two zooms, a single city straight to its neighbourhoods
+        var cn = f.geometry.coordinates, zn = rec.cities > 1 ? Math.min(DENSE_Z - 0.3, map.getZoom() + 2) : DENSE_Z + 0.6;
+        if (calm()) map.jumpTo({ center: cn, zoom: zn }); else map.easeTo({ center: cn, zoom: zn, duration: 600 });
         return;
       }
       if (src === "bc") { // a city's brands: in to where each brand has its own pin
@@ -699,14 +832,15 @@
     rec.count = n;
     if (!first && rec.snap) rec.snap();
     rec.num.textContent = n;
-    var ap = rec.el.classList.contains("cl-ap"), ct = rec.el.classList.contains("cl-ct"), bc = rec.el.classList.contains("cl-bc"), fn = rec.el.classList.contains("cl-fan");
-    rec.label = bc ? n + (n === 1 ? " brand in " : " brands in ") + rec.city + (rec.cities > 1 ? " and " + (rec.cities - 1) + (rec.cities === 2 ? " more place" : " more places") : "") + ", zoom in"
+    var ap = rec.el.classList.contains("cl-ap"), ct = rec.el.classList.contains("cl-ct"), bc = rec.el.classList.contains("cl-bc"), fn = rec.el.classList.contains("cl-fan"), nt = rec.nt;
+    rec.label = nt ? n + (n === 1 ? " place in " : " places in ") + rec.city + (rec.cities > 1 ? " and " + (rec.cities - 1) + (rec.cities === 2 ? " more city" : " more cities") : "") + ", zoom in"
+      : bc ? n + (n === 1 ? " brand in " : " brands in ") + rec.city + (rec.cities > 1 ? " and " + (rec.cities - 1) + (rec.cities === 2 ? " more place" : " more places") : "") + ", zoom in"
       : fn ? n + " places on one spot, tap to spread them"
       : rec.dg ? n + " places here, zoom in"
       : ap ? n + " pop-ups, somewhere in " + (rec.city || "this area") + ", place not posted yet"
       : ct ? n + (n === 1 ? " pop-up in " : " pop-ups in ") + rec.city + (rec.cities > 1 ? " and " + (rec.cities - 1) + (rec.cities === 2 ? " more place" : " more places") : "") + ", zoom in"
       : n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : rec.el.classList.contains("cl-sh") ? " shops" : " brands") + " here, zoom in";
-    if (ap || ct || bc || fn) rec.el.title = rec.label;
+    if (ap || ct || bc || fn || nt) rec.el.title = rec.label;
     rec.el.setAttribute("aria-label", rec.label);
     rec.el.classList.toggle("cl-m", n > 9);
     rec.el.classList.toggle("cl-l", n > 24);
@@ -739,9 +873,8 @@
         r.el.classList.toggle("sel", on);
         // The selected Mattie lifts (motion.css) and points up at his card; he goes back to rest when it closes.
         if (r.kind === "e" && !r.el.classList.contains("mk-ap")) {
-          var old = r.el.querySelector(".ch"), next = drawChar(on ? "m-point" : "m-base");
-          if (old) old.parentNode.replaceChild(next, old);
-          if (on) animOnce(next, "point-in");
+          var old = r.el.querySelector(".mk-in > .ch");
+          if (old) { var next = drawChar(on ? "m-point" : "m-base"); old.parentNode.replaceChild(next, old); if (on) animOnce(next, "point-in"); }
         }
       }
     });
@@ -1097,13 +1230,13 @@
     var html = renderCard(it, { phone: !wide.matches, dist: distOf(it), events: state.events, items: items });
     if (wide.matches) {
       var box = document.createElement("div");
-      box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html;
+      box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html + "<span class=\"pop-mattie\" aria-hidden=\"true\" data-char=\"m-point\"></span>";
       fillChars(box);
       if (window.MatchaRsvp) window.MatchaRsvp.hydrate(box);
       if (window.MatchaFeatured) window.MatchaFeatured.paint(box);
       box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
       popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "26rem", focusAfterOpen: false, className: "mm-pop",
-        anchor: "bottom", offset: it.kind === "e" ? [0, -50] : it.kind === "s" ? [0, -18] : [NUDGE, NUDGE - 12] })
+        anchor: "bottom", offset: it.kind === "e" ? [0, it.approx ? -50 : -96] : it.kind === "s" ? [0, -34] : [NUDGE, NUDGE - 24] }) // clear of the selected pin, which grows a third
         .setLngLat(lngLat(it.ll)).setDOMContent(box).addTo(map);
       // Keep the whole card on screen: nudge the map down when the card would run off the top.
       var pr = popup.getElement().getBoundingClientRect(), mr = map.getContainer().getBoundingClientRect();
@@ -1294,6 +1427,7 @@
   // and brands and storefronts wait.
   function isLow() { return map.getZoom() < LOW_Z; }
   function mapEvents(only) {
+    if (map.getZoom() < DENSE_Z) return []; // the national tier carries them
     var b = band(map.getZoom());
     if (b === "city") return []; // the city pins carry them
     if (b === "far") return only ? [] : visibleEvents();
@@ -1302,17 +1436,17 @@
   // One feature per city or metro (citypins.js). A pin holding one pop-up is that pop-up's own pin, at its own spot.
   function cityColl() {
     var z = map.getZoom(), CP = window.MatchaCityPins, none = { type: "FeatureCollection", features: [] };
-    if (band(z) !== "city" || !CP) return none;
+    if (z < DENSE_Z || band(z) !== "city" || !CP) return none;
     return { type: "FeatureCollection", features: CP.cityPins(visibleEvents(), Math.floor(z), window.CITIES).map(function (p) {
       if (p.n === 1) return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(items[p.keys[0]].ll) }, properties: { key: p.keys[0] } };
       return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(p.ll) }, properties: { key: "ct:" + p.city + "|" + p.state, ct: 1, n: p.n, city: p.city, cities: p.cities.length } };
     }) };
   }
   function mapBrands() { return isLow() || map.getZoom() < DENSE_Z ? [] : visibleBrands(); }
-  // One feature per city with brands (LOW_Z to DENSE_Z), at the city's centre; a city with one brand gets that brand's pin.
+  // One feature per city with brands, kept for reference: the national tier (ntColl) draws brands below DENSE_Z now.
   function brandCityColl() {
     var z = map.getZoom(), CP = window.MatchaCityPins, none = { type: "FeatureCollection", features: [] };
-    if (z < LOW_Z || z >= DENSE_Z || !CP) return none;
+    if (z >= 0 || !CP) return none;
     var list = visibleBrands().map(function (it) { return { key: it.key, ll: it.ll, data: { city: it.data.home_city, state: it.data.home_state } }; });
     return { type: "FeatureCollection", features: CP.cityPins(list, Math.floor(z), window.CITIES).map(function (p) {
       if (p.n === 1) return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(items[p.keys[0]].ll) }, properties: { key: p.keys[0] } };
@@ -1335,13 +1469,22 @@
   // each group's members by its feature key; KIND_SHIFT is where each kind's marker sits from its point (an event pin
   // stands on its point, so its middle is 23 px up; a brand mochi is nudged down-right).
   var densG = {}, denseCache = null;
-  var KIND_SHIFT = { b: [NUDGE, NUDGE], e: [0, -23], s: [0, 0] }, KIND_SRC = { e: "ev", s: "sh", b: "br" };
+  var KIND_SHIFT = { b: [NUDGE, NUDGE], e: [0, -35], s: [0, 0] }, KIND_SRC = { e: "ev", s: "sh", b: "br" };
   // Half of each marker's box (style.css), so no two markers on the map cover each other: a single pin, then a group by
   // its size class (cl-m over 9, cl-l over 24), widened on both sides by the count badge that pokes out to the right.
-  var PIN_HALF = { e: [20, 23], s: [14, 14], b: [11, 11] };
-  var GROUP_HALF = { e: [[26, 27], [28, 31], [30, 35]], s: [[22, 24], [24, 26], [26, 28]], b: [[25, 19], [25, 19], [25, 19]] };
+  // single pins: the mock's rule, one pin joins another closer than about 28 px (40 around a pop-up); a pin may tuck its
+  // edge under a neighbour, but never its middle. Groups are measured by their whole box.
+  var PIN_HALF = { e: [25, 25], s: [14, 14], b: [14, 14] };
+  // groups: to zoom 12 a neighbourhood pill (up to three faces and the count, a pink count above), from 12 a stack
+  // a single pin's whole box (with its day pill, cup or badge), for when it stands beside a group
+  var PIN_BOX = { e: [26, 35], s: [24, 23], b: [17, 15] };
+  function densBox(p) { return PIN_BOX[p.kind]; }
   function densShift(p) { return KIND_SHIFT[p.kind]; }
-  function densHalf(p, n) { return n > 1 ? GROUP_HALF[p.kind][n > 24 ? 2 : n > 9 ? 1 : 0] : PIN_HALF[p.kind]; }
+  function densHalf(p, n) {
+    if (n <= 1) return p.kind === "e" && items[p.key] && goingN[items[p.key].data.id] >= 1 ? [32, 25] : PIN_HALF[p.kind];
+    if (map.getZoom() < 12) { var k = Math.min(3, n), w = 37 + 20 * k + 9 * String(n).length; return [w / 2 + 9, 26]; }
+    return [32, 27];
+  }
   function isDense() { return map.getZoom() >= DENSE_Z; }
   function denseAll() {
     if (denseCache) return denseCache;
@@ -1349,7 +1492,7 @@
     var list = mapEvents(false).concat(mapShops(), mapBrands());
     if (!D) { list.forEach(function (it) { out[KIND_SRC[it.kind]].push(featureColl([it]).features[0]); }); return (denseCache = out); }
     var pts = list.map(function (it) { return { key: it.key, ll: it.ll, kind: it.kind, nogrid: it.kind === "b" }; });
-    D.group(pts, z, { grid: z < 12 ? 0.01 : 0, shift: densShift, half: densHalf, slack: 0 }).forEach(function (g) {
+    D.group(pts, z, { grid: z < 12 ? 0.01 : 0, shift: densShift, half: densHalf, box: densBox, slack: 10 }).forEach(function (g) {
       var kind = items[g.key].kind, src = KIND_SRC[kind];
       if (g.keys.length === 1) { out[src].push({ type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: g.key } }); return; }
       var gk = "g:" + src + ":" + g.key;
@@ -1393,7 +1536,38 @@
     fan = null;
   }
   map.on("zoomstart", closeFan);
-  function mapShops() { return isLow() ? [] : visibleShops(); }
+  function mapShops() { return map.getZoom() < DENSE_Z ? [] : visibleShops(); }
+  // The national tier: every visible pop-up (placed or city-only), shop and brand, one pin per city, merged only where two
+  // pins would overlap at this zoom's pin size (never by a radius). A place without a city stands on its own.
+  var ntStats = { cities: 0, pins: 0 };
+  function photoOf(it) { return it.kind === "s" ? it.data.image_url : it.kind === "e" ? imgSrc(it.data) : brandPicUrl(it); }
+  // the art inside a small city pin when there is no picture: the character of its kind (lighter than a drawn card)
+  function natArt(it) { return it.kind === "s" ? SHOP_ART : it.kind === "e" ? "<span class=\"pn-draw\" data-char=\"m-base\"></span>" : "<span class=\"pn-ini\">" + esc((String(it.data.brand || "?").match(/[A-Za-z0-9]/) || ["?"])[0].toUpperCase()) + "</span>"; }
+  function ntColl() {
+    var z = map.getZoom(), CP = window.MatchaCityPins, none = { type: "FeatureCollection", features: [] };
+    if (z >= DENSE_Z || !CP) { ntStats = { cities: 0, pins: 0 }; return none; }
+    var list = [], add = function (it, city, state) { list.push({ key: it.key, ll: it.ll, data: city ? { city: city, state: state } : { city: "@" + it.key, state: "" } }); };
+    visibleEvents().forEach(function (it) { add(it, it.data.city, it.data.state); });
+    visibleShops().forEach(function (it) { add(it, it.data.city, it.data.state); });
+    visibleBrands().forEach(function (it) { add(it, it.data.home_city, it.data.home_state); });
+    var seen = {};
+    list.forEach(function (x) { seen[x.data.city + "|" + x.data.state] = 1; });
+    var pins = CP.cityPins(list, Math.floor(z), window.CITIES, { mergePx: NT_SIZE(z), capMi: Infinity });
+    ntStats = { cities: Object.keys(seen).length, pins: pins.length, covered: pins.reduce(function (n, p) { return n + p.cities.length; }, 0) };
+    return { type: "FeatureCollection", features: pins.map(function (p) {
+      var k = { e: 0, s: 0, b: 0 }, lead = null, lp = -1;
+      p.keys.forEach(function (key) {
+        var it = items[key];
+        if (!it) return;
+        k[it.kind]++;
+        // the lead: a picture first (a pop-up's, then a shop's, then a brand's), else the first pop-up, shop, brand
+        var sc = (window.MatchaPins && window.MatchaPins.src(photoOf(it)) ? 10 : 0) + (it.kind === "e" ? 3 : it.kind === "s" ? 2 : 1);
+        if (sc > lp) { lp = sc; lead = key; }
+      });
+      var kind = k.e ? "e" : k.s ? "s" : "b", city = p.city.charAt(0) === "@" ? (items[p.keys[0]] && (items[p.keys[0]].data.name || items[p.keys[0]].data.brand)) || "" : p.city;
+      return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(p.ll) }, properties: { key: "nt:" + p.city + "|" + p.state + "|" + p.n, nt: 1, n: p.n, city: city, cities: p.cities.length, lead: lead, kind: kind } };
+    }) };
+  }
   function setSources() {
     closeFan();
     densG = {}; denseCache = null;
@@ -1409,6 +1583,8 @@
     if (sh) sh.setData(shColl());
     var ct = map.getSource("ct");
     if (ct) ct.setData(cityColl());
+    var nts = map.getSource("nt");
+    if (nts) nts.setData(ntColl());
   }
   function refreshEvents(stagger) {
     setSources();
@@ -2284,7 +2460,7 @@
     var m = /^(-?\d{1,2}(?:\.\d+)?),(-?\d{1,3}(?:\.\d+)?),(\d{1,2}(?:\.\d+)?)$/.exec(v || "");
     if (!m) return null;
     var lat = +m[1], lng = +m[2], z = +m[3];
-    if (lat < 15 || lat > 55 || lng < -165 || lng > -60 || z < 3 || z > 16) return null;
+    if (lat < 15 || lat > 55 || lng < -165 || lng > -60 || z < 2 || z > 16) return null; // 2: the whole country on a phone
     return [lat, lng, z];
   }
 
@@ -2433,5 +2609,5 @@
   }
 
   // Exposed for tests only.
-  window.__matcha = { state: state, shopsOn: function () { return shopsOn; }, servesOn: function () { return servesOn; }, shopsWords: shopsWords, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
+  window.__matcha = { ntStats: function () { return ntStats; }, state: state, shopsOn: function () { return shopsOn; }, servesOn: function () { return servesOn; }, shopsWords: shopsWords, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
 })();

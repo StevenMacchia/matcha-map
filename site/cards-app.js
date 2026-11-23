@@ -8,7 +8,7 @@
 // app does not need to call anything after it sets innerHTML. Set window.MatchaCards.open = function (key) {...} to
 // open an also-nearby pop-up in place (key "e:<id>"); without it the link is a normal deep link (?event=<id>).
 import { cardHtml, rowHtml, brandCardHtml, brandRowHtml, brandSectionHtml, wire, fitQuotes } from "./cards.js";
-import { shopCardHtml, menuForBrand } from "./shopcard.js"; // the storefront card ("s:<id>"); the brand card's menu
+import { shopCardHtml, menuForBrand, hoursTodayHtml } from "./shopcard.js"; // the storefront card ("s:<id>"); the brand card's menu
 
 const data = { art: null, brands: null, sources: null, places: null, menus: null };
 let pages = null; // data/pages.json: which city and brand pages exist (written by npm run pages)
@@ -77,7 +77,9 @@ function row(item, ctx) {
 
 // The list's "Brands near here" section (app.js renderList): ctx { open, row(item) }.
 function brandSection(list, ctx) { return brandSectionHtml(list, { ...context(ctx), ...(ctx || {}) }); }
-window.MatchaCards = Object.assign(window.MatchaCards || {}, { render, row, ready, brandSection });
+// open now, from the shop's own hours in its own time zone (the shop pin's green dot)
+function openNow(s) { return !!s && typeof s.opening_hours === "string" && /mm-shop-open/.test(hoursTodayHtml(s)); }
+window.MatchaCards = Object.assign(window.MatchaCards || {}, { render, row, ready, brandSection, openNow });
 wire(document.documentElement);
 // the quote's "more" link shows only when the clamp really hid text: measure once the card is in the DOM
 document.addEventListener("mm:card", (ev) => { try { fitQuotes(ev.detail && ev.detail.root); } catch (e) { /* no quote */ } });

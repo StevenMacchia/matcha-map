@@ -71,7 +71,7 @@ try {
   await Promise.all([s("Page.enable"), s("Runtime.enable")]);
   await s("Emulation.setDeviceMetricsOverride", { width: W, height: H, deviceScaleFactor: 1, mobile: W < 500 });
   if (DARK) await s("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "dark" }] });
-  await s("Page.navigate", { url: `${base}/?at=${AT}&motion=reduce` });
+  await s("Page.navigate", { url: `${base}/?at=${AT}${process.argv.includes("--motion") ? "" : "&motion=reduce"}` }); // --motion: leave the motion on (tools/frame-time.js)
   const probe = async () => (await s("Runtime.evaluate", { expression: PROBE, returnByValue: true })).result.value;
   const end = Date.now() + WAIT;
   let st = { pins: 0, rows: 0, loading: true };
@@ -88,6 +88,9 @@ try {
   if (LIST) { await s("Runtime.evaluate", { expression: `(() => { const g = document.getElementById("list-grip"); if (g && !document.body.classList.contains("show-list")) g.click(); })()` }); await sleep(900); }
   // --open <key>: open one card ("b:<source id>", "s:<id>", "e:<id>") the way a list row does
   if (OPEN) { const ok = (await s("Runtime.evaluate", { returnByValue: true, expression: `(() => { const o = window.MatchaCards && window.MatchaCards.open; if (!o) return false; o(${JSON.stringify(OPEN)}); return true; })()` })).result.value; if (!ok) { console.error("view-shot: cannot open " + OPEN); code = 1; } await sleep(2500); }
+  // --eval <js>: print the value of an expression in the page (a measurement next to the shot)
+  const EVAL = arg("--eval");
+  if (EVAL) console.log(JSON.stringify((await s("Runtime.evaluate", { expression: EVAL, returnByValue: true, awaitPromise: true })).result.value));
   await sleep(1500); // tiles and the last marker animations
   const shot = await s("Page.captureScreenshot", { format: "png" });
   fs.mkdirSync(path.dirname(path.resolve(OUT)), { recursive: true });
