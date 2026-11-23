@@ -1,0 +1,26 @@
+# Smoke test: serve site/, load the key pages in headless Chrome at desktop and phone width,
+# fail on uncaught exceptions, same-origin 4xx/5xx, or an empty home page. See README, "Smoke test".
+name: smoke
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: browser-actions/setup-chrome@v1
+        id: chrome
+      - run: npm run smoke
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}

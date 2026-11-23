@@ -52,6 +52,12 @@ jobs:
             git pull --rebase origin "${GITHUB_REF_NAME}" || true
             git push
           fi
+      - uses: browser-actions/setup-chrome@v1
+        id: chrome
+      - name: Smoke test (a broken build must not deploy)
+        run: npm run smoke
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
       - name: Deploy to Cloudflare Pages
         if: ${{ env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != '' }}
         run: npx wrangler pages deploy site --project-name matchamap --branch main

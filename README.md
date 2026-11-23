@@ -120,6 +120,10 @@ The map keeps a watch list of accounts in `data/watchlist.json` (every Instagram
 - **Linktree and Beacons**: `linktr.ee/robots.txt` ends with "User-agent: * Disallow: /" for every bot it does not name, so Linktree pages are skipped today (the three brands on it stay unread); `beacons.ai` allows crawling, no source is on it yet. For each source whose website or schedule_url is on either, a dated pop-up line in the bio or a link title becomes an event for that brand; MATO, Luma, Eventbrite, Partiful, Posh and Shopify events links are written to `data/discover-leads.json` under the source id so a human can set `schedule_url`. No event is made from a bare link.
 - Checked and skipped: **Yelp** (robots.txt disallows everything), **Posh** (client-rendered, data behind a disallowed API), **Partiful** (private invite links, no public listing), **Resident Advisor** (club music, no matcha).
 
+## Smoke test
+
+`npm run smoke` starts `tools/serve.js` on a free port (or reuses the server at `SMOKE_URL`), opens headless Chrome at 1440x900 and 390x844 over the home page, `?city=new-york-ny`, one city, brand and event page, `/add/`, `/weekend/` and `/art/gallery.html`, and reads the console over the DevTools protocol. It fails on any uncaught exception, any 4xx/5xx for a same-origin asset (`/favicon.ico` excepted), and, on `/`, if no list row or pin marker has rendered after 10 s or the loading state is still up. Set `CHROME_PATH` if Chrome is not in a standard place. Needs Node 22 or newer (built-in WebSocket). It runs on every push and pull request (`.github/workflows/smoke.yml`) and as the step before deploy in `daily.yml`, so a broken build never ships.
+
 ## Run it on a schedule
 
 - `npm run loop`: the full cycle (discover, watch, ingest) now and every 6 hours, and the watch pass alone every hour in between, while the terminal stays open. Each cycle prints one line with a timestamp, the result and time of each step, and the event counts. A step that fails is reported and the next one still runs. Ctrl+C stops it. `-- --every 6` and `-- --watch-every 1` change the intervals in hours.
