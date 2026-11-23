@@ -49,7 +49,7 @@
     "kind": "popup",
     "category": "coffee",
     "kind_note": null,
-    "home_city": "Northern Virginia",
+    "home_city": "Arlington",
     "home_state": "VA",
     "website": null,
     "instagram": "afterschoolcoffeehouse",
@@ -58,7 +58,7 @@
     "schedule_kind": "website",
     "adapter": "website",
     "active": true,
-    "notes": "DMV mobile matcha and coffee pop-up; posted 3 events in Nov 2026 on MATO. Linktree: linktr.ee/AfterSchoolCoffeeHouse.",
+    "notes": "DMV mobile matcha and coffee pop-up; posted 3 events in Nov 2026 on MATO. Linktree: linktr.ee/AfterSchoolCoffeeHouse. Home city set to Arlington (was \"Northern Virginia\", not a city) 2026-11-23; DC venues carry city overrides by event id.",
     "added": "2026-11-22",
     "verified": "2026-11-22"
   },
@@ -118,6 +118,25 @@
     "notes": "Started as an atelier pop-up, now a flagship; runs dated Luma events (e.g. Matcha Daddy Banana Stand with Banana Daddy, Jul 2026).",
     "added": "2026-11-22",
     "verified": "2026-11-22"
+  },
+  {
+    "id": "aloha-matcha-hawaii",
+    "brand": "Aloha Matcha Hawaii",
+    "kind": "popup",
+    "category": "matcha",
+    "kind_note": null,
+    "home_city": "Honolulu",
+    "home_state": "HI",
+    "website": null,
+    "instagram": null,
+    "tiktok": null,
+    "schedule_url": "https://allevents.in/honolulu/mochi-and-matcha-fest/100002004992347083",
+    "schedule_kind": "manual",
+    "adapter": "manual",
+    "active": true,
+    "notes": "Listed as a vendor at the JCCH Mochi & Matcha Fest, Sat 2026-12-05 9am-1pm, 2454 S Beretania St, Honolulu (AllEvents). No website or handle found; no other dates seen.",
+    "added": "2026-11-23",
+    "verified": null
   },
   {
     "id": "amaretto-stl",
@@ -2262,6 +2281,24 @@
     "active": true,
     "notes": "One-woman roving matcha collective: boutiques, vintage markets, matcha plus wine sessions (City Cast Pittsburgh; MATO venue page, events as of Aug 2026). Handle not seen.",
     "added": "2026-11-22",
+    "verified": null
+  },
+  {
+    "id": "maru-matcha",
+    "brand": "MARU",
+    "kind": "popup",
+    "category": "matcha",
+    "home_city": "Boston",
+    "home_state": "MA",
+    "website": null,
+    "instagram": null,
+    "tiktok": null,
+    "schedule_url": "https://www.instagram.com/reel/DgDmRqrR074",
+    "schedule_kind": "manual",
+    "adapter": "manual",
+    "active": true,
+    "notes": "Matcha brand popping up at Wishing Cup, 45 Court Street, Boston, Nov 20 - Dec 6 2026 (second run). Handle not confirmed. Evidence: https://www.instagram.com/reel/DgDmRqrR074",
+    "added": "2026-11-23",
     "verified": null
   },
   {
