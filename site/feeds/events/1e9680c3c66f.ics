@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:1e9680c3c66f@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T131640Z
-DTSTART;VALUE=DATE:20261227
-DTEND;VALUE=DATE:20261228
+DTSTART:20261227T180000Z
+DTEND:20261227T210000Z
 SUMMARY:Matcha + Meetup: Dallas
 LOCATION:Dallas\, TX
 DESCRIPTION:Join us for coffee at different cafes each gathering. Build you
  r community in your city with a fun day out! Meetup. Matcha. Support local
- !\nDetails not confirmed yet. Check the brand's post before you go.\nMore:
-  https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
+ !\nPrice: $12.51\nDetails not confirmed yet. Check the brand's post before
+  you go.\nMore: https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
 URL:https://matchamap-cu7.pages.dev/e/1e9680c3c66f/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T18:37:05.450Z",
+  "generated": "2026-11-23T18:39:25.916Z",
   "events": [
     {
       "id": "13650ade75dc",
@@ -5623,9 +5623,9 @@
       "source_id": "after-school-coffee-house",
       "kind": "popup",
       "category": "coffee",
-      "handle": "afterschoolcoffeehouse",
+      "handle": null,
       "source_url": "https://ma.to/event/after-school-on-the-block-07-nov-2026-1",
-      "title": "After School Coffee House pop-up",
+      "title": "After School on the Block",
       "start": "2026-11-07T11:00:00-05:00",
       "end": "2026-11-07T16:00:00-05:00",
       "tz": "America/New_York",
@@ -5641,7 +5641,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -5661,8 +5661,7 @@
         "oatly maple miso",
         "strawberry cloud matcha",
         "sweet potato casserole",
-        "house matcha",
-        "strawberry"
+        "house matcha"
       ],
       "price": null,
       "description": "After School Coffee House joins South Block and Oatly for an afternoon of seasonal drinks, co-branded merchandise, music, and community giving at One Loudoun.",
@@ -5674,8 +5673,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://ma.to/event/after-school-on-the-block-07-nov-2026-1",
-        "https://www.instagram.com/p/DekT4BHlLtP/"
+        "https://ma.to/event/after-school-on-the-block-07-nov-2026-1"
       ],
       "series": null
     },
@@ -11493,7 +11491,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -15823,7 +15821,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -16269,7 +16267,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -16325,11 +16323,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T20:31:16.778Z",
       "extracted_by": "manual",
       "image": {
@@ -16377,7 +16375,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -16493,7 +16491,7 @@
       "source_id": "sunday-culture",
       "kind": "organizer",
       "category": "matcha",
-      "handle": "sundayculturehq",
+      "handle": null,
       "source_url": "https://luma.com/8e96gm37",
       "title": "Florals & Friends hosted by @olastudionyc",
       "start": "2026-11-23T19:00:00-05:00",
@@ -16511,7 +16509,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:29:44.927Z",
       "extracted_by": "rule",
       "image": {
@@ -16527,12 +16525,9 @@
         "tiktok": null,
         "other": "https://luma.com/8e96gm37"
       },
-      "menu": [
-        "cookie",
-        "pastry"
-      ],
-      "price": "$33",
-      "description": "spend your Friendsgiving with us at a floral atelier",
+      "menu": [],
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": "https://www.instagram.com/sundayculturehq/",
@@ -16541,9 +16536,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://luma.com/8e96gm37",
-        "https://www.instagram.com/reel/DgDHHnNxDxa/",
-        "https://www.instagram.com/reel/Df3nd8bMG2G/"
+        "https://luma.com/8e96gm37"
       ],
       "series": null
     },
@@ -16571,7 +16564,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -16789,7 +16782,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -16844,7 +16837,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -16912,7 +16905,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -16976,7 +16969,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -17065,7 +17058,7 @@
       "source_id": "sunday-culture",
       "kind": "organizer",
       "category": "matcha",
-      "handle": "sundayculturehq",
+      "handle": null,
       "source_url": "https://luma.com/8e96gm37",
       "title": "Florals & Friends hosted by @olastudionyc",
       "start": "2026-11-24T19:00:00-05:00",
@@ -17083,7 +17076,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:29:44.927Z",
       "extracted_by": "rule",
       "image": {
@@ -17099,12 +17092,9 @@
         "tiktok": null,
         "other": "https://luma.com/8e96gm37"
       },
-      "menu": [
-        "cookie",
-        "pastry"
-      ],
-      "price": "$33",
-      "description": "spend your Friendsgiving with us at a floral atelier",
+      "menu": [],
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": "https://www.instagram.com/sundayculturehq/",
@@ -17113,9 +17103,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://luma.com/8e96gm37",
-        "https://www.instagram.com/reel/DgDHHnNxDxa/",
-        "https://www.instagram.com/reel/Df3nd8bMG2G/"
+        "https://luma.com/8e96gm37"
       ],
       "series": null
     },
@@ -17255,7 +17243,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -17317,7 +17305,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -17431,7 +17419,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -17499,7 +17487,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:16:40.235Z",
       "extracted_by": "rule",
       "image": {
@@ -17717,7 +17705,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -18041,7 +18029,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -18096,7 +18084,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -18150,11 +18138,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -18195,7 +18183,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -18222,7 +18210,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -18327,7 +18315,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:16:40.235Z",
       "extracted_by": "rule",
       "image": {
@@ -18537,7 +18525,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -18586,7 +18574,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -18804,7 +18792,7 @@
       "approx": false,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -19008,7 +18996,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19169,7 +19157,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19281,7 +19269,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19446,7 +19434,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -19502,7 +19490,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T12:17:36.576Z",
       "extracted_by": "rule",
       "image": {
@@ -19559,7 +19547,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -19616,7 +19604,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -19680,7 +19668,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19735,7 +19723,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -19792,7 +19780,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -19844,7 +19832,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -19952,7 +19940,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20020,7 +20008,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -20071,11 +20059,11 @@
       "zip": null,
       "lat": 47.257698,
       "lng": -122.44297,
-      "geocode_source": "nominatim",
+      "geocode_source": "manual",
       "approx": false,
-      "confidence": "likely",
+      "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -20136,7 +20124,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20198,7 +20186,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20315,7 +20303,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": {
@@ -20428,7 +20416,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -20538,7 +20526,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -20648,7 +20636,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -20811,7 +20799,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T00:33:14.962Z",
       "extracted_by": "rule",
       "image": {
@@ -20866,8 +20854,8 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
-      "first_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
+      "first_seen": "2026-11-23T18:29:44.592Z",
       "extracted_by": "sweep",
       "image": {
         "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/api-uploads/cq/5d9cc38f-a7ce-42ee-bc1b-1cbd6d464d3f.jpg",
@@ -20921,7 +20909,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "rule",
       "image": {
@@ -21029,7 +21017,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -21045,13 +21033,9 @@
         "tiktok": null,
         "other": "https://www.eventbrite.com/e/dream-tea-nyc-at-grand-bazaar-uws-indoors-tickets-2004635149696"
       },
-      "menu": [
-        "matcha",
-        "holiday tea sets",
-        "exclusive tea blends"
-      ],
-      "price": "free entry",
-      "description": "Dream Tea NYC sets up an indoor booth at the Upper West Side Sunday market with matcha and holiday tea gift sets. Free to drop in.",
+      "menu": [],
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": null,
@@ -21060,8 +21044,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://www.eventbrite.com/e/dream-tea-nyc-at-grand-bazaar-uws-indoors-tickets-2004635149696",
-        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+        "https://www.eventbrite.com/e/dream-tea-nyc-at-grand-bazaar-uws-indoors-tickets-2004635149696"
       ],
       "series": null
     },
@@ -21089,7 +21072,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -21264,7 +21247,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -21296,7 +21279,7 @@
       "series": null
     },
     {
-      "id": "e515c047c297",
+      "id": "df42a83f695e",
       "brand": "Central Matcha",
       "source_id": "central-matcha",
       "kind": "popup",
@@ -21308,20 +21291,20 @@
       "end": "2026-11-29T14:00:00-06:00",
       "tz": "America/Chicago",
       "all_day": false,
-      "venue": "Texas Farmers' Market at Mueller",
-      "address": "2006 Philomena St, Austin, TX 78723",
+      "venue": "Mueller",
+      "address": "2006 Philomena St",
       "city": "Austin",
       "state": "TX",
       "zip": "78723",
-      "lat": 30.2986,
-      "lng": -97.7541,
-      "geocode_source": "none",
-      "approx": true,
+      "lat": 30.299843,
+      "lng": -97.702653,
+      "geocode_source": "nominatim",
+      "approx": false,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
-      "extracted_by": "sweep",
+      "extracted_by": "rule",
       "image": null,
       "image_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/225603686_573153657045146_7170797240610520053_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=dgYX7IAGa88Q7kNvwEvfByM&_nc_oc=Adq7zaGT_mVmaJ4QhmyxfOMs4gvpCZ_J0QW1-nlirmfIBCrJVLGhQevTG3lNdD2_Gb8&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQRUZxOIHQspcbbM7EjQVd0pNkeZCmadPz18xqVEBjQnqA&oe=6B09F943",
       "posts": {
@@ -21439,7 +21422,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -21499,7 +21482,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -21613,7 +21596,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -21785,7 +21768,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -21843,7 +21826,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -21895,7 +21878,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -21950,7 +21933,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
@@ -22060,7 +22043,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -22278,7 +22261,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -22448,7 +22431,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -22507,7 +22490,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -22562,7 +22545,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -22630,7 +22613,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -22752,7 +22735,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -22809,8 +22792,8 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
-      "first_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
+      "first_seen": "2026-11-23T18:29:44.592Z",
       "extracted_by": "rule",
       "image": {
         "url": "https://cdn-az.allevents.in/events9/banners/d164a2a38df30264ae8e84992fbb34afed70c298c3ed3bffa37fb79aef170d06-rimg-w1200-h600-dcf8f8f8-gmir.jpg?v=1795160529",
@@ -22864,7 +22847,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
@@ -22919,7 +22902,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -22974,7 +22957,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23041,7 +23024,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23162,7 +23145,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23210,11 +23193,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -23255,7 +23238,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -23278,11 +23261,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -23322,7 +23305,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -23349,7 +23332,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23416,7 +23399,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -23471,7 +23454,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23519,11 +23502,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -23564,7 +23547,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -23642,11 +23625,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -23686,7 +23669,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -23713,7 +23696,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -23768,7 +23751,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -23823,7 +23806,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T12:52:52.775Z",
       "extracted_by": "rule",
       "image": {
@@ -23985,7 +23968,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -24073,23 +24056,23 @@
       "category": "matcha",
       "handle": null,
       "source_url": "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960",
-      "title": "Dream Tea NYC at The Artisans Bazaar, Fort Greene Park",
+      "title": "Dream Tea NYC in Fort Greene",
       "start": "2026-12-05T09:00:00-05:00",
       "end": "2026-12-05T09:00:00-05:00",
       "tz": "America/New_York",
       "all_day": false,
       "venue": "The Artisans Bazaar at Fort Greene Park",
-      "address": "Fort Greene Park, Brooklyn, NY 11205",
+      "address": "",
       "city": "Brooklyn",
       "state": "NY",
       "zip": null,
-      "lat": 40.690584,
-      "lng": -73.974194,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
+      "lat": 40.6526,
+      "lng": -73.9497,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -24105,12 +24088,9 @@
         "tiktok": null,
         "other": "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960"
       },
-      "menu": [
-        "matcha",
-        "tea blends"
-      ],
-      "price": "free entry",
-      "description": "Dream Tea NYC at the Saturday Artisans Bazaar in Fort Greene Park with matcha and tea.",
+      "menu": [],
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": null,
@@ -24119,8 +24099,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960",
-        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+        "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960"
       ],
       "series": null
     },
@@ -24148,7 +24127,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -24216,7 +24195,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -24244,6 +24223,65 @@
       "pay": null,
       "evidence": [
         "https://allevents.in/virginia-beach/matcha-mike-pop-up-at-landstown-middle-school-holiday-market/200031086793629"
+      ],
+      "series": null
+    },
+    {
+      "id": "cd0e6b0e4240",
+      "brand": "Caribe & Co.",
+      "source_id": "caribe-and-co",
+      "kind": "cafe",
+      "category": "coffee",
+      "handle": "caribeandco",
+      "source_url": "https://www.instagram.com/p/DgF6azFoRBd/",
+      "title": "Caribe & Co. pop-up",
+      "start": "2026-12-05T09:00:00-05:00",
+      "end": "2026-12-05T13:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "",
+      "address": "769 Westminster St",
+      "city": "Providence",
+      "state": "RI",
+      "zip": null,
+      "lat": 41.818014,
+      "lng": -71.420987,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "confirmed",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T18:21:10.377Z",
+      "first_seen": "2026-11-23T18:21:10.377Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/920341683_18042518822815239_8092293045812181833_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMiJ9&_nc_ohc=Tg9f4IWE0aUQ7kNvwEdEJj4&_nc_oc=Adqn7ET-PVPMtNB2s3UiAbQVRQeC7kA1T7Syc-jH2ch-Ci-HydoWodrUUPCeWMw8NmI&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=YVGgnaJ5xUEYx-BVZNG-ig&_nc_ct=RQgsPBUKFQIAAAA&oh=00_AQTp0Sr7Q3FNGJW83MU6X5fnJb3-aES5hOlwcvLDtxmRGA&oe=6B0A6329",
+        "local": null,
+        "credit": "@caribeandco",
+        "width": null,
+        "height": null
+      },
+      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/920341683_18042518822815239_8092293045812181833_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMiJ9&_nc_ohc=Tg9f4IWE0aUQ7kNvwEdEJj4&_nc_oc=Adqn7ET-PVPMtNB2s3UiAbQVRQeC7kA1T7Syc-jH2ch-Ci-HydoWodrUUPCeWMw8NmI&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=YVGgnaJ5xUEYx-BVZNG-ig&_nc_ct=RQgsPBUKFQIAAAA&oh=00_AQTp0Sr7Q3FNGJW83MU6X5fnJb3-aES5hOlwcvLDtxmRGA&oe=6B0A6329",
+      "posts": {
+        "instagram": "https://www.instagram.com/p/DgF6azFoRBd/",
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "pastry",
+        "latte",
+        "ice cream"
+      ],
+      "price": null,
+      "description": "December 5 & 11 - A Christmas in the Caribbean cafe popup is coming to bigfeeling_pvd",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/caribeandco/",
+        "tiktok": "https://www.tiktok.com/@caribeandco"
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.instagram.com/p/DgF6azFoRBd/"
       ],
       "series": null
     },
@@ -24324,7 +24362,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -24379,7 +24417,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -24434,7 +24472,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24490,7 +24528,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24546,7 +24584,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -24562,12 +24600,9 @@
         "tiktok": null,
         "other": "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966"
       },
-      "menu": [
-        "matcha",
-        "tea blends"
-      ],
-      "price": "free entry",
-      "description": "A Dream Tea NYC pop-up on Court Street in Cobble Hill with matcha and tea.",
+      "menu": [],
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": null,
@@ -24576,8 +24611,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966",
-        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+        "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966"
       ],
       "series": null
     },
@@ -24605,7 +24639,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -24660,7 +24694,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24724,7 +24758,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "sweep",
       "image": {
@@ -24889,7 +24923,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24991,11 +25025,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -25036,7 +25070,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -25063,7 +25097,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25115,7 +25149,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": {
@@ -25170,7 +25204,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25237,7 +25271,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25338,8 +25372,8 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
-      "first_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
+      "first_seen": "2026-11-23T18:29:44.592Z",
       "extracted_by": "rule",
       "image": {
         "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/9c4c8727ee46dc742c148d317ca2e9c9dc73a09aeaddbd798a87d89994d06d30-original.webp",
@@ -25395,7 +25429,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25459,7 +25493,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -25512,7 +25546,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25574,7 +25608,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -25686,11 +25720,11 @@
       "zip": null,
       "lat": 47.615655,
       "lng": -122.203677,
-      "geocode_source": "nominatim-venue",
+      "geocode_source": "manual",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -25807,7 +25841,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -25866,7 +25900,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -26083,7 +26117,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T12:52:52.775Z",
       "extracted_by": "rule",
       "image": {
@@ -26138,7 +26172,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -26363,7 +26397,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -26418,7 +26452,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26483,7 +26517,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -26538,7 +26572,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26710,7 +26744,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26777,7 +26811,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26835,7 +26869,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26944,7 +26978,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -26999,7 +27033,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -27056,7 +27090,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27110,7 +27144,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -27216,11 +27250,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -27261,7 +27295,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -27337,11 +27371,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -27382,7 +27416,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -27462,7 +27496,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27526,7 +27560,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27578,7 +27612,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27641,11 +27675,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -27686,7 +27720,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -27768,7 +27802,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27831,11 +27865,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -27875,7 +27909,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -27898,11 +27932,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -27943,7 +27977,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -27970,7 +28004,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -28062,6 +28096,65 @@
       "series": null
     },
     {
+      "id": "edbfbfe7c201",
+      "brand": "Caribe & Co.",
+      "source_id": "caribe-and-co",
+      "kind": "cafe",
+      "category": "coffee",
+      "handle": "caribeandco",
+      "source_url": "https://www.instagram.com/p/DgF6azFoRBd/",
+      "title": "Caribe & Co. pop-up",
+      "start": "2026-12-11T09:00:00-05:00",
+      "end": "2026-12-11T13:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "",
+      "address": "769 Westminster St",
+      "city": "Providence",
+      "state": "RI",
+      "zip": null,
+      "lat": 41.818014,
+      "lng": -71.420987,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "confirmed",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T18:21:10.377Z",
+      "first_seen": "2026-11-23T18:21:10.377Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/920341683_18042518822815239_8092293045812181833_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMiJ9&_nc_ohc=Tg9f4IWE0aUQ7kNvwEdEJj4&_nc_oc=Adqn7ET-PVPMtNB2s3UiAbQVRQeC7kA1T7Syc-jH2ch-Ci-HydoWodrUUPCeWMw8NmI&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=YVGgnaJ5xUEYx-BVZNG-ig&_nc_ct=RQgsPBUKFQIAAAA&oh=00_AQTp0Sr7Q3FNGJW83MU6X5fnJb3-aES5hOlwcvLDtxmRGA&oe=6B0A6329",
+        "local": null,
+        "credit": "@caribeandco",
+        "width": null,
+        "height": null
+      },
+      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/920341683_18042518822815239_8092293045812181833_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMiJ9&_nc_ohc=Tg9f4IWE0aUQ7kNvwEdEJj4&_nc_oc=Adqn7ET-PVPMtNB2s3UiAbQVRQeC7kA1T7Syc-jH2ch-Ci-HydoWodrUUPCeWMw8NmI&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=YVGgnaJ5xUEYx-BVZNG-ig&_nc_ct=RQgsPBUKFQIAAAA&oh=00_AQTp0Sr7Q3FNGJW83MU6X5fnJb3-aES5hOlwcvLDtxmRGA&oe=6B0A6329",
+      "posts": {
+        "instagram": "https://www.instagram.com/p/DgF6azFoRBd/",
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "pastry",
+        "latte",
+        "ice cream"
+      ],
+      "price": null,
+      "description": "December 5 & 11 - A Christmas in the Caribbean cafe popup is coming to bigfeeling_pvd",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/caribeandco/",
+        "tiktok": "https://www.tiktok.com/@caribeandco"
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.instagram.com/p/DgF6azFoRBd/"
+      ],
+      "series": null
+    },
+    {
       "id": "3327711c3213",
       "brand": "Howdy Y'all Coffee",
       "source_id": "howdy-yall-coffee",
@@ -28081,11 +28174,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -28126,7 +28219,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -28149,11 +28242,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -28193,7 +28286,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -28220,7 +28313,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -28334,7 +28427,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -28402,7 +28495,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -28457,7 +28550,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T18:22:28.723Z",
       "extracted_by": "manual",
       "image": null,
@@ -28509,7 +28602,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28561,11 +28654,11 @@
       "zip": null,
       "lat": 33.5722,
       "lng": -112.0901,
-      "geocode_source": "manual",
-      "approx": false,
-      "confidence": "likely",
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -28679,7 +28772,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28796,7 +28889,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28845,7 +28938,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28964,11 +29057,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -29009,7 +29102,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -29036,7 +29129,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -29093,7 +29186,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29157,7 +29250,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29210,7 +29303,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29272,7 +29365,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -29323,7 +29416,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29379,7 +29472,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
@@ -29466,6 +29559,55 @@
       "series": null
     },
     {
+      "id": "f4cc086d259d",
+      "brand": "KinKa",
+      "source_id": "allevents:kinka",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519",
+      "title": "Matcha 101 'Whisk & Sip'",
+      "start": "2026-12-13T00:00:00-05:00",
+      "end": null,
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "KINKA",
+      "address": "63 East 7th Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": null,
+      "lat": 40.727665,
+      "lng": -73.986861,
+      "geocode_source": "manual",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T18:29:44.592Z",
+      "first_seen": "2026-11-23T18:29:44.592Z",
+      "extracted_by": "rule",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519"
+      },
+      "menu": [],
+      "price": "$44.52",
+      "description": null,
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519"
+      ],
+      "series": null
+    },
+    {
       "id": "3f80fb2ebff1",
       "brand": "Northeast Tea House",
       "source_id": "eventbrite:northeast-tea-house",
@@ -29489,7 +29631,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -29544,7 +29686,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29666,7 +29808,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -29774,7 +29916,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29838,7 +29980,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29905,7 +30047,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29963,7 +30105,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T12:52:52.775Z",
       "extracted_by": "rule",
       "image": {
@@ -30020,7 +30162,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -30075,7 +30217,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -30107,7 +30249,7 @@
       "series": null
     },
     {
-      "id": "43aeff9a1f1a",
+      "id": "00eb146ceeae",
       "brand": "Dream Tea NYC",
       "source_id": "dream-tea-nyc",
       "kind": "tea-brand",
@@ -30119,20 +30261,20 @@
       "end": "2026-12-14T11:00:00-05:00",
       "tz": "America/New_York",
       "all_day": false,
-      "venue": "Empire Stores (Time Out Market)",
-      "address": "53 Water St, Brooklyn, NY 11201",
+      "venue": "Empire Stores",
+      "address": "83 Water Street",
       "city": "Brooklyn",
       "state": "NY",
       "zip": "11201",
-      "lat": 40.6526,
-      "lng": -73.9497,
-      "geocode_source": "none",
-      "approx": true,
-      "confidence": "unsure",
+      "lat": 40.70331,
+      "lng": -73.990971,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
-      "extracted_by": "sweep",
+      "extracted_by": "rule",
       "image": {
         "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197657641%2F2891855102831%2F1%2Foriginal.20261110-053800?crop=focalpoint&fit=crop&h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=d87c2ae5fc457d06857af2f7e6d297a4",
         "local": "img/events/00eb146ceeae.jpg",
@@ -30185,11 +30327,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30230,7 +30372,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -30257,7 +30399,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -30312,11 +30454,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30357,7 +30499,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -30380,11 +30522,11 @@
       "zip": null,
       "lat": 47.791654,
       "lng": -122.213732,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30421,7 +30563,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -30448,7 +30590,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -30552,11 +30694,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30597,7 +30739,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -30620,11 +30762,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30664,7 +30806,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -30793,11 +30935,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30838,7 +30980,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -30861,11 +31003,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30905,7 +31047,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -30932,7 +31074,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30999,7 +31141,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -31050,11 +31192,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -31094,7 +31236,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -31117,11 +31259,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -31162,7 +31304,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -31189,7 +31331,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -31257,7 +31399,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -31367,7 +31509,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -31417,11 +31559,11 @@
       "zip": null,
       "lat": 37.811418,
       "lng": -122.248801,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -31458,7 +31600,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -31481,11 +31623,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -31526,7 +31668,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -31549,11 +31691,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -31593,7 +31735,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -31620,7 +31762,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31678,11 +31820,11 @@
       "zip": null,
       "lat": 47.580434,
       "lng": -122.313613,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -31719,7 +31861,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -31852,7 +31994,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31917,7 +32059,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": {
@@ -31972,7 +32114,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -32027,7 +32169,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -32079,11 +32221,11 @@
       "zip": null,
       "lat": 37.839909,
       "lng": -122.259415,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32120,7 +32262,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32143,11 +32285,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32187,7 +32329,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32210,11 +32352,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32255,7 +32397,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32278,11 +32420,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32323,7 +32465,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32346,11 +32488,11 @@
       "zip": null,
       "lat": 47.791654,
       "lng": -122.213732,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32387,7 +32529,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32410,11 +32552,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32455,7 +32597,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32478,11 +32620,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32522,7 +32664,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32549,7 +32691,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
       "image": {
@@ -32608,11 +32750,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32653,7 +32795,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32676,11 +32818,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32720,7 +32862,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32747,7 +32889,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -32797,11 +32939,11 @@
       "zip": null,
       "lat": 37.811418,
       "lng": -122.248801,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32838,7 +32980,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32861,11 +33003,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32905,7 +33047,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -32928,11 +33070,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32973,7 +33115,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33000,7 +33142,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33058,11 +33200,11 @@
       "zip": null,
       "lat": 47.580434,
       "lng": -122.313613,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33099,7 +33241,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33246,7 +33388,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33307,11 +33449,11 @@
       "zip": null,
       "lat": 37.839909,
       "lng": -122.259415,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33348,7 +33490,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33371,11 +33513,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33415,7 +33557,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33442,7 +33584,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33491,11 +33633,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33536,7 +33678,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33559,11 +33701,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33604,7 +33746,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33627,11 +33769,11 @@
       "zip": null,
       "lat": 47.791654,
       "lng": -122.213732,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33668,7 +33810,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33691,11 +33833,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33736,7 +33878,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33759,11 +33901,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33803,7 +33945,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -33889,7 +34031,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-23T15:21:19.595Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -33940,11 +34082,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33984,7 +34126,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -34007,11 +34149,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34052,7 +34194,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -34375,7 +34517,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": {
@@ -34430,11 +34572,11 @@
       "zip": null,
       "lat": 37.811418,
       "lng": -122.248801,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34471,7 +34613,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -34494,11 +34636,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34539,7 +34681,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -34562,11 +34704,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34606,7 +34748,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -34629,11 +34771,11 @@
       "zip": null,
       "lat": 47.580434,
       "lng": -122.313613,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34670,7 +34812,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -34819,7 +34961,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -34880,11 +35022,11 @@
       "zip": null,
       "lat": 37.839909,
       "lng": -122.259415,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34921,7 +35063,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -34944,11 +35086,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34988,7 +35130,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -35131,11 +35273,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T17:52:31.893Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35176,7 +35318,7 @@
         ],
         "until": "2027-01-04",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -35305,7 +35447,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -35470,7 +35612,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -35751,7 +35893,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-23T18:22:28.723Z",
+      "last_seen": "2026-11-23T18:29:44.592Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {

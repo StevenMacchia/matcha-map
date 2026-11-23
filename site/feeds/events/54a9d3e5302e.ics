@@ -8,14 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:54a9d3e5302e@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261125T170000Z
 DTEND:20261125T190000Z
 SUMMARY:Thanksgiving Eve Coffee Party ☕️ 🎉
 LOCATION:2520 Airline Dr\, Houston\, TX
-DESCRIPTION:Likely\, not fully confirmed.\nMore: https://matchamap-cu7.page
- s.dev/e/54a9d3e5302e/
+DESCRIPTION:Thanksgiving Eve Coffee Party Spend Thanksgiving Eve with Hey N
+ eighbor! for coffee\, matcha\, house music\, and pickleball at Drop Shots!
+ \nPrice: free\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.
+ pages.dev/e/54a9d3e5302e/
 URL:https://matchamap-cu7.pages.dev/e/54a9d3e5302e/
 GEO:29.810226;-95.381617
 STATUS:CONFIRMED

@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:d326866419b2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
-DTSTART;VALUE=DATE:20261205
-DTEND;VALUE=DATE:20261206
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261205T180000Z
+DTEND:20261205T220000Z
 SUMMARY:GIFTS OF GRACE : A FAITH FILLED CHRISTMAS GIVEAWAY/SWAP PARTY
 LOCATION:4800 Crystal Springs Drive\, Los Angeles\, CA
 DESCRIPTION:Join local Christian mamas & littles for a free Christmas swap 
  party\, morning Prayer & Pilates\, Coffee\, Matcha pan dulce+ Arts & much 
- more!\nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.de
- v/e/d326866419b2/
+ more!\nPrice: Free\nLikely\, not fully confirmed.\nMore: https://matchamap
+ -cu7.pages.dev/e/d326866419b2/
 URL:https://matchamap-cu7.pages.dev/e/d326866419b2/
 GEO:34.119264;-118.273421
 STATUS:CONFIRMED

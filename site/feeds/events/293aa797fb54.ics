@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:293aa797fb54@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261125T170000Z
 DTEND:20261125T210000Z
-SUMMARY:Mellobun Cafe Holiday Pop-Up
+SUMMARY:Mellobun Cafe x Matte Matcha Bar pop-up
 LOCATION:Journey to the Dumpling\, Sacramento\, CA
 DESCRIPTION:Mellobun Cafe hosts a one-day holiday pop-up at Journey to the 
- Dumpling in Elk Grove.\nMenu: dumpling\, hojicha\, latte\, cookie\nLikely\
- , not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/293aa797fb
- 54/
+ Dumpling in Elk Grove.\nMenu: dumpling\, hojicha\, latte\, cookie\, pastry
+ \nLikely\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/2
+ 93aa797fb54/
 URL:https://matchamap-cu7.pages.dev/e/293aa797fb54/
 GEO:38.568504;-121.482258
 STATUS:CONFIRMED

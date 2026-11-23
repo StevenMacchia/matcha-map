@@ -9,14 +9,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:2af246a08639@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261129T150000Z
 DTEND:20261129T170000Z
 SUMMARY:Matcha Walk | First Longevity Philly Event
 LOCATION:Philadelphia\, PA
-DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/2af246a08639/
+DESCRIPTION:Matcha & Walk: Longevity Philadelphia’s First Event We’re e
+ xcited to host our very first Longevity Philadelphia event.\nDetails not c
+ onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
+ ap-cu7.pages.dev/e/2af246a08639/
 URL:https://matchamap-cu7.pages.dev/e/2af246a08639/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

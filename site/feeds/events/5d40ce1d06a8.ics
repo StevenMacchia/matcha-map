@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:5d40ce1d06a8@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T125252Z
-DTSTART;VALUE=DATE:20261219
-DTEND;VALUE=DATE:20261220
+DTSTART:20261219T180000Z
+DTEND:20261219T210000Z
 SUMMARY:Matcha + Meetup: Boston | Film + Music Speed Networking Roulette
 LOCATION:Boston\, MA
 DESCRIPTION:Five Rounds. Five Curated Conversations. Endless possibilities 
- for collaborations in this roulette edition of speed networking.\nDetails 
- not confirmed yet. Check the brand's post before you go.\nMore: https://ma
- tchamap-cu7.pages.dev/e/5d40ce1d06a8/
+ for collaborations in this roulette edition of speed networking.\nPrice: $
+ 23.18\nDetails not confirmed yet. Check the brand's post before you go.\nM
+ ore: https://matchamap-cu7.pages.dev/e/5d40ce1d06a8/
 URL:https://matchamap-cu7.pages.dev/e/5d40ce1d06a8/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

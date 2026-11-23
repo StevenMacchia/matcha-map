@@ -8,15 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:1e3675a352d5@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
-DTSTART;VALUE=DATE:20261129
-DTEND;VALUE=DATE:20261130
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261129T220000Z
+DTEND:20261129T233000Z
 SUMMARY:a very merry matcha workshop
 LOCATION:Saegé Studios\, 444 North Harbor Boulevard\, Fullerton\, CA
 DESCRIPTION:Join us for a festive Christmas afternoon learning to make the 
- perfect matcha latte at home!\nMenu: latte\nLikely\, not fully confirmed.\
- nMore: https://matchamap-cu7.pages.dev/e/1e3675a352d5/
+ perfect matcha latte at home!\nMenu: latte\nPrice: $44.52 to $76.54\nLikel
+ y\, not fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/1e3675a3
+ 52d5/
 URL:https://matchamap-cu7.pages.dev/e/1e3675a352d5/
 GEO:33.873639;-117.924166
 STATUS:CONFIRMED

@@ -8,8 +8,8 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:655c0a08570c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261129T230000Z
 DTEND:20261130T020000Z
 SUMMARY:DangoMatcha x Little V's Cafe journaling night
@@ -18,8 +18,8 @@ LOCATION:Little V's Cafe\, 2456 W 8th Ct\, Hialeah\, FL 33010\, Hialeah\, F
 DESCRIPTION:A junk-journaling night at a Hialeah cafe with matcha and coffe
  e on hand and DangoMatcha sticker packs to journal with. The cafe is servi
  ng an exclusive matcha for this one day only.\nMenu: exclusive little v's 
- matcha (one day onl\, coffee\nMore: https://matchamap-cu7.pages.dev/e/655c
- 0a08570c/
+ matcha (one day onl\, coffee\nPrice: Free\nMore: https://matchamap-cu7.pag
+ es.dev/e/655c0a08570c/
 URL:https://matchamap-cu7.pages.dev/e/655c0a08570c/
 GEO:25.843960;-80.299211
 STATUS:CONFIRMED

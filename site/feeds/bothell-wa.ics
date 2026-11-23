@@ -8,8 +8,8 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:ac57cfc384f0@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261124T190000Z
 DTEND:20261125T020000Z
 SUMMARY:Nicho's Matcha weekly pop-up at Nakagawa
@@ -26,8 +26,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:35856e945cf2@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261201T190000Z
 DTEND:20261202T020000Z
 SUMMARY:Nicho's Matcha weekly pop-up at Nakagawa
@@ -44,8 +44,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:dbf8f22dca58@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261208T190000Z
 DTEND:20261209T020000Z
 SUMMARY:Nicho's Matcha weekly pop-up at Nakagawa
@@ -62,7 +62,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:ca70d3bd5dcf@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T003314Z
 DTSTART:20261212T180000Z
 DTEND:20261212T220000Z
@@ -73,6 +73,60 @@ DESCRIPTION:Enjoy live local music with Vietnamese coffee\, ceremonial matc
  nPrice: free\nMore: https://matchamap-cu7.pages.dev/e/ca70d3bd5dcf/
 URL:https://matchamap-cu7.pages.dev/e/ca70d3bd5dcf/
 GEO:47.761816;-122.208452
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:65740d040b8d@matchamap-cu7.pages.dev
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261215T190000Z
+DTEND:20261216T020000Z
+SUMMARY:Nicho's Matcha weekly pop-up at Nakagawa
+LOCATION:Nakagawa Japanese Restaurant\, 1427 228th St SE #D6\, Bothell\, WA
+  98021\, Bothell\, WA
+DESCRIPTION:Nicho's takes over the Nakagawa dining room every Tuesday with 
+ signature matcha\, hojicha and a rotating seasonal menu.\nMenu: signature 
+ matcha\, hojicha\, rotating seasonal menu\, persimmon matcha\nLikely\, not
+  fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/65740d040b8d/
+URL:https://matchamap-cu7.pages.dev/e/65740d040b8d/
+GEO:47.791654;-122.213732
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:f9dabdf234b2@matchamap-cu7.pages.dev
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261222T190000Z
+DTEND:20261223T020000Z
+SUMMARY:Nicho's Matcha weekly pop-up at Nakagawa
+LOCATION:Nakagawa Japanese Restaurant\, 1427 228th St SE #D6\, Bothell\, WA
+  98021\, Bothell\, WA
+DESCRIPTION:Nicho's takes over the Nakagawa dining room every Tuesday with 
+ signature matcha\, hojicha and a rotating seasonal menu.\nMenu: signature 
+ matcha\, hojicha\, rotating seasonal menu\, persimmon matcha\nLikely\, not
+  fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/f9dabdf234b2/
+URL:https://matchamap-cu7.pages.dev/e/f9dabdf234b2/
+GEO:47.791654;-122.213732
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:514588e08711@matchamap-cu7.pages.dev
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261229T190000Z
+DTEND:20261230T020000Z
+SUMMARY:Nicho's Matcha weekly pop-up at Nakagawa
+LOCATION:Nakagawa Japanese Restaurant\, 1427 228th St SE #D6\, Bothell\, WA
+  98021\, Bothell\, WA
+DESCRIPTION:Nicho's takes over the Nakagawa dining room every Tuesday with 
+ signature matcha\, hojicha and a rotating seasonal menu.\nMenu: signature 
+ matcha\, hojicha\, rotating seasonal menu\, persimmon matcha\nLikely\, not
+  fully confirmed.\nMore: https://matchamap-cu7.pages.dev/e/514588e08711/
+URL:https://matchamap-cu7.pages.dev/e/514588e08711/
+GEO:47.791654;-122.213732
 STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT

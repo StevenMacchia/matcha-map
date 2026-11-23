@@ -8,14 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:78743c0635f5@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20261208T170000Z
 DTEND:20261208T190000Z
 SUMMARY:Matcha Mornings - Founder + Investor Meetup
 LOCATION:San Francisco\, CA
-DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/78743c0635f5/
+DESCRIPTION:Tech Week 2026 may already feel like a distant memory\, but the
+  conversations it sparked don’t have to stop.\nDetails not confirmed yet
+ . Check the brand's post before you go.\nMore: https://matchamap-cu7.pages
+ .dev/e/78743c0635f5/
 URL:https://matchamap-cu7.pages.dev/e/78743c0635f5/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

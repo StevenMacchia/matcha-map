@@ -44,7 +44,8 @@ function context(ctx) {
   const items = (ctx && ctx.events) || (st && st.events) || [];
   return {
     now: new Date(),
-    phone: !!(ctx && ctx.phone), // the desktop pop-up renders the compact card; the phone sheet the full one
+    phone: !!(ctx && ctx.phone), // the desktop pop-up renders the compact card (mock C); the phone sheet mock A
+    dist: ctx && typeof ctx.dist === "number" ? ctx.dist : null, // miles from the visitor, from app.js (the Where box)
     here: (st && st.userLoc) || null,
     events: items.map((it) => (it && it.data ? it.data : it)).filter(Boolean),
     drawn: window.Drawn || null,
@@ -79,3 +80,11 @@ document.addEventListener("click", (ev) => {
   ev.preventDefault();
   open("e:" + a.getAttribute("data-event"));
 });
+// A shared link (?event=<id>) can open its card before this module has loaded, and app.js then draws its plain built-in
+// card, which stayed up for good (seen by the card gate, 2026-11-23). If that happened, open the card again now.
+(function reopen() {
+  if (typeof location === "undefined" || typeof document.querySelector !== "function") return;
+  const id = /^[a-z0-9]{6,32}$/i.test(new URLSearchParams(location.search).get("event") || "") ? new URLSearchParams(location.search).get("event") : "";
+  const open = window.MatchaCards && window.MatchaCards.open;
+  if (id && typeof open === "function" && document.querySelector("#sheet:not([hidden]) #sheet-body > .ecard, .mm-pop .maplibregl-popup-content .ecard")) open("e:" + id);
+})();

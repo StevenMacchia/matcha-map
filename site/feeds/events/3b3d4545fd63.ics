@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:3b3d4545fd63@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T131640Z
-DTSTART;VALUE=DATE:20261123
-DTEND;VALUE=DATE:20261124
+DTSTART:20261124T000000Z
+DTEND:20261124T030000Z
 SUMMARY:Matcha + Meetup: Virginia Beach (Giving Back Edition)
 LOCATION:Virginia Beach\, VA
 DESCRIPTION:Join us for coffee at different cafe. Build your community whil
- e supporting local businesses\, and giving back to people in need.\nDetail
- s not confirmed yet. Check the brand's post before you go.\nMore: https://
- matchamap-cu7.pages.dev/e/3b3d4545fd63/
+ e supporting local businesses\, and giving back to people in need.\nPrice:
+  $17.85\nDetails not confirmed yet. Check the brand's post before you go.\
+ nMore: https://matchamap-cu7.pages.dev/e/3b3d4545fd63/
 URL:https://matchamap-cu7.pages.dev/e/3b3d4545fd63/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

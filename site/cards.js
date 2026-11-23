@@ -2,8 +2,9 @@
 // card and the same card as a string for the static /e/<id>/ pages. ES module, no dependencies, no DOM needed for the
 // string forms (Node runs cardHtml in tools/gen-event-pages.js and test/cards.test.js).
 //
-//   cardHtml(event, ctx)               -> HTML string, the full card (top to bottom: verdict, hero, brand, drinks, facts,
-//                                         place and actions, source posts, brand story, also nearby, report link)
+//   cardHtml(event, ctx)               -> HTML string, the card: the phone sheet (mock A: day, name, When and Where, quote,
+//                                         menu, photo strip, posts, story, nearby, foot, then the pinned going strip and
+//                                         buttons), the desktop pop-up (mock C, no photo) or the static page (ctx.page)
 //   renderCard(event, ctx)             -> HTMLElement (cardHtml + wired share button and image fallbacks)
 //   rowHtml / renderRow(event, ctx)    -> the compact list row (a <button data-key="e:<id>">, or <a> with ctx.rowTag "a")
 //   brandCardHtml / renderBrandCard(brand, events, ctx)
@@ -17,6 +18,7 @@
 // events (all events, for also-nearby), cityOf(e) -> string, distanceKm(a,b) with a,b = [lat,lng], base ("" in the app,
 // "/" on static pages: prefix for site paths), cityHref(e) -> path of that event's city page, or { href, name }, or "" (a quiet "More in <city>" link in the foot),
 // brandHref(handle) -> path of that brand's page or "" (the brand name links there), eventHref(id) (default "?event=<id>", "/e/<id>/" on static pages),
+// dist (miles from the visitor, a number, when there is no here), phone (true: the sheet, mock A; false: the desktop pop-up, mock C),
 // absolute: true (dates, never "Today", for pages built ahead), drawn (window.Drawn, for the drawn hero when there is no photo or event art), page: true (two-column page layout on wide
 // screens), document (for render* outside a browser), fmt: { miles(mi) -> string } }
 //
@@ -283,7 +285,9 @@ function brandRow(e, ctx, name, b) {
 function chipsHtml(e, ctx) {
   const menu = (Array.isArray(e.menu) ? e.menu : []).filter((m) => typeof m === "string" && m.trim()).slice(0, 8);
   if (!menu.length) return "";
-  return `<section class="mm-sec mm-menu" aria-label="On the menu"><h4 class="mm-h">On the menu</h4><ul class="mm-chips">${menu.map((m, i) =>
+  // the sheet and the pop-up have no price box: the price rides on the heading ("On the menu · $6-9")
+  const price = !ctx.page && e.price ? " · " + cut(e.price, 24) : "";
+  return `<section class="mm-sec mm-menu" aria-label="On the menu"><h4 class="mm-h">On the menu${esc(price)}</h4><ul class="mm-chips">${menu.map((m, i) =>
     `<li class="mm-chip mm-t${(hash(m) + i) % 3}">${drinkThumb(m, i, ctx)}<span>${esc(titleCase(cut(m, 40)))}</span></li>`).join("")}</ul></section>`;
 }
 function factsHtml(e) {
@@ -371,28 +375,119 @@ function goHtml(e, ctx, v, name, live) {
 }
 
 // ---- the card ------------------------------------------------------------------------------------------------
+// Three layouts from the same parts. ctx.page: the static /e/<id>/ page (verdict, picture, brand, facts, place, more).
+// ctx.phone false (the desktop map's pop-up, .mm-compact): mock C, short enough to sit under its pin with no scrolling
+// (day, name, when and where, going, one line of quote, menu, buttons, "Full details and photo"); the photo, posts, About
+// and Also nearby live on the full page. Otherwise (the phone sheet, .mm-sheet): mock A, facts first, the photo as a strip,
+// and the going strip with the buttons pinned to the bottom of the sheet (.mm-dock).
+const cap = (s) => String(s || "").replace(/^\s*([a-z])/, (m, a) => m.toUpperCase());
+// When, in two lines: the time ("1pm to 5pm", "10am until sold out", "All day") and the date.
+function whenLines(e, v) {
+  const s = parts(e.start), hours = e.hours ? cut(e.hours, 44) : "", tr = timeRange(e);
+  let main = tr ? cap(tr) : hours ? cap(hours) : e.all_day ? "All day" : "";
+  if (tr && /sold out/i.test(hours) && !/sold out/i.test(main)) main += ", until sold out";
+  const date = s ? dateLabel(s) : "";
+  if (!main) return { main: date || v.day, sub: "" };
+  return { main, sub: v.kind === "date" || v.kind === "unknown" ? "" : date };
+}
+function whereLines(e, ctx) {
+  // some venues arrive as a whole Instagram bio ("Tulip Cafe | Coffee Shop | Catering ..."): the box keeps the first part
+  const venue = e.venue && !/^(tbd|tba)$/i.test(e.venue) ? cut(String(e.venue).split(/\s+[|•·]\s+/)[0], ctx.compact ? 34 : 60) : "", approx = isApprox(e);
+  const main = approx ? venue || "Near " + (cityOf(e, ctx) || "town") : venue || e.address || cityState(e) || "Place to come";
+  let dist = distanceText(e, ctx);
+  if (!dist && typeof ctx.dist === "number" && isFinite(ctx.dist) && ctx.dist >= 0 && ctx.dist * 1.609344 <= FAR_KM) dist = (approx ? "about " : "") + milesText(ctx.dist * 1.609344, ctx);
+  const city = main === cityState(e) ? "" : cityState(e);
+  return { main, sub: join([city, dist]), approx };
+}
+function boxesHtml(e, ctx, v) {
+  const w = whenLines(e, v), p = whereLines(e, ctx);
+  return `<dl class="mm-boxes">` +
+    `<div class="mm-box mm-box-when"><dt>When</dt><dd class="mm-box-main">${esc(w.main)}</dd>${w.sub ? `<dd class="mm-box-sub">${esc(w.sub)}</dd>` : ""}</div>` +
+    `<div class="mm-box mm-box-where"><dt>Where</dt><dd class="mm-box-main">${ICON.pin}<span>${esc(p.main)}</span></dd>${p.sub ? `<dd class="mm-box-sub">${esc(p.sub)}</dd>` : ""}` +
+    `${p.approx ? `<dd class="mm-note">Exact spot not posted yet</dd>` : ""}</div></dl>`;
+}
+// The day pill with the time beside it, then the name (its brand link, then the Featured pill's place) and one meta line.
+function titleHtml(e, ctx, v, name) {
+  const h = handleOf(e, ctx), kind = KIND[e.kind] || "";
+  const brandTo = h && typeof ctx.brandHref === "function" ? ctx.brandHref(h) : "";
+  const meta = join([kind ? `<span class="mm-kind">${esc(kind)}</span>` : "", h ? `<a href="https://www.instagram.com/${encodeURIComponent(h)}/" target="_blank" rel="noopener">@${esc(h)}</a>` : ""], "");
+  return `<header class="mm-top"><p class="mm-dayline"><span class="mm-daypill">${esc(v.day)}</span>${v.time ? `<span class="mm-daytime">${esc(v.time)}</span>` : ""}</p>` +
+    `<h3 class="mm-bname">${brandTo ? `<a class="mm-bname-link" href="${esc(brandTo)}">${esc(name)}</a>` : esc(name)}</h3>` +
+    `<p class="mm-bmeta">${meta}${confBadge(e.confidence)}</p></header>`;
+}
+// The quote: two lines in the sheet, one in the pop-up; in the sheet "more" goes to the full page when the text runs long.
+function quoteHtml(plain, ctx, id, max) {
+  if (!plain) return "";
+  const t = cut(plain, max), more = id && !ctx.compact && (t !== plain || plain.length > 60);
+  return `<div class="mm-q"><p class="mm-q-text">${esc(t)}</p>${more ? `<a class="mm-q-more" href="${esc(ctx.base || "")}e/${id}/">more</a>` : ""}</div>`;
+}
+// The buttons: one filled (Directions, or Map when the spot is approximate), then Calendar and Share.
+function actsHtml(e, ctx, name, live) {
+  const approx = isApprox(e), base = ctx.base || "", id = safeId(e.id), a = [];
+  if (!approx && hasLL(e)) a.push(`<a class="mm-act mm-act-go" href="https://www.google.com/maps/dir/?api=1&amp;destination=${e.lat},${e.lng}" target="_blank" rel="noopener">${ICON.go}<span>Directions</span></a>`);
+  else if (e.venue || e.address || e.city) a.push(`<a class="mm-act mm-act-go" href="${esc(mapsSearch(e))}" target="_blank" rel="noopener">${ICON.map}<span>Map</span></a>`);
+  if (id && live) a.push(`<a class="mm-act" href="${esc(base)}feeds/events/${id}.ics">${ICON.cal}<span>Calendar</span></a>`);
+  if (id) a.push(`<a class="mm-act" href="${esc(base)}e/${id}/" data-mm-share data-title="${esc(name + " matcha pop-up")}">${ICON.share}<span>Share</span></a>`);
+  return a.length ? `<div class="mm-acts">${a.join("")}</div>` : "";
+}
+// The photo as a strip: the photo over the event art or the drawn card, or the art alone.
+function stripHtml(e, ctx, v, name) {
+  const art = eventArt(e, ctx), photo = photoOf(e, ctx);
+  let under = art ? `<img class="mm-hero-art" src="${esc(art)}" alt="" loading="lazy" decoding="async">` : "";
+  if (!under && ctx.drawn && typeof ctx.drawn.card === "function") {
+    let svg = "";
+    try { svg = ctx.drawn.card(e, { mode: "strip" }); } catch { svg = ""; }
+    if (svg) under = `<div class="mm-hero-drawn">${svg}</div>`;
+  }
+  if (!under) {
+    const menu = (Array.isArray(e.menu) ? e.menu : []).slice(0, 3), items = menu.length ? menu : ["matcha latte"];
+    under = `<div class="mm-hero-collage mm-t${hash(e.brand || e.id) % 3}"><span class="mm-cups">${items.map((m, i) => `<span class="mm-cupbox">${drinkThumb(m, i, ctx, "mm-cup-art")}</span>`).join("")}</span></div>`;
+  }
+  if (!photo) return `<div class="mm-strip mm-hero mm-hero-${art ? "art" : "drawn"}" role="img" aria-label="${esc("Drawing for " + name)}">${under}</div>`;
+  const remote = photo.remote ? ` data-remote="${esc(photo.remote)}"` : "";
+  const credit = e.image && e.image.credit ? `<span class="mm-credit">${esc(cut(e.image.credit, 32))}</span>` : "";
+  return `<div class="mm-strip mm-hero mm-hero-photo" role="img" aria-label="${esc("Photo from " + name + "'s post")}">${under}` +
+    `<img class="mm-hero-img" src="${esc(photo.src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"${remote}>${credit}</div>`;
+}
+// The foot: the host kit for an upcoming pop-up, "More in <city>" when that page exists, and Report a problem.
+function cityLinkHtml(e, ctx) {
+  const cityRef = typeof ctx.cityHref === "function" ? ctx.cityHref(e) : "";
+  const cityTo = (cityRef && cityRef.href) || (typeof cityRef === "string" ? cityRef : ""), cityName = (cityRef && cityRef.name) || cityOf(e, ctx);
+  return cityTo && cityName ? `<a class="mm-report mm-morecity" href="${esc(cityTo)}"><span>More in ${esc(cityName)}</span></a>` : "";
+}
+// lead: the pop-up's "Full details and photo" link, first in the same row (the pop-up has no room for two rows of links)
+function footHtml(e, ctx, id, live, lead = "") {
+  const promote = id && live ? `<a class="mm-report mm-promote" href="${esc(ctx.base || "")}promote/?event=${id}">${ICON.share}<span>Promote this pop-up</span></a>` : "";
+  const cityLink = cityLinkHtml(e, ctx);
+  return id || cityLink ? `<p class="mm-foot">${lead}${promote}${cityLink}${id ? `<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a>` : ""}</p>` : "";
+}
 export function cardHtml(e, ctx = {}) {
   e = e || {};
-  // The desktop map's pop-up (ctx.phone false, not a page) is the compact card: on a tall window the full card ran past
-  // the screen and the map panned itself to the Arctic to make room (Steven, 2026-11-23). Same frames, less of each.
   const compact = ctx.compact === true || (!ctx.page && ctx.phone === false);
   ctx = { ...ctx, compact };
   const v = verdict(e, ctx), b = brandOf(e, ctx), name = nameOf(e, b), id = safeId(e.id);
   const plain = String(e.description || "").replace(/[*_`#>]+/g, " ").replace(/\s+/g, " ").trim();
-  const desc = plain ? `<p class="mm-desc">${esc(cut(plain, 200))}</p>` : "";
   const live = !/^(past|cancelled)$/.test(dayWord(e, ctx.now || new Date()).kind);
-  // the foot: report, and for an upcoming pop-up the host kit (captions, counter QR, share card) at /promote/
-  const promote = id && live ? `<a class="mm-report mm-promote" href="${esc(ctx.base || "")}promote/?event=${id}">${ICON.share}<span>Promote this pop-up</span></a>` : "";
-  const cityRef = typeof ctx.cityHref === "function" ? ctx.cityHref(e) : "";
-  const cityTo = (cityRef && cityRef.href) || (typeof cityRef === "string" ? cityRef : ""), cityName = (cityRef && cityRef.name) || cityOf(e, ctx);
-  const cityLink = cityTo && cityName ? `<a class="mm-report mm-morecity" href="${esc(cityTo)}"><span>More in ${esc(cityName)}</span></a>` : "";
-  const report = id || cityLink ? `<p class="mm-foot">${promote}${cityLink}${id ? `<a class="mm-report" href="${esc(ctx.base || "")}report/?event=${id}">${ICON.flag}<span>Report a problem</span></a>` : ""}</p>` : "";
-  return `<article class="mm-card${ctx.page ? " mm-page" : ""}${compact ? " mm-compact" : ""} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>` +
-    `<header class="mm-top"><p class="mm-verdict"><span class="mm-vday">${esc(v.day)}</span>${v.time ? ` <span class="mm-vtime">${esc(v.time)}</span>` : ""}${v.where ? `<span class="mm-vwhere">${esc(v.where)}</span>` : ""}</p></header>` +
-    `<div class="mm-media">${heroHtml(e, ctx, v, name)}</div>` +
-    `<div class="mm-main">${brandRow(e, ctx, name, b)}${goHtml(e, ctx, v, name, live)}${desc}${chipsHtml(e, ctx)}${factsHtml(e)}${placeHtml(e, ctx, name)}</div>` +
-    `<div class="mm-more">${postsHtml(e, ctx, b)}${storyHtml(e, ctx, name, b)}${nearbyHtml(e, ctx)}${report}</div>` +
-    `</article>`;
+  const open = `<article class="mm-card${ctx.page ? " mm-page" : compact ? " mm-compact" : " mm-sheet"} mm-v-${v.kind}"${id ? ` data-id="${id}"` : ""}>`;
+  if (ctx.page) {
+    const desc = plain ? `<p class="mm-desc">${esc(cut(plain, 200))}</p>` : "";
+    return open +
+      `<header class="mm-top"><p class="mm-verdict"><span class="mm-vday">${esc(v.day)}</span>${v.time ? ` <span class="mm-vtime">${esc(v.time)}</span>` : ""}${v.where ? `<span class="mm-vwhere">${esc(v.where)}</span>` : ""}</p></header>` +
+      `<div class="mm-media">${heroHtml(e, ctx, v, name)}</div>` +
+      `<div class="mm-main">${brandRow(e, ctx, name, b)}${goHtml(e, ctx, v, name, live)}${desc}${chipsHtml(e, ctx)}${factsHtml(e)}${placeHtml(e, ctx, name)}</div>` +
+      `<div class="mm-more">${postsHtml(e, ctx, b)}${storyHtml(e, ctx, name, b)}${nearbyHtml(e, ctx)}${footHtml(e, ctx, id, live)}</div>` +
+      `</article>`;
+  }
+  const go = goHtml(e, ctx, v, name, live), acts = actsHtml(e, ctx, name, live);
+  if (compact) {
+    const full = id ? `<a class="mm-full" href="${esc(ctx.base || "")}e/${id}/">Full details and photo</a>` : "";
+    return open + titleHtml(e, ctx, v, name) + boxesHtml(e, ctx, v) + go + quoteHtml(plain, ctx, id, 120) + chipsHtml(e, ctx) +
+      `<div class="mm-dock">${acts}</div>${footHtml(e, ctx, id, live, full)}</article>`;
+  }
+  return open + titleHtml(e, ctx, v, name) + boxesHtml(e, ctx, v) + quoteHtml(plain, ctx, id, 160) + chipsHtml(e, ctx) +
+    stripHtml(e, ctx, v, name) +
+    `<div class="mm-more">${postsHtml(e, ctx, b)}${storyHtml(e, ctx, name, b)}${nearbyHtml(e, ctx)}${footHtml(e, ctx, id, live)}</div>` +
+    `<div class="mm-dock">${go}${acts}</div></article>`;
 }
 
 // ---- the list row --------------------------------------------------------------------------------------------

@@ -8,8 +8,8 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:8510155e1e6b@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261205T160000Z
 DTEND:20261205T190000Z
 SUMMARY:Shogun Matcha pop-up at Nobu Hotel Atlanta
@@ -26,9 +26,28 @@ STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
+UID:45475a09eeec@matchamap-cu7.pages.dev
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
+DTSTART:20261212T160000Z
+DTEND:20261212T190000Z
+SUMMARY:Muracha Matcha Pop-Up at Bella Cucina
+LOCATION:Bella Cucina\, 288 Buckhead Avenue\, Atlanta\, GA 30305\, Atlanta\
+ , GA
+DESCRIPTION:A holiday-season matcha bar at the Buckhead Village shop Bella 
+ Cucina\, with Muracha serving matcha and selling its tins and tools. A lim
+ ited Collector's Set made with artist Kristen Giorgi is on sale.\nMenu: ma
+ tcha served from the bar\, collector's set: yame no. 89 and uji no.\nMore:
+  https://matchamap-cu7.pages.dev/e/45475a09eeec/
+URL:https://matchamap-cu7.pages.dev/e/45475a09eeec/
+GEO:33.838303;-84.378234
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:f527a53f934a@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261212T210000Z
 DTEND:20261213T000000Z
 SUMMARY:Shogun Matcha pop-up at Nobu Hotel Atlanta
@@ -46,8 +65,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:01531189a0d4@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261219T150000Z
 DTEND:20261219T170000Z
 SUMMARY:Tea and Matcha Workshop
@@ -63,8 +82,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:d26ffe3e6493@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20261220T160000Z
 DTEND:20261220T190000Z
 SUMMARY:Shogun Matcha pop-up at Nobu Hotel Atlanta
@@ -82,7 +101,7 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:73d7d369378c@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T152119Z
 DTSTART;VALUE=DATE:20270102
 DTEND;VALUE=DATE:20270103
@@ -97,14 +116,15 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:dff4bcf1b2e1@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
-LAST-MODIFIED:20261123T152119Z
+DTSTAMP:20261123T182944Z
+LAST-MODIFIED:20261123T182944Z
 DTSTART:20270123T190000Z
 DTEND:20270123T210000Z
 SUMMARY:Matcha Making Workshop. 🍵🎀
 LOCATION:Creator’s Kitchen\, 1331 Metropolitan Pkwy\, Atlanta\, GA
-DESCRIPTION:Likely\, not fully confirmed.\nMore: https://matchamap-cu7.page
- s.dev/e/dff4bcf1b2e1/
+DESCRIPTION:Come Downstairs for an afternoon of matcha\, connection\, and a
+  little creativity.\nLikely\, not fully confirmed.\nMore: https://matchama
+ p-cu7.pages.dev/e/dff4bcf1b2e1/
 URL:https://matchamap-cu7.pages.dev/e/dff4bcf1b2e1/
 GEO:33.718507;-84.408352
 STATUS:CONFIRMED
@@ -112,14 +132,16 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:62b886870d67@matchamap-cu7.pages.dev
-DTSTAMP:20261123T152119Z
+DTSTAMP:20261123T182944Z
 LAST-MODIFIED:20261123T010415Z
 DTSTART:20270303T163000Z
 DTEND:20270303T183000Z
 SUMMARY:Matcha Crawl
 LOCATION:Atlanta\, GA
-DESCRIPTION:Details not confirmed yet. Check the brand's post before you go
- .\nMore: https://matchamap-cu7.pages.dev/e/62b886870d67/
+DESCRIPTION:We gathered Atlanta best matcha vendors all in one place so you
+  can enjoy them all at once! This matcha crawl will have you buzzing & see
+ ing green!\nDetails not confirmed yet. Check the brand's post before you g
+ o.\nMore: https://matchamap-cu7.pages.dev/e/62b886870d67/
 URL:https://matchamap-cu7.pages.dev/e/62b886870d67/
 STATUS:TENTATIVE
 CATEGORIES:Matcha
