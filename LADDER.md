@@ -10,7 +10,7 @@
 | SEO | seo (Sonnet, worktree `_wt/matcha-map-seo`, branch `lane/seo`) | Rung 1: Event and Organization JSON-LD, city landing copy, titles and descriptions, sitemap, canonical, OG, internal links | starting | 2026-11-23 |
 | Profitability | revenue (Sonnet, worktree `_wt/matcha-map-revenue`, branch `lane/revenue`) | Rung 1: docs/REVENUE.md options memo with the numbers we can know; Featured request flow up to the payment step | starting | 2026-11-23 |
 
-Merge order for the site lanes: SEO, then Design, then Profitability (the hot files index.html, style.css, app.js, gen-pages.js conflict least that way). Budget: about one point per lane until the weekly reset on Friday 2026-11-28 09:00Z; combined stop 43%, ceiling 45%.
+Merge order for the site lanes: SEO, then Design, then Profitability (the hot files index.html, style.css, app.js, gen-pages.js conflict least that way). Budget (Steven, 2026-11-23 afternoon: "Raise to 60%"): weekly ceiling 60% all models, combined stop 58% across all five lanes; from 38% that is about twenty points before the Friday 2026-11-28 09:00Z reset, planned as up to four per site lane (12 for Design, SEO and Profitability together) and about eight for Population and Events. get_usage before each new worker.
 
 The work on this repo is split into rungs. One worker per rung, run in order. This board is the one place to see who is on what and where it stands. States: pending / running / done / blocked.
 
