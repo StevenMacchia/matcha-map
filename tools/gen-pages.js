@@ -372,11 +372,16 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
     const ld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
       { "@type": "ListItem", position: 2, name: label, item: canonical }] }];
-    for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: it.insta }) });
+    // Standalone Event blocks carry an image, same fallback as the ItemList below: photo, drawn art, then the site card.
+    // No `performer`: Google lists it as recommended only, and these are brand pop-ups with no named act, so the
+    // organizer (already set) is the honest party; inventing a performer would be a made-up claim.
+    const evImage = (e, ev) => (ev.image && ev.image[0]) || (d.eventArt && d.eventArt.has(e.id) ? `${SITE_URL}/art/events/${e.id}.svg` : `${SITE_URL}/og.png`);
+    for (const it of ups) { const ev = eventLd(it.e, { brand: it.brand, insta: it.insta }); ev.image = [evImage(it.e, ev)]; ld.push({ "@context": "https://schema.org", ...ev }); }
+
     const listed = ups.filter((it) => eventPageId(it.e));
     if (listed.length) ld.push({ "@context": "https://schema.org", "@type": "ItemList", name: `Matcha pop-ups in ${label}`, numberOfItems: listed.length, itemListElement: listed.slice(0, 50).map((it, i) => {
       const ev = eventLd(it.e, { brand: it.brand, insta: it.insta });
-      return { "@type": "ListItem", position: i + 1, item: { "@type": "Event", name: ev.name, startDate: ev.startDate, url: `${SITE_URL}/e/${it.e.id}/`, image: (ev.image && ev.image[0]) || (d.eventArt && d.eventArt.has(it.e.id) ? `${SITE_URL}/art/events/${it.e.id}.svg` : `${SITE_URL}/og.png`), location: { "@type": "Place", name: ev.location.name, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
+      return { "@type": "ListItem", position: i + 1, item: { "@type": "Event", name: ev.name, startDate: ev.startDate, url: `${SITE_URL}/e/${it.e.id}/`, image: evImage(it.e, ev), location: { "@type": "Place", name: ev.location.name, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
     }) });
     const ogKey = `city-${c.slug}-${c.state.toLowerCase()}`;
     const image = d.cityOg && d.cityOg.has(ogKey) ? `${SITE_URL}/og/${ogKey}.png` : undefined;
