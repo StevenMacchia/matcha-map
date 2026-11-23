@@ -25,7 +25,7 @@ const FAIL_DIR = path.join(ROOT, "qa", "brands", "2026-11-23", "map-fail");
 export const FIXTURES = [["Manhattan", 40.745, -73.99], ["Triangle", 35.93, -78.80], ["LA", 34.05, -118.25], ["Seattle", 47.61, -122.33]];
 export const ZOOMS = [10, 11, 12, 13, 14, 16];
 export const SIZES = [[390, 844], [1440, 900]];
-export const REDUCED = { zooms: [11, 13], sizes: [[390, 844], [1440, 900]], themes: ["light"], fixtures: ["Manhattan", "Triangle"] };
+export const REDUCED = { zooms: [11, 13], sizes: [[390, 844], [800, 900], [1440, 900]], themes: ["light"], fixtures: ["Manhattan", "Triangle"] }; // 800: the pane width where the list went empty
 const MIN_PX = 28;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -58,6 +58,9 @@ const CHECK = `(() => {
     const [w, h] = ov(solid[i].b, solid[j].b);
     if (w > 3 && h > 3) out.push("markers overlap " + Math.round(w) + "x" + Math.round(h) + ": " + name(solid[i].el) + " / " + name(solid[j].el));
   }
+  // the list must never show the sleepy empty state while pins are on the map (Steven's Triangle, 2026-11-23)
+  const list = document.getElementById("list"), emp = document.getElementById("empty");
+  if (marks.length && list && list.children.length === 0 && emp && !emp.hidden) out.push("the list shows the empty state while " + marks.length + " pins are on the map");
   return { pins: marks.length, singles: singles.length, groups: marks.filter((m) => m.group).length, labels: labels.length, fails: [...new Set(out)] };
 })()`;
 // the map settled: no move, the sources loaded, then two frames and the label pass's frame

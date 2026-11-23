@@ -1268,7 +1268,8 @@
   function kindWord(o) { return KIND_WORD[o.kind] ? "<span class=\"kindword\">" + KIND_WORD[o.kind] + "</span>" : ""; }
   // Brands with no dates step aside while a date filter is on: they are not on that day.
   function dated() { return !!state.day || state.chip !== "any"; }
-  function visibleBrands() { return dated() ? [] : state.brands.filter(function (it) { return passesShow(it.data); }); }
+  // Brands list under every date filter (2026-11-23): a date narrows the pop-ups, not who is around here.
+  function visibleBrands() { return state.brands.filter(function (it) { return passesShow(it.data); }); }
 
   // only: true for the city-only events, false for the precise ones, omitted for both.
   function visibleEvents(only) {
@@ -1500,6 +1501,9 @@
       html += "<li class=\"apgroup\"><button type=\"button\" class=\"aprow\" data-ap-open=\"" + esc(k) + "\" aria-expanded=\"" + open + "\"><span class=\"apl\">" + (placed.length ? g.length + " more" : g.length + " pop-up" + (g.length === 1 ? "" : "s")) + " in " + esc(city) + "</span><span class=\"apq\">place not posted yet</span></button></li>" + (open ? rowsHTML(g, true) : "");
     });
     if (past.length) html += headHTML("Recent") + rowsHTML(past);
+    // No pop-ups but shops or brands in view: one quiet line above their sections, never the sleepy empty state
+    var others = shopsIn.length + brands.length, noPops = !up.length && !past.length;
+    if (noPops && others) html += "<li class=\"nopops\">No pop-ups here" + (rangeWords() || " yet") + ".</li>";
     if (shopsIn.length) {
       if (map.getZoom() >= 8) {
         var cap = 80, more = shopsIn.length - cap;
@@ -1514,8 +1518,9 @@
 
     // Empty: nothing on for the chosen dates anywhere, or nothing in this part of the map. Sleepy Mattie, one line, the
     // nearest pop-up with a button that goes there, and on a date filter the next range (motion.js floats it over the map on a phone).
-    var near = vis.length > 0 && !up.length && !past.length;
-    $("empty").hidden = !(dated() ? (vis.length === 0 || near) : !html);
+    // Empty only when nothing at all is in view: no pop-ups, no shops, no brands. "near" means something exists elsewhere.
+    var near = noPops && !others && (vis.length + visibleShops().length + visibleBrands().length) > 0;
+    $("empty").hidden = !(noPops && !others);
     if (!$("empty").hidden) emptyCopy(near, vis);
     listCount(up.length, past.length, brands.length + (typeof shopsIn !== "undefined" ? shopsIn.length : 0), datesNote);
     if (state.feed && html) html += "<li class=\"feedrow\"><a class=\"feedlink\" href=\"" + esc(state.feed.url) + "\">Get " + esc(state.feed.name) + " pop-ups on your calendar</a></li>";
@@ -1538,24 +1543,27 @@
     document.body.classList.toggle("list-none", !n && !past && !others);
   }
   var nearestKey = "";
+  function rangeWords() { return !dated() ? "" : state.day ? " on this day" : " " + (RANGE_WORDS[state.chip] || "on these dates"); }
+  function placeWord(it) { var d = it.data || {}; return d.city || d.home_city || it.name || "a pop-up"; }
   function emptyCopy(near, vis) {
-    var words = !dated() ? "" : state.day ? " on this day" : " " + (RANGE_WORDS[state.chip] || "on these dates");
+    var words = rangeWords();
     var next = dated() ? ((!state.day && NEXT_RANGE[state.chip]) || ["any", "See any date"]) : null;
     var line = (!dated() && near ? "Nothing here yet." : (near ? "Nothing near here" : "Nothing") + words + "."), nb = $("empty-near");
     nearestKey = "";
     if (near) {
       var ref = refPoint(), best = null, bd = Infinity;
-      vis.forEach(function (it) { if (it.data.status === "past") return; var d = miles(ref, it.ll); if (d < bd) { bd = d; best = it; } });
+      // the nearest thing of any kind: a pop-up, a shop or a brand
+      vis.concat(visibleShops(), visibleBrands()).forEach(function (it) { if (!it || !it.ll || (it.data && it.data.status === "past")) return; var d = miles(ref, it.ll); if (d < bd) { bd = d; best = it; } });
       if (best) {
         nearestKey = best.key;
-        line += " Nearest: " + (best.data.city || "a pop-up") + ", " + Math.round(bd) + " mi.";
+        line += " Nearest: " + placeWord(best) + ", " + Math.round(bd) + " mi.";
       }
     }
     var f = $("empty-feed");
     if (state.feed) { f.href = state.feed.url; f.textContent = "Get " + state.feed.name + " on your calendar"; f.hidden = false; } else f.hidden = true;
     $("empty").querySelector("p").textContent = line;
     nb.hidden = !nearestKey;
-    if (nearestKey) nb.textContent = "Go to " + (items[nearestKey].data.city || "it");
+    if (nearestKey) nb.textContent = "Go to " + (items[nearestKey] ? placeWord(items[nearestKey]) : "it");
     var b = $("empty-any");
     b.hidden = !next;
     if (next) { b.textContent = next[1]; b.setAttribute("data-next", next[0]); }
