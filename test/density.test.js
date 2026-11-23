@@ -47,6 +47,23 @@ test("every pair of markers left stands at least 28 px apart, with the marker's 
   }
 });
 
+test("with marker boxes: no two markers left overlap, a group measured at its grown size", () => {
+  const pts = [];
+  for (let i = 0; i < 300; i++) pts.push(pt((i % 3 ? "s:" : "e:") + i, 40.70 + ((i * 37) % 100) / 900, -74.02 + ((i * 53) % 100) / 900, i % 3 ? "s" : "e"));
+  const shift = (p) => (p.kind === "e" ? [0, -23] : [0, 0]);
+  const half = (p, n) => (n > 1 ? (n > 9 ? [30, 33] : [26, 27]) : p.kind === "e" ? [20, 23] : [14, 14]);
+  const kindOf = new Map(pts.map((p) => [p.key, p.kind]));
+  for (const z of [10, 12, 13, 14]) {
+    const g = D.group(pts, z, { grid: z < 12 ? 0.01 : 0, shift, half, slack: 0 });
+    assert.equal(g.reduce((n, x) => n + x.keys.length, 0), pts.length);
+    const box = (x) => { const k = { ll: x.ll, kind: kindOf.get(x.key) }, c = D.px(k, z, shift), h = half(k, x.keys.length); return [c[0] - h[0], c[1] - h[1], c[0] + h[0], c[1] + h[1]]; };
+    for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) {
+      const a = box(g[i]), b = box(g[j]), w = Math.min(a[2], b[2]) - Math.max(a[0], b[0]), h = Math.min(a[3], b[3]) - Math.max(a[1], b[1]);
+      assert.ok(!(w > 0 && h > 0), `zoom ${z}: ${g[i].key} (${g[i].keys.length}) and ${g[j].key} (${g[j].keys.length}) overlap ${w.toFixed(1)}x${h.toFixed(1)}`);
+    }
+  }
+});
+
 test("a spread stack: members stand apart from each other and from the middle", () => {
   for (const n of [2, 3, 5, 8, 9, 20, 60]) {
     const o = D.fanOffsets(n);

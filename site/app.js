@@ -355,11 +355,12 @@
   // marker holding a character, synced from querySourceFeatures. The circle layers are invisible
   // and exist only so the sources load.
   function addData() {
-    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: featureColl(mapEvents(false)), cluster: true, clusterRadius: 48, clusterMaxZoom: 13 });
+    // ev and sh: MapLibre's clusters up to zoom DENSE_Z - 1; from DENSE_Z the features are density.js groups (denseAll)
+    if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: evColl(), cluster: true, clusterRadius: 48, clusterMaxZoom: DENSE_Z - 1 });
     if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: brandColl() });
     // brand city pins (LOW_Z to DENSE_Z): already one feature per city, so no clustering here
     if (!map.getSource("bc")) map.addSource("bc", { type: "geojson", data: brandCityColl() });
-    if (!map.getSource("sh")) map.addSource("sh", { type: "geojson", data: featureColl(mapShops()), cluster: true, clusterRadius: 40, clusterMaxZoom: 13 });
+    if (!map.getSource("sh")) map.addSource("sh", { type: "geojson", data: shColl(), cluster: true, clusterRadius: 40, clusterMaxZoom: DENSE_Z - 1 });
     // City-only events: always clustered (points on one spot join at every zoom), never drawn as separate stacked pins.
     if (!map.getSource("ap")) map.addSource("ap", { type: "geojson", data: featureColl(mapEvents(true)), cluster: true, clusterRadius: 1, clusterMaxZoom: 17 });
     // City pins (zoom 5 to 9): already one feature per city or metro, so no clustering here.
@@ -400,13 +401,13 @@
         else if (grouped && (rec.count !== countOf(p) || rec.cities !== (p.cities || 0))) { rec.cities = p.cities || 0; setCount(rec, countOf(p)); }
       });
     });
-    var z = map.getZoom(), zin = z > lastSyncZ + 0.001, parents = [];
+    var z = map.getZoom(), zin = z > lastSyncZ + 0.001, parents = [], gone = 0;
     lastSyncZ = z;
     Object.keys(live).forEach(function (id) {
       if (seen[id]) return;
       var r = live[id];
       if (zin && r.kind === "c" && fresh.length && !calm() && Date.now() > stageUntil) parents.push(map.project(r.marker.getLngLat()));
-      leave(r); delete live[id];
+      leave(r); delete live[id]; gone++;
     });
     fresh.forEach(function (x) {
       var src = x[0], id = x[1], f = x[2];
@@ -416,7 +417,64 @@
       rec.el.setAttribute("aria-label", rec.label); // addTo writes "Map marker" over it
       if (parents.length) bloom(rec, parents);
     });
+    if (fresh.length || gone) labelSoon();
   }
+  // Name labels (2026-11-23): from LABEL_Z, shops and placed pop-ups carry their name in a small plate beside the pin.
+  // A label that would overlap one already placed, or any pin, tries the other side, then below, then stays hidden.
+  // Pop-ups go first, then shops; inside each, by key, so the same view always labels the same pins. Laid out after the
+  // markers change and after every move; hidden while a zoom runs.
+  var LABEL_Z = 13, lblRaf = 0;
+  function labelSoon() { if (!lblRaf) lblRaf = requestAnimationFrame(function () { lblRaf = 0; layoutLabels(); }); }
+  function boxOf(el) {
+    var r = el.getBoundingClientRect(), b = { l: r.left, t: r.top, r: r.right, b: r.bottom }, n = el.querySelector(".cl-n");
+    if (n) { var q = n.getBoundingClientRect(); b = { l: Math.min(b.l, q.left), t: Math.min(b.t, q.top), r: Math.max(b.r, q.right), b: Math.max(b.b, q.bottom) }; }
+    return b;
+  }
+  function hits(a, b) { return Math.min(a.r, b.r) - Math.max(a.l, b.l) > 1 && Math.min(a.b, b.b) - Math.max(a.t, b.t) > 1; }
+  function layoutLabels() {
+    var on = map.getZoom() >= LABEL_Z, recs = [];
+    Object.keys(live).forEach(function (id) { recs.push(live[id]); });
+    if (fan) recs = recs.concat(fan.pins);
+    recs = recs.filter(function (r) { return r.marker && r.el.isConnected && !r.el.classList.contains("leaving"); });
+    var want = on ? recs.filter(function (r) { return (r.kind === "s" || (r.kind === "e" && !r.el.classList.contains("mk-ap"))) && !r.el.classList.contains("fanned"); }) : [];
+    recs.forEach(function (r) { if (r.lbl && want.indexOf(r) < 0) r.lbl.hidden = true; });
+    if (!want.length) return;
+    var pins = recs.map(function (r) { return { r: r, b: boxOf(r.el) }; }), placed = [];
+    var mc = map.getContainer().getBoundingClientRect(), pad = map.getPadding() || {};
+    var area = { l: mc.left + 2, t: mc.top + (pad.top || 0) + 2, r: mc.right - 2, b: mc.bottom - (pad.bottom || 0) - 2 };
+    document.querySelectorAll(".maplibregl-ctrl, #map-panel > .geo, .tour-bar").forEach(function (c) {
+      if (c.hidden || !c.getClientRects().length) return;
+      var q = c.getBoundingClientRect(); pins.push({ r: null, b: { l: q.left, t: q.top, r: q.right, b: q.bottom } });
+    });
+    want.sort(function (a, b) { return (a.kind === b.kind ? 0 : a.kind === "e" ? -1 : 1) || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0); });
+    want.forEach(function (r) {
+      var it = items[r.key];
+      if (!it) return;
+      if (!r.lbl) {
+        r.lbl = document.createElement("span");
+        r.lbl.className = "mk-lbl";
+        r.lbl.setAttribute("aria-hidden", "true");
+        r.lbl.textContent = it.kind === "s" ? it.data.name : it.data.brand;
+        r.el.appendChild(r.lbl);
+      }
+      var L = r.lbl;
+      L.hidden = false; L.style.visibility = "hidden"; L.style.left = "0px"; L.style.top = "0px";
+      var w = L.offsetWidth, h = L.offsetHeight, mb = boxOf(r.el), er = r.el.getBoundingClientRect(), midY = it.kind === "e" ? mb.t + 13 : (mb.t + mb.b) / 2;
+      var tries = [{ l: mb.r + 3, t: midY - h / 2 }, { l: mb.l - 3 - w, t: midY - h / 2 }, { l: (mb.l + mb.r) / 2 - w / 2, t: mb.b + 2 }], spot = null;
+      for (var i = 0; i < tries.length && !spot; i++) {
+        var c = { l: tries[i].l, t: tries[i].t, r: tries[i].l + w, b: tries[i].t + h }, clear = c.l >= area.l && c.t >= area.t && c.r <= area.r && c.b <= area.b;
+        for (var j = 0; j < placed.length && clear; j++) if (hits(c, placed[j])) clear = false;
+        for (var k = 0; k < pins.length && clear; k++) if (pins[k].r !== r && hits(c, pins[k].b)) clear = false;
+        if (clear) spot = c;
+      }
+      if (!spot) { L.hidden = true; L.style.visibility = ""; return; }
+      placed.push(spot);
+      L.style.left = Math.round(spot.l - er.left) + "px"; L.style.top = Math.round(spot.t - er.top) + "px"; L.style.visibility = "";
+    });
+  }
+  map.on("moveend", labelSoon);
+  map.on("zoomstart", function () { map.getContainer().classList.add("zooming"); });
+  map.on("zoomend", function () { map.getContainer().classList.remove("zooming"); labelSoon(); });
   function bloom(rec, parents) {
     var at = map.project(rec.marker.getLngLat()), best = null, bd = 170;
     parents.forEach(function (p) { var d = Math.hypot(p.x - at.x, p.y - at.y); if (d < bd && d > 2) { bd = d; best = p; } });
@@ -602,7 +660,8 @@
       }).catch(function () { map.easeTo({ center: f.geometry.coordinates, zoom: map.getZoom() + 2 }); });
     });
     if (src === "ap") apInfo(f.properties.cluster_id).then(function (a) { if (a.ev) { rec.city = a.ev.city; setCount(rec, rec.count, true); } }).catch(function () { /* the label keeps the general wording */ });
-    rec.marker = new maplibregl.Marker({ element: el, anchor: "center", offset: src === "br" ? [NUDGE, NUDGE] : [0, 0] }).setLngLat(f.geometry.coordinates);
+    var dgk = p.dg && densG[p.key] ? KIND_SHIFT[densG[p.key].kind] : null; // a group sits where its first member's marker would
+    rec.marker = new maplibregl.Marker({ element: el, anchor: "center", offset: dgk || (src === "br" ? [NUDGE, NUDGE] : [0, 0]) }).setLngLat(f.geometry.coordinates);
     if (src === "ev" || src === "ct") el.style.zIndex = "3";
     if (src === "sh" || src === "ap") el.style.zIndex = "1";
     if (p.cluster && src !== "ap") { // approximate clusters, city pins and density groups already sit on a place; the snap is for MapLibre's clusters
@@ -643,6 +702,7 @@
     var ap = rec.el.classList.contains("cl-ap"), ct = rec.el.classList.contains("cl-ct"), bc = rec.el.classList.contains("cl-bc"), fn = rec.el.classList.contains("cl-fan");
     rec.label = bc ? n + (n === 1 ? " brand in " : " brands in ") + rec.city + (rec.cities > 1 ? " and " + (rec.cities - 1) + (rec.cities === 2 ? " more place" : " more places") : "") + ", zoom in"
       : fn ? n + " places on one spot, tap to spread them"
+      : rec.dg ? n + " places here, zoom in"
       : ap ? n + " pop-ups, somewhere in " + (rec.city || "this area") + ", place not posted yet"
       : ct ? n + (n === 1 ? " pop-up in " : " pop-ups in ") + rec.city + (rec.cities > 1 ? " and " + (rec.cities - 1) + (rec.cities === 2 ? " more place" : " more places") : "") + ", zoom in"
       : n + (rec.el.classList.contains("cl-ev") ? " pop-ups" : rec.el.classList.contains("cl-sh") ? " shops" : " brands") + " here, zoom in";
@@ -1267,22 +1327,39 @@
     });
     return best;
   }
-  // From DENSE_Z: density.js groups. densG holds each group's members by its feature key.
-  var densG = {};
-  var KIND_SHIFT = { b: [NUDGE, NUDGE] };
+  // From DENSE_Z (2026-11-23, density that changes no look): pop-ups, shops and brands are grouped together by density.js,
+  // to zoom 12 by a 0.01 degree grid (a neighbourhood; brands skip it), at every zoom by the 28 px rule, so no two
+  // markers on the map stand closer than 28 px. A group is drawn in the source of its first member's kind. densG holds
+  // each group's members by its feature key; KIND_SHIFT is where each kind's marker sits from its point (an event pin
+  // stands on its point, so its middle is 23 px up; a brand mochi is nudged down-right).
+  var densG = {}, denseCache = null;
+  var KIND_SHIFT = { b: [NUDGE, NUDGE], e: [0, -23], s: [0, 0] }, KIND_SRC = { e: "ev", s: "sh", b: "br" };
+  // Half of each marker's box (style.css), so no two markers on the map cover each other: a single pin, then a group by
+  // its size class (cl-m over 9, cl-l over 24), widened on both sides by the count badge that pokes out to the right.
+  var PIN_HALF = { e: [20, 23], s: [14, 14], b: [11, 11] };
+  var GROUP_HALF = { e: [[26, 27], [28, 31], [30, 35]], s: [[22, 24], [24, 26], [26, 28]], b: [[25, 19], [25, 19], [25, 19]] };
   function densShift(p) { return KIND_SHIFT[p.kind]; }
-  function densColl(list, src) {
-    var D = window.MatchaDensity, z = Math.floor(map.getZoom() * 2) / 2;
-    if (!D || !list.length) return featureColl(list);
-    var pts = list.map(function (it) { return { key: it.key, ll: it.ll, kind: it.kind }; });
-    return { type: "FeatureCollection", features: D.group(pts, z, { shift: densShift }).map(function (g) {
-      if (g.keys.length === 1) return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: g.key } };
+  function densHalf(p, n) { return n > 1 ? GROUP_HALF[p.kind][n > 24 ? 2 : n > 9 ? 1 : 0] : PIN_HALF[p.kind]; }
+  function isDense() { return map.getZoom() >= DENSE_Z; }
+  function denseAll() {
+    if (denseCache) return denseCache;
+    var D = window.MatchaDensity, z = Math.floor(map.getZoom() * 2) / 2, out = { ev: [], sh: [], br: [] };
+    var list = mapEvents(false).concat(mapShops(), mapBrands());
+    if (!D) { list.forEach(function (it) { out[KIND_SRC[it.kind]].push(featureColl([it]).features[0]); }); return (denseCache = out); }
+    var pts = list.map(function (it) { return { key: it.key, ll: it.ll, kind: it.kind, nogrid: it.kind === "b" }; });
+    D.group(pts, z, { grid: z < 12 ? 0.01 : 0, shift: densShift, half: densHalf, slack: 0 }).forEach(function (g) {
+      var kind = items[g.key].kind, src = KIND_SRC[kind];
+      if (g.keys.length === 1) { out[src].push({ type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: g.key } }); return; }
       var gk = "g:" + src + ":" + g.key;
-      densG[gk] = { lead: leadBrand(g.keys), keys: g.keys, ll: g.ll };
-      return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: gk, dg: 1, fan: g.kind === "fan" ? 1 : 0, n: g.keys.length } };
-    }) };
+      densG[gk] = { lead: kind === "b" ? leadBrand(g.keys) : g.key, kind: kind, keys: g.keys, ll: g.ll };
+      out[src].push({ type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: gk, dg: 1, fan: g.kind === "fan" ? 1 : 0, n: g.keys.length } });
+    });
+    return (denseCache = out);
   }
-  function brandColl() { return densColl(mapBrands(), "br"); }
+  function fc(list) { return { type: "FeatureCollection", features: list }; }
+  function evColl() { return isDense() ? fc(denseAll().ev) : featureColl(mapEvents(false)); }
+  function shColl() { return isDense() ? fc(denseAll().sh) : featureColl(mapShops()); }
+  function brandColl() { return isDense() ? fc(denseAll().br) : fc([]); }
   // A stack spread on tap (fanOffsets): its members stand around it as their own pins and its badge stays in the middle.
   // A second tap on the badge, a tap on the map, closing the card, zooming or a data change puts them back.
   var fan = null;
@@ -1294,8 +1371,9 @@
     g.keys.forEach(function (k, i) {
       var it = items[k];
       if (!it) return;
-      var r = makePin(it), base = it.kind === "b" ? [NUDGE, NUDGE] : [0, 0];
-      r.marker.setLngLat(lngLat(g.ll)).setOffset([base[0] + offs[i][0], base[1] + offs[i][1]]).addTo(map);
+      // the member's middle lands at the stack's middle plus its place in the ring, whatever its anchor
+      var r = makePin(it), lead = KIND_SHIFT[g.kind] || [0, 0], own = KIND_SHIFT[it.kind] || [0, 0], built = it.kind === "b" ? [NUDGE, NUDGE] : [0, 0];
+      r.marker.setLngLat(lngLat(g.ll)).setOffset([lead[0] + offs[i][0] - own[0] + built[0], lead[1] + offs[i][1] - own[1] + built[1]]).addTo(map);
       r.el.setAttribute("aria-label", r.label);
       r.el.classList.add("fanned");
       r.el.style.zIndex = "6";
@@ -1315,18 +1393,18 @@
   map.on("zoomstart", closeFan);
   function mapShops() { return isLow() ? [] : visibleShops(); }
   function setSources() {
+    closeFan();
+    densG = {}; denseCache = null;
     var src = map.getSource("ev");
-    if (src) src.setData(featureColl(mapEvents(false)));
+    if (src) src.setData(evColl());
     var ap = map.getSource("ap");
     if (ap) ap.setData(featureColl(mapEvents(true)));
-    closeFan();
-    densG = {};
     var b = map.getSource("br");
     if (b) b.setData(brandColl());
     var bcs = map.getSource("bc");
     if (bcs) bcs.setData(brandCityColl());
     var sh = map.getSource("sh");
-    if (sh) sh.setData(featureColl(mapShops()));
+    if (sh) sh.setData(shColl());
     var ct = map.getSource("ct");
     if (ct) ct.setData(cityColl());
   }

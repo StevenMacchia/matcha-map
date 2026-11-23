@@ -1,8 +1,9 @@
 // Map density from zoom 10 up (2026-11-23, after the Triangle showed blank brand faces piled on the city centre): which
 // pins stand alone, which fold into a group. Two rules, both in screen pixels at the given zoom:
 //   - zoom 10 to 12 (grid > 0): places fold by neighbourhood, a 0.01 degree cell (about a kilometre), not a pixel radius;
-//   - every zoom: a pin closer than MIN_PX to one already placed joins it. The first pin of a group (the leader: the
-//     biggest group, then the key) keeps its own spot, so any two markers left on the map stand at least MIN_PX apart.
+//   - every zoom: a pin closer than MIN_PX to one already placed, or whose box (opts.half) would overlap that one's,
+//     joins it. The first pin of a group (the leader: the biggest group, then the key) keeps its own spot, so any two
+//     markers left on the map stand at least MIN_PX apart and their boxes do not overlap.
 // A group from the grid is a neighbourhood ("cell": tap zooms in); one from the pixel rule alone is a stack ("fan": tap
 // spreads it, fanOffsets). Pure functions; test/density.test.js runs them in node.
 (function (root) {
@@ -14,14 +15,22 @@
     var w = 512 * Math.pow(2, zoom), d = shift ? shift(p) || [0, 0] : [0, 0];
     return [mx(p.ll[1]) * w + d[0], my(p.ll[0]) * w + d[1]];
   }
-  // points: [{ key, ll: [lat, lng], kind }]. opts: { grid: degrees (0 = none), minPx, shift(p) }.
+  // points: [{ key, ll: [lat, lng], kind, nogrid }]. opts: { grid: degrees (0 = none), minPx, shift(p), half(p, n) -> [hx, hy]
+  // (half the width and height of the marker a group of n drawn for p's kind takes; boxes may touch by slack px, default 3) }.
+  // A group's marker grows with its count, so once the groups are known any two whose boxes now overlap fold together, and
+  // again, until none do. A point with
+  // nogrid (a brand: its pin sits on a ring round its city, not on a place) skips the grid and only meets the pixel rule.
   // Returns [{ key, ll, keys, kind: "one" | "cell" | "fan", kinds: { e: n, s: n, b: n } }], leaders first, deterministic.
   function group(points, zoom, opts) {
     opts = opts || {};
-    var grid = opts.grid || 0, minPx = opts.minPx || MIN_PX, nodes = [];
+    var grid = opts.grid || 0, minPx = opts.minPx || MIN_PX, nodes = [], half = opts.half || null, slack = opts.slack == null ? 3 : opts.slack;
+    var maxH = 0;
+    if (half) points.forEach(function (p) { var h = half(p, points.length) || [0, 0]; maxH = Math.max(maxH, h[0], h[1]); });
+    var B = Math.max(minPx, 2 * maxH);
     if (grid > 0) {
       var cells = {}, order = [];
       points.forEach(function (p) {
+        if (p.nogrid) { nodes.push({ lead: p, pts: [p], cell: false }); return; }
         var k = Math.floor(p.ll[0] / grid) + "," + Math.floor(p.ll[1] / grid), c = cells[k];
         if (!c) { c = cells[k] = []; order.push(k); }
         c.push(p);
@@ -38,21 +47,41 @@
       });
     } else points.forEach(function (p) { nodes.push({ lead: p, pts: [p], cell: false }); });
     nodes.sort(function (a, b) { return b.pts.length - a.pts.length || byKey(a.lead, b.lead); });
-    // leader-follower in pixels, with a hash of MIN_PX buckets so a city's thousand shops stay fast
+    // leader-follower in pixels, with a hash of B px buckets so a city's thousand shops stay fast
     var placed = [], buckets = {};
     nodes.forEach(function (n) {
-      var q = px(n.lead, zoom, opts.shift), bx = Math.floor(q[0] / minPx), by = Math.floor(q[1] / minPx), hit = null, hd = Infinity;
+      var q = px(n.lead, zoom, opts.shift), h = half ? half(n.lead, n.pts.length) || [0, 0] : [0, 0], bx = Math.floor(q[0] / B), by = Math.floor(q[1] / B), hit = null, hd = Infinity;
       for (var i = -1; i <= 1; i++) for (var j = -1; j <= 1; j++) {
         (buckets[(bx + i) + "," + (by + j)] || []).forEach(function (g) {
-          var d = Math.hypot(g.q[0] - q[0], g.q[1] - q[1]);
-          if (d < minPx && d < hd) { hd = d; hit = g; }
+          var dx = Math.abs(g.q[0] - q[0]), dy = Math.abs(g.q[1] - q[1]), d = Math.hypot(dx, dy);
+          var over = half && dx < h[0] + g.h[0] - slack && dy < h[1] + g.h[1] - slack;
+          if ((d < minPx || over) && d < hd) { hd = d; hit = g; }
         });
       }
-      if (hit) { hit.pts = hit.pts.concat(n.pts); hit.cell = hit.cell || n.cell; return; }
-      var g = { lead: n.lead, pts: n.pts.slice(), cell: n.cell, q: q };
+      if (hit) { hit.pts = hit.pts.concat(n.pts); hit.cell = hit.cell || n.cell; if (half) hit.h = half(hit.lead, hit.pts.length) || hit.h; return; }
+      var g = { lead: n.lead, pts: n.pts.slice(), cell: n.cell, q: q, h: h };
       placed.push(g);
       (buckets[bx + "," + by] = buckets[bx + "," + by] || []).push(g);
     });
+    // fold groups whose grown boxes overlap: the smaller joins the bigger, until a pass changes nothing
+    for (var pass = 0; half && pass < 8; pass++) {
+      var changed = false;
+      placed.sort(function (a, b) { return b.pts.length - a.pts.length || byKey(a.lead, b.lead); });
+      for (var a = 0; a < placed.length; a++) {
+        var A = placed[a];
+        if (A.gone) continue;
+        for (var b = a + 1; b < placed.length; b++) {
+          var Bg = placed[b];
+          if (Bg.gone) continue;
+          var dx = Math.abs(A.q[0] - Bg.q[0]), dy = Math.abs(A.q[1] - Bg.q[1]);
+          if (Math.hypot(dx, dy) < minPx || (dx < A.h[0] + Bg.h[0] - slack && dy < A.h[1] + Bg.h[1] - slack)) {
+            A.pts = A.pts.concat(Bg.pts); A.cell = A.cell || Bg.cell; A.h = half(A.lead, A.pts.length) || A.h; Bg.gone = true; changed = true;
+          }
+        }
+      }
+      placed = placed.filter(function (g) { return !g.gone; });
+      if (!changed) break;
+    }
     return placed.map(function (g) {
       var kinds = {};
       g.pts.forEach(function (p) { kinds[p.kind] = (kinds[p.kind] || 0) + 1; });
