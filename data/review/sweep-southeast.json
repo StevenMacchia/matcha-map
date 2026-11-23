@@ -1,0 +1,391 @@
+{
+  "generated": "2026-11-23T03:24:22.563Z",
+  "group": "southeast",
+  "items": [
+    {
+      "brand": "DangoMatcha x Little V's Cafe",
+      "handle": null,
+      "source_id": null,
+      "title": "DangoMatcha x Little V's Cafe journaling night",
+      "start": "2026-11-29T18:00:00-05:00",
+      "end": "2026-11-29T21:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Little V's Cafe",
+      "address": "2456 W 8th Ct, Hialeah, FL 33010",
+      "city": "Hialeah",
+      "state": "FL",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/dangomatcha-x-little-vs-cafe-journaling-night-tickets-2005203329136",
+      "posts": [
+        "https://www.eventbrite.com/e/dangomatcha-x-little-vs-cafe-journaling-night-tickets-2005203329136"
+      ],
+      "evidence": [
+        "https://www.eventbrite.com/e/dangomatcha-x-little-vs-cafe-journaling-night-tickets-2005203329136",
+        "https://www.eventbrite.com/d/fl--miami/matcha/"
+      ],
+      "menu": [
+        "exclusive Little V's matcha (one day only)",
+        "coffee"
+      ],
+      "price": null,
+      "hours": "6pm-9pm",
+      "pay": null,
+      "description": "A junk-journaling night at a Hialeah cafe with matcha and coffee on hand and DangoMatcha sticker packs to journal with. The cafe is serving an exclusive matcha for this one day only.",
+      "image_url": "https://cdn.evbuc.com/images/1198459178/3021979798916/1/original.20261121-202944",
+      "confidence": "confirmed",
+      "notes": "Date, time and street address are on the Eventbrite page. Matcha is a feature, not the whole point: a journaling social at a cafe. Hialeah is Miami metro. Price and ticketing not shown on the page."
+    },
+    {
+      "brand": "Oohmami Matcha",
+      "handle": "oohmamimatcha",
+      "source_id": "oohmami-matcha",
+      "title": "Oohmami Matcha at Grant Park Farmers Market",
+      "start": "2026-11-29T09:00:00-05:00",
+      "end": "2026-11-29T13:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Grant Park Farmers Market (Beacon ATL)",
+      "address": "1040 Grant St SE, Atlanta, GA 30315",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://cfmatl.org/grantpark/",
+      "posts": [],
+      "evidence": [
+        "https://cfmatl.org/grantpark/",
+        "https://roughdraftatlanta.com/2026/04/29/matcha-drinks-desserts-atlanta/",
+        "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/"
+      ],
+      "menu": [
+        "matcha lattes",
+        "matcha powder and tins"
+      ],
+      "price": null,
+      "hours": "Market runs 9am-1pm Sundays",
+      "pay": null,
+      "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+    },
+    {
+      "brand": "Oohmami Matcha",
+      "handle": "oohmamimatcha",
+      "source_id": "oohmami-matcha",
+      "title": "Oohmami Matcha at Grant Park Farmers Market",
+      "start": "2026-12-06T09:00:00-05:00",
+      "end": "2026-12-06T13:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Grant Park Farmers Market (Beacon ATL)",
+      "address": "1040 Grant St SE, Atlanta, GA 30315",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://cfmatl.org/grantpark/",
+      "posts": [],
+      "evidence": [
+        "https://cfmatl.org/grantpark/",
+        "https://roughdraftatlanta.com/2026/04/29/matcha-drinks-desserts-atlanta/",
+        "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/"
+      ],
+      "menu": [
+        "matcha lattes",
+        "matcha powder and tins"
+      ],
+      "price": null,
+      "hours": "Market runs 9am-1pm Sundays",
+      "pay": null,
+      "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+    },
+    {
+      "brand": "Oohmami Matcha",
+      "handle": "oohmamimatcha",
+      "source_id": "oohmami-matcha",
+      "title": "Oohmami Matcha at Grant Park Farmers Market",
+      "start": "2026-12-13T09:00:00-05:00",
+      "end": "2026-12-13T13:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Grant Park Farmers Market (Beacon ATL)",
+      "address": "1040 Grant St SE, Atlanta, GA 30315",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://cfmatl.org/grantpark/",
+      "posts": [],
+      "evidence": [
+        "https://cfmatl.org/grantpark/",
+        "https://roughdraftatlanta.com/2026/04/29/matcha-drinks-desserts-atlanta/",
+        "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/"
+      ],
+      "menu": [
+        "matcha lattes",
+        "matcha powder and tins"
+      ],
+      "price": null,
+      "hours": "Market runs 9am-1pm Sundays",
+      "pay": null,
+      "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+    },
+    {
+      "brand": "Oohmami Matcha",
+      "handle": "oohmamimatcha",
+      "source_id": "oohmami-matcha",
+      "title": "Oohmami Matcha at Grant Park Farmers Market",
+      "start": "2026-12-20T09:00:00-05:00",
+      "end": "2026-12-20T13:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Grant Park Farmers Market (Beacon ATL)",
+      "address": "1040 Grant St SE, Atlanta, GA 30315",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://cfmatl.org/grantpark/",
+      "posts": [],
+      "evidence": [
+        "https://cfmatl.org/grantpark/",
+        "https://roughdraftatlanta.com/2026/04/29/matcha-drinks-desserts-atlanta/",
+        "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/"
+      ],
+      "menu": [
+        "matcha lattes",
+        "matcha powder and tins"
+      ],
+      "price": null,
+      "hours": "Market runs 9am-1pm Sundays",
+      "pay": null,
+      "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+    },
+    {
+      "brand": "Oohmami Matcha",
+      "handle": "oohmamimatcha",
+      "source_id": "oohmami-matcha",
+      "title": "Oohmami Matcha at Grant Park Farmers Market",
+      "start": "2027-01-03T09:00:00-05:00",
+      "end": "2027-01-03T13:00:00-05:00",
+      "all_day": false,
+      "tz": "America/New_York",
+      "venue": "Grant Park Farmers Market (Beacon ATL)",
+      "address": "1040 Grant St SE, Atlanta, GA 30315",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://cfmatl.org/grantpark/",
+      "posts": [],
+      "evidence": [
+        "https://cfmatl.org/grantpark/",
+        "https://roughdraftatlanta.com/2026/04/29/matcha-drinks-desserts-atlanta/",
+        "https://www.ajc.com/food-and-dining/2026/06/8-atlanta-pop-ups-you-cant-miss-this-week/"
+      ],
+      "menu": [
+        "matcha lattes",
+        "matcha powder and tins"
+      ],
+      "price": null,
+      "hours": "Market runs 9am-1pm Sundays",
+      "pay": null,
+      "description": "Oohmami sells matcha drinks and powder at the Sunday Grant Park market. Market hours are 9am to 1pm, year-round.",
+      "image_url": null,
+      "confidence": "unsure",
+      "notes": "Market date and hours are on the cfmatl page (Sundays year-round, it lists a Dec 28 2026 closure). Oohmami is not named on that page; Sunday attendance comes from April and June 2026 press, so each date assumes the stall shows up. Dec 27 skipped because of the listed closure wording. Confirm on @oohmamimatcha."
+    },
+    {
+      "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
+      "handle": null,
+      "source_id": "blind-tiger-ybor-matcha",
+      "title": "Ybor City Matcha & Mimosa Sundays",
+      "start": "2026-12-06T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
+      "address": "1823 East 7th Avenue, Tampa, FL 33605",
+      "city": "Tampa",
+      "state": "FL",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/1982190772961",
+      "posts": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "evidence": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "menu": [
+        "matcha",
+        "espresso, cold brew, nitro, chai",
+        "mimosas",
+        "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
+      "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
+      "confidence": "unsure",
+      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+    },
+    {
+      "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
+      "handle": null,
+      "source_id": "blind-tiger-ybor-matcha",
+      "title": "Ybor City Matcha & Mimosa Sundays",
+      "start": "2026-12-13T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
+      "address": "1823 East 7th Avenue, Tampa, FL 33605",
+      "city": "Tampa",
+      "state": "FL",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/1982190772961",
+      "posts": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "evidence": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "menu": [
+        "matcha",
+        "espresso, cold brew, nitro, chai",
+        "mimosas",
+        "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
+      "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
+      "confidence": "unsure",
+      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+    },
+    {
+      "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
+      "handle": null,
+      "source_id": "blind-tiger-ybor-matcha",
+      "title": "Ybor City Matcha & Mimosa Sundays",
+      "start": "2026-12-20T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
+      "address": "1823 East 7th Avenue, Tampa, FL 33605",
+      "city": "Tampa",
+      "state": "FL",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/1982190772961",
+      "posts": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "evidence": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "menu": [
+        "matcha",
+        "espresso, cold brew, nitro, chai",
+        "mimosas",
+        "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
+      "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
+      "confidence": "unsure",
+      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+    },
+    {
+      "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
+      "handle": null,
+      "source_id": "blind-tiger-ybor-matcha",
+      "title": "Ybor City Matcha & Mimosa Sundays",
+      "start": "2026-12-27T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
+      "address": "1823 East 7th Avenue, Tampa, FL 33605",
+      "city": "Tampa",
+      "state": "FL",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/1982190772961",
+      "posts": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "evidence": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "menu": [
+        "matcha",
+        "espresso, cold brew, nitro, chai",
+        "mimosas",
+        "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
+      "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
+      "confidence": "unsure",
+      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+    },
+    {
+      "brand": "Blind Tiger Coffee Roasters (Matcha & Mimosa Sundays)",
+      "handle": null,
+      "source_id": "blind-tiger-ybor-matcha",
+      "title": "Ybor City Matcha & Mimosa Sundays",
+      "start": "2027-01-03T00:00:00-05:00",
+      "end": null,
+      "all_day": true,
+      "tz": "America/New_York",
+      "venue": "Blind Tiger Coffee Roasters - Ybor City Cafe",
+      "address": "1823 East 7th Avenue, Tampa, FL 33605",
+      "city": "Tampa",
+      "state": "FL",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/1982190772961",
+      "posts": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "evidence": [
+        "https://www.eventbrite.com/e/1982190772961"
+      ],
+      "menu": [
+        "matcha",
+        "espresso, cold brew, nitro, chai",
+        "mimosas",
+        "pancakes, breakfast tacos, avocado toast, acai bowls, pastries"
+      ],
+      "price": null,
+      "hours": null,
+      "pay": null,
+      "description": "A recurring Sunday brunch at the Ybor City cafe with matcha next to coffee, mimosas and a full brunch menu.",
+      "image_url": "https://cdn.evbuc.com/images/1176466372/2990393315511/1/original.20260202-164945",
+      "confidence": "unsure",
+      "notes": "Eventbrite page says Every Sunday and Multiple dates but shows no individual dates or times in the text I could read. Matcha is one of several drinks, so it is weak as a matcha pop-up. Nov 29 is already on the map."
+    }
+  ]
+}

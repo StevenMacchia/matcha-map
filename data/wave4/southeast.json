@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "id": "dangomatcha",
+      "brand": "DangoMatcha",
+      "kind": "popup",
+      "category": "matcha",
+      "kind_note": "Matcha-themed sticker and journaling brand seen collaborating with cafes; not a drink pop-up itself.",
+      "home_city": "Miami",
+      "home_state": "FL",
+      "website": null,
+      "instagram": null,
+      "tiktok": null,
+      "schedule_url": "https://www.eventbrite.com/e/dangomatcha-x-little-vs-cafe-journaling-night-tickets-2005203329136",
+      "schedule_kind": "eventbrite",
+      "adapter": "manual",
+      "active": true,
+      "notes": "Seen once: journaling night with Little V's Cafe, 2456 W 8th Ct, Hialeah, 29 Nov 2026 6-9pm (Eventbrite organizer is the cafe). Known for matcha-themed sticker packs; a one-day exclusive matcha was served by the cafe. Handle not found, check Instagram before promoting. Price and payment unknown.",
+      "added": "2026-11-23",
+      "verified": null
+    }
+  ]
+}
