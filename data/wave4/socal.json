@@ -18,6 +18,25 @@
       "notes": "Local Asian-owned matcha vendor in Orange County; served matcha at the OC Matcha Run finish line at Old Town Tustin Farmers' Market (May 2026, Partiful). Handle not confirmed, so left inactive for a human to verify. Signature drinks, prices and payment unknown.",
       "added": "2026-11-23",
       "verified": null
+    },
+    {
+      "id": "kaphe-muna",
+      "brand": "Kaphé Muna",
+      "kind": "popup",
+      "category": "coffee",
+      "kind_note": null,
+      "home_city": "San Diego",
+      "home_state": "CA",
+      "website": null,
+      "instagram": "kaphemuna",
+      "tiktok": null,
+      "schedule_url": "https://www.instagram.com/p/Df8vzvKm5-C",
+      "schedule_kind": "manual",
+      "adapter": "manual",
+      "active": false,
+      "notes": "Specialty coffee and matcha pop-up (name means 'coffee first' in Tagalog) sharing Filipino heritage; vendor at Golden Makers Market holiday edition, Brick 828, Point Loma, Dec 6 2026 (Golden Guide Instagram post). Menu, prices and payment unknown; left inactive until a human verifies the handle and recurring schedule.",
+      "added": "2026-11-23",
+      "verified": null
     }
   ]
 }

@@ -1,0 +1,74 @@
+{
+  "generated": "2026-11-23T03:54:11.408Z",
+  "group": "socal",
+  "items": [
+    {
+      "tz": "America/Los_Angeles",
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "image_url": null,
+      "pay": null,
+      "brand": "Ruma Latte",
+      "handle": null,
+      "source_id": null,
+      "title": "Ruma Latte first-birthday matcha event",
+      "start": "2026-12-05T10:00:00-08:00",
+      "end": "2026-12-05T12:00:00-08:00",
+      "venue": "Old Town Tustin Farmers Market",
+      "address": "Old Town Tustin, Tustin, CA",
+      "city": "Tustin",
+      "state": "CA",
+      "source_url": "https://www.instagram.com/p/DfiuPMGiukj",
+      "posts": [
+        "https://www.instagram.com/p/DfiuPMGiukj"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/DfiuPMGiukj",
+        "https://partiful.com/e/nnm0LnUGXYTuJyROlZPm"
+      ],
+      "menu": [],
+      "price": null,
+      "hours": "10am-12pm",
+      "description": "Ruma Latte, the Tustin matcha vendor, celebrates its first birthday at the Old Town Tustin Farmers Market. The post asks guests to RSVP in advance to reserve a spot.",
+      "confidence": "likely",
+      "notes": "Search snippet of an Instagram post: 'RUMA LATTE IS TURNING ONE IN DECEMBER ... December 5, 2026, 10 AM-12 PM, Old Town Tustin Farmers Market, RSVP to participate'. Unclear whether it is a walk-up stand or an RSVP-only activity; no street address in snippet. Brand already in data/wave4/socal.json (inactive, handle unverified)."
+    },
+    {
+      "tz": "America/Los_Angeles",
+      "lat": null,
+      "lng": null,
+      "all_day": false,
+      "image_url": null,
+      "pay": null,
+      "brand": "Kaphé Muna",
+      "handle": "kaphemuna",
+      "source_id": null,
+      "title": "Kaphé Muna coffee and matcha pop-up at Golden Makers Market",
+      "start": "2026-12-06T12:00:00-08:00",
+      "end": "2026-12-06T17:00:00-08:00",
+      "venue": "Brick 828 (Golden Makers Market holiday edition)",
+      "address": null,
+      "city": "San Diego",
+      "state": "CA",
+      "source_url": "https://www.instagram.com/p/Df8vzvKm5-C",
+      "posts": [
+        "https://www.instagram.com/p/Df8vzvKm5-C",
+        "https://www.instagram.com/p/Df2UcOavCwB"
+      ],
+      "evidence": [
+        "https://www.instagram.com/p/Df8vzvKm5-C",
+        "https://www.instagram.com/p/Df2UcOavCwB"
+      ],
+      "menu": [
+        "specialty coffee",
+        "matcha drinks"
+      ],
+      "price": null,
+      "hours": "12pm-5pm (market hours)",
+      "description": "Kaphé Muna, a Filipino-heritage specialty coffee and matcha pop-up, is a named vendor among 45+ makers at the Golden Makers holiday market in Point Loma. Free RSVP through the market.",
+      "confidence": "likely",
+      "notes": "Golden Guide post (Nov 19 2026) names Kaphé Muna as a vendor at the Dec 6 market at Brick 828, Point Loma; market page post gives Sunday Dec 6 12-5pm. No street address found; the vendor's own hours at the market not stated. Market itself is in the earlier sweep as unsure."
+    }
+  ]
+}
