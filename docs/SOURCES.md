@@ -89,3 +89,8 @@ Every finding of every crawler is written to `data/review/<yyyy-mm-dd>.json` aft
 ## Why TikTok and plain Instagram are not crawled
 
 Their terms forbid scraping and the pages need a login. TikTok's Display API returns only the authorized user's own videos, and the Research API needs an approved application. oEmbed returns a caption for a link you already have; it cannot search. So pasted links go through oEmbed and the inbox, and nothing else touches either site.
+
+## Population lane additions (2026-11-23)
+
+- Eventbrite sitemap seeds: https://www.eventbrite.com/sitemap_xml/sitemap_index.xml (named in robots.txt) lists "top search pages"; the /d/<st>--<place>/matcha/ ones are read by the Eventbrite crawler on the default walk (about 30 places, cached a week in .cache/eventbrite-matcha-places.json; off with EVENTBRITE_SEEDS=0, skipped on --cities lists).
+- Probed and not used: Eventeny, Posh, Partiful, SweatPals sitemaps, Luma search, Meetup events sitemap. Reasons in docs/DISCOVERY-YIELD.md.
