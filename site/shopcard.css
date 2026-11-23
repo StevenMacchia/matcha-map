@@ -20,6 +20,7 @@
 .mm-shop-id { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
 .mm-shop-name { font-size: 1.25rem; line-height: 1.2; font-weight: 800; letter-spacing: -.01em; overflow-wrap: anywhere; color: var(--ink, #3B2E27); }
 .mm-shop-kind { font-size: .75rem; font-weight: 800; line-height: 1.4; padding: 1px 9px; border-radius: 999px; background: var(--mm-t1, #FDE4EB); color: var(--ink, #3B2E27); }
+.mm-shop-kinds { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; min-width: 0; }
 .mm-shop-sv { font-size: .8125rem; font-weight: 700; line-height: 1.3; color: var(--deep, #3E6B33); }
 .mm-shop-note { font-size: .875rem; line-height: 1.4; color: var(--muted, #6B5A4F); font-style: italic; overflow-wrap: anywhere; margin-top: -6px; }
 .mm-shop-addr { font-size: .9375rem; line-height: 1.4; color: var(--muted, #6B5A4F); overflow-wrap: anywhere; }

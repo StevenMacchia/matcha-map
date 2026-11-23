@@ -229,7 +229,7 @@ export function shopCardHtml(s, ctx = {}) {
   const now = ctx.now instanceof Date ? ctx.now : new Date();
   const name = String(s.name), addr = addressLine(s, ctx), serves = isServes(s);
   const head = `<div class="mm-shop-head"><span class="mm-shop-art${serves ? " mm-shop-art-sv" : ""}" data-char="s-shop" aria-hidden="true"></span><div class="mm-shop-id">` +
-    `<h3 class="mm-shop-name">${esc(cut(name, 80))}</h3>` + (serves ? `<p class="mm-shop-kind">Cafe</p><p class="mm-shop-sv">Matcha on the menu</p>` : `<p class="mm-shop-kind">Matcha shop</p>`) + `</div></div>` +
+    `<h3 class="mm-shop-name">${esc(cut(name, 80))}</h3>` + (serves ? `<div class="mm-shop-kinds"><p class="mm-shop-kind">Cafe</p><p class="mm-shop-sv">Matcha on the menu</p></div>` : `<p class="mm-shop-kind">Matcha shop</p>`) + `</div></div>` +
     (addr ? `<p class="mm-shop-addr">${esc(cut(addr, 140))}</p>` : "") +
     (typeof s.note === "string" && s.note.trim() ? `<p class="mm-shop-note">${esc(cut(s.note, 120))}</p>` : "");
   const acts = [];

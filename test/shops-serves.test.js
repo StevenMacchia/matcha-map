@@ -35,7 +35,7 @@ function run(saved) {
 test("serves: the card says Cafe and Matcha on the menu, never the core Matcha shop kind", () => {
   const h = shopCardHtml(SERVES);
   assert.doesNotMatch(h, /Matcha shop/);
-  assert.match(h, /<p class="mm-shop-kind">Cafe<\/p><p class="mm-shop-sv">Matcha on the menu<\/p>/);
+  assert.match(h, /<div class="mm-shop-kinds"><p class="mm-shop-kind">Cafe<\/p><p class="mm-shop-sv">Matcha on the menu<\/p><\/div>/);
   assert.match(h, /data-title="Leaf House, matcha on the menu"/);
   assert.match(h, /<p class="mm-shop-addr">1 Main St, Raleigh, NC<\/p><p class="mm-shop-note">Coffee bar with a short matcha list &amp; a patio<\/p>/);
   // the core shop keeps its kind and gets no serves line
