@@ -1,0 +1,41 @@
+{
+ "generated": "2026-11-23T20:00:00.000Z",
+ "group": "south-triangle",
+ "shops": [
+  {
+   "name": "Littlefoot Matcha",
+   "address": "234 Fayetteville Street",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27601",
+   "website": "https://littlefootmatcha.com",
+   "instagram": "littlefootmatcha",
+   "phone": null,
+   "opening_hours": "Mo-Fr 10:00-16:00",
+   "menu_url": null,
+   "image_url": "https://littlefootmatcha.com/cdn/shop/files/Untitled_design_037a6d53-fd56-4f97-a779-e9426ce87637.png?v=1773972028",
+   "image_credit": "Photo: Littlefoot Matcha website",
+   "source_url": "https://littlefootmatcha.com/pages/find-us",
+   "read": "2026-11-23",
+   "notes": "Held: its find-us page calls this a \"pop-up window concept\" at Maison Neue (Mo-Fr 10:00-16:00); shown only once a page says it is a standing counter. Its find-us page lists this as a pop-up window concept at Maison Neue, Monday to Friday 10am to 4pm; a Toast ordering page for 234 Fayetteville St also exists. Zip 27601 is from the Toast and press listings, not the find-us page. Check it is still a standing counter before showing."
+  },
+  {
+   "name": "Littlefoot Matcha",
+   "address": "1101 West Gate City Boulevard",
+   "city": "Greensboro",
+   "state": "NC",
+   "zip": null,
+   "website": "https://littlefootmatcha.com",
+   "instagram": "littlefootmatcha",
+   "phone": null,
+   "opening_hours": "Th-Sa 10:00-16:00",
+   "menu_url": null,
+   "image_url": "https://littlefootmatcha.com/cdn/shop/files/Untitled_design_037a6d53-fd56-4f97-a779-e9426ce87637.png?v=1773972028",
+   "image_credit": "Photo: Littlefoot Matcha website",
+   "source_url": "https://littlefootmatcha.com/pages/find-us",
+   "read": "2026-11-23",
+   "confirmed_via": "own-site",
+   "notes": "Correct name of the OSM row 'Littleftoot Matcha Cafe' (osm:node/14122736558). The find-us page gives the address as 1101 W Gate City Blvd #203, a cafe inside Late Checkout Thrift, Thursday to Saturday 10am to 4pm (OSM had Mo-Sa 10-17; Su 13-17, which the shop's own page does not show)."
+  }
+ ]
+}
