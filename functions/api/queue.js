@@ -1,8 +1,8 @@
 // GET /api/queue: pending and approved items. Needs "Authorization: Bearer <INTAKE_TOKEN>".
-// ?kinds=pending,approved (default) | report | claim ; ?limit=40 (max 40 per kind, keeps us under the subrequest cap).
+// ?kinds=pending,approved (default) | report | claim | featured ; ?limit=40 (max 40 per kind, keeps us under the subrequest cap).
 import { json, kvOf, guard, methodNot, NOT_SET_UP } from "../_lib/http.js";
 
-const KINDS = ["pending", "approved", "report", "claim"];
+const KINDS = ["pending", "approved", "report", "claim", "featured"];
 
 export async function onRequestGet({ request, env }) {
   const denied = guard(request, env);

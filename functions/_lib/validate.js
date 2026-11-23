@@ -145,6 +145,34 @@ export function validateClaim(body, { now = Date.now() } = {}) {
   return { ok: Object.keys(errors).length === 0, errors, clean };
 }
 
+export const FEATURED_PLANS = ["free", "paid"];
+
+// An event id (12 hex digits) or a map link that carries one: /?event=<id>, /e/<id>/, /promote/?event=<id>.
+export function eventIdOf(v) {
+  const s = str(String(v == null ? "" : v), 400);
+  const m = /(?:event=|[/]e[/])([a-f0-9]{12})(?![a-f0-9])/i.exec(s) || /^([a-f0-9]{12})$/i.exec(s);
+  return m ? m[1].toLowerCase() : "";
+}
+
+export function validateFeatured(body, { now = Date.now() } = {}) {
+  const b = body && typeof body === "object" ? body : {};
+  const gate = botCheck(b, now);
+  if (gate.bot) return { ok: false, bot: true, errors: {}, clean: null };
+  const errors = {};
+  if (gate.stale) errors.form = "This page has been open a while. Reload it and try again.";
+  const week = FIELDS.date(b.week);
+  const plan = FEATURED_PLANS.includes(b.plan) ? b.plan : "";
+  const clean = { event: eventIdOf(b.event), brand: str(String(b.brand || ""), 80), email: FIELDS.email(b.email), week, plan, notes: para(b.notes, 400), paid: false };
+  if (!clean.event) errors.event = "Paste the pop-up's map link or its id.";
+  if (!clean.brand) errors.brand = "Which brand?";
+  if (!clean.email) errors.email = "We need an email to reply to.";
+  if (!week) errors.week = "Pick the day your week starts.";
+  else if (week < new Date(now - 36e5 * 36).toISOString().slice(0, 10)) errors.week = "That date has passed.";
+  else if (week > new Date(now + 120 * 864e5).toISOString().slice(0, 10)) errors.week = "Pick a date in the next four months.";
+  if (!plan) errors.plan = "Pick free or paid.";
+  return { ok: Object.keys(errors).length === 0, errors, clean };
+}
+
 export function validateAlert(body, { now = Date.now() } = {}) {
   const b = body && typeof body === "object" ? body : {};
   const gate = botCheck(b, now);
