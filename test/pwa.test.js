@@ -30,7 +30,7 @@ test("sw.js precache list only names files that exist, and index.html links the 
   assert.ok(ctx.SHELL.length > 10);
   for (const u of ctx.SHELL) assert.ok(u === "/" || exists(u), "missing from site/: " + u);
   assert.ok(ctx.SHELL.includes("/index.html") && ctx.SHELL.includes("/pwa.js"));
-  assert.match(ctx.VERSION, /^mm-\d+$/);
+  assert.match(ctx.VERSION, /^mm-[0-9a-f]+$/); // a hash of the shell files, stamped by tools/sw-version.js
   const html = read("index.html");
   assert.match(html, /rel="manifest" href="\/manifest\.webmanifest"/);
   assert.match(html, /rel="apple-touch-icon"/);
