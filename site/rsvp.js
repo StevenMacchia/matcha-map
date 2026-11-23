@@ -6,7 +6,7 @@
 (function () {
   "use strict";
   var API = "/api/rsvp", ME_KEY = "matchamap.me", GOING_KEY = "matchamap.going";
-  var counts = {}, probeP = null;
+  var counts = {}, stamp = {}, probeP = null; // counts by id, and when each was fetched
   function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function store(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { /* private mode: the tap still counts this session */ } }
   function rand() {
@@ -53,7 +53,7 @@
   }
   function fetchCounts(ids) {
     return fetch(API + "?events=" + ids.join(","), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && d.counts) Object.keys(d.counts).forEach(function (k) { counts[k] = d.counts[k]; });
+      if (d && d.counts) Object.keys(d.counts).forEach(function (k) { counts[k] = d.counts[k]; stamp[k] = Date.now(); });
     }).catch(function () { /* the strip keeps its last words */ });
   }
   // Shows the strips under root once the API is known to be there, with this device's state and the live count.
@@ -67,6 +67,37 @@
       if (want.length) fetchCounts(want).then(function () { strips.forEach(function (s) { paint(s, s.getAttribute("data-mm-go")); }); });
     });
   }
+  // List rows (S1b): a quiet "3 going" under the place line, only when someone is going (a zero says nothing).
+  function rowLabel(n, mine) {
+    if (mine) return n <= 1 ? "You're going" : "You and " + (n - 1) + " more going";
+    return n >= 1 ? n + " going" : "";
+  }
+  function paintRows(root) {
+    (root || document).querySelectorAll(".mm-row[data-event]").forEach(function (r) {
+      var id = r.getAttribute("data-event"), t = rowLabel(counts[id] || 0, isGoing(id)), el = r.querySelector(".mm-rgo");
+      if (!t) { if (el) el.remove(); return; }
+      if (!el) {
+        var rt = r.querySelector(".mm-rt");
+        if (!rt) return;
+        el = document.createElement("span"); el.className = "mm-rgo";
+        var rp = rt.querySelector(".mm-rp");
+        if (rp) rt.insertBefore(el, rp.nextSibling); else rt.appendChild(el);
+      }
+      el.textContent = t;
+    });
+  }
+  // Fetches counts for the upcoming rows under root (at most 60, each at most once a minute) and paints the labels.
+  function hydrateRows(root) {
+    var rows = (root || document).querySelectorAll(".mm-row[data-event]:not(.mm-v-past):not(.mm-v-cancelled)");
+    if (!rows.length) return;
+    probe().then(function (ok) {
+      if (!ok) return;
+      var now = Date.now(), want = [], seen = {};
+      rows.forEach(function (r) { var id = r.getAttribute("data-event"); if (!seen[id] && (!stamp[id] || now - stamp[id] > 60000) && want.length < 60) { seen[id] = 1; want.push(id); } });
+      paintRows(root);
+      if (want.length) fetchCounts(want).then(function () { paintRows(root); });
+    });
+  }
   function toggle(strip, id) {
     if (strip.classList.contains("mm-busy")) return;
     var yes = !isGoing(id), c = strip.querySelector(".mm-gcount");
@@ -75,8 +106,9 @@
       .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
       .then(function (d) {
         setGoing(id, yes);
-        if (d && typeof d.count === "number") counts[id] = d.count;
+        if (d && typeof d.count === "number") { counts[id] = d.count; stamp[id] = Date.now(); }
         paint(strip, id);
+        paintRows(document);
         try { document.dispatchEvent(new CustomEvent("mm:going", { detail: { id: id, going: yes } })); } catch (e) { /* no choreography */ }
       })
       .catch(function (st) { if (c) c.textContent = st === 429 ? "That's a lot of taps for one day. Try again tomorrow." : "Could not save that. Try again."; })
@@ -93,5 +125,5 @@
     });
   }
   // forget(): drops this device's id and list (the data-deletion page can call it; the server rows expire on their own)
-  window.MatchaRsvp = { hydrate: hydrate, isGoing: isGoing, going: going, probe: probe, label: label, forget: function () { meMem = null; goingMem = null; store(ME_KEY, null); store(GOING_KEY, null); } };
+  window.MatchaRsvp = { hydrate: hydrate, hydrateRows: hydrateRows, isGoing: isGoing, going: going, probe: probe, label: label, rowLabel: rowLabel, forget: function () { meMem = null; goingMem = null; store(ME_KEY, null); store(GOING_KEY, null); } };
 })();

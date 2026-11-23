@@ -98,6 +98,12 @@ test("rsvp.js: the words stay true to the count, the device id is 32 hex and pri
   assert.equal(R.label(5, true), "You and 4 others going");
   assert.equal(R.label(undefined, false), "");
   assert.equal(R.label(undefined, true), "You're going");
+  // list rows: nothing at zero, a count from one, this device first
+  assert.equal(R.rowLabel(0, false), "");
+  assert.equal(R.rowLabel(1, false), "1 going");
+  assert.equal(R.rowLabel(1, true), "You're going");
+  assert.equal(R.rowLabel(3, true), "You and 2 more going");
+  assert.equal(typeof R.hydrateRows, "function");
   assert.deepEqual(Array.from(R.going()), []);
   assert.equal(R.isGoing("x"), false);
   R.forget();
@@ -124,6 +130,8 @@ test("shell: rsvp.js is loaded and precached, the worker never caches /api/, and
   assert.match(sw, /url\.pathname\.indexOf\("\/api\/"\) === 0\) return;/);
   const app = fs.readFileSync(path.join(SITE, "app.js"), "utf8");
   assert.equal((app.match(/MatchaRsvp\.hydrate\(/g) || []).length, 2);
+  assert.equal((app.match(/MatchaRsvp\.hydrateRows\(list\)/g) || []).length, 2, "both list renders paint the row counts");
+  assert.match(fs.readFileSync(path.join(SITE, "cards.css"), "utf8"), /\.mm-rgo \{/);
   assert.match(app, /dl\.plan && dl\.plan\.length/);
   assert.match(app, /function startTourWith\(keys, shared\)/);
   assert.match(app, /tb-share/);

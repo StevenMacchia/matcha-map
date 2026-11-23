@@ -1288,6 +1288,7 @@
     var list = $("list");
     list.innerHTML = html;
     fillChars(list);
+    if (window.MatchaRsvp) window.MatchaRsvp.hydrateRows(list);
     if (stagger && !calm()) {
       var rows = list.children;
       for (var i = 0; i < rows.length && i < 8; i++) animOnce(rows[i], "row-in", i * 30);
@@ -1336,6 +1337,7 @@
     list.innerHTML = headHTML("<span class=\"apl\">Place not posted yet</span> \u00b7 " + esc(cityLine(e0)), rows.length, "ap-head") + "<li class=\"apnote\"><button type=\"button\" class=\"aplink\" data-clear-ap>Show everything in view</button></li>" +
       rowsHTML(rows, true);
     fillChars(list);
+    if (window.MatchaRsvp) window.MatchaRsvp.hydrateRows(list);
     if (stagger && !calm()) { var kids = list.children; for (var i = 0; i < kids.length && i < 8; i++) animOnce(kids[i], "row-in", i * 30); }
   }
   $("list").addEventListener("click", function (ev) {

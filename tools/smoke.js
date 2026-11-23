@@ -158,8 +158,8 @@ try {
   for (const url of pages()) for (const size of SIZES) results.push(await checkPage(cdp, server.base, url, size, { staticOnly: server.staticOnly }));
   // a window with no room (1 by 1) and a tab that loads hidden: the list must still render and nothing may throw;
   // pins are not required (nothing is in a 1 px view, and a hidden tab gets no animation frames to place them)
-  results.push(await checkPage(cdp, server.base, "/", [1, 1], { tag: "1x1 window", noPins: true, emptyOk: true }));
-  results.push(await checkPage(cdp, server.base, "/", [0, 0], { tag: "background tab", background: true, noPins: true, emptyOk: true }));
+  results.push(await checkPage(cdp, server.base, "/", [1, 1], { tag: "1x1 window", noPins: true, emptyOk: true, staticOnly: server.staticOnly }));
+  results.push(await checkPage(cdp, server.base, "/", [0, 0], { tag: "background tab", background: true, noPins: true, emptyOk: true, staticOnly: server.staticOnly }));
 } finally { cdp.close(); chrome.stop(); server.stop(); }
 
 const pad = (v, n) => String(v).padEnd(n);

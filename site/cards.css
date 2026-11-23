@@ -161,6 +161,7 @@
 .mm-rname { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .mm-rn > .mm-dot, .mm-rn > .mm-kind { flex: none; }
 .mm-rp { font-size: 13.5px; color: var(--muted, #6B5A4F); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.mm-rgo { font-size: 12.5px; font-weight: 800; color: var(--deep, #3E6B33); white-space: nowrap; }
 .mm-rm { display: flex; gap: 4px; margin-top: 3px; overflow: hidden; }
 .mm-rm span { flex: none; font-size: 11.5px; font-weight: 800; padding: 1px 8px; border-radius: 999px; background: var(--foam, #E6F2DC); color: var(--deep, #3E6B33); }
 .mm-rd { flex: none; align-self: flex-start; font-size: 13px; font-weight: 800; padding: 2px 9px; border-radius: 999px; background: var(--canvas, #FBF6EA); border: 2px solid var(--line, #DCE7D0); }
