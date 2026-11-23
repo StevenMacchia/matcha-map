@@ -291,10 +291,109 @@ body.show-list .list-panel { display: block; }
 .mk-cl.cl-br.cl-bc, .mk-cl.cl-br.cl-fan, .mk-cl.cl-br.cl-cell { width: 22px; height: 22px; }
 .mk-cl.cl-bc .cl-n, .mk-cl.cl-br.cl-fan .cl-n, .mk-cl.cl-br.cl-cell .cl-n { right: -14px; bottom: -8px; }
 .mk-cl.fan-open .mk-in { opacity: .45; }
-/* name labels from zoom 13 (layoutLabels in app.js): quiet, small, on a plate; hidden while a zoom runs */
-.mk-lbl { position: absolute; left: 0; top: 0; z-index: 1; max-width: 150px; padding: 1px 6px; border-radius: 6px; background: color-mix(in srgb, var(--panel) 92%, transparent);
-  color: var(--ink); font-size: 12.5px; font-weight: 700; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; box-shadow: 0 1px 2px rgba(75,52,38,.18); }
+/* name labels from zoom 13 (layoutLabels in app.js), the mock's way: bold small text on a cream halo, coloured by kind;
+   hidden while a zoom runs */
+.mk-lbl { position: absolute; left: 0; top: 0; z-index: 1; max-width: 170px; font-size: 12.5px; font-weight: 800; line-height: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; color: var(--ink);
+  text-shadow: 0 0 2px var(--canvas), 0 0 2px var(--canvas), 0 0 3px var(--canvas), 0 0 4px var(--canvas), 1px 1px 0 var(--canvas), -1px -1px 0 var(--canvas), 1px -1px 0 var(--canvas), -1px 1px 0 var(--canvas); }
+.mk-lbl.lb-s { color: var(--deep); } .mk-lbl.lb-e { color: var(--pu-ink); } .mk-lbl.lb-b { color: var(--sage-ink); font-weight: 700; }
 .mk-lbl[hidden], .zooming .mk-lbl { display: none; }
+
+/* ---- the pin look (site/pins.js, the 2026-11-23 mock) ---- */
+:root { --pu-ink: #9A4B33; --sage: #C9D8BC; --sage-edge: #9CB58E; --sage-ink: #5B7150; --open: #4FA548; }
+:root[data-theme="dark"] { --pu-ink: #F4C3A6; --sage: #6F8A63; --sage-edge: #B7CCA9; --sage-ink: #C9D8BC; --open: #7BD072; }
+.pn-bob, .pn, .pn .pn-ph, .pn-ground { display: block; }
+.pn { position: relative; }
+.pn .pn-ph { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
+.pn .pn-ph > img, .pn .pn-ph > svg, .pn .pn-ph .pn-draw, .pn .pn-ph .pn-draw svg { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pn-ground { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -26px 0 0 -32px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(140,191,122,.36), rgba(140,191,122,0)); }
+/* colour by kind (2026-11-23 mock): pop-ups warm, shops matcha green, brands muted sage; the ground under each pin tints the
+   basemap a touch in its kind's colour, softer in the dark theme */
+.mk-ev .pn-ground { background: radial-gradient(closest-side, rgba(246,183,199,.42), rgba(248,211,181,0)); }
+.mk-br .pn-ground { width: 52px; height: 52px; margin: -22px 0 0 -26px; background: radial-gradient(closest-side, rgba(156,181,142,.34), rgba(156,181,142,0)); }
+:root[data-theme="dark"] .pn-ground { opacity: .6; }
+:root[data-theme="dark"] .pn-sh, :root[data-theme="dark"] .pn-stack .pn-st { box-shadow: 0 0 0 2px var(--panel), 0 3px 8px rgba(0,0,0,.45); }
+:root[data-theme="dark"] .pn-pu { box-shadow: 0 3px 10px rgba(0,0,0,.45); }
+/* shop: a round photo in a matcha ring, the cup as a mark, the open dot */
+.mk-sh { width: 40px; height: 40px; }
+.mk-sh::before { inset: -4px; }
+.pn-sh { width: 40px; height: 40px; border-radius: 50%; background: var(--panel); border: 3px solid var(--accent); box-shadow: 0 0 0 2px var(--panel), 0 3px 8px rgba(62,107,51,.35); box-sizing: border-box; }
+.pn-sh .pn-ph { inset: 1px; border-radius: 50%; background: var(--foam); }
+.pn-sh.sv { border-color: var(--shmint-edge); }
+.pn-sh .pn-draw { padding: 4px; box-sizing: border-box; }
+.pn-cup { position: absolute; right: -7px; bottom: -6px; width: 18px; height: 18px; border-radius: 50%; background: var(--panel); border: 1.5px solid var(--edge); display: grid; place-items: center; }
+.pn-cup svg { width: 13px; height: 13px; display: block; }
+.pn-open { position: absolute; right: -2px; top: -2px; width: 10px; height: 10px; border-radius: 50%; background: var(--open); border: 2px solid var(--panel); }
+/* pop-up: the drawn card or the photo in a warm rounded card with a tail, the day pill, a going badge, today's pulse */
+.mk-ev:not(.mk-ap) { width: 46px; height: 56px; }
+.mk-ev:not(.mk-ap)::after { display: none; }
+.mk-ev:not(.mk-ap) .mk-in { height: 56px; filter: none; }
+.pn-pu { width: 46px; height: 46px; border-radius: 14px; background: var(--peach); border: 3px solid var(--peach-edge); box-shadow: 0 3px 10px rgba(201,138,94,.35); box-sizing: border-box; }
+.pn-pu::after { content: ""; position: absolute; left: 50%; bottom: -9px; width: 12px; height: 12px; margin-left: -6px; background: var(--peach-edge); transform: rotate(45deg); border-radius: 2px; z-index: -1; }
+.pn-pu .pn-ph { border-radius: 11px; }
+.pn-pu.today { background: var(--pink); border-color: var(--pink-edge); box-shadow: 0 0 0 5px rgba(246,183,199,.45), 0 3px 12px rgba(217,140,162,.45); }
+.pn-pu.today::after { background: var(--pink-edge); }
+.pn-pill { position: absolute; left: 50%; top: -15px; transform: translateX(-50%); padding: 1px 7px; border-radius: 999px; font-size: 11px; font-weight: 800; line-height: 16px; white-space: nowrap; background: var(--panel); color: var(--pu-ink); border: 1.5px solid var(--peach-edge); }
+.pn-pu.today .pn-pill { background: #D9667F; color: #fff; border-color: #D9667F; }
+.pn-going { position: absolute; right: calc(100% - 6px); bottom: 4px; font-size: 10px; font-weight: 800; background: var(--deep); color: var(--panel); border: 1.5px solid var(--panel); border-radius: 999px; padding: 0 5px; line-height: 15px; white-space: nowrap; }
+.pn-pulse { position: absolute; inset: -3px; border-radius: 16px; border: 3px solid var(--pink-edge); pointer-events: none; opacity: 0; }
+.mk.past .pn-pu { opacity: .6; filter: grayscale(.4); }
+/* brand: the picture in a sage mochi frame, or the drawn card art with the initial */
+.mk-br, .mk-cl.cl-br.cl-bc { width: 34px; height: 30px; }
+.mk-br::before { inset: -6px; }
+.pn-br { width: 34px; height: 30px; border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; background: var(--sage); border: 2.5px solid var(--sage-edge); box-shadow: 0 2px 5px rgba(94,138,78,.25); box-sizing: border-box; }
+.pn-br .pn-ph > img, .pn-br .pn-ph > svg { filter: saturate(.85); }
+.mk-br.sel .pn-br { transform: scale(1.3); }
+/* life (2026-11-23 mock): an idle bob on a slow random phase (--ph from pins.js), a hop on hover or tap, today's pulse,
+   the selected pin bigger with a halo; Mattie at the card's foot turns toward the pin. Off under html.rm. */
+.pn-bob { animation: pn-bob 3.6s ease-in-out infinite alternate; animation-delay: var(--ph, 0s); }
+@keyframes pn-bob { from { transform: translateY(0) rotate(0); } to { transform: translateY(-3px) rotate(1deg); } }
+/* frame time (tools/frame-time.js, 2026-11-23): the idle bob on every pin cost most of the frame once a view held a few dozen;
+   past PN_BUSY pins in view (app.js) the map rests still and only today's pulse and the hop on a touched pin move */
+.pn-busy .pn-bob { animation: none; }
+.pn-busy .mk:hover .pn-bob, .pn-busy .mk:active .pn-bob { animation: pn-hop .45s var(--spring); }
+.mk:hover .pn-bob, .mk:focus-visible .pn-bob, .mk:active .pn-bob { animation: pn-hop .45s var(--spring); }
+@keyframes pn-hop { 40% { transform: translateY(-8px) scale(1.08); } }
+.pn-pulse { animation: pn-pulse 2.2s ease-out infinite; }
+.pn-pulse.b { animation-delay: 1.1s; }
+@keyframes pn-pulse { from { transform: scale(1); opacity: .75; } to { transform: scale(1.7); opacity: 0; } }
+.mk.sel { z-index: 30 !important; }
+.mk.sel .pn { transform: scale(1.32); transition: transform .3s var(--spring); }
+.mk.sel .pn-ground { width: 92px; height: 92px; margin: -40px 0 0 -46px; background: radial-gradient(closest-side, rgba(255,253,247,.95) 55%, rgba(246,183,199,.55) 75%, rgba(246,183,199,0)); }
+.mk.sel.mk-ev .pn-ground { margin-top: -66px; }
+.pop-mattie { position: absolute; left: -30px; bottom: -14px; width: 46px; height: 46px; pointer-events: none; transform: scaleX(-1) rotate(-8deg); transform-origin: 50% 90%; animation: mattie-turn .5s var(--spring) .1s both; }
+@keyframes mattie-turn { from { transform: scaleX(1) rotate(6deg); opacity: 0; } 60% { opacity: 1; } to { transform: scaleX(-1) rotate(-8deg); } }
+.card-open .sheet-peek .ch { transition: transform .4s var(--spring); transform: rotate(-10deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .pn-bob, .pn-pulse, .pop-mattie { animation: none !important; } }
+.rm .pn-pulse { display: none; }
+/* the national tier (below zoom 10): one small round pin per city, 20 px to zoom 5, 24 to 7, 28 to 10 */
+.mk-cl.cl-nt, .mk-cl.cl-nt.cl-m, .mk-cl.cl-nt.cl-l { width: 20px; height: 20px; }
+.nz1 .mk-cl.cl-nt { width: 24px; height: 24px; } .nz2 .mk-cl.cl-nt { width: 28px; height: 28px; }
+.pn-city { width: 100%; height: 100%; border-radius: 50%; box-sizing: border-box; border: 2px solid var(--accent); background: var(--foam); box-shadow: 0 0 0 1.5px var(--panel), 0 2px 5px rgba(62,107,51,.3); }
+.pn-city.k-e { border-color: var(--peach-edge); background: var(--peach); box-shadow: 0 0 0 1.5px var(--panel), 0 2px 5px rgba(201,138,94,.35); }
+.pn-city.k-b { border-color: var(--sage-edge); background: var(--sage); }
+.pn-city .pn-ph { border-radius: 50%; }
+.pn-city .pn-draw { padding: 1px; box-sizing: border-box; }
+.pn-ini { display: grid; place-items: center; width: 100%; height: 100%; font-size: 11px; font-weight: 800; color: var(--sage-ink); }
+.nz2 .pn-ini { font-size: 14px; }
+.pn-cn { position: absolute; right: -9px; bottom: -6px; min-width: 16px; padding: 0 4px; box-sizing: border-box; border-radius: 999px; font-size: 10.5px; font-weight: 800; line-height: 14px; text-align: center; color: var(--ink); background: var(--panel); border: 1.5px solid var(--edge); pointer-events: none; }
+.cl-nt:hover .pn-city, .cl-nt:focus-visible .pn-city { transform: scale(1.15); transition: transform .15s var(--soft); }
+.mk-lbl.lb-c { color: var(--ink); font-size: 12px; }
+/* a stack (zoom 12 up): the first two pins fanned, the count */
+.mk-cl.cl-stack, .mk-cl.cl-stack.cl-m, .mk-cl.cl-stack.cl-l { width: 50px; height: 40px; }
+.pn-stack { width: 50px; height: 40px; }
+.pn-stack .pn-st { position: absolute; top: 0; width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--accent); background: var(--panel); box-shadow: 0 0 0 2px var(--panel), 0 2px 6px rgba(62,107,51,.3); box-sizing: border-box; overflow: hidden; }
+.pn-stack .pn-st.k-e { border-radius: 12px; border-color: var(--peach-edge); }
+.pn-stack .pn-st.k-b { border-color: var(--sage-edge); }
+.pn-stack .pn-st1 { left: 0; transform: rotate(-8deg); } .pn-stack .pn-st2 { left: 14px; transform: rotate(7deg); }
+.pn-fan { position: absolute; right: -6px; bottom: -6px; font-size: 11px; font-weight: 800; color: var(--deep); background: var(--panel); border: 1.5px solid var(--edge); border-radius: 999px; padding: 0 5px; line-height: 15px; }
+/* a neighbourhood (zoom 10 to 12): up to three faces, the count, a pink count of pop-ups */
+.mk-cl.cl-hood, .mk-cl.cl-hood.cl-m, .mk-cl.cl-hood.cl-l { width: auto; height: auto; }
+.pn-hood { display: flex; align-items: center; padding: 4px 9px 4px 4px; border-radius: 999px; background: color-mix(in srgb, var(--panel) 96%, transparent); border: 2px solid var(--edge); box-shadow: var(--shadow); }
+.pn-hood .pn-av { position: relative; flex: none; width: 30px; height: 30px; border-radius: 50%; overflow: hidden; border: 2px solid var(--panel); margin-right: -10px; background: var(--foam); box-sizing: border-box; }
+.pn-hood .pn-av.k-e { border-radius: 9px; border-color: var(--peach-edge); }
+.pn-hood .pn-av.k-b { border-color: var(--sage-edge); }
+.hd-n { margin-left: 16px; font-weight: 800; font-size: 15px; color: var(--deep); line-height: 1; }
+.hd-p { position: absolute; right: -7px; top: -9px; font-size: 11px; line-height: 18px; min-width: 18px; text-align: center; color: #fff; background: #D9667F; border: 2px solid var(--panel); border-radius: 999px; padding: 0 3px; box-sizing: border-box; font-weight: 800; }
 
 /* clusters: dango */
 .mk-cl { width: 28px; height: 54px; }

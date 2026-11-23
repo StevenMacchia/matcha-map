@@ -27,6 +27,13 @@
     var maxH = 0;
     if (half) points.forEach(function (p) { var h = half(p, points.length) || [0, 0]; maxH = Math.max(maxH, h[0], h[1]); });
     var B = Math.max(minPx, 2 * maxH);
+    // how close two nodes may come, both ways: a single pin beside a group is measured by its whole box (opts.box), and a
+    // group gives at most 4 px of slack, so no group covers a pin; two single pins keep the looser single rule
+    var pair = function (a, ha, b) {
+      var ga = a.pts.length > 1, gb = b.pts.length > 1, sl = ga || gb ? Math.min(slack, 4) : slack;
+      var x = !ga && gb && opts.box ? opts.box(a.lead) || ha : ha, y = !gb && ga && opts.box ? opts.box(b.lead) || b.h : b.h;
+      return [x[0] + y[0] - sl, x[1] + y[1] - sl];
+    };
     if (grid > 0) {
       var cells = {}, order = [];
       points.forEach(function (p) {
@@ -54,7 +61,7 @@
       for (var i = -1; i <= 1; i++) for (var j = -1; j <= 1; j++) {
         (buckets[(bx + i) + "," + (by + j)] || []).forEach(function (g) {
           var dx = Math.abs(g.q[0] - q[0]), dy = Math.abs(g.q[1] - q[1]), d = Math.hypot(dx, dy);
-          var over = half && dx < h[0] + g.h[0] - slack && dy < h[1] + g.h[1] - slack;
+          var p2 = pair(n, h, g), over = half && dx < p2[0] && dy < p2[1];
           if ((d < minPx || over) && d < hd) { hd = d; hit = g; }
         });
       }
@@ -74,7 +81,8 @@
           var Bg = placed[b];
           if (Bg.gone) continue;
           var dx = Math.abs(A.q[0] - Bg.q[0]), dy = Math.abs(A.q[1] - Bg.q[1]);
-          if (Math.hypot(dx, dy) < minPx || (dx < A.h[0] + Bg.h[0] - slack && dy < A.h[1] + Bg.h[1] - slack)) {
+          var p3 = pair(A, A.h, Bg);
+          if (Math.hypot(dx, dy) < minPx || (dx < p3[0] && dy < p3[1])) {
             A.pts = A.pts.concat(Bg.pts); A.cell = A.cell || Bg.cell; A.h = half(A.lead, A.pts.length) || A.h; Bg.gone = true; changed = true;
           }
         }
