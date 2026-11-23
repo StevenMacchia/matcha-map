@@ -4,6 +4,7 @@
 // opened behind another one. On 2026-11-23 the stand-in map's fit threw on NaN there and the page stayed on "Brewing".
 // At the end it runs the event card's gate (tools/card-gate.js) on a reduced matrix: 320, 390, 1024 and 1440 wide, light and
 // dark, 16 and 20 px fonts, the longest-strings, city-only, no-photo and unsure fixtures; any failure there fails the smoke.
+// Then the shop gate and the map density gate (tools/map-gate.js), both reduced; a failure in either fails the smoke too.
 // Flags: --url <base>. Env: CHROME_PATH (Chrome binary), SMOKE_URL (reuse a running server instead of starting tools/serve.js).
 // Talks to Chrome over the DevTools protocol with Node's built-in WebSocket (Node 22+), no dependencies.
 import fs from "node:fs";
@@ -13,6 +14,7 @@ import net from "node:net";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { runCardGate } from "./card-gate.js";
+import { runMapGate } from "./map-gate.js";
 import { spawnSync } from "node:child_process";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -157,7 +159,7 @@ if (!bin) { console.error("smoke: no Chrome found. Set CHROME_PATH."); process.e
 const server = await startServer(), chrome = await startChrome(bin);
 const cdp = new CDP(chrome.ws);
 const results = [];
-let gate = null, shopGate = null;
+let gate = null, shopGate = null, mapGate = null;
 try {
   await cdp.open();
   for (const url of pages()) for (const size of SIZES) results.push(await checkPage(cdp, server.base, url, size, { staticOnly: server.staticOnly }));
@@ -171,6 +173,9 @@ try {
   console.log("\nshop gate (reduced matrix):");
   const sg = spawnSync(process.execPath, [path.join(ROOT, "tools", "shop-gate.js"), "--widths", "320,390,1024,1440", "--themes", "light,dark", "--fonts", "16,20", "--only", "most-items,no-menu,no-photo,no-city"], { stdio: "inherit", env: { ...process.env, GATE_URL: server.base } });
   shopGate = sg.status === 0 ? "passed" : "FAILED";
+  // the map density gate (tools/map-gate.js), reduced: Manhattan and the Triangle at zooms 11 and 13, 390 and 1440, light
+  console.log("\nmap gate (reduced matrix):");
+  mapGate = await runMapGate(cdp, server.base, { reduced: true });
 } finally { cdp.close(); chrome.stop(); server.stop(); }
 
 const pad = (v, n) => String(v).padEnd(n);
@@ -181,4 +186,5 @@ for (const r of bad) { console.log(`\nFAIL ${r.url} @${r.w}`); for (const e of r
 console.log(bad.length ? `\nsmoke: ${bad.length} of ${results.length} checks failed` : `\nsmoke: all ${results.length} checks passed`);
 console.log(gate ? `card gate: ${gate.cases - gate.failed} of ${gate.cases} cases passed${gate.failed ? " (screens in qa/cards/2026-11-23/fail/)" : ""}` : "card gate: did not run");
 console.log("shop gate (reduced): " + (shopGate || "did not run"));
-process.exit(bad.length || !gate || gate.failed || shopGate !== "passed" ? 1 : 0);
+console.log(mapGate ? `map gate (reduced): ${mapGate.cases - mapGate.failed} of ${mapGate.cases} cases passed${mapGate.failed ? " (screens in qa/brands/2026-11-23/map-fail/)" : ""}` : "map gate: did not run");
+process.exit(bad.length || !gate || gate.failed || shopGate !== "passed" || !mapGate || mapGate.failed ? 1 : 0);

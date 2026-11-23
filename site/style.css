@@ -291,6 +291,10 @@ body.show-list .list-panel { display: block; }
 .mk-cl.cl-br.cl-bc, .mk-cl.cl-br.cl-fan, .mk-cl.cl-br.cl-cell { width: 22px; height: 22px; }
 .mk-cl.cl-bc .cl-n, .mk-cl.cl-br.cl-fan .cl-n, .mk-cl.cl-br.cl-cell .cl-n { right: -14px; bottom: -8px; }
 .mk-cl.fan-open .mk-in { opacity: .45; }
+/* name labels from zoom 13 (layoutLabels in app.js): quiet, small, on a plate; hidden while a zoom runs */
+.mk-lbl { position: absolute; left: 0; top: 0; z-index: 1; max-width: 150px; padding: 1px 6px; border-radius: 6px; background: color-mix(in srgb, var(--panel) 92%, transparent);
+  color: var(--ink); font-size: 12.5px; font-weight: 700; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; box-shadow: 0 1px 2px rgba(75,52,38,.18); }
+.mk-lbl[hidden], .zooming .mk-lbl { display: none; }
 
 /* clusters: dango */
 .mk-cl { width: 28px; height: 54px; }
