@@ -14,7 +14,9 @@ import { readHeader } from "../ingest/lib/images.js";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
 export const MAX_W = 1200;
-export const OVER = 350 * 1024;
+export const OVER = 250 * 1024;
+export const WIDE = 1600;
+export const THUMB_W = 400;
 const TYPE = { jpg: "image/jpeg", png: "image/png", webp: "image/webp" };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -35,7 +37,7 @@ export async function openShrinker() {
   let id = 0; const pend = new Map();
   ws.onmessage = (m) => { const d = JSON.parse(m.data); if (d.id && pend.has(d.id)) { pend.get(d.id)(d); pend.delete(d.id); } };
   const send = (method, params = {}) => new Promise((r) => { const i = ++id; pend.set(i, r); ws.send(JSON.stringify({ id: i, method, params })); });
-  async function shrink(buf, ext, maxW = MAX_W) {
+  async function shrink(buf, ext, maxW = MAX_W, force = false) {
     const type = TYPE[ext];
     if (!type) return null;
     const src = `data:${type};base64,` + buf.toString("base64");
@@ -48,40 +50,63 @@ export async function openShrinker() {
     const b64 = r.result?.result?.value;
     if (!b64) return null;
     const out = Buffer.from(b64, "base64");
-    return out.length < buf.length ? out : null;
+    return force || out.length < buf.length ? out : null;
   }
   async function close() { try { ws.close(); } catch { /* gone */ } p.kill(); await sleep(300); try { fs.rmSync(ud, { recursive: true, force: true }); } catch { /* locked */ } }
   return { shrink, close };
 }
 
 // For one buffer (ingest). -> Buffer (smaller) or null.
-export async function shrinkBuffer(buf, ext, maxW = MAX_W) {
+export async function shrinkBuffer(buf, ext, maxW = MAX_W, force = false) {
   const s = await openShrinker();
-  try { return await s.shrink(buf, ext, maxW); } finally { await s.close(); }
+  try { return await s.shrink(buf, ext, maxW, force); } finally { await s.close(); }
 }
 
+// Skip logic (pure, no Chrome): does this file need a redraw? A file the index already has was handled once, so it
+// is left alone even if it stayed over the line (a redraw that does not shrink it is not retried every run).
+export function needsShrink({ size, width }, entry) {
+  if (entry && entry.orig) return false;
+  return size > OVER || (width || 0) > WIDE;
+}
+// A thumbnail is wanted for every picture that has none yet.
+export const needsThumb = (hasThumb) => !hasThumb;
+
 export async function run({ dir = path.join(ROOT, "site/img/events"), dry = false } = {}) {
+  const thumbDir = path.join(dir, "thumbs"), indexPath = path.join(dir, "index.json");
+  let index = {};
+  try { index = JSON.parse(fs.readFileSync(indexPath, "utf8")); } catch { /* first run */ }
   const files = fs.readdirSync(dir).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
-  const todo = files.filter((f) => {
-    const b = fs.readFileSync(path.join(dir, f)), h = readHeader(b);
-    return h && (b.length > OVER || (h.width || 0) > MAX_W * 1.15);
-  });
-  let before = 0, after = 0, done = 0;
-  if (!todo.length || dry) return { files: files.length, todo: todo.length, done, before, after };
+  const info = (f) => { const b = fs.readFileSync(path.join(dir, f)); return { b, h: readHeader(b) }; };
+  const todo = files.filter((f) => { const { b, h } = info(f); return h && needsShrink({ size: b.length, width: h.width }, index[f]); });
+  const thumbTodo = files.filter((f) => needsThumb(fs.existsSync(path.join(thumbDir, f))));
+  const total = () => files.reduce((n, f) => n + fs.statSync(path.join(dir, f)).size, 0);
+  const before = total();
+  const r = { files: files.length, todo: todo.length, thumbs: 0, done: 0, before, after: before };
+  if (dry || (!todo.length && !thumbTodo.length)) return r;
   const s = await openShrinker();
   try {
     for (const f of todo) {
-      const p = path.join(dir, f), b = fs.readFileSync(p), h = readHeader(b);
+      const p = path.join(dir, f), { b, h } = info(f);
       const out = await s.shrink(b, h.ext);
-      before += b.length;
-      if (out) { fs.writeFileSync(p, out); after += out.length; done++; } else after += b.length;
+      index[f] = { orig: b.length, origWidth: h.width || null };
+      if (out) { fs.writeFileSync(p, out); r.done++; }
+    }
+    fs.mkdirSync(thumbDir, { recursive: true });
+    for (const f of thumbTodo) {
+      const { b, h } = info(f);
+      if (!h) continue;
+      const out = await s.shrink(b, h.ext, THUMB_W, true);
+      if (out) { fs.writeFileSync(path.join(thumbDir, f), out); r.thumbs++; }
     }
   } finally { await s.close(); }
-  return { files: files.length, todo: todo.length, done, before, after };
+  for (const f of files) if (fs.existsSync(path.join(thumbDir, f))) (index[f] ||= {}).thumb = `thumbs/${f}`;
+  fs.writeFileSync(indexPath, JSON.stringify(index, null, 1) + "\n");
+  r.after = total();
+  return r;
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const r = await run({ dry: process.argv.includes("--dry") });
   const mb = (n) => (n / 1048576).toFixed(1) + " MB";
-  console.log(`images: ${r.files} files, ${r.todo} over ${MAX_W} px or ${OVER / 1024} KB, ${r.done} redrawn, ${mb(r.before)} -> ${mb(r.after)}`);
+  console.log(`images: ${r.files} files, ${r.todo} over ${MAX_W} px or ${OVER / 1024} KB, ${r.done} redrawn, ${r.thumbs} thumbs, ${mb(r.before)} -> ${mb(r.after)}`);
 }

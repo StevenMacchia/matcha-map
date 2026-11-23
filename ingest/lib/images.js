@@ -9,9 +9,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { UA } from "./fetch.js";
-import { debug, warn } from "./log.js";
+import { debug, info, warn } from "./log.js";
 
 export const MAX_BYTES = 2 * 1024 * 1024;
+export const SHRINK_OVER = 250 * 1024;
 export const HARD_MAX = 16 * 1024 * 1024;
 export const MAX_REDIRECTS = 2;
 export const ROBOTS = "blocked by robots.txt";
@@ -69,15 +70,29 @@ export async function fetchImage(url, { fetcher, fetchFn = fetch } = {}) {
 // Fill image.local, width and height on events (mutates). Files already on disk are reused.
 // Bring a big download under MAX_BYTES: shrink(buf, ext) -> Buffer|null (default: tools/shrink-images.js).
 async function fitSize(r, shrink) {
-  if (r.buf.length <= MAX_BYTES) return r;
+  if (r.buf.length <= SHRINK_OVER && (r.width || 0) <= 1600) return r;
   let out = null;
   try {
     const fn = shrink || (await import("../../tools/shrink-images.js")).shrinkBuffer;
     out = await fn(r.buf, r.ext);
   } catch (err) { debug("image shrink unavailable", err.message); }
-  if (!out || out.length > MAX_BYTES) throw new Error("over 2 MB");
+  if (!out) {
+    if (r.buf.length > MAX_BYTES) throw new Error("over 2 MB");
+    return r;   // small enough to keep as is; a failed resize never fails the ingest
+  }
+  if (out.length > MAX_BYTES) throw new Error("over 2 MB");
   const head = readHeader(out) || {};
   return { ...r, buf: out, width: head.width || r.width, height: head.height || r.height };
+}
+
+// 400 px thumbnail beside the picture (thumbs/<name>); best effort and silent. Skipped when a test injects a shrinker.
+async function writeThumb(dir, name, r, shrink) {
+  if (shrink) return;
+  try {
+    const { shrinkBuffer } = await import("../../tools/shrink-images.js");
+    const out = await shrinkBuffer(r.buf, r.ext, 400, true);
+    if (out) { fs.mkdirSync(path.join(dir, "thumbs"), { recursive: true }); fs.writeFileSync(path.join(dir, "thumbs", name), out); }
+  } catch (err) { debug("thumb skipped", err.message); }
 }
 
 export async function downloadImages(events, { fetcher, dir = IMG_DIR, fetchFn, shrink } = {}) {
@@ -92,6 +107,7 @@ export async function downloadImages(events, { fetcher, dir = IMG_DIR, fetchFn, 
       const r = await fitSize(await fetchImage(img.url, { fetcher, fetchFn }), shrink);
       const name = `${e.id}.${r.ext}`;
       fs.writeFileSync(path.join(dir, name), r.buf);
+      await writeThumb(dir, name, r, shrink);
       Object.assign(img, { local: `img/events/${name}`, width: r.width, height: r.height });
       stats.downloaded++;
     } catch (err) {
@@ -100,7 +116,7 @@ export async function downloadImages(events, { fetcher, dir = IMG_DIR, fetchFn, 
       if (err.message === ROBOTS) { stats.robots++; e.image_url = e.image_url || img.url; continue; }
       stats.failed++;
       debug("image failed", img.url, err.message);
-      if (err.message === "over 2 MB") debug(`image ${e.id}: over 2 MB and could not be redrawn smaller; the remote url stays`);
+      if (err.message === "over 2 MB") info(`  image ${e.id}: over 2 MB, left remote (no Chrome to redraw it; run npm run images)`);
       else warn(`image ${e.id}: ${err.message}`);
     }
   }
@@ -112,6 +128,9 @@ export function pruneImages(events, dir = IMG_DIR) {
   if (!fs.existsSync(dir)) return 0;
   const keep = new Set(events.map((e) => e.image?.local && path.basename(e.image.local)).filter(Boolean));
   let n = 0;
-  for (const f of fs.readdirSync(dir)) if (f !== ".gitkeep" && !keep.has(f)) { fs.unlinkSync(path.join(dir, f)); n++; }
+  for (const f of fs.readdirSync(dir)) if (/\.(jpe?g|png|webp)$/i.test(f) && !keep.has(f)) {
+    fs.unlinkSync(path.join(dir, f)); n++;
+    try { fs.unlinkSync(path.join(dir, "thumbs", f)); } catch { /* none */ }
+  }
   return n;
 }

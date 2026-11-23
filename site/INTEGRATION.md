@@ -108,3 +108,11 @@ el.appendChild(renderCard(event, ctx));   // or el.innerHTML = cardHtml(event, c
 
 `tools/gen-event-pages.js` uses `cardHtml` with `{ base: "/", page: true, absolute: true, eventHref: (id) => "/e/" + id + "/" }`
 and `site/cards-page.js` wires the static pages.
+
+## Image thumbnails (N7b)
+
+`npm run images` resizes `site/img/events/*` (over 250 KB or wider than 1600 px, to 1200 px, same name) and writes a
+400 px copy of each to `site/img/events/thumbs/<name>`. `site/img/events/index.json` records `orig` bytes and `thumb`.
+For list rows and "also nearby" mini rows: `import { thumbFor } from "./img-helper.js"`, then
+`<img src="${thumbFor(e.image.local)}" onerror="this.onerror=null;this.src='${e.image.local}'">`. Cards keep the full file.
+Ingest makes the thumb on download. N7b does not edit cards.js or app.js; the cards and design workers adopt it.
