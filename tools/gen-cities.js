@@ -100,6 +100,7 @@ export function parseGazetteer(text) {
 // Nominatim reverse lookup of every listed city's point (tools notes, 2026-11-23); add a row when a check flags another one.
 export const LAND_POINTS = {
   "San Francisco|CA": { lat: 37.7793, lng: -122.4193, why: "Census point 37.7272,-123.0322 is in the Pacific (Farallon Islands); City Hall instead" },
+  "Corpus Christi|TX": { lat: 27.8006, lng: -97.3964, why: "Census point 27.7543,-97.1734 is in Corpus Christi Bay, 22 km from the nearest street; downtown instead" },
 };
 export const landPoint = (c) => { const p = LAND_POINTS[`${c.name}|${c.state}`]; return p ? { ...c, lat: p.lat, lng: p.lng } : c; };
 // The two files -> the entries: top PER_STATE per state by population, ranked in the state and in the country.

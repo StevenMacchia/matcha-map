@@ -63,7 +63,7 @@
   {"name":"Stockton","state":"CA","pop":324975,"lat":37.9766,"lng":-121.3086,"slug":"stockton","rank_in_state":11,"rank_us":60,"tz":"America/Los_Angeles"},
   {"name":"Riverside","state":"CA","pop":323757,"lat":33.9381,"lng":-117.3932,"slug":"riverside","rank_in_state":12,"rank_us":61,"tz":"America/Los_Angeles"},
   {"name":"Irvine","state":"CA","pop":318683,"lat":33.6784,"lng":-117.7713,"slug":"irvine","rank_in_state":13,"rank_us":62,"tz":"America/Los_Angeles"},
-  {"name":"Corpus Christi","state":"TX","pop":317317,"lat":27.7543,"lng":-97.1734,"slug":"corpus-christi","rank_in_state":8,"rank_us":63,"tz":"America/Chicago"},
+  {"name":"Corpus Christi","state":"TX","pop":317317,"lat":27.8006,"lng":-97.3964,"slug":"corpus-christi","rank_in_state":8,"rank_us":63,"tz":"America/Chicago"},
   {"name":"Newark","state":"NJ","pop":317303,"lat":40.7242,"lng":-74.1726,"slug":"newark","rank_in_state":1,"rank_us":64,"tz":"America/New_York"},
   {"name":"Santa Ana","state":"CA","pop":316184,"lat":33.7363,"lng":-117.8829,"slug":"santa-ana","rank_in_state":14,"rank_us":65,"tz":"America/Los_Angeles"},
   {"name":"Cincinnati","state":"OH","pop":314915,"lat":39.1402,"lng":-84.5058,"slug":"cincinnati","rank_in_state":3,"rank_us":66,"tz":"America/New_York"},
