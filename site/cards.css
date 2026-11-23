@@ -255,3 +255,7 @@
 .pg-card > .mm-card { margin: 4px auto 0; border: 2px solid var(--line, #DCE7D0); box-shadow: var(--shadow, 0 8px 24px rgba(75,52,38,.10)); }
 .pg-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px !important; }
 .mm-compact .mm-desc::before { top: -6px; }
+
+/* Featured pill (site/featured.js): one quiet word next to a name; paid and free look the same. */
+.mm-feat { display: inline-block; flex: none; font-size: 11.5px; font-weight: 800; line-height: 1.4; padding: 1px 8px; margin-left: 6px; border-radius: 999px; background: var(--foam, #E6F2DC); color: var(--deep, #3E6B33); border: 1.5px solid var(--line, #DCE7D0); vertical-align: middle; white-space: nowrap; }
+.mm-rn > .mm-feat { margin-left: 0; }

@@ -34,6 +34,35 @@
     }
     return box;
   }
+  // Featured requests (kind "featured"): brand, event link, week, free or paid, email. Approve / Reject; "Mark paid" once approved.
+  function post(body, btn) {
+    btn.disabled = true;
+    return api("/api/approve", { method: "POST", body: JSON.stringify(body) }).then(load).catch(function (e) { msg.textContent = e.message; btn.disabled = false; });
+  }
+  function featCard(item, approved) {
+    var box = el("div", "rv-item");
+    box.appendChild(el("h3", "", (item.brand || "(no brand)") + "  " + (item.plan === "paid" ? "paid" : "free") + (item.paid ? " (paid in)" : "")));
+    box.appendChild(el("p", "rv-meta", "id " + item.id + " - sent " + (item.at || "").slice(0, 16).replace("T", " ")));
+    var p = el("p"), a = el("a", "", "Pop-up " + item.event);
+    a.href = /^[a-f0-9]{12}$/.test(item.event || "") ? "/?event=" + item.event : "#"; a.rel = "noopener noreferrer"; a.target = "_blank";
+    p.appendChild(document.createTextNode("Event: ")); p.appendChild(a); box.appendChild(p);
+    line(box, "Week from", item.week); if (approved) line(box, "Shown until", (item.until || "").slice(0, 10));
+    line(box, "Email", item.email); line(box, "Notes", item.notes); line(box, "Paid at", item.paid_at && item.paid_at.slice(0, 16).replace("T", " "));
+    var act = el("div", "rv-act");
+    var defs = approved ? (item.paid ? [] : [["Mark paid", "", { patch: { paid: true }, action: "edit" }]]) : [["Approve", "", { action: "approve" }], ["Reject", "alt", { action: "reject" }]];
+    defs.forEach(function (d) {
+      var btn = el("button", "fm-btn " + d[1], d[0]); btn.type = "button";
+      btn.addEventListener("click", function () { post(Object.assign({ id: item.id, kind: "featured" }, d[2]), btn); });
+      act.appendChild(btn);
+    });
+    if (defs.length) box.appendChild(act);
+    return box;
+  }
+  function fillFeat(id, items, approved) {
+    var c = document.getElementById(id); c.textContent = "";
+    if (!items.length) c.appendChild(el("p", "fm-note", "Nothing here."));
+    items.forEach(function (i) { c.appendChild(featCard(i, approved)); });
+  }
   function fill(id, items, pending) {
     var c = document.getElementById(id); c.textContent = "";
     if (!items.length) c.appendChild(el("p", "fm-note", "Nothing here."));
@@ -41,10 +70,11 @@
   }
   function load() {
     msg.textContent = "";
-    return api("/api/queue").then(function (j) {
+    return api("/api/queue?kinds=pending,approved,featured,featured-ok").then(function (j) {
       gate.hidden = true; queue.hidden = false;
       fill("pending", j.pending || [], true); fill("approved", j.approved || [], false);
-      if (j.pending_more || j.approved_more) msg.textContent = "More than 40 waiting: handle these, then reload.";
+      fillFeat("feat-pending", j.featured || [], false); fillFeat("feat-ok", j["featured-ok"] || [], true);
+      if (j.pending_more || j.approved_more || j.featured_more || j["featured-ok_more"]) msg.textContent = "More than 40 waiting: handle these, then reload.";
     }).catch(function (e) {
       queue.hidden = true; gate.hidden = false; msg.textContent = e.message;
       if (/not allowed/i.test(e.message)) setToken("");
