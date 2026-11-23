@@ -25,13 +25,13 @@ import path from "node:path";
 import net from "node:net";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { seriesWords } from "../site/cards.js";
+import { seriesWords, bioLine } from "../site/cards.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FAIL_DIR = path.join(ROOT, "qa", "cards", "2026-11-23", "fail");
 const HEIGHT = { 320: 568, 360: 740, 390: 844, 430: 932, 768: 1024, 1024: 768, 1280: 720, 1440: 900, 1920: 1080 };
 export const FULL = { widths: [320, 360, 390, 430, 768, 1024, 1280, 1440, 1920], fixtures: null };
-export const REDUCED = { widths: [320, 390, 1024, 1440], fixtures: ["longest brand", "city only", "no photo", "unsure", "brand menu", "series until"] };
+export const REDUCED = { widths: [320, 390, 1024, 1440], fixtures: ["longest brand", "city only", "no photo", "unsure", "brand menu", "longest bio", "no picture", "series until"] };
 // Cut on purpose, and only here: the quote (two lines in the sheet, one in the popup); the whole text is on /e/<id>/,
 // one tap away through "more" or "Full details and photo".
 export const ALLOW = [".mm-q-text"];
@@ -52,7 +52,21 @@ export function pickBrandFixture(sources, menus, events, now = Date.now()) {
     if (!m || !Array.isArray(m.items) || !m.items.length || !h || s.active === false || dated.has(s.id)) continue;
     if (lineLen(m) > bl) { bl = lineLen(m); best = { s, h }; }
   }
-  return { name: "brand menu", kind: "brand", id: best ? best.h : null, label: best ? `${best.s.brand} (?brand=${best.h}, ${hostOf(best.s.website)})` : "none in the data" };
+  return { name: "brand menu", kind: "brand", menu: true, id: best ? best.h : null, label: best ? `${best.s.brand} (?brand=${best.h}, ${hostOf(best.s.website)})` : "none in the data" };
+}
+// Two more brand cards (2026-11-23, the brand card rebuilt from brands.json): the brand whose one bio line is longest, and
+// a brand with no picture (no brands.json record, or one with an empty picture), so the initial stands in. Brands with
+// upcoming dates are left out, as above; a source without a handle opens by its id.
+export function pickBrandExtras(sources, brands, events, now = Date.now()) {
+  const dated = new Set(events.filter((e) => upcoming(e, now)).map((e) => e.source_id));
+  const by = new Map((brands || []).map((b) => [String(b.handle || "").toLowerCase(), b]));
+  const live = (sources || []).filter((s) => s && s.active !== false && !dated.has(s.id) && s.home_city);
+  const hOf = (s) => String(s.instagram || "").replace(/^@/, "").toLowerCase();
+  let bio = null, bl = -1;
+  for (const s of live) { const b = by.get(hOf(s)); const l = b ? bioLine(b.bio).length : -1; if (l > bl) { bl = l; bio = s; } }
+  const nopic = live.find((s) => { const b = by.get(hOf(s)); return !b || !b.picture; });
+  const fx = (name, s) => ({ name, kind: "brand", menu: false, id: s ? hOf(s) || s.id : null, label: s ? `${s.brand} (?brand=${hOf(s) || s.id})` : "none in the data" });
+  return [fx("longest bio", bl > 0 ? bio : null), fx("no picture", nopic)];
 }
 export function pickFixtures(events, brands, now = Date.now()) {
   const up = events.filter((e) => upcoming(e, now));
@@ -78,8 +92,8 @@ export function pickFixtures(events, brands, now = Date.now()) {
 }
 
 // ---- the checker, run in the page --------------------------------------------------------------------------------
-const CHECK = (allow, card = ".mm-card") => `(() => {
-  const allow = ${JSON.stringify(allow)}, card = ${JSON.stringify(card)}, out = [], vw = innerWidth, vh = innerHeight, T = 1;
+const CHECK = (allow, card = ".mm-card", menu = true) => `(() => {
+  const allow = ${JSON.stringify(allow)}, card = ${JSON.stringify(card)}, menu = ${menu ? "true" : "false"}, out = [], vw = innerWidth, vh = innerHeight, T = 1;
   const phone = !document.querySelector(".mm-pop .maplibregl-popup-content " + card);
   const root = phone ? document.getElementById("sheet-body") : document.querySelector(".mm-pop .maplibregl-popup-content");
   if (!root || !root.querySelector(card)) return { error: "no card" };
@@ -127,7 +141,7 @@ const CHECK = (allow, card = ".mm-card") => `(() => {
   }
   // the button row, on screen without scrolling (the event card; the brand card has no pinned row, its links end it)
   const acts = root.querySelector(".mm-dock .mm-acts");
-  if (card !== ".mm-card") { if (!root.querySelector(card + " .mm-menu-sec")) out.push("brand card has no Menu section"); }
+  if (card !== ".mm-card") { if (menu && !root.querySelector(card + " .mm-menu-sec")) out.push("brand card has no Menu section"); }
   else if (!acts) out.push("no button row (.mm-dock .mm-acts)");
   else {
     const a = acts.getBoundingClientRect();
@@ -165,7 +179,7 @@ export async function runCardGate(cdp, base, opts = {}) {
   const M = opts.reduced ? REDUCED : FULL;
   const src = opts.sources || JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", "sources.json"), "utf8"));
   const menus = opts.menus || JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", "menus.json"), "utf8"));
-  let fixtures = [...pickFixtures(events, brands), pickBrandFixture(Array.isArray(src) ? src : src.sources, menus, events)];
+  let fixtures = [...pickFixtures(events, brands), pickBrandFixture(Array.isArray(src) ? src : src.sources, menus, events), ...pickBrandExtras(Array.isArray(src) ? src : src.sources, brands, events)];
   const skipped = fixtures.filter((f) => !f.id);
   fixtures = fixtures.filter((f) => f.id && (!M.fixtures || M.fixtures.includes(f.name)) && (!opts.only || opts.only.includes(f.name)));
   for (const f of fixtures) log(`  fixture ${f.name.padEnd(20)} ${f.label}`);
@@ -199,7 +213,7 @@ export async function runCardGate(cdp, base, opts = {}) {
           await ev(SET_THEME(theme)); await ev(FORCE_GOING); if (feat) await ev(ADD_FEATURED);
           await ev(FRAMES);
           if (w < 900) { if ((await ev(SNAP("peek"))) === "peek" && !brand) { await ev(FRAMES); fails.push(...((await ev(PEEK)) || [])); } await ev(SNAP("full")); await ev(FRAMES); }
-          const r = await ev(CHECK(ALLOW, card));
+          const r = await ev(CHECK(ALLOW, card, f.menu !== false));
           if (!r || r.error) fails.push((r && r.error) || "checker did not run"); else fails.push(...r.fails);
           return fails;
         };

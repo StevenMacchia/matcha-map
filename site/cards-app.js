@@ -7,7 +7,7 @@
 // Share buttons, picture fallbacks and "Also nearby" links are handled by delegated listeners on the document, so the
 // app does not need to call anything after it sets innerHTML. Set window.MatchaCards.open = function (key) {...} to
 // open an also-nearby pop-up in place (key "e:<id>"); without it the link is a normal deep link (?event=<id>).
-import { cardHtml, rowHtml, brandCardHtml, wire, fitQuotes } from "./cards.js";
+import { cardHtml, rowHtml, brandCardHtml, brandRowHtml, wire, fitQuotes } from "./cards.js";
 import { shopCardHtml, menuForBrand } from "./shopcard.js"; // the storefront card ("s:<id>"); the brand card's menu
 
 const data = { art: null, brands: null, sources: null, places: null, menus: null };
@@ -69,6 +69,7 @@ function render(item, ctx) {
   return null;
 }
 function row(item, ctx) {
+  if (item && item.kind === "b" && item.data) return brandRowHtml(item.data, { ...context(ctx), dist: ctx && ctx.distText ? ctx.distText : "" });
   if (!item || item.kind !== "e" || !item.data) return null;
   // ctx.series: the row stands for a series of that many dates (app.js, the list with no date filter)
   return rowHtml(item.data, { ...context(ctx), series: ctx && ctx.series > 0 ? ctx.series : 0 });

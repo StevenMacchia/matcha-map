@@ -564,37 +564,88 @@ export function rowHtml(e, ctx = {}) {
 }
 
 // ---- the brand card ------------------------------------------------------------------------------------------
-// brand: a brands.json record ({handle, name, picture, bio, followers, website, home_city, home_state, kind, recent}) or a
-// sources.json record ({brand, instagram, tiktok, website, home_city, home_state, kind}); events: that brand's events.
+// brand: a sources.json record ({id, brand, instagram, tiktok, website, home_city, home_state, kind}) or a brands.json record
+// ({handle, name, picture, bio, followers, website, home_city, home_state, kind, recent}); events: that brand's events.
+// brands.json (ctx.brands, matched on the handle) comes first for every field it has; the source record fills the rest.
 // ctx.menus (data/menus.json): the brand's menu shows after its dates when its website host has one.
-export function brandCardHtml(brand, events = [], ctx = {}) {
+// (2026-11-23, after "Brands, no dates yet" read as six blank faces: the card and the row show the picture, one bio line,
+// followers, the website and the two latest posts; "no dates" is one small line under them, never the headline.)
+export function bioLine(s, max = 14) {
+  s = String(s || "").replace(/\s+/g, " ").trim();
+  if (!s) return "";
+  const first = (/^(.+?[.!?])(\s|$)/.exec(s) || [null, s])[1];
+  const words = first.split(" ").filter(Boolean);
+  return words.length > max ? words.slice(0, max).join(" ").replace(/[\s,.;:|•·-]+$/, "") + "…" : first;
+}
+// The alerts page's city value ("raleigh-nc"), the same as site/add/add.js builds for its picker.
+export function citySlug(city, state) {
+  if (!city || !state) return "";
+  const st = String(state).toLowerCase().replace(/[^a-z]/g, "");
+  if (st === "dc") return "washington-dc";
+  const c = String(city).toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return c && st ? c + "-" + st : "";
+}
+// "12k followers", only over 500 (a smaller count says little next to the name)
+export function followersWord(n) { return typeof n === "number" && n > 500 ? followers(n) : ""; }
+function postDate(ts) {
+  const t = Date.parse(ts || "");
+  if (!isFinite(t)) return "";
+  const d = new Date(t);
+  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}`;
+}
+function brandFacts(brand, ctx) {
   brand = brand || {};
   const h = String(brand.handle || brand.instagram || "").replace(/^@/, "").toLowerCase();
-  const b = (h && byKey(ctx.brands, h, "handle")) || (brand.picture || brand.bio ? brand : null);
-  const name = cut((b && b.name) || brand.name || brand.brand || h || "Matcha brand", 60);
+  const b = (h && byKey(ctx.brands, h, "handle")) || (brand.picture || brand.bio || brand.recent ? brand : null) || {};
+  const name = cut(brand.brand || b.name || brand.name || h || "Matcha brand", 60);
+  return { h, b, name, pic: safeUrl(b.picture), kind: KIND[brand.kind || b.kind] || "", bio: bioLine(b.bio || brand.bio),
+    fol: followersWord(b.followers), web: safeUrl(brand.website || b.website),
+    city: brand.home_city || b.home_city || "", state: brand.home_state || b.home_state || "" };
+}
+export function brandCardHtml(brand, events = [], ctx = {}) {
+  brand = brand || {};
+  const F = brandFacts(brand, ctx), { h, b, name, pic, kind, web } = F, base = ctx.base || "/";
   const now = ctx.now || new Date();
   const up = (Array.isArray(events) ? events : []).filter((e) => e && !/^(past|cancelled)$/.test(dayWord(e, now).kind)).sort((x, y) => (x.start < y.start ? -1 : 1));
-  const kind = KIND[brand.kind || (b && b.kind)] || "";
-  const home = join([brand.home_city || (b && b.home_city), brand.home_state || (b && b.home_state)], ", ");
+  const home = join([F.city, F.state], ", ");
   const next = up[0] ? verdict(up[0], ctx) : null;
-  const pic = b && safeUrl(b.picture);
-  const meta = join([h ? `<a href="https://www.instagram.com/${encodeURIComponent(h)}/" target="_blank" rel="noopener">@${esc(h)}</a>` : "", kind ? `<span class="mm-kind">${esc(kind)}</span>` : ""]);
-  const stats = [home ? `${ICON.pin}<span>${esc(home)}</span>` : "", followers(b && b.followers) ? `${ICON.heart}<span>${esc(followers(b.followers))}</span>` : ""].filter(Boolean);
-  const web = safeUrl(brand.website || (b && b.website)), tt = brand.tiktok ? "https://www.tiktok.com/@" + encodeURIComponent(String(brand.tiktok).replace(/^@/, "")) : "";
-  const links = [h ? `<a class="mm-act" href="https://www.instagram.com/${encodeURIComponent(h)}/" target="_blank" rel="noopener">${ICON.ig}<span>Instagram</span></a>` : "",
+  const ig = h ? `https://www.instagram.com/${encodeURIComponent(h)}/` : "";
+  const meta = join([kind ? `<span class="mm-kind">${esc(kind)}</span>` : "", h ? `<a href="${esc(ig)}" target="_blank" rel="noopener">@${esc(h)}</a>` : ""]);
+  const stats = [home ? `<span>${ICON.pin}<span>${esc(home)}</span></span>` : "", F.fol ? `<span>${ICON.heart}<span>${esc(F.fol)}</span></span>` : "",
+    web ? `<a class="mm-webpill" href="${esc(web)}" target="_blank" rel="noopener">${ICON.web}<span>${esc(domainOf(web))}</span></a>` : ""].filter(Boolean);
+  const tt = brand.tiktok ? "https://www.tiktok.com/@" + encodeURIComponent(String(brand.tiktok).replace(/^@/, "")) : "";
+  const slug = citySlug(F.city, F.state);
+  const links = [ig ? `<a class="mm-act mm-act-go" href="${esc(ig)}" target="_blank" rel="noopener">${ICON.ig}<span>Instagram</span></a>` : "",
     tt ? `<a class="mm-act" href="${esc(tt)}" target="_blank" rel="noopener">${ICON.tt}<span>TikTok</span></a>` : "",
-    web ? `<a class="mm-act" href="${esc(web)}" target="_blank" rel="noopener">${ICON.web}<span>Website</span></a>` : ""].filter(Boolean);
-  const recent = ((b && b.recent) || []).filter((r) => safeUrl(r.permalink) && safeUrl(r.image_url)).slice(0, 3);
+    `<a class="mm-act" href="${esc(base)}alerts/${slug ? "?city=" + encodeURIComponent(slug) : ""}">${ICON.cal}<span>Get alerts</span></a>`].filter(Boolean);
+  const recent = (Array.isArray(b.recent) ? b.recent : []).filter((r) => r && safeUrl(r.permalink) && safeUrl(r.image_url))
+    .sort((x, y) => String(y.timestamp || "").localeCompare(String(x.timestamp || ""))).slice(0, 2);
+  const claim = `${base}claim/?brand=${encodeURIComponent(name)}${h ? "&handle=" + encodeURIComponent(h) : ""}`;
   return `<article class="mm-brand"${h ? ` data-handle="${esc(h)}"` : ""}>` +
-    `<header class="mm-top"><p class="mm-verdict">${next ? `<span class="mm-vday">Next: ${esc(next.day)}</span>${next.time ? ` <span class="mm-vtime">${esc(next.time)}</span>` : ""}${next.where ? `<span class="mm-vwhere">${esc(next.where)}</span>` : ""}` : `<span class="mm-vday">No dates posted yet</span>`}</p></header>` +
+    (next ? `<header class="mm-top"><p class="mm-verdict"><span class="mm-vday">Next: ${esc(next.day)}</span>${next.time ? ` <span class="mm-vtime">${esc(next.time)}</span>` : ""}${next.where ? `<span class="mm-vwhere">${esc(next.where)}</span>` : ""}</p></header>` : "") +
     `<div class="mm-bhero mm-t${hash(name) % 3}">${avatarHtml(name, pic, "mm-avatar mm-avatar-xl")}</div>` +
     `<div class="mm-brandrow mm-brandrow-c"><div class="mm-btxt"><h3 class="mm-bname">${esc(name)}</h3>${meta ? `<p class="mm-bmeta">${meta}</p>` : ""}</div></div>` +
-    (stats.length ? `<p class="mm-stats">${stats.map((s) => `<span>${s}</span>`).join("")}</p>` : "") +
-    (b && b.bio ? `<p class="mm-bio">${esc(cut(b.bio, 240))}</p>` : "") +
+    (F.bio ? `<p class="mm-bio mm-bio1">${esc(F.bio)}</p>` : "") +
+    (stats.length ? `<p class="mm-stats">${stats.join("")}</p>` : "") +
     (up.length ? `<section class="mm-sec"><h4 class="mm-h">Coming up</h4><ul class="mm-nlist">${up.slice(0, 5).map((e) => `<li>${rowHtml(e, { ...ctx, rowTag: "a", mini: true })}</li>`).join("")}</ul></section>` : "") +
-    menuSectionHtml(menuForBrand({ website: web }, ctx.menus) || ownerMenuFor(brand && brand.handle, ctx), ctx) +
-    (recent.length ? `<section class="mm-sec"><h4 class="mm-h">Latest posts</h4><div class="mm-grid">${recent.map((r) => `<a href="${esc(r.permalink)}" target="_blank" rel="noopener" aria-label="${esc(cut(r.caption || "Recent post", 80))}"><img src="${esc(r.image_url)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>`).join("")}</div></section>` : "") +
-    (links.length ? `<div class="mm-acts">${links.join("")}</div>` : "") + `</article>`;
+    menuSectionHtml(menuForBrand({ website: web }, ctx.menus) || ownerMenuFor(h, ctx), ctx) +
+    (recent.length ? `<section class="mm-sec mm-recent"><h4 class="mm-h">Latest posts</h4><ul class="mm-rposts">${recent.map((r) => {
+      const d = postDate(r.timestamp), snip = cut(String(r.caption || "").split("\n")[0], 60) || "Post on Instagram";
+      const label = cut(join(["Post by " + (h ? "@" + h : name), d, r.caption ? cut(r.caption, 60) : ""], ", "), 120);
+      return `<li><a class="mm-rpost" href="${esc(r.permalink)}" target="_blank" rel="noopener" aria-label="${esc(label)}"><span class="mm-rpic"><span class="mm-rsnip">${esc(snip)}</span><img src="${esc(r.image_url)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>${d ? `<span class="mm-rdate">${esc(d)}</span>` : ""}</a></li>`;
+    }).join("")}</ul></section>` : "") +
+    (up.length ? "" : `<p class="mm-nodates">No upcoming dates posted</p>`) +
+    `<div class="mm-acts">${links.join("")}</div>` +
+    `<p class="mm-foot"><a class="mm-report mm-claim" href="${esc(claim)}">${ICON.flag}<span>Claim this page</span></a></p></article>`;
+}
+// The list row for a brand: picture (or the initial), name, kind, and the followers word or else the bio line.
+export function brandRowHtml(brand, ctx = {}) {
+  const F = brandFacts(brand, ctx), id = String((brand && brand.id) || "").replace(/[^A-Za-z0-9._-]/g, "");
+  const line = F.fol || F.bio;
+  const inner = `<span class="mm-th mm-th-b" aria-hidden="true">${avatarHtml(F.name, F.pic, "mm-avatar mm-avatar-row")}</span>` +
+    `<span class="mm-rt"><span class="mm-rn"><span class="mm-rname">${esc(F.name)}</span>${F.kind ? `<span class="mm-kind">${esc(F.kind)}</span>` : ""}</span>` +
+    (line ? `<span class="mm-rp">${esc(line)}</span>` : "") + `</span>` + (ctx.dist ? `<span class="mm-rd">${esc(ctx.dist)}</span>` : "");
+  return `<button type="button" class="mm-row mm-brow"${id ? ` data-key="b:${esc(id)}"` : ""}>${inner}</button>`;
 }
 
 // ---- DOM forms -----------------------------------------------------------------------------------------------

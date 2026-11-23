@@ -477,7 +477,7 @@
     if (it.kind === "e" && it.approx) return approxLabel(it.data);
     if (it.kind === "e" && !it.past && isToday(it.data) && !it.now) return it.data.brand + ", today, " + whenText(it.data);
     if (it.kind === "s") return it.data.name + (it.serves ? ", matcha on the menu" : ", shop") + (it.data.city ? ", " + it.data.city : "");
-    return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) + (it.now ? ", happening now" : "") : it.data.brand + ", " + it.data.home_city + ", no dates yet";
+    return it.kind === "e" ? it.data.brand + ", " + whenText(it.data) + (it.now ? ", happening now" : "") : it.data.brand + ", " + it.data.home_city + ", brand";
   }
   // The pink dot on a pin means "on today" (it was on every upcoming pin, which said nothing).
   function isToday(e) { var s = parts(e.start); return !!s && s.key === dateKey(new Date()); }
@@ -833,7 +833,7 @@
     if (b.tiktok) quiet.push(["TikTok", "https://www.tiktok.com/@" + encodeURIComponent(b.tiktok)]);
     if (safeUrl(b.schedule_url) && b.schedule_url !== b.website) quiet.push(["Schedule", b.schedule_url]);
     return "<div class=\"card bcard\"><h3><span class=\"card-mochi\" aria-hidden=\"true\"></span><span>" + esc(b.brand) + "</span></h3><p class=\"kline\">" + (kindWord(b) || "<span class=\"kindword\">Brand</span>") + "</p>" +
-      "<p class=\"muted place\">" + esc(b.home_city + ", " + b.home_state) + " · no dates posted here yet</p>" +
+      "<p class=\"muted place\">" + esc(b.home_city + ", " + b.home_state) + "</p>" +
       actsHTML(primary, [shareUrl("brand=" + encodeURIComponent(String(b.instagram || b.id).replace(/^@/, "").toLowerCase())), b.brand + " on Matcha Map"]) +
       factsHTML(brandsBy[String(b.instagram || "").toLowerCase()]) + quietHTML(quiet) + "</div>";
   }
@@ -1222,7 +1222,7 @@
   // A city-only event never shows a distance: its pin is the city's centre, not the place.
   function isCityOnly(it) { return it.approx && !it.data.address; }
   function rowHTML(it, grouped) {
-    var dist = distHTML(it.approx ? null : distOf(it));
+    var d = it.approx ? null : distOf(it), dist = distHTML(d);
     if (it.kind === "e") {
       // N6: the rich row from cards.js when it is loaded (same card system as the sheet)
       var r = window.MatchaCards && window.MatchaCards.row && window.MatchaCards.row(it, { events: state.events, series: seriesN[it.key] || 0 });
@@ -1242,8 +1242,10 @@
       return "<button type=\"button\" class=\"row shoprow" + (it.serves ? " shoprow-sv" : "") + "\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-shop\" aria-hidden=\"true\" data-char=\"s-shop\"></span><span class=\"rt\"><strong>" + esc(s.name) + "</strong><span class=\"kindword\">" + (it.serves ? "Matcha on the menu" : "Shop") + "</span><span>" +
         esc([s.address, s.city].filter(Boolean).join(", ") || shopAddress(s)) + "</span>" + dist + "</span></button>";
     }
+    var br = window.MatchaCards && window.MatchaCards.row && window.MatchaCards.row(it, { distText: d != null ? (d < 10 ? Math.round(d * 10) / 10 : Math.round(d)) + " mi" : "" });
+    if (br) return br;
     return "<button type=\"button\" class=\"row brandrow\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-mochi\" aria-hidden=\"true\"><span class=\"mochi\"></span></span><span class=\"rt\"><strong>" + esc(it.data.brand) + "</strong>" + kindWord(it.data) + "<span>" +
-      esc(it.data.home_city + ", " + it.data.home_state) + " · No dates posted here yet</span>" + dist + "</span></button>";
+      esc(it.data.home_city + ", " + it.data.home_state) + "</span>" + dist + "</span></button>";
   }
   function headHTML(text, n, cls) { return "<li class=\"head" + (cls ? " " + cls : "") + "\">" + text + (n ? " <span class=\"n\">" + n + "</span>" : "") + "</li>"; }
   function rowsHTML(list, grouped) { return list.map(function (it) { return "<li>" + rowHTML(it, grouped) + "</li>"; }).join(""); }
