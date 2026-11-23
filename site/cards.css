@@ -207,7 +207,7 @@
 .mm-compact .mm-avatar { width: 40px; height: 40px; }
 .mm-compact .mm-initial { font-size: 17px; }
 .mm-compact .mm-bname { font-size: 17px; }
-.mm-compact .mm-desc { font-size: 14.5px; padding: 8px 12px 8px 30px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.mm-compact .mm-desc { font-size: 14.5px; padding: 0 12px 0 30px; border: solid transparent; border-width: 8px 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .mm-compact .mm-chip { font-size: 13.5px; }
 .mm-compact .mm-chip-art, .mm-compact .mm-chip .mm-cup { width: 28px; height: 28px; }
 .mm-compact .mm-fact { padding: 6px 10px 7px; }
@@ -246,3 +246,4 @@
 .pg-main.pg-card { max-width: 1100px; }
 .pg-card > .mm-card { margin: 4px auto 0; border: 2px solid var(--line, #DCE7D0); box-shadow: var(--shadow, 0 8px 24px rgba(75,52,38,.10)); }
 .pg-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px !important; }
+.mm-compact .mm-desc::before { top: -6px; }

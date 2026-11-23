@@ -5,7 +5,8 @@
 .pr-card h3 { margin: 0 0 4px; font-size: 16px; }
 .pr-sub { color: var(--muted); margin: 0 0 10px; font-size: 15px; }
 .pr-line { margin: 6px 0; font-size: 17px; }
-.pr-links { margin: 6px 0 0; word-break: break-all; }
+.pr-links { margin: 6px 0 0; overflow-wrap: anywhere; font-size: 14.5px; line-height: 1.5; }
+.pr-links a { display: inline-block; padding: 4px 0; }
 .pr-cap { margin: 0 0 14px; }
 .pr-ta { width: 100%; padding: 10px 14px; border: 2px solid var(--edge); border-radius: 14px; background: var(--btnfill); color: var(--ink); font: 500 15px/1.4 var(--font); resize: vertical; margin: 0 0 8px; }
 .pr input[type="search"] { width: 100%; min-height: 46px; padding: 10px 14px; border: 2px solid var(--edge); border-radius: 14px; background: var(--btnfill); color: var(--ink); font: 500 16px var(--font); }
@@ -28,3 +29,5 @@
   .pr-print-scan { display: block; font-size: 24px; margin: 4px 0 0; color: #000; }
   .pr-qr svg { width: 420px; height: 420px; border: 0; }
 }
+/* design 2026-11-23: same column as the header on a wide screen (add.css sets it for the forms; this file loads after it) */
+@media (min-width: 800px) { .pr { max-width: 760px; padding-right: 216px; } }

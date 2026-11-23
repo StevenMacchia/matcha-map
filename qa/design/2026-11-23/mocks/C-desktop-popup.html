@@ -1,0 +1,22 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Card mock</title><style>
+:root{--canvas:#FBF6EA;--panel:#FFFDF7;--ink:#3B2E27;--muted:#6B5A4F;--deep:#3E6B33;--accent:#8CBF7A;--accent-ink:#1F2E1B;--edge:#6E9A5E;--line:#DCE7D0;--foam:#E6F2DC;--pink:#F6B7C7;--pink-edge:#D98CA2;--peach:#F8D3B5;--focus:#D9667F;--font:"M PLUS Rounded 1c",ui-rounded,"Arial Rounded MT Bold",sans-serif}
+*{box-sizing:border-box}body{margin:0;font:500 16px/1.45 var(--font);background:#CFE0C0;color:var(--ink)}
+.map{position:absolute;inset:0;background:linear-gradient(135deg,#E9EFDD,#F3E6D6)}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--panel);border-radius:26px 26px 0 0;box-shadow:0 -6px 30px rgba(59,46,39,.18);padding:22px 16px 0;display:flex;flex-direction:column}
+.sheet:before{content:"";position:absolute;top:8px;left:50%;width:40px;height:5px;margin-left:-20px;border-radius:99px;background:rgba(107,90,79,.4)}
+.x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--edge);background:var(--panel);color:var(--deep);font-size:22px}
+h1{margin:0;font-size:24px;line-height:1.15;color:var(--deep)}.sub{color:var(--muted);font-size:15px}
+.pill{display:inline-block;padding:2px 12px;border-radius:99px;background:var(--foam);color:var(--deep);font-weight:800;font-size:14px}
+.btn{min-height:46px;padding:0 20px;border-radius:99px;border:1.5px solid var(--edge);background:var(--panel);color:var(--deep);font:800 15px var(--font);display:inline-flex;align-items:center;gap:6px}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.art{height:120px;border-radius:18px;background:linear-gradient(120deg,#FDE9D7,#E6F2DC);border:2px solid #4B3426;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.quote{background:#F4EFE6;border-radius:16px;padding:10px 14px;font-size:15px}
+.lab{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.chip{padding:3px 12px;border-radius:99px;border:2px solid #4B3426;background:#E6F2DC;font-weight:800;font-size:14px;display:inline-block;margin:0 4px 6px 0}
+</style><div class="map"></div><div style="position:absolute;left:760px;top:150px;width:360px;background:var(--panel);border-radius:18px;box-shadow:0 18px 40px rgba(75,52,38,.2);padding:16px 18px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center"><div><span class="pill" style="background:var(--pink);color:#6b2a3d">Tomorrow</span><h1 style="margin-top:4px;font-size:22px">Heyteausa</h1><div class="sub" style="font-size:14px">pop-up &middot; New York</div></div><button class="x" style="position:static;width:36px;height:36px">&times;</button></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div style="border:2px solid var(--line);border-radius:14px;padding:8px 10px"><div class="lab">When</div><b>Until sold out</b></div><div style="border:2px solid var(--line);border-radius:14px;padding:8px 10px"><div class="lab">Where</div><b>Near New York</b></div></div>
+<div class="quote" style="font-size:14px">"New drink that fixes all of that. Their new Bitter Matcha series..."</div>
+<div><span class="chip">Ice Cream</span><span class="chip">Mochi</span><span class="chip">Latte</span></div>
+<div style="display:flex;gap:8px;border-top:1.5px solid var(--line);padding-top:10px"><button class="btn p" style="flex:1;justify-content:center">Directions</button><button class="btn">Calendar</button><button class="btn">Share</button></div>
+<a style="font-size:13px;color:var(--deep)">Full details and photo</a></div>

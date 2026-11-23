@@ -1,0 +1,9 @@
+# Mocks: the event card (audit item 17)
+
+The card today is seven stacked blocks: title, photo, brand and quote, menu, hours and price, place, then the buttons last. A visitor has to scroll to learn where to go. These three mocks keep the colours, corners, Mattie and the cream and matcha look, and change only the order and shape. Not applied. Open the .html files in a browser (they use the web font only if installed, so the type shows as a plain stand-in; the PNGs are the same pages).
+
+**A, facts first (`mocks/A-facts-first.html`, `.png`).** The day sits in a pink pill, then the name, then two boxes that say when and where in big plain words. The quote and menu follow, the photo shrinks to a strip, and the buttons (Directions first, then Calendar and Share) stay pinned at the bottom of the sheet, so they never scroll away. Why: the two questions a visitor asks, "when" and "where", are answered at a glance, and the next step is always one tap away.
+
+**B, ticket (`mocks/B-ticket.html`, `.png`).** A small square photo beside the name, then a green "ticket" band with dashed edges holding When, Where and Menu as three short lines, then the quote and two buttons. Why: it reads like a ticket stub, which fits a pop-up, and it needs the least scrolling of the three. The date warning ("Date not confirmed") replaces the unclear "Unsure" badge.
+
+**C, desktop popup (`mocks/C-desktop-popup.html`, `.png`).** The same facts-first order in the 360 px popup over the map: name and day, two fact boxes, a one-line quote, menu chips, and a button row at the bottom of the popup with a plain "Full details and photo" link. Why: today the popup is taller than the space under its pin and the action labels are cut off at the window edge; this version is short enough to fit, and the photo moves to the full page.
