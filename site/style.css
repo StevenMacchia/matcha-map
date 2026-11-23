@@ -283,6 +283,14 @@ body.show-list .list-panel { display: block; }
 .z9 .mochi::before, .th-mochi .mochi::before { content: ""; position: absolute; top: 5px; left: 5px; width: 2.4px; height: 2.6px; border-radius: 50%; background: var(--mo); box-shadow: 6px 0 0 var(--mo); }
 .mk-br:hover .mochi, .mk-br:focus-visible .mochi { transform: translateY(-3px) scale(1.12, .92); }
 .mk-br.sel .mochi { transform: scale(1.35); box-shadow: 0 0 0 3px var(--panel), 0 0 0 5px var(--edge); }
+/* the brand's picture inside its mochi (2026-11-23): the same frame and size, the picture cropped round to fill it */
+.mochi.has-pic { overflow: hidden; background: var(--panel); }
+.mochi.has-pic::before, .mochi.has-pic::after { display: none; }
+.mochi > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+/* a brand stack and a city's brands: the mochi with its count; a spread stack dims its badge while its pins are out */
+.mk-cl.cl-br.cl-bc, .mk-cl.cl-br.cl-fan, .mk-cl.cl-br.cl-cell { width: 22px; height: 22px; }
+.mk-cl.cl-bc .cl-n, .mk-cl.cl-br.cl-fan .cl-n, .mk-cl.cl-br.cl-cell .cl-n { right: -14px; bottom: -8px; }
+.mk-cl.fan-open .mk-in { opacity: .45; }
 
 /* clusters: dango */
 .mk-cl { width: 28px; height: 54px; }
