@@ -353,6 +353,8 @@
       txt.appendChild(acts);
       mapEmpty.appendChild(txt);
       $("map-panel").appendChild(mapEmpty);
+      // one wisp of steam from sleepy Mattie when the empty card first appears (N7)
+      setTimeout(function () { var s = mapEmpty && mapEmpty.querySelector(".sleepy"); if (s) { var r = s.getBoundingClientRect(); FX.burst(r.left + r.width / 2, r.top + 6, { n: 4, kind: "steam" }); } }, 260);
     }
     mapEmpty.querySelector("p").textContent = p ? p.textContent : "";
     // the same buttons as the list's empty card (Go to the nearest, the next range), each one clicking its original

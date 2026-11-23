@@ -810,7 +810,7 @@
       box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html;
       fillChars(box);
       box.querySelector(".pop-close").addEventListener("click", function () { var back = cardOpener; closeCard(false, "user"); refocus(back); });
-      popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "340px", focusAfterOpen: false, className: "mm-pop",
+      popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, maxWidth: "380px", focusAfterOpen: false, className: "mm-pop",
         anchor: "bottom", offset: it.kind === "e" ? [0, -50] : it.kind === "s" ? [0, -18] : [NUDGE, NUDGE - 12] })
         .setLngLat(lngLat(it.ll)).setDOMContent(box).addTo(map);
       // Keep the whole card on screen: nudge the map down when the card would run off the top.
@@ -1110,7 +1110,7 @@
   function emptyCopy(near, vis) {
     var words = !dated() ? "" : state.day ? " on this day" : " " + (RANGE_WORDS[state.chip] || "on these dates");
     var next = dated() ? ((!state.day && NEXT_RANGE[state.chip]) || ["any", "See any date"]) : null;
-    var line = (near ? "Nothing near here" : "Nothing") + words + ".", nb = $("empty-near");
+    var line = (!dated() && near ? "Nothing here yet." : (near ? "Nothing near here" : "Nothing") + words + "."), nb = $("empty-near");
     nearestKey = "";
     if (near) {
       var ref = refPoint(), best = null, bd = Infinity;
@@ -1289,9 +1289,9 @@
   }
   function typeZip() { var z = $("zip"); z.focus(); z.select(); }
   // Offline: Mattie naps and says so; the map and the last data stay usable (sw.js keeps them).
-  window.addEventListener("offline", function () { oops("You are offline. Showing what was saved.", null, "m-sleepy"); });
+  window.addEventListener("offline", function () { oops("You are offline. Showing the pop-ups you saw last.", null, "m-sleepy"); });
   window.addEventListener("online", function () { var n = $("note"); if (/offline/.test(n.textContent)) n.hidden = true; });
-  if (navigator.onLine === false) setTimeout(function () { oops("You are offline. Showing what was saved.", null, "m-sleepy"); }, 0);
+  if (navigator.onLine === false) setTimeout(function () { oops("You are offline. Showing the pop-ups you saw last.", null, "m-sleepy"); }, 0);
 
   // ---------- near me and zip ----------
   // One "you are here" marker: a dot for Near me, Chasen for a zip. Each clears the other.
@@ -1316,7 +1316,7 @@
   }
   $("near").addEventListener("click", function () {
     var note = $("note");
-    if (!navigator.geolocation) { oops("Location is off here.", ["Type a zip", typeZip]); return; }
+    if (!navigator.geolocation) { oops("No location, no problem. Type a zip or a city.", ["Enter a zip", typeZip]); return; }
     navigator.geolocation.getCurrentPosition(function (pos) {
       note.hidden = true;
       clearYou();
@@ -1326,7 +1326,7 @@
       if (state.view === "list") setView("map");
       moveMap({ center: lngLat(state.userLoc), zoom: 10 }, function () { animOnce(el, "ping"); renderList(true); });
     }, function () {
-      oops("Location is off.", ["Type a zip", typeZip]);
+      oops("No location, no problem. Type a zip or a city.", ["Enter a zip", typeZip]);
     }, { timeout: 10000, maximumAge: 300000 });
   });
 
@@ -1342,7 +1342,7 @@
   var zipErrT = null;
   function zipError(text) {
     var inp = $("zip"), er = $("zip-err");
-    er.textContent = text || "No such zip";
+    er.textContent = text || "Hmm, that zip is shy";
     var r = inp.getBoundingClientRect();
     er.style.left = Math.max(8, Math.min(r.left, window.innerWidth - 150)) + "px";
     er.style.top = (r.bottom + 6) + "px";
@@ -1383,11 +1383,11 @@
   }
   // Fly to a zip's centroid. quiet: a return visit, so no error and the map jumps there.
   function goZip(zip, quiet) {
-    if (!/^\d{5}$/.test(zip)) { if (!quiet) zipError("No such zip"); return; }
+    if (!/^\d{5}$/.test(zip)) { if (!quiet) zipError("Hmm, that zip is shy"); return; }
     loadZips().then(function (z) {
       var c = Object.prototype.hasOwnProperty.call(z, zip) ? z[zip] : null;
       if (!c || !isFinite(c[0]) || !isFinite(c[1])) {
-        if (!quiet) zipError("No such zip"); else { try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ } }
+        if (!quiet) zipError("Hmm, that zip is shy"); else { try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ } }
         return;
       }
       var town = cityNear(c);

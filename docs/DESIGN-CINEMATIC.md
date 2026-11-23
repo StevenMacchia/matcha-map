@@ -11,6 +11,48 @@
 5. **One product.** Radii 26 (sheets), 18 (cards, pictures), pill (chips, buttons); two shadows (resting, floating); type 13, 15, 17, 21, 26; tap targets 44 px or more. Dark mode uses the same shapes on night greens.
 6. **Motion has three moments**: the opening (map settles, pins drop in a wave from the centre, Mattie hops in), the pin that grows into the card, and the flight to a place with a short petal trail. Everything else is a quiet fade or slide; reduced motion keeps only fades.
 
+### What round 2 built (N7)
+
+- **Shell** (, new; index.html body): phone map edge to edge under floating chrome (Mattie disc = About, one search pill =  with Near me inside, theme disc), one chip row, the list as a bottom sheet that peeks with a verdict count ("6 pop-ups this weekend"); desktop keeps one header bar and the list column. Rung 35's bottom date bar was dropped in favour of the top chip row because the bottom now belongs to the list sheet; its Sat and Sun chips, place clear button and region-first opening were kept.
+- **Opening** (app.js , shell.css): map fades and settles from 1.05, chrome slides down, Mattie springs into his disc, pins drop in a continuous wave by distance (0 to 480 ms), one puff of petals; about 1.5 s, any input skips,  blocks replays, reduced motion gets a 0.3 s fade. The old full-screen pour cover is gone (it held the first paint).
+- **Transitions**: the selected pin flies into the card's picture slot on phones (motion.js , WAAPI), card sections reveal in order, list rows stagger; Back and Escape close the card or the full list (history steps); long flights leave three petals and land with a puff.
+- **Effects**: one canvas (), added on demand, removed when empty, 16 particles at most, none under reduced motion; used at the opening, a landing and the empty state.
+- **Empty states**: sleepy Mattie with one action (next range, or the nearest pop-up), then Add your pop-up () and the landed city's calendar (); notes with an action and a close for location denied ("Enter a zip"), offline and load failure. Strings from docs/COPY.md.
+- **Integration**: cards.js through  (one card for sheet, popup and list rows), search.js mounted in  (drinks narrow the map with a Show all note),  stays the single card entry point. Unconfirmed pop-ups with no place are off by default (Show > Unconfirmed).
+- **Speed**: the web font and MapLibre's CSS load from theme.js (not render-blocking), every script is , dates use the house font (the second web font is gone).
+
+| Lighthouse (local, ) | Performance | Accessibility | FCP | LCP | TBT | CLS |
+|---|---|---|---|---|---|---|
+| Desktop, before | 95 | 100 | 0.9 s | 0.9 s | 0 ms | 0.011 |
+| Desktop, after | 97 | 100 | 0.4 s | 0.4 s | 110 ms | 0 |
+| Mobile, before | 65 | 100 | 5.1 s | 6.2 s | 10 ms | 0 |
+| Mobile, after | 67 | 96 | 1.8 s | 1.8 s | 1,420 ms | 0.001 |
+
+Mobile stays under 90: first paint is three times faster, but simulated 4x CPU spends over a second in MapLibre's WebGL setup and the marker sync (the profile puts the time in  and the HTML markers, not in the site's own code). Next steps if it matters: draw unclustered pins as a symbol layer instead of HTML markers below zoom 6, and start the map after the first list paint. Accessibility 96 is the map's own attribution toggle (target size).
+
+Screens: , , , .
+
+### What round 2 built (N7)
+
+- **Shell** (`site/shell.css`, new; index.html body): on a phone the map runs edge to edge under floating chrome (Mattie disc = About, one search pill = `#search-slot` with Near me inside, theme disc), one chip row, and the list as a bottom sheet that peeks with a verdict count ("6 pop-ups this weekend"); desktop keeps one header bar and the list column. Rung 35's bottom date bar was dropped in favour of the top chip row, because the bottom now belongs to the list sheet; its Sat and Sun chips, place clear button, nearest-pop-up empty state and region-first opening were kept.
+- **Opening** (app.js `playIntro`, shell.css): the map fades and settles from 1.05, the chrome slides down, Mattie springs into his disc, pins drop in a continuous wave by distance (0 to 480 ms), one puff of petals; about 1.5 s, any input skips, `sessionStorage` blocks replays, reduced motion gets a 0.3 s fade. The full-screen pour cover is gone (it held the first paint).
+- **Transitions**: on phones the selected pin flies into the card's picture slot (motion.js `morph`, WAAPI); card sections reveal in order; list rows stagger; Back and Escape close the card or the full list (history steps); long flights leave three petals and land with a puff.
+- **Effects**: one canvas (`window.MatchaFX`), added on demand and removed when empty, 16 particles at most, none under reduced motion; used at the opening, a landing and the empty state.
+- **Empty states**: sleepy Mattie with one action (the next range, or the nearest pop-up), then Add your pop-up (`/add/`) and the landed city's calendar (`/feeds/<city>.ics`); notes with an action and a close for location denied ("Enter a zip"), offline and load failure. Strings from docs/COPY.md.
+- **Integration**: cards.js through `cards-app.js` (one card for the sheet, the popup and the list rows), search.js mounted in `#search-slot` (a drink narrows the map, with a Show all note); `renderCard` stays the single card entry point. Unconfirmed pop-ups with no place are off by default (Show > Unconfirmed).
+- **Speed**: the web font and MapLibre's CSS load from theme.js (not render-blocking), every script is `defer`, dates use the house font.
+
+| Lighthouse (local dev server) | Performance | Accessibility | FCP | LCP | TBT | CLS |
+|---|---|---|---|---|---|---|
+| Desktop, before | 95 | 100 | 0.9 s | 0.9 s | 0 ms | 0.011 |
+| Desktop, after | 97 | 100 | 0.4 s | 0.4 s | 110 ms | 0 |
+| Mobile, before | 65 | 100 | 5.1 s | 6.2 s | 10 ms | 0 |
+| Mobile, after | 67 | 96 | 1.8 s | 1.8 s | 1,420 ms | 0.001 |
+
+Mobile stays under 90: first paint is three times faster, but under the simulated 4x CPU over a second goes to MapLibre's WebGL setup and the HTML marker sync (the profile puts it in `_setupPainter`, not in the site's own code). Next step if it matters: draw unclustered pins as a symbol layer below zoom 6 and start the map after the first list paint. Accessibility 96 is MapLibre's attribution toggle (target size).
+
+Screens: `docs/screens/n7-phone-light.png`, `n7-phone-dark.png`, `n7-desktop-light.png`, `n7-desktop-dark.png`.
+
 ---
 
 # The cinematic pass (rung 32)

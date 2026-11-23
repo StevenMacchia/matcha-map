@@ -247,3 +247,8 @@ html.fadein:not(.open-go) #map { animation: mm-show 0s 2.6s forwards; }
 .searchbar > .zip-clear { order: 2; position: relative; margin: 0; width: 40px; height: 40px; }
 .searchbar > .go { order: 3; }
 .searchbar > .near { order: 4; }
+/* the map's attribution toggle gets a full tap target */
+@media (max-width: 899px) {
+  .maplibregl-ctrl-attrib.maplibregl-compact:not(.maplibregl-compact-show) { min-height: 44px; min-width: 44px; }
+  .maplibregl-ctrl-attrib-button { width: 44px !important; height: 44px !important; background-position: center !important; }
+}
