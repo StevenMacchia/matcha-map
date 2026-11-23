@@ -311,12 +311,12 @@ ${added.length} new candidates (${wl.accounts.length} accounts on the list), ${l
       kept.push(c);
     }
     // Every kept candidate goes to today's review file; the review-only crawlers stop there (ingest promotes their confirmed and likely finds).
-    const rev = writeReview(kept.map((c) => toItem(c, c._site)), { now });
-    info(`review: ${kept.length} candidates written to ${rev.file} (${rev.count} in the file)`);
     const direct = kept.filter((c) => !REVIEW_ONLY.has(c._site));
     const held = skipDominated(direct, readEvents());
     const heldSet = new Set(held);
-    for (const c of direct) if (!heldSet.has(c)) { const r = row(c._site); r.dropped["better source has it"] = (r.dropped["better source has it"] || 0) + 1; }
+    for (const c of direct) if (!heldSet.has(c)) { c.drop = "better source has it"; const r = row(c._site); r.dropped["better source has it"] = (r.dropped["better source has it"] || 0) + 1; }
+    const rev = writeReview(kept.map((c) => toItem(c, c._site)), { now });
+    info(`review: ${kept.length} candidates written to ${rev.file} (${rev.count} in the file)`);
     for (const c of kept.filter((x) => REVIEW_ONLY.has(x._site))) if (PROMOTE.has(c.confidence)) row(c._site).promoted++;
     const before = new Set(readEvents().map((e) => e.id));
     const { merged, final } = await finalize(held, { now, geocoder, fetcher, liveSourceIds: [], dry: false });

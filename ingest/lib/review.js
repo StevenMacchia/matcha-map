@@ -159,6 +159,9 @@ export function promote(items, existing = [], { sources = [], now = new Date() }
   const out = [];
   for (const i of items) {
     if (!PROMOTE.has(effectiveConfidence(i))) { stats.unsure++; if (PROMOTE.has(i.confidence)) stats.hedged++; continue; }
+    // A run-file item the crawler itself set aside (another site has the same event, see discover.js) is kept for the record only.
+    const held = /\bdropped: ([^;]+)/.exec(String(i.notes || ""));
+    if (held) { drop(held[1].trim()); continue; }
     const c = toCandidate(i, sources);
     if (c.drop) { drop(c.drop); continue; }
     if (isSweep(i)) c.extracted_by = "sweep";

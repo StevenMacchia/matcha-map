@@ -303,6 +303,8 @@ test("promote: confirmed and likely only; hedged notes stay; missing fields tole
   assert.equal(candidates.find((c) => c.brand === "Class Co").kind, "organizer");
   assert.equal(candidates.find((c) => c.brand === "Kettl").keepCoords, true);
   assert.equal(toCandidate({ brand: "A", state: "TX", start: "2026-12-06" }).drop, "no source url");
+  const set = promote([{ ...toItem({ ...cand(), drop: "better source has it" }, "eventbrite"), _file: "2026-11-22.json" }], [], { now });
+  assert.deepEqual([set.stats.promoted, set.stats.dropped], [0, { "better source has it": 1 }], "an item the crawler set aside is not promoted");
 });
 test("promote: the same brand, day and venue (or within 300 m) merges into the event held, richer value kept", () => {
   const held = { id: "held1", brand: "Kettl", source_id: "kettl", title: "Kettl pop-up", start: "2026-12-07T00:00:00-05:00", all_day: true, venue: "Hester St. Fair", address: "", city: "New York", state: "NY", lat: 40.7162, lng: -73.9905, approx: false, confidence: "likely", menu: [], description: null, evidence: [] };
