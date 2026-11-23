@@ -265,6 +265,44 @@ test("an Instagram account Graph never read is due whatever its cadence; a graph
   assert.ok(!wl.isDue(bad, t0, { graphOn: true }));
   assert.ok(!wl.isDue(acct({ platform: "tiktok", last_checked: daysAgo(0), cadence_hours: 72 }), t0, { graphOn: true }));
 });
+test("Invalid user id marks the account unreadable for good, keeping the error, the date and the old status", () => {
+  const msg = "Graph API HTTP 400: Invalid user id";
+  assert.ok(wl.isInvalidUserId(msg));
+  assert.ok(!wl.isInvalidUserId("Graph API HTTP 400: Unsupported get request"));
+  assert.ok(!wl.isInvalidUserId("Graph API HTTP 500: Invalid user id"));
+  assert.ok(!wl.isInvalidUserId(undefined));
+  const a = wl.markUnreadable(acct({ status: "candidate" }), msg, t0);
+  assert.deepEqual([a.status, a.unreadable_prior, a.graph_error, a.graph_error_at, a.unreadable_at], ["unreadable", "candidate", msg, t0.toISOString(), t0.toISOString()]);
+  assert.ok(wl.graphSkipped(a, new Date(t0.getTime() + 400 * D)), "never retried, however long it waits");
+  assert.ok(!wl.needsFirstRead(a, true));
+  assert.equal(wl.cadenceFor(a, t0), 168); // the search recheck still reaches it, at the quiet cadence
+  assert.ok(wl.isDue(acct({ status: "unreadable", last_checked: null }), t0, { graphOn: true }));
+  assert.ok(!wl.isDue(acct({ status: "unreadable", last_checked: daysAgo(2), cadence_hours: 168 }), t0, { graphOn: true }));
+  wl.markUnreadable(a, msg, new Date(t0.getTime() + D));
+  assert.equal(a.unreadable_prior, "candidate"); // a second mark does not overwrite the prior status
+  wl.recordGraph(a, null, t0); // if Graph ever does read it, it goes back to what it was
+  assert.deepEqual([a.status, a.unreadable_prior, a.graph_error], ["candidate", undefined, undefined]);
+});
+test("migrateUnreadable turns stored Invalid user id errors into unreadable, leaving dropped and other errors alone", () => {
+  const list = [
+    acct({ handle: "a", graph_error: "Graph API HTTP 400: Invalid user id", graph_error_at: daysAgo(3) }),
+    acct({ handle: "b", graph_error: "Graph API HTTP 400: Invalid user id", graph_error_at: daysAgo(3), status: "dropped" }),
+    acct({ handle: "c", graph_error: "Graph API HTTP 403: Rate", graph_error_at: daysAgo(3) }),
+    acct({ handle: "d", platform: "tiktok", graph_error: "Graph API HTTP 400: Invalid user id" }),
+    acct({ handle: "e" }),
+  ];
+  assert.equal(wl.migrateUnreadable(list), 1);
+  assert.deepEqual(list.map((a) => a.status), ["unreadable", "dropped", "watching", "watching", "watching"]);
+  assert.equal(list[0].unreadable_at, daysAgo(3));
+  assert.equal(wl.migrateUnreadable(list), 0);
+});
+test("graphOrder: never Graph-read first (watching before candidate, real before guessed), then oldest Graph read first; graphBacklog counts the unread", () => {
+  const read = (h, n) => acct({ handle: h, hits: 3, last_checked: daysAgo(n), graph_checked_at: daysAgo(n) });
+  const list = [read("r1", 1), read("r9", 9), acct({ handle: "cand", status: "candidate" }), acct({ handle: "guess", status: "candidate", guess: true }), acct({ handle: "watch" })];
+  assert.deepEqual(wl.graphOrder(list).map((a) => a.handle), ["watch", "cand", "guess", "r9", "r1"]);
+  assert.equal(wl.graphBacklog(list, t0), 3);
+  assert.equal(wl.graphBacklog([...list, acct({ handle: "u", status: "unreadable" }), acct({ handle: "d", status: "dropped" }), acct({ handle: "t", platform: "tiktok" })], t0), 3);
+});
 test("recordGraph keeps the account's facts and clears an old error; picks the name for a handle-shaped source", () => {
   const a = wl.recordGraphError(acct(), "x", t0);
   wl.recordGraph(a, mapAccountFacts(fx("graph-business-discovery.json")), t0);

@@ -13,7 +13,7 @@ import { createGeocoder } from "./lib/geocode.js";
 import { processItems, dedupeCandidates, finalize } from "./lib/pipeline.js";
 import { readEvents, writeEvents, passesWatchRule, hasPopupIntent } from "./lib/write.js";
 import { harvest, RUN_CALLS, funnelLine, loadConfig, weekTags, planTags } from "./lib/hashtags.js";
-import { planWatch, formatPlan } from "./lib/plan.js";
+import { planWatch, formatPlan, hashtagBudget } from "./lib/plan.js";
 import { hasMatcha } from "./adapters/mato.js";
 import { setVerbose, warn, info } from "./lib/log.js";
 import * as wlib from "./lib/watchlist.js";
@@ -46,6 +46,8 @@ async function main() {
   const sources = JSON.parse(fs.readFileSync("data/sources.json", "utf8"));
   const wl = wlib.load();
   wlib.seedFromSources(sources, wl, now); // new Instagram sources join the list as "watching"
+  const migrated = wlib.migrateUnreadable(wl.accounts); // an old "Invalid user id" error becomes status "unreadable" (saved with the list on a real run)
+  if (migrated) info(`${migrated} accounts with an old "Invalid user id" error are now unreadable: no more Graph reads of them`);
   if (dry) {
     // Plan only: reads the local watch list, hashtag config and rate file; no Meta, Tavily or other network call, nothing written.
     const rate0 = createRate(), cfg = loadConfig();
@@ -73,7 +75,9 @@ async function main() {
   const candidates = [], live = [], notes = new Map();
   let tagStats = null;
   if (igOn && !noFetch && !only) {
-    const h = await harvest({ now, env, rate: counted, room: () => spent < Math.min(allowance, RUN_CALLS), wl, sources, events: readEvents(), dry });
+    // Hashtags take a small share of the run (HASHTAG_SHARE calls) while the never-read backlog is large; accounts get the rest.
+    const hashCap = hashtagBudget(wlib.graphBacklog(wl.accounts, now), RUN_CALLS);
+    const h = await harvest({ now, env, rate: counted, room: () => spent < Math.min(allowance, hashCap), wl, sources, events: readEvents(), dry });
     tagStats = h.stats;
     candidates.push(...h.candidates);
     for (const a of h.accounts) wlib.addCandidate(wl, { handle: a.handle, found_via: a.found_via, found_from: a.found_from, notes: a.evidence, guess: a.guess }, now);
@@ -88,10 +92,10 @@ async function main() {
   const budget = loadBudget(undefined, now);
   const caps = { instagram: +(env.WATCH_IG_CAP ?? 60), tiktok: +(env.WATCH_TT_CAP ?? 40) };
   const queue = new Set([...wlib.pickForSearch(due, "instagram", caps.instagram), ...wlib.pickForSearch(due, "tiktok", caps.tiktok)].map((a) => a));
-  const order = new Map(wlib.prioritize(due).map((a, i) => [a, i]));
+  const order = new Map(wlib.graphOrder(due).map((a, i) => [a, i])); // Graph reads: never-read accounts first, then the longest since their last read
   due.sort((a, b) => order.get(a) - order.get(b));
   const known = new Set(readEvents().map((e) => e.id));
-  let waiting = 0, graphErrors = 0, dropped = 0, namesSet = 0, inGraph = false, guessReads = 0;
+  let waiting = 0, graphErrors = 0, unreadable = 0, dropped = 0, namesSet = 0, inGraph = false, guessReads = 0;
   const GUESS_CAP = +(env.WATCH_GUESS_CAP ?? 15); // guessed handles read per run; the rest wait so real brands get the hour's calls
   for (const acc of due) {
     const real = sources.find((s) => s.id === acc.source_id);
@@ -124,6 +128,8 @@ async function main() {
       if (adapter && adapter !== manual) { items = items.concat(await adapter.fetch(source, ctx)); ran = true; searchOnly = false; }
     } catch (e) {
       // Meta answered no for this account (personal, deleted, renamed): remember it and leave Graph alone for a week.
+      // "Invalid user id" (HTTP 400): the business_discovery edge cannot read this account, so it is marked unreadable and never retried by Graph.
+      if (inGraph && e.api && wlib.isInvalidUserId(e.message) && !acc.guess) { wlib.markUnreadable(acc, e.message, now); unreadable++; notes.set(acc.handle, `unreadable by Graph: ${e.message}`); inGraph = false; continue; }
       if (inGraph && e.api) { wlib.recordGraphError(acc, e.message, now); graphErrors++; if (acc.guess) { acc.status = "dropped"; acc.dropped_at = new Date(now).toISOString(); acc.notes = "guessed handle, Graph does not know it"; } notes.set(acc.handle, `graph error: ${e.message}`); inGraph = false; continue; }
       inGraph = false;
       warn(`${acc.handle}: ${e.message}`); notes.set(acc.handle, `failed: ${e.message}`); continue;
@@ -154,7 +160,7 @@ async function main() {
   saveBudget(budget, undefined, now); // credits are spent even on --dry
   const { merged } = await finalize(candidates, { now, geocoder, fetcher, liveSourceIds: live, dry, sourceIds });
   for (const k of ["instagram", "tiktok"]) info(`by-handle ${k}: ${stat[k].checked} accounts checked, ${stat[k].posts} posts of theirs seen, ${stat[k].events} dated events, ${stat[k].credits} credits`);
-  info(`graph: ${spent} of ${allowance} calls this run${tagStats ? ` (hashtags: ${tagStats.tags} tags, ${funnelLine(tagStats.funnel)})` : ""}; ${graphErrors} accounts with a Graph error (skipped for ${wlib.GRAPH_RETRY_DAYS} days), ${dropped} dropped for no matcha, ${namesSet} names set`);
+  info(`graph: ${spent} of ${allowance} calls this run${tagStats ? ` (hashtags: ${tagStats.tags} tags, ${funnelLine(tagStats.funnel)})` : ""}; ${unreadable} newly unreadable (Invalid user id, never retried), ${graphErrors} other accounts with a Graph error (skipped for ${wlib.GRAPH_RETRY_DAYS} days), ${dropped} dropped for no matcha, ${namesSet} names set`);
   if (waiting) info(`${waiting} accounts wait for the next hour`);
   info(budgetLine(budget));
   info(`${candidates.length} candidates, ${merged.events.length} events total (+${merged.stats.added} new, ${merged.stats.updated} updated)`);

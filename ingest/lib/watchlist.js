@@ -37,15 +37,18 @@ export function newAccount(o, now = new Date()) {
 
 // 24h for watching with a hit in the last 30 days, 72h for watching with none (and candidates), 168h for quiet.
 export function cadenceFor(acc, now = new Date()) {
-  if (acc.status === "quiet") return 168;
+  if (acc.status === "quiet" || acc.status === UNREADABLE) return 168;
   if (acc.status === "watching" && acc.last_post_with_popup && new Date(now) - Date.parse(acc.last_post_with_popup) <= RECENT_HIT_DAYS * DAY) return 24;
   return 72;
 }
 
 export const GRAPH_RETRY_DAYS = 7;
-// An account Graph said no to (personal, deleted, renamed) is not read again for a week.
-export const graphSkipped = (acc, now = new Date()) => !!acc.graph_error_at && new Date(now) - Date.parse(acc.graph_error_at) < GRAPH_RETRY_DAYS * DAY;
-// An Instagram account the Graph API has never read is due whatever its cadence says: an earlier pass may have marked it checked unread.
+// "unreadable": Graph answered HTTP 400 "Invalid user id" (a personal account, or one the business_discovery edge cannot see). Never read by Graph
+// again; the by-handle Tavily search still checks it, at the quiet cadence. Before 2026-11-23 these were retried every 7 days (327 calls a week).
+export const UNREADABLE = "unreadable";
+export const isInvalidUserId = (message) => /HTTP 400/.test(String(message)) && /invalid user id/i.test(String(message));
+// An account Graph said no to is not read again for a week; an unreadable one, never.
+export const graphSkipped = (acc, now = new Date()) => acc.status === UNREADABLE || (!!acc.graph_error_at && new Date(now) - Date.parse(acc.graph_error_at) < GRAPH_RETRY_DAYS * DAY);
 export const needsFirstRead = (acc, graphOn) => graphOn && acc.platform === "instagram" && acc.status !== "dropped" && !acc.graph_checked_at && !graphSkipped(acc);
 
 export function isDue(acc, now = new Date(), { graphOn = false } = {}) {
@@ -64,6 +67,7 @@ export function nextCheck(acc, now = new Date()) {
 export function recordGraph(acc, facts, now = new Date()) {
   acc.graph_checked_at = new Date(now).toISOString();
   delete acc.graph_error; delete acc.graph_error_at;
+  if (acc.status === UNREADABLE) { acc.status = acc.unreadable_prior || "candidate"; delete acc.unreadable_prior; delete acc.unreadable_at; }
   if (facts) {
     if (facts.name) acc.name = facts.name;
     for (const k of ["website", "profile_picture_url", "followers_count"]) if (facts[k] != null) acc[k] = facts[k];
@@ -77,6 +81,25 @@ export function recordGraphError(acc, message, now = new Date()) {
   acc.graph_error = String(message).slice(0, 160);
   acc.graph_error_at = new Date(now).toISOString();
   return acc;
+}
+// Graph said "Invalid user id": keep the error and the date, remember the status it had, stop reading it by Graph.
+export function markUnreadable(acc, message, now = new Date()) {
+  recordGraphError(acc, message, now);
+  if (acc.status !== UNREADABLE) acc.unreadable_prior = acc.status;
+  acc.status = UNREADABLE;
+  acc.unreadable_at = acc.graph_error_at;
+  return acc;
+}
+// Accounts whose stored graph_error is "Invalid user id" (recorded before the unreadable status existed) become unreadable, dated by their error.
+// Returns how many changed. Dropped accounts stay dropped.
+export function migrateUnreadable(accounts) {
+  let n = 0;
+  for (const a of accounts) {
+    if (a.platform !== "instagram" || a.status === "dropped" || a.status === UNREADABLE || !isInvalidUserId(a.graph_error)) continue;
+    markUnreadable(a, a.graph_error, a.graph_error_at || new Date());
+    n++;
+  }
+  return n;
 }
 // A candidate whose last 25 posts never mention matcha is dropped; returns true when it was.
 export function dropIfNoMatcha(acc, items, hasMatcha, now = new Date()) {
@@ -211,6 +234,15 @@ export function prioritize(accounts) {
   const t = (a) => (a.last_checked ? Date.parse(a.last_checked) : 0);
   return accounts.slice().sort((a, b) => priority(a) - priority(b) || t(a) - t(b));
 }
+// Order of the Graph reads: accounts Graph has never read first (real before guessed, then the usual priority, longest-unchecked first),
+// then the ones read before, longest since their last Graph read first. The hourly budget goes to the backlog before it goes to re-reads.
+export function graphOrder(accounts) {
+  const read = (a) => (a.graph_checked_at ? Date.parse(a.graph_checked_at) : a.last_checked ? Date.parse(a.last_checked) : 0);
+  return accounts.slice().sort((a, b) => !b.graph_checked_at - !a.graph_checked_at
+    || (!a.graph_checked_at ? priority(a) - priority(b) || read(a) - read(b) : read(a) - read(b) || priority(a) - priority(b)));
+}
+// Instagram accounts Graph could still read and has never read: the backlog the planner works down.
+export const graphBacklog = (accounts, now = new Date()) => accounts.filter((a) => a.platform === "instagram" && a.status !== "dropped" && !a.graph_checked_at && !graphSkipped(a, now)).length;
 // The accounts one search step may check: the due ones of a platform in priority order, at most `cap` (one credit each).
 export function pickForSearch(accounts, platform, cap) {
   return prioritize(accounts.filter((a) => a.platform === platform)).slice(0, Math.max(0, cap));

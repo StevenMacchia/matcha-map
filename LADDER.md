@@ -385,3 +385,9 @@ Follow-ups worth a rung (not done here): the Graph run spends most of its 180 ca
 
 Blocked, Steven only: Facebook sign-in for the Meta app review, Tavily sign-in on his Chrome tab, `tools/windows-task.ps1`, and the account-gated free keys (Ticketmaster, Eventbrite API, Yelp, Reddit).
 - 09:40 Shipped: branch pushed, `origin/main` fast-forwarded to df7b452, `npm run deploy` (https://b5dc41c9.matchamap-cu7.pages.dev), live smoke 16 of 16 at 1440 and 390, live shell VERSION mm-c5499397fb, live `data/events.json` 710 events. Browser gate on the live site: desktop first view shows the country with its pins and the list; `?city=san-francisco-ca` on a 375 phone centres on the peninsula with the 8 San Francisco pop-ups in view (no console errors). Usage at close: all-models 34%, Fable 29% (open 31% and 25%; ceiling 45%).
+
+## Follow-ups
+
+- Graph run planner (2026-11-23, branch `claude/laughing-babbage-689ab0`): accounts Graph has never read go first, then the longest since their last read; hashtag reads capped at 30 of 180 calls while 50+ accounts are unread. `npm run watch -- --dry` prints the backlog line (178 never read: 43 real, 135 guessed = 9 runs; guessed handles at 15 a run set that).
+- "Invalid user id" (HTTP 400) now sets `status: "unreadable"` and Graph never retries it; the 327 stored errors convert on the next real run, and the Tavily recheck still reaches them weekly. The wave's "332 never read" were these 327 already-failed accounts, so the real backlog is 178 and the saving (327 calls a week) starts 2026-11-30.
+- Next lever, not done: about 90 calls of each run stay unspent while 120 guessed handles wait past the 15-a-run cap; letting guessed handles use that spare room would clear the backlog in 2 runs instead of 9. Real Graph read not run in this branch.
