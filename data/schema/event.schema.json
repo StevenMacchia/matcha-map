@@ -60,7 +60,8 @@
         "price",
         "description",
         "links",
-        "image_url"
+        "image_url",
+        "series"
       ],
       "properties": {
         "id": {
@@ -381,6 +382,48 @@
             "format": "uri"
           },
           "description": "URLs that back the listing (the page read, plus any post or article it came with). Written by write.js; records written before it was added lack it until their next merge, so it is not in required."
+        },
+        "series": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Set when the event is one date of a recurring pop-up (data/series.json, ingest/lib/series.js, docs/SERIES.md): id of the series, rule as text, weekdays (0 Sunday to 6 Saturday), until (the last date the series is shown; null when it is open and unconfirmed), source_url of the page that states the rule, projected (true when the date was added from the rule rather than listed by a source). Null for one-off events.",
+          "required": [
+            "id",
+            "rule",
+            "weekdays",
+            "source_url",
+            "projected"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "rule": {
+              "type": "string"
+            },
+            "weekdays": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              }
+            },
+            "until": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source_url": {
+              "type": "string"
+            },
+            "projected": {
+              "type": "boolean"
+            }
+          }
         }
       }
     }

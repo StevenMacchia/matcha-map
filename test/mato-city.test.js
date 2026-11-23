@@ -238,7 +238,7 @@ test("writer cleanup drops non-matcha mato: events, keeps matcha ones and every 
   const events = [
     { ...base, id: "a" },
     { ...base, id: "b", title: "Matcha workshop" },
-    { ...base, id: "c", source_id: "some-popup" },
+    { ...base, id: "c", source_id: "some-popup", brand: "Other Shop" },
   ];
   assert.deepEqual(events.map(keepMatoEvent), [false, true, true]);
   const out = mergeEvents(events, [], { now });

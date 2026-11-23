@@ -1,5 +1,6 @@
 // Shared by `npm run ingest` and `npm run watch`: RawItems -> candidates, then dedupe, geocode, merge, write.
 import fs from "node:fs";
+import { endedOccurrences, readSeries } from "./series.js";
 import { extract, richFields } from "./extract.js";
 import { downloadImages, pruneImages } from "./images.js";
 import { improve } from "./llm.js";
@@ -70,7 +71,9 @@ export async function finalize(candidates, { now, geocoder, fetcher = null, live
   // keepCoords: a review item that came with its own pin (a sweep worker read it off the venue page) is not geocoded again.
   for (const c of dedupeCandidates(candidates, now)) final.push(c.keepCoords && c.lat != null ? c : await geocoder.geocode(c));
   if (!dry) geocoder.save();
-  const existing = dropSuperseded(readEvents(), final);
+  const held = dropSuperseded(readEvents(), final);
+  const gone = endedOccurrences(held, readSeries(), now);
+  const existing = gone.size ? held.filter((e) => !gone.has(e.id)) : held;
   let decay = {};
   try { decay = JSON.parse(fs.readFileSync("data/decay.json", "utf8")); } catch { /* first run */ }
   const merged = mergeEvents(existing, final, { now, liveSourceIds, decay, sourceIds });

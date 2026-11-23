@@ -789,8 +789,8 @@
       "notes": "found by eventbrite; pin at the city centre; dropped: better source has it"
     },
     {
-      "brand": "Cookbook Courtyard | DC Events & Food Community",
-      "handle": "cookbookcourtyard",
+      "brand": "Dimatchai",
+      "handle": null,
       "title": "Dimatchai Matcha Pop-Up",
       "start": "2026-11-23T13:00:00-05:00",
       "tz": "America/New_York",
@@ -798,9 +798,9 @@
       "venue": "TRESSE",
       "city": "Washington",
       "state": "DC",
-      "lat": 38.9042,
-      "lng": -77.0165,
-      "approx": true,
+      "lat": null,
+      "lng": null,
+      "approx": false,
       "source_id": "mato:cookbookcourtyard",
       "kind": "popup",
       "source_url": "https://ma.to/event/georgetown-matcha-pop-up-23-nov-2026",
@@ -816,12 +816,13 @@
         "cardamom crème brûlée matcha"
       ],
       "description": "dimatchai hosts a one-day matcha pop-up at TRESSE in Georgetown.",
-      "confidence": "unsure",
+      "confidence": "confirmed",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/georgetown-matcha-pop-up-23-nov-2026"
       ],
-      "notes": "found by mato; pin at the city centre"
+      "notes": "checked 2026-11-23: MATO page shows the date, a 1 PM start, TRESSE and 1661 Wisconsin Ave NW; dimatchai serves matcha lattes until sellout",
+      "address": "1661 Wisconsin Ave NW"
     },
     {
       "brand": "Personal",
@@ -2060,12 +2061,12 @@
       "tz": "America/Los_Angeles",
       "all_day": false,
       "venue": "Cocobolo",
-      "address": "626 St",
-      "city": "Seattle",
+      "address": "626 St Helens Ave",
+      "city": "Tacoma",
       "state": "WA",
-      "lat": 47.6193,
-      "lng": -122.3515,
-      "approx": true,
+      "lat": null,
+      "lng": null,
+      "approx": false,
       "source_id": "mato:sabzmatcha",
       "kind": "popup",
       "source_url": "https://ma.to/event/sabz-matcha-at-cocobolo-28-nov-2026",
@@ -2082,12 +2083,12 @@
         "matcha vanille"
       ],
       "description": "Sabz Matcha takes part in Small Business Saturday at Cocobolo, 626 St Helens Ave in Tacoma. The pop-up runs 11 AM-3 PM.",
-      "confidence": "unsure",
+      "confidence": "confirmed",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/sabz-matcha-at-cocobolo-28-nov-2026"
       ],
-      "notes": "found by mato; pin at the city centre"
+      "notes": "checked 2026-11-23: MATO page shows the date, 11 AM to 3 PM and 626 St Helens Ave, Tacoma (Small Business Saturday at Cocobolo)"
     },
     {
       "brand": "Ermantourage Europe",
@@ -2689,9 +2690,9 @@
       "venue": "EOC Studio",
       "city": "Sacramento",
       "state": "CA",
-      "lat": 38.5677,
-      "lng": -121.4682,
-      "approx": true,
+      "lat": null,
+      "lng": null,
+      "approx": false,
       "source_id": "mellobun-matte-matcha",
       "kind": "popup",
       "source_url": "https://ma.to/event/bloom-brew-pop-up-market-29-nov-2026",
@@ -2707,12 +2708,13 @@
         "hojicha"
       ],
       "description": "Bloom & Brew returns to EOC Studio with drinks, baked goods, shopping, a photo booth, and hair blowouts.",
-      "confidence": "unsure",
+      "confidence": "confirmed",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/bloom-brew-pop-up-market-29-nov-2026"
       ],
-      "notes": "found by mato; pin at the city centre"
+      "notes": "checked 2026-11-23: MATO page shows the date, 9 AM to 1 PM, EOC Studio 411 18th St and matcha from @mattematchabar",
+      "address": "411 18th St"
     },
     {
       "brand": "We'll meet outside of the cafe, right at the entrance. Look for a girl holding a red sign",
@@ -2751,9 +2753,9 @@
       "venue": "Monarca Thrift Club",
       "city": "Minneapolis",
       "state": "MN",
-      "lat": 44.9633,
-      "lng": -93.2683,
-      "approx": true,
+      "lat": null,
+      "lng": null,
+      "approx": false,
       "source_id": "mato:shesinvited",
       "kind": "popup",
       "source_url": "https://ma.to/event/all-girls-thrift-matcha-29-nov-2026",
@@ -2763,12 +2765,13 @@
         "other": "https://ma.to/event/all-girls-thrift-matcha-29-nov-2026"
       },
       "description": "Monarca Thrift Club hosts an all-girls Thrift & Matcha event with She's Invited.",
-      "confidence": "unsure",
+      "confidence": "likely",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/all-girls-thrift-matcha-29-nov-2026"
       ],
-      "notes": "found by mato; pin at the city centre"
+      "notes": "checked 2026-11-23: MATO page shows the date, 11 AM, Monarca Thrift Club and pink matcha for an all-girls thrift event (advance RSVP)",
+      "address": "2400 N 2nd Street"
     },
     {
       "brand": "STILLROOM Presents:",
@@ -3525,11 +3528,11 @@
       "tz": "America/Los_Angeles",
       "all_day": false,
       "venue": "Aveda Store at Bellevue Square",
-      "city": "Seattle",
+      "city": "Bellevue",
       "state": "WA",
-      "lat": 47.6193,
-      "lng": -122.3515,
-      "approx": true,
+      "lat": null,
+      "lng": null,
+      "approx": false,
       "source_id": "mato:sabzmatcha",
       "kind": "popup",
       "source_url": "https://ma.to/event/aveda-x-sabz-matcha-05-dec-2026",
@@ -3546,12 +3549,12 @@
         "matcha vanille"
       ],
       "description": "Sabz Matcha and Aveda hold a collaboration pop-up at the Aveda Store at Bellevue Square. The pop-up runs 11 AM-4 PM. A seasonal flavor is planned for the December pop-up.",
-      "confidence": "unsure",
+      "confidence": "likely",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/aveda-x-sabz-matcha-05-dec-2026"
       ],
-      "notes": "found by mato; pin at the city centre"
+      "notes": "checked 2026-11-23: MATO page shows the date, 11 AM to 4 PM and the Aveda Store at Bellevue Square (no street line)"
     },
     {
       "brand": "Ricky Ly",

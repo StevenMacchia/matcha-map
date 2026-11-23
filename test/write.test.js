@@ -71,7 +71,7 @@ test("status and 30-day expiry", () => {
 test("output is sorted by start and has only schema keys", () => {
   const r = mergeEvents([], [cand({ start: "2026-12-20T10:00:00-08:00", end: null, venue: "B" }), cand({ venue: "A" })], { now });
   assert.deepEqual(r.events.map((e) => e.venue), ["A", "B"]);
-  assert.equal(Object.keys(r.events[0]).length, 36);
+  assert.equal(Object.keys(r.events[0]).length, 37);
 });
 
 test("robots rules: longest match wins, wildcards", () => {
