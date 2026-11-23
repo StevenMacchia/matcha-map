@@ -1440,7 +1440,8 @@
     el.className = "you" + (zip ? " you-zip" : "");
     el.innerHTML = "<span class=\"ring\"></span><span class=\"ring r2\"></span>" + (zip ? "" : "<span class=\"you-dot\"></span>");
     if (zip) el.appendChild(drawChar("c-chasen", "you-chasen"));
-    youMarker = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(lngLat(ll)).addTo(map);
+    var add = function () { youMarker = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(lngLat(ll)).addTo(map); };
+    if (map.isPre) map.once("load", add); else add(); // a deep link lands before the real map exists (N9: ?city= threw and showed "Could not load pop-ups")
     el.style.zIndex = "0"; // under the pins and the city's dashed ring, never over them
     syncPlace();
     return el;
