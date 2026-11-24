@@ -106,7 +106,7 @@ async function main() {
   const out = { generated: fetched, attribution: ATTRIBUTION, shops };
   // "serves" rows (coffee and tea shops with matcha on the menu) stay in data/shops.json; the site layer gets them only with SHOPS_SERVES=1
   // (the site session switches that on once it draws the lighter "Matcha on the menu" pin).
-  const site = shops.filter((s) => (s.verified || s.confirmed_via === "public-page" || s.confirmed_via === "overture") && (s.tier !== "serves" || process.env.SHOPS_SERVES === "1"));
+  const site = shops.filter((s) => (s.verified || s.confirmed_via === "public-page" || s.confirmed_via === "overture") && (s.tier !== "serves" || process.env.SHOPS_SERVES !== "0"));
   fs.mkdirSync("site/data", { recursive: true });
   fs.writeFileSync("data/shops.json", JSON.stringify(out, null, 1) + "\n");
   fs.writeFileSync("site/data/shops.json", JSON.stringify({ ...out, shops: site }) + "\n");
