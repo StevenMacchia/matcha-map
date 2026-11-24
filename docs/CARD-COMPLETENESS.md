@@ -312,3 +312,13 @@ Result: 279 rows gained at least one field.
 - **Menu link (87%)**: core shops whose site has no /menu page or menu link (a one-page site). Serves rows are 100% by rule.
 - **Note (3%)**: editorial. Left to a human (or to the shop-claim form).
 - **Website (97%)**: the blanks are rows whose only listing was a Facebook, Instagram or ordering page; those are not stored as a website.
+
+## Reading 3, end of the second window (2026-11-24, 1,651 rows)
+
+Chunks 2 and 3 of the national cafe-menu loop and the whole-North-Carolina pass added 370 matcha-on-the-menu rows after reading 2. The own-site read ran over each batch (`npm run shops:fill`), but a share of new rows are read from Square storefronts, picture menus and sites with no hours text, so hours dilute from 46% to 41% on a larger base; the blanks are the same kinds as above.
+
+| Tier | Rows | Website | Phone | Hours | Menu link | Image | Instagram | Note |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| serves (matcha on the menu) | 1375 | 100% | 96% | 39% | 100% | 70% | 83% | 3% |
+| shop (core) | 276 | 86% | 60% | 47% | 46% | 50% | 61% | 1% |
+| **All** | 1651 | 98% | 90% | 41% | 91% | 67% | 79% | 2% |

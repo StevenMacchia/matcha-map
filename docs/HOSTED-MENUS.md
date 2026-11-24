@@ -27,3 +27,7 @@ Square asks for a 5 second Crawl-delay and answers a burst with HTTP 429, so eve
 Why the rest are held (counted per pass in the `--menus` log line): fewer than three matcha drinks on the menu page 569; own site not readable 195; menu is pictures only 92; Toast bot check 65; menu is a PDF 40; Square lists no matcha product 12; Toast robots disallow 8; rate limited (429) 14. Durham stays thin because most of its cafes put the menu in Toast, a PDF or a picture, not because we skipped them.
 
 Command: `node ingest/shops-overture.js --menus --cities "raleigh,durham,..." --tag tri2 --out data/shops-zz-overture-nc.json` (a `--state NC --tag nc` run reads the whole state into the same file; `--tag` gives the pass its own cursor, so the national cursor is untouched).
+
+## The whole of North Carolina (2026-11-24)
+
+4,554 candidates with a website, 66 new serves rows (NC on the map 71 -> 104 in the landing that merged it with chunk 3). Held, counted: fewer than three matcha drinks 2,469; own site not readable 1,144; menu is pictures only 403; menu is a PDF 167; Toast bot check 128 (and 18 robots disallow, 10 unchallenged pages without matcha); Square lists no matcha product 81, rate limited 11, no sitemap 7, retail items only 1; own site rate limited 49. Toast reads nothing anywhere; PDF and picture menus are the next largest unread class (570 in NC alone) and would need image or PDF reading, which this pipeline does not do.

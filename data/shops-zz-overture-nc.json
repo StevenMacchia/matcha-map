@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T13:56:25.810Z",
+ "generated": "2026-11-24T14:51:42.096Z",
  "group": "overture-serves",
  "release": "2026-11-18.0",
  "shops": [
@@ -1329,6 +1329,2779 @@
      "dataset": "Overture-signals",
      "license": "CDLA-Permissive-2.0",
      "record_id": "ffca8de9-cb0b-4567-a39a-d47f2670687b"
+    }
+   ]
+  },
+  {
+   "name": "Dobrá Tea West",
+   "address": "707 Haywood Rd",
+   "city": "Asheville",
+   "state": "NC",
+   "zip": "28806-3111",
+   "website": "http://dobrateanc.com/wavl",
+   "instagram": "dobrateanc",
+   "phone": "+18285054307",
+   "opening_hours": null,
+   "menu_url": "http://dobrateanc.com/menu",
+   "image_url": "http://static1.squarespace.com/static/611ac078f991a415236b90af/t/6123be93aae13c19f167612f/1775006856814/social+share%402x.png?format=1500w",
+   "image_credit": "Photo: Dobrá Tea West website",
+   "source_url": "http://dobrateanc.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA GREEN TEA",
+     "price": null
+    },
+    {
+     "name": "MATCHA KYOTO",
+     "price": null
+    },
+    {
+     "name": "KYOTO KINEN: Matcha Milk",
+     "price": null
+    },
+    {
+     "name": "MATCHA ON THE ROCKS",
+     "price": null
+    }
+   ],
+   "overture_id": "c57e8a54-7fdc-4dbd-bb34-7783940736dc",
+   "lat": 35.5776,
+   "lng": -82.59203,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "737264099725341"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "86074c33-efd3-4941-a405-3a481543f878"
+    }
+   ]
+  },
+  {
+   "name": "Dobrá Tea",
+   "address": "78 N Lexington Ave",
+   "city": "Asheville",
+   "state": "NC",
+   "zip": "28801",
+   "website": "http://www.dobrateanc.com/",
+   "instagram": "dobrateanc",
+   "phone": "+18285752424",
+   "opening_hours": null,
+   "menu_url": "http://www.dobrateanc.com/menu",
+   "image_url": "http://static1.squarespace.com/static/611ac078f991a415236b90af/t/6123be93aae13c19f167612f/1775006856814/social+share%402x.png?format=1500w",
+   "image_credit": "Photo: Dobrá Tea website",
+   "source_url": "http://www.dobrateanc.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA GREEN TEA",
+     "price": null
+    },
+    {
+     "name": "MATCHA KYOTO",
+     "price": null
+    },
+    {
+     "name": "KYOTO KINEN: Matcha Milk",
+     "price": null
+    },
+    {
+     "name": "MATCHA ON THE ROCKS",
+     "price": null
+    }
+   ],
+   "overture_id": "49037ee6-ce01-4e44-adbc-6073cc879891",
+   "lat": 35.597391,
+   "lng": -82.553471,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "136528306376795"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7a376b10-85a3-4a8d-b530-723d128b967b"
+    }
+   ]
+  },
+  {
+   "name": "Milk Cha-Cha Ballantyne",
+   "address": "9826 Sandy Rock Pl",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28277-7719",
+   "website": "http://www.milkchachausa.com/",
+   "instagram": "milk.cha.cha",
+   "phone": "(980) 298-6226",
+   "opening_hours": null,
+   "menu_url": "http://www.milkchachausa.com/menu",
+   "image_url": "https://static.wixstatic.com/media/3d26a3_6956d1ae41f0459792e8f384614ee808~mv2.jpg/v1/fit/w_2500,h_1330,al_c/3d26a3_6956d1ae41f0459792e8f384614ee808~mv2.jpg",
+   "image_credit": "Photo: Milk Cha-Cha Ballantyne website",
+   "source_url": "http://www.milkchachausa.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Slush (Organic)",
+     "price": null
+    },
+    {
+     "name": "Uji Matcha Latte (Organic)",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "ca4111e8-9c6b-4fbc-be24-383dcc848152",
+   "lat": 35.05308,
+   "lng": -80.774242,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "110139355509810"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "bc836b1b-b163-4037-8db1-8137f67949d0"
+    }
+   ]
+  },
+  {
+   "name": "Boba Baba",
+   "address": "1425 Winnifred St  Ste 114",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28203-4681",
+   "website": "https://www.bobababacafe.com",
+   "instagram": "bobababacafe",
+   "phone": "+19802986296",
+   "opening_hours": null,
+   "menu_url": "https://www.bobababacafe.com/menu",
+   "image_url": "http://static1.squarespace.com/static/5d23f3bbfd6bee0001ae9cd5/t/5f1ab43ec92dd520159c6679/1595585604845/10.png?format=1500w",
+   "image_credit": "Photo: Boba Baba website",
+   "source_url": "https://www.bobababacafe.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "matcha",
+     "price": null
+    },
+    {
+     "name": "MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "TRIPLE MATCHA",
+     "price": null
+    },
+    {
+     "name": "STRAWBERRY MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "MANGO MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "SEA SALT CREAM MATCHA",
+     "price": null
+    },
+    {
+     "name": "UBE CREAM MATCHA",
+     "price": null
+    }
+   ],
+   "overture_id": "5408d906-18bb-4a7a-b769-cc76b86fb7b2",
+   "lat": 35.217833,
+   "lng": -80.856411,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "86973254"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7bacc919-77f2-44c7-8ef8-8c327a185a89"
+    }
+   ]
+  },
+  {
+   "name": "BobaBing",
+   "address": "2963 NC-105",
+   "city": "Boone",
+   "state": "NC",
+   "zip": "28607",
+   "website": "https://www.bobabingnc.com",
+   "instagram": "drem.inc",
+   "phone": "+18283339323",
+   "opening_hours": null,
+   "menu_url": "https://www.bobabingnc.com/menu",
+   "image_url": "https://dremtek.com/preview.png",
+   "image_credit": "Photo: BobaBing website",
+   "source_url": "https://www.bobabingnc.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Mama",
+     "price": null
+    },
+    {
+     "name": "Matcha milk tea",
+     "price": null
+    },
+    {
+     "name": "Magic Matcha Pop",
+     "price": null
+    },
+    {
+     "name": "Lavender matcha milk tea",
+     "price": null
+    },
+    {
+     "name": "Black sugar matcha milk tea",
+     "price": null
+    },
+    {
+     "name": "Banana matcha milk tea",
+     "price": null
+    },
+    {
+     "name": "Wintermelon matcha milk tea",
+     "price": null
+    }
+   ],
+   "overture_id": "34b422be-c31c-4f30-b80e-cc5ccb168c7f",
+   "lat": 36.2068,
+   "lng": -81.702904,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103006081836098"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "89ee9dde-a4af-458f-8dc3-f0a78b795b19"
+    }
+   ]
+  },
+  {
+   "name": "Moonraker Tea Shop",
+   "address": "587 Irvin Garrish Hwy",
+   "city": "Ocracoke",
+   "state": "NC",
+   "zip": "27960",
+   "website": "http://www.moonrakerteashop.com/",
+   "instagram": null,
+   "phone": "+12529280443",
+   "opening_hours": null,
+   "menu_url": "http://www.moonrakerteashop.com/",
+   "image_url": "https://www.moonrakerteashop.com/uploads/b/47bc5a30-6f98-11ea-8d43-8d45c641f916/Moonraker%20Tea%20Shop%20teal%20second%20revision.jpg",
+   "image_credit": "Photo: Moonraker Tea Shop website",
+   "source_url": "http://www.moonrakerteashop.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Chai Matcha Ca Discontinued",
+     "price": null
+    },
+    {
+     "name": "Dragonwell Ca Ceremonial",
+     "price": null
+    },
+    {
+     "name": "Hojicha Ca",
+     "price": null
+    },
+    {
+     "name": "Ivory Matcha Discontinued",
+     "price": null
+    },
+    {
+     "name": "Peppermint Matcha Organic",
+     "price": null
+    },
+    {
+     "name": "Uji Matcha Organic",
+     "price": null
+    }
+   ],
+   "overture_id": "be6dadf7-6c47-498e-b21a-cf3187f79635",
+   "lat": 35.111301,
+   "lng": -75.980145,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "239038033494220"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "6bde907c-9e16-4d95-aabf-1be60e9009c1"
+    }
+   ]
+  },
+  {
+   "name": "Queen Bee Boba Tea",
+   "address": "1800 Skibo Rd Ste 252",
+   "city": "Fayetteville",
+   "state": "NC",
+   "zip": "28303",
+   "website": "https://queenbeebobatea.com/",
+   "instagram": "wix",
+   "phone": "+19102638526",
+   "opening_hours": null,
+   "menu_url": "https://queenbeebobatea.com/menu",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://queenbeebobatea.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Iced Latte",
+     "price": null
+    },
+    {
+     "name": "Pure Matcha with Whole Milk",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Iced Latte",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Iced Latte",
+     "price": null
+    },
+    {
+     "name": "Dirty Matcha Iced Latte",
+     "price": null
+    },
+    {
+     "name": "Royal Matcha Cloudie",
+     "price": null
+    }
+   ],
+   "overture_id": "f5b03e4a-4ae5-4725-b20d-aa62407d2666",
+   "lat": 35.073149,
+   "lng": -78.965862,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "109705775352301"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "bffede99-8bef-46d2-8b27-a0c5f30264b9"
+    }
+   ]
+  },
+  {
+   "name": "Milk Cha-Cha",
+   "address": "4620 Piedmont Row Drive",
+   "city": "Charlotte",
+   "state": "NORTH CAROLINA",
+   "zip": "28210",
+   "website": "http://www.milkchachausa.com",
+   "instagram": "milk.cha.cha",
+   "phone": "(980) 298-6226",
+   "opening_hours": null,
+   "menu_url": "http://www.milkchachausa.com/menu",
+   "image_url": "https://static.wixstatic.com/media/3d26a3_6956d1ae41f0459792e8f384614ee808~mv2.jpg/v1/fit/w_2500,h_1330,al_c/3d26a3_6956d1ae41f0459792e8f384614ee808~mv2.jpg",
+   "image_credit": "Photo: Milk Cha-Cha website",
+   "source_url": "http://www.milkchachausa.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Slush (Organic)",
+     "price": null
+    },
+    {
+     "name": "Uji Matcha Latte (Organic)",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "efbb2897-0911-4048-aa0f-1ad157fe06cc",
+   "lat": 35.153193,
+   "lng": -80.839901,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "105099324444947"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "067d58a7-bf96-40f5-8782-1d85a16c577e"
+    }
+   ]
+  },
+  {
+   "name": "Dobra Tea East",
+   "address": "1011 Tunnel Rd",
+   "city": "Asheville",
+   "state": "NC",
+   "zip": "28805",
+   "website": "http://www.dobrateanc.com",
+   "instagram": "dobrateanc",
+   "phone": "+18287745088",
+   "opening_hours": null,
+   "menu_url": "http://www.dobrateanc.com/menu",
+   "image_url": "http://static1.squarespace.com/static/611ac078f991a415236b90af/t/6123be93aae13c19f167612f/1775006856814/social+share%402x.png?format=1500w",
+   "image_credit": "Photo: Dobra Tea East website",
+   "source_url": "http://www.dobrateanc.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA GREEN TEA",
+     "price": null
+    },
+    {
+     "name": "MATCHA KYOTO",
+     "price": null
+    },
+    {
+     "name": "KYOTO KINEN: Matcha Milk",
+     "price": null
+    },
+    {
+     "name": "MATCHA ON THE ROCKS",
+     "price": null
+    }
+   ],
+   "overture_id": "a39760e0-d011-47c6-8dd8-49d842b3d0d1",
+   "lat": 35.587057,
+   "lng": -82.493568,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "64b2f78e36bb3c283f39046e"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c25189a8-30aa-4db5-a223-77d551df44e1"
+    }
+   ]
+  },
+  {
+   "name": "Dobrá Tea",
+   "address": "120 Broadway St",
+   "city": "Black Mountain",
+   "state": "NC",
+   "zip": "28711",
+   "website": "http://www.dobrateanc.com",
+   "instagram": "dobrateanc",
+   "phone": "+18283578530",
+   "opening_hours": null,
+   "menu_url": "http://www.dobrateanc.com/menu",
+   "image_url": "http://static1.squarespace.com/static/611ac078f991a415236b90af/t/6123be93aae13c19f167612f/1775006856814/social+share%402x.png?format=1500w",
+   "image_credit": "Photo: Dobrá Tea website",
+   "source_url": "http://www.dobrateanc.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA GREEN TEA",
+     "price": null
+    },
+    {
+     "name": "MATCHA KYOTO",
+     "price": null
+    },
+    {
+     "name": "KYOTO KINEN: Matcha Milk",
+     "price": null
+    },
+    {
+     "name": "MATCHA ON THE ROCKS",
+     "price": null
+    }
+   ],
+   "overture_id": "56d97e5f-295a-45a1-8f1a-f0dd3a1152da",
+   "lat": 35.616659,
+   "lng": -82.320156,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "523da80511d2337387a1fd8d"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "42f0c7dc-25d6-4c8b-8f74-a30ccb249f74"
+    }
+   ]
+  },
+  {
+   "name": "Sharetea Steele Creek",
+   "address": "4922 Trojan Dr",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28278",
+   "website": "http://www.shareteaclt.com/",
+   "instagram": "shareteaclt",
+   "phone": "+19802072266",
+   "opening_hours": null,
+   "menu_url": "http://www.shareteaclt.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.shareteaclt.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Fresh Milk",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Fresh Milk",
+     "price": null
+    },
+    {
+     "name": "Matcha Ice Blended",
+     "price": null
+    }
+   ],
+   "overture_id": "040fe93b-9a6e-412a-a9e7-12706f5aa1c9",
+   "lat": 35.166111,
+   "lng": -80.968491,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "375736223132029"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "8ea55376-6175-4313-84be-c595dc73775b"
+    }
+   ]
+  },
+  {
+   "name": "Happy Cup NC",
+   "address": "2653 Hope Mills Rd",
+   "city": "Fayetteville",
+   "state": "NC",
+   "zip": "28306-8469",
+   "website": "http://www.happycupnc.com/",
+   "instagram": null,
+   "phone": "+19107790030",
+   "opening_hours": null,
+   "menu_url": "http://www.happycupnc.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.happycupnc.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Hojicha Tea 16oz",
+     "price": null
+    },
+    {
+     "name": "Matcha Boba Milktea",
+     "price": null
+    },
+    {
+     "name": "Matcha Cafe Latte 16oz",
+     "price": null
+    },
+    {
+     "name": "Matcha Milkshake",
+     "price": null
+    }
+   ],
+   "overture_id": "537b21fa-69de-406e-b40c-59fd30573167",
+   "lat": 34.995771,
+   "lng": -78.966515,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "114680284913537"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "6fbbdb80-1842-432b-87ce-dbae54638e46"
+    }
+   ]
+  },
+  {
+   "name": "Muse & Co",
+   "address": "311 Hay St",
+   "city": "Fayetteville",
+   "state": "NC",
+   "zip": "28310",
+   "website": "https://ncmuse.co/",
+   "instagram": "ncmuseco",
+   "phone": "+19104215220",
+   "opening_hours": null,
+   "menu_url": "https://ncmuse.co/menu",
+   "image_url": "https://ncmuse.co/images/events/sunday-sketch-club/sketch-club-group.jpg",
+   "image_credit": "Photo: Muse & Co website",
+   "source_url": "https://ncmuse.co/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Wonderland",
+     "price": null
+    },
+    {
+     "name": "Matcha Witches Brew",
+     "price": null
+    },
+    {
+     "name": "Matcha Milk Tea",
+     "price": null
+    },
+    {
+     "name": "Matcha Tash-Style Milk Tea",
+     "price": null
+    }
+   ],
+   "overture_id": "eafe8319-1912-4e3f-9c2e-02db42557cd7",
+   "lat": 35.053511,
+   "lng": -78.881531,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "793345097198007"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "2899fed9-3ed9-4032-8d43-0586a86a2e2a"
+    }
+   ]
+  },
+  {
+   "name": "Cafe Mata",
+   "address": "1540 South 2nd Street",
+   "city": "Wilmington",
+   "state": "NC",
+   "zip": "28401",
+   "website": "http://www.cafemata.com/",
+   "instagram": "cafematailm",
+   "phone": "+19103862569",
+   "opening_hours": null,
+   "menu_url": "http://www.cafemata.com/menu",
+   "image_url": "https://static.wixstatic.com/media/156748_a0298bc2ad6141e0bead44a1b02e1b53~mv2.png/v1/fit/w_2500,h_1330,al_c/156748_a0298bc2ad6141e0bead44a1b02e1b53~mv2.png",
+   "image_credit": "Photo: Cafe Mata website",
+   "source_url": "http://www.cafemata.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "16oz Iced Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Cloud",
+     "price": null
+    },
+    {
+     "name": "Matcha - Salty Kurimu",
+     "price": null
+    },
+    {
+     "name": "Matcha - Strawberry Kurimu",
+     "price": null
+    }
+   ],
+   "overture_id": "90bd3e0e-813c-469d-b4a2-b05dd32c0f6c",
+   "lat": 34.215807,
+   "lng": -77.945358,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "256012427606461"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "45d13055-6ef6-4c1a-b8f9-c432bd2d151e"
+    }
+   ]
+  },
+  {
+   "name": "All Day Darling",
+   "address": "102 Montford Ave",
+   "city": "Asheville",
+   "state": "NC",
+   "zip": "28801",
+   "website": "http://www.alldaydarlingavl.com/",
+   "instagram": "alldaydarlingasheville",
+   "phone": "+1-828-505-3701",
+   "opening_hours": "Mo-Su 07:00-20:00",
+   "menu_url": "http://www.alldaydarlingavl.com/menu",
+   "image_url": "https://-2811",
+   "image_credit": "Photo: All Day Darling website",
+   "source_url": "http://www.alldaydarlingavl.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha powder, honey, oat milk",
+     "price": null
+    },
+    {
+     "name": "Citrus, matcha, chlorophyll, soda",
+     "price": null
+    }
+   ],
+   "overture_id": "0384ba22-cb93-4c5f-a2a5-a4f6659e2ee0",
+   "lat": 35.599005,
+   "lng": -82.561836,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "162222557139038"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "096d2ae2-b224-4233-bf04-6503846caaea"
+    }
+   ]
+  },
+  {
+   "name": "Backyard Brew",
+   "address": "1218 East Blvd",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28203",
+   "website": "http://backyardbrew.com/",
+   "instagram": "backyardbrewpa",
+   "phone": "+1-704-650-1584",
+   "opening_hours": "Mo-Fr 06:00-17:00; Sa,Su 08:00-17:00",
+   "menu_url": "http://backyardbrew.com/",
+   "image_url": "https://brewos.biz/menu/og/backyard-brew-og.jpg",
+   "image_credit": "Photo: Backyard Brew website",
+   "source_url": "http://backyardbrew.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Almond Joy Matcha",
+     "price": null
+    },
+    {
+     "name": "Apple Pie Matcha Fall Special",
+     "price": null
+    },
+    {
+     "name": "Banana Bread Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Caramel Sea Salt Matcha",
+     "price": null
+    },
+    {
+     "name": "Ceremonial Matcha 100g Jar",
+     "price": null
+    },
+    {
+     "name": "Ceremonial Matcha Green Tea",
+     "price": null
+    },
+    {
+     "name": "Coconut Cloud Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Coconut Sunrise Matcha",
+     "price": null
+    },
+    {
+     "name": "Desert Rose Matcha",
+     "price": null
+    },
+    {
+     "name": "Flapjacks Matcha",
+     "price": null
+    },
+    {
+     "name": "Golden Honey Matcha",
+     "price": null
+    },
+    {
+     "name": "Halva Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "62d7e470-b0f7-4f5c-864e-1120eba997a2",
+   "lat": 35.20294,
+   "lng": -80.84631,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "313243145741071"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "68f6877e-c819-4ff0-8e10-8bbecf3ea1fc"
+    }
+   ]
+  },
+  {
+   "name": "DeBeen Espresso",
+   "address": "231 E 5th St",
+   "city": "Winston-Salem",
+   "state": "NC",
+   "zip": "27101",
+   "website": "https://debeenespresso.com/",
+   "instagram": "debeenespresso",
+   "phone": "+13369898098",
+   "opening_hours": "Mo 06:00-20:00; Tu-Fr 06:00-21:00; Sa 07:00-20:00; Su 07:30-20:00",
+   "menu_url": "https://debeenespresso.com/menu",
+   "image_url": "https://img1.wsimg.com/isteam/ip/23587e10-91aa-4e2f-9713-ff3c82741be7/DSC_0538.jpeg",
+   "image_credit": "Photo: DeBeen Espresso website",
+   "source_url": "https://debeenespresso.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Frozen Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha tea blended with ice",
+     "price": null
+    },
+    {
+     "name": "Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "0063a3eb-6c86-4941-ac61-33892e540907",
+   "lat": 36.100441,
+   "lng": -80.241703,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "105444381445889"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "855feb78-d59b-49e1-94b7-78ec4f2c6851"
+    }
+   ]
+  },
+  {
+   "name": "The Kraken Coffeehouse",
+   "address": "615 E Main St",
+   "city": "Elizabeth City",
+   "state": "NC",
+   "zip": "27909",
+   "website": "http://www.thekrakencoffeehouse.com/",
+   "instagram": null,
+   "phone": "+12523016525",
+   "opening_hours": null,
+   "menu_url": "http://www.thekrakencoffeehouse.com/",
+   "image_url": "https://www.thekrakencoffeehouse.com/uploads/b/12d3faa0-a1a7-11ec-9500-895b639eeaf6/1633B34A-7087-44AE-B185-31978F7B3936.png",
+   "image_credit": "Photo: The Kraken Coffeehouse website",
+   "source_url": "http://www.thekrakencoffeehouse.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Madame Ching Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Frappe",
+     "price": null
+    },
+    {
+     "name": "Matcha Mushroom Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "d81ddb56-c6fd-445c-9fed-c18c359dccf7",
+   "lat": 36.299543,
+   "lng": -76.218975,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "106582022348456"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5ad443c5-8b61-4ab3-be9d-632ad5b21c7c"
+    }
+   ]
+  },
+  {
+   "name": "Edenton Coffee House",
+   "address": "302 S Broad St",
+   "city": "Edenton",
+   "state": "NC",
+   "zip": "27932",
+   "website": "http://edentoncoffeehouse.com/",
+   "instagram": null,
+   "phone": "+12524827465",
+   "opening_hours": null,
+   "menu_url": "http://edentoncoffeehouse.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://edentoncoffeehouse.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Blackberry Hollow Matcha",
+     "price": null
+    },
+    {
+     "name": "Cranberry Orchard Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Cinnamon Bun Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Dubai Chocolate Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Funky Monkey Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Island Breeze Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Kiss Me I M Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Lavender Cream Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Mango Matcha Dream",
+     "price": null
+    },
+    {
+     "name": "Iced Pumpkin Cream Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Salted Honey Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Spring Berry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "97137ec7-d2f4-4451-a92a-eaecdef40151",
+   "lat": 36.058798,
+   "lng": -76.609028,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "255864427792477"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d870504e-4d12-40d7-b109-06d35d9bc9f4"
+    }
+   ]
+  },
+  {
+   "name": "Jumpin' Java Coffee Shop",
+   "address": "7737 Good Middling Dr",
+   "city": "Fayetteville",
+   "state": "NC",
+   "zip": "28304",
+   "website": "http://www.jumpinjava.coffee/",
+   "instagram": null,
+   "phone": "+19108674444",
+   "opening_hours": null,
+   "menu_url": "http://www.jumpinjava.coffee/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.jumpinjava.coffee/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Cannot Be Dairy Free",
+     "price": null
+    },
+    {
+     "name": "Matcha Tea",
+     "price": null
+    },
+    {
+     "name": "Only Milk Chai Or Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "9f8138e5-499d-4d0c-b524-8e466edf914c",
+   "lat": 35.027063,
+   "lng": -79.05489,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "139319686107154"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "920ebbd3-6b9c-433c-849c-31559dd5c444"
+    }
+   ]
+  },
+  {
+   "name": "Wisteria Coffee Company",
+   "address": "537 S Main St",
+   "city": "King",
+   "state": "NC",
+   "zip": "27021",
+   "website": "http://www.wisteriacoffee.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": "http://www.wisteriacoffee.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.wisteriacoffee.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Gf Df Matcha Muffin",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Strawberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "b88accef-e3b7-4307-83dc-e3825f8e87cc",
+   "lat": 36.2703,
+   "lng": -80.360813,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1784750228470618"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "29e03c1c-4943-42ad-b408-590350bb0bcd"
+    }
+   ]
+  },
+  {
+   "name": "Matilda's Coffee",
+   "address": "3078 South Horner Boulevard",
+   "city": "Sanford",
+   "state": "NC",
+   "zip": "27330",
+   "website": "http://www.matildascoffeeshop.com/",
+   "instagram": "matildascoffeeshop",
+   "phone": "(984) 368-0317",
+   "opening_hours": "Tu-Fr 06:30-17:30; Sa 08:00-16:00; Su 09:00-16:00",
+   "menu_url": "http://www.matildascoffeeshop.com/menu",
+   "image_url": "https://static.wixstatic.com/media/9f8703_dc6ee4c84a874ed39b603cb91c74215a~mv2.png/v1/fit/w_2500,h_1330,al_c/9f8703_dc6ee4c84a874ed39b603cb91c74215a~mv2.png",
+   "image_credit": "Photo: Matilda's Coffee website",
+   "source_url": "http://www.matildascoffeeshop.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Green Tea",
+     "price": null
+    },
+    {
+     "name": "Matcha Smoothie",
+     "price": null
+    },
+    {
+     "name": "Green Tea Matcha, Banana, Coconut, & Milk",
+     "price": null
+    }
+   ],
+   "overture_id": "13af2718-8740-40c0-9e0e-3b493270f681",
+   "lat": 35.449984,
+   "lng": -79.13591,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "337933363492378"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "ac613d38-d2b1-43ac-ba9c-fd1b3dfc236f"
+    }
+   ]
+  },
+  {
+   "name": "Your Coffee Place Troutman",
+   "address": "403 N Main St",
+   "city": "Troutman",
+   "state": "NC",
+   "zip": "28166",
+   "website": "https://www.ycpcoffee.com",
+   "instagram": null,
+   "phone": "+17045082094",
+   "opening_hours": null,
+   "menu_url": "https://www.ycpcoffee.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.ycpcoffee.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Banana Bread Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Frappe 20oz",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "0dac6240-cf97-4f3e-896a-6f1f3ae9fad7",
+   "lat": 35.706423,
+   "lng": -80.893074,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "106764751658747"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f97ec895-2043-4c29-bb2b-5b64ecce5ac7"
+    }
+   ]
+  },
+  {
+   "name": "Your Mom's Donuts- Park Road",
+   "address": "4205 Park Rd",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28209",
+   "website": "http://www.yourmomsdonutsnc.com/",
+   "instagram": null,
+   "phone": "+17047714155",
+   "opening_hours": null,
+   "menu_url": "http://www.yourmomsdonutsnc.com/",
+   "image_url": "https://www.yourmomsdonutsnc.com/uploads/b/eaff9bd0-c73d-11ed-95aa-831df6c7e7be/YMD%20Alternate%20Logo_MTUxNz.png",
+   "image_credit": "Photo: Your Mom's Donuts- Park Road website",
+   "source_url": "http://www.yourmomsdonutsnc.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Iced Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Iced Vanilla Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Chai Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Vanilla Matcha With Freeze Dried Strawberries",
+     "price": null
+    }
+   ],
+   "overture_id": "ca268f1a-a089-4eb5-ac59-499fb9fd0bf1",
+   "lat": 35.174253,
+   "lng": -80.848633,
+   "overture_sources": [
+    {
+     "dataset": "Microsoft",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1125899912215751"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "168bfbca-9bb9-49e0-ba94-6ff667992de9"
+    }
+   ]
+  },
+  {
+   "name": "Qatra Specialty Coffee",
+   "address": "6311 Stadium Dr B",
+   "city": "Clemmons",
+   "state": "NC",
+   "zip": "27012",
+   "website": "https://qatracoffee.com/",
+   "instagram": "qatra.coffee",
+   "phone": "+1 (234) 567 89 00",
+   "opening_hours": "Mo-Fr 07:00-20:00; Sa,Su 08:00-21:00",
+   "menu_url": "https://qatracoffee.com/menu",
+   "image_url": "https://res2.yourwebsite.life/res/6796e2c46c55b30740e1cd9f/67a93c24899575de737d3829_optimized",
+   "image_credit": "Photo: Qatra Specialty Coffee website",
+   "source_url": "https://qatracoffee.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Cold Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Lavender Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Strawberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Vanilla Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "★ Iced Qatra matcha",
+     "price": null
+    },
+    {
+     "name": "Hot Matcha",
+     "price": null
+    },
+    {
+     "name": "Qatra matcha",
+     "price": null
+    },
+    {
+     "name": "Lavender Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Vanilla Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "8d3d2866-6239-4b33-9464-0467b2cc531c",
+   "lat": 36.031076,
+   "lng": -80.380653,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "921399207718019"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "ecfbedef-97aa-43eb-a63e-7a7a829705cc"
+    }
+   ]
+  },
+  {
+   "name": "Narrow Gauge Coffee & Cafe",
+   "address": "1148 N Main Ave",
+   "city": "Newton",
+   "state": "NC",
+   "zip": "28658",
+   "website": "https://narrowgaugecoffeeandcafe.square.site/",
+   "instagram": null,
+   "phone": "+18284695118",
+   "opening_hours": null,
+   "menu_url": "https://narrowgaugecoffeeandcafe.square.site/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://narrowgaugecoffeeandcafe.square.site/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Affogato Matcha",
+     "price": null
+    },
+    {
+     "name": "Hot Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "daefa74c-69c5-4349-8df3-2783fc006e5d",
+   "lat": 35.67448,
+   "lng": -81.221157,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "148727089110003"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "ccf5726b-43b2-42aa-9ccf-4b4131f17734"
+    }
+   ]
+  },
+  {
+   "name": "Peet's Coffee",
+   "address": "149 Cross Center Rd # 121",
+   "city": "Denver",
+   "state": "NC",
+   "zip": "28037",
+   "website": "http://www.peets.com",
+   "instagram": "peetscoffee",
+   "phone": "800-999-2132",
+   "opening_hours": null,
+   "menu_url": "http://www.peets.com/menu",
+   "image_url": "https://cdn.shopify.com/s/files/1/0319/0764/3436/files/Peet_s-Logo-Social_29ea83ae-ba4e-4961-a2bd-21ab98c2225c.png?v=1612399636",
+   "image_credit": "Photo: Peet's Coffee website",
+   "source_url": "http://www.peets.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Peppermint Bark Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Pumpkin Matcha with Vanilla Dream Top",
+     "price": null
+    },
+    {
+     "name": "Matcha Protein Latte",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Protein Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha's Dreamy Peppermint Crush",
+     "price": null
+    }
+   ],
+   "overture_id": "38d4b6ba-b643-469f-9ec2-f1383ff497a7",
+   "lat": 35.443636,
+   "lng": -80.995579,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "f8a575c091b9459ca41b97a8"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "fd0594dd-cae8-4c66-b249-8d0f01d3fa20"
+    }
+   ]
+  },
+  {
+   "name": "Grow Cafe",
+   "address": "5342 Docia Crossing Road",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28269",
+   "website": "http://growcafeclt.com/",
+   "instagram": null,
+   "phone": "+17049190919",
+   "opening_hours": null,
+   "menu_url": "http://growcafeclt.com/menu",
+   "image_url": "https://static.wixstatic.com/media/7e1fee_36a72150c35d4d589ec1f93c808772e2%7Emv2.png/v1/fit/w_2500,h_1330,al_c/7e1fee_36a72150c35d4d589ec1f93c808772e2%7Emv2.png",
+   "image_credit": "Photo: Grow Cafe website",
+   "source_url": "http://growcafeclt.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Tea",
+     "price": null
+    },
+    {
+     "name": "Lavender Matcha",
+     "price": null
+    },
+    {
+     "name": "Berry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "d4cbd03c-ffe3-4495-85a4-5b48197b9fe8",
+   "lat": 35.367109,
+   "lng": -80.785896,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "107081642126048"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "2bd21824-3568-43f2-97d8-4a4495ea141e"
+    }
+   ]
+  },
+  {
+   "name": "Dilworth Coffee Plantation Market",
+   "address": "3016 Weddington Rd",
+   "city": "Matthews",
+   "state": "NC",
+   "zip": "28105-7652",
+   "website": "http://dilworthcoffee.square.site/",
+   "instagram": null,
+   "phone": "+17048469345",
+   "opening_hours": null,
+   "menu_url": "http://dilworthcoffee.square.site/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://dilworthcoffee.square.site/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Iced Matcha Green Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Green Tea Chiller",
+     "price": null
+    },
+    {
+     "name": "Matcha Green Tea Latte",
+     "price": null
+    },
+    {
+     "name": "Smitten By Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "1baef50c-0e1f-44a4-a85c-96e6f06d237a",
+   "lat": 35.083639,
+   "lng": -80.732635,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1590286147923447"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "ee972fdb-6001-4629-b3dd-19c03d71d7db"
+    }
+   ]
+  },
+  {
+   "name": "Kunu Coffee Co.",
+   "address": "18644 W Catawba Ave",
+   "city": "Cornelius",
+   "state": "NC",
+   "zip": "28031",
+   "website": "http://www.kunu.coffee/",
+   "instagram": null,
+   "phone": "+17042517091",
+   "opening_hours": null,
+   "menu_url": "http://www.kunu.coffee/",
+   "image_url": "https://www.kunu.coffee/uploads/b/7b0b2770-dbe7-11ee-b27c-8fc8ab008c19/seo%20social%20profile.png",
+   "image_credit": "Photo: Kunu Coffee Co. website",
+   "source_url": "http://www.kunu.coffee/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Blackberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Thank You Very Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "1fb803e3-d030-4923-8156-d65ef376d269",
+   "lat": 35.467314,
+   "lng": -80.888847,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "486887474516592"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c8fff47f-7e4f-48e2-928a-e079e62b6b4b"
+    }
+   ]
+  },
+  {
+   "name": "Peet's Coffee and Tea",
+   "address": "11222 Providence Rd",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28277",
+   "website": "http://www.peets.com",
+   "instagram": "peetscoffee",
+   "phone": "800-999-2132",
+   "opening_hours": null,
+   "menu_url": "http://www.peets.com/menu",
+   "image_url": "https://cdn.shopify.com/s/files/1/0319/0764/3436/files/Peet_s-Logo-Social_29ea83ae-ba4e-4961-a2bd-21ab98c2225c.png?v=1612399636",
+   "image_credit": "Photo: Peet's Coffee and Tea website",
+   "source_url": "http://www.peets.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Peppermint Bark Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Pumpkin Matcha with Vanilla Dream Top",
+     "price": null
+    },
+    {
+     "name": "Matcha Protein Latte",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Protein Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha's Dreamy Peppermint Crush",
+     "price": null
+    }
+   ],
+   "overture_id": "c2b95c93-a471-4473-87f4-e2f05564c924",
+   "lat": 35.056562,
+   "lng": -80.769943,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "65c056a836e04ebb465f0dbd"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f7e89902-fcab-450b-87b2-d884795f6a4b"
+    }
+   ]
+  },
+  {
+   "name": "Peet's Coffee and Tea",
+   "address": "4150 Clemmons Rd # 228",
+   "city": "Clemmons",
+   "state": "NC",
+   "zip": "27012",
+   "website": "http://www.peets.com",
+   "instagram": "peetscoffee",
+   "phone": "800-999-2132",
+   "opening_hours": null,
+   "menu_url": "http://www.peets.com/menu",
+   "image_url": "https://cdn.shopify.com/s/files/1/0319/0764/3436/files/Peet_s-Logo-Social_29ea83ae-ba4e-4961-a2bd-21ab98c2225c.png?v=1612399636",
+   "image_credit": "Photo: Peet's Coffee and Tea website",
+   "source_url": "http://www.peets.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Peppermint Bark Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Pumpkin Matcha with Vanilla Dream Top",
+     "price": null
+    },
+    {
+     "name": "Matcha Protein Latte",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Protein Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha's Dreamy Peppermint Crush",
+     "price": null
+    }
+   ],
+   "overture_id": "bf005cfd-6bb8-48b1-84c9-ef6a2909393d",
+   "lat": 36.01885,
+   "lng": -80.407375,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "0aedf2d12a9744e14650db5b"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4c557308-e140-4d6d-80b4-67d21eb5073f"
+    }
+   ]
+  },
+  {
+   "name": "The Rustic Roast",
+   "address": "103 E Main Ave",
+   "city": "Taylorsville",
+   "state": "NC",
+   "zip": "28681",
+   "website": "http://www.therusticroastcafe.com/",
+   "instagram": null,
+   "phone": "+18288096210",
+   "opening_hours": null,
+   "menu_url": "http://www.therusticroastcafe.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.therusticroastcafe.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Hot Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Lemonade",
+     "price": null
+    }
+   ],
+   "overture_id": "e080b6f2-3073-4bf6-8ccf-7bbc54c4c221",
+   "lat": 35.923521,
+   "lng": -81.173676,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "516938108179797"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "40ced57a-e6f8-4922-b5a1-fbbac461cc07"
+    }
+   ]
+  },
+  {
+   "name": "Babaloo Coffee Club",
+   "address": "1425 Winnifred St, Suite 117",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28203",
+   "website": "http://babaloocoffeeclub.com/",
+   "instagram": "babaloocoffeeclub",
+   "phone": "(704) 817-7261",
+   "opening_hours": "Mo-Fr 07:00-18:00; Sa,Su 08:00-18:00",
+   "menu_url": "http://babaloocoffeeclub.com/menu",
+   "image_url": "https://babaloocoffeeclub.com/_astro/hero-dogs-1_ZwrfKr.jpg",
+   "image_credit": "Photo: Babaloo Coffee Club website",
+   "source_url": "http://babaloocoffeeclub.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha & non-coffee",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": "$6"
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": "$8"
+    },
+    {
+     "name": "Matcha Tiramisú",
+     "price": "$8.50"
+    },
+    {
+     "name": "Blue Cloud Banana Matcha",
+     "price": "$8.50"
+    },
+    {
+     "name": "Mango Sticky Rice Matcha",
+     "price": "$9"
+    },
+    {
+     "name": "Asian Cloud Matcha",
+     "price": "$7.50"
+    },
+    {
+     "name": "Peach Creamsicle Matcha",
+     "price": "$8.50"
+    },
+    {
+     "name": "Banana Pudding Matcha",
+     "price": "$9"
+    },
+    {
+     "name": "Carrot Cake Matcha",
+     "price": "$8"
+    },
+    {
+     "name": "Matcha Lemonade",
+     "price": "$6.50"
+    },
+    {
+     "name": "Snickers Matcha",
+     "price": "$8.50"
+    }
+   ],
+   "overture_id": "4e7e91b2-aa97-42b2-a556-1d39be1a7a94",
+   "lat": 35.222862,
+   "lng": -80.837963,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "804657032724981"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ]
+  },
+  {
+   "name": "Kale Me Crazy",
+   "address": "6800 Parker Farm Rd Unit 100",
+   "city": "Wilmington",
+   "state": "NC",
+   "zip": "28411",
+   "website": "https://wilmington.kalemecrazy.net/",
+   "instagram": null,
+   "phone": "9106798188",
+   "opening_hours": null,
+   "menu_url": "https://wilmington.kalemecrazy.net/menu",
+   "image_url": "https://kalemecrazy.net/wp-content/uploads/2025/04/KMC-Recovery.jpg",
+   "image_credit": "Photo: Kale Me Crazy website",
+   "source_url": "https://wilmington.kalemecrazy.net/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Super Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Rose Latte",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Iced Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Iced Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "18ddeee8-ffbf-4ff5-9fa4-c0c1ee1da6d4",
+   "lat": 34.235178,
+   "lng": -77.831921,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "235143187201863"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "8238ff46-89d4-4162-af97-168885bcbb0e"
+    }
+   ]
+  },
+  {
+   "name": "All Good Things Bakery",
+   "address": "289 S Trade St",
+   "city": "Tryon",
+   "state": "NC",
+   "zip": "28782",
+   "website": "http://AllGoodThingsBakery.com/",
+   "instagram": null,
+   "phone": "+18284401018",
+   "opening_hours": null,
+   "menu_url": "http://allgoodthingsbakery.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://allgoodthingsbakery.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Creamsicle Matcha",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Special Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "c903b042-541f-4756-8cdd-39c6d621026c",
+   "lat": 35.204615,
+   "lng": -82.237328,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "218386342043081"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "77cc460e-ca2a-4851-8e02-f4a3e5773343"
+    }
+   ]
+  },
+  {
+   "name": "Littl Madeleine",
+   "address": "11318 N Community House Rd",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28277",
+   "website": "http://littlmade.com/",
+   "instagram": null,
+   "phone": "+19802070997",
+   "opening_hours": null,
+   "menu_url": "http://littlmade.com/",
+   "image_url": "https://www.littlmade.com/uploads/b/fdfe11e0-a907-11ee-8eb1-27d017044d04/DSC02653.JPEG",
+   "image_credit": "Photo: Littl Madeleine website",
+   "source_url": "http://littlmade.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Cloud Blue Matcha Latte Iced Only",
+     "price": null
+    },
+    {
+     "name": "Cloud Matcha Latte Iced Only",
+     "price": null
+    },
+    {
+     "name": "Double Matcha Madeleine",
+     "price": null
+    },
+    {
+     "name": "Matcha Affogato",
+     "price": null
+    },
+    {
+     "name": "Matcha Basque Cheesecake",
+     "price": null
+    },
+    {
+     "name": "Organic Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Organic Strawberry Matcha Latte Iced Only",
+     "price": null
+    },
+    {
+     "name": "Passion Fruit Matcha Latte Iced Only",
+     "price": null
+    }
+   ],
+   "overture_id": "5350775e-d027-47d5-ab66-efec2a17e944",
+   "lat": 35.056078,
+   "lng": -80.835342,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "214300461758898"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "021962e2-c49b-411f-9d7c-12a878a42eb8"
+    }
+   ]
+  },
+  {
+   "name": "Amelie's French Bakery & Cafe",
+   "address": "524 Brandywine Rd",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28209",
+   "website": "https://ameliesfrenchbakery.com/park-road-shopping-center-charlotte-nc/",
+   "instagram": "ameliesfrenchbakery",
+   "phone": "7043761781",
+   "opening_hours": null,
+   "menu_url": "https://ameliesfrenchbakery.com/menu",
+   "image_url": "https://ameliesfrenchbakery.com/wp-content/uploads/2025/09/Menu-683x1024.jpg",
+   "image_credit": "Photo: Amelie's French Bakery & Cafe website",
+   "source_url": "https://ameliesfrenchbakery.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Vanilla Cinnamon Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Macaron",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "095db13b-4104-48d6-b4da-7ab458e01877",
+   "lat": 35.173409,
+   "lng": -80.847504,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "437386370042138"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a004ba54-e8a7-4df9-8401-3ec61fbade7a"
+    }
+   ]
+  },
+  {
+   "name": "Amelie's French Bakery & Cafe",
+   "address": "7715 Pineville-Matthews Rd Unit 34B",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28226",
+   "website": "https://ameliesfrenchbakery.com/carmel-commons-charlotte-nc/",
+   "instagram": "ameliesfrenchbakery",
+   "phone": "7043761781",
+   "opening_hours": null,
+   "menu_url": "https://ameliesfrenchbakery.com/menu",
+   "image_url": "https://ameliesfrenchbakery.com/wp-content/uploads/2025/09/Menu-683x1024.jpg",
+   "image_credit": "Photo: Amelie's French Bakery & Cafe website",
+   "source_url": "https://ameliesfrenchbakery.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Vanilla Cinnamon Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Macaron",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "d9f3d47b-bae7-4bff-af79-14f1ec3dca15",
+   "lat": 35.086264,
+   "lng": -80.850662,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1050282608319775"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "977f6ba2-8222-40e0-8755-f39ee72e6db0"
+    }
+   ]
+  },
+  {
+   "name": "Amelie's French Bakery — Uptown",
+   "address": "301 S Tryon St",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28282",
+   "website": "http://www.ameliesfrenchbakery.com",
+   "instagram": "ameliesfrenchbakery",
+   "phone": "7043761781",
+   "opening_hours": null,
+   "menu_url": "http://www.ameliesfrenchbakery.com/menu",
+   "image_url": "https://ameliesfrenchbakery.com/wp-content/uploads/2025/09/Menu-683x1024.jpg",
+   "image_credit": "Photo: Amelie's French Bakery — Uptown website",
+   "source_url": "http://www.ameliesfrenchbakery.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Vanilla Cinnamon Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Macaron",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "110a7c1d-5823-47ea-bac0-56a6458069e1",
+   "lat": 35.224108,
+   "lng": -80.845043,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "56539dc6498e84bcdb93141c"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "6716bef0-3d9a-4c1c-ae92-89aa0c706c72"
+    }
+   ]
+  },
+  {
+   "name": "Amelie's Uptown",
+   "address": "380 S College St",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28202",
+   "website": "http://www.ameliesfrenchbakery.com",
+   "instagram": "ameliesfrenchbakery",
+   "phone": "7043761781",
+   "opening_hours": null,
+   "menu_url": "http://www.ameliesfrenchbakery.com/menu",
+   "image_url": "https://ameliesfrenchbakery.com/wp-content/uploads/2025/09/Menu-683x1024.jpg",
+   "image_credit": "Photo: Amelie's Uptown website",
+   "source_url": "http://www.ameliesfrenchbakery.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Vanilla Cinnamon Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Macaron",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "1a38a476-e56e-4037-88f6-1f613ff39f2b",
+   "lat": 35.224283,
+   "lng": -80.845207,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "676969149180335"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "20646e4a-b25a-4f44-a3af-d11b47f1b530"
+    }
+   ]
+  },
+  {
+   "name": "Ocha Time Tea & Creamery",
+   "address": "2001 Commonwealth Ave",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28205",
+   "website": "http://ochatimetea.com",
+   "instagram": null,
+   "phone": "+19802197859",
+   "opening_hours": null,
+   "menu_url": "http://ochatimetea.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://ochatimetea.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Mango Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Dark Brown Sugar With Pearls",
+     "price": null
+    },
+    {
+     "name": "Matcha Green Tea Slushie",
+     "price": null
+    },
+    {
+     "name": "Matcha Green Tea Smoothie",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Love",
+     "price": null
+    },
+    {
+     "name": "Matcha Milk Tea",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "0bec82b1-285d-4a3c-aa0a-a0cb2c000098",
+   "lat": 35.219168,
+   "lng": -80.811848,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "5e35cf560f6c4c0008655a9d"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1cca7db4-11c1-43fe-9c2d-18122e7facac"
+    }
+   ]
+  },
+  {
+   "name": "Amelie's",
+   "address": "2424 N Davidson St",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28205-1874",
+   "website": "http://www.ameliesfrenchbakery.com",
+   "instagram": "ameliesfrenchbakery",
+   "phone": "7043761781",
+   "opening_hours": null,
+   "menu_url": "http://www.ameliesfrenchbakery.com/menu",
+   "image_url": "https://ameliesfrenchbakery.com/wp-content/uploads/2025/09/Menu-683x1024.jpg",
+   "image_credit": "Photo: Amelie's website",
+   "source_url": "http://www.ameliesfrenchbakery.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Vanilla Cinnamon Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Macaron",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "aed25c8f-f256-43e8-8a21-4d2ce5f9bdfd",
+   "lat": 35.241232,
+   "lng": -80.812378,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "124401760987984"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "3f080321-bcb7-42fa-bd42-662f1c7a29bf"
+    }
+   ]
+  },
+  {
+   "name": "Amelies",
+   "address": "7715 Pineville Matthews Rd",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28226-3946",
+   "website": "http://www.ameliesfrenchbakery.com",
+   "instagram": "ameliesfrenchbakery",
+   "phone": "7043761781",
+   "opening_hours": null,
+   "menu_url": "http://www.ameliesfrenchbakery.com/menu",
+   "image_url": "https://ameliesfrenchbakery.com/wp-content/uploads/2025/09/Menu-683x1024.jpg",
+   "image_credit": "Photo: Amelies website",
+   "source_url": "http://www.ameliesfrenchbakery.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Vanilla Cinnamon Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Macaron",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "36143fa7-3300-44e4-bb15-4b391f2f5151",
+   "lat": 35.087564,
+   "lng": -80.849102,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "161086304429279"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ]
+  },
+  {
+   "name": "Paris Baguette",
+   "address": "9826 Sandy Rock Place",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28277",
+   "website": "https://parisbaguette.com/locations/nc/charlotte/9826-sandy-rock-pl-a/",
+   "instagram": "parisbaguette_usa",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": "https://parisbaguette.com/menu",
+   "image_url": "https://parisbaguette.com/wp-content/uploads/2024/04/icon-catering.svg",
+   "image_credit": "Photo: Paris Baguette website",
+   "source_url": "https://parisbaguette.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Mirrorball Iced Croissant Latte & Matcha",
+     "price": null
+    },
+    {
+     "name": "Mirrorball Iced Croissant Matcha",
+     "price": null
+    },
+    {
+     "name": "Order Now for Mirrorball Iced Croissant Matcha",
+     "price": null
+    },
+    {
+     "name": "Details for Mirrorball Iced Croissant Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Cake",
+     "price": null
+    },
+    {
+     "name": "Order Now for Strawberry Matcha Cake",
+     "price": null
+    },
+    {
+     "name": "Details for Strawberry Matcha Cake",
+     "price": null
+    },
+    {
+     "name": "Iced Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Order Now for Iced Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Details for Iced Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Order Now for Iced Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "38b23b2e-2d81-4b1a-bcf2-dce763bb993a",
+   "lat": 35.052996,
+   "lng": -80.774139,
+   "overture_sources": [
+    {
+     "dataset": "AllThePlaces",
+     "license": "CC0-1.0",
+     "record_id": "ddDyFYWzvbNRQh1Ax_bZE3vodAw="
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ]
+  },
+  {
+   "name": "Sugar Coated Bakery",
+   "address": "2803 Evans St Ste 100",
+   "city": "Greenville",
+   "state": "NC",
+   "zip": "27834",
+   "website": "https://www.sugarcoatedbakerync.com/",
+   "instagram": null,
+   "phone": "+12527516437",
+   "opening_hours": null,
+   "menu_url": "https://www.sugarcoatedbakerync.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.sugarcoatedbakerync.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Berry Matcha",
+     "price": null
+    },
+    {
+     "name": "Grinch Matcha Frappe",
+     "price": null
+    },
+    {
+     "name": "Honeycomb Matcha",
+     "price": null
+    },
+    {
+     "name": "Marshmallow Moonwalk Matcha",
+     "price": null
+    },
+    {
+     "name": "Plain Matcha",
+     "price": null
+    },
+    {
+     "name": "Plain Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Pumpkin Cream Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Fields Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "564787dd-a8c4-4546-b835-7cb06db1cdc1",
+   "lat": 35.584074,
+   "lng": -77.379539,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "116172698229937"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "367b5212-9400-489c-9a17-7624cea7dc97"
     }
    ]
   }
