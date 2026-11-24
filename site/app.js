@@ -146,7 +146,7 @@
   // WebGL probe answers: a few milliseconds on a phone with a free GPU, under a second on a busy one. The header, the
   // chips and the list render from the data on the stand-in; its listeners, padding, camera and controls move over to
   // the real map. Without WebGL the stand-in stays and the list, the cards and search still work.
-  var MAP_OPTS = { minZoom: 2.5, maxZoom: 18, maxBounds: USA_BOUNDS, dragRotate: false, pitchWithRotate: false, touchPitch: false,
+  var MAP_OPTS = { minZoom: 1.5, maxZoom: 18, dragRotate: false, pitchWithRotate: false, touchPitch: false,
     attributionControl: { compact: true }, fadeDuration: 200 };
   function mx(lng) { return (lng + 180) / 360; }
   function my(lat) { var s = Math.sin(Math.max(-85, Math.min(85, lat)) * Math.PI / 180); return 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI); }
@@ -237,7 +237,7 @@
     if (!map.isPre) return;
     var pre = map, real;
     try {
-      real = new maplibregl.Map(Object.assign({ container: "map", style: styleUrl(), center: pre.c, zoom: pre.z }, MAP_OPTS));
+      real = new maplibregl.Map(Object.assign({ container: "map", style: styleUrl(), center: pre.c, zoom: pre.z, maxBounds: rangeFor(homeZoom(pre)) }, MAP_OPTS));
     } catch (e) { // no WebGL
       document.documentElement.classList.add("nomap");
       playIntro();
@@ -294,14 +294,29 @@
   var mapPad = { top: 0, bottom: 0, left: 0, right: 0 }, refitLater = false;
   // The home view at this window's size. A window with no size yet (a tab opened in the background, a tab restored at
   // launch, the pane still opening) cannot fit anything: the camera stays where it is and the fit runs again on the
-  // first resize that has a size, on a wide screen; a narrow one keeps the region the phone path opened in the meantime.
+  // first resize that has a size (a phone starts at home too since rung 8).
   // Whatever happens in here, the rest of the page goes on (the "nothing broken" rule).
   function lockRange() {
     if (map.isPre || !map.cameraForBounds || !map.setMinZoom) return;
     try {
       var cam = map.cameraForBounds(HOME, { padding: 16 });
-      if (cam && isFinite(cam.zoom)) map.setMinZoom(Math.max(1, Math.min(4, cam.zoom - 0.25)));
+      if (cam && isFinite(cam.zoom)) { map.setMinZoom(Math.max(1, Math.min(4, cam.zoom - 0.25))); if (map.setMaxBounds) map.setMaxBounds(rangeFor(cam.zoom)); }
     } catch (e) { /* keep the fixed floor */ }
+  }
+  // The zoom that fits the contiguous states on this screen (the stand-in camera answers it before the real map exists).
+  function homeZoom(m) { try { var cam = (m || map).cameraForBounds(HOME, { padding: 16 }); return cam && isFinite(cam.zoom) ? cam.zoom : 4; } catch (e) { return 4; } }
+  // The range box for this screen (rung 8, 2026-11-23): USA_BOUNDS, grown north and south (or east and west) by just what
+  // the screen needs at the lowest zoom allowed. MapLibre raises the zoom until the whole screen fits inside the box, so
+  // on a tall phone the unchanged box put the first view on the upper Midwest at zoom 3.2 instead of the home view.
+  function rangeFor(z) {
+    var el = map.getContainer(), h = (el && el.clientHeight) || innerHeight || 0, w = (el && el.clientWidth) || innerWidth || 0;
+    var world = 512 * Math.pow(2, Math.max(1, (isFinite(z) ? z : 4) - 0.25)), needX = w / world, needY = h / world;
+    var fx = function (lng) { return (lng + 180) / 360; }, fy = function (lat) { var s = Math.sin(lat * Math.PI / 180); return 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI); };
+    var gx = function (x) { return x * 360 - 180; }, gy = function (y) { return 180 / Math.PI * (2 * Math.atan(Math.exp((0.5 - y) * 2 * Math.PI)) - Math.PI / 2); };
+    var xW = fx(USA_BOUNDS[0][0]), xE = fx(USA_BOUNDS[1][0]), yS = fy(USA_BOUNDS[0][1]), yN = fy(USA_BOUNDS[1][1]);
+    var ax = Math.max(0, (needX - (xE - xW)) / 2), ay = Math.max(0, (needY - (yS - yN)) / 2);
+    if (!ax && !ay) return USA_BOUNDS;
+    return [[gx(xW - ax), Math.max(-85, gy(yS + ay))], [gx(xE + ax), Math.min(85, gy(yN - ay))]];
   }
   window.addEventListener("resize", function () { setTimeout(lockRange, 150); });
   function refitHome() {
@@ -325,7 +340,7 @@
   var padT;
   function padSoon() {
     clearTimeout(padT);
-    padT = setTimeout(function () { try { syncPad(false); if (refitLater && wide.matches) refitHome(); } catch (e) { /* same */ } }, 120);
+    padT = setTimeout(function () { try { syncPad(false); if (refitLater) refitHome(); } catch (e) { /* same */ } }, 120);
   }
   window.addEventListener("resize", padSoon);
   // a tab that loaded hidden is sized when it is first shown, and not every browser fires a resize for that:
@@ -377,6 +392,7 @@
   // and exist only so the sources load.
   function addData() {
     lockRange(); // the real map is here (style.load)
+    lblOrig = null; lblNow = ""; // a fresh style carries its own label filters (syncCityLabels)
     // ev, sh and br: from LOW_Z the places and stacks of tiers() (the uncluster rule), never MapLibre's own clusters
     if (!map.getSource("ev")) map.addSource("ev", { type: "geojson", data: evColl() });
     if (!map.getSource("br")) map.addSource("br", { type: "geojson", data: brandColl() });
@@ -393,6 +409,7 @@
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
     scheduleSync();
+    syncCityLabels(); // the layers are on the style now (lblOrig was reset above)
   }
   map.on("style.load", addData);
 
@@ -1606,7 +1623,8 @@
   function photoOf(it) { return it.kind === "s" ? it.data.image_url : it.kind === "e" ? imgSrc(it.data) : brandPicUrl(it); }
   // the art inside a small city pin when there is no picture: the character of its kind (lighter than a drawn card)
   function natArt(it) { return it.kind === "s" ? SHOP_ART : it.kind === "e" ? "<span class=\"pn-draw\" data-char=\"m-base\"></span>" : "<span class=\"pn-ini\">" + esc((String(it.data.brand || "?").match(/[A-Za-z0-9]/) || ["?"])[0].toUpperCase()) + "</span>"; }
-  function ntColl() {
+  function ntColl() { return (ntLast = ntColl0()); }
+  function ntColl0() {
     var z = map.getZoom(), CP = window.MatchaCityPins, none = { type: "FeatureCollection", features: [] };
     if (z >= LOW_Z) return fc(tiers().nt); // from LOW_Z the city pins that have not opened (tiers())
     if (!CP) { ntStats = { cities: 0, pins: 0 }; return none; }
@@ -1636,8 +1654,30 @@
     var ct = map.getSource("ct");
     if (ct) ct.setData(cityColl());
     var nts = map.getSource("nt");
-    if (nts) nts.setData(ntColl());
+    if (nts) { nts.setData(ntColl()); syncCityLabels(); }
   }
+  // Basemap city names under a city pin of the same name (zooms 5 to 10, rung 8): the pin carries the name, so the
+  // style's own label for that city is filtered out while the pin stands, and comes back when the pin opens or the
+  // view leaves that range. The filters are read from the style once per style load and restored from there.
+  var LBL_LAYERS = ["label_city", "label_city_capital", "label_town", "label_other"], lblOrig = null, lblNow = "", ntLast = null;
+  function cityLabelNames() {
+    var z = map.getZoom(), names = [];
+    if (!ntLast || z < 5 || z > 10) return names;
+    (ntLast.features || []).forEach(function (f) { var c = f.properties && f.properties.city; if (c && names.indexOf(c) < 0) names.push(c); });
+    return names;
+  }
+  function syncCityLabels() {
+    if (map.isPre || !map.getLayer || !map.setFilter) return;
+    try {
+      if (!lblOrig) { lblOrig = {}; LBL_LAYERS.forEach(function (id) { if (map.getLayer(id)) lblOrig[id] = map.getFilter(id) || null; }); }
+      var names = cityLabelNames(), key = names.join("|");
+      if (key === lblNow) return;
+      lblNow = key;
+      var hide = ["!", ["in", ["coalesce", ["get", "name_en"], ["get", "name"]], ["literal", names]]];
+      Object.keys(lblOrig).forEach(function (id) { var f = lblOrig[id]; map.setFilter(id, !names.length ? f : f ? ["all", f, hide] : hide); });
+    } catch (e) { /* a label is cosmetic; never break the map over it */ }
+  }
+  map.on("zoomend", syncCityLabels);
   function refreshEvents(stagger) {
     setSources();
     renderList(stagger);
@@ -1723,7 +1763,9 @@
     var ref = refPoint();
     order.sort(metro ? function (a, b) { return miles(ref, groups[a][0].ll) - miles(ref, groups[b][0].ll); } : function (a, b) { return byStart(groups[a][0], groups[b][0]); });
     var unplacedN = up.length - placed.length;
-    if (up.length) html += "<li class=\"head\">Pop-ups <span class=\"n\">" + up.length + "</span>" + (datesNote ? "<span class=\"n-q\">" + datesNote + "</span>" : "") + (unplacedN ? "<span class=\"n-q\"> · " + unplacedN + " without a place yet</span>" : "") + "</li>" + rowsHTML(placed);
+    // One line, count first like the shops heading ("254 pop-ups · 344 dates"); the ones without a place on a quiet second
+    // line of their own, so the heading never wraps in a narrow pane (the 800 px fixture in tools/map-gate.js).
+    if (up.length) html += "<li class=\"head pophead\"><span class=\"hd1\">" + up.length + " pop-up" + (up.length === 1 ? "" : "s") + (datesNote ? "<span class=\"n-q\"> · " + dates + " dates</span>" : "") + "</span></li>" + (unplacedN ? "<li class=\"headsub\">" + unplacedN + " without a place yet</li>" : "") + rowsHTML(placed);
     order.forEach(function (k) {
       var g = groups[k], open = !!apOpen[k], city = g[0].data.city || "this city";
       html += "<li class=\"apgroup\"><button type=\"button\" class=\"aprow\" data-ap-open=\"" + esc(k) + "\" aria-expanded=\"" + open + "\"><span class=\"apl\">" + (placed.length ? g.length + " more" : g.length + " pop-up" + (g.length === 1 ? "" : "s")) + " in " + esc(city) + "</span><span class=\"apq\">place not posted yet</span></button></li>" + (open ? rowsHTML(g, true) : "");
@@ -2492,16 +2534,13 @@
   function firstList(res) {
     var go = function () { syncZoomFace(); refreshEvents(false); };
     var zs = ""; try { zs = localStorage.getItem(ZIP_KEY) || ""; } catch (e) { /* ignore */ }
-    // A phone with no saved zip and no link opens on its region: framed before the first list, so the list is built
-    // once and not for the whole country first (N7c).
-    var dl0 = window.MatchaDeepLink ? window.MatchaDeepLink.parse(location.search) : {};
-    // ?at=lat,lng,zoom opens on that view (review screenshots, tests, a shared view); it wins over the zip and the region.
+    // A phone opens where a wide screen does (rung 8, 2026-11-23): the contiguous states fitted to the width, the city
+    // pins of the national tier on them and the Hawaii jump; the busiest-region start is gone. A saved zip or a link wins.
+    // ?at=lat,lng,zoom opens on that view (review screenshots, tests, a shared view); it wins over the zip.
     var at = viewParam(params.get("at"));
-    var regionFirst = !wide.matches && !at && !/^\d{5}$/.test(zs) && !(dl0.q || dl0.city || dl0.event || dl0.brand || dl0.shop);
-    if (regionFirst) { openRegion(); clearTimeout(moveT); }
     if (at) { map.jumpTo({ center: [at[1], at[0]], zoom: at[2] }); clearTimeout(moveT); }
     go(); // sources added later by addData (style.load) start from the same lists
-    if (!regionFirst && !at && !applyDeepLink()) { if (/^\d{5}$/.test(zs)) goZip(zs, true); else if (!wide.matches) openRegion(); }
+    if (!at && !applyDeepLink() && /^\d{5}$/.test(zs)) goZip(zs, true);
     loadShops();
     loadExtras();
     mountSearchSoon(res[1] || []);
@@ -2519,45 +2558,6 @@
   // ---------- your region first (phones, rung 35) ----------
   // A whole country is a few specks on a tall screen. Without a saved zip or a deep link, a phone opens on the busiest
   // region (the most pop-ups within 60 miles of one another) at a readable zoom; a first visit gets one quiet line saying so.
-  var REGION_KEY = "matchamap.region";
-  // The pop-up with the most others within 60 miles wins; the view frames the ones within 20 miles of it.
-  function busiestRegion() {
-    var pts = visibleEvents().filter(function (it) { return it.data.status !== "past"; }), best = null, bn = 0;
-    if (pts.length < 3) return null;
-    pts.forEach(function (a) {
-      var n = 0;
-      for (var i = 0; i < pts.length; i++) {
-        var b = pts[i].ll;
-        if (Math.abs(b[0] - a.ll[0]) < 0.9 && Math.abs(b[1] - a.ll[1]) < 1.3 && miles(a.ll, b) < 60) n++; // a box first: 60 miles is under 0.9 degrees of latitude and 1.3 of longitude in the lower 48
-      }
-      if (n > bn) { bn = n; best = a; }
-    });
-    return pts.filter(function (b) { return miles(best.ll, b.ll) < 20; });
-  }
-  function openRegion() {
-    var near = busiestRegion();
-    if (!near) return;
-    var b = new maplibregl.LngLatBounds();
-    near.forEach(function (it) { b.extend(lngLat(it.ll)); });
-    var cam = map.cameraForBounds(b, { padding: { top: 60, bottom: 90, left: 40, right: 40 } }) || {};
-    var c = b.getCenter(), z = Math.max(9, Math.min(11, cam.zoom || 10));
-    map.jumpTo({ center: c, zoom: z });
-    var seen = false;
-    try { seen = !!localStorage.getItem(REGION_KEY); localStorage.setItem(REGION_KEY, "1"); } catch (e) { seen = true; }
-    if (seen) return;
-    var town = cityNear([c.lat, c.lng]);
-    var hint = document.createElement("div");
-    hint.className = "region-hint";
-    hint.setAttribute("role", "status");
-    hint.innerHTML = "<span>Starting where it is busiest" + (town ? ": " + esc(town[0]) : "") + ". Enter your zip for yours.</span>" +
-      "<button type=\"button\" class=\"rh-x\" aria-label=\"Dismiss\">&times;</button>";
-    var drop = function () { if (hint.parentNode) hint.remove(); };
-    hint.querySelector(".rh-x").addEventListener("click", drop);
-    document.addEventListener("mm:land", drop);
-    $("map-panel").appendChild(hint);
-    setTimeout(drop, 12000);
-  }
-
   // ---------- weekend tour (rung 35) ----------
   // This weekend's placed pop-ups near you (within 60 miles of your place, else in view), one at a time, in time order,
   // with Back and Next. Each step is the usual glide and card; calm mode jumps.
@@ -2661,5 +2661,5 @@
   }
 
   // Exposed for tests only.
-  window.__matcha = { ntStats: function () { return ntStats; }, ntPlaces: function () { return Object.keys(live).filter(function (k) { return live[k].nt && ntG[k]; }).map(function (k) { return { key: k, lls: ntG[k].keys.map(function (q) { return items[q] ? lngLat(items[q].ll) : null; }).filter(Boolean) }; }); }, tierZoom: function () { return tierCache ? tierCache.z : null; }, state: state, shopsOn: function () { return shopsOn; }, servesOn: function () { return servesOn; }, shopsWords: shopsWords, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
+  window.__matcha = { cityLabelNames: cityLabelNames, ntStats: function () { return ntStats; }, ntPlaces: function () { return Object.keys(live).filter(function (k) { return live[k].nt && ntG[k]; }).map(function (k) { return { key: k, lls: ntG[k].keys.map(function (q) { return items[q] ? lngLat(items[q].ll) : null; }).filter(Boolean) }; }); }, tierZoom: function () { return tierCache ? tierCache.z : null; }, state: state, shopsOn: function () { return shopsOn; }, servesOn: function () { return servesOn; }, shopsWords: shopsWords, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
 })();

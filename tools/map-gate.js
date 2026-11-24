@@ -32,7 +32,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FAIL_DIR = path.join(ROOT, "qa", "brands", "2026-11-23", "map-fail");
 export const FIXTURES = [["Manhattan", 40.745, -73.99], ["Triangle", 35.93, -78.80], ["LA", 34.05, -118.25], ["Seattle", 47.61, -122.33]];
 export const ZOOMS = [10, 11, 12, 13, 14, 16];
-export const SIZES = [[320, 568], [390, 844], [1024, 768], [1440, 900], [1920, 1080]];
+export const SIZES = [[320, 568], [390, 844], [800, 900], [1024, 768], [1440, 900], [1920, 1080]]; // 800: the pane where the header wrapped
 export const NATIONAL = { fixture: ["USA", 38.5, -97], zooms: ["home", 4, 5, 7, 10], widths: [390, 1440] };
 export const FOCUS = { cases: [["LA", 34.05, -118.25, 9], ["Houston", 29.76, -95.37, 9], ["Seattle", 47.61, -122.33, 10], ["Manhattan", 40.73, -73.99, 13], ["Triangle", 35.86, -78.72, 11], ["LA", 34.05, -118.25, 7], ["Houston", 29.76, -95.37, 8]], widths: [390, 1440] };
 export const REDUCED = { zooms: [11, 13], sizes: [[390, 844], [800, 900], [1440, 900]], themes: ["light"], fixtures: ["Manhattan", "Triangle"], national: ["home", 5] }; // 800: the pane width where the list went empty
@@ -85,6 +85,15 @@ const CHECK = `(() => {
   // the list must never show the sleepy empty state while pins are on the map (Steven's Triangle, 2026-11-23)
   const list = document.getElementById("list"), emp = document.getElementById("empty");
   if (marks.length && list && list.children.length === 0 && emp && !emp.hidden) out.push("the list shows the empty state while " + marks.length + " pins are on the map");
+  // the pop-ups heading is one line, never wrapped or cut (rung 8; the 800 px pane)
+  const hd = document.querySelector(".list li.head .hd1");
+  if (hd && shown(hd) && (hd.getClientRects().length > 1 || hd.scrollWidth > hd.clientWidth + 1)) out.push("the list header wraps or is cut: " + hd.textContent);
+  // no basemap label doubles a city pin of the same name at zooms 5 to 10 (rung 8)
+  if (map && map.getZoom() >= 5 && map.getZoom() <= 10 && map.isStyleLoaded && map.isStyleLoaded()) {
+    const pinNames = [...document.querySelectorAll(".maplibregl-marker .mk-lbl.lb-c")].filter(shown).map((l) => l.textContent.trim().replace(/\s*\+\d+$/, ""));
+    const layers = ["label_city", "label_city_capital", "label_town", "label_other"].filter((id) => map.getLayer(id));
+    if (pinNames.length && layers.length) for (const f of map.queryRenderedFeatures({ layers })) { const n = (f.properties || {}).name_en || (f.properties || {}).name; if (pinNames.includes(n)) out.push("basemap label doubles the city pin: " + n); }
+  }
   const nt = window.__matcha.ntStats ? window.__matcha.ntStats() : null;
   return { nt, cityPins: nat.length, pins: marks.length, singles: singles.length, groups: marks.filter((m) => m.group).length, labels: labels.length, fails: [...new Set(out)] };
 })()`;

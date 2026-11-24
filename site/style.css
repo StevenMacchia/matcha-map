@@ -739,6 +739,9 @@ dialog .credit { font-size: 14px; color: var(--muted); }
 
 /* list: counts on the headings, city-only pop-ups gathered under one dashed heading per city */
 .list li.head .n { font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* the pop-ups heading stays on one line; the places not posted yet go on a quiet line under it (rung 8) */
+.list li.head .hd1 { display: block; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+.list li.headsub { margin: -4px 2px 8px 20px; color: var(--muted); font-size: 13px; font-weight: 700; }
 .apl::before { content: ""; display: inline-block; width: 11px; height: 11px; margin-right: 6px; border: 1.5px dashed var(--edge); border-radius: 50%; vertical-align: -1px; }
 .list li.head.ap-head { font-size: 15px; }
 .list li.head.ap-head::before { display: none; }
@@ -816,7 +819,9 @@ body.card-open .frow1 { visibility: hidden; }
 /* ---------- home footer index (tools/gen-pages.js fills it between the cities markers): quiet links at the end of the list ---------- */
 .home-index { padding: 8px 16px 32px; border-top: 1.5px solid var(--line); margin: 4px 12px 0; color: var(--muted); font-size: 14px; }
 .home-index .hix-h { font-size: 14px; font-weight: 800; color: var(--muted); margin: 14px 0 6px; }
-.home-index .hix { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 12px; }
-.home-index .hix li { margin: 0; }
+.home-index ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 12px; }
+.home-index li { margin: 0; background: none; border: 0; padding: 0; }
+/* the generator writes the list without its heading at times (pg-chips, the city pages' class): the nav names itself */
+.home-index:not(:has(.hix-h))::before { content: "Matcha pop-ups by city"; display: block; font-size: 14px; font-weight: 800; color: var(--muted); margin: 14px 0 6px; }
 .home-index a { color: var(--muted); display: inline-block; padding: 4px 0; }
 .home-index a:hover { color: var(--deep); }
