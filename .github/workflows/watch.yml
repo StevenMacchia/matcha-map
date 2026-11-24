@@ -1,11 +1,10 @@
-# Watch loop: every 6 hours, find new accounts, check the watch list, rebuild events.
+# Manual run only (workflow_dispatch). The schedule is off: the Windows tasks "Matcha Map watch" (hourly) and "Matcha Map daily" (13:00 local time) are authoritative, see docs/DAILY-RUN.md.
+# Watch loop (when run by hand): find new accounts, check the watch list, rebuild events.
 # NOTE: nothing is deployed yet. This file only matters once the repo has a remote on GitHub.
 # Without the secrets below the job still runs: every key-gated step logs "off" and does nothing,
 # and the commit step finds no change. Nothing here scrapes behind a login.
 name: watch
 on:
-  schedule:
-    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions:

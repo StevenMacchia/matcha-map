@@ -50,4 +50,4 @@ API summary (token routes need `Authorization: Bearer <INTAKE_TOKEN>`): `POST /a
 
 ## Daily job
 
-`.github/workflows/daily.yml` runs at 09:17 UTC (and by hand): discover, art (if the script exists), ingest, feeds, event pages, commits `data/events.json data/review data/geocache.json data/inbox site/data site/art site/feeds site/e site/city site/brand site/sitemap.xml` if changed, then deploys with wrangler when the two Cloudflare secrets exist. `watch.yml` is unchanged.
+The GitHub Actions schedules are off (`daily.yml` and `watch.yml` run only by hand); the Windows task "Matcha Map daily" at 13:00 local time is authoritative (`docs/DAILY-RUN.md`). `.github/workflows/daily.yml`, run by hand, does: discover, art (if the script exists), ingest, feeds, event pages, commits `data/events.json data/review data/geocache.json data/inbox site/data site/art site/feeds site/e site/city site/brand site/sitemap.xml` if changed, then deploys with wrangler when the two Cloudflare secrets exist. `watch.yml` is unchanged.

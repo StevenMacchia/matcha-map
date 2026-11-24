@@ -1,10 +1,8 @@
-# Daily refresh at 09:17 UTC: discover, ingest, feeds, event pages, commit, deploy to Cloudflare Pages.
-# watch.yml (every 6 hours) stays as it is. Every key-gated step logs "off" when its secret is missing.
+# Manual run only (workflow_dispatch). The schedule is off: the Windows task "Matcha Map daily" (13:00 local time, npm run daily) is authoritative, see docs/DAILY-RUN.md.
+# When run by hand: discover, ingest, feeds, event pages, commit, deploy to Cloudflare Pages. Every key-gated step logs "off" when its secret is missing.
 # Secrets to add under Settings > Secrets and variables > Actions: see docs/INTAKE.md.
 name: daily
 on:
-  schedule:
-    - cron: "17 9 * * *"
   workflow_dispatch:
 
 permissions:

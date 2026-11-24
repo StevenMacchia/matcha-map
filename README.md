@@ -33,6 +33,7 @@ Commands that matter, one line each. Flags go after `--`.
 
 The rest, in the order you will want them:
 
+- `npm run daily`: the once-a-day run (pull, discover, watch, ingest, Yelp leads, new shops, smoke, report, commit, push, deploy; no model calls), started at 13:00 by the Windows task from `tools/windows-task.ps1`. See `docs/DAILY-RUN.md`.
 - `npm run refresh`: discover, watch and ingest once. `npm run loop` repeats it every 6 hours (watch hourly) while the terminal stays open.
 - `npm run clean`: applies the noise rules to events already on file.
 - `npm run regeocode`: looks up venues that sit at their city centre on Nominatim (150 requests a run, cached in `data/geocache.json`).
