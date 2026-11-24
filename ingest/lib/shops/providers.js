@@ -70,6 +70,12 @@ export function tierHint(c) {
 const streetNumber = (a) => (/^\s*(\d{1,6})/.exec(a || "") || [])[1] || null;
 const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 
+// A drink name, not a heading, a description or a sentence: at most 7 words, no closing period, and not "series", "menu", "flavors".
+export const drinkLooksOk = (name) => {
+  const n = String(name || "").trim();
+  return n.length >= 5 && n.split(/\s+/).length <= 7 && !/[.!?]$/.test(n) && !/\b(series|menu|collection|flavou?rs?|options?|section|category|infused|topped|served|made with)\b|\bw\//i.test(n);
+};
+
 // Distinct matcha drink lines on a menu page's text: short lines with "matcha", names only (a trailing price is split off).
 export function matchaDrinks(html) {
   const seen = new Set(), out = [];
@@ -77,7 +83,7 @@ export function matchaDrinks(html) {
     if (line.length > 70 || line.length < 5 || !/matcha/i.test(line) || /[.!?]\s+[A-Z]/.test(line) || /\b(our|we|your|you|the best|shop|buy|order online|subscribe)\b/i.test(line)) continue;
     const m = /^(.*?)(?:\s*[-–·:]?\s*(\$\s?\d+(?:\.\d{2})?\+?))?$/.exec(line.trim());
     const name = (m?.[1] || line).replace(/\s+/g, " ").trim();
-    if (name.length < 5 || seen.has(name.toLowerCase())) continue;
+    if (!drinkLooksOk(name) || seen.has(name.toLowerCase())) continue;
     seen.add(name.toLowerCase());
     out.push({ name, price: m?.[2] || null });
   }
@@ -85,7 +91,7 @@ export function matchaDrinks(html) {
 }
 
 // Candidate + the shop's own pages -> a curated row (data/shops-*.json shape) or { held: reason }. `get(url)` -> {ok, text}.
-export async function confirmCandidate(c, get, { read = new Date().toISOString().slice(0, 10), relaxAddress = false } = {}) {
+export async function confirmCandidate(c, get, { read = new Date().toISOString().slice(0, 10), relaxAddress = false, weakOk = false } = {}) {
   if (!c.website) return { held: "no website from the provider (a worker confirms it by name)" };
   let base; try { base = new URL(c.website); } catch { return { held: "website not a url" }; }
   if (/instagram\.com|facebook\.com|linktr\.ee|ubereats|doordash|grubhub|toasttab|yelp\.com/i.test(base.host)) return { held: "provider website is a social or ordering page" };
@@ -100,7 +106,7 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
   // The site must print the same street number (or the provider's zip) as the candidate.
   const num = streetNumber(c.address);
   const printed = pages.map((p) => p.rd).filter((r) => r.address);
-  let sameSpot = printed.find((r) => (num && streetNumber(r.address) === num) || (c.zip && r.zip && r.zip.slice(0, 5) === String(c.zip).slice(0, 5)));
+  let sameSpot = printed.find((r) => (num && streetNumber(r.address) === num) || (c.zip && r.zip && String(r.zip).slice(0, 5) === String(c.zip).slice(0, 5)));
   // relaxAddress (Overture places): the provider already tied this website to this place, so a menu proof on the site is enough when the site prints no address.
   let viaOverture = false;
   if (!sameSpot) {
@@ -109,11 +115,12 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
   }
   const menuPage = pages.find((p) => /menu/i.test(p.url) && p.rd.matcha_mentions) || pages.find((p) => p.rd.matcha_mentions);
   const hint = tierHint(c);
-  let tier = null, menu_matcha = null;
+  let tier = null, menu_matcha = null, weak = false;
   if (hint === "core" && mentions >= 3) tier = "shop";
   else {
     const drinks = menuPage ? matchaDrinks(menuPage.html) : [];
     if (drinks.length >= 3) { tier = "serves"; menu_matcha = drinks.slice(0, 12); }
+    else if (weakOk && drinks.length >= 1) { tier = "serves"; menu_matcha = drinks; weak = true; }
   }
   if (!tier) return { held: hint === "core" ? "own site barely mentions matcha" : "fewer than three matcha drinks on the site's own menu page" };
   const best = (k) => sameSpot[k] || rd(k);
@@ -123,7 +130,7 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
       website: c.website, instagram: best("instagram") || (c.instagram ? String(c.instagram).replace(/^@/, "") : null), phone: best("phone") || c.phone || null,
       opening_hours: rd("hours_osm"), menu_url: tier === "serves" && menuPage ? menuPage.url : rd("menu_url"),
       image_url: rd("image"), image_credit: rd("image") ? `Photo: ${c.name} website` : null,
-      source_url: sameSpot.url || pages[0].url, read, confirmed_via: viaOverture ? "overture" : "own-site", tier, ...(menu_matcha ? { menu_matcha } : {}),
+      source_url: sameSpot.url || pages[0].url, read, confirmed_via: viaOverture ? "overture" : "own-site", tier, ...(menu_matcha ? { menu_matcha } : {}), ...(weak ? { note: "Menu mentions matcha" } : {}),
     },
   };
 }

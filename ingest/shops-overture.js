@@ -98,12 +98,15 @@ async function main() {
   }
   if (argv.includes("--menus")) {
     const limit = +arg("--limit", 1500);
-    const cands = places.filter(isServesCandidate).sort((a, b) => (PRIORITY[a.tax] ?? 5) - (PRIORITY[b.tax] ?? 5) || (b.conf - a.conf));
-    const curFile = `${dir}/menus-cursor.json`;
+    const only = arg("--cities") ? new Set(String(arg("--cities")).split(",").map((x) => x.trim().toLowerCase())) : null;
+    const box = arg("--bbox") ? String(arg("--bbox")).split(",").map(Number) : null;
+    const st = arg("--state");
+    const cands = places.filter((p) => isServesCandidate(p) && (!only || only.has(String(p.city || "").toLowerCase())) && (!box || (p.lng >= box[0] && p.lat >= box[1] && p.lng <= box[2] && p.lat <= box[3])) && (!st || stateOf(p) === st)).sort((a, b) => (PRIORITY[a.tax] ?? 5) - (PRIORITY[b.tax] ?? 5) || (b.conf - a.conf));
+    const curFile = `${dir}/menus-cursor${only || box ? "-" + arg("--tag", "sel") : ""}.json`;
     const start = readJson(curFile, { next: 0 }).next % Math.max(1, cands.length);
     const batch = cands.slice(start, start + limit);
     const f = createFetcher({});
-    const outFile = "data/shops-zz-overture-serves.json";
+    const outFile = arg("--out", "data/shops-zz-overture-serves.json");
     const prev = readJson(outFile, { shops: [] }).shops;
     const rows = new Map(prev.map((r) => [`${r.name}|${r.address}`.toLowerCase(), r]));
     let ok = 0, done = 0, held = {};
@@ -113,10 +116,10 @@ async function main() {
     const work = async () => {
       while (next < batch.length) {
         const p = batch[next++];
-        const r = await confirmCandidate(toCandidate(p), (u) => f.get(u), { relaxAddress: true }).catch((e) => ({ held: "error: " + e.message.slice(0, 40) }));
+        const r = await confirmCandidate(toCandidate(p), (u) => f.get(u), { relaxAddress: true, weakOk: argv.includes("--weak") }).catch((e) => ({ held: "error: " + e.message.slice(0, 40) }));
         done++;
         if (r.held) { held[r.held] = (held[r.held] || 0) + 1; continue; }
-        rows.set(`${r.row.name}|${r.row.address}`.toLowerCase(), { ...r.row, overture_id: p.id, overture_sources: compactSources(p.sources) });
+        rows.set(`${r.row.name}|${r.row.address}`.toLowerCase(), { ...r.row, overture_id: p.id, lat: p.lat, lng: p.lng, overture_sources: compactSources(p.sources) });
         ok++;
       }
     };

@@ -4,11 +4,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
-import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
 import { brandOf as cleanBrand, placeOf } from "../ingest/lib/names.js";
 import { tzForPlace } from "../ingest/lib/tz.js";
+import { sitemapFiles, writeSitemaps, patchState, updateRegistry, writeRedirects, dirsWithIndex, UPDATED, WIN, hashInput, hash12, dayText, subHash } from "./seo-lib.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const LIMITS = { files: 20000, bytes: 30 * 1024 * 1024 };
@@ -182,10 +182,11 @@ export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stri
 const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'; connect-src 'self' https://cloudflareinsights.com";
 
 // image: a page's own share card (a city card from `npm run weekend`); the site card otherwise.
-export function shell({ title, desc, canonical, ld = [], body, image, noindex = false }) {
+// seo: the page's data summary for the gate ("u1 s0 b2 n3"), written on <html> as data-seo (docs/SEO-RULES.md, rule 1).
+export function shell({ title, desc, canonical, ld = [], body, image, noindex = false, seo = "" }) {
   const og = image || `${SITE_URL}/og.png`;
   return `<!doctype html>
-<html lang="en" class="pg">
+<html lang="en" class="pg"${seo ? ` data-seo="${esc(seo)}"` : ""}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -207,21 +208,21 @@ ${noindex ? "" : `<meta name="theme-color" content="#FBF6EA">
 ${noindex ? "" : `<meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 `}<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${esc(title)}">
+${noindex ? "" : `<meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${esc(og)}">
-<script src="/theme.js"></script>
+`}<script src="/theme.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/pages.css">
 ${ld.map(ldScript).join("\n")}
 </head>
 <body class="pg">
-<header class="pg-top"><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="/">Open the map</a></header>
+<header class="pg-top" data-boiler><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="/">Open the map</a></header>
 <main class="pg-main">
 ${body}
 </main>
-<footer class="pg-foot"><p>Matcha Map is a free map of matcha pop-ups across America. Map data \u00a9 OpenStreetMap contributors.</p></footer>
+<footer class="pg-foot" data-boiler><p>Matcha Map is a free map of matcha pop-ups across America. Map data \u00a9 OpenStreetMap contributors.</p></footer>
 </body>
 </html>
 `;
@@ -264,7 +265,8 @@ const NEAR_MI = Math.floor(NEAR_KM / KM_PER_MI); // 15
 const miText = (kmv) => { const m = Math.max(1, Math.round(kmv / KM_PER_MI)); return `${m} ${m === 1 ? "mile" : "miles"}`; };
 const followersText = (n) => { n = Number(n); if (!isFinite(n) || n <= 0) return ""; const r = (v) => String(Math.round(v * 10) / 10).replace(/\.0$/, ""); return `${n >= 1e6 ? r(n / 1e6) + "m" : n >= 1e3 ? r(n / 1e3) + "k" : String(Math.round(n))} followers`; };
 const clip = (s, n) => (s.length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/, "").replace(/[,;:\s]+$/, "") + "…");
-const UPDATED = "~UPDATED~"; // stands in for the date while a page is hashed, so the date alone never moves a lastmod
+// UPDATED stands in for the "Updated" date while a page is hashed, so the date alone never moves a lastmod; WIN is the same for the
+// rolling weekend window ("Nov 27 to Nov 29"), a date that moves every week on every page (both in seo-lib.js).
 
 const shortDay = (k) => new Intl.DateTimeFormat("en-US", { timeZone: "UTC", weekday: "short", month: "short", day: "numeric" }).format(keyDate(k)).replace(",", "");
 export const shortDayOf = (e, tz) => shortDay(dayKey(Date.parse(e.start), e.tz || tz));
@@ -279,17 +281,25 @@ export function cityIntro(c, ups, tz) {
 }
 
 // ---- index or noindex (docs/SEO-CITY-PAGES.md section 4) ----
-// A city page is indexable when it has a pop-up matched to it, a pop-up within 40 miles, a verified shop within 25 km, or a brand
-// based there. Each field is a count or a list. Pure: re-evaluated every run from the data.
-export function cityIndexable({ ups = 0, nearby = 0, shops = 0, brands = 0 } = {}) {
+// (docs/SEO-RULES.md, rule 1). A city page is indexable when it has at least one upcoming pop-up matched to the city, OR at least one
+// verified shop within 25 km, OR at least two brands based there that have a picture, OR pop-ups within 64 km in at least three distinct
+// other cities. Each field is a count or a list. Pure: re-evaluated every run from the data, and again by tools/seo-gate.js from the
+// counts the page carries in data-seo.
+export const SEO_RULE = { ups: 1, shops: 1, brandsWithPicture: 2, nearbyCities: 3 };
+export function cityIndexable({ ups = 0, shops = 0, brandsWithPicture = 0, nearbyCities = 0 } = {}) {
   const n = (x) => (Array.isArray(x) ? x.length : Number(x) || 0);
   const reasons = [];
-  if (n(ups)) reasons.push("popup");
-  if (n(nearby)) reasons.push("nearby");
-  if (n(shops)) reasons.push("shop");
-  if (n(brands)) reasons.push("brand");
+  if (n(ups) >= SEO_RULE.ups) reasons.push("popup");
+  if (n(shops) >= SEO_RULE.shops) reasons.push("shop");
+  if (n(brandsWithPicture) >= SEO_RULE.brandsWithPicture) reasons.push("brands");
+  if (n(nearbyCities) >= SEO_RULE.nearbyCities) reasons.push("nearby");
   return { indexable: reasons.length > 0, reasons };
 }
+// A state hub is indexable with at least one pop-up or verified shop in the state and at least 5 cities with a page: a hub of one or two
+// cities (DC, Hawaii) only repeats those city pages.
+export const STATE_MIN_CITIES = 5;
+export const stateIndexable = ({ ups = 0, shops = 0, cities = 0 } = {}) => (ups > 0 || shops > 0) && cities >= STATE_MIN_CITIES;
+export const seoAttr = (c) => `u${c.ups} s${c.shops} b${c.brandsWithPicture} n${c.nearbyCities}`;
 
 // ---- shops: opening hours (OSM syntax) and LocalBusiness ----
 const OSM_DAYS = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
@@ -364,7 +374,7 @@ export function shopLd(s) {
 // ---- city copy: lead, FAQ ----
 // f: { ups, shops, brands, nearest: { it, km } | null }  (counts, and the nearest pop-up outside the city's own)
 export function cityLead(c, f) {
-  const label = `${c.name}, ${c.state}`;
+  const label = f.label || `${c.name}, ${c.state}`;
   if (f.ups) {
     const rest = [];
     if (f.shops) rest.push(plural(f.shops, "matcha shop"));
@@ -373,27 +383,34 @@ export function cityLead(c, f) {
   }
   if (f.nearest && f.nearest.km <= NEARBY_KM) {
     const e = f.nearest.it.e;
-    return `No matcha pop-up is listed in ${c.name} right now. The nearest is in ${[e.city, e.state].filter(Boolean).join(", ")}, ${miText(f.nearest.km)} away (${f.nearest.it.brand}, ${shortDayOf(e, c.tz)}).`;
+    return `No matcha pop-up is listed in ${label} right now. The nearest is in ${[e.city, e.state].filter(Boolean).join(", ")}, ${miText(f.nearest.km)} away (${f.nearest.it.brand}, ${shortDayOf(e, c.tz)}).`;
   }
-  return `No matcha pop-up is listed within ${NEARBY_MI} miles of ${c.name} right now. ${f.shops ? `${plural(f.shops, "matcha shop")} ${f.shops === 1 ? "is" : "are"} listed here.` : "No matcha shop is listed either."}`;
+  return `No matcha pop-up is listed within ${NEARBY_MI} miles of ${label} right now. ${f.shops ? `${plural(f.shops, "matcha shop")} ${f.shops === 1 ? "is" : "are"} listed here.` : "No matcha shop is listed either."}`;
 }
-// f: { win, wk, ups, nearest, shops, firstShop }
+/// f: { label, when, win, wk, ups, nearest, shops, firstShop, nearbyN, brands, near3, indexable }. Every answer carries the city's own name and numbers,
+// so no answer repeats across pages (docs/SEO-RULES.md, rule 5).
 export function cityFaq(c, f) {
-  const when = windowText(f.win.keys), day = (it) => shortDayOf(it.e, c.tz);
+  const label = f.label || `${c.name}, ${c.state}`;
+  const when = f.when || windowText(f.win.keys), day = (it) => shortDayOf(it.e, c.tz);
+  const is = (n) => (n === 1 ? "is" : "are");
   let a1;
-  if (f.wk.length) a1 = `Yes. ${plural(f.wk.length, "matcha pop-up")} ${f.wk.length === 1 ? "is" : "are"} listed in ${c.name} this weekend (${when}): ${andList(f.wk.slice(0, 3).map((it) => `${it.brand} on ${day(it)}`))}.`;
-  else if (f.ups.length) a1 = `No. Nothing is listed in ${c.name} for this weekend (${when}) yet. The next pop-up is ${f.ups[0].brand} on ${day(f.ups[0])}.`;
-  else if (f.nearest && f.nearest.km <= NEARBY_KM) a1 = `No. Nothing is listed in ${c.name} for this weekend (${when}). The nearest pop-up is ${f.nearest.it.brand} in ${[f.nearest.it.e.city, f.nearest.it.e.state].filter(Boolean).join(", ")}, ${miText(f.nearest.km)} away, on ${shortDayOf(f.nearest.it.e, c.tz)}.`;
-  else a1 = `No. Nothing is listed within ${NEARBY_MI} miles of ${c.name} for this weekend (${when}).`;
+  if (f.wk.length) a1 = `Yes. ${plural(f.wk.length, "matcha pop-up")} ${is(f.wk.length)} listed in ${label} this weekend (${when}): ${andList(f.wk.slice(0, 3).map((it) => `${it.brand} on ${day(it)}`))}.`;
+  else if (f.ups.length) a1 = `No. Nothing is listed in ${label} for this weekend (${when}) yet. The next pop-up is ${f.ups[0].brand} on ${day(f.ups[0])}, one of ${f.ups.length} listed.`;
+  else if (f.nearest && f.nearest.km <= NEARBY_KM) a1 = `No. Nothing is listed in ${label} for this weekend (${when}). The nearest pop-up is ${f.nearest.it.brand} in ${[f.nearest.it.e.city, f.nearest.it.e.state].filter(Boolean).join(", ")}, ${miText(f.nearest.km)} away, on ${shortDayOf(f.nearest.it.e, c.tz)}.`;
+  else a1 = `No. Nothing is listed within ${NEARBY_MI} miles of ${label} for this weekend (${when}).`;
   const a2 = f.shops
-    ? `${f.shops === 1 ? "1 verified matcha cafe or shop is" : `${f.shops} verified matcha cafes and shops are`} listed within ${NEAR_MI} miles of ${c.name}. The closest is ${f.firstShop}.`
-    : `No matcha shop is listed within ${NEAR_MI} miles of ${c.name}.`;
-  return [
+    ? `${f.shops === 1 ? "1 verified matcha cafe or shop is" : `${f.shops} verified matcha cafes and shops are`} listed within ${NEAR_MI} miles of ${label}. The closest is ${f.firstShop}.`
+    : `No matcha shop is listed within ${NEAR_MI} miles of ${label}.`;
+  const near = f.ups.length ? `${plural(f.ups.length, "upcoming pop-up")} ${is(f.ups.length)} on the map for it today.` : f.nearbyN ? `Nothing is listed there yet, and ${plural(f.nearbyN, "pop-up")} ${is(f.nearbyN)} within ${NEARBY_MI} miles.` : `Nothing is listed there or within ${NEARBY_MI} miles yet, so an alert is how you hear when one appears.`;
+  const faq = [
     { q: `Is there a matcha pop-up in ${c.name} this weekend?`, a: a1 },
     { q: `How many matcha shops are in ${c.name}?`, a: a2 },
-    { q: `How do I get alerts for ${c.name}?`, a: `Pick ${c.name} on the alerts page and add your email.` },
-    { q: `How do I list my pop-up in ${c.name}?`, a: `Use the Add your pop-up page with the brand, date and place. It is free.` },
+    { q: `How do I get alerts for ${c.name}?`, a: `Pick ${label} on the alerts page and add your email. ${near}` },
+    { q: `How do I list my pop-up in ${c.name}?`, a: `Use the Add your pop-up page, choose ${label}, and give the brand, date and place. It is free. ${f.brands ? `${plural(f.brands, "brand")} based in ${c.name} ${is(f.brands)} already on the map.` : `No brand based in ${c.name} is on the map yet.`}` },
   ];
+  // the page that is indexed answers one more question from its own geography: the closest cities and what is around
+  if (f.indexable && f.near3 && f.near3.length) faq.push({ q: `Where else can I look near ${c.name}?`, a: `The closest listed cities to ${label} are ${andList(f.near3.map((n) => `${n.x.name}, ${n.x.state} (${miText(n.km)})`))}. ${f.nearbyN ? `${plural(f.nearbyN, "pop-up")} ${is(f.nearbyN)} listed within ${NEARBY_MI} miles of ${c.name}.` : `Nothing is listed within ${NEARBY_MI} miles of ${c.name} yet.`}` });
+  return faq;
 }
 export const faqLd = (items) => ({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: items.map((x) => ({ "@type": "Question", name: x.q, acceptedAnswer: { "@type": "Answer", text: x.a } })) });
 const faqHtml = (items, name) => `<section class="pg-faq"><h2>Questions</h2>\n${items.map((x) => `<details><summary>${esc(x.q)}</summary><p>${esc(x.a)}</p></details>`).join("\n")}\n</section>\n`;
@@ -424,12 +441,12 @@ export function loadCities(root = ROOT) {
 // The calendar feed for a city page: its own when npm run feeds wrote one, else every pop-up.
 const feedOf = (d, c) => { const k = `${c.slug}-${c.state.toLowerCase()}`; return d.cityFeeds && d.cityFeeds.has(k) ? `/feeds/${k}.ics` : "/feeds/all.ics"; };
 const crumbLd = (items) => ({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items.map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) });
-const crumbHtml = (trail, last) => `<nav class="pg-crumb" aria-label="Breadcrumb">${trail.map(([n, h]) => `<a href="${esc(h)}">${esc(n)}</a> <span aria-hidden="true">›</span> `).join("")}<span>${esc(last)}</span></nav>`;
+const crumbHtml = (trail, last) => `<nav class="pg-crumb" data-boiler aria-label="Breadcrumb">${trail.map(([n, h]) => `<a href="${esc(h)}">${esc(n)}</a> <span aria-hidden="true">›</span> `).join("")}<span>${esc(last)}</span></nav>`;
 
 // "This weekend" block: only when the city has a pop-up in the window gen-weekend.js computes; links that page.
 function weekendBlock(c, wk, win) {
   const names = andList(wk.slice(0, 3).map((it) => `${it.brand} on ${shortDayOf(it.e, c.tz)}`));
-  return `<section class="pg-wk"><h2>This weekend in ${esc(c.name)}</h2>\n<p>${esc(plural(wk.length, "matcha pop-up"))} ${wk.length === 1 ? "is" : "are"} listed for ${esc(windowText(win.keys))}: ${esc(names)}${wk.length > 3 ? " and more" : ""}. <a href="/weekend/${esc(c.slug)}-${c.state.toLowerCase()}/">See this weekend in ${esc(c.name)}</a></p></section>\n`;
+  return `<section class="pg-wk"><h2>This weekend in ${esc(c.name)}</h2>\n<p>${esc(plural(wk.length, "matcha pop-up"))} ${wk.length === 1 ? "is" : "are"} listed for ${WIN}: ${esc(names)}${wk.length > 3 ? " and more" : ""}. <a href="/weekend/${esc(c.slug)}-${c.state.toLowerCase()}/">See this weekend in ${esc(c.name)}</a></p></section>\n`;
 }
 
 function shopsSection(c, sh) {
@@ -456,49 +473,53 @@ function nearbySection(c, nb) {
   return `<section><h2>Pop-ups near ${esc(c.name)}</h2>\n<ul class="pg-list pg-shops">\n${items.join("\n")}\n</ul></section>\n`;
 }
 
-// One city page: { html, lastDay }. The date text is the UPDATED token until buildSite hashes the page.
+/// One city page: { html, lastDay, secs, win }. The date text is the UPDATED token and the weekend window the WIN token until buildSite
+// hashes the page. secs: the page's sections as text, hashed apart so the gate can say which one moved (docs/SEO-RULES.md, rule 2).
 function cityPage(c, x) {
-  const { d, ups, sh, home, nearby, nearest, near3, indexable } = x;
-  const label = `${c.name}, ${c.state}`, key = `${c.slug}-${c.state.toLowerCase()}`;
+  const { d, ups, sh, home, nearby, nearest, near3, indexable, label, counts } = x;
+  const key = `${c.slug}-${c.state.toLowerCase()}`;
   const today = dayKey(x.nowMs, c.tz), win = weekendWindow(x.nowMs, c.tz);
   const wk = ups.filter((it) => it.e.id && inWindow(it.e, win.keys, c.tz));
-  const lead = cityLead(c, { ups: ups.length, shops: sh.length, brands: home.length, nearest });
-  const faq = cityFaq(c, { win, wk, ups, nearest, shops: sh.length, firstShop: sh[0] && sh[0].s.name });
+  const lead = cityLead(c, { label, ups: ups.length, shops: sh.length, brands: home.length, nearest });
+  const faq = cityFaq(c, { label, when: WIN, win, wk, ups, nearest, shops: sh.length, firstShop: sh[0] && sh[0].s.name, nearbyN: x.nearbyTotal, brands: home.length, near3, indexable });
   const credited = new Map();
-  let body = `${crumbHtml([["Matcha Map", "/"], [STATE_NAMES[c.state] || c.state, "/" + stateHref(c.state)]], label)}
+  const secs = { lead: "", events: "", shops: "", brands: "", nearby: "", faq: "", rest: "" };
+  const add = (k, html) => { secs[k] += html; };
+  add("lead", `${crumbHtml([["Matcha Map", "/"], [STATE_NAMES[c.state] || c.state, "/" + stateHref(c.state)]], label)}
 <h1>Matcha pop-ups in ${esc(label)}</h1>
 <p class="pg-lead">${esc(lead)}</p>
-${ups.length ? `<p class="pg-intro">${esc(cityIntro(c, ups, c.tz))}</p>\n` : ""}<p class="pg-sub">${indexable && !ups.length ? `Updated ${UPDATED}. ` : ""}${mapLink("city=" + key, "Open " + c.name + " on the map")}</p>
-`;
-  if (!ups.length) body += `<p class="pg-dim">Dates come from each brand's own posts, so check the post before you go.</p>\n`;
-  if (wk.length) body += weekendBlock(c, wk, win);
+${ups.length ? `<p class="pg-intro">${esc(cityIntro(c, ups, c.tz))}</p>\n` : ""}<p class="pg-sub" data-boiler>${indexable && !ups.length ? `Updated ${UPDATED}. ` : ""}${mapLink("city=" + key, "Open " + c.name + " on the map")}</p>
+`);
+  if (!ups.length) add("lead", `<p class="pg-dim" data-boiler>Dates come from each brand's own posts, so check the post before you go.</p>\n`);
+  if (wk.length) add("events", weekendBlock(c, wk, win));
   if (ups.length) {
-    body += `<section><h2>Upcoming pop-ups</h2>\n<p class="pg-dim">Dates come from each brand's own posts, so check the post before you go.</p>\n`;
+    let b = `<section><h2>Upcoming pop-ups</h2>\n<p class="pg-dim" data-boiler>Dates come from each brand's own posts, so check the post before you go.</p>\n`;
     for (const g of groupByDay(ups, c.tz, today)) {
-      body += `<h3 class="pg-day">${esc(g.label)}</h3>\n<ul class="pg-list">\n`;
+      b += `<h3 class="pg-day">${esc(g.label)}</h3>\n<ul class="pg-list">\n`;
       for (const it of g.items) {
         credited.set(it.brand, it.handle);
-        body += eventCard(it.e, { tz: c.tz, heading: it.brand, brandHandle: it.handle }) + "\n";
+        b += eventCard(it.e, { tz: c.tz, heading: it.brand, brandHandle: it.handle }) + "\n";
       }
-      body += `</ul>\n`;
+      b += `</ul>\n`;
     }
-    body += `</section>\n`;
+    add("events", b + `</section>\n`);
   }
-  if (sh.length) body += shopsSection(c, sh);
+  if (sh.length) add("shops", shopsSection(c, sh));
   if (home.length) {
-    body += `<section><h2>Brands based in ${esc(c.name)}</h2>\n<ul class="pg-chips">\n`;
-    for (const b of home) { credited.set(b.name, b.slug); body += `<li>${b.picture ? `<img src="${esc(b.picture)}" alt="" width="32" height="32" loading="lazy"> ` : ""}<a href="/brand/${esc(b.slug)}/">${esc(b.name)}</a>${b.instagram ? ` <a class="pg-dim" href="https://www.instagram.com/${esc(b.instagram)}/" rel="noopener">@${esc(b.instagram)}</a>` : ""}${followersText(b.followers) ? ` <span class="pg-dim">${followersText(b.followers)}</span>` : ""}</li>\n`; }
-    body += `</ul></section>\n`;
+    let b = `<section><h2>Brands based in ${esc(c.name)}</h2>\n<ul class="pg-chips">\n`;
+    for (const h of home) { credited.set(h.name, h.slug); b += `<li>${h.picture && indexable ? `<img src="${esc(h.picture)}" alt="" width="32" height="32" loading="lazy"> ` : ""}<a href="/brand/${esc(h.slug)}/">${esc(h.name)}</a>${h.instagram ? ` <a class="pg-dim" href="https://www.instagram.com/${esc(h.instagram)}/" rel="noopener">@${esc(h.instagram)}</a>` : ""}${followersText(h.followers) ? ` <span class="pg-dim">${followersText(h.followers)}</span>` : ""}</li>\n`; }
+    add("brands", b + `</ul></section>\n`);
   }
-  body += nearby.length ? nearbySection(c, nearby) : `<section><h2>Pop-ups near ${esc(c.name)}</h2><p>Nothing listed yet within ${NEARBY_MI} miles.</p></section>\n`;
-  body += faqHtml(faq, c.name);
-  body += `<p class="pg-cta"><a class="pg-btn" href="/alerts/?city=${esc(key)}">Get alerts for ${esc(c.name)}</a> <a class="pg-btn" href="/add/">Add your pop-up</a> <a class="pg-btn" href="/add/?city=${esc(key)}">Report a pop-up we missed</a>${indexable ? ` <a class="pg-btn" href="${feedOf(d, c)}">Calendar feed</a>` : ""}</p>\n`;
-  body += `<section><h2>Nearby cities</h2>\n<ul class="pg-chips">\n${near3.map((n) => `<li><a href="/${cityPath(n.x)}">${esc(n.x.name)}, ${esc(n.x.state)}</a> <span class="pg-dim">${miText(n.km)}</span></li>`).join("\n")}\n</ul>\n<p class="pg-sub"><a href="/${stateHref(c.state)}">All matcha pop-ups in ${esc(STATE_NAMES[c.state] || c.state)}</a></p></section>\n`;
+  add("nearby", nearby.length ? nearbySection(c, nearby) : `<section><h2>Pop-ups near ${esc(c.name)}</h2><p data-boiler>Nothing listed yet within ${NEARBY_MI} miles.</p></section>\n`);
+  add("faq", faqHtml(faq, c.name));
+  add("rest", `<p class="pg-cta" data-boiler><a class="pg-btn" href="/alerts/?city=${esc(key)}">Get alerts for ${esc(c.name)}</a> <a class="pg-btn" href="/add/">Add your pop-up</a> <a class="pg-btn" href="/add/?city=${esc(key)}">Report a pop-up we missed</a>${indexable ? ` <a class="pg-btn" href="${feedOf(d, c)}">Calendar feed</a>` : ""}</p>\n`);
+  add("rest", `<section><h2>Nearby cities</h2>\n<ul class="pg-chips">\n${near3.map((n) => `<li><a href="/${cityPath(n.x)}">${esc(n.x.name)}, ${esc(n.x.state)}</a> <span class="pg-dim">${miText(n.km)}</span></li>`).join("\n")}\n</ul>\n<p class="pg-sub"><a href="/${stateHref(c.state)}">All matcha pop-ups in ${esc(STATE_NAMES[c.state] || c.state)}</a></p></section>\n`);
   // a page with nothing listed (noindex) keeps one line, so the thin set stays under 6 KB
-  body += !indexable ? "" : `<section class="pg-how"><h2>How this map works</h2>
+  if (indexable) add("rest", `<section class="pg-how" data-boiler><h2>How this map works</h2>
 <p>Matcha Map collects pop-ups that brands post publicly, on their own sites, in event listings and on Instagram, matches each one to a day and a place, and puts them on one map. Dates come from those posts, so check the post before you go. When a brand has not said where, the page says so instead of guessing.</p>
 ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[...credited].map(([n, h]) => (h ? `<a href="/brand/${esc(h)}/">${esc(n)}</a>` : esc(n))).join(", ")}.</p>` : ""}
-</section>`;
+</section>`);
+  const body = Object.values(secs).join("");
 
   const title = `Matcha pop-ups in ${label}: this weekend and upcoming`;
   const desc = clip(lead.replace(UPDATED, x.updatedText), 158).replace(x.updatedText, UPDATED);
@@ -515,10 +536,10 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
     return { "@type": "ListItem", position: i + 1, item: { "@type": "Event", name: ev.name, startDate: ev.startDate, url: `${SITE_URL}/e/${it.e.id}/`, image: evImage(it.e, ev), location: { "@type": "Place", name: ev.location.name, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
   }) });
   for (const { s } of sh.slice(0, NEARBY_MAX)) { const l = shopLd(s); if (l) ld.push({ "@context": "https://schema.org", ...l }); }
-  ld.push(faqLd(faq));
+  if (indexable) ld.push(faqLd(faq)); // a noindex page keeps the questions on the page and drops the markup, to stay under 6 KB
   const ogKey = `city-${key}`;
   const image = d.cityOg && d.cityOg.has(ogKey) ? `${SITE_URL}/og/${ogKey}.png` : undefined;
-  return { html: shell({ title, desc, canonical, ld, body, image, noindex: !indexable }), lastDay: newestDay([...ups, ...nearby.map((n) => n.it)].map((it) => it.e), x.cap) };
+  return { html: shell({ title, desc, canonical, ld, body, image, noindex: !indexable, seo: seoAttr(counts) }), lastDay: newestDay([...ups, ...nearby.map((n) => n.it)].map((it) => it.e), x.cap), secs: Object.values(secs).slice(0, 6), win: windowText(win.keys) };
 }
 
 // ---- state hubs ----
@@ -536,14 +557,40 @@ function statePage(st, rows, x) {
   let body = `${crumbHtml([["Matcha Map", "/"]], name)}
 <h1>Matcha pop-ups in ${esc(name)}</h1>
 <p class="pg-lead">${esc(lead)}</p>
-<p class="pg-sub">Updated ${UPDATED}. <a href="/state/">All states</a></p>
+<p class="pg-sub" data-boiler>Updated ${UPDATED}. <a href="/state/">All states</a></p>
+<p>${esc(stateAbout(name, rows, { U, S, withUps, withShops, rest }))}</p>
 `;
   if (withUps.length) body += `<section><h2>Cities with upcoming pop-ups</h2>\n<ul class="pg-chips">\n${withUps.map((r) => `<li>${link(r)} <span class="pg-dim">${r.ups.length} · next ${esc(shortDayOf(r.ups[0].e, r.c.tz))}</span></li>`).join("\n")}\n</ul></section>\n`;
   if (withShops.length) body += `<section><h2>Cities with matcha shops</h2>\n<ul class="pg-chips">\n${withShops.map((r) => `<li>${link(r)} <span class="pg-dim">${r.shops}</span></li>`).join("\n")}\n</ul></section>\n`;
   if (rest.length) body += `<section><h2>${withUps.length || withShops.length ? "Every other city" : "Every city"} in ${esc(name)}</h2>\n<ul class="pg-chips">\n${rest.map((r) => `<li>${link(r)}</li>`).join("\n")}\n</ul></section>\n`;
   const title = `Matcha pop-ups in ${name}: cities, this weekend and upcoming`;
   const ld = [crumbLd([["Matcha Map", SITE_URL + "/"], [name, canonical]])];
-  return { html: shell({ title, desc: clip(lead, 158), canonical, ld, body, noindex: !x.indexable }), lastDay: x.lastDay };
+  return { html: shell({ title, desc: clip(lead, 158), canonical, ld, body, noindex: !x.indexable, seo: `u${U} s${S} c${rows.length}` }), lastDay: x.lastDay };
+}
+
+const cityWord = (n) => `${n} ${n === 1 ? "city" : "cities"}`;
+// The state hub's own summary, built from its rows: how many cities, where the pop-ups and shops are, the next pop-up.
+function stateAbout(name, rows, { U, S, withUps, withShops, rest }) {
+  const top = (list, n) => andList(list.slice(0, 3).map((r) => `${r.c.name} (${n(r)})`));
+  const out = [`${name} has ${cityWord(rows.length)} with a page on Matcha Map.`];
+  if (U) {
+    const next = withUps.map((r) => r.ups[0]).sort((a, b) => Date.parse(a.e.start) - Date.parse(b.e.start))[0], at = withUps.find((r) => r.ups[0] === next);
+    out.push(`${plural(U, "upcoming matcha pop-up")} ${U === 1 ? "is" : "are"} listed across ${cityWord(withUps.length)}, the most in ${top(withUps, (r) => r.ups.length)}. The next one is ${next.brand} in ${at.c.name} on ${shortDayOf(next.e, at.c.tz)}.`);
+  } else out.push(`No upcoming matcha pop-up is listed in ${name} yet.`);
+  if (S) out.push(`${plural(S, "verified matcha shop")} ${S === 1 ? "is" : "are"} listed in ${name}${withShops.length ? `, found near ${cityWord(withShops.length)} including ${top(withShops, (r) => r.shops)}` : ""}.`);
+  else out.push(`No verified matcha shop is listed in ${name} yet.`);
+  if (rest.length) out.push(`The other ${cityWord(rest.length)} have nothing listed yet, and each page says how far the nearest pop-up is.`);
+  const big = [...rows].sort((a, b) => b.c.pop - a.c.pop || a.c.name.localeCompare(b.c.name)).filter((r) => r.c.pop > 0).slice(0, 3);
+  if (big.length) out.push(`The largest cities listed are ${andList(big.map((r) => `${r.c.name} (${r.c.pop.toLocaleString("en-US")} people)`))}.`);
+  const soon = withUps.flatMap((r) => r.ups.map((it) => ({ it, c: r.c }))).sort((a, b) => Date.parse(a.it.e.start) - Date.parse(b.it.e.start)).slice(1, 4);
+  if (soon.length) out.push(`After that: ${andList(soon.map(({ it, c }) => `${it.brand} in ${c.name} on ${shortDayOf(it.e, c.tz)}`))}.`);
+  return out.join(" ");
+}
+
+function statesAbout(list) {
+  const withUps = list.filter((s) => s.ups).sort((a, b) => b.ups - a.ups || a.name.localeCompare(b.name)), U = withUps.reduce((n, s) => n + s.ups, 0);
+  if (!U) return `No upcoming matcha pop-up is listed in any of the ${list.length} states and districts right now. Each state page lists its cities and the nearest matcha shops.`;
+  return `${plural(U, "upcoming matcha pop-up")} ${U === 1 ? "is" : "are"} listed across ${withUps.length} of the ${list.length} states and districts here, the most in ${andList(withUps.slice(0, 3).map((s) => `${s.name} (${s.ups})`))}. Every state page lists its cities: the ones with pop-ups first, then the ones with matcha shops, then the rest. Each city page says how far the nearest pop-up is.`;
 }
 
 function statesIndexPage(list) {
@@ -552,13 +599,13 @@ function statesIndexPage(list) {
   const body = `${crumbHtml([["Matcha Map", "/"]], "States")}
 <h1>Matcha pop-ups by state</h1>
 <p class="pg-lead">Pick a state to see its cities, this weekend and what is coming up.</p>
+<p>${esc(statesAbout(list))}</p>
 <ul class="pg-chips">
 ${list.map((s) => `<li><a href="/${stateHref(s.st)}">${esc(s.name)}</a>${s.ups ? ` <span class="pg-dim">${s.ups}</span>` : ""}</li>`).join("\n")}
 </ul>`;
   return shell({ title, desc, canonical, ld: [crumbLd([["Matcha Map", SITE_URL + "/"], ["States", canonical]])], body });
 }
 
-const hashOf = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 12);
 
 export function buildSite(d) {
   const nowMs = d.now instanceof Date ? d.now.getTime() : Date.parse(d.now);
@@ -638,11 +685,21 @@ export function buildSite(d) {
   const urls = [{ loc: SITE_URL + "/" }];
   // lastmod moves only when a page's body does: { "city/nc/raleigh": [hash, lastmod] }, kept in data/pages-lastmod.json
   const prev = d.prevPages || {}, stamps = {};
-  const stamp = (key, html, computed) => {
-    const h = hashOf(html), p = prev[key];
+  // The "Updated" line prints the page's own lastmod, never the data date; the weekend window is a date that rolls weekly and is
+  // left out of the hash the same way (docs/SEO-RULES.md, rule 2). secs: section texts, hashed apart to say which section moved.
+  const stamp = (key, html, computed, { secs, win } = {}) => {
+    const h = hash12(hashInput(html)), p = prev[key];
     const lm = p && p[0] === h ? p[1] : p && p[1] > computed ? p[1] : computed;
-    stamps[key] = [h, lm];
-    return { html: html.split(UPDATED).join(updatedText), lm };
+    stamps[key] = secs ? [h, lm, secs.map(subHash)] : [h, lm];
+    return { html: html.split(UPDATED).join(dayText(lm)).split(WIN).join(win || ""), lm };
+  };
+  // two listed cities with one name in one state: the label carries a word of the slug, so titles and descriptions stay apart
+  const nameCount = new Map();
+  for (const c of cities) { const k = `${c.state}|${norm(c.name)}`; nameCount.set(k, (nameCount.get(k) || 0) + 1); }
+  const labelOf = (c) => {
+    if (nameCount.get(`${c.state}|${norm(c.name)}`) < 2) return `${c.name}, ${c.state}`;
+    const words = new Set(norm(c.name).split(" "));
+    return `${c.name} (${c.slug.split("-").filter((w) => !words.has(w)).join(" ") || c.slug}), ${c.state}`;
   };
   const near3Of = (c) => {
     const best = [];
@@ -672,9 +729,12 @@ export function buildSite(d) {
     }
     out.sort((a, b) => a.km - b.km || Date.parse(a.it.e.start) - Date.parse(b.it.e.start));
     const nearby = out.slice(0, NEARBY_MAX);
-    const { indexable } = cityIndexable({ ups, nearby: out, shops: sh, brands: home });
-    const pg = cityPage(c, { d, nowMs, updatedText, cap: lastmod, ups, sh, home, nearby, nearest, near3: near3Of(c), indexable });
-    const st = stamp("city/" + cityKey(c).toLowerCase(), pg.html, pg.lastDay);
+    const own = `${c.state}|${norm(c.name)}`, otherCities = new Set();
+    for (const { it } of out) if (it.e.city && `${it.e.state}|${norm(it.e.city)}` !== own) otherCities.add(`${it.e.state}|${norm(it.e.city)}`);
+    const counts = { ups: ups.length, shops: sh.length, brandsWithPicture: home.filter((b) => b.picture).length, nearbyCities: otherCities.size };
+    const { indexable } = cityIndexable(counts);
+    const pg = cityPage(c, { d, nowMs, updatedText, cap: lastmod, ups, sh, home, nearby: indexable ? nearby : nearby.slice(0, 3), nearest, near3: near3Of(c), indexable, label: labelOf(c), counts, nearbyTotal: out.length });
+    const st = stamp("city/" + cityKey(c).toLowerCase(), pg.html, pg.lastDay, pg);
     files.set(cityPath(c) + "index.html", st.html);
     if (indexable) { urls.push({ loc: `${SITE_URL}/${cityPath(c)}`, lastmod: st.lm }); tally.indexable++; tally.byState[c.state] = (tally.byState[c.state] || 0) + 1; } else tally.noindex++;
     if (!stateRows.has(c.state)) stateRows.set(c.state, []);
@@ -684,6 +744,9 @@ export function buildSite(d) {
   // brand pages
   const KIND = { popup: "Matcha pop-up brand", cafe: "Cafe", venue: "Venue", organizer: "Event organizer", "tea-brand": "Tea brand", festival: "Festival" };
   const brandPages = [...brands.values()].sort((a, b) => a.slug.localeCompare(b.slug));
+  const brandNames = new Map();
+  for (const b of brandPages) brandNames.set(norm(b.name), (brandNames.get(norm(b.name)) || 0) + 1);
+  const brandCity = {}; // slug -> "st/city slug" of its home city page: where a removed brand page is sent
   for (const b of brandPages) {
     const ups = b.events.filter((x) => x.up).sort((a, c) => Date.parse(a.e.start) - Date.parse(c.e.start));
     const past = b.events.filter((x) => !x.up).sort((a, c) => Date.parse(c.e.start) - Date.parse(a.e.start)).slice(0, 20);
@@ -706,8 +769,9 @@ export function buildSite(d) {
     if (ups.length) body += `<section><h2>Upcoming pop-ups</h2>\n<ul class="pg-list">\n${cards(ups)}\n</ul></section>\n`;
     if (past.length) body += `<section><h2>Past pop-ups kept on file</h2>\n<ul class="pg-list">\n${cards(past)}\n</ul></section>\n`;
     body += `<section class="pg-how"><h2>About this page</h2><p>This page lists what ${esc(b.name)} has posted publicly. Everything here belongs to ${esc(b.name)}; follow the links above to see it from the source. Dates come from posts, so check the post before you go.</p></section>`;
-    const title = `${b.name} matcha pop-ups: dates and places`;
-    const desc = `${b.name}${home ? ", " + home : ""}: ${ups.length ? plural(ups.length, "upcoming matcha pop-up") : "no upcoming pop-ups posted right now"}. Dates, places and links on Matcha Map.`.slice(0, 154);
+    const tag = brandNames.get(norm(b.name)) > 1 ? ` (@${b.slug})` : ""; // two brands with one name: the handle keeps titles and descriptions apart
+    const title = `${b.name}${tag} matcha pop-ups: dates and places`;
+    const desc = `${b.name}${tag}${home ? ", " + home : ""}: ${ups.length ? plural(ups.length, "upcoming matcha pop-up") : "no upcoming pop-ups posted right now"}. Dates, places and links on Matcha Map.`.slice(0, 154);
     const canonical = `${SITE_URL}/brand/${b.slug}/`;
     const ld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
@@ -719,8 +783,10 @@ export function buildSite(d) {
     if (logo) org.logo = logo;
     ld.push(org);
     for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: b.instagram ? `https://www.instagram.com/${b.instagram}/` : "" }) });
-    files.set(`brand/${b.slug}/index.html`, shell({ title, desc, canonical, ld, body }));
-    urls.push({ loc: canonical, lastmod: newestDay(b.events.map((x) => x.e), lastmod), thin: !b.events.length && !b.city, slug: b.slug });
+    const bs = stamp(`brand/${b.slug}`, shell({ title, desc, canonical, ld, body }), newestDay(b.events.map((x) => x.e), lastmod));
+    files.set(`brand/${b.slug}/index.html`, bs.html);
+    brandCity[b.slug] = hc ? `${hc.state.toLowerCase()}/${hc.slug}` : "";
+    urls.push({ loc: canonical, lastmod: bs.lm, thin: !b.events.length && !b.city, slug: b.slug });
   }
 
   // state hubs, then the /state/ index
@@ -728,7 +794,7 @@ export function buildSite(d) {
   const byName = (a, b) => (STATE_NAMES[a[0]] || a[0]).localeCompare(STATE_NAMES[b[0]] || b[0]);
   for (const [st, rows] of [...stateRows].sort(byName)) {
     const U = rows.reduce((n, r) => n + r.ups.length, 0), S = shopsByState.get(st) || 0;
-    const indexable = U > 0 || S > 0;
+    const indexable = stateIndexable({ ups: U, shops: S, cities: rows.length });
     const pg = statePage(st, rows, { shopCount: S, indexable, lastDay: newestDay(rows.flatMap((r) => r.ups.map((x) => x.e)), lastmod) });
     const s = stamp("state/" + st.toLowerCase(), pg.html, pg.lastDay);
     files.set(stateHref(st) + "index.html", s.html);
@@ -746,21 +812,22 @@ export function buildSite(d) {
   const sizeOf = () => { let n = 0; for (const t of files.values()) n += Buffer.byteLength(t); return n; };
   const OTHER = 6; // sitemap, robots, home, og and the like
   if (files.size + OTHER > lim.files * 0.9 || sizeOf() > lim.bytes * 0.9) {
-    for (let i = urls.length - 1; i >= 0; i--) if (urls[i].thin) { files.delete(`brand/${urls[i].slug}/index.html`); urls.splice(i, 1); }
+    for (let i = urls.length - 1; i >= 0; i--) if (urls[i].thin) { files.delete(`brand/${urls[i].slug}/index.html`); delete stamps[`brand/${urls[i].slug}`]; delete brandCity[urls[i].slug]; urls.splice(i, 1); }
   }
   if (files.size + OTHER > lim.files || sizeOf() > lim.bytes) throw new Error(`page set too large: ${files.size} files, ${sizeOf()} bytes (limits ${lim.files} files, ${lim.bytes} bytes)`);
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${esc(u.loc)}</loc><lastmod>${u.lastmod || lastmod}</lastmod></url>`).join("\n")}\n</urlset>\n`;
+  // one sitemap.xml, or past 45,000 URLs an index over sitemap-1.xml, sitemap-2.xml... (docs/SEO-RULES.md, rule 6)
+  const sitemaps = sitemapFiles(urls.map((u) => ({ loc: u.loc, lastmod: u.lastmod || lastmod })), d.sitemap);
   const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   const pageBytes = sizeOf();
-  files.set("sitemap.xml", sitemap);
+  for (const [n, xml] of sitemaps) files.set(n, xml);
   // which city and brand pages exist, for the live app (site/cards-app.js links "More in <city>" and the brand name only to a page that is there)
   const hasPage = (c) => files.has(cityPath(c) + "index.html");
   const pagesIndex = { cities: d.cities.filter(hasPage).map((c) => ({ p: `${c.state.toLowerCase()}/${c.slug}`, n: c.name, s: c.state, la: c.lat, lo: c.lng })), brands: [...files.keys()].filter((p) => /^brand\/[^/]+\/index\.html$/.test(p)).map((p) => p.split("/")[1]).sort() };
   files.set("data/pages.json", JSON.stringify(pagesIndex));
   files.set("robots.txt", robots);
   const nCity = [...files.keys()].filter((p) => p.startsWith("city/")).length;
-  return { files, urls, lastmods: stamps, counts: { cities: nCity, brands: [...files.keys()].filter((p) => p.startsWith("brand/")).length, states: [...files.keys()].filter((p) => /^state\/[a-z]{2}\//.test(p)).length, indexable: tally.indexable, noindex: tally.noindex, indexableByState: tally.byState, bytes: pageBytes + Buffer.byteLength(sitemap) + robots.length } };
+  return { files, urls, lastmods: stamps, counts: { cities: nCity, brands: [...files.keys()].filter((p) => p.startsWith("brand/")).length, states: [...files.keys()].filter((p) => /^state\/[a-z]{2}\//.test(p)).length, indexable: tally.indexable, noindex: tally.noindex, indexableByState: tally.byState, bytes: pageBytes + [...sitemaps.values()].reduce((n, x) => n + Buffer.byteLength(x), 0) + robots.length }, registry: { brands: brandCity } };
 }
 
 // ---- home head (between the markers in site/index.html) ----
@@ -815,10 +882,16 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     watchlist: fs.existsSync(path.join(root, "data/watchlist.json")) ? read("data/watchlist.json") : { accounts: [] },
   };
   const out = buildSite(data);
-  fs.writeFileSync(path.join(root, "data/pages-lastmod.json"), JSON.stringify(out.lastmods) + "\n"); // not under site/: the live app must not load it
+  const lastmods = { ...out.lastmods };
+  for (const k of Object.keys(data.prevPages)) if (k.startsWith("e/")) lastmods[k] = data.prevPages[k]; // the event pages' stamps belong to gen-event-pages.js
+  fs.writeFileSync(path.join(root, "data/pages-lastmod.json"), JSON.stringify(lastmods) + "\n"); // not under site/: the live app must not load it
   const site = path.join(root, "site");
+  const onDisk = dirsWithIndex(path.join(site, "brand")); // published before this run: a brand page missing now gets a 301 (rule 3)
   for (const dir of ["city", "brand", "state"]) fs.rmSync(path.join(site, dir), { recursive: true, force: true });
-  for (const [p, text] of out.files) { const f = path.join(site, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text); }
+  const isSitemap = (p) => /^sitemap(-\d+)?\.xml$/.test(p);
+  for (const [p, text] of out.files) { if (isSitemap(p)) continue; const f = path.join(site, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text); }
+  writeSitemaps(site, new Map([...out.files].filter(([p]) => isSitemap(p))));
+  writeRedirects(root, patchState(root, (s) => updateRegistry(s, "brands", out.registry.brands, onDisk)));
   const ix = path.join(site, "index.html");
   const html = fs.readFileSync(ix, "utf8"), next = patchIndex(html, data.cities);
   if (next !== html) fs.writeFileSync(ix, next);

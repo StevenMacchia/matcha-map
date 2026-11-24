@@ -89,6 +89,9 @@ Budget check first on Friday: both weekly windows must be under the ceiling afte
 - Opening hours also accept `<day> off` rules; a day named in two rules, overnight ranges, 24/7, holidays and months are text only.
 - A shop gets CafeOrCoffeeShop markup only with an address, a city and a state; at most 12 per page.
 
+## Rules since 2026-11-23 (docs/SEO-RULES.md)
+
+Steven asked that the SEO stay up to date and never flood. The index rule in section 4 above is replaced: a city page is indexable with an upcoming pop-up matched to it, a verified shop within 25 km, two brands based there with a picture, or pop-ups within 64 km in at least three distinct other cities (the 40-mile "any pop-up" and "any brand" cases are gone), and a state hub needs at least 5 cities. Each page carries its counts in `data-seo`, the "Updated" line prints the page's own lastmod, the FAQ answers carry the city's own numbers, removed event and brand pages get a 301 in `site/_redirects`, the sitemap splits past 45,000 URLs, and `tools/seo-gate.js` checks all nine rules on every daily run and stops the deploy when one fails.
 ## Template pass 2026-11-23 (lane/seo-city): the approved mock
 
 Built on main (2784a5b, the data session's commit), so the city list, hubs at `/state/<st>/` and the index rule are the
