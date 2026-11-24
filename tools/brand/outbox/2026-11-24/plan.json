@@ -1,0 +1,340 @@
+{
+  "date": "2026-11-24",
+  "items": [
+    {
+      "slot": "story",
+      "kind": "today",
+      "time": "08:30",
+      "title": "Today in Brooklyn",
+      "tag": "Today",
+      "date": "2026-11-24",
+      "city": "Brooklyn",
+      "state": "NY",
+      "link": "https://matchamap.app/city/ny/brooklyn/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchabrooklyn",
+        "#brooklynfood",
+        "#icedmatcha",
+        "#matchatime"
+      ],
+      "caption": "Today in Brooklyn. Sunday Culture (@sundayculturehq) is popping up at @olastudionyc in Brooklyn, NY, today, Tuesday, November 24, 7 pm to 9:30 pm.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Brooklyn on the map: https://matchamap.app/city/ny/brooklyn/\n\n#matcha #matchapopup #matchamap #matchabrooklyn #brooklynfood #icedmatcha #matchatime\n",
+      "user_tags": [],
+      "mentions": [
+        "sundayculturehq",
+        "olastudionyc"
+      ],
+      "brands": [
+        "sundayculturehq"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "b585043507e8",
+          "brand": "Sunday Culture",
+          "handle": "sundayculturehq",
+          "venue": "",
+          "venueHandle": "olastudionyc",
+          "address": "68 Jay St",
+          "city": "Brooklyn",
+          "state": "NY",
+          "day": "2026-11-24",
+          "time": "7 pm to 9:30 pm",
+          "menu": [],
+          "series": null,
+          "kind": "organizer"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "01",
+      "name": "01-story-today-brooklyn",
+      "image_url": "https://matchamap.app/social/2026-11-24/01-story-today-brooklyn.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "today",
+      "time": "10:00",
+      "title": "Today in Brooklyn",
+      "tag": "Today",
+      "date": "2026-11-24",
+      "city": "Brooklyn",
+      "state": "NY",
+      "link": "https://matchamap.app/city/ny/brooklyn/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchabrooklyn",
+        "#brooklynfood",
+        "#cafehopping",
+        "#localeats"
+      ],
+      "caption": "Today in Brooklyn. Sunday Culture (@sundayculturehq) is popping up at @olastudionyc in Brooklyn, NY, today, Tuesday, November 24, 7 pm to 9:30 pm.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Brooklyn on the map: https://matchamap.app/city/ny/brooklyn/\n\n#matcha #matchapopup #matchamap #matchabrooklyn #brooklynfood #cafehopping #localeats\n",
+      "user_tags": [
+        {
+          "username": "sundayculturehq",
+          "x": 0.5,
+          "y": 0.5
+        },
+        {
+          "username": "olastudionyc",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "sundayculturehq",
+        "olastudionyc"
+      ],
+      "brands": [
+        "sundayculturehq"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "b585043507e8",
+          "brand": "Sunday Culture",
+          "handle": "sundayculturehq",
+          "venue": "",
+          "venueHandle": "olastudionyc",
+          "address": "68 Jay St",
+          "city": "Brooklyn",
+          "state": "NY",
+          "day": "2026-11-24",
+          "time": "7 pm to 9:30 pm",
+          "menu": [],
+          "series": null,
+          "kind": "organizer"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "02",
+      "name": "02-feed-today-brooklyn",
+      "image_url": "https://matchamap.app/social/2026-11-24/02-feed-today-brooklyn.png"
+    },
+    {
+      "slot": "story",
+      "kind": "today",
+      "time": "12:00",
+      "title": "Today in Mesa",
+      "tag": "Today",
+      "date": "2026-11-24",
+      "city": "Mesa",
+      "state": "AZ",
+      "link": "https://matchamap.app/city/az/mesa/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchamesa",
+        "#mesafood",
+        "#greentea",
+        "#popupshop"
+      ],
+      "caption": "Today in Mesa. Therese Moussa is popping up at Metanoia Toolbox Sacred Wellness Space in Mesa, AZ, today, Tuesday, November 24, 12 pm to 1:30 pm.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Mesa on the map: https://matchamap.app/city/az/mesa/\n\n#matcha #matchapopup #matchamap #matchamesa #mesafood #greentea #popupshop\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [
+        "theresemoussa"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "ae4fa6311e6b",
+          "brand": "Therese Moussa",
+          "handle": null,
+          "venue": "Metanoia Toolbox Sacred Wellness Space",
+          "venueHandle": null,
+          "address": "2150 East Brown Road",
+          "city": "Mesa",
+          "state": "AZ",
+          "day": "2026-11-24",
+          "time": "12 pm to 1:30 pm",
+          "menu": [],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "03",
+      "name": "03-story-today-mesa",
+      "image_url": "https://matchamap.app/social/2026-11-24/03-story-today-mesa.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "shop",
+      "time": "13:00",
+      "title": "Matcha & Creme",
+      "tag": "New on the map",
+      "date": "2026-11-24",
+      "city": "Dallas",
+      "state": "TX",
+      "link": "https://matchamap.app/city/tx/dallas/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchadallas",
+        "#dallasfood",
+        "#weekendplans",
+        "#matchadrinks"
+      ],
+      "caption": "New on the map: Matcha & Creme (@matchaandcreme) in Dallas, TX. 10455 N Central Expy.\n\nMatcha on the menu: Strawberry Matcha Latte, Cardamom Matcha Latte, Matcha Latte, Jasmine Matcha Cloud.\n\nFind it and more matcha spots in Dallas: https://matchamap.app/city/tx/dallas/\n\n#matcha #matchapopup #matchamap #matchadallas #dallasfood #weekendplans #matchadrinks\n",
+      "user_tags": [
+        {
+          "username": "matchaandcreme",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "matchaandcreme"
+      ],
+      "brands": [
+        "matchaandcreme"
+      ],
+      "shopId": "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160",
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160",
+        "name": "Matcha & Creme",
+        "handle": "matchaandcreme",
+        "city": "Dallas",
+        "state": "TX",
+        "address": "10455 N Central Expy",
+        "drinks": [
+          "Strawberry Matcha Latte",
+          "Cardamom Matcha Latte",
+          "Matcha Latte",
+          "Jasmine Matcha Cloud"
+        ],
+        "tier": "shop",
+        "seen": "2026-11-23"
+      },
+      "n": "04",
+      "name": "04-feed-shop-matcha-creme",
+      "image_url": "https://matchamap.app/social/2026-11-24/04-feed-shop-matcha-creme.png"
+    },
+    {
+      "slot": "story",
+      "kind": "shop",
+      "time": "16:00",
+      "title": "Matcha & Creme",
+      "tag": "New on the map",
+      "date": "2026-11-24",
+      "city": "Dallas",
+      "state": "TX",
+      "link": "https://matchamap.app/city/tx/dallas/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchadallas",
+        "#dallasfood",
+        "#supportsmallbusiness",
+        "#shopsmall"
+      ],
+      "caption": "New on the map: Matcha & Creme (@matchaandcreme) in Dallas, TX. 10455 N Central Expy.\n\nMatcha on the menu: Strawberry Matcha Latte, Cardamom Matcha Latte, Matcha Latte, Jasmine Matcha Cloud.\n\nFind it and more matcha spots in Dallas: https://matchamap.app/city/tx/dallas/\n\n#matcha #matchapopup #matchamap #matchadallas #dallasfood #supportsmallbusiness #shopsmall\n",
+      "user_tags": [],
+      "mentions": [
+        "matchaandcreme"
+      ],
+      "brands": [
+        "matchaandcreme"
+      ],
+      "shopId": "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160",
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160",
+        "name": "Matcha & Creme",
+        "handle": "matchaandcreme",
+        "city": "Dallas",
+        "state": "TX",
+        "address": "10455 N Central Expy",
+        "drinks": [
+          "Strawberry Matcha Latte",
+          "Cardamom Matcha Latte",
+          "Matcha Latte",
+          "Jasmine Matcha Cloud"
+        ],
+        "tier": "shop",
+        "seen": "2026-11-23"
+      },
+      "n": "05",
+      "name": "05-story-shop-matcha-creme",
+      "image_url": "https://matchamap.app/social/2026-11-24/05-story-shop-matcha-creme.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "series",
+      "time": "17:00",
+      "title": "Every Tuesday",
+      "tag": "Every Tuesday",
+      "date": "2026-11-24",
+      "city": "Bothell",
+      "state": "WA",
+      "link": "https://matchamap.app/city/wa/bothell/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchabothell",
+        "#bothellfood",
+        "#matchalatte",
+        "#matchalover"
+      ],
+      "caption": "Every Tuesday: Nicho's Matcha Cafe at Nakagawa Japanese Restaurant in Bothell, WA, 11 am to 6 pm.\n\nNext one: today, Tuesday, November 24.\n\nSchedules change; check their page before you go.\n\nMore matcha in Bothell: https://matchamap.app/city/wa/bothell/\n\n#matcha #matchapopup #matchamap #matchabothell #bothellfood #matchalatte #matchalover\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [
+        "nichosmatchacafe"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "ac57cfc384f0",
+          "brand": "Nicho's Matcha Cafe",
+          "handle": null,
+          "venue": "Nakagawa Japanese Restaurant",
+          "venueHandle": null,
+          "address": "1427 228th St SE #D6, Bothell, WA 98021",
+          "city": "Bothell",
+          "state": "WA",
+          "day": "2026-11-24",
+          "time": "11 am to 6 pm",
+          "menu": [
+            "signature matcha",
+            "hojicha",
+            "rotating seasonal menu",
+            "persimmon matcha"
+          ],
+          "series": "Every Tuesday",
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "06",
+      "name": "06-feed-series-bothell",
+      "image_url": "https://matchamap.app/social/2026-11-24/06-feed-series-bothell.png"
+    }
+  ],
+  "featured": {
+    "brands": [
+      "matchaandcreme",
+      "nichosmatchacafe",
+      "sundayculturehq",
+      "theresemoussa"
+    ],
+    "shops": [
+      "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160"
+    ]
+  }
+}

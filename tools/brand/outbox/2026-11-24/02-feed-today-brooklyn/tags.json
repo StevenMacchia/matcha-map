@@ -1,0 +1,32 @@
+{
+  "slot": "feed",
+  "time": "10:00",
+  "image_url": "https://matchamap.app/social/2026-11-24/02-feed-today-brooklyn.png",
+  "location": "Brooklyn, NY",
+  "link": "https://matchamap.app/city/ny/brooklyn/",
+  "user_tags": [
+    {
+      "username": "sundayculturehq",
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "username": "olastudionyc",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "sundayculturehq",
+    "olastudionyc"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchabrooklyn",
+    "#brooklynfood",
+    "#cafehopping",
+    "#localeats"
+  ]
+}

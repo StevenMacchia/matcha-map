@@ -38,15 +38,21 @@ jobs:
       - run: npm run ingest
       - run: npm run feeds
       - run: npm run event-pages
+      - name: Social outbox (drawn posts for Steven to pick; nothing is posted, see docs/SOCIAL.md)
+        run: npm run social
+        continue-on-error: true
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
       - name: Commit changes
         run: |
           git config user.name "matcha-map bot"
           git config user.email "matcha-map-bot@users.noreply.github.com"
           git add -A data/events.json data/review data/geocache.json data/inbox site/data site/art site/feeds site/e site/city site/brand site/sitemap.xml
+          git add -A site/social tools/brand/outbox 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "no changes"
           else
-            git commit -m "daily: refresh events, feeds and pages"
+            git commit -m "daily: refresh events, feeds, pages and the social outbox"
             git pull --rebase origin "${GITHUB_REF_NAME}" || true
             git push
           fi
