@@ -1,5 +1,7 @@
 # Search Console, step by step
 
+Done on 2026-11-23: the matchamap.app Domain property is verified by DNS TXT (two `google-site-verification` TXT records sit on the zone root; keep both, never remove either), and https://matchamap.app/sitemap.xml is submitted with status Success and 1,466 discovered pages. What follows is the record of the steps and the first-week checklist.
+
 Site: https://matchamap.app/ (the custom domain on the Pages project since 2026-11-23; the old pages.dev host answers every path with a 301 to it). Steven does these by hand; nothing here can be scripted from the repo.
 
 1. Open https://search.google.com/search-console and sign in with the Google account that should own the site.
