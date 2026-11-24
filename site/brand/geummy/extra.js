@@ -1,0 +1,1 @@
+mmBrandExtra({"v":1,"brand":"geummy","upcoming":[],"drinks":[],"price":{"min":4,"max":4,"text":"$4"},"story":"Shop recommended products from Your Wellness Buddy on www.amazon.com. Learn more about Your Wellness Buddy's favorite products."});
