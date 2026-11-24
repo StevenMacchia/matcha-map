@@ -28,14 +28,20 @@ export function indexMd(p) {
   const lines = [`# Social outbox ${p.date}`, "",
     "Nothing here has been posted. Steven picks which to use; until the Meta app review passes, post or schedule each by hand in Meta Business Suite (Planner, then Create post or Create story). Times are Eastern. Full captions are in each folder's caption.txt; tags.json has the handles. Every image is drawn art; no brand photo is reused. Check the brand's own post still shows the date before posting.", "",
     "| Time | Type | File | Caption | Tags | Paste where |", "|---|---|---|---|---|---|"];
+  const groups = [];
   for (const it of p.items) {
     const tags = it.mentions.map((h) => "@" + h).join(" ") || "none in our data";
     const where = it.slot === "feed"
       ? `Business Suite > Create post: upload image.png, paste caption.txt, Add location "${it.city}, ${it.state}"${it.mentions.length ? `, Tag people ${tags}` : ""}`
       : `Business Suite > Create story: upload image.png, add a link sticker to ${it.link}${it.mentions.length ? ` and a mention sticker for ${tags}` : ""}`;
-    lines.push(`| ${it.time} | ${it.slot} (${it.kind}) | ${it.name}/image.png | ${oneLine(it.caption).replace(/\|/g, "/")} | ${tags} | ${where.replace(/\|/g, "/")} |`);
+    if (it.group && !groups.find((g) => g.key === it.group.key)) groups.push(it.group);
+    lines.push(`| ${it.time} | ${it.slot} (${it.kind}${it.group ? ", " + it.group.place : ""}) | ${it.name}/image.png | ${oneLine(it.caption).replace(/\|/g, "/")} | ${tags} | ${where.replace(/\|/g, "/")} |`);
   }
   if (!p.items.length) lines.push("| | | | Nothing to post for this date: no pop-up, shop or series in the data that was not featured in the last 7 days. | | |");
+  if (groups.length) {
+    lines.push("", "## Stories by place", "", "Each place opens with its title story, then its own stories, close together in time. Post them in this order.", "");
+    for (const g of groups) { const st = p.items.filter((i) => i.group && i.group.key === g.key); lines.push(`${g.n}. **${g.title}** (${st[0].time} to ${st[st.length - 1].time}): ${st.map((i) => i.name).join(", ")}`); }
+  }
   return lines.join("\n") + "\n";
 }
 
@@ -76,11 +82,11 @@ ${figs}
 }
 
 export async function buildOutbox({ date = tomorrowNY(), root = ROOT, outbox = path.join(root, "tools", "brand", "outbox"), siteDir = path.join(root, "site", "social"),
-  historyFile = path.join(outbox, "history.json"), force = false, site = true, render = renderPages, data = loadData(root), log = console.log } = {}) {
+  historyFile = path.join(outbox, "history.json"), force = false, site = true, sample = false, render = renderPages, data = loadData(root), log = console.log } = {}) {
   const history = readHistory(historyFile);
   const p = plan({ date, data, history });
   for (const it of p.items) it.image_url = imageUrl(date, it);
-  const dir = path.join(outbox, date);
+  const dir = path.join(outbox, sample ? "sample-" + date : date);      // a sample day is drawn beside the live folders and touches neither the history nor the site
   fs.mkdirSync(dir, { recursive: true });
 
   // the same plan as last time keeps its drawings (unless --force); anything else is cleared and redrawn
@@ -107,10 +113,10 @@ export async function buildOutbox({ date = tomorrowNY(), root = ROOT, outbox = p
   fs.writeFileSync(path.join(dir, "INDEX.md"), indexMd(p));
   fs.writeFileSync(path.join(dir, "plan.json"), JSON.stringify({ date: p.date, items: p.items, featured: p.featured }, null, 2) + "\n");
   fs.mkdirSync(path.dirname(historyFile), { recursive: true });
-  fs.writeFileSync(historyFile, JSON.stringify(recordHistory(history, p), null, 2) + "\n");
+  if (!sample) fs.writeFileSync(historyFile, JSON.stringify(recordHistory(history, p), null, 2) + "\n");
 
   // public copies for the Graph API, kept two weeks
-  if (site) {
+  if (site && !sample) {
     const sd = path.join(siteDir, date);
     fs.rmSync(sd, { recursive: true, force: true });
     if (p.items.length) fs.mkdirSync(sd, { recursive: true });
@@ -136,7 +142,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const a = process.argv.slice(2);
   const i = a.findIndex((x) => x === "--date" || x.startsWith("--date="));
   const date = i < 0 ? tomorrowNY() : a[i].includes("=") ? a[i].split("=")[1] : a[i + 1];
-  buildOutbox({ date, force: a.includes("--force"), site: !a.includes("--no-site") }).then((r) => {
+  buildOutbox({ date, force: a.includes("--force"), site: !a.includes("--no-site"), sample: a.includes("--sample") }).then((r) => {
     for (const it of r.plan.items) console.log(`  ${it.time} ${it.slot.padEnd(5)} ${it.name} ${it.mentions.map((h) => "@" + h).join(" ")}`);
   }).catch((e) => { console.error("social: " + e.message); process.exit(1); });
 }

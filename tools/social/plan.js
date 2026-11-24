@@ -10,6 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "../site-url.js";
 import { brandOf, placeOf } from "../../ingest/lib/names.js";
+import { whatTheyPour } from "./drinks.js";
 import { dayKey, addDays, loadCities, makeCityLocator, weekendWindow, inWindow } from "../gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -19,7 +20,11 @@ export const REPEAT_DAYS = 7;
 export const BANNED = /(kawaii|uwu|\bcute|cutesy|girly)/i;
 export const HANDLE = /^(?!\.)[a-z0-9._]{2,30}(?<!\.)$/;
 export const FEED_TIMES = ["10:00", "13:00", "17:00"];
-export const STORY_TIMES = ["08:30", "12:00", "16:00"];
+// Stories run in location groups (a title story, then up to two of that place's), up to three groups a day; each group's
+// stories go out close together: morning, midday, afternoon.
+export const STORY_TIMES = ["08:00", "08:30", "09:00", "11:30", "12:00", "12:30", "15:30", "16:00", "16:30"];
+export const MAX_GROUPS = 3, GROUP_CONTENT = 2;
+const STATE_FULL = { AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", DC: "Washington, DC", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming" };
 // Regions that get a post of their own every week even when their data is thin (Steven, 2026-11-23: "1-2 a week from
 // NC triangle area too"): when the last six days had no feed post from the region, today's second feed post is its own;
 // when they had no story, one story slot is. What that post is comes from what there is, in this order: today's
@@ -102,7 +107,23 @@ function context(data) {
   for (const s of data.shops) if (s.name && cleanHandle(s.instagram)) shopByName.set(`${norm(s.name)}|${norm(s.city)}`, cleanHandle(s.instagram));
   const brandByName = new Map();
   for (const b of data.brands) if (b.name && cleanHandle(b.handle)) brandByName.set(norm(String(b.name).split("|")[0]), cleanHandle(b.handle));
-  return { srcById, locate, shopByName, brandByName };
+  const pourByKey = new Map();
+  for (const s of data.shops) {
+    if (!s.name || !Array.isArray(s.menu_matcha) || !s.menu_matcha.length) continue;
+    const pour = whatTheyPour(s.menu_matcha, 5);
+    if (!pour.items.length) continue;
+    const h = cleanHandle(s.instagram);
+    if (h) pourByKey.set("h:" + h, pour);
+    pourByKey.set(`n:${norm(s.name)}|${norm(s.city)}`, pour);
+  }
+  return { srcById, locate, shopByName, brandByName, pourByKey };
+}
+
+// The drinks a pop-up names: its own menu text first (a pop-up's menu lines are drinks), else the brand's own shop row.
+function eventPour(e, handle, brand, ctx) {
+  const own = whatTheyPour((Array.isArray(e.menu) ? e.menu : []).map((m) => String(m).trim()), 5, undefined, true);
+  if (own.items.length) return own;
+  return (handle && ctx.pourByKey.get("h:" + handle)) || ctx.pourByKey.get(`n:${norm(brand)}|${norm(e.city)}`) || null;
 }
 
 // One event, as the posts need it: the brand as shown, its handle, the venue and the venue's handle when our data has one.
@@ -122,6 +143,7 @@ function view(e, ctx) {
   return {
     id: e.id, brand, handle, key: handle || norm(brand), venue, venueHandle, address: String(e.address || "").trim(),
     city, state, cityObj: c, day: eventDay(e), time: timeWords(e),
+    pour: eventPour(e, handle, brand, ctx),
     menu: (Array.isArray(e.menu) ? e.menu : []).map((m) => String(m).trim()).filter((m) => m && m.length <= 40).slice(0, 4),
     series: e.series && Array.isArray(e.series.weekdays) ? weekdayRule(e.series.weekdays) : null, kind: e.kind,
   };
@@ -242,9 +264,9 @@ export function plan({ date, data, history = {} }) {
     };
     shopPool = data.shops.filter((s) => s.verified !== false && s.name && s.city && s.state && (s.tier === "shop" || s.tier === "serves" || s.tier == null) && !shopsEver.has(s.id) && clean(s.name))
       .map((s) => { const handle = cleanHandle(s.instagram), c = ctx.locate({ city: s.city, state: s.state, lat: s.lat, lng: s.lng });
-        return { id: s.id, name: String(s.name).replace(/\s+/g, " ").trim(), handle, key: handle || norm(s.name), city: c ? c.name : s.city, state: c ? c.state : s.state, cityObj: c, address: String(s.address || "").trim(), drinks: drinksOf(s), tier: s.tier || "shop", seen: String(s.read || s.fetched || "").slice(0, 10) }; })
+        return { id: s.id, name: String(s.name).replace(/\s+/g, " ").trim(), handle, key: handle || norm(s.name), city: c ? c.name : s.city, state: c ? c.state : s.state, cityObj: c, address: String(s.address || "").trim(), drinks: drinksOf(s), pour: whatTheyPour(s.menu_matcha, 5), tier: s.tier || "shop", seen: String(s.read || s.fetched || "").slice(0, 10) }; })
       .filter((s) => free(s.key));
-    const order = (a, b) => b.drinks.length - a.drinks.length || (b.handle ? 1 : 0) - (a.handle ? 1 : 0) || hash(date + a.id) - hash(date + b.id);
+    const order = (a, b) => b.pour.items.length - a.pour.items.length || b.drinks.length - a.drinks.length || (b.handle ? 1 : 0) - (a.handle ? 1 : 0) || hash(date + a.id) - hash(date + b.id);
     // a new shop we can tag comes first: the post is for them
     shopCand = (pool) => {
       pool = pool.filter((s) => free(s.key));
@@ -300,35 +322,74 @@ export function plan({ date, data, history = {} }) {
     if (week.feed === 0 && i > 1) { cands.splice(i, 1); cands.splice(1, 0, own); }
   }
 
-  // feed: the first three; stories: the first, then the extras, padded with the second and third
+  // feed: the first three. Stories run by location: every story candidate (the day's pop-ups, the weekend, the shop, the series,
+  // a region's own) is filed under its place, and each place opens with a title story. A city with two or more stories (or a
+  // region such as the Triangle) is a group of its own; single ones share their state. The biggest groups go first, three at
+  // most, a title and up to two stories each; a city with one story gets a shop of its own that pours matcha, if there is one.
   const feed = cands.slice(0, 3);
-  const story = [cands[0], ...cands.slice(3, 5), cands[1], cands[2]].filter(Boolean).filter((c, i, a) => a.indexOf(c) === i).slice(0, 3);
-  for (const [rk, own] of Object.entries(regionOwn)) {
-    if ((regionWeek[rk] || {}).story === 0 && !story.includes(own)) { if (story.length >= 3) story[story.length - 1] = own; else story.push(own); }
+  const content = [cands[0], ...cands.slice(3, 5), cands[1], cands[2]].filter(Boolean).filter((c, i, a) => a.indexOf(c) === i);
+  for (const [rk, own] of Object.entries(regionOwn)) if ((regionWeek[rk] || {}).story === 0 && !content.includes(own)) content.unshift(own);
+  const placeKey = (c) => (c.region ? "r:" + c.region : "c:" + c.state + "/" + norm(c.city));
+  const countBy = (list) => { const m = new Map(); for (const c of list) m.set(placeKey(c), (m.get(placeKey(c)) || 0) + 1); return m; };
+  for (const [k, n] of countBy(content)) {
+    if (n !== 1 || content.length >= MAX_GROUPS * GROUP_CONTENT) continue;
+    const mate = content.find((c) => placeKey(c) === k);
+    const extra = shopCand(shopPool.filter((s) => (mate.region ? regionOf(s.city, s.state) === mate.region : s.city === mate.city && s.state === mate.state) && s.pour.items.length && s.id !== mate.shopId));
+    if (extra) { take(extra); extra.region = mate.region || null; content.push(extra); }
+  }
+  const cityN = countBy(content);
+  const groups = new Map();
+  for (const c of content) {
+    const k = cityN.get(placeKey(c)) >= 2 ? placeKey(c) : "s:" + c.state;
+    (groups.get(k) || groups.set(k, { key: k, list: [] }).get(k)).list.push(c);
+  }
+  const order = [...groups.values()].map((g, i) => ({ ...g, i })).sort((a, b) => b.list.length - a.list.length || a.i - b.i).slice(0, MAX_GROUPS);
+  const KIND_RANK = { today: 0, weekend: 1, soon: 2, shop: 3, series: 4 };
+  const VERB = { today: "Today in", weekend: "This weekend in", soon: "Coming up in", shop: "New in", series: "This week in" };
+  const storyList = [];
+  for (const g of order) {
+    const list = g.list.slice(0, GROUP_CONTENT), first = list[0];
+    const place = g.key.startsWith("r:") ? REGIONS[g.key.slice(2)].name : g.key.startsWith("s:") ? STATE_FULL[first.state] || first.state : first.city;
+    const lead = list.slice().sort((a, b) => (KIND_RANK[a.kind] ?? 9) - (KIND_RANK[b.kind] ?? 9))[0];
+    const title = `${VERB[lead.kind] || "Today in"} ${place}`;
+    const names = list.map((c) => (c.kind === "shop" ? c.shop.name : c.kind === "series" ? c.events[0].brand : c.events.slice(0, 3).map((v) => v.brand).join(", ")));
+    const rows = list.flatMap((c) => (c.kind === "shop" ? [{ id: c.shopId, brand: c.shop.name, kind: "cafe", sub: c.shop.city + ", " + c.shop.state }]
+      : c.events.slice(0, 3).map((v) => ({ id: v.id, brand: v.brand, kind: v.kind, sub: (c.kind === "weekend" || c.kind === "soon" ? dayWords(v.day).split(",")[0] + " " : "") + v.time })))).slice(0, 3);
+    const group = { key: g.key, rows, place, title, n: order.indexOf(g) + 1, of: order.length, names };
+    storyList.push({ kind: "location", title, tag: lead.kind === "shop" ? "New on the map" : lead.kind === "weekend" ? "This weekend" : lead.kind === "soon" ? "Coming up" : lead.kind === "series" ? "This week" : "Today",
+      city: first.city, state: first.state, region: first.region || null, link: first.link, events: [], more: 0, brands: [], group, role: "title" });
+    for (const c of list) storyList.push({ ...c, group, role: "content" });
   }
   const items = [];
-  const finish = (c, slot, i) => {
+  const finish = (c, slot, i, ti = i) => {
     const tags = hashtagsFor(c.city, data, date, i + (slot === "story" ? 3 : 0));
-    const caption = c.kind === "shop" ? captionShop(c.shop, c.link, tags) : c.kind === "series" ? captionSeries(c.events[0], c.link, tags, date) : captionEvents(c.kind, c.title, c.events, c.link, tags, date, c.more);
-    const handles = c.kind === "shop" ? [c.shop.handle] : c.events.flatMap((v) => [v.handle, v.venueHandle]);
+    const caption = c.kind === "location" ? `${c.title}: ${c.group.names.join("; ")}.
+
+More matcha in ${c.group.place}: ${c.link}
+
+${tags.join(" ")}
+`
+      : c.kind === "shop" ? captionShop(c.shop, c.link, tags) : c.kind === "series" ? captionSeries(c.events[0], c.link, tags, date) : captionEvents(c.kind, c.title, c.events, c.link, tags, date, c.more);
+    const handles = c.kind === "location" ? [] : c.kind === "shop" ? [c.shop.handle] : c.events.flatMap((v) => [v.handle, v.venueHandle]);
     const tagList = [...new Set(handles.filter(Boolean))].slice(0, 20);
-    const time = (slot === "feed" ? FEED_TIMES : STORY_TIMES)[i];
+    const time = (slot === "feed" ? FEED_TIMES : STORY_TIMES)[ti];
     return {
       slot, kind: c.kind, time, title: c.title, tag: c.tag, date, city: c.city, state: c.state, region: c.region || null, link: c.link, hashtags: tags, caption,
       user_tags: slot === "feed" ? tagList.map((username) => ({ username, x: 0.5, y: 0.5 })) : [],
-      mentions: tagList, brands: c.brands, shopId: c.shopId || null,
+      mentions: tagList, brands: c.brands, shopId: c.shopId || null, group: c.group || null, role: c.role || null,
       events: (c.events || []).map(({ cityObj, key, ...v }) => v), more: c.more || 0, shop: c.shop ? (({ cityObj, key, ...s }) => s)(c.shop) : null,
     };
   };
   feed.forEach((c, i) => items.push(finish(c, "feed", i)));
-  story.forEach((c, i) => items.push(finish(c, "story", i)));
+  let gi = -1, within = 0;
+  storyList.forEach((c, i) => { if (c.role === "title") { gi++; within = 0; } items.push(finish(c, "story", i, gi * 3 + within)); within++; });
   items.sort((a, b) => a.time.localeCompare(b.time));
-  items.forEach((it, i) => { it.n = String(i + 1).padStart(2, "0"); it.name = `${it.n}-${it.slot}-${it.kind}-${slug(it.kind === "shop" ? it.shop.name : it.city)}`; });
+  items.forEach((it, i) => { it.n = String(i + 1).padStart(2, "0"); it.name = `${it.n}-${it.slot}-${it.kind}-${slug(it.kind === "shop" ? it.shop.name : it.kind === "location" ? it.group.place : it.city)}`; });
   for (const it of items) {
     if (it.caption.length > CAPTION_MAX) it.caption = it.caption.slice(0, CAPTION_MAX - 1).replace(/\s+\S*$/, "") + "\n";
     if (BANNED.test(it.caption + " " + JSON.stringify(it.events) + " " + it.title)) throw new Error(`banned word in ${it.name}`);
   }
-  const regions = Object.fromEntries(Object.keys(REGIONS).map((k) => [k, { feed: items.filter((it) => it.slot === "feed" && it.region === k).length, story: items.filter((it) => it.slot === "story" && it.region === k).length }]));
+  const regions = Object.fromEntries(Object.keys(REGIONS).map((k) => [k, { feed: items.filter((it) => it.slot === "feed" && it.region === k).length, story: items.filter((it) => it.slot === "story" && it.role !== "title" && it.region === k).length }]));
   return { date, items, featured: { brands: [...used].sort(), shops: cands.filter((c) => c.shopId).map((c) => c.shopId), regions } };
 }
 

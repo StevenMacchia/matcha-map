@@ -10,6 +10,7 @@ import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { hash } from "./plan.js";
+import { glyphSvg } from "./glyphs.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const TPL = path.join(ROOT, "tools", "social", "templates");
@@ -53,6 +54,14 @@ const mattie = (pose, x, y, s, flip = false) => use(pose, "0 0 64 64", `left:${x
 const petal = (x, y, s, r) => `<svg class="co" viewBox="0 0 20 20" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px;transform:rotate(${r}deg)"><use href="#c-petal" width="20" height="20"/></svg>`;
 const drawnBox = (cls, e, opts) => `<div class="${cls}" data-drawn="${esc(JSON.stringify({ e, opts }))}"></div>`;
 const fitLine = (cls, text, max) => `<span class="line ${cls}" data-fit data-max="${max}" data-min1="${MIN_TEXT_PX}" data-min="${MIN_TEXT_PX}">${esc(text)}</span>`;
+// "What they pour": one row per drink type, the drawn glyph and the name as the menu gives it, and a count of the rest.
+const POUR_ROWS = { story: 5, feed: 3 };
+const pourHtml = (pour, max) => {
+  if (!pour || !pour.items || !pour.items.length) return "";
+  const shown = pour.items.slice(0, max), more = (pour.more || 0) + pour.items.length - shown.length;
+  return `<div class="pour"><div class="ph"><span>What they pour</span>${more ? `<span class="pm">+ ${more} more drink${more === 1 ? "" : "s"}</span>` : ""}</div>` +
+    shown.map((i) => `<div class="pr"><div class="pg">${glyphSvg(i.type)}</div><span class="pn" data-fit data-max="44" data-min1="36" data-min="36">${esc(i.name)}</span></div>`).join("") + "</div>";
+};
 const trunc = (s, n) => { s = String(s || ""); return s.length > n ? s.slice(0, n - 1).replace(/\s+$/, "") + "…" : s; };
 const kindLabel = (k) => (k === "organizer" ? "Matcha event" : k === "cafe" ? "Matcha cafe" : k === "festival" ? "Matcha festival" : "Matcha pop-up");
 const placeLine = (v) => v.venue || (v.venueHandle ? "@" + v.venueHandle : "");
@@ -75,18 +84,31 @@ function scene(it, size) {
   let s = `<div class="top" data-blk style="top:${g.top}px"><div class="wm">${FACE}Matcha Map</div><div class="tag" data-fit data-max="36" data-min1="36" data-min="36">${esc(tag)}</div></div>`;
   const head = (text, two) => `<div class="head" data-fit data-max="${g.headMax}" data-min1="64" ${two ? `data-lines="2" data-max2="${g.headMax2}"` : ""} data-min="56">${esc(text)}</div>`;
   const pills = (list) => list.length ? `<div class="pills">${list.map((m) => `<span class="pill">${esc(trunc(m, 26))}</span>`).join("")}</div>` : "";
-  const col = (inner) => `<div class="main" data-blk style="top:${g.head}px;height:${g.bottom - g.head}px;gap:${g.gap}px">${inner}</div>`;
+  const col = (inner, bottom = g.bottom, gap = g.gap) => `<div class="main" data-blk style="top:${g.head}px;height:${bottom - g.head}px;gap:${gap}px">${inner}</div>`;
+  const PB = { story: 1600, feed: 1196 }[size];      // the column runs lower when it carries a pour block; Mattie then steps aside
   const foot = `<div class="foot" data-blk style="top:${g.foot}px">matchamap.app · link in bio</div>`;
   const [mx, my, ms] = g.mattie;
 
+  if (it.kind === "location") {
+    const rows = (it.group.rows || []).map((r) => `<div class="row"><div class="mochi" data-drawn="${esc(JSON.stringify({ e: { id: r.id, brand: r.brand, kind: r.kind }, opts: { mode: "thumb" } }))}"></div>` +
+      `<div class="tx"><span class="rb" data-fit data-max="48" data-min1="38" data-min="38">${esc(trunc(r.brand, 34))}</span><span class="rs" data-fit data-max="36" data-min1="36" data-min="36">${esc(trunc(r.sub, 36))}</span></div></div>`).join("");
+    const art = `<div class="shopart" style="height:240px"><div class="blob" style="left:60px;top:15px;width:210px;height:210px"></div>` +
+      `<svg viewBox="0 0 64 64" style="left:68px;top:22px;width:194px;height:194px"><use href="#s-shop" width="64" height="64"/></svg>` +
+      `<svg viewBox="0 0 64 64" style="left:600px;top:8px;width:220px;height:220px"><use href="#${["m-wave", "m-happy", "m-excited"][hb % 3]}" width="64" height="64"/></svg>` +
+      `<svg viewBox="0 0 20 20" style="left:440px;top:50px;width:54px;height:54px;transform:rotate(24deg)"><use href="#c-petal" width="20" height="20"/></svg></div>`;
+    s += col(head(it.title, true) + art + `<div class="rows loc">${rows}</div>`, PB, 22);
+    return s + foot;
+  }
+
   if (it.kind === "shop") {
-    const sh = it.shop, artH = g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
+    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 280 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
     const art = `<div class="shopart" style="height:${artH}px"><div class="blob" style="left:40px;top:${artH - big - 20}px;width:${big + 40}px;height:${big + 40}px"></div>` +
       `<svg viewBox="0 0 64 64" style="left:60px;top:${artH - big - 16}px;width:${big}px;height:${big}px"><use href="#s-shop" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 64 64" style="left:${930 - m - 30}px;top:${artH - m - 16}px;width:${m}px;height:${m}px"><use href="#m-whisk" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:560px;top:36px;width:60px;height:60px;transform:rotate(24deg)"><use href="#c-petal" width="20" height="20"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:840px;top:60px;width:42px;height:42px;transform:rotate(-30deg)"><use href="#c-petal" width="20" height="20"/></svg></div>`;
-    const info = `<div class="info">${fitLine("mid", cityLine(sh), 44)}${fitLine("sub", sh.tier === "serves" ? "Matcha on the menu" : "Matcha shop", 38)}</div>`;
+    const info = `<div class="info">${fitLine("mid", trunc(cityLine(sh), 48), 44)}${fitLine("sub", sh.tier === "serves" ? "Matcha on the menu" : "Matcha shop", 38)}</div>`;
+    if (pv) return s + col(head(sh.name, true) + art + info + pourHtml(sh.pour, POUR_ROWS[size]), PB, 18) + (size === "feed" ? mattie("m-wave", 930, 1204, 110, !flip) : "") + foot;
     s += col(head(sh.name, true) + art + info + pills(sh.drinks));
     s += mattie("m-wave", mx + 20, my + 20, ms - 20, !flip);
     return s + foot;
@@ -96,9 +118,12 @@ function scene(it, size) {
     const v = ev[0];
     const card = { id: v.id, brand: v.brand, kind: v.kind === "organizer" ? "organizer" : "popup" };
     const lines = [fitLine("big", v.time, 60)];
-    if (placeLine(v)) lines.push(fitLine("mid", placeLine(v), 44));
-    lines.push(fitLine("sub", cityLine(v), 38));
-    s += col(head(it.title, false) + drawnBox("panel", card, { mode: "card", when: kindLabel(v.kind), crop: 1 }) + `<div class="info">${lines.join("")}</div>` + pills(v.menu.slice(0, 3)));
+    if (placeLine(v)) lines.push(fitLine("mid", trunc(placeLine(v), 46), 44));
+    lines.push(fitLine("sub", trunc(cityLine(v), 48), 38));
+    const pv = !!(v.pour && v.pour.items && v.pour.items.length);
+    const inner = head(it.title, false) + drawnBox("panel", card, { mode: "card", when: kindLabel(v.kind), crop: 1 }) + `<div class="info">${lines.join("")}</div>`;
+    if (pv) return s + col(inner + pourHtml(v.pour, size === "story" ? 4 : POUR_ROWS.feed), PB, 18) + (size === "feed" ? mattie("m-happy", 930, 1204, 110, !flip) : "") + foot;
+    s += col(inner + pills(v.menu.slice(0, 3)));
     s += mattie(["m-wave", "m-happy", "m-excited"][hb % 3], mx, my, ms, !flip);
     s += petal(mx - 30, my + 6, 44, 20);
     return s + foot;
@@ -109,7 +134,7 @@ function scene(it, size) {
     const when = it.kind === "weekend" || it.kind === "soon" ? `${DAYS[new Date(v.day + "T12:00:00Z").getUTCDay()].slice(0, 3)} ${v.time}` : v.time;
     const where = placeLine(v) || v.city;
     return `<div class="row"><div class="mochi" data-drawn="${esc(JSON.stringify({ e: { id: v.id, brand: v.brand, kind: v.kind }, opts: { mode: "thumb" } }))}"></div>` +
-      `<div class="tx"><span class="rb" data-fit data-max="48" data-min1="38" data-min="38">${esc(v.brand)}</span><span class="rs" data-fit data-max="36" data-min1="36" data-min="36">${esc(trunc(`${when} · ${where}`, 36))}</span></div></div>`;
+      `<div class="tx"><span class="rb" data-fit data-max="48" data-min1="38" data-min="38">${esc(trunc(v.brand, 34))}</span><span class="rs" data-fit data-max="36" data-min1="36" data-min="36">${esc(trunc(`${when} · ${where}`, 36))}</span></div></div>`;
   }).join("") + `</div>`;
   s += col(head(it.title, true) + rows + (it.more ? `<div class="more">+ ${it.more} more on the map</div>` : ""));
   s += mattie("m-wave", mx + 20, my + 10, ms - 20, flip);
@@ -142,11 +167,25 @@ const CHECK = `(() => {
     if (!(el instanceof SVGElement) && el.scrollWidth > el.clientWidth + 1 && getComputedStyle(el).overflow !== "visible") cut.push(t.textContent.trim().slice(0, 40));
   }
   for (const m of document.querySelectorAll(".main")) if (m.scrollHeight > m.clientHeight + 1) cut.push("column runs past its space by " + (m.scrollHeight - m.clientHeight) + "px");
-  const blks = [...document.querySelectorAll("[data-blk]")].map((e) => [e, e.getBoundingClientRect()]);
-  for (const [e, r] of blks) if (r.left < -1 || r.top < -1 || r.right > W + 1 || r.bottom > H + 1) off.push("block " + e.className);
+  const BOXES = "[data-blk],.pr,.row,.pill,.ph,.info,.panel,.shopart,.mt,.more,.top>*";
+  const blks = [...document.querySelectorAll(BOXES)].filter((e) => !e.closest("defs,symbol")).map((e) => [e, e.getBoundingClientRect()]);
+  const nm = (e) => (e.className && e.className.baseVal !== undefined ? e.className.baseVal : e.className) || e.tagName;
+  for (const [e, r] of blks) if (r.left < -1 || r.top < -1 || r.right > W + 1 || r.bottom > H + 1) off.push("block " + nm(e));
   for (let i = 0; i < blks.length; i++) for (let j = i + 1; j < blks.length; j++) {
-    const a = blks[i][1], b = blks[j][1];
-    if (a.left < b.right - 1 && b.left < a.right - 1 && a.top < b.bottom - 1 && b.top < a.bottom - 1) overlap.push(blks[i][0].className + " / " + blks[j][0].className);
+    const [ea, a] = blks[i], [eb, b] = blks[j];
+    if (ea.contains(eb) || eb.contains(ea)) continue;
+    if (a.left < b.right - 1 && b.left < a.right - 1 && a.top < b.bottom - 1 && b.top < a.bottom - 1) overlap.push(nm(ea) + " / " + nm(eb));
+  }
+  // text that runs out of the box it sits in (a name wider than its row, a line past its pill)
+  const tw2 = document.createTreeWalker(document.querySelector(".canvas"), NodeFilter.SHOW_TEXT);
+  while (tw2.nextNode()) {
+    const t = tw2.currentNode, el = t.parentElement;
+    if (!t.textContent.trim() || !el || el.closest("defs,symbol,style,script")) continue;
+    const bx = el.closest(".pr,.row,.pill,.tag,.wm,.more,.ph,.info,.head,.foot,.panel,.shopart");
+    if (!bx) continue;
+    const rg = document.createRange(); rg.selectNodeContents(t);
+    const q = rg.getBoundingClientRect(), r = bx.getBoundingClientRect();
+    if (q.width && (q.left < r.left - 3 || q.right > r.right + 3)) cut.push("outside its box: " + t.textContent.trim().slice(0, 40));
   }
   return { min: Math.round(min * 10) / 10, small, off, cut, overlap, fonts: document.fonts.check("800 40px 'M PLUS Rounded 1c'") };
 })()`;

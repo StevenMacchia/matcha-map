@@ -38,12 +38,22 @@ test("plan: the same date and data give the same plan", () => {
   assert.deepEqual(plan({ date: "2026-12-01", data: FIX }), plan({ date: "2026-12-01", data: FIX }));
 });
 
-test("plan: 2 to 3 feed posts and 2 to 3 stories on a day with pop-ups", () => {
+test("plan: 2 to 3 feed posts, and stories in location groups of a title and one or two stories (3 groups at most)", () => {
   for (const date of ["2026-11-24", "2026-11-27", "2026-11-28"]) {
     const p = plan({ date, data: DATA, history: {} });
     const feed = p.items.filter((i) => i.slot === "feed").length, story = p.items.filter((i) => i.slot === "story").length;
     assert.ok(feed >= 2 && feed <= 3, `${date}: ${feed} feed`);
-    assert.ok(story >= 2 && story <= 3, `${date}: ${story} stories`);
+    assert.ok(story >= 2 && story <= 9, `${date}: ${story} stories`);
+    const st = p.items.filter((i) => i.slot === "story"), keys = [...new Set(st.map((i) => i.group.key))];
+    assert.ok(keys.length >= 1 && keys.length <= 3, `${date}: ${keys.length} groups`);
+    for (const k of keys) {
+      const g = st.filter((i) => i.group.key === k);
+      assert.equal(g[0].kind, "location", "each group opens with its title story");
+      assert.ok(g.length >= 2 && g.length <= 3, `${date} ${k}: ${g.length} stories`);
+      assert.deepEqual(g.map((i) => i.time), [...g.map((i) => i.time)].sort(), "a group's stories go out in order");
+      assert.ok(g.slice(1).every((i) => i.kind !== "location"));
+    }
+    assert.deepEqual(st.map((i) => i.group.key), keys.flatMap((k) => st.filter((i) => i.group.key === k).map((i) => i.group.key)), "stories are in group order");
   }
 });
 
@@ -143,7 +153,7 @@ test("plan: a week with nothing from the Triangle gets one of its own, as the se
   assert.match(feed[1].caption, /Saiko Matcha House \(@saikomatcha\) is popping up at Village District in Raleigh, NC, Wednesday/);
   assert.ok(story.some((i) => i.region === "triangle"), "and a story");
   assert.equal(feed.length, 3);
-  assert.equal(story.length, 3);
+  assert.ok(story.length >= 2 && story.length <= 9);
   assert.deepEqual(p.featured.regions, { triangle: { feed: 1, story: 1 } });
   const h = recordHistory({}, p);
   assert.deepEqual(h["2026-12-01"].regions, { triangle: { feed: 1, story: 1 } });
