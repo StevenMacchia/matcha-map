@@ -81,7 +81,7 @@ test("the fixture passes all nine rules; the summary line has the counts; --dry 
   const first = gate(root, { baseline: true });
   assert.deepEqual(fails(first), [], first.lines.join("\n"));
   assert.equal(first.lines.length, 9);
-  assert.match(first.summary, /^seo gate: 9 rules, 0 failed; indexable 6, noindex 1, lastmod moved 0$/);
+  assert.match(first.summary, /^seo gate: 9 rules, 0 failed; indexable 6, noindex 1, lastmod moved 0, pace queue 0$/);
   assert.equal(readState(root), null, "dry: no state written");
   const real = runGate({ root, baseline: true, env: {} });
   assert.equal(real.wrote, true);
@@ -250,30 +250,38 @@ test("rule 8: robots.txt, the home page and _headers never block the home, the h
 }));
 
 // ---- rule 9 ----
-test("rule 9: more than 150 newly indexable pages in one run fails, unless --baseline or SEO_PACE_LIMIT; no state fails without --baseline", () => withRoot((root) => {
+test("rule 9: a pace breach never refuses; the gate reports admitted and waiting pages, and fails only when the queue holds a page already indexed", () => withRoot((root) => {
   build(root);
   const none = runGate({ root, dry: true, env: {} });
-  assert.equal(rule(none, 9).ok, false);
-  assert.match(rule(none, 9).examples[0], /no previous state: run `node tools\/seo-gate\.js --baseline`/);
-  assert.equal(rule(runGate({ root, dry: true, env: {}, baseline: true }), 9).ok, true);
+  assert.equal(rule(none, 9).ok, true, "no previous state is the baseline, not a failure");
+  assert.match(rule(none, 9).msg, /^no previous state; this run's 5 indexable pages are the baseline, 0 earned and waiting/);
   baselined(root);
   const more = (n) => Object.fromEntries(Array.from({ length: n }, (_, i) => [`city/nc/new${i}`, { seo: "u1 s0 b0 n0", body: `<h1>New ${i}</h1><p>${words(160, "new" + i)}</p>${faq("New" + i)}` }]));
   build(root, { pages: more(5) });
-  const small = runGate({ root, dry: true, env: { SEO_PACE_LIMIT: "5" } });
-  assert.equal(rule(small, 9).ok, true, rule(small, 9).examples.join("; "));
-  assert.match(rule(small, 9).msg, /^5 newly indexable \(limit 5\)/);
-  const big = runGate({ root, dry: true, env: { SEO_PACE_LIMIT: "4" } });
-  assert.equal(rule(big, 9).ok, false);
-  assert.match(rule(big, 9).examples[0], /5 pages newly indexable in one run \(limit 4; SEO_PACE_LIMIT raises it\)/);
-  assert.equal(rule(runGate({ root, dry: true, env: { SEO_PACE_LIMIT: "4" }, baseline: true }), 9).ok, true, "--baseline records without failing");
-  // the default limit is 150
-  build(root, { pages: more(151) });
-  assert.equal(rule(runGate({ root, dry: true, env: {} }), 9).ok, false);
-  build(root, { pages: more(150) });
-  assert.equal(rule(runGate({ root, dry: true, env: {} }), 9).ok, true);
-  // event pages have their own limit
-  build(root, { pages: Object.fromEntries(Array.from({ length: 301 }, (_, i) => [`e/ev${String(i).padStart(6, "0")}`, { body: "<p>x</p>" }])) });
-  assert.match(rule(runGate({ root, dry: true, env: {} }), 9).examples[0], /301 new event pages in one run \(limit 300/);
+  const five = runGate({ root, dry: true, env: { SEO_PACE_LIMIT: "4" } });
+  assert.equal(rule(five, 9).ok, true, "more newly indexable pages than the cap is reported, never refused");
+  assert.match(rule(five, 9).msg, /^5 newly indexable admitted \(cap 4 city pages per run\), 0 earned and waiting in the pace queue, 0 new event pages, 0 no longer indexable$/);
+  assert.match(runGate({ root, dry: true, env: {} }).summary, /, pace queue 0$/);
+  // 151 new pages and 301 new event pages pass as well
+  build(root, { pages: { ...more(151), ...Object.fromEntries(Array.from({ length: 301 }, (_, i) => [`e/ev${String(i).padStart(6, "0")}`, { body: "<p>x</p>" }])) } });
+  const flood = runGate({ root, dry: true, env: {} });
+  assert.equal(rule(flood, 9).ok, true);
+  assert.match(rule(flood, 9).msg, /^151 newly indexable admitted \(cap 100 city pages per run\), 0 earned and waiting in the pace queue, 301 new event pages/);
+  // a page waiting in the queue: earned by its counts, noindex, out of the sitemap, " q" in data-seo; rule 1 accepts it, rule 9 counts it
+  build(root, { pages: { "city/nc/waiting": { seo: "u0 s1 b0 n0 q", noindex: true, body: `<h1>Waiting</h1><p>${words(160, "wai")}</p>${faq("Waiting")}` } } });
+  const q = runGate({ root, dry: true, env: {} });
+  assert.deepEqual(fails(q), [], q.lines.join("\n"));
+  assert.match(rule(q, 1).msg, /4 city pages, 2 indexable, 1 earned and waiting in the pace queue, 1 noindex/);
+  assert.match(rule(q, 9).msg, /, 1 earned and waiting in the pace queue,/);
+  assert.match(q.summary, /, pace queue 1$/);
+  // " q" on a page whose counts do not earn an index is a rule 1 failure
+  const fake = runGate({ root: (build(root, { pages: { "city/nc/fake": { seo: "u0 s0 b0 n0 q", noindex: true, body: `<h1>Fake</h1><p>${words(20, "fak")}</p>` } } }), root), dry: true, env: {} });
+  assert.match(rule(fake, 1).examples[0], /city\/nc\/fake: counts u0 s0 b0 n0 q do not earn an index, yet the page is marked as waiting/);
+  // a queued page the last passing run indexed is a demotion: the one thing rule 9 fails on
+  build(root, { pages: { "city/nc/cary": { seo: "u0 s1 b0 n0 q", noindex: true } } });
+  const demoted = runGate({ root, dry: true, env: {} });
+  assert.equal(rule(demoted, 9).ok, false);
+  assert.match(rule(demoted, 9).examples[0], /^1 pages the last passing run indexed are waiting in the pace queue \(the queue never demotes\): city\/nc\/cary/);
   // a failed run does not move the state forward; a passing one does
   const before = JSON.stringify(readState(root));
   const failed = runGate({ root, env: {} });

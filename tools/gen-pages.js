@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
 import { brandOf as cleanBrand, placeOf } from "../ingest/lib/names.js";
 import { tzForPlace } from "../ingest/lib/tz.js";
-import { sitemapFiles, writeSitemaps, patchState, updateRegistry, writeRedirects, dirsWithIndex, UPDATED, WIN, hashInput, hash12, dayText, subHash } from "./seo-lib.js";
+import { sitemapFiles, writeSitemaps, readState, patchState, updateRegistry, writeRedirects, dirsWithIndex, UPDATED, WIN, hashInput, hash12, dayText, subHash } from "./seo-lib.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const LIMITS = { files: 20000, bytes: 30 * 1024 * 1024 };
@@ -299,7 +299,25 @@ export function cityIndexable({ ups = 0, shops = 0, brandsWithPicture = 0, nearb
 // cities (DC, Hawaii) only repeats those city pages.
 export const STATE_MIN_CITIES = 5;
 export const stateIndexable = ({ ups = 0, shops = 0, cities = 0 } = {}) => (ups > 0 || shops > 0) && cities >= STATE_MIN_CITIES;
-export const seoAttr = (c) => `u${c.ups} s${c.shops} b${c.brandsWithPicture} n${c.nearbyCities}`;
+// A page waiting in the pace queue (below) carries " q" after its counts, so the gate knows its noindex is the queue's, not the data's.
+export const seoAttr = (c, queued = false) => `u${c.ups} s${c.shops} b${c.brandsWithPicture} n${c.nearbyCities}${queued ? " q" : ""}`;
+
+// ---- publishing pace (docs/SEO-RULES.md, rule 9) ----
+// A city page that earns an index for the first time waits its turn: at most PACE_ADMIT of them become indexable per run, the richest
+// first; the rest stay noindex,follow and out of the sitemap until a later run. A page the last passing gate run already indexed
+// (data/seo-state.json, "indexable") is never queued or demoted here; rule 1 alone can take its index away when the data no longer earns it.
+export const PACE_ADMIT = 100;
+// Richness, compared position by position: upcoming pop-ups, shops with hours or a menu, shops, brands with a picture, population.
+export const richness = ({ ups = 0, richShops = 0, shops = 0, brandsWithPicture = 0, pop = 0 } = {}) => [ups, richShops, shops, brandsWithPicture, pop];
+// earned: [{ key: "city/nc/raleigh", score: richness(...) }] for every page whose data earns an index. prior: Set of keys the last passing
+// run indexed, or null when there is no state yet (every earned page is admitted: the first run is the baseline).
+export function admitPace(earned, prior, cap = PACE_ADMIT) {
+  if (!prior) return { admitted: new Set(earned.map((e) => e.key)), queued: [], fresh: earned.length, kept: earned.length };
+  const kept = earned.filter((e) => prior.has(e.key)), fresh = earned.filter((e) => !prior.has(e.key));
+  fresh.sort((a, b) => { for (let i = 0; i < Math.max(a.score.length, b.score.length); i++) { const d = (b.score[i] || 0) - (a.score[i] || 0); if (d) return d; } return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; });
+  const admit = fresh.slice(0, Math.max(0, Number(cap) || 0));
+  return { admitted: new Set([...kept, ...admit].map((e) => e.key)), queued: fresh.slice(admit.length).map((e) => e.key), fresh: admit.length, kept: kept.length };
+}
 
 // ---- shops: opening hours (OSM syntax) and LocalBusiness ----
 const OSM_DAYS = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
@@ -539,7 +557,7 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
   if (indexable) ld.push(faqLd(faq)); // a noindex page keeps the questions on the page and drops the markup, to stay under 6 KB
   const ogKey = `city-${key}`;
   const image = d.cityOg && d.cityOg.has(ogKey) ? `${SITE_URL}/og/${ogKey}.png` : undefined;
-  return { html: shell({ title, desc, canonical, ld, body, image, noindex: !indexable, seo: seoAttr(counts) }), lastDay: newestDay([...ups, ...nearby.map((n) => n.it)].map((it) => it.e), x.cap), secs: Object.values(secs).slice(0, 6), win: windowText(win.keys) };
+  return { html: shell({ title, desc, canonical, ld, body, image, noindex: !indexable, seo: seoAttr(counts, x.queued) }), lastDay: newestDay([...ups, ...nearby.map((n) => n.it)].map((it) => it.e), x.cap), secs: Object.values(secs).slice(0, 6), win: windowText(win.keys) };
 }
 
 // ---- state hubs ----
@@ -711,8 +729,9 @@ export function buildSite(d) {
     return best;
   };
 
-  const tally = { indexable: 0, noindex: 0, byState: {} };
+  const tally = { indexable: 0, noindex: 0, queued: 0, admitted: 0, byState: {} };
   const stateRows = new Map();
+  const prep = []; // every city's data first, so the pace queue can rank the newly earned pages before any page is built
   for (const c of cities) {
     const k = cityKey(c);
     const ups = (byCity.get(k) || []).sort((a, b) => Date.parse(a.e.start) - Date.parse(b.e.start));
@@ -732,11 +751,19 @@ export function buildSite(d) {
     const own = `${c.state}|${norm(c.name)}`, otherCities = new Set();
     for (const { it } of out) if (it.e.city && `${it.e.state}|${norm(it.e.city)}` !== own) otherCities.add(`${it.e.state}|${norm(it.e.city)}`);
     const counts = { ups: ups.length, shops: sh.length, brandsWithPicture: home.filter((b) => b.picture).length, nearbyCities: otherCities.size };
-    const { indexable } = cityIndexable(counts);
-    const pg = cityPage(c, { d, nowMs, updatedText, cap: lastmod, ups, sh, home, nearby: indexable ? nearby : nearby.slice(0, 3), nearest, near3: near3Of(c), indexable, label: labelOf(c), counts, nearbyTotal: out.length });
-    const st = stamp("city/" + cityKey(c).toLowerCase(), pg.html, pg.lastDay, pg);
+    const earned = cityIndexable(counts).indexable;
+    const richShops = sh.filter(({ s }) => s.opening_hours || s.menu_url || s.menu_matcha).length;
+    prep.push({ c, key: "city/" + k.toLowerCase(), ups, sh, home, nearby, nearest, out, counts, earned, score: richness({ ...counts, richShops, pop: c.pop || 0 }) });
+  }
+  const pace = admitPace(prep.filter((p) => p.earned).map((p) => ({ key: p.key, score: p.score })), d.priorIndexable || null, d.paceCap ?? PACE_ADMIT);
+  tally.admitted = pace.fresh;
+  for (const { c, key, ups, sh, home, nearby, nearest, out, counts, earned } of prep) {
+    const queued = earned && !pace.admitted.has(key);
+    const indexable = earned && !queued;
+    const pg = cityPage(c, { d, nowMs, updatedText, cap: lastmod, ups, sh, home, nearby: indexable ? nearby : nearby.slice(0, 3), nearest, near3: near3Of(c), indexable, queued, label: labelOf(c), counts, nearbyTotal: out.length });
+    const st = stamp(key, pg.html, pg.lastDay, pg);
     files.set(cityPath(c) + "index.html", st.html);
-    if (indexable) { urls.push({ loc: `${SITE_URL}/${cityPath(c)}`, lastmod: st.lm }); tally.indexable++; tally.byState[c.state] = (tally.byState[c.state] || 0) + 1; } else tally.noindex++;
+    if (indexable) { urls.push({ loc: `${SITE_URL}/${cityPath(c)}`, lastmod: st.lm }); tally.indexable++; tally.byState[c.state] = (tally.byState[c.state] || 0) + 1; } else { tally.noindex++; if (queued) tally.queued++; }
     if (!stateRows.has(c.state)) stateRows.set(c.state, []);
     stateRows.get(c.state).push({ c, ups, shops: sh.length, brands: home.length });
   }
@@ -827,7 +854,7 @@ export function buildSite(d) {
   files.set("data/pages.json", JSON.stringify(pagesIndex));
   files.set("robots.txt", robots);
   const nCity = [...files.keys()].filter((p) => p.startsWith("city/")).length;
-  return { files, urls, lastmods: stamps, counts: { cities: nCity, brands: [...files.keys()].filter((p) => p.startsWith("brand/")).length, states: [...files.keys()].filter((p) => /^state\/[a-z]{2}\//.test(p)).length, indexable: tally.indexable, noindex: tally.noindex, indexableByState: tally.byState, bytes: pageBytes + [...sitemaps.values()].reduce((n, x) => n + Buffer.byteLength(x), 0) + robots.length }, registry: { brands: brandCity } };
+  return { files, urls, lastmods: stamps, counts: { cities: nCity, brands: [...files.keys()].filter((p) => p.startsWith("brand/")).length, states: [...files.keys()].filter((p) => /^state\/[a-z]{2}\//.test(p)).length, indexable: tally.indexable, noindex: tally.noindex, queued: tally.queued, admitted: tally.admitted, queue: pace.queued, indexableByState: tally.byState, bytes: pageBytes + [...sitemaps.values()].reduce((n, x) => n + Buffer.byteLength(x), 0) + robots.length }, registry: { brands: brandCity } };
 }
 
 // ---- home head (between the markers in site/index.html) ----
@@ -880,6 +907,9 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     cityOg: new Set(fs.existsSync(path.join(root, "site/og")) ? fs.readdirSync(path.join(root, "site/og")).filter((n) => /^city-.*.png$/.test(n)).map((n) => n.slice(0, -4)) : []),
     brandPictures: (() => { try { return new Map(read("site/data/brands.json").brands.filter((x) => String(x.picture || "").startsWith("https://")).map((x) => [handleSlug(x.handle), x.picture])); } catch { return new Map(); } })(),
     watchlist: fs.existsSync(path.join(root, "data/watchlist.json")) ? read("data/watchlist.json") : { accounts: [] },
+    // the pace queue (rule 9): the pages the last passing gate run indexed, and how many newly earned pages this run may admit
+    priorIndexable: (() => { const s = readState(root); return s && Array.isArray(s.indexable) ? new Set(s.indexable) : null; })(),
+    paceCap: Number(process.env.SEO_PACE_LIMIT) || PACE_ADMIT,
   };
   const out = buildSite(data);
   const lastmods = { ...out.lastmods };
@@ -891,7 +921,11 @@ export function run({ root = ROOT, now = new Date() } = {}) {
   const isSitemap = (p) => /^sitemap(-\d+)?\.xml$/.test(p);
   for (const [p, text] of out.files) { if (isSitemap(p)) continue; const f = path.join(site, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text); }
   writeSitemaps(site, new Map([...out.files].filter(([p]) => isSitemap(p))));
-  writeRedirects(root, patchState(root, (s) => updateRegistry(s, "brands", out.registry.brands, onDisk)));
+  writeRedirects(root, patchState(root, (s) => {
+    updateRegistry(s, "brands", out.registry.brands, onDisk);
+    // what the daily report and the gate print about the queue; the gate's own keys (indexable, pages) move only when it passes
+    s.queue = { updated: new Date(now).toISOString().slice(0, 10), cap: data.paceCap, admitted: out.counts.admitted, queued: out.counts.queued, next: out.counts.queue.slice(0, 10) };
+  }));
   const ix = path.join(site, "index.html");
   const html = fs.readFileSync(ix, "utf8"), next = patchIndex(html, data.cities);
   if (next !== html) fs.writeFileSync(ix, next);
@@ -900,5 +934,5 @@ export function run({ root = ROOT, now = new Date() } = {}) {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const o = run();
-  console.log(`pages: ${o.counts.cities} city pages, ${o.counts.brands} brand pages, ${o.urls.length} sitemap urls, ${(o.counts.bytes / 1048576).toFixed(2)} MB`);
+  console.log(`pages: ${o.counts.cities} city pages, ${o.counts.brands} brand pages, ${o.urls.length} sitemap urls, ${(o.counts.bytes / 1048576).toFixed(2)} MB; pace: ${o.counts.admitted} newly indexable admitted, ${o.counts.queued} earned and waiting`);
 }

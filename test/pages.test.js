@@ -6,7 +6,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
-import { buildSite, eventLd, weekendKeys, timeText, dayKey, patchIndex, homeHead, LIMITS, isUpcoming, cityIndexable, parseOpeningHours, openingHoursSpec, hoursText, shopLd, loadCities, citiesBlock, CITIES_START, CITIES_END, NEARBY_KM, km as kmBetween, seoAttr, stateIndexable, makeCityLocator } from "../tools/gen-pages.js";
+import { buildSite, eventLd, weekendKeys, timeText, dayKey, patchIndex, homeHead, LIMITS, isUpcoming, cityIndexable, admitPace, richness, PACE_ADMIT, parseOpeningHours, openingHoursSpec, hoursText, shopLd, loadCities, citiesBlock, CITIES_START, CITIES_END, NEARBY_KM, km as kmBetween, seoAttr, stateIndexable, makeCityLocator } from "../tools/gen-pages.js";
 import { buildEventPages } from "../tools/gen-event-pages.js";
 import { run as runExtras } from "../tools/gen-sitemap-extras.js";
 import { updateRegistry, redirectsText, parseRedirects, parseSitemap, readSitemapRows, REDIRECT_CAP } from "../tools/seo-lib.js";
@@ -70,6 +70,38 @@ test("cityIndexable: a pop-up, a verified shop, two brands with a picture or pop
   assert.equal(stateIndexable({ ups: 0, shops: 0, cities: 50 }), false);
 });
 
+test("pace queue: at most the cap of newly earned city pages is admitted per run, richest first; pages already indexed are never queued", () => {
+  assert.equal(PACE_ADMIT, 100);
+  const earned = [
+    { key: "city/nc/shopburg", score: richness({ shops: 1, pop: 800 }) },
+    { key: "city/nc/cary", score: richness({ ups: 1, pop: 180000 }) },
+    { key: "city/nc/raleigh", score: richness({ ups: 2, pop: 500000 }) },
+    { key: "city/nc/hoursville", score: richness({ shops: 1, richShops: 1, pop: 10 }) },
+  ];
+  const all = admitPace(earned, null, 1);
+  assert.deepEqual([all.admitted.size, all.queued, all.fresh], [4, [], 4], "no state yet: everything earned is admitted");
+  const one = admitPace(earned, new Set(["city/nc/shopburg"]), 1);
+  assert.deepEqual([...one.admitted].sort(), ["city/nc/raleigh", "city/nc/shopburg"], "the indexed page stays, the richest new one (two pop-ups) is admitted");
+  assert.deepEqual(one.queued, ["city/nc/cary", "city/nc/hoursville"], "a pop-up beats a shop with hours; the queue is in richness order");
+  assert.deepEqual([one.fresh, one.kept], [1, 1]);
+  assert.deepEqual(admitPace(earned, new Set(), 0).admitted.size, 0, "a cap of 0 admits nothing new");
+  // through buildSite: Raleigh and Cary have a pop-up, Shopburg a verified shop; Raleigh was indexed by the last passing run
+  const cary = ev({ city: "Cary", lat: 35.79, lng: -78.78 });
+  const out = buildSite({ ...data([ev({}), cary]), priorIndexable: new Set(["city/nc/raleigh"]), paceCap: 1 });
+  const robots = (p) => /<meta name="robots" content="noindex,follow">/.test(page(out, p));
+  const seo = (p) => /<html[^>]*data-seo="([^"]*)"/.exec(page(out, p))[1];
+  assert.equal(robots("city/nc/raleigh/index.html"), false, "already indexed, never demoted");
+  assert.equal(robots("city/nc/cary/index.html"), false, "the one admission goes to the pop-up city");
+  assert.equal(robots("city/nc/shopburg/index.html"), true, "the shop city waits");
+  assert.equal(seo("city/nc/shopburg/index.html"), "u0 s1 b0 n0 q");
+  assert.equal(seo("city/nc/cary/index.html"), "u1 s0 b0 n1", "an admitted page carries no q");
+  const locs = [...page(out, "sitemap.xml").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  assert.ok(locs.includes(SITE_URL + "/city/nc/cary/") && !locs.includes(SITE_URL + "/city/nc/shopburg/"), "a queued page is out of the sitemap");
+  assert.deepEqual([out.counts.indexable, out.counts.queued, out.counts.admitted, out.counts.queue], [2, 1, 1, ["city/nc/shopburg"]]);
+  assert.equal(out.counts.indexable + out.counts.noindex, out.counts.cities, "a queued page counts as noindex");
+  const open = buildSite(data([ev({}), cary]));
+  assert.deepEqual([open.counts.indexable, open.counts.queued], [3, 0], "no prior state: all three are indexable");
+});
 test("noindex pages: robots meta, out of the sitemap, still a full page; data-seo carries the counts; indexable pages carry no robots meta", () => {
   const apex = { name: "Apex", state: "NC", pop: 60000, lat: 35.73, lng: -78.85, slug: "apex", tz: "America/New_York" };
   const cary = ev({ city: "Cary", lat: 35.79, lng: -78.78 });
