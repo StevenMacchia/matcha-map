@@ -1,0 +1,1 @@
+mmBrandExtra({"v":1,"brand":"whiskdtea","upcoming":[{"id":"b1451b9a6cb7","day":"Saturday, Nov 28","time":"All day","place":"Washington, DC","url":"/e/b1451b9a6cb7/","map":"/?event=b1451b9a6cb7"}],"drinks":[],"price":{"min":0,"max":0,"text":"Free"},"story":""});

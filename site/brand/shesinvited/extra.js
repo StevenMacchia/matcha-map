@@ -1,0 +1,1 @@
+mmBrandExtra({"v":1,"brand":"shesinvited","upcoming":[{"id":"90a3138f5a5b","day":"Sunday, Nov 29","time":"11 AM","place":"Monarca Thrift Club, Minneapolis","url":"/e/90a3138f5a5b/","map":"/?event=90a3138f5a5b"}],"drinks":[],"price":null,"story":"Come sing your heart out with the girls💖"});

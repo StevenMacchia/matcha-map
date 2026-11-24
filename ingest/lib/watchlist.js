@@ -71,6 +71,7 @@ export function recordGraph(acc, facts, now = new Date()) {
   if (facts) {
     if (facts.name) acc.name = facts.name;
     for (const k of ["website", "profile_picture_url", "followers_count"]) if (facts[k] != null) acc[k] = facts[k];
+    if (facts.profile_picture_url) acc.profile_picture_at = acc.graph_checked_at; // Meta's url expires in days; the card shows it only while this read is fresh
     if (Array.isArray(facts.recent) && facts.recent.length) acc.recent = facts.recent.slice(0, 3);
     if (facts.biography) acc.bio = String(facts.biography).slice(0, 300); // the harvest reads a home city out of it
   }

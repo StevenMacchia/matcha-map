@@ -89,6 +89,10 @@ test("the report: headline first, then the counts, per-source new, calls, failur
   assert.match(md, /- Shops shown: 2/);
   assert.match(md, /- Cities with an upcoming pop-up: 2/);
   assert.match(md, /- Pages: city 10, brand 20, event 30, weekend 4/);
+  assert.match(md, /- SEO pace queue: not recorded/);
+  const paced = renderReport(D({ pace: { updated: "2026-11-23", cap: 100, admitted: 100, queued: 109, next: ["city/tx/plano"] } }));
+  assert.match(paced, /- SEO pace queue: 100 newly indexable admitted, 109 earned and waiting \(100 per run\)/);
+  assert.match(ladderLine(D({ pace: { cap: 100, admitted: 100, queued: 109 } })), /SEO pace queue 100 newly indexable admitted, 109 earned and waiting \(100 per run\), keyed calls/);
   assert.match(md, /- New today \(4\) by source: a 2, b 1, unknown 1/);
   assert.match(md, /- Keyed calls today: yelp 250/);
   assert.match(md, /- Failures: none/);

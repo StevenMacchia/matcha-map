@@ -62,6 +62,9 @@ export function socialSummary(root, today) {
   return { path: rel, items: fs.readdirSync(dir, { withFileTypes: true }).filter((e) => e.isFile()).length };
 }
 export const socialText = (s) => (!s || s.items == null ? "none" : `${s.path} (${s.items} item${s.items === 1 ? "" : "s"})`);
+// The SEO pace queue (docs/SEO-RULES.md, rule 9) as tools/gen-pages.js left it in data/seo-state.json: how many newly earned city pages this
+// run admitted to the index and how many earned pages wait noindex for a later run.
+export const paceText = (q) => (!q || q.queued == null ? "not recorded" : `${q.admitted} newly indexable admitted, ${q.queued} earned and waiting (${q.cap} per run)`);
 
 // ---- report ------------------------------------------------------------------------------------------------------------------------------
 const pad2 = (n) => String(n).padStart(2, "0");
@@ -95,6 +98,7 @@ export function renderReport(d) {
     `- Shops shown: ${d.shopsShown}`,
     `- Cities with an upcoming pop-up: ${d.citiesUpcoming}`,
     `- Pages: city ${d.pages.city}, brand ${d.pages.brand}, event ${d.pages.event}, weekend ${d.pages.weekend}`,
+    `- SEO pace queue: ${paceText(d.pace)}`,
     `- New today (${d.newTotal}) by source: ${list(d.newBySource)}`,
     `- Keyed calls today: ${list(d.calls)}`,
     `- Social outbox: ${socialText(d.social)}`,
@@ -108,7 +112,7 @@ export function renderReport(d) {
 // One line for LADDER.md.
 export function ladderLine(d) {
   const f = failedSteps(d);
-  return `- ${d.etLabel} daily run: ${d.events.total} events, ${d.events.upcoming} upcoming, ${d.shopsShown} shops, ${d.citiesUpcoming} cities with a pop-up, ${d.newTotal} new (${list(d.newBySource)}), pages city ${d.pages.city} brand ${d.pages.brand} event ${d.pages.event} weekend ${d.pages.weekend}, keyed calls ${list(d.calls)}, social outbox ${socialText(d.social)}, failures ${f.length ? f.join(", ") : "none"}, ${fmtDur(d.totalSecs)} (docs/DAILY.md).`;
+  return `- ${d.etLabel} daily run: ${d.events.total} events, ${d.events.upcoming} upcoming, ${d.shopsShown} shops, ${d.citiesUpcoming} cities with a pop-up, ${d.newTotal} new (${list(d.newBySource)}), pages city ${d.pages.city} brand ${d.pages.brand} event ${d.pages.event} weekend ${d.pages.weekend}, SEO pace queue ${paceText(d.pace)}, keyed calls ${list(d.calls)}, social outbox ${socialText(d.social)}, failures ${f.length ? f.join(", ") : "none"}, ${fmtDur(d.totalSecs)} (docs/DAILY.md).`;
 }
 
 // Append to LADDER.md under a trailing "## Daily runs" heading (created at the end if missing), in the file's own line ending.
@@ -146,7 +150,7 @@ export function summarize({ events, shops, keyed, today }) {
 export function collect(root, today) {
   const rd = (f, fb) => { try { return JSON.parse(fs.readFileSync(path.join(root, f), "utf8")); } catch { return fb; } };
   const s = summarize({ events: rd("data/events.json", { events: [] }).events || [], shops: rd("site/data/shops.json", { shops: [] }).shops || [], keyed: rd(".cache/keyed-places.json", {}), today });
-  return { ...s, social: socialSummary(root, today), pages: { city: countIndex(path.join(root, "site/city")), brand: countIndex(path.join(root, "site/brand")), event: countIndex(path.join(root, "site/e")), weekend: countIndex(path.join(root, "site/weekend")) } };
+  return { ...s, social: socialSummary(root, today), pace: rd("data/seo-state.json", {}).queue || null, pages: { city: countIndex(path.join(root, "site/city")), brand: countIndex(path.join(root, "site/brand")), event: countIndex(path.join(root, "site/e")), weekend: countIndex(path.join(root, "site/weekend")) } };
 }
 
 // ---- processes ---------------------------------------------------------------------------------------------------------------------------

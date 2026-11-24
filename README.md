@@ -39,7 +39,7 @@ The rest, in the order you will want them:
 - `npm run regeocode`: looks up venues that sit at their city centre on Nominatim (150 requests a run, cached in `data/geocache.json`).
 - `npm run shops`: builds permanent matcha storefronts from OpenStreetMap (`data/shops.json`). Slow; run it now and then. Not part of refresh.
 - `npm run yelp`: refuses to run. Yelp's API terms rule out storing or showing Yelp content; Yelp answers are storefront leads only (`npm run shops:keyed -- --provider yelp`, in `npm run refresh`). See `docs/YELP-TERMS.md`.
-- `npm run brands`: rebuilds `site/data/brands.json` from the watch list and sources (no network).
+- `npm run brands`: rebuilds `site/data/brands.json` from the watch list and sources (no network). Brand pictures are never copied off Meta's servers (platform terms): a card carries the profile picture url from the newest Graph read only while that read is under 7 days old and the url's own expiry (`oe`) has not passed, else `picture` is null and the site draws the brand's initial. The watch run rebuilds the file hourly and every watched account is re-read within 72 hours, so the daily deploy carries live urls (`picture_at` says when each was read; `test/brands.test.js` checks the file).
 - `npm run brands:apply`: merges `data/review/brand-facts.json` into `data/sources.json` where a field is empty.
 - `npm run watchlist:apply`: merges `data/review/watchlist-additions.json` into `data/watchlist.json`.
 - `npm run brand-extras`: per-brand `extra.json` (dates, drinks, price, story) for brand pages.

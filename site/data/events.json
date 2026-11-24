@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T03:30:45.515Z",
+  "generated": "2026-11-24T03:43:20.802Z",
   "events": [
     {
       "id": "13650ade75dc",
@@ -21790,8 +21790,8 @@
       "id": "693434f07d91",
       "brand": "amatō",
       "source_id": "amato-raleigh",
-      "kind": "popup",
-      "category": "matcha",
+      "kind": "cafe",
+      "category": "bakery",
       "handle": "amatosweetlover",
       "source_url": "https://www.eventeny.com/events/2026-durham-underground-market-durham-central-park-25990",
       "title": "amatō at the Durham Underground Market",
@@ -21828,7 +21828,7 @@
       "description": "Japanese-inspired bakery and matcha pop-up (matcha drinks and pastries) listed as a vendor at the market.",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/amatosweetlover/",
         "tiktok": null
       },
       "hours": null,
@@ -25585,8 +25585,8 @@
       "id": "da37c3a1afb7",
       "brand": "amatō",
       "source_id": "amato-raleigh",
-      "kind": "popup",
-      "category": "matcha",
+      "kind": "cafe",
+      "category": "bakery",
       "handle": "amatosweetlover",
       "source_url": "https://shoplocalraleigh.org/jolly-raleigh-holiday-market-2",
       "title": "amatō at the Jolly Raleigh Holiday Market",
@@ -25623,7 +25623,7 @@
       "description": "Japanese-inspired bakery and matcha pop-up (matcha drinks and pastries) listed as a vendor at the market.",
       "links": {
         "website": null,
-        "instagram": null,
+        "instagram": "https://www.instagram.com/amatosweetlover/",
         "tiktok": null
       },
       "hours": null,

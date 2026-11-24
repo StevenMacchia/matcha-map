@@ -5,20 +5,19 @@
 //   --baseline  record today's set and snapshot as the state without failing rule 9 (the first run, by hand)
 //   --dry       print only, write no state
 //   --root <d>  another checkout (tests)
-// Env: SEO_PACE_LIMIT (default 150 newly indexable pages per run), SEO_EVENT_PACE_LIMIT (default 300 new event pages per run).
+// Env: SEO_PACE_LIMIT (how many newly indexable city pages tools/gen-pages.js admits per run, default 100); rule 9 reports the queue and never refuses.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
-import { cityIndexable, stateIndexable } from "./gen-pages.js";
+import { cityIndexable, stateIndexable, PACE_ADMIT } from "./gen-pages.js";
 import { checkSite } from "./check-jsonld.js";
 import { readState, writeState, readSitemapRows, isSitemapIndex, parseRedirects, hash12, hashInput, dayText, SITEMAP_SPLIT } from "./seo-lib.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const MIN_WORDS = 150; // rule 5: words outside the boilerplate on an indexable city or state page
 export const FAQ_SHARE = 0.05; // rule 5: no FAQ answer on more than 5% of indexable pages
-export const PACE_LIMIT = 150; // rule 9
-export const EVENT_PACE_LIMIT = 300;
+export const PACE_LIMIT = PACE_ADMIT; // rule 9: the generator's cap on newly indexable city pages per run; the gate only reports against it
 export const FILE_LIMIT = 50000; // rule 6: URLs per sitemap file
 // rule 8: the top of each tree and a page inside it
 const PROTECTED = ["/", "/city/", "/state/", "/weekend/", "/e/", "/brand/", "/city/nc/raleigh/", "/state/nc/", "/weekend/raleigh-nc/", "/e/abc123def456/", "/brand/moonbee/"];
@@ -84,7 +83,7 @@ export function loadPages(site) {
   }
   return pages;
 }
-const parseSeo = (s) => { const m = /^u(\d+) s(\d+) b(\d+) n(\d+)$/.exec(s || ""); return m ? { ups: +m[1], shops: +m[2], brandsWithPicture: +m[3], nearbyCities: +m[4] } : null; };
+const parseSeo = (s) => { const m = /^u(\d+) s(\d+) b(\d+) n(\d+)( q)?$/.exec(s || ""); return m ? { ups: +m[1], shops: +m[2], brandsWithPicture: +m[3], nearbyCities: +m[4], queued: !!m[5] } : null; };
 const pathOfLoc = (loc) => { try { return decodeURIComponent(new URL(loc).pathname); } catch { return ""; } };
 const sample = (a, n = 5) => a.slice(0, n);
 const num = (n) => n.toLocaleString("en-US");
@@ -94,16 +93,18 @@ const num = (n) => n.toLocaleString("en-US");
 function rule1(ctx) {
   const bad = [], inMap = new Set(ctx.rows.map((r) => pathOfLoc(r.loc)));
   const cities = ctx.pages.filter((p) => p.tree === "city");
-  let ix = 0;
+  let ix = 0, queued = 0;
   for (const p of cities) {
     const c = parseSeo(p.seo);
     if (!c) { bad.push(`${p.key}: no data-seo summary`); continue; }
-    const want = cityIndexable(c).indexable;
-    if (want) ix++;
+    const earned = cityIndexable(c).indexable;
+    if (c.queued && !earned) bad.push(`${p.key}: counts ${p.seo} do not earn an index, yet the page is marked as waiting in the pace queue`);
+    const want = earned && !c.queued; // a page in the pace queue (rule 9) has earned its index and waits noindex for a later run
+    if (want) ix++; else if (earned) queued++;
     if (p.noindex === want) bad.push(`${p.key}: counts ${p.seo} say ${want ? "indexable" : "noindex"}, the page is ${p.noindex ? "noindex" : "indexable"}`);
     if (inMap.has(p.path) !== want) bad.push(`${p.key}: counts ${p.seo} say ${want ? "in" : "out of"} the sitemap, it is ${inMap.has(p.path) ? "in" : "out"}`);
   }
-  return { ok: !bad.length, examples: bad, msg: `${num(cities.length)} city pages, ${num(ix)} earned an index, ${num(cities.length - ix)} noindex` };
+  return { ok: !bad.length, examples: bad, msg: `${num(cities.length)} city pages, ${num(ix)} indexable, ${num(queued)} earned and waiting in the pace queue, ${num(cities.length - ix - queued)} noindex` };
 }
 
 function rule2(ctx) {
@@ -252,18 +253,21 @@ function rule8(ctx) {
   return { ok: !bad.length, examples: bad, msg: "robots.txt, the home page, _headers and the state hubs leave every indexable page open" };
 }
 
+// Rule 9 is a throttle, not a refusal: tools/gen-pages.js admits at most PACE_ADMIT newly earned city pages per run (richest first) and
+// keeps the rest noindex with " q" in data-seo. The gate reports admitted and waiting counts. It fails only when the queue holds a page
+// the last passing run had already indexed: the queue never demotes.
 function rule9(ctx) {
   const prior = ctx.state && ctx.state.indexable;
+  const cap = Number(ctx.env.SEO_PACE_LIMIT) || PACE_LIMIT;
   const today = ctx.indexable, events = ctx.pages.filter((p) => p.tree === "e").map((p) => p.key);
-  const limit = Number(ctx.env.SEO_PACE_LIMIT) || PACE_LIMIT, evLimit = Number(ctx.env.SEO_EVENT_PACE_LIMIT) || EVENT_PACE_LIMIT;
-  if (!prior) return { ok: !!ctx.baseline, examples: ["no previous state: run `node tools/seo-gate.js --baseline` once, by hand, to record today's set"], msg: `baseline recorded: ${num(today.length)} indexable pages` };
+  const queued = ctx.pages.filter((p) => p.tree === "city" && (parseSeo(p.seo) || {}).queued).map((p) => p.key);
+  if (!prior) return { ok: true, examples: [], msg: `no previous state; this run's ${num(today.length)} indexable pages are the baseline, ${num(queued.length)} earned and waiting in the pace queue` };
   const was = new Set(prior), fresh = today.filter((k) => !was.has(k));
   const wasPages = new Set(Object.keys(ctx.state.pages || {})), freshEv = events.filter((k) => !wasPages.has(k));
-  const bad = [];
-  if (!ctx.baseline && fresh.length > limit) bad.push(`${num(fresh.length)} pages newly indexable in one run (limit ${limit}; SEO_PACE_LIMIT raises it): ${sample(fresh, 3).join(", ")}`);
-  if (!ctx.baseline && freshEv.length > evLimit) bad.push(`${num(freshEv.length)} new event pages in one run (limit ${evLimit}; SEO_EVENT_PACE_LIMIT raises it)`);
+  const demoted = queued.filter((k) => was.has(k));
+  const bad = demoted.length ? [`${num(demoted.length)} pages the last passing run indexed are waiting in the pace queue (the queue never demotes): ${sample(demoted, 3).join(", ")}`] : [];
   const dropped = prior.filter((k) => !today.includes(k)).length;
-  return { ok: !bad.length, examples: bad, msg: `${num(fresh.length)} newly indexable (limit ${limit}), ${num(freshEv.length)} new event pages (limit ${evLimit}), ${num(dropped)} no longer indexable${ctx.baseline ? "; baseline" : ""}` };
+  return { ok: !bad.length, examples: bad, msg: `${num(fresh.length)} newly indexable admitted (cap ${num(cap)} city pages per run), ${num(queued.length)} earned and waiting in the pace queue, ${num(freshEv.length)} new event pages, ${num(dropped)} no longer indexable${ctx.baseline ? "; baseline" : ""}` };
 }
 
 const RULES = [
@@ -286,7 +290,8 @@ export function runGate({ root = ROOT, baseline = false, dry = false, env = proc
   const failed = results.filter((r) => !r.ok).length;
   const noindex = pages.filter((p) => p.noindex).length;
   const lines = results.map((r) => `rule ${r.n} ${r.name}: ${r.ok ? "ok" : "FAIL"} (${r.ok ? r.msg : `${r.examples.length}: ${sample(r.examples).join(" | ")}${r.examples.length > 5 ? ` | ... ${r.examples.length - 5} more` : ""}`})`);
-  const summary = `seo gate: ${RULES.length} rules, ${failed} failed; indexable ${pages.length - noindex}, noindex ${noindex}, lastmod moved ${ctx.moved}`;
+  const queued = pages.filter((p) => p.tree === "city" && (parseSeo(p.seo) || {}).queued).length;
+  const summary = `seo gate: ${RULES.length} rules, ${failed} failed; indexable ${pages.length - noindex}, noindex ${noindex}, lastmod moved ${ctx.moved}, pace queue ${queued}`;
   // the state moves forward only on a passing run (or --baseline with every other rule passing), so a failure repeats until it is fixed
   const recordable = !failed;
   let wrote = false;
