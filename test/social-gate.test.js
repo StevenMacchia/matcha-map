@@ -73,7 +73,7 @@ test("gate: every template with the longest real names and drink lists has no ov
 
 test("gate: it catches text out of its box and boxes that intersect", { skip: !hasChrome && "no Chrome" }, async () => {
   const sh = SHOPS[0];
-  const huge = { items: [{ type: "latte", name: "W".repeat(70) }, ...longPour.items.slice(0, 4)], more: 0 };
+  const huge = { items: [{ name: "W".repeat(70), plain: true }, ...longPour.items.slice(0, 4)], more: 0 };
   const [r1] = await render([{ size: "story", it: base({ kind: "shop", title: sh.name, shop: { ...sh, pour: huge } }) }]);
   assert.ok(r1.check.cut.length || r1.check.off.length, "a 70-letter drink name is flagged");
   // five rows in the feed (it has room for three) run the column past its space

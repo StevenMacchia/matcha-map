@@ -10,7 +10,7 @@ import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { hash } from "./plan.js";
-import { glyphSvg } from "./glyphs.js";
+import { drinkSvg } from "./drinks.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const TPL = path.join(ROOT, "tools", "social", "templates");
@@ -60,7 +60,7 @@ const pourHtml = (pour, max) => {
   if (!pour || !pour.items || !pour.items.length) return "";
   const shown = pour.items.slice(0, max), more = (pour.more || 0) + pour.items.length - shown.length;
   return `<div class="pour"><div class="ph"><span>What they pour</span>${more ? `<span class="pm">+ ${more} more drink${more === 1 ? "" : "s"}</span>` : ""}</div>` +
-    shown.map((i) => `<div class="pr"><div class="pg">${glyphSvg(i.type)}</div><span class="pn" data-fit data-max="44" data-min1="36" data-min="36">${esc(i.name)}</span></div>`).join("") + "</div>";
+    shown.map((i, k) => `<div class="pr"><div class="pg">${drinkSvg(i.name, "pr" + k)}</div><span class="pn" data-fit data-max="44" data-min1="36" data-min="36">${esc(i.name)}</span></div>`).join("") + "</div>";
 };
 const trunc = (s, n) => { s = String(s || ""); return s.length > n ? s.slice(0, n - 1).replace(/\s+$/, "") + "…" : s; };
 const kindLabel = (k) => (k === "organizer" ? "Matcha event" : k === "cafe" ? "Matcha cafe" : k === "festival" ? "Matcha festival" : "Matcha pop-up");
@@ -101,7 +101,7 @@ function scene(it, size) {
   }
 
   if (it.kind === "shop") {
-    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 280 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
+    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 210 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
     const art = `<div class="shopart" style="height:${artH}px"><div class="blob" style="left:40px;top:${artH - big - 20}px;width:${big + 40}px;height:${big + 40}px"></div>` +
       `<svg viewBox="0 0 64 64" style="left:60px;top:${artH - big - 16}px;width:${big}px;height:${big}px"><use href="#s-shop" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 64 64" style="left:${930 - m - 30}px;top:${artH - m - 16}px;width:${m}px;height:${m}px"><use href="#m-whisk" width="64" height="64"/></svg>` +
@@ -136,7 +136,7 @@ function scene(it, size) {
     return `<div class="row"><div class="mochi" data-drawn="${esc(JSON.stringify({ e: { id: v.id, brand: v.brand, kind: v.kind }, opts: { mode: "thumb" } }))}"></div>` +
       `<div class="tx"><span class="rb" data-fit data-max="48" data-min1="38" data-min="38">${esc(trunc(v.brand, 34))}</span><span class="rs" data-fit data-max="36" data-min1="36" data-min="36">${esc(trunc(`${when} · ${where}`, 36))}</span></div></div>`;
   }).join("") + `</div>`;
-  s += col(head(it.title, true) + rows + (it.more ? `<div class="more">+ ${it.more} more on the map</div>` : ""));
+  s += col(head(it.title, true) + rows + (it.more ? `<div class="more">+ ${it.more} more on the map</div>` : ""), g.bottom, size === "feed" ? 12 : g.gap);
   s += mattie("m-wave", mx + 20, my + 10, ms - 20, flip);
   return s + foot;
 }
@@ -157,7 +157,7 @@ const CHECK = `(() => {
   const tw = document.createTreeWalker(document.querySelector(".canvas"), NodeFilter.SHOW_TEXT);
   while (tw.nextNode()) {
     const t = tw.currentNode, el = t.parentElement;
-    if (!t.textContent.trim() || !el || el.closest("defs,symbol,style,script")) continue;
+    if (!t.textContent.trim() || !el || el.closest("defs,symbol,style,script,title")) continue;
     let px = parseFloat(getComputedStyle(el).fontSize);
     if (el instanceof SVGElement && el.getScreenCTM) { const m = el.getScreenCTM(); px *= Math.hypot(m.a, m.b); }
     min = Math.min(min, px);
@@ -180,7 +180,7 @@ const CHECK = `(() => {
   const tw2 = document.createTreeWalker(document.querySelector(".canvas"), NodeFilter.SHOW_TEXT);
   while (tw2.nextNode()) {
     const t = tw2.currentNode, el = t.parentElement;
-    if (!t.textContent.trim() || !el || el.closest("defs,symbol,style,script")) continue;
+    if (!t.textContent.trim() || !el || el.closest("defs,symbol,style,script,title")) continue;
     const bx = el.closest(".pr,.row,.pill,.tag,.wm,.more,.ph,.info,.head,.foot,.panel,.shopart");
     if (!bx) continue;
     const rg = document.createRange(); rg.selectNodeContents(t);

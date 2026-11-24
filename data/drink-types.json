@@ -1,17 +1,12 @@
 {
-  "_doc": "Matcha drink types for the social graphics (tools/social/drinks.js). A menu_matcha drink name is read top to bottom: the first type whose `words` regex matches it wins; a name that matches none gets the plain `matcha` glyph. `skip` drops menu lines that are not drinks to pour (merch, powders, page furniture, policies) and `strip` cleans the name for display without changing its words. Edit here; tests are test/social-drinks.test.js.",
-  "types": [
-    { "id": "dessert", "label": "Matcha dessert", "words": "\\b(cake|tiramisu|crepe|mochi|macaron|pudding|affogato|cookie|waffle|parfait|bingsoo|bingsu|soft ?serve|ice ?cream|gelato|sundae|brulee|cheesecake|donut|doughnut|croissant|roll|shortcake|granola|daifuku|warabi|manju|omanju|brownie|blondie|pastry|tart|bouchee|cone|snow|tornado|swirl|freeze|milkshake|shake)\\b" },
-    { "id": "hojicha", "label": "Hojicha", "words": "hojicha|houjicha" },
-    { "id": "strawberry", "label": "Strawberry matcha", "words": "strawberr|\\bpink\\b" },
-    { "id": "plantmilk", "label": "Matcha with plant milk", "words": "\\b(oat|oatmilk|soy|almond|coconut|non-?dairy|vegan|plant|cashew)\\b|oat ?milk|soy ?milk" },
-    { "id": "iced", "label": "Iced matcha", "words": "\\b(iced|ice|frio|rocks|cold|frappe|frozen|slush|lemonade|tonic|soda|sparkling|spritz|shaken|frostie|smoothie|blended)\\b" },
-    { "id": "bowl", "label": "Ceremonial bowl", "words": "ceremonial|usucha|koicha|\\bbowl\\b|\\bomomo\\b|\\bhomare\\b|\\byamabuki\\b|\\bayashirabe\\b|\\bkyoto kinen\\b" },
-    { "id": "latte", "label": "Matcha latte", "words": "latte|milk|cortado|cappuccino|einsp|americano|coffee|boba|bubble|cloud|foam|cream|royale|deluxe|dirty|creamomo|colada" }
-  ],
-  "plain": { "id": "matcha", "label": "Matcha" },
+  "_doc": "Clean-up rules for the social What they pour block (tools/social/drinks.js): skip = menu lines that are not drinks to pour, strip = price tails and page words cut off a name, maxName = longest name printed. The drawings come from the drink illustration engine (tools/illustrate/drink.js), not from here.",
   "skip": "\\b(tools?|whisks?|powders?|sets?|teaware|accessories|gift|class|course|policies|policy|shipping|return|cancellation|lip balm|honey|starter pack|sampler|bundle|subscription|merch|tin|canister|chasen|chawan)\\b|^(explore|see all|view all|all |order now$|what is|matcha items|matcha drinks|matcha, tea)|→",
-  "strip": ["^(order now for|details for)\\s+", "\\s*[:\\-–]?\\s*\\$?\\d+(\\.\\d{1,2})?\\s*$", "\\s+new!?$", "&reg;|&#8482;", "\\s*[,;]\\s*$"],
-  "maxName": 34,
-  "max": { "story": 5, "feed": 3 }
+  "strip": [
+    "^(order now for|details for)\\s+",
+    "\\s*[:\\-–]?\\s*\\$?\\d+(\\.\\d{1,2})?\\s*$",
+    "\\s+new!?$",
+    "&reg;|&#8482;",
+    "\\s*[,;]\\s*$"
+  ],
+  "maxName": 34
 }

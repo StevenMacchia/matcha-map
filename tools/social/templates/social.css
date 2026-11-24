@@ -67,11 +67,13 @@ box-shadow:0 0 0 5px #fff,5px 7px 0 5px rgba(75,52,38,.9);transform:rotate(2deg)
 .pour{display:flex;flex-direction:column;gap:8px;flex:0 0 auto}
 .ph{display:flex;align-items:baseline;justify-content:space-between;gap:20px;font-size:40px;color:var(--az2);line-height:1.2}
 .ph .pm{font-size:36px;white-space:nowrap}
-.pr{display:flex;align-items:center;gap:20px;background:var(--cream);border:4px solid var(--edge);border-radius:28px;padding:4px 24px 4px 10px;height:100px}
-.pg{flex:0 0 84px;width:84px;height:84px}
+.pr{display:flex;align-items:center;gap:20px;background:var(--cream);border:4px solid var(--edge);border-radius:28px;padding:4px 24px 4px 10px;height:112px}
+.pg{flex:0 0 100px;width:100px;height:100px}
 .pg svg{width:100%;height:100%;display:block}
 .pn{flex:1 1 auto;min-width:0;font-size:44px;white-space:nowrap;overflow:hidden;line-height:1.2}
 .panel.sm svg.dc{width:760px;margin:0 auto;display:block}
 body.feed .pr{height:76px}
 body.feed .pg{flex:0 0 64px;width:64px;height:64px}
 .rows.loc{gap:16px;padding-bottom:0}
+body.feed .rows{gap:12px;padding-bottom:0}
+body.feed .row{padding:6px 24px 6px 6px}
