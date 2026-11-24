@@ -6,14 +6,18 @@
 //   - a name label touches another label (2026-11-23, the pin look: labels keep 2 px apart);
 //   - a name label touches a pin or group (its box with what sticks out of it: a count, a day pill, the cup), other than its own;
 //   - a name label leaves the clear part of the map (under the top bar or the list grip on a phone, or off the map);
-//   - two single pins (not groups, not the "place not posted" rings) stand closer than 28 px, centre to centre: such a
-//     pair must be one stack that spreads on tap;
+//   - two single pins (not groups, not the "place not posted" rings) stand closer than 20 px, centre to centre: such a
+//     pair must be one stack that spreads on hover and tap (the uncluster rule, 2026-11-23);
+//   - from zoom 6, a city pin is still shown while its places stand more than 20 px apart on screen (it must have opened);
 //   - two markers' boxes overlap by more than 12 px both ways (an edge, a cup mark or a badge may tuck under a neighbour) (the "place not posted" rings are left out: they sit on a
 //     city's centre by design).
 // The national tier (2026-11-23, "a usa map of matcha"): the opening view (the contiguous states fitted, as the page opens)
 // and zooms 4, 5, 7 and 10 over the middle of the country, at 390 and 1440, light and dark: no two city pins overlap (their
 // circles, the 20 px rule at these zooms), and at the opening view the city pins cover every city that has anything (the
 // app's own count, __matcha.ntStats()); that number is printed.
+// The uncluster views (2026-11-23, "you have to zoom WAY too far in"): LA at 9, Houston at 9, Seattle at 10, Manhattan at 13
+// and the Triangle at 11, plus LA and Houston at 7 and 8 inside the city band, at 390 and 1440, light and dark; the pin
+// count of each view is printed.
 // Prints a table, saves a screenshot of every failing case to qa/brands/2026-11-23/map-fail/, exits 1 on any failure.
 // Flags: --url <base> (a running server instead of tools/serve.js), --only <fixture,...>, --zooms 12,13, --sizes 390x844.
 // Exports runMapGate(cdp, base, opts) for tools/smoke.js. No dependencies (Node 22+ WebSocket).
@@ -30,12 +34,13 @@ export const FIXTURES = [["Manhattan", 40.745, -73.99], ["Triangle", 35.93, -78.
 export const ZOOMS = [10, 11, 12, 13, 14, 16];
 export const SIZES = [[320, 568], [390, 844], [1024, 768], [1440, 900], [1920, 1080]];
 export const NATIONAL = { fixture: ["USA", 38.5, -97], zooms: ["home", 4, 5, 7, 10], widths: [390, 1440] };
+export const FOCUS = { cases: [["LA", 34.05, -118.25, 9], ["Houston", 29.76, -95.37, 9], ["Seattle", 47.61, -122.33, 10], ["Manhattan", 40.73, -73.99, 13], ["Triangle", 35.86, -78.72, 11], ["LA", 34.05, -118.25, 7], ["Houston", 29.76, -95.37, 8]], widths: [390, 1440] };
 export const REDUCED = { zooms: [11, 13], sizes: [[390, 844], [800, 900], [1440, 900]], themes: ["light"], fixtures: ["Manhattan", "Triangle"], national: ["home", 5] }; // 800: the pane width where the list went empty
-const MIN_PX = 28;
+const MIN_PX = 20, SPLIT_PX = 20;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const CHECK = `(() => {
-  const out = [], MIN = ${MIN_PX};
+  const out = [], MIN = ${MIN_PX}, SPLIT = ${SPLIT_PX};
   const shown = (el) => el.isConnected && !el.hidden && getComputedStyle(el).display !== "none" && getComputedStyle(el).visibility !== "hidden" && el.getClientRects().length > 0;
   const R = (r) => ({ l: r.left, t: r.top, r: r.right, b: r.bottom });
   const box = (el) => { let b = R(el.getBoundingClientRect()); el.querySelectorAll(".cl-n, .bx").forEach((n) => { if (!shown(n)) return; const q = n.getBoundingClientRect(); b = { l: Math.min(b.l, q.left), t: Math.min(b.t, q.top), r: Math.max(b.r, q.right), b: Math.max(b.b, q.bottom) }; }); return b; };
@@ -57,6 +62,13 @@ const CHECK = `(() => {
   for (let i = 0; i < singles.length; i++) for (let j = i + 1; j < singles.length; j++) {
     const p = c(singles[i].b), q = c(singles[j].b), d = Math.hypot(p[0] - q[0], p[1] - q[1]);
     if (d < MIN) out.push("pins " + d.toFixed(1) + " px apart: " + name(singles[i].el) + " / " + name(singles[j].el));
+  }
+  // from zoom 6 a city pin stands only while its places sit within SPLIT px of each other on screen
+  if (map && map.getZoom() >= 6 && window.__matcha.ntPlaces) for (const c of window.__matcha.ntPlaces()) {
+    const q = c.lls.map((ll) => map.project(ll));
+    let far = 0;
+    for (let i = 0; i < q.length; i++) for (let j = i + 1; j < q.length; j++) far = Math.max(far, Math.hypot(q[i].x - q[j].x, q[i].y - q[j].y));
+    if (far > SPLIT + 0.5) out.push("city pin " + c.key + " shown while its places stand " + far.toFixed(1) + " px apart");
   }
   // city pins (the national tier) are round: their circles must not overlap
   const nat = marks.filter((m) => m.el.classList.contains("cl-nt")).map((m) => { const r = m.el.getBoundingClientRect(); return { m, x: r.left + r.width / 2, y: r.top + r.height / 2, d: r.width }; });
@@ -102,6 +114,11 @@ export async function runMapGate(cdp, base, opts = {}) {
       for (const end = Date.now() + 30000; Date.now() < end && !ok;) { await sleep(300); try { ok = await ev(READY); } catch { /* navigating */ } }
       const cases = [];
       for (const [fname, lat, lng] of fixtures) for (const z of zooms) cases.push([fname, lat, lng, z]);
+      // the uncluster views, at their own centres and zooms
+      if (FOCUS.widths.includes(W)) for (const [fname, lat, lng, z] of opts.reduced ? FOCUS.cases.slice(0, 2) : FOCUS.cases) {
+        if ((opts.only && !opts.only.includes(fname)) || (opts.zooms && !opts.zooms.includes(z))) continue;
+        cases.push([fname + "@", lat, lng, z]);
+      }
       const natZ = opts.reduced ? REDUCED.national : NATIONAL.zooms;
       if (!opts.only || opts.only.includes("USA")) if (NATIONAL.widths.includes(W) || opts.reduced) for (const z of natZ) cases.push([NATIONAL.fixture[0], NATIONAL.fixture[1], NATIONAL.fixture[2], z]);
       for (const [fname, lat, lng, z] of cases) {
