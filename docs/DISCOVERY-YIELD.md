@@ -32,3 +32,7 @@ Checked and closed this rung, with why (all read-only, robots respected):
 - SweatPals: robots allow its day sitemaps (21,281 URLs); 18 slugs say matcha, all fitness classes (pilates, twerk cardio, yoga); event pages carry no Event JSON-LD. Not built.
 - Luma keyword search: api.lu.ma/search answers 401 "not signed in"; the place crawler stays the route.
 - Meetup events sitemap: slugs carry ids only, no titles.
+
+## Host-venue calendars (markets adapter, 2026-11-24, second Population window)
+
+`ingest/lib/sites/markets.js` gained eight host venues our own events already name (SoWa Boston, Texas Farmers' Market at Mueller, The Village District, Downtown Raleigh Partnership, RiNo Art District, Portland's Pearl District and Temescal farmers markets, Grant Park Market) and a reader for pages that list event cards (`calendarCards`: "EVENT / title / blurb / date / Learn More"). A matcha card is paired only with the dates printed inside its own card, never with the page's other dates (the roster-by-date pairing would have given the Village District Saikō card the Santa photos' dates), and days our data already holds for that brand and city are skipped (`knownOnDay`). Dry run on the live pages: 8 hosts, 45 pages, 1 matcha card (Village District, Saikō Matcha Pop Up, Nov 27 and 28), both days already in our data, so 0 new events; the other seven hosts carry no matcha text and no Event JSON-LD today. The Downtown Raleigh and RiNo pages list no card markers; Downtown Raleigh and RiNo are read for JSON-LD events only. Fixture test: `test/markets-calendar.test.js`.

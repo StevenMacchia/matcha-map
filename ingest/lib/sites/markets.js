@@ -49,9 +49,21 @@ export const MARKETS = [
   { id: "ponce-city", name: "Ponce City Market", city: "Atlanta", state: "GA", address: "675 Ponce De Leon Ave NE, Atlanta, GA 30308", pages: ["https://poncecitymarket.com/"] },
   { id: "wharf-dc", name: "The Wharf", city: "Washington", state: "DC", address: "760 Maine Ave SW, Washington, DC 20024", pages: ["https://www.wharfdc.com/"] },
   { id: "lincoln-road", name: "Lincoln Road", city: "Miami", state: "FL", address: "Lincoln Rd, Miami Beach, FL 33139", pages: ["https://lincolnroadmiami.com/"] },
+  // Host venues (2026-11-24, second Population window): the market, district and landlord pages our own events already name as the place of a
+  // pop-up (SoWa Boston, Texas Farmers' Market at Mueller, The Village District, Downtown Raleigh Partnership, RiNo Art District, the Pearl District
+  // and Temescal farmers markets, Grant Park Market). Their home pages carried no "matcha" and no JSON-LD events when read on that day; they are listed
+  // so a vendor roster or a dated event page that names matcha is picked up the day it appears.
+  { id: "sowa", name: "SoWa Winter Farmers Market and Holiday Market", city: "Boston", state: "MA", address: "550 Harrison Ave, Boston, MA 02118", pages: ["https://www.sowaboston.com/"] },
+  { id: "texas-farmers-mueller", name: "Texas Farmers' Market at Mueller", city: "Austin", state: "TX", address: "2006 Philomena St, Austin, TX 78723", pages: ["https://texasfarmersmarket.org/"] },
+  { id: "village-district", name: "The Village District", city: "Raleigh", state: "NC", address: "2068 Clark Ave, Raleigh, NC 27605", pages: ["https://www.shopvillagedistrict.com/"] },
+  { id: "downtown-raleigh", name: "Downtown Raleigh Partnership", city: "Raleigh", state: "NC", address: "", pages: ["https://www.downtownraleigh.org/events"] },
+  { id: "rino", name: "RiNo Art District", city: "Denver", state: "CO", address: "", pages: ["https://rinoartdistrict.org/events/"] },
+  { id: "pearl-farmers", name: "Portland Farmers Market at the Pearl District", city: "Portland", state: "OR", address: "327 NW 10th Ave, Portland, OR 97209", pages: ["https://www.portlandfarmersmarket.org/"] },
+  { id: "temescal-farmers", name: "Temescal Farmers Market", city: "Oakland", state: "CA", address: "5300 Claremont Ave, Oakland, CA 94618", pages: ["https://www.agriculturalinstitute.org/"] },
+  { id: "grant-park-market", name: "Grant Park Market", city: "Atlanta", state: "GA", address: "", pages: ["https://www.grantparkmarket.org/"] },
 ];
 
-const FOLLOW = /(vendor|maker|food|eat|shop|exhibitor|artist|directory|market-guide|holiday)/i;
+const FOLLOW = /(vendor|maker|food|eat|shop|exhibitor|artist|directory|market-guide|holiday|events?|calendar|whats-on|happenings)/i;
 const CATEGORY_LIST = /^(?:[a-z&' -]{2,18}\s*[|,/·•]\s*){2,}/i;
 const DATE_LINE = /\b(open|hours|dates?|market|weekend|every|season|sat|sun|fri)\w*/i;
 const DAY = 86400000;
@@ -96,7 +108,55 @@ const brandDay = (brand, day) => `${String(brand).toLowerCase().replace(/[^a-z0-
 // One market page -> {vendors, dates, lds}. Pure.
 export function readMarketPage(html, url, market, now = new Date()) {
   const lines = htmlToLines(html);
-  return { vendors: rosterVendors(lines), dates: marketDates(lines, now), events: ldEvents(html).map((ld) => ldToRaw(ld, url, { cityHint: { city: market.city, state: market.state } })).filter(Boolean) };
+  const cal = calendarCards(lines, now);
+  // A calendar page (a list of event cards) pairs a matcha title only with the dates inside its own card: its roster and page-wide dates are not
+  // used (every other event's date on the page would otherwise be given to the matcha vendor).
+  return { vendors: cal.isCalendar ? [] : rosterVendors(lines), dates: cal.isCalendar ? [] : marketDates(lines, now), cards: cal.cards, events: ldEvents(html).map((ld) => ldToRaw(ld, url, { cityHint: { city: market.city, state: market.state } })).filter(Boolean) };
+}
+
+// ---- host-venue calendars: a district, landlord or market page that lists event cards ("EVENT / title / blurb / Friday, November 27th / Learn More") -----
+const CARD_END = /^(learn more|read more|more info|more details|details|view event|get tickets|rsvp|register)$/i;
+const CARD_START = /^(event|events?|upcoming)$/i;
+// Page lines -> { isCalendar, cards: [{ title, dates: [{y, mo, d, time}] }] }: one card per matcha title line, with the explicit dates printed in that
+// card (its blurb and its date line), from today to 180 days ahead. A card without an explicit month and day gives no event.
+export function calendarCards(lines, now = new Date()) {
+  const ends = lines.filter((l) => CARD_END.test(l)).length;
+  const isCalendar = ends >= 2;
+  if (!isCalendar) return { isCalendar, cards: [] };
+  const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  const ref = { y: now.getUTCFullYear(), mo: now.getUTCMonth() + 1, d: now.getUTCDate() };
+  const cards = [];
+  for (let i = 0; i < lines.length; i++) {
+    const t = lines[i];
+    if (!hasMatcha(t) || t.length > 80 || t.length < 6 || /[.!?]$/.test(t)) continue;
+    // the card runs from its title to the next end marker (at most 8 lines), and never past the next card's start
+    let end = i + 1;
+    while (end < lines.length && end < i + 8 && !CARD_END.test(lines[end]) && !CARD_START.test(lines[end])) end++;
+    const dates = [], seen = new Set();
+    for (let j = i; j <= end && j < lines.length; j++) {
+      const l = lines[j];
+      if (l.length > 400) continue;
+      for (const g of findDates(l, ref)) {
+        if (["rel", "weekday", "weekend"].includes(g.kind)) continue;
+        const time = findTime(l);
+        for (const d of g.dates) {
+          const ms = Date.UTC(d.y, d.mo - 1, d.d), k = `${d.y}-${d.mo}-${d.d}`;
+          if (ms < today || ms > today + 180 * DAY || seen.has(k)) continue;
+          seen.add(k);
+          dates.push({ ...d, time: time || null });
+        }
+      }
+    }
+    if (dates.length && !cards.some((c) => c.title.toLowerCase() === t.toLowerCase())) cards.push({ title: t.replace(/\s+/g, " "), dates });
+  }
+  return { isCalendar, cards };
+}
+
+// Does our own data already hold a pop-up by this brand (its first word, accents folded) in this city on this day?
+const word0 = (s) => String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ").trim().split(/\s+/)[0] || "";
+export function knownOnDay(existing, title, city, day) {
+  const w = word0(title);
+  return !!w && existing.some((e) => String(e.start).slice(0, 10) === day && String(e.city || "").toLowerCase() === String(city || "").toLowerCase() && word0(e.brand) === w);
 }
 
 // Vendors and dates -> RawItems, one per vendor per date. Time from the date line when it names one, else all-day.
@@ -181,7 +241,7 @@ export async function discover(ctx) {
   let existing = ctx.existing;
   if (!existing) { try { existing = readEvents(); } catch { existing = []; } }
   const have = new Set(existing.map((e) => brandDay(e.brand, String(e.start).slice(0, 10))));
-  const stats = { markets: 0, skippedHosts: [], pages: 0, vendors: 0, rosterOnly: 0, fetches: 0 };
+  const stats = { markets: 0, skippedHosts: [], pages: 0, vendors: 0, cards: 0, cardsKnown: 0, rosterOnly: 0, fetches: 0 };
   const raws = [], rosterOnly = [];
   const okHost = new Map();
   for (const m of markets) {
@@ -204,6 +264,16 @@ export async function discover(ctx) {
       done++;
       const p = readMarketPage(r.text, url, m, now);
       for (const raw of p.events) if (hasMatcha(raw.text, raw.hints.title)) raws.push(raw);
+      // Event cards of a host calendar: each matcha card gives its own dates only, minus the days our data already holds for that brand.
+      for (const c of p.cards) {
+        stats.cards++;
+        const fresh = c.dates.filter((d) => !knownOnDay(existing, c.title, m.city, `${d.y}-${String(d.mo).padStart(2, "0")}-${String(d.d).padStart(2, "0")}`));
+        stats.cardsKnown += c.dates.length - fresh.length;
+        for (const raw of vendorEvents([c.title], fresh, m, url)) {
+          const k = brandDay(raw.organizer.name, raw.hints.start.slice(0, 10));
+          if (!have.has(k)) { have.add(k); raws.push(raw); }
+        }
+      }
       // Vendors and dates must come from the same page: a roster is never paired with dates found on another page.
       if (p.vendors.length) {
         stats.vendors += p.vendors.length;
