@@ -28,9 +28,13 @@ import { recheckTiktok, recheckInstagram, loadBudget, saveBudget, budgetLine } f
 import graph, { creds, createRate, runAllowance } from "./adapters/instagram-graph.js";
 import { brandOf } from "./lib/names.js";
 import { buildBrands, writeBrands } from "./lib/enrich/brands.js";
+import { readLock, acquire } from "./lib/runlock.js";
+import { readLock, acquire } from "./lib/runlock.js";
 
 const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual];
 const pad = (s, n) => String(s).padEnd(n).slice(0, n);
+let releaseLock = null; // .cache/watch.lock (ingest/lib/runlock.js), released when main ends
+let releaseLock = null; // .cache/watch.lock (ingest/lib/runlock.js), released when main ends
 
 async function main() {
   const argv = process.argv.slice(2);
@@ -39,6 +43,13 @@ async function main() {
   const only = argv.includes("--handle") ? wlib.norm(argv[argv.indexOf("--handle") + 1]).toLowerCase() : null;
   const dry = has("--dry"), all = has("--all"), noFetch = has("--no-fetch");
   const now = new Date(), env = process.env;
+  // One run at a time in this checkout (ingest/lib/runlock.js): while the daily run holds .cache/daily.lock this hourly pass skips, since the
+  // daily run has its own watch step and both write data/watchlist.json and site/data/brands.json. The daily run's own child carries MATCHA_DAILY_CHILD.
+  if (!dry && env.MATCHA_DAILY_CHILD !== "1") {
+    const d = readLock(process.cwd(), "daily");
+    if (d) { info(`daily run in progress (pid ${d.pid}, started ${d.started}); this hourly watch is skipped`); return; }
+  }
+  if (!dry) releaseLock = acquire(process.cwd(), "watch");
   const igOn = !!creds(env);
   if (!igOn) info("Instagram Graph: off (set INSTAGRAM_TOKEN and INSTAGRAM_BUSINESS_ID; see docs/INSTAGRAM-SETUP.md)");
 
@@ -183,4 +194,4 @@ async function main() {
   info(`wrote site/data/brands.json (${brandData.brands.length} accounts)`);
 }
 
-main().catch((e) => { console.error("watch crashed:", e); process.exit(1); });
+main().finally(() => { if (releaseLock) releaseLock(); }).catch((e) => { console.error("watch crashed:", e); process.exit(1); });

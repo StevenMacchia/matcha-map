@@ -1,10 +1,12 @@
 // npm run daily: the once-a-day run (docs/DAILY-RUN.md). The Windows task "Matcha Map daily" starts it at 13:00 local time.
 // Steps, in order, each its own child process (one crash never stops the run; a failed step is recorded and the next still runs):
-//   pull (tools/sync-checkout.js: a fast-forward to origin/main that first unions or discards what the watch task left dirty), discover, watch, ingest, yelp-leads (once a UTC day), overture (if the adapter exists), deepen (new shops only),
+//   pull (tools/sync-checkout.js: a fast-forward to origin/main that first unions or discards what the watch task or a stranded run left dirty), discover, watch, ingest, yelp-leads (once a UTC day), overture (if the adapter exists), deepen (new shops only),
 //   pages (only when yelp-leads, overture or deepen changed the data), seo-gate (the nine SEO rules, tools/seo-gate.js), smoke,
-//   report (docs/DAILY.md + one LADDER.md line), commit, push, deploy (live smoke after it), notify (a GitHub issue when something failed or nothing new arrived).
+//   report (docs/DAILY.md + one LADDER.md line), commit (after a resync when origin/main moved during the run: pages, gate, smoke and report again),
+//   push, deploy (live smoke after it), notify (a GitHub issue when something failed or nothing new arrived; gh's own login, else the token git holds).
 // Commit, push and deploy need the smoke and the SEO gate to have passed. No step may call a model: every child gets MATCHA_NO_MODEL=1 and no
 // CLAUDE_API_KEY or ANTHROPIC_API_KEY (childEnv below; ingest/lib/env.js and ingest/lib/llm.js honour the flag even with a .env file).
+// The run holds .cache/daily.lock (ingest/lib/runlock.js) so the hourly watch task skips while it runs, and waits for a running watch first.
 // Flags: --dry (everything except commit, push, deploy and the issue; prints what it would do) | --steps a,b,c (only those steps).
 import fs from "node:fs";
 import path from "node:path";
@@ -12,6 +14,7 @@ import crypto from "node:crypto";
 import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { yelpDue, stampYelp, todayUTC } from "./lib/day-gate.js";
+import { acquire, waitFor } from "./lib/runlock.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GH = "C:\\Program Files\\GitHub CLI\\gh.exe";
@@ -33,7 +36,7 @@ const SCRIPTS = {
   social: ["tools/social/outbox.js"], // npm run social; writes tools/brand/outbox/<date>/ and site/social/<date>/
 };
 // Explicit paths only, each only if it exists. Never `git add -A`.
-export const COMMIT_PATHS = ["data/events.json", "data/review", "data/geocache.json", "data/watchlist.json", "data/hashtags.json", "data/tavily-budget.json", "data/shops.json", "data/shops-extra.json", "data/sources.json", "data/pages.json", "site/data", "site/art", "site/img", "site/feeds", "site/e", "site/city", "site/state", "site/brand", "site/weekend", "site/og", "site/sitemap.xml", "site/robots.txt", "site/_redirects", "site/social", "data/pages-lastmod.json", "data/seo-state.json", "docs/DAILY.md", "LADDER.md"];
+export const COMMIT_PATHS = ["data/events.json", "data/review", "data/geocache.json", "data/watchlist.json", "data/hashtags.json", "data/tavily-budget.json", "data/shops.json", "data/shops-extra.json", "data/sources.json", "data/pages.json", "site/data", "site/art", "site/img", "site/feeds", "site/e", "site/city", "site/state", "site/brand", "site/weekend", "site/og", "site/sitemap.xml", "site/robots.txt", "site/_redirects", "site/social", "tools/brand/outbox", "data/pages-lastmod.json", "data/seo-state.json", "docs/DAILY.md", "LADDER.md"];
 // site/sitemap-1.xml, sitemap-2.xml... exist only once the sitemap passes 45,000 URLs; they are staged by name when present.
 export const sitemapParts = (root = ROOT) => (fs.existsSync(path.join(root, "site")) ? fs.readdirSync(path.join(root, "site")).filter((n) => /^sitemap-\d+\.xml$/.test(n)).map((n) => `site/${n}`) : []);
 // The generators ingest/run.js runs after the data is written, in its order (plus the slim first-paint file `npm run pages` writes).
@@ -43,11 +46,12 @@ for (const [f, fn] of [["tools/gen-pages.js", "run"], ["tools/slim-events.js", "
   const m = await u(f); await m[fn](); console.log("ok " + f);
 }`;
 
-// The environment every child gets: no model keys, the no-model flag, a default Chrome.
+// The environment every child gets: no model keys, the no-model flag, the daily-child mark (ingest/lib/runlock.js), a default Chrome.
 export function childEnv(env = process.env) {
   const out = { ...env };
   for (const k of MODEL_KEYS) delete out[k];
   out.MATCHA_NO_MODEL = "1";
+  out.MATCHA_DAILY_CHILD = "1";
   if (!out.CHROME_PATH) out.CHROME_PATH = CHROME_DEFAULT;
   return out;
 }
@@ -154,12 +158,12 @@ export function collect(root, today) {
 }
 
 // ---- processes ---------------------------------------------------------------------------------------------------------------------------
-function runProc({ cmd = process.execPath, args = [], shell = false, cwd = ROOT }) {
+function runProc({ cmd = process.execPath, args = [], shell = false, cwd = ROOT, env = childEnv() }) {
   return new Promise((resolve) => {
     const t0 = Date.now();
     let out = "";
     let child;
-    try { child = spawn(cmd, args, { cwd, env: childEnv(), stdio: ["ignore", "pipe", "pipe"], shell }); }
+    try { child = spawn(cmd, args, { cwd, env, stdio: ["ignore", "pipe", "pipe"], shell }); }
     catch (e) { return resolve({ ok: false, code: -1, secs: 0, note: e.message, out: "" }); }
     const take = (d) => { out = (out + d).slice(-200000); };
     child.stdout.on("data", take);
@@ -173,6 +177,24 @@ function runProc({ cmd = process.execPath, args = [], shell = false, cwd = ROOT 
 }
 const node = (args) => runProc({ args });
 const git = (args) => runProc({ cmd: "git", args });
+const firstLines = (s, n) => String(s || "").trim().split(/\r?\n/).filter(Boolean).slice(0, n).join(" | ").slice(0, 200);
+
+// The token git's credential helper holds for github.com (git credential fill, never prompting), or null. Handed to gh as GH_TOKEN in memory
+// when gh cannot read its own login (the notify step); never logged, never written anywhere.
+export const parseCredential = (text) => { const m = /^password=(.+)$/m.exec(String(text || "")); return m ? m[1].trim() || null : null; };
+function gitToken() {
+  return new Promise((resolve) => {
+    let out = "";
+    let child;
+    try { child = spawn("git", ["credential", "fill"], { cwd: ROOT, env: { ...childEnv(), GIT_TERMINAL_PROMPT: "0", GCM_INTERACTIVE: "never" }, stdio: ["pipe", "pipe", "ignore"] }); }
+    catch { return resolve(null); }
+    child.stdout.on("data", (d) => { out += d; });
+    child.on("error", () => resolve(null));
+    child.on("close", () => resolve(parseCredential(out)));
+    child.stdin.on("error", () => {});
+    child.stdin.end("protocol=https\nhost=github.com\n\n");
+  });
+}
 
 function dataHash() {
   const h = crypto.createHash("sha1");
@@ -199,6 +221,11 @@ async function main() {
   const started = new Date();
   const today = todayUTC(started.getTime());
   const say = (m) => console.log(`[${new Date().toISOString().replace("T", " ").slice(0, 19)}] ${m}`);
+  // One run at a time in this checkout (ingest/lib/runlock.js): wait for a running hourly watch, then hold the daily lock so the watch task skips.
+  const busy = await waitFor(ROOT, "watch", { log: (m) => say(`lock: ${m}`) });
+  if (busy) say(`lock: the watch run is still going after 5 minutes (pid ${busy.pid}); going on`);
+  const release = args.dry ? () => {} : acquire(ROOT, "daily");
+
   const steps = [];
   const rec = (name, status, secs, note = "") => { steps.push({ name, status, secs, note }); say(`${name} ${status}${secs != null ? ` ${secs}s` : ""}${note ? ` (${note})` : ""}`); };
   const fromRun = (name, r) => rec(name, r.ok ? "ok" : "FAILED", r.secs, r.note);
@@ -206,8 +233,42 @@ async function main() {
   const snapshot = () => { if (!state.before) state.before = dataHash(); };
   const build = () => ({ date: today, etLabel: fmtET(new Date()), utcLabel: fmtUTC(new Date()), totalSecs: Math.round((Date.now() - started.getTime()) / 1000), steps: [...steps], ...collect(ROOT, today) });
   const writeDaily = (d) => { fs.mkdirSync(path.join(ROOT, "docs"), { recursive: true }); fs.writeFileSync(path.join(ROOT, "docs/DAILY.md"), renderReport(d)); };
+  // The LADDER line of this run; written again (replacing the first) when the report step runs a second time after a resync.
+  let ladderWritten = null;
+  const writeLadder = (line) => {
+    const f = path.join(ROOT, "LADDER.md");
+    let t = fs.existsSync(f) ? fs.readFileSync(f, "utf8") : "";
+    if (ladderWritten && t.trimEnd().endsWith(ladderWritten)) t = t.trimEnd().slice(0, -ladderWritten.length).trimEnd() + (t.includes("\r\n") ? "\r\n" : "\n");
+    fs.writeFileSync(f, appendLadder(t, line));
+    ladderWritten = line;
+  };
+
+  // The steps a resync runs again (see commit): pages, seo-gate, smoke, report.
+  const pagesStep = async (force = false) => {
+    if (!force && state.before && state.before === dataHash()) { rec("pages", "skipped", null, "steps 5 to 7 changed no data"); return; }
+    fromRun("pages", await node(["--input-type=module", "-e", PAGES_SCRIPT]));
+  };
+  const gateStep = async () => {
+    // --dry prints and writes no state; the daily run never passes --baseline (a person records the first set)
+    const r = await node(args.dry ? [...SCRIPTS["seo-gate"], "--dry"] : SCRIPTS["seo-gate"]);
+    state.gateOk = r.ok;
+    const lines = r.out.split(/\r?\n/).filter(Boolean);
+    for (const l of lines) say(`  ${l}`);
+    const fail = lines.filter((l) => /^rule \d+ .*: FAIL/.test(l)).map((l) => l.slice(0, 160));
+    rec("seo-gate", r.ok ? "ok" : "FAILED", r.secs, r.ok ? lines.find((l) => l.startsWith("seo gate:")) || "" : fail.join("; ") || r.note);
+  };
+  const smokeStep = async () => { const r = await node(SCRIPTS.smoke); state.smokeOk = r.ok; fromRun("smoke", r); };
+  const reportStep = () => {
+    const d = build();
+    writeDaily(d);
+    const line = ladderLine(d);
+    if (args.dry) say(`dry: would append to LADDER.md under "## Daily runs": ${line}`);
+    else writeLadder(line);
+    rec("report", "ok", null, "docs/DAILY.md");
+  };
   say(`daily run${args.dry ? " (dry)" : ""}: ${args.steps ? args.steps.join(",") : "all steps"}`);
 
+  try {
   for (const name of STEP_NAMES) {
     if (!want(name)) continue;
     if (["yelp-leads", "overture", "deepen"].includes(name)) snapshot();
@@ -225,43 +286,37 @@ async function main() {
         if (fs.existsSync(path.join(ROOT, "ingest/overture.js"))) fromRun(name, await node(["ingest/overture.js", "--incremental"]));
         else rec(name, "off", null, "no adapter yet");
         break;
-      case "pages": {
-        const changed = !state.before || state.before !== dataHash();
-        if (!changed) { rec(name, "skipped", null, "steps 5 to 7 changed no data"); break; }
-        fromRun(name, await node(["--input-type=module", "-e", PAGES_SCRIPT]));
-        break;
-      }
-      case "seo-gate": {
-        // --dry prints and writes no state; the daily run never passes --baseline (a person records the first set)
-        const r = await node(args.dry ? [...SCRIPTS["seo-gate"], "--dry"] : SCRIPTS["seo-gate"]);
-        state.gateOk = r.ok;
-        const lines = r.out.split(/\r?\n/).filter(Boolean);
-        for (const l of lines) say(`  ${l}`);
-        const fail = lines.filter((l) => /^rule \d+ .*: FAIL/.test(l)).map((l) => l.slice(0, 160));
-        rec(name, r.ok ? "ok" : "FAILED", r.secs, r.ok ? lines.find((l) => l.startsWith("seo gate:")) || "" : fail.join("; ") || r.note);
-        break;
-      }
+      case "pages": await pagesStep(); break;
+      case "seo-gate": await gateStep(); break;
       case "social": {
         // soft: a failure is recorded as "social FAILED (soft)" and never stops the run, the commit, the push or the deploy
         const r = await node(SCRIPTS.social);
         rec(name, r.ok ? "ok" : "FAILED (soft)", r.secs, r.ok ? "" : `social FAILED (soft): ${r.note}`);
         break;
       }
-      case "smoke": { const r = await node(SCRIPTS.smoke); state.smokeOk = r.ok; fromRun(name, r); break; }
-      case "report": {
-        const d = build();
-        writeDaily(d);
-        const line = ladderLine(d);
-        if (args.dry) say(`dry: would append to LADDER.md under "## Daily runs": ${line}`);
-        else { const f = path.join(ROOT, "LADDER.md"); fs.writeFileSync(f, appendLadder(fs.existsSync(f) ? fs.readFileSync(f, "utf8") : "", line)); }
-        rec(name, "ok", null, "docs/DAILY.md");
-        break;
-      }
+      case "smoke": await smokeStep(); break;
+      case "report": reportStep(); break;
       case "commit": {
         if (!state.smokeOk || !state.gateOk) { rec(name, "skipped", null, !state.smokeOk ? "smoke did not pass" : "seo gate did not pass"); break; }
-        const d = collect(ROOT, today);
-        const msg = `daily: ${today} ${d.events.total} events, ${d.events.upcoming} upcoming, ${d.newTotal} new`;
-        if (args.dry) { rec(name, "skipped", null, `dry: would commit "${msg}"`); break; }
+        const msgOf = () => { const d = collect(ROOT, today); return `daily: ${today} ${d.events.total} events, ${d.events.upcoming} upcoming, ${d.newTotal} new`; };
+        if (args.dry) { rec(name, "skipped", null, `dry: would fetch, resync if origin/main moved, then commit "${msgOf()}"`); break; }
+        // origin/main may have moved during the run (another lane landing while the steps ran, 2026-11-24). Bring it in before committing,
+        // the way the pull step does (tools/sync-checkout.js: the run's dirty state files unioned, its generated pages discarded), then
+        // rebuild the pages and run the gate, the smoke and the report again on the result; the push then fast-forwards instead of merging.
+        const f = await git(["fetch", "origin"]);
+        if (f.ok && !(await git(["merge-base", "--is-ancestor", "origin/main", "HEAD"])).ok) {
+          const s = await node(["tools/sync-checkout.js"]);
+          const last = firstLines(s.out.trim().split(/\r?\n/).filter(Boolean).pop(), 1);
+          if (!s.ok) { rec(name, "FAILED", s.secs, `origin/main moved during the run and the resync stopped: ${last}`); break; }
+          say(`origin/main moved during the run (${last}); pages, gate, smoke and report run again on the result`);
+          state.gateOk = state.smokeOk = false;
+          await pagesStep(true);
+          await gateStep();
+          if (state.gateOk) await smokeStep();
+          reportStep();
+          if (!state.smokeOk || !state.gateOk) { rec(name, "skipped", null, !state.gateOk ? "seo gate did not pass after the resync" : "smoke did not pass after the resync"); break; }
+        }
+        const msg = msgOf();
         const paths = [...COMMIT_PATHS, ...sitemapParts()].filter((p) => fs.existsSync(path.join(ROOT, p)));
         const add = await git(["add", "--", ...paths]);
         if (!add.ok) { fromRun(name, add); break; }
@@ -277,8 +332,9 @@ async function main() {
         if (!f.ok) { fromRun(name, f); break; }
         const anc = await git(["merge-base", "--is-ancestor", "origin/main", "HEAD"]);
         if (!anc.ok) {
+          // the small window after the commit's resync; a conflict is aborted here and tomorrow's pull dissolves this run's commit and unions it
           const m = await git([...IDENTITY, "merge", "--no-edit", "origin/main"]);
-          if (!m.ok) { await git(["merge", "--abort"]); rec(name, "FAILED", m.secs, `merge with origin/main failed, aborted: ${m.note}`); break; }
+          if (!m.ok) { await git(["merge", "--abort"]); rec(name, "FAILED", m.secs, `merge with origin/main failed, aborted (the next pull unions this run's commit): ${m.note}`); break; }
         }
         const p = await git(["push", "origin", "HEAD:main"]);
         state.pushOk = p.ok;
@@ -299,20 +355,32 @@ async function main() {
         if (!needsIssue(d)) { rec(name, "skipped", null, "nothing to report"); break; }
         const title = issueTitle(d);
         if (args.dry) { rec(name, "skipped", null, `dry: would open or comment on issue "${title}"`); break; }
-        const ghRun = (a) => runProc({ cmd: fs.existsSync(GH) ? GH : "gh", args: a });
+        const ghRun = (a, env) => runProc({ cmd: fs.existsSync(GH) ? GH : "gh", args: a, env });
         const body = path.join(ROOT, "docs/DAILY.md");
         try {
-          await ghRun(["label", "create", "daily-run", "--color", "0E8A16", "--description", "Matcha Map daily run needs a look", "--force"]);
-          const l = await ghRun(["issue", "list", "--label", "daily-run", "--state", "open", "--search", today, "--json", "number,title"]);
+          // gh keeps its login in the Windows credential store. When this process cannot read it (exit 4, "please run gh auth login": the
+          // scheduled task on 2026-11-24, though gh is logged in at the prompt), the token git's own credential helper holds for github.com is
+          // handed to gh as GH_TOKEN for this process only; nothing is written anywhere. The probe's first lines go to the log for the record.
+          let env;
+          const probe = await ghRun(["auth", "status"]);
+          if (!probe.ok) {
+            say(`  gh auth status: exit ${probe.code}: ${firstLines(probe.out, 2)}`);
+            const tok = await gitToken();
+            if (tok) { env = { ...childEnv(), GH_TOKEN: tok }; say("  gh: using the token git's credential helper holds for github.com, as GH_TOKEN for this process only"); }
+            else say(`  gh: git credential fill holds no token for github.com either (user ${process.env.USERNAME || "?"}, APPDATA ${process.env.APPDATA ? "set" : "unset"}, session ${process.env.SESSIONNAME || "?"})`);
+          }
+          await ghRun(["label", "create", "daily-run", "--color", "0E8A16", "--description", "Matcha Map daily run needs a look", "--force"], env);
+          const l = await ghRun(["issue", "list", "--label", "daily-run", "--state", "open", "--search", today, "--json", "number,title"], env);
           let existing = null;
           try { existing = JSON.parse(l.out).find((i) => i.title.includes(`Daily run ${today}`)); } catch { /* none */ }
-          const r = existing ? await ghRun(["issue", "comment", String(existing.number), "--body-file", body]) : await ghRun(["issue", "create", "--title", title, "--label", "daily-run", "--body-file", body]);
+          const r = existing ? await ghRun(["issue", "comment", String(existing.number), "--body-file", body], env) : await ghRun(["issue", "create", "--title", title, "--label", "daily-run", "--body-file", body], env);
           rec(name, r.ok ? "ok" : "skipped", null, r.ok ? (existing ? `commented on #${existing.number}` : "issue opened") : `gh failed: ${r.note}`);
         } catch (e) { rec(name, "skipped", null, `gh unavailable: ${e.message}`); }
         break;
       }
     }
   }
+  } finally { release(); }
   const failed = steps.filter((s) => s.status === "FAILED").map((s) => s.name);
   say(`done in ${fmtDur(Math.round((Date.now() - started.getTime()) / 1000))}${failed.length ? `; FAILED: ${failed.join(", ")}` : ""}`);
   process.exit(failed.length ? 1 : 0);

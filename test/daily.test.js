@@ -5,7 +5,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { STEP_NAMES, YELP_ARGS, COMMIT_PATHS, childEnv, summarize, renderReport, headline, issueTitle, needsIssue, ladderLine, appendLadder, parseArgs, fmtDur, socialSummary } from "../ingest/daily.js";
+import { STEP_NAMES, YELP_ARGS, COMMIT_PATHS, childEnv, summarize, renderReport, headline, issueTitle, needsIssue, ladderLine, appendLadder, parseArgs, fmtDur, socialSummary, parseCredential } from "../ingest/daily.js";
 import { newRows } from "../ingest/shops-deepen.js";
 import { yelpDue, stampYelp } from "../ingest/lib/day-gate.js";
 import { loadEnv, parseEnv } from "../ingest/lib/env.js";
@@ -207,4 +207,13 @@ test("social: a soft step after the gate; its failure never blocks commit, push 
     assert.match(renderReport(D({ social: s })), /- Social outbox: tools\/brand\/outbox\/2026-11-23 \(3 items\)/);
     assert.match(ladderLine(D({ social: s })), /social outbox tools\/brand\/outbox\/2026-11-23 \(3 items\)/);
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
+});
+
+
+test("daily: the social outbox is committed, children carry the daily-child mark, parseCredential reads git's answer", () => {
+  assert.ok(COMMIT_PATHS.includes("tools/brand/outbox"), "the social step's outbox and history.json are committed by the run");
+  assert.equal(childEnv({}).MATCHA_DAILY_CHILD, "1");
+  assert.equal(parseCredential("protocol=https\nhost=github.com\nusername=x\npassword=tok_123\n"), "tok_123");
+  assert.equal(parseCredential("protocol=https\nhost=github.com\n"), null);
+  assert.equal(parseCredential(""), null);
 });
