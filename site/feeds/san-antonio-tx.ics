@@ -7,9 +7,42 @@ X-WR-CALNAME:Matcha Map: San Antonio\, TX
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
+UID:d669184556d4@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T180010Z
+DTSTART:20261125T160000Z
+DTEND:20261125T180000Z
+SUMMARY:Panda Fest at Hemisfair Park
+LOCATION:San Antonio\, TX
+DESCRIPTION:Panda Fest is at Hemisfair Park through November 25. CommonWeal
+ th Coffeehouse Hemisfair serves its PANDA BAE special during the festival:
+  an iced white mocha latte or matcha topped with ube cold foam.\nMenu: lat
+ te\, ube cold foam\nDetails not confirmed yet. Check the brand's post befo
+ re you go.\nMore: https://matchamap.app/e/d669184556d4/
+URL:https://matchamap.app/e/d669184556d4/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
+UID:ce8ad978c1f6@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181706Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Satxfoodie matcha pop-up at The RIM. See
+LOCATION:The RIM. See\, 18303 Rim Drive\, San Antonio\, TX
+DESCRIPTION:Appreciate everyone for coming out to our pop-up this past week
+ end!\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/ce8ad97
+ 8c1f6/
+URL:https://matchamap.app/e/ce8ad978c1f6/
+GEO:29.615484;-98.602039
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+BEGIN:VEVENT
 UID:703f38ec7253@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261124T033045Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
 DTSTART:20261201T170000Z
 DTEND:20261201T190000Z
 SUMMARY:MoonchildLand: Family & Friends
@@ -24,8 +57,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:e42e6bf48a5a@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261124T033045Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
 DTSTART:20261202T170000Z
 DTEND:20261202T190000Z
 SUMMARY:MoonchildLand: Bring Your Moon Pup
@@ -40,8 +73,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:b036de5da0fa@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261124T033045Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
 DTSTART:20261204T000000Z
 DTEND:20261204T020000Z
 SUMMARY:MoonchildLand: Creator Day
@@ -56,8 +89,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:93c43f078e7b@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261124T033045Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
 DTSTART:20261204T230000Z
 DTEND:20261205T010000Z
 SUMMARY:MoonchildLand: First Friday
@@ -73,8 +106,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:0d8fccb23e2e@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261124T033045Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
 DTSTART:20261205T170000Z
 DTEND:20261205T190000Z
 SUMMARY:MoonchildLand: Local Love
@@ -88,8 +121,8 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:0e4806dcbc24@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261124T033045Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
 DTSTART:20261206T170000Z
 DTEND:20261206T190000Z
 SUMMARY:MoonchildLand Grand Opening
@@ -103,55 +136,52 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:288ec37d2e7d@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261123T185809Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T180010Z
 DTSTART:20261219T150000Z
 DTEND:20261219T170000Z
 SUMMARY:Mats & Matcha
-LOCATION:The Creamery District\, San Antonio\, TX
+LOCATION:San Antonio\, TX
 DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
  The Creamery District. The class is $15\, and the ticket includes matcha. 
  It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
  t. Check the brand's post before you go.\nMore: https://matchamap.app/e/28
  8ec37d2e7d/
 URL:https://matchamap.app/e/288ec37d2e7d/
-GEO:29.446649;-98.481341
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:e0ce95bc349a@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261123T183318Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T180010Z
 DTSTART:20270116T150000Z
 DTEND:20270116T170000Z
 SUMMARY:Mats & Matcha
-LOCATION:The Creamery District\, San Antonio\, TX
+LOCATION:San Antonio\, TX
 DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
  The Creamery District. The class is $15\, and the ticket includes matcha. 
  It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
  t. Check the brand's post before you go.\nMore: https://matchamap.app/e/e0
  ce95bc349a/
 URL:https://matchamap.app/e/e0ce95bc349a/
-GEO:29.446649;-98.481341
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:ddb3d76440a3@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261123T183318Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T180010Z
 DTSTART:20270220T150000Z
 DTEND:20270220T170000Z
 SUMMARY:Mats & Matcha
-LOCATION:The Creamery District\, San Antonio\, TX
+LOCATION:San Antonio\, TX
 DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
  The Creamery District. The class is $15\, and the ticket includes matcha. 
  It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
  t. Check the brand's post before you go.\nMore: https://matchamap.app/e/dd
  b3d76440a3/
 URL:https://matchamap.app/e/ddb3d76440a3/
-GEO:29.446649;-98.481341
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

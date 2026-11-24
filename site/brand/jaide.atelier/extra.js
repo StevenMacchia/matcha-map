@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"jaide.atelier","upcoming":[],"drinks":[],"price":null,"story":"Check out my Link in Bio page to learn more."});
+mmBrandExtra({"v":1,"brand":"jaide.atelier","upcoming":[],"drinks":[],"price":null,"story":"For her taste. Her expression. Her world. Style, hospitality + experiences Atlanta | Charlotte"});

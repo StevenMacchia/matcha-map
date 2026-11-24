@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bella Cucina pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c49ef320b364@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Muracha Matcha Pop-Up | Saturday\, December 12th\, 2026
+LOCATION:Bella Cucina\, 288 Buckhead Avenue\, Atlanta\, GA
+DESCRIPTION:Take a break from holiday hustle with Muracha and Bella Cucina.
+  Sip on matcha from the bar and shop Muracha products and tools.\nLikely\,
+  not fully confirmed.\nMore: https://matchamap.app/e/c49ef320b364/
+URL:https://matchamap.app/e/c49ef320b364/
+GEO:33.838296;-84.378420
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

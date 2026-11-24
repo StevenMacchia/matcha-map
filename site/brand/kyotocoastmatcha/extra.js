@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"kyotocoastmatcha","upcoming":[],"drinks":[{"slug":"pumpkin","name":"Pumpkin","art":"/art/drinks/pumpkin.svg"},{"slug":"cookie","name":"Cookie","art":"/art/drinks/cookie.svg"}],"price":null,"story":""});
+mmBrandExtra({"v":1,"brand":"kyotocoastmatcha","upcoming":[],"drinks":[{"slug":"pumpkin","name":"Pumpkin","art":"/art/drinks/pumpkin.svg"},{"slug":"cookie","name":"Cookie","art":"/art/drinks/cookie.svg"}],"price":null,"story":"📍 Little Italy • 2360 India St Mon–Sun 9AM–3PM 📍 Ocean Beach • 5013 Newport Ave Mon-Sun 9AM–3PM 📦 Wholesale Available"});

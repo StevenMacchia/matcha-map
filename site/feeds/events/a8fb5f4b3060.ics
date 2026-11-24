@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Howdy Y'all Coffee pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a8fb5f4b3060@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
+DTSTART:20270105T180000Z
+DTEND:20270106T000000Z
+SUMMARY:Howdy Y'all Coffee at the Seattle Central Library
+LOCATION:Seattle Central Library\, 1000 4th Ave\, Seattle\, WA 98104\, Seat
+ tle\, WA
+DESCRIPTION:A matcha and hojicha counter inside the downtown library\, with
+  new corn and melon matcha this fall.\nMenu: corn matcha\, melon matcha\, 
+ cream top matcha latte\, hojicha\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap.app/e/a8fb5f4b3060/
+URL:https://matchamap.app/e/a8fb5f4b3060/
+GEO:47.606714;-122.332698
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

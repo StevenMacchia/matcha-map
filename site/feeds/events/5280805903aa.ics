@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Sen Tea and Coffee House pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5280805903aa@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T011621Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:The Sen Tea and Coffee House pop-up
+LOCATION:Denver\, CO
+DESCRIPTION:Both The Sen locations — DTC & Highland — will close early 
+ at 4:00 PM on Thanksgiving Day\, November 26\, to allow our team to spend 
+ time with their loved ones.\nDetails not confirmed yet. Check the brand's 
+ post before you go.\nMore: https://matchamap.app/e/5280805903aa/
+URL:https://matchamap.app/e/5280805903aa/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -9,5 +9,17 @@
     "shops": [
       "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160"
     ]
+  },
+  "2026-11-25": {
+    "brands": [
+      "gatodates",
+      "heyneighborhtxcoffeematcha",
+      "laboracafe",
+      "mellobunbakery",
+      "thespiceteaexchangeofportjefferson"
+    ],
+    "shops": [
+      "brand:web-labora-ca-san-diego-8055-clairemont-mesa-blvd-4e7494"
+    ]
   }
 }

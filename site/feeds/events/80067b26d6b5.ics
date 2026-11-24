@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:80067b26d6b5@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261124T033045Z
-DTSTART:20261213T163000Z
-DTEND:20261213T183000Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
 SUMMARY:RISE & SHINE | YOGA & MATCHA
 LOCATION:Inspire Yoga & Wellness Studio\, 1100 Nerge Rd\, Elk Grove Village
  \, IL
 DESCRIPTION:Kickstart your morning with some chill yoga flows and a refresh
- ing matcha boost to keep you glowing all day.\nPrice: $39.19\nLikely\, not
-  fully confirmed.\nMore: https://matchamap.app/e/80067b26d6b5/
+ ing matcha boost to keep you glowing all day.\nLikely\, not fully confirme
+ d.\nMore: https://matchamap.app/e/80067b26d6b5/
 URL:https://matchamap.app/e/80067b26d6b5/
 GEO:41.994894;-88.028788
 STATUS:CONFIRMED

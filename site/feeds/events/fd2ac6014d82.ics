@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Wynwood pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:fd2ac6014d82@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181706Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Wynwood matcha pop-up
+LOCATION:Miami\, FL
+DESCRIPTION:i can’t wait to try every flavor of matcha ever at matchafest
+ !! mark ur calendars for december 12 at wynwood marketplace\nDetails not c
+ onfirmed yet. Check the brand's post before you go.\nMore: https://matcham
+ ap.app/e/fd2ac6014d82/
+URL:https://matchamap.app/e/fd2ac6014d82/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

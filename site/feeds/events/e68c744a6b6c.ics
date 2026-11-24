@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Market Studios pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:e68c744a6b6c@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181706Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Market Studios matcha pop-up
+LOCATION:San Diego\, CA
+DESCRIPTION:Your favorite market is baaaaack\nDetails not confirmed yet. Ch
+ eck the brand's post before you go.\nMore: https://matchamap.app/e/e68c744
+ a6b6c/
+URL:https://matchamap.app/e/e68c744a6b6c/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

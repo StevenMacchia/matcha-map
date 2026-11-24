@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"cookbookcourtyard","upcoming":[],"drinks":[{"slug":"latte","name":"Latte","art":"/art/drinks/latte.svg"}],"price":null,"story":""});
+mmBrandExtra({"v":1,"brand":"cookbookcourtyard","upcoming":[{"id":"d923ebef8623","day":"Tuesday, Nov 24","time":"All day","place":"Washington, DC","url":"/e/d923ebef8623/","map":"/?event=d923ebef8623"}],"drinks":[{"slug":"latte","name":"Latte","art":"/art/drinks/latte.svg"}],"price":null,"story":"📍D.C. area markets & events 🧺 Visit @shoptinybasket at @unionmarketdc 💌"});

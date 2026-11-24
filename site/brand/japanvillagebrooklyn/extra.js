@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"japanvillagebrooklyn","upcoming":[],"drinks":[{"slug":"matcha-latte-iced","name":"iced matcha latte","art":null}],"price":null,"story":""});
+mmBrandExtra({"v":1,"brand":"japanvillagebrooklyn","upcoming":[],"drinks":[{"slug":"matcha-latte-iced","name":"iced matcha latte","art":null}],"price":null,"story":"Take a trip to Tokyo without the jet lag🇯🇵 📍934 Third Ave, Brooklyn, NY 11232"});

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Satxfoodie pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:ce8ad978c1f6@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181706Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Satxfoodie matcha pop-up at The RIM. See
+LOCATION:The RIM. See\, 18303 Rim Drive\, San Antonio\, TX
+DESCRIPTION:Appreciate everyone for coming out to our pop-up this past week
+ end!\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/ce8ad97
+ 8c1f6/
+URL:https://matchamap.app/e/ce8ad978c1f6/
+GEO:29.615484;-98.602039
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

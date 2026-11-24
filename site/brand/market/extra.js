@@ -1,1 +1,1 @@
-mmBrandExtra(null);
+mmBrandExtra({"v":1,"brand":"market","upcoming":[{"id":"e68c744a6b6c","day":"Sunday, Dec 6","time":"All day","place":"San Diego, CA","url":"/e/e68c744a6b6c/","map":"/?event=e68c744a6b6c"}],"drinks":[],"price":null,"story":"Chinatown Market is a Los Angeles-based streetwear brand known for graphic apparel, unexpected collaborations and a playful approach to design. Explore new arri"});

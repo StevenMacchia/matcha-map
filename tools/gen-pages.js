@@ -576,7 +576,7 @@ function statePage(st, rows, x) {
 <h1>Matcha pop-ups in ${esc(name)}</h1>
 <p class="pg-lead">${esc(lead)}</p>
 <p class="pg-sub" data-boiler>Updated ${UPDATED}. <a href="/state/">All states</a></p>
-<p>${esc(stateAbout(name, rows, { U, S, withUps, withShops, rest }))}</p>
+<p>${esc(stateAbout(name, rows, { U, S, withUps, withShops, rest, shopNames: x.shopNames || [] }))}</p>
 `;
   if (withUps.length) body += `<section><h2>Cities with upcoming pop-ups</h2>\n<ul class="pg-chips">\n${withUps.map((r) => `<li>${link(r)} <span class="pg-dim">${r.ups.length} · next ${esc(shortDayOf(r.ups[0].e, r.c.tz))}</span></li>`).join("\n")}\n</ul></section>\n`;
   if (withShops.length) body += `<section><h2>Cities with matcha shops</h2>\n<ul class="pg-chips">\n${withShops.map((r) => `<li>${link(r)} <span class="pg-dim">${r.shops}</span></li>`).join("\n")}\n</ul></section>\n`;
@@ -587,8 +587,8 @@ function statePage(st, rows, x) {
 }
 
 const cityWord = (n) => `${n} ${n === 1 ? "city" : "cities"}`;
-// The state hub's own summary, built from its rows: how many cities, where the pop-ups and shops are, the next pop-up.
-function stateAbout(name, rows, { U, S, withUps, withShops, rest }) {
+// The state hub's own summary, built from its rows: how many cities, where the pop-ups and shops are (named when there are three or fewer), the next pop-up.
+function stateAbout(name, rows, { U, S, withUps, withShops, rest, shopNames = [] }) {
   const top = (list, n) => andList(list.slice(0, 3).map((r) => `${r.c.name} (${n(r)})`));
   const out = [`${name} has ${cityWord(rows.length)} with a page on Matcha Map.`];
   if (U) {
@@ -597,6 +597,7 @@ function stateAbout(name, rows, { U, S, withUps, withShops, rest }) {
   } else out.push(`No upcoming matcha pop-up is listed in ${name} yet.`);
   if (S) out.push(`${plural(S, "verified matcha shop")} ${S === 1 ? "is" : "are"} listed in ${name}${withShops.length ? `, found near ${cityWord(withShops.length)} including ${top(withShops, (r) => r.shops)}` : ""}.`);
   else out.push(`No verified matcha shop is listed in ${name} yet.`);
+  if (S && shopNames.length) out.push(`${S === 1 ? "That shop is" : "They are"} ${andList(shopNames)}.`);
   if (rest.length) out.push(`The other ${cityWord(rest.length)} have nothing listed yet, and each page says how far the nearest pop-up is.`);
   const big = [...rows].sort((a, b) => b.c.pop - a.c.pop || a.c.name.localeCompare(b.c.name)).filter((r) => r.c.pop > 0).slice(0, 3);
   if (big.length) out.push(`The largest cities listed are ${andList(big.map((r) => `${r.c.name} (${r.c.pop.toLocaleString("en-US")} people)`))}.`);
@@ -822,7 +823,8 @@ export function buildSite(d) {
   for (const [st, rows] of [...stateRows].sort(byName)) {
     const U = rows.reduce((n, r) => n + r.ups.length, 0), S = shopsByState.get(st) || 0;
     const indexable = stateIndexable({ ups: U, shops: S, cities: rows.length });
-    const pg = statePage(st, rows, { shopCount: S, indexable, lastDay: newestDay(rows.flatMap((r) => r.ups.map((x) => x.e)), lastmod) });
+    const shopNames = S && S <= 3 ? shops.filter((s) => s.state === st).map((s) => (s.city ? `${s.name} in ${s.city}` : s.name)) : [];
+    const pg = statePage(st, rows, { shopCount: S, shopNames, indexable, lastDay: newestDay(rows.flatMap((r) => r.ups.map((x) => x.e)), lastmod) });
     const s = stamp("state/" + st.toLowerCase(), pg.html, pg.lastDay);
     files.set(stateHref(st) + "index.html", s.html);
     if (indexable) urls.push({ loc: `${SITE_URL}/${stateHref(st)}`, lastmod: s.lm });

@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CommonWealth Coffeehouse pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:d669184556d4@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T180010Z
+DTSTART:20261125T160000Z
+DTEND:20261125T180000Z
+SUMMARY:Panda Fest at Hemisfair Park
+LOCATION:San Antonio\, TX
+DESCRIPTION:Panda Fest is at Hemisfair Park through November 25. CommonWeal
+ th Coffeehouse Hemisfair serves its PANDA BAE special during the festival:
+  an iced white mocha latte or matcha topped with ube cold foam.\nMenu: lat
+ te\, ube cold foam\nDetails not confirmed yet. Check the brand's post befo
+ re you go.\nMore: https://matchamap.app/e/d669184556d4/
+URL:https://matchamap.app/e/d669184556d4/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

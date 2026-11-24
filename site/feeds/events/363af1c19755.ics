@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matchaintulsa pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:363af1c19755@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181706Z
+DTSTART:20261130T153000Z
+DTEND:20261130T200000Z
+SUMMARY:Matchaintulsa matcha pop-up at Prism Caf
+LOCATION:Prism Caf\, 217 W. Latimer St\, Tulsa\, OK
+DESCRIPTION:Celebrate the perfect pairing of matcha and beautiful cupcake c
+ reations inspired by floral arrangements. Join Jo Matcha and Sweet Bloom B
+ ouqCakes for a special Matcha Monday pop-up at Prism Café.\nMenu: cupcake
+ \nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/363af1c1975
+ 5/
+URL:https://matchamap.app/e/363af1c19755/
+GEO:36.168925;-95.998338
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

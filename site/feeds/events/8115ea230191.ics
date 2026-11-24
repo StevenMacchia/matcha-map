@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Houston Coffee pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:8115ea230191@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181706Z
+DTSTART:20261129T140000Z
+DTEND:20261129T220000Z
+SUMMARY:Houston Coffee matcha pop-up
+LOCATION:Houston\, TX
+DESCRIPTION:RUN DON’T WALK! This is your last chance to enjoy our fall me
+ nu this week and weekend!\nMenu: latte\, pumpkin\nDetails not confirmed ye
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/81
+ 15ea230191/
+URL:https://matchamap.app/e/8115ea230191/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

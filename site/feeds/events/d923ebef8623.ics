@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cookbook Courtyard | DC Events & Food Community pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:d923ebef8623@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T021621Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Cookbook Courtyard | DC Events & Food Community pop-up
+LOCATION:Washington\, DC
+DESCRIPTION:AND WOW! What a beautiful day in Georgetown for soup\, good com
+ pany and delicious matcha from dimatchai!\nDetails not confirmed yet. Chec
+ k the brand's post before you go.\nMore: https://matchamap.app/e/d923ebef8
+ 623/
+URL:https://matchamap.app/e/d923ebef8623/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

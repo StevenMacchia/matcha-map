@@ -1,1 +1,1 @@
-mmBrandExtra(null);
+mmBrandExtra({"v":1,"brand":"oohmamimatcha","upcoming":[],"drinks":[],"price":null,"story":"Pour into You Founder-led Matcha Brand Farm Direct from Uji Japan to ATL Pop Ups + Partnerships"});

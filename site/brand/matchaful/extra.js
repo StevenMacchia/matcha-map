@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"matchaful","upcoming":[],"drinks":[{"slug":"chocolate","name":"Chocolate","art":"/art/drinks/chocolate.svg"}],"price":null,"story":"Shop single-origin, organically-grown ceremonial matcha from Shizuoka, Japan — ground to order, pesticide-free, and third-party tested."});
+mmBrandExtra({"v":1,"brand":"matchaful","upcoming":[],"drinks":[{"slug":"chocolate","name":"Chocolate","art":"/art/drinks/chocolate.svg"}],"price":null,"story":"Farm-to-whisk matcha · Ritual Bar Classes & Menu ⤵️"});

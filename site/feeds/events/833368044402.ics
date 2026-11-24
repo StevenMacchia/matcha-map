@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:833368044402@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261124T033045Z
-DTSTART:20261128T200000Z
-DTEND:20261128T213000Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181943Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
 SUMMARY:Matcha Workshop
 LOCATION:Lansing\, MI
 DESCRIPTION:Learn how to create an authentic matcha the traditional way wit
  h bamboo whisk and ceramic bowl which you get to keep. Also includes snack
- s.\nPrice: $65.87\nDetails not confirmed yet. Check the brand's post befor
- e you go.\nMore: https://matchamap.app/e/833368044402/
+ s.\nDetails not confirmed yet. Check the brand's post before you go.\nMore
+ : https://matchamap.app/e/833368044402/
 URL:https://matchamap.app/e/833368044402/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

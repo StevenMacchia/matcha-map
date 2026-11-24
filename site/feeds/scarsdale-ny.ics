@@ -8,17 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:04fba76a064e@matchamap-cu7.pages.dev
-DTSTAMP:20261124T033045Z
-LAST-MODIFIED:20261123T183318Z
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T180010Z
 DTSTART:20261129T170000Z
 DTEND:20261129T190000Z
 SUMMARY:Moss & Matcha
-LOCATION:STILLROOM\, Irvington\, NY
+LOCATION:Irvington\, NY
 DESCRIPTION:A little moss\, a little matcha\, and something green to bring 
  home.\nPrice: $75\nDetails not confirmed yet. Check the brand's post befor
  e you go.\nMore: https://matchamap.app/e/04fba76a064e/
 URL:https://matchamap.app/e/04fba76a064e/
-GEO:41.044527;-73.862630
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

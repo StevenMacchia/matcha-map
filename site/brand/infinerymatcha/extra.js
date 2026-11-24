@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"infinerymatcha","upcoming":[],"drinks":[],"price":null,"story":"Thank you for considering Infinery Matcha for your future event! If you have any questions please contact us via the methods below: Instagram: @infinerymatcha v"});
+mmBrandExtra({"v":1,"brand":"infinerymatcha","upcoming":[],"drinks":[],"price":null,"story":"✨ Matcha that brings joy and love to all ✨ Owner: @raqisdmvdiary 🥰 VA and MD (DMV based)📍 12/05: @novanitemarket ❄️"});

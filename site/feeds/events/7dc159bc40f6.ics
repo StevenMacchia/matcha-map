@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Brewphoria pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:7dc159bc40f6@matchamap-cu7.pages.dev
+DTSTAMP:20261124T191621Z
+LAST-MODIFIED:20261124T181706Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Brewphoria matcha pop-up
+LOCATION:Houston\, TX
+DESCRIPTION:as a little thank-you to our TMC besties\, greet our team with 
+ “Happy Friendsgiving!” to receive a FREE surprise while supplies last!
+  Only on Thirsty Tuesday 11/24 from 630am-Midnight!\nMenu: southern maple 
+ pecan latte\, cheery cherry cheesecake matcha\, texas turtle pecan latte\n
+ Details not confirmed yet. Check the brand's post before you go.\nMore: ht
+ tps://matchamap.app/e/7dc159bc40f6/
+URL:https://matchamap.app/e/7dc159bc40f6/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR
