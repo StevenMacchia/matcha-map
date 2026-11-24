@@ -1,0 +1,6607 @@
+{
+ "generated": "2026-11-24T00:27:27.845Z",
+ "group": "overture-core",
+ "release": "2026-11-18.0",
+ "shops": [
+  {
+   "name": "Premium Matcha Cafe Maiko",
+   "address": "2310 Kuhio Ave",
+   "city": "Honolulu",
+   "state": "HI",
+   "zip": "96815-2950",
+   "website": "https://www.matchacafe-maiko.com/eng/",
+   "instagram": null,
+   "phone": "+18083698031",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com/eng/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "70779fee-291a-41f9-acee-9e19e9e0d083",
+   "lat": 21.279372,
+   "lng": -157.825783,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1565621077074724"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "75e816f4-cbfd-460e-ae2e-c6b834f049a4"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Love",
+   "address": "2330 Kalakaua Ave",
+   "city": "Honolulu",
+   "state": "HI",
+   "zip": "96815",
+   "website": "https://www.matchalove.com",
+   "instagram": null,
+   "phone": "+18086640563",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchalove.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "2c23c75f-bc73-47f4-9772-09e961ac864d",
+   "lat": 21.278563,
+   "lng": -157.826691,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "5968785c1acf1133aefe48a5"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "023e59c2-bca2-48e9-9857-7b8b6a413bdd"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Daily Whisk Matcha",
+   "address": "1114 11th Ave",
+   "city": "Honolulu",
+   "state": "HI",
+   "zip": "96816",
+   "website": "https://dailywhiskmatcha.com/",
+   "instagram": null,
+   "phone": "+18084903436",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://dailywhiskmatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "8036d66e-1a93-44a3-8f70-eb2c526bb840",
+   "lat": 21.282266,
+   "lng": -157.800812,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "113170377815956"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "19cd4a6e-381f-47a4-b327-c1e1f85c4ddb"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Maui Matcha",
+   "address": "2435 Kaanapali Pkwy  Ste G5",
+   "city": "Lahaina",
+   "state": "HI",
+   "zip": "96761-1916",
+   "website": "http://www.maui-matcha.com",
+   "instagram": null,
+   "phone": "+18087272744",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.maui-matcha.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "9c7fb871-e625-4916-8dcf-a192e708a5e6",
+   "lat": 20.921893,
+   "lng": -156.693527,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "99170607"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d0a7e169-9245-4a9a-8ec9-0722541249e4"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha-Ya",
+   "address": "4-1400 Kuhio Hwy",
+   "city": "Kapa'a",
+   "state": "HI",
+   "zip": "96746",
+   "website": "https://matcha-ya.com/",
+   "instagram": null,
+   "phone": "+18086524063",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://matcha-ya.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "bfc3c2cc-3673-4f70-babe-a47aafc41de3",
+   "lat": 22.076443,
+   "lng": -159.317444,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1043047235849945"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4765b8af-4397-4989-9844-91e857f65e8b"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Premium Matcha",
+   "address": "4301 McPherson Rd Ste 105",
+   "city": "Laredo",
+   "state": "TX",
+   "zip": "78041",
+   "website": null,
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "46cb3c42-77d0-4021-992a-faea9a87c973",
+   "lat": 27.53545,
+   "lng": -99.483932,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1125880073938773"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Sip Matcha",
+   "address": "4113 S Sugar Rd",
+   "city": "Edinburg",
+   "state": "TX",
+   "zip": "78539",
+   "website": null,
+   "instagram": null,
+   "phone": "+19568880898",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "b6777b90-014c-4c0a-9107-e0a095b6cdf8",
+   "lat": 26.265259,
+   "lng": -98.184853,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "713025831893723"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "89f06a88-0489-4c86-8131-cf068f62e5da"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Yōko Matcha",
+   "address": "2211 NW 2nd Ave",
+   "city": "Miami",
+   "state": "FL",
+   "zip": "33127-4828",
+   "website": null,
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "33395cd3-cb28-4c19-a8c7-a282c284183d",
+   "lat": 25.798168,
+   "lng": -80.198872,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "88028011"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4cc515f9-aaea-4446-8168-6cb3bdae8668"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Dreamer Miami Açai Juice Matcha Paraiso",
+   "address": "480 NE 31st St",
+   "city": "Miami",
+   "state": "FL",
+   "zip": "33137",
+   "website": "http://dreamermiami.com",
+   "instagram": null,
+   "phone": "+13059893841",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://dreamermiami.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "79383ed0-b067-4df5-8971-62b2e12bb07a",
+   "lat": 25.806608,
+   "lng": -80.187241,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "645be849b441a536cbccab7c"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "36381acd-5cab-4c95-ac4b-00fc87abd390"
+    }
+   ],
+   "notes": "From Overture Maps places (smoothie_juice_bar); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Alma Matcha",
+   "address": "701 NW Fifth Ave",
+   "city": "Fort Lauderdale",
+   "state": "FL",
+   "zip": "33311",
+   "website": "https://www.almamatcha.com",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.almamatcha.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "40db2240-0785-4418-bfac-3435fe5f5814",
+   "lat": 26.132036,
+   "lng": -80.149113,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "68e27cf46627d025b4da42ca"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Holy Matcha",
+   "address": "201 Park Blvd Ste 105",
+   "city": "San Diego",
+   "state": "CA",
+   "zip": "92101",
+   "website": "http://www.holymatchasd.com",
+   "instagram": "holymatchaa",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.holymatchasd.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "a7ff8c26-72ff-48ad-a66d-fb0e26606e40",
+   "lat": 32.707624,
+   "lng": -117.154274,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "5c7d89ead69ed0002cdfc68a"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "602c85f8-e11e-477e-9df6-84706ea05d74"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Holy Matcha",
+   "address": "3118 University Ave",
+   "city": "San Diego",
+   "state": "CA",
+   "zip": "92104",
+   "website": "http://www.holymatchasd.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.holymatchasd.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "4cdf56e1-9cdc-4957-bbb0-0fd5dc44be32",
+   "lat": 32.748621,
+   "lng": -117.127167,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "722581871241018"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "44882634-20db-4809-b659-b7c9ec150f59"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "12 Hours Matcha Cafe",
+   "address": "212 Broadway Ste 1",
+   "city": "Chula Vista",
+   "state": "CA",
+   "zip": "91910",
+   "website": "https://12hrsmatchacafe.square.site",
+   "instagram": "12hrsmatchacafe",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://12hrsmatchacafe.square.site",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "da3a2346-a186-47b3-9314-57b1b64eb44c",
+   "lat": 32.640779,
+   "lng": -117.093735,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "67faf2c47420c95c8434072b"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a80a8f26-a5bf-4ef4-b1f3-a715f0506586"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "8072 Clairemont Mesa Blvd",
+   "city": "San Diego",
+   "state": "CA",
+   "zip": "92111",
+   "website": "http://www.matchasd.com/",
+   "instagram": null,
+   "phone": "+18582623970",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchasd.com/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "bc391503-2ac9-4808-8676-4067c0794ae1",
+   "lat": 32.833464,
+   "lng": -117.149239,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "2783063975054273"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "25dd8fa3-dbe7-4348-a9c5-7ce2bfb205c5"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Cafe Maiko - Escondido",
+   "address": "1024 W Valley Pkwy",
+   "city": "Escondido",
+   "state": "CA",
+   "zip": "92025",
+   "website": "https://www.matchasd.com",
+   "instagram": null,
+   "phone": "+17605466409",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchasd.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "6df5f999-fe0d-4778-b202-fa273837f1e5",
+   "lat": 33.11775,
+   "lng": -117.096901,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "108870858188138"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a2bca5dc-7d6f-447e-818e-461985e54b32"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Premium Matcha Cafe Maiko",
+   "address": "7115 Blanco Rd",
+   "city": "San Antonio",
+   "state": "TX",
+   "zip": "78216-5045",
+   "website": "https://www.matchacafe-maiko.com/eng/",
+   "instagram": null,
+   "phone": "+12102671020",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com/eng/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "3d348435-1545-412a-8db1-760348a3e9c4",
+   "lat": 29.522587,
+   "lng": -98.506569,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "102025008059935"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "0f89a2a5-53d6-4b8b-803f-ec54bcc623a1"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Minimo Coffee & Matcha",
+   "address": "508 West Ave",
+   "city": "Austin",
+   "state": "TX",
+   "zip": "78701",
+   "website": null,
+   "instagram": null,
+   "phone": "+15123662377",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "82155f68-adfd-44f0-9e6a-c416e1f9fbd1",
+   "lat": 30.270069,
+   "lng": -97.751137,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "896271050233653"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5d49b06b-9a11-475b-bcd5-a64cf0a3d9c3"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Kissa Matcha",
+   "address": "2625 W Pioneer Pkwy #210",
+   "city": "Grand Prairie",
+   "state": "TX",
+   "zip": "75051",
+   "website": null,
+   "instagram": null,
+   "phone": "+19729755091",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "b9b1bcce-ed76-4e70-86b6-31a1cab11099",
+   "lat": 32.709696,
+   "lng": -97.04615,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "197026984399551"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "811b96e8-747b-42c3-9c30-0d589fb09979"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Tifa Chocolate and Gelato (Matcha & Coffee)",
+   "address": "1300 Red River Dr Ste 100",
+   "city": "Euless",
+   "state": "TX",
+   "zip": "76039",
+   "website": "https://tifachocolateandgelato.com/location-detail/euless-tx/",
+   "instagram": null,
+   "phone": "+14697998941",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://tifachocolateandgelato.com/location-detail/euless-tx/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "bcfd9c4b-04a1-458e-9bc1-4a5e6bedaf7e",
+   "lat": 32.875746,
+   "lng": -97.103157,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "373254729214632"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "26c30e54-5a32-4a5d-a1b9-28582ce671c6"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Chasen Matcha Bar",
+   "address": "416 N Tyler St",
+   "city": "Dallas",
+   "state": "TX",
+   "zip": "75208",
+   "website": "http://chasenmatchabar.com",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://chasenmatchabar.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "92a9fdf2-9109-4859-9368-c10f6a9697f9",
+   "lat": 32.748697,
+   "lng": -96.837448,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "66a579f3f4593431ae30d3ad"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "3eadea2f-d363-44c8-91d4-2f7999cf2b96"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha & Creme",
+   "address": "10455 N Central Expy",
+   "city": "Dallas",
+   "state": "TX",
+   "zip": "75230",
+   "website": "http://matchaandcreme.com/",
+   "instagram": null,
+   "phone": "+16823086436",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchaandcreme.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "30a430d7-84b8-4286-9293-45541c18b9c9",
+   "lat": 32.887838,
+   "lng": -96.771683,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "994873050376569"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1ae28498-105a-4e66-87b8-3b761b33d4f2"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Tea Top Carrollton - Matcha, Coffee & Milk Tea",
+   "address": "4070 State Hwy 121",
+   "city": "Carrollton",
+   "state": "TX",
+   "zip": "75010",
+   "website": null,
+   "instagram": null,
+   "phone": "+14692890420",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "3aeef373-7873-4885-82f5-32cb63579788",
+   "lat": 33.01972,
+   "lng": -96.932938,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "508235839051106"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "12c8ec8d-e487-42c7-948d-4f3679eabeb9"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Premium Matcha Cafe Maiko",
+   "address": "9244 Prestmont Pl #207",
+   "city": "Frisco",
+   "state": "TX",
+   "zip": "75035",
+   "website": "https://www.matchacafe-maiko.com/eng/",
+   "instagram": null,
+   "phone": "+19722927890",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com/eng/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "628dae54-e51a-41a6-bf96-0cd5f71e309e",
+   "lat": 33.111788,
+   "lng": -96.802803,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "609220208934319"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "0bb631bd-c8af-4a33-8b08-3a54949fe710"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Cha Cha Matcha (VENICE)",
+   "address": "1401 Abbot Kinney Blvd",
+   "city": "Venice",
+   "state": "CA",
+   "zip": "90291",
+   "website": "http://chachamatcha.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://chachamatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "a1b8757e-6e88-406c-9ddf-ae231d409bf3",
+   "lat": 33.990728,
+   "lng": -118.465805,
+   "overture_sources": [
+    {
+     "dataset": "Microsoft",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "562949966242993"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "eb5b9680-58c4-4abc-a5be-834d2c5dd631"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha DNA",
+   "address": "2554 Lincoln Blvd",
+   "city": "Venice",
+   "state": "CA",
+   "zip": "90291",
+   "website": null,
+   "instagram": null,
+   "phone": "+13108538996",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "07ec9950-b699-4296-bfb2-60187a45c240",
+   "lat": 33.991047,
+   "lng": -118.448097,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "433905140420964"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5137eb9c-7a0f-4c18-8656-5ec3942cfc5d"
+    }
+   ],
+   "notes": "From Overture Maps places (health_food_store); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Chitchat Coffee and Matcha",
+   "address": "1854 Sawtelle Blvd",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90025",
+   "website": "https://www.chitchatla.com/",
+   "instagram": null,
+   "phone": "+13108209191",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.chitchatla.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "d1628e5d-0301-4726-903c-e9594e20c81b",
+   "lat": 34.042688,
+   "lng": -118.444984,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "705177879874144"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "244e449f-2f28-4c05-b705-b4a8b871b9e6"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Luna Matcha",
+   "address": "2003 Sawtelle Blvd",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90025",
+   "website": "https://lunamatcha.com/",
+   "instagram": null,
+   "phone": "+13104732035",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://lunamatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "31a1b28d-ceca-4dc2-8c82-51f3f9b14fcd",
+   "lat": 34.04071,
+   "lng": -118.443619,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "188419621010642"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7a5861c5-459e-4b39-94ca-17f7eff81494"
+    }
+   ],
+   "notes": "From Overture Maps places (specialty_foods_store); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Village",
+   "address": "2202 Sawtelle Blvd",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90064",
+   "website": "https://order.mealkeyway.com/merchant/4f436e565731303037617578796b42524664584e41673d3d/main",
+   "instagram": null,
+   "phone": "+13232759988",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://order.mealkeyway.com/merchant/4f436e565731303037617578796b42524664584e41673d3d/main",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "20d25858-263e-4be9-b532-e02d04a53ea7",
+   "lat": 34.037987,
+   "lng": -118.441078,
+   "overture_sources": [
+    {
+     "dataset": "Microsoft",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1407374889058079"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f6b2d618-0ede-4f81-8e4f-ec248a09fc6f"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cha",
+   "address": "11301 W Olympic Blvd",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90064-1615",
+   "website": "http://www.matcha-cha.com/",
+   "instagram": null,
+   "phone": "+14242938550",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matcha-cha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "9b238017-f494-46f1-8170-7386cd6f3b16",
+   "lat": 34.038221,
+   "lng": -118.441666,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "188445365269605"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5c16d295-ac33-44a8-b1c4-c9cf573acdab"
+    }
+   ],
+   "notes": "From Overture Maps places (ice_cream_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Midori Matcha Cafe",
+   "address": "123 Astronaut Ellison S Onizuka St #101-C",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90012",
+   "website": "http://www.midorimatchatea.com",
+   "instagram": null,
+   "phone": "+12136283440",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.midorimatchatea.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "69b220de-6b02-4a0d-ac58-cc6968eae064",
+   "lat": 34.049971,
+   "lng": -118.242035,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1875561072497406"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "95c3c524-0e50-4fcf-ab56-97727bb0b406"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Tea Master Matcha Cafe And Green Tea Shop",
+   "address": "450 E 2nd St",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90012-4209",
+   "website": "https://www.teamastermatcha.com",
+   "instagram": null,
+   "phone": "+12136801006",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.teamastermatcha.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "6cf3be59-b3cd-4dd5-be34-26b6298f75e4",
+   "lat": 34.046991,
+   "lng": -118.238495,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "82051114"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b81cad54-36d2-4d35-8d90-a4b648beb205"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "AOI Matcha",
+   "address": "16651 Gothard St",
+   "city": "Huntington Beach",
+   "state": "CA",
+   "zip": "92647-4482",
+   "website": "http://www.aoimatcha.com/",
+   "instagram": null,
+   "phone": "+17148412716",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.aoimatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "dcdb1386-a17a-4ce1-9fad-10c5fbe49b40",
+   "lat": 33.720999,
+   "lng": -118.000175,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "200584453316901"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a0382e00-4dc9-4a4e-a192-c7118da45902"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Sumochacha.Matchasupplier",
+   "address": "7771 Westminster Blvd",
+   "city": "Westminster",
+   "state": "CA",
+   "zip": "92683-4025",
+   "website": "https://www.youtube.com/@sumochacha7771",
+   "instagram": null,
+   "phone": "+18087849491",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.youtube.com/@sumochacha7771",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "b161b379-17b5-4c6e-907e-147189d04bab",
+   "lat": 33.759611,
+   "lng": -117.993454,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "791665150699923"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ],
+   "notes": "From Overture Maps places (food_and_beverage_store); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "17086 Magnolia St",
+   "city": "Fountain Valley",
+   "state": "CA",
+   "zip": "92708",
+   "website": "http://www.matchacafemaikofv.com",
+   "instagram": null,
+   "phone": "+17147072225",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchacafemaikofv.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "2e9d0e6a-4d48-48fa-86b2-b1caa04390a5",
+   "lat": 33.714437,
+   "lng": -117.970474,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "5d6b28d58b45db0007bd3f0a"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "96ddd83a-034b-4927-a2b4-1ee6db951905"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "9738 Garden Grove Blvd",
+   "city": "Garden Grove",
+   "state": "CA",
+   "zip": "92844",
+   "website": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=ca&target=ca-garden-grove",
+   "instagram": null,
+   "phone": "+17145915282",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=ca&target=ca-garden-grove",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "fa38247e-329f-4bcd-8124-2addf3a64f62",
+   "lat": 33.773262,
+   "lng": -117.962646,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "5d0eda10395231002394a77b"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "40cf83c3-6069-49d7-aa60-97779449dea6"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Junbi Matcha & Tea - Garden Grove",
+   "address": "12932 8th St",
+   "city": "Garden Grove",
+   "state": "CA",
+   "zip": "92840",
+   "website": null,
+   "instagram": null,
+   "phone": "+17143676081",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "4889d225-7f0c-41eb-87a7-c5fe42855042",
+   "lat": 33.774887,
+   "lng": -117.933105,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "810151075512536"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7adf1764-9a58-415e-a293-5db712d880b7"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Meccha Matcha",
+   "address": "11816 Artesia Blvd",
+   "city": "Artesia",
+   "state": "CA",
+   "zip": "90701",
+   "website": "http://www.mecchamatcha.com/",
+   "instagram": null,
+   "phone": "+15622029450",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.mecchamatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "e3a698f7-8e47-4ed7-be4e-b7a6fe0a16bb",
+   "lat": 33.872732,
+   "lng": -118.081619,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "276377753201419"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "aa648cb8-49bd-4807-b247-6a14254a70dd"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "18180 Colima Rd",
+   "city": "Rowland Heights",
+   "state": "CA",
+   "zip": "91748",
+   "website": "http://www.matchacafe-maiko.com",
+   "instagram": null,
+   "phone": "+16267644888",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchacafe-maiko.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "c6a0fc19-20dd-4777-bb88-efcf4d724f8e",
+   "lat": 33.987349,
+   "lng": -117.907608,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "439124760191926"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d888ac12-8b06-429b-b386-5829beb2262b"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Sip Matcha",
+   "address": "18558 Gale Ave",
+   "city": "Rowland Heights",
+   "state": "CA",
+   "zip": "91748-1392",
+   "website": "http://www.wearesip.com",
+   "instagram": null,
+   "phone": "+14242535850",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.wearesip.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "b384f0aa-1ace-457f-a9de-641e9cf8941c",
+   "lat": 33.994883,
+   "lng": -117.899529,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1389066347860872"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "bdbf9152-27e7-43f3-acd7-da30435990d8"
+    }
+   ],
+   "notes": "From Overture Maps places (restaurant); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Boba",
+   "address": "245 N Moorpark Rd",
+   "city": "Thousand Oaks",
+   "state": "CA",
+   "zip": "91360",
+   "website": "https://thousandoaksbubbleteashop.com/",
+   "instagram": null,
+   "phone": "+18055386074",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://thousandoaksbubbleteashop.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "add0fd12-2d0f-4da1-a771-928eb981777a",
+   "lat": 34.182928,
+   "lng": -118.878815,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "237467851569855"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c03a8d59-ed46-48f5-874e-dd06f1d213f1"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Junbi Matcha & Tea - Westwood",
+   "address": "10967 Weyburn Ave",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90024-2811",
+   "website": "https://junbishop.com",
+   "instagram": null,
+   "phone": "+14242535850",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://junbishop.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "8ea884fe-5fcf-449a-aee7-cfe2488368d8",
+   "lat": 34.062426,
+   "lng": -118.447601,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "88789952"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "348090ae-2860-4b48-b0de-e9726e5be21a"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "CafÃ© Matcha",
+   "address": "12070 Ventura Blvd",
+   "city": "Studio City",
+   "state": "CA",
+   "zip": "91604",
+   "website": "http://cafe-matcha.com/",
+   "instagram": null,
+   "phone": "+18183086952",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://cafe-matcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "1833e3e0-d5c6-44ea-8d0f-751f8b3f68e7",
+   "lat": 34.143435,
+   "lng": -118.394997,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "812434658619408"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b0460dfb-1b6c-4309-82b8-788eddf479c2"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Cha Cha Matcha",
+   "address": "510 N Robertson Blvd",
+   "city": "West Hollywood",
+   "state": "CA",
+   "zip": "90048",
+   "website": "https://chachamatcha.com",
+   "instagram": null,
+   "phone": "+18559242242",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://chachamatcha.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "84b4dc01-146d-4652-9a67-7a93c3e700bc",
+   "lat": 34.080187,
+   "lng": -118.384987,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "301916400450742"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "95beec7e-348c-4a0d-be70-3f519985fca2"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Ultimatcha",
+   "address": "3463 State St",
+   "city": "Santa Barbara",
+   "state": "CA",
+   "zip": "93105",
+   "website": "http://jovialgoods.com/",
+   "instagram": null,
+   "phone": "+18555684254",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://jovialgoods.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "03159315-0900-448d-8d44-5b0298fc25ac",
+   "lat": 34.439871,
+   "lng": -119.738335,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "289994294191159"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "257e4a1f-d930-4d0f-87f0-f8ae4fe99750"
+    }
+   ],
+   "notes": "From Overture Maps places (health_food_store); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Humanist Coffee + Matcha + Toast",
+   "address": "7353 Melrose Ave",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90046",
+   "website": null,
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "7f392553-54aa-4b6d-aac0-b609247d6611",
+   "lat": 34.083817,
+   "lng": -118.350143,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "253935887813180"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1069bb20-4a15-4c30-9106-fc5f33699e63"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "MatchaBar Silverlake",
+   "address": "3534 W Sunset Blvd",
+   "city": "Los Angeles",
+   "state": "CA",
+   "zip": "90026-2106",
+   "website": "http://matchabarnyc.com/",
+   "instagram": null,
+   "phone": "+13235226810",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchabarnyc.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "5bbbb546-f9db-41a0-bf7c-2a08e5a64bb4",
+   "lat": 34.089258,
+   "lng": -118.276886,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1811141375816680"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "9bd4fe68-8525-4cb4-be98-b15712abbb40"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "United Matcha - Arcadia",
+   "address": "400 S Baldwin Ave",
+   "city": "Arcadia",
+   "state": "CA",
+   "zip": "91007",
+   "website": null,
+   "instagram": null,
+   "phone": "+16266883879",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "fcc18764-14ca-493d-a6da-467c8a91dbfd",
+   "lat": 34.134817,
+   "lng": -118.052132,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1714439045471174"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha",
+   "address": "27931 La Paz Rd Ste D",
+   "city": "Laguna Niguel",
+   "state": "CA",
+   "zip": "92677",
+   "website": "https://www.matchashoppe.com",
+   "instagram": null,
+   "phone": "+19495690097",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchashoppe.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "8c5475ad-8046-4202-8017-e0111f0767db",
+   "lat": 33.556108,
+   "lng": -117.710236,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "648389482259b42bfe32d86d"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Grove",
+   "address": "81 S McQueen Rd",
+   "city": "Gilbert",
+   "state": "AZ",
+   "zip": "85233",
+   "website": "https://www.matchagrove.com/",
+   "instagram": null,
+   "phone": "+14808263013",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchagrove.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "3107b249-2cef-4e70-9047-f0ab5b89a3f5",
+   "lat": 33.348349,
+   "lng": -111.823578,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "105604404978884"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "55176879-3928-4e16-a43e-aad7b2da94f5"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Magic - NOW OPEN!",
+   "address": "922 E Apache Blvd Ste 105",
+   "city": "Tempe",
+   "state": "AZ",
+   "zip": "85281",
+   "website": null,
+   "instagram": null,
+   "phone": "+14803464300",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "2cfe0fdc-8bc4-4635-94d9-3494a16899e0",
+   "lat": 33.414927,
+   "lng": -111.924835,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1007131052492063"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b658a738-87e1-463a-8b1f-33491befa63e"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "REN Matcha&Mochi",
+   "address": "665 Paularino Ave",
+   "city": "Costa Mesa",
+   "state": "CA",
+   "zip": "92626",
+   "website": null,
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "fd903c99-6146-46ac-8a7f-c3df22bc8d9b",
+   "lat": 33.681433,
+   "lng": -117.884026,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "509768485553987"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "6365c720-a2e8-4898-bf7c-6d901a20925b"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Love",
+   "address": "665 Paularino Ave",
+   "city": "Costa Mesa",
+   "state": "CA",
+   "zip": "92626-3033",
+   "website": null,
+   "instagram": null,
+   "phone": "+17149572932",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "ba9842dd-d784-4455-9835-1f7b1f9feefa",
+   "lat": 33.681604,
+   "lng": -117.88414,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "97831815"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "30142278-e0bb-4b9e-a678-697c07f10a24"
+    }
+   ],
+   "notes": "From Overture Maps places (ice_cream_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Coffee Heist Vietnamese Coffee & Matcha Tea at Mainplace",
+   "address": "2800 Main St",
+   "city": "Santa Ana",
+   "state": "CA",
+   "zip": "92705",
+   "website": null,
+   "instagram": null,
+   "phone": "+17146132278",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "d9cef444-74fe-4337-94af-24f339f4ff60",
+   "lat": 33.776377,
+   "lng": -117.869987,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "379576789307078"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5f1a5611-b7c8-4621-a51d-d191b3360959"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "The Greenhouse Matcha",
+   "address": "111 W Transit St",
+   "city": "Ontario",
+   "state": "CA",
+   "zip": "91762",
+   "website": "https://www.thegreenhousematcha.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.thegreenhousematcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "bc1d3824-4751-40b8-8598-5019de24b42a",
+   "lat": 34.062525,
+   "lng": -117.651596,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "834715356398882"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "60d8f9b9-561b-4e45-a399-599a3282d5e6"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Buena Matcha",
+   "address": "73833 El Paseo",
+   "city": "Palm Desert",
+   "state": "CA",
+   "zip": "92260",
+   "website": "http://www.buenamatcha.com/",
+   "instagram": null,
+   "phone": "+14424000901",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.buenamatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "69044f88-2f16-408f-9268-9d796c0f0075",
+   "lat": 33.719469,
+   "lng": -116.376251,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "186541821201884"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f08a5baa-d941-4a23-aa29-ab5cf35a2ef6"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "The Phin Coffee and Matcha",
+   "address": "9889 Bellaire Blvd Ste 228D",
+   "city": "Houston",
+   "state": "TX",
+   "zip": "77036",
+   "website": null,
+   "instagram": null,
+   "phone": "+17136843324",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "dec71d8f-2bab-427e-a4be-fc33d8e51e8b",
+   "lat": 29.703516,
+   "lng": -95.553436,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1137806036075339"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "3655c94e-fc38-4271-a443-5ccde5cafcde"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "6650 Corporate Dr Ste E",
+   "city": "Houston",
+   "state": "TX",
+   "zip": "77036",
+   "website": "http://www.matchacafe-maiko.com",
+   "instagram": null,
+   "phone": "+17139313030",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchacafe-maiko.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "2bad802f-8f73-4e71-ba86-7e7decea276e",
+   "lat": 29.706078,
+   "lng": -95.552338,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "5b50f4c195d986002cb8a09b"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e2cafda7-507b-40bf-818c-1577e56bcd84"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Saigon Arts Matcha Cafe",
+   "address": "6650 Corporate Dr Ste e-1",
+   "city": "Houston",
+   "state": "TX",
+   "zip": "77036",
+   "website": null,
+   "instagram": null,
+   "phone": "+18328310740",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "6b7a52ab-5462-4454-a679-177a900cf53f",
+   "lat": 29.70619,
+   "lng": -95.551926,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100854499296540"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b3b9b05e-7d4a-4db8-b77c-4f00908b3dd3"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Whisk Matcha Bar",
+   "address": "4001 Bellaire Blvd Ste g",
+   "city": "Southside Place",
+   "state": "TX",
+   "zip": "77025",
+   "website": null,
+   "instagram": null,
+   "phone": "+12815010330",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "fef26b2e-f11c-44c0-9fc3-594bf595d660",
+   "lat": 29.705442,
+   "lng": -95.440636,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "973314722542333"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Mia Memorial",
+   "address": "1809 Eldridge Pkwy",
+   "city": "Houston",
+   "state": "TX",
+   "zip": "77077",
+   "website": null,
+   "instagram": null,
+   "phone": "+13462192792",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "38b7377b-dc1c-42c6-90ec-4ded7a8cd475",
+   "lat": 29.748882,
+   "lng": -95.624489,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103321056170831"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "62d4f93d-4c57-48c1-ae6b-6b3d509a43d2"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Mama",
+   "address": "4444 Westheimer Rd",
+   "city": "Houston",
+   "state": "TX",
+   "zip": "77027",
+   "website": "http://matchamama.com",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchamama.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "d41e3ee0-084a-4857-8fac-58d517ad1a2b",
+   "lat": 29.742081,
+   "lng": -95.453392,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "677473b4716e992800568c45"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "0dc5a40d-5b25-47ce-be04-26756fb685b3"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Creamy matcha & Coffee",
+   "address": "2616 Blodgett St",
+   "city": "Houston",
+   "state": "TX",
+   "zip": "77004",
+   "website": "https://g.co/kgs/A1s1szD",
+   "instagram": null,
+   "phone": "+12818279496",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://g.co/kgs/A1s1szD",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "55db5c9a-4135-440e-9c1a-5e7e94c5ac68",
+   "lat": 29.722744,
+   "lng": -95.370453,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103754189011958"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "080cb2bf-0ebc-403c-aa49-9e8f1e14d4a9"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Magic",
+   "address": "2000 Tulane Ave",
+   "city": "New Orleans",
+   "state": "LA",
+   "zip": "70112",
+   "website": "https://www.itsmatchamagic.com/menus/",
+   "instagram": null,
+   "phone": "+15043541426",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.itsmatchamagic.com/menus/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "0b6121da-3133-45df-8bfa-e17b214b8bc1",
+   "lat": 29.957935,
+   "lng": -90.082924,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "704657242734968"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b1c6772e-cce6-41ad-a71d-386ae8722c83"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Evolve Coffee + Matcha",
+   "address": "3304 W Esplanade Ave N Ste B7",
+   "city": "Metairie",
+   "state": "LA",
+   "zip": "70002",
+   "website": "http://www.evolvecoffeenola.com/",
+   "instagram": null,
+   "phone": "+15045829553",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.evolvecoffeenola.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "396d5135-d1d0-4b29-bcf2-d6c8ae6c3d8b",
+   "lat": 30.014635,
+   "lng": -90.1567,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100877961392531"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b599bb2a-8c43-47fc-8493-ab1e5773c0ea"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "639 Mills Ave N",
+   "city": "Orlando",
+   "state": "FL",
+   "zip": "32803-4640",
+   "website": "http://www.cafemaikoorl.com/",
+   "instagram": null,
+   "phone": "+14077309090",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.cafemaikoorl.com/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "f4be9069-f3fa-414d-884a-ff979ae8496d",
+   "lat": 28.552753,
+   "lng": -81.364334,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "107771267592548"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "cccb90c3-ffc0-4799-89f0-a348cd7b74db"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "TAIYO MATCHA",
+   "address": "10095 Beach Blvd",
+   "city": "Jacksonville",
+   "state": "FL",
+   "zip": "32246",
+   "website": "https://taiyomatcha.com/",
+   "instagram": null,
+   "phone": "+19045108925",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://taiyomatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "8c0352b5-7be2-4a57-936f-c611bd5b84cb",
+   "lat": 30.287392,
+   "lng": -81.551495,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "573369735848780"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "2b8c59fa-7846-4e2f-ac2d-6d7a5234bc71"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Z&E cafecito + matcha",
+   "address": "301 Tanger Dr",
+   "city": "Terrell",
+   "state": "TX",
+   "zip": "75160",
+   "website": null,
+   "instagram": null,
+   "phone": "+19729553105",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "cf0de271-3061-407f-b504-a21ddff1c50b",
+   "lat": 32.702833,
+   "lng": -96.282425,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "390109340848558"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1f622fbf-21b6-48bd-a0bb-f4ebb51f70a0"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Junbi Matcha - Richardson",
+   "address": "326 W Campbell Rd",
+   "city": "Richardson",
+   "state": "TX",
+   "zip": "75080",
+   "website": null,
+   "instagram": null,
+   "phone": "+14697797423",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "9607ffb4-76ca-4057-b1a2-e07390fe4fea",
+   "lat": 32.976175,
+   "lng": -96.722618,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103534521841762"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "9e9be9f6-0068-4b16-aa48-fd3279b6b5d4"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "5306 Buford Hwy NE Ste B",
+   "city": "Doraville",
+   "state": "GA",
+   "zip": "30340",
+   "website": "https://www.matchacafeatl.com",
+   "instagram": null,
+   "phone": "+14703593142",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafeatl.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "2cbec54f-3400-4caa-985d-76aec1891d5e",
+   "lat": 33.897299,
+   "lng": -84.281246,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100139228214503"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d5273922-e8cb-42a4-937b-2fdff021dccf"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "2131 Pleasant Hill Rd",
+   "city": "Duluth",
+   "state": "GA",
+   "zip": "30096-2300",
+   "website": "https://www.matchacafeatl.com",
+   "instagram": null,
+   "phone": "+14703596152",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafeatl.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "80807f5f-e046-4c91-93c1-a211ccf6717f",
+   "lat": 33.956678,
+   "lng": -84.134628,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "105230671029735"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c497031c-1115-47eb-a0e1-4499c84c17b2"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "La Matcha Cafe",
+   "address": "1828 El Camino Real Unit 102",
+   "city": "Burlingame",
+   "state": "CA",
+   "zip": "94010",
+   "website": "http://www.lamatchacafe.com/",
+   "instagram": null,
+   "phone": "+16502318060",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.lamatchacafe.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "98b989dd-954f-4eb7-b894-dc76d5ecfce3",
+   "lat": 37.595493,
+   "lng": -122.38382,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "2226534304250535"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4a4bf828-85f7-438b-bca8-e37a5b21d8b4"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Town",
+   "address": "10815 N Wolfe Rd",
+   "city": "Cupertino",
+   "state": "CA",
+   "zip": "95014",
+   "website": null,
+   "instagram": null,
+   "phone": "+16692306173",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "4951b94e-9d18-4751-91a1-8f11c53deb52",
+   "lat": 37.33544,
+   "lng": -122.014664,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "880867415120001"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7cafd3af-2180-461f-a179-832ff4e6b045"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Izumi Matcha",
+   "address": "19740 Stevens Creek Blvd",
+   "city": "Cupertino",
+   "state": "CA",
+   "zip": "95014",
+   "website": "https://izumimatcha.com",
+   "instagram": "izumi.matcha",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://izumimatcha.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "f048ca9a-4113-4d15-b440-ae3adb0b042b",
+   "lat": 37.321873,
+   "lng": -122.017876,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "650dfc9b0835cc2ce80d001c"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a75d496c-429a-4834-a5e9-f685d9e91148"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Amausaan Uji Matcha",
+   "address": "34563 Alvarado Niles Rd",
+   "city": "Union City",
+   "state": "CA",
+   "zip": "94587-4575",
+   "website": "https://www.amausaan.us",
+   "instagram": null,
+   "phone": "+14156910536",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.amausaan.us",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "19cf626d-a668-4467-b601-80587fcf6fec",
+   "lat": 37.586451,
+   "lng": -122.020065,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103742724862281"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "226bddeb-ffbe-4aea-8c68-c0f64e1b5c3a"
+    }
+   ],
+   "notes": "From Overture Maps places (ice_cream_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Amausaan Uji Matcha",
+   "address": "39658 Cedar Blvd",
+   "city": "Newark",
+   "state": "CA",
+   "zip": "94560-5487",
+   "website": "http://www.amausaan.us",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.amausaan.us",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "dff26d1f-32c4-4dcc-bcfe-f13c8501e596",
+   "lat": 37.521795,
+   "lng": -121.997253,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "102424934"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "8e3f2e6a-f38b-4686-9ea9-750e72f24ebc"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "3251 20th Ave",
+   "city": "San Francisco",
+   "state": "CA",
+   "zip": "94132",
+   "website": null,
+   "instagram": null,
+   "phone": "+14156809650",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "2da812d7-01b8-4b76-9731-46e84bfe62e4",
+   "lat": 37.727819,
+   "lng": -122.476715,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "481518856006479"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7759f826-f56c-4171-bd9f-51179b15df6e"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Amausaan Uji Matcha",
+   "address": "103 Serramonte Ctr",
+   "city": "Daly City",
+   "state": "CA",
+   "zip": "94015-2349",
+   "website": "http://www.amausaan.us",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.amausaan.us",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "6482496f-7fc2-41ba-8a29-a42189d27019",
+   "lat": 37.671928,
+   "lng": -122.47036,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "96941986"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a0712135-f891-492e-bf9e-c4c218244aa1"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Stonemill Matcha",
+   "address": "561 Valencia St",
+   "city": "San Francisco",
+   "state": "CA",
+   "zip": "94110",
+   "website": null,
+   "instagram": null,
+   "phone": "+14157963876",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "75656035-bbf8-46a8-a344-9ad4b62c9ad2",
+   "lat": 37.76396,
+   "lng": -122.421707,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "422967084706784"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "16e529b4-4ae7-4d66-9de2-d5bd2203b772"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Brew Cha & Matcha - San Francisco",
+   "address": "3420 18th St",
+   "city": "San Francisco",
+   "state": "CA",
+   "zip": "94110",
+   "website": "https://www.brewchasf.com/",
+   "instagram": null,
+   "phone": "+16288677122",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.brewchasf.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "ab0a3a9c-3976-4491-8698-4f138f03b773",
+   "lat": 37.761969,
+   "lng": -122.419998,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "102517949080498"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "559c1d47-def9-4d1c-a3b0-163cf3fbf5a6"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Kiss of Matcha",
+   "address": "750 Clement St",
+   "city": "San Francisco",
+   "state": "CA",
+   "zip": "94118",
+   "website": "http://www.kissofmatcha.com",
+   "instagram": null,
+   "phone": "+14159729372",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.kissofmatcha.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "1b63c32c-b415-4b70-9a6f-a2b96eeb0333",
+   "lat": 37.782982,
+   "lng": -122.467346,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "62b276fe157ddb5168af5c5e"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "6aafe878-3089-4e3b-aa5a-88e13f7d8cd6"
+    }
+   ],
+   "notes": "From Overture Maps places (ice_cream_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Amausaan Uji Matcha",
+   "address": "354 Clement St",
+   "city": "San Francisco",
+   "state": "CA",
+   "zip": "94118-2316",
+   "website": null,
+   "instagram": null,
+   "phone": "+15106260666",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "a9346bf6-0a41-4f3e-83c2-b1e737823204",
+   "lat": 37.783112,
+   "lng": -122.463142,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "282396482645922"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "9f6b0b4c-4cab-41e0-8a2c-246829c8e17e"
+    }
+   ],
+   "notes": "From Overture Maps places (ice_cream_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "1581 Webster St #175",
+   "city": "San Francisco",
+   "state": "CA",
+   "zip": "94115",
+   "website": "http://www.matchacafe-maiko.com/eng/menu/",
+   "instagram": null,
+   "phone": "+14157570919",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchacafe-maiko.com/eng/menu/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "6880eabb-35e4-4c37-bdd5-3925d28f9e3a",
+   "lat": 37.784992,
+   "lng": -122.431602,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "511220782982939"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1c462af7-a6ec-4f7b-a85f-84a07d14ac72"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "756 Grant Ave",
+   "city": "San Francisco",
+   "state": "CA",
+   "zip": "94108",
+   "website": "https://www.matchacafe-maiko.com",
+   "instagram": null,
+   "phone": "+14156587748",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "37a521a4-f825-4e6c-adfd-134586d060e7",
+   "lat": 37.794212,
+   "lng": -122.40625,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100114754842250"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e8b0229e-e75f-4b16-b020-7829e5add825"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Boba Bay® - Premium Boba Tea & Matcha Cafe",
+   "address": "110 Capitola Ave  Ste 3",
+   "city": "Capitola",
+   "state": "CA",
+   "zip": "95010-3248",
+   "website": "https://bobabay.com",
+   "instagram": null,
+   "phone": "+18312667088",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://bobabay.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "c0b9bcf4-fa27-423a-81af-abd3e6d713b6",
+   "lat": 36.973001,
+   "lng": -121.950844,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "98857389"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d89d7e02-ce54-4546-8af7-74a2c2ee4188"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "matcha LOVE",
+   "address": "675 Saratoga Ave",
+   "city": "San Jose",
+   "state": "CA",
+   "zip": "95129",
+   "website": "http://matchalove.com",
+   "instagram": null,
+   "phone": "+14087779200",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchalove.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "467b98f1-e515-46af-a7f7-237b41a91c82",
+   "lat": 37.314877,
+   "lng": -121.977814,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "53890158498e63a9b044b68c"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a57bb239-1af1-453a-b5b4-c564ce58b1f6"
+    }
+   ],
+   "notes": "From Overture Maps places (ice_cream_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "2855 Stevens Creek Blvd Ste 9254",
+   "city": "Santa Clara",
+   "state": "CA",
+   "zip": "95050-6709",
+   "website": "https://www.matchacafe-maiko.com",
+   "instagram": null,
+   "phone": "+14086889488",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "694a070a-0847-4639-8618-58bc88a1ce9c",
+   "lat": 37.32552,
+   "lng": -121.945656,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "93880843"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "58a6e2fc-c86d-4791-b676-7eb672ec2813"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Izumi Matcha",
+   "address": "3005 Silver Creek Rd Ste 142",
+   "city": "San Jose",
+   "state": "CA",
+   "zip": "95121",
+   "website": null,
+   "instagram": null,
+   "phone": "+18777990790",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "478548cc-8d76-44ce-8c0e-8ae51a9b66ac",
+   "lat": 37.308521,
+   "lng": -121.813858,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "681643302263129"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "6f57d974-9be4-49e3-8048-26c78f4fe449"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Breakaway Matcha",
+   "address": "1218 San Anselmo Ave",
+   "city": "San Anselmo",
+   "state": "CA",
+   "zip": "94960-2228",
+   "website": "http://breakawaymatcha.com/",
+   "instagram": null,
+   "phone": "+14154623313",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://breakawaymatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "d9b5290a-a33c-408e-8340-6a96449678d3",
+   "lat": 37.979502,
+   "lng": -122.572441,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "196322287057653"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "22987b13-49ab-463e-9ec1-704bc89d50fe"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "8 Grams Matcha",
+   "address": "2440 Bancroft Way",
+   "city": "Berkeley",
+   "state": "CA",
+   "zip": "94704",
+   "website": "http://www.8gramsmatcha.com/",
+   "instagram": null,
+   "phone": "+15105022771",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.8gramsmatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "ef8f7396-1922-4d4b-bed4-a7b18b600431",
+   "lat": 37.868311,
+   "lng": -122.260429,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "847449575129421"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "88b20238-81b0-4c41-8472-8779cf6ebe23"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Green Tea",
+   "address": "1601 Corporate Cir",
+   "city": "Petaluma",
+   "state": "CA",
+   "zip": "94954-9991",
+   "website": "https://thinkenergytea.com/",
+   "instagram": null,
+   "phone": "+17074088321",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://thinkenergytea.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "179e116a-6caf-4763-86d7-fcdad4a176d8",
+   "lat": 38.231522,
+   "lng": -122.599403,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "192054021170324"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e8690eae-908c-469e-a337-2d487f4f5726"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "6905 Stockton Blvd",
+   "city": "Sacramento",
+   "state": "CA",
+   "zip": "95823",
+   "website": "http://www.matchacafe-maiko.com",
+   "instagram": null,
+   "phone": "+19165949967",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchacafe-maiko.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "bbc0bdb9-17db-420e-8f6d-8bc98c8352bc",
+   "lat": 38.501541,
+   "lng": -121.431236,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "113445677797420"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "9b93a54e-2807-4440-b7ce-c6caa6dd9502"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Urban Matcha",
+   "address": "3400 S Jones Blvd",
+   "city": "Las Vegas",
+   "state": "NV",
+   "zip": "89146",
+   "website": "http://www.UrbanMatchaStore.com/",
+   "instagram": null,
+   "phone": "+17022471779",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.UrbanMatchaStore.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "80314db0-bee3-40f0-8c00-e8dd20221610",
+   "lat": 36.127989,
+   "lng": -115.224678,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "168861340365643"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c1d4c4f1-d88d-479c-8b08-ff9c36cab49c"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko of Las Vegas",
+   "address": "4545 Spring Mountain Rd Ste 109",
+   "city": "Las Vegas",
+   "state": "NV",
+   "zip": "89102",
+   "website": null,
+   "instagram": null,
+   "phone": "+17026400033",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "1b9f83f9-7470-4bad-8185-c63e49ccadf9",
+   "lat": 36.125576,
+   "lng": -115.202606,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "815356695004255"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d1ede1d0-1a1e-4786-aea7-8bb61cd51d76"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "True Matcha",
+   "address": "4731 Spring Mountain Rd",
+   "city": "Las Vegas",
+   "state": "NV",
+   "zip": "89102-8700",
+   "website": null,
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "79c2b386-588f-4568-a8d3-6b9fb3363351",
+   "lat": 36.124912,
+   "lng": -115.205666,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "660697303801432"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "fd8ce3c7-1885-4032-bd72-14778bde0f90"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Kyoto",
+   "address": "2223 S Highland Dr E5",
+   "city": "Salt Lake City",
+   "state": "UT",
+   "zip": "84106",
+   "website": "http://matchacafekyoto.com/",
+   "instagram": null,
+   "phone": "+18016805990",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchacafekyoto.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "463768db-ad5c-493e-bbac-7da69ad46a0a",
+   "lat": 40.722347,
+   "lng": -111.858131,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "148346715019529"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a09e8f53-072b-4c62-b3c9-6b4bc7b8afa4"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Boba House",
+   "address": "297 E Main St",
+   "city": "Ashland",
+   "state": "OR",
+   "zip": "97520",
+   "website": "http://matchaboba.com/",
+   "instagram": null,
+   "phone": "+15417086600",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchaboba.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "38195b87-ef17-4376-9489-f26b3e1fe01f",
+   "lat": 42.195614,
+   "lng": -122.711327,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100299748779987"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e3b550af-b483-4088-bfca-c15d9f3dc5c0"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Junbi Matcha - Portland",
+   "address": "1280 SE Nehalem St",
+   "city": "Portland",
+   "state": "OR",
+   "zip": "97202-6698",
+   "website": "https://junbishop.com/pages/locations",
+   "instagram": null,
+   "phone": "+15039468900",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://junbishop.com/pages/locations",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "cac12382-dac9-4c40-b8b9-761cbe95e4ac",
+   "lat": 45.465612,
+   "lng": -122.65316,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "213729475160631"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "06d4dfca-2843-4f0b-a9e4-97d8ac3f8d6c"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Premium Matcha Cafe Maiko",
+   "address": "3416 SE Cesar Estrada Chavez Blvd",
+   "city": "Portland",
+   "state": "OR",
+   "zip": "97202",
+   "website": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=or&target=or-portland#store-breakdown",
+   "instagram": null,
+   "phone": "+19712794637",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com/eng/store/index.html?country=usa&region=or&target=or-portland#store-breakdown",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "2167fca9-7615-48a3-9b11-8966f39dea6e",
+   "lat": 45.498159,
+   "lng": -122.6222,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "101708488011542"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7fc69388-c755-4cea-864c-ace288f8aad6"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Mako Matcha Mill",
+   "address": "414 SW 13th Ave",
+   "city": "Portland",
+   "state": "OR",
+   "zip": "97205",
+   "website": null,
+   "instagram": null,
+   "phone": "+12177221091",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "c03c6cac-ad8c-45ee-9dfc-cbd82a744a83",
+   "lat": 45.522572,
+   "lng": -122.683975,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "783090691558322"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d890af5e-f2f8-4e6b-af11-fb3c648f8b46"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "400 Pine St  Ste 324",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98101-1628",
+   "website": null,
+   "instagram": null,
+   "phone": "+12068252023",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "00f0e237-9963-4580-8404-ab960fd608f3",
+   "lat": 47.611984,
+   "lng": -122.337669,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "81178768"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7c0a9177-0d56-48b7-9796-010e6d64e4ba"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Man Ice Cream & Taiyaki",
+   "address": "6014 12th Ave S",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98108",
+   "website": null,
+   "instagram": null,
+   "phone": "+12064533205",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "63f745d2-a083-42de-9fe1-19d2dbeb79dc",
+   "lat": 47.548775,
+   "lng": -122.317154,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "130966167450525"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "686d8b78-0e7b-41f0-a362-5bded45a03b3"
+    }
+   ],
+   "notes": "From Overture Maps places (ice_cream_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Magic Bellevue",
+   "address": "10246 Main St",
+   "city": "Bellevue",
+   "state": "WA",
+   "zip": "98004-8154",
+   "website": "http://www.itsmatchamagic.com",
+   "instagram": null,
+   "phone": "+14254531029",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.itsmatchamagic.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "c584c524-b413-4da5-bac4-51dce5e278f8",
+   "lat": 47.610237,
+   "lng": -122.203293,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "774245209114339"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c15a162a-ea4f-4e22-a9be-7f0ba46caf20"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Magic SLU",
+   "address": "500 Fairview Ave N",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98109",
+   "website": null,
+   "instagram": null,
+   "phone": "+12068586619",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "9ae29bb2-2fb7-417c-bfa2-955b0f57c5d9",
+   "lat": 47.623314,
+   "lng": -122.334091,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "807951162403350"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Vale Matcha & Coffee",
+   "address": "2000 Terry Ave",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98121",
+   "website": "https://www.valenow.com/",
+   "instagram": null,
+   "phone": "+12062220524",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.valenow.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "d835531f-0c58-4666-b346-b57318dce14a",
+   "lat": 47.617413,
+   "lng": -122.334908,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "769689792901736"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4b23772c-f379-4b01-b539-acbe9483f870"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Junbi Matcha & Tea - Seattle",
+   "address": "722 E Pike St Ste 110",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98122",
+   "website": "http://Www.junbishop.com/",
+   "instagram": null,
+   "phone": "+12064223920",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://Www.junbishop.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "6d3c9a72-3446-45af-8f0a-963f385074b9",
+   "lat": 47.614273,
+   "lng": -122.322388,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "857902890728752"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "38240baa-d1b2-4c14-8aae-b7c251e01a9a"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Magic Capitol Hill",
+   "address": "1530 11th Ave",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98122",
+   "website": null,
+   "instagram": null,
+   "phone": "+12065032196",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "1a43aa27-7258-4e05-bd1a-09f9a2650163",
+   "lat": 47.614948,
+   "lng": -122.317947,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "824953690698794"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "be97229b-3048-44aa-82f4-34e4da9b749b"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Grean Matcha",
+   "address": "4524 University Way NE",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98105",
+   "website": "http://drinkgrean.com",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://drinkgrean.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "f14e917d-40ee-4733-9c6b-fc6d849b8000",
+   "lat": 47.661957,
+   "lng": -122.312775,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "699cc29712c743499dfdda31"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "fe39e639-1fa6-410e-9717-fc85e5545322"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchabae",
+   "address": "2701 184th St SW",
+   "city": "Lynnwood",
+   "state": "WA",
+   "zip": "98037",
+   "website": "http://Bobalustteahouse.com/",
+   "instagram": null,
+   "phone": "+14253611997",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://Bobalustteahouse.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "8e13681b-ffc1-4037-b34e-e7df912d2756",
+   "lat": 47.832565,
+   "lng": -122.269363,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "115500351592333"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b1464cdc-1ea5-41f0-8019-ad46c8b43b23"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Verde Café",
+   "address": "2112 W Nob Hill Blvd Suite B",
+   "city": "Yakima",
+   "state": "WA",
+   "zip": "98902",
+   "website": "https://order.dripos.com/Matcha-Verde-Caf%C3%A9?fbclid=PAZXh0bgNhZW0CMTEAAaZVky3EegeiYXbDFE2vMVuu-72uqytrE6RTDZkZ_GnTKfn8jQ2YfMXXU74_aem_LokQ77m04KZwpT-n_eyWog",
+   "instagram": null,
+   "phone": "+15097316990",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://order.dripos.com/Matcha-Verde-Caf%C3%A9?fbclid=PAZXh0bgNhZW0CMTEAAaZVky3EegeiYXbDFE2vMVuu-72uqytrE6RTDZkZ_GnTKfn8jQ2YfMXXU74_aem_LokQ77m04KZwpT-n_eyWog",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "a858290b-f57f-4502-9891-7ae5348eb97d",
+   "lat": 46.585075,
+   "lng": -120.538109,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "380969275108940"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "91b3f482-9f51-4f9c-97e3-8dd99bc2c81f"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Magic Redmond",
+   "address": "7705 168th Ave NE Ste 110",
+   "city": "Redmond",
+   "state": "WA",
+   "zip": "98052",
+   "website": null,
+   "instagram": null,
+   "phone": "+14252420029",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "9c7eef53-9fa6-4a0d-bb3b-81a3cb4335f3",
+   "lat": 47.672691,
+   "lng": -122.116585,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "834676326392032"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4de1306b-b18c-40b3-8f23-d2707ccdf162"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "BUBL Works Tea, Espresso, Matcha, Boba, Coffee Shop",
+   "address": "2620 E 21st St N",
+   "city": "Wichita",
+   "state": "KS",
+   "zip": "67214",
+   "website": "http://www.bublworks.com/",
+   "instagram": null,
+   "phone": "+13164691315",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.bublworks.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "a6a867ca-cc23-4903-8a37-32027f76b86b",
+   "lat": 37.723022,
+   "lng": -97.305931,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100533542724983"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f26797a9-86a8-4f08-a312-2961d7754524"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Kyo Matcha",
+   "address": "915 County Rd 42 W",
+   "city": "Burnsville",
+   "state": "MN",
+   "zip": "55306",
+   "website": "https://www.kyotomatcha.us/",
+   "instagram": null,
+   "phone": "+19529522688",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.kyotomatcha.us/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "01d0052d-1409-45ab-b7ba-68a9af1718d0",
+   "lat": 44.744572,
+   "lng": -93.287979,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "703001176219688"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "44300147-114b-4ecf-942f-09206ebc694c"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Kyo Matcha",
+   "address": "9 E 66th St",
+   "city": "Richfield",
+   "state": "MN",
+   "zip": "55423",
+   "website": "https://www.kyotomatcha.us/store-locator",
+   "instagram": null,
+   "phone": "+16126826888",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.kyotomatcha.us/store-locator",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "3b890437-9b32-43f1-8227-bcf12ae93c5e",
+   "lat": 44.88303,
+   "lng": -93.277611,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "437313686138880"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "26ea9374-c75e-4c3d-b37d-51b544640341"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "KyoMatcha Dinkytown",
+   "address": "406 14th Ave SE",
+   "city": "Minneapolis",
+   "state": "MN",
+   "zip": "55414",
+   "website": null,
+   "instagram": null,
+   "phone": "+16122009292",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "6ef35ca4-9858-4471-a63f-f1a57d1bd8f9",
+   "lat": 44.980701,
+   "lng": -93.235306,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "665139666692554"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "bd0f954b-d20a-4f02-b198-af51f2d2edc3"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Kyo Matcha",
+   "address": "11630 Fountains Dr",
+   "city": "Maple Grove",
+   "state": "MN",
+   "zip": "55369",
+   "website": "https://www.kyotomatcha.us",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.kyotomatcha.us",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "71a90874-0613-4ad6-a144-bde04146023c",
+   "lat": 45.093182,
+   "lng": -93.426456,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "69cc6acc84ff8551ccea9866"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a82a6e20-c3c5-4713-b406-390f02e59ca9"
+    }
+   ],
+   "notes": "From Overture Maps places (bubble_tea_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Re Leaf Matcha Cafe",
+   "address": "100 E Algonquin Rd",
+   "city": "Arlington Heights",
+   "state": "IL",
+   "zip": "60005",
+   "website": "http://www.discoverarlington.com/business/details.aspx?BusinessId=191",
+   "instagram": null,
+   "phone": "+18472285435",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.discoverarlington.com/business/details.aspx?BusinessId=191",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "e5a6ff4c-9c5f-4811-89d6-2be500dcac83",
+   "lat": 42.044895,
+   "lng": -87.980938,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "4d3b48d9979ea14353199afc"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "afe529cb-3cd4-490e-b144-26e56fc6a33f"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Yesterday's Tea Cafe & Matcha Bar (@ Friendly Market)",
+   "address": "10050 Norbotten Dr",
+   "city": "Florence",
+   "state": "KY",
+   "zip": "41042",
+   "website": "http://www.yesterdaysteacafe.com",
+   "instagram": null,
+   "phone": "+18505944832",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.yesterdaysteacafe.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "a61f339f-be35-4ee2-80d3-589aed13eef3",
+   "lat": 38.959538,
+   "lng": -84.625126,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "55e36959498e04276761716d"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c8dc6ffd-b111-4306-b64e-dc338c4c758d"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Little Matcha Covington",
+   "address": "332 Scott St",
+   "city": "Covington",
+   "state": "KY",
+   "zip": "41011",
+   "website": "https://littlematchaonline.square.site/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://littlematchaonline.square.site/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "baeb0a16-e765-4a89-a0b5-59c34eb2291c",
+   "lat": 39.087584,
+   "lng": -84.509335,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "751889304682839"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5466c788-7698-46b9-8ed0-a80e9fad212e"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Gotcha Matcha & Espresso",
+   "address": "200 S Tryon St",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28204",
+   "website": "http://gotchamatcha.co/",
+   "instagram": null,
+   "phone": "+16463424707",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://gotchamatcha.co/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "0d05558a-8928-4254-8142-288a844d9d04",
+   "lat": 35.226278,
+   "lng": -80.844673,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "377955933017909"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1b88badb-2eaf-4d22-85fc-67d92fed6839"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Me",
+   "address": "2348 N High St",
+   "city": "Columbus",
+   "state": "OH",
+   "zip": "43202",
+   "website": "http://Matchamecafe.com/",
+   "instagram": null,
+   "phone": "+16149608972",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://Matchamecafe.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "f11f7f23-26c1-43b5-9541-9a193dc8d8d2",
+   "lat": 40.01022,
+   "lng": -83.010014,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "299187026621483"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "009803f0-0252-4daf-b3b6-741fcb0bb9cd"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Milky Way Matcha Bar",
+   "address": "4540 Bridge Park Ave",
+   "city": "Dublin",
+   "state": "OH",
+   "zip": "43017",
+   "website": "http://milkywaymatcha.com/",
+   "instagram": null,
+   "phone": "+16145537392",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://milkywaymatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "b4c423b9-9c08-42ff-8435-c4b9a3a6b315",
+   "lat": 40.102587,
+   "lng": -83.108807,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "427388247117732"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "8d510699-eef9-46b2-a793-bdf5f63b4b11"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Wonderful Matcha",
+   "address": "4 W Burlington Ave",
+   "city": "La Grange",
+   "state": "IL",
+   "zip": "60525",
+   "website": "http://www.wonderfulmatcha.com/",
+   "instagram": null,
+   "phone": "+17089379225",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.wonderfulmatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "bd6ee747-aa2f-4e80-93b8-fd3e4c594341",
+   "lat": 41.815748,
+   "lng": -87.870029,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103100644941966"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e72c4cd9-9b3a-4eac-ba67-b330c3a47d37"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha En",
+   "address": "2167 S China Pl",
+   "city": "Chicago",
+   "state": "IL",
+   "zip": "60616",
+   "website": "http://www.matcha-en.com",
+   "instagram": null,
+   "phone": "+13128775557",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matcha-en.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "90404604-72a0-4612-bdb6-4663632d7c71",
+   "lat": 41.853622,
+   "lng": -87.635086,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "111905254825309"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "8b334bfd-9448-458c-a380-0cffc4efe0d9"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cita",
+   "address": "1017 W Lake St",
+   "city": "Chicago",
+   "state": "IL",
+   "zip": "60607",
+   "website": "http://www.matchacitachi.com/",
+   "instagram": null,
+   "phone": "+13126172240",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchacitachi.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "5dae6476-5d56-49be-b447-8402958bae55",
+   "lat": 41.885431,
+   "lng": -87.65284,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "114550671229855"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "873544a6-5b5c-4cc4-8f1a-66d192c0ab6a"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cita",
+   "address": "705 W Belden Ave",
+   "city": "Chicago",
+   "state": "IL",
+   "zip": "60614-3301",
+   "website": "https://www.matchacitachi.com/home",
+   "instagram": null,
+   "phone": "+13125139302",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacitachi.com/home",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "bdf55e70-3111-4b2a-8d65-b44c6b46423c",
+   "lat": 41.923702,
+   "lng": -87.646679,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "101596172026915"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "95728f9a-380c-4599-8003-06863ab0be3c"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Go Matcha Go",
+   "address": "5001 South Ave",
+   "city": "Toledo",
+   "state": "OH",
+   "zip": "43615-6400",
+   "website": "http://www.GoMatchaGo.com/",
+   "instagram": null,
+   "phone": "+14193595777",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.GoMatchaGo.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "cb6df0bd-16c4-4c3b-92ab-6434853492ff",
+   "lat": 41.630848,
+   "lng": -83.660965,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100856683350030"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "cf1f81a1-d204-4ca9-83e1-168afa0c92f7"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Premium Matcha Cafe Maiko",
+   "address": "5082 Rochester Rd",
+   "city": "Troy",
+   "state": "MI",
+   "zip": "48085",
+   "website": "https://www.matchacafe-maiko.com/eng",
+   "instagram": null,
+   "phone": "+12484226870",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com/eng",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "fe3146f1-9b2f-4a16-b9a3-cffbb4f0daae",
+   "lat": 42.593681,
+   "lng": -83.128311,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "110356014146897"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "08989452-a71c-4e91-abb1-0033e626c062"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "8128 Providence Rd",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip": "28277",
+   "website": "http://matchacafemaikoclt.com/",
+   "instagram": null,
+   "phone": "+19804303918",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchacafemaikoclt.com/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "d4e10b6f-e6d7-4517-b3b8-bb1b66102a11",
+   "lat": 35.095919,
+   "lng": -80.780067,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "101034454695291"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "77c9d0c7-6294-44bc-9fee-631e2053262b"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "5947 Centreville Crest Ln",
+   "city": "Centreville",
+   "state": "VA",
+   "zip": "20121",
+   "website": null,
+   "instagram": null,
+   "phone": "+17038737589",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "306513f8-a409-4be2-954c-54b5147b71c3",
+   "lat": 38.837679,
+   "lng": -77.434269,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "452292508584942"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1fd43f03-23b3-4d34-aca7-c3c3c6987942"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Cafe Maiko - Tysons",
+   "address": "1961 Chain Bridge Rd",
+   "city": "McLean",
+   "state": "VA",
+   "zip": "22102",
+   "website": "http://www.matchacafe-maiko.com/eng/",
+   "instagram": null,
+   "phone": "+12404864166",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchacafe-maiko.com/eng/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "ae941609-cab6-4755-b3c7-cb2c3cb0dd8d",
+   "lat": 38.91828,
+   "lng": -77.220375,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "2601095313294044"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "27a98d2d-3f0f-4967-9a81-2f4c1f4cabe9"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Kyo Matcha",
+   "address": "920 W Broad St",
+   "city": "Falls Church",
+   "state": "VA",
+   "zip": "22046",
+   "website": "http://www.kyomatcha.online/order",
+   "instagram": null,
+   "phone": "+17038911370",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.kyomatcha.online/order",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "5589bc9c-6efc-4398-85af-36e0e6c7d592",
+   "lat": 38.890024,
+   "lng": -77.1833,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "645c35e51e82ed4828eb56d4"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5492c6df-bd21-4ab6-a3e3-efddfbb94683"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Kyo Matcha",
+   "address": "6550 Little River Tpke",
+   "city": "Alexandria",
+   "state": "VA",
+   "zip": "22312",
+   "website": "https://www.kyotomatcha.us",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.kyotomatcha.us",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "2367938f-7f23-403b-980f-67ccaa7c463b",
+   "lat": 38.82303,
+   "lng": -77.161697,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "6765af4a06b24c20719105b8"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f4a13b3e-84ca-4d1a-949c-1660b9057392"
+    }
+   ],
+   "notes": "From Overture Maps places (ice_cream_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Ms. Matcha",
+   "address": "1441 U St NW",
+   "city": "Washington",
+   "state": "DC",
+   "zip": "20009",
+   "website": "http://msmatcha.shop/",
+   "instagram": null,
+   "phone": "+18326557796",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://msmatcha.shop/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "3b4ef4af-bb45-4e90-a4a5-2525db1e7b4d",
+   "lat": 38.917219,
+   "lng": -77.033665,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "372274799292471"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e98c6fc5-c0f9-4002-8386-80bbcfe5442f"
+    }
+   ],
+   "notes": "From Overture Maps places (health_food_store); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Kyo Matcha",
+   "address": "33 Maryland Ave",
+   "city": "Rockville",
+   "state": "MD",
+   "zip": "20850",
+   "website": "http://www.kyotomatcha.us/",
+   "instagram": null,
+   "phone": "+13014174856",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.kyotomatcha.us/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "e72bf5a4-03af-40ab-aef8-77628ec00be0",
+   "lat": 39.086084,
+   "lng": -77.151558,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "413367549425373"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "43bb12d8-978c-48d4-9edc-be5caef295e0"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Kyoto Matcha",
+   "address": "10045 Baltimore National Pike Ste A6",
+   "city": "Ellicott City",
+   "state": "MD",
+   "zip": "21042",
+   "website": "http://kyotomatcha.us",
+   "instagram": null,
+   "phone": "+14107202178",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://kyotomatcha.us",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "940734d3-93e4-4e9e-8d07-8c263c10213c",
+   "lat": 39.277685,
+   "lng": -76.85891,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "102950194898323"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c4ac953f-db25-4a71-8be4-b05753e48100"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Ensora - Matcha and Coffee Cafe",
+   "address": "116 Barclay Farms Shopping Center",
+   "city": "Cherry Hill Township",
+   "state": "NJ",
+   "zip": "08034",
+   "website": "https://ensora.co/",
+   "instagram": null,
+   "phone": "+18563104846",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://ensora.co/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "cc9cef3b-ebc7-4362-b2b3-3dba3da6e43a",
+   "lat": 39.91004,
+   "lng": -74.995785,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "663195320213294"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "06055fe5-9c7e-4c10-802b-854b1a7d90ae"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "923 Race St",
+   "city": "Philadelphia",
+   "state": "PA",
+   "zip": "19107",
+   "website": "https://www.matchacafe-maiko.com/eng",
+   "instagram": null,
+   "phone": "+12678610251",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com/eng",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "45f8196f-f048-4496-a1ac-18895dd38d02",
+   "lat": 39.955418,
+   "lng": -75.155144,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "102333035419881"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b01d9def-c709-43c2-8a0f-8075a8aecd2a"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha Panda Cafe",
+   "address": "202 N 9th St",
+   "city": "Philadelphia",
+   "state": "PA",
+   "zip": "19107",
+   "website": "http://matchapanda.com/",
+   "instagram": null,
+   "phone": "+12157178358",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchapanda.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "2f59231c-5b64-429b-8ef5-c143bf15d6f2",
+   "lat": 39.955345,
+   "lng": -75.154373,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "110128828317527"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b18cf0e6-98c0-446d-a695-8eb58aca1ac3"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Mikkusu Matcha Tea House",
+   "address": "3511 Butler St",
+   "city": "Pittsburgh",
+   "state": "PA",
+   "zip": "15201",
+   "website": "http://MikkusuTea.com/",
+   "instagram": null,
+   "phone": "+14126264585",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://MikkusuTea.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "ce35d23b-2205-49f1-a7b5-9e85f14295f0",
+   "lat": 40.464352,
+   "lng": -79.966206,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1887298838156639"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "236b39e5-bfda-4f35-9fd8-c931182e285d"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Junbi Matcha & Tea",
+   "address": "27 Witherspoon St",
+   "city": "Princeton",
+   "state": "NJ",
+   "zip": "08542-3237",
+   "website": null,
+   "instagram": null,
+   "phone": "+16094973244",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "0add11aa-4149-402e-90ef-f8b800de70eb",
+   "lat": 40.35067,
+   "lng": -74.659927,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "110189831441877"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "cbd989d9-9948-4f3a-a8c4-2c28437fe574"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchaful",
+   "address": "250 Vesey St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10281",
+   "website": "http://matchaful.com/",
+   "instagram": null,
+   "phone": "+16468640009",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchaful.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "a01aa62e-3a7b-47cb-a646-5c54a4f58bc8",
+   "lat": 40.713444,
+   "lng": -74.015179,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "437015079503364"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "8c558cea-e818-43da-bd09-576e03d7590d"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Tokuyamatcha & Onigirazu Bar",
+   "address": "28 Grand Street",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10013",
+   "website": "http://tokuyamasalon.com",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://tokuyamasalon.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "356175ba-cec0-4c4b-b7ea-931c190841fd",
+   "lat": 40.722914,
+   "lng": -74.004658,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "68c31f9307d7b5366f841023"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ],
+   "notes": "From Overture Maps places (japanese_restaurant); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchaful",
+   "address": "359 Canal St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10013",
+   "website": "https://www.bematchaful.com",
+   "instagram": null,
+   "phone": "+16468961058",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.bematchaful.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "3d070f0a-4bcb-4df7-afe7-6d250a500610",
+   "lat": 40.721146,
+   "lng": -74.003918,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "5d31ef28f2215400084b2be1"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "35eefb71-92da-425d-b051-a3cad7fe7d21"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchaful",
+   "address": "184 Prince St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10012",
+   "website": "http://matchaful.com/",
+   "instagram": null,
+   "phone": "+16468961058",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchaful.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "d72de3f0-2e91-48d3-8fd6-1e3486ee7841",
+   "lat": 40.726265,
+   "lng": -74.002155,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "452479861286916"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "ffa39930-585d-4740-a0e5-2b41c8475462"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchaful",
+   "address": "217 Mulberry St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10012-5749",
+   "website": "http://matchaful.com/",
+   "instagram": null,
+   "phone": "+16463719110",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchaful.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "459f46aa-3d93-4c9b-9ba0-57126c3ae2a7",
+   "lat": 40.722219,
+   "lng": -73.99625,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "483789492142341"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "99aff1c6-4ca3-46fe-8782-a9131c489735"
+    }
+   ],
+   "notes": "From Overture Maps places (specialty_foods_store); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchabar",
+   "address": "70 Prince St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10012-3306",
+   "website": null,
+   "instagram": null,
+   "phone": "+12122537854",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "b90767bd-427a-4c56-bd5a-a4a89c7be868",
+   "lat": 40.723675,
+   "lng": -73.996967,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "86516063"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "832a8f5f-16fa-422b-a64a-97a8be880522"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Cha Cha Matcha (NoHo)",
+   "address": "327 Lafayette St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10012",
+   "website": "http://chachamatcha.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://chachamatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "a6cde802-d7a3-4226-ba30-6c327e32914e",
+   "lat": 40.725447,
+   "lng": -73.994823,
+   "overture_sources": [
+    {
+     "dataset": "Microsoft",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "562949966242982"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d177cf4a-cdaa-46c7-9014-632ae388ef2a"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "132 Bowery",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10013",
+   "website": "https://www.matchacafe-maiko.com/eng/",
+   "instagram": null,
+   "phone": "+19176883166",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.matchacafe-maiko.com/eng/",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "356d8de1-b85f-4b62-9499-6a7fb1f7a6ea",
+   "lat": 40.718958,
+   "lng": -73.994778,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "112686735078164"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "cbf90750-36b6-4d3e-bcf2-6e4063f8709e"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha N' More",
+   "address": "177 Hester St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10013-4704",
+   "website": null,
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "1b5a5c79-9aa5-4d12-8b1f-dbf191cdc692",
+   "lat": 40.718008,
+   "lng": -73.997272,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "105819933"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a2d75457-3277-48aa-9719-c726cfd99d28"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "MATCHA HOUSE",
+   "address": "203 E 10th St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10003",
+   "website": "http://matchahousenyc.com",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchahousenyc.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "6721358a-eecd-443c-a69e-d4ad888c2b3e",
+   "lat": 40.729694,
+   "lng": -73.986317,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "6882562dfff7eb6d38875e59"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "bb516ec9-a297-478d-8de8-cf3b6e986fe9"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Tokuyamatcha & Onigirazu Bar",
+   "address": "627 E 6th St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10009",
+   "website": "https://tokuyamasalon.com/cafe",
+   "instagram": "tokuyamatcha",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://tokuyamasalon.com/cafe",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "eebfae7b-ab23-4657-95b0-689ec98d3639",
+   "lat": 40.723969,
+   "lng": -73.980152,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "64ce92f5d2cb875445ba7817"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4b5956f8-438a-4819-b188-a024439ba5c1"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "TOKUYAMATCHA & ONIGIRAZU BAR- E 6th St.",
+   "address": "627 E 6th St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10009",
+   "website": "http://tokuyamasalon.com/cafe/",
+   "instagram": null,
+   "phone": "+12123881276",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://tokuyamasalon.com/cafe/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "fbce009a-fbc2-4b2f-83c3-fbdd3cffaa0e",
+   "lat": 40.723972,
+   "lng": -73.980167,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1057655530991984"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "84781bc4-7914-43da-bf88-57ce02abef69"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchaful",
+   "address": "44 Washington Ave",
+   "city": "Brooklyn",
+   "state": "NY",
+   "zip": "11205-1202",
+   "website": null,
+   "instagram": null,
+   "phone": "+13472276353",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "d20e6762-6e90-4c4b-8609-0b136a32fcb0",
+   "lat": 40.697432,
+   "lng": -73.967865,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "423960420809891"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "58b48e8b-21a3-441b-af7f-06bd303c58ed"
+    }
+   ],
+   "notes": "From Overture Maps places (tea_room); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Aoko Matcha",
+   "address": "275 Bleecker St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10014",
+   "website": "https://www.aokomatcha.com",
+   "instagram": null,
+   "phone": "+16466784831",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.aokomatcha.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "870dffb3-7f44-49b0-bf04-00c782e19c31",
+   "lat": 40.73163,
+   "lng": -74.003071,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "629171413623497"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "94b5ea96-60b8-46d8-9bc7-f3a6f50b60fe"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchaful",
+   "address": "87 Christopher St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10014-4250",
+   "website": "http://matchaful.com/",
+   "instagram": null,
+   "phone": "+15859864358",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchaful.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "aab22c34-b857-4aa5-9c69-4af9b59fca62",
+   "lat": 40.733566,
+   "lng": -74.003948,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "440681652469492"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5bc3ee0b-c8bd-430d-a817-c58f383f4a2f"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "MatchaBar",
+   "address": "256 W 15th St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10011-6505",
+   "website": "http://www.matchabar.co/",
+   "instagram": null,
+   "phone": "+12126271058",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchabar.co/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "b470d0e8-3a6c-4999-be60-74e00588709f",
+   "lat": 40.740128,
+   "lng": -74.001507,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "685963348155379"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b8b0d686-024c-4215-a22b-f16b1d8ca94b"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "A'more Caffe & Matcha - Chelsea",
+   "address": "126 W 25th St Store W",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10001",
+   "website": null,
+   "instagram": null,
+   "phone": "+16468013868",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "f320c583-6761-44d4-b1b5-d946ad170c57",
+   "lat": 40.744505,
+   "lng": -73.993137,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "753580714502575"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "7e5db9e1-c356-45f8-a371-3382d7c4ad40"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Cha Cha Matcha",
+   "address": "922 Broadway",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10010-6063",
+   "website": null,
+   "instagram": null,
+   "phone": "+16468959484",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://docs.overturemaps.org/guides/places/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "bc737543-9f0a-493c-a2ca-556e7f36f241",
+   "lat": 40.739803,
+   "lng": -73.989162,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100750774"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "48ff9332-fed9-498a-8cb9-3ab0d6a0a3f2"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Cha Cha Matcha",
+   "address": "1158 Broadway",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10001",
+   "website": "http://chachamatcha.com",
+   "instagram": null,
+   "phone": "+16468959484",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://chachamatcha.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "46a959e5-3847-48d8-8caa-b39918165ca4",
+   "lat": 40.744598,
+   "lng": -73.988773,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "285046511967592"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "0435a908-432c-40bf-af14-c9af8f2dc77f"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Cha Cha Matcha (MOYNIHAN)",
+   "address": "421 8th Ave, suite 40",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10001",
+   "website": "http://www.chachamatcha.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.chachamatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "aa21fece-dd9e-4b6c-9bec-ba4daf5942ba",
+   "lat": 40.751202,
+   "lng": -73.995392,
+   "overture_sources": [
+    {
+     "dataset": "Microsoft",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "562949966242981"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "fae1d2d4-e7a2-4ff0-9e90-2c64db07567f"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchaful",
+   "address": "240 E 54th St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10022",
+   "website": "http://matchaful.com/",
+   "instagram": null,
+   "phone": "+16468500048",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchaful.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "2e64d902-6203-4d9a-9e3d-452cbe8e7766",
+   "lat": 40.757452,
+   "lng": -73.967487,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "496867843503880"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "01ca66a9-f453-4746-b291-c4f4e741c6b0"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchaful Café & Ritual Bar",
+   "address": "92 Berry St",
+   "city": "New York",
+   "state": "NY",
+   "zip": "11249",
+   "website": "http://www.bematchaful.com",
+   "instagram": null,
+   "phone": "+16467672020",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.bematchaful.com",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "e70ca640-7646-4a65-ba82-79b6bfe6601b",
+   "lat": 40.719498,
+   "lng": -73.958374,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "513871261801374"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "8b1a3914-42a0-4318-b790-7b0991d24aa8"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Sieve Cafe: Matcha & Coffee",
+   "address": "7-57 Seneca Ave",
+   "city": "Ridgewood",
+   "state": "NY",
+   "zip": "11385",
+   "website": "http://sievecafe.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://sievecafe.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "d5540e9a-5450-457a-bdee-18ca134ae5ca",
+   "lat": 40.702265,
+   "lng": -73.90657,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "764730280057001"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1ce4fc7a-f00c-4c6c-a991-89d9b521deb7"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Cha Cha Matcha (MADISON)",
+   "address": "477 Madison Avenue",
+   "city": "New York",
+   "state": "NY",
+   "zip": "10022",
+   "website": "https://chachamatcha.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://chachamatcha.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "dfdd76e2-ccd8-4b63-9f3a-8ed07b6f1f35",
+   "lat": 40.758671,
+   "lng": -73.974854,
+   "overture_sources": [
+    {
+     "dataset": "Microsoft",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "562949966242974"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5f0642bf-5ae2-43b4-8866-0326102ae2c9"
+    }
+   ],
+   "notes": "From Overture Maps places (coffee_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "1630 Lemoine Ave",
+   "city": "Fort Lee",
+   "state": "NJ",
+   "zip": "07024",
+   "website": "http://www.matchacafe-maiko.com/eng",
+   "instagram": null,
+   "phone": "+12016855378",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchacafe-maiko.com/eng",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "e4521aee-caec-40c3-804e-8b956383e617",
+   "lat": 40.850634,
+   "lng": -73.970188,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "208239112371873"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d341a0be-7a3d-4ff2-9110-7470e3779fec"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Premium Matcha Cafe Maiko",
+   "address": "133-33 39th Ave",
+   "city": "Flushing",
+   "state": "NY",
+   "zip": "11354",
+   "website": "http://matchacafe-maiko.com",
+   "instagram": "maikomatchanyc",
+   "phone": "+17182190011",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchacafe-maiko.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "6c5e3de1-f977-432a-87f7-adf921c06da8",
+   "lat": 40.759857,
+   "lng": -73.834232,
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "6417481f74da337fe440a70d"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e8d43afa-2e58-4ac1-8db1-8ec6387e5ecb"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Kyo Matcha",
+   "address": "1010 Beacon St",
+   "city": "Brookline",
+   "state": "MA",
+   "zip": "02446",
+   "website": "https://www.kyotomatcha.us/",
+   "instagram": null,
+   "phone": "+16175056857",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.kyotomatcha.us/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "0b888807-70de-420f-a426-71eadba0d05e",
+   "lat": 42.3463,
+   "lng": -71.107357,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "102567252809495"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "449de917-3f9e-40d5-8778-338ae616e54f"
+    }
+   ],
+   "notes": "From Overture Maps places (dessert_shop); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Mama Matcha Green Bar",
+   "address": "258 Commercial St",
+   "city": "Provincetown",
+   "state": "MA",
+   "zip": "02657-2231",
+   "website": "http://mamamatchaptown.com/",
+   "instagram": null,
+   "phone": "+15084870777",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://mamamatchaptown.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "b34a6ac9-f282-4b03-b8bb-ddc48d94d833",
+   "lat": 42.050968,
+   "lng": -70.187466,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1997214673827160"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "77464c65-7972-4e05-99cd-36ce2f102ebe"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matcha Cafe Maiko",
+   "address": "115 Jersey St",
+   "city": "Boston",
+   "state": "MA",
+   "zip": "02215",
+   "website": "http://www.matchamaikobos.com",
+   "instagram": null,
+   "phone": "+16173225360",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchamaikobos.com",
+   "read": "2026-11-24",
+   "tier": "shop",
+   "overture_id": "8d0e86db-fe5c-4bec-9819-36ea7481d9c4",
+   "lat": 42.342693,
+   "lng": -71.097034,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "102590995148203"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "ccf9f658-6183-4f8f-bcf0-052c86124723"
+    }
+   ],
+   "notes": "Held: all Matcha Cafe Maiko stores reported closed Nov 8 (Matcha Toko rebrand); see data/maiko-check-2026-11-23.json."
+  },
+  {
+   "name": "Matcha",
+   "address": "55 E Broadway",
+   "city": "Derry",
+   "state": "NH",
+   "zip": "03038-2401",
+   "website": "http://www.matchaderry.com/",
+   "instagram": null,
+   "phone": "+16039982554",
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.matchaderry.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "064ef7b3-a1ae-4fb7-abaa-9b200f5ecf43",
+   "lat": 42.881962,
+   "lng": -71.323391,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "453259211199711"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "571fd4e9-6b1b-4fc9-9f3f-87537b638cae"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  },
+  {
+   "name": "Matchamood",
+   "address": "654 Congress St",
+   "city": "Portland",
+   "state": "ME",
+   "zip": "04101",
+   "website": "http://matchamoodmaine.com/",
+   "instagram": null,
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": null,
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://matchamoodmaine.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "overture",
+   "tier": "shop",
+   "overture_id": "53ca4b00-b63a-4da5-8eba-a77a4f68fc22",
+   "lat": 43.653053,
+   "lng": -70.265537,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "134023739788440"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a45cd5ea-43fe-439a-9d83-35b37b6f0195"
+    }
+   ],
+   "notes": "From Overture Maps places (cafe); matcha in the name; unverified until the shop's own site confirms."
+  }
+ ]
+}

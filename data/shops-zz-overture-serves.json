@@ -1,0 +1,597 @@
+{
+ "generated": "2026-11-24T00:29:33.486Z",
+ "group": "overture-serves",
+ "release": "2026-11-18.0",
+ "shops": [
+  {
+   "name": "The Moo Bar",
+   "address": "2124 Westlake Ave",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98121-2717",
+   "website": "http://themoomilkbar.com/",
+   "instagram": "themoobarseattle",
+   "phone": "+12064673191",
+   "opening_hours": "Mo 11:00-20:00, Tu 11:00-20:00, We 11:00-20:00, Th 11:00-20:00, Fr 11:00-20:00, Sa 11:00-20:00, Su 11:00-20:00",
+   "menu_url": "http://themoomilkbar.com/menu",
+   "image_url": "http://static1.squarespace.com/static/596f97c8e4fcb5feaa1e41b8/t/6822c1832a94dc617ccbe44b/1747108227237/IMG_1002.jpg?format=1500w",
+   "image_credit": "Photo: The Moo Bar website",
+   "source_url": "http://themoomilkbar.com/menu",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MANGO MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "CLOUDY OREO MATCHA (blended)",
+     "price": null
+    },
+    {
+     "name": "MATCHA BRULEE",
+     "price": null
+    }
+   ],
+   "overture_id": "9b322ff9-4307-42b4-a6de-d0cf654e0c67",
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "118399295502522"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "40bbec0b-9beb-4705-92ce-38061ad31c20"
+    }
+   ]
+  },
+  {
+   "name": "3 Leaf Tea",
+   "address": "25 Seminary Street, Suite 1F",
+   "city": "Auburn",
+   "state": "NY",
+   "zip": "13021",
+   "website": "http://threeleaftea.com/",
+   "instagram": "3leaftea",
+   "phone": "315-255-1022",
+   "opening_hours": null,
+   "menu_url": "http://threeleaftea.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://threeleaftea.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "What is matcha?",
+     "price": null
+    },
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Farm-Fresh Authentic Japanese Matcha",
+     "price": null
+    },
+    {
+     "name": "Banana Matcha",
+     "price": null
+    },
+    {
+     "name": "Birthday Cake Matcha",
+     "price": null
+    },
+    {
+     "name": "Blueberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Cardamom Matcha",
+     "price": null
+    },
+    {
+     "name": "Cinnamon Matcha",
+     "price": null
+    },
+    {
+     "name": "Coconut Matcha",
+     "price": null
+    },
+    {
+     "name": "Fan Favorites Matcha Sampler",
+     "price": null
+    },
+    {
+     "name": "Flavored Matcha Starter Pack",
+     "price": null
+    },
+    {
+     "name": "Matcha - Japanese Green Tea",
+     "price": null
+    }
+   ],
+   "overture_id": "4aa27ec2-cb8a-411f-9831-3a304bd380b3",
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1451275508459541"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "58068855-c630-4b9a-a638-4307110b5257"
+    }
+   ]
+  },
+  {
+   "name": "TeaDM Plus",
+   "address": "6779 Wilson Blvd",
+   "city": "Falls Church",
+   "state": "VA",
+   "zip": "22044",
+   "website": "https://teadm.com/",
+   "instagram": "teadmeastcoast",
+   "phone": "(703) 477-6807",
+   "opening_hours": "Mo-Sa 07:00-23:59; Su 07:00-21:00",
+   "menu_url": "https://teadm.com/menu",
+   "image_url": "https://teadm.com/img/og/home.jpg",
+   "image_credit": "Photo: TeaDM Plus website",
+   "source_url": "https://teadm.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha 6",
+     "price": null
+    },
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Grade A matcha from Japan.",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Kyoto Matcha",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha",
+     "price": null
+    },
+    {
+     "name": "Banana Matcha",
+     "price": null
+    },
+    {
+     "name": "Ubae Matcha",
+     "price": null
+    },
+    {
+     "name": "01 Matcha Latte",
+     "price": "$7.25"
+    },
+    {
+     "name": "02 Kyoto Matcha",
+     "price": "$7.50"
+    },
+    {
+     "name": "03 Mango Matcha",
+     "price": "$7.50"
+    },
+    {
+     "name": "04 Strawberry Matcha",
+     "price": "$7.50"
+    }
+   ],
+   "overture_id": "b0bfd2db-e934-43f2-8702-b37d8ac74421",
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "657534887711999"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a230108c-8a1c-477a-b9d9-091e91da484d"
+    }
+   ]
+  },
+  {
+   "name": "Pearls Boba",
+   "address": "2264 Fair Oaks Blvd",
+   "city": "Sacramento",
+   "state": "CA",
+   "zip": "95825",
+   "website": "http://www.pearlsboba.com/",
+   "instagram": "sacpearls",
+   "phone": "(916) 514-9573",
+   "opening_hours": null,
+   "menu_url": "http://www.pearlsboba.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.pearlsboba.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Snow",
+     "price": null
+    },
+    {
+     "name": "Pink Matcha (matcha, strawberry, cream)",
+     "price": null
+    }
+   ],
+   "overture_id": "c7b6598a-32f0-4460-bc7b-ba207263eab0",
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "905723496210190"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "0bce2f11-f386-49e1-9a67-b7656c97c93d"
+    }
+   ]
+  },
+  {
+   "name": "Motto Tea Cafe - Pasadena",
+   "address": "100 West Green Street",
+   "city": "Pasadena",
+   "state": "CA",
+   "zip": "91105",
+   "website": "https://www.mottoteacafe.com",
+   "instagram": null,
+   "phone": "16263651049",
+   "opening_hours": "Tu-Th 11:30-21:30; Fr,Sa 11:30-22:00; Su 11:30-19:00",
+   "menu_url": "https://www.mottoteacafe.com/menu",
+   "image_url": "https://static.wixstatic.com/media/b7fcba_5e15eef2223d45088d0d74e20b334640%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/b7fcba_5e15eef2223d45088d0d74e20b334640%7Emv2.jpg",
+   "image_credit": "Photo: Motto Tea Cafe - Pasadena website",
+   "source_url": "https://www.mottoteacafe.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Motto Uji Matcha",
+     "price": null
+    },
+    {
+     "name": "Uji Matcha",
+     "price": null
+    },
+    {
+     "name": "Uji Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Uji Kintoki Matcha",
+     "price": null
+    },
+    {
+     "name": "Layered Uji Matcha Latte with Red Beans & White Boba",
+     "price": null
+    },
+    {
+     "name": "Cheese Mousse Uji Matcha",
+     "price": null
+    },
+    {
+     "name": "Cheese Mousse Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Cheese Mousse Uji Matchan Latte",
+     "price": null
+    },
+    {
+     "name": "Original / Matcha Granola",
+     "price": null
+    }
+   ],
+   "overture_id": "c5c4f490-7336-42e5-a7e1-b56b0d2dbfd9",
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1194191114044392"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "55dc85ea-1cb1-4002-97ac-71ccab76dbbe"
+    }
+   ]
+  },
+  {
+   "name": "Drip Tea Seattle",
+   "address": "1416 10th Ave",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98122",
+   "website": "http://Dripteaseattle.com/",
+   "instagram": "driptea.seattle",
+   "phone": "+12064574374",
+   "opening_hours": null,
+   "menu_url": "http://dripteaseattle.com/menu",
+   "image_url": "http://static1.squarespace.com/static/5edd7d428a6e202e0d1b37dc/t/62a52c25d383814a597ae1c6/1654991909771/DRIP+TEA+LOGO+%281%29+White.png?format=1500w",
+   "image_credit": "Photo: Drip Tea Seattle website",
+   "source_url": "http://dripteaseattle.com/contact",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "matcha smoothie + oreo + choco swirl",
+     "price": null
+    },
+    {
+     "name": "matcha milk tea",
+     "price": null
+    },
+    {
+     "name": "matcha blend",
+     "price": null
+    }
+   ],
+   "overture_id": "3d9639fa-172d-43d8-9714-0cd6120cbcde",
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "109513440532722"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e950f817-1afd-4341-951c-61478235e328"
+    }
+   ]
+  },
+  {
+   "name": "Little Sweet",
+   "address": "756 Palani Avenue",
+   "city": "Honolulu",
+   "state": "HI",
+   "zip": "96816",
+   "website": "https://www.littlesweethi.com/",
+   "instagram": "littlesweethi",
+   "phone": "8087321000",
+   "opening_hours": "Tu-Su 10:30-21:30",
+   "menu_url": "https://www.littlesweethi.com/menu",
+   "image_url": "https://static.wixstatic.com/media/0a17d8_05ebdbd8b0204202a92b18f6c3585d2b%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/0a17d8_05ebdbd8b0204202a92b18f6c3585d2b%7Emv2.jpg",
+   "image_credit": "Photo: Little Sweet website",
+   "source_url": "https://www.littlesweethi.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Special",
+     "price": null
+    },
+    {
+     "name": "Matcha Milk",
+     "price": null
+    },
+    {
+     "name": "Matcha Milk Brulee",
+     "price": null
+    },
+    {
+     "name": "Matcha Milk Strawberry",
+     "price": null
+    },
+    {
+     "name": "Black Sesame Boba Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Black Sesame Matcha Milk",
+     "price": null
+    },
+    {
+     "name": "Matcha Mochi Milk",
+     "price": null
+    },
+    {
+     "name": "Red Bean Matcha Milk",
+     "price": null
+    },
+    {
+     "name": "Ice Cream Matcha Milk",
+     "price": null
+    }
+   ],
+   "overture_id": "1b2bdade-d446-4f8e-a10e-986fd6f10ebc",
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "110701648459482"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b9f5ad4c-08f4-4bc7-837c-299be04c14e9"
+    }
+   ]
+  },
+  {
+   "name": "Tea.Lab",
+   "address": "8265 W Sunrise Blvd",
+   "city": "Plantation",
+   "state": "FL",
+   "zip": "33322",
+   "website": "https://www.tealabfl.com/",
+   "instagram": null,
+   "phone": "+1954-289-8401",
+   "opening_hours": null,
+   "menu_url": "https://www.tealabfl.com/menu",
+   "image_url": "https://website-cdn.menusifu.com/wp-content/uploads/tealabfl.com/2026/06/Cute-cartoon-logo-of-two-kids-and-a-puppy-for-Tea.Lab-a-Bubble-Tea-Store-in-FL.png",
+   "image_credit": "Photo: Tea.Lab website",
+   "source_url": "https://www.tealabfl.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha latte w/ Panna Cotta: 7.25",
+     "price": null
+    },
+    {
+     "name": "Brown sugar matcha latte: 6.99",
+     "price": null
+    },
+    {
+     "name": "Strawberry matcha latte: 6.99",
+     "price": null
+    },
+    {
+     "name": "Matcha Jasmine milk tea: 6.99",
+     "price": null
+    },
+    {
+     "name": "Matcha smoothie: 7.50",
+     "price": null
+    },
+    {
+     "name": "Iced matcha latte: 6.59",
+     "price": null
+    }
+   ],
+   "overture_id": "800f702c-cfc3-4515-919b-607068a37734",
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "267602419762685"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "5d6f1074-a394-4b00-9aac-8cf3bc15c502"
+    }
+   ]
+  },
+  {
+   "name": "Yun Tea House",
+   "address": "4433 Convoy Street",
+   "city": "San Diego",
+   "state": "CA",
+   "zip": "92111-3736",
+   "website": "https://www.yunteasd.com",
+   "instagram": "yunteasd",
+   "phone": "858-492-0402",
+   "opening_hours": null,
+   "menu_url": "https://www.yunteasd.com/menu",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.yunteasd.com/",
+   "read": "2026-11-24",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "mango matcha",
+     "price": null
+    },
+    {
+     "name": "mango chunks topped off with matcha cheese foam",
+     "price": null
+    },
+    {
+     "name": "matcha",
+     "price": null
+    },
+    {
+     "name": "strawberry matcha",
+     "price": null
+    },
+    {
+     "name": "blended strawberries layered with a matcha cheese foam",
+     "price": null
+    }
+   ],
+   "overture_id": "ff1bda73-a47e-4154-9c61-05e8411b9f16",
+   "overture_sources": [
+    {
+     "dataset": "Foursquare",
+     "license": "Apache-2.0",
+     "record_id": "65484bfce63b5e738d609930"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "fc97c55d-30e6-4fcc-87cd-962aedfd188b"
+    }
+   ]
+  }
+ ]
+}

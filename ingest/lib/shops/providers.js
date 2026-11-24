@@ -85,7 +85,7 @@ export function matchaDrinks(html) {
 }
 
 // Candidate + the shop's own pages -> a curated row (data/shops-*.json shape) or { held: reason }. `get(url)` -> {ok, text}.
-export async function confirmCandidate(c, get, { read = new Date().toISOString().slice(0, 10) } = {}) {
+export async function confirmCandidate(c, get, { read = new Date().toISOString().slice(0, 10), relaxAddress = false } = {}) {
   if (!c.website) return { held: "no website from the provider (a worker confirms it by name)" };
   let base; try { base = new URL(c.website); } catch { return { held: "website not a url" }; }
   if (/instagram\.com|facebook\.com|linktr\.ee|ubereats|doordash|grubhub|toasttab|yelp\.com/i.test(base.host)) return { held: "provider website is a social or ordering page" };
@@ -100,8 +100,13 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
   // The site must print the same street number (or the provider's zip) as the candidate.
   const num = streetNumber(c.address);
   const printed = pages.map((p) => p.rd).filter((r) => r.address);
-  const sameSpot = printed.find((r) => (num && streetNumber(r.address) === num) || (c.zip && r.zip && r.zip.slice(0, 5) === String(c.zip).slice(0, 5)));
-  if (!sameSpot) return { held: "own site prints no matching street address" };
+  let sameSpot = printed.find((r) => (num && streetNumber(r.address) === num) || (c.zip && r.zip && r.zip.slice(0, 5) === String(c.zip).slice(0, 5)));
+  // relaxAddress (Overture places): the provider already tied this website to this place, so a menu proof on the site is enough when the site prints no address.
+  let viaOverture = false;
+  if (!sameSpot) {
+    if (!relaxAddress) return { held: "own site prints no matching street address" };
+    sameSpot = { address: c.address, city: c.city, state: c.state, zip: c.zip, url: pages[0].url }; viaOverture = true;
+  }
   const menuPage = pages.find((p) => /menu/i.test(p.url) && p.rd.matcha_mentions) || pages.find((p) => p.rd.matcha_mentions);
   const hint = tierHint(c);
   let tier = null, menu_matcha = null;
@@ -118,7 +123,7 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
       website: c.website, instagram: best("instagram") || (c.instagram ? String(c.instagram).replace(/^@/, "") : null), phone: best("phone") || c.phone || null,
       opening_hours: rd("hours_osm"), menu_url: tier === "serves" && menuPage ? menuPage.url : rd("menu_url"),
       image_url: rd("image"), image_credit: rd("image") ? `Photo: ${c.name} website` : null,
-      source_url: sameSpot.url || pages[0].url, read, confirmed_via: "own-site", tier, ...(menu_matcha ? { menu_matcha } : {}),
+      source_url: sameSpot.url || pages[0].url, read, confirmed_via: viaOverture ? "overture" : "own-site", tier, ...(menu_matcha ? { menu_matcha } : {}),
     },
   };
 }
