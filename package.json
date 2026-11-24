@@ -17,6 +17,7 @@
     "shops:fill": "node ingest/shops-fill.js",
     "shops:completeness": "node tools/card-completeness.mjs",
     "shops:recheck": "node ingest/shops-recheck.js",
+    "shops:liveness": "node ingest/shops-liveness.js",
     "series": "node ingest/series.js",
     "tidy": "node ingest/tidy.js",
     "enrich": "node ingest/enrich.js",

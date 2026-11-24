@@ -84,6 +84,18 @@ export function bodyItems(body, item, source, now = new Date()) {
   return out;
 }
 
+// Lines of an issue that report a place closing for good ("Kaya Cafe has permanently closed", "closed its doors after 6 years"). They are not
+// events, so bodyItems drops them; the shop liveness step (ingest/shops-liveness.js) matches them against our storefronts by name.
+const CLOSURE = /\b(?:permanently closed|closed permanently|has closed|have closed|closed (?:its|their|our) doors|closing (?:its|their) doors|closed for good|shut(?:ting)? down|has shuttered|shuttered|going out of business|final day of business)\b/i;
+export function closureLines(body, item = {}, source = {}) {
+  const out = [];
+  for (const line of entries(htmlToLines(/<[a-z][\s\S]*>/i.test(body) ? body : `<p>${body}</p>`).map((l) => l.replace(/\s+/g, " ").trim()).filter(Boolean))) {
+    if (line.length < 20 || line.length > 400 || !CLOSURE.test(line)) continue;
+    out.push({ line: line.slice(0, 300), source: source.name || null, source_url: item.link || source.url || null, published: item.published || null });
+  }
+  return out;
+}
+
 export function loadRoundups(file = "data/roundups.json") {
   try { return JSON.parse(fs.readFileSync(file, "utf8")).sources || []; } catch { return []; }
 }
@@ -101,6 +113,7 @@ export async function discover(ctx) {
   const spent = { used: 0, pages: 0, hitCap: false, stopped: null };
   const raws = [];
   const stats = { sources: 0, skippedHosts: [], items: 0, kept: 0, back: 0 };
+  const closures = [];
   const okHost = new Map();
   const gateFor = async (url) => { const h = new URL(url).host; if (!okHost.has(h)) okHost.set(h, await gate(b, h)); if (!okHost.get(h).ok) stats.skippedHosts.push(`${h}: ${okHost.get(h).reason}`); return okHost.get(h).ok; };
   const take = (items, s) => {
@@ -127,6 +140,7 @@ export async function discover(ctx) {
       seenLinks.add(it.link);
       const body = [it.title, it.summary, it.content].filter(Boolean).join("\n");
       stats.items++;
+      closures.push(...closureLines(body, it, s));
       take(bodyItems(body, it, s, now), s);
     }
     // Back issues: the archive page lists more posts than the feed carries; read the ones the feed did not.
@@ -142,15 +156,27 @@ export async function discover(ctx) {
           const published = (/"datePublished":"([^"]+)"/.exec(p.text) || /property="article:published_time" content="([^"]+)"/.exec(p.text) || [])[1] || null;
           const t = Date.parse(published || "");
           if (Number.isFinite(t) && now.getTime() - t > MAX_AGE_DAYS * 86400000) continue;
+          closures.push(...closureLines(p.text, { link, published, title }, s));
           take(bodyItems(p.text, { link, published, title }, s, now), s);
         }
       }
     }
   }
+  saveClosures(closures, now);
   const out = finish(name, raws, sources);
   tagKinds(out.items);
   for (const r of out.items) if (!r.source_hint.home_city) { r.source_hint.home_city = r.feed?.city || ""; r.source_hint.home_state = r.feed?.state || ""; }
   return { ...out, stats: { ...stats, fetches: spent.used + b.st.used, pages: spent.pages + b.st.pages, hitCap: spent.hitCap || b.st.hitCap, stopped: spent.stopped || b.st.stopped } };
+}
+
+// data/roundup-closures.json: the closure lines seen so far (newest 300), merged by line; written only by this reader.
+export function saveClosures(found, now = new Date(), file = "data/roundup-closures.json") {
+  if (!found.length || process.env.MATCHA_NO_WRITE) return;
+  let prev = []; try { prev = JSON.parse(fs.readFileSync(file, "utf8")).closures || []; } catch { /* first run */ }
+  const by = new Map(prev.map((c) => [c.line, c]));
+  for (const c of found) if (!by.has(c.line)) by.set(c.line, { ...c, seen: now.toISOString().slice(0, 10) });
+  const all = [...by.values()].sort((a, b) => String(b.published || b.seen).localeCompare(String(a.published || a.seen))).slice(0, 300);
+  fs.writeFileSync(file, JSON.stringify({ note: "Lines in press and newsletter roundups that report a place closing; read by ingest/shops-liveness.js.", closures: all }, null, 1) + "\n");
 }
 
 export default { name, host, discover };

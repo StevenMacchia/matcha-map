@@ -93,5 +93,93 @@
  "brand:web-matcha-cafe-maiko-tx-frisco-9244-prestmont-pl-a543fd": {
   "verified": false,
   "why": "Held 2026-11-23: What Now Sacramento (Nov 16) and the Sacramento Bee (Nov 9) report all Matcha Cafe Maiko locations closed Nov 8 for the Matcha Toko rebrand, social accounts taken down; no store-level activity found after Nov 8 (data/maiko-check-2026-11-23.json). Returns when its page or a dated post shows activity."
+ },
+ "brand:web-matcha-boba-ca-thousand-oaks-245-n-moorpark-rd-22d76f": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site's domain does not resolve",
+  "checked": "2026-11-24",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-24: own site's domain does not resolve"
+ },
+ "brand:web-taiyo-matcha-fl-jacksonville-10095-beach-blvd-f5bb05": {
+  "status": "open",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site returns 404",
+  "checked": "2026-11-24",
+  "checked_by": "hand",
+  "clear_runs": 0,
+  "why": "Hand check 2026-11-24: site returned 404 but MapQuest, Crema and Poyst list 10095 Beach Blvd Suite 525 as open; kept on the map. Recheck after 2027-01-23."
+ },
+ "brand:web-sip-matcha-ca-rowland-heights-18558-gale-ave-478489": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site's domain does not resolve",
+  "checked": "2026-11-24",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-24: own site's domain does not resolve"
+ },
+ "brand:web-amausaan-uji-matcha-ca-union-city-34563-alvara-fc3021": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site's domain does not resolve",
+  "checked": "2026-11-24",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-24: own site's domain does not resolve"
+ },
+ "brand:web-ms-matcha-dc-washington-1441-u-st-nw-e78ab9": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site's domain does not resolve",
+  "checked": "2026-11-24",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-24: own site's domain does not resolve"
+ },
+ "brand:web-matcha-boba-house-or-ashland-297-e-main-st-3f0c42": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site's domain does not resolve",
+  "checked": "2026-11-24",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-24: own site's domain does not resolve"
+ },
+ "brand:web-amausaan-uji-matcha-ca-newark-39658-cedar-blvd-8bc9ea": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site's domain does not resolve",
+  "checked": "2026-11-24",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-24: own site's domain does not resolve"
+ },
+ "brand:web-amausaan-uji-matcha-ca-daly-city-103-serramont-fb72cb": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site's domain does not resolve",
+  "checked": "2026-11-24",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-24: own site's domain does not resolve"
  }
 }

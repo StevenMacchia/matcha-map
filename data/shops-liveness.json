@@ -1,0 +1,85 @@
+{
+ "about": "Last weekly liveness run (npm run shops:liveness); flagged rows are also in data/shops-overrides.json with status check or closed.",
+ "date": "2026-11-24",
+ "rows": 1269,
+ "withSite": 1231,
+ "siteRead": 1220,
+ "siteUnreadable": 11,
+ "bios": 17,
+ "check": 8,
+ "closed": 0,
+ "cleared": 0,
+ "flagged": [
+  {
+   "name": "Matcha Boba",
+   "city": "Thousand Oaks",
+   "state": "CA",
+   "tier": "shop",
+   "verdict": "check",
+   "why": "own site's domain does not resolve"
+  },
+  {
+   "name": "TAIYO MATCHA",
+   "city": "Jacksonville",
+   "state": "FL",
+   "tier": "shop",
+   "verdict": "check",
+   "why": "own site returns 404"
+  },
+  {
+   "name": "Sip Matcha",
+   "city": "Rowland Heights",
+   "state": "CA",
+   "tier": "shop",
+   "verdict": "check",
+   "why": "own site's domain does not resolve"
+  },
+  {
+   "name": "Amausaan Uji Matcha",
+   "city": "Union City",
+   "state": "CA",
+   "tier": "shop",
+   "verdict": "check",
+   "why": "own site's domain does not resolve"
+  },
+  {
+   "name": "Ms. Matcha",
+   "city": "Washington",
+   "state": "DC",
+   "tier": "shop",
+   "verdict": "check",
+   "why": "own site's domain does not resolve"
+  },
+  {
+   "name": "Matcha Boba House",
+   "city": "Ashland",
+   "state": "OR",
+   "tier": "shop",
+   "verdict": "check",
+   "why": "own site's domain does not resolve"
+  },
+  {
+   "name": "Amausaan Uji Matcha",
+   "city": "Newark",
+   "state": "CA",
+   "tier": "shop",
+   "verdict": "check",
+   "why": "own site's domain does not resolve"
+  },
+  {
+   "name": "Amausaan Uji Matcha",
+   "city": "Daly City",
+   "state": "CA",
+   "tier": "shop",
+   "verdict": "check",
+   "why": "own site's domain does not resolve"
+  }
+ ],
+ "maiko": {
+  "rows": 21,
+  "siteSaysToko": 0,
+  "datesAfterCutoff": 0,
+  "closedWording": 0,
+  "unreadable": 0
+ }
+}
