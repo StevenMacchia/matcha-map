@@ -71,7 +71,7 @@ function scene(it, size) {
   const g = G[size], hb = hash(it.city + it.kind + it.title);
   const flip = (hb >>> 3) & 1;
   const ev = it.events || [];
-  const tag = it.kind === "shop" ? it.tag : it.kind === "weekend" ? "This weekend" : ev[0] ? shortDay(ev[0].day) : it.tag;
+  const tag = it.kind === "shop" ? it.tag : it.kind === "weekend" ? "This weekend" : it.kind === "soon" ? "Coming up" : ev[0] ? shortDay(ev[0].day) : it.tag;
   let s = `<div class="top" data-blk style="top:${g.top}px"><div class="wm">${FACE}Matcha Map</div><div class="tag" data-fit data-max="36" data-min1="36" data-min="36">${esc(tag)}</div></div>`;
   const head = (text, two) => `<div class="head" data-fit data-max="${g.headMax}" data-min1="64" ${two ? `data-lines="2" data-max2="${g.headMax2}"` : ""} data-min="56">${esc(text)}</div>`;
   const pills = (list) => list.length ? `<div class="pills">${list.map((m) => `<span class="pill">${esc(trunc(m, 26))}</span>`).join("")}</div>` : "";
@@ -106,7 +106,7 @@ function scene(it, size) {
 
   // a list of two to four
   const rows = `<div class="rows">` + ev.map((v) => {
-    const when = it.kind === "weekend" ? `${DAYS[new Date(v.day + "T12:00:00Z").getUTCDay()].slice(0, 3)} ${v.time}` : v.time;
+    const when = it.kind === "weekend" || it.kind === "soon" ? `${DAYS[new Date(v.day + "T12:00:00Z").getUTCDay()].slice(0, 3)} ${v.time}` : v.time;
     const where = placeLine(v) || v.city;
     return `<div class="row"><div class="mochi" data-drawn="${esc(JSON.stringify({ e: { id: v.id, brand: v.brand, kind: v.kind }, opts: { mode: "thumb" } }))}"></div>` +
       `<div class="tx"><span class="rb" data-fit data-max="48" data-min1="38" data-min="38">${esc(v.brand)}</span><span class="rs" data-fit data-max="36" data-min1="36" data-min="36">${esc(trunc(`${when} · ${where}`, 36))}</span></div></div>`;
