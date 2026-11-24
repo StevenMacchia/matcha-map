@@ -189,6 +189,18 @@ function captionShop(s, link, tags) {
   lines.push(tags.join(" "));
   return lines.join("\n\n") + "\n";
 }
+function captionFeatured(s, link, tags) {
+  const names = s.pour.items.map((i) => i.name);
+  const lines = [`Featured: ${s.name}${at(s.handle)} in ${s.city}, ${s.state}.${s.address ? " " + s.address + "." : ""}`];
+  if (names.length) lines.push(`What they pour: ${names.join(", ")}${s.pour.more ? `, and ${s.pour.more} more` : ""}.`);
+  lines.push(`Find it and more matcha spots in ${s.city}: ${link}`);
+  lines.push(tags.join(" "));
+  return lines.join("\n\n") + "\n";
+}
+function captionCity(c, tags) {
+  const list = c.events.map((v) => `${v.brand}${at(v.handle)}`).join(", ");
+  return [`New on the map in ${c.city}, ${c.state}: ${list}${c.more ? `, and ${c.more} more` : ""}.`, `Every matcha spot in ${c.city}: ${c.link}`, tags.join(" ")].join("\n\n") + "\n";
+}
 function captionSeries(v, link, tags, date) {
   const next = v.day === date ? `today, ${dayWords(v.day)}` : dayWords(v.day);
   return [`${v.series}: ${v.brand}${at(v.handle)} ${whereOf(v)}, ${v.time.toLowerCase()}.`, `Next one: ${next}.`,
@@ -205,13 +217,21 @@ function historyBefore(history, date) {
     if (d >= from) for (const [k, n] of Object.entries(h.regions || {})) if (regionWeek[k]) { regionWeek[k].feed += +(n && n.feed) || 0; regionWeek[k].story += +(n && n.story) || 0; }
     for (const s of h.shops || []) shopsEver.add(s);
   }
-  return { blocked, shopsEver, regionWeek };
+  let lastMetro = null, lastD = "";
+  const feat60 = new Set(), cityRecent = new Set(), f60 = addDays(date, -60), c14 = addDays(date, -14);
+  for (const [d, h] of Object.entries(history || {})) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || d >= date || !h.feat) continue;
+    if (h.feat.metro && d > lastD) { lastD = d; lastMetro = h.feat.metro; }
+    if (d >= f60 && h.feat.shop) feat60.add(h.feat.shop);
+    if (d >= c14 && h.feat.city) cityRecent.add(h.feat.city);
+  }
+  return { blocked, shopsEver, regionWeek, lastMetro, feat60, cityRecent };
 }
 
 export function plan({ date, data, history = {} }) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("date must be YYYY-MM-DD");
   const ctx = context(data);
-  const { blocked, shopsEver, regionWeek } = historyBefore(history, date);
+  const { blocked, shopsEver, regionWeek, lastMetro, feat60, cityRecent } = historyBefore(history, date);
   const used = new Set();
   const free = (k) => k && !blocked.has(k) && !used.has(k);
   const clean = (s) => !BANNED.test(s);
@@ -249,11 +269,13 @@ export function plan({ date, data, history = {} }) {
   const wk = data.events.filter(eligible).filter((e) => inWindow(e, wkKeys, "America/New_York")).map((e) => view(e, ctx)).filter((v) => v.brand && clean(v.brand + " " + v.venue + " " + v.menu.join(" ")));
   if (dow === 4 || dow === 5) {
     const g = rank(groupBy(wk)).find(([, l]) => l.length >= 2);
-    if (g) take(eventCand("weekend", g[1], `This weekend in ${g[1][0].city}`, "This weekend"));
+    if (g) { const wc = eventCand("weekend", g[1], `This weekend in ${g[1][0].city}`, "This weekend"); wc.feedOnly = true; wc.why = "weekend roundup"; take(wc); }
   }
 
   // 3. a new shop: first read in the last 7 days, else the one with the most matcha drinks; never one featured before
-  let shopPool = [], shopCand = () => null;
+  let shopPool = [], shopCand = () => null, featuredC = null;
+  const metroOf = (s) => (s.cityObj ? s.cityObj.state + "/" + s.cityObj.slug : s.state + "/" + slug(s.city));
+  const richness = (s) => (s.tier === "shop" ? 1e6 : 0) + s.pour.items.length * 1e4 + Math.min(s.drinks.length, 40) * 100 + (s.handle ? 50 : 0);
   {
     const from = addDays(date, -REPEAT_DAYS);
     const drinksOf = (s) => {
@@ -274,6 +296,21 @@ export function plan({ date, data, history = {} }) {
       const s = fresh[0] || pool.slice().sort(order)[0];
       return s ? { kind: "shop", title: s.name, tag: "New on the map", city: s.city, state: s.state, shop: { ...s, drinks: s.drinks.slice(0, 4) }, brands: [s.key], shopId: s.id, link: cityLink(s, data) } : null;
     };
+    // 3a. the day's featured shop: the post for the grid. Richest first: core tier, most distinct drinks drawn, most menu
+    // drinks, a handle we can tag; never one featured in the last 60 days; the metro rotates (not yesterday's); a region
+    // owed its weekly feed post (REGIONS) gets its own pick first.
+    {
+      const fpool = shopPool.filter((s) => free(s.key) && s.pour.items.length >= 3 && !feat60.has(s.id));
+      const rank2 = (list) => list.slice().sort((a, b) => richness(b) - richness(a) || hash(date + a.id) - hash(date + b.id));
+      let pick = null;
+      for (const k of Object.keys(REGIONS)) if (!pick && (regionWeek[k] || {}).feed === 0) pick = rank2(fpool.filter((s) => regionOf(s.city, s.state) === k))[0] || null;
+      if (!pick) { const other = fpool.filter((s) => metroOf(s) !== lastMetro); pick = rank2(other.length ? other : fpool)[0] || null; }
+      if (pick) {
+        used.add(pick.key);
+        featuredC = { kind: "featured-shop", why: "featured shop", title: pick.name, tag: "Featured shop", city: pick.city, state: pick.state, region: regionOf(pick.city, pick.state), metro: metroOf(pick),
+          shop: { ...pick, drinks: pick.drinks.slice(0, 4) }, brands: [pick.key], shopId: pick.id, link: cityLink(pick, data) };
+      }
+    }
     const c = shopCand(shopPool);
     if (c) take(c);
   }
@@ -291,6 +328,26 @@ export function plan({ date, data, history = {} }) {
     if (cands.length >= 5) break;
     if (shownCity(l)) continue;
     take(eventCand("today", l, `Today in ${l[0].city}`, "Today"));
+  }
+
+  // 5b. with no featured shop, today's pop-up with the fullest menu (3 or more drinks drawn) is the featured piece
+  if (!featuredC) {
+    const v = today.filter((x) => free(x.key) && x.pour && x.pour.items.length >= 3).sort((a, b) => b.pour.items.length - a.pour.items.length || hash(date + a.id) - hash(date + b.id))[0];
+    if (v) { used.add(v.key); featuredC = { kind: "featured-popup", why: "featured pop-up", title: v.brand, tag: "Featured pop-up", city: v.city, state: v.state, region: regionOf(v.city, v.state), metro: metroOf(v),
+      events: [v], more: 0, brands: [v.key], link: cityLink(v, data) }; }
+  }
+  // 5c. a city feature: a metro that gained 3 or more shops this week (first read in the last 7 days), not featured in 14 days
+  let cityC = null;
+  {
+    const from = addDays(date, -REPEAT_DAYS), by = new Map();
+    for (const s of shopPool) if (s.seen >= from && s.seen < date && free(s.key) && !cityRecent.has(metroOf(s))) { const k = metroOf(s); (by.get(k) || by.set(k, []).get(k)).push(s); }
+    const g = [...by.values()].filter((l) => l.length >= 3).sort((a, b) => b.length - a.length || hash(date + a[0].id) - hash(date + b[0].id))[0];
+    if (g) {
+      const top = g.slice().sort((a, b) => richness(b) - richness(a) || hash(date + a.id) - hash(date + b.id)).slice(0, 4);
+      cityC = { kind: "city", why: "city feature", title: `New in ${top[0].city}`, tag: "City feature", city: top[0].city, state: top[0].state, region: regionOf(top[0].city, top[0].state), metro: metroOf(top[0]),
+        events: top.map((s) => ({ id: s.id, brand: s.name, handle: s.handle, kind: "cafe", venue: "", venueHandle: null, address: "", city: s.city, state: s.state, day: date, time: "New on the map", menu: [], series: null, pour: s.pour })),
+        more: Math.max(0, g.length - 4), brands: top.map((s) => s.key), shopIds: top.map((s) => s.id), link: cityLink(top[0], data) };
+    }
   }
 
   // 6. a region's week (REGIONS): with no feed post from the region in the last six days, one of its own becomes the
@@ -315,19 +372,21 @@ export function plan({ date, data, history = {} }) {
   for (const [rk, r] of Object.entries(REGIONS)) {
     const week = regionWeek[rk] || { feed: 0, story: 0 };
     let own = cands.find((c) => c.region === rk);
-    if (!own && (week.feed === 0 || week.story === 0)) { own = regionCand(rk, r); if (own) { own.region = rk; take(own); } }
+    if (!own && week.story === 0) { own = regionCand(rk, r); if (own) { own.region = rk; take(own); } }
     if (!own) continue;
     regionOwn[rk] = own;
-    const i = cands.indexOf(own);
-    if (week.feed === 0 && i > 1) { cands.splice(i, 1); cands.splice(1, 0, own); }
   }
 
   // feed: the first three. Stories run by location: every story candidate (the day's pop-ups, the weekend, the shop, the series,
   // a region's own) is filed under its place, and each place opens with a title story. A city with two or more stories (or a
   // region such as the Triangle) is a group of its own; single ones share their state. The biggest groups go first, three at
   // most, a title and up to two stories each; a city with one story gets a shop of its own that pours matcha, if there is one.
-  const feed = cands.slice(0, 3);
-  const content = [cands[0], ...cands.slice(3, 5), cands[1], cands[2]].filter(Boolean).filter((c, i, a) => a.indexOf(c) === i);
+  // Feed posts are featured pieces only (1 to 2 a day): the featured shop or pop-up, the Friday weekend roundup, a city feature.
+  // Everything time-bound or routine (today's pop-ups, new on the map, a series reminder, a region's own) is a story.
+  const weekendC = cands.find((c) => c.feedOnly);
+  const feed = [featuredC, weekendC, cityC].filter(Boolean).slice(0, 2);
+  const content = cands.filter((c) => !c.feedOnly);
+  if (feed.includes(cityC)) cityC.brands.forEach((b) => used.add(b));
   for (const [rk, own] of Object.entries(regionOwn)) if ((regionWeek[rk] || {}).story === 0 && !content.includes(own)) content.unshift(own);
   const placeKey = (c) => (c.region ? "r:" + c.region : "c:" + c.state + "/" + norm(c.city));
   const countBy = (list) => { const m = new Map(); for (const c of list) m.set(placeKey(c), (m.get(placeKey(c)) || 0) + 1); return m; };
@@ -371,20 +430,20 @@ export function plan({ date, data, history = {} }) {
   const items = [];
   const finish = (c, slot, i, ti = i) => {
     const tags = hashtagsFor(c.city, data, date, i + (slot === "story" ? 3 : 0));
-    const caption = c.kind === "location" ? `${c.title}: ${c.group.names.join("; ")}.
+    const caption = c.kind === "featured-shop" ? captionFeatured(c.shop, c.link, tags) : c.kind === "city" ? captionCity(c, tags) : c.kind === "location" ? `${c.title}: ${c.group.names.join("; ")}.
 
 More matcha in ${c.group.place}: ${c.link}
 
 ${tags.join(" ")}
 `
       : c.kind === "shop" ? captionShop(c.shop, c.link, tags) : c.kind === "series" ? captionSeries(c.events[0], c.link, tags, date) : captionEvents(c.kind, c.title, c.events, c.link, tags, date, c.more);
-    const handles = c.kind === "location" ? [] : c.kind === "shop" ? [c.shop.handle] : c.events.flatMap((v) => [v.handle, v.venueHandle]);
+    const handles = c.kind === "location" ? [] : c.kind === "shop" || c.kind === "featured-shop" ? [c.shop.handle] : c.events.flatMap((v) => [v.handle, v.venueHandle]);
     const tagList = [...new Set(handles.filter(Boolean))].slice(0, 20);
     const time = (slot === "feed" ? FEED_TIMES : STORY_TIMES)[ti];
     return {
       slot, kind: c.kind, time, title: c.title, tag: c.tag, date, city: c.city, state: c.state, region: c.region || null, link: c.link, hashtags: tags, caption,
       user_tags: slot === "feed" ? tagList.map((username) => ({ username, x: 0.5, y: 0.5 })) : [],
-      mentions: tagList, brands: c.brands, shopId: c.shopId || null, group: c.group || null, role: c.role || null,
+      mentions: tagList, brands: c.brands, shopId: c.shopId || null, group: c.group || null, role: c.role || null, why: c.why || null, metro: c.metro || null,
       events: (c.events || []).map(({ cityObj, key, ...v }) => v), more: c.more || 0, shop: c.shop ? (({ cityObj, key, ...s }) => s)(c.shop) : null,
     };
   };
@@ -392,13 +451,14 @@ ${tags.join(" ")}
   let gi = -1, within = 0;
   storyList.forEach((c, i) => { if (c.role === "title") { gi++; within = 0; } items.push(finish(c, "story", i, gi * 3 + within)); within++; });
   items.sort((a, b) => a.time.localeCompare(b.time));
-  items.forEach((it, i) => { it.n = String(i + 1).padStart(2, "0"); it.name = `${it.n}-${it.slot}-${it.kind}-${slug(it.kind === "shop" ? it.shop.name : it.kind === "location" ? it.group.place : it.city)}`; });
+  items.forEach((it, i) => { it.n = String(i + 1).padStart(2, "0"); it.name = `${it.n}-${it.slot}-${it.kind}-${slug(it.kind === "shop" || it.kind === "featured-shop" ? it.shop.name : it.kind === "location" ? it.group.place : it.city)}`; });
   for (const it of items) {
     if (it.caption.length > CAPTION_MAX) it.caption = it.caption.slice(0, CAPTION_MAX - 1).replace(/\s+\S*$/, "") + "\n";
     if (BANNED.test(it.caption + " " + JSON.stringify(it.events) + " " + it.title)) throw new Error(`banned word in ${it.name}`);
   }
   const regions = Object.fromEntries(Object.keys(REGIONS).map((k) => [k, { feed: items.filter((it) => it.slot === "feed" && it.region === k).length, story: items.filter((it) => it.slot === "story" && it.role !== "title" && it.region === k).length }]));
-  return { date, items, featured: { brands: [...used].sort(), shops: cands.filter((c) => c.shopId).map((c) => c.shopId), regions } };
+  return { date, items, featured: { brands: [...used].sort(), shops: [...cands, ...feed].filter((c) => c.shopId).map((c) => c.shopId).concat(feed.includes(cityC) ? cityC.shopIds : []), regions,
+    feat: { shop: featuredC && featuredC.shopId || null, metro: featuredC ? featuredC.metro : null, city: feed.includes(cityC) ? cityC.metro : null } } };
 }
 
 // The history entry for the date replaces any earlier run of that date; entries older than 90 days are dropped.
@@ -406,7 +466,7 @@ export function recordHistory(history, p) {
   const out = {};
   const cut = addDays(p.date, -90);
   for (const [d, h] of Object.entries(history || {})) if (d >= cut && d !== p.date) out[d] = h;
-  out[p.date] = { brands: p.featured.brands, shops: p.featured.shops, regions: p.featured.regions || {} };
+  out[p.date] = { brands: p.featured.brands, shops: p.featured.shops, regions: p.featured.regions || {}, feat: p.featured.feat || null };
   return Object.fromEntries(Object.entries(out).sort(([a], [b]) => a.localeCompare(b)));
 }
 export const readHistory = (file = HISTORY_FILE) => readJson(file, {});

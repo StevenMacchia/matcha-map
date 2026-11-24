@@ -35,7 +35,7 @@ export function indexMd(p) {
       ? `Business Suite > Create post: upload image.png, paste caption.txt, Add location "${it.city}, ${it.state}"${it.mentions.length ? `, Tag people ${tags}` : ""}`
       : `Business Suite > Create story: upload image.png, add a link sticker to ${it.link}${it.mentions.length ? ` and a mention sticker for ${tags}` : ""}`;
     if (it.group && !groups.find((g) => g.key === it.group.key)) groups.push(it.group);
-    lines.push(`| ${it.time} | ${it.slot} (${it.kind}${it.group ? ", " + it.group.place : ""}) | ${it.name}/image.png | ${oneLine(it.caption).replace(/\|/g, "/")} | ${tags} | ${where.replace(/\|/g, "/")} |`);
+    lines.push(`| ${it.time} | ${it.slot} (${it.why || it.kind}${it.group ? ", " + it.group.place : ""}) | ${it.name}/image.png | ${oneLine(it.caption).replace(/\|/g, "/")} | ${tags} | ${where.replace(/\|/g, "/")} |`);
   }
   if (!p.items.length) lines.push("| | | | Nothing to post for this date: no pop-up, shop or series in the data that was not featured in the last 7 days. | | |");
   if (groups.length) {

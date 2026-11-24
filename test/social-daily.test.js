@@ -26,7 +26,7 @@ const FIX = {
     ev({ id: "a4", brand: "Unsure Thing", handle: "unsure.thing", confidence: "unsure", start: "2026-12-01T11:00:00-05:00", city: "Raleigh", state: "NC" }),
     ev({ id: "a5", brand: "Weekly Whisk", handle: "weeklywhisk", start: "2026-12-02T08:00:00-05:00", end: "2026-12-02T11:00:00-05:00", venue: "Corner Books", city: "Raleigh", state: "NC", series: { weekdays: [3] } }),
   ],
-  shops: [{ id: "s1", name: "Green Door", city: "Raleigh", state: "NC", address: "9 Oak St", instagram: "greendoor.tea", verified: true, tier: "serves", read: "2026-11-28", menu_matcha: [{ name: "Matcha Latte" }, { name: "Usucha" }] }],
+  shops: [{ id: "s1", name: "Green Door", city: "Raleigh", state: "NC", address: "9 Oak St", instagram: "greendoor.tea", verified: true, tier: "serves", read: "2026-11-28", menu_matcha: [{ name: "Matcha Latte" }, { name: "Usucha" }, { name: "Strawberry Matcha" }, { name: "Hojicha Latte" }] }],
   brands: [], sources: [],
   hashtags: { always: ["matcha", "matchapopup", "matchamap"], city: ["matcha{city}", "{city}food"], rotating: ["a1", "b2", "c3", "d4"] },
   cities: [city("Durham", "NC", 35.99, -78.9), city("Raleigh", "NC", 35.78, -78.64)],
@@ -115,7 +115,7 @@ test("plan: banned words never appear, captions stay under 2,200 characters, 5 t
   assert.equal(top.city, "Durham");
   assert.equal(top.link, "https://matchamap.app/city/nc/durham/");
   assert.ok(top.caption.includes("@leafcart"));
-  assert.ok(f.items.some((i) => i.kind === "shop" && i.mentions.includes("greendoor.tea")));
+  assert.ok(f.items.some((i) => (i.kind === "shop" || i.kind === "featured-shop") && i.mentions.includes("greendoor.tea")));
   assert.ok(f.items.some((i) => i.kind === "series" && i.title === "Every Wednesday"));
   assert.equal(timeWords(FIX.events[0]), "10 am to 2 pm");
 });
@@ -147,25 +147,40 @@ test("plan: a week with nothing from the Triangle gets one of its own, as the se
   assert.equal(regionOf("Raleigh", "WV"), null);
   const p = plan({ date: "2026-12-01", data: TRI, history: {} });
   const feed = p.items.filter((i) => i.slot === "feed"), story = p.items.filter((i) => i.slot === "story");
-  assert.equal(feed[1].region, "triangle", "the second feed post is the Triangle's");
-  assert.equal(feed[1].kind, "soon", "nothing today or this weekend and no shop there: the next pop-up within two weeks");
-  assert.match(feed[1].title, /^Coming up in Raleigh$/);
-  assert.match(feed[1].caption, /Saiko Matcha House \(@saikomatcha\) is popping up at Village District in Raleigh, NC, Wednesday/);
-  assert.ok(story.some((i) => i.region === "triangle"), "and a story");
-  assert.equal(feed.length, 3);
+  assert.ok(feed.length <= 2 && feed.every((i) => ["featured-shop", "featured-popup", "weekend", "city"].includes(i.kind)), "feed posts are featured pieces only");
+  const own = story.find((i) => i.region === "triangle" && i.role !== "title");
+  assert.equal(own.kind, "soon", "nothing today or this weekend and no shop there: the next pop-up within two weeks, as a story");
+  assert.match(own.title, /^Coming up in Raleigh$/);
+  assert.match(own.caption, /Saiko Matcha House \(@saikomatcha\) is popping up at Village District in Raleigh, NC, Wednesday/);
   assert.ok(story.length >= 2 && story.length <= 6);
-  assert.deepEqual(p.featured.regions, { triangle: { feed: 1, story: 1 } });
+  assert.deepEqual(p.featured.regions, { triangle: { feed: 0, story: 1 } });
   const h = recordHistory({}, p);
-  assert.deepEqual(h["2026-12-01"].regions, { triangle: { feed: 1, story: 1 } });
+  assert.deepEqual(h["2026-12-01"].regions, { triangle: { feed: 0, story: 1 } });
   // the week had one: nothing forced (the only Triangle content is the same brand, blocked for 7 days anyway)
   const q = plan({ date: "2026-12-02", data: TRI, history: h });
   assert.ok(!q.items.some((i) => i.region === "triangle"));
-  // a week that had a Triangle story but no feed post: the feed post is forced, from a fresh brand
-  const h2 = { "2026-11-28": { brands: [], shops: [], regions: { triangle: { feed: 0, story: 1 } } } };
-  const r = plan({ date: "2026-12-01", data: TRI, history: h2 });
-  assert.equal(r.items.filter((i) => i.slot === "feed")[1].region, "triangle");
   // the same date and history give the same plan
   assert.deepEqual(plan({ date: "2026-12-01", data: TRI, history: {} }), p);
+});
+
+test("plan: the feed is featured pieces only, 1 to 2 a day, never the same shop within 60 days, the metro rotates", () => {
+  let history = {};
+  const seen = new Set();
+  let lastMetro = null;
+  for (const date of days("2026-11-24", 30)) {
+    const p = plan({ date, data: DATA, history });
+    const feed = p.items.filter((i) => i.slot === "feed"), story = p.items.filter((i) => i.slot === "story");
+    assert.ok(feed.length >= 1 && feed.length <= 2, `${date}: ${feed.length} feed posts`);
+    assert.ok(feed.every((i) => i.why && ["featured shop", "featured pop-up", "weekend roundup", "city feature"].includes(i.why)), date);
+    assert.ok(story.length <= 6 && story.every((i) => !["featured-shop", "weekend", "city"].includes(i.kind)), date);
+    const fs1 = feed.find((i) => i.kind === "featured-shop");
+    if (fs1) {
+      assert.ok(fs1.shop.pour.items.length >= 3 && fs1.shop.pour.items.length <= 5, "3 to 5 drinks drawn");
+      assert.ok(!seen.has(fs1.shopId), `${date}: ${fs1.title} featured again`); seen.add(fs1.shopId);
+      assert.notEqual(fs1.metro, lastMetro, `${date}: the same metro two days running`); lastMetro = fs1.metro;
+    }
+    history = recordHistory(history, p);
+  }
 });
 
 test("render: feed 1080x1350 and story 1080x1920 PNGs, text at least 36px, nothing cut or overlapping", { skip: !hasChrome && "no Chrome" }, async () => {

@@ -38,6 +38,11 @@ function cards() {
   const ls = longest(SHOPS, (s) => s.name + s.address + s.city)[0];
   for (const size of ["story", "feed"]) {
     out.push({ name: `${size} shop, longest name, five longest drinks`, size, it: base({ slot: size, kind: "shop", title: ls.name, city: ls.city, state: ls.state, shop: { ...ls, pour: longPour } }) });
+    if (size === "feed") {
+      out.push({ name: "feed featured shop, five longest drinks", size, it: base({ slot: "feed", kind: "featured-shop", tag: "Featured shop", title: ls.name, city: ls.city, state: ls.state, shop: { ...ls, pour: longPour } }) });
+      out.push({ name: "feed featured pop-up, long pour", size, it: base({ slot: "feed", kind: "featured-popup", tag: "Featured pop-up", title: lb.brand, events: [evOf(lb, longPour)] }) });
+      out.push({ name: "feed city feature, four longest shops", size, it: base({ slot: "feed", kind: "city", tag: "City feature", title: "New in " + longCity.city, events: longest(SHOPS, (x) => x.name, 4).map((x) => ({ id: x.id, brand: x.name, kind: "cafe", venue: "", city: x.city, state: x.state, day: "2026-11-24", time: "New on the map", menu: [], pour: x.pour })), more: 9 }) });
+    }
     out.push({ name: `${size} shop, one drink`, size, it: base({ slot: size, kind: "shop", title: ls.name, shop: { ...ls, pour: { items: longPour.items.slice(0, 1), more: 0 } } }) });
     out.push({ name: `${size} shop, no pour (the old card)`, size, it: base({ slot: size, kind: "shop", title: ls.name, shop: { ...ls, pour: { items: [], more: 0 } } }) });
     out.push({ name: `${size} pop-up, longest names, long pour`, size, it: base({ slot: size, kind: "today", title: `Today in ${longCity.city}`, city: longCity.city, events: [evOf(lb, longPour)] }) });

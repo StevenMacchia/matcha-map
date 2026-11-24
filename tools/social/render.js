@@ -80,7 +80,7 @@ function scene(it, size) {
   const g = G[size], hb = hash(it.city + it.kind + it.title);
   const flip = (hb >>> 3) & 1;
   const ev = it.events || [];
-  const tag = it.kind === "shop" ? it.tag : it.kind === "weekend" ? "This weekend" : it.kind === "soon" ? "Coming up" : ev[0] ? shortDay(ev[0].day) : it.tag;
+  const tag = ["shop", "featured-shop", "city"].includes(it.kind) ? it.tag : it.kind === "weekend" ? "This weekend" : it.kind === "soon" ? "Coming up" : ev[0] ? shortDay(ev[0].day) : it.tag;
   let s = `<div class="top" data-blk style="top:${g.top}px"><div class="wm">${FACE}Matcha Map</div><div class="tag" data-fit data-max="36" data-min1="36" data-min="36">${esc(tag)}</div></div>`;
   const head = (text, two) => `<div class="head" data-fit data-max="${g.headMax}" data-min1="64" ${two ? `data-lines="2" data-max2="${g.headMax2}"` : ""} data-min="56">${esc(text)}</div>`;
   const pills = (list) => list.length ? `<div class="pills">${list.map((m) => `<span class="pill">${esc(trunc(m, 26))}</span>`).join("")}</div>` : "";
@@ -105,15 +105,15 @@ function scene(it, size) {
     return s + foot;
   }
 
-  if (it.kind === "shop") {
-    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 180 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
+  if (it.kind === "shop" || it.kind === "featured-shop") {
+    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 180 : it.kind === "featured-shop" ? 150 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
     const art = `<div class="shopart" style="height:${artH}px"><div class="blob" style="left:40px;top:${artH - big - 20}px;width:${big + 40}px;height:${big + 40}px"></div>` +
       `<svg viewBox="0 0 64 64" style="left:60px;top:${artH - big - 16}px;width:${big}px;height:${big}px"><use href="#s-shop" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 64 64" style="left:${930 - m - 30}px;top:${artH - m - 16}px;width:${m}px;height:${m}px"><use href="#m-whisk" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:560px;top:36px;width:60px;height:60px;transform:rotate(24deg)"><use href="#c-petal" width="20" height="20"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:840px;top:60px;width:42px;height:42px;transform:rotate(-30deg)"><use href="#c-petal" width="20" height="20"/></svg></div>`;
     const info = `<div class="info">${fitLine("mid", trunc(cityLine(sh), 48), 44)}${fitLine("sub", sh.tier === "serves" ? "Matcha on the menu" : "Matcha shop", 38)}</div>`;
-    if (pv) return s + col(head(sh.name, true) + art + info + pourHtml(sh.pour, size === "story" ? 4 : POUR_ROWS.feed), PB, 18) + (size === "feed" ? mattie("m-wave", 930, 1204, 110, !flip) : "") + foot;
+    if (pv) return s + col(head(sh.name, true) + art + info + pourHtml(sh.pour, size === "story" ? 4 : it.kind === "featured-shop" ? 5 : POUR_ROWS.feed), PB, 18) + (size === "feed" ? mattie("m-wave", 930, 1204, 110, !flip) : "") + foot;
     s += col(head(sh.name, true) + art + info + pills(sh.drinks));
     s += mattie("m-wave", mx + 20, my + 20, ms - 20, !flip);
     return s + foot;
@@ -151,7 +151,7 @@ const dayName = (k) => { const d = new Date(k + "T12:00:00Z"); return `${DAYS[d.
 
 export function itemHtml(it, size = it.slot) {
   const S = shared();
-  const tpl = read(path.join(TPL, size === "story" ? "story.html" : "feed.html"));
+  const tpl = read(path.join(TPL, size === "story" ? "story.html" : "featured.html"));
   return fill(tpl, { ...S, variant: "v" + (hash(it.city || it.title) % 3), scene: scene(it, size) });
 }
 
