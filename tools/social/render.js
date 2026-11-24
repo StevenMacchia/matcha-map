@@ -62,6 +62,16 @@ const pourHtml = (pour, max, tight = false) => {
   return `<div class="pour${tight && shown.length > 2 ? " tight" : ""}"><div class="ph"><span>What they pour</span>${more ? `<span class="pm">+ ${more} more drink${more === 1 ? "" : "s"}</span>` : ""}</div>` +
     shown.map((i, k) => `<div class="pr"><div class="pg">${drinkSvg(i.name, "pr" + k)}</div><span class="pn" data-fit data-max="44" data-min1="36" data-min="36">${esc(i.name)}</span></div>`).join("") + "</div>";
 };
+const tilesHtml = (pour, max) => {
+  if (!pour || !pour.items || !pour.items.length) return "";
+  const shown = pour.items.slice(0, max), more = (pour.more || 0) + pour.items.length - shown.length;
+  return `<div class="pour"><div class="ph"><span>What they pour</span>${more ? `<span class="pm">+ ${more} more drink${more === 1 ? "" : "s"}</span>` : ""}</div><div class="tiles">` +
+    shown.map((i, k) => `<div class="tile"><div class="pg">${drinkSvg(i.name, "tl" + k)}</div><span class="tn">${esc(i.name)}</span></div>`).join("") + "</div></div>";
+};
+// a list row's thumb: the shop's or pop-up's top drink cartoon when a drink is known, else the initial mochi
+const thumb = (v) => (v.pour && v.pour.items && v.pour.items[0]
+  ? `<div class="mochi dk">${drinkSvg(v.pour.items[0].name, "th" + hash(v.id))}</div>`
+  : `<div class="mochi" data-drawn="${esc(JSON.stringify({ e: { id: v.id, brand: v.brand, kind: v.kind }, opts: { mode: "thumb" } }))}"></div>`);
 const trunc = (s, n) => { s = String(s || ""); return s.length > n ? s.slice(0, n - 1).replace(/\s+$/, "") + "…" : s; };
 const kindLabel = (k) => (k === "organizer" ? "Matcha event" : k === "cafe" ? "Matcha cafe" : k === "festival" ? "Matcha festival" : "Matcha pop-up");
 const placeLine = (v) => v.venue || (v.venueHandle ? "@" + v.venueHandle : "");
@@ -106,14 +116,14 @@ function scene(it, size) {
   }
 
   if (it.kind === "shop" || it.kind === "featured-shop") {
-    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 180 : it.kind === "featured-shop" ? 150 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
+    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 180 : it.kind === "featured-shop" ? 110 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
     const art = `<div class="shopart" style="height:${artH}px"><div class="blob" style="left:40px;top:${artH - big - 20}px;width:${big + 40}px;height:${big + 40}px"></div>` +
       `<svg viewBox="0 0 64 64" style="left:60px;top:${artH - big - 16}px;width:${big}px;height:${big}px"><use href="#s-shop" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 64 64" style="left:${930 - m - 30}px;top:${artH - m - 16}px;width:${m}px;height:${m}px"><use href="#m-whisk" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:560px;top:36px;width:60px;height:60px;transform:rotate(24deg)"><use href="#c-petal" width="20" height="20"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:840px;top:60px;width:42px;height:42px;transform:rotate(-30deg)"><use href="#c-petal" width="20" height="20"/></svg></div>`;
     const info = `<div class="info">${fitLine("mid", trunc(cityLine(sh), 48), 44)}${fitLine("sub", sh.tier === "serves" ? "Matcha on the menu" : "Matcha shop", 38)}</div>`;
-    if (pv) return s + col(head(sh.name, true) + art + info + pourHtml(sh.pour, size === "story" ? 4 : it.kind === "featured-shop" ? 5 : POUR_ROWS.feed), PB, 18) + (size === "feed" ? mattie("m-wave", 930, 1204, 110, !flip) : "") + foot;
+    if (pv) return s + col(head(sh.name, true) + art + info + (size === "feed" && it.kind === "featured-shop" ? tilesHtml(sh.pour, 4) : pourHtml(sh.pour, size === "story" ? 4 : POUR_ROWS.feed)), PB, 18) + (size === "feed" ? mattie("m-wave", 930, 1204, 110, !flip) : "") + foot;
     s += col(head(sh.name, true) + art + info + pills(sh.drinks));
     s += mattie("m-wave", mx + 20, my + 20, ms - 20, !flip);
     return s + foot;
@@ -127,7 +137,7 @@ function scene(it, size) {
     lines.push(fitLine("sub", trunc(cityLine(v), 48), 38));
     const pv = !!(v.pour && v.pour.items && v.pour.items.length);
     const inner = head(it.title, false) + drawnBox("panel", card, { mode: "card", when: kindLabel(v.kind), crop: 1 }) + `<div class="info">${lines.join("")}</div>`;
-    if (pv) return s + col(inner + pourHtml(v.pour, size === "story" ? 3 : POUR_ROWS.feed, true), PB, 18) + (size === "feed" ? mattie("m-happy", 930, 1204, 110, !flip) : "") + foot;
+    if (pv) return s + col(inner + (size === "feed" && it.kind === "featured-popup" ? tilesHtml(v.pour, 2) : pourHtml(v.pour, size === "story" ? 3 : POUR_ROWS.feed, true)), PB, 18) + (size === "feed" ? mattie("m-happy", 930, 1204, 110, !flip) : "") + foot;
     s += col(inner + pills(v.menu.slice(0, 3)));
     s += mattie(["m-wave", "m-happy", "m-excited"][hb % 3], mx, my, ms, !flip);
     s += petal(mx - 30, my + 6, 44, 20);
@@ -138,7 +148,7 @@ function scene(it, size) {
   const rows = `<div class="rows">` + ev.map((v) => {
     const when = it.kind === "weekend" || it.kind === "soon" ? `${DAYS[new Date(v.day + "T12:00:00Z").getUTCDay()].slice(0, 3)} ${v.time}` : v.time;
     const where = placeLine(v) || v.city;
-    return `<div class="row"><div class="mochi" data-drawn="${esc(JSON.stringify({ e: { id: v.id, brand: v.brand, kind: v.kind }, opts: { mode: "thumb" } }))}"></div>` +
+    return `<div class="row">${thumb(v)}` +
       `<div class="tx"><span class="rb" data-fit data-max="48" data-min1="38" data-min="38">${esc(trunc(v.brand, 34))}</span><span class="rs" data-fit data-max="36" data-min1="36" data-min="36">${esc(trunc(`${when} · ${where}`, 36))}</span></div></div>`;
   }).join("") + `</div>`;
   s += col(head(it.title, true) + rows + (it.more ? `<div class="more">+ ${it.more} more on the map</div>` : ""), g.bottom, size === "feed" ? 12 : g.gap);
@@ -172,7 +182,7 @@ const CHECK = `(() => {
     if (!(el instanceof SVGElement) && el.scrollWidth > el.clientWidth + 1 && getComputedStyle(el).overflow !== "visible") cut.push(t.textContent.trim().slice(0, 40));
   }
   for (const m of document.querySelectorAll(".main")) if (m.scrollHeight > m.clientHeight + 1) cut.push("column runs past its space by " + (m.scrollHeight - m.clientHeight) + "px");
-  const BOXES = "[data-blk],.pr,.row,.pill,.ph,.info,.panel,.shopart,.mt,.more,.top>*";
+  const BOXES = "[data-blk],.pr,.tile,.row,.pill,.ph,.info,.panel,.shopart,.mt,.more,.top>*";
   const blks = [...document.querySelectorAll(BOXES)].filter((e) => !e.closest("defs,symbol")).map((e) => [e, e.getBoundingClientRect()]);
   const nm = (e) => (e.className && e.className.baseVal !== undefined ? e.className.baseVal : e.className) || e.tagName;
   for (const [e, r] of blks) if (r.left < -1 || r.top < -1 || r.right > W + 1 || r.bottom > H + 1) off.push("block " + nm(e));
@@ -186,7 +196,7 @@ const CHECK = `(() => {
   while (tw2.nextNode()) {
     const t = tw2.currentNode, el = t.parentElement;
     if (!t.textContent.trim() || !el || el.closest("defs,symbol,style,script,title")) continue;
-    const bx = el.closest(".pr,.row,.pill,.tag,.wm,.more,.ph,.info,.head,.foot,.panel,.shopart");
+    const bx = el.closest(".pr,.tile,.row,.pill,.tag,.wm,.more,.ph,.info,.head,.foot,.panel,.shopart");
     if (!bx) continue;
     const rg = document.createRange(); rg.selectNodeContents(t);
     const q = rg.getBoundingClientRect(), r = bx.getBoundingClientRect();

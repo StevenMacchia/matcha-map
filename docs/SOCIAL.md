@@ -4,7 +4,7 @@ Steven, 2026-11-23: two to three posts and two to three stories every day, repea
 
 ## What runs every day
 
-`npm run social` (`tools/social/outbox.js`) plans tomorrow's posts from the data and draws them. Run with `--date YYYY-MM-DD` for another day; `--force` redraws a day whose plan has not changed. The daily GitHub job (`.github/workflows/daily.yml`) runs it after the data refresh and commits the result with the other generated files. The Windows task (`npm run daily`, `ingest/daily.js`) does not run it yet; until a `social` step is added there, run `npm run social` by hand after the daily run.
+`npm run social` (`tools/social/outbox.js`) plans tomorrow's posts from the data and draws them. Run with `--date YYYY-MM-DD` for another day; `--force` redraws a day whose plan has not changed. The daily GitHub job (`.github/workflows/daily.yml`) runs it after the data refresh and commits the result with the other generated files. The Windows task (`npm run daily`, `ingest/daily.js`) runs it too, as its `social` step (it logs "social ok").
 
 1. **Plan** (`tools/social/plan.js`). For the posting day it picks, in this order:
    - the day's pop-ups in the city with the most of them ("Today in Brooklyn");
