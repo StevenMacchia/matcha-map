@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
-import { buildSite, eventLd, weekendKeys, timeText, dayKey, patchIndex, homeHead, LIMITS, isUpcoming, cityIndexable, parseOpeningHours, openingHoursSpec, hoursText, shopLd, loadCities, citiesBlock, CITIES_START, CITIES_END, NEARBY_KM, km as kmBetween } from "../tools/gen-pages.js";
+import { buildSite, eventLd, weekendKeys, timeText, dayKey, patchIndex, homeHead, LIMITS, isUpcoming, cityIndexable, parseOpeningHours, openingHoursSpec, hoursText, shopLd, loadCities, citiesBlock, CITIES_START, CITIES_END, NEARBY_KM, km as kmBetween, cityParam } from "../tools/gen-pages.js";
 import { weekendWindow, inWindow } from "../tools/gen-weekend.js";
 import { slugOf } from "../tools/gen-cities.js";
 import { SITE_URL } from "../tools/site-url.js";
@@ -72,7 +72,8 @@ test("noindex pages: robots meta, out of the sitemap, still a full page; indexab
   assert.ok(sm.includes("/city/nc/apex/") && sm.includes("/city/nc/shopburg/") && sm.includes("/city/nc/tinyville/"));
   assert.ok(!sm.includes("/city/nc/quietton/"));
   const q = page(out, "city/nc/quietton/index.html");
-  for (const need of ["<h1>Matcha pop-ups in Quietton, NC</h1>", "pg-faq", "FAQPage", 'href="/alerts/?city=quietton-nc"', 'href="/add/"', "Nearby cities", 'href="/state/nc/"', 'href="/?city=quietton-nc"']) assert.ok(q.includes(need), need);
+  for (const need of ["<h1>Matcha pop-ups in Quietton, NC: this weekend and upcoming</h1>", "pg-faq", 'href="/alerts/?city=quietton-nc"', 'href="/add/?city=quietton-nc"', "<h2>Nearest cities</h2>", 'href="/state/nc/"', 'href="/?city=quietton-nc"', "Seen a pop-up we missed?"]) assert.ok(q.includes(need), need);
+  assert.ok(!q.includes('"FAQPage"'), "a noindex page shows the questions without the FAQPage block");
   assert.ok(Buffer.byteLength(q) < 6 * 1024, "thin pages stay under 6 KB: " + Buffer.byteLength(q));
   assert.equal(out.counts.indexable + out.counts.noindex, out.counts.cities);
 });
@@ -82,18 +83,17 @@ test("an event in a suburb that is not listed lands on the nearest listed city w
   assert.match(page(out, "city/nc/cary/index.html"), /Moonbee/);
 });
 
-test("events are grouped by day in the event's own time zone, with the weekend count in the lead", () => {
+test("upcoming pop-ups are cards with a day pill in the event's own time zone; the weekend and 30-day counts lead", () => {
   const out = buildSite(data([ev({}), ev({ title: "Later", start: "2026-12-05T10:00:00-05:00", end: "2026-12-05T12:00:00-05:00" }), ev({ start: "2026-11-28T18:00:00-05:00", end: null })]));
   const h = page(out, "city/nc/raleigh/index.html");
-  assert.match(h, /<h1>Matcha pop-ups in Raleigh, NC<\/h1>/);
-  assert.match(h, /<p class="pg-lead">3 upcoming matcha pop-ups in Raleigh, NC, updated Nov 25, 2026\.<\/p>/);
-  assert.match(h, /<h2>This weekend in Raleigh<\/h2>\s*<p>2 matcha pop-ups are listed for Nov 27 to Nov 29: Moonbee on Sat Nov 28 and Moonbee on Sat Nov 28\. <a href="\/weekend\/raleigh-nc\/">/);
-  assert.ok(h.indexOf("This weekend in Raleigh") < h.indexOf("Upcoming pop-ups"));
-  assert.equal((h.match(/class="pg-day"/g) || []).length, 2);
-  assert.ok(h.indexOf("Saturday, Nov 28") < h.indexOf("Saturday, Dec 5"));
-  assert.match(h, /11 AM\u20133 PM/);
-  assert.match(h, /href="\/\?event=/);
-  assert.match(h, /href="https:\/\/www\.instagram\.com\/p\/XYZ\/"/);
+  assert.match(h, /<h1>Matcha pop-ups in Raleigh, NC: this weekend and upcoming<\/h1>/);
+  assert.match(h, /<p class="pg-lead">2 this weekend, 3 in the next 30 days\. <a href="\/weekend\/raleigh-nc\/">See this weekend<\/a><\/p>/);
+  const pills = [...h.matchAll(/<span class="pg-day2">([^<]*)<\/span>/g)].map((m) => m[1]);
+  assert.deepEqual(pills, ["Sat, Nov 28", "Sat, Nov 28", "Sat, Dec 5"]);
+  assert.match(h, /<p class="pg-when">11 AM to 3 PM<\/p>/);
+  assert.match(h, /<p class="pg-where">Books &amp; Co · 1 Main St<\/p>/);
+  assert.match(h, /<h3><a href="\/brand\/moonbeematcha\/">Moonbee<\/a><\/h3>/);
+  assert.match(h, /<a href="\/e\/aaaaaa\d{6}\/">Details<\/a><a class="pg-btn" href="\/\?event=aaaaaa\d{6}">See on the map<\/a>/);
   assert.deepEqual(weekendKeys("2026-11-25"), ["2026-11-28", "2026-11-29"]);
   assert.deepEqual(weekendKeys("2026-11-29"), ["2026-11-28", "2026-11-29"]);
   assert.equal(dayKey(Date.parse("2026-11-29T03:00:00Z"), "America/Los_Angeles"), "2026-11-28");
@@ -114,12 +114,12 @@ test("an empty city says so honestly and still links the map", () => {
   const h = page(out, "city/nc/quietton/index.html");
   assert.match(h, /<p class="pg-lead">No matcha pop-up is listed within 40 miles of Quietton right now\. No matcha shop is listed either\.<\/p>/);
   assert.match(h, /href="\/\?city=quietton-nc"/);
-  assert.match(h, /Nearby cities/);
-  assert.ok(!/\b0 (matcha|upcoming)/.test(h.replace(/<script[\s\S]*?<\/script>/g, "")), "zero never prints as a number in prose");
+  assert.match(h, /<h2>Nearest cities<\/h2>/);
+  assert.ok(!/\b0 (matcha|upcoming|pop-up|shop|brand|cit)/.test(h.replace(/<script[\s\S]*?<\/script>/g, "")), "zero never prints as a number in prose");
   const near = buildSite(data([ev({})]));
   assert.match(page(near, "city/nc/tinyville/index.html"), /No matcha pop-up is listed within 40 miles of Tinyville/);
   const cary = buildSite(data([ev({})], { cities: [...cities, { name: "Apex", state: "NC", pop: 60000, lat: 35.73, lng: -78.85, slug: "apex", tz: "America/New_York" }] }));
-  assert.match(page(cary, "city/nc/apex/index.html"), /<p class="pg-lead">No matcha pop-up is listed in Apex right now\. The nearest is in Raleigh, NC, \d+ miles? away \(Moonbee, Sat Nov 28\)\./);
+  assert.match(page(cary, "city/nc/apex/index.html"), /<p class="pg-lead">No matcha pop-up is listed in Apex right now\. The nearest is in Raleigh, NC, \d+ miles? away \(Moonbee, Sat, Nov 28\)\./);
 });
 
 test("Event JSON-LD carries schema.org's required fields (name, startDate, location) and the rest of what we know", () => {
@@ -296,9 +296,9 @@ test("city, event and brand titles; the city intro and description come from the
   const h = page(out, "city/nc/raleigh/index.html");
   assert.match(h, /<title>Matcha pop-ups in Raleigh, NC: this weekend and upcoming<\/title>/);
   const desc = /name="description" content="([^"]*)"/.exec(h)[1];
-  assert.equal(desc, "3 upcoming matcha pop-ups in Raleigh, NC, updated Nov 25, 2026.");
+  assert.equal(desc, "3 matcha pop-ups in Raleigh, NC, next on Sat, Nov 28: Moonbee. Times and places.");
   assert.ok(desc.length <= 158);
-  assert.match(h, /<p class="pg-intro">The next one is Moonbee on Sat Nov 28 at Books &amp; Co\./);
+  assert.match(h, /<p class="pg-intro">3 matcha pop-ups are listed for Raleigh, NC, from 3 brands\. The next pop-up is Moonbee on Sat, Nov 28 at Books &amp; Co, with 2 more dates after it\. Dates come from each brand&#39;s own posts/);
   const q = page(out, "city/nc/quietton/index.html");
   assert.match(q, /<title>Matcha pop-ups in Quietton, NC: this weekend and upcoming<\/title>/, "the title is stable for empty cities");
   assert.ok(!/pg-intro/.test(q));
@@ -396,9 +396,9 @@ test("shop JSON-LD: CafeOrCoffeeShop only for verified shops with an address, ho
   assert.equal(odd.openingHoursSpecification, undefined, "unparseable hours: text only");
   assert.equal(odd.url, undefined);
   assert.equal(odd.sameAs, undefined);
-  assert.match(h, /Hours: Mon-Fri 8 AM-5 PM; Sat 9 AM-3 PM/);
+  assert.match(h, /Hours: Mon to Fri 8 AM to 5 PM; Sat 9 AM to 3 PM/);
   assert.match(h, /Hours: Mo-Fr 08:00-17:00; PH off/, "the raw text is printed when it does not parse");
-  assert.match(h, /<h2>Matcha cafes and shops in Raleigh<\/h2>/);
+  assert.match(h, /<h2>Matcha shops in Raleigh<\/h2>/);
   assert.ok(!/rating|review|aggregateRating|yelp/i.test(JSON.stringify(ld)), "no rating or review field");
   assert.equal(shopLd(shopRow({ verified: false })), null);
   assert.equal(shopLd(shopRow({ address: "" })), null);
@@ -407,20 +407,25 @@ test("shop JSON-LD: CafeOrCoffeeShop only for verified shops with an address, ho
 test("intro numbers equal the counted lists, and zero never reads as '0'", () => {
   const out = buildSite(data([ev({}), ev({ start: "2026-12-05T10:00:00-05:00", end: null }), ev({ start: "2026-12-06T10:00:00-05:00", end: null })], { shops: [shopRow({ id: "a" }), shopRow({ id: "b", name: "Second", lat: 35.82 })], sources: [{ id: "moonbee", brand: "Moonbee", instagram: "moonbeematcha", home_city: "Raleigh", home_state: "NC", kind: "popup" }] }));
   const h = page(out, "city/nc/raleigh/index.html");
-  assert.match(h, /<p class="pg-lead">3 upcoming matcha pop-ups in Raleigh, NC, 2 matcha shops and 1 brand based here, updated Nov 25, 2026\.<\/p>/);
+  assert.match(h, /<p class="pg-lead">1 this weekend, 3 in the next 30 days\./);
+  assert.match(h, /<p class="pg-intro">3 matcha pop-ups are listed for Raleigh, NC, from 1 brand, and 2 matcha shops\. 1 brand is based here\. The next pop-up is Moonbee on Sat, Nov 28 at Books &amp; Co, with 2 more dates after it\./);
   assert.equal((h.match(/class="pg-ev"/g) || []).length, 3);
+  assert.match(h, /<p class="pg-dim">2 matcha shops\.<\/p>/);
   assert.equal((/<ul class="pg-list pg-shops">([\s\S]*?)<\/ul>/.exec(h)[1].match(/<li>/g) || []).length, 2);
   assert.ok(h.includes("<h2>Brands based in Raleigh</h2>"));
   const only = page(buildSite(data([ev({})])), "city/nc/raleigh/index.html");
-  assert.match(only, /<p class="pg-lead">1 upcoming matcha pop-up in Raleigh, NC, updated Nov 25, 2026\.<\/p>/);
+  assert.match(only, /<p class="pg-lead">1 this weekend, 1 in the next 30 days\./);
+  assert.match(only, /<p class="pg-intro">1 matcha pop-up is listed for Raleigh, NC, from 1 brand\. The next pop-up is Moonbee on Sat, Nov 28 at Books &amp; Co\. Dates/);
 });
 
-test("this weekend block: names the dates and count and links the weekend page, only when the window has a pop-up", () => {
-  const out = buildSite(data([ev({}), ev({ start: "2026-12-05T10:00:00-05:00", end: null })]));
-  const h = page(out, "city/nc/raleigh/index.html");
-  assert.match(h, /<h2>This weekend in Raleigh<\/h2>\s*<p>1 matcha pop-up is listed for Nov 27 to Nov 29: Moonbee on Sat Nov 28\. <a href="\/weekend\/raleigh-nc\/">/);
+test("this weekend: the lead counts it and links the weekend page, only when the window has a pop-up", () => {
+  const h = page(buildSite(data([ev({}), ev({ start: "2026-12-05T10:00:00-05:00", end: null })])), "city/nc/raleigh/index.html");
+  assert.match(h, /<p class="pg-lead">1 this weekend, 2 in the next 30 days\. <a href="\/weekend\/raleigh-nc\/">See this weekend<\/a><\/p>/);
   const later = page(buildSite(data([ev({ start: "2026-12-05T10:00:00-05:00", end: null })])), "city/nc/raleigh/index.html");
-  assert.ok(!later.includes("This weekend in Raleigh") && !later.includes("/weekend/raleigh-nc/"));
+  assert.match(later, /<p class="pg-lead">Nothing this weekend, 1 in the next 30 days\.<\/p>/);
+  assert.ok(!later.includes("/weekend/raleigh-nc/"));
+  const far = page(buildSite(data([ev({ start: "2027-02-05T10:00:00-05:00", end: null })])), "city/nc/raleigh/index.html");
+  assert.match(far, /<p class="pg-lead">Nothing this weekend, nothing in the next 30 days\. 1 pop-up is listed after that\.<\/p>/);
   // the window rule is one function, shared with gen-weekend
   const win = weekendWindow(NOW.getTime(), "America/New_York");
   assert.deepEqual(win.keys, ["2026-11-27", "2026-11-28", "2026-11-29"]);
@@ -433,64 +438,88 @@ test("Nearby: pop-ups outside the city's own list within 64 km, nearest first, a
   const far = ev({ city: "Tinyville", lat: 36.9, lng: -80.1, title: "Far away" });
   const near = ev({ city: "Cary", lat: 35.79, lng: -78.78, title: "In Cary", brand: "Cary Cup", source_id: "cary", handle: "carycup" });
   const out = buildSite(data([ev({}), near, far], { cities: [...cities, apex] }));
-  const h = page(out, "city/nc/apex/index.html");
-  assert.match(h, /<h2>Pop-ups near Apex<\/h2>/);
-  const sect = /<h2>Pop-ups near Apex<\/h2>([\s\S]*?)<\/section>/.exec(h)[1];
+  const nearList = (h) => { const m = /<h3 class="pg-nearh">Pop-ups within 40 miles<\/h3>\s*<ul[^>]*>([\s\S]*?)<\/ul>/.exec(h); return m ? m[1] : ""; };
+  const sect = nearList(page(out, "city/nc/apex/index.html"));
   const rows = [...sect.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((m) => m[1]);
   assert.equal(rows.length, 2, "Raleigh's and Cary's pop-ups, not the one 170 km away");
   assert.match(rows[0], /Cary Cup[\s\S]*Cary, NC · \d+ miles?[\s\S]*href="\/e\/aaaaaa/);
   assert.match(rows[1], /Moonbee[\s\S]*Raleigh, NC/);
   assert.ok(!sect.includes("Far away") && !sect.includes("Tinyville"));
   // the city's own pop-ups are not repeated in its Nearby section
-  const r = page(out, "city/nc/raleigh/index.html");
-  const nr = /<h2>Pop-ups near Raleigh<\/h2>([\s\S]*?)<\/section>/.exec(r)[1];
+  const nr = nearList(page(out, "city/nc/raleigh/index.html"));
   assert.ok(nr.includes("Cary Cup") && !nr.includes("Moonbee"), "own pop-ups stay out of Nearby");
   // distance cut and the cap of 12
   const crowd = Array.from({ length: 15 }, (_, i) => ev({ city: "Cary", lat: 35.79 + i * 0.01, lng: -78.78, title: "n" + i }));
-  const big = page(buildSite(data(crowd, { cities: [...cities, apex] })), "city/nc/apex/index.html");
-  const n = (/<h2>Pop-ups near Apex<\/h2>([\s\S]*?)<\/section>/.exec(big)[1].match(/<li>/g) || []).length;
-  assert.equal(n, 12);
+  const big = nearList(page(buildSite(data(crowd, { cities: [...cities, apex] })), "city/nc/apex/index.html"));
+  assert.equal((big.match(/<li>/g) || []).length, 12);
   const km1 = kmBetween(apex, { lat: 35.79, lng: -78.78 });
   assert.ok(km1 > 0 && km1 < NEARBY_KM);
 });
 
-test("three nearby cities and the state hub link on every city page", () => {
-  const out = buildSite(data([ev({})]));
-  const h = page(out, "city/nc/raleigh/index.html");
-  const sect = /<h2>Nearby cities<\/h2>([\s\S]*?)<\/section>/.exec(h)[1];
-  assert.equal((sect.match(/<li><a href="\/city\//g) || []).length, 3);
-  assert.match(sect, /href="\/city\/nc\/cary\/"/);
-  assert.match(sect, /href="\/state\/nc\/">All matcha pop-ups in North Carolina</);
-  assert.match(sect, /^\s*<ul class="pg-chips">\s*<li><a href="\/city\/nc\/cary\/">/, "nearest first");
-  assert.ok(!sect.includes("/city/nc/raleigh/"), "never itself");
+test("Nearby within 40 miles: up to three nearest cities with their own count, how many lie within reach, the state hub", () => {
+  const apex = { name: "Apex", state: "NC", pop: 60000, lat: 35.73, lng: -78.85, slug: "apex", tz: "America/New_York" };
+  const holly = { name: "Holly Springs", state: "NC", pop: 40000, lat: 35.65, lng: -78.83, slug: "holly-springs", tz: "America/New_York" };
+  const garner = { name: "Garner", state: "NC", pop: 30000, lat: 35.71, lng: -78.61, slug: "garner", tz: "America/New_York" };
+  const out = buildSite(data([ev({}), ev({ city: "Cary", lat: 35.79, lng: -78.78 })], { cities: [...cities, apex, holly, garner] }));
+  const sect = (h) => /<section class="pg-near">([\s\S]*?)<\/section>/.exec(h)[1];
+  const r = sect(page(out, "city/nc/raleigh/index.html"));
+  assert.match(r, /^<h2>Nearby within 40 miles<\/h2>/);
+  const chips = [...r.matchAll(/<li><a href="(\/city\/[^"]+)">([^<]+)<\/a> <span class="pg-dim">([^<]+)<\/span><\/li>/g)].map((m) => [m[1], m[3]]);
+  assert.equal(chips.length, 3);
+  assert.deepEqual(chips.map((c) => c[0]), ["/city/nc/garner/", "/city/nc/cary/", "/city/nc/apex/"], "nearest first");
+  assert.match(chips[1][1], /^\d+ mi · 1 pop-up$/);
+  assert.match(chips[0][1], /^\d+ mi · nothing listed yet$/);
+  assert.match(r, /4 cities in the data lie within 40 miles of Raleigh; three are shown here\. <a href="\/state\/nc\/">All of North Carolina<\/a>/);
+  assert.ok(!r.includes("/city/nc/raleigh/"), "never itself");
+  // nothing within reach: the nearest three, said plainly
+  const q = sect(page(out, "city/nc/quietton/index.html"));
+  assert.match(q, /^<h2>Nearest cities<\/h2>/);
+  assert.equal((q.match(/<li><a href="\/city\//g) || []).length, 3);
+  assert.match(q, /No other city in the data lies within 40 miles of Quietton; the nearest are shown\./);
+  // every city page links its state hub twice: the breadcrumb and the Updated line
+  const h = page(out, "city/nc/tinyville/index.html");
+  assert.match(h, /<nav class="pg-crumb" aria-label="Breadcrumb"><a href="\/">Home<\/a> <span aria-hidden="true">›<\/span> <a href="\/state\/nc\/">NC<\/a> <span aria-hidden="true">›<\/span> <span>Tinyville<\/span><\/nav>/);
+  assert.match(h, /<p class="pg-sub">Updated Nov 25, 2026\. State page: <a href="\/state\/nc\/">All of North Carolina<\/a><\/p>/);
 });
 
-test("FAQ: four questions, FAQPage JSON-LD with the page's own answer text", () => {
-  for (const events of [[ev({})], [ev({ start: "2026-12-05T10:00:00-05:00", end: null })], []]) {
+test("FAQ: three questions answered from the data, open on the page, FAQPage JSON-LD with the same text on indexed pages", () => {
+  for (const events of [[ev({})], [ev({ start: "2026-12-05T10:00:00-05:00", end: null })], [ev({}), ev({ venue: "Park", address: "2 Elm St", start: "2026-12-05T10:00:00-05:00", end: null }), ev({ start: "2026-12-06T10:00:00-05:00", end: null })]]) {
     const out = buildSite(data(events));
-    for (const slug of ["raleigh", "quietton"]) {
+    for (const slug of ["raleigh", "cary", "quietton"]) {
       const h = page(out, `city/nc/${slug}/index.html`);
-      const items = [...h.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/g)].map((m) => [un(m[1]), un(m[2])]);
-      assert.equal(items.length, 4);
+      const items = [...h.matchAll(/<details open><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/g)].map((m) => [un(m[1]), un(m[2])]);
+      assert.equal(items.length, 3);
+      const city = slug.charAt(0).toUpperCase() + slug.slice(1);
+      assert.deepEqual(items.map((x) => x[0]), [`When is the next matcha pop-up in ${city}?`, `Where do matcha pop-ups happen in ${city}?`, `How do I get alerts for new pop-ups in ${city}?`]);
       const faq = ldOf(h).find((x) => x["@type"] === "FAQPage");
+      if (slug === "quietton") { assert.equal(faq, undefined, "noindex: no FAQPage block"); continue; }
       assert.deepEqual(faq.mainEntity.map((q) => [q.name, q.acceptedAnswer.text]), items);
       assert.ok(faq.mainEntity.every((q) => q["@type"] === "Question" && q.acceptedAnswer["@type"] === "Answer"));
-      const city = slug === "raleigh" ? "Raleigh" : "Quietton";
-      assert.deepEqual(items.map((x) => x[0]), [`Is there a matcha pop-up in ${city} this weekend?`, `How many matcha shops are in ${city}?`, `How do I get alerts for ${city}?`, `How do I list my pop-up in ${city}?`]);
     }
   }
-  const yes = ldOf(page(buildSite(data([ev({})])), "city/nc/raleigh/index.html")).find((x) => x["@type"] === "FAQPage");
-  assert.match(yes.mainEntity[0].acceptedAnswer.text, /^Yes\. 1 matcha pop-up is listed in Raleigh this weekend \(Nov 27 to Nov 29\): Moonbee on Sat Nov 28\.$/);
-  const no = ldOf(page(buildSite(data([ev({})])), "city/nc/cary/index.html")).find((x) => x["@type"] === "FAQPage");
-  assert.match(no.mainEntity[0].acceptedAnswer.text, /^No\. Nothing is listed in Cary for this weekend \(Nov 27 to Nov 29\)\. The nearest pop-up is Moonbee in Raleigh, NC, \d+ miles? away, on Sat Nov 28\.$/);
-  const shops = ldOf(page(buildSite(data([], { shops: [shopRow({ id: "a" }), shopRow({ id: "b", name: "Second", lat: 35.82 })] })), "city/nc/raleigh/index.html")).find((x) => x["@type"] === "FAQPage");
-  assert.match(shops.mainEntity[1].acceptedAnswer.text, /^2 verified matcha cafes and shops are listed within 15 miles of Raleigh\. The closest is Green Cup\.$/);
+  const ans = (out, slug) => ldOf(page(out, `city/nc/${slug}/index.html`)).find((x) => x["@type"] === "FAQPage").mainEntity.map((q) => q.acceptedAnswer.text);
+  const one = ans(buildSite(data([ev({})])), "raleigh");
+  assert.equal(one[0], "Moonbee is next, on Saturday, Nov 28, 11 AM to 3 PM at Books & Co, 1 Main St.");
+  assert.equal(one[1], "The listed date is at Books & Co (1 Main St).");
+  assert.match(one[2], /^Choose Get alerts, pick Raleigh and give your email\./);
+  const three = ans(buildSite(data([ev({}), ev({ venue: "Park", address: "2 Elm St", start: "2026-12-05T10:00:00-05:00", end: null }), ev({ start: "2026-12-06T10:00:00-05:00", end: null })])), "raleigh");
+  assert.match(three[0], /^Moonbee is next, on Saturday, Nov 28, 11 AM to 3 PM at Books & Co, 1 Main St\. After it: Moonbee on Saturday, Dec 5, 10 AM at Park, and 1 more date on this page\.$/);
+  assert.equal(three[1], "The listed dates are at Books & Co (1 Main St) and Park (2 Elm St).");
+  const near = ans(buildSite(data([ev({})])), "cary");
+  assert.match(near[0], /^Nothing is listed in Cary yet\. The nearest is Moonbee in Raleigh, NC, \d+ miles? away, on Saturday, Nov 28\.$/);
+  const shops = ans(buildSite(data([], { shops: [shopRow({ id: "a" }), shopRow({ id: "b", name: "Second", lat: 35.82 })] })), "raleigh");
+  assert.equal(shops[1], "No pop-up is listed in Raleigh right now. For matcha any day, the shops on this page: Green Cup and Second.");
+  const loose = ans(buildSite(data([ev({ approx: true, venue: "", address: "", geocode_source: "none" })])), "raleigh");
+  assert.match(loose[0], /The place is not posted yet\.$/);
+  assert.equal(loose[1], "None of the listed dates in Raleigh has a place posted yet.");
 });
 
-test("calls to action: alerts for the city (slug-st) and the add page", () => {
+test("calls to action: alerts, add and the map for the city (slug-st), and the missed-pop-up box", () => {
   const h = page(buildSite(data([ev({})])), "city/nc/raleigh/index.html");
-  assert.match(h, /<a class="pg-btn" href="\/alerts\/\?city=raleigh-nc">Get alerts for Raleigh<\/a>/);
-  assert.match(h, /<a class="pg-btn" href="\/add\/">Add your pop-up<\/a>/);
+  assert.match(h, /<div class="pg-ctas"><a class="pg-btn pri" href="\/alerts\/\?city=raleigh-nc">Get alerts<\/a><a class="pg-btn" href="\/add\/\?city=raleigh-nc">Add your pop-up<\/a><a class="pg-btn" href="\/\?city=raleigh-nc">Open Raleigh on the map<\/a><\/div>/);
+  assert.match(h, /<div class="pg-report"><strong>Seen a pop-up we missed\?<\/strong> <a class="pg-btn" href="\/add\/\?city=raleigh-nc">Report a pop-up we missed<\/a><\/div>/);
+  assert.equal(cityParam({ slug: "washington-dc", state: "DC" }), "washington-dc", "DC's slug already carries its state");
+  assert.equal(cityParam({ slug: "st-louis", state: "MO" }), "st-louis-mo");
 });
 
 test("state hubs: every city of the state in three lists, breadcrumb Home > State, index rule, /state/ index", () => {
@@ -532,19 +561,20 @@ test("lastmod moves only when a page's body does (hash kept in data/pages-lastmo
   // a new pop-up changes the body and moves lastmod to its day
   const moved = buildSite({ ...d1, generated: "2026-11-26T09:00:00Z", events: [...d1.events, ev({ title: "New one", last_seen: "2026-11-26T08:00:00Z" })], prevPages: prev });
   assert.equal(lmOf(moved, "/city/nc/raleigh/"), "2026-11-26");
-  assert.equal(lmOf(moved, "/city/nc/tinyville/"), "2026-11-25");
+  assert.equal(moved.lastmods["city/nc/quietton"][1], "2026-11-26", "a neighbour's count in Nearby changed its body, so it moves too");
   // without a previous hash the page takes the computed day
   assert.equal(lmOf(buildSite(d1), "/city/nc/raleigh/"), "2026-11-20");
 });
 
-test("home page: the cities marker is filled with the 50 biggest cities; no markers, no change", () => {
-  const many = Array.from({ length: 60 }, (_, i) => ({ name: "City" + i, state: "TX", pop: 1000 - i, lat: 30, lng: -100, slug: "city" + i, tz: "America/Chicago" })).concat([{ name: "Brooklyn", state: "NY", pop: 0, extra: true, lat: 40, lng: -74, slug: "brooklyn", tz: "America/New_York" }]);
+test("home page: the cities marker is filled with the 50 biggest cities and every state hub; no markers, no change", () => {
+  const many = Array.from({ length: 60 }, (_, i) => ({ name: "City" + i, state: i % 2 ? "TX" : "NC", pop: 1000 - i, lat: 30, lng: -100, slug: "city" + i, tz: "America/Chicago" })).concat([{ name: "Brooklyn", state: "NY", pop: 0, extra: true, lat: 40, lng: -74, slug: "brooklyn", tz: "America/New_York" }]);
   const html = `<head><title>x</title>\n<meta name="description" content="y"></head><body>${CITIES_START}\nold\n${CITIES_END}</body>`;
   const out = patchIndex(html, many);
-  assert.equal((out.match(/<li><a href="\/city\/tx\/city\d+\/"/g) || []).length, 50);
-  assert.ok(out.includes('href="/city/tx/city0/"') && !out.includes("city50/") && !out.includes("brooklyn") && !out.includes("old"));
+  assert.equal((out.match(/<li><a href="\/city\/(tx|nc)\/city\d+\/"/g) || []).length, 50);
+  assert.ok(out.includes('href="/city/nc/city0/"') && !out.includes("city50/") && !out.includes("brooklyn") && !out.includes("old"));
+  assert.deepEqual([...out.matchAll(/<li><a href="(\/state\/[a-z]*\/?)"/g)].map((m) => m[1]), ["/state/ny/", "/state/nc/", "/state/tx/", "/state/"], "state hubs by name, then the index");
   assert.equal(patchIndex(out, many), out, "idempotent");
   const none = '<head><title>x</title>\n<meta name="description" content="y"></head><body>nothing</body>';
-  assert.ok(!patchIndex(none, many).includes("pg-chips"));
-  assert.equal(citiesBlock(many, 3).match(/<li>/g).length, 3);
+  assert.ok(!patchIndex(none, many).includes('class="hix"'));
+  assert.equal(citiesBlock(many, 3).match(/<li><a href="\/city\//g).length, 3);
 });

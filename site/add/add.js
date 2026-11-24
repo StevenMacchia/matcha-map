@@ -10,16 +10,31 @@
   var topErr = document.getElementById("form-error");
   var btn = form.querySelector("button[type=submit]");
 
-  // Prefill from the query string: /report/?event=<id>, /claim/?brand=<id>, /alerts/?city=raleigh-nc
+  // Prefill from the query string: /report/?event=<id>, /claim/?brand=<id>, /alerts/?city=raleigh-nc, /add/?city=raleigh-nc
+  // (a city page's buttons). A city slug in a text field becomes "Raleigh, NC", the form the field asks for.
+  var slugOf = function (name, st) { return st === "DC" ? "washington-dc" : String(name).toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + "-" + st.toLowerCase(); };
+  var cityWords = function (raw) {
+    var v = String(raw).toLowerCase(), m = /^([a-z0-9]+(?:-[a-z0-9]+)*)-([a-z]{2})$/.exec(v);
+    if (!m) return raw;
+    var all = window.CITY_LIST || [];
+    for (var i = 0; i < all.length; i++) if (slugOf(all[i][0], all[i][1]) === v) return all[i][0] + ", " + all[i][1];
+    return m[1].split("-").map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(" ") + ", " + m[2].toUpperCase();
+  };
+  var wantCity = "";
   try {
     var q = new URLSearchParams(location.search);
-    q.forEach(function (v, k) { var el = form.elements[k]; if (el && !el.value && el.type !== "checkbox") el.value = v.slice(0, 200); });
+    wantCity = String(q.get("city") || "").toLowerCase().slice(0, 80);
+    q.forEach(function (v, k) {
+      var el = form.elements[k];
+      if (!el || el.value || el.type === "checkbox" || (el.hasAttribute && el.hasAttribute("data-cities"))) return; // the alerts picker is filled below
+      el.value = (k === "city" && el.tagName !== "SELECT" ? cityWords(v) : v).slice(0, 200);
+    });
   } catch (e) { /* old browser: no prefill */ }
 
-  // Alerts: fill the city picker from the site's top cities.
+  // Alerts: fill the city picker from the site's top cities; a ?city= for any other listed city adds that one.
   var pick = form.querySelector("select[data-cities]");
   if (pick && window.CITY_LIST) {
-    var want = pick.value;
+    var want = wantCity || pick.value;
     window.CITY_LIST.slice(0, 120).slice().sort(function (a, b) { return a[0] < b[0] ? -1 : 1; }).forEach(function (c) {
       var slug = String(c[0]).toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       if (c[1] === "DC") slug = "washington";
@@ -27,6 +42,16 @@
       o.value = slug + "-" + c[1].toLowerCase(); o.textContent = c[0] + ", " + c[1];
       pick.appendChild(o);
     });
+    if (want && !pick.querySelector('option[value="' + want.replace(/[^a-z0-9-]/g, "") + '"]')) {
+      for (var j = 0; j < window.CITY_LIST.length; j++) {
+        var c2 = window.CITY_LIST[j];
+        if (slugOf(c2[0], c2[1]) !== want) continue;
+        var o2 = document.createElement("option");
+        o2.value = want; o2.textContent = c2[0] + ", " + c2[1];
+        pick.insertBefore(o2, pick.options[1] || null);
+        break;
+      }
+    }
     if (want) pick.value = want;
   }
 
