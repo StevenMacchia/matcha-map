@@ -14,7 +14,7 @@ import { loadBoxes, nextBoxes, boxesPerRun } from "./lib/shops/boxes.js";
 import { buildQuery, runQuery, parseElements } from "./lib/shops/overpass.js";
 import { findAddress } from "./lib/shops/brandsites.js";
 import { curatedShops } from "./lib/shops/curated.js";
-import { dedupe, applyOverrides, fillState, legitimate } from "./lib/shops/merge.js";
+import { dedupe, applyOverrides, fillState, legitimate, normPlace } from "./lib/shops/merge.js";
 
 export const ATTRIBUTION = "© OpenStreetMap contributors, ODbL";
 const read = (p, d) => { try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch { return d; } };
@@ -99,7 +99,7 @@ async function main() {
   { const geocoder = createGeocoder({ noFetch }); web = await curatedShops({ geocoder, fetched }); geocoder.save(); for (const h of web.held) warn(`curated shop held: ${h.name} (${h.file}): ${h.why}`); }
   const leg = legitimate([...osm.values(), ...brands.shops, ...web.shops]);
   let shops = dedupe(leg.kept);
-  shops = applyOverrides(shops, read("data/shops-overrides.json", {})).map((s) => fillState(s, cities));
+  shops = applyOverrides(shops, read("data/shops-overrides.json", {})).map((s) => normPlace(fillState(s, cities)));
   shops = attachMenus(shops, read("data/menus.json", { menus: {} }).menus);
   shops = attachExtras(shops, read("data/shops-extra.json", { shops: {} }).shops);
   shops.sort((a, b) => (a.state || "~").localeCompare(b.state || "~") || a.name.localeCompare(b.name));
