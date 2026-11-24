@@ -43,7 +43,7 @@ The rest, in the order you will want them:
 - `npm run watchlist:apply`: merges `data/review/watchlist-additions.json` into `data/watchlist.json`.
 - `npm run brand-extras`: per-brand `extra.json` (dates, drinks, price, story) for brand pages.
 - `npm run sitemap-extras`: adds weekend pages, event pages and feeds to `sitemap.xml`.
-- `npm run flyers`: Instagram flyers for @matchamap.us. See "Posts".
+- `npm run flyers`: Instagram flyers for @matchamap.app. See "Posts".
 - `npm run og`: re-renders the link-preview cards with headless Chrome.
 - `npm run icons`: re-renders the app icons from Mattie. Only when the look changes.
 - `npm run sw-version`: stamps the service worker and the shell links with a hash. `deploy` runs it for you.
@@ -171,7 +171,7 @@ To override one event, put its id in `data/overrides.json`. `{"drop": true}` rem
 
 ## Posts, flyers, storefronts, Instagram account
 
-- Flyers: `npm run flyers` writes Instagram posts for @matchamap.us (single pop-up flyers for the next 7 days, a "This weekend in <City>" roundup for cities with three or more, a welcome post) to `tools/brand/outbox/<date>/` with a caption and `INDEX.md`. Templates are in `tools/brand/templates/`, rendered with headless Chrome (`CHROME_PATH` if not at the default). `--force` redraws. Every caption credits the brand. Nothing is posted automatically; a human checks each source and posts by hand. Publishing through the Graph API needs `instagram_content_publish` and is not built.
+- Flyers: `npm run flyers` writes Instagram posts for @matchamap.app (single pop-up flyers for the next 7 days, a "This weekend in <City>" roundup for cities with three or more, a welcome post) to `tools/brand/outbox/<date>/` with a caption and `INDEX.md`. Templates are in `tools/brand/templates/`, rendered with headless Chrome (`CHROME_PATH` if not at the default). `--force` redraws. Every caption credits the brand. Nothing is posted automatically; a human checks each source and posts by hand. Publishing through the Graph API needs `instagram_content_publish` and is not built.
 - Storefronts: a map layer of permanent matcha shops from OpenStreetMap (`npm run shops`). A shop needs a name and a street address; it is drawn only when it has a website, hours or a phone. Data is (c) OpenStreetMap contributors, ODbL.
 - Instagram account: the Meta app "Matcha Map" reads public posts of professional accounts and public hashtags, links back to each post, stores no personal profile data and never posts. Setup `docs/INSTAGRAM-SETUP.md`, readiness and budget `docs/INSTAGRAM-READINESS.md`, review `docs/META-APP-REVIEW.md`.
 
