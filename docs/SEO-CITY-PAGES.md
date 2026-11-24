@@ -88,3 +88,19 @@ Budget check first on Friday: both weekly windows must be under the ceiling afte
 - site/data/pages.json grew from 43 KB to 184 KB (2,420 cities; same fields as before). The {hash, lastmod} map lives in data/pages-lastmod.json, not served.
 - Opening hours also accept `<day> off` rules; a day named in two rules, overnight ranges, 24/7, holidays and months are text only.
 - A shop gets CafeOrCoffeeShop markup only with an address, a city and a state; at most 12 per page.
+
+## Template pass 2026-11-23 (lane/seo-city): the approved mock
+
+Built on main (2784a5b, the data session's commit), so the city list, hubs at `/state/<st>/` and the index rule are the
+data session's. The page now follows `qa/mocks/2026-11-23/city` (lane/design-mocks2): H1 is the full title; a counts line
+("2 this weekend, 2 in the next 30 days.", linking the weekend page); the intro paragraph from the counted lists; Get alerts,
+Add your pop-up and Open on the map, each with `?city=<slug>-<st>` (`cityParam`, so DC is `washington-dc`); "Updated <date>.
+State page: All of <State>"; pop-up cards with a day pill; "Matcha shops in <City>" with the shop and on-the-menu count, a
+picture or the drawn storefront, kind, address (with the town when it is not the page's city) and hours or "Hours not
+listed"; brand cards (picture or initial, followers from brands.json, @handle, most followed first, 24 cards then links);
+"Nearby within 40 miles": the three nearest cities in reach with their own count or "nothing listed yet", how many lie
+within 40 miles, then the pop-ups within 40 miles; three questions (next pop-up, where, alerts) as open `<details>`;
+"Seen a pop-up we missed?" to `/add/?city=`; breadcrumbs Home > ST > City. Noindex pages show the questions but carry no
+FAQPage block (largest thin page under 6 KB). The home page lists the 50 biggest cities and every state hub inside the
+list panel, after the list. `site/add/add.js` turns `?city=raleigh-nc` into "Raleigh, NC" on the add form and adds any
+listed city to the alerts picker.
