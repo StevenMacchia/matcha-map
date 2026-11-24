@@ -8,7 +8,7 @@ Budget: ceiling 75% all models, stop line 73% (Steven, 2026-11-23). Last reading
 
 | Thing | State |
 |---|---|
-| Shops on the map | 910 (272 core, 638 "matcha on the menu") in 387 cities, 45 states (live on matchamap.app, deployed before the last two commits; city-case fix b3bd66aa and the roundup reader 2b5e4583 ship with the next deploy) |
+| Shops on the map | 1,143 (272 core, 871 "matcha on the menu"), 46 states; deployed 2026-11-24 (main 6a520b94f) (live on matchamap.app, deployed before the last two commits; city-case fix b3bd66aa and the roundup reader 2b5e4583 ship with the next deploy) |
 | Researched shop files | `data/shops-<region>-<part>.json` (about 30 files, hand-research by workers; ids `brand:web-<slug>-<hash>`), read by `ingest/lib/shops/curated.js` |
 | Overture core rows | `data/shops-zz-overture-core.json` (171 matcha-named places, 29 Maiko held); rebuild with `node ingest/shops-overture.js --build` |
 | Overture serves rows | `data/shops-zz-overture-serves.json` (537 after cleaning), `-serves-proof.json` (83, six proof metros), `-triangle.json` (50, includes 35 "Menu mentions matcha" rows). These are rewritten by `node ingest/shops-overture.js --menus ...` |
@@ -20,7 +20,7 @@ Budget: ceiling 75% all models, stop line 73% (Steven, 2026-11-23). Last reading
 
 ## What may still be running in the background
 
-1. The national cafe-menu loop: `C:\Users\SWOLY_~1\AppData\Local\Temp\pop\ovloop2.sh` runs six chunks of `node ingest/shops-overture.js --menus --limit 3000 --conc 10`, each followed by the cleaner. Progress: cursor `.cache/overture/2026-11-18.0/menus-cursor.json` (next index into the 153,911 serves candidates; it was 12600 at handover), log `C:\Users\SWOLY_~1\AppData\Local\Temp\pop\ov-menus-loop2.log` (ends with LOOPDONE). Each chunk rewrites `data/shops-zz-overture-serves.json` at its end. If the machine restarted, nothing is running: restart with `node ingest/shops-overture.js --menus --limit 3000 --conc 10` (it resumes at the cursor).
+1. The national cafe-menu loop: `C:\Users\SWOLY_~1\AppData\Local\Temp\pop\ovloop2.sh` runs six chunks of `node ingest/shops-overture.js --menus --limit 3000 --conc 10`, each followed by the cleaner. Progress: cursor `.cache/overture/2026-11-18.0/menus-cursor.json` (next index into the 153,911 serves candidates; 30600 after the 2026-11-24 merge, loop finished, nothing running), log `C:\Users\SWOLY_~1\AppData\Local\Temp\pop\ov-menus-loop2.log` (ends with LOOPDONE). Each chunk rewrites `data/shops-zz-overture-serves.json` at its end. If the machine restarted, nothing is running: restart with `node ingest/shops-overture.js --menus --limit 3000 --conc 10` (it resumes at the cursor).
 2. Nothing else (the Triangle, proof-metro and Graph-read runs finished).
 
 How to merge the chunks (one landing): `node tools/clean-overture-serves.mjs data/shops-zz-overture-serves.json data/shops-zz-overture-serves-proof.json data/shops-zz-overture-triangle.json` (drops description lines and headings counted as drinks; keeps "Menu mentions matcha" rows with one drink), `npm run shops -- --no-osm --no-brands`, `npm test`, `npm run pages`, `npm run brand-extras`, `npm run sitemap-extras`, `npm run smoke` (the new shop and map gates may fail on dense data: see below), `git add` explicit paths, merge origin/main (resolve generated files by regenerating, geocache by `node tools/merge-state.cjs geocache`), push, `npm run deploy`, then report per state for both tiers. Yield so far: 12,600 sites read, about 10% serves rows for tea rooms and bubble tea, lower for cafes.
