@@ -6,7 +6,7 @@
 
 Each step is its own child process with a timing and `ok` or `FAILED`. A failed step is recorded and the next one still runs. Commit, push and deploy need the smoke to have passed.
 
-1. `pull`: `git pull --ff-only origin main`, so the task never runs stale code. A failure is recorded; the run goes on with the code present.
+1. `pull`: `node tools/sync-checkout.js`, a fast-forward to `origin/main` that first discards dirty generated outputs, unions dirty state files (`tools/merge-state.cjs`) and keeps every local copy in `.cache/sync/<timestamp>/`; any other dirty tracked file stops it with a line naming it. So the task never runs stale code. A failure is recorded; the run goes on with the code present.
 2. `discover`: `ingest/lib/discover.js` (press and newsletter readers, host calendars, ma.to and the other adapters that live there).
 3. `watch`: `ingest/watch.js` (Graph reads of the watch list).
 4. `ingest`: `ingest/run.js` (series, expiry, dedupe, enrich, pages, sitemap, feeds, event pages, weekend pages, brand extras).

@@ -1,6 +1,6 @@
 // npm run daily: the once-a-day run (docs/DAILY-RUN.md). The Windows task "Matcha Map daily" starts it at 13:00 local time.
 // Steps, in order, each its own child process (one crash never stops the run; a failed step is recorded and the next still runs):
-//   pull, discover, watch, ingest, yelp-leads (once a UTC day), overture (if the adapter exists), deepen (new shops only),
+//   pull (tools/sync-checkout.js: a fast-forward to origin/main that first unions or discards what the watch task left dirty), discover, watch, ingest, yelp-leads (once a UTC day), overture (if the adapter exists), deepen (new shops only),
 //   pages (only when yelp-leads, overture or deepen changed the data), smoke, report (docs/DAILY.md + one LADDER.md line),
 //   commit, push, deploy (live smoke after it), notify (a GitHub issue when something failed or nothing new arrived).
 // Commit, push and deploy need the smoke to have passed. No step may call a model: every child gets MATCHA_NO_MODEL=1 and no
@@ -192,7 +192,7 @@ async function main() {
     if (!want(name)) continue;
     if (["yelp-leads", "overture", "deepen"].includes(name)) snapshot();
     switch (name) {
-      case "pull": fromRun("pull", await git(["pull", "--ff-only", "origin", "main"])); break;
+      case "pull": fromRun("pull", await node(["tools/sync-checkout.js"])); break;
       case "discover": case "watch": case "ingest": case "deepen": fromRun(name, await node(SCRIPTS[name])); break;
       case "yelp-leads": {
         if (!yelpDue()) { rec(name, "skipped", null, "ran today"); break; }
