@@ -2,7 +2,7 @@
 
 A running log, one entry per newly found independent matcha pop-up brand (Overture host handles, press reader hits, Yelp leads, the inbox, outreach replies, the recall study). Each entry answers: who, city, how the last three dated pop-ups were announced, which of those channels we can read, which one found the brand for us, and what would have found it a week earlier. At 50 entries the analysis below is written (channels ranked by coverage and readability, adapters to build or tune in order, recall against the 60-brand sample) and again every 50 after that. A finding that changes the finder order goes on the board (LADDER.md) the same day. Channel names follow docs/DISCOVERY-RECALL.md.
 
-Count: **31 of 50** (Saikō plus the 30 brands of the first recall sample). Next analysis at 50.
+Count: **50 of 50** (Saikō, the 30 brands of the first recall sample, and 19 drafted from our own record on 2026-11-24). Analysis below; the next analysis is at 100.
 
 ## Are we reading Instagram? (state of 2026-11-23)
 
@@ -184,3 +184,148 @@ Net: the channel that announces first (an independent's own Instagram post or st
 - Who: Coffee pop-up begun at home in 2023 with a residency at Chilte, 765 Grand Ave, since April; menu includes matcha lattes. WEAK FIT: coffee-first residency.
 - Announced: no dated pop-up on any public page; the schedule lives on its Instagram (not readable).
 - Found for us by: the recall study's open-web search (2026-11-23); known to us before: sources no, watch list no.
+
+## Drafted from our own record (2026-11-24; `node tools/case-studies-draft.mjs`)
+
+The 19 brands with the most separately dated pop-ups in `data/events.json` that were not yet in this file (dates materialised from a series are not counted). Unlike the entries above, these were not found by an outside search: they describe what our record shows, so the channel listed is the one a dated post was read from, not every channel the brand uses, and "In our data: yes" is true by construction. They measure what we can read, not what exists; the recall study (docs/DISCOVERY-RECALL.md) is the unbiased view.
+
+### Caribe & Co. (Boston MA, @caribeandco)
+- Who: coffee pop-up brand (18 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2027-03-04, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2027-01-04, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2027-01-02, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-23 (extracted by sweep). Would have found it a week earlier: not computed from our record.
+
+### Bearly Awake Cafe (Atlanta GA, @bearlyawake_coffee)
+- Who: coffee pop-up brand (11 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2027-01-02, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-22, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-21, 10:00-13:00, Druid Hills Farmers Market: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Glimpse Matcha (Portland OR, @glimpsematchapopup)
+- Who: matcha pop-up brand (11 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-12-31, 10:00-18:00, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23).
+- 2026-12-05, 10:00-18:00, Glimpse Matcha pop-up storefront: own-instagram-post (readable: Graph business account on the watch list); tiktok (not read). In our data: yes (first seen 2026-11-23).
+- 2026-12-04, 10:00-18:00, Glimpse Matcha pop-up storefront: own-instagram-post (readable: Graph business account on the watch list); tiktok (not read). In our data: yes (first seen 2026-11-23).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-23 (extracted by sweep). Would have found it a week earlier: not computed from our record.
+
+### Dream Tea NYC (New York NY)
+- Who: matcha pop-up brand (11 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-12-31, 11:00-19:00, venue not stated: eventbrite.com (readable web page). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-12-20, 11:00-18:00, Timeout Market, Brooklyn: eventbrite.com (readable web page). In our data: yes (first seen 2026-11-22).
+- 2026-12-14, 11:00-11:00, Empire Stores (Time Out Market), Brooklyn: eventbrite.com (readable web page). In our data: yes (first seen 2026-11-22).
+- Found for us by: the watch list / sources record, first read from eventbrite.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### whisk'd (Washington DC, @whiskdtea)
+- Who: matcha pop-up brand (10 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-28, all day, venue not stated: own-instagram-post (not readable: not a Graph-readable account). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-22, 09:00-13:00, Brambleton Farmers Market: ma.to venue list (readable); own-instagram-post (not readable: not a Graph-readable account). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-21, all day, venue not stated: own-instagram-post (not readable: not a Graph-readable account). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: the watch list / sources record, first read from ma.to on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Mellobun Cafe x Matte Matcha Bar (Sacramento CA, @mellobunbakery)
+- Who: matcha pop-up brand (10 dated pop-ups in our data); own site mellobunbakery.com. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-29, 09:00-13:00, EOC Studio: ma.to venue list (readable); own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22).
+- 2026-11-28, 10:00-16:00, Parkside Pharmacy: ma.to venue list (readable). In our data: yes (first seen 2026-11-22).
+- 2026-11-28, 09:00-13:00, Salvatore Galateria: ma.to venue list (readable). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: the watch list / sources record, first read from ma.to on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Kaphé Muna (San Diego CA, @kaphemuna)
+- Who: coffee pop-up brand (9 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-12-12, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-12-06, 12:00-17:00, Brick 828 (Golden Makers Market holiday edition): own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-11-21, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-23 (extracted by sweep). Would have found it a week earlier: not computed from our record.
+
+### UNLABELED Coffee and Matcha (Los Angeles CA, @unlabeled.coffee)
+- Who: matcha pop-up brand (9 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-29, all day, Kuns Park: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-11-26, all day, Kuns Park: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-11-22, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Alma Matcha (Fort Lauderdale FL, @almamatcha)
+- Who: matcha pop-up brand (9 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-12-06, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-12-01, all day, Alma Matcha: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-11-30, all day, Alma Matcha: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### 333Matcha (Dallas TX, @333.matcha)
+- Who: matcha pop-up brand (8 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-12-06, 12:00-16:00, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-12-05, 12:00-16:00, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-12-04, 12:00-16:00, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### More Than Matcha (Los Angeles CA, @morethan.matcha)
+- Who: matcha pop-up brand (8 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2027-01-04, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2027-01-02, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-12-27, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Himori Cafe (Houston TX, @himoricafe.htx)
+- Who: matcha pop-up brand (7 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-22, 12:00-16:00, Gerry's Grill: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-21, 12:00-16:00, Gerry's Grill: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-15, 12:00-16:00, MKT The Heights: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Magnaye (San Diego CA, @magnaye.sd)
+- Who: matcha pop-up brand (7 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-27, 10:00-14:00, Patine: ma.to venue list (readable). In our data: yes (first seen 2026-11-22).
+- 2026-11-25, all day, Home Ec: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-22, all day, Home Ec: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: a find outside sources.json, first read from ma.to on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Creamed | HTX (Houston TX, @creamedtx)
+- Who: matcha pop-up brand (7 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-29, 10:00, ONLI: ma.to venue list (readable). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-28, 09:00, ONLI: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-22, 09:00, Kohiko Coffee House: ma.to venue list (readable). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: a find outside sources.json, first read from ma.to on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Celeste Matcha Haven (Arlington VA, @celeste.matcha.haven)
+- Who: matcha pop-up brand (6 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-22, 11:00-16:00, venue not stated, Washington: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-11-21, all day, venue not stated, Washington: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-11-15, 12:00-16:00, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Matcha LUV (West Des Moines IA, @matchaluv.dsm)
+- Who: matcha pop-up brand (6 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-12-06, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-22, 10:00-13:00, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-21, 08:00-16:00, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Infinery Matcha (Washington DC, @infinerymatcha)
+- Who: matcha pop-up brand (6 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-05, 17:30-20:30, Fair Oaks Mall: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-11-05, 05:30-20:30, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- 2026-10-31, 10:00-17:00, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-23, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-23 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### Sml Wrld Cafe (Detroit MI, @smlwrldcafe)
+- Who: matcha pop-up brand (6 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-19, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-18, all day, venue not stated: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- 2026-11-14, all day, Gratiot: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: the watch list / sources record, first read from instagram.com on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+### After School Coffee House (Arlington VA)
+- Who: coffee pop-up brand (6 dated pop-ups in our data); no own site in our sources. Drafted from our record by tools/case-studies-draft.mjs: the channels below are the ones a dated post was read from, not every channel the brand uses.
+- 2026-11-15, 08:00-11:00, venue not stated, Washington: own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22).
+- 2026-11-07, 11:00-16:00, South Block: ma.to venue list (readable); own-instagram-post (readable: Graph business account on the watch list). In our data: yes (first seen 2026-11-22).
+- 2026-11-01, 10:00, @wearealchemycollective pop-up: ma.to venue list (readable). In our data: yes (first seen 2026-11-22, date unsure).
+- Found for us by: the watch list / sources record, first read from ma.to on 2026-11-22 (extracted by rule). Would have found it a week earlier: not computed from our record.
+
+## Analysis at 50 entries (2026-11-24)
+
+What the 19 record-drafted entries show (57 dated pop-ups, the latest three per brand): a Graph-readable Instagram post carried 45 of them (79%), a ma.to venue list 9 (16%), another readable web page 3, an Instagram account the Graph cannot read 3, TikTok 2 (a date can have more than one channel). 45 of the 57 dates are `unsure`: they were read from a caption, not from a dated page. So for independents the announcing channel is Instagram, the part of it we can read is the business and creator accounts on the watch list, and the weakness is date confidence, not coverage: a caption read gives a day but rarely a time and a street address.
+
+Channels ranked, across the 50 entries: (1) the brand's own Instagram post: first to announce, readable only for watch-list business accounts, caption dates, the largest share; (2) host-venue calendars and market pages (the Village District, farmers markets, ma.to venue lists): readable and dated, but only some hosts publish them and most carry no vendor names; (3) local press and newsletters (Let It Simmer, Indy Week): readable, dated, late and narrow; (4) the brand's own site: readable and well dated when it has an "Upcoming Events" section, which few independents keep; (5) TikTok and Instagram stories: not read.
+
+Adapter order this implies: keep the Graph watch list growing (it is the largest source of dated independents); the own-site schedule reader for the brands with a site (cheapest, best dates); host-venue calendars next, with the card reader built this window (`calendarCards` in `ingest/lib/sites/markets.js`: 8 hosts, 0 new dates today because the one matcha card was already known); press roundups stay weekly. Recall against the 60-brand sample (72% in window at the last reading, 58% without a recurring series) is re-measured after the 2026-11-28 reset.
