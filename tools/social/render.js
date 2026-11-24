@@ -56,10 +56,10 @@ const drawnBox = (cls, e, opts) => `<div class="${cls}" data-drawn="${esc(JSON.s
 const fitLine = (cls, text, max) => `<span class="line ${cls}" data-fit data-max="${max}" data-min1="${MIN_TEXT_PX}" data-min="${MIN_TEXT_PX}">${esc(text)}</span>`;
 // "What they pour": one row per drink type, the drawn glyph and the name as the menu gives it, and a count of the rest.
 const POUR_ROWS = { story: 5, feed: 3 };
-const pourHtml = (pour, max) => {
+const pourHtml = (pour, max, tight = false) => {
   if (!pour || !pour.items || !pour.items.length) return "";
   const shown = pour.items.slice(0, max), more = (pour.more || 0) + pour.items.length - shown.length;
-  return `<div class="pour"><div class="ph"><span>What they pour</span>${more ? `<span class="pm">+ ${more} more drink${more === 1 ? "" : "s"}</span>` : ""}</div>` +
+  return `<div class="pour${tight && shown.length > 2 ? " tight" : ""}"><div class="ph"><span>What they pour</span>${more ? `<span class="pm">+ ${more} more drink${more === 1 ? "" : "s"}</span>` : ""}</div>` +
     shown.map((i, k) => `<div class="pr"><div class="pg">${drinkSvg(i.name, "pr" + k)}</div><span class="pn" data-fit data-max="44" data-min1="36" data-min="36">${esc(i.name)}</span></div>`).join("") + "</div>";
 };
 const trunc = (s, n) => { s = String(s || ""); return s.length > n ? s.slice(0, n - 1).replace(/\s+$/, "") + "…" : s; };
@@ -90,25 +90,30 @@ function scene(it, size) {
   const [mx, my, ms] = g.mattie;
 
   if (it.kind === "location") {
-    const rows = (it.group.rows || []).map((r) => `<div class="row"><div class="mochi" data-drawn="${esc(JSON.stringify({ e: { id: r.id, brand: r.brand, kind: r.kind }, opts: { mode: "thumb" } }))}"></div>` +
-      `<div class="tx"><span class="rb" data-fit data-max="48" data-min1="38" data-min="38">${esc(trunc(r.brand, 34))}</span><span class="rs" data-fit data-max="36" data-min1="36" data-min="36">${esc(trunc(r.sub, 36))}</span></div></div>`).join("");
-    const art = `<div class="shopart" style="height:240px"><div class="blob" style="left:60px;top:15px;width:210px;height:210px"></div>` +
-      `<svg viewBox="0 0 64 64" style="left:68px;top:22px;width:194px;height:194px"><use href="#s-shop" width="64" height="64"/></svg>` +
-      `<svg viewBox="0 0 64 64" style="left:600px;top:8px;width:220px;height:220px"><use href="#${["m-wave", "m-happy", "m-excited"][hb % 3]}" width="64" height="64"/></svg>` +
-      `<svg viewBox="0 0 20 20" style="left:440px;top:50px;width:54px;height:54px;transform:rotate(24deg)"><use href="#c-petal" width="20" height="20"/></svg></div>`;
+    // each listed shop or pop-up with its top two drinks, drawn by the drink engine; rows with drinks are tall, so two fit
+    const all = it.group.rows || [], hasDr = all.some((r) => r.drinks && r.drinks.length);
+    const rows = all.slice(0, hasDr ? 2 : 3).map((r, k) => `<div class="row loc"><div class="rt"><div class="mochi" data-drawn="${esc(JSON.stringify({ e: { id: r.id, brand: r.brand, kind: r.kind }, opts: { mode: "thumb" } }))}"></div>` +
+      `<div class="tx"><span class="rb" data-fit data-max="48" data-min1="38" data-min="38">${esc(trunc(r.brand, 34))}</span><span class="rs" data-fit data-max="36" data-min1="36" data-min="36">${esc(trunc(r.sub, 36))}</span></div></div>` +
+      ((r.drinks || []).length ? `<div class="dr">${r.drinks.map((n, j) => `<div class="pg">${drinkSvg(n, "lr" + k + j)}</div>`).join("")}</div>` : "") + "</div>").join("");
+    // the picture takes the room the rows leave (a lone row gets a big picture), within 240 to 460px
+    const nRows = Math.min(all.length, hasDr ? 2 : 3), rowsH = nRows * (hasDr ? 336 : 176), A = Math.max(240, Math.min(460, 960 - rowsH)), mS = Math.round(A * 0.92);
+    const art = `<div class="shopart" style="height:${A}px"><div class="blob" style="left:60px;top:15px;width:${Math.round(A * 0.88)}px;height:${Math.round(A * 0.88)}px"></div>` +
+      `<svg viewBox="0 0 64 64" style="left:${68}px;top:${Math.round(A * 0.09)}px;width:${Math.round(A * 0.8)}px;height:${Math.round(A * 0.8)}px"><use href="#s-shop" width="64" height="64"/></svg>` +
+      `<svg viewBox="0 0 64 64" style="left:${900 - mS}px;top:${Math.round(A * 0.04)}px;width:${mS}px;height:${mS}px"><use href="#${["m-wave", "m-happy", "m-excited"][hb % 3]}" width="64" height="64"/></svg>` +
+      `<svg viewBox="0 0 20 20" style="left:${Math.round(60 + A * 0.95)}px;top:${Math.round(A * 0.2)}px;width:54px;height:54px;transform:rotate(24deg)"><use href="#c-petal" width="20" height="20"/></svg></div>`;
     s += col(head(it.title, true) + art + `<div class="rows loc">${rows}</div>`, PB, 22);
     return s + foot;
   }
 
   if (it.kind === "shop") {
-    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 210 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
+    const sh = it.shop, pv = !!(sh.pour && sh.pour.items && sh.pour.items.length), artH = pv ? (size === "story" ? 180 : 250) : g.art, big = Math.round(artH * 0.86), m = Math.round(artH * 0.7);
     const art = `<div class="shopart" style="height:${artH}px"><div class="blob" style="left:40px;top:${artH - big - 20}px;width:${big + 40}px;height:${big + 40}px"></div>` +
       `<svg viewBox="0 0 64 64" style="left:60px;top:${artH - big - 16}px;width:${big}px;height:${big}px"><use href="#s-shop" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 64 64" style="left:${930 - m - 30}px;top:${artH - m - 16}px;width:${m}px;height:${m}px"><use href="#m-whisk" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:560px;top:36px;width:60px;height:60px;transform:rotate(24deg)"><use href="#c-petal" width="20" height="20"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:840px;top:60px;width:42px;height:42px;transform:rotate(-30deg)"><use href="#c-petal" width="20" height="20"/></svg></div>`;
     const info = `<div class="info">${fitLine("mid", trunc(cityLine(sh), 48), 44)}${fitLine("sub", sh.tier === "serves" ? "Matcha on the menu" : "Matcha shop", 38)}</div>`;
-    if (pv) return s + col(head(sh.name, true) + art + info + pourHtml(sh.pour, POUR_ROWS[size]), PB, 18) + (size === "feed" ? mattie("m-wave", 930, 1204, 110, !flip) : "") + foot;
+    if (pv) return s + col(head(sh.name, true) + art + info + pourHtml(sh.pour, size === "story" ? 4 : POUR_ROWS.feed), PB, 18) + (size === "feed" ? mattie("m-wave", 930, 1204, 110, !flip) : "") + foot;
     s += col(head(sh.name, true) + art + info + pills(sh.drinks));
     s += mattie("m-wave", mx + 20, my + 20, ms - 20, !flip);
     return s + foot;
@@ -122,7 +127,7 @@ function scene(it, size) {
     lines.push(fitLine("sub", trunc(cityLine(v), 48), 38));
     const pv = !!(v.pour && v.pour.items && v.pour.items.length);
     const inner = head(it.title, false) + drawnBox("panel", card, { mode: "card", when: kindLabel(v.kind), crop: 1 }) + `<div class="info">${lines.join("")}</div>`;
-    if (pv) return s + col(inner + pourHtml(v.pour, size === "story" ? 4 : POUR_ROWS.feed), PB, 18) + (size === "feed" ? mattie("m-happy", 930, 1204, 110, !flip) : "") + foot;
+    if (pv) return s + col(inner + pourHtml(v.pour, size === "story" ? 3 : POUR_ROWS.feed, true), PB, 18) + (size === "feed" ? mattie("m-happy", 930, 1204, 110, !flip) : "") + foot;
     s += col(inner + pills(v.menu.slice(0, 3)));
     s += mattie(["m-wave", "m-happy", "m-excited"][hb % 3], mx, my, ms, !flip);
     s += petal(mx - 30, my + 6, 44, 20);

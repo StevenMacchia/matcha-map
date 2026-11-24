@@ -45,7 +45,7 @@ function cards() {
     const four = longest(EVENTS, (v) => v.brand + (v.venue || ""), 4);
     out.push({ name: `${size} list of four, longest names`, size, it: base({ slot: size, kind: "weekend", title: `This weekend in ${longCity.city}`, events: four, more: 7 }) });
   }
-  const rows = longest(EVENTS, (v) => v.brand, 4).map((v) => ({ id: v.id, brand: v.brand, kind: v.kind, sub: v.time }));
+  const rows = longest(EVENTS, (v) => v.brand, 4).map((v) => ({ id: v.id, brand: v.brand, kind: v.kind, sub: v.time, drinks: longPour.items.slice(0, 2).map((i) => i.name) }));
   for (const place of [longest(EVENTS, (v) => v.city)[0].city, "Washington, DC", "the Triangle", "North Carolina"]) {
     out.push({ name: `story location title, ${place}`, size: "story", it: base({ kind: "location", title: `This weekend in ${place}`, group: { key: "c:x", place, title: `This weekend in ${place}`, n: 1, of: 3, rows, names: [] } }) });
   }

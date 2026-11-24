@@ -23,7 +23,7 @@ export const FEED_TIMES = ["10:00", "13:00", "17:00"];
 // Stories run in location groups (a title story, then up to two of that place's), up to three groups a day; each group's
 // stories go out close together: morning, midday, afternoon.
 export const STORY_TIMES = ["08:00", "08:30", "09:00", "11:30", "12:00", "12:30", "15:30", "16:00", "16:30"];
-export const MAX_GROUPS = 3, GROUP_CONTENT = 2;
+export const MAX_GROUPS = 2, GROUP_CONTENT = 2;      // the one knob: groups a day (a title and up to two stories each: 6 stories at most)
 const STATE_FULL = { AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", DC: "Washington, DC", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming" };
 // Regions that get a post of their own every week even when their data is thin (Steven, 2026-11-23: "1-2 a week from
 // NC triangle area too"): when the last six days had no feed post from the region, today's second feed post is its own;
@@ -343,7 +343,14 @@ export function plan({ date, data, history = {} }) {
     const k = cityN.get(placeKey(c)) >= 2 ? placeKey(c) : "s:" + c.state;
     (groups.get(k) || groups.set(k, { key: k, list: [] }).get(k)).list.push(c);
   }
-  const order = [...groups.values()].map((g, i) => ({ ...g, i })).sort((a, b) => b.list.length - a.list.length || a.i - b.i).slice(0, MAX_GROUPS);
+  const ranked = [...groups.values()].map((g, i) => ({ ...g, i })).sort((a, b) => b.list.length - a.list.length || a.i - b.i);
+  const order = ranked.slice(0, MAX_GROUPS);
+  // a region owed its weekly story keeps its group even when the day has bigger ones
+  for (const [rk, own] of Object.entries(regionOwn)) {
+    if ((regionWeek[rk] || {}).story !== 0 || order.some((g) => g.list.includes(own))) continue;
+    const g = ranked.find((x) => x.list.includes(own));
+    if (g) order[order.length - 1] = g;
+  }
   const KIND_RANK = { today: 0, weekend: 1, soon: 2, shop: 3, series: 4 };
   const VERB = { today: "Today in", weekend: "This weekend in", soon: "Coming up in", shop: "New in", series: "This week in" };
   const storyList = [];
@@ -353,8 +360,9 @@ export function plan({ date, data, history = {} }) {
     const lead = list.slice().sort((a, b) => (KIND_RANK[a.kind] ?? 9) - (KIND_RANK[b.kind] ?? 9))[0];
     const title = `${VERB[lead.kind] || "Today in"} ${place}`;
     const names = list.map((c) => (c.kind === "shop" ? c.shop.name : c.kind === "series" ? c.events[0].brand : c.events.slice(0, 3).map((v) => v.brand).join(", ")));
-    const rows = list.flatMap((c) => (c.kind === "shop" ? [{ id: c.shopId, brand: c.shop.name, kind: "cafe", sub: c.shop.city + ", " + c.shop.state }]
-      : c.events.slice(0, 3).map((v) => ({ id: v.id, brand: v.brand, kind: v.kind, sub: (c.kind === "weekend" || c.kind === "soon" ? dayWords(v.day).split(",")[0] + " " : "") + v.time })))).slice(0, 3);
+    const dn = (pour) => ((pour && pour.items) || []).slice(0, 2).map((i) => i.name);
+    const rows = list.flatMap((c) => (c.kind === "shop" ? [{ id: c.shopId, brand: c.shop.name, kind: "cafe", sub: c.shop.city + ", " + c.shop.state, drinks: dn(c.shop.pour) }]
+      : c.events.slice(0, 3).map((v) => ({ id: v.id, brand: v.brand, kind: v.kind, sub: (c.kind === "weekend" || c.kind === "soon" ? dayWords(v.day).split(",")[0] + " " : "") + v.time, drinks: dn(v.pour) })))).slice(0, 3);
     const group = { key: g.key, rows, place, title, n: order.indexOf(g) + 1, of: order.length, names };
     storyList.push({ kind: "location", title, tag: lead.kind === "shop" ? "New on the map" : lead.kind === "weekend" ? "This weekend" : lead.kind === "soon" ? "Coming up" : lead.kind === "series" ? "This week" : "Today",
       city: first.city, state: first.state, region: first.region || null, link: first.link, events: [], more: 0, brands: [], group, role: "title" });

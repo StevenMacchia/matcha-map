@@ -40,7 +40,8 @@ export const parsed = (name) => { drinkConfig(); return !!specFromText(name); };
 export function drinkSvg(name, uid) {
   drinkConfig();
   const spec = specFromText(name) || specFromText("matcha");
-  return drawDrink(spec, { mattie: false, label: false, uid: uid || undefined });
+  // cropped to the tint circle (the drink and its shadow), so the cartoon fills its box
+  return drawDrink(spec, { mattie: false, label: false, uid: uid || undefined }).replace('viewBox="0 0 200 240" width="200" height="240"', 'viewBox="8 24 184 188"');
 }
 const look = (spec) => JSON.stringify([spec.kind, spec.temp, spec.layers, spec.flavors, spec.toppings, spec.garnish, spec.ice, spec.top, spec.straw, spec.blend]);
 
