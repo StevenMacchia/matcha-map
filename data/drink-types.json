@@ -1,7 +1,7 @@
 {
   "_doc": "Clean-up rules for the social What they pour block (tools/social/drinks.js): skip = menu lines that are not drinks to pour, strip = price tails and page words cut off a name, maxName = longest name printed. The drawings come from the drink illustration engine (tools/illustrate/drink.js), not from here.",
   "skip": "\\b(tools?|whisks?|powders?|sets?|teaware|accessories|gift|class|course|policies|policy|shipping|return|cancellation|lip balm|honey|starter pack|sampler|bundle|subscription|merch|tin|canister|chasen|chawan)\\b|^(explore|see all|view all|all |order now$|what is|matcha items|matcha drinks|matcha, tea)|→",
-  "strip": [
+  "strip": ["\\*+", "^(new!?|seasonal|limited( time)?|featured|special)\\s*[:!\\-–]?\\s+(?=\\S)", "\\s+(new!?|\\(new\\))$",
     "^(order now for|details for)\\s+",
     "\\s*[:\\-–]?\\s*\\$?\\d+(\\.\\d{1,2})?\\s*$",
     "\\s+new!?$",
