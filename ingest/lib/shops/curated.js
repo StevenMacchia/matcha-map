@@ -11,7 +11,8 @@ import { createHash } from "node:crypto";
 export const STATES = new Set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split(" "));
 // own-site, instagram-bio, press+site: confirmed (verified). public-page: a non-Yelp public page (ordering page header, Linktree, a market or mall
 // directory, local press, OpenStreetMap) names the shop and its address; the row is shown but verified stays false until an own page confirms it.
-export const CONFIRMED_VIA = new Set(["own-site", "instagram-bio", "press+site", "public-page"]);
+// overture: an Overture Maps place whose name says matcha (open data, storable); shown, verified false until the shop's own site confirms it.
+export const CONFIRMED_VIA = new Set(["own-site", "instagram-bio", "press+site", "public-page", "overture"]);
 const http = (u) => (typeof u === "string" && /^https?:\/\/[^\s]+$/i.test(u.trim()) ? u.trim() : null);
 const str = (v) => (typeof v === "string" && v.trim() ? v.trim() : null);
 const handle = (v) => { const s = str(v); if (!s) return null; const m = /instagram\.com\/([A-Za-z0-9._]+)/i.exec(s); return (m ? m[1] : s.replace(/^@/, "")).toLowerCase().replace(/[^a-z0-9._]/g, "") || null; };
@@ -60,7 +61,8 @@ export function checkRow(r, file = "") {
       website: http(r.website), instagram: handle(r.instagram), phone: str(r.phone), opening_hours: str(r.opening_hours),
       menu_url: http(r.menu_url), image_url: http(r.image_url), image_credit: str(r.image_credit),
       tier, ...(menu_matcha ? { menu_matcha } : {}), note: str(r.note) ? str(r.note).slice(0, 120) : null,
-      cuisine: null, source: "web", source_url, read: r.read, confirmed_via: via, verified: !!via && via !== "public-page",
+      ...(str(r.overture_id) ? { overture_id: str(r.overture_id), ...(Number.isFinite(r.lat) && Number.isFinite(r.lng) ? { lat: r.lat, lng: r.lng } : {}), overture_sources: Array.isArray(r.overture_sources) ? r.overture_sources.slice(0, 4) : [] } : {}),
+      cuisine: null, source: "web", source_url, read: r.read, confirmed_via: via, verified: !!via && via !== "public-page" && via !== "overture",
     },
   };
 }
@@ -84,6 +86,8 @@ export async function curatedShops({ geocoder, fetched, dir = "data" }) {
     const s = c.shop;
     if (seen.has(s.id)) continue;
     seen.add(s.id);
+    // An Overture place brings its own coordinates (open data); everything else is geocoded from its street address.
+    if (s.overture_id && Number.isFinite(s.lat) && Number.isFinite(s.lng) && s.lat > 17 && s.lat < 72) { shops.push({ ...s, geocode_source: "overture", osm_url: null, fetched }); continue; }
     const ev = { id: s.id, address: s.address, city: s.city, state: s.state, zip: s.zip, confidence: "confirmed" };
     await geocoder.geocode(ev);
     // A suite or unit number often defeats Nominatim: ask again with the street alone.

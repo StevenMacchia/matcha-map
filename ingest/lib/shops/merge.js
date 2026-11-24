@@ -18,7 +18,7 @@ export function dedupe(list, within = 150) {
     // within 75 m of the same spot.
     const dup = out.find((o) => { const d = metres(o, s), n = norm(o.name); return (n === k && d <= within) || (d <= 75 && (n.startsWith(k + " ") || k.startsWith(n + " "))); });
     if (!dup) { out.push({ ...s }); continue; }
-    for (const f of ["address", "city", "state", "zip", "website", "instagram", "phone", "opening_hours", "cuisine", "menu_url", "image_url", "image_credit", "source_url", "read", "confirmed_via", "note", "menu_matcha"]) if (!dup[f] && s[f]) dup[f] = s[f];
+    for (const f of ["address", "city", "state", "zip", "website", "instagram", "phone", "opening_hours", "cuisine", "menu_url", "image_url", "image_credit", "source_url", "read", "confirmed_via", "note", "menu_matcha", "overture_id", "overture_sources"]) if (!dup[f] && s[f]) dup[f] = s[f];
     if (s.tier === "shop" && dup.tier === "serves") dup.tier = "shop";
     if (s.verified && !dup.verified) dup.verified = true;
     if (s.brand_id && !dup.brand_id) dup.brand_id = s.brand_id;
