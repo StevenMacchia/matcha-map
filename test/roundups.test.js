@@ -32,3 +32,12 @@ test("roundups: archive links come from /p/ paths, and the source list is a file
   assert.deepEqual(links, ["https://x.example/p/issue-one", "https://x.example/p/issue-two"]);
   assert.ok(loadRoundups().length >= 10);
 });
+
+test("roundups: closures, the issue subtitle and weekly residencies are not events", () => {
+  const src = { name: "x", url: "https://x.example/feed", city: "Seattle", state: "WA" };
+  const run = (body, title = "This Week") => bodyItems(body, { link: "https://x.example/p/1", published: "2026-11-19T12:00:00Z", title }, src);
+  assert.equal(run("<p>COFFEE & MATCHA | CHINATOWN-ID \u2014 Muni Cafe serves lattes. Note they will be closed 11/25-11/29.</p>").length, 0);
+  assert.equal(run("<p>This Week in Seattle Pop-Ups: November 19-26. Melon matcha, butternut kale biscuits, and plates.</p>", "This Week in Seattle Pop-Ups: November 19-26").length, 0);
+  assert.equal(run("<p>COFFEE | WEST SEATTLE \u2014 Numa Coffee Bar serves matcha inside Driftwood every week, Tue-Sat 8am-1pm.</p>").length, 0);
+  assert.equal(run("<p>MATCHA | FREMONT \u2014 Nicho\u2019s Matcha Cafe is popping up at Snow Peak. Plus they serve every Tuesday. Sat 12/05, 11am-3pm at Snow Peak .</p>").length, 1);
+});

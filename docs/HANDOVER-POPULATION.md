@@ -27,7 +27,7 @@ How to merge the chunks (one landing): `node tools/clean-overture-serves.mjs dat
 
 ## Open items and who owns them
 
-- Seattle review items (`data/review/2026-11-24.json`, from the roundup reader, all "unsure": no street address printed): Muni Cafe at Anh Ơi Bake Shop, Chinatown-International District, Nov 25 and Nov 29; Melon Matcha Nov 26 (venue not printed); Numa Coffee Bar and Seaglass Bakeshop at Driftwood, West Seattle, Nov 26 08:00. Each needs the venue's street address from its own public page (Anh Ơi Bake Shop, Driftwood, Melon Matcha's own site); then set `confidence: "likely"` and promote through `npm run ingest`. Sent to the Events lane's verification path on 2026-11-24.
+- Seattle review items: settled as dropped by the Events lane on 2026-11-24 (the issue shows closure ranges, a subtitle and standing residencies; reader fixed accordingly). Lead for shops: Howdy Y'all Coffee, standing counter inside Seattle Central Library, 1000 Fourth Ave (matcha), not an event.
 - Gate failures with dense data (not code): shop gate "no-menu @320" and map gate Manhattan zoom 13; flagged to the site session. The deploys went out anyway.
 - Hand-research rows held for geocoding: Matchaful Brookfield Place (250 Vesey St), a Maiko, Nana's Green Tea Seattle, Matsu Matcha, Evolve New Orleans; Nominatim sometimes returns 629, and `data/geocache.json` stores misses for 7 days: delete recent miss entries before retrying.
 - The weekly Maiko recheck and the Nakama 2027-07-13 year bug are with the Events lane.

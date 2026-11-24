@@ -56,12 +56,19 @@ export function brandFromEntry(entry) {
   return brandFromTitle(rest.slice(0, 160)) || brandFromLine(rest.slice(0, 160));
 }
 
+const WEEKLY = /\bevery (?:week|day|(?:mon|tues?|wednes|thurs?|fri|satur|sun)day)s?\b|\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s*(?:-|\u2013|to|through)\s*(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\b|\b(?:mon|tues?|wednes|thurs?|fri|satur|sun)days\b/i;
+
 // One item's body -> raw items (one per matcha line that names a brand).
 export function bodyItems(body, item, source, now = new Date()) {
   const lines = entries(htmlToLines(/<[a-z][\s\S]*>/i.test(body) ? body : `<p>${body}</p>`).map((l) => l.replace(/\s+/g, " ").trim()).filter(Boolean));
   const out = [], seen = new Set();
   lines.forEach((line, i) => {
     if (line.length < 12 || line.length > 600 || !hasMatcha(line)) return;
+    // Events lane findings (2026-11-24): a closure range is not an event ("closed 11/25-11/29", "closed on Thanksgiving 11/26"); the issue's
+    // own title or subtitle is not a brand ("Melon matcha, butternut kale ..."); a weekly residency line with no dated day is a shop, not an item.
+    if (/\b(?:will be |is |are )?closed\b|\bclosing\b/i.test(line)) return;
+    if (item.title && (line.startsWith(item.title.slice(0, 40)) || item.title.startsWith(line.slice(0, 40)))) return;
+    if (WEEKLY.test(line) && !/\b\d{1,2}\/\d{1,2}\b/.test(line)) return;
     const eb = brandFromEntry(line);
     const brand = eb || brandFromLine(line) || (i > 0 && lines[i - 1].length < 70 ? brandFromLine(lines[i - 1]) : null);
     if (!brand) return;
