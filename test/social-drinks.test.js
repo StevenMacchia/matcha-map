@@ -49,3 +49,12 @@ test("the real menus: nearly every drink line is read by the engine, no row empt
   const rep = plainReport(shops);
   assert.ok(rep.plain / rep.total < 0.02, `${rep.plain} of ${rep.total} drink lines fall to the plain drawing`);
 });
+
+test("menu furniture prefixes and marks are stripped, the drink name kept", () => {
+  assert.equal(cleanDrink("NEW Tiramisu Matcha Latte"), "Tiramisu Matcha Latte");
+  assert.equal(cleanDrink("New! Pecan Pie Matcha Latte"), "Pecan Pie Matcha Latte");
+  assert.equal(cleanDrink("Seasonal: Pumpkin Matcha"), "Pumpkin Matcha");
+  assert.equal(cleanDrink("**Matcha Latte**"), "Matcha Latte");
+  assert.equal(cleanDrink("Strawberry Matcha New"), "Strawberry Matcha");
+  assert.equal(cleanDrink("Holiday Matcha"), "Holiday Matcha");
+});
