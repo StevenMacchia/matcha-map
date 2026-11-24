@@ -4644,6 +4644,747 @@
   },
   "brand:web-sugarbaby-gatlinburg-tn-gatlinburg-727-parkway-1ea3cf": {
    "fill": "2026-11-24"
+  },
+  "brand:web-7-leaves-cafe-ca-irvine-14845-jeffrey-rd-e023e8": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-7-leaves-cafe-ca-san-jose-375-saratoga-ave-n-41dab7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-aroma-craft-coffee-ca-walnut-20265-valley-boul-6e1639": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-7-leaves-cafe-chino-hills-ca-chino-hills-13920-48439c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-7-leaves-cafe-ca-riverside-1201-university-ave-ff3c78": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-arome-cafe-ca-san-jose-4878-san-felipe-rd-110-ff51a4": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-banner-coffee-company-ca-arroyo-grande-995-e-g-768811": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-blk-dot-coffee-ca-orange-201-w-chapman-ave-e4980d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-1-oz-coffee-ca-mountain-view-650-castro-st-130-8aedc6": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-brewja-coffee-ca-san-lorenzo-1432-vi-a-lacqua-229bf8": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-bandido-coffee-parlor-al-birmingham-1101-20th-ddec4d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-king-coffee-az-tempe-1020-s-mill-ave-c6d654": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-avenues-san-francisco-ca-san-francisco-3606-ta-92e295": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-dead-eye-coffee-bar-ca-south-san-francisco-415-fcbe0e": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Su 07:00-15:00",
+   "read": "2026-11-24",
+   "source_url": "http://www.deadeyecoffeebar.com/"
+  },
+  "brand:web-7-leaves-cafe-ca-cupertino-11111-n-wolfe-rd-e96357": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-connect-coffee-ca-visalia-5505-w-riggin-ave-22aa21": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-cloud-forest-cafe-ca-davis-222-d-st-83c4c9": {
+   "fill": "2026-11-24",
+   "opening_hours": "Tu-Sa 08:00-15:00; Su 08:30-15:00",
+   "read": "2026-11-24",
+   "source_url": "http://www.cloudforestcafe.com/"
+  },
+  "brand:web-cora-coffee-ca-sacramento-1201-j-st-0cff1e": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Fr 07:00-21:00; Sa 09:00-21:00",
+   "read": "2026-11-24",
+   "source_url": "https://www.coracoffeesactown.com/"
+  },
+  "brand:web-coffee-lovers-tully-road-ca-san-jose-1696-tull-17bab2": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-jack-s-coffee-ca-salinas-1348-s-main-st-b6fbe6": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-g-y-bakery-restaurant-ca-san-francisco-881-cla-ef0e53": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Th,Su 10:00-21:00; Fr,Sa 10:00-22:00",
+   "read": "2026-11-24",
+   "source_url": "https://gandybakery.kwickmenu.com"
+  },
+  "brand:web-egghead-sando-cafe-ca-san-jose-6201-santa-tere-b13b27": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-hot-lips-coffee-shop-ca-cathedral-city-68461-e-a7d82d": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo,Sa,Su 08:00-13:00; Tu-Fr 07:00-13:00",
+   "read": "2026-11-24",
+   "source_url": "http://www.hotlipscoffeeshop.com/"
+  },
+  "brand:web-el-dicho-coffee-and-antojitos-ca-south-lake-ta-a310ff": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-l-s-caffe-ca-san-francisco-2871-24th-st-f978b2": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-cafe-xocolatl-ca-sacramento-1607-10th-st-94deba": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-fullerton-2400-e-chapman-ave-a0958e": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-irvine-6278-irvine-blvd-700682": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-millbrae-655-broadway-8372a4": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-san-mateo-208-e-3rd-ave-8f41a3": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-hayward-29213-mission-blvd-s-51ca8b": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-san-jose-685-saratoga-ave-adebac": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-san-jose-1698-hostetter-rd-7b7c8a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-walnut-creek-1345-newell-ave-6b4a27": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ca-fresno-6451-n-riverside-dr-s-23a165": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-coffee-tea-traders-ca-alameda-883-island-dr-st-3dc7b9": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-damask-rose-ca-oakland-6606-shattuck-ave-07501f": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-irvine-3972-barranca-pkwy-ste-d1331a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-irvine-3927-portola-pkwy-c7b0a2": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-tustin-12932-newport-ave-1698fd": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-yorba-linda-18353-imperial-hw-ceb2d8": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-belmont-1200a-el-camino-real-adecee": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-carlos-677-laurel-st-ste-73f23c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-redwood-city-2600-broadway-b8cc8a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-menlo-park-899-santa-cruz-ave-0f099a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-palo-alto-153-homer-ave-86cffb": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-palo-alto-77-town-and-country-5c78c7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-los-altos-367-state-st-6ebaee": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-palo-alto-3904-middlefield-rd-6586c0": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-south-san-francisco-102-grand-3545b6": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-millbrae-401-broadway-a21b82": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-mateo-255-e-3rd-ave-5b47d7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-burlingame-1241-burlingame-av-fbc32d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-cupertino-22350-homestead-rd-ab385d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-sunnyvale-144-w-el-camino-rea-de1d9f": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-saratoga-12148-saratoga-sunny-bfc869": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-scotts-valley-214-mt-hermon-r-9b4020": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-mountain-view-420-castro-st-5a8743": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-1509-sloat-blvd-8752a5": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-3251-20th-ave-3a0fa6": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-2257-market-st-696ac7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-5201-geary-blvd-fc362b": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-3419-california-970825": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-2197-fillmore-s-ea793b": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-310-broderick-s-41878a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-2139-polk-st-4595c9": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-emeryville-1400-park-ave-e97218": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-alameda-1901-webster-st-fd0d47": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-leandro-1500-e-14th-st-c1df42": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-alameda-1365-park-st-833166": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-hayward-878-b-st-f45767": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-los-gatos-798-1-blossom-hill-d6b98d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-capitola-819-bay-ave-6a336b": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-jose-2035-camden-ave-cdc8c1": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-monterey-560-munras-ave-unit-5578bd": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-monterey-220-alvarado-st-ce2fa0": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-aptos-50-rancho-del-mar-c266fc": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-campbell-1875-s-bascom-ave-6ea96f": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-jose-1140-lincoln-ave-d04639": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-jose-1295-the-alameda-8d9bc6": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-morgan-hill-755-cochrane-rd-s-2867ae": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-santa-clara-2002-el-camino-re-6c32b0": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-jose-1088-e-brokaw-rd-6a7809": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-ramon-166-sunset-dr-f77428": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-milpitas-543-e-calaveras-blvd-40aa53": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-pleasanton-349-main-st-110-b03b81": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-livermore-152-s-livermore-ave-74acf5": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-dublin-4620-tassajara-rd-173a92": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-2080-chestnut-s-468cff": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-francisco-160-jefferson-s-3071fd": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-berkeley-1825-solano-ave-94d3a9": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-berkeley-2124-vine-st-d7cf46": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-rafael-5800-northgate-mal-00e459": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-san-anselmo-896-sir-francis-d-a6c4c7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-corte-madera-77-casa-buena-dr-54542c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-tiburon-1-blackfield-dr-4b56a3": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-pinole-2712-pinole-valley-rd-c1453d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-el-cerrito-9895-san-pablo-ave-02e052": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-oakland-5095-telegraph-ave-st-b0a2a9": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-berkeley-2501-telegraph-ave-109faa": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-oakland-4050-piedmont-ave-cc9d6a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-oakland-3401-fruitvale-ave-92a0ef": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-oakland-3258-lakeshore-ave-68300b": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-oakland-2066-antioch-ct-03209e": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-berkeley-2916-domingo-ave-30715c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-orinda-63-moraga-way-d80bfa": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-lafayette-3518-mount-diablo-b-43bc45": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-walnut-creek-1343-locust-st-66b393": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-alamo-215-alamo-plaza-ef883c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-danville-435-railroad-ave-d9620a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-pleasant-hill-65-crescent-dr-98516f": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-concord-2072-salvio-st-defd77": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-concord-5458-ygnacio-valley-r-d3cb4b": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-petaluma-5-petaluma-blvd-s-16d711": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-santa-rosa-2500-mendocino-ave-be2b9e": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-novato-7320-redwood-blvd-ste-5e0df7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-fairfield-1380-holiday-ln-776d08": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-napa-3678-bel-aire-plaza-e9a3ef": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-vacaville-1671-e-monte-vista-1b591a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-brentwood-5411-lone-tree-wy-bde409": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-davis-231-e-st-d40780": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-davis-1411-w-covell-blvd-114-648caa": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-sacramento-3700-crocker-dr-12f824": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-sacramento-1050-20th-st-190-eddaa1": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-elk-grove-7127-elk-grove-blvd-9a2351": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-elk-grove-8234-laguna-blvd-10-dd0aa3": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-stockton-5765-pacific-ave-c-1-d18230": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-roseville-1200-cirby-way-ste-3a6913": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-fair-oaks-8909-madison-ave-715a1a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-el-dorado-hills-1004-white-ro-938f74": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-roseville-4180-thrive-dr-417f0f": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-ca-roseville-1198-roseville-pkwy-5c257d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-tea-ca-sunnyvale-605-tasman-dr-58076e": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-tea-ca-san-francisco-919-cole-st-f960e6": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-tea-ca-san-jose-377-santana-row-dcef1f": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-tea-ca-san-ramon-11000-bollinger-76d73a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-tea-ca-berkeley-2255-shattuck-av-27fe91": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-tea-ca-sacramento-4650-natomas-b-1871c5": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-peet-s-coffee-corporate-headquarters-ca-emeryv-977fce": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-kaizen-coffee-ca-san-mateo-2337-s-el-camino-re-8adcaf": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-caffe-mercato-ca-menifee-30141-antelope-rd-306a77": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-everbloom-coffee-midtown-ca-indio-81730-ca-111-fe208c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-la-ca-bakery-cafe-ca-hayward-24788-amador-st-0894d3": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-plucky-s-cafe-ca-burlingame-1352-broadway-82e960": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-mi-cafecito-coffee-ca-pomona-101-s-main-st-7bf1d7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-lagu-cafe-ca-irvine-17779-main-st-j-193507": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-caffe-in-coffee-tustin-ca-tustin-2512-walnut-a-5a710c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-milli-cafe-ca-millbrae-299-broadway-147760": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-pause-coffee-house-ca-fair-oaks-8121-madison-a-562069": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-caffe-in-coffee-co-ca-anaheim-5642-e-la-palma-bc9a27": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-the-power-plant-coffee-ca-moss-landing-7990-ca-024e43": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Fr,Su 07:00-16:00; Sa 07:00-17:00",
+   "read": "2026-11-24",
+   "source_url": "http://thepowerplant.store/"
+  },
+  "brand:web-still-coffee-treats-ca-brea-391-state-college-d2e600": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-stray-dogs-coffee-ca-riverside-3225-market-st-c6de59": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo 07:00-17:00; Tu-Fr 07:00-20:00; Sa 09:00-18:00",
+   "read": "2026-11-24",
+   "source_url": "https://www.straydogscoffee.com/"
+  },
+  "brand:web-polaris-cafe-ca-emeryville-5858-horton-st-151-e51827": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-red-berry-coffee-bar-ca-los-altos-145-main-st-ef8f01": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-sam-s-general-store-ca-calistoga-109-wappo-ave-79d762": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-spro-coffeelab-ca-san-francisco-500-church-st-216ed5": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-cool-river-coffee-house-co-breckenridge-325-s-e9dc48": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-springly-ca-fresno-7859-n-blackstone-ave-0ce321": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-tea-rex-cafe-specialty-teas-ca-san-francisco-3-33ea42": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-terra-forte-coffee-ca-sacramento-1125-2nd-st-f9945a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-tay-tah-cafe-ca-albany-1182-solano-ave-b19541": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-fl-orlando-7501-w-colonial-dr-s-9cb19e": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-pause-coffee-house-ca-rocklin-2168-sunset-blvd-cee66e": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-raining-berries-gainesville-fl-gainesville-111-b963b7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-southern-grounds-co-fl-jacksonville-14100-mayo-aa2121": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Su 06:30-21:00",
+   "read": "2026-11-24",
+   "source_url": "https://www.southerngrounds.com/"
+  },
+  "brand:web-southern-grounds-co-fl-st-augustine-124-king-s-0f0c34": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Su 06:30-21:00",
+   "read": "2026-11-24",
+   "source_url": "https://www.southerngrounds.com/?utm_source=Meta&utm_medium=organic&utm_campaign=Facebook&utm_content=StAugustine"
+  },
+  "brand:web-southern-grounds-co-fl-jacksonville-1671-atlan-94c8ad": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Su 06:30-21:00",
+   "read": "2026-11-24",
+   "source_url": "https://www.southerngrounds.com/"
+  },
+  "brand:web-southern-grounds-and-co-fl-jacksonville-3562-s-db62c6": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Su 06:30-21:00",
+   "read": "2026-11-24",
+   "source_url": "https://www.southerngrounds.com/"
+  },
+  "brand:web-wake-cup-ca-san-francisco-1476-haight-st-46cda7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-yeti-s-grind-co-vail-141-e-meadow-dr-108-cebe5a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-early-dog-coffee-golden-co-golden-1981-youngfi-819534": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-zugba-cafe-fl-daytona-beach-shores-3106-s-atla-903edd": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Th 08:00-15:00; Fr-Su 08:00-17:00",
+   "read": "2026-11-24",
+   "source_url": "http://www.zugba.cafe/"
+  },
+  "brand:web-7-leaves-cafe-ga-duluth-4020-satellite-blvd-e5d0ec": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-alla-prima-coffee-roaster-fl-pensacola-532-w-g-915fc7": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-pour-boy-coffee-mobile-barista-ga-savannah-660-b4171b": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-brew-fl-new-smyrna-beach-424-luna-bella-ln-61bc53": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-fable-coffee-pastries-fl-orlando-11909-e-colon-5947f4": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-good-day-darling-fl-pensacola-901-n-12th-ave-4ce340": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-oviedo-city-cafe-fl-oviedo-1333-w-broadway-st-fbbadc": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-voyager-craft-coffee-ca-san-jose-111-w-st-john-accce2": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-bungalow-coffee-co-nv-las-vegas-201-e-charlest-ee3abc": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Fr 07:00-16:00; Sa,Su 08:00-16:00",
+   "read": "2026-11-24",
+   "source_url": "http://bungalowcoffeeco.com/"
+  },
+  "brand:web-cafe-mata-nc-wilmington-1540-south-2nd-street-0ed00f": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-founders-coffee-nv-las-vegas-6410-s-durango-dr-5f2feb": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Su 06:00-18:00",
+   "read": "2026-11-24",
+   "source_url": "http://founderscoffeeco.com/"
+  },
+  "brand:web-founders-coffee-nv-henderson-3512-st-rose-pkwy-8b13bc": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Su 06:00-18:00",
+   "read": "2026-11-24",
+   "source_url": "http://founderscoffeeco.com"
+  },
+  "brand:web-qreate-coffee-studio-fl-orlando-1212-woodward-3f999d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-voyager-craft-coffee-ca-santa-clara-3985-steve-4b9383": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-tehillah-coffee-co-fl-fort-walton-beach-405-gr-9d53d8": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-le-cafe-eblouir-la-gretna-2112-belle-chasse-hw-22bdfb": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-evergreen-coffee-nv-henderson-40-n-valle-verde-5c27e4": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Su 07:00-16:00",
+   "read": "2026-11-24",
+   "source_url": "http://www.EvergreenCoffeeLV.com/"
+  },
+  "brand:web-paris-baguette-sc-hilton-head-95-mathews-dr-a650e1": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-7-leaves-cafe-tx-houston-9798-bellaire-blvd-st-1414f4": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-7-leaves-cafe-tx-houston-3825-richmond-ave-23c6dc": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-wyatt-s-coffee-fl-gainesville-202-se-2nd-ave-38c018": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-turbo-coffee-fl-santa-rosa-beach-4771-e-county-aad40d": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-java-java-cafe-sc-johns-island-375-gardners-ci-bd4739": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-kula-coffee-co-ga-atlanta-3423-piedmont-rd-ne-d8595a": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-three-tree-coffee-ga-pooler-215-w-collins-st-10774c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-atcha-tx-houston-9889-bellaire-blvd-ste-d-234-cf1ebf": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Th 08:00-21:00; Fr 08:00-21:30; Sa 09:00-21:30; Su 09:00-21:00",
+   "read": "2026-11-24",
+   "source_url": "http://mecchamatcha.com"
+  },
+  "brand:web-henry-and-the-fish-nm-santa-fe-217-w-san-franc-53b196": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-tx-houston-9110-bellaire-blvd-s-5f2e7f": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-tx-houston-12230-westheimer-rd-a6bd3c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-tx-pearland-9240-broadway-st-st-9d2dfb": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-tx-woodlands-2501-research-fore-97f449": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-tx-plano-1201-e-parker-rd-ste-1-934d4c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-tx-allen-824-w-stacy-rd-ste-800-a4d524": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-iwana-specialty-coffee-roasters-nv-las-vegas-6-1e4702": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Fr 07:00-16:00; Sa,Su 08:00-16:00",
+   "read": "2026-11-24",
+   "source_url": "http://iwanacoffee.com/"
+  },
+  "brand:web-bad-owl-coffee-nv-henderson-10575-s-eastern-av-23f1c3": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-long-coffee-tx-houston-10611-bellaire-blvd-727b6e": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Th,Su 08:00-22:00; Fr,Sa 08:00-23:00",
+   "read": "2026-11-24",
+   "source_url": "http://www.longcoffeeus.com"
+  },
+  "brand:web-brown-fox-coffee-sc-mt-pleasant-307-simmons-st-4ee2bb": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-lowcountry-cider-and-superior-coffee-sc-beaufo-078ece": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-paris-baguette-ut-midvale-950-e-fort-union-blv-0a8fe3": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-lula-s-coffee-co-sc-florence-600-pamplico-hwy-349fc6": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-cherry-moon-tx-friendswood-2920-w-bay-area-blv-fbc516": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-long-coffee-tx-katy-1321-n-westgreen-blvd-100-9cd44a": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Th,Su 08:00-22:00; Fr,Sa 08:00-23:00",
+   "read": "2026-11-24",
+   "source_url": "http://www.longcoffeeus.com/"
+  },
+  "brand:web-cozy-coffee-station-allen-tx-allen-900-w-betha-0acf3c": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-beany-s-to-go-ut-saratoga-springs-1058-n-redwo-215550": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Sa 06:00-17:00; Su 07:00-15:00",
+   "read": "2026-11-24",
+   "source_url": "http://beanysespresso.com"
+  },
+  "brand:web-golden-hour-tx-the-woodlands-4849-fm-1488-rd-s-80662e": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-beany-s-to-go-ut-vineyard-61-n-geneva-rd-96ba9b": {
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Sa 06:00-17:00; Su 07:00-15:00",
+   "read": "2026-11-24",
+   "source_url": "http://beanysespresso.com"
+  },
+  "brand:web-ome-calli-cafe-tx-the-woodlands-2260-buckthorn-aa1045": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-slow-drip-tx-tx-houston-1625-main-st-b13804": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-district-coffee-co-ut-salt-lake-city-206-n-200-39cf36": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-un-cafecito-slc-ut-salt-lake-city-838-w-north-5a6598": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-the-mercantile-ut-ogden-2501-grant-ave-0ea2b8": {
+   "fill": "2026-11-24"
+  },
+  "brand:web-waygood-coffee-shop-tx-pearland-2715-old-max-c-813740": {
+   "fill": "2026-11-24"
   }
  }
 }
