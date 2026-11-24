@@ -7,6 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
+import { stateAbbr } from "./merge.js";
 
 export const STATES = new Set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split(" "));
 // own-site, instagram-bio, press+site: confirmed (verified). public-page: a non-Yelp public page (ordering page header, Linktree, a market or mall
@@ -42,7 +43,11 @@ function matchaItems(list) {
 
 // One raw row -> { shop } (without coordinates) or { held: reason }.
 export function checkRow(r, file = "") {
-  const name = str(r?.name), address = str(r?.address), city = str(r?.city), state = str(r?.state)?.toUpperCase() || null, source_url = http(r?.source_url);
+  // A site prints "Arizona" for AZ, and an address can lead with the shop's own name ("Mad Coffee & More, 8049 US Highway 83"): both are repaired here
+  // so a good row is not held for them. A city the provider did not have falls back to the listing name's " - City" suffix ("Kyuramen - Cherry Hill").
+  const name = str(r?.name), state = stateAbbr(r?.state), source_url = http(r?.source_url);
+  const address = str(r?.address)?.replace(/^[^\d,]+,\s*(?=\d)/, "") || null;
+  const city = str(r?.city) || (/ - ([A-Z][A-Za-z.' ]{2,30})$/.exec(name || "") || [])[1] || null;
   if (!name) return { held: "no name" };
   if (!address || !/^\d/.test(address)) return { held: "no street address" };
   if (!city) return { held: "no city" };
@@ -60,7 +65,8 @@ export function checkRow(r, file = "") {
       name, address, city, state, zip,
       website: http(r.website), instagram: handle(r.instagram), phone: str(r.phone), opening_hours: str(r.opening_hours),
       menu_url: http(r.menu_url), image_url: http(r.image_url), image_credit: str(r.image_credit),
-      tier, ...(menu_matcha ? { menu_matcha } : {}), note: str(r.note) ? str(r.note).slice(0, 120) : null,
+      tier, ...(menu_matcha ? { menu_matcha } : {}),
+ note: str(r.note) ? str(r.note).slice(0, 120) : null,
       ...(str(r.overture_id) ? { overture_id: str(r.overture_id), ...(Number.isFinite(r.lat) && Number.isFinite(r.lng) ? { lat: r.lat, lng: r.lng } : {}), overture_sources: Array.isArray(r.overture_sources) ? r.overture_sources.slice(0, 4) : [] } : {}),
       cuisine: null, source: "web", source_url, read: r.read, confirmed_via: via, verified: !!via && via !== "public-page" && via !== "overture",
     },
@@ -90,9 +96,9 @@ export async function curatedShops({ geocoder, fetched, dir = "data" }) {
     if (s.overture_id && Number.isFinite(s.lat) && Number.isFinite(s.lng) && s.lat > 17 && s.lat < 72) { shops.push({ ...s, geocode_source: "overture", osm_url: null, fetched }); continue; }
     const ev = { id: s.id, address: s.address, city: s.city, state: s.state, zip: s.zip, confidence: "confirmed" };
     await geocoder.geocode(ev);
-    // A suite or unit number often defeats Nominatim: ask again with the street alone.
+    // A suite or unit number often defeats Nominatim: ask again with the street alone (also when the first try fell back to the city centre, geocode_source "none").
     const bare = s.address.split(",")[0].replace(/[\s]+(?:suite|ste\.?|unit|#|space|bldg|building|\d+(?:st|nd|rd|th) floor|ground floor|floor)\s*[\w-]*.*$/i, "").replace(/\s*\(.*$/, "").trim();
-    if (ev.lat == null && bare && bare !== s.address) { const again = { id: ev.id + "~bare", address: bare, city: s.city, state: s.state, zip: s.zip, confidence: "confirmed" }; await geocoder.geocode(again); Object.assign(ev, { lat: again.lat, lng: again.lng, geocode_source: again.geocode_source }); }
+    if ((ev.lat == null || ev.geocode_source === "none") && bare && bare !== s.address) { const again = { id: ev.id + "~bare", address: bare, city: s.city, state: s.state, zip: s.zip, confidence: "confirmed" }; await geocoder.geocode(again); Object.assign(ev, { lat: again.lat, lng: again.lng, geocode_source: again.geocode_source }); }
     if (ev.lat == null || !["nominatim", "mapbox", "manual"].includes(ev.geocode_source)) { held.push({ file, name: s.name, why: "address not geocoded" }); continue; }
     shops.push({ ...s, lat: ev.lat, lng: ev.lng, geocode_source: ev.geocode_source, osm_url: null, fetched });
   }

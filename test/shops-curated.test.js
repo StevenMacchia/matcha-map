@@ -111,3 +111,15 @@ test("the shop data carries no all-caps or all-lower-case city and no state that
   const bad = shops.filter((s) => (s.city && (s.city === s.city.toUpperCase() || s.city === s.city.toLowerCase()) && /[A-Za-z]{3,}/.test(s.city)) || (s.state && !/^[A-Z]{2}$/.test(s.state)));
   assert.deepEqual(bad.map((s) => `${s.name}|${s.city}|${s.state}`).slice(0, 5), []);
 });
+
+test("a full state name, a name-led address and a missing city suffix are repaired instead of held", () => {
+  const base = { name: "Mad Coffee & More", address: "Mad Coffee & More, 8049 US Highway 83", city: "Abilene", state: "TEXAS", zip: "79602", source_url: "https://madcoffeemore.com/", read: "2026-11-24" };
+  const a = checkRow(base);
+  assert.equal(a.shop.state, "TX");
+  assert.equal(a.shop.address, "8049 US Highway 83");
+  assert.equal(checkRow({ ...base, state: "Arizona" }).shop.state, "AZ");
+  const k = checkRow({ ...base, name: "Kyuramen - Cherry Hill", address: "1871 NJ-70", city: null, state: "NJ" });
+  assert.equal(k.shop.city, "Cherry Hill");
+  assert.ok(checkRow({ ...base, state: "Narnia" }).held);
+  assert.equal(checkRow({ ...base, address: "123 Main St, Suite 4" }).shop.address, "123 Main St, Suite 4");
+});
