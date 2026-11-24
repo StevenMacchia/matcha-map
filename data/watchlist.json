@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T02:01:37.475Z",
+  "updated": "2026-11-24T03:43:20.802Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -29311,6 +29311,51 @@
         }
       ],
       "bio": "Your neighborhood hangout in RTP — eat, shop & explore with the whole family.\n📍 @hubrtp\n🕗: Tue-Sat, 11 a.m.-8 p.m (vendor hours vary)"
+    },
+    {
+      "handle": "melon_matcha",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "roundups",
+      "first_seen": "2026-11-24T03:42:31.972Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=roundups; org=melon-matcha; home=, ; brand=Melon matcha; e.g. "
+    },
+    {
+      "handle": "muni_cafe",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "roundups",
+      "first_seen": "2026-11-24T03:42:31.972Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=roundups; org=muni-cafe; home=, ; brand=Muni Cafe; e.g. "
+    },
+    {
+      "handle": "numa_coffee_bar_and_seaglass_bakeshop",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "roundups",
+      "first_seen": "2026-11-24T03:42:31.972Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=roundups; org=numa-coffee-bar-and-seaglass-bakeshop; home=, ; brand=Numa Coffee Bar and Seaglass Bakeshop; e.g. "
     }
   ]
 }

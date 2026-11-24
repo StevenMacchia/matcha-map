@@ -1,0 +1,157 @@
+{
+  "generated": "2026-11-24T03:43:20.802Z",
+  "items": [
+    {
+      "brand": "Melon matcha",
+      "title": "Melon matcha pop-up",
+      "start": "2026-11-19T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
+      "source_id": "roundups:melon-matcha",
+      "kind": "popup",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      },
+      "menu": [
+        "melon matcha"
+      ],
+      "description": "Melon matcha, butternut kale asiago biscuits, and Korean chicken plates",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      ],
+      "notes": "found by roundups; city inferred from the source; pin at the city centre"
+    },
+    {
+      "brand": "Muni Cafe",
+      "title": "Muni Cafe pop-up at Anh",
+      "start": "2026-11-25T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "Anh",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.618198,
+      "lng": -122.347121,
+      "approx": false,
+      "source_id": "roundups:muni-cafe",
+      "kind": "popup",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      },
+      "menu": [
+        "black sesame ube latte"
+      ],
+      "description": "*COFFEE & MATCHA | CHINATOWN-ID — Muni Cafe serves as the resident beverage operator at Anh Ơi Bake Shop. Snag a daydreamer, biko latte, or the sesame ube latte, available with matcha or espresso.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      ],
+      "notes": "found by roundups; city inferred from the source"
+    },
+    {
+      "brand": "Melon matcha",
+      "title": "Melon matcha pop-up",
+      "start": "2026-11-26T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
+      "source_id": "roundups:melon-matcha",
+      "kind": "popup",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      },
+      "menu": [
+        "melon matcha"
+      ],
+      "description": "Melon matcha, butternut kale asiago biscuits, and Korean chicken plates",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      ],
+      "notes": "found by roundups; city inferred from the source; pin at the city centre"
+    },
+    {
+      "brand": "Numa Coffee Bar and Seaglass Bakeshop",
+      "title": "Numa Coffee Bar and Seaglass Bakeshop pop-up at Driftwood",
+      "start": "2026-11-26T08:00:00-08:00",
+      "end": "2026-11-26T13:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Driftwood",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.579058,
+      "lng": -122.410315,
+      "approx": false,
+      "source_id": "roundups:numa-coffee-bar-and-seaglass-bakeshop",
+      "kind": "popup",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      },
+      "description": "*SPECIALTY COFFEE & BAKERY | WEST SEATTLE — Numa Coffee Bar and Seaglass Bakeshop serve together inside Driftwood every week with specialty espresso, full-bodied pourovers, or matcha to pair with…",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      ],
+      "notes": "found by roundups; city inferred from the source"
+    },
+    {
+      "brand": "Muni Cafe",
+      "title": "Muni Cafe pop-up at Anh",
+      "start": "2026-11-29T10:00:00-08:00",
+      "end": "2026-11-29T17:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Anh",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.618198,
+      "lng": -122.347121,
+      "approx": false,
+      "source_id": "roundups:muni-cafe",
+      "kind": "popup",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      },
+      "menu": [
+        "black sesame ube latte"
+      ],
+      "description": "*COFFEE & MATCHA | CHINATOWN-ID — Muni Cafe serves as the resident beverage operator at Anh Ơi Bake Shop. Snag a daydreamer, biko latte, or the sesame ube latte, available with matcha or espresso.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      ],
+      "notes": "found by roundups; city inferred from the source"
+    }
+  ]
+}
