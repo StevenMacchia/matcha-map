@@ -435,8 +435,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://www.8gramsmatcha.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static.wixstatic.com/media/10da5b_48e2665b1e1247b490ed346892e4918a~mv2.png",
+   "image_credit": "8gramsmatcha.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -463,8 +463,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://www.forestea.life/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/682d2c4dd09b461367132f46/t/682d2fbecfe9b442af15cd87/1747791807061/Forest_Beige_Transparent.png?format=1500w",
+   "image_credit": "forestea.life",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -814,7 +814,7 @@
      }
     ],
     "source_url": "http://www.laboracafe.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -1086,7 +1086,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -1233,7 +1233,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -1250,8 +1250,8 @@
    "phone": null,
    "opening_hours": "Mo 11:30-20:30; We,Th,Su 11:30-21:00; Fr,Sa 11:30-21:30",
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://matchamori.cafe/assets/icon.jpg",
+   "image_credit": "matcha-mori.pages.dev",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -1502,8 +1502,8 @@
    "phone": "+13104006342",
    "opening_hours": null,
    "menu_url": "https://millimatcha.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/6aab5e34cce45a7d76def005/t/6aab5e43cce45a7d76def418/1777865320019/Milli-logo-carbon-black.png?format=1500w",
+   "image_credit": "millimatcha.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -1614,8 +1614,8 @@
    "phone": "+1-415-796-3876",
    "opening_hours": "Mo-Fr 10:00-16:00; Sa-Su 09:00-19:00",
    "menu_url": "https://www.stonemillmatcha-us.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/657b4b6d0e78ba5ac47f86ee/t/657b4b7b0e78ba5ac47f8a51/1794697593785/",
+   "image_credit": "stonemillmatcha-us.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -1753,9 +1753,9 @@
    "instagram": "thesen.coffeetea_dtc",
    "phone": "720-353-4648",
    "opening_hours": "Mo-Th 08:00-21:00; Fr 08:00-21:30; Sa 09:00-21:30; Su 09:00-21:00",
-   "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "menu_url": "https://the-sen-highland-denver.cloveronline.com/menu/all",
+   "image_url": "https://static1.squarespace.com/static/67267ab4c75d49163edd6058/t/6ac7d83bec8bf3582b6d5d86/1791586805744/",
+   "image_credit": "thesencafe.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -1778,12 +1778,12 @@
    "state": "CO",
    "zip": "80211",
    "website": "https://www.thesencafe.com",
-   "instagram": null,
+   "instagram": "thesen.coffeetea_dtc",
    "phone": "720-210-9121",
    "opening_hours": "Mo-Fr 09:00-20:00; Sa-Su 09:00-21:00",
    "menu_url": "https://the-sen-highland-denver.cloveronline.com/menu/all",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/67267ab4c75d49163edd6058/t/6ac7d83bec8bf3582b6d5d86/1791586805744/",
+   "image_credit": "thesencafe.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -2034,8 +2034,8 @@
    "phone": null,
    "opening_hours": "Mo-Su 07:00-19:00",
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static.wixstatic.com/media/70b541_4e69a15f87624856aa2772795a5c583a%7Emv2.png/v1/fit/w_2500,h_1330,al_c/70b541_4e69a15f87624856aa2772795a5c583a%7Emv2.png",
+   "image_credit": "almamatcha.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -2062,8 +2062,8 @@
    "phone": null,
    "opening_hours": "Mo-Fr 07:30-17:00; Sa-Su 08:00-17:00",
    "menu_url": "https://www.healcafemia.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/67a15ac02356c340d417c1da/t/67a1646f56f6770d9050b5b8/1781289473685/",
+   "image_credit": "healcafemia.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -2488,7 +2488,7 @@
      }
     ],
     "source_url": "https://cafemaikoorl.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -2849,7 +2849,7 @@
      }
     ],
     "source_url": "https://cafemaikoorl.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -2893,8 +2893,8 @@
    "phone": "+1-813-733-6353",
    "opening_hours": "Mo,Tu,We,Su 07:00-22:30; Th-Sa 07:00-23:00",
    "menu_url": "https://noblebrewtampa.com/#menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_1bjyn17bbm944s0sw63ed2jgxx/57ce60731d77e699aec5edc3f98e2992_1795140727757.png",
+   "image_credit": "noblebrewtampa.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -2935,8 +2935,8 @@
    "phone": "407-864-2555",
    "opening_hours": null,
    "menu_url": "https://enter.saikocafe.com/orlando",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://assets.cdn.filesafe.space/RG12djwjTYNebchcUqtb/media/deda35d9-b952-442c-ae3f-fb64e18a2d6f.png",
+   "image_credit": "enter.saikocafe.com",
    "tier": "shop",
    "note": "Matcha, hojicha and coffee counter inside Orlando Racket Sports",
    "cuisine": null,
@@ -2982,8 +2982,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://www.lapinllc23.com/uploads/b/3f77a090-9faa-11ef-983b-7f73d33f4c66/LAPIN%20Logo%20grey%20bg.png",
+   "image_credit": "lapinllc23.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -3224,7 +3224,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -3269,8 +3269,8 @@
    "phone": null,
    "opening_hours": "Tu-Su 09:30-15:00",
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/68782dc079fae76d4368532b/t/698ecd5fc49ded1cf209a7ab/1784311056845/",
+   "image_credit": "yamematchahouse.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -3297,8 +3297,8 @@
    "phone": null,
    "opening_hours": "Mo-Fr 07:30-14:00",
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static1.squarespace.com/static/68782dc079fae76d4368532b/t/698ecd5fc49ded1cf209a7ab/1784311056845/",
+   "image_credit": "yamematchahouse.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -3522,8 +3522,8 @@
    "phone": "+1-504-582-9553",
    "opening_hours": "Mo-Fr 07:00-19:00; Sa,Su 08:00-18:00",
    "menu_url": "https://www.evolvecoffeenola.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/5d9f9a074b2d110c1d450c68/t/6b02f8f563805f1160ed00a0/1795356917585/evolve_logo_with_R.png?format=1500w",
+   "image_credit": "evolvecoffeenola.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -3550,8 +3550,8 @@
    "phone": null,
    "opening_hours": "Mo-Fr 06:30-16:00; Sa 09:00-15:00",
    "menu_url": "https://itsmatchamagic.com/menus/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://images.getbento.com/accounts/ee5aaf463e6eb3ed06b018bc15172199/media/images/40260MMagic_PrimaryLogoDark.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100",
+   "image_credit": "itsmatchamagic.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -3575,11 +3575,11 @@
    "zip": "02139",
    "website": "https://www.bomdough.com",
    "instagram": "bom.dough",
-   "phone": null,
+   "phone": "+1-857-799-5015",
    "opening_hours": "Mo-Fr 08:00-15:00; Sa,Su 08:00-16:00",
    "menu_url": "https://www.bomdough.com/matcha/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://bomdough.com/photos/bom-dough-bagel-brioche-breakfast-sandwiches-cambridge.jpg",
+   "image_credit": "bomdough.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -3633,11 +3633,11 @@
    "zip": "02141",
    "website": "https://www.bomdough.com",
    "instagram": "bom.dough",
-   "phone": null,
+   "phone": "+1-857-799-5015",
    "opening_hours": "Mo-Fr 08:00-15:00; Sa,Su 08:00-16:00",
    "menu_url": "https://www.bomdough.com/matcha/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://bomdough.com/photos/bom-dough-bagel-brioche-breakfast-sandwiches-cambridge.jpg",
+   "image_credit": "bomdough.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -3693,9 +3693,9 @@
    "instagram": "bychaeofficial",
    "phone": null,
    "opening_hours": "Mo-Sa 08:00-20:00; Su 11:00-19:00",
-   "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "menu_url": "https://bychae.com/pages/menu",
+   "image_url": "https://bychae.com/cdn/shop/t/9/assets/photo-storefront.jpg?v=18439758766847135491795159660",
+   "image_credit": "bychae.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -3875,7 +3875,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -4258,7 +4258,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -4275,8 +4275,8 @@
    "phone": "(612) 321-8215",
    "opening_hours": null,
    "menu_url": "https://northeastteahouse.com/pages/tea-menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://northeastteahouse.com/cdn/shop/files/culture_-_gettyimages-701014036-612x612_c27ecdb9-73b6-40fb-85b3-65a209f7b2c8.jpg?v=1640802884",
+   "image_credit": "northeastteahouse.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -4378,7 +4378,7 @@
      }
     ],
     "source_url": "https://www.thematchabarx.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -4654,7 +4654,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -4829,7 +4829,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -4865,8 +4865,8 @@
    "phone": "505-899-1001",
    "opening_hours": "Mo-Su 07:00-16:00",
    "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://www.satellitecoffee.com/wp-content/uploads/2018/08/cafecaffeine-lo-300x44.png",
+   "image_credit": "satellitecoffee.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -4907,8 +4907,8 @@
    "phone": "505-254-3800",
    "opening_hours": "Mo-Sa 07:30-18:00",
    "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://www.satellitecoffee.com/wp-content/uploads/2018/08/cafecaffeine-lo-300x44.png",
+   "image_credit": "satellitecoffee.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -4949,8 +4949,8 @@
    "phone": "505-433-5052",
    "opening_hours": "Mo-Fr 07:00-14:00; Sa 07:00-12:00",
    "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://www.satellitecoffee.com/wp-content/uploads/2018/08/cafecaffeine-lo-300x44.png",
+   "image_credit": "satellitecoffee.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -4991,8 +4991,8 @@
    "phone": "505-296-7654",
    "opening_hours": "Mo-Su 06:00-18:00",
    "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://www.satellitecoffee.com/wp-content/uploads/2018/08/cafecaffeine-lo-300x44.png",
+   "image_credit": "satellitecoffee.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -5033,8 +5033,8 @@
    "phone": "505-247-0662",
    "opening_hours": "Mo-Fr 07:00-17:00",
    "menu_url": "https://www.satellitecoffee.com/menu-sat10/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://www.satellitecoffee.com/wp-content/uploads/2018/08/cafecaffeine-lo-300x44.png",
+   "image_credit": "satellitecoffee.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -5250,7 +5250,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -5612,7 +5612,7 @@
      }
     ],
     "source_url": "https://nanasgreentealasvegas.com/menu.html",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -5625,11 +5625,11 @@
    "zip": "89113",
    "website": "https://nanasgreentealasvegas.com",
    "instagram": null,
-   "phone": null,
-   "opening_hours": null,
+   "phone": "+1(555)000-0000",
+   "opening_hours": "Mo-Su 08:00-20:00",
    "menu_url": "https://nanasgreentealasvegas.com/menu.html",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://nanasgreentealasvegas.com/images/logo.png",
+   "image_credit": "nanasgreentealasvegas.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -5977,7 +5977,7 @@
      }
     ],
     "source_url": "https://nanasgreentealasvegas.com/menu.html",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -6034,7 +6034,7 @@
    "website": "https://urbanmatchastore.com",
    "instagram": "urban.matcha",
    "phone": "702-247-1779",
-   "opening_hours": null,
+   "opening_hours": "Tu-Su 12:00-22:00",
    "menu_url": null,
    "image_url": "https://static.wixstatic.com/media/8711a4_4c4c1865965c411892db6025b24e6ca9~mv2.jpg/v1/fill/w_2500,h_2115,al_c/8711a4_4c4c1865965c411892db6025b24e6ca9~mv2.jpg",
    "image_credit": "Photo: Urban Matcha website",
@@ -6733,7 +6733,7 @@
      }
     ],
     "source_url": "https://www.kijitorabrooklyn.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -6968,7 +6968,7 @@
      }
     ],
     "source_url": "https://www.kijitorabrooklyn.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -7203,7 +7203,7 @@
      }
     ],
     "source_url": "https://www.kijitorabrooklyn.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -7438,7 +7438,7 @@
      }
     ],
     "source_url": "https://www.kijitorabrooklyn.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -7673,7 +7673,7 @@
      }
     ],
     "source_url": "https://www.kijitorabrooklyn.com/menu",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -7817,7 +7817,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -7964,7 +7964,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -8466,7 +8466,7 @@
      }
     ],
     "source_url": "https://www.setsugekkany.com/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -8615,7 +8615,7 @@
      }
     ],
     "source_url": "https://cinsei.com/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -8659,8 +8659,8 @@
    "phone": "503-477-6625",
    "opening_hours": "Tu-Su 11:00-17:00",
    "menu_url": "https://www.behindthemuseumcafe.com/menu-pkikj",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static.wixstatic.com/media/e791bc_7afae65c5e694469a52a97af7e15dfb0~mv2_d_2020_3410_s_2.jpg",
+   "image_credit": "behindthemuseumcafe.com",
    "tier": "serves",
    "menu_matcha": [
     {
@@ -8879,7 +8879,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -9143,7 +9143,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -9281,8 +9281,8 @@
    "phone": null,
    "opening_hours": "Tu-Su 07:00-18:00",
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/6a73a8660055515f39ed77f8/t/6a872fbec69b742b04f57c30/1787244478980/ouri+white.png?format=1500w",
+   "image_credit": "ourimatcha.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -9423,8 +9423,8 @@
    "phone": "+18329349059",
    "opening_hours": "Mo,Fr-Su 10:00-17:00",
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://isamatcha.com/images/2009792/0_0.png",
+   "image_credit": "isamatcha.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -9642,8 +9642,8 @@
    "phone": null,
    "opening_hours": "Mo-Th 11:00-16:00; Fr-Sa 10:00-17:00",
    "menu_url": "https://magickmatcha.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/60c4cbeca0b6a72781ca7c9d/t/69bb232db5a3356aef47bd91/1773871917131/6A036B64-AF08-4470-9D0F-8A7E235640BC.png?format=1500w",
+   "image_credit": "magickmatcha.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -9899,7 +9899,7 @@
      }
     ],
     "source_url": "https://www.matchaandcreme.com/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html"
    }
   },
@@ -10045,7 +10045,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -10192,7 +10192,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -10339,7 +10339,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -10486,7 +10486,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -10503,8 +10503,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://matchamama.com/wp-content/uploads/2023/04/tulum.pdf",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://matchamama.com/wp-content/uploads/2023/02/Group-37083.png",
+   "image_credit": "matchamama.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -10912,7 +10912,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -11056,7 +11056,7 @@
      }
     ],
     "source_url": "https://www.matchacafe-maiko.com/eng/menu/",
-    "read": "2026-11-23",
+    "read": "2026-11-24",
     "kind": "html",
     "note": "Main menu of the Hawaii store; items and prices vary by location"
    }
@@ -11101,8 +11101,8 @@
    "phone": "(206) 413-5903",
    "opening_hours": null,
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static.wixstatic.com/media/9a794a_353dcdc6e4374c4d8d46991d06453c24~mv2_d_3600_3600_s_4_2.jpg",
+   "image_credit": "atulea.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -11126,11 +11126,11 @@
    "zip": "98103",
    "website": "https://www.atulea.com",
    "instagram": "shopatulea",
-   "phone": null,
+   "phone": "(206) 413-5903",
    "opening_hours": null,
    "menu_url": null,
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://static.wixstatic.com/media/9a794a_353dcdc6e4374c4d8d46991d06453c24~mv2_d_3600_3600_s_4_2.jpg",
+   "image_credit": "atulea.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -11182,11 +11182,11 @@
    "zip": "98402",
    "website": "https://www.jinjinmatcha.com",
    "instagram": "jinjinmatcha",
-   "phone": null,
+   "phone": "2069154815",
    "opening_hours": "Mo-Su 09:00-16:00",
    "menu_url": "https://www.jinjinmatcha.com/menu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/63f179ea55332b46216ac0f3/t/664ba60b1249a37e1ab39dd2/1716233741869/jin+jin+matcha+giftcard.jpg?format=1500w",
+   "image_credit": "jinjinmatcha.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -11241,8 +11241,8 @@
    "phone": "(425) 242-0029",
    "opening_hours": "Mo-Su 09:00-18:00",
    "menu_url": "https://www.itsmatchamagic.com/menus/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://images.getbento.com/accounts/ee5aaf463e6eb3ed06b018bc15172199/media/images/40260MMagic_PrimaryLogoDark.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100",
+   "image_credit": "itsmatchamagic.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -11269,8 +11269,8 @@
    "phone": "(206) 503-2196",
    "opening_hours": "Mo-Su 09:00-18:00",
    "menu_url": "https://www.itsmatchamagic.com/menus/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://images.getbento.com/accounts/ee5aaf463e6eb3ed06b018bc15172199/media/images/40260MMagic_PrimaryLogoDark.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100",
+   "image_credit": "itsmatchamagic.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -11297,8 +11297,8 @@
    "phone": null,
    "opening_hours": null,
    "menu_url": "https://www.itsmatchamagic.com/menus/",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "https://images.getbento.com/accounts/ee5aaf463e6eb3ed06b018bc15172199/media/images/40260MMagic_PrimaryLogoDark.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100",
+   "image_credit": "itsmatchamagic.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -11435,8 +11435,8 @@
    "phone": null,
    "opening_hours": "Mo-Fr 08:00-17:30; Sa-Su 10:00-17:30",
    "menu_url": "https://tazseattle.com/tazmatchamenu",
-   "image_url": null,
-   "image_credit": null,
+   "image_url": "http://static1.squarespace.com/static/6a851f131791961efd3ec716/t/6aa1cd4d77b7680d51b18726/1788988749931/Untitled+design+2.png.png?format=1500w",
+   "image_credit": "tazseattle.com",
    "tier": "shop",
    "note": null,
    "cuisine": null,
@@ -11489,7 +11489,7 @@
    "website": "https://www.valematcha.com",
    "instagram": "vale_now",
    "phone": null,
-   "opening_hours": null,
+   "opening_hours": "Mo-Fr 07:00-19:00; Sa,Su 08:00-19:00",
    "menu_url": null,
    "image_url": "https://www.valematcha.com/images/og-image.jpg",
    "image_credit": "Photo: Vale Matcha & Coffee website",
