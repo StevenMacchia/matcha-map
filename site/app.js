@@ -1732,11 +1732,11 @@
     // No pop-ups but shops or brands in view: one quiet line above their sections, never the sleepy empty state
     var others = shopsIn.length + brands.length, noPops = !up.length && !past.length;
     if (noPops && others) html += "<li class=\"nopops\">No pop-ups here" + (rangeWords() || " yet") + ".</li>";
+    // The list lists whatever the map draws, at every zoom (the map shows shops from zoom 6; the list used to say
+    // "Zoom in to see them" below 8, so the two disagreed): rows up to a cap, then one line with the rest.
     if (shopsIn.length) {
-      if (map.getZoom() >= 8) {
-        var cap = 80, more = shopsIn.length - cap;
-        html += headHTML(shopsWords(shopsIn), 0, "shophead") + rowsHTML(shopsIn.slice(0, cap)) + (more > 0 ? "<li class=\"shopnote\">+" + more + " more · zoom in</li>" : "");
-      } else html += headHTML(shopsWords(shopsIn), 0, "shophead") + "<li class=\"shopnote\">Zoom in to see them</li>";
+      var cap = 80, more = shopsIn.length - cap;
+      html += headHTML(shopsWords(shopsIn), 0, "shophead") + rowsHTML(shopsIn.slice(0, cap)) + (more > 0 ? "<li class=\"shopnote\">+" + more + " more · zoom in</li>" : "");
     }
     // Brands last, never above a shop (2026-11-23): most followed first, three rows until "Show all".
     if (brands.length) {
