@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ahry Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:4d2b1344043b@matchamap-cu7.pages.dev
+DTSTAMP:20261124T003157Z
+LAST-MODIFIED:20261123T233317Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Ahry Matcha pop-up
+LOCATION:Houston\, TX
+DESCRIPTION:Our first farmers market at oldkatyfarmersmarket !\nDetails not
+  confirmed yet. Check the brand's post before you go.\nMore: https://match
+ amap.app/e/4d2b1344043b/
+URL:https://matchamap.app/e/4d2b1344043b/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha event pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a0162911dc71@matchamap-cu7.pages.dev
+DTSTAMP:20261124T003157Z
+LAST-MODIFIED:20261124T003157Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:The People's Matcha @ Yoga Six Oyster Point
+LOCATION:101 Oyster Point Boulevard\, South San Francisco\, CA
+DESCRIPTION:Matcha and yoga! The perfect Saturday! Come by for a class or a
+  matcha\, or both!\nLikely\, not fully confirmed.\nMore: https://matchamap
+ .app/e/a0162911dc71/
+URL:https://matchamap.app/e/a0162911dc71/
+GEO:37.663165;-122.396058
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

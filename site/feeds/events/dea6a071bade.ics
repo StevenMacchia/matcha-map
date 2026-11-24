@@ -8,16 +8,17 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:dea6a071bade@matchamap-cu7.pages.dev
-DTSTAMP:20261123T230054Z
+DTSTAMP:20261124T003157Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261128T150000Z
 DTEND:20261128T170000Z
 SUMMARY:Creamed | HTX pop-up at ONLI
-LOCATION:Houston\, TX
+LOCATION:ONLI\, Houston\, TX
 DESCRIPTION:Matcha & Corn Basque\, why nottt?\nDetails not confirmed yet. C
  heck the brand's post before you go.\nMore: https://matchamap.app/e/dea6a0
  71bade/
 URL:https://matchamap.app/e/dea6a071bade/
+GEO:29.769610;-95.356220
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

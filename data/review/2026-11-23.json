@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T17:48:52.307Z",
+  "generated": "2026-11-23T18:33:18.178Z",
   "items": [
     {
       "brand": "Japan Village",
@@ -457,8 +457,8 @@
       "venue": "Jiaren Cafe",
       "city": "San Francisco",
       "state": "CA",
-      "lat": 37.7793,
-      "lng": -122.4193,
+      "lat": 37.7272,
+      "lng": -123.0322,
       "approx": true,
       "source_id": "mato:moodymatcharitual",
       "kind": "organizer",
@@ -825,6 +825,41 @@
       "address": "1661 Wisconsin Ave NW"
     },
     {
+      "brand": "Cookbook Courtyard | DC Events & Food Community",
+      "handle": "cookbookcourtyard",
+      "title": "Dimatchai Matcha Pop-Up",
+      "start": "2026-11-23T13:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "TRESSE",
+      "city": "Washington",
+      "state": "DC",
+      "lat": 38.9042,
+      "lng": -77.0165,
+      "approx": true,
+      "source_id": "mato:cookbookcourtyard",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/georgetown-matcha-pop-up-23-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/georgetown-matcha-pop-up-23-nov-2026"
+      },
+      "menu": [
+        "yame: okumidori matcha latte",
+        "earl grey fig matcha",
+        "coconut date matcha",
+        "cardamom crème brûlée matcha"
+      ],
+      "description": "dimatchai hosts a one-day matcha pop-up at TRESSE in Georgetown.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/georgetown-matcha-pop-up-23-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
       "brand": "Personal",
       "title": "matcha mahjong mondays at leaflet",
       "start": "2026-11-23T18:00:00-08:00",
@@ -853,35 +888,6 @@
         "https://luma.com/fhd3f23p"
       ],
       "notes": "found by luma"
-    },
-    {
-      "brand": "INFINITEMA",
-      "title": "MATCHA MOONDAYS CEREMONY",
-      "start": "2026-11-23T19:00:00-08:00",
-      "end": "2026-11-23T22:00:00-08:00",
-      "tz": "America/Los_Angeles",
-      "all_day": false,
-      "city": "Las Vegas",
-      "state": "NV",
-      "lat": 36.2335,
-      "lng": -115.264,
-      "approx": true,
-      "source_id": "eventbrite:infinitema",
-      "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-moondays-ceremony-tickets-2000651451347",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-moondays-ceremony-tickets-2000651451347"
-      },
-      "price": "$88–144",
-      "description": "Chill out with some zen vibes and tasty matcha in a cozy moondays hangout you don’t wanna miss.",
-      "confidence": "unsure",
-      "extracted_by": "rule",
-      "evidence": [
-        "https://www.eventbrite.com/e/matcha-moondays-ceremony-tickets-2000651451347"
-      ],
-      "notes": "found by eventbrite; pin at the city centre"
     },
     {
       "brand": "INFINITEMA",
@@ -1365,37 +1371,6 @@
       "notes": "found by eventbrite"
     },
     {
-      "brand": "Restaurant of the Week",
-      "title": "Matcha + Meetup: Boca Raton | Creatives Edition",
-      "start": "2026-11-28T00:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": true,
-      "venue": "Restaurant of the Week",
-      "city": "Boca Raton",
-      "state": "FL",
-      "lat": 26.3727,
-      "lng": -80.1037,
-      "approx": true,
-      "source_id": "eventbrite:restaurant-of-the-week",
-      "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400"
-      },
-      "menu": [
-        "latte"
-      ],
-      "description": "Join us for coffee, latte, or matcha at different cafes. Build your creative community in your city with a fun day out!",
-      "confidence": "unsure",
-      "extracted_by": "rule",
-      "evidence": [
-        "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400"
-      ],
-      "notes": "found by eventbrite; pin at the city centre"
-    },
-    {
       "brand": "Wishing Cup",
       "title": "Matcha Tasting + Mug Making Workshop",
       "start": "2026-11-28T00:00:00-05:00",
@@ -1423,6 +1398,68 @@
         "https://www.eventbrite.com/e/matcha-tasting-mug-making-workshop-tickets-2003747660191"
       ],
       "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Chesapeake",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Chesapeake",
+      "state": "VA",
+      "lat": 36.6794,
+      "lng": -76.3018,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-chesapeake-tickets-1971930946544",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-chesapeake-tickets-1971930946544"
+      },
+      "menu": [
+        "latte"
+      ],
+      "description": "Join us for coffee, latte, or matcha at different cafes each gathering. Build your community in your city with a fun day out!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-chesapeake-tickets-1971930946544"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Restaurant of the Week",
+      "title": "Matcha + Meetup: Houston | Creatives Edition",
+      "start": "2026-11-28T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "Restaurant of the Week",
+      "city": "Houston",
+      "state": "TX",
+      "lat": 29.7857,
+      "lng": -95.3888,
+      "approx": true,
+      "source_id": "eventbrite:restaurant-of-the-week",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-houston-creatives-edition-tickets-1986770368655",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-houston-creatives-edition-tickets-1986770368655"
+      },
+      "menu": [
+        "latte"
+      ],
+      "description": "Join us for coffee, latte, or matcha at different cafes. Build your creative community in your city with a fun day out!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-houston-creatives-edition-tickets-1986770368655"
+      ],
+      "notes": "found by eventbrite; pin at the city centre; dropped: better source has it"
     },
     {
       "brand": "Ark of Safety Christian Church",
@@ -1485,61 +1522,30 @@
       "notes": "found by eventbrite"
     },
     {
-      "brand": "Cafe of the Day",
-      "title": "Matcha + Meetup: Chicago | Creative Minds Edition",
-      "start": "2026-11-28T00:00:00-06:00",
-      "tz": "America/Chicago",
-      "all_day": true,
-      "venue": "Cafe of the Day",
-      "city": "Chicago",
-      "state": "IL",
-      "lat": 41.837,
-      "lng": -87.6849,
-      "approx": true,
-      "source_id": "eventbrite:cafe-of-the-day",
-      "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-chicago-creative-minds-edition-tickets-1972018595705",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-chicago-creative-minds-edition-tickets-1972018595705"
-      },
-      "menu": [
-        "latte"
-      ],
-      "description": "Join us for coffee, latte, or matcha! Each gathering is at a different coffee shop. Build your community in your city with a fun day out!",
-      "confidence": "unsure",
-      "extracted_by": "rule",
-      "evidence": [
-        "https://www.eventbrite.com/e/matcha-meetup-chicago-creative-minds-edition-tickets-1972018595705"
-      ],
-      "notes": "found by eventbrite; pin at the city centre"
-    },
-    {
       "brand": "Cafe of the Month",
-      "title": "Matcha + Meetup: Chicago | Film + Music Speed Networking Roulette",
+      "title": "Matcha + Meetup: Austin | Film + Music Industry Monthly Mingle",
       "start": "2026-11-28T00:00:00-06:00",
       "tz": "America/Chicago",
       "all_day": true,
       "venue": "Cafe of the Month",
-      "city": "Chicago",
-      "state": "IL",
-      "lat": 41.837,
-      "lng": -87.6849,
+      "city": "Austin",
+      "state": "TX",
+      "lat": 30.2986,
+      "lng": -97.7541,
       "approx": true,
       "source_id": "eventbrite:cafe-of-the-month",
       "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-chicago-film-music-speed-networking-roulette-tickets-1994110124061",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-austin-film-music-industry-monthly-mingle-tickets-1992290469425",
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-chicago-film-music-speed-networking-roulette-tickets-1994110124061"
+        "other": "https://www.eventbrite.com/e/matcha-meetup-austin-film-music-industry-monthly-mingle-tickets-1992290469425"
       },
-      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
+      "description": "Life can be lonely for creatives when you're busy with your passions. Meet us at a different cafe each month for coffee and conversation!",
       "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
-        "https://www.eventbrite.com/e/matcha-meetup-chicago-film-music-speed-networking-roulette-tickets-1994110124061"
+        "https://www.eventbrite.com/e/matcha-meetup-austin-film-music-industry-monthly-mingle-tickets-1992290469425"
       ],
       "notes": "found by eventbrite; pin at the city centre"
     },
@@ -1843,6 +1849,35 @@
       "notes": "found by eventbrite"
     },
     {
+      "brand": "Matcha event",
+      "title": "The People's Matcha @ Yoga Six Oyster Point",
+      "start": "2026-11-28T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "address": "101 Oyster Point Boulevard",
+      "city": "South San Francisco",
+      "state": "CA",
+      "zip": "94080",
+      "lat": 37.663165,
+      "lng": -122.396058,
+      "approx": false,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174"
+      },
+      "description": "Matcha and yoga! The perfect Saturday! Come by for a class or a matcha, or both!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
       "brand": "Longevity Cities",
       "title": "Matcha & Walk | Heritage Trail with Longevity Pittsburgh",
       "start": "2026-11-28T10:00:00-05:00",
@@ -2061,12 +2096,12 @@
       "tz": "America/Los_Angeles",
       "all_day": false,
       "venue": "Cocobolo",
-      "address": "626 St Helens Ave",
-      "city": "Tacoma",
+      "address": "626 St",
+      "city": "Seattle",
       "state": "WA",
-      "lat": null,
-      "lng": null,
-      "approx": false,
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
       "source_id": "mato:sabzmatcha",
       "kind": "popup",
       "source_url": "https://ma.to/event/sabz-matcha-at-cocobolo-28-nov-2026",
@@ -2083,37 +2118,38 @@
         "matcha vanille"
       ],
       "description": "Sabz Matcha takes part in Small Business Saturday at Cocobolo, 626 St Helens Ave in Tacoma. The pop-up runs 11 AM-3 PM.",
-      "confidence": "confirmed",
+      "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/sabz-matcha-at-cocobolo-28-nov-2026"
       ],
-      "notes": "checked 2026-11-23: MATO page shows the date, 11 AM to 3 PM and 626 St Helens Ave, Tacoma (Small Business Saturday at Cocobolo)"
+      "notes": "found by mato; pin at the city centre"
     },
     {
       "brand": "Ermantourage Europe",
-      "title": "Matcha + Meetup: Baltimore (Giving Back Edition)",
+      "title": "Matcha + Meetup: Richmond Creatives (Giving Back Edition)",
       "start": "2026-11-28T12:00:00-05:00",
       "tz": "America/New_York",
       "all_day": false,
       "venue": "Cafe of the Day",
-      "city": "Baltimore",
-      "state": "MD",
-      "lat": 39.3,
-      "lng": -76.6105,
+      "city": "Richmond",
+      "state": "VA",
+      "lat": 37.5314,
+      "lng": -77.476,
       "approx": true,
       "source_id": "allevents:ermantourage-europe",
       "kind": "organizer",
-      "source_url": "https://allevents.in/baltimore/matcha-meetup-baltimore-giving-back-edition/100001974539204915",
+      "source_url": "https://allevents.in/richmond/matcha-meetup-richmond-creatives-giving-back-edition/100001988353575068",
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://allevents.in/baltimore/matcha-meetup-baltimore-giving-back-edition/100001974539204915"
+        "other": "https://allevents.in/richmond/matcha-meetup-richmond-creatives-giving-back-edition/100001988353575068"
       },
+      "price": "$12.51",
       "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
-        "https://allevents.in/baltimore/matcha-meetup-baltimore-giving-back-edition/100001974539204915"
+        "https://allevents.in/richmond/matcha-meetup-richmond-creatives-giving-back-edition/100001988353575068"
       ],
       "notes": "found by allevents; pin at the city centre"
     },
@@ -2181,30 +2217,30 @@
       "notes": "found by eventbrite; pin at the city centre"
     },
     {
-      "brand": "Ermantourage UK",
-      "title": "Matcha + Meetup: Norfolk | Coffee Meets to Benefit Dream Foundation",
+      "brand": "Ermantourage Europe",
+      "title": "Matcha + Meetup: Wilmington | Film + Music Industry Monthly Mingle",
       "start": "2026-11-28T13:00:00-05:00",
       "tz": "America/New_York",
       "all_day": false,
-      "venue": "Cafe of the Week",
-      "city": "Norfolk",
-      "state": "VA",
-      "lat": 36.923,
-      "lng": -76.2446,
+      "venue": "Cafe of the Month",
+      "city": "Wilmington",
+      "state": "NC",
+      "lat": 34.2092,
+      "lng": -77.8858,
       "approx": true,
-      "source_id": "allevents:ermantourage-uk",
+      "source_id": "allevents:ermantourage-europe",
       "kind": "organizer",
-      "source_url": "https://allevents.in/norfolk/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation/100002004914315689",
+      "source_url": "https://allevents.in/wilmington/matcha-meetup-wilmington-film-music-industry-monthly-mingle/100001992372919034",
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://allevents.in/norfolk/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation/100002004914315689"
+        "other": "https://allevents.in/wilmington/matcha-meetup-wilmington-film-music-industry-monthly-mingle/100001992372919034"
       },
-      "price": "$19.09",
+      "price": "$19",
       "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
-        "https://allevents.in/norfolk/matcha-meetup-norfolk-coffee-meets-to-benefit-dream-foundation/100002004914315689"
+        "https://allevents.in/wilmington/matcha-meetup-wilmington-film-music-industry-monthly-mingle/100001992372919034"
       ],
       "notes": "found by allevents; pin at the city centre"
     },
@@ -2301,30 +2337,30 @@
       "notes": "found by eventbrite; dropped: better source has it"
     },
     {
-      "brand": "Ermantourage Europe",
-      "title": "Matcha + Meetup: SLC | Film + Music Industry Monthly Mingle",
-      "start": "2026-11-28T13:00:00-07:00",
-      "tz": "America/Denver",
+      "brand": "Ermantourage UK",
+      "title": "Matcha + Meetup: Fullerton | Coffee Meets to Benefit Dream Foundation",
+      "start": "2026-11-28T13:00:00-08:00",
+      "tz": "America/Los_Angeles",
       "all_day": false,
-      "venue": "Cafe of the Month",
-      "city": "Salt Lake City",
-      "state": "UT",
-      "lat": 40.7769,
-      "lng": -111.931,
+      "venue": "Cafe of the Week",
+      "city": "Fullerton",
+      "state": "CA",
+      "lat": 33.8857,
+      "lng": -117.928,
       "approx": true,
-      "source_id": "allevents:ermantourage-europe",
+      "source_id": "allevents:ermantourage-uk",
       "kind": "organizer",
-      "source_url": "https://allevents.in/salt-lake-city/matcha-meetup-slc-film-music-industry-monthly-mingle/100001992441471075",
+      "source_url": "https://allevents.in/fullerton/matcha-meetup-fullerton-coffee-meets-to-benefit-dream-foundation/100002004907842327",
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://allevents.in/salt-lake-city/matcha-meetup-slc-film-music-industry-monthly-mingle/100001992441471075"
+        "other": "https://allevents.in/fullerton/matcha-meetup-fullerton-coffee-meets-to-benefit-dream-foundation/100002004907842327"
       },
-      "price": "$19.36",
+      "price": "$17.35",
       "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
-        "https://allevents.in/salt-lake-city/matcha-meetup-slc-film-music-industry-monthly-mingle/100001992441471075"
+        "https://allevents.in/fullerton/matcha-meetup-fullerton-coffee-meets-to-benefit-dream-foundation/100002004907842327"
       ],
       "notes": "found by allevents; pin at the city centre"
     },
@@ -2367,8 +2403,8 @@
       "venue": "Jiaren Cafe",
       "city": "San Francisco",
       "state": "CA",
-      "lat": 37.7793,
-      "lng": -122.4193,
+      "lat": 37.7272,
+      "lng": -123.0322,
       "approx": true,
       "source_id": "mato:jiarencafe",
       "kind": "organizer",
@@ -2396,8 +2432,8 @@
       "venue": "Jiaren Cafe",
       "city": "San Francisco",
       "state": "CA",
-      "lat": 37.7793,
-      "lng": -122.4193,
+      "lat": 37.7272,
+      "lng": -123.0322,
       "approx": true,
       "source_id": "mato:moodymatcharitual",
       "kind": "organizer",
@@ -2477,29 +2513,29 @@
     },
     {
       "brand": "Cafe of the Day",
-      "title": "Matcha + Meetup: Northridge (Giving Back Edition)",
+      "title": "Matcha + Meetup: Marina del Rey (Giving Back Edition)",
       "start": "2026-11-29T00:00:00-08:00",
       "tz": "America/Los_Angeles",
       "all_day": true,
       "venue": "Cafe of the Day",
-      "city": "Los Angeles",
+      "city": "Marina del Rey",
       "state": "CA",
-      "lat": 34.0194,
-      "lng": -118.4108,
+      "lat": 33.977685,
+      "lng": -118.448647,
       "approx": true,
       "source_id": "eventbrite:cafe-of-the-day",
       "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-northridge-giving-back-edition-tickets-1990215054804",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-marina-del-rey-giving-back-edition-tickets-1990215449986",
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-northridge-giving-back-edition-tickets-1990215054804"
+        "other": "https://www.eventbrite.com/e/matcha-meetup-marina-del-rey-giving-back-edition-tickets-1990215449986"
       },
       "description": "Join us for coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
       "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
-        "https://www.eventbrite.com/e/matcha-meetup-northridge-giving-back-edition-tickets-1990215054804"
+        "https://www.eventbrite.com/e/matcha-meetup-marina-del-rey-giving-back-edition-tickets-1990215449986"
       ],
       "notes": "found by eventbrite; pin at the city centre"
     },
@@ -2690,9 +2726,9 @@
       "venue": "EOC Studio",
       "city": "Sacramento",
       "state": "CA",
-      "lat": null,
-      "lng": null,
-      "approx": false,
+      "lat": 38.5677,
+      "lng": -121.4682,
+      "approx": true,
       "source_id": "mellobun-matte-matcha",
       "kind": "popup",
       "source_url": "https://ma.to/event/bloom-brew-pop-up-market-29-nov-2026",
@@ -2708,13 +2744,12 @@
         "hojicha"
       ],
       "description": "Bloom & Brew returns to EOC Studio with drinks, baked goods, shopping, a photo booth, and hair blowouts.",
-      "confidence": "confirmed",
+      "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/bloom-brew-pop-up-market-29-nov-2026"
       ],
-      "notes": "checked 2026-11-23: MATO page shows the date, 9 AM to 1 PM, EOC Studio 411 18th St and matcha from @mattematchabar",
-      "address": "411 18th St"
+      "notes": "found by mato; pin at the city centre"
     },
     {
       "brand": "We'll meet outside of the cafe, right at the entrance. Look for a girl holding a red sign",
@@ -2753,9 +2788,9 @@
       "venue": "Monarca Thrift Club",
       "city": "Minneapolis",
       "state": "MN",
-      "lat": null,
-      "lng": null,
-      "approx": false,
+      "lat": 44.9633,
+      "lng": -93.2683,
+      "approx": true,
       "source_id": "mato:shesinvited",
       "kind": "popup",
       "source_url": "https://ma.to/event/all-girls-thrift-matcha-29-nov-2026",
@@ -2765,13 +2800,12 @@
         "other": "https://ma.to/event/all-girls-thrift-matcha-29-nov-2026"
       },
       "description": "Monarca Thrift Club hosts an all-girls Thrift & Matcha event with She's Invited.",
-      "confidence": "likely",
+      "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/all-girls-thrift-matcha-29-nov-2026"
       ],
-      "notes": "checked 2026-11-23: MATO page shows the date, 11 AM, Monarca Thrift Club and pink matcha for an all-girls thrift event (advance RSVP)",
-      "address": "2400 N 2nd Street"
+      "notes": "found by mato; pin at the city centre"
     },
     {
       "brand": "STILLROOM Presents:",
@@ -3034,35 +3068,6 @@
       "notes": "found by allevents"
     },
     {
-      "brand": "Haraz Coffee House Fishtown",
-      "title": "Matcha & Mahjong",
-      "start": "2026-12-01T19:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "Haraz Coffee House Fishtown",
-      "address": "23 West Girard Avenue",
-      "city": "Philadelphia",
-      "state": "PA",
-      "lat": 39.968829,
-      "lng": -75.135458,
-      "approx": false,
-      "source_id": "allevents:haraz-coffee-house-fishtown",
-      "kind": "popup",
-      "source_url": "https://allevents.in/philadelphia/matcha-and-mahjong/100002004917386875",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://allevents.in/philadelphia/matcha-and-mahjong/100002004917386875"
-      },
-      "price": "$23.18",
-      "confidence": "likely",
-      "extracted_by": "rule",
-      "evidence": [
-        "https://allevents.in/philadelphia/matcha-and-mahjong/100002004917386875"
-      ],
-      "notes": "found by allevents; dropped: better source has it"
-    },
-    {
       "brand": "Águila Coffee",
       "title": "The Manifestation Club Gratitude Walk",
       "start": "2026-12-02T00:00:00-05:00",
@@ -3091,6 +3096,36 @@
         "https://www.eventbrite.com/e/the-manifestation-club-gratitude-walk-tickets-2004737668332"
       ],
       "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "VERVE Columbia",
+      "title": "JETSET On The Mat x  VERVE",
+      "start": "2026-12-04T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "VERVE Columbia",
+      "address": "450 Blossom Street",
+      "city": "Columbia",
+      "state": "SC",
+      "zip": "29201",
+      "lat": 33.988678,
+      "lng": -81.042395,
+      "approx": false,
+      "source_id": "eventbrite:verve-columbia",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/jetset-on-the-mat-x-verve-tickets-2005296792688",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/jetset-on-the-mat-x-verve-tickets-2005296792688"
+      },
+      "description": "Enjoy a refreshing 45-minute Mat Pilates class at VERVE Apts. followed by delicious coffee and matcha from Nible on Friday 12/04 at 9AM!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/jetset-on-the-mat-x-verve-tickets-2005296792688"
+      ],
+      "notes": "found by eventbrite"
     },
     {
       "brand": "The Foundry on Adams",
@@ -3487,7 +3522,7 @@
       "evidence": [
         "https://ma.to/event/mochi-matcha-fest-05-dec-2026"
       ],
-      "notes": "found by mato; pin at the city centre; dropped: better source has it"
+      "notes": "found by mato; pin at the city centre"
     },
     {
       "brand": "Personal",
@@ -3528,11 +3563,11 @@
       "tz": "America/Los_Angeles",
       "all_day": false,
       "venue": "Aveda Store at Bellevue Square",
-      "city": "Bellevue",
+      "city": "Seattle",
       "state": "WA",
-      "lat": null,
-      "lng": null,
-      "approx": false,
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
       "source_id": "mato:sabzmatcha",
       "kind": "popup",
       "source_url": "https://ma.to/event/aveda-x-sabz-matcha-05-dec-2026",
@@ -3549,12 +3584,12 @@
         "matcha vanille"
       ],
       "description": "Sabz Matcha and Aveda hold a collaboration pop-up at the Aveda Store at Bellevue Square. The pop-up runs 11 AM-4 PM. A seasonal flavor is planned for the December pop-up.",
-      "confidence": "likely",
+      "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
         "https://ma.to/event/aveda-x-sabz-matcha-05-dec-2026"
       ],
-      "notes": "checked 2026-11-23: MATO page shows the date, 11 AM to 4 PM and the Aveda Store at Bellevue Square (no street line)"
+      "notes": "found by mato; pin at the city centre"
     },
     {
       "brand": "Ricky Ly",
@@ -3635,8 +3670,8 @@
       "venue": "Jiaren Cafe",
       "city": "San Francisco",
       "state": "CA",
-      "lat": 37.7793,
-      "lng": -122.4193,
+      "lat": 37.7272,
+      "lng": -123.0322,
       "approx": true,
       "source_id": "mato:jiarencafe",
       "kind": "organizer",
@@ -3829,6 +3864,36 @@
       "notes": "found by eventbrite; pin at the city centre; dropped: better source has it"
     },
     {
+      "brand": "Leev Matcha Atelier",
+      "title": "The Art of Matcha I A Founder- Led Tasting at LEEV",
+      "start": "2026-12-06T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "Leev Matcha Atelier",
+      "address": "7565 Norman Rockwell Lane",
+      "city": "Las Vegas",
+      "state": "NV",
+      "zip": "89143",
+      "lat": 36.298678,
+      "lng": -115.280223,
+      "approx": false,
+      "source_id": "eventbrite:leev-matcha-atelier",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663"
+      },
+      "description": "Discover the art of Japanese matcha through guided tastings, hands-on whisking, and an intimate experience hosted by LEEV's founder.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
       "brand": "Cafe Monet Art & Clay Studio",
       "handle": "cafe_monet_studio",
       "title": "Matcha Bowl & Whisk Holder Workshop",
@@ -3982,38 +4047,6 @@
       "notes": "found by eventbrite; pin at the city centre"
     },
     {
-      "brand": "Leev Matcha Atelier",
-      "title": "The Art of Matcha I A Founder- Led Tasting at LEEV",
-      "start": "2026-12-06T14:00:00-08:00",
-      "end": "2026-12-06T15:00:00-08:00",
-      "tz": "America/Los_Angeles",
-      "all_day": false,
-      "venue": "Leev Matcha Atelier",
-      "address": "7565 Norman Rockwell Lane",
-      "city": "Las Vegas",
-      "state": "NV",
-      "zip": "89143",
-      "lat": 36.298678,
-      "lng": -115.280223,
-      "approx": false,
-      "source_id": "eventbrite:leev-matcha-atelier",
-      "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663"
-      },
-      "price": "$44.52",
-      "description": "Discover the art of Japanese matcha through guided tastings, hands-on whisking, and an intimate experience hosted by LEEV's founder.",
-      "confidence": "confirmed",
-      "extracted_by": "rule",
-      "evidence": [
-        "https://www.eventbrite.com/e/the-art-of-matcha-i-a-founder-led-tasting-at-leev-tickets-2005041353663"
-      ],
-      "notes": "found by eventbrite"
-    },
-    {
       "brand": "Matcha event",
       "title": "Matcha Mornings - Founder + Investor Meetup",
       "start": "2026-12-08T09:00:00-08:00",
@@ -4021,8 +4054,8 @@
       "all_day": false,
       "city": "San Francisco",
       "state": "CA",
-      "lat": 37.7793,
-      "lng": -122.4193,
+      "lat": 37.7272,
+      "lng": -123.0322,
       "approx": true,
       "source_id": "allevents:event",
       "kind": "organizer",
@@ -4161,6 +4194,32 @@
         "https://www.eventbrite.com/e/mat-moov-matcha-tickets-2004888657946"
       ],
       "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Design Matcha Demo",
+      "start": "2026-12-12T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.6627,
+      "lng": -73.9387,
+      "approx": true,
+      "source_id": "allevents:event",
+      "kind": "popup",
+      "source_url": "https://allevents.in/new-york/design-matcha-demo/4700031093557131",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://allevents.in/new-york/design-matcha-demo/4700031093557131"
+      },
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://allevents.in/new-york/design-matcha-demo/4700031093557131"
+      ],
+      "notes": "found by allevents; pin at the city centre"
     },
     {
       "brand": "Café on 1st",
@@ -4313,32 +4372,6 @@
         "https://www.eventbrite.com/e/matcha-meetup-charlotte-creatives-giving-back-edition-tickets-1988352720512"
       ],
       "notes": "found by eventbrite; pin at the city centre"
-    },
-    {
-      "brand": "Matcha event",
-      "title": "Design Matcha Demo",
-      "start": "2026-12-12T12:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "city": "New York",
-      "state": "NY",
-      "lat": 40.6627,
-      "lng": -73.9387,
-      "approx": true,
-      "source_id": "allevents:event",
-      "kind": "popup",
-      "source_url": "https://allevents.in/new-york/design-matcha-demo/4700031093557131",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://allevents.in/new-york/design-matcha-demo/4700031093557131"
-      },
-      "confidence": "unsure",
-      "extracted_by": "rule",
-      "evidence": [
-        "https://allevents.in/new-york/design-matcha-demo/4700031093557131"
-      ],
-      "notes": "found by allevents; pin at the city centre"
     },
     {
       "brand": "Mat & Moov",
@@ -4873,31 +4906,31 @@
     },
     {
       "brand": "Cafe of the Month",
-      "title": "Matcha + Meetup: LA | Film + Music Speed Networking Roulette",
-      "start": "2026-12-19T00:00:00-08:00",
-      "tz": "America/Los_Angeles",
+      "title": "Matcha + Meetup: Austin | Film + Music Speed Networking Roulette",
+      "start": "2026-12-19T00:00:00-06:00",
+      "tz": "America/Chicago",
       "all_day": true,
       "venue": "Cafe of the Month",
-      "city": "Los Angeles",
-      "state": "CA",
-      "lat": 34.0194,
-      "lng": -118.4108,
+      "city": "Austin",
+      "state": "TX",
+      "lat": 30.2986,
+      "lng": -97.7541,
       "approx": true,
       "source_id": "eventbrite:cafe-of-the-month",
       "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-la-film-music-speed-networking-roulette-tickets-1994109959569",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-austin-film-music-speed-networking-roulette-tickets-1994110317640",
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-la-film-music-speed-networking-roulette-tickets-1994109959569"
+        "other": "https://www.eventbrite.com/e/matcha-meetup-austin-film-music-speed-networking-roulette-tickets-1994110317640"
       },
       "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
       "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
-        "https://www.eventbrite.com/e/matcha-meetup-la-film-music-speed-networking-roulette-tickets-1994109959569"
+        "https://www.eventbrite.com/e/matcha-meetup-austin-film-music-speed-networking-roulette-tickets-1994110317640"
       ],
-      "notes": "found by eventbrite; pin at the city centre; dropped: better source has it"
+      "notes": "found by eventbrite; pin at the city centre"
     },
     {
       "brand": "Padekwa Cafe",
@@ -5078,6 +5111,34 @@
       "notes": "found by eventbrite"
     },
     {
+      "brand": "Cafe of the Month",
+      "title": "Matcha + Meetup: Virginia Beach | Entrepreneur Speed Networking Roulette",
+      "start": "2026-12-20T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Month",
+      "city": "Virginia Beach",
+      "state": "VA",
+      "lat": 36.7795,
+      "lng": -76.0291,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-month",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-virginia-beach-entrepreneur-speed-networking-roulette-tickets-1994355378624",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-virginia-beach-entrepreneur-speed-networking-roulette-tickets-1994355378624"
+      },
+      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-virginia-beach-entrepreneur-speed-networking-roulette-tickets-1994355378624"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
       "brand": "Cafe of the Day",
       "title": "Matcha + Meetup: Austin Creatives (Giving Back Edition)",
       "start": "2026-12-20T00:00:00-06:00",
@@ -5104,34 +5165,6 @@
         "https://www.eventbrite.com/e/matcha-meetup-austin-creatives-giving-back-edition-tickets-1988353540966"
       ],
       "notes": "found by eventbrite; pin at the city centre; dropped: better source has it"
-    },
-    {
-      "brand": "Cafe of the Month",
-      "title": "Matcha + Meetup: Sacramento | Entrepreneur Speed Networking Roulette",
-      "start": "2026-12-20T00:00:00-08:00",
-      "tz": "America/Los_Angeles",
-      "all_day": true,
-      "venue": "Cafe of the Month",
-      "city": "Sacramento",
-      "state": "CA",
-      "lat": 38.5677,
-      "lng": -121.4682,
-      "approx": true,
-      "source_id": "eventbrite:cafe-of-the-month",
-      "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-sacramento-entrepreneur-speed-networking-roulette-tickets-1994332205312",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-sacramento-entrepreneur-speed-networking-roulette-tickets-1994332205312"
-      },
-      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
-      "confidence": "unsure",
-      "extracted_by": "rule",
-      "evidence": [
-        "https://www.eventbrite.com/e/matcha-meetup-sacramento-entrepreneur-speed-networking-roulette-tickets-1994332205312"
-      ],
-      "notes": "found by eventbrite; pin at the city centre"
     },
     {
       "brand": "Ermantourage by ADDVentures",
@@ -5165,60 +5198,57 @@
     },
     {
       "brand": "Cafe of the Day",
-      "title": "Matcha + Meetup: San Diego",
-      "start": "2026-12-27T00:00:00-08:00",
-      "tz": "America/Los_Angeles",
+      "title": "Matcha + Meetup: Austin",
+      "start": "2026-12-27T00:00:00-06:00",
+      "tz": "America/Chicago",
       "all_day": true,
       "venue": "Cafe of the Day",
-      "city": "San Diego",
-      "state": "CA",
-      "lat": 32.815,
-      "lng": -117.1356,
+      "city": "Austin",
+      "state": "TX",
+      "lat": 30.2986,
+      "lng": -97.7541,
       "approx": true,
       "source_id": "eventbrite:cafe-of-the-day",
       "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-san-diego-tickets-1974524096726",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-austin-tickets-1974524453794",
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-san-diego-tickets-1974524096726"
+        "other": "https://www.eventbrite.com/e/matcha-meetup-austin-tickets-1974524453794"
       },
-      "menu": [
-        "latte"
-      ],
-      "description": "Join us for coffee, latte, or matcha at different cafes each gathering. Build your community in your city with a fun day out!",
+      "description": "Join us for coffee at different cafes each gathering. Build your community in your city with a fun day out! Meetup. Matcha. Support local!",
       "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
-        "https://www.eventbrite.com/e/matcha-meetup-san-diego-tickets-1974524096726"
+        "https://www.eventbrite.com/e/matcha-meetup-austin-tickets-1974524453794"
       ],
       "notes": "found by eventbrite; pin at the city centre"
     },
     {
       "brand": "Cafe of the Month",
-      "title": "Matcha + Meetup: San Francisco | Entrepreneur Speed Networking Roulette",
-      "start": "2026-12-27T00:00:00-08:00",
-      "tz": "America/Los_Angeles",
+      "title": "Matcha + Meetup: Denver | Entrepreneur Speed Networking Roulette",
+      "start": "2026-12-27T00:00:00-07:00",
+      "tz": "America/Denver",
       "all_day": true,
       "venue": "Cafe of the Month",
-      "city": "San Francisco",
-      "state": "CA",
-      "lat": 37.7793,
-      "lng": -122.4193,
+      "city": "Denver",
+      "state": "CO",
+      "lat": 39.7619,
+      "lng": -104.8811,
       "approx": true,
       "source_id": "eventbrite:cafe-of-the-month",
       "kind": "organizer",
-      "source_url": "https://www.eventbrite.com/e/matcha-meetup-san-francisco-entrepreneur-speed-networking-roulette-tickets-1994315717998",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-denver-entrepreneur-speed-networking-roulette-tickets-1994346345606",
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-meetup-san-francisco-entrepreneur-speed-networking-roulette-tickets-1994315717998"
+        "other": "https://www.eventbrite.com/e/matcha-meetup-denver-entrepreneur-speed-networking-roulette-tickets-1994346345606"
       },
       "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
       "confidence": "unsure",
       "extracted_by": "rule",
       "evidence": [
-        "https://www.eventbrite.com/e/matcha-meetup-san-francisco-entrepreneur-speed-networking-roulette-tickets-1994315717998"
+        "https://www.eventbrite.com/e/matcha-meetup-denver-entrepreneur-speed-networking-roulette-tickets-1994346345606"
       ],
       "notes": "found by eventbrite; pin at the city centre"
     },
