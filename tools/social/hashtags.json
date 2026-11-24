@@ -1,0 +1,6 @@
+{
+  "note": "Hashtags for the daily @matchamap.app posts (tools/social/plan.js). Every caption gets the three 'always' tags, the two city tags ({city} is the city name in lower case letters and digits) and two from 'rotating', picked by the date and the item's place in the day, so the set changes daily and a re-run of a date gives the same tags. 5 to 8 in all. Keep every tag free of the banned words in plan.js.",
+  "always": ["matcha", "matchapopup", "matchamap"],
+  "city": ["matcha{city}", "{city}food"],
+  "rotating": ["matchalatte", "matchalover", "icedmatcha", "matchatime", "greentea", "popupshop", "supportsmallbusiness", "shopsmall", "cafehopping", "localeats", "weekendplans", "matchadrinks"]
+}

@@ -1,0 +1,12 @@
+# Social outbox 2026-11-24
+
+Nothing here has been posted. Steven picks which to use; until the Meta app review passes, post or schedule each by hand in Meta Business Suite (Planner, then Create post or Create story). Times are Eastern. Full captions are in each folder's caption.txt; tags.json has the handles. Every image is drawn art; no brand photo is reused. Check the brand's own post still shows the date before posting.
+
+| Time | Type | File | Caption | Tags | Paste where |
+|---|---|---|---|---|---|
+| 08:30 | story (today) | 01-story-today-brooklyn/image.png | Today in Brooklyn. Sunday Culture (@sundayculturehq) is popping up at @olastudionyc in Brooklyn, NY, today, Tuesday, November 24, 7 pm to 9… | @sundayculturehq @olastudionyc | Business Suite > Create story: upload image.png, add a link sticker to https://matchamap.app/city/ny/brooklyn/ and a mention sticker for @sundayculturehq @olastudionyc |
+| 10:00 | feed (today) | 02-feed-today-brooklyn/image.png | Today in Brooklyn. Sunday Culture (@sundayculturehq) is popping up at @olastudionyc in Brooklyn, NY, today, Tuesday, November 24, 7 pm to 9… | @sundayculturehq @olastudionyc | Business Suite > Create post: upload image.png, paste caption.txt, Add location "Brooklyn, NY", Tag people @sundayculturehq @olastudionyc |
+| 12:00 | story (today) | 03-story-today-mesa/image.png | Today in Mesa. Therese Moussa is popping up at Metanoia Toolbox Sacred Wellness Space in Mesa, AZ, today, Tuesday, November 24, 12 pm to 1:… | none in our data | Business Suite > Create story: upload image.png, add a link sticker to https://matchamap.app/city/az/mesa/ |
+| 13:00 | feed (shop) | 04-feed-shop-matcha-creme/image.png | New on the map: Matcha & Creme (@matchaandcreme) in Dallas, TX. 10455 N Central Expy. | @matchaandcreme | Business Suite > Create post: upload image.png, paste caption.txt, Add location "Dallas, TX", Tag people @matchaandcreme |
+| 16:00 | story (shop) | 05-story-shop-matcha-creme/image.png | New on the map: Matcha & Creme (@matchaandcreme) in Dallas, TX. 10455 N Central Expy. | @matchaandcreme | Business Suite > Create story: upload image.png, add a link sticker to https://matchamap.app/city/tx/dallas/ and a mention sticker for @matchaandcreme |
+| 17:00 | feed (series) | 06-feed-series-bothell/image.png | Every Tuesday: Nicho's Matcha Cafe at Nakagawa Japanese Restaurant in Bothell, WA, 11 am to 6 pm. | none in our data | Business Suite > Create post: upload image.png, paste caption.txt, Add location "Bothell, WA" |

@@ -1,5 +1,6 @@
-// Map density (site/density.js): from zoom 10 up, places fold by a 0.01 degree grid to zoom 12, and any two markers left
-// stand at least 28 px apart (a closer one joins the first as a stack that spreads on tap). Run on a fixture and on today's data.
+// Map density (site/density.js), the uncluster rule (2026-11-23): from zoom 9 up nothing groups by area; a pin joins another
+// only when the two stand closer than 20 px on screen, as a stack that spreads on hover and tap. spread() is the city split
+// test from zoom 6 to 9. Run on a fixture and on today's data.
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -13,7 +14,9 @@ const D = w.MatchaDensity;
 const pt = (key, lat, lng, kind = "s") => ({ key, ll: [lat, lng], kind });
 const dist = (a, b, z, shift) => { const p = D.px({ ll: a.ll, kind: a.kind }, z, shift), q = D.px({ ll: b.ll, kind: b.kind }, z, shift); return Math.hypot(p[0] - q[0], p[1] - q[1]); };
 
-test("two pins closer than 28 px fold into one stack at the first pin's spot; far ones stand alone", () => {
+test("the threshold is 20 px", () => assert.equal(D.MIN_PX, 20));
+
+test("two pins closer than 20 px fold into one stack at the first pin's spot; far ones stand alone", () => {
   // at zoom 14 one degree of longitude is 512 * 2^14 / 360 = 23302 px, so 0.0005 degrees is about 12 px
   const g = D.group([pt("s:b", 40.75, -73.99), pt("s:a", 40.75, -73.9895), pt("s:c", 40.76, -73.98)], 14);
   assert.equal(g.length, 2);
@@ -24,44 +27,63 @@ test("two pins closer than 28 px fold into one stack at the first pin's spot; fa
   assert.equal(g.find((x) => x.keys.length === 1).kind, "one");
 });
 
-test("zoom 10 to 12: a 0.01 degree cell is one neighbourhood group on its middle member", () => {
-  const pts = [pt("s:1", 40.7501, -73.9901), pt("s:2", 40.7505, -73.9905), pt("s:3", 40.7509, -73.9909), pt("s:4", 40.7801, -73.9601)];
-  const g = D.group(pts, 11, { grid: 0.01 });
-  const cell = g.find((x) => x.keys.length === 3);
-  assert.equal(cell.kind, "cell");
-  assert.equal(cell.key, "s:2", "the member nearest the cell's mean");
-  assert.equal(g.length, 2);
+test("no neighbourhood grouping: pins 21 px apart in one 0.01 degree cell stand alone at zoom 10 to 12", () => {
+  for (const z of [10, 11, 12]) {
+    const step = 21 * 360 / (512 * 2 ** z); // 21 px of longitude
+    const pts = [0, 1, 2].map((i) => pt("s:" + i, 40.7505, -73.9905 + i * step));
+    const g = D.group(pts, z);
+    assert.equal(g.length, 3, "zoom " + z);
+    assert.ok(g.every((x) => x.kind === "one"));
+  }
 });
 
-test("every pair of markers left stands at least 28 px apart, with the marker's own offset", () => {
+test("every pair of markers left stands at least 20 px apart, with the marker's own offset", () => {
   const pts = [];
   for (let i = 0; i < 400; i++) pts.push(pt("s:" + i, 40.70 + ((i * 37) % 100) / 1000, -74.02 + ((i * 53) % 100) / 1000, i % 3 ? "s" : "b"));
   const shift = (p) => (p.kind === "b" ? [12, 12] : [0, 0]);
-  for (const z of [10, 11, 12, 13, 14, 16]) {
-    const g = D.group(pts, z, { grid: z < 12 ? 0.01 : 0, shift });
+  for (const z of [9, 10, 11, 12, 13, 14, 16]) {
+    const g = D.group(pts, z, { shift });
     assert.equal(g.reduce((n, x) => n + x.keys.length, 0), pts.length, "every point in exactly one group at " + z);
     for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) {
       const a = { ll: g[i].ll, kind: pts.find((p) => p.key === g[i].key).kind }, b = { ll: g[j].ll, kind: pts.find((p) => p.key === g[j].key).kind };
-      assert.ok(dist(a, b, z, shift) >= 28, `zoom ${z}: ${g[i].key} and ${g[j].key} are ${dist(a, b, z, shift).toFixed(1)} px apart`);
+      assert.ok(dist(a, b, z, shift) >= 20, `zoom ${z}: ${g[i].key} and ${g[j].key} are ${dist(a, b, z, shift).toFixed(1)} px apart`);
+    }
+    // and every member of a stack is within 20 px of its leader: nothing joins from further away
+    for (const x of g) for (const k of x.keys) {
+      const p = pts.find((q) => q.key === k), l = pts.find((q) => q.key === x.key);
+      assert.ok(dist(p, l, z, shift) < 20 || k === x.key, `zoom ${z}: ${k} joined ${x.key} from ${dist(p, l, z, shift).toFixed(1)} px`);
     }
   }
 });
 
-test("with marker boxes: no two markers left overlap, a group measured at its grown size", () => {
+test("with icon sizes: two markers join only where their icons would overlap, and none left overlap past the tuck", () => {
   const pts = [];
   for (let i = 0; i < 300; i++) pts.push(pt((i % 3 ? "s:" : "e:") + i, 40.70 + ((i * 37) % 100) / 900, -74.02 + ((i * 53) % 100) / 900, i % 3 ? "s" : "e"));
-  const shift = (p) => (p.kind === "e" ? [0, -23] : [0, 0]);
-  const half = (p, n) => (n > 1 ? (n > 9 ? [30, 33] : [26, 27]) : p.kind === "e" ? [20, 23] : [14, 14]);
+  const shift = (p) => (p.kind === "e" ? [0, -35] : [0, 0]);
+  const R = { e: 23, s: 18 }, radius = (p, n) => (n > 1 ? 25 : R[p.kind]);
   const kindOf = new Map(pts.map((p) => [p.key, p.kind]));
-  for (const z of [10, 12, 13, 14]) {
-    const g = D.group(pts, z, { grid: z < 12 ? 0.01 : 0, shift, half, slack: 0 });
+  for (const z of [9, 11, 13, 14]) {
+    const g = D.group(pts, z, { shift, radius });
     assert.equal(g.reduce((n, x) => n + x.keys.length, 0), pts.length);
-    const box = (x) => { const k = { ll: x.ll, kind: kindOf.get(x.key) }, c = D.px(k, z, shift), h = half(k, x.keys.length); return [c[0] - h[0], c[1] - h[1], c[0] + h[0], c[1] + h[1]]; };
     for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) {
-      const a = box(g[i]), b = box(g[j]), w = Math.min(a[2], b[2]) - Math.max(a[0], b[0]), h = Math.min(a[3], b[3]) - Math.max(a[1], b[1]);
-      assert.ok(!(w > 0 && h > 0), `zoom ${z}: ${g[i].key} (${g[i].keys.length}) and ${g[j].key} (${g[j].keys.length}) overlap ${w.toFixed(1)}x${h.toFixed(1)}`);
+      const a = { ll: g[i].ll, kind: kindOf.get(g[i].key) }, b = { ll: g[j].ll, kind: kindOf.get(g[j].key) }, d = dist(a, b, z, shift);
+      const lim = Math.max(20, radius(a, g[i].keys.length) + radius(b, g[j].keys.length) - 4);
+      assert.ok(d >= lim, `zoom ${z}: ${g[i].key} (${g[i].keys.length}) and ${g[j].key} (${g[j].keys.length}) are ${d.toFixed(1)} px apart, under ${lim}`);
     }
   }
+  // two shops 33 px apart (their 36 px rings tuck by 3) stand alone; 31 px apart they stack
+  const z = 14, px1 = 360 / (512 * 2 ** z);
+  assert.equal(D.group([pt("s:a", 40.75, -73.99), pt("s:b", 40.75, -73.99 + 33 * px1)], z, { radius }).length, 2);
+  assert.equal(D.group([pt("s:a", 40.75, -73.99), pt("s:b", 40.75, -73.99 + 31 * px1)], z, { radius }).length, 1);
+});
+
+test("spread: the screen size of a city's places, which doubles with each zoom", () => {
+  const lls = [[29.76, -95.37], [29.70, -95.40], [29.80, -95.30]];
+  const s7 = D.spread(lls, 7), s8 = D.spread(lls, 8);
+  assert.ok(Math.abs(s8 / s7 - 2) < 1e-9);
+  assert.equal(D.spread([[29.76, -95.37]], 12), 0);
+  // never less than the widest pair
+  for (let i = 0; i < lls.length; i++) for (let j = i + 1; j < lls.length; j++) assert.ok(dist({ ll: lls[i] }, { ll: lls[j] }, 7) <= s7 + 1e-9);
 });
 
 test("a spread stack: members stand apart from each other and from the middle", () => {
@@ -75,10 +97,10 @@ test("a spread stack: members stand apart from each other and from the middle", 
   }
 });
 
-test("today's shops: deterministic, and fast enough for every half zoom", () => {
+test("today's shops: deterministic, and fast enough for every quarter zoom", () => {
   const shops = JSON.parse(fs.readFileSync(path.join(SITE, "data", "shops.json"), "utf8")).shops.filter((s) => isFinite(s.lat) && isFinite(s.lng));
   const pts = shops.map((s) => pt("s:" + s.id, s.lat, s.lng));
-  const t = Date.now(), a = D.group(pts, 12, { grid: 0 }), b = D.group(pts.slice().reverse(), 12, { grid: 0 });
+  const t = Date.now(), a = D.group(pts, 12), b = D.group(pts.slice().reverse(), 12);
   assert.ok(Date.now() - t < 1500, "two passes over every shop in under 1.5 s");
   assert.deepEqual(a.map((g) => g.key).sort(), b.map((g) => g.key).sort(), "the same groups whatever the input order");
 });
