@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { mapAccountFacts, recentPosts } from "../ingest/adapters/instagram-graph.js";
 import { recordGraph } from "../ingest/lib/watchlist.js";
-import { buildBrands, cleanBio } from "../ingest/lib/enrich/brands.js";
+import { buildBrands, cleanBio, freshPicture, pictureExpiry, META_PICTURE, PICTURE_DAYS } from "../ingest/lib/enrich/brands.js";
 
 // A small JSON Schema checker (enough for data/schema/event.schema.json): type, enum, required,
 // additionalProperties, anyOf, pattern, minimum, maximum, maxLength, maxItems, items, $ref.
@@ -88,6 +88,41 @@ test("a huge watch list is trimmed to fit 400 KB", () => {
     recent: [0, 1, 2].map((n) => ({ permalink: "https://www.instagram.com/p/" + n, image_url: "https://i/" + "v".repeat(350), timestamp: "t", caption: "c".repeat(90) })) }));
   const d = buildBrands({ accounts }, []);
   assert.ok(Buffer.byteLength(JSON.stringify(d)) <= 400 * 1024);
+});
+test("recordGraph dates the picture url; a card shows it only while the read is under 7 days old and the url has not expired", () => {
+  const t0 = new Date("2026-11-23T12:00:00Z");
+  const oe = (d) => Math.floor(Date.parse(d) / 1000).toString(16); // Meta's expiry parameter: epoch seconds in hex
+  const url = `https://scontent.cdninstagram.com/v/pp.jpg?stp=x&oe=${oe("2026-11-27T12:00:00Z")}`;
+  assert.equal(pictureExpiry(url).toISOString(), "2026-11-27T12:00:00.000Z");
+  assert.equal(pictureExpiry("https://brand.example/logo.png"), null);
+  const acc = recordGraph({ handle: "a" }, { name: "A", profile_picture_url: url }, t0);
+  assert.equal(acc.profile_picture_at, t0.toISOString());
+  recordGraph(acc, { name: "A", profile_picture_url: null }, new Date("2026-11-24T12:00:00Z"));
+  assert.equal(acc.profile_picture_at, t0.toISOString(), "a read with no picture keeps the old url and its own date");
+  assert.deepEqual(freshPicture(acc, new Date("2026-11-26T00:00:00Z")), { picture: url, at: t0.toISOString() });
+  assert.deepEqual(freshPicture(acc, new Date("2026-11-27T12:00:01Z")), { picture: null, at: null }, "cleared once the url's oe expiry passes");
+  const noOe = { profile_picture_url: "https://scontent.cdninstagram.com/pp.jpg", graph_checked_at: t0.toISOString() };
+  assert.equal(freshPicture(noOe, new Date("2026-11-30T11:00:00Z")).picture, noOe.profile_picture_url, "an account read before profile_picture_at existed goes by its read date");
+  assert.equal(freshPicture(noOe, new Date("2026-11-30T13:00:00Z")).picture, null, "and is cleared after 7 days");
+  assert.equal(freshPicture({ profile_picture_url: "https://x/y.jpg" }).picture, null, "no read date, no picture");
+  const d = buildBrands({ accounts: [
+    { handle: "fresh", platform: "instagram", status: "watching", graph_checked_at: "2026-11-22T00:00:00Z", profile_picture_at: "2026-11-22T00:00:00Z", name: "F", profile_picture_url: "https://scontent.cdninstagram.com/f.jpg" },
+    { handle: "stale", platform: "instagram", status: "watching", graph_checked_at: "2026-11-10T00:00:00Z", name: "S", profile_picture_url: "https://scontent.cdninstagram.com/s.jpg", followers_count: 3 },
+  ] }, [], new Date("2026-11-23T00:00:00Z"));
+  const by = Object.fromEntries(d.brands.map((b) => [b.handle, b]));
+  assert.deepEqual([by.fresh.picture, by.fresh.picture_at], ["https://scontent.cdninstagram.com/f.jpg", "2026-11-22T00:00:00.000Z"]);
+  assert.deepEqual([by.stale.picture, "picture_at" in by.stale], [null, false], "a stale read's picture is cleared, the card stays");
+  const errs = []; const schema = load("data/schema/brands.schema.json"); check(schema, d, schema, "$", errs);
+  assert.deepEqual(errs, []);
+});
+test("site/data/brands.json: no Meta picture url is older than its Graph read by more than 7 days, none has expired", () => {
+  if (!fs.existsSync("site/data/brands.json")) return;
+  const d = load("site/data/brands.json"), gen = Date.parse(d.generated);
+  const meta = d.brands.filter((b) => META_PICTURE.test(b.picture || ""));
+  const old = meta.filter((b) => !b.picture_at || gen - Date.parse(b.picture_at) > PICTURE_DAYS * 86400e3).map((b) => b.handle);
+  assert.deepEqual(old, [], "Meta pictures with no read date or a read over 7 days before the file was built");
+  const expired = meta.filter((b) => { const e = pictureExpiry(b.picture); return e && e <= gen; }).map((b) => b.handle);
+  assert.deepEqual(expired, [], "Meta pictures already expired when the file was built");
 });
 test("site/data/brands.json and places.json (when present) validate", () => {
   for (const [f, s] of [["site/data/brands.json", "data/schema/brands.schema.json"], ["site/data/places.json", "data/schema/places.schema.json"]]) {

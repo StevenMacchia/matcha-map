@@ -1,3 +1,4 @@
 # Written by tools/gen-pages.js and tools/gen-event-pages.js from data/seo-state.json (docs/SEO-RULES.md, rule 3). Do not edit by hand.
 # A page that was published and is no longer generated keeps its address: it points at its city page, or the home page.
 /e/faa56768b874/ /city/wa/vancouver/ 301
+/e/117d9583b848/ /city/ny/new-york/ 301

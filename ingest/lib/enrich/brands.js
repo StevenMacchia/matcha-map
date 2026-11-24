@@ -15,15 +15,39 @@ export function cleanBio(s) {
 }
 const cut = (s, n) => String(s || "").replace(/\s+/g, " ").trim().slice(0, n);
 
-export function brandEntry(acc, source) {
+// Profile pictures stay on Meta's servers (copying them off is against the platform terms we work under), and Meta's urls are signed
+// to expire in about five days. So the card shows the url from the newest Graph read only while that read is under PICTURE_DAYS old
+// and the url's own expiry (the `oe` query parameter, seconds since the epoch in hex) has not passed; otherwise picture is null and
+// the site draws the brand's initial instead of a broken image. Every watched account is re-read within 72 hours (cadenceFor).
+export const PICTURE_DAYS = 7;
+export const META_PICTURE = /\b(cdninstagram\.com|fbcdn\.net)\b/;
+export function pictureExpiry(url) {
+  const m = /[?&]oe=([0-9A-Fa-f]{6,12})(?:&|$)/.exec(String(url || ""));
+  return m ? new Date(parseInt(m[1], 16) * 1000) : null;
+}
+// The picture url a card may show from a watch-list account, or null. `at` is when the url was read (profile_picture_at, or the read
+// date for accounts recorded before that field existed).
+export function freshPicture(acc, now = new Date()) {
+  const url = acc.profile_picture_url || null;
+  if (!url) return { picture: null, at: null };
+  const at = acc.profile_picture_at || acc.graph_checked_at || null;
+  const t = at ? Date.parse(at) : NaN;
+  if (!Number.isFinite(t) || new Date(now) - t > PICTURE_DAYS * 86400e3) return { picture: null, at: null };
+  const exp = pictureExpiry(url);
+  if (exp && exp <= new Date(now)) return { picture: null, at: null };
+  return { picture: url, at: new Date(t).toISOString() };
+}
+
+export function brandEntry(acc, source, now = new Date()) {
   const recent = (acc.recent || []).filter((r) => r && r.permalink && r.image_url).slice(0, 3)
     .map((r) => ({ permalink: r.permalink, image_url: r.image_url, timestamp: r.timestamp || null, caption: cut(r.caption, 80) }));
+  const { picture, at } = freshPicture(acc, now);
   return {
     handle: acc.handle, name: acc.name || source?.auto_name || source?.brand || acc.handle,
     website: acc.website || null, followers: Number.isFinite(acc.followers_count) ? acc.followers_count : null,
-    bio: cleanBio(acc.bio), picture: acc.profile_picture_url || null,
+    bio: cleanBio(acc.bio), picture,
     home_city: source?.home_city || null, home_state: source?.home_state || null, kind: source?.kind || null,
-    recent,
+    recent, ...(at ? { picture_at: at } : {}),
   };
 }
 
@@ -65,7 +89,7 @@ export function buildBrands(wl, sources, now = new Date()) {
   for (const a of wl?.accounts || []) {
     if (a.platform !== "instagram" || a.status === "dropped" || !a.graph_checked_at) continue;
     if (!a.name && a.followers_count == null && !a.profile_picture_url) continue; // Graph returned nothing about it
-    brands.push(brandEntry(a, bySource.get(a.source_id) || byHandle.get(a.handle.toLowerCase()) || null));
+    brands.push(brandEntry(a, bySource.get(a.source_id) || byHandle.get(a.handle.toLowerCase()) || null, now));
   }
   const have = new Set(brands.map((x) => x.handle.toLowerCase()));
   for (const s of sources || []) {
