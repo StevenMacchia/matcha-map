@@ -86,6 +86,11 @@
     "lng": -122.317187,
     "source": "nominatim"
   },
+  "1000 social st raleigh nc 27609": {
+    "lat": 35.830353,
+    "lng": -78.624094,
+    "source": "nominatim"
+  },
   "10008 aurora ave n seattle wa 98133": {
     "lat": 47.702797,
     "lng": -122.342469,
@@ -5102,6 +5107,11 @@
   "501 e pine st ste 101 seattle wa": {
     "miss": true,
     "at": 1795436186118
+  },
+  "501 foster st durham nc 27701": {
+    "lat": 36.000744,
+    "lng": -78.901866,
+    "source": "nominatim"
   },
   "5013 newport ave san diego ca": {
     "lat": 32.746935,
