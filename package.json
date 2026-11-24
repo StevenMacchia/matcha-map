@@ -14,6 +14,8 @@
     "shops": "node ingest/shops.js",
     "menus": "node ingest/menus.js",
     "shops:deepen": "node ingest/shops-deepen.js",
+    "shops:fill": "node ingest/shops-fill.js",
+    "shops:completeness": "node tools/card-completeness.mjs",
     "shops:recheck": "node ingest/shops-recheck.js",
     "series": "node ingest/series.js",
     "tidy": "node ingest/tidy.js",

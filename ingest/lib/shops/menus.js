@@ -19,7 +19,7 @@ export function attachExtras(shops, extra = {}) {
     const e = extra[s.id];
     if (!e) return s;
     const o = { ...s };
-    for (const k of ["opening_hours", "phone", "instagram", "image_url", "menu_url"]) if (!o[k] && e[k]) o[k] = e[k];
+    for (const k of ["website", "opening_hours", "phone", "instagram", "image_url", "menu_url"]) if (!o[k] && e[k]) o[k] = e[k];
     if (e.image_url && o.image_url === e.image_url) { o.image_credit = o.image_credit || e.image_credit; o.source_url = o.source_url || e.source_url; o.read = o.read || e.read; }
     return o;
   });

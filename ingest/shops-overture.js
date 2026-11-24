@@ -44,7 +44,7 @@ export async function pull({ release = RELEASE, out }) {
 export function readPlaces(file) {
   return fs.readFileSync(file, "utf8").split("\n").filter(Boolean).map((l) => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
 }
-const igHandle = (socials) => {
+export const igHandle = (socials) => {
   for (const u of [].concat(typeof socials === "string" ? safeJson(socials) : socials || [])) {
     const m = /instagram\.com\/([A-Za-z0-9._]{2,30})/i.exec(String(u));
     if (m && !/^(p|reel|reels|explore|accounts|tv)$/i.test(m[1])) return m[1].toLowerCase();
@@ -102,7 +102,7 @@ async function main() {
     const box = arg("--bbox") ? String(arg("--bbox")).split(",").map(Number) : null;
     const st = arg("--state");
     const cands = places.filter((p) => isServesCandidate(p) && (!only || only.has(String(p.city || "").toLowerCase())) && (!box || (p.lng >= box[0] && p.lat >= box[1] && p.lng <= box[2] && p.lat <= box[3])) && (!st || stateOf(p) === st)).sort((a, b) => (PRIORITY[a.tax] ?? 5) - (PRIORITY[b.tax] ?? 5) || (b.conf - a.conf));
-    const curFile = `${dir}/menus-cursor${only || box ? "-" + arg("--tag", "sel") : ""}.json`;
+    const curFile = `${dir}/menus-cursor${only || box || st ? "-" + arg("--tag", "sel") : ""}.json`;
     const start = readJson(curFile, { next: 0 }).next % Math.max(1, cands.length);
     const batch = cands.slice(start, start + limit);
     const f = createFetcher({});
