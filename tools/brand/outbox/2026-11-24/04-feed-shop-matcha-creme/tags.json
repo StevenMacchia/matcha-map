@@ -1,0 +1,26 @@
+{
+  "slot": "feed",
+  "time": "13:00",
+  "image_url": "https://matchamap.app/social/2026-11-24/04-feed-shop-matcha-creme.png",
+  "location": "Dallas, TX",
+  "link": "https://matchamap.app/city/tx/dallas/",
+  "user_tags": [
+    {
+      "username": "matchaandcreme",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "matchaandcreme"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchadallas",
+    "#dallasfood",
+    "#weekendplans",
+    "#matchadrinks"
+  ]
+}

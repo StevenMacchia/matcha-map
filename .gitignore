@@ -10,5 +10,14 @@ node_modules/
 !.dev.vars.example
 !.env.example
 
-# generated post images, reviewed by hand before posting
-tools/brand/outbox/
+# generated post images, reviewed by hand before posting. The flyers (npm run flyers) stay local; the daily social outbox
+# (npm run social: INDEX.md, plan.json, the NN-feed-*/NN-story-* folders, published.json) and the brand history are committed.
+tools/brand/outbox/*
+!tools/brand/outbox/history.json
+!tools/brand/outbox/20??-??-??/
+tools/brand/outbox/20??-??-??/*
+!tools/brand/outbox/20??-??-??/INDEX.md
+!tools/brand/outbox/20??-??-??/plan.json
+!tools/brand/outbox/20??-??-??/published.json
+!tools/brand/outbox/20??-??-??/[0-9][0-9]-feed-*/
+!tools/brand/outbox/20??-??-??/[0-9][0-9]-story-*/

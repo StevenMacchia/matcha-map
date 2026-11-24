@@ -34,6 +34,8 @@
     "gate:shop": "node tools/shop-gate.js",
     "gate:map": "node tools/map-gate.js",
     "flyers": "node tools/flyers.js",
+    "social": "node tools/social/outbox.js",
+    "social:publish": "node tools/social/publish.js",
     "pages": "node tools/gen-pages.js && node tools/slim-events.js",
     "og": "node tools/gen-og.js",
     "images": "node tools/shrink-images.js",
