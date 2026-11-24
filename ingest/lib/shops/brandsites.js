@@ -14,6 +14,7 @@ function fromLd(html) {
     return null;
   };
   for (const x of jsonLd(html)) {
+    if (!x || typeof x !== "object") continue; // a JSON-LD array can hold null
     const r = one(x) || (Array.isArray(x.location) ? x.location.map(one).find(Boolean) : one(x.location));
     if (r) return r;
   }

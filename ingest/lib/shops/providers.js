@@ -14,6 +14,7 @@ import { UA } from "../fetch.js";
 import { BRAND_NAMES } from "./brands.js";
 import { htmlToLines } from "../html.js";
 import { readPage } from "../../../tools/shop-read.js";
+import { hostedMenu, gatedGet, isSquareOnline, isSquareHost } from "./hosted-menus.js";
 
 export const YELP_BASE = "https://api.yelp.com/v3/businesses/search";
 export const FSQ_BASE = "https://places-api.foursquare.com/places/search";
@@ -91,16 +92,22 @@ export function matchaDrinks(html) {
 }
 
 // Candidate + the shop's own pages -> a curated row (data/shops-*.json shape) or { held: reason }. `get(url)` -> {ok, text}.
+const MIN_HOSTED = 3;
 export async function confirmCandidate(c, get, { read = new Date().toISOString().slice(0, 10), relaxAddress = false, weakOk = false } = {}) {
   if (!c.website) return { held: "no website from the provider (a worker confirms it by name)" };
   let base; try { base = new URL(c.website); } catch { return { held: "website not a url" }; }
   if (/instagram\.com|facebook\.com|linktr\.ee|ubereats|doordash|grubhub|toasttab|yelp\.com/i.test(base.host)) return { held: "provider website is a social or ordering page" };
   const pages = [];
+  let limited = false;
   for (const p of ["/", "/menu", "/locations", "/contact", "/about"]) {
-    let r; try { r = await get(new URL(p, base).href); } catch { continue; }
-    if (r?.ok) pages.push({ url: new URL(p, base).href, html: r.text, rd: readPage(r.text, new URL(p, base).href) });
+    const u = new URL(p, base).href;
+    let r; try { r = await gatedGet(get, u); if (r?.status === 429 && !isSquareHost(u)) { await new Promise((x) => setTimeout(x, 8000)); r = await gatedGet(get, u); } } catch { continue; }
+    if (r?.status === 429) limited = true;
+    if (r?.ok) pages.push({ url: u, html: r.text, rd: readPage(r.text, u) });
+    // A Square Online storefront answers every path with the same script shell: its menu is read from the sitemap, so the other pages are not asked for.
+    if (p === "/" && r?.ok && isSquareOnline(r.text, u)) break;
   }
-  if (!pages.length) return { held: "own site not readable" };
+  if (!pages.length) return { held: limited ? "own site rate limited (429)" : "own site not readable" };
   const rd = (k) => pages.map((p) => p.rd[k]).find(Boolean) || null;
   const mentions = pages.reduce((n, p) => n + p.rd.matcha_mentions, 0);
   // The site must print the same street number (or the provider's zip) as the candidate.
@@ -122,13 +129,20 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
     if (drinks.length >= 3) { tier = "serves"; menu_matcha = drinks.slice(0, 12); }
     else if (weakOk && drinks.length >= 1) { tier = "serves"; menu_matcha = drinks; weak = true; }
   }
-  if (!tier) return { held: hint === "core" ? "own site barely mentions matcha" : "fewer than three matcha drinks on the site's own menu page" };
+  // A menu kept on Square Online or Toast (or one that is a PDF or pictures): read what is public, and count the reason for what is not.
+  let hostedUrl = null, hostedReason = null;
+  if (!tier) {
+    const hm = await hostedMenu(pages, get).catch(() => null);
+    if (hm?.drinks?.length >= MIN_HOSTED) { tier = hint === "core" ? "shop" : "serves"; menu_matcha = hm.drinks.slice(0, 12); hostedUrl = hm.menu_url; }
+    else hostedReason = hm?.reason || null;
+  }
+  if (!tier) return { held: hostedReason || (hint === "core" ? "own site barely mentions matcha" : "fewer than three matcha drinks on the site's own menu page") };
   const best = (k) => sameSpot[k] || rd(k);
   return {
     row: {
       name: c.name, address: sameSpot.address, city: sameSpot.city || c.city, state: (sameSpot.state || c.state || "").toUpperCase(), zip: sameSpot.zip || c.zip || null,
       website: c.website, instagram: best("instagram") || (c.instagram ? String(c.instagram).replace(/^@/, "") : null), phone: best("phone") || c.phone || null,
-      opening_hours: rd("hours_osm"), menu_url: tier === "serves" && menuPage ? menuPage.url : rd("menu_url"),
+      opening_hours: rd("hours_osm"), menu_url: hostedUrl || (tier === "serves" && menuPage ? menuPage.url : rd("menu_url")),
       image_url: rd("image"), image_credit: rd("image") ? `Photo: ${c.name} website` : null,
       source_url: sameSpot.url || pages[0].url, read, confirmed_via: viaOverture ? "overture" : "own-site", tier, ...(menu_matcha ? { menu_matcha } : {}), ...(weak ? { note: "Menu mentions matcha" } : {}),
     },
