@@ -77,3 +77,33 @@ Pages generated: city, state, brand, event, weekend. Indexable city pages and no
 ## 10. Budget and order of work
 
 Budget check first on Friday: both weekly windows must be under the ceiling after the reset before the build starts. The build is a Sonnet worker's from this spec (gen-pages changes, state hubs, LocalBusiness and FAQ builders, tests, check-jsonld), with Fable reading the diff, the first build's numbers and the report. Order: index rule and `noindex` option; all cities paged with size measured; Nearby and the intro; shops schema; FAQ; state hubs; lastmod hash; tests and check-jsonld; home marker patch last (depends on the site session's marker). Deploy only with the site session, after its template pass, through the usual ship path.
+
+## Built 2026-11-23: deviations and numbers
+
+- Pages: 2,420 city (2,410 listed plus 10 brand home cities from site/cities.js, via `loadCities()`, which gen-weekend now uses too so the two agree), 51 state hubs plus /state/, 483 brand. 966 city pages indexable, 1,454 noindex. Output 19.57 MB, so `LIMITS.bytes` is 30 MB (measured plus half).
+- Nearby is "not this city's own pop-ups, within 64 km", so a pop-up under 25 km that belongs to a neighbouring city (a Cary event for Apex) shows too; read literally, "between 25 and 64 km" would leave such a city with nothing.
+- The meta description is the whole lead (at most 158 characters), not only its first sentence: the empty-city lead is two sentences and the second is the useful one.
+- The weekend window (`weekendWindow`, `inWindow`, `windowText`) moved from gen-weekend.js into gen-pages.js; gen-weekend re-exports it, so no circular import.
+- Thin noindex pages keep one line instead of "How this map works", drop the calendar-feed button and the og:image size tags, and use short FAQ answers, to stay under 6 KB (largest 6,127 bytes). City pages no longer link /state/ (the state hub does); the footer link is the site session's.
+- site/data/pages.json grew from 43 KB to 184 KB (2,420 cities; same fields as before). The {hash, lastmod} map lives in data/pages-lastmod.json, not served.
+- Opening hours also accept `<day> off` rules; a day named in two rules, overnight ranges, 24/7, holidays and months are text only.
+- A shop gets CafeOrCoffeeShop markup only with an address, a city and a state; at most 12 per page.
+
+## Rules since 2026-11-23 (docs/SEO-RULES.md)
+
+Steven asked that the SEO stay up to date and never flood. The index rule in section 4 above is replaced: a city page is indexable with an upcoming pop-up matched to it, a verified shop within 25 km, two brands based there with a picture, or pop-ups within 64 km in at least three distinct other cities (the 40-mile "any pop-up" and "any brand" cases are gone), and a state hub needs at least 5 cities. Each page carries its counts in `data-seo`, the "Updated" line prints the page's own lastmod, the FAQ answers carry the city's own numbers, removed event and brand pages get a 301 in `site/_redirects`, the sitemap splits past 45,000 URLs, and `tools/seo-gate.js` checks all nine rules on every daily run and stops the deploy when one fails.
+## Template pass 2026-11-23 (lane/seo-city): the approved mock
+
+Built on main (2784a5b, the data session's commit), so the city list, hubs at `/state/<st>/` and the index rule are the
+data session's. The page now follows `qa/mocks/2026-11-23/city` (lane/design-mocks2): H1 is the full title; a counts line
+("2 this weekend, 2 in the next 30 days.", linking the weekend page); the intro paragraph from the counted lists; Get alerts,
+Add your pop-up and Open on the map, each with `?city=<slug>-<st>` (`cityParam`, so DC is `washington-dc`); "Updated <date>.
+State page: All of <State>"; pop-up cards with a day pill; "Matcha shops in <City>" with the shop and on-the-menu count, a
+picture or the drawn storefront, kind, address (with the town when it is not the page's city) and hours or "Hours not
+listed"; brand cards (picture or initial, followers from brands.json, @handle, most followed first, 24 cards then links);
+"Nearby within 40 miles": the three nearest cities in reach with their own count or "nothing listed yet", how many lie
+within 40 miles, then the pop-ups within 40 miles; three questions (next pop-up, where, alerts) as open `<details>`;
+"Seen a pop-up we missed?" to `/add/?city=`; breadcrumbs Home > ST > City. Noindex pages show the questions but carry no
+FAQPage block (largest thin page under 6 KB). The home page lists the 50 biggest cities and every state hub inside the
+list panel, after the list. `site/add/add.js` turns `?city=raleigh-nc` into "Raleigh, NC" on the add form and adds any
+listed city to the alerts picker.

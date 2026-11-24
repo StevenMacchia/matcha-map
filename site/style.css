@@ -813,3 +813,10 @@ body.card-open .frow1 { visibility: hidden; }
 /* Weekend tour bar (social wave): on wide screens it sits at the bottom of the map, clear of the card that opens above the pin; the Share button carries a stroked icon */
 @media (min-width: 900px) { .tour-bar { top: auto; bottom: 18px; } }
 .tour-bar .tb-share svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+/* ---------- home footer index (tools/gen-pages.js fills it between the cities markers): quiet links at the end of the list ---------- */
+.home-index { padding: 8px 16px 32px; border-top: 1.5px solid var(--line); margin: 4px 12px 0; color: var(--muted); font-size: 14px; }
+.home-index .hix-h { font-size: 14px; font-weight: 800; color: var(--muted); margin: 14px 0 6px; }
+.home-index .hix { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 12px; }
+.home-index .hix li { margin: 0; }
+.home-index a { color: var(--muted); display: inline-block; padding: 4px 0; }
+.home-index a:hover { color: var(--deep); }

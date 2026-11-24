@@ -8,6 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { yelpDue, stampYelp } from "./lib/day-gate.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -20,11 +21,7 @@ if (!(hours > 0) || !(watchHours > 0)) { console.error("--every and --watch-ever
 const WATCH = ["watch", ["ingest/watch.js"]];
 // The full cycle (discover, watch, ingest) and the hourly one (watch alone).
 export const YELP_LEADS = ["yelp-leads", ["ingest/shops-keyed.js", "--provider", "yelp", "--limit", "250"]];
-const DAY_STAMP = path.join(ROOT, ".cache", "yelp-leads-day.txt");
-const todayUTC = () => new Date().toISOString().slice(0, 10);
-// Once a UTC day, never twice: the stamp holds the day of the last completed run.
-export function yelpDue(read = (f) => fs.readFileSync(f, "utf8")) { try { return read(DAY_STAMP).trim() !== todayUTC(); } catch { return true; } }
-function stampYelp() { fs.mkdirSync(path.dirname(DAY_STAMP), { recursive: true }); fs.writeFileSync(DAY_STAMP, todayUTC()); }
+// Once a UTC day, never twice: the stamp (.cache/yelp-leads-day.txt) lives in ingest/lib/day-gate.js, shared with ingest/daily.js.
 const FULL = [["discover", ["ingest/lib/discover.js"]], WATCH, ["ingest", ["ingest/run.js"]], YELP_LEADS];
 
 const stamp = () => new Date().toISOString().replace("T", " ").slice(0, 19);

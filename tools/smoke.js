@@ -30,6 +30,21 @@ function pages() {
   const st = first("city"), city = st && first("city/" + st);
   const brand = first("brand"), ev = first("e");
   if (city) list.push(`/city/${st}/${city}/`);
+  // one indexable city page (the first city in the sitemap) and one noindex page (rendered in full, left out of the sitemap)
+  const sm = (() => { try { return fs.readFileSync(path.join(SITE, "sitemap.xml"), "utf8"); } catch { return ""; } })();
+  const indexed = /<loc>[^<]*?(\/city\/[a-z]{2}\/[^<]+\/)<\/loc>/.exec(sm);
+  if (indexed && !list.includes(indexed[1])) list.push(indexed[1]);
+  const noindex = (() => {
+    try {
+      for (const s2 of fs.readdirSync(path.join(SITE, "city")).sort()) for (const c of fs.readdirSync(path.join(SITE, "city", s2)).sort()) {
+        const p = path.join(SITE, "city", s2, c, "index.html");
+        if (fs.existsSync(p) && /<meta name="robots" content="noindex,follow">/.test(fs.readFileSync(p, "utf8"))) return `/city/${s2}/${c}/`;
+      }
+    } catch { /* no city pages */ }
+    return null;
+  })();
+  if (noindex && !list.includes(noindex)) list.push(noindex);
+  list.push("/state/nc/", "/alerts/?city=winston-salem-nc", "/add/?city=raleigh-nc"); // a state hub; the city pages' calls to action with the city prefilled
   if (brand) list.push(`/brand/${brand}/`);
   list.push("/add/");
   if (ev) list.push(`/promote/?event=${ev}`);

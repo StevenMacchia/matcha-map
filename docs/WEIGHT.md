@@ -73,3 +73,22 @@ Lighthouse mobile, home page, local `tools/serve.js` (uncompressed, so the whole
 The run to run spread (TBT 120 to 250 ms) is larger than the difference: on this machine the gain is inside the noise,
 and the byte saving is where the win is (most for a phone on a slow link). The full file still downloads, just after
 the first paint.
+
+## City pages in the mock's shape (2026-11-23, lane/seo-city)
+
+Lighthouse mobile (simulated slow 4G), local build. `tools/serve.js` does not compress; `npx serve site` gzips, which is
+closer to Cloudflare (Brotli). Seattle is the densest city page (66 pop-ups, 12 shops, 15 brands: 139 KB raw, 13.7 KB gzip).
+
+| Page | Server | Perf | FCP | LCP | TBT | CLS |
+|---|---|---:|---:|---:|---:|---:|
+| /city/wa/seattle/ | serve.js, uncompressed | 91 | 2.8 s | 2.8 s | 0 ms | 0.045 |
+| /city/wa/seattle/ | gzip, two runs | 97 / 97 | 2.0 s | 2.0 s | 0 ms | 0.034 / 0.045 |
+| /city/nc/raleigh/ | gzip, font `display=swap` | 84 | 2.0 s | 2.0 s | 0 ms | 0.259 |
+| /city/nc/raleigh/ | gzip, font `display=optional` | 97 | 2.0 s | 2.0 s | 0 ms | 0 |
+| /city/wa/seattle/ | gzip, font `display=optional` | 97 | 2.0 s | 2.0 s | 0 ms | 0 |
+
+The Raleigh shift was the web font swapping in under the intro and pushing the cards down. City and state pages
+(`shell({ wide: true })`) now ask Google Fonts for `display=optional`: the font is used when it arrives in the first
+100 ms (or from cache, which is every page after the first), otherwise the page keeps the fallback and never jumps.
+Brand pages keep `swap`. What is left: `style.css` (the whole app's CSS, about 70 KB raw) blocks the first paint of
+every static page; a pages-only stylesheet would cut that, but it is a split of the shell's CSS, not a template change.

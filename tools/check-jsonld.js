@@ -1,5 +1,7 @@
-// Structured data self-check: parses every JSON-LD block in site/e, site/city and site/brand and checks the fields
-// Google needs (Event: name, startDate, location; Organization: name, url), parseable dates, absolute image URLs, no
+// Structured data self-check: parses every JSON-LD block in site/e, site/city, site/state and site/brand and checks the fields
+// Google needs (Event: name, startDate, location; Organization: name, url; CafeOrCoffeeShop/LocalBusiness: name, address, geo;
+// FAQPage: every Question has an acceptedAnswer with text; BreadcrumbList: named items with absolute URLs; OpeningHoursSpecification:
+// schema.org days and HH:MM times), parseable dates, absolute image URLs, no
 // "undefined"/"null"/"NaN" strings, and that no ListItem carries both url and item (a mutually-exclusive pair).
 import fs from "node:fs";
 import path from "node:path";
@@ -47,6 +49,33 @@ function checkNode(node, at, err, stats) {
     if (node.url !== undefined && !isAbs(node.url)) err(`${at}: Organization url not absolute`);
     else if (node.url === undefined && !/\.organizer$/.test(at)) err(`${at}: Organization url missing`);
   }
+  if (t === "CafeOrCoffeeShop" || t === "LocalBusiness") {
+    stats.shops++;
+    if (!node.name) err(`${at}: ${t} without name`);
+    if (!node.address || typeof node.address !== "object" || !node.address.streetAddress || !node.address.addressLocality) err(`${at}: ${t} without a full address`);
+    if (!node.geo || !isFinite(node.geo.latitude) || !isFinite(node.geo.longitude)) err(`${at}: ${t} without geo`);
+    if (node.aggregateRating !== undefined || node.review !== undefined) err(`${at}: ${t} carries a rating or review`);
+    if (node.url !== undefined && !isAbs(node.url)) err(`${at}: ${t} url not absolute`);
+  }
+  if (t === "OpeningHoursSpecification") {
+    const days = [].concat(node.dayOfWeek || []);
+    if (!days.length || !days.every((d) => /^https:\/\/schema\.org\/(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$/.test(d))) err(`${at}: OpeningHoursSpecification dayOfWeek`);
+    if (!/^\d\d:\d\d$/.test(node.opens || "") || !/^\d\d:\d\d$/.test(node.closes || "")) err(`${at}: OpeningHoursSpecification opens/closes`);
+  }
+  if (t === "BreadcrumbList") {
+    stats.crumbs++;
+    const items = node.itemListElement;
+    if (!Array.isArray(items) || !items.length) err(`${at}: BreadcrumbList without items`);
+    for (const [i, x] of (items || []).entries()) if (!x || x.position !== i + 1 || !x.name || !isAbs(x.item)) err(`${at}.itemListElement[${i}]: breadcrumb needs position ${i + 1}, a name and an absolute item`);
+  }
+  if (t === "FAQPage") {
+    stats.faqs++;
+    if (!Array.isArray(node.mainEntity) || !node.mainEntity.length) err(`${at}: FAQPage without questions`);
+    for (const [i, q] of (node.mainEntity || []).entries()) {
+      if (!q || q["@type"] !== "Question" || !q.name) err(`${at}.mainEntity[${i}]: not a named Question`);
+      else if (!q.acceptedAnswer || typeof q.acceptedAnswer.text !== "string" || !q.acceptedAnswer.text.trim()) err(`${at}.mainEntity[${i}]: Question without acceptedAnswer.text`);
+    }
+  }
   if (t === "ListItem" && node.url !== undefined && node.item !== undefined) err(`${at}: ListItem has both url and item`);
   if (t === "ListItem") stats.listItems++;
   for (const k of ["image", "logo"]) {
@@ -58,8 +87,8 @@ function checkNode(node, at, err, stats) {
 }
 
 export function checkSite(siteDir = path.join(root, "site")) {
-  const files = [...walkFiles(path.join(siteDir, "e")), ...walkFiles(path.join(siteDir, "city")), ...walkFiles(path.join(siteDir, "brand"))];
-  const stats = { files: files.length, blocks: 0, events: 0, orgs: 0, listItems: 0 };
+  const files = [...walkFiles(path.join(siteDir, "e")), ...walkFiles(path.join(siteDir, "city")), ...walkFiles(path.join(siteDir, "state")), ...walkFiles(path.join(siteDir, "brand"))];
+  const stats = { files: files.length, blocks: 0, events: 0, orgs: 0, shops: 0, faqs: 0, crumbs: 0, listItems: 0 };
   const errors = [];
   for (const f of files) {
     const rel = path.relative(siteDir, f).split(path.sep).join("/");
@@ -75,8 +104,10 @@ export function checkSite(siteDir = path.join(root, "site")) {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const { stats, errors } = checkSite();
-  console.log(`jsonld: ${stats.files} pages, ${stats.blocks} blocks, ${stats.events} Event, ${stats.orgs} Organization, ${stats.listItems} ListItem, ${errors.length} problems`);
+  console.log(`jsonld: ${stats.files} pages, ${stats.blocks} blocks, ${stats.events} Event, ${stats.orgs} Organization, ${stats.shops} LocalBusiness, ${stats.faqs} FAQPage, ${stats.crumbs} BreadcrumbList, ${stats.listItems} ListItem, ${errors.length} problems`);
   errors.slice(0, 40).forEach((m) => console.log("  " + m));
   if (errors.length > 40) console.log(`  ... ${errors.length - 40} more`);
-  process.exit(errors.length ? 1 : 0);
+  // any problem exits 1, and so does a run that found no page to check (a missing or empty site/ must not read as clean)
+  if (!stats.files) console.log("  no pages found under site/e, city, state or brand");
+  process.exit(errors.length || !stats.files ? 1 : 0);
 }

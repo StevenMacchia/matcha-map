@@ -3,7 +3,9 @@
 // onto the shop rows (ingest/lib/shops/menus.js attachExtras) by this command and by every `npm run shops`.
 // Only empty fields are filled, only from the shop's own website (robots respected, 1 request a second a host). Nothing is guessed:
 // hours come only from JSON-LD openingHours / openingHoursSpecification; a phone only from JSON-LD telephone or a tel: link.
-//   npm run shops:deepen [-- --dry] [-- --only <host>]
+//   npm run shops:deepen [-- --dry] [-- --only <host>] [-- --new]
+// --new (the daily run): only shop rows with no entry in data/shops-extra.json yet, so the daily cost is the new storefronts only; a row read
+// that gained nothing is stamped (read date, source url) so it is not read again tomorrow.
 import fs from "node:fs";
 import { pathToFileURL } from "node:url";
 import { createFetcher } from "./lib/fetch.js";
@@ -71,6 +73,9 @@ export function facts(html, base) {
   return out;
 }
 
+// Pure: the shop rows --new reads, those with a website, verified, and no entry in the extras store.
+export const newRows = (shops, prev) => shops.filter((s) => s.website && s.verified && !(prev || {})[s.id]);
+
 async function main() {
   const shops = JSON.parse(fs.readFileSync("data/shops.json", "utf8")).shops;
   const prev = fs.existsSync("data/shops-extra.json") ? JSON.parse(fs.readFileSync("data/shops-extra.json", "utf8")).shops || {} : {};
@@ -96,7 +101,7 @@ async function main() {
     if (!s.instagram && fa.instagram) e.instagram = fa.instagram;
     if (!s.image_url && fa.image_url) { e.image_url = fa.image_url; e.image_credit = host; }
     if (!s.menu_url && fa.menu_link) e.menu_url = fa.menu_link;
-    if (Object.keys(e).length) { e.read = when; e.source_url = s.website; extra[s.id] = e; }
+    if (Object.keys(e).length || flag("--new")) { e.read = when; e.source_url = s.website; extra[s.id] = e; }
   }
   const filled = {};
   for (const e of Object.values(extra)) for (const k of Object.keys(e)) if (!["read", "source_url", "image_credit"].includes(k)) filled[k] = (filled[k] || 0) + 1;

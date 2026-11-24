@@ -33,7 +33,10 @@
     "gate:card": "node tools/card-gate.js",
     "gate:shop": "node tools/shop-gate.js",
     "gate:map": "node tools/map-gate.js",
+    "gate:seo": "node tools/seo-gate.js",
     "flyers": "node tools/flyers.js",
+    "social": "node tools/social/outbox.js",
+    "social:publish": "node tools/social/publish.js",
     "pages": "node tools/gen-pages.js && node tools/slim-events.js",
     "og": "node tools/gen-og.js",
     "images": "node tools/shrink-images.js",
@@ -51,6 +54,7 @@
     "brands:apply": "node tools/apply-brand-facts.js",
     "outreach": "node tools/outreach.js",
     "shops:keyed": "node ingest/shops-keyed.js",
+    "daily": "node ingest/daily.js",
     "shops:overture": "node ingest/shops-overture.js"
   },
   "license": "MIT",

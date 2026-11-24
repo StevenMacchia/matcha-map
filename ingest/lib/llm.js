@@ -24,11 +24,12 @@ export const PROMPT = (text, nowIso) =>
   `Use null for anything the post does not state. Never guess, never fill a field from general knowledge, never compute a date the post does not name.\n\nPOST:\n`
   + text.slice(0, 2500);
 
-export const llmEnabled = (env = process.env) => !!env.CLAUDE_API_KEY;
+// MATCHA_NO_MODEL=1 (the daily run, docs/DAILY-RUN.md) turns every model call off even when a key is present.
+export const llmEnabled = (env = process.env) => !!env.CLAUDE_API_KEY && env.MATCHA_NO_MODEL !== "1";
 
 // Ask the model. -> parsed JSON object or null. Injectable fetch for tests.
 export async function askLlm(text, { env = process.env, now = new Date(), fetchFn = fetch } = {}) {
-  if (!env.CLAUDE_API_KEY || calls >= MAX_CALLS) return null;
+  if (!llmEnabled(env) || calls >= MAX_CALLS) return null;
   calls++;
   try {
     const res = await fetchFn("https://api.anthropic.com/v1/messages", {

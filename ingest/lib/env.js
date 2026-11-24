@@ -16,9 +16,16 @@ export function parseEnv(text) {
   return out;
 }
 
+// Model keys. With MATCHA_NO_MODEL=1 (set by ingest/daily.js on every child) the .env file may not put them back.
+export const MODEL_KEYS = ["CLAUDE_API_KEY", "ANTHROPIC_API_KEY"];
+export const noModel = (env = process.env) => env.MATCHA_NO_MODEL === "1";
+
 export function loadEnv(file = ".env", env = process.env) {
   try {
-    for (const [k, v] of Object.entries(parseEnv(fs.readFileSync(file, "utf8")))) if (env[k] === undefined || env[k] === "") env[k] = v;
+    for (const [k, v] of Object.entries(parseEnv(fs.readFileSync(file, "utf8")))) {
+      if (noModel(env) && MODEL_KEYS.includes(k)) continue;
+      if (env[k] === undefined || env[k] === "") env[k] = v;
+    }
   } catch { /* no .env: fine */ }
 }
 
