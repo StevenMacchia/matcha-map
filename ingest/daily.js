@@ -1,9 +1,9 @@
 // npm run daily: the once-a-day run (docs/DAILY-RUN.md). The Windows task "Matcha Map daily" starts it at 13:00 local time.
 // Steps, in order, each its own child process (one crash never stops the run; a failed step is recorded and the next still runs):
 //   pull (tools/sync-checkout.js: a fast-forward to origin/main that first unions or discards what the watch task left dirty), discover, watch, ingest, yelp-leads (once a UTC day), overture (if the adapter exists), deepen (new shops only),
-//   pages (only when yelp-leads, overture or deepen changed the data), smoke, report (docs/DAILY.md + one LADDER.md line),
-//   commit, push, deploy (live smoke after it), notify (a GitHub issue when something failed or nothing new arrived).
-// Commit, push and deploy need the smoke to have passed. No step may call a model: every child gets MATCHA_NO_MODEL=1 and no
+//   pages (only when yelp-leads, overture or deepen changed the data), seo-gate (the nine SEO rules, tools/seo-gate.js), smoke,
+//   report (docs/DAILY.md + one LADDER.md line), commit, push, deploy (live smoke after it), notify (a GitHub issue when something failed or nothing new arrived).
+// Commit, push and deploy need the smoke and the SEO gate to have passed. No step may call a model: every child gets MATCHA_NO_MODEL=1 and no
 // CLAUDE_API_KEY or ANTHROPIC_API_KEY (childEnv below; ingest/lib/env.js and ingest/lib/llm.js honour the flag even with a .env file).
 // Flags: --dry (everything except commit, push, deploy and the issue; prints what it would do) | --steps a,b,c (only those steps).
 import fs from "node:fs";
@@ -19,7 +19,7 @@ const CHROME_DEFAULT = "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const IDENTITY = ["-c", "user.name=Steven Macchia", "-c", "user.email=64022630+StevenMacchia@users.noreply.github.com"];
 const MODEL_KEYS = ["CLAUDE_API_KEY", "ANTHROPIC_API_KEY"];
 
-export const STEP_NAMES = ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "smoke", "report", "commit", "push", "deploy", "notify"];
+export const STEP_NAMES = ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "report", "commit", "push", "deploy", "notify"];
 // Same arguments as YELP_LEADS in ingest/loop.js (test/daily.test.js checks they match).
 export const YELP_ARGS = ["ingest/shops-keyed.js", "--provider", "yelp", "--limit", "250"];
 const SCRIPTS = {
@@ -29,9 +29,13 @@ const SCRIPTS = {
   "yelp-leads": YELP_ARGS,
   deepen: ["ingest/shops-deepen.js", "--new"],
   smoke: ["tools/smoke.js"],
+  "seo-gate": ["tools/seo-gate.js"],
+  social: ["tools/social/outbox.js"], // npm run social; writes tools/brand/outbox/<date>/ and site/social/<date>/
 };
 // Explicit paths only, each only if it exists. Never `git add -A`.
-export const COMMIT_PATHS = ["data/events.json", "data/review", "data/geocache.json", "data/watchlist.json", "data/hashtags.json", "data/tavily-budget.json", "data/shops.json", "data/shops-extra.json", "data/sources.json", "data/pages.json", "site/data", "site/art", "site/img", "site/feeds", "site/e", "site/city", "site/state", "site/brand", "site/weekend", "site/og", "site/sitemap.xml", "site/robots.txt", "docs/DAILY.md", "LADDER.md"];
+export const COMMIT_PATHS = ["data/events.json", "data/review", "data/geocache.json", "data/watchlist.json", "data/hashtags.json", "data/tavily-budget.json", "data/shops.json", "data/shops-extra.json", "data/sources.json", "data/pages.json", "site/data", "site/art", "site/img", "site/feeds", "site/e", "site/city", "site/state", "site/brand", "site/weekend", "site/og", "site/sitemap.xml", "site/robots.txt", "site/_redirects", "site/social", "data/pages-lastmod.json", "data/seo-state.json", "docs/DAILY.md", "LADDER.md"];
+// site/sitemap-1.xml, sitemap-2.xml... exist only once the sitemap passes 45,000 URLs; they are staged by name when present.
+export const sitemapParts = (root = ROOT) => (fs.existsSync(path.join(root, "site")) ? fs.readdirSync(path.join(root, "site")).filter((n) => /^sitemap-\d+\.xml$/.test(n)).map((n) => `site/${n}`) : []);
 // The generators ingest/run.js runs after the data is written, in its order (plus the slim first-paint file `npm run pages` writes).
 const PAGES_SCRIPT = `
 const u = (p) => import(${JSON.stringify(pathToFileURL(ROOT + path.sep).href)} + p);
@@ -47,6 +51,17 @@ export function childEnv(env = process.env) {
   if (!out.CHROME_PATH) out.CHROME_PATH = CHROME_DEFAULT;
   return out;
 }
+
+// The social outbox of the day: where it is and how many items it holds. INDEX.md entries (bullet or numbered lines) when there is one,
+// else the files in the folder; "none" when the folder is missing.
+export function socialSummary(root, today) {
+  const rel = `tools/brand/outbox/${today}`, dir = path.join(root, rel);
+  if (!fs.existsSync(dir)) return { path: rel, items: null };
+  const idx = path.join(dir, "INDEX.md");
+  if (fs.existsSync(idx)) return { path: rel, items: fs.readFileSync(idx, "utf8").split(/\r?\n/).filter((l) => /^\s*(?:[-*]|\d+\.)\s+\S/.test(l)).length };
+  return { path: rel, items: fs.readdirSync(dir, { withFileTypes: true }).filter((e) => e.isFile()).length };
+}
+export const socialText = (s) => (!s || s.items == null ? "none" : `${s.path} (${s.items} item${s.items === 1 ? "" : "s"})`);
 
 // ---- report ------------------------------------------------------------------------------------------------------------------------------
 const pad2 = (n) => String(n).padStart(2, "0");
@@ -82,6 +97,7 @@ export function renderReport(d) {
     `- Pages: city ${d.pages.city}, brand ${d.pages.brand}, event ${d.pages.event}, weekend ${d.pages.weekend}`,
     `- New today (${d.newTotal}) by source: ${list(d.newBySource)}`,
     `- Keyed calls today: ${list(d.calls)}`,
+    `- Social outbox: ${socialText(d.social)}`,
     `- Failures: ${fails.length ? fails.map((s) => `${s.name}${s.note ? ` (${s.note})` : ""}`).join("; ") : "none"}`, "",
     "Steps:",
     ...(d.steps.length ? d.steps : [{ name: "none run yet", status: "" }]).map((s) => `- ${s.name}${s.status ? ": " + s.status : ""}${s.secs != null ? ` ${s.secs}s` : ""}${s.note ? ` (${s.note})` : ""}`),
@@ -92,7 +108,7 @@ export function renderReport(d) {
 // One line for LADDER.md.
 export function ladderLine(d) {
   const f = failedSteps(d);
-  return `- ${d.etLabel} daily run: ${d.events.total} events, ${d.events.upcoming} upcoming, ${d.shopsShown} shops, ${d.citiesUpcoming} cities with a pop-up, ${d.newTotal} new (${list(d.newBySource)}), pages city ${d.pages.city} brand ${d.pages.brand} event ${d.pages.event} weekend ${d.pages.weekend}, keyed calls ${list(d.calls)}, failures ${f.length ? f.join(", ") : "none"}, ${fmtDur(d.totalSecs)} (docs/DAILY.md).`;
+  return `- ${d.etLabel} daily run: ${d.events.total} events, ${d.events.upcoming} upcoming, ${d.shopsShown} shops, ${d.citiesUpcoming} cities with a pop-up, ${d.newTotal} new (${list(d.newBySource)}), pages city ${d.pages.city} brand ${d.pages.brand} event ${d.pages.event} weekend ${d.pages.weekend}, keyed calls ${list(d.calls)}, social outbox ${socialText(d.social)}, failures ${f.length ? f.join(", ") : "none"}, ${fmtDur(d.totalSecs)} (docs/DAILY.md).`;
 }
 
 // Append to LADDER.md under a trailing "## Daily runs" heading (created at the end if missing), in the file's own line ending.
@@ -130,7 +146,7 @@ export function summarize({ events, shops, keyed, today }) {
 export function collect(root, today) {
   const rd = (f, fb) => { try { return JSON.parse(fs.readFileSync(path.join(root, f), "utf8")); } catch { return fb; } };
   const s = summarize({ events: rd("data/events.json", { events: [] }).events || [], shops: rd("site/data/shops.json", { shops: [] }).shops || [], keyed: rd(".cache/keyed-places.json", {}), today });
-  return { ...s, pages: { city: countIndex(path.join(root, "site/city")), brand: countIndex(path.join(root, "site/brand")), event: countIndex(path.join(root, "site/e")), weekend: countIndex(path.join(root, "site/weekend")) } };
+  return { ...s, social: socialSummary(root, today), pages: { city: countIndex(path.join(root, "site/city")), brand: countIndex(path.join(root, "site/brand")), event: countIndex(path.join(root, "site/e")), weekend: countIndex(path.join(root, "site/weekend")) } };
 }
 
 // ---- processes ---------------------------------------------------------------------------------------------------------------------------
@@ -182,7 +198,7 @@ async function main() {
   const steps = [];
   const rec = (name, status, secs, note = "") => { steps.push({ name, status, secs, note }); say(`${name} ${status}${secs != null ? ` ${secs}s` : ""}${note ? ` (${note})` : ""}`); };
   const fromRun = (name, r) => rec(name, r.ok ? "ok" : "FAILED", r.secs, r.note);
-  const state = { smokeOk: false, pushOk: false, before: null };
+  const state = { smokeOk: false, gateOk: false, pushOk: false, before: null };
   const snapshot = () => { if (!state.before) state.before = dataHash(); };
   const build = () => ({ date: today, etLabel: fmtET(new Date()), utcLabel: fmtUTC(new Date()), totalSecs: Math.round((Date.now() - started.getTime()) / 1000), steps: [...steps], ...collect(ROOT, today) });
   const writeDaily = (d) => { fs.mkdirSync(path.join(ROOT, "docs"), { recursive: true }); fs.writeFileSync(path.join(ROOT, "docs/DAILY.md"), renderReport(d)); };
@@ -211,6 +227,22 @@ async function main() {
         fromRun(name, await node(["--input-type=module", "-e", PAGES_SCRIPT]));
         break;
       }
+      case "seo-gate": {
+        // --dry prints and writes no state; the daily run never passes --baseline (a person records the first set)
+        const r = await node(args.dry ? [...SCRIPTS["seo-gate"], "--dry"] : SCRIPTS["seo-gate"]);
+        state.gateOk = r.ok;
+        const lines = r.out.split(/\r?\n/).filter(Boolean);
+        for (const l of lines) say(`  ${l}`);
+        const fail = lines.filter((l) => /^rule \d+ .*: FAIL/.test(l)).map((l) => l.slice(0, 160));
+        rec(name, r.ok ? "ok" : "FAILED", r.secs, r.ok ? lines.find((l) => l.startsWith("seo gate:")) || "" : fail.join("; ") || r.note);
+        break;
+      }
+      case "social": {
+        // soft: a failure is recorded as "social FAILED (soft)" and never stops the run, the commit, the push or the deploy
+        const r = await node(SCRIPTS.social);
+        rec(name, r.ok ? "ok" : "FAILED (soft)", r.secs, r.ok ? "" : `social FAILED (soft): ${r.note}`);
+        break;
+      }
       case "smoke": { const r = await node(SCRIPTS.smoke); state.smokeOk = r.ok; fromRun(name, r); break; }
       case "report": {
         const d = build();
@@ -222,11 +254,11 @@ async function main() {
         break;
       }
       case "commit": {
-        if (!state.smokeOk) { rec(name, "skipped", null, "smoke did not pass"); break; }
+        if (!state.smokeOk || !state.gateOk) { rec(name, "skipped", null, !state.smokeOk ? "smoke did not pass" : "seo gate did not pass"); break; }
         const d = collect(ROOT, today);
         const msg = `daily: ${today} ${d.events.total} events, ${d.events.upcoming} upcoming, ${d.newTotal} new`;
         if (args.dry) { rec(name, "skipped", null, `dry: would commit "${msg}"`); break; }
-        const paths = COMMIT_PATHS.filter((p) => fs.existsSync(path.join(ROOT, p)));
+        const paths = [...COMMIT_PATHS, ...sitemapParts()].filter((p) => fs.existsSync(path.join(ROOT, p)));
         const add = await git(["add", "--", ...paths]);
         if (!add.ok) { fromRun(name, add); break; }
         const staged = await git(["diff", "--cached", "--quiet", "--", ...paths]);
@@ -235,7 +267,7 @@ async function main() {
         break;
       }
       case "push": {
-        if (!state.smokeOk) { rec(name, "skipped", null, "smoke did not pass"); break; }
+        if (!state.smokeOk || !state.gateOk) { rec(name, "skipped", null, !state.smokeOk ? "smoke did not pass" : "seo gate did not pass"); break; }
         if (args.dry) { rec(name, "skipped", null, "dry: would fetch, merge if needed and push HEAD:main"); break; }
         const f = await git(["fetch", "origin"]);
         if (!f.ok) { fromRun(name, f); break; }
@@ -250,7 +282,7 @@ async function main() {
         break;
       }
       case "deploy": {
-        if (!state.smokeOk || !state.pushOk) { rec(name, "skipped", null, !state.smokeOk ? "smoke did not pass" : "push did not succeed"); break; }
+        if (!state.smokeOk || !state.gateOk || !state.pushOk) { rec(name, "skipped", null, !state.smokeOk ? "smoke did not pass" : !state.gateOk ? "seo gate did not pass" : "push did not succeed"); break; }
         if (args.dry) { rec(name, "skipped", null, "dry: would npm run deploy, then smoke https://matchamap.app"); break; }
         const r = await runProc({ cmd: "npm run deploy", shell: true });
         fromRun(name, r);

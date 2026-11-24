@@ -33,6 +33,7 @@
     "gate:card": "node tools/card-gate.js",
     "gate:shop": "node tools/shop-gate.js",
     "gate:map": "node tools/map-gate.js",
+    "gate:seo": "node tools/seo-gate.js",
     "flyers": "node tools/flyers.js",
     "pages": "node tools/gen-pages.js && node tools/slim-events.js",
     "og": "node tools/gen-og.js",

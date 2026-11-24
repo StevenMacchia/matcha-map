@@ -5,14 +5,14 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { STEP_NAMES, YELP_ARGS, COMMIT_PATHS, childEnv, summarize, renderReport, headline, issueTitle, needsIssue, ladderLine, appendLadder, parseArgs, fmtDur } from "../ingest/daily.js";
+import { STEP_NAMES, YELP_ARGS, COMMIT_PATHS, childEnv, summarize, renderReport, headline, issueTitle, needsIssue, ladderLine, appendLadder, parseArgs, fmtDur, socialSummary } from "../ingest/daily.js";
 import { newRows } from "../ingest/shops-deepen.js";
 import { yelpDue, stampYelp } from "../ingest/lib/day-gate.js";
 import { loadEnv, parseEnv } from "../ingest/lib/env.js";
 import { llmEnabled, askLlm } from "../ingest/lib/llm.js";
 
 test("the step list and its order", () => {
-  assert.deepEqual(STEP_NAMES, ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "smoke", "report", "commit", "push", "deploy", "notify"]);
+  assert.deepEqual(STEP_NAMES, ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "report", "commit", "push", "deploy", "notify"]);
   assert.deepEqual(parseArgs(["--dry", "--steps", "report,smoke"]), { dry: true, steps: ["report", "smoke"] });
   assert.deepEqual(parseArgs([]), { dry: false, steps: null });
 });
@@ -131,7 +131,7 @@ test("the LADDER.md line is one line and lands under a trailing Daily runs headi
 
 test("commit paths are explicit: no root, no wildcard, the ones named", () => {
   for (const p of COMMIT_PATHS) assert.ok(!/^\.?\/?$|\*/.test(p), p);
-  for (const p of ["data/events.json", "site/city", "site/e", "docs/DAILY.md", "LADDER.md", "site/sitemap.xml"]) assert.ok(COMMIT_PATHS.includes(p), p);
+  for (const p of ["data/events.json", "site/city", "site/e", "docs/DAILY.md", "LADDER.md", "site/sitemap.xml", "site/_redirects", "data/seo-state.json", "data/pages-lastmod.json"]) assert.ok(COMMIT_PATHS.includes(p), p);
   const src = fs.readFileSync("ingest/daily.js", "utf8");
   assert.ok(!/["']add["'],\s*["']-A["']|git add -A/.test(src.replace(/\/\/.*$/gm, "")), "never git add -A");
 });
@@ -160,4 +160,47 @@ test("the day gate is shared: loop.js and daily.js import it, and the stamp hold
   // Both runners search the same way.
   const loop = fs.readFileSync("ingest/loop.js", "utf8");
   assert.ok(loop.includes(JSON.stringify(YELP_ARGS).replace(/","/g, '", "').replace(/^\[/, "[").replace(/\]$/, "]")), "daily and loop use the same yelp-leads arguments");
+});
+
+test("the seo-gate step sits right after pages and before smoke; commit, push and deploy need it as well as the smoke", () => {
+  assert.equal(STEP_NAMES.indexOf("seo-gate"), STEP_NAMES.indexOf("pages") + 1);
+  assert.ok(STEP_NAMES.indexOf("seo-gate") < STEP_NAMES.indexOf("smoke"));
+  const src = fs.readFileSync(new URL("../ingest/daily.js", import.meta.url), "utf8");
+  for (const name of ["commit", "push", "deploy"]) {
+    const block = new RegExp(`case "${name}": \\{[\\s\\S]*?\\n      \\}`).exec(src)[0];
+    assert.match(block, /state\.smokeOk/, name);
+    assert.match(block, /state\.gateOk/, name + " needs the gate");
+  }
+  assert.ok(!/seo-gate\.js[^\n]*--baseline/.test(src), "the daily run never records a baseline");
+  assert.ok(COMMIT_PATHS.includes("site/_redirects") && COMMIT_PATHS.includes("data/seo-state.json"));
+});
+
+test("social: a soft step after the gate; its failure never blocks commit, push or deploy; the report names the outbox path and item count", () => {
+  assert.equal(STEP_NAMES.indexOf("social"), STEP_NAMES.indexOf("seo-gate") + 1);
+  assert.ok(STEP_NAMES.indexOf("social") < STEP_NAMES.indexOf("smoke"));
+  assert.ok(COMMIT_PATHS.includes("site/social"));
+  const src = fs.readFileSync(new URL("../ingest/daily.js", import.meta.url), "utf8");
+  assert.match(src, /tools\/social\/outbox\.js/);
+  assert.match(src, /"FAILED \(soft\)"/);
+  for (const name of ["commit", "push", "deploy"]) assert.ok(!/socialOk/.test(new RegExp(`case "${name}": \\{[\\s\\S]*?\\n      \\}`).exec(src)[0]), name);
+  // a soft failure is not a FAILED step: no issue, no failed exit
+  const soft = D({ steps: [{ name: "social", status: "FAILED (soft)", secs: 1, note: "social FAILED (soft): exit 1" }] });
+  assert.equal(needsIssue({ ...soft, newTotal: 3 }), false);
+  assert.match(renderReport(soft), /- social: FAILED \(soft\) 1s \(social FAILED \(soft\): exit 1\)/);
+  // the outbox line: INDEX.md entries, else files, else none
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "mm-soc-"));
+  try {
+    assert.equal(socialSummary(root, "2026-11-23").items, null);
+    assert.match(renderReport(D({ social: socialSummary(root, "2026-11-23") })), /- Social outbox: none/);
+    const dir = path.join(root, "tools/brand/outbox/2026-11-23");
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, "a.md"), "x");
+    fs.writeFileSync(path.join(dir, "b.md"), "x");
+    assert.equal(socialSummary(root, "2026-11-23").items, 2, "files when there is no INDEX.md");
+    fs.writeFileSync(path.join(dir, "INDEX.md"), "# Outbox\n\n- one\n- two\n3. three\n");
+    const s = socialSummary(root, "2026-11-23");
+    assert.deepEqual(s, { path: "tools/brand/outbox/2026-11-23", items: 3 });
+    assert.match(renderReport(D({ social: s })), /- Social outbox: tools\/brand\/outbox\/2026-11-23 \(3 items\)/);
+    assert.match(ladderLine(D({ social: s })), /social outbox tools\/brand\/outbox\/2026-11-23 \(3 items\)/);
+  } finally { fs.rmSync(root, { recursive: true, force: true }); }
 });

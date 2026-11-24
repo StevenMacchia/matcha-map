@@ -1,0 +1,2 @@
+# Written by tools/gen-pages.js and tools/gen-event-pages.js from data/seo-state.json (docs/SEO-RULES.md, rule 3). Do not edit by hand.
+# A page that was published and is no longer generated keeps its address: it points at its city page, or the home page.

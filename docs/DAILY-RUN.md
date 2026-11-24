@@ -4,7 +4,7 @@
 
 ## What runs, in order
 
-Each step is its own child process with a timing and `ok` or `FAILED`. A failed step is recorded and the next one still runs. Commit, push and deploy need the smoke to have passed.
+Each step is its own child process with a timing and `ok` or `FAILED`. A failed step is recorded and the next one still runs. Commit, push and deploy need the smoke and the SEO gate to have passed.
 
 1. `pull`: `node tools/sync-checkout.js`, a fast-forward to `origin/main` that first discards dirty generated outputs, unions dirty state files (`tools/merge-state.cjs`) and keeps every local copy in `.cache/sync/<timestamp>/`; any other dirty tracked file stops it with a line naming it. So the task never runs stale code. A failure is recorded; the run goes on with the code present.
 2. `discover`: `ingest/lib/discover.js` (press and newsletter readers, host calendars, ma.to and the other adapters that live there).
@@ -14,14 +14,16 @@ Each step is its own child process with a timing and `ok` or `FAILED`. A failed 
 6. `overture`: `node ingest/overture.js --incremental` when that adapter exists; otherwise recorded as `off (no adapter yet)`.
 7. `deepen`: `ingest/shops-deepen.js --new`, only shop rows with no entry in `data/shops-extra.json` yet, so the daily cost is the new storefronts. A row read that gained nothing is stamped so it is not read again.
 8. `pages`: the page generators again, but only when steps 5 to 7 changed `data/shops.json`, `data/events.json` or the shop extras (a hash before and after); otherwise skipped with a note.
-9. `smoke`: `node tools/smoke.js` (`CHROME_PATH` defaults to `C:/Program Files/Google/Chrome/Application/chrome.exe`).
-10. `report`: writes `docs/DAILY.md` (one screen, overwritten each run) and appends one line to `LADDER.md` under a trailing `## Daily runs` heading.
-11. `commit`: `git add` by explicit paths only (never `-A`), message `daily: <date> <events> events, <upcoming> upcoming, <new> new`, identity Steven Macchia. Skipped when nothing is staged or the smoke failed.
-12. `push`: `git fetch origin`; if `origin/main` is an ancestor of `HEAD`, push `HEAD:main`; otherwise merge `origin/main` first. A merge conflict is aborted, recorded as a failure, and the deploy is skipped.
-13. `deploy`: only when the smoke passed and the push succeeded: `npm run deploy`, then `node tools/smoke.js --url https://matchamap.app`, recorded as `live-smoke`.
-14. `notify`: see "When it opens an issue".
+9. `seo-gate`: `node tools/seo-gate.js` (with `--dry` when the run is dry): the nine SEO rules over the generated `site/` (docs/SEO-RULES.md): earned index, real lastmod, stable URLs with 301s, no duplicates, no thin pages, sitemap hygiene, JSON-LD, robots, publishing pace. It prints one line per rule and a summary, and on a pass moves `data/seo-state.json` forward. A failure is recorded with the failing rules, and commit, push and deploy are skipped. The daily run never passes `--baseline`; a person records the first set once.
+10. `social`: `node tools/social/outbox.js` (`npm run social`), which writes `tools/brand/outbox/<date>/` with an `INDEX.md` and public copies under `site/social/<date>/`. It is a soft step: a failure is recorded as `social FAILED (soft)`, is not counted as a failed step (no issue, no failed exit) and never blocks commit, push or deploy. `site/social` is in the commit paths. `docs/DAILY.md` and the LADDER line name the day's outbox folder and its item count (entries in `INDEX.md`, else the files in the folder, `none` when the folder is missing).
+11. `smoke`: `node tools/smoke.js` (`CHROME_PATH` defaults to `C:/Program Files/Google/Chrome/Application/chrome.exe`).
+12. `report`: writes `docs/DAILY.md` (one screen, overwritten each run) and appends one line to `LADDER.md` under a trailing `## Daily runs` heading.
+13. `commit`: `git add` by explicit paths only (never `-A`), message `daily: <date> <events> events, <upcoming> upcoming, <new> new`, identity Steven Macchia. Skipped when nothing is staged or the smoke or the SEO gate failed. The explicit paths include `site/_redirects`, `data/pages-lastmod.json` and `data/seo-state.json`.
+14. `push`: `git fetch origin`; if `origin/main` is an ancestor of `HEAD`, push `HEAD:main`; otherwise merge `origin/main` first. A merge conflict is aborted, recorded as a failure, and the deploy is skipped.
+15. `deploy`: only when the smoke and the SEO gate passed and the push succeeded: `npm run deploy`, then `node tools/smoke.js --url https://matchamap.app`, recorded as `live-smoke`.
+16. `notify`: see "When it opens an issue".
 
-Flags: `--dry` does everything except commit, push, deploy and the issue, and prints what it would do (it also does not append to `LADDER.md`). `--steps a,b,c` runs only those steps, by the names above (`pull, discover, watch, ingest, yelp-leads, overture, deepen, pages, smoke, report, commit, push, deploy, notify`). Proof of the report on current data: `node ingest/daily.js --dry --steps report`.
+Flags: `--dry` does everything except commit, push, deploy and the issue, and prints what it would do (it also does not append to `LADDER.md`). `--steps a,b,c` runs only those steps, by the names above (`pull, discover, watch, ingest, yelp-leads, overture, deepen, pages, seo-gate, social, smoke, report, commit, push, deploy, notify`). Proof of the report on current data: `node ingest/daily.js --dry --steps report`.
 
 ## Why it is model-free
 

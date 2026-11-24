@@ -94,5 +94,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   console.log(`jsonld: ${stats.files} pages, ${stats.blocks} blocks, ${stats.events} Event, ${stats.orgs} Organization, ${stats.shops} LocalBusiness, ${stats.faqs} FAQPage, ${stats.listItems} ListItem, ${errors.length} problems`);
   errors.slice(0, 40).forEach((m) => console.log("  " + m));
   if (errors.length > 40) console.log(`  ... ${errors.length - 40} more`);
-  process.exit(errors.length ? 1 : 0);
+  // any problem exits 1, and so does a run that found no page to check (a missing or empty site/ must not read as clean)
+  if (!stats.files) console.log("  no pages found under site/e, city, state or brand");
+  process.exit(errors.length || !stats.files ? 1 : 0);
 }
