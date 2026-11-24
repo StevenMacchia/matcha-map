@@ -52,7 +52,7 @@ export function checkRow(r, file = "") {
   const via = CONFIRMED_VIA.has(r.confirmed_via) ? r.confirmed_via : null;
   const tier = r.tier === "serves" ? "serves" : "shop";
   const menu_matcha = tier === "serves" ? matchaItems(r.menu_matcha) : null;
-  if (tier === "serves" && (!http(r.menu_url) || menu_matcha.length < MIN_SERVES_ITEMS)) return { held: `serves tier needs a menu_url and at least ${MIN_SERVES_ITEMS} distinct matcha drinks` };
+  if (tier === "serves" && (!http(r.menu_url) || menu_matcha.length < (str(r.note) === "Menu mentions matcha" ? 1 : MIN_SERVES_ITEMS))) return { held: `serves tier needs a menu_url and at least ${MIN_SERVES_ITEMS} distinct matcha drinks` };
   const zip = /^\d{5}/.test(String(r.zip || "")) ? String(r.zip).slice(0, 5) : null;
   return {
     shop: {

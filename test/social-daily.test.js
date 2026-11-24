@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { plan, loadData, knownHandles, recordHistory, BANNED, CAPTION_MAX, timeWords } from "../tools/social/plan.js";
+import { plan, loadData, knownHandles, recordHistory, BANNED, CAPTION_MAX, timeWords, regionOf } from "../tools/social/plan.js";
 import { renderPages, itemHtml, pngSize, chromePath, MIN_TEXT_PX } from "../tools/social/render.js";
 import { publish, modeOf, refusal, parseArgs } from "../tools/social/publish.js";
 import { addDays } from "../tools/gen-pages.js";
@@ -117,6 +117,47 @@ test("plan: Thursday and Friday add the weekend roundup", () => {
 });
 
 const hasChrome = fs.existsSync(chromePath());
+// The Triangle's week (Steven, 2026-11-23): a week with nothing from Raleigh, Durham, Chapel Hill, Cary or Apex gets one of
+// its own as the second feed post and a story, built from what there is; a week that had one is not forced.
+const TRI = {
+  ...FIX,
+  events: [
+    ev({ id: "t1", brand: "Austin Whisk", handle: "austinwhisk", start: "2026-12-01T10:00:00-06:00", end: "2026-12-01T14:00:00-06:00", venue: "South Market", city: "Austin", state: "TX", tz: "America/Chicago" }),
+    ev({ id: "t2", brand: "Lone Star Latte", handle: "lonestarlatte", start: "2026-12-01T09:00:00-06:00", end: "2026-12-01T12:00:00-06:00", venue: "East Hall", city: "Austin", state: "TX", tz: "America/Chicago" }),
+    ev({ id: "t3", brand: "Hill Country Tea", handle: "hillcountrytea", start: "2026-12-01T11:00:00-06:00", end: "2026-12-01T13:00:00-06:00", venue: "North Yard", city: "Austin", state: "TX", tz: "America/Chicago" }),
+    ev({ id: "t4", brand: "Dallas Dango", handle: "dallasdango", start: "2026-12-01T11:00:00-06:00", end: "2026-12-01T13:00:00-06:00", venue: "West Lot", city: "Dallas", state: "TX", tz: "America/Chicago" }),
+    ev({ id: "t5", brand: "Saiko Matcha House", handle: "saikomatcha", start: "2026-12-09T10:00:00-05:00", end: "2026-12-09T14:00:00-05:00", venue: "Village District", city: "Raleigh", state: "NC" }),
+  ],
+  shops: [{ id: "x1", name: "Barton Springs Tea", city: "Austin", state: "TX", address: "2 Lamar Blvd", instagram: "bartontea", verified: true, tier: "shop", read: "2026-11-29", menu_matcha: [{ name: "Matcha Latte" }, { name: "Usucha" }, { name: "Koicha" }] }],
+  cities: [city("Austin", "TX", 30.27, -97.74), city("Dallas", "TX", 32.78, -96.8), city("Raleigh", "NC", 35.78, -78.64)],
+};
+test("plan: a week with nothing from the Triangle gets one of its own, as the second feed post and a story", () => {
+  assert.equal(regionOf("Chapel Hill", "NC"), "triangle");
+  assert.equal(regionOf("Charlotte", "NC"), null);
+  assert.equal(regionOf("Raleigh", "WV"), null);
+  const p = plan({ date: "2026-12-01", data: TRI, history: {} });
+  const feed = p.items.filter((i) => i.slot === "feed"), story = p.items.filter((i) => i.slot === "story");
+  assert.equal(feed[1].region, "triangle", "the second feed post is the Triangle's");
+  assert.equal(feed[1].kind, "soon", "nothing today or this weekend and no shop there: the next pop-up within two weeks");
+  assert.match(feed[1].title, /^Coming up in Raleigh$/);
+  assert.match(feed[1].caption, /Saiko Matcha House \(@saikomatcha\) is popping up at Village District in Raleigh, NC, Wednesday/);
+  assert.ok(story.some((i) => i.region === "triangle"), "and a story");
+  assert.equal(feed.length, 3);
+  assert.equal(story.length, 3);
+  assert.deepEqual(p.featured.regions, { triangle: { feed: 1, story: 1 } });
+  const h = recordHistory({}, p);
+  assert.deepEqual(h["2026-12-01"].regions, { triangle: { feed: 1, story: 1 } });
+  // the week had one: nothing forced (the only Triangle content is the same brand, blocked for 7 days anyway)
+  const q = plan({ date: "2026-12-02", data: TRI, history: h });
+  assert.ok(!q.items.some((i) => i.region === "triangle"));
+  // a week that had a Triangle story but no feed post: the feed post is forced, from a fresh brand
+  const h2 = { "2026-11-28": { brands: [], shops: [], regions: { triangle: { feed: 0, story: 1 } } } };
+  const r = plan({ date: "2026-12-01", data: TRI, history: h2 });
+  assert.equal(r.items.filter((i) => i.slot === "feed")[1].region, "triangle");
+  // the same date and history give the same plan
+  assert.deepEqual(plan({ date: "2026-12-01", data: TRI, history: {} }), p);
+});
+
 test("render: feed 1080x1350 and story 1080x1920 PNGs, text at least 36px, nothing cut or overlapping", { skip: !hasChrome && "no Chrome" }, async () => {
   const p = plan({ date: "2026-12-01", data: FIX });
   const pick = [p.items.find((i) => i.slot === "feed" && i.events.length > 1) || p.items.find((i) => i.slot === "feed"), p.items.find((i) => i.kind === "shop"), p.items.find((i) => i.slot === "story")].filter(Boolean);
@@ -202,4 +243,13 @@ test("publish: live with a fake Graph API posts only the pick, with user tags, l
     await publish({ date: "2026-12-01", picks: [feed.n], mode: "live", env, fetchImpl: fake, root, log: () => {}, wait: async () => {} });
     assert.equal(calls.length, before, "an item already published is skipped");
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
+});
+
+test("outbox: the public index at /social/<date>/ addresses every asset from the root and stays out of search", async () => {
+  const { socialIndexHtml } = await import("../tools/social/outbox.js");
+  const html = socialIndexHtml("2026-12-01", [{ name: "01-feed-today-durham", title: "Today in <Durham>", time: "10:00", slot: "feed" }, { name: "02-story-shop-x", title: "X", time: "08:30", slot: "story" }]);
+  assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
+  assert.match(html, /src="\/social\/2026-12-01\/01-feed-today-durham\.png" alt="Today in &lt;Durham&gt;"/);
+  for (const m of html.matchAll(/(?:src|href)="([^"]+)"/g)) assert.ok(/^(\/|https:\/\/)/.test(m[1]), "root or https: " + m[1]);
+  assert.equal((html.match(/<figure/g) || []).length, 2);
 });

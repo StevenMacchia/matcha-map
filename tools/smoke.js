@@ -50,7 +50,9 @@ function pages() {
   if (ev) list.push(`/promote/?event=${ev}`);
   list.push("/promote/", "/featured/");
   if (ev) list.push(`/e/${ev}/`, `/?event=${ev}`, `/?plan=${ev}`); // the shared-link forms: the card on the map (sometimes before the real map exists), a one-stop plan
-  list.push("/weekend/", "/art/gallery.html");
+  list.push("/weekend/", "/art/gallery.html", "/404.html");
+  const social = (() => { try { return fs.readdirSync(path.join(SITE, "social")).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d) && fs.existsSync(path.join(SITE, "social", d, "index.html"))).sort().pop(); } catch { return null; } })();
+  if (social) list.push(`/social/${social}/`); // the public outbox index (tools/social/outbox.js), served under its own folder
   return list;
 }
 
@@ -169,6 +171,64 @@ async function checkPage(cdp, base, url, [w, h], opts = {}) {
   return { url: label, w, errors: [...new Set(errors)], rows: home ? st.rows : "-", pins: home ? st.pins : "-", ms: Date.now() - t0 };
 }
 
+// The remembered place (site/place.js): a city page landing is stored with its zoom; the next load opens there with the
+// Whole map button; a shared ?event= link leaves it alone; Forget in the Show sheet clears it and the next load is the
+// whole country again. One browser profile, so localStorage carries from tab to tab like a visitor's.
+async function checkMemory(cdp, base) {
+  const t0 = Date.now(), errors = [], ev = first("e");
+  const tab = async (url) => {
+    const { targetId } = await cdp.send("Target.createTarget", { url: "about:blank" });
+    const { sessionId: sid } = await cdp.send("Target.attachToTarget", { targetId, flatten: true });
+    const s = (m, p) => cdp.send(m, p, sid);
+    await Promise.all([s("Page.enable"), s("Runtime.enable")]);
+    await s("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
+    await s("Page.navigate", { url: base + url });
+    const ev2 = async (x) => (await s("Runtime.evaluate", { expression: x, returnByValue: true, awaitPromise: true })).result.value;
+    const end = Date.now() + HOME_WAIT_MS;
+    let st = { rows: 0, loading: true };
+    while (Date.now() < end) { try { st = await ev2(PROBE); } catch { /* navigating */ } if (st.rows >= 1 && !st.loading) break; await sleep(250); }
+    await sleep(600);
+    return { ev: ev2, close: () => cdp.send("Target.closeTarget", { targetId }) };
+  };
+  const PLACE = "JSON.parse(localStorage.getItem('matchamap.place') || 'null')";
+  const VIEW = "(() => { const m = window.__matcha.map, c = m.getCenter(); return { lat: c.lat, lng: c.lng, zoom: m.getZoom(), whole: !document.getElementById('whole').hidden }; })()";
+  try {
+    let t = await tab("/robots.txt"); await t.ev("localStorage.clear()"); await t.close();
+    t = await tab("/?city=raleigh-nc&motion=reduce");
+    let p = await t.ev(PLACE);
+    if (!p || p.how !== "page" || p.label !== "Raleigh, NC" || Math.abs(p.zoom - 10) > 0.05) errors.push("a city page landing was not remembered: " + JSON.stringify(p));
+    await t.close();
+    t = await tab("/?motion=reduce");
+    const v = await t.ev(VIEW);
+    if (!v || !p || Math.abs(v.lat - p.lat) > 0.01 || Math.abs(v.lng - p.lng) > 0.01 || Math.abs(v.zoom - p.zoom) > 0.05) errors.push("the next visit did not open on the remembered place: " + JSON.stringify(v) + " vs " + JSON.stringify(p));
+    if (v && !v.whole) errors.push("the Whole map button is hidden on a remembered open");
+    await t.ev("document.getElementById('whole').click()"); await sleep(400);
+    const v2 = await t.ev(VIEW);
+    if (!v2 || v2.zoom >= 5 || v2.whole) errors.push("Whole map did not go back to the whole country: " + JSON.stringify(v2));
+    await t.close();
+    if (ev) {
+      t = await tab("/?event=" + ev + "&motion=reduce");
+      p = await t.ev(PLACE);
+      if (!p || p.label !== "Raleigh, NC") errors.push("a shared link replaced the remembered place: " + JSON.stringify(p));
+      await t.close();
+    }
+    t = await tab("/?motion=reduce");
+    await t.ev("document.getElementById('show-btn').click()"); await sleep(200);
+    const row = await t.ev("!document.getElementById('sp-place-row').hidden && document.getElementById('sp-place-l').textContent");
+    if (!row || !/Raleigh, NC/.test(row)) errors.push("the Show sheet does not show the remembered place: " + JSON.stringify(row));
+    await t.ev("document.getElementById('place-forget').click()"); await sleep(200);
+    if (await t.ev(PLACE)) errors.push("Forget did not clear the remembered place");
+    if (await t.ev("localStorage.getItem('matchamap.zip')")) errors.push("Forget left the zip memory");
+    await t.close();
+    t = await tab("/?motion=reduce");
+    const v3 = await t.ev(VIEW);
+    if (!v3 || v3.zoom >= 5 || v3.whole) errors.push("after Forget the map did not open on the whole country: " + JSON.stringify(v3));
+    await t.ev("localStorage.clear()");
+    await t.close();
+  } catch (e) { errors.push("remembered place case threw: " + (e && e.message)); }
+  return { url: "remembered place (city page, revisit, link, Forget)", w: 1440, errors, rows: "-", pins: "-", ms: Date.now() - t0 };
+}
+
 const bin = findChrome();
 if (!bin) { console.error("smoke: no Chrome found. Set CHROME_PATH."); process.exit(2); }
 const server = await startServer(), chrome = await startChrome(bin);
@@ -178,6 +238,7 @@ let gate = null, shopGate = null, mapGate = null;
 try {
   await cdp.open();
   for (const url of pages()) for (const size of SIZES) results.push(await checkPage(cdp, server.base, url, size, { staticOnly: server.staticOnly }));
+  results.push(await checkMemory(cdp, server.base));
   // a window with no room (1 by 1) and a tab that loads hidden: the list must still render and nothing may throw;
   // pins are not required (nothing is in a 1 px view, and a hidden tab gets no animation frames to place them)
   results.push(await checkPage(cdp, server.base, "/", [1, 1], { tag: "1x1 window", noPins: true, emptyOk: true, staticOnly: server.staticOnly }));

@@ -77,3 +77,10 @@ test("the page loads pins.js before app.js and the worker precaches it", () => {
   assert.ok(html.indexOf('src="pins.js') > 0 && html.indexOf('src="pins.js') < html.indexOf('src="app.js'));
   assert.match(fs.readFileSync(path.join(SITE, "sw.js"), "utf8"), /"\/pins\.js"/);
 });
+
+test("a pop-up at a shop's address carries the shop's cup (rung 8)", () => {
+  assert.match(P.popPin({ pill: "Sat", shop: true }), /<span class="pn-cup bx" aria-hidden="true"><svg/);
+  assert.doesNotMatch(P.popPin({ pill: "Sat" }), /pn-cup/);
+  assert.match(P.stackPin([{ kind: "e" }, { kind: "e" }], 2, { shop: true }), /pn-fan bx">2<\/span><span class="pn-cup bx"/);
+  assert.doesNotMatch(P.stackPin([{ kind: "e" }, { kind: "s" }], 2), /pn-cup/);
+});

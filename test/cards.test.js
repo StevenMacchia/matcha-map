@@ -320,7 +320,7 @@ test("the app's list puts brands after the pop-ups and the shops", async () => {
   const fs = await import("node:fs");
   const app = fs.readFileSync(new URL("../site/app.js", import.meta.url), "utf8");
   const body = app.slice(app.indexOf("function renderList("), app.indexOf("var NEXT_RANGE"));
-  const shops = body.indexOf("shopsWords(shopsIn)"), brands = body.indexOf("MC.brandSection"), pops = body.indexOf("Pop-ups <span");
+  const shops = body.indexOf("shopsWords(shopsIn)"), brands = body.indexOf("MC.brandSection"), pops = body.indexOf("head pophead");
   assert.ok(pops > 0 && shops > pops && brands > shops, "pop-ups, then shops, then brands");
   assert.doesNotMatch(app, /Brands, no dates yet|No dates posted here yet/);
 });

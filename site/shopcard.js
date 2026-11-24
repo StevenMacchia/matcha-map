@@ -195,9 +195,11 @@ function nearestCity(s, ctx) {
   return best && bd * 69 <= 25 ? best[0] : "";
 }
 export function addressLine(s, ctx) {
-  const city = s.city || nearestCity(s, ctx);
+  const city = s.city || nearestCity(s, ctx), addr = String(s.address || "").replace(/\s+/g, " ").trim();
+  // an address that already names the city ("1560 Shingle Creek Pkwy Suite 116, Brooklyn Center, MN 55430") stands alone
+  if (addr && city && addr.toLowerCase().includes(String(city).toLowerCase())) return addr;
   const tail = [city, s.state].filter(Boolean).join(", ");
-  return [s.address, tail].filter(Boolean).join(", ");
+  return [addr, tail].filter(Boolean).join(", ");
 }
 // A picture the shop's record carries: image_url with image_credit ("Photo: <shop> website", from the pipeline), the
 // credit as a caption under the photo; neither shows unless both are there. The older { local, url, credit } shape that
@@ -224,6 +226,12 @@ export function servesMenu(s) {
   return items.length ? { items, source_url: s.menu_url, kind: "serves" } : null;
 }
 export const isServes = (s) => !!s && s.tier === "serves";
+// The pop-ups at this shop's address (app.js pairs them; ctx.popsHere: [{ id, brand, when }]), each a tap away.
+function popsHereHtml(list) {
+  if (!Array.isArray(list) || !list.length) return "";
+  const rows = list.slice(0, 3).map((p) => `<p class="mm-pop-here"><a href="?event=${encodeURIComponent(String(p.id || ""))}" data-event="${esc(String(p.id || ""))}">${esc(cut(String(p.brand || "Pop-up"), 50))}</a><span class="mm-dim">${esc(String(p.when || ""))}</span></p>`).join("");
+  return `<section class="mm-pops-here"><h4>Pop-up here</h4>${rows}${list.length > 3 ? `<p class="mm-dim">+${list.length - 3} more</p>` : ""}</section>`;
+}
 export function shopCardHtml(s, ctx = {}) {
   if (!s || !s.name) return "";
   const now = ctx.now instanceof Date ? ctx.now : new Date();
@@ -243,5 +251,5 @@ export function shopCardHtml(s, ctx = {}) {
   // Directions sits right under the hours: the phone sheet opens at half height with the rest a drag away, and a
   // 66-line menu above it would push it out of that first view.
   return `<article class="mm-card mm-shop" aria-label="${esc(name)}">${head}${hoursTodayHtml(s, now)}` +
-    (acts.length ? `<div class="mm-shop-acts">${acts.join("")}</div>` : "") + `${menuSectionHtml(s.menu || ownerMenuFor(s.id, ctx) || servesMenu(s), ctx)}${photoHtml(s, ctx)}${credit}</article>`;
+    (acts.length ? `<div class="mm-shop-acts">${acts.join("")}</div>` : "") + popsHereHtml(ctx.popsHere) + `${menuSectionHtml(s.menu || ownerMenuFor(s.id, ctx) || servesMenu(s), ctx)}${photoHtml(s, ctx)}${credit}</article>`;
 }

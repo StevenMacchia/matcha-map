@@ -1,0 +1,91 @@
+{
+  "note": "Roundup and newsletter sources read by ingest/lib/sites/roundups.js (npm run discover -- --only roundups). Each: name, url (RSS or Atom feed; Substack feeds carry the full issue), city, state, optional archive (Substack /archive page: older issues the feed no longer carries) and back (how many older issues, default 8). Checked 2026-11-23: every feed answers 200 or a redirect to a feed; robots.txt is read for every host. Add a source by adding a row.",
+  "sources": [
+    {
+      "name": "Let It Simmer (Seattle pop-up roundup)",
+      "url": "https://letitsimmernewsletter.substack.com/feed",
+      "archive": "https://letitsimmernewsletter.substack.com/archive?sort=new",
+      "back": 10,
+      "city": "Seattle",
+      "state": "WA"
+    },
+    {
+      "name": "Indy Week",
+      "url": "https://indyweek.com/feed/",
+      "city": "Raleigh",
+      "state": "NC"
+    },
+    {
+      "name": "Raleigh Magazine",
+      "url": "https://raleighmag.com/feed/",
+      "city": "Raleigh",
+      "state": "NC"
+    },
+    {
+      "name": "Triangle on the Cheap",
+      "url": "https://triangleonthecheap.com/feed/",
+      "city": "Raleigh",
+      "state": "NC"
+    },
+    {
+      "name": "This Is Raleigh",
+      "url": "https://thisisraleigh.com/feed/",
+      "city": "Raleigh",
+      "state": "NC"
+    },
+    {
+      "name": "Rough Draft Atlanta",
+      "url": "https://www.roughdraftatlanta.com/feed/",
+      "city": "Atlanta",
+      "state": "GA"
+    },
+    {
+      "name": "Denverite",
+      "url": "https://denverite.com/feed/",
+      "city": "Denver",
+      "state": "CO"
+    },
+    {
+      "name": "Westword",
+      "url": "https://www.westword.com/feed",
+      "city": "Denver",
+      "state": "CO"
+    },
+    {
+      "name": "Seattle Met",
+      "url": "https://www.seattlemet.com/feed",
+      "city": "Seattle",
+      "state": "WA"
+    },
+    {
+      "name": "Eater Seattle",
+      "url": "https://seattle.eater.com/rss/index.xml",
+      "city": "Seattle",
+      "state": "WA"
+    },
+    {
+      "name": "Phoenix Magazine",
+      "url": "https://www.phoenixmag.com/feed/",
+      "city": "Phoenix",
+      "state": "AZ"
+    },
+    {
+      "name": "Dallas Observer",
+      "url": "https://www.dallasobserver.com/rss",
+      "city": "Dallas",
+      "state": "TX"
+    },
+    {
+      "name": "Nashville Scene",
+      "url": "https://nashvillescene.com/feed",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "name": "Boston Magazine",
+      "url": "https://www.bostonmagazine.com/feed/",
+      "city": "Boston",
+      "state": "MA"
+    }
+  ]
+}

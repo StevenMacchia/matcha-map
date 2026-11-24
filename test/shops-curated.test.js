@@ -92,3 +92,22 @@ test("public-page rows are kept and shown but are not verified; unknown evidence
   assert.equal(pp.verified, false);
   assert.equal(checkRow({ ...row, confirmed_via: "yelp" }).shop.confirmed_via, null);
 });
+
+test("shop places: an ALL-CAPS or lower-case city is title-cased, odd names keep their capitals, the state is two upper-case letters", async () => {
+  const { normPlace } = await import("../ingest/lib/shops/merge.js");
+  assert.equal(normPlace({ city: "CARY", state: "nc" }).city, "Cary");
+  assert.equal(normPlace({ city: "CARY", state: "nc" }).state, "NC");
+  assert.equal(normPlace({ city: "st. louis" }).city, "St. Louis");
+  assert.equal(normPlace({ city: "MCLEAN" }).city, "McLean");
+  assert.equal(normPlace({ city: "LA JOLLA" }).city, "La Jolla");
+  assert.equal(normPlace({ city: "McLean" }).city, "McLean", "mixed case is left alone");
+  assert.equal(normPlace({ city: "Winston-Salem" }).city, "Winston-Salem");
+  assert.equal(normPlace({ city: null }).city, null);
+});
+
+test("the shop data carries no all-caps or all-lower-case city and no state that is not two upper-case letters", async () => {
+  const fs = await import("node:fs");
+  const shops = JSON.parse(fs.readFileSync(new URL("../data/shops.json", import.meta.url), "utf8")).shops;
+  const bad = shops.filter((s) => (s.city && (s.city === s.city.toUpperCase() || s.city === s.city.toLowerCase()) && /[A-Za-z]{3,}/.test(s.city)) || (s.state && !/^[A-Z]{2}$/.test(s.state)));
+  assert.deepEqual(bad.map((s) => `${s.name}|${s.city}|${s.state}`).slice(0, 5), []);
+});

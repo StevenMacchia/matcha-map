@@ -46,6 +46,20 @@ export function legitimate(list) {
   return { kept, dropped };
 }
 
+// Names whose capitals a title-caser would get wrong.
+const CITY_CASE = { mclean: "McLean", "la jolla": "La Jolla", mckinney: "McKinney", "mc kinney": "McKinney", dekalb: "DeKalb", lagrange: "LaGrange", desoto: "DeSoto", "la mesa": "La Mesa", "la verne": "La Verne", "las vegas": "Las Vegas", "mcallen": "McAllen", "mcminnville": "McMinnville" };
+// A shop's city and state as the map should print them: an ALL-CAPS or all-lower-case city is title-cased (CARY -> Cary, st. louis ->
+// St. Louis), anything with mixed case is left alone, the known odd names keep their capitals, and the state is two upper-case letters.
+export function normPlace(s) {
+  let city = s.city == null ? s.city : String(s.city).replace(/\s+/g, " ").trim();
+  if (city && !(/[a-z]/.test(city) && /[A-Z]/.test(city))) {
+    const low = city.toLowerCase();
+    city = CITY_CASE[low] || low.replace(/(^|[\s\-'\u2019.(])([a-z])/g, (m, pre, ch) => pre + ch.toUpperCase());
+  }
+  const state = s.state && /^[A-Za-z]{2}$/.test(String(s.state).trim()) ? String(s.state).trim().toUpperCase() : s.state;
+  return { ...s, city, state };
+}
+
 export function applyOverrides(list, overrides = {}) {
   const out = [];
   for (const s of list) {

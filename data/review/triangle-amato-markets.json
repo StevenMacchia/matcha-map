@@ -1,0 +1,88 @@
+{
+ "generated": "2026-11-24T03:30:44.566Z",
+ "group": "triangle-amato-markets",
+ "items": [
+  {
+   "brand": "amatō",
+   "handle": "amatosweetlover",
+   "source_id": "amato-raleigh",
+   "kind": "popup",
+   "category": "matcha",
+   "tz": "America/New_York",
+   "all_day": false,
+   "posts": {
+    "instagram": null,
+    "tiktok": null,
+    "other": "https://www.eventeny.com/events/2026-durham-underground-market-durham-central-park-25990"
+   },
+   "menu": [
+    "matcha",
+    "Japanese pastries"
+   ],
+   "price": null,
+   "hours": null,
+   "pay": null,
+   "image_url": null,
+   "confidence": "likely",
+   "extracted_by": "manual",
+   "lat": null,
+   "lng": null,
+   "state": "NC",
+   "description": "Japanese-inspired bakery and matcha pop-up (matcha drinks and pastries) listed as a vendor at the market.",
+   "title": "amatō at the Durham Underground Market",
+   "start": "2026-11-29T11:00:00-05:00",
+   "end": "2026-11-29T15:00:00-05:00",
+   "venue": "Durham Central Park",
+   "address": "501 Foster St",
+   "city": "Durham",
+   "zip": "27701",
+   "source_url": "https://www.eventeny.com/events/2026-durham-underground-market-durham-central-park-25990",
+   "evidence": [
+    "https://www.eventeny.com/events/2026-durham-underground-market-durham-central-park-25990",
+    "https://ma.to/venue/amatosweetlover"
+   ],
+   "notes": "read 2026-11-23: vendor list on the market's Eventeny page, Sunday Nov 29 11:00-3:00, Durham Central Park, 501 Foster St. Identity: vendor 'Amatō by Oh My Cake' is amatō (the account's own bio reads 'by @ohmycakebyapple'; same Japanese dessert and drink pop-up)."
+  },
+  {
+   "brand": "amatō",
+   "handle": "amatosweetlover",
+   "source_id": "amato-raleigh",
+   "kind": "popup",
+   "category": "matcha",
+   "tz": "America/New_York",
+   "all_day": false,
+   "posts": {
+    "instagram": null,
+    "tiktok": null,
+    "other": "https://shoplocalraleigh.org/jolly-raleigh-holiday-market-2"
+   },
+   "menu": [
+    "matcha",
+    "Japanese pastries"
+   ],
+   "price": null,
+   "hours": null,
+   "pay": null,
+   "image_url": null,
+   "confidence": "likely",
+   "extracted_by": "manual",
+   "lat": null,
+   "lng": null,
+   "state": "NC",
+   "description": "Japanese-inspired bakery and matcha pop-up (matcha drinks and pastries) listed as a vendor at the market.",
+   "title": "amatō at the Jolly Raleigh Holiday Market",
+   "start": "2026-12-05T11:00:00-05:00",
+   "end": "2026-12-05T17:00:00-05:00",
+   "venue": "The Exchange Raleigh",
+   "address": "1000 Social St",
+   "city": "Raleigh",
+   "zip": "27609",
+   "source_url": "https://shoplocalraleigh.org/jolly-raleigh-holiday-market-2",
+   "evidence": [
+    "https://shoplocalraleigh.org/jolly-raleigh-holiday-market-2",
+    "https://ma.to/venue/amatosweetlover"
+   ],
+   "notes": "read 2026-11-23: 2026 vendor list on the market page, Saturday Dec 5 11:00-5:00, The Exchange Raleigh, 1000 Social St. Identity: vendor 'Amatō by Oh My Cake' is amatō (the account's own bio reads 'by @ohmycakebyapple'; same Japanese dessert and drink pop-up)."
+  }
+ ]
+}

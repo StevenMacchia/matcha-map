@@ -136,7 +136,7 @@ test("data/shops.json, when present, has the attribution and valid points", () =
 // own; both Shops switches are on by default; Littlefoot Matcha is at 234 Fayetteville St.
 test("shops draw at every zoom with the switches on by default, and Littlefoot Raleigh is placed downtown", () => {
   const app = fs.readFileSync(path.resolve("site", "app.js"), "utf8");
-  assert.match(app, /var precise = visibleEvents\(false\)\.concat\(visibleShops\(\), visibleBrands\(\)\)/, "the tiers hold every shop from zoom 6");
+  assert.match(app, /var precise = withoutShopsUnder\(visibleEvents\(false\)\.concat\(visibleShops\(\), visibleBrands\(\)\)\)/, "the tiers hold every shop from zoom 6 (one under a pop-up at its address steps aside while that pop-up is drawn)");
   assert.match(app, /visibleShops\(\)\.forEach\(function \(it\) \{ add\(it, it\.data\.city, it\.data\.state\); \}\);/, "the national tier holds every shop");
   assert.match(app, /shopsOn = true, SERVES_KEY = "matchamap\.serves", servesOn = true;/);
   const shops = JSON.parse(fs.readFileSync(path.resolve("site", "data", "shops.json"), "utf8")).shops;

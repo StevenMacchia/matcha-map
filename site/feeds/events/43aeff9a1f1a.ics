@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Dream Tea NYC pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:43aeff9a1f1a@matchamap-cu7.pages.dev
+DTSTAMP:20261124T033045Z
+LAST-MODIFIED:20261124T033045Z
+DTSTART:20261214T160000Z
+DTEND:20261214T180000Z
+SUMMARY:Dream Tea NYC at Timeout Market\, Dumbo!
+LOCATION:Empire Stores (Time Out Market)\, 53 Water St\, Brooklyn\, NY 1120
+ 1\, Brooklyn\, NY
+DESCRIPTION:Dream Tea NYC at Timeout Market\, Dumbo! Monday\, December 14 t
+ o Sunday\, December 20\, 2026\, 11 AM to 6 PM\, Empire Stores\, 53-83 Wate
+ r Street\, Brooklyn\, NY 11201.\nMenu: matcha\, tea blends\nPrice: free en
+ try\nMore: https://matchamap.app/e/43aeff9a1f1a/
+URL:https://matchamap.app/e/43aeff9a1f1a/
+GEO:40.703341;-73.991574
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

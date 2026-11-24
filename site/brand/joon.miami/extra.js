@@ -1,1 +1,0 @@
-mmBrandExtra({"v":1,"brand":"joon.miami","upcoming":[{"id":"a51c507e49ce","day":"Thursday, Nov 26","time":"All day","place":"Miami, FL","url":"/e/a51c507e49ce/","map":"/?event=a51c507e49ce"}],"drinks":[{"slug":"pistachio","name":"Pistachio","art":"/art/drinks/pistachio.svg"}],"price":null,"story":"Good things take time 🤍 Now taking pick up orders in Kendall! 🌷 ✉️"});

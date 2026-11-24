@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T00:31:57.195Z",
+ "generated": "2026-11-24T03:30:45.515Z",
  "all": "/feeds/all.ics",
  "new": "/feeds/new.xml",
  "cities": {
@@ -26,6 +26,7 @@
   "dearborn-mi": "/feeds/dearborn-mi.ics",
   "decatur-ga": "/feeds/decatur-ga.ics",
   "detroit-mi": "/feeds/detroit-mi.ics",
+  "durham-nc": "/feeds/durham-nc.ics",
   "el-paso-tx": "/feeds/el-paso-tx.ics",
   "elk-grove-ca": "/feeds/elk-grove-ca.ics",
   "fairfield-ct": "/feeds/fairfield-ct.ics",
@@ -117,6 +118,7 @@
   "dearborn-mi": "Dearborn, MI",
   "decatur-ga": "Decatur, GA",
   "detroit-mi": "Detroit, MI",
+  "durham-nc": "Durham, NC",
   "el-paso-tx": "El Paso, TX",
   "elk-grove-ca": "Elk Grove, CA",
   "fairfield-ct": "Fairfield, CT",

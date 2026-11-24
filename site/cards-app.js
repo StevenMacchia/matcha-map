@@ -7,7 +7,7 @@
 // Share buttons, picture fallbacks and "Also nearby" links are handled by delegated listeners on the document, so the
 // app does not need to call anything after it sets innerHTML. Set window.MatchaCards.open = function (key) {...} to
 // open an also-nearby pop-up in place (key "e:<id>"); without it the link is a normal deep link (?event=<id>).
-import { cardHtml, rowHtml, brandCardHtml, brandRowHtml, brandSectionHtml, wire, fitQuotes } from "./cards.js";
+import { cardHtml, rowHtml, brandCardHtml, brandRowHtml, brandSectionHtml, wire, fitQuotes, dayWord } from "./cards.js";
 import { shopCardHtml, menuForBrand, hoursTodayHtml } from "./shopcard.js"; // the storefront card ("s:<id>"); the brand card's menu
 
 const data = { art: null, brands: null, sources: null, places: null, menus: null };
@@ -48,6 +48,8 @@ function context(ctx) {
     phone: !!(ctx && ctx.phone), // the desktop pop-up renders the compact card (mock C); the phone sheet mock A
     dist: ctx && typeof ctx.dist === "number" ? ctx.dist : null, // miles from the visitor, from app.js (the Where box)
     here: (st && st.userLoc) || null,
+    shopAt: (ctx && ctx.shopAt) || null, // the shop at this pop-up's address (app.js)
+    popsHere: Array.isArray(ctx && ctx.popsHere) ? ctx.popsHere : [], // the pop-ups at this shop's address
     events: items.map((it) => (it && it.data ? it.data : it)).filter(Boolean),
     drawn: window.Drawn || null,
     eventHref: (id) => "?event=" + id,
@@ -65,7 +67,7 @@ function render(item, ctx) {
     const b = item.data;
     return brandCardHtml({ ...b, handle: b.instagram || b.handle }, c.events.filter((e) => e.source_id === b.id), c);
   }
-  if (item.kind === "s") return shopCardHtml(item.data, c);
+  if (item.kind === "s") return shopCardHtml(item.data, { ...c, popsHere: c.popsHere.map((e) => ({ id: e.id, brand: e.brand, when: dayWord(e, c.now).word })) });
   return null;
 }
 function row(item, ctx) {
@@ -84,11 +86,11 @@ wire(document.documentElement);
 // the quote's "more" link shows only when the clamp really hid text: measure once the card is in the DOM
 document.addEventListener("mm:card", (ev) => { try { fitQuotes(ev.detail && ev.detail.root); } catch (e) { /* no quote */ } });
 document.addEventListener("click", (ev) => {
-  const a = ev.target && ev.target.closest && ev.target.closest(".mm-card a[data-event], .mm-brand a[data-event]");
+  const a = ev.target && ev.target.closest && ev.target.closest(".mm-card a[data-event], .mm-brand a[data-event], .mm-card a[data-shop]");
   const open = window.MatchaCards && window.MatchaCards.open;
   if (!a || typeof open !== "function" || ev.metaKey || ev.ctrlKey || ev.shiftKey) return;
   ev.preventDefault();
-  open("e:" + a.getAttribute("data-event"));
+  open(a.hasAttribute("data-shop") ? "s:" + a.getAttribute("data-shop") : "e:" + a.getAttribute("data-event"));
 });
 // A shared link (?event=<id>) can open its card before this module has loaded, and app.js then draws its plain built-in
 // card, which stayed up for good (seen by the card gate, 2026-11-23). If that happened, open the card again now.

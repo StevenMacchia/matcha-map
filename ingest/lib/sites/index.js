@@ -22,10 +22,11 @@ import * as meetup from "./meetup.js";
 import * as linktree from "./linktree.js";
 import * as allevents from "./allevents.js";
 import * as socialSearch from "./social-search.js";
+import * as roundups from "./roundups.js";
 import { SITE_ORDER, dupKey, titleKey } from "./common.js";
 import { info, warn } from "../log.js";
 
-export const SITES = [luma, eventbrite, dostuff, meetup, linktree, allevents, socialSearch];
+export const SITES = [luma, eventbrite, dostuff, meetup, linktree, allevents, roundups, socialSearch];
 export const NAMES = ["mato", ...SITES.map((s) => s.name)];
 
 // argv -> {only, off:Set}. Unknown --only names are reported by the caller.
@@ -95,7 +96,7 @@ export const capConfidence = (c) => {
   // Aggregator, feed, permit and Bluesky finds: "likely" at most (no human-checked time or address).
   // Reddit, Mastodon and news finds the source gave no brand for ("r/nyc post") stay unsure: a human reads them in data/review/.
   if (/^(reddit|mastodon|gnews):/.test(String(c.source_id)) && String(c.brand || "").startsWith("r/")) return { ...c, confidence: "unsure" };
-  return /^(allevents|feeds|bluesky|embed|permits|reddit|mastodon|gnews|yelpevents):/.test(String(c.source_id)) && c.confidence === "confirmed" ? { ...c, confidence: "likely" } : c;
+  return /^(allevents|feeds|roundups|bluesky|embed|permits|reddit|mastodon|gnews|yelpevents):/.test(String(c.source_id)) && c.confidence === "confirmed" ? { ...c, confidence: "likely" } : c;
 };
 
 void info;
@@ -122,4 +123,4 @@ import * as yelpEvents from "./yelp-events.js";
 const N2 = [reddit, mastodon, gnews, ticketmaster, eventbriteApi, yelpEvents];
 SITES.push(...N2);
 NAMES.push(...N2.map((s) => s.name));
-export const REVIEW_ONLY = new Set(["reddit", "mastodon", "gnews", "yelpevents"]);
+export const REVIEW_ONLY = new Set(["reddit", "mastodon", "gnews", "yelpevents", "roundups"]);

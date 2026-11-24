@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:amatō pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:da37c3a1afb7@matchamap-cu7.pages.dev
+DTSTAMP:20261124T033045Z
+LAST-MODIFIED:20261124T033045Z
+DTSTART:20261205T160000Z
+DTEND:20261205T220000Z
+SUMMARY:amatō at the Jolly Raleigh Holiday Market
+LOCATION:The Exchange Raleigh\, 1000 Social St\, Raleigh\, NC
+DESCRIPTION:Japanese-inspired bakery and matcha pop-up (matcha drinks and p
+ astries) listed as a vendor at the market.\nMenu: matcha\, japanese pastri
+ es\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/da37c3a1a
+ fb7/
+URL:https://matchamap.app/e/da37c3a1afb7/
+GEO:35.830353;-78.624094
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

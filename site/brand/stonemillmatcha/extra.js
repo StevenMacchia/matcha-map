@@ -1,1 +1,0 @@
-mmBrandExtra({"v":1,"brand":"stonemillmatcha","upcoming":[],"drinks":[{"slug":"pumpkin","name":"Pumpkin","art":"/art/drinks/pumpkin.svg"},{"slug":"hojicha-latte","name":"Hojicha latte","art":"/art/drinks/hojicha-latte.svg"}],"price":null,"story":"Permanent Valencia St cafe; one pop-up sale seen."});
