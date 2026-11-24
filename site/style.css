@@ -166,6 +166,7 @@ button, input { font: inherit; color: inherit; }
 .show-pop.pop-in { animation: popin .18s var(--soft) both; transform-origin: 30px 0; }
 @keyframes popin { from { opacity: 0; transform: scale(.94) translateY(-4px); } to { opacity: 1; transform: none; } }
 .kindword { display: block; font-size: 13px; font-weight: 700; color: var(--muted); line-height: 1.2; margin: -2px 0 3px; }
+.row .rownote { display: block; font-size: 12.5px; font-style: italic; color: var(--muted); line-height: 1.3; margin-top: 2px; } /* the data row's note, e.g. "Menu mentions matcha" */
 .you-zip { width: 28px; height: 28px; }
 .you-chasen { position: absolute; left: 50%; bottom: 14px; width: 28px; height: 42px; transform: translateX(-50%); filter: drop-shadow(0 2px 2px rgba(75,52,38,.25)); }
 .frow1, .frow2 { display: contents; }
@@ -322,6 +323,8 @@ body.show-list .list-panel { display: block; }
 .pn-sh .pn-draw { padding: 4px; box-sizing: border-box; }
 .pn-cup { position: absolute; right: -7px; bottom: -6px; width: 18px; height: 18px; border-radius: 50%; background: var(--panel); border: 1.5px solid var(--edge); display: grid; place-items: center; }
 .pn-cup svg { width: 13px; height: 13px; display: block; }
+.pn-pu .pn-cup, .pn-stack .pn-cup { right: -8px; bottom: -3px; border-color: var(--accent); } /* a pop-up (or a stack with one) at a shop's address carries the shop's cup */
+.pn-stack .pn-cup { right: -4px; bottom: -5px; }
 .pn-open { position: absolute; right: -2px; top: -2px; width: 10px; height: 10px; border-radius: 50%; background: var(--open); border: 2px solid var(--panel); }
 /* pop-up: the drawn card or the photo in a warm rounded card with a tail, the day pill, a going badge, today's pulse */
 .mk-ev:not(.mk-ap) { width: 46px; height: 56px; }
@@ -422,6 +425,9 @@ body.show-list .list-panel { display: block; }
 /* Hawaii jump: a small Mattie hops off the button */
 .geo { position: absolute; top: 12px; right: 12px; z-index: 500; min-height: 44px; padding: 0 16px; border-radius: var(--pill); border: 1.5px solid var(--edge); background: var(--btnfill); color: var(--deep); font-weight: 800; font-size: 15px; box-shadow: var(--shadow); cursor: pointer; }
 .geo:hover { background: var(--foam); }
+/* the Show sheet's "Next visit" row: the remembered place and Forget (site/place.js) */
+.sp-place { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+.sp-place .linkbtn { flex: none; }
 .hop { position: absolute; top: 60px; right: 40px; width: 30px; height: 30px; z-index: 501; pointer-events: none; }
 .hop-y { display: block; width: 100%; height: 100%; }
 .hop.go { animation: hop-x .8s cubic-bezier(.45, 0, .55, 1) forwards; }

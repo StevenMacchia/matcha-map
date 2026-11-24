@@ -244,3 +244,12 @@ test("publish: live with a fake Graph API posts only the pick, with user tags, l
     assert.equal(calls.length, before, "an item already published is skipped");
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
 });
+
+test("outbox: the public index at /social/<date>/ addresses every asset from the root and stays out of search", async () => {
+  const { socialIndexHtml } = await import("../tools/social/outbox.js");
+  const html = socialIndexHtml("2026-12-01", [{ name: "01-feed-today-durham", title: "Today in <Durham>", time: "10:00", slot: "feed" }, { name: "02-story-shop-x", title: "X", time: "08:30", slot: "story" }]);
+  assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
+  assert.match(html, /src="\/social\/2026-12-01\/01-feed-today-durham\.png" alt="Today in &lt;Durham&gt;"/);
+  for (const m of html.matchAll(/(?:src|href)="([^"]+)"/g)) assert.ok(/^(\/|https:\/\/)/.test(m[1]), "root or https: " + m[1]);
+  assert.equal((html.match(/<figure/g) || []).length, 2);
+});

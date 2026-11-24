@@ -49,22 +49,23 @@
     o = o || {};
     return wrap("sh" + (o.serves ? " sv" : ""), art(o.photo, o.drawn) + "<span class=\"pn-cup bx\" aria-hidden=\"true\">" + CUP + "</span>" + (o.open ? "<span class=\"pn-open\" aria-hidden=\"true\"></span>" : ""));
   }
-  // o: { photo, drawn, pill, today, going }
+  // o: { photo, drawn, pill, today, going, shop } (shop: the pop-up is at a shop's address; the shop's cup sits on the pin)
   function popPin(o) {
     o = o || {};
     var n = +o.going || 0;
     return wrap("pu" + (o.today ? " today" : ""), (o.today ? "<span class=\"pn-pulse\" aria-hidden=\"true\"></span><span class=\"pn-pulse b\" aria-hidden=\"true\"></span>" : "") + art(o.photo, o.drawn) +
-      (o.pill ? "<span class=\"pn-pill bx\">" + esc(o.pill) + "</span>" : "") + (n >= 1 ? goingHTML(n) : ""));
+      (o.pill ? "<span class=\"pn-pill bx\">" + esc(o.pill) + "</span>" : "") + (n >= 1 ? goingHTML(n) : "") + (o.shop ? "<span class=\"pn-cup bx\" aria-hidden=\"true\">" + CUP + "</span>" : ""));
   }
   function goingHTML(n) { n = Math.floor(+n || 0); return n >= 1 ? "<span class=\"pn-going bx\">" + n + " going</span>" : ""; }
   // o: { photo, drawn }
   function brandPin(o) { o = o || {}; return wrap("br", art(o.photo, o.drawn)); }
   // faces: [{ kind: "s" | "e" | "b", photo, drawn }]
   function face(f, cls) { return "<span class=\"" + cls + " k-" + esc(f.kind) + "\">" + art(f.photo, f.drawn) + "</span>"; }
-  function stackPin(faces, n) {
-    faces = (faces || []).slice(0, 2);
+  // o: { shop } (a pop-up in the stack is at a shop's address: the shop's cup sits on the stack)
+  function stackPin(faces, n, o) {
+    faces = (faces || []).slice(0, 2); o = o || {};
     return "<span class=\"pn-ground\" aria-hidden=\"true\"></span><span class=\"pn-bob\"><span class=\"pn pn-stack\">" + faces.map(function (f, i) { return face(f, "pn-st pn-st" + (i + 1)); }).join("") +
-      "<span class=\"pn-fan bx\">" + (Math.floor(+n) || faces.length) + "</span></span></span>";
+      "<span class=\"pn-fan bx\">" + (Math.floor(+n) || faces.length) + "</span>" + (o.shop ? "<span class=\"pn-cup bx\" aria-hidden=\"true\">" + CUP + "</span>" : "") + "</span></span>";
   }
   function hoodPin(faces, n, pops) {
     faces = (faces || []).slice(0, 3);

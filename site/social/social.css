@@ -1,0 +1,5 @@
+/* the public outbox index at /social/<date>/ (tools/social/outbox.js): the day's images in a grid */
+.so-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin: 16px 0 32px; }
+.so-fig { margin: 0; }
+.so-fig img { display: block; width: 100%; height: auto; border-radius: 14px; border: 2px solid var(--line, #E6DCC8); background: var(--panel, #fff); }
+.so-fig figcaption { font-size: 13px; color: var(--muted, #6B5A4F); margin-top: 6px; }

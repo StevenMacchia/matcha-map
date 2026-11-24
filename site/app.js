@@ -615,7 +615,7 @@
     inner.className = "mk-in";
     if (it.kind === "e" && !it.approx && window.MatchaPins) {
       var today = !it.past && isToday(it.data);
-      inner.innerHTML = window.MatchaPins.popPin({ photo: imgSrc(it.data), drawn: artFor(it), pill: window.MatchaPins.dayPill(it.data.start), today: today, going: goingN[it.data.id] || 0 });
+      inner.innerHTML = window.MatchaPins.popPin({ photo: imgSrc(it.data), drawn: artFor(it), pill: window.MatchaPins.dayPill(it.data.start), today: today, going: goingN[it.data.id] || 0, shop: !!atShopOf(it) });
       if (today) el.classList.add("today");
     } else if (it.kind === "e") {
       if (it.approx) inner.appendChild(ringEl());
@@ -769,7 +769,7 @@
     if (dgg && PN) {
       // every group is a stack that spreads (the uncluster rule): no neighbourhood pills
       var faces = facesOf(dgg.keys, 2);
-      inner.innerHTML = PN.stackPin(faces, dgg.keys.length);
+      inner.innerHTML = PN.stackPin(faces, dgg.keys.length, { shop: dgg.keys.some(function (k) { return !!atShopOf(items[k]); }) });
       inner.querySelectorAll(".pn-av, .pn-st").forEach(function (fe, i) { if (faces[i]) fe.setAttribute("data-fkey", faces[i].key); });
       fillChars(inner);
       num = inner.querySelector(".hd-n, .pn-fan");
@@ -1259,7 +1259,7 @@
     setSelected(key);
     pushStep("card");
     requestAnimationFrame(watchPin);
-    var html = renderCard(it, { phone: !wide.matches, dist: distOf(it), events: state.events, items: items });
+    var html = renderCard(it, { phone: !wide.matches, dist: distOf(it), events: state.events, items: items, shopAt: (atShopOf(it) || {}).data || null, popsHere: popsHereOf(it).map(function (e) { return e.data; }) });
     if (wide.matches) {
       var box = document.createElement("div");
       box.innerHTML = "<button type=\"button\" class=\"close pop-close\" aria-label=\"Close details\">&times;</button>" + html + "<span class=\"pop-mattie\" aria-hidden=\"true\" data-char=\"m-point\"></span>";
@@ -1383,6 +1383,29 @@
       items[it.key] = it;
       return it;
     });
+    pairAtShop();
+  }
+  // A pop-up at a shop's address (rung 8, site/atshop.js): atShop maps a pop-up's id to the shop's key, popsAt a shop's
+  // id to its pop-ups' keys. The pop-up pin stands alone there with the shop's cup on it (the shop steps aside while
+  // that pop-up is drawn), and each card names the other.
+  var atShop = {}, popsAt = {};
+  function pairAtShop() {
+    var P = window.MatchaAtShop;
+    atShop = {}; popsAt = {};
+    if (!P || !state.events || !state.shops) return;
+    try {
+      var r = P.pair(state.events.map(function (it) { return it.data; }), state.shops.map(function (it) { return it.data; }));
+      Object.keys(r.byEvent).forEach(function (id) { atShop[id] = "s:" + r.byEvent[id]; });
+      Object.keys(r.byShop).forEach(function (id) { popsAt[id] = r.byShop[id].map(function (eid) { return "e:" + eid; }); });
+    } catch (e) { atShop = {}; popsAt = {}; }
+  }
+  function atShopOf(it) { return it && it.kind === "e" && atShop[it.data.id] ? items[atShop[it.data.id]] || null : null; }
+  function popsHereOf(it) { return it && it.kind === "s" ? (popsAt[it.data.id] || []).map(function (k) { return items[k]; }).filter(function (e) { return e && !e.past && e.data.status !== "past"; }) : []; }
+  // the shops under a pop-up at their address step aside while that pop-up is drawn
+  function withoutShopsUnder(list) {
+    var under = {}, any = false;
+    list.forEach(function (it) { var s = it.kind === "e" && !it.past ? atShopOf(it) : null; if (s) { under[s.key] = 1; any = true; } });
+    return any ? list.filter(function (it) { return !(it.kind === "s" && under[it.key]); }) : list;
   }
   // Storefronts switch and the "Matcha on the menu" switch (shops with tier "serves": coffee and tea shops that serve
   // matcha): both on by default, each remembered on its own key.
@@ -1503,8 +1526,11 @@
   // their icons would overlap (density.js), never by area
   // a pop-up pin is 46 by 56 plus its day pill, a shop's ring 36, a brand 34 by 30, a stack (cl-stack) 50 by 40 plus its
   // count badge. The floor is 24 px, over the 20 px rule, because a badge or cup mark moves a drawn box's middle off its point.
-  var KIND_R = { e: 30, s: 18, b: 16 }, STACK_R = 34, MIN_SEP = 24;
-  function densRadius(p, n) { return n > 1 ? STACK_R : KIND_R[p.kind]; }
+  // KIND_R: half of each pin as drawn, the shop's with its cup badge; a stack groups by its box corner to corner
+  // (STACK_BOX), because the gate measures boxes and a stack's corner met a shop pin's badge 63 px away (Triangle at 10,
+  // 2026-11-23) while the circles stood apart.
+  var KIND_R = { e: 30, s: 22, b: 16 }, STACK_R = 34, STACK_BOX = 50, MIN_SEP = 24;
+  function densRadius(p, n) { return n > 1 ? STACK_BOX : KIND_R[p.kind]; }
   function isDense() { return map.getZoom() >= LOW_Z; }
   function cityOf(it) { var e = it.data; return it.kind === "b" ? [e.home_city, e.home_state] : [e.city, e.state]; }
   function ntFeature(p) {
@@ -1526,7 +1552,7 @@
     if (tierCache) return tierCache;
     var D = window.MatchaDensity, CP = window.MatchaCityPins, z = tierZoomNow(), out = { ev: [], sh: [], br: [], nt: [], ap: [], z: z };
     if (z < LOW_Z) return (tierCache = out);
-    var precise = visibleEvents(false).concat(visibleShops(), visibleBrands()), approx = visibleEvents(true), open = precise;
+    var precise = withoutShopsUnder(visibleEvents(false).concat(visibleShops(), visibleBrands())), approx = visibleEvents(true), open = precise;
     ntStats = { cities: 0, pins: 0 };
     if (!D) { precise.forEach(function (it) { out[KIND_SRC[it.kind]].push(featureColl([it]).features[0]); }); out.ap = approx; return (tierCache = out); }
     if (z < DENSE_Z && CP) {
@@ -1685,7 +1711,16 @@
   }
 
   // ---------- list ----------
-  function inView(ll) { return map.getBounds().contains(lngLat(ll)); }
+  // In view: on the canvas, or within a marker's width outside it, since a pin whose point is a pixel past the edge is
+  // still drawn (Seattle at 16 on a phone: one serves pin at the bottom edge, "Nothing here yet" in the list, 2026-11-23).
+  var VIEW_MARGIN = 40;
+  function inView(ll) {
+    try {
+      var p = map.project(lngLat(ll)), el = map.getContainer(), w = el.clientWidth || innerWidth, h = el.clientHeight || innerHeight;
+      if (p && isFinite(p.x) && isFinite(p.y) && w > 1 && h > 1) return p.x >= -VIEW_MARGIN && p.y >= -VIEW_MARGIN && p.x <= w + VIEW_MARGIN && p.y <= h + VIEW_MARGIN;
+    } catch (e) { /* the stand-in map in a window with no size: the bounds below */ }
+    return map.getBounds().contains(lngLat(ll));
+  }
   function distOf(it) { return state.userLoc ? miles(state.userLoc, it.ll) : null; }
 
   function distHTML(d) { return d != null ? "<span class=\"dist\">" + (d < 10 ? Math.round(d * 10) / 10 : Math.round(d)) + " mi</span>" : ""; }
@@ -1711,7 +1746,7 @@
     if (it.kind === "s") {
       var s = it.data;
       return "<button type=\"button\" class=\"row shoprow" + (it.serves ? " shoprow-sv" : "") + "\" data-key=\"" + esc(it.key) + "\"><span class=\"th th-shop\" aria-hidden=\"true\" data-char=\"s-shop\"></span><span class=\"rt\"><strong>" + esc(s.name) + "</strong><span class=\"kindword\">" + (it.serves ? "Matcha on the menu" : "Shop") + "</span><span>" +
-        esc([s.address, s.city].filter(Boolean).join(", ") || shopAddress(s)) + "</span>" + dist + "</span></button>";
+        esc([s.address, s.city].filter(Boolean).join(", ") || shopAddress(s)) + "</span>" + (typeof s.note === "string" && /\S/.test(s.note) ? "<span class=\"rownote\">" + esc(s.note.trim().slice(0, 60)) + "</span>" : "") + dist + "</span></button>";
     }
     var br = window.MatchaCards && window.MatchaCards.row && window.MatchaCards.row(it, { distText: d != null ? (d < 10 ? Math.round(d * 10) / 10 : Math.round(d)) + " mi" : "" });
     if (br) return br;
@@ -1939,6 +1974,17 @@
     animOnce(h, "go");
     setTimeout(function () { h.hidden = true; }, 820);
   }
+  function setupWhole() {
+    var b = $("whole"), f = $("place-forget");
+    if (b) b.addEventListener("click", function () {
+      openedFrom = null; closeCard(true);
+      if (calm()) map.fitBounds(HOME, { padding: 16, animate: false }); else map.fitBounds(HOME, { padding: 16, duration: 1400, curve: 1.3 });
+      syncWhole();
+    });
+    if (f) f.addEventListener("click", forgetPlace);
+    map.on("moveend", syncWhole);
+    syncPlaceRow();
+  }
   function setupHawaii() {
     var has = state.brands.some(function (b) { return b.data.home_state === "HI"; }) ||
       state.events.some(function (e) { return e.data.state === "HI"; });
@@ -2010,6 +2056,37 @@
   // ---------- near me and zip ----------
   // One "you are here" marker: a dot for Near me, Chasen for a zip. Each clears the other.
   var youMarker = null, ZIP_KEY = "matchamap.zip";
+  // The remembered place (Steven, 2026-11-23, "make the site remember ur location when u share it for when u revisit"):
+  // site/place.js keeps one place in localStorage, no account: where Near me, a zip, a city search or a city page landed,
+  // at the zoom the visitor had when the move ended. A shared link stores its view only while nothing is remembered.
+  // The next visit opens there (openRemembered) with a Whole map button; Forget is in the Show sheet (syncPlaceRow).
+  var PL = window.MatchaPlace, openedFrom = null;
+  function rememberHere(how, label) {
+    if (!PL) return;
+    try {
+      var c = map.getCenter(), z = map.getZoom();
+      if (!c || !isFinite(c.lat) || !isFinite(c.lng) || !isFinite(z)) return;
+      PL.write(localStorage, { lat: c.lat, lng: c.lng, zoom: z, label: label || "", how: how, at: Date.now() });
+    } catch (e) { /* storage is optional */ }
+    syncPlaceRow();
+  }
+  // after the move that is about to start ends (a flight on the real map, at once on the stand-in)
+  function rememberSoon(how, label) { if (PL) map.once("moveend", function () { rememberHere(how, label); }); }
+  function syncPlaceRow() {
+    var row = $("sp-place-row"), h = $("sp-place"), saved = null;
+    if (!row || !h) return;
+    try { saved = PL && PL.read(localStorage); } catch (e) { saved = null; }
+    row.hidden = h.hidden = !saved;
+    if (saved) $("sp-place-l").textContent = "Opens on " + PL.describe(saved) + " next time";
+  }
+  function forgetPlace() {
+    try { if (PL) PL.clear(localStorage); localStorage.removeItem(ZIP_KEY); } catch (e) { /* nothing to forget */ }
+    openedFrom = null;
+    syncPlaceRow(); syncWhole();
+    say("Forgotten. Next time the map opens on the whole country.");
+  }
+  // "Whole map": shown while the visit opened on the remembered place and the view is still a local one
+  function syncWhole() { var b = $("whole"); if (b) b.hidden = !openedFrom || map.getZoom() < 5 || inHawaii; }
   function placeYou(ll, zip) {
     state.userLoc = ll;
     if (youMarker) youMarker.remove();
@@ -2027,7 +2104,8 @@
     if (youMarker) { youMarker.remove(); youMarker = null; }
     state.userLoc = null; state.zip = ""; state.feed = null;
     syncPlace();
-    try { localStorage.removeItem(ZIP_KEY); } catch (e) { /* ignore */ }
+    try { localStorage.removeItem(ZIP_KEY); if (PL) PL.clear(localStorage); } catch (e) { /* ignore */ }
+    syncPlaceRow();
   }
   $("near").addEventListener("click", function () {
     var note = $("note");
@@ -2039,7 +2117,8 @@
       var el = placeYou([pos.coords.latitude, pos.coords.longitude], false);
       $("near").setAttribute("aria-pressed", "true");
       if (state.view === "list") setView("map");
-      moveMap({ center: lngLat(state.userLoc), zoom: 10 }, function () { animOnce(el, "ping"); renderList(true); });
+      var town = cityNear(state.userLoc);
+      moveMap({ center: lngLat(state.userLoc), zoom: 10 }, function () { animOnce(el, "ping"); renderList(true); rememberHere("near", town ? town[0] + ", " + town[1] : "near you"); });
     }, function () {
       oops("No location, no problem. Type a zip or a city.", ["Enter a zip", typeZip]);
     }, { timeout: 10000, maximumAge: 300000 });
@@ -2067,7 +2146,7 @@
     zipErrT = setTimeout(function () { er.hidden = true; }, 3000);
   }
   // Land on a point for a zip or a city: Chasen, the label under the filters, the list sorted by distance. quiet: a return visit.
-  function landAt(c, label, zip, quiet) {
+  function landAt(c, label, zip, quiet, how, zoom) {
     $("zip-err").hidden = true;
     closeCard(true);
     clearYou();
@@ -2077,9 +2156,9 @@
     cityFeed(label);
     if (zip) { try { localStorage.setItem(ZIP_KEY, zip); } catch (e) { /* ignore */ } }
     if (state.view === "list") setView("map");
-    var opts = { center: lngLat(state.userLoc), zoom: 10 };
+    var opts = { center: lngLat(state.userLoc), zoom: isFinite(zoom) && zoom ? zoom : 10 };
     if (quiet) { map.jumpTo(opts); animOnce(el, "ping"); renderList(false); }
-    else moveMap(opts, function () { animOnce(el, "ping"); announce("land", { label: label }); renderList(true); });
+    else moveMap(opts, function () { animOnce(el, "ping"); announce("land", { label: label }); renderList(true); rememberHere(how || (zip ? "zip" : "city"), label); });
   }
   // A landed city's calendar feed (/feeds/<city>-<st>.ics, written by npm run feeds), when there is one (N7).
   var feedsP = null, feedLabel = "";
@@ -2097,7 +2176,7 @@
     });
   }
   // Fly to a zip's centroid. quiet: a return visit, so no error and the map jumps there.
-  function goZip(zip, quiet) {
+  function goZip(zip, quiet, zoom) {
     if (!/^\d{5}$/.test(zip)) { if (!quiet) zipError("Hmm, that zip is shy"); return; }
     loadZips().then(function (z) {
       var c = Object.prototype.hasOwnProperty.call(z, zip) ? z[zip] : null;
@@ -2106,7 +2185,7 @@
         return;
       }
       var town = cityNear(c);
-      landAt(c, (town ? town[0] + ", " + town[1] + " " : "") + zip, zip, quiet);
+      landAt(c, (town ? town[0] + ", " + town[1] + " " : "") + zip, zip, quiet, "zip", zoom);
     }).catch(function () { if (!quiet) zipError("Zip list did not load"); });
   }
   // A city of window.CITY_LIST (biggest first): "Raleigh", "Raleigh NC" or "Raleigh, NC". The biggest city of a shared name wins.
@@ -2168,7 +2247,7 @@
     showPop.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8)) + "px";
     showPop.style.top = (r.bottom + 6) + "px";
   }
-  function openShow() { showPop.hidden = false; showBtn.setAttribute("aria-expanded", "true"); placeShow(); animOnce(showPop, "pop-in"); }
+  function openShow() { syncPlaceRow(); showPop.hidden = false; showBtn.setAttribute("aria-expanded", "true"); placeShow(); animOnce(showPop, "pop-in"); }
   function closeShow(back) {
     if (showPop.hidden) return;
     showPop.hidden = true; showBtn.setAttribute("aria-expanded", "false");
@@ -2375,14 +2454,14 @@
     if (!dl) return false;
     if (dl.plan && dl.plan.length) { // a friend's plan: the tour on their stops, in their order (S3)
       var pk = dl.plan.map(function (id) { return "e:" + id; }).filter(function (k) { return items[k]; });
-      if (pk.length) { widenFor(pk[0]); startTourWith(pk, true); return true; }
+      if (pk.length) { widenFor(pk[0]); rememberSoon("link", "a shared plan"); startTourWith(pk, true); return true; }
     }
-    if (dl.event && items["e:" + dl.event]) { widenFor("e:" + dl.event); flyTo("e:" + dl.event); return true; }
+    if (dl.event && items["e:" + dl.event]) { widenFor("e:" + dl.event); rememberSoon("link", items["e:" + dl.event].name + ", " + cityLine(items["e:" + dl.event].data)); flyTo("e:" + dl.event); return true; }
     if (dl.shop) { pendingShop = "s:" + dl.shop; return true; } // storefronts load after this: loadShops opens it
     var bk = dl.brand && brandKeyOf(dl.brand);
-    if (bk) { widenFor(bk); flyTo(bk); return true; }
+    if (bk) { widenFor(bk); rememberSoon("link", items[bk] ? items[bk].name : ""); flyTo(bk); return true; }
     var c = dl.city && DL.findCityBySlug(window.CITY_LIST, dl.city);
-    if (c) { landAt([c[2], c[3]], c[0] + ", " + c[1], "", false); return true; }
+    if (c) { landAt([c[2], c[3]], c[0] + ", " + c[1], "", false, "page"); return true; }
     if (dl.q) { goPlace(dl.q); return true; }
     return false;
   }
@@ -2510,11 +2589,13 @@
       items[it.key] = it;
       return it;
     });
+    pairAtShop();
     // Slim data: fetch the full records now (they carry description, posts, evidence, photo URLs).
     if (data.slim) fullP = getJSON("data/events.json").then(landFull).catch(function () { /* the slim records stay */ }).then(function () { fullDone = true; });
     else fullDone = true;
     buildBrands(res[1] || []);
     setupHawaii();
+    setupWhole();
     // a breath between reading the data and building the list keeps each under a long task on a phone (N7c)
     return new Promise(function (ok) { setTimeout(ok, 0); }).then(function () { firstList(res); });
   }).catch(function (DBGERR) { window.__dbg = String(DBGERR && DBGERR.stack);
@@ -2538,14 +2619,24 @@
     // pins of the national tier on them and the Hawaii jump; the busiest-region start is gone. A saved zip or a link wins.
     // ?at=lat,lng,zoom opens on that view (review screenshots, tests, a shared view); it wins over the zip.
     var at = viewParam(params.get("at"));
-    if (at) { map.jumpTo({ center: [at[1], at[0]], zoom: at[2] }); clearTimeout(moveT); }
+    if (at) { map.jumpTo({ center: [at[1], at[0]], zoom: at[2] }); clearTimeout(moveT); rememberHere("link", "a shared view"); }
     go(); // sources added later by addData (style.load) start from the same lists
-    if (!at && !applyDeepLink() && /^\d{5}$/.test(zs)) goZip(zs, true);
+    if (!at && !applyDeepLink()) openRemembered(zs);
     loadShops();
     loadExtras();
     mountSearchSoon(res[1] || []);
   }
 
+  // The next visit opens where the last one landed (site/place.js): a zip keeps its You marker and city calendar at the
+  // saved zoom; the rest jump to the saved view. A jump needs no window size, so a tab that loads hidden gets it too.
+  function openRemembered(zs) {
+    var saved = null;
+    try { saved = PL && PL.read(localStorage); } catch (e) { saved = null; }
+    var zip = /^\d{5}$/.test(zs);
+    if (saved && saved.how === "zip" && zip) { openedFrom = saved; goZip(zs, true, saved.zoom); syncWhole(); return; }
+    if (saved) { openedFrom = saved; map.jumpTo({ center: [saved.lng, saved.lat], zoom: saved.zoom }); clearTimeout(moveT); renderList(false); syncWhole(); return; }
+    if (zip) goZip(zs, true);
+  }
   // "lat,lng,zoom" with the lower 48 and Hawaii in range and a zoom from 3 to 16, else null.
   function viewParam(v) {
     var m = /^(-?\d{1,2}(?:\.\d+)?),(-?\d{1,3}(?:\.\d+)?),(\d{1,2}(?:\.\d+)?)$/.exec(v || "");
@@ -2655,7 +2746,7 @@
     fetch("data/shops.json").then(function (r) { if (!r.ok) throw new Error("shops"); return r.json(); }).then(function (d) {
       buildShops(d.shops);
       refreshEvents(false);
-      if (pendingShop && items[pendingShop]) flyTo(pendingShop);
+      if (pendingShop && items[pendingShop]) { rememberSoon("link", items[pendingShop].name); flyTo(pendingShop); }
       pendingShop = "";
     }).catch(function () { /* the storefront layer is optional */ });
   }
