@@ -40,6 +40,40 @@ export function indexMd(p) {
 }
 
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const escH = (v) => String(v == null ? "" : v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+// The public index of a day's images at /social/<date>/ (noindex; the images are the only public part of the outbox).
+// Every asset is addressed from the root: this page lives two folders down, and a relative address would miss.
+export function socialIndexHtml(date, items) {
+  const figs = (items || []).map((it) => `<figure class="so-fig"><img src="/social/${escH(date)}/${escH(it.name)}.png" alt="${escH(it.title)}" loading="lazy" decoding="async" width="${it.slot === "story" ? 1080 : 1080}" height="${it.slot === "story" ? 1920 : 1350}"><figcaption>${escH(it.time)} · ${escH(it.slot)} · ${escH(it.title)}</figcaption></figure>`).join("\n");
+  return `<!doctype html>
+<html lang="en" class="pg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'; connect-src 'self' https://cloudflareinsights.com">
+<title>Matcha Map on Instagram, ${escH(date)}</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#FBF6EA">
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/social/social.css">
+</head>
+<body class="pg">
+<header class="pg-top"><a class="pg-home" href="/"><svg class="pg-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/characters.svg#m-base"/></svg><span>Matcha Map</span></a><a class="pg-map" href="/">Open the map</a></header>
+<main class="pg-main pg-wide">
+<h1>Matcha Map on Instagram, ${escH(date)}</h1>
+<p class="pg-intro">The day's drawn posts. Follow <a href="https://www.instagram.com/matchamap.app/" rel="noopener">@matchamap.app</a> for them as they go up.</p>
+<div class="so-grid">
+${figs}
+</div>
+</main>
+<footer class="pg-foot"><p><a href="/privacy/">Privacy</a> &middot; <a href="/data-deletion/">Remove my data</a></p></footer>
+</body>
+</html>
+`;
+}
 
 export async function buildOutbox({ date = tomorrowNY(), root = ROOT, outbox = path.join(root, "tools", "brand", "outbox"), siteDir = path.join(root, "site", "social"),
   historyFile = path.join(outbox, "history.json"), force = false, site = true, render = renderPages, data = loadData(root), log = console.log } = {}) {
@@ -81,6 +115,7 @@ export async function buildOutbox({ date = tomorrowNY(), root = ROOT, outbox = p
     fs.rmSync(sd, { recursive: true, force: true });
     if (p.items.length) fs.mkdirSync(sd, { recursive: true });
     for (const it of p.items) fs.copyFileSync(path.join(dir, it.name, "image.png"), path.join(sd, it.name + ".png"));
+    if (p.items.length) fs.writeFileSync(path.join(sd, "index.html"), socialIndexHtml(date, p.items));
     const cut = addDays(date, -KEEP_SITE_DAYS);
     if (fs.existsSync(siteDir)) for (const f of fs.readdirSync(siteDir)) if (/^\d{4}-\d{2}-\d{2}$/.test(f) && f < cut) fs.rmSync(path.join(siteDir, f), { recursive: true, force: true });
   }

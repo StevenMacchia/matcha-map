@@ -331,6 +331,8 @@ function placeHtml(e, ctx, name) {
   let lines;
   if (approx) lines = `<p class="mm-pname">${esc(e.venue && !/^(tbd|tba)$/i.test(e.venue) ? e.venue : "Near " + (cityOf(e, ctx) || "town"))}</p><p class="mm-paddr">${esc(city)}</p><p class="mm-approx">Exact spot not posted yet. The pin sits near the middle of ${esc(cityOf(e, ctx) || "town")}.</p>`;
   else lines = `<p class="mm-pname">${esc(e.venue || e.address || city || "Place to come")}</p>${e.venue && e.address ? `<p class="mm-paddr">${esc(e.address)}</p>` : ""}${city && (e.venue || e.address) ? `<p class="mm-paddr">${esc(join([e.city, join([e.state, e.zip], " ")], ", "))}</p>` : ""}`;
+  // at a shop's address (app.js pairs them): the shop, a tap away
+  if (ctx.shopAt && ctx.shopAt.name) lines += `<p class="mm-atshop">Inside <a href="?shop=${encodeURIComponent(String(ctx.shopAt.id || ""))}" data-shop="${esc(String(ctx.shopAt.id || ""))}">${esc(cut(String(ctx.shopAt.name), 60))}</a>, ${ctx.shopAt.tier === "serves" ? "matcha on the menu" : "matcha shop"}</p>`;
   const acts = [];
   if (!approx && hasLL(e)) acts.push(`<a class="mm-act mm-act-go" href="https://www.google.com/maps/dir/?api=1&amp;destination=${e.lat},${e.lng}" target="_blank" rel="noopener">${ICON.go}<span>Directions</span></a>`);
   if (e.venue || e.address || e.city) acts.push(`<a class="mm-act" href="${esc(mapsSearch(e))}" target="_blank" rel="noopener">${ICON.map}<span>Map</span></a>`);
@@ -429,7 +431,15 @@ function boxesHtml(e, ctx, v) {
   return `<dl class="mm-boxes">` +
     `<div class="mm-box mm-box-when"><dt>When</dt><dd class="mm-box-main">${esc(w.main)}</dd>${w.sub ? `<dd class="mm-box-sub">${esc(w.sub)}</dd>` : ""}</div>` +
     `<div class="mm-box mm-box-where"><dt>Where</dt><dd class="mm-box-main">${ICON.pin}<span>${esc(p.main)}</span></dd>${p.sub ? `<dd class="mm-box-sub">${esc(p.sub)}</dd>` : ""}` +
-    `${p.approx ? `<dd class="mm-note">Exact spot not posted yet</dd>` : ""}</div></dl>`;
+    `${p.approx ? `<dd class="mm-note">Exact spot not posted yet</dd>` : ""}${atShopHtml(ctx, p.main)}</div></dl>`;
+}
+// At a shop's address (app.js pairs them): the shop, a tap away. When the venue already is the shop, just the way in.
+function atShopHtml(ctx, main) {
+  const s = ctx.shopAt;
+  if (!s || !s.name) return "";
+  const id = String(s.id || ""), kind = s.tier === "serves" ? "matcha on the menu" : "matcha shop", same = String(main || "").trim().toLowerCase() === String(s.name).trim().toLowerCase();
+  const a = (text) => `<a href="?shop=${encodeURIComponent(id)}" data-shop="${esc(id)}">${text}</a>`;
+  return `<dd class="mm-atshop">${same ? a("The shop: hours and menu") : `Inside ${a(esc(cut(String(s.name), 60)))}, ${kind}`}</dd>`;
 }
 // The day pill with the time beside it, then the name (its brand link, then the Featured pill's place) and one meta line.
 function titleHtml(e, ctx, v, name) {

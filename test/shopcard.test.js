@@ -148,3 +148,24 @@ test("shopcard: image_url shows the photo with image_credit under it, escaped; n
   const withPic = SHOPS.find((s) => s.image_url && s.image_credit);
   if (withPic) assert.ok(shopCardHtml(withPic).includes(`<figcaption class="mm-shop-cap">${withPic.image_credit.replace(/&/g, "&amp;").replace(/'/g, "&#39;")}</figcaption>`), withPic.name);
 });
+
+test("shopcard: the pop-ups at the shop's address, each a tap away, none when there are none (rung 8)", async () => {
+  const { shopCardHtml } = await import("../site/shopcard.js");
+  const shop = { id: "osm:node/77", name: "Corner Tea", address: "1 Main St", city: "Reno", state: "NV", lat: 39.5, lng: -119.8 };
+  const html = shopCardHtml(shop, { popsHere: [{ id: "abc123def456", brand: "Dango <b>Days</b>", when: "Today" }, { id: "def456abc123", brand: "Second", when: "Saturday" }] });
+  assert.match(html, /<section class="mm-pops-here"><h4>Pop-up here<\/h4>/);
+  assert.match(html, /href="\?event=abc123def456" data-event="abc123def456">Dango &lt;b&gt;Days&lt;\/b&gt;<\/a><span class="mm-dim">Today<\/span>/);
+  assert.equal((html.match(/mm-pop-here/g) || []).length, 2);
+  assert.doesNotMatch(shopCardHtml(shop, {}), /mm-pops-here/);
+  assert.doesNotMatch(shopCardHtml(shop, { popsHere: [] }), /mm-pops-here/);
+  const four = shopCardHtml(shop, { popsHere: [1, 2, 3, 4].map((n) => ({ id: "id" + n, brand: "B" + n, when: "Sat" })) });
+  assert.equal((four.match(/mm-pop-here/g) || []).length, 3);
+  assert.match(four, /\+1 more/);
+});
+
+test("shopcard: the address never repeats the city it already names", async () => {
+  const { addressLine } = await import("../site/shopcard.js");
+  assert.equal(addressLine({ address: "1560 Shingle Creek Pkwy Suite 116, Brooklyn Center, MN 55430", city: "Brooklyn Center", state: "MN" }, {}), "1560 Shingle Creek Pkwy Suite 116, Brooklyn Center, MN 55430");
+  assert.equal(addressLine({ address: "234 Fayetteville St", city: "Raleigh", state: "NC" }, {}), "234 Fayetteville St, Raleigh, NC");
+  assert.equal(addressLine({ address: "", city: "Raleigh", state: "NC" }, {}), "Raleigh, NC");
+});

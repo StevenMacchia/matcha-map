@@ -20,6 +20,17 @@ export const BANNED = /(kawaii|uwu|\bcute|cutesy|girly)/i;
 export const HANDLE = /^(?!\.)[a-z0-9._]{2,30}(?<!\.)$/;
 export const FEED_TIMES = ["10:00", "13:00", "17:00"];
 export const STORY_TIMES = ["08:30", "12:00", "16:00"];
+// Regions that get a post of their own every week even when their data is thin (Steven, 2026-11-23: "1-2 a week from
+// NC triangle area too"): when the last six days had no feed post from the region, today's second feed post is its own;
+// when they had no story, one story slot is. What that post is comes from what there is, in this order: today's
+// pop-ups there, the coming weekend there, a shop there never featured, the next pop-up there within two weeks, a
+// weekly one there. Handles are tagged only when our data has them, like every other post.
+export const REGIONS = { triangle: { name: "the Triangle", state: "NC", cities: ["Raleigh", "Durham", "Chapel Hill", "Cary", "Apex", "Morrisville", "Carrboro", "Wake Forest", "Holly Springs"] } };
+export function regionOf(city, state) {
+  const c = norm(city);
+  for (const [k, r] of Object.entries(REGIONS)) if (r.state === state && r.cities.some((x) => norm(x) === c)) return k;
+  return null;
+}
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const OK_KINDS = new Set(["popup", "cafe", "organizer", "festival", "tea-brand"]);
@@ -142,7 +153,7 @@ function captionEvents(kind, title, list, link, tags, date, more = 0) {
     if (v.menu.length) lines.push(`On the menu: ${v.menu.join(", ")}.`);
   } else {
     lines.push(`${title}: ${list.length} matcha pop-ups.`);
-    lines.push(list.map((v) => `${v.brand}${at(v.handle)}, ${kind === "weekend" ? dayWords(v.day).split(",")[0] + " " : ""}${v.time.toLowerCase()}${v.venue ? `, ${v.venue}${at(v.venueHandle)}` : v.venueHandle ? `, at @${v.venueHandle}` : ""}`).join("\n") + (more ? `\nand ${more} more on the map` : ""));
+    lines.push(list.map((v) => `${v.brand}${at(v.handle)}, ${kind === "weekend" || kind === "soon" ? dayWords(v.day).split(",")[0] + " " : ""}${v.time.toLowerCase()}${v.venue ? `, ${v.venue}${at(v.venueHandle)}` : v.venueHandle ? `, at @${v.venueHandle}` : ""}`).join("\n") + (more ? `\nand ${more} more on the map` : ""));
   }
   lines.push(`Times and places come from each brand's own posts; check their page before you go.`);
   lines.push(`Every pop-up in ${list[0].city} on the map: ${link}`);
@@ -164,19 +175,21 @@ function captionSeries(v, link, tags, date) {
 
 // ---- the plan ----
 function historyBefore(history, date) {
-  const blocked = new Set(), shopsEver = new Set(), from = addDays(date, -(REPEAT_DAYS - 1));
+  const blocked = new Set(), shopsEver = new Set(), from = addDays(date, -(REPEAT_DAYS - 1)), regionWeek = {};
+  for (const k of Object.keys(REGIONS)) regionWeek[k] = { feed: 0, story: 0 };
   for (const [d, h] of Object.entries(history || {})) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || d >= date) continue;
     if (d >= from) for (const b of h.brands || []) blocked.add(b);
+    if (d >= from) for (const [k, n] of Object.entries(h.regions || {})) if (regionWeek[k]) { regionWeek[k].feed += +(n && n.feed) || 0; regionWeek[k].story += +(n && n.story) || 0; }
     for (const s of h.shops || []) shopsEver.add(s);
   }
-  return { blocked, shopsEver };
+  return { blocked, shopsEver, regionWeek };
 }
 
 export function plan({ date, data, history = {} }) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("date must be YYYY-MM-DD");
   const ctx = context(data);
-  const { blocked, shopsEver } = historyBefore(history, date);
+  const { blocked, shopsEver, regionWeek } = historyBefore(history, date);
   const used = new Set();
   const free = (k) => k && !blocked.has(k) && !used.has(k);
   const clean = (s) => !BANNED.test(s);
@@ -210,14 +223,15 @@ export function plan({ date, data, history = {} }) {
 
   // 2. this weekend in <City>, posted Thursday and Friday
   const dow = dowOf(date);
+  const wkKeys = weekendWindow(new Date(date + "T16:00:00Z").getTime()).keys;
+  const wk = data.events.filter(eligible).filter((e) => inWindow(e, wkKeys, "America/New_York")).map((e) => view(e, ctx)).filter((v) => v.brand && clean(v.brand + " " + v.venue + " " + v.menu.join(" ")));
   if (dow === 4 || dow === 5) {
-    const keys = weekendWindow(new Date(date + "T16:00:00Z").getTime()).keys;
-    const wk = data.events.filter(eligible).filter((e) => inWindow(e, keys, "America/New_York")).map((e) => view(e, ctx)).filter((v) => v.brand && clean(v.brand + " " + v.venue + " " + v.menu.join(" ")));
     const g = rank(groupBy(wk)).find(([, l]) => l.length >= 2);
     if (g) take(eventCand("weekend", g[1], `This weekend in ${g[1][0].city}`, "This weekend"));
   }
 
   // 3. a new shop: first read in the last 7 days, else the one with the most matcha drinks; never one featured before
+  let shopPool = [], shopCand = () => null;
   {
     const from = addDays(date, -REPEAT_DAYS);
     const drinksOf = (s) => {
@@ -226,15 +240,20 @@ export function plan({ date, data, history = {} }) {
       for (const x of (s.menu && Array.isArray(s.menu.items)) ? s.menu.items : []) if (x && x.name && /matcha/i.test(x.name + " " + (x.note || ""))) out.push(String(x.name));
       return [...new Map(out.map((n) => [norm(n), n.replace(/\s+/g, " ").trim()])).values()].filter((n) => n.length <= 32 && clean(n));
     };
-    const pool = data.shops.filter((s) => s.verified !== false && s.name && s.city && s.state && (s.tier === "shop" || s.tier === "serves" || s.tier == null) && !shopsEver.has(s.id) && clean(s.name))
+    shopPool = data.shops.filter((s) => s.verified !== false && s.name && s.city && s.state && (s.tier === "shop" || s.tier === "serves" || s.tier == null) && !shopsEver.has(s.id) && clean(s.name))
       .map((s) => { const handle = cleanHandle(s.instagram), c = ctx.locate({ city: s.city, state: s.state, lat: s.lat, lng: s.lng });
         return { id: s.id, name: String(s.name).replace(/\s+/g, " ").trim(), handle, key: handle || norm(s.name), city: c ? c.name : s.city, state: c ? c.state : s.state, cityObj: c, address: String(s.address || "").trim(), drinks: drinksOf(s), tier: s.tier || "shop", seen: String(s.read || s.fetched || "").slice(0, 10) }; })
       .filter((s) => free(s.key));
     const order = (a, b) => b.drinks.length - a.drinks.length || (b.handle ? 1 : 0) - (a.handle ? 1 : 0) || hash(date + a.id) - hash(date + b.id);
     // a new shop we can tag comes first: the post is for them
-    const fresh = pool.filter((s) => s.seen >= from && s.seen < date).sort((a, b) => (b.handle ? 1 : 0) - (a.handle ? 1 : 0) || order(a, b));
-    const s = fresh[0] || pool.sort(order)[0];
-    if (s) take({ kind: "shop", title: s.name, tag: "New on the map", city: s.city, state: s.state, shop: { ...s, drinks: s.drinks.slice(0, 4) }, brands: [s.key], shopId: s.id, link: cityLink(s, data) });
+    shopCand = (pool) => {
+      pool = pool.filter((s) => free(s.key));
+      const fresh = pool.filter((s) => s.seen >= from && s.seen < date).sort((a, b) => (b.handle ? 1 : 0) - (a.handle ? 1 : 0) || order(a, b));
+      const s = fresh[0] || pool.slice().sort(order)[0];
+      return s ? { kind: "shop", title: s.name, tag: "New on the map", city: s.city, state: s.state, shop: { ...s, drinks: s.drinks.slice(0, 4) }, brands: [s.key], shopId: s.id, link: cityLink(s, data) } : null;
+    };
+    const c = shopCand(shopPool);
+    if (c) take(c);
   }
 
   // 4. a series reminder: the next weekly date within a week, soonest first
@@ -252,9 +271,41 @@ export function plan({ date, data, history = {} }) {
     take(eventCand("today", l, `Today in ${l[0].city}`, "Today"));
   }
 
+  // 6. a region's week (REGIONS): with no feed post from the region in the last six days, one of its own becomes the
+  // second feed post today; with no story, one story slot is its own (below). Thin data gives a shorter post, never none.
+  const byDay = (a, b) => a.day.localeCompare(b.day) || hash(date + a.id) - hash(date + b.id);
+  const regionCand = (rk, r) => {
+    const inR = (v) => regionOf(v.city, v.state) === rk;
+    const td = firstPerBrand(today.filter(inR).sort(byDay));
+    if (td.length) return eventCand("today", td, `Today in ${td[0].city}`, "Today");
+    const wr = dow === 4 || dow === 5 || dow === 6 || dow === 0 ? firstPerBrand(wk.filter(inR).filter((v) => v.day >= date).sort(byDay)) : []; // a weekend roundup from Thursday on; earlier in the week those dates read as "Coming up"
+    if (wr.length) return eventCand("weekend", wr, `This weekend in ${new Set(wr.map((v) => v.city)).size > 1 ? r.name : wr[0].city}`, "This weekend");
+    const sc = shopCand(shopPool.filter(inR));
+    if (sc) return sc;
+    const soon = firstPerBrand(all.filter(inR).filter((v) => !v.series && v.day > date && v.day <= addDays(date, 14)).sort(byDay));
+    if (soon.length) return eventCand("soon", soon, `Coming up in ${new Set(soon.map((v) => v.city)).size > 1 ? r.name : soon[0].city}`, "Coming up");
+    const ser = firstPerBrand(all.filter(inR).filter((v) => v.series && v.day >= date && v.day <= addDays(date, 13)).sort(byDay));
+    if (ser[0]) { const v = ser[0]; return { kind: "series", title: v.series, tag: v.series, city: v.city, state: v.state, events: [v], more: 0, brands: [v.key], link: cityLink(v, data) }; }
+    return null;
+  };
+  cands.forEach((c) => { c.region = regionOf(c.city, c.state); });
+  const regionOwn = {};
+  for (const [rk, r] of Object.entries(REGIONS)) {
+    const week = regionWeek[rk] || { feed: 0, story: 0 };
+    let own = cands.find((c) => c.region === rk);
+    if (!own && (week.feed === 0 || week.story === 0)) { own = regionCand(rk, r); if (own) { own.region = rk; take(own); } }
+    if (!own) continue;
+    regionOwn[rk] = own;
+    const i = cands.indexOf(own);
+    if (week.feed === 0 && i > 1) { cands.splice(i, 1); cands.splice(1, 0, own); }
+  }
+
   // feed: the first three; stories: the first, then the extras, padded with the second and third
   const feed = cands.slice(0, 3);
   const story = [cands[0], ...cands.slice(3, 5), cands[1], cands[2]].filter(Boolean).filter((c, i, a) => a.indexOf(c) === i).slice(0, 3);
+  for (const [rk, own] of Object.entries(regionOwn)) {
+    if ((regionWeek[rk] || {}).story === 0 && !story.includes(own)) { if (story.length >= 3) story[story.length - 1] = own; else story.push(own); }
+  }
   const items = [];
   const finish = (c, slot, i) => {
     const tags = hashtagsFor(c.city, data, date, i + (slot === "story" ? 3 : 0));
@@ -263,7 +314,7 @@ export function plan({ date, data, history = {} }) {
     const tagList = [...new Set(handles.filter(Boolean))].slice(0, 20);
     const time = (slot === "feed" ? FEED_TIMES : STORY_TIMES)[i];
     return {
-      slot, kind: c.kind, time, title: c.title, tag: c.tag, date, city: c.city, state: c.state, link: c.link, hashtags: tags, caption,
+      slot, kind: c.kind, time, title: c.title, tag: c.tag, date, city: c.city, state: c.state, region: c.region || null, link: c.link, hashtags: tags, caption,
       user_tags: slot === "feed" ? tagList.map((username) => ({ username, x: 0.5, y: 0.5 })) : [],
       mentions: tagList, brands: c.brands, shopId: c.shopId || null,
       events: (c.events || []).map(({ cityObj, key, ...v }) => v), more: c.more || 0, shop: c.shop ? (({ cityObj, key, ...s }) => s)(c.shop) : null,
@@ -277,7 +328,8 @@ export function plan({ date, data, history = {} }) {
     if (it.caption.length > CAPTION_MAX) it.caption = it.caption.slice(0, CAPTION_MAX - 1).replace(/\s+\S*$/, "") + "\n";
     if (BANNED.test(it.caption + " " + JSON.stringify(it.events) + " " + it.title)) throw new Error(`banned word in ${it.name}`);
   }
-  return { date, items, featured: { brands: [...used].sort(), shops: cands.filter((c) => c.shopId).map((c) => c.shopId) } };
+  const regions = Object.fromEntries(Object.keys(REGIONS).map((k) => [k, { feed: items.filter((it) => it.slot === "feed" && it.region === k).length, story: items.filter((it) => it.slot === "story" && it.region === k).length }]));
+  return { date, items, featured: { brands: [...used].sort(), shops: cands.filter((c) => c.shopId).map((c) => c.shopId), regions } };
 }
 
 // The history entry for the date replaces any earlier run of that date; entries older than 90 days are dropped.
@@ -285,7 +337,7 @@ export function recordHistory(history, p) {
   const out = {};
   const cut = addDays(p.date, -90);
   for (const [d, h] of Object.entries(history || {})) if (d >= cut && d !== p.date) out[d] = h;
-  out[p.date] = { brands: p.featured.brands, shops: p.featured.shops };
+  out[p.date] = { brands: p.featured.brands, shops: p.featured.shops, regions: p.featured.regions || {} };
   return Object.fromEntries(Object.entries(out).sort(([a], [b]) => a.localeCompare(b)));
 }
 export const readHistory = (file = HISTORY_FILE) => readJson(file, {});
