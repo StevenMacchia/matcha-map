@@ -31,3 +31,22 @@ test("the checker flags ListItem with url and item, a missing list image, bad da
   assert.match(checkSite(site({ ...good, image: ["/rel.png"] })).errors.join("\n"), /absolute/);
   assert.match(checkSite(site({ ...good, location: {} })).errors.join("\n"), /location/);
 });
+
+test("the checker holds LocalBusiness, FAQPage, BreadcrumbList and opening hours to the fields Google reads", () => {
+  const shop = { "@type": "CafeOrCoffeeShop", name: "Green Cup", url: "https://green.example", address: { "@type": "PostalAddress", streetAddress: "5 Oak St", addressLocality: "Raleigh", addressRegion: "NC" }, geo: { "@type": "GeoCoordinates", latitude: 35.8, longitude: -78.6 },
+    openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["https://schema.org/Monday"], opens: "08:00", closes: "17:00" }] };
+  assert.deepEqual(checkSite(site(shop)).errors, []);
+  const errs = (x) => checkSite(site(x)).errors.join("\n");
+  assert.match(errs({ ...shop, address: { streetAddress: "5 Oak St" } }), /full address/);
+  assert.match(errs({ ...shop, geo: undefined }), /without geo/);
+  assert.match(errs({ ...shop, aggregateRating: { ratingValue: 5 } }), /rating/);
+  assert.match(errs({ ...shop, url: "/rel" }), /url not absolute/);
+  assert.match(errs({ ...shop, openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Mo"], opens: "8am", closes: "17:00" }] }), /dayOfWeek[\s\S]*opens\/closes/);
+  const faq = { "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "When?", acceptedAnswer: { "@type": "Answer", text: "Saturday." } }] };
+  assert.deepEqual(checkSite(site(faq)).errors, []);
+  assert.match(errs({ ...faq, mainEntity: [] }), /without questions/);
+  assert.match(errs({ ...faq, mainEntity: [{ "@type": "Question", name: "When?", acceptedAnswer: { "@type": "Answer", text: " " } }] }), /acceptedAnswer/);
+  const crumb = { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Matcha Map", item: "https://matchamap.app/" }, { "@type": "ListItem", position: 2, name: "North Carolina", item: "https://matchamap.app/state/nc/" }] };
+  assert.deepEqual(checkSite(site(crumb)).errors, []);
+  assert.match(errs({ ...crumb, itemListElement: [{ "@type": "ListItem", position: 2, name: "", item: "/state/nc/" }] }), /breadcrumb needs position 1/);
+});
