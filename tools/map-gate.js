@@ -90,7 +90,7 @@ const CHECK = `(() => {
   if (hd && shown(hd) && (hd.getClientRects().length > 1 || hd.scrollWidth > hd.clientWidth + 1)) out.push("the list header wraps or is cut: " + hd.textContent);
   // no basemap label doubles a city pin of the same name at zooms 5 to 10 (rung 8)
   if (map && map.getZoom() >= 5 && map.getZoom() <= 10 && map.isStyleLoaded && map.isStyleLoaded()) {
-    const pinNames = [...document.querySelectorAll(".maplibregl-marker .mk-lbl.lb-c")].filter(shown).map((l) => l.textContent.trim().replace(/\s*\+\d+$/, ""));
+    const pinNames = [...document.querySelectorAll(".maplibregl-marker .mk-lbl.lb-c")].filter(shown).map((l) => l.textContent.trim().replace(/\\s*\\+\\d+$/, ""));
     const layers = ["label_city", "label_city_capital", "label_town", "label_other"].filter((id) => map.getLayer(id));
     if (pinNames.length && layers.length) for (const f of map.queryRenderedFeatures({ layers })) { const n = (f.properties || {}).name_en || (f.properties || {}).name; if (pinNames.includes(n)) out.push("basemap label doubles the city pin: " + n); }
   }
