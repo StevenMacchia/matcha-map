@@ -8574,6 +8574,11 @@
     "miss": true,
     "at": 1795400399094
   },
+  "venue: anh seattle wa": {
+    "lat": 47.618198,
+    "lng": -122.347121,
+    "source": "nominatim-venue"
+  },
   "venue: atlanta chinatown atlanta ga": {
     "lat": 33.890544,
     "lng": -84.299625,
@@ -8672,6 +8677,11 @@
   "venue: doma coffee nashville tn": {
     "miss": true,
     "at": 1795412802713
+  },
+  "venue: driftwood seattle wa": {
+    "lat": 47.579058,
+    "lng": -122.410315,
+    "source": "nominatim-venue"
   },
   "venue: druid hills farmers market atlanta ga": {
     "miss": true,
