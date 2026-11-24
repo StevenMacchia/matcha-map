@@ -39,3 +39,12 @@ test("data/review: the open queue is under 20 and every settled entry has a reas
   }
   assert.ok(items.some((i) => PROMOTE.has(effectiveConfidence(i))), "promotable items exist");
 });
+
+test("a settled row that names a brand settles only that brand on a shared newsletter page and day", () => {
+  const url = "https://news.example/issue-1";
+  const settled = new Map([[`${url}|2026-11-26|muni cafe`, { verdict: "dropped", why: "closed" }]]);
+  const a = item({ brand: "Muni Cafe", source_url: url, evidence: [url], start: "2026-11-26T00:00:00-08:00" });
+  const b = item({ brand: "Other Brand", source_url: url, evidence: [url], start: "2026-11-26T00:00:00-08:00" });
+  assert.equal(isSettled(a, settled, NOW), true);
+  assert.equal(isSettled(b, settled, NOW), false);
+});

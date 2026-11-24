@@ -184,11 +184,12 @@ export function promote(items, existing = [], { sources = [], now = new Date() }
 // the page URL plus the event day; an item whose notes start "dropped:" or say "checked <date>" is settled too (docs/LANES.md).
 export const settledKey = (i) => `${[i.source_url, ...arr(i.evidence)].find((u) => u && !/instagram\.com|tiktok\.com/.test(u)) || i.source_url || arr(i.evidence)[0] || ""}|${String(i.start || "").slice(0, 10)}`;
 export function readSettled(dir = REVIEW_DIR) {
-  try { return new Map((JSON.parse(fs.readFileSync(path.join(dir, "settled.json"), "utf8")).settled || []).map((s) => [`${s.url}|${s.day}`, s])); } catch { return new Map(); }
+  // A row may name a brand: one newsletter issue lists many brands on the same page and day, so `brand` settles just that one.
+  try { return new Map((JSON.parse(fs.readFileSync(path.join(dir, "settled.json"), "utf8")).settled || []).map((s) => [`${s.url}|${s.day}${s.brand ? "|" + String(s.brand).toLowerCase() : ""}`, s])); } catch { return new Map(); }
 }
 export function isSettled(i, settled = new Map(), now = new Date()) {
   const n = String(i.notes || "");
-  if (settled.has(settledKey(i)) || /\bdropped: /.test(n)) return true;
+  if (settled.has(settledKey(i)) || settled.has(`${settledKey(i)}|${String(i.brand || "").toLowerCase()}`) || /\bdropped: /.test(n)) return true;
   const c = /\bchecked (20\d\d-\d\d-\d\d)/.exec(n); // opened within the last 14 days: not reopened
   return !!c && new Date(now).getTime() - Date.parse(c[1]) < 14 * 86400000;
 }
