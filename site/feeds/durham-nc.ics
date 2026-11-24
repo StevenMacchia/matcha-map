@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Durham\, NC
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:693434f07d91@matchamap-cu7.pages.dev
+DTSTAMP:20261124T033045Z
+LAST-MODIFIED:20261124T033045Z
+DTSTART:20261129T160000Z
+DTEND:20261129T200000Z
+SUMMARY:amatō at the Durham Underground Market
+LOCATION:Durham Central Park\, 501 Foster St\, Durham\, NC
+DESCRIPTION:Japanese-inspired bakery and matcha pop-up (matcha drinks and p
+ astries) listed as a vendor at the market.\nMenu: matcha\, japanese pastri
+ es\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/693434f07
+ d91/
+URL:https://matchamap.app/e/693434f07d91/
+GEO:36.000744;-78.901866
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

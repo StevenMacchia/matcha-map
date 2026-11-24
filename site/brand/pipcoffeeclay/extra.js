@@ -1,1 +1,0 @@
-mmBrandExtra({"v":1,"brand":"pipcoffeeclay","upcoming":[{"id":"42ce152c9009","day":"Saturday, Dec 12","time":"9:30 AM","place":"Phoenix, AZ","url":"/e/42ce152c9009/","map":"/?event=42ce152c9009"}],"drinks":[{"slug":"matcha-bowl","name":"Matcha Bowl","art":"/art/drinks/matcha-bowl.svg"}],"price":null,"story":""});

@@ -1,1 +1,0 @@
-mmBrandExtra({"v":1,"brand":"kyotocoastmatcha","upcoming":[],"drinks":[{"slug":"pumpkin","name":"Pumpkin","art":"/art/drinks/pumpkin.svg"},{"slug":"cookie","name":"Cookie","art":"/art/drinks/cookie.svg"}],"price":null,"story":""});
