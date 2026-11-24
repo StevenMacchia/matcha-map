@@ -1,1 +1,0 @@
-mmBrandExtra({"v":1,"brand":"japanvillagebrooklyn","upcoming":[],"drinks":[{"slug":"matcha-latte-iced","name":"iced matcha latte","art":null}],"price":null,"story":""});

@@ -548,3 +548,41 @@ test("home page: the cities marker is filled with the 50 biggest cities; no mark
   assert.ok(!patchIndex(none, many).includes("pg-chips"));
   assert.equal(citiesBlock(many, 3).match(/<li>/g).length, 3);
 });
+
+// ---- city page shape approved from the mock (2026-11-23) ----
+test("shops are grouped by tier as it appears in the rows, rows without a tier last under Other; hours and schema stay", () => {
+  const shops = [shopRow({ id: "a", tier: "shop" }), shopRow({ id: "b", name: "Plain Row", lat: 35.82 }), shopRow({ id: "c", name: "Cafe Row", tier: "cafe", lat: 35.83 })];
+  const h = page(buildSite(data([ev({})], { shops })), "city/nc/raleigh/index.html");
+  const sect = /<h2>Matcha cafes and shops in Raleigh<\/h2>([\s\S]*?)<\/section>/.exec(h)[1];
+  assert.deepEqual([...sect.matchAll(/<h3 class="pg-day">(.*?)<\/h3>/g)].map((m) => m[1]), ["Cafe", "Shop", "Other"]);
+  assert.match(sect, /Cafe<\/h3>[\s\S]*Cafe Row[\s\S]*Shop<\/h3>[\s\S]*Green Cup[\s\S]*Other<\/h3>[\s\S]*Plain Row/);
+  assert.match(sect, /Hours: Mon-Fri 8 AM-5 PM/);
+  assert.equal(ldOf(h).filter((x) => x["@type"] === "CafeOrCoffeeShop").length, 3);
+});
+
+test("brands based in the city show their picture and followers when known, nothing when not", () => {
+  const sources = [{ id: "moonbee", brand: "Moonbee", instagram: "moonbeematcha", home_city: "Raleigh", home_state: "NC", kind: "popup" }, { id: "bare", brand: "Bare Brand", instagram: "barebrand", home_city: "Raleigh", home_state: "NC", kind: "popup" }];
+  const watchlist = { accounts: [{ handle: "moonbeematcha", name: "Moonbee", status: "watching", platform: "instagram", followers_count: 12400, profile_picture_url: "https://img.example/wl.jpg" }] };
+  const h = page(buildSite(data([], { sources, watchlist, brandPictures: new Map([["moonbeematcha", "https://img.example/m.jpg"]]) })), "city/nc/raleigh/index.html");
+  const li = (n) => new RegExp("<li>[^\\n]*" + n + "[^\\n]*</li>").exec(h)[0];
+  assert.match(li("Moonbee"), /<img src="https:\/\/img\.example\/m\.jpg" alt="" width="32" height="32" loading="lazy">/);
+  assert.match(li("Moonbee"), /12\.4k followers/);
+  assert.ok(!/<img|followers/.test(li("Bare Brand")));
+  const wl = page(buildSite(data([], { sources, watchlist })), "city/nc/raleigh/index.html");
+  assert.match(wl, /<img src="https:\/\/img\.example\/wl\.jpg"/, "the watch-list avatar when the brand has no picture");
+});
+
+test("Nearby stays with a line when nothing is within 40 miles; the disclaimer sits under Upcoming and on empty cities; report link", () => {
+  const out = buildSite(data([ev({})]));
+  const q = page(out, "city/nc/quietton/index.html");
+  assert.match(q, /<h2>Pop-ups near Quietton<\/h2><p>Nothing listed yet within 40 miles\.<\/p>/);
+  const disc = "Dates come from each brand's own posts, so check the post before you go.";
+  assert.equal(q.split(disc).length - 1, 1, "once on an empty city");
+  assert.match(q, new RegExp("pg-lead[\\s\\S]*" + disc.replace(/[.']/g, "\\$&")));
+  const r = page(out, "city/nc/raleigh/index.html");
+  assert.match(r, /<h2>Upcoming pop-ups<\/h2>\s*<p class="pg-dim">Dates come from each brand's own posts, so check the post before you go\.<\/p>/);
+  assert.equal(r.split(disc).length - 1, 1, "once, under Upcoming");
+  for (const p of [r, q]) assert.match(p, /<a class="pg-btn" href="\/add\/\?city=raleigh-nc|<a class="pg-btn" href="\/add\/\?city=quietton-nc">Report a pop-up we missed<\/a>/);
+  assert.match(r, /href="\/add\/\?city=raleigh-nc">Report a pop-up we missed<\/a>/);
+  assert.ok(Buffer.byteLength(q) < 6 * 1024);
+});

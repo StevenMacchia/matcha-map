@@ -194,10 +194,10 @@ export function shell({ title, desc, canonical, ld = [], body, image, noindex = 
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${esc(canonical)}">
 ${noindex ? '<meta name="robots" content="noindex,follow">\n' : ""}<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#FBF6EA">
+${noindex ? "" : `<meta name="theme-color" content="#FBF6EA">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+`}<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Matcha Map">
 <meta property="og:title" content="${esc(title)}">
@@ -262,6 +262,7 @@ const andList = (a) => (a.length < 3 ? a.join(" and ") : a.slice(0, -1).join(", 
 const NEARBY_MI = Math.round(NEARBY_KM / KM_PER_MI); // 40
 const NEAR_MI = Math.floor(NEAR_KM / KM_PER_MI); // 15
 const miText = (kmv) => { const m = Math.max(1, Math.round(kmv / KM_PER_MI)); return `${m} ${m === 1 ? "mile" : "miles"}`; };
+const followersText = (n) => { n = Number(n); if (!isFinite(n) || n <= 0) return ""; const r = (v) => String(Math.round(v * 10) / 10).replace(/\.0$/, ""); return `${n >= 1e6 ? r(n / 1e6) + "m" : n >= 1e3 ? r(n / 1e3) + "k" : String(Math.round(n))} followers`; };
 const clip = (s, n) => (s.length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/, "").replace(/[,;:\s]+$/, "") + "…");
 const UPDATED = "~UPDATED~"; // stands in for the date while a page is hashed, so the date alone never moves a lastmod
 
@@ -274,7 +275,7 @@ export function cityIntro(c, ups, tz) {
   if (!ups.length) return "";
   const next = ups[0];
   const where = next.e.venue && !isApprox(next.e) ? " at " + next.e.venue : "";
-  return `The next one is ${next.brand} on ${shortDayOf(next.e, tz)}${where}. Dates come from each brand's own posts, so check the post before you go.`;
+  return `The next one is ${next.brand} on ${shortDayOf(next.e, tz)}${where}.`;
 }
 
 // ---- index or noindex (docs/SEO-CITY-PAGES.md section 4) ----
@@ -432,13 +433,17 @@ function weekendBlock(c, wk, win) {
 }
 
 function shopsSection(c, sh) {
-  const items = sh.slice(0, NEARBY_MAX).map(({ s, km: dd }) => {
+  const shown = sh.slice(0, NEARBY_MAX);
+  const li = ({ s, km: dd }) => {
     const w = safeUrl(s.website);
     const rules = parseOpeningHours(s.opening_hours);
     const hours = rules ? hoursText(rules) : String(s.opening_hours || "").trim().slice(0, 120);
     return `<li><strong>${w ? `<a href="${esc(w)}" rel="noopener">${esc(s.name)}</a>` : esc(s.name)}</strong> <span class="pg-dim">${Math.round(dd / KM_PER_MI)} mi</span><br>${esc(s.address || "")}${hours ? `<br><span class="pg-dim">Hours: ${esc(hours)}</span>` : ""}</li>`;
-  });
-  return `<section><h2>Matcha cafes and shops in ${esc(c.name)}</h2>\n<ul class="pg-list pg-shops">\n${items.join("\n")}\n</ul>${sh.length > NEARBY_MAX ? `<p class="pg-dim">The nearest ${NEARBY_MAX} of ${sh.length}.</p>` : ""}</section>\n`;
+  };
+  // one group per tier value as it appears in the rows; rows with no tier go last under "Other"
+  const tiers = [...new Set(shown.map(({ s }) => String(s.tier || "")))].sort((p, q) => (p === "") - (q === "") || p.localeCompare(q));
+  const groups = tiers.map((t) => `<h3 class="pg-day">${esc(t ? t.charAt(0).toUpperCase() + t.slice(1) : "Other")}</h3>\n<ul class="pg-list pg-shops">\n${shown.filter(({ s }) => String(s.tier || "") === t).map(li).join("\n")}\n</ul>`);
+  return `<section><h2>Matcha cafes and shops in ${esc(c.name)}</h2>\n${groups.join("\n")}${sh.length > NEARBY_MAX ? `<p class="pg-dim">The nearest ${NEARBY_MAX} of ${sh.length}.</p>` : ""}</section>\n`;
 }
 
 // Pop-ups between the city's own match and 64 km, by distance, each with its city and miles.
@@ -463,11 +468,12 @@ function cityPage(c, x) {
   let body = `${crumbHtml([["Matcha Map", "/"], [STATE_NAMES[c.state] || c.state, "/" + stateHref(c.state)]], label)}
 <h1>Matcha pop-ups in ${esc(label)}</h1>
 <p class="pg-lead">${esc(lead)}</p>
-${ups.length ? `<p class="pg-intro">${esc(cityIntro(c, ups, c.tz))}</p>\n` : ""}<p class="pg-sub">${ups.length ? "" : `Updated ${UPDATED}. `}${mapLink("city=" + key, "Open " + c.name + " on the map")}</p>
+${ups.length ? `<p class="pg-intro">${esc(cityIntro(c, ups, c.tz))}</p>\n` : ""}<p class="pg-sub">${indexable && !ups.length ? `Updated ${UPDATED}. ` : ""}${mapLink("city=" + key, "Open " + c.name + " on the map")}</p>
 `;
+  if (!ups.length) body += `<p class="pg-dim">Dates come from each brand's own posts, so check the post before you go.</p>\n`;
   if (wk.length) body += weekendBlock(c, wk, win);
   if (ups.length) {
-    body += `<section><h2>Upcoming pop-ups</h2>\n`;
+    body += `<section><h2>Upcoming pop-ups</h2>\n<p class="pg-dim">Dates come from each brand's own posts, so check the post before you go.</p>\n`;
     for (const g of groupByDay(ups, c.tz, today)) {
       body += `<h3 class="pg-day">${esc(g.label)}</h3>\n<ul class="pg-list">\n`;
       for (const it of g.items) {
@@ -481,15 +487,15 @@ ${ups.length ? `<p class="pg-intro">${esc(cityIntro(c, ups, c.tz))}</p>\n` : ""}
   if (sh.length) body += shopsSection(c, sh);
   if (home.length) {
     body += `<section><h2>Brands based in ${esc(c.name)}</h2>\n<ul class="pg-chips">\n`;
-    for (const b of home) { credited.set(b.name, b.slug); body += `<li><a href="/brand/${esc(b.slug)}/">${esc(b.name)}</a>${b.instagram ? ` <a class="pg-dim" href="https://www.instagram.com/${esc(b.instagram)}/" rel="noopener">@${esc(b.instagram)}</a>` : ""}</li>\n`; }
+    for (const b of home) { credited.set(b.name, b.slug); body += `<li>${b.picture ? `<img src="${esc(b.picture)}" alt="" width="32" height="32" loading="lazy"> ` : ""}<a href="/brand/${esc(b.slug)}/">${esc(b.name)}</a>${b.instagram ? ` <a class="pg-dim" href="https://www.instagram.com/${esc(b.instagram)}/" rel="noopener">@${esc(b.instagram)}</a>` : ""}${followersText(b.followers) ? ` <span class="pg-dim">${followersText(b.followers)}</span>` : ""}</li>\n`; }
     body += `</ul></section>\n`;
   }
-  if (nearby.length) body += nearbySection(c, nearby);
+  body += nearby.length ? nearbySection(c, nearby) : `<section><h2>Pop-ups near ${esc(c.name)}</h2><p>Nothing listed yet within ${NEARBY_MI} miles.</p></section>\n`;
   body += faqHtml(faq, c.name);
-  body += `<p class="pg-cta"><a class="pg-btn" href="/alerts/?city=${esc(key)}">Get alerts for ${esc(c.name)}</a> <a class="pg-btn" href="/add/">Add your pop-up</a>${indexable ? ` <a class="pg-btn" href="${feedOf(d, c)}">Calendar feed</a>` : ""}</p>\n`;
+  body += `<p class="pg-cta"><a class="pg-btn" href="/alerts/?city=${esc(key)}">Get alerts for ${esc(c.name)}</a> <a class="pg-btn" href="/add/">Add your pop-up</a> <a class="pg-btn" href="/add/?city=${esc(key)}">Report a pop-up we missed</a>${indexable ? ` <a class="pg-btn" href="${feedOf(d, c)}">Calendar feed</a>` : ""}</p>\n`;
   body += `<section><h2>Nearby cities</h2>\n<ul class="pg-chips">\n${near3.map((n) => `<li><a href="/${cityPath(n.x)}">${esc(n.x.name)}, ${esc(n.x.state)}</a> <span class="pg-dim">${miText(n.km)}</span></li>`).join("\n")}\n</ul>\n<p class="pg-sub"><a href="/${stateHref(c.state)}">All matcha pop-ups in ${esc(STATE_NAMES[c.state] || c.state)}</a></p></section>\n`;
   // a page with nothing listed (noindex) keeps one line, so the thin set stays under 6 KB
-  body += !indexable ? `<p class="pg-how">Dates come from each brand's own posts, so check the post before you go.</p>` : `<section class="pg-how"><h2>How this map works</h2>
+  body += !indexable ? "" : `<section class="pg-how"><h2>How this map works</h2>
 <p>Matcha Map collects pop-ups that brands post publicly, on their own sites, in event listings and on Instagram, matches each one to a day and a place, and puts them on one map. Dates come from those posts, so check the post before you go. When a brand has not said where, the page says so instead of guessing.</p>
 ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[...credited].map(([n, h]) => (h ? `<a href="/brand/${esc(h)}/">${esc(n)}</a>` : esc(n))).join(", ")}.</p>` : ""}
 </section>`;
@@ -581,6 +587,14 @@ export function buildSite(d) {
     if (b) { b.website = b.website || safeUrl(a.website); continue; }
     brands.set(slug, { slug, name: a.name, instagram: slug, tiktok: "", website: safeUrl(a.website), city: "", state: "", kind: "", ids: new Set(a.source_id ? [a.source_id] : []), events: [] });
   }
+  for (const a of (d.watchlist && d.watchlist.accounts) || []) {
+    const b = brands.get(handleSlug(a.handle));
+    if (!b) continue;
+    if (a.followers_count > 0) b.followers = a.followers_count;
+    const pic = (d.brandPictures && d.brandPictures.get(b.slug)) || (String(a.profile_picture_url || "").startsWith("https://") ? a.profile_picture_url : "");
+    if (pic) b.picture = pic;
+  }
+  for (const b of brands.values()) if (!b.picture && d.brandPictures && d.brandPictures.get(b.slug)) b.picture = d.brandPictures.get(b.slug);
   const bySource = new Map();
   for (const b of brands.values()) for (const id of b.ids) if (!bySource.has(id)) bySource.set(id, b);
   const brandOf = (e) => brands.get(eventHandle(e, srcById)) || bySource.get(e.source_id);
