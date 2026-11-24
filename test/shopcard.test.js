@@ -55,7 +55,7 @@ test("shopcard: the menu section shows eight lines, the caveat, the link and the
   assert.match(h, /aria-label="First 8 of 66 menu items"/);
   assert.match(h, new RegExp(`href="${nana.menu.source_url.replace(/[.?*+()[\]\\/]/g, "\\$&")}" target="_blank" rel="noopener"`));
   assert.match(h, /See the full menu/);
-  assert.match(h, /From nanasgreentealasvegas\.com, read Nov 23, 2026/);
+  assert.match(h, /From nanasgreentealasvegas\.com, read Nov \d+, 2026/); // the read date moves each time npm run menus re-reads the page
   assert.doesNotMatch(h, /mm-menu-note/);
   const first = nana.menu.items[0];
   if (first.price) assert.ok(h.includes(first.price.replace(/&/g, "&amp;")), "price exactly as the data has it");
