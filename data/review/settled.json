@@ -427,6 +427,46 @@
       "verdict": "dropped",
       "why": "class, workshop, walk, run club, meetup or party, not a walk-in matcha pop-up (docs/LANES.md)",
       "on": "2026-11-23"
+    },
+    {
+      "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "day": "2026-11-19",
+      "brand": "Melon matcha",
+      "verdict": "dropped",
+      "why": "dropped: not a brand. 'Melon matcha' is the issue's subtitle and a menu item; the issue lists Howdy Y'all Coffee serving corn matcha and melon matcha inside the Seattle Central Library, Mon-Sat 10am-4pm, every week (a standing counter, not a dated pop-up)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "day": "2026-11-26",
+      "brand": "Melon matcha",
+      "verdict": "dropped",
+      "why": "dropped: not a brand. 'Melon matcha' is the issue's subtitle and a menu item; the issue lists Howdy Y'all Coffee serving corn matcha and melon matcha inside the Seattle Central Library, Mon-Sat 10am-4pm, every week (a standing counter, not a dated pop-up)",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "day": "2026-11-25",
+      "brand": "Muni Cafe",
+      "verdict": "dropped",
+      "why": "dropped: the issue says Muni Cafe is closed 11/25-11/29 ('Note they will be closed 11/25-11/29'), so 11/25 is a closure date, not a pop-up; normal hours Wed-Sun 10am-5pm at Anh Oi Bake Shop",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "day": "2026-11-29",
+      "brand": "Muni Cafe",
+      "verdict": "dropped",
+      "why": "dropped: the issue says Muni Cafe is closed 11/25-11/29, so 11/29 is a closure date, not a pop-up",
+      "on": "2026-11-23"
+    },
+    {
+      "url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "day": "2026-11-26",
+      "brand": "Numa Coffee Bar and Seaglass Bakeshop",
+      "verdict": "dropped",
+      "why": "dropped: the issue says they are closed on Thanksgiving 11/26 ('closed on Thanksgiving 11/26'); a standing Tue-Sat 8am-1pm residency inside Driftwood, not a dated pop-up",
+      "on": "2026-11-23"
     }
   ]
 }
