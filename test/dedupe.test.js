@@ -70,3 +70,23 @@ test("the writer folds duplicates and expires unconfirmed city-only finds a live
   assert.equal(r.stats.expired, 1);
   assert.equal(r.stats.merged, 1);
 });
+
+import { keepEvent } from "../ingest/lib/write.js";
+import { extract } from "../ingest/lib/extract.js";
+
+test("a social find whose year-less caption date landed more than 150 days after we first saw it is not kept; a nearer one, or an Eventbrite one, is", () => {
+  const e = { id: "z1", brand: "Nakama Matcha", source_id: "nakama-matcha", title: "Nakama Matcha pop-up", state: "CO", venue: "Ironworks", menu: [], extracted_by: "rule", source_url: "https://www.instagram.com/p/DbBpgW6M6po/", first_seen: "2026-11-22T23:56:00Z", start: "2027-07-13T00:00:00-06:00" };
+  assert.equal(keepEvent(e), false);
+  assert.equal(keepEvent({ ...e, start: "2026-12-13T00:00:00-07:00" }), true);
+  assert.equal(keepEvent({ ...e, source_url: "https://www.eventbrite.com/e/x-1" }), true);
+  assert.equal(keepEvent({ ...e, extracted_by: "manual" }), true);
+});
+
+test("the extractor drops a year-less date more than 150 days ahead of the post, keeps a near one", () => {
+  const ref = new Date("2026-11-22T12:00:00Z");
+  const run = (text) => extract({ text, source_url: "https://www.instagram.com/p/x/", handle: "b" }, { id: "b", brand: "B", home_city: "Denver", home_state: "CO" }, ref);
+  const far = run("Matcha Mondays at Ironworks on Fox, 651 W 42nd Ave Denver, July 13!");
+  assert.equal(far.filter((c) => String(c.start).startsWith("2027-07")).length, 0);
+  const near = run("Matcha pop-up at Ironworks, 651 W 42nd Ave Denver, December 13 from 2 to 5pm");
+  assert.ok(near.some((c) => String(c.start).startsWith("2026-12-13")));
+});

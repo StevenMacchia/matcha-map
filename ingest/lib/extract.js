@@ -12,6 +12,9 @@ const RE_MD = new RegExp(`\\b${MON}\\.?\\s+(\\d{1,2})(?:st|nd|rd|th)?\\b${NOT_TI
 const RE_DM = new RegExp(`\\b(\\d{1,2})(?:st|nd|rd|th)?(?:\\s*(-|\\u2013|\\u2014|to|&|and)\\s*(\\d{1,2})(?:st|nd|rd|th)?)?\\s+(?:of\\s+)?${MON}\\b\\.?(?:,?\\s*(20\\d\\d)\\b)?`, "gi");
 const RE_NUM = /(?<![\d/$.:])(\d{1,2})\/(\d{1,2})(?:\/(\d{4}|\d{2}))?(?:\s*[-–]\s*(\d{1,2}))?(?![\d/])/g;
 const RE_REL = /\b(today|tonight|tomorrow|this weekend|next weekend|(?:this|next|on)?\s*(?:sun|mon|tues|wednes|thurs|fri|satur)day(?!s))\b/gi;
+// A date with no year that lands more than this many days ahead of the post is last season's (a July date read in November rolled to next July).
+export const DEFAULT_MAX_AHEAD_DAYS = 150;
+
 // Recurring talk: "weekly", "every Saturday", "each week", "every other weekend"; "every single time" is not.
 const RECURRING = /\bweekly\b|\b(?:every|each)\s+(?:other\s+|single\s+)?(?:sun|mon|tue|wed|thu|fri|sat|week|day|weekend|month|first|second|third|fourth|last|1st|2nd|3rd|4th)/i;
 
@@ -217,7 +220,7 @@ export function extract(raw, ctx = {}) {
       const t = findTime(after) || findTime(before) || globalTime;
       for (const d of g.dates) {
         // Stale-page guard: a year-less date far ahead is more likely last season's.
-        if (raw.maxAheadDays && d.inferred && cmpDays(d, ref) > raw.maxAheadDays) continue;
+        if (d.inferred && cmpDays(d, ref) > (raw.maxAheadDays || DEFAULT_MAX_AHEAD_DAYS)) continue;
         const rel = ["rel", "weekday", "weekend"].includes(g.kind);
         // A relative word ("tomorrow", "this Saturday") resolves against the post date (raw.published_at). Without a trusted post date
         // (raw.noRelative) it is not used; and a relative day that resolves before today is a past post, never an event.

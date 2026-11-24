@@ -124,10 +124,13 @@ function dropped(id) {
   return DROPS.has(id);
 }
 // "Matcha + Meetup: <city> | ..." (ADDVentures): a networking meetup at a cafe announced on RSVP, never a matcha pop-up.
+// A find from a social post whose date is more than 150 days past the day we first saw it: a year-less caption date rolled to next year.
+export const STALE_YEAR = /(?:instagram|tiktok)\.com/i;
 export const NETWORKING = /^\s*matcha\s*\+\s*meetup\b/i;
 export function keepEvent(e, { sourceIds = null } = {}) {
   if (dropped(e.id)) return false;
   if (NETWORKING.test(String(e.title || ""))) return false; // the "Matcha + Meetup" networking series is not a pop-up (docs/LANES.md)
+  if (STALE_YEAR.test(String(e.source_url || "")) && e.extracted_by === "rule" && e.first_seen && Date.parse(e.start) - Date.parse(e.first_seen) > 150 * 86400000) return false; // a caption date with no year rolled to next year // the "Matcha + Meetup" networking series is not a pop-up (docs/LANES.md)
   if (!keepMatoEvent(e)) return false;
   // Site and web finds (pseudo sources) must name matcha as the point: hotel, craft-class and generic listings go (ingest/lib/quality.js).
   if (isPseudoId(e.source_id) && !judge(e).keep) return false;
