@@ -1,1 +1,0 @@
-mmBrandExtra({"v":1,"brand":"demo.spot","upcoming":[{"id":"5c522a699b41","day":"Friday, Nov 27","time":"5–9 PM","place":"Sacramento, CA","url":"/e/5c522a699b41/","map":"/?event=5c522a699b41"}],"drinks":[],"price":null,"story":"this weeks hours: Sun: 12-4PM - @demo_radio"});
