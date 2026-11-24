@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Central Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:df42a83f695e@matchamap-cu7.pages.dev
+DTSTAMP:20261124T003157Z
+LAST-MODIFIED:20261124T003157Z
+DTSTART:20261129T160000Z
+DTEND:20261129T200000Z
+SUMMARY:Central Matcha at Texas Farmers' Market at Mueller
+LOCATION:Mueller\, 2006 Philomena St\, Austin\, TX
+DESCRIPTION:Austin's Central Matcha serves whisked ceremonial-grade matcha 
+ from a market stand at the Sunday Mueller farmers market. Expect matcha sh
+ ots and iced lattes made to order\, plus tins and kits to take h\nMenu: ma
+ tcha shot\, iced matcha latte\, ceremonial-grade matcha lattes\nDetails no
+ t confirmed yet. Check the brand's post before you go.\nMore: https://matc
+ hamap.app/e/df42a83f695e/
+URL:https://matchamap.app/e/df42a83f695e/
+GEO:30.299843;-97.702653
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

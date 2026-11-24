@@ -8,18 +8,19 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:ddb3d76440a3@matchamap-cu7.pages.dev
-DTSTAMP:20261123T235327Z
-LAST-MODIFIED:20261123T151724Z
+DTSTAMP:20261124T003157Z
+LAST-MODIFIED:20261123T183318Z
 DTSTART:20270220T150000Z
 DTEND:20270220T170000Z
 SUMMARY:Mats & Matcha
-LOCATION:San Antonio\, TX
+LOCATION:The Creamery District\, San Antonio\, TX
 DESCRIPTION:Mats & Matcha is a pilates class hosted by Pilates Platinum at 
  The Creamery District. The class is $15\, and the ticket includes matcha. 
  It takes place every third Saturday.\nPrice: $15\nDetails not confirmed ye
  t. Check the brand's post before you go.\nMore: https://matchamap.app/e/dd
  b3d76440a3/
 URL:https://matchamap.app/e/ddb3d76440a3/
+GEO:29.446649;-98.481341
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

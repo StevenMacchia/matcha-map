@@ -8,18 +8,19 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:9fc3ea7a0140@matchamap-cu7.pages.dev
-DTSTAMP:20261123T235327Z
+DTSTAMP:20261124T003157Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 SUMMARY:magnaye pop-up at Home Ec
-LOCATION:San Diego\, CA
+LOCATION:Home Ec\, San Diego\, CA
 DESCRIPTION:11/22 | Sunday evening is the last chance to order bottled latt
  es for pick up at Home Ec on Wednesday 11/25 for your holiday festivities.
   Vanilla / Burnt Honey Orange Blossom with espresso or matcha\nMenu: latte
  \, vanilla\, honey\nDetails not confirmed yet. Check the brand's post befo
  re you go.\nMore: https://matchamap.app/e/9fc3ea7a0140/
 URL:https://matchamap.app/e/9fc3ea7a0140/
+GEO:32.763060;-117.105816
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT

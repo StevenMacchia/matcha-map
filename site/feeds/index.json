@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T23:53:27.383Z",
+ "generated": "2026-11-24T00:31:57.195Z",
  "all": "/feeds/all.ics",
  "new": "/feeds/new.xml",
  "cities": {
@@ -20,6 +20,7 @@
   "chicago-il": "/feeds/chicago-il.ics",
   "cleveland-heights-oh": "/feeds/cleveland-heights-oh.ics",
   "cleveland-oh": "/feeds/cleveland-oh.ics",
+  "columbia-sc": "/feeds/columbia-sc.ics",
   "columbus-oh": "/feeds/columbus-oh.ics",
   "dallas-tx": "/feeds/dallas-tx.ics",
   "dearborn-mi": "/feeds/dearborn-mi.ics",
@@ -111,6 +112,7 @@
   "chicago-il": "Chicago, IL",
   "cleveland-heights-oh": "Cleveland Heights, OH",
   "cleveland-oh": "Cleveland, OH",
+  "columbia-sc": "Columbia, SC",
   "columbus-oh": "Columbus, OH",
   "dallas-tx": "Dallas, TX",
   "dearborn-mi": "Dearborn, MI",

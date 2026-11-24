@@ -8,18 +8,19 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:7b9142168116@matchamap-cu7.pages.dev
-DTSTAMP:20261123T235327Z
+DTSTAMP:20261124T003157Z
 LAST-MODIFIED:20261123T005942Z
 DTSTART:20261129T160000Z
 DTEND:20261129T180000Z
 SUMMARY:Creamed Pop-Up at ONLI
-LOCATION:Houston\, TX
+LOCATION:ONLI\, Houston\, TX
 DESCRIPTION:Creamed returns to ONLI for a morning pop-up featuring a variet
  y of bakes.\nMenu: matcha\, corn basque cheesecakes\, mandarin\, chestnut 
  cinnamon rolls\, black sesame\, sweet potato pie\nDetails not confirmed ye
  t. Check the brand's post before you go.\nMore: https://matchamap.app/e/7b
  9142168116/
 URL:https://matchamap.app/e/7b9142168116/
+GEO:29.769610;-95.356220
 STATUS:TENTATIVE
 CATEGORIES:Matcha
 END:VEVENT
