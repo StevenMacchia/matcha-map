@@ -77,3 +77,14 @@ Pages generated: city, state, brand, event, weekend. Indexable city pages and no
 ## 10. Budget and order of work
 
 Budget check first on Friday: both weekly windows must be under the ceiling after the reset before the build starts. The build is a Sonnet worker's from this spec (gen-pages changes, state hubs, LocalBusiness and FAQ builders, tests, check-jsonld), with Fable reading the diff, the first build's numbers and the report. Order: index rule and `noindex` option; all cities paged with size measured; Nearby and the intro; shops schema; FAQ; state hubs; lastmod hash; tests and check-jsonld; home marker patch last (depends on the site session's marker). Deploy only with the site session, after its template pass, through the usual ship path.
+
+## Built 2026-11-23: deviations and numbers
+
+- Pages: 2,420 city (2,410 listed plus 10 brand home cities from site/cities.js, via `loadCities()`, which gen-weekend now uses too so the two agree), 51 state hubs plus /state/, 483 brand. 966 city pages indexable, 1,454 noindex. Output 19.57 MB, so `LIMITS.bytes` is 30 MB (measured plus half).
+- Nearby is "not this city's own pop-ups, within 64 km", so a pop-up under 25 km that belongs to a neighbouring city (a Cary event for Apex) shows too; read literally, "between 25 and 64 km" would leave such a city with nothing.
+- The meta description is the whole lead (at most 158 characters), not only its first sentence: the empty-city lead is two sentences and the second is the useful one.
+- The weekend window (`weekendWindow`, `inWindow`, `windowText`) moved from gen-weekend.js into gen-pages.js; gen-weekend re-exports it, so no circular import.
+- Thin noindex pages keep one line instead of "How this map works", drop the calendar-feed button and the og:image size tags, and use short FAQ answers, to stay under 6 KB (largest 6,127 bytes). City pages no longer link /state/ (the state hub does); the footer link is the site session's.
+- site/data/pages.json grew from 43 KB to 184 KB (2,420 cities; same fields as before). The {hash, lastmod} map lives in data/pages-lastmod.json, not served.
+- Opening hours also accept `<day> off` rules; a day named in two rules, overnight ranges, 24/7, holidays and months are text only.
+- A shop gets CafeOrCoffeeShop markup only with an address, a city and a state; at most 12 per page.

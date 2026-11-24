@@ -7,46 +7,14 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
-import { esc, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf, eventHandle, makeCityLocator, cityPath } from "./gen-pages.js";
+import { esc, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf, eventHandle, makeCityLocator, cityPath, loadCities, weekendWindow, inWindow, windowText, addDays, SUNDAY_CUTOFF_HOUR } from "./gen-pages.js";
+export { weekendWindow, inWindow, windowText, addDays, SUNDAY_CUTOFF_HOUR }; // the window rule lives in gen-pages.js (city pages link here too)
 import { cityCardHtml, renderCards, MAX_OG_BYTES } from "./gen-og.js";
 import { drinkLookup, drinkSlug, drinkName, slugify } from "../site/search.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'none'";
-export const SUNDAY_CUTOFF_HOUR = 20; // from 8 pm Sunday local time, "this weekend" means the next one
-
-// ---- the window ----
-const keyDate = (k) => new Date(k + "T12:00:00Z");
-export const addDays = (k, n) => new Date(keyDate(k).getTime() + n * 864e5).toISOString().slice(0, 10);
-function localHour(ms, tz) {
-  try { return Number(new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", hour12: false }).format(ms)) % 24; } catch { return 12; }
-}
-// Friday, Saturday and Sunday (day keys, venue-local) of the weekend to show. Mon-Thu: the coming one. Fri-Sun: the one under way,
-// until 8 pm Sunday, then the next.
-export function weekendWindow(nowMs, tz = "America/New_York") {
-  const today = dayKey(nowMs, tz);
-  const dow = keyDate(today).getUTCDay(); // 0 = Sunday
-  let fri;
-  if (dow >= 1 && dow <= 4) fri = addDays(today, 5 - dow);
-  else if (dow === 5) fri = today;
-  else if (dow === 6) fri = addDays(today, -1);
-  else fri = addDays(today, -2);
-  const next = dow === 0 && localHour(nowMs, tz) >= SUNDAY_CUTOFF_HOUR;
-  if (next) fri = addDays(fri, 7);
-  return { today, keys: [fri, addDays(fri, 1), addDays(fri, 2)], next };
-}
-// Does the event fall in the window: it starts on one of the days, or began earlier and runs into the first.
-export function inWindow(e, keys, tz) {
-  const zone = e.tz || tz;
-  const st = Date.parse(e.start);
-  if (isNaN(st)) return false;
-  const k = dayKey(st, zone);
-  if (keys.includes(k)) return true;
-  const en = e.end && !isNaN(Date.parse(e.end)) ? Date.parse(e.end) : NaN;
-  return k < keys[0] && !isNaN(en) && dayKey(en, zone) >= keys[0];
-}
-const shortDay = (k) => new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric" }).format(keyDate(k));
-export const windowText = (keys) => `${shortDay(keys[0])} to ${shortDay(keys[2])}`;
+// ---- the window: weekendWindow, inWindow, windowText live in gen-pages.js ----
 const plural = (n) => `${n} matcha pop-up${n === 1 ? "" : "s"}`;
 const keyOf = (c, e) => (c ? `${c.slug}-${c.state.toLowerCase()}` : e.city && e.state ? `${slugify(e.city)}-${e.state.toLowerCase()}` : null);
 
@@ -261,7 +229,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
   const ev = read("site/data/events.json");
   const art = fs.existsSync(path.join(site, "art", "index.json")) ? read("site/art/index.json") : null;
   const out = buildWeekend({
-    events: ev.events, cities: read("data/cities.json").cities, sources: read("data/sources.json"), art, now,
+    events: ev.events, cities: loadCities(root), sources: read("data/sources.json"), art, now,
     hasArt: (id) => fs.existsSync(path.join(site, "art", "events", `${id}.svg`)),
     hasFile: (p) => fs.existsSync(path.join(root, p)),
     hasOg: (n) => fs.existsSync(path.join(site, "og", n)),
