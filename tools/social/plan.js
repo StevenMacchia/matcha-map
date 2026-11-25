@@ -13,6 +13,7 @@ import { brandOf, placeOf } from "../../ingest/lib/names.js";
 import { whatTheyPour } from "./drinks.js";
 import { assignStyles, activeStyles } from "./styles.js";
 import { dayKey, addDays, loadCities, makeCityLocator, weekendWindow, inWindow } from "../gen-pages.js";
+import { readSiteShops } from "../../ingest/lib/site-shops.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 export const HISTORY_FILE = path.join(ROOT, "tools", "brand", "outbox", "history.json");
@@ -81,7 +82,7 @@ const weekdayRule = (days) => {
 // ---- data ----
 export function loadData(root = ROOT) {
   const events = (readJson(path.join(root, "site", "data", "events.json"), { events: [] }).events) || [];
-  const shops = (readJson(path.join(root, "site", "data", "shops.json"), { shops: [] }).shops) || [];
+  const shops = readSiteShops(root).shops || []; // every field (site/data/shops.json is the slim file)
   const brands = (readJson(path.join(root, "site", "data", "brands.json"), { brands: [] }).brands) || [];
   const sources = readJson(path.join(root, "data", "sources.json"), []);
   const hashtags = readJson(path.join(root, "tools", "social", "hashtags.json"), { always: ["matcha", "matchapopup"], city: [], rotating: [] });

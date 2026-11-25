@@ -6,6 +6,7 @@ import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
+import { readSiteShops } from "../ingest/lib/site-shops.js";
 import { brandOf as cleanBrand, placeOf } from "../ingest/lib/names.js";
 import { tzForPlace } from "../ingest/lib/tz.js";
 import { sitemapFiles, writeSitemaps, readState, patchState, updateRegistry, writeRedirects, dirsWithIndex, UPDATED, WIN, hashInput, hash12, dayText, subHash } from "./seo-lib.js";
@@ -179,7 +180,7 @@ export const eventPageId = (e) => (e.id && /^[a-z0-9]{6,32}$/i.test(e.id) ? e.id
 export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
 // ---- html ----
-const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'; connect-src 'self' https://cloudflareinsights.com";
+const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'; connect-src 'self' https://cloudflareinsights.com";
 
 // image: a page's own share card (a city card from `npm run weekend`); the site card otherwise.
 // seo: the page's data summary for the gate ("u1 s0 b2 n3"), written on <html> as data-seo (docs/SEO-RULES.md, rule 1).
@@ -212,7 +213,8 @@ ${noindex ? "" : `<meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${esc(og)}">
 `}<script src="/theme.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="preload" href="/fonts/mplus-rounded-1c-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/mplus-rounded-1c-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/pages.css">
 ${ld.map(ldScript).join("\n")}
@@ -903,7 +905,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     now, generated: ev.generated, events: ev.events,
     cities: loadCities(root), sources: read("data/sources.json"),
     prevPages: (() => { try { return read("data/pages-lastmod.json"); } catch { return {}; } })(),
-    shops: read("site/data/shops.json").shops || [],
+    shops: readSiteShops(root).shops || [], // every field: site/data/shops.json is the slim file now
     cityFeeds: new Set(fs.existsSync(path.join(root, "site/feeds")) ? fs.readdirSync(path.join(root, "site/feeds")).filter((n) => n.endsWith(".ics")).map((n) => n.slice(0, -4)) : []),
     eventArt: new Set(fs.existsSync(path.join(root, "site/art/events")) ? fs.readdirSync(path.join(root, "site/art/events")).filter((n) => n.endsWith(".svg")).map((n) => n.slice(0, -4)) : []),
     cityOg: new Set(fs.existsSync(path.join(root, "site/og")) ? fs.readdirSync(path.join(root, "site/og")).filter((n) => /^city-.*.png$/.test(n)).map((n) => n.slice(0, -4)) : []),

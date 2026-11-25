@@ -22,7 +22,7 @@ test("the explainer carries the copy as written", () => {
 test("page: own CSP, no inline script, handler or style, scripts and styles are local, no banned words", () => {
   const m = /Content-Security-Policy" content="([^"]+)"/.exec(html);
   assert.ok(m);
-  assert.match(m[1], /^default-src 'none'; script-src 'self' https:\/\/static\.cloudflareinsights\.com; style-src 'self' https:\/\/fonts\.googleapis\.com;/);
+  assert.match(m[1], /^default-src 'none'; script-src 'self' https:\/\/static\.cloudflareinsights\.com; style-src 'self';/);
   assert.doesNotMatch(m[1], /unsafe-inline|unsafe-eval/);
   assert.ok([...html.matchAll(/<script\b([^>]*)>/g)].every((x) => /\bsrc="\//.test(x[1])));
   assert.doesNotMatch(html, /\son[a-z]+=|\sstyle=|javascript:/i);

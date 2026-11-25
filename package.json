@@ -37,6 +37,7 @@
     "gate:shop": "node tools/shop-gate.js",
     "gate:map": "node tools/map-gate.js",
     "gate:seo": "node tools/seo-gate.js",
+    "gate:perf": "node tools/perf-gate.js",
     "flyers": "node tools/flyers.js",
     "social": "node tools/social/outbox.js",
     "social:styles": "node tools/social/styles-sheet.js",

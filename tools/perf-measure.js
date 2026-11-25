@@ -1,20 +1,29 @@
 // Lighthouse 12 mobile (simulated throttling) on one or more URLs; prints one row per URL and writes the raw reports.
 // Shared by tools/perf-gate.js. Usage: node tools/perf-measure.js [--out dir] [--runs 1] <url> [<url> ...]
 // Needs Chrome (found by Lighthouse) and network access to npm for `npx lighthouse@12` the first time.
-import { spawnSync } from 'node:child_process';
+import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
 export const LH_VERSION = '12';
 
+// Async on purpose: tools/perf-gate.js serves the site from this same process, which must keep answering while Lighthouse runs.
 export function runLighthouse(url, outFile) {
   const args = ['--yes', `lighthouse@${LH_VERSION}`, url, '--form-factor=mobile', '--screenEmulation.mobile',
     '--throttling-method=simulate', '--only-categories=performance,seo', '--output=json', `--output-path=${outFile}`,
     '--quiet', '--chrome-flags=--headless=new --no-sandbox'];
-  const r = spawnSync(process.platform === 'win32' ? 'npx.cmd' : 'npx', args, { encoding: 'utf8', shell: process.platform === 'win32', timeout: 240000 });
-  if (!fs.existsSync(outFile)) throw new Error(`lighthouse failed for ${url}: ${(r.stderr || r.stdout || '').slice(-400)}`);
-  return JSON.parse(fs.readFileSync(outFile, 'utf8'));
+  return new Promise((resolve, reject) => {
+    const p = spawn(process.platform === 'win32' ? 'npx.cmd' : 'npx', args, { shell: process.platform === 'win32', stdio: ['ignore', 'pipe', 'pipe'] });
+    let err = '';
+    p.stdout.on('data', (d) => { err += d; }); p.stderr.on('data', (d) => { err += d; });
+    const t = setTimeout(() => p.kill(), 240000);
+    p.on('close', () => {
+      clearTimeout(t);
+      if (!fs.existsSync(outFile)) return reject(new Error(`lighthouse failed for ${url}: ${err.slice(-400)}`));
+      resolve(JSON.parse(fs.readFileSync(outFile, 'utf8')));
+    });
+  });
 }
 
 export function summarize(lh) {
@@ -52,9 +61,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(im
   }
   fs.mkdirSync(out, { recursive: true });
   console.log(HEADER);
-  urls.forEach((u, i) => {
-    const lh = runLighthouse(u, path.join(out, `lh-${i}.json`));
+  for (const [i, u] of urls.entries()) {
+    const lh = await runLighthouse(u, path.join(out, `lh-${i}.json`));
     console.log(row(summarize(lh)));
     if (process.env.TOP) console.log(topRequests(lh).map((t) => `    ${t.bytes}  ${t.url.slice(0, 110)}`).join('\n'));
-  });
+  }
 }

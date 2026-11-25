@@ -107,7 +107,12 @@ export const UPDATED = "~UPDATED~";
 export const WIN = "~WEEKEND~";
 const UPDATED_RE = /\b([Uu]pdated) [A-Z][a-z]{2} \d{1,2}, \d{4}/g;
 const WIN_RE = /[A-Z][a-z]{2} \d{1,2} to [A-Z][a-z]{2} \d{1,2}/g;
-export const hashInput = (html) => html.replace(UPDATED_RE, `$1 ${UPDATED}`).replace(WIN_RE, WIN);
+// Head-only template changes are not content, so a page is hashed as it read before each one (hashes stored earlier stay valid and no lastmod moves):
+//  2026-11-25 (perf lane): the Google Fonts stylesheet became two preloads of the self-hosted font, and the CSP no longer names fonts.googleapis.com / fonts.gstatic.com.
+const FONT_PRELOADS_RE = /<link rel="preload" href="\/fonts\/mplus-rounded-1c-latin-500\.woff2"[^>]*>\r?\n<link rel="preload" href="\/fonts\/mplus-rounded-1c-latin-700\.woff2"[^>]*>/;
+const FONT_LINK_OLD = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">';
+const asBefore = (html) => html.replace(FONT_PRELOADS_RE, FONT_LINK_OLD).replace("style-src 'self';", "style-src 'self' https://fonts.googleapis.com;").replace("font-src 'self';", "font-src https://fonts.gstatic.com;");
+export const hashInput = (html) => asBefore(html).replace(UPDATED_RE, `$1 ${UPDATED}`).replace(WIN_RE, WIN);
 export const hash12 = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 12);
 export const dayText = (k) => new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" }).format(new Date(k + "T12:00:00Z"));
 export const SECTIONS = ["lead", "events", "shops", "brands", "nearby", "faq"]; // the order of a city page's sub-hashes

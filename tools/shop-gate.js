@@ -20,6 +20,7 @@ import path from "node:path";
 import net from "node:net";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { readSiteShops } from "../ingest/lib/site-shops.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
@@ -32,7 +33,7 @@ const THEMES = list("--themes", "light,dark"), FONTS = list("--fonts", "16,20").
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Fixtures from site/data/shops.json, picked by what they stress (the ids are checked against the data below).
-const SHOPS = JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", "shops.json"), "utf8")).shops;
+const SHOPS = readSiteShops(ROOT).shops; // every field: site/data/shops.json is the slim file
 const itemLen = (s) => Math.max(0, ...((s.menu && s.menu.items) || []).map((i) => (i.name || "").length + (i.note || "").length + (i.price || "").length));
 const pick = (f) => SHOPS.slice().sort(f)[0];
 const servesLen = (s) => (s.tier === "serves" && Array.isArray(s.menu_matcha) ? s.menu_matcha.length : -1);

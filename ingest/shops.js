@@ -15,6 +15,7 @@ import { buildQuery, runQuery, parseElements } from "./lib/shops/overpass.js";
 import { findAddress } from "./lib/shops/brandsites.js";
 import { curatedShops } from "./lib/shops/curated.js";
 import { dedupe, applyOverrides, fillState, legitimate, normPlace } from "./lib/shops/merge.js";
+import { writeSiteShops } from "./lib/site-shops.js";
 
 export const ATTRIBUTION = "© OpenStreetMap contributors, ODbL";
 const read = (p, d) => { try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch { return d; } };
@@ -110,7 +111,7 @@ async function main() {
   const site = shops.filter((s) => (s.verified || s.confirmed_via === "public-page" || s.confirmed_via === "overture") && s.status !== "closed" && (s.tier !== "serves" || process.env.SHOPS_SERVES !== "0"));
   fs.mkdirSync("site/data", { recursive: true });
   fs.writeFileSync("data/shops.json", JSON.stringify(out, null, 1) + "\n");
-  fs.writeFileSync("site/data/shops.json", JSON.stringify({ ...out, shops: site }) + "\n");
+  writeSiteShops({ ...out, shops: site }); // site/data/shops.json (slim), site/data/shops/<ST>.json (card details), site/data/shops-photos.json
 
   const by = (f) => { const m = {}; shops.forEach((s) => { const k = f(s); m[k] = (m[k] || 0) + 1; }); return Object.entries(m).sort((a, b) => b[1] - a[1]); };
   info(`Dropped, no coordinates (no node position or way center): ${noCoords}. Only OSM coordinates and geocoded street addresses are ever used; nothing is spread or placed at a city centre.`);

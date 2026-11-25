@@ -12,6 +12,7 @@ import { createFetcher } from "./lib/fetch.js";
 import { jsonLd, metaContent, ldImage } from "./lib/html.js";
 import { hostOf } from "./lib/shops/menus.js";
 import { attachExtras } from "./lib/shops/menus.js";
+import { buildSiteShops } from "./lib/site-shops.js";
 
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(n);
@@ -108,10 +109,11 @@ async function main() {
   console.log(`read ${read} sites (${failed} not readable); ${Object.keys(extra).length} shops gained fields: ${JSON.stringify(filled)}`);
   if (flag("--dry")) return;
   fs.writeFileSync("data/shops-extra.json", JSON.stringify({ about: "Fields read from each shop's own public site by npm run shops:deepen; only empty fields on the shop row are filled.", shops: extra }, null, 1) + "\n");
-  for (const file of ["data/shops.json", "site/data/shops.json"]) {
+  for (const file of ["data/shops.json"]) {
     const j = JSON.parse(fs.readFileSync(file, "utf8"));
     j.shops = attachExtras(j.shops, extra);
-    fs.writeFileSync(file, file.startsWith("site/") ? JSON.stringify(j) + "\n" : JSON.stringify(j, null, 1) + "\n");
+    fs.writeFileSync(file, JSON.stringify(j, null, 1) + "\n");
   }
+  buildSiteShops(); // the site files (slim rows, card details, photos) come from data/shops.json
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main();

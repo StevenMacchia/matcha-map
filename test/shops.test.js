@@ -7,6 +7,7 @@ import { buildQuery, parseElements, runQuery, isClosed } from "../ingest/lib/sho
 import { metroBoxes } from "../ingest/lib/shops/boxes.js";
 import { extractAddress } from "../ingest/lib/shops/brandsites.js";
 import { dedupe, applyOverrides, fillState, stateFromZip, legitimate } from "../ingest/lib/shops/merge.js";
+import { readSiteShops } from "../ingest/lib/site-shops.js";
 
 const fx = JSON.parse(fs.readFileSync("test/fixtures/overpass-shops.json", "utf8"));
 const rec = () => parseElements(fx.elements, "2026-11-22T00:00:00Z");
@@ -139,7 +140,7 @@ test("shops draw at every zoom with the switches on by default, and Littlefoot R
   assert.match(app, /var precise = withoutShopsUnder\(visibleEvents\(false\)\.concat\(visibleShops\(\), visibleBrands\(\)\)\)/, "the tiers hold every shop from zoom 6 (one under a pop-up at its address steps aside while that pop-up is drawn)");
   assert.match(app, /visibleShops\(\)\.forEach\(function \(it\) \{ add\(it, it\.data\.city, it\.data\.state\); \}\);/, "the national tier holds every shop");
   assert.match(app, /shopsOn = true, SERVES_KEY = "matchamap\.serves", servesOn = true;/);
-  const shops = JSON.parse(fs.readFileSync(path.resolve("site", "data", "shops.json"), "utf8")).shops;
+  const shops = readSiteShops(".").shops;
   const lf = shops.find((s) => /littlefoot/i.test(s.name) && s.city === "Raleigh");
   assert.ok(lf, "Littlefoot Matcha, Raleigh");
   assert.match(lf.address, /^234 Fayetteville/);

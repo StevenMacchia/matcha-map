@@ -80,7 +80,7 @@
   function setOffline(on) {
     if (!on) { clearOffline(); return; }
     if (lastSaved) { drawOffline(); return; }
-    fetch("data/events.json").then(function (r) { return r.json(); }).then(function (d) { lastSaved = when(d.generated); }).catch(function () { /* no time known */ }).then(drawOffline);
+    (window.mmJSON ? window.mmJSON("data/events.json") : fetch("data/events.json").then(function (r) { return r.json(); })).then(function (d) { lastSaved = when(d.generated); }).catch(function () { /* no time known */ }).then(drawOffline);
   }
   window.addEventListener("offline", function () { setOffline(true); });
   window.addEventListener("online", function () { setOffline(false); });

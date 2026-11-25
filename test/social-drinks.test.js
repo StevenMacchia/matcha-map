@@ -4,6 +4,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { whatTheyPour, cleanDrink, drinkSvg, parsed, plainReport } from "../tools/social/drinks.js";
+import { readSiteShops } from "../ingest/lib/site-shops.js";
 
 test("menu lines that are not drinks are dropped and prices and page words are cleaned off", () => {
   for (const x of ["Matcha Whisk", "Matcha Powder", "Matcha Tools", "See all matcha →", "Shipping, Return, Cancellation, and Matcha Specific Policies", "What is matcha?", "Matcha Set", "Ceremonial Matcha Gift Set", "A very long description of how our matcha is grown and shipped to you", "Matcha * $5.00 /", "Matcha Latte 6.75 / Iced"]) assert.equal(cleanDrink(x), "", x);
@@ -36,7 +37,7 @@ test("whatTheyPour: one row per visibly different drawing in menu order, a count
 });
 
 test("the real menus: nearly every drink line is read by the engine, no row empty, no price or page word left", () => {
-  const shops = JSON.parse(fs.readFileSync(new URL("../site/data/shops.json", import.meta.url), "utf8")).shops.filter((s) => s.menu_matcha && s.menu_matcha.length);
+  const shops = readSiteShops(".").shops.filter((s) => s.menu_matcha && s.menu_matcha.length);
   assert.ok(shops.length > 100);
   let withDrinks = 0;
   for (const s of shops) {

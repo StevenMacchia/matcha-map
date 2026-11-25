@@ -6,12 +6,12 @@
 var VERSION = "mm-b7577df645";
 var SHELL_CACHE = VERSION + "-shell", DATA_CACHE = VERSION + "-data", LIB_CACHE = "mm-lib-maplibre-4.7.1";
 var SHELL = ["/index.html", "/style.css", "/motion.css", "/pwa.css", "/app.js", "/motion.js", "/theme.js", "/drawn.js", "/deeplink.js", "/rsvp.js", "/featured.js", "/pwa.js", "/cities.js", "/citypins.js", "/density.js", "/pins.js", "/pics.js", "/atshop.js", "/place.js", "/series.js", "/characters.svg", "/map-style.json", "/map-style-dark.json", "/manifest.webmanifest", "/ownermenus.js",
-  "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png", "/icons/favicon-32.png", "/shell.css",
+  "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png", "/icons/favicon-32.png", "/shell.css", "/vendor/maplibre-gl-4.7.1/maplibre-gl.js", "/vendor/maplibre-gl-4.7.1/maplibre-gl.css",
   "/cards.css", "/cards-app.js", "/cards.js", "/shopcard.js", "/shopcard.css", "/search.js", "/search.css", "/art.js", "/img-helper.js"];
 // Files from the next-level workers (N6, N8): cached too, but one that is missing never stops the install.
 var EXTRA = ["/weekend.css", "/weekend/", "/brand-extras.js"];
 // The map library is pinned and checked by SRI in index.html; the shell cannot draw a map without it.
-var LIB = ["https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js", "https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"];
+var LIB = []; // MapLibre is served from /vendor/ since 2026-11-25 (SHELL); an older worker's unpkg copy in LIB_CACHE is left alone
 var offline = false;
 
 self.addEventListener("install", function (e) {
@@ -84,6 +84,8 @@ self.addEventListener("fetch", function (e) {
   }
   if (url.origin !== self.location.origin) return; // tiles, fonts, Instagram images: straight to the network, never stored
   if (url.pathname.indexOf("/api/") === 0) return; // counts and forms: live answers only, never from a cache
+  // pinned by path and never changed in place (vendor/, fonts/): the cached copy first, no revalidation round trip
+  if (url.pathname.indexOf("/vendor/") === 0 || url.pathname.indexOf("/fonts/") === 0) { e.respondWith(caches.match(req).then(function (hit) { return hit || networkFirstAsset(req); })); return; }
   if (req.mode === "navigate") { e.respondWith(networkFirstPage(req)); return; }
   if ((url.pathname.indexOf("/data/") === 0 && /\.json$/.test(url.pathname)) || url.pathname.indexOf("/img/events/") === 0) {
     e.respondWith(staleWhileRevalidate(req, DATA_CACHE));

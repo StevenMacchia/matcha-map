@@ -11,7 +11,7 @@ import { esc, shortDayOf, makeCityLocator, cityPath, ldScript, eventLd, isUpcomi
 import { patchState, updateRegistry, writeRedirects, dirsWithIndex, hash12, hashInput } from "./seo-lib.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; img-src 'self' https: data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'none'";
+const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; img-src 'self' https: data:; style-src 'self'; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'none'";
 
 // og:image: the event's photo, else site/art/events/<id>.svg when it exists, else the shared card.
 export function ogImage(e, { hasArt = () => false } = {}) {
@@ -65,7 +65,8 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false, card =
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${esc(img)}">
 <script src="/theme.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+<link rel="preload" href="/fonts/mplus-rounded-1c-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/mplus-rounded-1c-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/pages.css">
 <link rel="stylesheet" href="/cards.css">

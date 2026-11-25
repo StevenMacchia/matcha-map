@@ -12,7 +12,7 @@ import { loadEnv, parseEnv } from "../ingest/lib/env.js";
 import { llmEnabled, askLlm } from "../ingest/lib/llm.js";
 
 test("the step list and its order", () => {
-  assert.deepEqual(STEP_NAMES, ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "report", "commit", "push", "deploy", "notify"]);
+  assert.deepEqual(STEP_NAMES, ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "perf-gate", "report", "commit", "push", "deploy", "notify"]);
   assert.deepEqual(parseArgs(["--dry", "--steps", "report,smoke"]), { dry: true, steps: ["report", "smoke"] });
   assert.deepEqual(parseArgs([]), { dry: false, steps: null });
 });

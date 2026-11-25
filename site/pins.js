@@ -94,5 +94,5 @@
   // A slow random phase for the idle bob, the same for the same pin: a negative delay in 0 to 3.6 s.
   function phase(key) { var h = 5381; key = String(key || ""); for (var i = 0; i < key.length; i++) h = ((h << 5) + h + key.charCodeAt(i)) >>> 0; return -((h % 3600) / 1000); }
 
-  root.MatchaPins = { cityPin: cityPin, shopPin: shopPin, popPin: popPin, brandPin: brandPin, stackPin: stackPin, hoodPin: hoodPin, goingHTML: goingHTML, dayPill: dayPill, phase: phase, src: src, esc: esc };
+  root.MatchaPins = { photoImg: function (u) { u = src(u); return u ? img(u) : ""; }, cityPin: cityPin, shopPin: shopPin, popPin: popPin, brandPin: brandPin, stackPin: stackPin, hoodPin: hoodPin, goingHTML: goingHTML, dayPill: dayPill, phase: phase, src: src, esc: esc };
 })(typeof window !== "undefined" ? window : this);

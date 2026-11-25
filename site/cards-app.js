@@ -12,7 +12,7 @@ import { shopCardHtml, menuForBrand, hoursTodayHtml } from "./shopcard.js"; // t
 
 const data = { art: null, brands: null, sources: null, places: null, menus: null };
 let pages = null; // data/pages.json: which city and brand pages exist (written by npm run pages)
-const get = (u) => fetch(u).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+const get = (u) => (window.mmJSON ? window.mmJSON(u) : fetch(u).then((r) => { if (!r.ok) throw new Error(u); return r.json(); })).catch(() => null); // one fetch per file for the page (theme.js mmJSON)
 const ready = Promise.all([get("art/index.json"), get("data/brands.json"), get("data/sources.json"), get("data/places.json"), get("data/pages.json"), get("data/menus.json")])
   .then(([art, brands, sources, places, idx, menus]) => { Object.assign(data, { art, brands, sources, places, menus }); pages = idx && Array.isArray(idx.cities) ? { cities: idx.cities, brands: new Set(idx.brands || []) } : null; });
 

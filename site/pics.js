@@ -60,9 +60,10 @@
   }
   function rescan() { if (!scanT) scanT = setTimeout(scan, 60); }
 
+  var openers = [];
   function open(byTouch) {
     if (byTouch) touched = true;
-    if (!opened) opened = true;
+    if (!opened) { opened = true; openers.splice(0).forEach(function (f) { try { f(); } catch (e) { /* a late caller must not stop the loader */ } }); }
     soon();
   }
   function start() {
@@ -76,5 +77,6 @@
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start, { once: true }); else start();
 
-  window.MatchaPics = { stats: function () { return { started: started, running: running, waiting: waiting.length, opened: opened, touched: touched }; } };
+  // whenOpen(fn): fn runs once, the first time pictures may load (app.js fetches the shop photo addresses then, not before)
+  window.MatchaPics = { whenOpen: function (f) { if (opened) f(); else openers.push(f); }, stats: function () { return { started: started, running: running, waiting: waiting.length, opened: opened, touched: touched }; } };
 })();

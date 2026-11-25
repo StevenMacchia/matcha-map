@@ -7,6 +7,7 @@ import fs from "node:fs";
 import { pathToFileURL } from "node:url";
 import { createFetcher } from "./lib/fetch.js";
 import { attachMenus } from "./lib/shops/menus.js";
+import { buildSiteShops } from "./lib/site-shops.js";
 
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(n);
@@ -199,12 +200,13 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   if (!flag("--dry")) fs.writeFileSync(file, JSON.stringify({ generated: new Date().toISOString(), menus: out }, null, 1) + "\n");
   if (!flag("--dry") && !opt("--out")) {
     // Put the menus on the shop rows now, so a shops run is not needed to see them.
-    for (const f of ["data/shops.json", "site/data/shops.json"]) {
+    for (const f of ["data/shops.json"]) {
       if (!fs.existsSync(f)) continue;
       const j = JSON.parse(fs.readFileSync(f, "utf8"));
       j.shops = attachMenus(j.shops, out);
-      fs.writeFileSync(f, f.startsWith("site/") ? JSON.stringify(j) + "\n" : JSON.stringify(j, null, 1) + "\n");
+      fs.writeFileSync(f, JSON.stringify(j, null, 1) + "\n");
     }
+    if (fs.existsSync("data/shops.json")) buildSiteShops(); // the site files (slim rows, card details, photos) come from data/shops.json
     fs.writeFileSync("site/data/menus.json", JSON.stringify({ generated: new Date().toISOString(), menus: out }) + "\n");
     const withMenu = JSON.parse(fs.readFileSync("data/shops.json", "utf8")).shops.filter((s) => s.menu).length;
     console.log(withMenu + " shop rows now carry a menu");

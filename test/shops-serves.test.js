@@ -6,6 +6,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import vm from "node:vm";
 import { shopCardHtml, servesMenu } from "../site/shopcard.js";
+import { readSiteShops } from "../ingest/lib/site-shops.js";
 
 const APP = fs.readFileSync(new URL("../site/app.js", import.meta.url), "utf8").replace(/\r\n/g, "\n");
 const HTML = fs.readFileSync(new URL("../site/index.html", import.meta.url), "utf8");
@@ -67,7 +68,7 @@ test("serves: the Menu section reads menu_matcha as written, links menu_url, cre
 });
 
 test("serves: every serves row in the site data renders without the core kind", () => {
-  const SHOPS = JSON.parse(fs.readFileSync(new URL("../site/data/shops.json", import.meta.url), "utf8")).shops;
+  const SHOPS = readSiteShops(".").shops;
   const sv = SHOPS.filter((s) => s.tier === "serves");
   if (!sv.length) return; // the site layer holds none until the Population lane flips SHOPS_SERVES on
   for (const s of sv) {

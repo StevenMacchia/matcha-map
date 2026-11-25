@@ -1064,7 +1064,7 @@
       "<p class=\"ycredit muted\">Details from <a class=\"ywm\" href=\"" + esc(p.url) + "\" target=\"_blank\" rel=\"noopener\">Yelp</a></p></div></div>";
   }
   function loadExtras() {
-    var get = function (u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); };
+    var get = function (u) { return window.mmJSON ? window.mmJSON(u) : fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); };
     get("data/brands.json").then(function (d) { (d.brands || []).forEach(function (b) { if (b && b.handle) brandsBy[String(b.handle).toLowerCase()] = b; }); brandsLanded(); }).catch(function () { /* optional layer */ });
     get("data/places.json").then(function (d) { (d.places || []).forEach(function (p) { if (p && p.key) placesBy[p.key] = p; }); }).catch(function () { /* optional layer */ });
   }
@@ -1254,6 +1254,7 @@
     var it = items[key];
     if (!it) return;
     if (!fullDone && fullP && it.kind === "e") { fullP.then(function () { showCard(key, focusIt); }); return; }
+    if (it.kind === "s" && !it.data._d) { loadShopDetail(it).then(function () { showCard(key, focusIt); }); return; } // a shop's card waits for its details (one small file for its state)
     // The desktop card is a MapLibre popup, which needs the real map: a deep link (?event=) that lands while the stand-in
     // is still up threw inside Popup.addTo (live, 2026-11-23). It waits for the real map; the stand-in hands the listener over.
     if (wide.matches && map.isPre) { map.once("load", function () { showCard(key, focusIt); }); return; }
@@ -2556,7 +2557,7 @@
   }
 
   // ---------- load ----------
-  function getJSON(u) { twirl(); return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
+  function getJSON(u) { twirl(); return window.mmJSON ? window.mmJSON(u, { cache: "no-cache" }) : fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
 
   try {
     var saved = JSON.parse(localStorage.getItem("matchamap.filter") || "null");
@@ -2745,13 +2746,51 @@
 
   // Storefronts load after events and brands so the first paint never waits for them. ?shop=<id> waits here.
   var pendingShop = "";
+  // data/shops.json is the slim list (id, name, lat, lng, city, state, tier, hours): enough for a pin, a group and a list row.
+  // A shop's card needs its details (address, website, menu, ...), one file per state (data/shops/<ST>.json) fetched when the
+  // card opens; the pins' photo addresses (data/shops-photos.json) come once pictures may load (site/pics.js).
   function loadShops() {
     fetch("data/shops.json").then(function (r) { if (!r.ok) throw new Error("shops"); return r.json(); }).then(function (d) {
       buildShops(d.shops);
       refreshEvents(false);
       if (pendingShop && items[pendingShop]) { rememberSoon("link", items[pendingShop].name); flyTo(pendingShop); }
       pendingShop = "";
+      if (window.MatchaPics && window.MatchaPics.whenOpen) window.MatchaPics.whenOpen(loadShopPhotos);
     }).catch(function () { /* the storefront layer is optional */ });
+  }
+  var shardP = {}, SHARD_DIR = "data/shops/"; // one details file per state: data/shops/<ST>.json
+  function shardOf(s) { return /^[A-Z]{2}$/.test(s.state || "") ? s.state : "_"; }
+  // resolves once the shop's details are merged into its record (or could not be fetched: the card then shows what the slim row has)
+  function loadShopDetail(it) {
+    var s = it.data, k = shardOf(s);
+    if (s._d) return Promise.resolve();
+    if (!shardP[k]) shardP[k] = fetch(SHARD_DIR + k + ".json").then(function (r) { if (!r.ok) throw new Error("shard"); return r.json(); }).catch(function () { return { shops: {} }; });
+    return shardP[k].then(function (d) {
+      var det = (d.shops || {})[s.id];
+      if (det) Object.keys(det).forEach(function (f) { s[f] = det[f]; });
+      s._d = 1;
+    });
+  }
+  function loadShopPhotos() {
+    fetch("data/shops-photos.json").then(function (r) { if (!r.ok) throw new Error("photos"); return r.json(); }).then(function (d) {
+      var ph = d.photos || {}, any = false;
+      Object.keys(ph).forEach(function (id) { var it = items["s:" + id]; if (it && !it.data.image_url) { it.data.image_url = ph[id]; any = true; } });
+      if (any) photosLanded();
+    }).catch(function () { /* the pins keep their drawn art */ });
+  }
+  // The shop pins already on the map get their photo in place (over the drawn art, loaded by site/pics.js); pins drawn
+  // from now on find the address on the shop's record.
+  function photosLanded() {
+    var P = window.MatchaPins;
+    if (!P || !P.photoImg) return;
+    var list = document.querySelectorAll(".maplibregl-marker .pn-ph");
+    for (var i = 0; i < list.length; i++) {
+      var ph = list[i];
+      if (ph.querySelector("img")) continue;
+      var face = ph.closest("[data-fkey]"), mk = ph.closest(".maplibregl-marker");
+      var it = items[(face && face.getAttribute("data-fkey")) || (mk && mk.getAttribute("data-key")) || ""];
+      if (it && it.kind === "s") ph.insertAdjacentHTML("beforeend", P.photoImg(it.data.image_url));
+    }
   }
 
   // Exposed for tests only.

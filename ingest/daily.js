@@ -15,6 +15,7 @@ import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { yelpDue, stampYelp, todayUTC } from "./lib/day-gate.js";
 import { acquire, waitFor } from "./lib/runlock.js";
+import { readSiteShops } from "./lib/site-shops.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GH = "C:\\Program Files\\GitHub CLI\\gh.exe";
@@ -22,7 +23,7 @@ const CHROME_DEFAULT = "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const IDENTITY = ["-c", "user.name=Steven Macchia", "-c", "user.email=64022630+StevenMacchia@users.noreply.github.com"];
 const MODEL_KEYS = ["CLAUDE_API_KEY", "ANTHROPIC_API_KEY"];
 
-export const STEP_NAMES = ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "report", "commit", "push", "deploy", "notify"];
+export const STEP_NAMES = ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "perf-gate", "report", "commit", "push", "deploy", "notify"];
 // Same arguments as YELP_LEADS in ingest/loop.js (test/daily.test.js checks they match).
 export const YELP_ARGS = ["ingest/shops-keyed.js", "--provider", "yelp", "--limit", "250"];
 const SCRIPTS = {
@@ -32,6 +33,7 @@ const SCRIPTS = {
   "yelp-leads": YELP_ARGS,
   deepen: ["ingest/shops-deepen.js", "--new"],
   smoke: ["tools/smoke.js"],
+  "perf-gate": ["tools/perf-gate.js"], // Lighthouse mobile on four page types against the budgets in docs/PERFORMANCE.md; soft
   "seo-gate": ["tools/seo-gate.js"],
   social: ["tools/social/outbox.js"], // npm run social; writes tools/brand/outbox/<date>/ and site/social/<date>/
 };
@@ -153,7 +155,7 @@ export function summarize({ events, shops, keyed, today }) {
 
 export function collect(root, today) {
   const rd = (f, fb) => { try { return JSON.parse(fs.readFileSync(path.join(root, f), "utf8")); } catch { return fb; } };
-  const s = summarize({ events: rd("data/events.json", { events: [] }).events || [], shops: rd("site/data/shops.json", { shops: [] }).shops || [], keyed: rd(".cache/keyed-places.json", {}), today });
+  const s = summarize({ events: rd("data/events.json", { events: [] }).events || [], shops: (() => { try { return readSiteShops(root).shops || []; } catch { return []; } })(), keyed: rd(".cache/keyed-places.json", {}), today });
   return { ...s, social: socialSummary(root, today), pace: rd("data/seo-state.json", {}).queue || null, pages: { city: countIndex(path.join(root, "site/city")), brand: countIndex(path.join(root, "site/brand")), event: countIndex(path.join(root, "site/e")), weekend: countIndex(path.join(root, "site/weekend")) } };
 }
 
@@ -295,6 +297,14 @@ async function main() {
         break;
       }
       case "smoke": await smokeStep(); break;
+      case "perf-gate": {
+        // soft like social: a missed budget is recorded ("perf-gate FAILED (soft)") and shows in the report, and never stops the commit, the push or the deploy
+        if (args.dry) { rec(name, "skipped", null, "dry"); break; }
+        const r = await node(SCRIPTS["perf-gate"]);
+        const miss = r.out.split(/\r?\n/).filter((l) => /FAIL |perf gate:/.test(l)).map((l) => l.trim().slice(0, 140));
+        rec(name, r.ok ? "ok" : "FAILED (soft)", r.secs, r.ok ? miss.pop() || "" : `perf-gate FAILED (soft): ${miss.join("; ").slice(0, 400) || r.note}`);
+        break;
+      }
       case "report": reportStep(); break;
       case "commit": {
         if (!state.smokeOk || !state.gateOk) { rec(name, "skipped", null, !state.smokeOk ? "smoke did not pass" : "seo gate did not pass"); break; }
