@@ -38,3 +38,7 @@ npm run social -- --date 2026-11-24 --sample --force
 ```
 
 Writes `tools/brand/outbox/sample-<date>/` (gitignored) with `INDEX.md`, `plan.json` and one folder per image; it touches neither `history.json` nor `site/social/`. A sample uses an empty history, so featured shops repeat across sample days. Gate: `node --test test/social-gate.test.js` (every template with the longest real names). All social tests: `node --test test/social-daily.test.js test/social-gate.test.js test/social-drinks.test.js test/social.test.js test/social-search.test.js`.
+
+## Styles (added 2026-11-24, social-styles lane)
+
+Ten looks over the same layouts, rotating daily; see "Styles (looks)" in `docs/SOCIAL.md`. Pieces: `tools/social/styles.js` (token sets, decorations, `assignStyles`, `activeStyles`), `data/social-styles.json` (pin a style off), theme variables at the top of `templates/social.css`, `itemHtml` in `render.js` (picks the style from `it.style`), `history.json` `styles` per date. Not done: the drawn pop-up card (`site/drawn.js`, used on single pop-up cards) keeps its own palette in every style; Mattie keeps his drawing and only swaps pose.

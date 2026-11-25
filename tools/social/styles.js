@@ -60,7 +60,7 @@ const checker = (c, y, h, a, b) => { let o = ""; const s = h / 2; for (let row =
 export const STYLES = {
   pastel: { word: "soft", note: "the original: cream, matcha green, blush petals", vars: {}, css: "", fonts: "", pose: {}, deco: () => "" },
 
-  kawaii: { word: "sticker", note: "kawaii sticker sheet: pink polka ground, die-cut white edges, stitched tiles, hearts and stars",
+  sticker: { word: "sweet", note: "sticker sheet: pink polka ground, die-cut white edges, stitched tiles, hearts and stars",
     vars: { "--low": "#FFE6F0", "--az": "#5A3248", "--az2": "#8A5A74", "--cream": "#FFFFFF", "--top": "#FFD3E4", "--strong": "#FFB5D2", "--edge": "#FF9CC2", "--sun": "#FFF08A",
       "--canvas": `#FFE6F0 ${uri('<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72"><circle cx="18" cy="18" r="6.5" fill="#fff" fill-opacity=".75"/><circle cx="54" cy="54" r="6.5" fill="#fff" fill-opacity=".75"/><circle cx="54" cy="18" r="2.5" fill="#FF9CC2" fill-opacity=".5"/><circle cx="18" cy="54" r="2.5" fill="#FF9CC2" fill-opacity=".5"/></svg>')}`,
       "--tile-edge": "#FF9CC2", "--r-tile": "40px", "--r-row": "38px", "--r-art": "44px", "--r-mochi": "30px",
@@ -69,7 +69,7 @@ export const STYLES = {
       "--tag-bg": "#FFF08A", "--tag-line": "#FF9CC2", "--tag-rot": "-3deg", "--tag-shadow": "0 0 0 6px #fff, 0 10px 12px 4px rgba(214,100,150,.3)",
       "--head-stroke": "14px", "--head-shadow": "0 6px 0 rgba(255,156,194,.7)", "--head-ink": "#5A3248", "--foot-ink": "#8A5A74",
       "--dots-ink": "rgba(255,156,194,.8)", "--dots-style": "dashed", "--mt-filter": "drop-shadow(0 0 0 #fff) drop-shadow(0 4px 0 rgba(255,255,255,.9))" },
-    css: ".st-kawaii .tile{border-style:dashed;border-width:5px}.st-kawaii .pr,.st-kawaii .pill{border-style:dashed}.st-kawaii .shopart{border-style:solid}",
+    css: ".st-sticker .tile{border-style:dashed;border-width:5px}.st-sticker .pr,.st-sticker .pill{border-style:dashed}.st-sticker .shopart{border-style:solid}",
     fonts: "", pose: { "m-wave": "m-excited" },
     deco: (c) => { const r = mul(c.seed); return svg(c, around(r, c.W, c.H, c.story ? 34 : 26, 30, (x, y, i) => i % 3 === 0 ? heart(x, y, 24 + r() * 10, pick(r, kaw), (r() - 0.5) * 40) : i % 3 === 1 ? star4(x, y, 22 + r() * 12, pick(r, kaw), r() * 30) : dot(x, y, 8 + r() * 8, pick(r, kaw)))
       + bands(r, c, 12, (x, y, i) => i % 3 === 0 ? heart(x, y, 44 + r() * 26, pick(r, kaw), (r() - 0.5) * 40) : i % 3 === 1 ? star4(x, y, 40 + r() * 22, pick(r, kaw), r() * 30) : dot(x, y, 18 + r() * 16, pick(r, kaw)))); } },
@@ -221,4 +221,31 @@ export function activeStyles(file = STYLE_CONFIG) {
   try { off = JSON.parse(fs.readFileSync(file, "utf8")).off || []; } catch { /* no config: every style is on */ }
   const on = STYLE_NAMES.filter((n) => !off.includes(n));
   return on.length ? on : [DEFAULT_STYLE];
+}
+
+// ---- rotation ----
+// One look per unit: each feed post is a unit, and each story group (a title story and its stories) is one, so a sequence of
+// stories looks designed together while a day mixes looks. Deterministic for a date: the day's order of styles is a shuffle
+// keyed by the date; units take the next styles in it, so no style repeats within a day (until there are more units than
+// styles). The first feed post never uses the style of the last feed post before this date (`lastFeed`, from the history), and
+// feed posts within a day always differ, so the same style never runs on two consecutive feed (featured) posts.
+const hashStr = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
+export function assignStyles(items, { date, lastFeed = null, styles = activeStyles() } = {}) {
+  const order = styles.slice().sort((a, b) => hashStr(date + a) - hashStr(date + b) || a.localeCompare(b));
+  const units = [];
+  for (const it of items) {
+    if (it.slot === "feed") units.push({ feed: true, items: [it] });
+    else if (it.role === "title" || !units.length || units[units.length - 1].feed) units.push({ feed: false, items: [it] });
+    else units[units.length - 1].items.push(it);
+  }
+  const used = [], prev = [];                                 // used: styles taken today; prev: the last feed post's style
+  let last = lastFeed;
+  const takeFrom = (ok) => { const c = order.find((n) => !used.includes(n) && ok(n)) || order.find((n) => ok(n)) || order[0]; used.push(c); if (used.length >= order.length) used.length = 0; return c; };
+  for (const u of units.sort((a, b) => (b.feed ? 1 : 0) - (a.feed ? 1 : 0) || 0)) {   // feed first (stable: Array.sort keeps the rest in order)
+    const s = u.feed ? takeFrom((n) => n !== last || order.length < 2) : takeFrom(() => true);
+    if (u.feed) last = s;
+    for (const it of u.items) it.style = s;
+  }
+  const feed = items.filter((it) => it.slot === "feed").sort((a, b) => a.time.localeCompare(b.time)).map((it) => it.style);
+  return { feed, story: [...new Set(items.filter((it) => it.slot === "story").map((it) => it.style))] };
 }

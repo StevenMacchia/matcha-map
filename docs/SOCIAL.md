@@ -49,8 +49,32 @@ Steven, 2026-11-23: two to three posts and two to three stories every day, repea
 - **Tags only from our data.** A handle is tagged or written only when our data has it: the event's own handle or Instagram link, `data/sources.json`, `site/data/brands.json`, or the shop row for the venue. Nothing is guessed; a brand without a handle is credited by name.
 - **Words.** Plain, specific, no hype. The words kawaii, uwu, cute, cutesy and girly are never used (the plan refuses a caption that has one, and leaves out a brand whose name does). Captions stay under Instagram's 2,200 characters, with 5 to 8 hashtags from `tools/social/hashtags.json`.
 
+## Styles (looks)
+
+Steven, 2026-11-24, after seeing the featured shop card with four drink tiles: "start working on different styles like 10 of them for variety, fun, cute, exciting." `tools/social/styles.js` holds ten named token sets applied over the same layouts: ground colour and pattern, panel and tile fills, border weight and corner radius, type face, badge shape, a Mattie pose swap, and decorations drawn in code (SVG shapes only: no photo, no logo, no words). Layout and copy never change with the style; the 36px floor and the overlap gate still apply.
+
+| Style | Intent | Look |
+|---|---|---|
+| `pastel` | soft | the original: cream, matcha green, blush petals (renders byte-identical to before styles existed) |
+| `sticker` | sweet | pink polka ground, die-cut white edges, stitched tiles, hearts and stars |
+| `neon` | night | night-market indigo, pink and cyan tube light, glowing frames, paper lanterns |
+| `diner` | retro | cream, red and teal, checkerboard bands, chunky outlines, hard shadows |
+| `washi` | tea | kraft paper grain, indigo ink, vermilion stamp tag, washi tape, wave band, serif headline |
+| `comic` | pop | yellow with halftone dots, black outlines, hard shadows, starbursts |
+| `garden` | botanical | sage ground, leaf-shaped tiles, vines in the margins |
+| `confetti` | festival | white, bunting, confetti, a different bright border on every drink tile |
+| `editorial` | clean | white page, hairline rules, serif headline, one green accent |
+| `frost` | winter | icy blue, frosted-glass panels, snowflakes and icicles |
+
+- **Pick by hand:** `npm run social -- --date D --sample --force --style neon` draws every card of the day in one style. A plan item's `style` field does the same for one card.
+- **Contact sheet:** `npm run social:styles -- --date D [--kind featured-shop|city|location|...] [--only a,b]` draws one card of the day in all ten styles, prints each one's measurements, and writes `tools/brand/outbox/styles-<date>[-<kind>]/<style>.png` plus `sheet.png` (gitignored).
+- **Rotation (live in the daily plan):** `assignStyles` in styles.js gives every feed post its own look and every story group (a title story and its stories) one look, so a day mixes looks and a story sequence looks designed. The day's order of styles is a shuffle keyed by the date, so the same date gives the same plan. The first feed post never uses the style of the last feed post before it (from `history.json`), and feed posts in a day always differ, so the same style never runs on two consecutive feed posts. The choice is stored in `plan.json` (`style` on each item) and in `history.json` (`styles: { feed: [...], story: [...] }` per date).
+- **Pin a style off:** list it in `data/social-styles.json` (`{ "off": ["comic"] }`). The plan skips it from the next run; if all are off the soft pastel look is used.
+- **Fonts:** most styles load one extra Google font (Lilita One, Shippori Mincho, Bangers, Fraunces, Fredoka, Playfair Display, Quicksand), like the base font. Offline Chrome falls back to a system font; the run's overlap check would print any card that then overflows.
+- **Adding a style:** add an entry to `STYLES` in styles.js (vars, css, fonts, pose, deco); the tests and the gate pick it up. `node --test test/social-styles.test.js`; the gate for one style: `GATE_STYLES=neon node --test test/social-gate.test.js`.
+
 ## Tests
 
 `node --test test/social-daily.test.js`: the plan (no brand twice in 7 days over three weeks, handles only from data, banned words absent, caption length, same date gives the same plan, weekend roundup on Thursday and Friday), the drawings (PNG sizes, the 36px floor, nothing cut or overlapping) and publish (a dry run makes no network call, a live run refuses without the flag, token and pick, a fake Graph API sees only the pick with its user tags).
 
-`node --test test/social-drinks.test.js`: non-drinks and prices are dropped, each row is drawn by the engine, unreadable names get the plain matcha drawing, no printed name is made up, and under 2% of real drink lines fall to plain. `node --test test/social-gate.test.js` is the overlap and overflow gate: it renders every template (shop, pop-up, list, location title; feed and story) with the longest real brands, venues, cities, shops and drink lists in the data and fails on text under 36px, text off the canvas or out of its own box, a cut-short line, a column past its space, or any two boxes (rows, pills, the pour block, Mattie, the foot) that intersect; a second test proves the gate catches both faults.
+`node --test test/social-styles.test.js`: ten styles with decorations that are shapes only, the style class on a card, the rotation (deterministic, no repeat on consecutive feed posts, a story group keeps one look, a day mixes looks) and the pin-off config. `node --test test/social-drinks.test.js`: non-drinks and prices are dropped, each row is drawn by the engine, unreadable names get the plain matcha drawing, no printed name is made up, and under 2% of real drink lines fall to plain. `node --test test/social-gate.test.js` is the overlap and overflow gate: it renders (in each of the ten styles) every template (shop, pop-up, list, location title; feed and story) with the longest real brands, venues, cities, shops and drink lists in the data and fails on text under 36px, text off the canvas or out of its own box, a cut-short line, a column past its space, or any two boxes (rows, pills, the pour block, Mattie, the foot) that intersect; a second test proves the gate catches both faults.

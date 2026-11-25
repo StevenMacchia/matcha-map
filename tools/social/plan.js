@@ -11,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { SITE_URL } from "../site-url.js";
 import { brandOf, placeOf } from "../../ingest/lib/names.js";
 import { whatTheyPour } from "./drinks.js";
+import { assignStyles, activeStyles } from "./styles.js";
 import { dayKey, addDays, loadCities, makeCityLocator, weekendWindow, inWindow } from "../gen-pages.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -217,21 +218,22 @@ function historyBefore(history, date) {
     if (d >= from) for (const [k, n] of Object.entries(h.regions || {})) if (regionWeek[k]) { regionWeek[k].feed += +(n && n.feed) || 0; regionWeek[k].story += +(n && n.story) || 0; }
     for (const s of h.shops || []) shopsEver.add(s);
   }
-  let lastMetro = null, lastD = "";
+  let lastMetro = null, lastD = "", lastFeedStyle = null, lastSD = "";
   const feat60 = new Set(), cityRecent = new Set(), f60 = addDays(date, -60), c14 = addDays(date, -14);
   for (const [d, h] of Object.entries(history || {})) {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(d) && d < date && d > lastSD && h.styles && h.styles.feed && h.styles.feed.length) { lastSD = d; lastFeedStyle = h.styles.feed[h.styles.feed.length - 1]; }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || d >= date || !h.feat) continue;
     if (h.feat.metro && d > lastD) { lastD = d; lastMetro = h.feat.metro; }
     if (d >= f60 && h.feat.shop) feat60.add(h.feat.shop);
     if (d >= c14 && h.feat.city) cityRecent.add(h.feat.city);
   }
-  return { blocked, shopsEver, regionWeek, lastMetro, feat60, cityRecent };
+  return { blocked, shopsEver, regionWeek, lastMetro, feat60, cityRecent, lastFeedStyle };
 }
 
-export function plan({ date, data, history = {} }) {
+export function plan({ date, data, history = {}, styles = activeStyles() }) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("date must be YYYY-MM-DD");
   const ctx = context(data);
-  const { blocked, shopsEver, regionWeek, lastMetro, feat60, cityRecent } = historyBefore(history, date);
+  const { blocked, shopsEver, regionWeek, lastMetro, feat60, cityRecent, lastFeedStyle } = historyBefore(history, date);
   const used = new Set();
   const free = (k) => k && !blocked.has(k) && !used.has(k);
   const clean = (s) => !BANNED.test(s);
@@ -452,12 +454,13 @@ ${tags.join(" ")}
   storyList.forEach((c, i) => { if (c.role === "title") { gi++; within = 0; } items.push(finish(c, "story", i, gi * 3 + within)); within++; });
   items.sort((a, b) => a.time.localeCompare(b.time));
   items.forEach((it, i) => { it.n = String(i + 1).padStart(2, "0"); it.name = `${it.n}-${it.slot}-${it.kind}-${slug(it.kind === "shop" || it.kind === "featured-shop" ? it.shop.name : it.kind === "location" ? it.group.place : it.city)}`; });
+  const looks = assignStyles(items, { date, lastFeed: lastFeedStyle, styles });      // one look per feed post and per story group (styles.js)
   for (const it of items) {
     if (it.caption.length > CAPTION_MAX) it.caption = it.caption.slice(0, CAPTION_MAX - 1).replace(/\s+\S*$/, "") + "\n";
     if (BANNED.test(it.caption + " " + JSON.stringify(it.events) + " " + it.title)) throw new Error(`banned word in ${it.name}`);
   }
   const regions = Object.fromEntries(Object.keys(REGIONS).map((k) => [k, { feed: items.filter((it) => it.slot === "feed" && it.region === k).length, story: items.filter((it) => it.slot === "story" && it.role !== "title" && it.region === k).length }]));
-  return { date, items, featured: { brands: [...used].sort(), shops: [...cands, ...feed].filter((c) => c.shopId).map((c) => c.shopId).concat(feed.includes(cityC) ? cityC.shopIds : []), regions,
+  return { date, items, featured: { brands: [...used].sort(), shops: [...cands, ...feed].filter((c) => c.shopId).map((c) => c.shopId).concat(feed.includes(cityC) ? cityC.shopIds : []), regions, styles: looks,
     feat: { shop: featuredC && featuredC.shopId || null, metro: featuredC ? featuredC.metro : null, city: feed.includes(cityC) ? cityC.metro : null } } };
 }
 
@@ -466,7 +469,7 @@ export function recordHistory(history, p) {
   const out = {};
   const cut = addDays(p.date, -90);
   for (const [d, h] of Object.entries(history || {})) if (d >= cut && d !== p.date) out[d] = h;
-  out[p.date] = { brands: p.featured.brands, shops: p.featured.shops, regions: p.featured.regions || {}, feat: p.featured.feat || null };
+  out[p.date] = { brands: p.featured.brands, shops: p.featured.shops, regions: p.featured.regions || {}, feat: p.featured.feat || null, styles: p.featured.styles || null };
   return Object.fromEntries(Object.entries(out).sort(([a], [b]) => a.localeCompare(b)));
 }
 export const readHistory = (file = HISTORY_FILE) => readJson(file, {});
