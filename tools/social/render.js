@@ -11,6 +11,7 @@ import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { hash } from "./plan.js";
 import { drinkSvg } from "./drinks.js";
+import { styleOf, styleCss, styleFontLink, stylePose, styleDeco, DEFAULT_STYLE } from "./styles.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const TPL = path.join(ROOT, "tools", "social", "templates");
@@ -50,7 +51,9 @@ const fill = (tpl, vars) => tpl.replace(/\{\{\{(\w+)\}\}\}/g, (_, k) => vars[k] 
 // ---- pieces ----
 const FACE = '<svg viewBox="4 9 56 52"><use href="#m-happy" width="64" height="64"/></svg>';
 const use = (id, vb, style, cls = "mt") => { const [, , w, h] = vb.split(" "); return `<svg class="${cls}" viewBox="${vb}" style="${style}"><use href="#${id}" width="${w}" height="${h}"/></svg>`; };
-const mattie = (pose, x, y, s, flip = false) => use(pose, "0 0 64 64", `left:${x}px;top:${y}px;width:${s}px;height:${s}px`, "mt" + (flip ? " flip" : ""));
+let POSE = {};                      // the style's Mattie pose swaps (styles.js), set per card by itemHtml
+const pz = (id) => POSE[id] || id;
+const mattie = (pose, x, y, s, flip = false) => use(pz(pose), "0 0 64 64", `left:${x}px;top:${y}px;width:${s}px;height:${s}px`, "mt" + (flip ? " flip" : ""));
 const petal = (x, y, s, r) => `<svg class="co" viewBox="0 0 20 20" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px;transform:rotate(${r}deg)"><use href="#c-petal" width="20" height="20"/></svg>`;
 const drawnBox = (cls, e, opts) => `<div class="${cls}" data-drawn="${esc(JSON.stringify({ e, opts }))}"></div>`;
 const fitLine = (cls, text, max) => `<span class="line ${cls}" data-fit data-max="${max}" data-min1="${MIN_TEXT_PX}" data-min="${MIN_TEXT_PX}">${esc(text)}</span>`;
@@ -109,7 +112,7 @@ function scene(it, size) {
     const nRows = Math.min(all.length, hasDr ? 2 : 3), rowsH = nRows * (hasDr ? 336 : 176), A = Math.max(240, Math.min(460, 960 - rowsH)), mS = Math.round(A * 0.92);
     const art = `<div class="shopart" style="height:${A}px"><div class="blob" style="left:60px;top:15px;width:${Math.round(A * 0.88)}px;height:${Math.round(A * 0.88)}px"></div>` +
       `<svg viewBox="0 0 64 64" style="left:${68}px;top:${Math.round(A * 0.09)}px;width:${Math.round(A * 0.8)}px;height:${Math.round(A * 0.8)}px"><use href="#s-shop" width="64" height="64"/></svg>` +
-      `<svg viewBox="0 0 64 64" style="left:${900 - mS}px;top:${Math.round(A * 0.04)}px;width:${mS}px;height:${mS}px"><use href="#${["m-wave", "m-happy", "m-excited"][hb % 3]}" width="64" height="64"/></svg>` +
+      `<svg viewBox="0 0 64 64" style="left:${900 - mS}px;top:${Math.round(A * 0.04)}px;width:${mS}px;height:${mS}px"><use href="#${pz(["m-wave", "m-happy", "m-excited"][hb % 3])}" width="64" height="64"/></svg>` +
       `<svg viewBox="0 0 20 20" style="left:${Math.round(60 + A * 0.95)}px;top:${Math.round(A * 0.2)}px;width:54px;height:54px;transform:rotate(24deg)"><use href="#c-petal" width="20" height="20"/></svg></div>`;
     s += col(head(it.title, true) + art + `<div class="rows loc">${rows}</div>`, PB, 22);
     return s + foot;
@@ -162,7 +165,13 @@ const dayName = (k) => { const d = new Date(k + "T12:00:00Z"); return `${DAYS[d.
 export function itemHtml(it, size = it.slot) {
   const S = shared();
   const tpl = read(path.join(TPL, size === "story" ? "story.html" : "featured.html"));
-  return fill(tpl, { ...S, variant: "v" + (hash(it.city || it.title) % 3), scene: scene(it, size) });
+  const style = styleOf(it.style).name;                               // an unknown or missing style is the soft pastel look
+  const [W, H] = SIZES[size], g = G[size];
+  POSE = stylePose(style);
+  const body = scene(it, size);
+  POSE = {};
+  const deco = styleDeco(style, { W, H, g, story: size === "story", seed: hash(`${it.city}|${it.kind}|${it.title}|${style}`) });
+  return fill(tpl, { ...S, css: S.css + "\n" + styleCss(style), fontlink: styleFontLink(style), variant: `st-${style}` + (style === DEFAULT_STYLE ? " v" + (hash(it.city || it.title) % 3) : ""), scene: deco + body });
 }
 
 // Measured inside the page after layout: text size floor, text off the canvas or cut short, overlapping blocks.

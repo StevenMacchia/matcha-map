@@ -82,10 +82,10 @@ ${figs}
 }
 
 export async function buildOutbox({ date = tomorrowNY(), root = ROOT, outbox = path.join(root, "tools", "brand", "outbox"), siteDir = path.join(root, "site", "social"),
-  historyFile = path.join(outbox, "history.json"), force = false, site = true, sample = false, render = renderPages, data = loadData(root), log = console.log } = {}) {
+  historyFile = path.join(outbox, "history.json"), force = false, site = true, sample = false, style = null, render = renderPages, data = loadData(root), log = console.log } = {}) {
   const history = readHistory(historyFile);
   const p = plan({ date, data, history });
-  for (const it of p.items) it.image_url = imageUrl(date, it);
+  for (const it of p.items) { it.image_url = imageUrl(date, it); if (style) it.style = style; }      // --style forces one look on every card
   const dir = path.join(outbox, sample ? "sample-" + date : date);      // a sample day is drawn beside the live folders and touches neither the history nor the site
   fs.mkdirSync(dir, { recursive: true });
 
@@ -138,11 +138,12 @@ export async function buildOutbox({ date = tomorrowNY(), root = ROOT, outbox = p
   return { plan: p, dir, checks, kept: keep };
 }
 
+const flagValue = (a, name) => { const i = a.findIndex((x) => x === name || x.startsWith(name + "=")); return i < 0 ? null : a[i].includes("=") ? a[i].split("=")[1] : a[i + 1]; };
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const a = process.argv.slice(2);
   const i = a.findIndex((x) => x === "--date" || x.startsWith("--date="));
   const date = i < 0 ? tomorrowNY() : a[i].includes("=") ? a[i].split("=")[1] : a[i + 1];
-  buildOutbox({ date, force: a.includes("--force"), site: !a.includes("--no-site"), sample: a.includes("--sample") }).then((r) => {
+  buildOutbox({ date, force: a.includes("--force"), site: !a.includes("--no-site"), sample: a.includes("--sample"), style: flagValue(a, "--style") }).then((r) => {
     for (const it of r.plan.items) console.log(`  ${it.time} ${it.slot.padEnd(5)} ${it.name} ${it.mentions.map((h) => "@" + h).join(" ")}`);
   }).catch((e) => { console.error("social: " + e.message); process.exit(1); });
 }
