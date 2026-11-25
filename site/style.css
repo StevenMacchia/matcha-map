@@ -306,6 +306,9 @@ body.show-list .list-panel { display: block; }
 .pn { position: relative; }
 .pn .pn-ph { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
 .pn .pn-ph > img, .pn .pn-ph > svg, .pn .pn-ph .pn-draw, .pn .pn-ph .pn-draw svg { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* a picture on another site loads late (site/pics.js): the drawn art shows until it lands, then the photo covers it */
+.pn .pn-ph > img[data-pic] { position: absolute; inset: 0; }
+.pn .pn-ph > img[data-pic].ld { background: var(--foam); }
 .pn-ground { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -26px 0 0 -32px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(140,191,122,.36), rgba(140,191,122,0)); }
 /* colour by kind (2026-11-23 mock): pop-ups warm, shops matcha green, brands muted sage; the ground under each pin tints the
    basemap a touch in its kind's colour, softer in the dark theme */

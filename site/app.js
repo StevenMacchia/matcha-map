@@ -680,6 +680,8 @@
   map.getContainer().addEventListener("error", function (ev) {
     var im = ev.target;
     if (!im || im.tagName !== "IMG" || !im.closest(".pn")) return;
+    var full = im.getAttribute("data-full");
+    if (full) { im.removeAttribute("data-full"); im.src = full; return; }
     var ph = im.closest(".pn-ph"), face = im.closest("[data-fkey]"), mk = im.closest(".maplibregl-marker");
     var it = items[(face && face.getAttribute("data-fkey")) || (mk && mk.getAttribute("data-key")) || ""];
     if (ph) { ph.innerHTML = artFor(it); fillChars(ph); }
@@ -714,7 +716,8 @@
     var img = document.createElement("img");
     img.alt = ""; img.loading = "lazy"; img.decoding = "async"; img.referrerPolicy = "no-referrer";
     img.addEventListener("error", function () { img.remove(); mochi.classList.remove("has-pic"); });
-    img.src = u;
+    // another site's picture waits for site/pics.js (on screen, after a touch); a path on this site loads now
+    if (/^https:\/\//i.test(u)) { img.setAttribute("data-pic", u); img.setAttribute("fetchpriority", "low"); } else img.src = u;
     mochi.appendChild(img);
     mochi.classList.add("has-pic");
   }

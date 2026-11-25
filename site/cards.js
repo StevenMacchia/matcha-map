@@ -297,9 +297,17 @@ function heroHtml(e, ctx, v, name) {
     `<img class="mm-hero-blur" src="${esc(photo.src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"${remote}>` +
     `<img class="mm-hero-img" src="${esc(photo.src)}" alt=""${dims}${lead} decoding="async" referrerpolicy="no-referrer"${remote}>${credit}</div>`;
 }
+// A picture on another site is written as data-pic and site/pics.js fetches it when it is on screen and the visitor has
+// touched the page (a full size photo for a 40 to 68 px thumbnail); a path on this site keeps src. The drawn art or the
+// initial under it shows until then.
+// A list row shows a 68 px box: its 400 px copy (img/events/thumbs/<name>, npm run images) when the picture is one of ours;
+// data-full keeps the full file for the error handler below, which tries it once if the copy is missing.
+const thumbOf = (u) => { const m = /^(.*\/img\/events\/|img\/events\/)([^/]+\.(?:jpe?g|png|webp))$/i.exec(u); return m ? `${m[1]}thumbs/${m[2]}` : ""; };
+const isRemote = (u) => /^https:\/\//i.test(u);
+const picAttr = (u) => (isRemote(u) ? `data-pic="${esc(u)}" fetchpriority="low"` : `src="${esc(u)}"`);
 function avatarHtml(name, pic, cls = "mm-avatar") {
   const ch = (String(name || "M").match(/[A-Za-z0-9]/) || ["M"])[0].toUpperCase();
-  return `<span class="${cls} mm-t${hash(name) % 3}" aria-hidden="true"><span class="mm-initial">${esc(ch)}</span>${pic ? `<img src="${esc(pic)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span>`;
+  return `<span class="${cls} mm-t${hash(name) % 3}" aria-hidden="true"><span class="mm-initial">${esc(ch)}</span>${pic ? `<img ${picAttr(pic)} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span>`;
 }
 function brandRow(e, ctx, name, b) {
   const h = handleOf(e, ctx), kind = KIND[e.kind] || "";
@@ -542,7 +550,8 @@ export function cardHtml(e, ctx = {}) {
 function thumbHtml(e, ctx, name) {
   const photo = photoOf(e, ctx), art = eventArt(e, ctx);
   const under = art ? `<img class="mm-th-art" src="${esc(art)}" alt="" width="68" height="68" loading="lazy" decoding="async">` : `<span class="mm-th-cup mm-t${hash(e.brand || e.id) % 3}">${drinkThumb((e.menu && e.menu[0]) || "matcha latte", 0, ctx, "mm-cup-art")}</span>`;
-  const img = photo ? `<img class="mm-th-img" src="${esc(photo.src)}" alt="" width="68" height="68" loading="lazy" decoding="async" referrerpolicy="no-referrer"${photo.remote ? ` data-remote="${esc(photo.remote)}"` : ""}>` : "";
+  const tb = photo ? thumbOf(photo.src) : "";
+  const img = photo ? `<img class="mm-th-img" ${tb ? `src="${esc(tb)}" data-full="${esc(photo.src)}"` : picAttr(photo.src)} alt="" width="68" height="68" loading="lazy" decoding="async" referrerpolicy="no-referrer"${photo.remote ? ` data-remote="${esc(photo.remote)}"` : ""}>` : "";
   return `<span class="mm-th" aria-hidden="true">${under}${img}</span>`;
 }
 // ctx.series (a number, the dates it stands for): the row stands for the event's whole series (the list with no date
@@ -725,6 +734,8 @@ export function wire(root, ctx = {}) {
   root.addEventListener("error", (ev) => {
     const img = ev.target;
     if (!img || img.tagName !== "IMG" || !img.closest(".mm-card, .mm-row, .mm-brand")) return;
+    const full = img.getAttribute("data-full");
+    if (full) { img.removeAttribute("data-full"); img.src = full; return; }
     const remote = img.getAttribute("data-remote");
     if (remote) { img.removeAttribute("data-remote"); img.src = remote; return; }
     const hero = img.closest(".mm-hero-photo");

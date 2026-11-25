@@ -37,11 +37,21 @@
     if (diff > 0 && diff < 7) return DAYS[d.getDay()];
     return MONTHS[d.getMonth()] + " " + d.getDate();
   }
-  function img(u) { return "<img src=\"" + esc(u) + "\" alt=\"\" loading=\"lazy\" decoding=\"async\" referrerpolicy=\"no-referrer\" draggable=\"false\">"; }
+  // A picture on another site is not fetched here: it goes out as data-pic and site/pics.js gives it a src when it is on
+  // screen and the visitor has touched the page (full size photos in 40 px pins were 13 MB on the first view). The
+  // drawn art sits under it until then. A path on this site loads as before.
+  function remote(u) { return /^https:\/\//i.test(u); }
+  // a pin is 40 to 56 px: one of this site's event pictures goes out as its 400 px copy (thumbs/), the full file kept in
+  // data-full for the error handler in app.js, which tries it once if the copy is missing
+  function thumbOf(u) { var m = /^(.*\/img\/events\/|img\/events\/)([^/]+\.(?:jpe?g|png|webp))$/i.exec(u); return m ? m[1] + "thumbs/" + m[2] : ""; }
+  function img(u) {
+    var t = remote(u) ? "" : thumbOf(u);
+    return "<img " + (remote(u) ? "data-pic" : "src") + "=\"" + esc(t || u) + "\"" + (t ? " data-full=\"" + esc(u) + "\"" : "") + " alt=\"\" loading=\"lazy\" decoding=\"async\"" + (remote(u) ? " fetchpriority=\"low\"" : "") + " referrerpolicy=\"no-referrer\" draggable=\"false\">";
+  }
   // the site's cup (cards.js CUP), small
   var CUP = "<svg viewBox=\"0 0 40 40\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 13h20l-2.2 19a3 3 0 0 1-3 2.6h-9.6a3 3 0 0 1-3-2.6z\" fill=\"#FFFDF7\" stroke=\"#4B3426\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M11.2 20h17.6l-1.2 11.6a2.4 2.4 0 0 1-2.4 2.1h-10.4a2.4 2.4 0 0 1-2.4-2.1z\" fill=\"#8CBF7A\"/><path d=\"M8.5 13h23\" stroke=\"#4B3426\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>";
   // inner: the picture, or the fallback markup app.js hands in (drawn art, already safe markup it built itself)
-  function art(photo, drawn) { var u = src(photo); return "<span class=\"pn-ph\">" + (u ? img(u) : drawn || "") + "</span>"; }
+  function art(photo, drawn) { var u = src(photo); return "<span class=\"pn-ph\">" + (u ? (remote(u) ? (drawn || "") : "") + img(u) : drawn || "") + "</span>"; }
   function wrap(kind, body) { return "<span class=\"pn-ground\" aria-hidden=\"true\"></span><span class=\"pn-bob\"><span class=\"pn pn-" + kind + "\">" + body + "</span></span>"; }
 
   // o: { photo, drawn, open, serves }

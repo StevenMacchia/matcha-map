@@ -120,7 +120,7 @@ test("facts, confidence, posts and brand story", () => {
   assert.equal((html.match(/class="mm-post /g) || []).length, 3); // instagram (deduped with evidence), tiktok, eventbrite
   assert.match(t, /Instagram post TikTok Eventbrite/);
   assert.match(t, /About Moonbee Small-batch matcha from Houston\. Based in Houston, TX · 4\.7k followers/);
-  assert.match(html, /mm-avatar[^]*src="https:\/\/cdn\.example\/a\.jpg"/);
+  assert.match(html, /mm-avatar[^]*data-pic="https:\/\/cdn\.example\/a\.jpg"/);
 });
 
 test("also nearby: upcoming, within 10 km, soonest first, at most three, never itself", () => {
@@ -182,7 +182,7 @@ const ctxB = (rec) => ({ now: NOW, brands: { brands: [rec] } });
 
 test("brand card with everything: picture, one bio line, kind, @handle, website pill, followers, two latest posts, alerts, claim", () => {
   const html = brandCardHtml(SRC_B, [], ctxB(FULL_B)), t = text(html);
-  assert.match(html, /<img src="https:\/\/cdn\.example\/leaf\.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">/);
+  assert.match(html, /<img data-pic="https:\/\/cdn\.example\/leaf\.jpg" fetchpriority="low" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">/);
   assert.match(t, /Leaf &amp; Whisk/);
   assert.match(html, /<p class="mm-bio mm-bio1">Ceremonial matcha pop-ups across the Triangle\.<\/p>/, "the first sentence only");
   assert.match(html, /<span class="mm-kind">pop-up<\/span>/);

@@ -15,7 +15,7 @@ const tags = (html) => [...html.matchAll(/<[^>]*>/g)].map((m) => m[0]);
 test("shop pin: the photo in the ring, the cup mark, the open dot only when open", () => {
   const open = P.shopPin({ photo: "https://cdn.example/s.jpg", open: true });
   assert.match(open, /class="pn pn-sh"/);
-  assert.match(open, /<img src="https:\/\/cdn\.example\/s\.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false">/);
+  assert.match(open, /<img data-pic="https:\/\/cdn\.example\/s\.jpg" alt="" loading="lazy" decoding="async" fetchpriority="low" referrerpolicy="no-referrer" draggable="false">/);
   assert.match(open, /class="pn-cup bx"/);
   assert.match(open, /class="pn-open"/);
   const shut = P.shopPin({ photo: "", drawn: "<span class=\"pn-draw\" data-char=\"s-shop\"></span>", serves: true });
