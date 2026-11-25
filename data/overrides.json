@@ -292,5 +292,9 @@
  "series:blind-tiger-ybor-sundays": {
   "drop": true,
   "why": "Blind Tiger Sunday brunch, not a matcha pop-up; blocks series expansion"
+ },
+ "662e0899a35f": {
+  "drop": true,
+  "why": "Holiday Shop Party, St. George UT: a placeholder 'Matcha event' row with no time or venue; the page gives Dec 11 2-7pm at lululemon Red Cliffs Mall, 446 N 1680 E, with Phin Coffee pouring; promoted from data/review/events-triage.json"
  }
 }

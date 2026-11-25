@@ -467,6 +467,69 @@
       "verdict": "dropped",
       "why": "dropped: the issue says they are closed on Thanksgiving 11/26 ('closed on Thanksgiving 11/26'); a standing Tue-Sat 8am-1pm residency inside Driftwood, not a dated pop-up",
       "on": "2026-11-23"
+    },
+    {
+      "url": "https://ma.to/event/georgetown-matcha-pop-up-23-nov-2026",
+      "day": "2026-11-23",
+      "verdict": "past",
+      "why": "past: 2026-11-23 has passed; held as event 648438ff34d7 (confirmed, 1661 Wisconsin Ave NW)",
+      "on": "2026-11-25"
+    },
+    {
+      "url": "https://ma.to/event/panda-fest-at-hemisfair-park-24-nov-2026",
+      "day": "2026-11-24",
+      "verdict": "past",
+      "why": "past: 2026-11-24 has passed; held as event 882773cde409",
+      "on": "2026-11-25"
+    },
+    {
+      "url": "https://ma.to/event/panda-fest-at-hemisfair-park-25-nov-2026",
+      "day": "2026-11-25",
+      "verdict": "dropped",
+      "why": "checked 2026-11-25: the page gives Hemisfair Park, San Antonio, a date (the festival's last day) and no time or street address, so it stays held as event d669184556d4 (unsure, city pin) and ends today; not promoted",
+      "on": "2026-11-25"
+    },
+    {
+      "url": "https://ma.to/event/sabz-matcha-at-cocobolo-28-nov-2026",
+      "day": "2026-11-28",
+      "verdict": "promoted",
+      "why": "held as event 68e932a1bcfc (confirmed): the page says 626 St Helens Ave, Tacoma, 11am-3pm; city override applied",
+      "on": "2026-11-25"
+    },
+    {
+      "url": "https://ma.to/event/bloom-brew-pop-up-market-29-nov-2026",
+      "day": "2026-11-29",
+      "verdict": "promoted",
+      "why": "held as event 0bf42e9f695a (confirmed, EOC Studio, 411 18th St, Sacramento)",
+      "on": "2026-11-25"
+    },
+    {
+      "url": "https://ma.to/event/all-girls-thrift-matcha-29-nov-2026",
+      "day": "2026-11-29",
+      "verdict": "promoted",
+      "why": "held as event 90a3138f5a5b (confirmed, Monarca Thrift Club, 2400 N 2nd St, Minneapolis)",
+      "on": "2026-11-25"
+    },
+    {
+      "url": "https://ma.to/event/mochi-matcha-fest-05-dec-2026",
+      "day": "2026-12-05",
+      "verdict": "promoted",
+      "why": "held as events 6e4abd99b485 and 749f6b4f6df4 (confirmed, JCCH, 2454 S Beretania St, Honolulu)",
+      "on": "2026-11-25"
+    },
+    {
+      "url": "https://ma.to/event/aveda-x-sabz-matcha-05-dec-2026",
+      "day": "2026-12-05",
+      "verdict": "promoted",
+      "why": "held as event f38213be4726 (likely, Aveda Store at Bellevue Square; city override Bellevue)",
+      "on": "2026-11-25"
+    },
+    {
+      "url": "https://www.eventbrite.com/e/holiday-shop-party-tickets-2005064373516",
+      "day": "2026-12-11",
+      "verdict": "promoted",
+      "why": "page read 2026-11-25: Dec 11 2-7pm, Red Cliffs Mall, 446 N 1680 E, St. George UT; promoted from data/review/events-triage.json as Phin Coffee (confirmed), the placeholder 'Matcha event' row dropped",
+      "on": "2026-11-25"
     }
   ]
 }

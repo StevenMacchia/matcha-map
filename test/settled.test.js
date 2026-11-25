@@ -48,3 +48,8 @@ test("a settled row that names a brand settles only that brand on a shared newsl
   assert.equal(isSettled(a, settled, NOW), true);
   assert.equal(isSettled(b, settled, NOW), false);
 });
+
+test("a Matcha + Meetup networking title is settled by rule, never listed for review", () => {
+  assert.equal(isSettled(item({ title: "Matcha + Meetup: Austin | Film + Music", source_url: "https://eb.example/1", evidence: [] }), new Map(), NOW), true);
+  assert.equal(isSettled(item({ title: "Matcha pop-up", source_url: "https://eb.example/2", evidence: [] }), new Map(), NOW), false);
+});

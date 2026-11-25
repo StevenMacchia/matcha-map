@@ -75,6 +75,11 @@ test("times", () => {
   assert.equal(findTime("noon").start.h, 12);
   assert.equal(findTime("until sold out 10am").untilSoldOut, true);
   assert.equal(findTime("no time here"), null);
+  // a compact time ("630am", "1030pm") is read as 6:30am, 10:30pm; before, "630am-Midnight" kept only "12am" and started the event at midnight
+  assert.deepEqual(findTime("Only on Thirsty Tuesday 11/24 from 630am-Midnight!").start, { h: 6, mi: 30 });
+  assert.deepEqual(findTime("Only on Thirsty Tuesday 11/24 from 630am-Midnight!").end, { h: 0, mi: 0 });
+  assert.deepEqual(findTime("doors 1030pm").start, { h: 22, mi: 30 });
+  assert.equal(findTime("Nov 24 2026 pm"), null);
 });
 test("address with suite, city, state, zip", () => {
   const a = parseAddress("Matcha & Creme, 10455 N Central Expy Ste 106, Dallas, TX 75230, USA");

@@ -1153,6 +1153,11 @@
     "lng": -75.004354,
     "source": "nominatim"
   },
+  "1400 spring garden st greensboro nc 27412 greensboro nc": {
+    "lat": 36.065589,
+    "lng": -79.81305,
+    "source": "nominatim"
+  },
   "1401 abbot kinney blvd venice ca 90291": {
     "lat": 33.990677,
     "lng": -118.465791,
@@ -4814,6 +4819,11 @@
     "lng": -95.453022,
     "source": "nominatim"
   },
+  "446 n 1680 e st george ut 84790 st george ut": {
+    "lat": 37.110862,
+    "lng": -113.546712,
+    "source": "nominatim"
+  },
   "45 court boston ma": {
     "lat": 42.28799,
     "lng": -71.094442,
@@ -5395,6 +5405,11 @@
     "lng": -73.992379,
     "source": "nominatim"
   },
+  "540 st albans dr raleigh nc raleigh nc": {
+    "lat": 35.834325,
+    "lng": -78.631154,
+    "source": "nominatim"
+  },
   "5405 ballard ave nw seattle wa 98107": {
     "lat": 47.667512,
     "lng": -122.384936,
@@ -5496,6 +5511,11 @@
   "5620 e santa ana canyon rd anaheim ca 92807": {
     "lat": 33.842314,
     "lng": -117.831182,
+    "source": "nominatim"
+  },
+  "5622 carnegie blvd charlotte nc 28209 charlotte nc": {
+    "lat": 35.153802,
+    "lng": -80.838578,
     "source": "nominatim"
   },
   "5700 100th st sw lakewood wa 98499": {
@@ -9130,6 +9150,10 @@
   "venue: the creamery district san antonio tx": {
     "miss": true,
     "at": 1795440819514
+  },
+  "venue: the dollhouse by busy vintage garner nc": {
+    "miss": true,
+    "at": 1795649869605
   },
   "venue: the malin washington dc": {
     "miss": true,

@@ -6,7 +6,7 @@
 // Unsure items stay in their file for a human (`npm run review` lists them).
 import fs from "node:fs";
 import path from "node:path";
-import { eventId } from "./write.js";
+import { eventId, NETWORKING } from "./write.js";
 import { judge } from "./quality.js";
 import { kmBetween } from "./geocode.js";
 import { tzFor, zonedIso, STATES } from "./tz.js";
@@ -189,6 +189,7 @@ export function readSettled(dir = REVIEW_DIR) {
 }
 export function isSettled(i, settled = new Map(), now = new Date()) {
   const n = String(i.notes || "");
+  if (NETWORKING.test(String(i.title || ""))) return true; // rule: the Matcha + Meetup networking series is not a pop-up (docs/LANES.md)
   if (settled.has(settledKey(i)) || settled.has(`${settledKey(i)}|${String(i.brand || "").toLowerCase()}`) || /\bdropped: /.test(n)) return true;
   const c = /\bchecked (20\d\d-\d\d-\d\d)/.exec(n); // opened within the last 14 days: not reopened
   return !!c && new Date(now).getTime() - Date.parse(c[1]) < 14 * 86400000;
