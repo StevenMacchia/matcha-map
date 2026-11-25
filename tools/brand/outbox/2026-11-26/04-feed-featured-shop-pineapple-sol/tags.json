@@ -1,0 +1,26 @@
+{
+  "slot": "feed",
+  "time": "10:00",
+  "image_url": "https://matchamap.app/social/2026-11-26/04-feed-featured-shop-pineapple-sol.png",
+  "location": "Cary, NC",
+  "link": "https://matchamap.app/city/nc/cary/",
+  "user_tags": [
+    {
+      "username": "pineapplesol",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "pineapplesol"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchacary",
+    "#caryfood",
+    "#matchalatte",
+    "#matchalover"
+  ]
+}

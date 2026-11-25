@@ -1,0 +1,347 @@
+{
+  "date": "2026-11-25",
+  "items": [
+    {
+      "slot": "story",
+      "kind": "today",
+      "time": "08:30",
+      "title": "Today in Elk Grove",
+      "tag": "Today",
+      "date": "2026-11-25",
+      "city": "Elk Grove",
+      "state": "CA",
+      "link": "https://matchamap.app/city/ca/elk-grove/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchaelkgrove",
+        "#elkgrovefood",
+        "#greentea",
+        "#popupshop"
+      ],
+      "caption": "Today in Elk Grove. Mellobun Cafe x Matte Matcha Bar (@mellobunbakery) is popping up at 7419 Laguna Blvd Unit 180, Elk Grove, CA, today, Wednesday, November 25, 9 am to 1 pm.\n\nOn the menu: hojicha, latte, cookie.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Elk Grove on the map: https://matchamap.app/city/ca/elk-grove/\n\n#matcha #matchapopup #matchamap #matchaelkgrove #elkgrovefood #greentea #popupshop\n",
+      "user_tags": [],
+      "mentions": [
+        "mellobunbakery"
+      ],
+      "brands": [
+        "mellobunbakery"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "9f87731c11ea",
+          "brand": "Mellobun Cafe x Matte Matcha Bar",
+          "handle": "mellobunbakery",
+          "venue": "",
+          "venueHandle": null,
+          "address": "7419 Laguna Blvd Unit 180",
+          "city": "Elk Grove",
+          "state": "CA",
+          "day": "2026-11-25",
+          "time": "9 am to 1 pm",
+          "menu": [
+            "hojicha",
+            "latte",
+            "cookie"
+          ],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "01",
+      "name": "01-story-today-elk-grove",
+      "image_url": "https://matchamap.app/social/2026-11-25/01-story-today-elk-grove.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "today",
+      "time": "10:00",
+      "title": "Today in Elk Grove",
+      "tag": "Today",
+      "date": "2026-11-25",
+      "city": "Elk Grove",
+      "state": "CA",
+      "link": "https://matchamap.app/city/ca/elk-grove/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchaelkgrove",
+        "#elkgrovefood",
+        "#weekendplans",
+        "#matchadrinks"
+      ],
+      "caption": "Today in Elk Grove. Mellobun Cafe x Matte Matcha Bar (@mellobunbakery) is popping up at 7419 Laguna Blvd Unit 180, Elk Grove, CA, today, Wednesday, November 25, 9 am to 1 pm.\n\nOn the menu: hojicha, latte, cookie.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Elk Grove on the map: https://matchamap.app/city/ca/elk-grove/\n\n#matcha #matchapopup #matchamap #matchaelkgrove #elkgrovefood #weekendplans #matchadrinks\n",
+      "user_tags": [
+        {
+          "username": "mellobunbakery",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "mellobunbakery"
+      ],
+      "brands": [
+        "mellobunbakery"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "9f87731c11ea",
+          "brand": "Mellobun Cafe x Matte Matcha Bar",
+          "handle": "mellobunbakery",
+          "venue": "",
+          "venueHandle": null,
+          "address": "7419 Laguna Blvd Unit 180",
+          "city": "Elk Grove",
+          "state": "CA",
+          "day": "2026-11-25",
+          "time": "9 am to 1 pm",
+          "menu": [
+            "hojicha",
+            "latte",
+            "cookie"
+          ],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "02",
+      "name": "02-feed-today-elk-grove",
+      "image_url": "https://matchamap.app/social/2026-11-25/02-feed-today-elk-grove.png"
+    },
+    {
+      "slot": "story",
+      "kind": "today",
+      "time": "12:00",
+      "title": "Today in Houston",
+      "tag": "Today",
+      "date": "2026-11-25",
+      "city": "Houston",
+      "state": "TX",
+      "link": "https://matchamap.app/city/tx/houston/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchahouston",
+        "#houstonfood",
+        "#supportsmallbusiness",
+        "#shopsmall"
+      ],
+      "caption": "Today in Houston. Hey Neighbor HTX - Coffee & Matcha is popping up at 2520 Airline Dr, Houston, TX, today, Wednesday, November 25, from 11 am.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Houston on the map: https://matchamap.app/city/tx/houston/\n\n#matcha #matchapopup #matchamap #matchahouston #houstonfood #supportsmallbusiness #shopsmall\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [
+        "heyneighborhtxcoffeematcha"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "54a9d3e5302e",
+          "brand": "Hey Neighbor HTX - Coffee & Matcha",
+          "handle": null,
+          "venue": "",
+          "venueHandle": null,
+          "address": "2520 Airline Dr",
+          "city": "Houston",
+          "state": "TX",
+          "day": "2026-11-25",
+          "time": "From 11 am",
+          "menu": [],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "03",
+      "name": "03-story-today-houston",
+      "image_url": "https://matchamap.app/social/2026-11-25/03-story-today-houston.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "shop",
+      "time": "13:00",
+      "title": "Labora",
+      "tag": "New on the map",
+      "date": "2026-11-25",
+      "city": "San Diego",
+      "state": "CA",
+      "link": "https://matchamap.app/city/ca/san-diego/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchasandiego",
+        "#sandiegofood",
+        "#matchalatte",
+        "#matchalover"
+      ],
+      "caption": "New on the map: Labora (@laboracafe) in San Diego, CA. 8055 Clairemont Mesa Blvd Suite 101.\n\nMatcha on the menu: SALTY 46, SCARLET 3, BANANA 53, BLUEBERRY 30.\n\nFind it and more matcha spots in San Diego: https://matchamap.app/city/ca/san-diego/\n\n#matcha #matchapopup #matchamap #matchasandiego #sandiegofood #matchalatte #matchalover\n",
+      "user_tags": [
+        {
+          "username": "laboracafe",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "laboracafe"
+      ],
+      "brands": [
+        "laboracafe"
+      ],
+      "shopId": "brand:web-labora-ca-san-diego-8055-clairemont-mesa-blvd-4e7494",
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-labora-ca-san-diego-8055-clairemont-mesa-blvd-4e7494",
+        "name": "Labora",
+        "handle": "laboracafe",
+        "city": "San Diego",
+        "state": "CA",
+        "address": "8055 Clairemont Mesa Blvd Suite 101",
+        "drinks": [
+          "SALTY 46",
+          "SCARLET 3",
+          "BANANA 53",
+          "BLUEBERRY 30"
+        ],
+        "tier": "shop",
+        "seen": "2026-11-23"
+      },
+      "n": "04",
+      "name": "04-feed-shop-labora",
+      "image_url": "https://matchamap.app/social/2026-11-25/04-feed-shop-labora.png"
+    },
+    {
+      "slot": "story",
+      "kind": "today",
+      "time": "16:00",
+      "title": "Today in Port Jefferson",
+      "tag": "Today",
+      "date": "2026-11-25",
+      "city": "Port Jefferson",
+      "state": "NY",
+      "link": "https://matchamap.app/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchaportjefferson",
+        "#portjeffersonfood",
+        "#cafehopping",
+        "#localeats"
+      ],
+      "caption": "Today in Port Jefferson. The Spice & Tea Exchange of Port Jefferson is popping up in Port Jefferson, NY, today, Wednesday, November 25, 6:30 pm to 8:30 pm.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Port Jefferson on the map: https://matchamap.app/\n\n#matcha #matchapopup #matchamap #matchaportjefferson #portjeffersonfood #cafehopping #localeats\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [
+        "thespiceteaexchangeofportjefferson"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "17f394a5bfe9",
+          "brand": "The Spice & Tea Exchange of Port Jefferson",
+          "handle": null,
+          "venue": "",
+          "venueHandle": null,
+          "address": "",
+          "city": "Port Jefferson",
+          "state": "NY",
+          "day": "2026-11-25",
+          "time": "6:30 pm to 8:30 pm",
+          "menu": [],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "05",
+      "name": "05-story-today-port-jefferson",
+      "image_url": "https://matchamap.app/social/2026-11-25/05-story-today-port-jefferson.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "series",
+      "time": "17:00",
+      "title": "Every Saturday",
+      "tag": "Every Saturday",
+      "date": "2026-11-25",
+      "city": "Los Angeles",
+      "state": "CA",
+      "link": "https://matchamap.app/city/ca/los-angeles/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchalosangeles",
+        "#losangelesfood",
+        "#icedmatcha",
+        "#matchatime"
+      ],
+      "caption": "Every Saturday: GATO DATES x More Than Matcha (@gatodates) at Westfield Century City Holiday Market (in front of lululemon) in Los Angeles, CA, from 11 am.\n\nNext one: Saturday, November 28.\n\nSchedules change; check their page before you go.\n\nMore matcha in Los Angeles: https://matchamap.app/city/ca/los-angeles/\n\n#matcha #matchapopup #matchamap #matchalosangeles #losangelesfood #icedmatcha #matchatime\n",
+      "user_tags": [
+        {
+          "username": "gatodates",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "gatodates"
+      ],
+      "brands": [
+        "gatodates"
+      ],
+      "shopId": null,
+      "events": [
+        {
+          "id": "c349fd654710",
+          "brand": "GATO DATES x More Than Matcha",
+          "handle": "gatodates",
+          "venue": "Westfield Century City Holiday Market (in front of lululemon)",
+          "venueHandle": null,
+          "address": "10250 Santa Monica Blvd, Los Angeles, CA 90067",
+          "city": "Los Angeles",
+          "state": "CA",
+          "day": "2026-11-28",
+          "time": "From 11 am",
+          "menu": [
+            "matcha drinks",
+            "sweet treats and holiday gifts"
+          ],
+          "series": "Every Saturday",
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "06",
+      "name": "06-feed-series-los-angeles",
+      "image_url": "https://matchamap.app/social/2026-11-25/06-feed-series-los-angeles.png"
+    }
+  ],
+  "featured": {
+    "brands": [
+      "gatodates",
+      "heyneighborhtxcoffeematcha",
+      "laboracafe",
+      "mellobunbakery",
+      "thespiceteaexchangeofportjefferson"
+    ],
+    "shops": [
+      "brand:web-labora-ca-san-diego-8055-clairemont-mesa-blvd-4e7494"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "slot": "feed",
+  "time": "17:00",
+  "image_url": "https://matchamap.app/social/2026-11-25/06-feed-series-los-angeles.png",
+  "location": "Los Angeles, CA",
+  "link": "https://matchamap.app/city/ca/los-angeles/",
+  "user_tags": [
+    {
+      "username": "gatodates",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "gatodates"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchalosangeles",
+    "#losangelesfood",
+    "#icedmatcha",
+    "#matchatime"
+  ]
+}

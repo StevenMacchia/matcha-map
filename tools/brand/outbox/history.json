@@ -21,5 +21,42 @@
     "shops": [
       "brand:web-labora-ca-san-diego-8055-clairemont-mesa-blvd-4e7494"
     ]
+  },
+  "2026-11-26": {
+    "brands": [
+      "babaloocoffeeclub",
+      "cubeteastudioo",
+      "dreamteanyc",
+      "fortheloveofmatchacafe",
+      "kinka",
+      "longevitynewyork",
+      "pineapplesol",
+      "saikomatchahouse"
+    ],
+    "shops": [
+      "brand:web-babaloo-coffee-club-nc-charlotte-1425-winnifre-3ab2d1",
+      "brand:web-pineapple-sol-nc-cary-302-colonades-way-ste-10-77d683"
+    ],
+    "regions": {
+      "triangle": {
+        "feed": 1,
+        "story": 1
+      }
+    },
+    "feat": {
+      "shop": "brand:web-pineapple-sol-nc-cary-302-colonades-way-ste-10-77d683",
+      "metro": "NC/cary",
+      "city": null
+    },
+    "styles": {
+      "feed": [
+        "editorial",
+        "washi"
+      ],
+      "story": [
+        "neon",
+        "garden"
+      ]
+    }
   }
 }

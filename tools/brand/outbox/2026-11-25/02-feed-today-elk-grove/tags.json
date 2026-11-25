@@ -1,0 +1,26 @@
+{
+  "slot": "feed",
+  "time": "10:00",
+  "image_url": "https://matchamap.app/social/2026-11-25/02-feed-today-elk-grove.png",
+  "location": "Elk Grove, CA",
+  "link": "https://matchamap.app/city/ca/elk-grove/",
+  "user_tags": [
+    {
+      "username": "mellobunbakery",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "mellobunbakery"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchaelkgrove",
+    "#elkgrovefood",
+    "#weekendplans",
+    "#matchadrinks"
+  ]
+}

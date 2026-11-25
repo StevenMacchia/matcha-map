@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"moment.of.tea","upcoming":[{"id":"946a1a0bba72","day":"Tuesday, Nov 24","time":"All day","place":"Casa, Austin","url":"/e/946a1a0bba72/","map":"/?event=946a1a0bba72"}],"drinks":[],"price":null,"story":"A Japanese-inspired teahouse 2nd floor, in the heart of Casa de Luz Village Wed-Thu 12–6 PM | Fri-Sun 12–8 PM"});
+mmBrandExtra({"v":1,"brand":"moment.of.tea","upcoming":[],"drinks":[],"price":null,"story":"A Japanese-inspired teahouse 2nd floor, in the heart of Casa de Luz Village Wed-Thu 12–6 PM | Fri-Sun 12–8 PM"});

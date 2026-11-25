@@ -1,5 +1,5 @@
 {
- "about": "Fields read from each shop's own public site (npm run shops:deepen, npm run shops:fill) or carried from the Overture place behind the row; only empty fields on the shop row are filled.",
+ "about": "Fields read from each shop's own public site by npm run shops:deepen; only empty fields on the shop row are filled.",
  "shops": {
   "brand:web-premium-matcha-cafe-maiko-az-tempe-920-e-unive-754902": {
    "instagram": "matchacafemaikoaz",
@@ -22,7 +22,7 @@
   "brand:web-kettl-ca-los-angeles-4677-hollywood-blvd-ab7e83": {
    "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
    "image_credit": "kettl.co",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://kettl.co",
    "fill": "2026-11-24"
   },
@@ -33,13 +33,13 @@
   },
   "brand:web-meccha-matcha-ca-artesia-11816-artesia-blvd-d90f05": {
    "instagram": "mecchamatcha_ca",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.mecchamatcha.com",
    "fill": "2026-11-24"
   },
   "brand:web-meccha-matcha-ca-long-beach-2310-n-bellflower-03c072": {
    "instagram": "mecchamatcha_ca",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.mecchamatcha.com",
    "fill": "2026-11-24",
    "opening_hours": "Mo-Th 08:00-21:00; Fr 08:00-21:30; Sa 09:00-21:30; Su 09:00-21:00"
@@ -47,7 +47,7 @@
   "brand:web-midori-matcha-cafe-ca-los-angeles-123-astronau-bf1078": {
    "image_url": "http://static1.squarespace.com/static/56cab4c0b654f92cd6ed4ce9/t/56cb0ea87da24f86a7a04c55/1456148141700/logo.png?format=1500w",
    "image_credit": "midorimatchatea.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://midorimatchatea.com",
    "fill": "2026-11-24"
   },
@@ -62,7 +62,7 @@
   "osm:node/6292161039": {
    "image_url": "http://static1.squarespace.com/static/69b4d8c19880f21d612e52e2/t/69b5c1ad1544da198078ea6d/1773519277991/Matcha+Theory+Logo+%281%29.png?format=1500w",
    "image_credit": "thematchatheory.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.thematchatheory.com/",
    "fill": "2026-11-24"
   },
@@ -70,7 +70,7 @@
    "instagram": "matchacitachi",
    "image_url": "https://static1.squarespace.com/static/66536296f27321176a4760b3/t/669a897f3414157f2cc8ec0d/1794853690240/",
    "image_credit": "matchacitachi.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.matchacitachi.com",
    "fill": "2026-11-24",
    "menu_url": "https://www.matchacitachi.com/fulton-market"
@@ -78,27 +78,27 @@
   "osm:node/13831193089": {
    "image_url": "https://littlematchacincy.square.site/uploads/b/c79a08a0-005a-11f1-b674-9963d475ec70/IMG_9666.jpeg",
    "image_credit": "littlematchacincy.square.site",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://littlematchacincy.square.site",
    "fill": "2026-11-24"
   },
   "osm:node/13762175477": {
    "instagram": "meandersalem",
    "menu_url": "https://www.meandercoffee.com/menu",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.meandercoffee.com/",
    "fill": "2026-11-24"
   },
   "osm:node/5376369821": {
    "instagram": "kyomatchausa",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kyotomatcha.us",
    "fill": "2026-11-24",
    "menu_url": "https://www.kyotomatcha.us/menu"
   },
   "osm:node/3224246961": {
    "instagram": "matchatimegiftshop",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.matchatimegiftshop.com",
    "phone": "+14104139800",
    "overture_read": "2026-11-24",
@@ -109,7 +109,7 @@
    "image_url": "https://static1.squarespace.com/static/695be3f4cedb8b04b48acce3/t/695be5a0324cc8450971e7e8/1770399805046/",
    "image_credit": "thematchabarx.com",
    "menu_url": "https://www.thematchabarx.com/menu",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.thematchabarx.com/",
    "fill": "2026-11-24",
    "opening_hours": "We-Su 10:00-16:00"
@@ -127,7 +127,7 @@
    "image_url": "https://nanasgreentealasvegas.com/images/logo.png",
    "image_credit": "nanasgreentealasvegas.com",
    "menu_url": "https://nanasgreentealasvegas.com/menu.html",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://nanasgreentealasvegas.com/",
    "fill": "2026-11-24"
   },
@@ -137,63 +137,63 @@
    "instagram": "urban.matcha",
    "image_url": "https://static.wixstatic.com/media/8711a4_6cd47429b19e45e9a452cb2c1d01058f~mv2.png",
    "image_credit": "matchalv.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://urbanmatchastore.com",
    "fill": "2026-11-24"
   },
   "brand:web-isshiki-matcha-ny-new-york-183-grand-street-6af484": {
    "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
    "image_credit": "isshikimatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://isshikimatcha.com",
    "fill": "2026-11-24"
   },
   "brand:web-isshiki-matcha-at-ace-hotel-ny-new-york-20-wes-146692": {
    "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
    "image_credit": "isshikimatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://isshikimatcha.com",
    "fill": "2026-11-24"
   },
   "brand:web-isshiki-matcha-at-loulou-ny-new-york-176-8th-a-d611cd": {
    "image_url": "https://isshikimatcha.com/cdn/shop/files/2.25_X_1.25.png?v=1712713416",
    "image_credit": "isshikimatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://isshikimatcha.com",
    "fill": "2026-11-24"
   },
   "osm:node/2268954021": {
    "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
    "image_credit": "kettl.co",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://kettl.co",
    "fill": "2026-11-24"
   },
   "brand:web-kettl-matcha-sen-mon-ten-ny-brooklyn-38-norman-05a9ef": {
    "image_url": "https://kettl.co/cdn/shop/files/A_commitment_to_quality.jpg",
    "image_credit": "kettl.co",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://kettl.co",
    "fill": "2026-11-24"
   },
   "brand:web-kijitora-ny-brooklyn-151-north-7th-street-3c75b7": {
    "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
    "image_credit": "kijitorabrooklyn.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kijitorabrooklyn.com",
    "fill": "2026-11-24"
   },
   "brand:web-kijitora-e14th-ny-new-york-534-east-14th-stree-1ea3c2": {
    "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
    "image_credit": "kijitorabrooklyn.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kijitorabrooklyn.com",
    "fill": "2026-11-24"
   },
   "brand:web-kijitora-east-ny-brooklyn-309-graham-avenue-fbe6cc": {
    "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
    "image_credit": "kijitorabrooklyn.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kijitorabrooklyn.com",
    "phone": "+13477630087",
    "overture_read": "2026-11-24",
@@ -202,21 +202,21 @@
   "brand:web-kijitora-mini-ny-brooklyn-578-driggs-avenue-d6bfc7": {
    "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
    "image_credit": "kijitorabrooklyn.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kijitorabrooklyn.com",
    "fill": "2026-11-24"
   },
   "brand:web-kijitora-ridgewood-ny-ridgewood-279-st-nichola-791f76": {
    "image_url": "https://static1.squarespace.com/static/68dbe21d54d45d744c7fa3ca/t/68ddd43f52fed871c5697406/1784907297551/",
    "image_credit": "kijitorabrooklyn.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kijitorabrooklyn.com",
    "fill": "2026-11-24"
   },
   "brand:web-matcha-house-ny-new-york-203-east-10th-street-1f82de": {
    "image_url": "http://static1.squarespace.com/static/680aaea7cc5f2e167bd0100a/t/681d0f38f1094d75c4ce0368/1746734904354/BRAND+LOGO.png?format=1500w",
    "image_credit": "matchahousenyc.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://matchahousenyc.com",
    "fill": "2026-11-24"
   },
@@ -224,21 +224,21 @@
    "image_url": "https://image.jimcdn.com/app/cms/image/transf/none/path/s829b2a241d8376a0/image/ib05737b5e324194c/version/1793208287/image.png",
    "image_credit": "setsugekkany.com",
    "menu_url": "https://www.setsugekkany.com/menu/",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.setsugekkany.com/",
    "fill": "2026-11-24"
   },
   "brand:web-sorate-flatiron-teahouse-ny-new-york-30-east-1-781dff": {
    "image_url": "http://sorate.co/cdn/shop/files/1200x1200pixels.png?v=1616650774",
    "image_credit": "sorate.co",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://sorate.co",
    "fill": "2026-11-24"
   },
   "brand:web-sorate-soho-teahouse-ny-new-york-103-sullivan-692910": {
    "image_url": "http://sorate.co/cdn/shop/files/1200x1200pixels.png?v=1616650774",
    "image_credit": "sorate.co",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://sorate.co",
    "fill": "2026-11-24"
   },
@@ -252,7 +252,7 @@
   },
   "osm:node/9659344789": {
    "instagram": "kyomatchausa",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kyotomatcha.us",
    "fill": "2026-11-24"
   },
@@ -264,7 +264,7 @@
   "osm:node/12708690933": {
    "image_url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ebd6f2cc-1225-4efe-b33d-673faec21136/id-preview-56e1eaa9--47623335-1913-4543-a02e-388d374a6145.lovable.app-1754675852659.png",
    "image_credit": "lovelampmatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://lovelampmatcha.com/",
    "fill": "2026-11-24",
    "menu_url": "https://lovelampmatcha.com/menu"
@@ -291,7 +291,7 @@
   },
   "osm:node/11399205396": {
    "instagram": "kyomatchausa",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kyotomatcha.us/",
    "fill": "2026-11-24",
    "menu_url": "https://www.kyotomatcha.us/menu"
@@ -315,21 +315,21 @@
   "brand:web-eight-grams-matcha-ca-berkeley-2440-bancroft-w-b87eef": {
    "image_url": "https://static.wixstatic.com/media/10da5b_48e2665b1e1247b490ed346892e4918a~mv2.png",
    "image_credit": "8gramsmatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.8gramsmatcha.com",
    "fill": "2026-11-24"
   },
   "brand:web-forest-tea-bar-ca-berkeley-2628-shattuck-ave-c78da2": {
    "image_url": "http://static1.squarespace.com/static/682d2c4dd09b461367132f46/t/682d2fbecfe9b442af15cd87/1747791807061/Forest_Beige_Transparent.png?format=1500w",
    "image_credit": "forestea.life",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.forestea.life",
    "fill": "2026-11-24"
   },
   "brand:web-matcha-mori-ca-mountain-view-636-san-antonio-r-be6079": {
    "image_url": "https://matchamori.cafe/assets/icon.jpg",
    "image_credit": "matcha-mori.pages.dev",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://matcha-mori.pages.dev",
    "fill": "2026-11-24",
    "menu_url": "https://matcha-mori.pages.dev/menu"
@@ -337,7 +337,7 @@
   "brand:web-milli-matcha-ca-pasadena-20-union-street-suite-0affb3": {
    "image_url": "http://static1.squarespace.com/static/6aab5e34cce45a7d76def005/t/6aab5e43cce45a7d76def418/1777865320019/Milli-logo-carbon-black.png?format=1500w",
    "image_credit": "millimatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://millimatcha.com",
    "fill": "2026-11-24"
   },
@@ -364,14 +364,14 @@
   "brand:web-alma-matcha-fl-fort-lauderdale-701-nw-5th-ave-522635": {
    "image_url": "https://static.wixstatic.com/media/70b541_4e69a15f87624856aa2772795a5c583a%7Emv2.png/v1/fit/w_2500,h_1330,al_c/70b541_4e69a15f87624856aa2772795a5c583a%7Emv2.png",
    "image_credit": "almamatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.almamatcha.com",
    "fill": "2026-11-24"
   },
   "brand:web-heal-cafe-fl-miami-3252-ne-1st-ave-suite-111-01f69b": {
    "image_url": "https://static1.squarespace.com/static/67a15ac02356c340d417c1da/t/67a1646f56f6770d9050b5b8/1781289473685/",
    "image_credit": "healcafemia.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.healcafemia.com",
    "fill": "2026-11-24"
   },
@@ -384,28 +384,28 @@
   "brand:web-saiko-fl-orlando-7059-s-orange-blossom-trl-10fdfe": {
    "image_url": "https://assets.cdn.filesafe.space/RG12djwjTYNebchcUqtb/media/deda35d9-b952-442c-ae3f-fb64e18a2d6f.png",
    "image_credit": "enter.saikocafe.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://enter.saikocafe.com/orlando",
    "fill": "2026-11-24"
   },
   "brand:web-cafe-lapin-hi-honolulu-808-sheridan-st-4f73e7": {
    "image_url": "https://www.lapinllc23.com/uploads/b/3f77a090-9faa-11ef-983b-7f73d33f4c66/LAPIN%20Logo%20grey%20bg.png",
    "image_credit": "lapinllc23.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.lapinllc23.com",
    "fill": "2026-11-24"
   },
   "brand:web-yame-matcha-house-kaka-ako-hi-honolulu-961-kaw-617ccb": {
    "image_url": "https://static1.squarespace.com/static/68782dc079fae76d4368532b/t/698ecd5fc49ded1cf209a7ab/1784311056845/",
    "image_credit": "yamematchahouse.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://yamematchahouse.com",
    "fill": "2026-11-24"
   },
   "brand:web-yame-matcha-house-uh-manoa-hi-honolulu-2500-do-01dd40": {
    "image_url": "https://static1.squarespace.com/static/68782dc079fae76d4368532b/t/698ecd5fc49ded1cf209a7ab/1784311056845/",
    "image_credit": "yamematchahouse.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://yamematchahouse.com",
    "fill": "2026-11-24"
   },
@@ -441,14 +441,14 @@
    "image_url": "https://bychae.com/cdn/shop/t/9/assets/photo-storefront.jpg?v=18439758766847135491795159660",
    "image_credit": "bychae.com",
    "menu_url": "https://bychae.com/pages/menu",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://bychae.com",
    "fill": "2026-11-24"
   },
   "brand:web-northeast-tea-house-mn-minneapolis-224-e-henne-822c8f": {
    "image_url": "http://northeastteahouse.com/cdn/shop/files/culture_-_gettyimages-701014036-612x612_c27ecdb9-73b6-40fb-85b3-65a209f7b2c8.jpg?v=1640802884",
    "image_credit": "northeastteahouse.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://northeastteahouse.com",
    "fill": "2026-11-24"
   },
@@ -487,13 +487,13 @@
    "phone": "+1(555)000-0000",
    "image_url": "https://nanasgreentealasvegas.com/images/logo.png",
    "image_credit": "nanasgreentealasvegas.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://nanasgreentealasvegas.com",
    "fill": "2026-11-24"
   },
   "brand:web-urban-matcha-nv-las-vegas-7795-s-rainbow-blvd-6af355": {
    "opening_hours": "Tu-Su 12:00-22:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://urbanmatchastore.com",
    "fill": "2026-11-24"
   },
@@ -506,35 +506,35 @@
   "brand:web-ouri-matcha-tn-memphis-606-n-main-street-93310f": {
    "image_url": "http://static1.squarespace.com/static/6a73a8660055515f39ed77f8/t/6a872fbec69b742b04f57c30/1787244478980/ouri+white.png?format=1500w",
    "image_credit": "ourimatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.ourimatcha.com",
    "fill": "2026-11-24"
   },
   "brand:web-isa-matcha-tx-houston-1143-providence-st-7e3794": {
    "image_url": "https://isamatcha.com/images/2009792/0_0.png",
    "image_credit": "isamatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://isamatcha.com",
    "fill": "2026-11-24"
   },
   "brand:web-magick-matcha-tx-austin-1516-s-congress-ave-232919": {
    "image_url": "http://static1.squarespace.com/static/60c4cbeca0b6a72781ca7c9d/t/69bb232db5a3356aef47bd91/1773871917131/6A036B64-AF08-4470-9D0F-8A7E235640BC.png?format=1500w",
    "image_credit": "magickmatcha.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://magickmatcha.com",
    "fill": "2026-11-24"
   },
   "brand:web-matcha-mama-tx-austin-1107-s-congress-ave-b445b7": {
    "image_url": "http://matchamama.com/wp-content/uploads/2023/02/Group-37083.png",
    "image_credit": "matchamama.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.matchamama.com",
    "fill": "2026-11-24"
   },
   "brand:web-atulea-wa-seattle-1715-12th-ave-0c850d": {
    "image_url": "https://static.wixstatic.com/media/9a794a_353dcdc6e4374c4d8d46991d06453c24~mv2_d_3600_3600_s_4_2.jpg",
    "image_credit": "atulea.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.atulea.com",
    "fill": "2026-11-24"
   },
@@ -542,7 +542,7 @@
    "phone": "(206) 413-5903",
    "image_url": "https://static.wixstatic.com/media/9a794a_353dcdc6e4374c4d8d46991d06453c24~mv2_d_3600_3600_s_4_2.jpg",
    "image_credit": "atulea.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.atulea.com",
    "fill": "2026-11-24"
   },
@@ -568,20 +568,20 @@
   "brand:web-matcha-magic-wa-seattle-500-fairview-ave-n-669aed": {
    "image_url": "https://images.getbento.com/accounts/ee5aaf463e6eb3ed06b018bc15172199/media/images/40260MMagic_PrimaryLogoDark.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=EDEDF1&pad=100",
    "image_credit": "itsmatchamagic.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.itsmatchamagic.com",
    "fill": "2026-11-24"
   },
   "brand:web-taz-matcha-wa-seattle-1514-4th-ave-200a9c": {
    "image_url": "http://static1.squarespace.com/static/6a851f131791961efd3ec716/t/6aa1cd4d77b7680d51b18726/1788988749931/Untitled+design+2.png.png?format=1500w",
    "image_credit": "tazseattle.com",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://tazseattle.com/",
    "fill": "2026-11-24"
   },
   "brand:web-vale-matcha-bar-first-hill-wa-seattle-1101-mad-b12f37": {
    "opening_hours": "Mo-Fr 07:00-19:00; Sa,Su 08:00-19:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.valematcha.com",
    "fill": "2026-11-24"
   },
@@ -592,17 +592,23 @@
   "brand:web-izumi-matcha-ca-cupertino-19740-stevens-creek-ae1770": {
    "instagram": "izumi.matcha",
    "overture_read": "2026-11-24",
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://izumimatcha.com"
   },
   "brand:web-mizu-matcha-ma-boston-217-newbury-street-e37643": {
    "phone": "+16179364025",
    "overture_read": "2026-11-24",
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.mizumatchaus.com/"
   },
   "brand:web-greenova-tea-tx-frisco-3401-preston-rd-15-28fcb6": {
    "phone": "+12143089548",
    "overture_read": "2026-11-24",
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.greenovatea.com"
   },
   "brand:web-tea-top-carrollton-matcha-coffee-milk-tea-tx-c-206b02": {
    "instagram": "teatop_carrollton",
@@ -615,7 +621,9 @@
   "brand:web-vale-matcha-coffee-wa-seattle-2000-terry-ave-eb47db": {
    "phone": "+12062220524",
    "overture_read": "2026-11-24",
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.valematcha.com"
   },
   "brand:web-sipping-streams-tea-company-ak-fairbanks-36-co-c9f4d9": {
    "fill": "2026-11-24",
@@ -636,7 +644,9 @@
    "source_url": "http://fruitnearme.com/"
   },
   "brand:web-aura-bobatea-al-anniston-9-bill-robison-pkwy-51775c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://aurabobatea.com/"
   },
   "brand:web-aura-bobatea-al-homewood-293-w-valley-ave-836c11": {
    "fill": "2026-11-24"
@@ -675,7 +685,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-matcha-darlin-cafe-az-tempe-43-e-broadway-91851d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchadarlin.com"
   },
   "brand:web-matcha-grove-az-gilbert-81-s-mcqueen-rd-9e3de6": {
    "fill": "2026-11-24",
@@ -692,7 +704,9 @@
    "source_url": "http://yifangteausa.com"
   },
   "brand:web-matcha-magic-asu-tempe-az-tempe-922-e-apache-b-ab0ce8": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.itsmatchamagic.com"
   },
   "brand:web-meet-fresh-az-chandler-1900-w-chandler-blvd-24-739008": {
    "fill": "2026-11-24"
@@ -710,7 +724,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-songbird-coffee-tea-house-phoenix-az-az-phoeni-2ea79d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.songbirdcoffeehouse.com/"
   },
   "brand:web-top-cup-coffee-house-az-gilbert-7115-s-val-vis-f9a839": {
    "fill": "2026-11-24",
@@ -721,7 +737,7 @@
   "brand:web-wz-poke-and-ramen-az-prescott-258-north-lee-bo-4dd8a6": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 11:00-20:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://wzpokeramenprescot.kwickmenu.com/"
   },
   "brand:web-12-hours-matcha-cafe-ca-chula-vista-212-broadw-b3d825": {
@@ -840,7 +856,11 @@
    "fill": "2026-11-24"
   },
   "brand:web-cereal-twister-ca-los-angeles-6600-topanga-can-d3f95d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://static.wixstatic.com/media/188a16_a73b7091ac0e4b4189be78e755f019e6~mv2.png",
+   "image_credit": "cerealtwister.com",
+   "read": "2026-11-25",
+   "source_url": "http://www.cerealtwister.com/"
   },
   "brand:web-buena-matcha-ca-palm-desert-73833-el-paseo-1f9e17": {
    "fill": "2026-11-24",
@@ -858,7 +878,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-chitchat-coffee-matcha-ca-los-angeles-1854-saw-1f45de": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chitchatla.com"
   },
   "brand:web-chocolate-bash-ca-covina-1395-n-citrus-ave-4e407b": {
    "fill": "2026-11-24"
@@ -887,7 +909,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-constance-tea-ca-san-francisco-3512-balboa-st-003ad5": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.constancetea.com"
   },
   "brand:web-amausaan-uji-matcha-ca-union-city-34563-alvara-fc3021": {
    "fill": "2026-11-24"
@@ -896,22 +920,30 @@
    "fill": "2026-11-24"
   },
   "brand:web-cha-cha-matcha-ca-venice-1401-abbot-kinney-blv-a10267": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "brand:web-cha-cha-matcha-ca-los-angeles-10250-santa-moni-94d473": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "brand:web-amausaan-uji-matcha-ca-daly-city-103-serramont-fb72cb": {
    "fill": "2026-11-24"
   },
   "brand:web-cha-cha-matcha-ca-los-angeles-510-n-robertson-fb56b7": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "brand:web-domo-arcadia-ca-arcadia-1021-s-baldwin-ave-7260de": {
    "fill": "2026-11-24"
   },
   "brand:web-cha-cha-matcha-ca-beverly-hills-475-north-beve-5d6435": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "brand:web-daboba-at-santee-ca-santee-8917-carlton-hills-c2dda5": {
    "fill": "2026-11-24",
@@ -925,7 +957,7 @@
   "brand:web-dogtown-coffee-ca-santa-monica-2003-main-st-0dd3da": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 07:00-18:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.dogtowncoffee.com/"
   },
   "brand:web-dori-boba-ca-chula-vista-520-broadway-9e9a8c": {
@@ -941,13 +973,17 @@
    "fill": "2026-11-24"
   },
   "brand:web-de-matcha-buena-park-ca-buena-park-5444-beach-52cc28": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.dematcha.us/"
   },
   "brand:web-chocolate-bash-ca-newport-beach-2233-w-balboa-5edd3c": {
    "fill": "2026-11-24"
   },
   "brand:web-de-matcha-del-amo-fashion-center-ca-torrance-2-b069fd": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.dematcha.us/"
   },
   "brand:web-chocolate-bash-ca-sacramento-8304-delta-shores-0b270b": {
    "fill": "2026-11-24"
@@ -1004,7 +1040,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-holy-matcha-ca-san-diego-3118-university-avenu-de0c63": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://holymatchasd.com"
   },
   "brand:web-it-s-boba-time-commerce-ca-commerce-5452-whitt-bfa576": {
    "fill": "2026-11-24"
@@ -1013,7 +1051,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-hamano-sushi-ca-san-francisco-1332-castro-stre-1acb57": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.hamanosushi.com"
   },
   "brand:web-holy-matcha-ca-san-diego-201-park-blvd-ste-105-2420f8": {
    "fill": "2026-11-24"
@@ -1022,13 +1062,17 @@
    "fill": "2026-11-24"
   },
   "brand:web-iki-toro-japanese-restaurant-ca-glendale-120-s-0709d9": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://ikitoro.com/"
   },
   "brand:web-factory-tea-bar-ca-westminster-10487-bolsa-ave-e6436e": {
    "fill": "2026-11-24"
   },
   "brand:web-factory-tea-bar-ca-san-gabriel-323-s-mission-d-618fb9": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.factoryteabar.com"
   },
   "brand:web-it-s-boba-time-rancho-cucamonga-ca-rancho-cuca-771e16": {
    "fill": "2026-11-24"
@@ -1127,12 +1171,14 @@
    "fill": "2026-11-24"
   },
   "brand:web-japan-tea-studio-108-ca-el-cerrito-2097-key-bo-76a9ef": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.japanteastudio108.com/"
   },
   "brand:web-izumi-matcha-ca-san-jose-3005-silver-creek-rd-210e9e": {
    "fill": "2026-11-24",
    "opening_hours": "Mo,We,Th,Su 12:00-20:00; Fr,Sa 12:00-21:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://izumimatcha.com"
   },
   "brand:web-k-minamoto-ca-san-francisco-648-market-st-f6e011": {
@@ -1141,7 +1187,7 @@
   "brand:web-katsubo-tea-ca-fullerton-2241-west-malvern-ave-6efc38": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 11:00-20:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.katsubo.com"
   },
   "brand:web-la-matcha-cafe-ca-burlingame-1828-el-camino-re-d38e88": {
@@ -1166,7 +1212,7 @@
   "brand:web-magic-tea-ca-la-verne-1207-foothill-blvd-4821bf": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 12:00-20:30",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://magictea.kwickmenu.com"
   },
   "brand:web-junbi-ca-city-of-industry-18558-gale-ave-106-724e6b": {
@@ -1181,7 +1227,9 @@
    "source_url": "https://junbishop.com"
   },
   "brand:web-junbi-matcha-tea-ca-livermore-3046-w-jack-lond-084985": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://junbishop.com"
   },
   "brand:web-matcha-ca-laguna-niguel-27931-la-paz-rd-ste-d-fe597c": {
    "fill": "2026-11-24",
@@ -1193,13 +1241,19 @@
    "fill": "2026-11-24"
   },
   "brand:web-kiss-of-matcha-ca-san-francisco-612-broadway-30c3b4": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.kissofmatcha.com"
   },
   "brand:web-kiss-of-matcha-ca-san-francisco-750-clement-st-f876bc": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.kissofmatcha.com"
   },
   "brand:web-kiss-of-matcha-ca-san-francisco-2127-irving-st-b9730a": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.kissofmatcha.com"
   },
   "brand:web-matcha-green-tea-ca-petaluma-1601-corporate-ci-dc2e7b": {
    "fill": "2026-11-24"
@@ -1216,7 +1270,7 @@
   "brand:web-maruwu-seicha-ca-culver-city-9426-washington-b-c11d67": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 10:00-22:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.maruwuseicha.us"
   },
   "brand:web-matcha-village-ca-los-angeles-2202-sawtelle-bl-bf40c7": {
@@ -1226,13 +1280,19 @@
    "source_url": "https://order.mealkeyway.com/merchant/4f436e565731303037617578796b42524664584e41673d3d/main"
   },
   "brand:web-maruwu-seicha-ca-palo-alto-250-university-ave-222cb6": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.maruwuseicha.us"
   },
   "brand:web-maruwu-seicha-ca-san-jose-100-n-almaden-ave-fcf40d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.maruwuseicha.us"
   },
   "brand:web-maruwu-seicha-ca-san-francisco-1737-post-st-2cfdd4": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.maruwuseicha.us"
   },
   "brand:web-matcha-cha-ca-los-angeles-11301-w-olympic-blvd-3def11": {
    "fill": "2026-11-24",
@@ -1256,18 +1316,20 @@
    "source_url": "http://matchabarnyc.com/"
   },
   "brand:web-matcha-ren-ca-san-jose-675-saratoga-ave-6e491e": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matcharen.com"
   },
   "brand:web-matsu-matcha-ca-santa-clara-3030-el-camino-rea-7d3462": {
    "fill": "2026-11-24",
    "menu_url": "https://matsumatcha-usa.com/#",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://matsumatcha-usa.com"
   },
   "brand:web-matsu-matcha-ca-los-angeles-547-s-western-ave-13aa5d": {
    "fill": "2026-11-24",
    "menu_url": "https://matsumatcha-usa.com/#",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://matsumatcha-usa.com"
   },
   "brand:web-meet-fresh-ca-daly-city-148c-serramonte-center-d58192": {
@@ -1318,7 +1380,7 @@
   "brand:web-milk-honey-premium-tea-ca-glendora-208-n-glend-e1fe6d": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 11:00-20:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://milkandhoneypremiumtea.com/"
   },
   "brand:web-mochinut-indio-ca-indio-44100-jefferson-st-92e90a": {
@@ -1334,7 +1396,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-miracle-mushroom-tea-ca-south-pasadena-2-fair-d064b5": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://Www.miraclemushroomtea.com/"
   },
   "brand:web-mngo-ca-national-city-41-e-8th-st-afdbd9": {
    "fill": "2026-11-24"
@@ -1343,16 +1407,24 @@
    "fill": "2026-11-24"
   },
   "brand:web-mngo-cafe-ca-san-diego-4176-convoy-st-6245cf": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "http://www.mngocafe.com/assets/kakigori.png",
+   "image_credit": "mngocafe.com",
+   "read": "2026-11-25",
+   "source_url": "http://www.mngocafe.com"
   },
   "brand:web-motto-tea-cafe-pasadena-ca-pasadena-100-west-g-d4d23e": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.mottoteacafe.com"
   },
   "brand:web-my-boba-spot-ca-yuba-city-551-n-palora-ave-cee93a": {
    "fill": "2026-11-24"
   },
   "brand:web-nana-s-green-tea-ca-pasadena-45-n-raymond-ave-7ff42c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://nanasgreenteausa.com"
   },
   "brand:web-oishii-matcha-ca-san-francisco-2299-market-str-f6e94c": {
    "fill": "2026-11-24"
@@ -1396,7 +1468,7 @@
   "brand:web-pearls-boba-ca-sacramento-2264-fair-oaks-blvd-5490e9": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 10:00-21:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.pearlsboba.com/"
   },
   "brand:web-peet-s-coffee-ca-studio-city-12215-ventura-blv-54e97f": {
@@ -1505,7 +1577,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-show-izakaya-ca-davis-102-f-street-a3f7ea": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.showizakaya.com"
   },
   "brand:web-sip-matcha-ca-rowland-heights-18558-gale-ave-478489": {
    "fill": "2026-11-24"
@@ -1520,7 +1594,11 @@
    "fill": "2026-11-24"
   },
   "brand:web-society-kitchen-ca-santa-monica-2901-ocean-par-9c1ec7": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://res.cloudinary.com/grubhub/image/upload/w_100,h_100,f_auto,fl_lossy,q_80,c_fit/pynh6tosdubafnwn3etv",
+   "image_credit": "societykitchen.eat24hour.com",
+   "read": "2026-11-25",
+   "source_url": "https://societykitchen.eat24hour.com/"
   },
   "brand:web-sumochacha-matchasupplier-ca-westminster-7771-8420b3": {
    "fill": "2026-11-24",
@@ -1537,7 +1615,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-summerfield-tea-bar-ca-garden-grove-12460-s-eu-85e297": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.summerfieldteabar.com/"
   },
   "brand:web-sunright-tea-studio-ca-union-city-34563-alvara-c58f87": {
    "fill": "2026-11-24"
@@ -1624,7 +1704,11 @@
    "fill": "2026-11-24"
   },
   "brand:web-tai-tea-near-disney-ca-anaheim-874-w-lincoln-a-d7540c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://www.nhathuyllc.com/",
+   "image_credit": "nhathuyllc.com",
+   "read": "2026-11-25",
+   "source_url": "http://nhathuyllc.com"
   },
   "brand:web-sunright-tea-studio-sunnyvale-ca-sunnyvale-795-e8bd49": {
    "fill": "2026-11-24"
@@ -1729,7 +1813,9 @@
    "source_url": "https://gotastea.com/blog/tastea-opens-new-location-in-westminster-"
   },
   "brand:web-tea-master-matcha-cafe-green-tea-shop-ca-los-a-fcffef": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://teamastermatcha.com"
   },
   "brand:web-tea-master-matcha-cafe-and-green-tea-shop-ca-l-46aac0": {
    "fill": "2026-11-24",
@@ -1917,13 +2003,13 @@
   "brand:web-teddy-boba-ca-rancho-cordova-10995-olson-dr-6c94ca": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Sa 11:00-20:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.teddyboba.com"
   },
   "brand:web-teddy-boba-ca-rocklin-5406-crossings-dr-103-453606": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Sa 11:00-20:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://teddyboba.com/rocklin"
   },
   "brand:web-the-greenhouse-matcha-ca-ontario-111-w-transit-dd1e88": {
@@ -1932,11 +2018,13 @@
   "brand:web-tibear-ca-berkeley-1938-shattuck-ave-4a3c6e": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Th,Su 12:00-20:00; Fr,Sa 12:00-20:30",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://tibearbk.kwickmenu.com"
   },
   "brand:web-ucrave-ca-san-fernando-110-maclay-ave-d1df46": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://ucravecafeandgrill.com"
   },
   "brand:web-ultimatcha-ca-santa-barbara-3463-state-st-8a7ea7": {
    "fill": "2026-11-24",
@@ -1991,19 +2079,27 @@
    "fill": "2026-11-24"
   },
   "brand:web-yayoi-palo-alto-ca-palo-alto-403-university-av-3ed7fd": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.yayoi-us.com/"
   },
   "brand:web-ume-tea-ca-fremont-43743-boscell-rd-80b8f9": {
    "fill": "2026-11-24"
   },
   "brand:web-yun-tea-house-ca-san-diego-4433-convoy-street-6ff787": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://static.wixstatic.com/media/13d1c3_e10ed7ea3a454ff18dad8a2bfba52751~mv2.png",
+   "image_credit": "yunteasd.com",
+   "read": "2026-11-25",
+   "source_url": "https://www.yunteasd.com"
   },
   "brand:web-ume-tea-ca-milpitas-450-great-mall-dr-ste-139a-d23236": {
    "fill": "2026-11-24"
   },
   "brand:web-boba-kulture-co-longmont-1102-francis-st-0b938c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.bobakul.com/"
   },
   "brand:web-ume-tea-ca-mountain-view-220-castro-st-61a862": {
    "fill": "2026-11-24"
@@ -2039,7 +2135,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-day-day-up-tea-co-lafayette-535-west-south-bou-873b95": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.daydayuptea.shop/"
   },
   "brand:web-ti-cafe-co-denver-30-north-broadway-197f80": {
    "fill": "2026-11-24",
@@ -2048,10 +2146,14 @@
    "source_url": "https://www.ti.cafe"
   },
   "brand:web-house-of-vibes-coffee-and-curio-co-silverthorn-f19aa8": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://Houseofvibescoffee.com/"
   },
   "brand:web-mystical-blends-cafe-co-denver-2936-e-colfax-a-f6897d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.mysticalblendscafe.com/"
   },
   "brand:web-yogen-fruz-ca-monterey-park-500-n-atlantic-blv-c268a9": {
    "fill": "2026-11-24"
@@ -2093,13 +2195,17 @@
    "fill": "2026-11-24"
   },
   "brand:web-coopertine-matcha-ct-granby-2-salmon-brook-st-e891fe": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://coopertinematcha.com"
   },
   "brand:web-compass-coffee-dc-washington-435-11th-st-nw-158c0c": {
    "fill": "2026-11-24"
   },
   "brand:web-zen-cha-matcha-ct-darien-130-heights-rd-9c09f7": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.zenchamatcha.com"
   },
   "brand:web-brooklyn-gourmet-italian-ices-fl-tampa-514-n-t-98fbcc": {
    "fill": "2026-11-24",
@@ -2126,7 +2232,9 @@
    "source_url": "https://www.eatbananadaddy.com/"
   },
   "brand:web-boba-garden-fl-winter-springs-1184-e-state-rd-52f603": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://bobagarden.cafe/"
   },
   "brand:web-crema-gourmet-espresso-bar-fl-miami-3275-ne-1s-29d2ea": {
    "fill": "2026-11-24"
@@ -2158,16 +2266,22 @@
    "fill": "2026-11-24"
   },
   "brand:web-spot-of-tea-dc-washington-2101-p-street-nw-40f611": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.drinkspotoftea.com"
   },
   "brand:web-raining-berries-waterford-lakes-fl-orlando-485-edbae5": {
    "fill": "2026-11-24"
   },
   "brand:web-spot-of-tea-dc-washington-1309-5th-street-ne-198ab4": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.drinkspotoftea.com"
   },
   "brand:web-spot-of-tea-dc-washington-3210-grace-street-nw-0afc3d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.drinkspotoftea.com"
   },
   "brand:web-yogen-fru-z-fl-lake-buena-vista-1500-e-buena-v-d7fd15": {
    "fill": "2026-11-24"
@@ -2179,7 +2293,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-honey-veil-fl-south-miami-5748-sunset-dr-d8f83c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://honeyveil.com"
   },
   "brand:web-for-five-coffee-atlanta-ga-atlanta-1105-w-peac-0c44f0": {
    "fill": "2026-11-24"
@@ -2226,7 +2342,7 @@
   "brand:web-tea-lab-fl-plantation-8265-w-sunrise-blvd-1366b7": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.tealabfl.com/"
   },
   "brand:web-the-nest-cafe-ga-alpharetta-58-canton-street-3acb0c": {
@@ -2239,13 +2355,19 @@
    "fill": "2026-11-24"
   },
   "brand:web-maruwu-seicha-hi-honolulu-260-beach-walk-10cacb": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.maruwuseicha.us"
   },
   "brand:web-maruwu-seicha-hi-honolulu-2615-s-king-st-0e1dc5": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.maruwuseicha.us"
   },
   "brand:web-e-bubble-cafe-ga-suwanee-2855-lawrenceville-su-2202c2": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.ebubblecafe.com/"
   },
   "brand:web-t-yummi-boba-tea-ba-nh-mi-more-fl-naples-8845-d6750d": {
    "fill": "2026-11-24",
@@ -2275,7 +2397,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-daily-whisk-matcha-hi-honolulu-1114-11th-ave-09574d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://dailywhiskmatcha.com"
   },
   "brand:web-matcha-ya-hi-kapa-a-4-1400-kuhio-hwy-d381aa": {
    "fill": "2026-11-24"
@@ -2307,12 +2431,14 @@
    "source_url": "https://bobadrip.com/"
   },
   "brand:web-8-degrees-ice-cream-ia-des-moines-1315-31st-st-a32f47": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.8degreesdsm.com"
   },
   "brand:web-lily-coffee-tea-bread-ga-augusta-1378-laney-wa-f95534": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Fr 09:00-17:30; Sa 10:00-19:00; Su 10:00-18:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://lily-coffee-tea-bread.square.site"
   },
   "brand:web-zenko-tea-ia-des-moines-5828-douglas-ave-483b1d": {
@@ -2337,7 +2463,9 @@
    "source_url": "https://gaijinchicago.com/"
   },
   "brand:web-tea-time-ia-ames-107-welch-ave-168364": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.teatimeia.com"
   },
   "brand:web-asel-il-batavia-817-n-randall-rd-dee049": {
    "fill": "2026-11-24",
@@ -2365,7 +2493,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-chazui-tea-tower-il-chicago-3349-n-clark-st-c331f1": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://chazui-tea-tower.square.site"
   },
   "brand:web-meet-fresh-il-champaign-209-e-university-ave-26d29b": {
    "fill": "2026-11-24"
@@ -2380,7 +2510,9 @@
    "source_url": "http://churrostinocoinc.com/"
   },
   "brand:web-chicago-teahouse-il-chicago-1160-n-state-stree-687561": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chicagoteahouse.com/"
   },
   "brand:web-peet-s-coffee-il-chicago-410-n-michigan-ave-a97c70": {
    "fill": "2026-11-24"
@@ -2416,7 +2548,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-kopa-tea-bar-il-wheeling-37-huntington-lane-45e2d6": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://Www.kopateabar.com/"
   },
   "brand:web-yogen-fruz-il-chicago-177-n-lake-st-3ed308": {
    "fill": "2026-11-24"
@@ -2447,7 +2581,7 @@
    "opening_hours": "Mo-Sa 08:00-17:00; Su 08:30-17:00",
    "image_url": "https://static.wixstatic.com/media/ad75df_5992a794206e4c6fac6f7a8e738df81f~mv2.jpg/v1/fit/w_2500,h_1330,al_c/ad75df_5992a794206e4c6fac6f7a8e738df81f~mv2.jpg",
    "image_credit": "Photo: Noble Fat website",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.noblefat.com"
   },
   "brand:web-re-leaf-matcha-cafe-il-arlington-heights-100-e-c2a123": {
@@ -2458,12 +2592,14 @@
    "source_url": "http://www.discoverarlington.com/business/details.aspx?BusinessId=191"
   },
   "brand:web-shinya-ramen-house-il-chicago-3240-s-halsted-s-7871a5": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.shinyaramen.com/"
   },
   "brand:web-pearl-and-brew-tea-coffee-bubble-tea-il-palati-72ca46": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 11:00-21:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.pearlandbrew.com/"
   },
   "brand:web-royal-tea-in-highland-2160-45th-st-f9f832": {
@@ -2485,7 +2621,7 @@
    "instagram": "wonderfulmatcha",
    "image_url": "http://www.wonderfulmatcha.com/cdn/shop/files/Logo_51ad337f-084a-494b-b4bb-81373b7fba84.png?v=1754011072",
    "image_credit": "Photo: Wonderful Matcha website",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.wonderfulmatcha.com/"
   },
   "brand:web-sweet-monster-il-oak-park-6604-roosevelt-rd-e9a410": {
@@ -2540,7 +2676,7 @@
   "brand:web-nana-s-green-tea-ma-boston-175-newbury-street-582869": {
    "fill": "2026-11-24",
    "phone": "(425) 590-9715",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://nanasgreenteausa.com"
   },
   "brand:web-honey-dew-donuts-ma-sudbury-100-boston-post-rd-87b97f": {
@@ -2562,7 +2698,9 @@
    "source_url": "http://www.tbaar.com/"
   },
   "osm:node/2458189474": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.kyotomatcha.us"
   },
   "brand:web-kokee-tea-md-annapolis-2002-annapolis-mall-rd-f7c723": {
    "fill": "2026-11-24"
@@ -2589,12 +2727,14 @@
    "source_url": "http://www.bobateaandsnowicehouse.com/"
   },
   "brand:web-kyoto-matcha-md-towson-1-e-joppa-rd-suite-165b-8be82d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.kyotomatcha.us"
   },
   "brand:web-la-grekka-cafe-riverwalk-ma-lawrence-282-merri-5c2f2b": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Sa 07:00-20:00; Su 08:00-20:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://lagrekka.com/"
   },
   "brand:web-paris-baguette-md-germantown-21040-frederick-r-a96655": {
@@ -2604,7 +2744,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-bliss-matcha-beyond-new-haven-ct-new-haven-98-12cefe": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.blissmatchaandbeyond.com/"
   },
   "brand:web-mama-matcha-green-bar-ma-provincetown-258-comm-f4b8ba": {
    "fill": "2026-11-24",
@@ -2631,10 +2773,14 @@
    "fill": "2026-11-24"
   },
   "brand:web-bliss-matcha-beyond-west-hartford-ct-west-hart-cfead4": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.blissmatchaandbeyond.com/"
   },
   "brand:web-sugi-matcha-ma-worcester-19-harrison-st-fdea76": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://sugimatcha.com"
   },
   "brand:web-boba-tea-house-ann-arbor-mi-ann-arbor-3780-jac-1e2ed2": {
    "fill": "2026-11-24",
@@ -2672,7 +2818,7 @@
   "brand:web-equitea-matcha-studio-md-baltimore-311-w-28th-797739": {
    "fill": "2026-11-24",
    "menu_url": "https://equitea.com/menu",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://equitea.com"
   },
   "brand:web-kyo-matcha-md-rockville-33-maryland-ave-ba8d60": {
@@ -2683,7 +2829,9 @@
    "source_url": "http://www.kyotomatcha.us/"
   },
   "brand:web-tea-boss-md-ocean-city-11805-coastal-hwy-unit-ef7303": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.teabossmd.com"
   },
   "brand:web-matchamood-me-portland-654-congress-st-50842e": {
    "fill": "2026-11-24",
@@ -2698,7 +2846,7 @@
   "brand:web-uncharted-tea-me-portland-662-congress-street-3b6579": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 09:00-18:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.unchartedtea.com/"
   },
   "brand:web-tealicious-boba-mn-e-little-canada-45-little-c-96bdd7": {
@@ -2710,7 +2858,7 @@
   "brand:web-palgong-tea-ann-arbor-mi-ann-arbor-2264-s-main-989813": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Sa 11:00-21:00; Su 11:00-19:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://a2palgongtea.com/"
   },
   "brand:web-boba-baba-nc-cary-12102-bradford-green-square-7a3d78": {
@@ -2720,7 +2868,11 @@
    "source_url": "http://www.bobababacafe.com"
   },
   "brand:web-102-boba-brooklyn-center-mn-brooklyn-center-15-4a6c87": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://site.zingmyorder.com/img/default/original.jpg",
+   "image_credit": "102boba.com",
+   "read": "2026-11-25",
+   "source_url": "https://102boba.com"
   },
   "brand:web-boba-baba-nc-charlotte-1425-winnifred-st-ste-1-4c77e6": {
    "fill": "2026-11-24",
@@ -2776,7 +2928,9 @@
    "source_url": "http://www.dobrateanc.com"
   },
   "brand:web-9bar-coffeehouse-nc-clayton-411-athletic-club-1e7b94": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.9barcoffeehouse.com/"
   },
   "brand:web-savoy-tea-co-mo-kansas-city-2108-wyandotte-st-c58c97": {
    "fill": "2026-11-24"
@@ -2785,7 +2939,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-deja-brew-coffee-house-nc-raleigh-5001-falls-o-65ae8f": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://Dejabrewnc.com/"
   },
   "brand:web-meeple-s-brew-nc-cary-821-bass-pro-ln-a55a65": {
    "fill": "2026-11-24",
@@ -2830,10 +2986,14 @@
    "source_url": "https://ncmuse.co/"
   },
   "brand:web-heirloom-brewshop-nc-raleigh-219-s-west-st-d599ca": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://heirloom-raleigh.com"
   },
   "brand:web-great-harvest-bread-co-nc-cary-1240-nw-maynard-eccb9a": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://greatharvestcary.com/"
   },
   "brand:web-o-m-tea-nc-raleigh-3901-157-capital-blvd-bcc123": {
    "fill": "2026-11-24",
@@ -2869,22 +3029,28 @@
    "fill": "2026-11-24"
   },
   "brand:web-notes-coffee-house-nc-apex-830-perry-road-e99376": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://notescoffeehouse.com/"
   },
   "brand:web-moge-tee-chapel-hill-nc-chapel-hill-151-e-fran-1ba4ea": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Th,Su 10:30-21:00; Fr,Sa 10:30-21:30",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.mogeteechapelhill.com/"
   },
   "brand:web-nautical-bowls-nc-cary-1205-parkside-main-st-fb8b10": {
    "fill": "2026-11-24"
   },
   "brand:web-littlefoot-matcha-nc-raleigh-234-fayetteville-808d26": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://littlefootmatcha.com"
   },
   "brand:web-littlefoot-matcha-nc-greensboro-1101-west-gate-3d9b6c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://littlefootmatcha.com"
   },
   "brand:web-purple-spoon-ac-ai-nc-raleigh-3801-hillsboroug-bf5d29": {
    "fill": "2026-11-24",
@@ -2914,7 +3080,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-queen-bee-boba-tea-nc-fayetteville-1800-skibo-fa0856": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://queenbeebobatea.com/"
   },
   "brand:web-sweet-talk-cafe-nc-apex-2008-creekside-landing-45d0e7": {
    "fill": "2026-11-24",
@@ -2955,7 +3123,7 @@
   "brand:web-wada-boba-tea-nc-garner-259-timber-dr-0c2c7d": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Sa 11:00-20:00; Su 12:00-18:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.wadabobatea.com/"
   },
   "brand:web-mochinut-ne-omaha-3605-n-147th-st-105-fecf9a": {
@@ -2967,7 +3135,7 @@
   "brand:web-sugar-koi-nc-cary-116-kilmayne-drive-f0f94d": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Sa 12:00-21:00; Su 15:00-21:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.sugarkoi.com/"
   },
   "brand:web-yaya-tea-durham-nc-durham-807-e-main-st-26ada3": {
@@ -3010,7 +3178,9 @@
    "fill": "2026-11-24"
   },
   "osm:node/6006320286": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.mokamatcha.com/"
   },
   "brand:web-cloud9-tea-nj-cherry-hill-township-1400-haddon-63b7a5": {
    "fill": "2026-11-24",
@@ -3031,7 +3201,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-jane-s-matcha-nj-jersey-city-93-franklin-stree-fe2e24": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://janesmatcha.com"
   },
   "brand:web-the-harvy-s-nc-cary-2763-nc-55-eb7566": {
    "fill": "2026-11-24"
@@ -3052,10 +3224,14 @@
    "source_url": "https://tbaar.com/"
   },
   "brand:web-frosty-cafe-dessertery-nj-bergenfield-108-n-wa-facb68": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.frostycafenj.com/"
   },
   "brand:web-ooika-lawrenceville-nj-lawrenceville-2661-main-0f878b": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://ooika.co/"
   },
   "brand:web-icicles-nm-albuquerque-3705-ellison-rd-nw-209c39": {
    "fill": "2026-11-24",
@@ -3088,7 +3264,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-the-waterbar-by-thought-in-motion-nj-montclair-7903dd": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://thoughtinmotion.net/"
   },
   "brand:web-tbaar-nv-las-vegas-5130-spring-mountain-rd-106-353dc5": {
    "fill": "2026-11-24",
@@ -3097,7 +3275,9 @@
    "source_url": "http://www.tbaar.com/"
   },
   "brand:web-machapresso-nj-closter-229-closter-dock-road-7c2c87": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.machapresso.com/"
   },
   "brand:web-tea-and-whisk-nv-las-vegas-6288-spring-mountai-028f40": {
    "fill": "2026-11-24",
@@ -3133,16 +3313,24 @@
    "source_url": "https://toosoultea.co/"
   },
   "brand:web-cactus-bubble-tea-nv-las-vegas-7686-s-las-vega-6d1eb0": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.cactusbubbletea.com/"
   },
   "brand:web-boba-tea-licious-nv-las-vegas-4085-blue-diamon-35acf6": {
    "fill": "2026-11-24"
   },
   "brand:web-3-leaf-tea-ny-auburn-25-seminary-street-suite-5fb818": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://3-leaf-tea.myshopify.com/cdn/shop/files/PXL_20210604_144826819.jpg",
+   "image_credit": "threeleaftea.com",
+   "read": "2026-11-25",
+   "source_url": "http://threeleaftea.com/"
   },
   "osm:node/12739827416": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.12matcha.com"
   },
   "brand:web-windmill-tea-house-nm-albuquerque-11200-montgo-072335": {
    "fill": "2026-11-24",
@@ -3160,34 +3348,50 @@
    "fill": "2026-11-24"
   },
   "brand:web-cha-cha-matcha-dumbo-ny-brooklyn-55-water-stre-c04ae6": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "osm:node/2555136029": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "brand:web-cha-cha-matcha-madison-ny-new-york-477-madison-138a75": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "brand:web-cha-cha-matcha-moynihan-ny-new-york-421-8th-av-028f75": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "osm:way/1149319923": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "osm:node/2549948620": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://chachamatcha.com"
   },
   "brand:web-aoko-matcha-bayside-ny-bayside-38-35-bell-boul-5c39e4": {
    "fill": "2026-11-24",
    "menu_url": "https://www.aokomatcha.com/menu",
-   "read": "2026-11-24",
-   "source_url": "https://www.aokomatcha.com"
+   "read": "2026-11-25",
+   "source_url": "https://www.aokomatcha.com",
+   "image_url": "https://static.wixstatic.com/media/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg/v1/fill/w_1080,h_473,al_c/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg",
+   "image_credit": "aokomatcha.com"
   },
   "brand:web-aoko-matcha-park-slope-ny-brooklyn-155-5th-ave-bed41d": {
    "fill": "2026-11-24",
    "menu_url": "https://www.aokomatcha.com/menu",
-   "read": "2026-11-24",
-   "source_url": "https://www.aokomatcha.com"
+   "read": "2026-11-25",
+   "source_url": "https://www.aokomatcha.com",
+   "image_url": "https://static.wixstatic.com/media/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg/v1/fill/w_1080,h_473,al_c/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg",
+   "image_credit": "aokomatcha.com"
   },
   "brand:web-davelle-ny-new-york-102-suffolk-street-f40d11": {
    "fill": "2026-11-24",
@@ -3201,14 +3405,18 @@
   "brand:web-aoko-matcha-west-village-ny-new-york-275-bleec-243904": {
    "fill": "2026-11-24",
    "menu_url": "https://www.aokomatcha.com/menu",
-   "read": "2026-11-24",
-   "source_url": "https://www.aokomatcha.com"
+   "read": "2026-11-25",
+   "source_url": "https://www.aokomatcha.com",
+   "image_url": "https://static.wixstatic.com/media/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg/v1/fill/w_1080,h_473,al_c/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg",
+   "image_credit": "aokomatcha.com"
   },
   "brand:web-aoko-matcha-chinatown-ny-new-york-81-chrystie-18e59c": {
    "fill": "2026-11-24",
    "menu_url": "https://www.aokomatcha.com/menu",
-   "read": "2026-11-24",
-   "source_url": "https://www.aokomatcha.com"
+   "read": "2026-11-25",
+   "source_url": "https://www.aokomatcha.com",
+   "image_url": "https://static.wixstatic.com/media/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg/v1/fill/w_1080,h_473,al_c/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg",
+   "image_credit": "aokomatcha.com"
   },
   "brand:web-ichiddo-ramen-ny-port-washington-983-port-wash-6bfce9": {
    "fill": "2026-11-24",
@@ -3221,11 +3429,15 @@
   "brand:web-aoko-matcha-fidi-ny-new-york-40-gold-street-c71dc4": {
    "fill": "2026-11-24",
    "menu_url": "https://www.aokomatcha.com/menu",
-   "read": "2026-11-24",
-   "source_url": "https://www.aokomatcha.com"
+   "read": "2026-11-25",
+   "source_url": "https://www.aokomatcha.com",
+   "image_url": "https://static.wixstatic.com/media/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg/v1/fill/w_1080,h_473,al_c/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg",
+   "image_credit": "aokomatcha.com"
   },
   "brand:web-cow-bubble-tea-ny-buffalo-3500-main-street-13229c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://cowbubbletea.com"
   },
   "brand:web-ikedo-ramen-ny-port-washington-983-port-washin-a1f42e": {
    "fill": "2026-11-24",
@@ -3236,7 +3448,10 @@
    "source_url": "https://www.ikedoramen.com/"
   },
   "brand:web-dragon-girl-tea-ny-buffalo-1-walden-galleria-c3a825": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "opening_hours": "Mo-Th 11:00-19:30; Fr,Sa 10:30-20:30; Su 11:00-18:00",
+   "read": "2026-11-25",
+   "source_url": "https://dragongirltea.com/"
   },
   "brand:web-green-hill-tea-ny-new-york-183-mulberry-st-c5119e": {
    "fill": "2026-11-24"
@@ -3251,7 +3466,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-k-minamoto-ny-new-york-604-5th-avenue-ac655b": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.kitchoan.com/"
   },
   "brand:web-blank-street-ny-new-york-181-prince-st-99a774": {
    "fill": "2026-11-24"
@@ -3278,7 +3495,9 @@
    "source_url": "http://www.nonameus.com/"
   },
   "brand:web-kulu-desserts-ny-queens-86-55-broadway-69f802": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.kuludesserts.com/"
   },
   "brand:web-kulu-desserts-ny-new-york-123-w-3rd-st-174df9": {
    "fill": "2026-11-24"
@@ -3300,7 +3519,7 @@
    "instagram": "hustle",
    "image_url": "https://www.matchabar.co/cdn/shop/files/MAT009_05_Hustle_Assets_Matchabar_Logo_sRGB_V1_78573778-85fc-454e-b0ca-2c9e93f008a7_3008x1774.png?v=1615569311",
    "image_credit": "Photo: MatchaBar website",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://matchabar.co/pages/locate#chelsea"
   },
   "brand:web-matchaful-ny-new-york-250-vesey-st-dc70f4": {
@@ -3324,19 +3543,27 @@
    "fill": "2026-11-24"
   },
   "brand:web-matchaful-clinton-hill-culinary-lab-ny-brookly-fb4266": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-matto-espresso-ny-new-york-8-w-46th-st-f294c9": {
    "fill": "2026-11-24"
   },
   "brand:web-matchaful-park-avenue-south-ny-new-york-337-pa-47b2d2": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-matchaful-midtown-east-inside-clean-market-ny-1cf4f2": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-matchaful-soho-ny-new-york-184-prince-street-c80e06": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-saratoga-tea-and-honey-company-ny-saratoga-spr-c61a9b": {
    "fill": "2026-11-24",
@@ -3345,19 +3572,29 @@
    "source_url": "http://www.saratogateaandhoney.com/"
   },
   "brand:web-matchaful-nolita-ny-new-york-217-mulberry-stre-66f226": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-matchaful-williamsburg-ny-brooklyn-92-berry-st-b5a202": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-matchaful-tribeca-ny-new-york-350-greenwich-st-796721": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-panda-bubble-tea-ny-new-york-1000-8th-ave-447e03": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://pandabubbletea.com/"
   },
   "osm:node/11860537157": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.nanasgreenteaus.com"
   },
   "brand:web-spot-dessert-bar-long-island-city-ny-new-york-5fe1e1": {
    "fill": "2026-11-24"
@@ -3369,7 +3606,9 @@
    "source_url": "http://tbaar.com"
   },
   "osm:node/6550407925": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-tbaar-ny-new-york-8520-20th-ave-e3a56e": {
    "fill": "2026-11-24",
@@ -3438,7 +3677,11 @@
    "source_url": "http://tbaar.com/"
   },
   "brand:web-spot-dessert-bar-ny-new-york-13-st-marks-place-9eb73d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://www.spotdessertbar.com/images/stmarks.jpg",
+   "image_credit": "spotdessertbar.com",
+   "read": "2026-11-25",
+   "source_url": "http://www.spotdessertbar.com"
   },
   "brand:web-sieve-cafe-matcha-coffee-ny-ridgewood-7-57-sen-3bf5ae": {
    "fill": "2026-11-24",
@@ -3456,10 +3699,14 @@
    "source_url": "http://www.churchillsteas.com/"
   },
   "brand:web-nippon-cha-bayside-ny-bayside-39-34-bell-boule-dfc920": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://nipponcha.us"
   },
   "brand:web-nippon-cha-williamsburg-ny-brooklyn-214-bedfor-5f988f": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://nipponcha.us"
   },
   "brand:web-spot-dessert-bar-ny-flushing-39-16-prince-st-67c452": {
    "fill": "2026-11-24"
@@ -3480,10 +3727,14 @@
    "fill": "2026-11-24"
   },
   "brand:web-yallah-habibi-desserts-ny-staten-island-949-je-79225a": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://yallahhabibi.co/"
   },
   "brand:web-boss-tea-ok-tulsa-8222-east-103rd-street-ca8fe4": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://thebossteashop.com/"
   },
   "brand:web-meet-fresh-or-portland-230-sw-ash-st-fb5924": {
    "fill": "2026-11-24"
@@ -3492,16 +3743,22 @@
    "fill": "2026-11-24"
   },
   "brand:web-cinsei-oh-cincinnati-32-e-13th-st-aa615e": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://cinsei.com"
   },
   "brand:web-epic-coffee-shoppe-oh-kettering-22-w-stroop-rd-a9655f": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.epiccoffeeshoppe.com"
   },
   "brand:web-first-corner-bubble-tea-oh-bexley-2408-e-main-b3edf6": {
    "fill": "2026-11-24"
   },
   "brand:web-matcha-me-oh-columbus-2348-n-high-street-20d228": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchamecafe.com"
   },
   "brand:web-go-matcha-go-oh-toledo-5001-south-ave-7143e8": {
    "fill": "2026-11-24",
@@ -3546,8 +3803,10 @@
   "brand:web-aoko-matcha-philadelphia-pa-philadelphia-44-n-deedf2": {
    "fill": "2026-11-24",
    "menu_url": "https://www.aokomatcha.com/menu",
-   "read": "2026-11-24",
-   "source_url": "https://www.aokomatcha.com"
+   "read": "2026-11-25",
+   "source_url": "https://www.aokomatcha.com",
+   "image_url": "https://static.wixstatic.com/media/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg/v1/fill/w_1080,h_473,al_c/ac2bd4_8d958ee8c46b4f96a5ec2cef28f80efa~mv2.jpg",
+   "image_credit": "aokomatcha.com"
   },
   "brand:web-smith-teamaker-or-portland-500-nw-23rd-ave-7b95fa": {
    "fill": "2026-11-24"
@@ -3565,7 +3824,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-kyo-matcha-pa-philadelphia-222-n-11th-st-b90e1f": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.kyotomatcha.us"
   },
   "brand:web-tea-bar-or-portland-4330-se-division-st-e04e00": {
    "fill": "2026-11-24"
@@ -3597,7 +3858,7 @@
   "brand:web-yokohama-skyline-eatery-or-portland-33-ne-3rd-39f858": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Fr 11:30-15:00; Sa 12:00-15:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.yokohamaskylinepdx.com/"
   },
   "brand:web-yogen-fru-z-sc-lexington-851-highway-378-ste-1-a3f387": {
@@ -3624,7 +3885,7 @@
   "brand:web-blue-monkey-tea-pa-pittsburgh-5872-forbes-ave-54c927": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Fr 11:00-19:00; Sa 11:00-17:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.bluemonkeytea.com/"
   },
   "brand:web-paris-baguette-tn-murfreesboro-2615-medical-ce-98f51d": {
@@ -3643,10 +3904,14 @@
    "source_url": "https://bubblefishrobinson.com"
   },
   "brand:web-bubble-tea-room-pa-philadelphia-319-market-st-693e36": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.bubbletearoomphilly.com"
   },
   "brand:web-mikkusu-matcha-tea-house-pa-pittsburgh-3511-bu-ba0f6c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://mikkusutea.com"
   },
   "brand:web-eat-bubbles-tn-nashville-3820-charlotte-ave-cdf0d0": {
    "fill": "2026-11-24",
@@ -3660,11 +3925,13 @@
   "brand:web-bubble-bang-tn-cordova-420-s-germantown-pkwy-1-1a15ee": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Sa 11:00-20:00; Su 12:00-18:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://bubblebang4u.com/"
   },
   "brand:web-nostalgic-tea-rooms-tn-collierville-684-w-popl-ee9801": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://nostalgictearooms.com/"
   },
   "brand:web-carolina-parakeet-tea-and-gifts-sc-anderson-28-832a3a": {
    "fill": "2026-11-24"
@@ -3690,23 +3957,29 @@
   "osm:node/11629630569": {
    "fill": "2026-11-24",
    "menu_url": "https://matchapanda.com/menu",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://matchapanda.com"
   },
   "osm:node/13608358235": {
    "fill": "2026-11-24",
    "menu_url": "https://matchapanda.com/menu",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://matchapanda.com"
   },
   "brand:web-junbi-tx-cedar-park-202-walton-way-ste-120-b638cc": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://junbishop.com"
   },
   "brand:web-junbi-tx-arlington-1255-w-interstate-20-suite-e50438": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://junbishop.com"
   },
   "brand:web-junbi-tx-houston-9188-bellaire-blvd-ste-x-05134e": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://junbishop.com"
   },
   "brand:web-kokee-tea-tx-sugar-land-16535-southwest-fwy-64c63e": {
    "fill": "2026-11-24"
@@ -3730,10 +4003,16 @@
    "fill": "2026-11-24"
   },
   "brand:web-bonappetea-tx-college-station-112-nagle-st-9cfb32": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://www.bonappeteatx.com/assets/tea.png",
+   "image_credit": "bonappeteatx.com",
+   "read": "2026-11-25",
+   "source_url": "http://bonappeteatx.com/"
   },
   "brand:web-boba-mama-tx-league-city-3311-fm-518-rd-e-ste-830a26": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://boba-mama.com/"
   },
   "brand:web-fat-straws-tx-dallas-11810-preston-rd-150-bd8201": {
    "fill": "2026-11-24",
@@ -3831,13 +4110,13 @@
   "brand:web-lacreme-bakery-cafe-frisco-tx-frisco-6549-coit-969536": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Fr 09:00-19:00; Sa 10:00-19:00; Su 10:00-15:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://lacremebakerycafe.com/"
   },
   "brand:web-crema-coffee-company-tx-tyler-2251-three-lakes-32c73b": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Fr 06:00-18:00; Sa,Su 07:00-17:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://cremacoffeetyler.com/"
   },
   "brand:web-crazy-croffles-ut-salt-lake-city-158-s-rio-gra-b9d865": {
@@ -3847,7 +4126,9 @@
    "source_url": "https://crazycroffles.online/"
   },
   "brand:web-junbi-ut-salt-lake-city-464-s-600-e-unit-a-dd7832": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://junbishop.com"
   },
   "brand:web-redstraw-tea-bar-tx-carrollton-1012-mac-arthur-25345d": {
    "fill": "2026-11-24"
@@ -3855,7 +4136,7 @@
   "brand:web-mira-matcha-tx-san-antonio-1931-north-new-brau-147356": {
    "fill": "2026-11-24",
    "opening_hours": "We-Fr 08:00-15:00; Sa,Su 09:00-16:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.miramatcha.com"
   },
   "brand:web-meet-fresh-ut-south-salt-lake-3390-s-state-st-c858d0": {
@@ -3913,7 +4194,7 @@
    "fill": "2026-11-24",
    "instagram": "kyomatchausa",
    "menu_url": "https://www.kyotomatcha.us/menu",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.kyotomatcha.us"
   },
   "brand:web-teavalley-tx-plano-3320-k-ave-1fadd8": {
@@ -3932,7 +4213,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-matcha-creme-tx-dallas-10455-n-central-expy-eec160": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaandcreme.com"
   },
   "brand:web-seven-teahouse-va-se-leesburg-1607-village-mar-1aae5e": {
    "fill": "2026-11-24",
@@ -3947,7 +4230,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-guayoyo-cafe-ut-west-jordan-7173-s-redwood-rd-d495fd": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://guayoyocafe.com"
   },
   "brand:web-tifa-chocolate-and-gelato-matcha-coffee-tx-eul-e1f6ee": {
    "fill": "2026-11-24",
@@ -3958,7 +4243,9 @@
    "source_url": "https://tifachocolateandgelato.com/location-detail/euless-tx/"
   },
   "brand:web-matcha-cafe-kyoto-ut-salt-lake-city-2223-s-hig-f6c99c": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://matchacafekyoto.com"
   },
   "brand:web-l-ami-bakery-cafe-va-burke-9550-burke-rd-f88ca3": {
    "fill": "2026-11-24",
@@ -3978,7 +4265,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-the-humble-mug-vt-brattleboro-114-main-street-4c4726": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.thehumblemug.com/"
   },
   "brand:web-the-sweet-spot-va-chesapeake-660-belaire-ave-1517bd": {
    "fill": "2026-11-24",
@@ -4002,7 +4291,9 @@
    "source_url": "https://iamthesweetspot.com/"
   },
   "brand:web-ku-tea-coffee-tea-town-va-fredericksburg-9861-e39c27": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://kuteatown.com/"
   },
   "brand:web-ku-tea-coffee-tea-town-va-stafford-915-wonder-3229d6": {
    "fill": "2026-11-24"
@@ -4010,8 +4301,10 @@
   "brand:web-badger-canyon-tea-co-wa-kennewick-201-north-ed-6e71ec": {
    "fill": "2026-11-24",
    "opening_hours": "Tu-Sa 10:00-17:00",
-   "read": "2026-11-24",
-   "source_url": "http://badgercanyontea.com/"
+   "read": "2026-11-25",
+   "source_url": "http://badgercanyontea.com/",
+   "image_url": "https://static.wixstatic.com/media/170133_86409c8cf26a476e8d3579bf498906e5~mv2.png",
+   "image_credit": "badgercanyontea.com"
   },
   "brand:web-j-sweets-wa-bellevue-699-120th-ave-ne-2d0bbd": {
    "fill": "2026-11-24"
@@ -4023,16 +4316,22 @@
    "fill": "2026-11-24"
   },
   "brand:web-drip-tea-seattle-wa-seattle-1416-10th-ave-c1c5df": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://Dripteaseattle.com/"
   },
   "brand:web-mochinut-south-lake-union-wa-seattle-400-fairv-33df87": {
    "fill": "2026-11-24"
   },
   "brand:web-grean-matcha-wa-seattle-4524-university-way-ne-ed6602": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://drinkgrean.com"
   },
   "brand:web-nana-s-green-tea-wa-bellevue-16-103rd-ave-ne-a79dd4": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://nanasgreenteausa.com"
   },
   "brand:web-peet-s-coffee-wa-seattle-17801-international-b-32c92d": {
    "fill": "2026-11-24"
@@ -4105,7 +4404,9 @@
    "source_url": "http://Bobalustteahouse.com/"
   },
   "brand:web-miro-tea-wa-seattle-5405-ballard-ave-nw-fe8e92": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://mirotea.com"
   },
   "brand:web-idyllic-bubble-tea-house-wi-waukesha-802-n-gra-741fa9": {
    "fill": "2026-11-24",
@@ -4126,12 +4427,14 @@
    "source_url": "http://www.trueteashop.com/"
   },
   "brand:web-mina-s-matcha-wa-seattle-5200-roosevelt-way-ne-e52c76": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://minasmatcha.com"
   },
   "brand:web-timeless-tea-dessert-cafe-uw-wa-seattle-1000-n-47038f": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 11:00-23:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.timelessteaseattle.com/"
   },
   "brand:web-valentinas-cafe-wa-seattle-5405-leary-ave-nw-af7a39": {
@@ -4150,13 +4453,19 @@
    "fill": "2026-11-24"
   },
   "brand:web-taichi-bubble-tea-ramen-milwaukee-wi-milwaukee-30c764": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.taichimilwaukee.com"
   },
   "brand:web-bubble-fish-wv-morgantown-1006-suncrest-town-c-b8be95": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://bubblefishwv.com"
   },
   "brand:web-tea-jar-tx-mansfield-761-e-debbie-ln-ste-107-cf87c5": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://theteajar.com/"
   },
   "brand:web-atra-cafe-ca-fountain-valley-18120-brookhurst-b041ef": {
    "fill": "2026-11-24",
@@ -4209,7 +4518,7 @@
   "brand:web-blu-jam-cafe-ca-los-angeles-12400-wilshire-blv-6f0b5a": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Fr 08:30-14:00; Sa,Su 08:30-15:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.blujamcafe.com/"
   },
   "brand:web-coffee-importers-ca-dana-point-24200-dana-poin-4d2674": {
@@ -4233,7 +4542,7 @@
   "brand:web-matsu-matcha-ca-los-angeles-107-japanese-villa-6e6466": {
    "fill": "2026-11-24",
    "menu_url": "https://matsumatcha-usa.com/#",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://matsumatcha-usa.com"
   },
   "brand:web-7-leaves-cafe-ca-downey-8901-apollo-wy-4a-f503d7": {
@@ -4246,7 +4555,9 @@
    "source_url": "http://www.blujamcafe.com/"
   },
   "brand:web-brass-bird-coffee-kitchen-ca-carpinteria-4835-0298f3": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://brassbirdcoffee.com"
   },
   "brand:web-faregrounds-beverly-hills-ca-beverly-hills-459-59b30b": {
    "fill": "2026-11-24",
@@ -4369,7 +4680,9 @@
    "source_url": "https://www.milliescafela.com"
   },
   "brand:web-muri-coffee-dessert-ca-san-diego-2528-universi-4bf719": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://muricafe.com/"
   },
   "brand:web-nostalgic-cafe-ca-pasadena-27-e-holly-st-467a7f": {
    "fill": "2026-11-24"
@@ -4455,7 +4768,7 @@
   "brand:web-surfers-point-cafe-ca-ventura-204-east-thompso-e6fe7c": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Fr 07:00-15:00; Sa,Su 08:00-15:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.surferspointcafe.com/"
   },
   "brand:web-savour-coffee-fl-fort-myers-16520-s-tamiami-tr-026341": {
@@ -4474,7 +4787,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-united-bowl-nation-ca-marina-del-rey-13910-mar-864471": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://unitedbowlnation.com/"
   },
   "brand:web-vi-coffee-bar-fl-boca-raton-1159-s-federal-hwy-482b98": {
    "fill": "2026-11-24",
@@ -4483,7 +4798,9 @@
    "source_url": "http://vicoffeebar.net/"
   },
   "brand:web-stagger-coffee-ca-los-angeles-2-w-8th-st-3ba8be": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.staggercoffee.com/"
   },
   "brand:web-phin-smith-ca-garden-grove-12921-main-st-05e989": {
    "fill": "2026-11-24"
@@ -4511,7 +4828,9 @@
    "source_url": "https://www.evolvecoffeenola.com"
   },
   "brand:web-cloud-nine-cafe-hi-honolulu-1221-kapiolani-blv-bcc671": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.cloud9cafehi.com/"
   },
   "brand:web-crema-gourmet-espresso-bar-fl-miami-1010-brick-503a75": {
    "fill": "2026-11-24"
@@ -4535,7 +4854,9 @@
    "source_url": "http://www.milkchachausa.com"
   },
   "brand:web-teascape-coffee-and-tea-bar-ca-anaheim-9774-ka-cab142": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://teascape.us/"
   },
   "brand:web-cafe-lift-haddonfield-nj-haddonfield-144-kings-fada33": {
    "fill": "2026-11-24",
@@ -4544,7 +4865,9 @@
    "source_url": "https://cafelifthaddonfield.com/"
   },
   "brand:web-matchaful-brookfield-place-inside-clean-market-153d75": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.matchaful.com"
   },
   "brand:web-matto-espresso-ny-new-york-114-e-40th-st-dbe836": {
    "fill": "2026-11-24"
@@ -4559,7 +4882,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-verveine-cafe-bakery-ma-cambridge-298-massachu-db8f60": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.verveinecafe.com"
   },
   "brand:web-aura-coffee-tx-denton-1306-w-hickory-st-792f53": {
    "fill": "2026-11-24",
@@ -4576,7 +4901,7 @@
   "brand:web-nector-cafe-hi-hilo-216-kamehameha-ave-96e759": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 09:00-17:30",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://www.nectorcafe.com/"
   },
   "brand:web-mad-coffee-more-tx-abilene-8049-us-highway-83-ede2e4": {
@@ -4607,10 +4932,14 @@
    "fill": "2026-11-24"
   },
   "brand:web-nana-s-green-tea-wa-seattle-1007-stewart-st-st-a1125a": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://nanasgreenteausa.com"
   },
   "brand:web-poppy-s-coffee-house-tx-leon-valley-6417-evers-1af88d": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://poppyscafe.net/"
   },
   "brand:web-triptych-coffee-co-tx-denton-301-s-locust-st-ca193d": {
    "fill": "2026-11-24"
@@ -4637,13 +4966,17 @@
    "fill": "2026-11-24"
   },
   "brand:web-mo-mo-tea-co-englewood-3602-river-point-pkwy-u-654c8a": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://momomilkteahouse.com/"
   },
   "brand:web-42-lawrence-nc-raleigh-134-e-martin-st-d6ce26": {
    "fill": "2026-11-24"
   },
   "brand:web-sugarbaby-gatlinburg-tn-gatlinburg-727-parkway-1ea3cf": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.sugarbabysweetshop.com/"
   },
   "brand:web-7-leaves-cafe-ca-irvine-14845-jeffrey-rd-e023e8": {
    "fill": "2026-11-24"
@@ -4652,7 +4985,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-aroma-craft-coffee-ca-walnut-20265-valley-boul-6e1639": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.aromacraftcoffee.com/"
   },
   "brand:web-7-leaves-cafe-chino-hills-ca-chino-hills-13920-48439c": {
    "fill": "2026-11-24"
@@ -4694,7 +5029,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-connect-coffee-ca-visalia-5505-w-riggin-ave-22aa21": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.connectcoffeevisalia.com/"
   },
   "brand:web-cloud-forest-cafe-ca-davis-222-d-st-83c4c9": {
    "fill": "2026-11-24",
@@ -4709,7 +5046,9 @@
    "source_url": "https://www.coracoffeesactown.com/"
   },
   "brand:web-coffee-lovers-tully-road-ca-san-jose-1696-tull-17bab2": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://tcoffeelovers.restaurants-info.com"
   },
   "brand:web-jack-s-coffee-ca-salinas-1348-s-main-st-b6fbe6": {
    "fill": "2026-11-24"
@@ -4730,7 +5069,9 @@
    "source_url": "http://www.hotlipscoffeeshop.com/"
   },
   "brand:web-el-dicho-coffee-and-antojitos-ca-south-lake-ta-a310ff": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://eldichocafetahoe.com"
   },
   "brand:web-l-s-caffe-ca-san-francisco-2871-24th-st-f978b2": {
    "fill": "2026-11-24"
@@ -4859,7 +5200,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-peet-s-coffee-ca-emeryville-1400-park-ave-e97218": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://locations.peets.com/ll/US/CA/San-Francisco/1400-Mission-Street"
   },
   "brand:web-peet-s-coffee-ca-alameda-1901-webster-st-fd0d47": {
    "fill": "2026-11-24"
@@ -5075,10 +5418,14 @@
    "fill": "2026-11-24"
   },
   "brand:web-peet-s-coffee-corporate-headquarters-ca-emeryv-977fce": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.peets.com/"
   },
   "brand:web-kaizen-coffee-ca-san-mateo-2337-s-el-camino-re-8adcaf": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.kaizenandcoffee.com/"
   },
   "brand:web-caffe-mercato-ca-menifee-30141-antelope-rd-306a77": {
    "fill": "2026-11-24"
@@ -5090,7 +5437,9 @@
    "fill": "2026-11-24"
   },
   "brand:web-plucky-s-cafe-ca-burlingame-1352-broadway-82e960": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://pluckyscafe.com/"
   },
   "brand:web-mi-cafecito-coffee-ca-pomona-101-s-main-st-7bf1d7": {
    "fill": "2026-11-24"
@@ -5122,7 +5471,7 @@
   "brand:web-stray-dogs-coffee-ca-riverside-3225-market-st-c6de59": {
    "fill": "2026-11-24",
    "opening_hours": "Mo 07:00-17:00; Tu-Fr 07:00-20:00; Sa 09:00-18:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "https://www.straydogscoffee.com/"
   },
   "brand:web-polaris-cafe-ca-emeryville-5858-horton-st-151-e51827": {
@@ -5132,13 +5481,19 @@
    "fill": "2026-11-24"
   },
   "brand:web-sam-s-general-store-ca-calistoga-109-wappo-ave-79d762": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "image_url": "https://1148023cd8e28393a2fb.cdn6.editmysite.com/uploads/b/1148023cd8e28393a2fb534ec6a34b53dba095372fa55d59f273b37d9f26de97/2026-05-04_11-06-24_1777917997.jpg",
+   "image_credit": "samsgeneral.store",
+   "read": "2026-11-25",
+   "source_url": "http://samsgeneral.store"
   },
   "brand:web-spro-coffeelab-ca-san-francisco-500-church-st-216ed5": {
    "fill": "2026-11-24"
   },
   "brand:web-cool-river-coffee-house-co-breckenridge-325-s-e9dc48": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://coolrivercoffeehouse.com/"
   },
   "brand:web-springly-ca-fresno-7859-n-blackstone-ave-0ce321": {
    "fill": "2026-11-24"
@@ -5231,7 +5586,9 @@
    "source_url": "http://bungalowcoffeeco.com/"
   },
   "brand:web-cafe-mata-nc-wilmington-1540-south-2nd-street-0ed00f": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "http://www.cafemata.com/"
   },
   "brand:web-founders-coffee-nv-las-vegas-6410-s-durango-dr-5f2feb": {
    "fill": "2026-11-24",
@@ -5317,7 +5674,7 @@
   "brand:web-iwana-specialty-coffee-roasters-nv-las-vegas-6-1e4702": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Fr 07:00-16:00; Sa,Su 08:00-16:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://iwanacoffee.com/"
   },
   "brand:web-bad-owl-coffee-nv-henderson-10575-s-eastern-av-23f1c3": {
@@ -5537,7 +5894,9 @@
    "source_url": "http://www.ameliesfrenchbakery.com"
   },
   "brand:web-coffeesmiths-mo-rolla-707-n-pine-st-ac048a": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "read": "2026-11-25",
+   "source_url": "https://www.coffeesmithsrolla.com/"
   },
   "brand:web-mugshots-coffee-company-mn-bloomington-10518-f-95cc06": {
    "fill": "2026-11-24"
@@ -5560,7 +5919,7 @@
   "brand:web-grow-cafe-nc-charlotte-5342-docia-crossing-roa-b1ab6d": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 08:45-16:30",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://growcafeclt.com/"
   },
   "brand:web-dilworth-coffee-plantation-market-nc-matthews-63cd15": {
@@ -5582,7 +5941,10 @@
    "fill": "2026-11-24"
   },
   "brand:web-kale-me-crazy-nc-wilmington-6800-parker-farm-r-d14ee6": {
-   "fill": "2026-11-24"
+   "fill": "2026-11-24",
+   "instagram": "kalemecrazy",
+   "read": "2026-11-25",
+   "source_url": "https://wilmington.kalemecrazy.net/"
   },
   "brand:web-espresso-royale-cafe-village-green-il-champaig-9ff829": {
    "fill": "2026-11-24"
@@ -5647,7 +6009,7 @@
   "brand:web-golden-hour-coffee-co-or-portland-3538-se-hawt-e2887e": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Su 09:00-16:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://goldenhourcoffeeco.com/"
   },
   "brand:web-peet-s-coffee-or-hillsboro-10150-ne-cornell-rd-bfde08": {
@@ -5707,7 +6069,7 @@
   "brand:web-sweet-eye-coffee-tn-cordova-1140-n-germantown-5958ae": {
    "fill": "2026-11-24",
    "opening_hours": "Mo-Th 07:30-21:00; Fr 07:30-22:30; Sa 08:00-22:30; Su 08:00-21:00",
-   "read": "2026-11-24",
+   "read": "2026-11-25",
    "source_url": "http://Sweeteyecafe.com/"
   },
   "brand:web-less-and-more-coffee-ii-or-portland-811-sw-6th-1bd2ab": {

@@ -8,8 +8,8 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:17f394a5bfe9@matchamap-cu7.pages.dev
-DTSTAMP:20261124T191621Z
-LAST-MODIFIED:20261124T181943Z
+DTSTAMP:20261125T182233Z
+LAST-MODIFIED:20261125T182233Z
 DTSTART:20261125T233000Z
 DTEND:20261126T013000Z
 SUMMARY:Paint and Sip - Grinch Wine Bottle
@@ -24,16 +24,15 @@ CATEGORIES:Matcha
 END:VEVENT
 BEGIN:VEVENT
 UID:6e3949ab5d9e@matchamap-cu7.pages.dev
-DTSTAMP:20261124T191621Z
-LAST-MODIFIED:20261124T181943Z
-DTSTART:20261128T003000Z
-DTEND:20261128T030000Z
+DTSTAMP:20261125T182233Z
+LAST-MODIFIED:20261125T182233Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
 SUMMARY:Friday Night Comedy and Open Mic at Roots Kava Bar\, Port Jefferson
 LOCATION:Roots Kava Bar\, 250 East Main Street\, Port Jefferson\, NY
 DESCRIPTION:Alcohol-free comedy night every Friday in Port Jeff. Sign-ups 7
- :30\, open mic 8\, comedy 9. Kava\, coffee\, matcha and mocktails.\nPrice:
-  Free\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/6e3949
- ab5d9e/
+ :30\, open mic 8\, comedy 9. Kava\, coffee\, matcha and mocktails.\nLikely
+ \, not fully confirmed.\nMore: https://matchamap.app/e/6e3949ab5d9e/
 URL:https://matchamap.app/e/6e3949ab5d9e/
 GEO:40.945446;-73.067637
 STATUS:CONFIRMED

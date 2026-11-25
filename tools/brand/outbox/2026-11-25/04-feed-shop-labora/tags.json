@@ -1,0 +1,26 @@
+{
+  "slot": "feed",
+  "time": "13:00",
+  "image_url": "https://matchamap.app/social/2026-11-25/04-feed-shop-labora.png",
+  "location": "San Diego, CA",
+  "link": "https://matchamap.app/city/ca/san-diego/",
+  "user_tags": [
+    {
+      "username": "laboracafe",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "laboracafe"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchasandiego",
+    "#sandiegofood",
+    "#matchalatte",
+    "#matchalover"
+  ]
+}

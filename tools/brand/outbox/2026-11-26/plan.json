@@ -1,0 +1,669 @@
+{
+  "date": "2026-11-26",
+  "items": [
+    {
+      "slot": "story",
+      "kind": "location",
+      "time": "08:00",
+      "title": "This weekend in North Carolina",
+      "tag": "This weekend",
+      "date": "2026-11-26",
+      "city": "Charlotte",
+      "state": "NC",
+      "region": null,
+      "link": "https://matchamap.app/city/nc/charlotte/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchacharlotte",
+        "#charlottefood",
+        "#supportsmallbusiness",
+        "#shopsmall"
+      ],
+      "caption": "This weekend in North Carolina: Babaloo Coffee Club; Saikō Matcha House.\n\nMore matcha in North Carolina: https://matchamap.app/city/nc/charlotte/\n\n#matcha #matchapopup #matchamap #matchacharlotte #charlottefood #supportsmallbusiness #shopsmall\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [],
+      "shopId": null,
+      "group": {
+        "key": "s:NC",
+        "rows": [
+          {
+            "id": "brand:web-babaloo-coffee-club-nc-charlotte-1425-winnifre-3ab2d1",
+            "brand": "Babaloo Coffee Club",
+            "kind": "cafe",
+            "sub": "Charlotte, NC",
+            "drinks": [
+              "Matcha & non-coffee",
+              "Matcha Latte"
+            ]
+          },
+          {
+            "id": "a42948012615",
+            "brand": "Saikō Matcha House",
+            "kind": "popup",
+            "sub": "Friday 10 am to 2 pm",
+            "drinks": [
+              "ceremonial first-harvest matcha"
+            ]
+          }
+        ],
+        "place": "North Carolina",
+        "title": "This weekend in North Carolina",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Babaloo Coffee Club",
+          "Saikō Matcha House"
+        ]
+      },
+      "role": "title",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": null,
+      "n": "01",
+      "name": "01-story-location-north-carolina",
+      "style": "neon",
+      "image_url": "https://matchamap.app/social/2026-11-26/01-story-location-north-carolina.png"
+    },
+    {
+      "slot": "story",
+      "kind": "shop",
+      "time": "08:30",
+      "title": "Babaloo Coffee Club",
+      "tag": "New on the map",
+      "date": "2026-11-26",
+      "city": "Charlotte",
+      "state": "NC",
+      "region": null,
+      "link": "https://matchamap.app/city/nc/charlotte/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchacharlotte",
+        "#charlottefood",
+        "#cafehopping",
+        "#localeats"
+      ],
+      "caption": "New on the map: Babaloo Coffee Club (@babaloocoffeeclub) in Charlotte, NC. 1425 Winnifred St, Suite 117.\n\nMatcha on the menu: Matcha & non-coffee, Matcha Latte, Strawberry Matcha, Matcha Tiramisú.\n\nFind it and more matcha spots in Charlotte: https://matchamap.app/city/nc/charlotte/\n\n#matcha #matchapopup #matchamap #matchacharlotte #charlottefood #cafehopping #localeats\n",
+      "user_tags": [],
+      "mentions": [
+        "babaloocoffeeclub"
+      ],
+      "brands": [
+        "babaloocoffeeclub"
+      ],
+      "shopId": "brand:web-babaloo-coffee-club-nc-charlotte-1425-winnifre-3ab2d1",
+      "group": {
+        "key": "s:NC",
+        "rows": [
+          {
+            "id": "brand:web-babaloo-coffee-club-nc-charlotte-1425-winnifre-3ab2d1",
+            "brand": "Babaloo Coffee Club",
+            "kind": "cafe",
+            "sub": "Charlotte, NC",
+            "drinks": [
+              "Matcha & non-coffee",
+              "Matcha Latte"
+            ]
+          },
+          {
+            "id": "a42948012615",
+            "brand": "Saikō Matcha House",
+            "kind": "popup",
+            "sub": "Friday 10 am to 2 pm",
+            "drinks": [
+              "ceremonial first-harvest matcha"
+            ]
+          }
+        ],
+        "place": "North Carolina",
+        "title": "This weekend in North Carolina",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Babaloo Coffee Club",
+          "Saikō Matcha House"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-babaloo-coffee-club-nc-charlotte-1425-winnifre-3ab2d1",
+        "name": "Babaloo Coffee Club",
+        "handle": "babaloocoffeeclub",
+        "city": "Charlotte",
+        "state": "NC",
+        "address": "1425 Winnifred St, Suite 117",
+        "drinks": [
+          "Matcha & non-coffee",
+          "Matcha Latte",
+          "Strawberry Matcha",
+          "Matcha Tiramisú"
+        ],
+        "pour": {
+          "items": [
+            {
+              "name": "Matcha & non-coffee",
+              "plain": false
+            },
+            {
+              "name": "Matcha Latte",
+              "plain": false
+            },
+            {
+              "name": "Strawberry Matcha",
+              "plain": false
+            },
+            {
+              "name": "Matcha Tiramisú",
+              "plain": false
+            },
+            {
+              "name": "Blue Cloud Banana Matcha",
+              "plain": false
+            }
+          ],
+          "more": 7
+        },
+        "tier": "serves",
+        "seen": "2026-11-24"
+      },
+      "n": "02",
+      "name": "02-story-shop-babaloo-coffee-club",
+      "style": "neon",
+      "image_url": "https://matchamap.app/social/2026-11-26/02-story-shop-babaloo-coffee-club.png"
+    },
+    {
+      "slot": "story",
+      "kind": "weekend",
+      "time": "09:00",
+      "title": "This weekend in Raleigh",
+      "tag": "This weekend",
+      "date": "2026-11-26",
+      "city": "Raleigh",
+      "state": "NC",
+      "region": "triangle",
+      "link": "https://matchamap.app/city/nc/raleigh/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matcharaleigh",
+        "#raleighfood",
+        "#weekendplans",
+        "#matchadrinks"
+      ],
+      "caption": "This weekend in Raleigh. Saikō Matcha House (@saikomatchahouse) is popping up at MODE at The Village District in Raleigh, NC, Friday, November 27, 10 am to 2 pm.\n\nOn the menu: ceremonial first-harvest matcha, house-made syrups.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Raleigh on the map: https://matchamap.app/city/nc/raleigh/\n\n#matcha #matchapopup #matchamap #matcharaleigh #raleighfood #weekendplans #matchadrinks\n",
+      "user_tags": [],
+      "mentions": [
+        "saikomatchahouse"
+      ],
+      "brands": [
+        "saikomatchahouse"
+      ],
+      "shopId": null,
+      "group": {
+        "key": "s:NC",
+        "rows": [
+          {
+            "id": "brand:web-babaloo-coffee-club-nc-charlotte-1425-winnifre-3ab2d1",
+            "brand": "Babaloo Coffee Club",
+            "kind": "cafe",
+            "sub": "Charlotte, NC",
+            "drinks": [
+              "Matcha & non-coffee",
+              "Matcha Latte"
+            ]
+          },
+          {
+            "id": "a42948012615",
+            "brand": "Saikō Matcha House",
+            "kind": "popup",
+            "sub": "Friday 10 am to 2 pm",
+            "drinks": [
+              "ceremonial first-harvest matcha"
+            ]
+          }
+        ],
+        "place": "North Carolina",
+        "title": "This weekend in North Carolina",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Babaloo Coffee Club",
+          "Saikō Matcha House"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [
+        {
+          "id": "a42948012615",
+          "brand": "Saikō Matcha House",
+          "handle": "saikomatchahouse",
+          "venue": "MODE at The Village District",
+          "venueHandle": null,
+          "address": "2068 Clark Ave",
+          "city": "Raleigh",
+          "state": "NC",
+          "day": "2026-11-27",
+          "time": "10 am to 2 pm",
+          "pour": {
+            "items": [
+              {
+                "name": "ceremonial first-harvest matcha",
+                "plain": false
+              }
+            ],
+            "more": 0
+          },
+          "menu": [
+            "ceremonial first-harvest matcha",
+            "house-made syrups"
+          ],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "03",
+      "name": "03-story-weekend-raleigh",
+      "style": "neon",
+      "image_url": "https://matchamap.app/social/2026-11-26/03-story-weekend-raleigh.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "featured-shop",
+      "time": "10:00",
+      "title": "Pineapple Sol",
+      "tag": "Featured shop",
+      "date": "2026-11-26",
+      "city": "Cary",
+      "state": "NC",
+      "region": "triangle",
+      "link": "https://matchamap.app/city/nc/cary/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchacary",
+        "#caryfood",
+        "#matchalatte",
+        "#matchalover"
+      ],
+      "caption": "Featured: Pineapple Sol (@pineapplesol) in Cary, NC. 302 Colonades Way, Ste 109.\n\nWhat they pour: Organic Matcha, Matcha Latte, Pumpkin Cloud Matcha Latte Iced, Pecan Pie Matcha Latte, Banana Bread Matcha Latte, and 5 more.\n\nFind it and more matcha spots in Cary: https://matchamap.app/city/nc/cary/\n\n#matcha #matchapopup #matchamap #matchacary #caryfood #matchalatte #matchalover\n",
+      "user_tags": [
+        {
+          "username": "pineapplesol",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "pineapplesol"
+      ],
+      "brands": [
+        "pineapplesol"
+      ],
+      "shopId": "brand:web-pineapple-sol-nc-cary-302-colonades-way-ste-10-77d683",
+      "group": null,
+      "role": null,
+      "why": "featured shop",
+      "metro": "NC/cary",
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-pineapple-sol-nc-cary-302-colonades-way-ste-10-77d683",
+        "name": "Pineapple Sol",
+        "handle": "pineapplesol",
+        "city": "Cary",
+        "state": "NC",
+        "address": "302 Colonades Way, Ste 109",
+        "drinks": [
+          "Organic Matcha",
+          "Matcha Latte",
+          "NEW Pecan Pie Matcha Latte",
+          "NEW Banana Bread Matcha Latte"
+        ],
+        "pour": {
+          "items": [
+            {
+              "name": "Organic Matcha",
+              "plain": false
+            },
+            {
+              "name": "Matcha Latte",
+              "plain": false
+            },
+            {
+              "name": "Pumpkin Cloud Matcha Latte Iced",
+              "plain": false
+            },
+            {
+              "name": "Pecan Pie Matcha Latte",
+              "plain": false
+            },
+            {
+              "name": "Banana Bread Matcha Latte",
+              "plain": false
+            }
+          ],
+          "more": 5
+        },
+        "tier": "serves",
+        "seen": "2026-11-24"
+      },
+      "n": "04",
+      "name": "04-feed-featured-shop-pineapple-sol",
+      "style": "editorial",
+      "image_url": "https://matchamap.app/social/2026-11-26/04-feed-featured-shop-pineapple-sol.png"
+    },
+    {
+      "slot": "story",
+      "kind": "location",
+      "time": "11:30",
+      "title": "Today in Missouri",
+      "tag": "Today",
+      "date": "2026-11-26",
+      "city": "St. Louis",
+      "state": "MO",
+      "region": null,
+      "link": "https://matchamap.app/city/mo/st-louis/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchastlouis",
+        "#stlouisfood",
+        "#matchalatte",
+        "#matchalover"
+      ],
+      "caption": "Today in Missouri: Cube Tea Studio O.\n\nMore matcha in Missouri: https://matchamap.app/city/mo/st-louis/\n\n#matcha #matchapopup #matchamap #matchastlouis #stlouisfood #matchalatte #matchalover\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [],
+      "shopId": null,
+      "group": {
+        "key": "s:MO",
+        "rows": [
+          {
+            "id": "cfdc0e7f85d6",
+            "brand": "Cube Tea Studio O",
+            "kind": "popup",
+            "sub": "11:30 am to 6 pm",
+            "drinks": [
+              "milk tea",
+              "boba"
+            ]
+          }
+        ],
+        "place": "Missouri",
+        "title": "Today in Missouri",
+        "n": 2,
+        "of": 2,
+        "names": [
+          "Cube Tea Studio O"
+        ]
+      },
+      "role": "title",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": null,
+      "n": "05",
+      "name": "05-story-location-missouri",
+      "style": "garden",
+      "image_url": "https://matchamap.app/social/2026-11-26/05-story-location-missouri.png"
+    },
+    {
+      "slot": "story",
+      "kind": "today",
+      "time": "12:00",
+      "title": "Today in St. Louis",
+      "tag": "Today",
+      "date": "2026-11-26",
+      "city": "St. Louis",
+      "state": "MO",
+      "region": null,
+      "link": "https://matchamap.app/city/mo/st-louis/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchastlouis",
+        "#stlouisfood",
+        "#icedmatcha",
+        "#matchatime"
+      ],
+      "caption": "Today in St. Louis. Cube Tea Studio O is popping up at 8110 Olive Blvd, St. Louis, MO, today, Thursday, November 26, 11:30 am to 6 pm.\n\nOn the menu: milk tea, lemon, boba.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in St. Louis on the map: https://matchamap.app/city/mo/st-louis/\n\n#matcha #matchapopup #matchamap #matchastlouis #stlouisfood #icedmatcha #matchatime\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [
+        "cubeteastudioo"
+      ],
+      "shopId": null,
+      "group": {
+        "key": "s:MO",
+        "rows": [
+          {
+            "id": "cfdc0e7f85d6",
+            "brand": "Cube Tea Studio O",
+            "kind": "popup",
+            "sub": "11:30 am to 6 pm",
+            "drinks": [
+              "milk tea",
+              "boba"
+            ]
+          }
+        ],
+        "place": "Missouri",
+        "title": "Today in Missouri",
+        "n": 2,
+        "of": 2,
+        "names": [
+          "Cube Tea Studio O"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [
+        {
+          "id": "cfdc0e7f85d6",
+          "brand": "Cube Tea Studio O",
+          "handle": null,
+          "venue": "",
+          "venueHandle": null,
+          "address": "8110 Olive Blvd",
+          "city": "St. Louis",
+          "state": "MO",
+          "day": "2026-11-26",
+          "time": "11:30 am to 6 pm",
+          "pour": {
+            "items": [
+              {
+                "name": "milk tea",
+                "plain": false
+              },
+              {
+                "name": "boba",
+                "plain": false
+              }
+            ],
+            "more": 0
+          },
+          "menu": [
+            "milk tea",
+            "lemon",
+            "boba"
+          ],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "06",
+      "name": "06-story-today-st-louis",
+      "style": "garden",
+      "image_url": "https://matchamap.app/social/2026-11-26/06-story-today-st-louis.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "weekend",
+      "time": "13:00",
+      "title": "This weekend in New York",
+      "tag": "This weekend",
+      "date": "2026-11-26",
+      "city": "New York",
+      "state": "NY",
+      "region": null,
+      "link": "https://matchamap.app/city/ny/new-york/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchanewyork",
+        "#newyorkfood",
+        "#icedmatcha",
+        "#matchatime"
+      ],
+      "caption": "This weekend in New York: 3 matcha pop-ups.\n\nKinka, Sunday 11 am to 11:45 am, at @kinka_nyc\nLongevity New York, Sunday from 3 pm, Blue Bottle Coffee\nDream Tea NYC, Sunday from 10 am, Grand Bazaar NYC\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in New York on the map: https://matchamap.app/city/ny/new-york/\n\n#matcha #matchapopup #matchamap #matchanewyork #newyorkfood #icedmatcha #matchatime\n",
+      "user_tags": [
+        {
+          "username": "kinka_nyc",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "kinka_nyc"
+      ],
+      "brands": [
+        "kinka",
+        "longevitynewyork",
+        "dreamteanyc"
+      ],
+      "shopId": null,
+      "group": null,
+      "role": null,
+      "why": "weekend roundup",
+      "metro": null,
+      "events": [
+        {
+          "id": "57d7e842a46b",
+          "brand": "Kinka",
+          "handle": null,
+          "venue": "",
+          "venueHandle": "kinka_nyc",
+          "address": "63 East 7th Street",
+          "city": "New York",
+          "state": "NY",
+          "day": "2026-11-29",
+          "time": "11 am to 11:45 am",
+          "pour": {
+            "items": [
+              {
+                "name": "whisked matcha bowl",
+                "plain": false
+              }
+            ],
+            "more": 0
+          },
+          "menu": [
+            "whisked matcha bowl",
+            "japanese dry sweet"
+          ],
+          "series": null,
+          "kind": "organizer"
+        },
+        {
+          "id": "948cb993bc10",
+          "brand": "Longevity New York",
+          "handle": null,
+          "venue": "Blue Bottle Coffee",
+          "venueHandle": null,
+          "address": "",
+          "city": "New York",
+          "state": "NY",
+          "day": "2026-11-29",
+          "time": "From 3 pm",
+          "pour": null,
+          "menu": [],
+          "series": null,
+          "kind": "popup"
+        },
+        {
+          "id": "a5e40d21d935",
+          "brand": "Dream Tea NYC",
+          "handle": null,
+          "venue": "Grand Bazaar NYC",
+          "venueHandle": null,
+          "address": "100 West 77th Street",
+          "city": "New York",
+          "state": "NY",
+          "day": "2026-11-29",
+          "time": "From 10 am",
+          "pour": null,
+          "menu": [],
+          "series": null,
+          "kind": "tea-brand"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "07",
+      "name": "07-feed-weekend-new-york",
+      "style": "washi",
+      "image_url": "https://matchamap.app/social/2026-11-26/07-feed-weekend-new-york.png"
+    }
+  ],
+  "featured": {
+    "brands": [
+      "babaloocoffeeclub",
+      "cubeteastudioo",
+      "dreamteanyc",
+      "fortheloveofmatchacafe",
+      "kinka",
+      "longevitynewyork",
+      "pineapplesol",
+      "saikomatchahouse"
+    ],
+    "shops": [
+      "brand:web-babaloo-coffee-club-nc-charlotte-1425-winnifre-3ab2d1",
+      "brand:web-pineapple-sol-nc-cary-302-colonades-way-ste-10-77d683"
+    ],
+    "regions": {
+      "triangle": {
+        "feed": 1,
+        "story": 1
+      }
+    },
+    "styles": {
+      "feed": [
+        "editorial",
+        "washi"
+      ],
+      "story": [
+        "neon",
+        "garden"
+      ]
+    },
+    "feat": {
+      "shop": "brand:web-pineapple-sol-nc-cary-302-colonades-way-ste-10-77d683",
+      "metro": "NC/cary",
+      "city": null
+    }
+  }
+}

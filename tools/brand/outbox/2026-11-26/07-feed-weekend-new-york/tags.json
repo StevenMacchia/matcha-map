@@ -1,0 +1,26 @@
+{
+  "slot": "feed",
+  "time": "13:00",
+  "image_url": "https://matchamap.app/social/2026-11-26/07-feed-weekend-new-york.png",
+  "location": "New York, NY",
+  "link": "https://matchamap.app/city/ny/new-york/",
+  "user_tags": [
+    {
+      "username": "kinka_nyc",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "kinka_nyc"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchanewyork",
+    "#newyorkfood",
+    "#icedmatcha",
+    "#matchatime"
+  ]
+}

@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"osssocafe","upcoming":[],"drinks":[],"price":null,"story":"Artisan Coffee & Matcha Private Parties | Weddings | Corporate | Deliveries DM to Order |"});
+mmBrandExtra(null);

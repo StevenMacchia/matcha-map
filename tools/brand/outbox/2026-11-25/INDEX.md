@@ -1,0 +1,12 @@
+# Social outbox 2026-11-25
+
+Nothing here has been posted. Steven picks which to use; until the Meta app review passes, post or schedule each by hand in Meta Business Suite (Planner, then Create post or Create story). Times are Eastern. Full captions are in each folder's caption.txt; tags.json has the handles. Every image is drawn art; no brand photo is reused. Check the brand's own post still shows the date before posting.
+
+| Time | Type | File | Caption | Tags | Paste where |
+|---|---|---|---|---|---|
+| 08:30 | story (today) | 01-story-today-elk-grove/image.png | Today in Elk Grove. Mellobun Cafe x Matte Matcha Bar (@mellobunbakery) is popping up at 7419 Laguna Blvd Unit 180, Elk Grove, CA, today, We… | @mellobunbakery | Business Suite > Create story: upload image.png, add a link sticker to https://matchamap.app/city/ca/elk-grove/ and a mention sticker for @mellobunbakery |
+| 10:00 | feed (today) | 02-feed-today-elk-grove/image.png | Today in Elk Grove. Mellobun Cafe x Matte Matcha Bar (@mellobunbakery) is popping up at 7419 Laguna Blvd Unit 180, Elk Grove, CA, today, We… | @mellobunbakery | Business Suite > Create post: upload image.png, paste caption.txt, Add location "Elk Grove, CA", Tag people @mellobunbakery |
+| 12:00 | story (today) | 03-story-today-houston/image.png | Today in Houston. Hey Neighbor HTX - Coffee & Matcha is popping up at 2520 Airline Dr, Houston, TX, today, Wednesday, November 25, from 11 … | none in our data | Business Suite > Create story: upload image.png, add a link sticker to https://matchamap.app/city/tx/houston/ |
+| 13:00 | feed (shop) | 04-feed-shop-labora/image.png | New on the map: Labora (@laboracafe) in San Diego, CA. 8055 Clairemont Mesa Blvd Suite 101. | @laboracafe | Business Suite > Create post: upload image.png, paste caption.txt, Add location "San Diego, CA", Tag people @laboracafe |
+| 16:00 | story (today) | 05-story-today-port-jefferson/image.png | Today in Port Jefferson. The Spice & Tea Exchange of Port Jefferson is popping up in Port Jefferson, NY, today, Wednesday, November 25, 6:3… | none in our data | Business Suite > Create story: upload image.png, add a link sticker to https://matchamap.app/ |
+| 17:00 | feed (series) | 06-feed-series-los-angeles/image.png | Every Saturday: GATO DATES x More Than Matcha (@gatodates) at Westfield Century City Holiday Market (in front of lululemon) in Los Angeles,… | @gatodates | Business Suite > Create post: upload image.png, paste caption.txt, Add location "Los Angeles, CA", Tag people @gatodates |

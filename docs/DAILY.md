@@ -1,29 +1,26 @@
-Daily run 2026-11-24: FAILED pull, push
+Daily run 2026-11-25: FAILED watch
 
-Run: 2026-11-24 13:30 ET / 2026-11-24 18:30 UTC. Total 30m 56s.
+Run: 2026-11-25 13:44 ET / 2026-11-25 18:44 UTC. Total 44m 08s.
 
-- Events: 663 total, 370 upcoming
-- Shops shown: 171
-- Cities with an upcoming pop-up: 96
-- Pages: city 2420, brand 489, event 370, weekend 96
-- New today (25) by source: hashtag:houston-coffee 5, hashtag:capricorn-cafe 2, mato:commonwealth_coffeehouse 2, allevents:anaheim-public-library 1, allevents:world-equestrian-center-ocala-resort 1, eventbrite:bella-cucina 1, eventbrite:event 1, eventbrite:japan-house 1, hashtag:bluebonnetbook-shop 1, hashtag:brewphoria 1, hashtag:market 1, hashtag:matchaintulsa 1, hashtag:satxfoodie 1, hashtag:smiski 1, hashtag:wynwood 1, howdy-yall-coffee 1, mato:fujiyahawaii 1, nichos-matcha-cafe 1, review:longevity-cities-matcha-walk 1
+- Events: 664 total, 370 upcoming
+- Shops shown: 430
+- Cities with an upcoming pop-up: 99
+- Pages: city 2420, brand 572, event 370, weekend 99
+- SEO pace queue: 76 newly indexable admitted, 0 earned and waiting (100 per run)
+- New today (9) by source: allevents:anaheim-public-library 1, allevents:baristas-bouquet 1, eventbrite:event 1, eventbrite:garden-house-wellness 1, eventbrite:metanoia-toolbox-sacred-wellness-space 1, howdy-yall-coffee 1, mato:fujiyahawaii 1, muni-cafe 1, review:longevity-cities-matcha-walk 1
 - Keyed calls today: yelp 250
-- Social outbox: tools/brand/outbox/2026-11-24 (0 items)
-- Failures: pull (exit 1: sync: STOPPED: git merge --ff-only origin/main failed: Aborting; local copies are in C:\Users\swoly_uygf8xn\github-portf); push (merge with origin/main failed, aborted: exit 2: Merge with strategy ort failed.)
+- Social outbox: tools/brand/outbox/2026-11-25 (0 items)
+- Failures: watch (exit 1: Node.js v24.12.0)
 
 Steps:
-- pull: FAILED 8s (exit 1: sync: STOPPED: git merge --ff-only origin/main failed: Aborting; local copies are in C:\Users\swoly_uygf8xn\github-portf)
-- discover: ok 1016s
-- watch: ok 157s
-- ingest: ok 156s
-- yelp-leads: skipped (ran today)
+- pull: ok 2s
+- discover: ok 1348s
+- watch: FAILED 0s (exit 1: Node.js v24.12.0)
+- ingest: ok 164s
+- yelp-leads: ok 478s
 - overture: off (no adapter yet)
-- deepen: ok 139s
-- pages: ok 9s
-- seo-gate: ok 4s (seo gate: 9 rules, 0 failed; indexable 1476, noindex 1951, lastmod moved 17)
-- social: ok 24s
-- smoke: ok 313s
-- report: ok (docs/DAILY.md)
-- commit: ok 11s
-- push: FAILED 8s (merge with origin/main failed, aborted: exit 2: Merge with strategy ort failed.)
-- deploy: skipped (push did not succeed)
+- deepen: ok 266s
+- pages: ok 13s
+- seo-gate: ok 4s (seo gate: 9 rules, 0 failed; indexable 1835, noindex 1678, lastmod moved 462, pace queue 0)
+- social: ok 25s
+- smoke: ok 347s

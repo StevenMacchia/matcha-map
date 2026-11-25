@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Garden House Wellness pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c247893ea25c@matchamap-cu7.pages.dev
+DTSTAMP:20261125T182233Z
+LAST-MODIFIED:20261125T182233Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Japanese Matcha Tea Ceremony & Big Brush Calligraphy
+LOCATION:Garden House Wellness\, 5120 Southeast 28th Avenue\, Portland\, OR
+DESCRIPTION:Experience Japanese tea ceremony\, Zen meditation\, and big bru
+ sh calligraphy with Kyoto artist Mochi. No experience needed!\nMenu: mochi
+ \nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/c247893ea25
+ c/
+URL:https://matchamap.app/e/c247893ea25c/
+GEO:45.485858;-122.637317
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR
