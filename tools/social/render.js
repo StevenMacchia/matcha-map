@@ -86,7 +86,7 @@ const shortDay = (k) => { const d = new Date(k + "T12:00:00Z"); return `${DAYS[d
 // at the lower right and the pills stop short of him. Stories keep the top and bottom 220px clear of Instagram's own bars.
 const G = {
   feed: { top: 56, head: 168, bottom: 1106, headMax: 92, headMax2: 80, gap: 26, foot: 1258, mattie: [846, 1116, 190], art: 420 },
-  story: { top: 232, head: 350, bottom: 1380, headMax: 104, headMax2: 90, gap: 36, foot: 1636, mattie: [668, 1380, 352], art: 500 },
+  story: { top: 232, head: 350, bottom: 1380, headMax: 104, headMax2: 90, gap: 36, foot: 1636, mattie: [668, 1380, 352], art: 470 },
 };
 
 function scene(it, size) {
