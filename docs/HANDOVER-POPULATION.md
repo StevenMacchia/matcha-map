@@ -29,6 +29,8 @@ AK 4>7, AL 9>13, AR 7>23, AZ 25>67, CA 634>1106, CO 31>73, CT 5>26, DC 9>33, DE 
 3. **Picture menus counted** per metro (same commit; `docs/HOSTED-MENUS.md`).
 4. **Liveness** second run, the last 3,311 loop candidates (cursor to the end, +18 rows), the hours re-read (`shops:fill -- --sites --blank-hours`; +10 hours, 574 hosts answer 429 each time), and the held-row fixes: this landing.
 
+5. **Own-site schedule reader** (`ingest/lib/sites/ownsites.js`, `test/ownsites.test.js`, review-only; notes in `docs/DISCOVERY-YIELD.md`): reads the "Upcoming Events" block of the 14 sources' own websites that the website adapter does not read; 2 finds on its first run (Littlefoot Matcha), 13 sources print no events block. Code only, no site change, so no deploy.
+
 ## Findings worth keeping
 
 - The previous window's fetch cache (`C:\Users\swoly_uygf8xn\github-portfolio\matcha-map\.claude\worktrees\lane-population-2-1ece53\.cache`, 373,000 pages, 6 hour TTL ignored with `noFetch`) turns any new reader over the cafe pages into a ten-minute offline pass (14 shards at once on 32 cores). Keep that folder until the picture-menu decision is made; it is gitignored and not on main.
@@ -50,7 +52,7 @@ AK 4>7, AL 9>13, AR 7>23, AZ 25>67, CA 634>1106, CO 31>73, CT 5>26, DC 9>33, DE 
 ## Next rungs, in order
 
 1. **Decide on OCR for picture-only menus** with the numbers in `docs/HOSTED-MENUS.md`: run tesseract locally on the pictures of the top 20 metros first (about 2,000 cafes, 259 in New York, 225 in Houston), count the rows it gives, then decide on the other ~9,000. Only images on a cafe's own `/menu` page; none stored; menu words only.
-2. **Own-site schedule reader for pop-up brands** in `data/sources.json` (the Saiko "Upcoming Events" shape): one adapter, tested, nothing invented. Not started this window (the budget line was never the limit; the earlier rungs used the time).
+2. **Settle the two Littlefoot Matcha finds** the new own-site reader makes (Sat Nov 28 10am-2pm at 540 St Albans Dr, Raleigh; Thu Dec 3 4-7pm at the UNCG Alumni Center, Greensboro; both print date, time and place on littlefootmatcha.com/pages/find-us but come out `unsure` with the source city): open the page, then promote or set the city by hand. Events lane.
 3. Overture's next release: `node ingest/shops-overture.js --pull --build`, then `--menus` again (cursor starts at 0 for a new release) and the same landing steps as rung 1.
 4. Re-read the 574 rate-limited own sites for hours after a few days (`node ingest/shops-fill.js --sites --blank-hours` skips rows marked `fill_status: "read"`), and the weekly `npm run shops:liveness`.
 5. After the reset: recall re-sample (workers); the host-venue calendar adapter only if a host publishes vendors by date (`DOWNTOWN RALEIGH`, `RiNo`, `Village District` probed 2026-11-24: no vendor lists).
