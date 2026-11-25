@@ -63,7 +63,7 @@ export const STYLES = {
   kawaii: { word: "sticker", note: "kawaii sticker sheet: pink polka ground, die-cut white edges, stitched tiles, hearts and stars",
     vars: { "--low": "#FFE6F0", "--az": "#5A3248", "--az2": "#8A5A74", "--cream": "#FFFFFF", "--top": "#FFD3E4", "--strong": "#FFB5D2", "--edge": "#FF9CC2", "--sun": "#FFF08A",
       "--canvas": `#FFE6F0 ${uri('<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72"><circle cx="18" cy="18" r="6.5" fill="#fff" fill-opacity=".75"/><circle cx="54" cy="54" r="6.5" fill="#fff" fill-opacity=".75"/><circle cx="54" cy="18" r="2.5" fill="#FF9CC2" fill-opacity=".5"/><circle cx="18" cy="54" r="2.5" fill="#FF9CC2" fill-opacity=".5"/></svg>')}`,
-      "--tile-edge": "#FFB5D2", "--r-tile": "40px", "--r-row": "38px", "--r-art": "44px", "--r-mochi": "30px",
+      "--tile-edge": "#FF9CC2", "--r-tile": "40px", "--r-row": "38px", "--r-art": "44px", "--r-mochi": "30px",
       "--tile-shadow": "0 0 0 7px #fff, 0 12px 14px 6px rgba(214,100,150,.28)", "--pill-shadow": "0 0 0 5px #fff, 0 9px 10px 4px rgba(214,100,150,.25)",
       "--row-shadow": "0 0 0 6px #fff, 0 12px 14px 6px rgba(214,100,150,.28)", "--line": "#FF9CC2", "--wm-line": "#FF9CC2", "--wm-shadow": "0 0 0 6px #fff, 0 10px 12px 4px rgba(214,100,150,.28)",
       "--tag-bg": "#FFF08A", "--tag-line": "#FF9CC2", "--tag-rot": "-3deg", "--tag-shadow": "0 0 0 6px #fff, 0 10px 12px 4px rgba(214,100,150,.3)",
@@ -99,10 +99,10 @@ export const STYLES = {
       "--tile-shadow": "6px 7px 0 #2B2430", "--pill-shadow": "4px 5px 0 #2B2430", "--row-shadow": "6px 7px 0 #2B2430", "--wm-r": "16px", "--wm-bw": "5px", "--wm-shadow": "4px 5px 0 #D7263D",
       "--tag-bg": "#D7263D", "--tag-ink": "#FFF3DC", "--tag-r": "10px", "--tag-rot": "-3deg", "--tag-bw": "5px", "--tag-shadow": "5px 6px 0 #2B2430",
       "--head-font": '"Lilita One","M PLUS Rounded 1c",sans-serif', "--head-weight": "400", "--head-ls": "0px", "--head-ink": "#D7263D", "--head-shadow": "4px 4px 0 #2B2430", "--foot-ink": "#2B2430", "--dots-inset": "46px", "--dots-style": "none", "--dots-bw": "0px" },
-    css: ".st-diner .head{padding-bottom:6px}.st-diner .shopart{background:#BFEDE6}.st-diner .shopart .blob{background:#FFD23F}.st-diner .tn,.st-diner .pn{font-weight:800}",
+    css: ".st-diner .shopart{background:#BFEDE6}.st-diner .shopart .blob{background:#FFD23F}.st-diner .tn,.st-diner .pn{font-weight:800}",
     fonts: "family=Lilita+One", pose: { "m-wave": "m-whisk" },
-    deco: (c) => { const r = mul(c.seed), b = 44;
-      let o = checker(c, 0, b, "#D7263D", "#FFF8EA") + checker(c, c.H - b, b, "#19B5A5", "#FFF8EA") + `<rect x="0" y="${b}" width="${c.W}" height="6" fill="#2B2430"/><rect x="0" y="${c.H - b - 6}" width="${c.W}" height="6" fill="#2B2430"/>`;
+    deco: (c) => { const r = mul(c.seed), b = 38;
+      let o = checker(c, 0, b, "#D7263D", "#FFF8EA") + checker(c, c.H - b, b, "#19B5A5", "#FFF8EA") + `<rect x="0" y="${b}" width="${c.W}" height="5" fill="#2B2430"/><rect x="0" y="${c.H - b - 5}" width="${c.W}" height="5" fill="#2B2430"/>`;
       o += around(r, c.W, c.H, 0, 30, () => "");
       for (let i = 0; i < (c.story ? 9 : 0); i++) { const x = 90 + r() * (c.W - 180), top = i % 2 === 0, y = top ? 70 + r() * 130 : c.H - 200 + r() * 130; o += star5(x, y, 38 + r() * 40, i % 2 ? "#FFD23F" : "#19B5A5", r() * 30, "#2B2430"); }
       for (let i = 0; i < 10; i++) { const left = i % 2 === 0, x = left ? 30 : c.W - 30, y = 90 + (i / 10) * (c.H - 220) + r() * 20; o += star5(x, y, 22 + r() * 8, i % 4 < 2 ? "#FFD23F" : "#19B5A5", r() * 30, "#2B2430"); }
@@ -113,7 +113,7 @@ export const STYLES = {
       "--canvas": "#F3EAD6", "--bw": "3px", "--bw-art": "3px", "--r-pill": "8px", "--r-tile": "6px", "--r-row": "8px", "--r-art": "8px", "--r-mochi": "6px", "--tile-edge": "#2B3445",
       "--tile-shadow": "inset 0 0 0 5px #FBF6EA, inset 0 0 0 7px rgba(43,52,69,.4)", "--row-shadow": "4px 5px 0 rgba(43,52,69,.22)", "--wm-r": "8px", "--wm-bw": "3px", "--wm-shadow": "none", "--wm-pad": "6px 24px 6px 10px",
       "--tag-bg": "#B33A2E", "--tag-ink": "#FBF6EA", "--tag-line": "#8E2A20", "--tag-r": "8px", "--tag-bw": "3px", "--tag-rot": "-2deg", "--tag-shadow": "0 0 0 4px #F3EAD6, 0 0 0 6px #B33A2E",
-      "--head-font": '"Shippori Mincho","M PLUS Rounded 1c",serif', "--head-weight": "800", "--head-ls": "0px", "--dots-ink": "rgba(43,52,69,.45)", "--dots-style": "solid", "--dots-bw": "2px", "--dots-r": "4px", "--dots-inset": "26px" },
+      "--head-font": '"Shippori Mincho","M PLUS Rounded 1c",serif', "--head-weight": "800", "--head-ls": "-1.5px", "--dots-ink": "rgba(43,52,69,.45)", "--dots-style": "solid", "--dots-bw": "2px", "--dots-r": "4px", "--dots-inset": "26px" },
     css: ".st-washi .shopart .blob{background:#D9CDAA}.st-washi .tn,.st-washi .pn,.st-washi .rb{font-weight:800}",
     fonts: "family=Shippori+Mincho:wght@700;800", pose: { "m-wave": "m-pour" },
     deco: (c) => { const r = mul(c.seed), cols = ["#F5B5C8", "#A9CF92", "#8FB2D9", "#F2D07A"];
@@ -131,15 +131,15 @@ export const STYLES = {
       "--canvas": "#FFE14D", "--bw": "6px", "--bw-art": "7px", "--r-pill": "14px", "--r-tile": "12px", "--r-row": "14px", "--r-art": "16px", "--r-mochi": "10px", "--tile-edge": "#141414",
       "--t1": "#141414", "--tile-shadow": "8px 8px 0 #141414", "--pill-shadow": "5px 5px 0 #141414", "--row-shadow": "8px 8px 0 #141414",
       "--wm-r": "14px", "--wm-bw": "6px", "--wm-shadow": "5px 5px 0 #FF4D6D", "--tag-bg": "#FF4D6D", "--tag-ink": "#FFFFFF", "--tag-r": "8px", "--tag-bw": "6px", "--tag-rot": "-4deg", "--tag-shadow": "6px 6px 0 #141414",
-      "--head-font": 'Bangers,"M PLUS Rounded 1c",sans-serif', "--head-weight": "400", "--head-ls": "1.5px", "--head-ink": "#FFFFFF", "--head-stroke": "12px", "--head-stroke-ink": "#141414", "--head-shadow": "6px 6px 0 #FF4D6D",
+      "--head-font": 'Bangers,"M PLUS Rounded 1c",sans-serif', "--head-weight": "400", "--head-ls": "3px", "--head-ink": "#FFFFFF", "--head-stroke": "8px", "--head-stroke-ink": "#141414", "--head-shadow": "5px 5px 0 #FF4D6D",
       "--foot-ink": "#141414", "--dots-inset": "0px", "--dots-bw": "10px", "--dots-style": "solid", "--dots-ink": "#141414", "--dots-r": "0px" },
-    css: ".st-comic .shopart .blob{background:#FFE14D}.st-comic .head{padding:4px 12px 8px 6px;margin-left:-6px;width:972px}.st-comic .tn,.st-comic .pn,.st-comic .rb{font-weight:800}",
+    css: ".st-comic .shopart .blob{background:#FFE14D}.st-comic .head{padding:4px 12px 8px 6px;margin:-4px 0 -8px -6px;width:972px}.st-comic .tn,.st-comic .pn,.st-comic .rb{font-weight:800}",
     fonts: "family=Bangers", pose: { "m-wave": "m-excited", "m-happy": "m-excited" },
     deco: (c) => { const r = mul(c.seed);
-      const burst = (x, y, s, col, rot) => { const pts = []; for (let i = 0; i < 24; i++) { const a = (i / 24) * Math.PI * 2, rr = (i % 2 ? 0.58 : 1) * s / 2; pts.push(`${f(x + Math.cos(a) * rr)},${f(y + Math.sin(a) * rr)}`); } return `<polygon points="${pts.join(" ")}" fill="${col}" stroke="#141414" stroke-width="5" stroke-linejoin="round" transform="rotate(${f(rot)} ${f(x)} ${f(y)})"/>`; };
+      const burst = (x, y, s, col, rot) => { const pts = []; for (let i = 0; i < 20; i++) { const a = (i / 20) * Math.PI * 2, rr = (i % 2 ? 0.55 : 1) * s / 2; pts.push(`${f(x + Math.cos(a) * rr)},${f(y + Math.sin(a) * rr)}`); } return `<polygon points="${pts.join(" ")}" fill="${col}" stroke="#141414" stroke-width="4" stroke-linejoin="round" transform="rotate(${f(rot)} ${f(x)} ${f(y)})"/>`; };
       let o = `<defs/><rect width="${c.W}" height="${c.H}" fill="url(#ht)"/>`;
-      o += around(r, c.W, c.H, c.story ? 18 : 14, 36, (x, y, i) => burst(x, y, 24 + r() * 14, i % 3 === 0 ? "#fff" : i % 3 === 1 ? "#FF7AA8" : "#8DE0F2", r() * 40)) + bands(r, c, 8, (x, y, i) => burst(x, y, 90 + r() * 70, i % 3 === 0 ? "#fff" : i % 3 === 1 ? "#FF7AA8" : "#8DE0F2", r() * 40));
-      return svg(c, o, `<radialGradient id="hg" cx=".5" cy=".5" r=".75"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="1"/></radialGradient><mask id="hm"><rect width="${c.W}" height="${c.H}" fill="url(#hg)"/></mask><pattern id="ht" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="14" cy="14" r="6.5" fill="#FF7AA8" fill-opacity=".75"/></pattern>`).replace('fill="url(#ht)"', 'fill="url(#ht)" mask="url(#hm)"'); } },
+      o += around(r, c.W, c.H, c.story ? 16 : 11, 28, (x, y, i) => burst(x, y, 30 + r() * 8, i % 3 === 0 ? "#fff" : i % 3 === 1 ? "#FF7AA8" : "#8DE0F2", r() * 40)) + bands(r, c, 8, (x, y, i) => burst(x, y, 90 + r() * 70, i % 3 === 0 ? "#fff" : i % 3 === 1 ? "#FF7AA8" : "#8DE0F2", r() * 40));
+      return svg(c, o, `<radialGradient id="hg" cx=".5" cy=".5" r=".75"><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></radialGradient><mask id="hm"><rect width="${c.W}" height="${c.H}" fill="url(#hg)"/></mask><pattern id="ht" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="14" cy="14" r="6.5" fill="#FF7AA8" fill-opacity=".85"/></pattern>`).replace('fill="url(#ht)"', 'fill="url(#ht)" mask="url(#hm)"'); } },
 
   garden: { word: "botanical", note: "garden botanical: sage ground, deep green ink, leaf-shaped tiles, vines in the margins",
     vars: { "--low": "#EAF1DF", "--az": "#2F4A2C", "--az2": "#587455", "--cream": "#FBFDF5", "--top": "#D8E7C6", "--strong": "#BCD6A2", "--edge": "#6FA35E", "--sun": "#F6E6A6",
@@ -168,7 +168,7 @@ export const STYLES = {
     deco: (c) => { const r = mul(c.seed);
       let o = ""; const flags = c.story ? 12 : 17, fw = c.W / flags;       // bunting across the top, in the band above the wordmark
       o += `<path d="M0 6Q${c.W / 2} 22 ${c.W} 6" stroke="#3B2A4A" stroke-width="3" fill="none"/>`;
-      for (let i = 0; i < flags; i++) { const x = i * fw, t = (x + fw / 2) / c.W, sag = 6 + 16 * (1 - Math.pow(2 * t - 1, 2)); o += `<polygon points="${f(x + 4)},${f(sag)} ${f(x + fw - 4)},${f(sag)} ${f(x + fw / 2)},${f(sag + (c.story ? 56 : 34))}" fill="${party[i % party.length]}" stroke="#3B2A4A" stroke-width="2.5" stroke-linejoin="round"/>`; }
+      for (let i = 0; i < flags; i++) { const x = i * fw, t = (x + fw / 2) / c.W, sag = 6 + (c.story ? 16 : 10) * (1 - Math.pow(2 * t - 1, 2)); o += `<polygon points="${f(x + 4)},${f(sag)} ${f(x + fw - 4)},${f(sag)} ${f(x + fw / 2)},${f(sag + (c.story ? 56 : 26))}" fill="${party[i % party.length]}" stroke="#3B2A4A" stroke-width="2.5" stroke-linejoin="round"/>`; }
       o += around(r, c.W, c.H, c.story ? 40 : 30, 36, (x, y) => { if (y < 70) y += 34; return piece(x, y, 16 + r() * 12, pick(r, party), r() * 180, Math.floor(r() * 4)); });
       o += bands(r, c, 36, (x, y) => piece(x, y, 24 + r() * 26, pick(r, party), r() * 180, Math.floor(r() * 4)));
       return svg(c, o); } },
@@ -179,7 +179,7 @@ export const STYLES = {
       "--wm-bg": "transparent", "--wm-bw": "0px", "--wm-shadow": "none", "--wm-pad": "0 0", "--wm-r": "0px",
       "--tag-bg": "transparent", "--tag-line": "#5E8C4A", "--tag-bw": "0px", "--tag-r": "0px", "--tag-rot": "0deg", "--tag-shadow": "none", "--tag-pad": "4px 0",
       "--head-font": '"Playfair Display","M PLUS Rounded 1c",serif', "--head-weight": "800", "--head-ls": "-1px", "--foot-ink": "#5A5A5A", "--dots-style": "none", "--dots-bw": "0px" },
-    css: ".st-editorial .tag{text-transform:uppercase;letter-spacing:3px;font-weight:800;border-bottom:4px solid #5E8C4A}.st-editorial .wm{letter-spacing:.5px}.st-editorial .shopart{background:#F1F5EC}.st-editorial .shopart .blob{background:#DCE6D0}.st-editorial .tn,.st-editorial .pn,.st-editorial .rb{font-weight:700}.st-editorial .foot{text-transform:uppercase;letter-spacing:3px;font-size:36px}",
+    css: ".st-editorial .tag{text-transform:uppercase;letter-spacing:3px;font-weight:800;border-bottom:4px solid #5E8C4A}.st-editorial .wm{letter-spacing:.5px}.st-editorial .shopart{background:#F1F5EC}.st-editorial .shopart .blob{background:#DCE6D0}.st-editorial .tn,.st-editorial .pn,.st-editorial .rb{font-weight:700}.st-editorial .foot{letter-spacing:1px}",
     fonts: "family=Playfair+Display:wght@700;800", pose: { "m-wave": "m-happy" },
     deco: (c) => { const g = c.g; return svg(c, `<rect width="${c.W}" height="16" fill="#5E8C4A"/><rect x="60" y="${g.head - 14}" width="960" height="2" fill="#161616"/><rect x="60" y="${c.story ? 1626 : 1236}" width="960" height="2" fill="#161616"/><rect x="60" y="${c.story ? 1620 : 1230}" width="64" height="8" fill="#5E8C4A"/>`); } },
 

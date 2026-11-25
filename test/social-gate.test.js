@@ -11,6 +11,7 @@ import { plan, loadData } from "../tools/social/plan.js";
 import { renderPages, itemHtml, chromePath, MIN_TEXT_PX } from "../tools/social/render.js";
 import { whatTheyPour, cleanDrink } from "../tools/social/drinks.js";
 import { addDays } from "../tools/gen-pages.js";
+import { STYLE_NAMES } from "../tools/social/styles.js";
 
 const hasChrome = fs.existsSync(chromePath());
 const DATA = loadData();
@@ -58,23 +59,26 @@ function cards() {
   return out;
 }
 
-const render = async (list) => {
+const render = async (list, style) => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "social-gate-"));
-  try { return await renderPages(list.map((c, i) => ({ html: itemHtml(c.it, c.size), out: path.join(dir, `${i}.png`), size: c.size }))); }
+  try { return await renderPages(list.map((c, i) => ({ html: itemHtml(style ? { ...c.it, style } : c.it, c.size), out: path.join(dir, `${i}.png`), size: c.size }))); }
   finally { fs.rmSync(dir, { recursive: true, force: true }); }
 };
 
-test("gate: every template with the longest real names and drink lists has no overflow and no overlap", { skip: !hasChrome && "no Chrome" }, async () => {
-  assert.ok(EVENTS.length && SHOPS.length && longPour.items.length >= 4, "the data gave real names to draw");
-  const list = cards(), res = await render(list);
-  assert.equal(res.length, list.length);
-  const bad = [];
-  res.forEach((r, i) => {
-    const c = r.check || {};
-    if (!r.ok || [c.small, c.off, c.cut, c.overlap].some((x) => !x || x.length) || !(c.min >= MIN_TEXT_PX - 0.5)) bad.push(`${list[i].name}: ${JSON.stringify({ min: c.min, small: c.small, off: c.off, cut: c.cut, overlap: c.overlap })}`);
+// every template in every style: a style may change colour, fonts, borders and decoration, never the fit (Steven, 2026-11-24: ten styles for variety)
+for (const style of STYLE_NAMES.filter((n) => !process.env.GATE_STYLES || process.env.GATE_STYLES.split(",").includes(n))) {
+  test(`gate: every template with the longest real names and drink lists has no overflow and no overlap, style ${style}`, { skip: !hasChrome && "no Chrome" }, async () => {
+    assert.ok(EVENTS.length && SHOPS.length && longPour.items.length >= 4, "the data gave real names to draw");
+    const list = cards(), res = await render(list, style);
+    assert.equal(res.length, list.length);
+    const bad = [];
+    res.forEach((r, i) => {
+      const c = r.check || {};
+      if (!r.ok || [c.small, c.off, c.cut, c.overlap].some((x) => !x || x.length) || !(c.min >= MIN_TEXT_PX - 0.5)) bad.push(`${style} / ${list[i].name}: ${JSON.stringify({ min: c.min, small: c.small, off: c.off, cut: c.cut, overlap: c.overlap })}`);
+    });
+    assert.deepEqual(bad, []);
   });
-  assert.deepEqual(bad, []);
-});
+}
 
 test("gate: it catches text out of its box and boxes that intersect", { skip: !hasChrome && "no Chrome" }, async () => {
   const sh = SHOPS[0];

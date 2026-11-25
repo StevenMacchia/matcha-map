@@ -39,6 +39,7 @@
     "gate:seo": "node tools/seo-gate.js",
     "flyers": "node tools/flyers.js",
     "social": "node tools/social/outbox.js",
+    "social:styles": "node tools/social/styles-sheet.js",
     "social:publish": "node tools/social/publish.js",
     "pages": "node tools/gen-pages.js && node tools/slim-events.js",
     "og": "node tools/gen-og.js",
