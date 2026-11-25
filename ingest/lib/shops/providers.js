@@ -12,7 +12,7 @@
 import fs from "node:fs";
 import { UA } from "../fetch.js";
 import { BRAND_NAMES } from "./brands.js";
-import { htmlToLines } from "../html.js";
+import { drinkLooksOk, matchaDrinks } from "./drinks.js";
 import { readPage } from "../../../tools/shop-read.js";
 import { hostedMenu, gatedGet, isSquareOnline, isSquareHost } from "./hosted-menus.js";
 
@@ -71,29 +71,12 @@ export function tierHint(c) {
 const streetNumber = (a) => (/^\s*(\d{1,6})/.exec(a || "") || [])[1] || null;
 const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 
-// A drink name, not a heading, a description or a sentence: at most 7 words, no closing period, and not "series", "menu", "flavors".
-export const drinkLooksOk = (name) => {
-  const n = String(name || "").trim();
-  return n.length >= 5 && n.split(/\s+/).length <= 7 && !/[.!?]$/.test(n) && !/\b(series|menu|collection|flavou?rs?|options?|section|category|infused|topped|served|made with)\b|\bw\//i.test(n);
-};
-
-// Distinct matcha drink lines on a menu page's text: short lines with "matcha", names only (a trailing price is split off).
-export function matchaDrinks(html) {
-  const seen = new Set(), out = [];
-  for (const line of htmlToLines(html)) {
-    if (line.length > 70 || line.length < 5 || !/matcha/i.test(line) || /[.!?]\s+[A-Z]/.test(line) || /\b(our|we|your|you|the best|shop|buy|order online|subscribe)\b/i.test(line)) continue;
-    const m = /^(.*?)(?:\s*[-–·:]?\s*(\$\s?\d+(?:\.\d{2})?\+?))?$/.exec(line.trim());
-    const name = (m?.[1] || line).replace(/\s+/g, " ").trim();
-    if (!drinkLooksOk(name) || seen.has(name.toLowerCase())) continue;
-    seen.add(name.toLowerCase());
-    out.push({ name, price: m?.[2] || null });
-  }
-  return out;
-}
+// Drink-name rules live in drinks.js (shared with the PDF reader); re-exported here for the callers that import them from this module.
+export { drinkLooksOk, matchaDrinks };
 
 // Candidate + the shop's own pages -> a curated row (data/shops-*.json shape) or { held: reason }. `get(url)` -> {ok, text}.
 const MIN_HOSTED = 3;
-export async function confirmCandidate(c, get, { read = new Date().toISOString().slice(0, 10), relaxAddress = false, weakOk = false } = {}) {
+export async function confirmCandidate(c, get, { read = new Date().toISOString().slice(0, 10), relaxAddress = false, weakOk = false, getPdf = null } = {}) {
   if (!c.website) return { held: "no website from the provider (a worker confirms it by name)" };
   let base; try { base = new URL(c.website); } catch { return { held: "website not a url" }; }
   if (/instagram\.com|facebook\.com|linktr\.ee|ubereats|doordash|grubhub|toasttab|yelp\.com/i.test(base.host)) return { held: "provider website is a social or ordering page" };
@@ -132,7 +115,7 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
   // A menu kept on Square Online or Toast (or one that is a PDF or pictures): read what is public, and count the reason for what is not.
   let hostedUrl = null, hostedReason = null;
   if (!tier) {
-    const hm = await hostedMenu(pages, get).catch(() => null);
+    const hm = await hostedMenu(pages, get, { getPdf }).catch(() => null);
     if (hm?.drinks?.length >= MIN_HOSTED) { tier = hint === "core" ? "shop" : "serves"; menu_matcha = hm.drinks.slice(0, 12); hostedUrl = hm.menu_url; }
     else hostedReason = hm?.reason || null;
   }

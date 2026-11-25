@@ -13,6 +13,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { createFetcher } from "./lib/fetch.js";
 import { confirmCandidate } from "./lib/shops/providers.js";
+import { createPdfGetter } from "./lib/shops/pdf-menus.js";
 import { STATES } from "./lib/shops/curated.js";
 import { info, warn } from "./lib/log.js";
 
@@ -103,9 +104,18 @@ async function main() {
     const st = arg("--state");
     const cands = places.filter((p) => isServesCandidate(p) && (!only || only.has(String(p.city || "").toLowerCase())) && (!box || (p.lng >= box[0] && p.lat >= box[1] && p.lng <= box[2] && p.lat <= box[3])) && (!st || stateOf(p) === st)).sort((a, b) => (PRIORITY[a.tax] ?? 5) - (PRIORITY[b.tax] ?? 5) || (b.conf - a.conf));
     const curFile = `${dir}/menus-cursor${only || box || st ? "-" + arg("--tag", "sel") : ""}.json`;
-    const start = readJson(curFile, { next: 0 }).next % Math.max(1, cands.length);
-    const batch = cands.slice(start, start + limit);
-    const f = createFetcher({});
+    // --all: every candidate, no cursor (with --cache-dir the pages come from an earlier run's fetch cache and only PDFs are downloaded);
+    // --shard i/n takes every n-th candidate; --held-out file.json lists each held candidate with its reason (for counts per city).
+    const everything = argv.includes("--all");
+    const [shardI, shardN] = String(arg("--shard", "0/1")).split("/").map(Number);
+    const start = everything ? 0 : readJson(curFile, { next: 0 }).next % Math.max(1, cands.length);
+    const priorIds = new Set(["data/shops-zz-overture-serves.json", arg("--out", "data/shops-zz-overture-serves.json")].flatMap((f) => readJson(f, { shops: [] }).shops.map((r) => r.overture_id)));
+    const onlyIds = arg("--ids") ? new Set(readJson(arg("--ids"), [])) : null;
+    const batch = everything ? cands.filter((p, i) => i % shardN === shardI && !priorIds.has(p.id) && (!onlyIds || onlyIds.has(p.id))) : cands.slice(start, start + limit);
+    const cacheDir = arg("--cache-dir");
+    const f = cacheDir ? createFetcher({ noFetch: true, cacheDir }) : createFetcher({});
+    const getPdf = argv.includes("--no-pdf") ? null : createPdfGetter(cacheDir ? createFetcher({}) : f);
+    const heldList = [];
     const outFile = arg("--out", "data/shops-zz-overture-serves.json");
     const prev = readJson(outFile, { shops: [] }).shops;
     const rows = new Map(prev.map((r) => [`${r.name}|${r.address}`.toLowerCase(), r]));
@@ -116,16 +126,17 @@ async function main() {
     const work = async () => {
       while (next < batch.length) {
         const p = batch[next++];
-        const r = await confirmCandidate(toCandidate(p), (u) => f.get(u), { relaxAddress: true, weakOk: argv.includes("--weak") }).catch((e) => ({ held: "error: " + e.message.slice(0, 40) }));
+        const r = await confirmCandidate(toCandidate(p), (u) => f.get(u), { relaxAddress: true, weakOk: argv.includes("--weak"), getPdf }).catch((e) => ({ held: "error: " + e.message.slice(0, 40) }));
         done++;
-        if (r.held) { held[r.held] = (held[r.held] || 0) + 1; continue; }
+        if (r.held) { held[r.held] = (held[r.held] || 0) + 1; if (arg("--held-out")) heldList.push({ id: p.id, name: p.name, city: p.city, state: stateOf(p), website: p.website, reason: r.held }); continue; }
         rows.set(`${r.row.name}|${r.row.address}`.toLowerCase(), { ...r.row, overture_id: p.id, lat: p.lat, lng: p.lng, overture_sources: compactSources(p.sources) });
         ok++;
       }
     };
     await Promise.all(Array.from({ length: conc }, work));
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(curFile, JSON.stringify({ next: start + batch.length }));
+    if (!everything) fs.writeFileSync(curFile, JSON.stringify({ next: start + batch.length }));
+    if (arg("--held-out")) fs.writeFileSync(arg("--held-out"), JSON.stringify(heldList));
     fs.writeFileSync(outFile, JSON.stringify({ generated: new Date().toISOString(), group: "overture-serves", release, shops: [...rows.values()] }, null, 1) + "\n");
     info(`overture menus: ${batch.length} sites read of ${cands.length} candidates (from ${start}); ${ok} serves rows; held ${JSON.stringify(held)}`);
   }

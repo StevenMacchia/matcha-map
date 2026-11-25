@@ -11,6 +11,7 @@
 //   ("toast: bot check, not read") and stops. If a Toast page ever comes back unchallenged, its schema.org Menu JSON-LD is read the same way as any
 //   own-site menu (toastMenuFromLd). Verified 2026-11-24 against five NC Toast pages: all challenged.
 import { jsonLd, htmlToLines } from "../html.js";
+import { menuPdfLinks, readMenuPdfs } from "./pdf-menus.js";
 
 const RETAIL = /\b(powder|tins?|whisks?|chasen|bowls?|chawan|sets?|kits?|totes?|shirts?|tees?|hoodie|balm|samples?|gift ?cards?|bags?|lbs?|oz|grams?|class(?:es)?|workshops?|courses?|merch|candles?|soap|scoops?|spoons?|sifters?|subscriptions?|stickers?|mugs?|tumblers?|caps?|hats?|bundle|blend|pouch)\b/i;
 // "Lg Matcha Latte" and "Rg Matcha Latte" are one drink in two sizes.
@@ -120,12 +121,19 @@ export function unreadableMenuKind(pages) {
 }
 
 // What the hosted-menu step adds to confirmCandidate: pages read from the shop's own site -> { drinks, menu_url } or { reason }.
-export async function hostedMenu(pages, get, { toast = true } = {}) {
+export async function hostedMenu(pages, get, { toast = true, getPdf = null } = {}) {
   const sq = pages.find((p) => isSquareOnline(p.html, p.url));
   if (sq) return { kind: "square", ...(await readSquareMenu(get, new URL(sq.url).origin)) };
   if (toast) {
     const link = pages.map((p) => toastLinkIn(p.html)).find(Boolean);
     if (link) return { kind: "toast", ...(await readToastMenu(get, link)) };
+  }
+  // A menu that is a PDF the page links: read its text layer when a downloader is given (otherwise it is counted as unread below).
+  const pdfs = getPdf ? menuPdfLinks(pages) : [];
+  if (pdfs.length) {
+    const r = await readMenuPdfs(pdfs, getPdf);
+    const drinks = r.drinks.filter((d) => !RETAIL.test(d.name));
+    return { kind: "pdf", drinks, ...(drinks.length ? { menu_url: r.menu_url } : { reason: r.reason || "pdf: no matcha drinks" }) };
   }
   const kind = unreadableMenuKind(pages);
   return kind ? { kind: "unreadable", drinks: [], reason: kind } : null;

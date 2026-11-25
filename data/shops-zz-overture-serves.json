@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T07:51:22.873Z",
+ "generated": "2026-11-25T22:08:04.039Z",
  "group": "overture-serves",
  "release": "2026-11-18.0",
  "shops": [
@@ -222179,6 +222179,2086 @@
      "dataset": "Overture-signals",
      "license": "CDLA-Permissive-2.0",
      "record_id": "0c2101b5-df76-4dcf-98f5-0d2a1ddc4a8c"
+    }
+   ]
+  },
+  {
+   "name": "District Coffee Co.",
+   "address": "222 Texas Ave",
+   "city": "El Paso",
+   "state": "TX",
+   "zip": "79901",
+   "website": "http://www.districtcoffee.co",
+   "instagram": null,
+   "phone": "+19155333226",
+   "opening_hours": null,
+   "menu_url": "http://www.districtcoffee.co/media/DistrictCoffee_Menu.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.districtcoffee.co/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Coconut Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Vanilla Bean Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "e98a2e73-af41-4061-a68a-030f66edebc2",
+   "lat": 31.759169,
+   "lng": -106.486359,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "347147819125836"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "61ab5e08-9491-46f2-9985-bd8c7b01de6b"
+    }
+   ]
+  },
+  {
+   "name": "KARIBU COFFEES CAFE",
+   "address": "2522 W Park Row Dr",
+   "city": "Pantego",
+   "state": "TX",
+   "zip": "76013",
+   "website": "http://www.karibucoffees.com/",
+   "instagram": "karibucoffees",
+   "phone": "+1 214 886 5633",
+   "opening_hours": "Mo 07:00-12:00; Tu-Sa 07:00-17:00; Su 08:00-17:00",
+   "menu_url": "http://img1.wsimg.com/blobby/go/aaad6ab2-168c-4c1f-b079-c7bee470d78c/downloads/f0c8553a-e18b-4744-a7a7-6ecfa6e237c2/MENU%20PDF.pdf?ver=1794236144728",
+   "image_url": "https://img1.wsimg.com/isteam/ip/aaad6ab2-168c-4c1f-b079-c7bee470d78c/r8br1ixb.png",
+   "image_credit": "Photo: KARIBU COFFEES CAFE website",
+   "source_url": "http://www.karibucoffees.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Dirty Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha STUDIO",
+     "price": null
+    }
+   ],
+   "overture_id": "3657742e-51a9-4bfa-a735-a16770a23210",
+   "lat": 32.721079,
+   "lng": -97.15139,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "110534638670520"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "ba808046-b514-4f45-8d15-47621be1becf"
+    }
+   ]
+  },
+  {
+   "name": "Criterion coffee",
+   "address": "39 N Arroyo Pkwy",
+   "city": "Pasadena",
+   "state": "CA",
+   "zip": "91103",
+   "website": "https://criterioncoffee.us/",
+   "instagram": "criterioncoffeepasadena",
+   "phone": "16266963023",
+   "opening_hours": null,
+   "menu_url": "https://criterioncoffee.us/wp-content/uploads/2026/09/new-menu-SEP-2026_compressed.pdf",
+   "image_url": "https://criterioncoffee.us/wp-content/uploads/2024/05/about-cup.png",
+   "image_credit": "Photo: Criterion coffee website",
+   "source_url": "https://criterioncoffee.us/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "STRAWBERRY MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "MATCHA STRAWBERRY LATTE",
+     "price": null
+    }
+   ],
+   "overture_id": "e8b63a40-c2b0-4193-b973-842f1ebbfacd",
+   "lat": 34.14657,
+   "lng": -118.147827,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "319902981209206"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f18d5bea-bb26-4b7d-9c0e-29a7457e1ad5"
+    }
+   ]
+  },
+  {
+   "name": "Sorbo Coffee",
+   "address": "2653 Bruce B Downs Blvd",
+   "city": "Wesley Chapel",
+   "state": "FL",
+   "zip": "33544",
+   "website": "http://www.sorbowesleychapel.com/",
+   "instagram": "sorbowesleychapel",
+   "phone": "+18134285396",
+   "opening_hours": null,
+   "menu_url": "http://www.sorbowesleychapel.com/SorboMenu2026.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.sorbowesleychapel.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha",
+     "price": "$10"
+    },
+    {
+     "name": "Imported Yame Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Ube Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "9a5483b4-2171-4d75-9e31-a2fc2743afdd",
+   "lat": 28.195126,
+   "lng": -82.354225,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "112996915135221"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "302f500c-bb33-4155-8987-845d30125f33"
+    }
+   ]
+  },
+  {
+   "name": "40 LBS Coffee Bar",
+   "address": "824 SW 2nd Ave",
+   "city": "Portland",
+   "state": "OR",
+   "zip": "97204",
+   "website": "http://40lbscoffee.com/",
+   "instagram": "40lbs",
+   "phone": "503.329.5782",
+   "opening_hours": null,
+   "menu_url": "https://40lbscoffee.com/wp-content/uploads/2024/06/CoffeeDrinks_ALL3s.pdf",
+   "image_url": "https://40lbscoffee.com/wp-content/uploads/2016/09/40lbs-backwall_overlay.jpg",
+   "image_credit": "Photo: 40 LBS Coffee Bar website",
+   "source_url": "http://40lbscoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Martini",
+     "price": null
+    },
+    {
+     "name": "Rose Matchade",
+     "price": null
+    }
+   ],
+   "overture_id": "c44719af-23d2-49f8-8d2e-429bfba9e49d",
+   "lat": 45.516979,
+   "lng": -122.675018,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1642324075992490"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "58a5774c-ddac-48d6-9417-14efba837d4b"
+    }
+   ]
+  },
+  {
+   "name": "LP Espresso",
+   "address": "625 Elm St",
+   "city": "Page",
+   "state": "AZ",
+   "zip": "86040",
+   "website": "http://www.lpespresso.com/",
+   "instagram": "lpespresso",
+   "phone": "928-612-8071",
+   "opening_hours": "Mo 07:00-16:00, Tu 07:00-16:00, We 07:00-16:00, Th 07:00-16:00, Fr 07:00-16:00, Sa 08:00-16:00, Su 08:00-16:00",
+   "menu_url": "http://www.lpespresso.com/s/LPE-MENU-524-rev2.pdf",
+   "image_url": "http://static1.squarespace.com/static/5a11a9dcd0e628a8679c3447/t/6275991d3dd1c6337efc9485/1651874077475/Minimalist+outline+logo+with+coffee+tree+branch.+Local+coffee+shop.png?format=1500w",
+   "image_credit": "Photo: LP Espresso website",
+   "source_url": "http://www.lpespresso.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA TEA",
+     "price": null
+    },
+    {
+     "name": "STRAWBERRY MATCHA COLD FOAM",
+     "price": null
+    },
+    {
+     "name": "TROPICAL MATCHA",
+     "price": null
+    }
+   ],
+   "overture_id": "8dd28718-df22-4809-8aad-3b7cd9fe8ec3",
+   "lat": 36.916952,
+   "lng": -111.46035,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "532684463608354"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "33ae9dad-0391-4e42-ace4-02eb47171598"
+    }
+   ]
+  },
+  {
+   "name": "Fulcrum Coffee Roasters",
+   "address": "4660 Ohio Ave S",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98134",
+   "website": "https://fulcrumcoffee.com",
+   "instagram": "fulcrumcoffeeroasters",
+   "phone": "+14257413405",
+   "opening_hours": null,
+   "menu_url": "https://cdn.shopify.com/s/files/1/0750/1342/3426/files/Fulcrum_Menu_10.1.2026.pdf?v=1791407907",
+   "image_url": "http://www.fulcrumcoffee.com/cdn/shop/files/Fulcrum-Coffee-Roasters-Logotype.png?height=628&pad_color=fff&v=1683736136&width=1200",
+   "image_credit": "Photo: Fulcrum Coffee Roasters website",
+   "source_url": "https://fulcrumcoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Maple Matcha",
+     "price": null
+    },
+    {
+     "name": "Orange Cardamom Matcha",
+     "price": null
+    },
+    {
+     "name": "Marionberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": "$7"
+    }
+   ],
+   "overture_id": "5c2539c0-13e6-4442-a709-897365e38068",
+   "lat": 47.561077,
+   "lng": -122.337753,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "180216151510"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "8515f94a-96f7-4d18-aee7-7c71a2f4a7bc"
+    }
+   ]
+  },
+  {
+   "name": "Nibbāna Café",
+   "address": "122 Western Ave",
+   "city": "Lowell",
+   "state": "MA",
+   "zip": "01851",
+   "website": "http://www.nibbanacafe.com/",
+   "instagram": null,
+   "phone": "9783220325",
+   "opening_hours": null,
+   "menu_url": "https://nibbana.coffee/wp-content/uploads/2025/06/Full-Menu_.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.nibbanacafe.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Ein",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Ein",
+     "price": null
+    }
+   ],
+   "overture_id": "5da31e7a-c4bc-4477-8fea-010122a278aa",
+   "lat": 42.640133,
+   "lng": -71.319389,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "207533683134076"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "9c24664f-7574-42c7-93a9-7954b4e9c812"
+    }
+   ]
+  },
+  {
+   "name": "Brewpoint Craft Oak Park",
+   "address": "163 S Oak Park Ave",
+   "city": "Oak Park",
+   "state": "IL",
+   "zip": "60302-2901",
+   "website": "https://brewpointcoffee.com",
+   "instagram": "brewpointcoffee",
+   "phone": "+17084345479",
+   "opening_hours": null,
+   "menu_url": "https://cdn.shopify.com/s/files/1/0117/1708/3195/files/BrewpointMenu2026.pdf?v=1772810432",
+   "image_url": "http://brewpointcoffee.com/cdn/shop/files/DSCF3935_Afterlight_2.jpg?crop=center&height=1200&v=1783515963&width=1200",
+   "image_credit": "Photo: Brewpoint Craft Oak Park website",
+   "source_url": "https://brewpointcoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "ROSE MATCHA",
+     "price": null
+    },
+    {
+     "name": "MAPLE BUTTER Matcha",
+     "price": null
+    },
+    {
+     "name": "MATCHATINI",
+     "price": null
+    },
+    {
+     "name": "MATCHA MOCKTINI",
+     "price": null
+    }
+   ],
+   "overture_id": "c53c440a-dfa1-4315-9ffa-0bad79ef7760",
+   "lat": 41.885754,
+   "lng": -87.794624,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "104014380"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b644c933-5e83-4faa-a258-65b56c3a3fa3"
+    }
+   ]
+  },
+  {
+   "name": "Amate Coffee",
+   "address": "44514 20th St W",
+   "city": "Lancaster",
+   "state": "CA",
+   "zip": "93534",
+   "website": "http://amatecoffee.com/",
+   "instagram": null,
+   "phone": "+16616749466",
+   "opening_hours": null,
+   "menu_url": "http://amatecoffee.com/s/Amate-Summer-Menu.pdf",
+   "image_url": "http://static1.squarespace.com/static/670f1324cc1a842f1b13e3de/t/67c3ad0a40f3bd7f19634631/1740877066147/transparent_amate.png?format=1500w",
+   "image_credit": "Photo: Amate Coffee website",
+   "source_url": "http://amatecoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "GUAVA MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "BLUE MATCHA LEMONADE",
+     "price": null
+    },
+    {
+     "name": "MATCHA TEA LATTE",
+     "price": null
+    },
+    {
+     "name": "BLUE MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "FRESAS CON CREMA MATCHA",
+     "price": null
+    },
+    {
+     "name": "HORCHATA MATCHA LATTE",
+     "price": null
+    }
+   ],
+   "overture_id": "cd236930-75c4-460f-9fb2-1d33fc074de1",
+   "lat": 34.69116,
+   "lng": -118.164223,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "606259915893063"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "abb4d282-b87d-40c1-b7f6-63462682a225"
+    }
+   ]
+  },
+  {
+   "name": "Kinsley",
+   "address": "1 N Wacker Dr Ste 150",
+   "city": "Chicago",
+   "state": "IL",
+   "zip": "60606",
+   "website": "http://kinsleychicago.com/",
+   "instagram": "ourfairgrounds",
+   "phone": "+13123662469",
+   "opening_hours": null,
+   "menu_url": "https://kinsleychicago.com/wp-content/uploads/2024/01/2024-Kinsley-Menu.pdf",
+   "image_url": "https://kinsleychicago.com/wp-content/uploads/2022/09/gale-ferris-jr-original-wheel.jpg",
+   "image_credit": "Photo: Kinsley website",
+   "source_url": "http://kinsleychicago.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "matcha bar",
+     "price": null
+    },
+    {
+     "name": "SUB MATCHA",
+     "price": null
+    },
+    {
+     "name": "MATCHA",
+     "price": null
+    },
+    {
+     "name": "RISHI ORGANIC MATCHA",
+     "price": null
+    },
+    {
+     "name": "MATCHA MIEL LATTE",
+     "price": null
+    },
+    {
+     "name": "MATCHA LATTE",
+     "price": null
+    }
+   ],
+   "overture_id": "2a5b9d3f-2e3d-4522-95ef-2865337097c7",
+   "lat": 41.882315,
+   "lng": -87.635468,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100832525909451"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1e0f7e12-12e2-437f-b61c-30f1b2bf5815"
+    }
+   ]
+  },
+  {
+   "name": "Fulcrum Café",
+   "address": "590 Bell St",
+   "city": "Seattle",
+   "state": "WA",
+   "zip": "98121",
+   "website": "https://fulcrumcoffee.com",
+   "instagram": "fulcrumcoffeeroasters",
+   "phone": "+14257413405",
+   "opening_hours": null,
+   "menu_url": "https://cdn.shopify.com/s/files/1/0750/1342/3426/files/Fulcrum_Menu_10.1.2026.pdf?v=1791407907",
+   "image_url": "http://www.fulcrumcoffee.com/cdn/shop/files/Fulcrum-Coffee-Roasters-Logotype.png?height=628&pad_color=fff&v=1683736136&width=1200",
+   "image_credit": "Photo: Fulcrum Café website",
+   "source_url": "https://fulcrumcoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Maple Matcha",
+     "price": null
+    },
+    {
+     "name": "Orange Cardamom Matcha",
+     "price": null
+    },
+    {
+     "name": "Marionberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": "$7"
+    }
+   ],
+   "overture_id": "97ff2edf-b9c6-46de-9e24-c33f7eff1a57",
+   "lat": 47.616699,
+   "lng": -122.342499,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "104635337801320"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "062f1e12-dca5-481a-8a86-3864245a794d"
+    }
+   ]
+  },
+  {
+   "name": "The Alley Dtc",
+   "address": "4940 S Yosemite St Ste E6b",
+   "city": "Greenwood Village",
+   "state": "CO",
+   "zip": "80111-1316",
+   "website": "http://www.the-alley.ca",
+   "instagram": "thealley.ca",
+   "phone": "+17203534648",
+   "opening_hours": null,
+   "menu_url": "http://www.the-alley.ca/images/menu/TA_Menu_2026-03_English.pdf",
+   "image_url": "http://www.the-alley.ca/images/attachment_blank.png",
+   "image_credit": "Photo: The Alley Dtc website",
+   "source_url": "http://www.the-alley.ca/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Deerioca Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Deerioca au Matcha",
+     "price": null
+    },
+    {
+     "name": "Latte au Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "5d996f00-6d04-4cea-97ec-81d2e5ce0c58",
+   "lat": 39.625208,
+   "lng": -104.88343,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "94625714"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "d2c150a8-2886-40ab-bfd9-1a11ef28d3ab"
+    }
+   ]
+  },
+  {
+   "name": "THE BVRLY",
+   "address": "200 S Beverly Dr",
+   "city": "Beverly Hills",
+   "state": "CA",
+   "zip": "90212",
+   "website": "https://www.thebvrly.com/",
+   "instagram": null,
+   "phone": "4247770033",
+   "opening_hours": null,
+   "menu_url": "https://www.thebvrly.com/wp-content/uploads/2026/01/new-menu-edited-the-bvrly-.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.thebvrly.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "COLD FOAM ICED MATCHA",
+     "price": "$8"
+    },
+    {
+     "name": "MATCHA LATTE",
+     "price": "$6.50"
+    },
+    {
+     "name": "COLD FOAM PISTACHIO MATCHA",
+     "price": "$7.50"
+    },
+    {
+     "name": "MATCHA SHAKE",
+     "price": "$7"
+    }
+   ],
+   "overture_id": "ea3bc952-cd16-4248-836e-82aad595dfbd",
+   "lat": 34.064892,
+   "lng": -118.39888,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "878845728641805"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "649d46f6-7f7e-416d-b176-9895f2803852"
+    }
+   ]
+  },
+  {
+   "name": "Pop Pie Co.",
+   "address": "270 E 17th St #17",
+   "city": "Costa Mesa",
+   "state": "CA",
+   "zip": "92627",
+   "website": "http://www.poppieco.com/",
+   "instagram": "eatpoppie",
+   "phone": "+19497918133",
+   "opening_hours": ", , , , , ,",
+   "menu_url": "http://www.poppieco.com/s/PopPie-Drinks-Menu-Ordered.pdf",
+   "image_url": "http://static1.squarespace.com/static/656a343243f402167d9fe4c5/t/659458f49deb4d46f69d0393/1704220916969/Logo_Main_OffWhite_RGB.png?format=1500w",
+   "image_credit": "Photo: Pop Pie Co. website",
+   "source_url": "http://www.poppieco.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte (sweetened)",
+     "price": "$8.75"
+    },
+    {
+     "name": "Vanilla Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Maple Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "5b345633-ec45-4fea-8041-82d06bf71b62",
+   "lat": 33.633802,
+   "lng": -117.915352,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103686217660952"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "6feaa1d9-b07d-453f-8f7e-2283320b4e4b"
+    }
+   ]
+  },
+  {
+   "name": "Brewpoint Craft Elmhurst",
+   "address": "617 N York St",
+   "city": "Elmhurst",
+   "state": "IL",
+   "zip": "60126",
+   "website": "http://brewpointcoffee.com/",
+   "instagram": "brewpointcoffee",
+   "phone": "+16303023636",
+   "opening_hours": null,
+   "menu_url": "https://cdn.shopify.com/s/files/1/0117/1708/3195/files/BrewpointMenu2026.pdf?v=1772810432",
+   "image_url": "http://brewpointcoffee.com/cdn/shop/files/DSCF3935_Afterlight_2.jpg?crop=center&height=1200&v=1783515963&width=1200",
+   "image_credit": "Photo: Brewpoint Craft Elmhurst website",
+   "source_url": "http://brewpointcoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "ROSE MATCHA",
+     "price": null
+    },
+    {
+     "name": "MAPLE BUTTER Matcha",
+     "price": null
+    },
+    {
+     "name": "MATCHATINI",
+     "price": null
+    },
+    {
+     "name": "MATCHA MOCKTINI",
+     "price": null
+    }
+   ],
+   "overture_id": "68038345-8f4e-406b-bd74-8a94b1cc11ab",
+   "lat": 41.916939,
+   "lng": -87.939209,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1641336145928721"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e507c11c-bb8f-4607-b0f0-6e1ce25ea382"
+    }
+   ]
+  },
+  {
+   "name": "Life’s Patina Co. Mercantile and Cafe",
+   "address": "1657 Art School Rd",
+   "city": "Chester Springs",
+   "state": "PA",
+   "zip": "19425",
+   "website": "https://lifespatina.com/historic-yellow-springs/",
+   "instagram": "lifes.patina",
+   "phone": "+14844715501",
+   "opening_hours": null,
+   "menu_url": "https://static.showit.com/file/UVGV4I80DgupEQgsh7nm7w/112409/mercantile_menu_7_26_26.pdf",
+   "image_url": "https://lifespatina.com/wp-content/uploads/2015/03/2013-11-09-10.54.41.jpeg",
+   "image_credit": "Photo: Life’s Patina Co. Mercantile and Cafe website",
+   "source_url": "https://lifespatina.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "BLACKBERRY MATCHA",
+     "price": null
+    },
+    {
+     "name": "MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "CEREMONIAL MATCHA LATTE",
+     "price": null
+    }
+   ],
+   "overture_id": "2bf429ea-da04-4c96-acb8-6b10910646e7",
+   "lat": 40.100328,
+   "lng": -75.620586,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "140793679112907"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b6ebe589-a726-41d7-9a00-dd507ddb5b91"
+    }
+   ]
+  },
+  {
+   "name": "Swatara Coffee Company",
+   "address": "40 W. Market Street",
+   "city": "Jonestown",
+   "state": "PA",
+   "zip": "17038",
+   "website": "http://www.swataracoffee.com/",
+   "instagram": "swataracoffee",
+   "phone": "+17178651800",
+   "opening_hours": null,
+   "menu_url": "https://swataracoffee.com/wp-content/uploads/2026/10/Jonestown-Menu-NEW-Oct-2026.pdf",
+   "image_url": "https://websitedemos.net/alex69/wp-content/uploads/sites/545/2020/02/icon-04-free-img.png",
+   "image_credit": "Photo: Swatara Coffee Company website",
+   "source_url": "http://www.swataracoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Peacock Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Frozen Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "53635a6f-06ba-4216-808e-2ccbe56e5dce",
+   "lat": 40.413404,
+   "lng": -76.479534,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103506754761603"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "703b18ec-b68d-4a9a-b16b-c0dac0996a68"
+    }
+   ]
+  },
+  {
+   "name": "Biddle's Brewing",
+   "address": "215 High St",
+   "city": "Williamsburg",
+   "state": "PA",
+   "zip": "16693",
+   "website": "https://www.biddlesbrewing.com/",
+   "instagram": "biddlesbrewing",
+   "phone": null,
+   "opening_hours": "Mo,We 06:00-13:00; Tu 00:00-00:00; Th,Fr 06:00-17:30; Sa,Su 07:00-15:00",
+   "menu_url": "https://img1.wsimg.com/blobby/go/0f86ecfc-c618-4b25-a6c0-bba291c19b01/downloads/2aa3832a-26ab-4625-a32c-8efaf83fb4b9/BB%20Menu%202026.pdf?ver=1794965406048",
+   "image_url": "https://img1.wsimg.com/isteam/ip/0f86ecfc-c618-4b25-a6c0-bba291c19b01/4P7A2518.jpg",
+   "image_credit": "Photo: Biddle's Brewing website",
+   "source_url": "https://www.biddlesbrewing.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Original Matcha",
+     "price": "$6.25"
+    },
+    {
+     "name": "Lavender Haze Matcha",
+     "price": "$7.50"
+    },
+    {
+     "name": "Raspberry Sunrise Matcha",
+     "price": "$7.50"
+    },
+    {
+     "name": "The Grinch Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "b9f9e990-83f6-4f6d-b8f4-9cc1c0550cce",
+   "lat": 40.460747,
+   "lng": -78.201511,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "106621254769712"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "3153987f-20c9-42c6-8412-f3f243bd23ce"
+    }
+   ]
+  },
+  {
+   "name": "Kale Me Crazy",
+   "address": "100 6th Street",
+   "city": "Atlanta",
+   "state": "GA",
+   "zip": "30308",
+   "website": "https://midtown.kalemecrazy.net/",
+   "instagram": null,
+   "phone": "4042283878",
+   "opening_hours": null,
+   "menu_url": "https://kalemecrazy.net/wp-content/uploads/2026/10/KMC-QR-Menu-Oven-Sourdough.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://midtown.kalemecrazy.net/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Super Matcha",
+     "price": "$10.95"
+    },
+    {
+     "name": "Matcha Iced Latte",
+     "price": "$5.95"
+    },
+    {
+     "name": "Matcha Rose Latte",
+     "price": "$5.95"
+    },
+    {
+     "name": "Strawberry Matcha Iced Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "3063350a-96e3-415f-aca6-fb792a87cacc",
+   "lat": 33.777353,
+   "lng": -84.383011,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "148595129051486"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "bbcedafa-f1da-463a-bfc5-1c50dd65231d"
+    }
+   ]
+  },
+  {
+   "name": "Wellth",
+   "address": "2636 Walnut St  # 103",
+   "city": "Denver",
+   "state": "CO",
+   "zip": "80205-2231",
+   "website": "https://www.wellthyliving.com",
+   "instagram": "wellthy__living",
+   "phone": "+17203284465",
+   "opening_hours": ", , , , , ,",
+   "menu_url": "https://www.wellthyliving.com/s/WellthyMenu_5x7_MylksCoffee.pdf",
+   "image_url": "http://static1.squarespace.com/static/5cc3f12a7980b35a62adcc56/t/5e584d1ac060a7674779eb2b/1582845220790/WELLth-3.png?format=1500w",
+   "image_credit": "Photo: Wellth website",
+   "source_url": "https://www.wellthyliving.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Mylk",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Tea",
+     "price": null
+    },
+    {
+     "name": "Matcha in hot water",
+     "price": null
+    }
+   ],
+   "overture_id": "f5509944-831c-40ae-b6f0-5487030b6a9a",
+   "lat": 39.759607,
+   "lng": -104.985222,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "88632927"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "770668a4-cd66-403b-abd2-7ec474fe07a8"
+    }
+   ]
+  },
+  {
+   "name": "Espresso Cielo",
+   "address": "1431 2nd St",
+   "city": "Santa Monica",
+   "state": "CA",
+   "zip": "90401",
+   "website": "http://www.espressocielo.com/",
+   "instagram": "espressocielo",
+   "phone": "+13102601268",
+   "opening_hours": "Mo-Th 07:00-16:00; Fr-Su 07:00-18:00",
+   "menu_url": "http://img1.wsimg.com/blobby/go/256556ec-a387-40aa-b81b-2cde68b3332d/drink%20menu.pdf",
+   "image_url": "https://img1.wsimg.com/isteam/ip/256556ec-a387-40aa-b81b-2cde68b3332d/66d0a6bd5f1a396b8e6540b8_EspressoCielo-76-of-1.png",
+   "image_credit": "Photo: Espresso Cielo website",
+   "source_url": "http://www.espressocielo.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Elderflower Matcha Tonic",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Berry Lemonade",
+     "price": null
+    },
+    {
+     "name": "Matcha Shot",
+     "price": null
+    }
+   ],
+   "overture_id": "0208a5a2-9e4d-4134-a21f-8c1d632d336a",
+   "lat": 34.014105,
+   "lng": -118.495941,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "332391123812098"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "37968135-1fae-41c0-ae7e-4b175c738b26"
+    }
+   ]
+  },
+  {
+   "name": "Pop Pie Co.",
+   "address": "4195 Voltaire St Ste A",
+   "city": "San Diego",
+   "state": "CA",
+   "zip": "92107",
+   "website": "http://www.poppieco.com/",
+   "instagram": "eatpoppie",
+   "phone": "+16195397052",
+   "opening_hours": ", , , , , ,",
+   "menu_url": "http://www.poppieco.com/s/PopPie-Drinks-Menu-Ordered.pdf",
+   "image_url": "http://static1.squarespace.com/static/656a343243f402167d9fe4c5/t/659458f49deb4d46f69d0393/1704220916969/Logo_Main_OffWhite_RGB.png?format=1500w",
+   "image_credit": "Photo: Pop Pie Co. website",
+   "source_url": "http://www.poppieco.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte (sweetened)",
+     "price": "$8.75"
+    },
+    {
+     "name": "Vanilla Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Maple Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "57576331-049f-4a05-8366-0f295981148f",
+   "lat": 32.743589,
+   "lng": -117.234741,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "110313374842513"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "c12debc1-b58c-4a87-a43a-27b1085891d3"
+    }
+   ]
+  },
+  {
+   "name": "Knots Coffee Roasters",
+   "address": "150 Kapahulu Ave",
+   "city": "Honolulu",
+   "state": "HI",
+   "zip": "96815",
+   "website": "https://www.knotscoffee.com/",
+   "instagram": "knotscoffeehawaii",
+   "phone": "+18089314482",
+   "opening_hours": "Mo 07:00-17:00, Tu 07:00-17:00, We 07:00-17:00, Th 07:00-17:00, Fr 07:00-17:00, Sa 07:00-17:00, Su 07:00-17:00",
+   "menu_url": "https://www.knotscoffee.com/s/Knots-Menu-Portrait-Menu-85-x-14-2026-Regular.pdf",
+   "image_url": "http://static1.squarespace.com/static/5e5197a612c0b73372f97b10/t/5e5346b7cd15995a4ebb588e/1594760135903/deck_yuki065.jpg?format=1500w",
+   "image_credit": "Photo: Knots Coffee Roasters website",
+   "source_url": "https://www.knotscoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "BLUEBERRY MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "STRAWBERRY MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "EARL GREY MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "CHOCOLATE MATCHA",
+     "price": null
+    },
+    {
+     "name": "WHITE CHOCOLATE MATCHA",
+     "price": null
+    }
+   ],
+   "overture_id": "5895ab89-42d2-44f5-8158-993aff2bf971",
+   "lat": 21.272116,
+   "lng": -157.821167,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "251464532087061"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "0d2cbb54-8b36-484d-b48f-ef59abd12a03"
+    }
+   ]
+  },
+  {
+   "name": "Nibbāna Café",
+   "address": "12 Cardinal Oconnell Pkwy",
+   "city": "Lowell",
+   "state": "MA",
+   "zip": "01852-1802",
+   "website": "http://www.nibbanacafe.com",
+   "instagram": null,
+   "phone": "9783220325",
+   "opening_hours": null,
+   "menu_url": "https://nibbana.coffee/wp-content/uploads/2025/06/Full-Menu_.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://www.nibbanacafe.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Ein",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Ein",
+     "price": null
+    }
+   ],
+   "overture_id": "b0cc60f8-dc5c-454c-9456-1c193fa7facf",
+   "lat": 42.645611,
+   "lng": -71.314487,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "86580761"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "289312e3-81b2-4323-b8c0-bbb919351b14"
+    }
+   ]
+  },
+  {
+   "name": "Ruthii's Coffee",
+   "address": "28010 Valley Center Rd",
+   "city": "Valley Center",
+   "state": "CA",
+   "zip": "92082",
+   "website": "http://CoffeeWithRuthii.com/",
+   "instagram": "ruthiis_coffee",
+   "phone": "+17607490691",
+   "opening_hours": null,
+   "menu_url": "https://coffeewithruthii.com/wp-content/uploads/2024/11/pdf-menu-fall-2024.pdf",
+   "image_url": "https://coffeewithruthii.com/wp-content/uploads/2024/11/d7142090-f4a5-4135-a592-5a6c2271e31b-1.jpeg",
+   "image_credit": "Photo: Ruthii's Coffee website",
+   "source_url": "http://coffeewithruthii.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Lavender Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "1e3768b1-484f-4f3c-b41b-03eb2417b278",
+   "lat": 33.21871,
+   "lng": -117.03437,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "101743489337350"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4bdd497e-f5a8-40a8-8399-3d60eb1f7f23"
+    }
+   ]
+  },
+  {
+   "name": "Water Cress Cafe",
+   "address": "5 Sylvan Way",
+   "city": "Parsippany",
+   "state": "NJ",
+   "zip": "07054-3818",
+   "website": "https://www.watercressbali.com",
+   "instagram": "watercressbali",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": "https://watercressbali.com/wp-content/uploads/2026/09/WTCU_WA-MENU_V106_SEP-2026.pdf",
+   "image_url": "https://watercressbali.com/wp-content/uploads/2026/05/about-1.webp",
+   "image_credit": "Photo: Water Cress Cafe website",
+   "source_url": "https://www.watercressbali.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA",
+     "price": null
+    },
+    {
+     "name": "CEREMONIAL MATCHA LATTE",
+     "price": null
+    },
+    {
+     "name": "MATCHA UBEE",
+     "price": null
+    },
+    {
+     "name": "MATCHA BERRIES",
+     "price": null
+    },
+    {
+     "name": "MATCHA COCO",
+     "price": null
+    }
+   ],
+   "overture_id": "12770320-cb49-4563-8342-4ef52d049da9",
+   "lat": 40.847233,
+   "lng": -74.453564,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103788695"
+    },
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103788695"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ]
+  },
+  {
+   "name": "Pop Pie Co.",
+   "address": "4404 Park Blvd. Suite A",
+   "city": "San Diego",
+   "state": "CA",
+   "zip": "92116",
+   "website": "http://www.poppieco.com/",
+   "instagram": "eatpoppie",
+   "phone": "+16195014440",
+   "opening_hours": ", , , , , ,",
+   "menu_url": "http://www.poppieco.com/s/PopPie-Drinks-Menu-Ordered.pdf",
+   "image_url": "http://static1.squarespace.com/static/656a343243f402167d9fe4c5/t/659458f49deb4d46f69d0393/1704220916969/Logo_Main_OffWhite_RGB.png?format=1500w",
+   "image_credit": "Photo: Pop Pie Co. website",
+   "source_url": "http://www.poppieco.com/locations",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte (sweetened)",
+     "price": "$8.75"
+    },
+    {
+     "name": "Vanilla Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Maple Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "8ae1356e-f371-4dbe-bbf3-95f5cfdb06a3",
+   "lat": 32.757368,
+   "lng": -117.146454,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "654097728066010"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "41581a78-2480-49d7-8d32-a43ee6a520e4"
+    }
+   ]
+  },
+  {
+   "name": "Kyotobrew",
+   "address": "121 Historic Town Square",
+   "city": "Lancaster",
+   "state": "TX",
+   "zip": "75146",
+   "website": "http://www.kyotobrewtx.com/",
+   "instagram": "kyotobrew",
+   "phone": "+12142003996",
+   "opening_hours": null,
+   "menu_url": "http://www.kyotobrewtx.com/s/MENU.pdf",
+   "image_url": "http://static1.squarespace.com/static/637e9b4bf91d71181bec0779/t/655c10f4d112ef3ea0e9b6e4/1700532468609/Kyotobrew_Cocktail.jpg?format=1500w",
+   "image_credit": "Photo: Kyotobrew website",
+   "source_url": "http://www.kyotobrewtx.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "KYOTO MATCHA IPA",
+     "price": "$6.50"
+    },
+    {
+     "name": "Matcha Tea",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Lemonade",
+     "price": null
+    }
+   ],
+   "overture_id": "c1d1b082-bcac-45d8-bba8-745ec749c87c",
+   "lat": 32.592581,
+   "lng": -96.756287,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "186626851194010"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103701b4-1fb4-4bb5-b050-9693a0dbe3d5"
+    }
+   ]
+  },
+  {
+   "name": "Plate 21",
+   "address": "3664 Rugby Dr",
+   "city": "Toledo",
+   "state": "OH",
+   "zip": "43614",
+   "website": "https://www.plate21coffee.com/",
+   "instagram": "plate21",
+   "phone": "+14193852121",
+   "opening_hours": null,
+   "menu_url": "https://www.plate21coffee.com/s/plate-bev-menu-2point0.pdf",
+   "image_url": "http://static1.squarespace.com/static/6563f50abf1bbd2e6d41dcd3/t/68a1ee00effece73c16fbdeb/1755442688953/IMG_1580.jpg?format=1500w",
+   "image_credit": "Photo: Plate 21 website",
+   "source_url": "https://www.plate21coffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Ceremonial Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Fruity Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Frappe",
+     "price": null
+    }
+   ],
+   "overture_id": "f91765d0-a832-40ef-b7c8-1c450e06492e",
+   "lat": 41.599243,
+   "lng": -83.61055,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "117954481501"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "e0ac4ae9-c9c6-4f31-8dc3-77a074ec8050"
+    }
+   ]
+  },
+  {
+   "name": "Stagecoach Coffee",
+   "address": "31 Pioneer St #2",
+   "city": "Cooperstown",
+   "state": "NY",
+   "zip": "13326",
+   "website": "http://www.stagecoachcoffee.com/",
+   "instagram": "stagecoachcoffee",
+   "phone": "+16075476229",
+   "opening_hours": null,
+   "menu_url": "https://stagecoachcoffee.com/wp-content/uploads/2026/04/April-2026-Coop-Menu.pdf",
+   "image_url": "https://stagecoachcoffee.com/wp-content/uploads/2026/09/falldrinks2026.webp",
+   "image_credit": "Photo: Stagecoach Coffee website",
+   "source_url": "http://www.stagecoachcoffee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Frappe",
+     "price": null
+    },
+    {
+     "name": "Matcha Lemonade Spritz",
+     "price": null
+    },
+    {
+     "name": "Lavender Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "c6f98259-c39a-4dd6-8daa-b71d764a2b03",
+   "lat": 42.700848,
+   "lng": -74.924,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "117224288375860"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "34136711-1b03-426d-b2b5-d5afc9e0a820"
+    }
+   ]
+  },
+  {
+   "name": "Hudson Botanical - Café | Catering | Houseplants",
+   "address": "2433 Old Philadelphia Pike",
+   "city": "Smoketown",
+   "state": "PA",
+   "zip": "17576",
+   "website": "http://www.hudsonbotanical.com/",
+   "instagram": "_hudsonbotanical",
+   "phone": "+17176212374",
+   "opening_hours": ", , We 08:00-16:00, Th 08:00-16:00, Fr 08:00-16:00, Sa 08:00-19:00, Su 08:00-14:00",
+   "menu_url": "http://www.hudsonbotanical.com/s/AUTUMN-WINTER-2026.pdf",
+   "image_url": "http://static1.squarespace.com/static/619d15cc2d8973445e0d7404/t/61b78f56645808385fbc9a26/1639419734397/Huston+Botanical+Logo+wht.png?format=1500w",
+   "image_credit": "Photo: Hudson Botanical - Café | Catering | Houseplants website",
+   "source_url": "http://www.hudsonbotanical.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "STRAWBERRY MATCHA",
+     "price": null
+    },
+    {
+     "name": "TROPICAL RED BULL MATCHA",
+     "price": null
+    },
+    {
+     "name": "BERRY MANGO MATCHA WAFFLES",
+     "price": "$15"
+    }
+   ],
+   "overture_id": "30b0c77a-c0f5-49a4-a728-c89bc087a19c",
+   "lat": 40.040001,
+   "lng": -76.207043,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "107652111814822"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "bebb3ad3-cfe1-46ed-8224-a27ab28a3653"
+    }
+   ]
+  },
+  {
+   "name": "Cafe Agape",
+   "address": "381 E 6th St",
+   "city": "Beaumont",
+   "state": "CA",
+   "zip": "92223",
+   "website": "http://cafeagapejava.com",
+   "instagram": null,
+   "phone": "+19519995261",
+   "opening_hours": null,
+   "menu_url": "http://cafeagapejava.com/Website_menu_051226.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://cafeagapejava.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Frap",
+     "price": null
+    },
+    {
+     "name": "Blackberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Lavendar Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "bbbfa64a-76e0-4bb6-a13c-8bbf8cf73eb2",
+   "lat": 33.929037,
+   "lng": -116.977982,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "146926062035421"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "0a435181-afb6-481e-895f-022c3bea99de"
+    }
+   ]
+  },
+  {
+   "name": "The Alley",
+   "address": "430 S Garfield Ave  Ste 428",
+   "city": "Alhambra",
+   "state": "CA",
+   "zip": "91801-6807",
+   "website": "http://www.the-alley.ca",
+   "instagram": "thealley.ca",
+   "phone": "+19494268858",
+   "opening_hours": null,
+   "menu_url": "http://www.the-alley.ca/images/menu/TA_Menu_2026-03_English.pdf",
+   "image_url": "http://www.the-alley.ca/images/attachment_blank.png",
+   "image_credit": "Photo: The Alley website",
+   "source_url": "http://www.the-alley.ca/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Deerioca Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Deerioca au Matcha",
+     "price": null
+    },
+    {
+     "name": "Latte au Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "beb41047-60ed-4d93-85a4-d6ebeb09bea0",
+   "lat": 34.090336,
+   "lng": -118.12307,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103267116"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f30d8cd0-6f45-4a8c-aa89-b2534f10f8ff"
+    }
+   ]
+  },
+  {
+   "name": "Kale Me Crazy",
+   "address": "1570 Holcomb Bridge Rd",
+   "city": "Roswell",
+   "state": "GA",
+   "zip": "30076-2552",
+   "website": "https://roswell.kalemecrazy.net/",
+   "instagram": null,
+   "phone": "6788783188",
+   "opening_hours": null,
+   "menu_url": "https://kalemecrazy.net/wp-content/uploads/2026/10/KMC-QR-Menu-Oven-Sourdough.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://roswell.kalemecrazy.net/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Super Matcha",
+     "price": "$10.95"
+    },
+    {
+     "name": "Matcha Iced Latte",
+     "price": "$5.95"
+    },
+    {
+     "name": "Matcha Rose Latte",
+     "price": "$5.95"
+    },
+    {
+     "name": "Strawberry Matcha Iced Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "ff1b8b76-7e6e-43af-b552-7dbbc875a78c",
+   "lat": 34.018307,
+   "lng": -84.312027,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1763054623706517"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "dafd9ec4-67b3-4492-8dbf-b5736156c7f2"
+    }
+   ]
+  },
+  {
+   "name": "Pop Pie Co. Pacific Beach",
+   "address": "829 Garnet Ave",
+   "city": "San Diego",
+   "state": "CA",
+   "zip": "92109",
+   "website": "http://www.poppieco.com/",
+   "instagram": "eatpoppie",
+   "phone": "+18582033610",
+   "opening_hours": ", , , , , ,",
+   "menu_url": "http://www.poppieco.com/s/PopPie-Drinks-Menu-Ordered.pdf",
+   "image_url": "http://static1.squarespace.com/static/656a343243f402167d9fe4c5/t/659458f49deb4d46f69d0393/1704220916969/Logo_Main_OffWhite_RGB.png?format=1500w",
+   "image_credit": "Photo: Pop Pie Co. Pacific Beach website",
+   "source_url": "http://www.poppieco.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte (sweetened)",
+     "price": "$8.75"
+    },
+    {
+     "name": "Vanilla Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Maple Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "6ae4abe3-891b-4902-9be6-e27658442abc",
+   "lat": 32.796534,
+   "lng": -117.254623,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "111717688510561"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "bf270f8b-4be9-4a6d-a12c-53104eec98db"
+    }
+   ]
+  },
+  {
+   "name": "Kale Me Crazy",
+   "address": "358 W. Ponce de Leon Ave",
+   "city": "Decatur",
+   "state": "GA",
+   "zip": "30030",
+   "website": "https://decatur.kalemecrazy.net/",
+   "instagram": null,
+   "phone": "4043308502",
+   "opening_hours": null,
+   "menu_url": "https://kalemecrazy.net/wp-content/uploads/2026/10/KMC-QR-Menu-Oven-Sourdough.pdf",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://decatur.kalemecrazy.net/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Super Matcha",
+     "price": "$10.95"
+    },
+    {
+     "name": "Matcha Iced Latte",
+     "price": "$5.95"
+    },
+    {
+     "name": "Matcha Rose Latte",
+     "price": "$5.95"
+    },
+    {
+     "name": "Strawberry Matcha Iced Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "0b4fcde9-5e1e-4479-9721-cd9f2de6ae29",
+   "lat": 33.775463,
+   "lng": -84.301548,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "129399327663513"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f014165e-1464-446c-9730-6aa226705d04"
     }
    ]
   }

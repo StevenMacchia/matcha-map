@@ -65,5 +65,8 @@
   "devDependencies": {
     "@duckdb/node-api": "^2.0.1-r.1",
     "wrangler": "^4.166.0"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^4.10.38"
   }
 }
