@@ -100,10 +100,10 @@
    "site"
   ],
   "check_reason": "own site's domain does not resolve",
-  "checked": "2026-11-24",
+  "checked": "2026-11-25",
   "checked_by": "liveness",
   "clear_runs": 0,
-  "why": "Check 2026-11-24: own site's domain does not resolve"
+  "why": "Check 2026-11-25: own site's domain does not resolve"
  },
  "brand:web-taiyo-matcha-fl-jacksonville-10095-beach-blvd-f5bb05": {
   "status": "open",
@@ -122,10 +122,10 @@
    "site"
   ],
   "check_reason": "own site's domain does not resolve",
-  "checked": "2026-11-24",
+  "checked": "2026-11-25",
   "checked_by": "liveness",
   "clear_runs": 0,
-  "why": "Check 2026-11-24: own site's domain does not resolve"
+  "why": "Check 2026-11-25: own site's domain does not resolve"
  },
  "brand:web-amausaan-uji-matcha-ca-union-city-34563-alvara-fc3021": {
   "status": "check",
@@ -133,9 +133,9 @@
    "site"
   ],
   "check_reason": "own site's domain does not resolve",
-  "checked": "2026-11-24",
+  "checked": "2026-11-25",
   "checked_by": "liveness",
-  "clear_runs": 0,
+  "clear_runs": 1,
   "why": "Check 2026-11-24: own site's domain does not resolve"
  },
  "brand:web-ms-matcha-dc-washington-1441-u-st-nw-e78ab9": {
@@ -144,10 +144,10 @@
    "site"
   ],
   "check_reason": "own site's domain does not resolve",
-  "checked": "2026-11-24",
+  "checked": "2026-11-25",
   "checked_by": "liveness",
   "clear_runs": 0,
-  "why": "Check 2026-11-24: own site's domain does not resolve"
+  "why": "Check 2026-11-25: own site's domain does not resolve"
  },
  "brand:web-matcha-boba-house-or-ashland-297-e-main-st-3f0c42": {
   "status": "check",
@@ -155,10 +155,10 @@
    "site"
   ],
   "check_reason": "own site's domain does not resolve",
-  "checked": "2026-11-24",
+  "checked": "2026-11-25",
   "checked_by": "liveness",
   "clear_runs": 0,
-  "why": "Check 2026-11-24: own site's domain does not resolve"
+  "why": "Check 2026-11-25: own site's domain does not resolve"
  },
  "brand:web-amausaan-uji-matcha-ca-newark-39658-cedar-blvd-8bc9ea": {
   "status": "check",
@@ -166,9 +166,9 @@
    "site"
   ],
   "check_reason": "own site's domain does not resolve",
-  "checked": "2026-11-24",
+  "checked": "2026-11-25",
   "checked_by": "liveness",
-  "clear_runs": 0,
+  "clear_runs": 1,
   "why": "Check 2026-11-24: own site's domain does not resolve"
  },
  "brand:web-amausaan-uji-matcha-ca-daly-city-103-serramont-fb72cb": {
@@ -177,9 +177,53 @@
    "site"
   ],
   "check_reason": "own site's domain does not resolve",
-  "checked": "2026-11-24",
+  "checked": "2026-11-25",
+  "checked_by": "liveness",
+  "clear_runs": 1,
+  "why": "Check 2026-11-24: own site's domain does not resolve"
+ },
+ "brand:web-kale-me-crazy-ga-atlanta-3205-cumberland-blvd-6ed49a": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site returns 404",
+  "checked": "2026-11-25",
   "checked_by": "liveness",
   "clear_runs": 0,
-  "why": "Check 2026-11-24: own site's domain does not resolve"
+  "why": "Check 2026-11-25: own site returns 404"
+ },
+ "brand:web-kale-me-crazy-ga-marietta-3600-dallas-hwy-ste-7fc472": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site returns 404",
+  "checked": "2026-11-25",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-25: own site returns 404"
+ },
+ "brand:web-kale-me-crazy-ms-ridgeland-1067-highland-colon-5bedb8": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site returns 404",
+  "checked": "2026-11-25",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-25: own site returns 404"
+ },
+ "brand:web-sweet-palm-breakfast-burritos-wraps-coffee-sc-0dd2dc": {
+  "status": "check",
+  "signals": [
+   "site"
+  ],
+  "check_reason": "own site's domain does not resolve",
+  "checked": "2026-11-25",
+  "checked_by": "liveness",
+  "clear_runs": 0,
+  "why": "Check 2026-11-25: own site's domain does not resolve"
  }
 }

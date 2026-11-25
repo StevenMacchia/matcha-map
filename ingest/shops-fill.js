@@ -1,4 +1,4 @@
-// npm run shops:fill [-- --overture] [-- --sites] [-- --limit n] [-- --dry] [-- --refresh]
+// npm run shops:fill [-- --overture] [-- --sites] [-- --limit n] [-- --dry] [-- --refresh] [-- --blank-hours]
 // Fills the blanks on a storefront card from sources we may store, into data/shops-extra.json (the overlay `attachExtras` applies; only empty
 // fields on the row are ever filled, and the loop that rewrites data/shops-zz-overture-serves.json never loses them):
 //   --overture  the Overture place behind the row (by overture_id, or the same name within 150 m for a hand-researched row): its own website
@@ -108,10 +108,10 @@ export async function readSite(s, fetcher, need) {
   return { facts: out, tried };
 }
 
-async function readSites(shops, extra, { limit, refresh }) {
+async function readSites(shops, extra, { limit, refresh, blankHours }) {
   const fetcher = createFetcher({});
   const rows = shops.filter((s) => shown(s) && s.website && ownSite(s.website) && FIELDS.some((k) => k !== "website" && !s[k] && !(extra[s.id] || {})[k]))
-    .filter((s) => refresh || !(extra[s.id] || {}).fill || (Date.parse(today) - Date.parse(extra[s.id].fill)) > 30 * 864e5)
+    .filter((s) => refresh || !(extra[s.id] || {}).fill || (Date.parse(today) - Date.parse(extra[s.id].fill)) > 30 * 864e5 || (blankHours && !s.opening_hours && (extra[s.id] || {}).fill_status !== "read"))
     .slice(0, limit);
   const filled = { opening_hours: 0, phone: 0, instagram: 0, image_url: 0, menu_url: 0 }, status = {};
   let next = 0, done = 0, gained = 0;
@@ -126,6 +126,7 @@ async function readSites(shops, extra, { limit, refresh }) {
       for (const [k, v] of Object.entries(facts)) { e[k] = v; filled[k]++; any = true; if (k === "image_url") { e.image_credit = `Photo: ${s.name} website`; } }
       if (any) { gained++; e.read = e.read || today; e.source_url = e.source_url || s.website; }
       const key = tried.includes("ok") ? "read" : tried[0] ? `unreadable (${tried[0]})` : "unreadable"; status[key] = (status[key] || 0) + 1;
+      e.fill_status = tried.includes("ok") ? "read" : "unreadable";
       extra[s.id] = e;
       if (++done % 100 === 0) console.log(`  ${done}/${rows.length} sites, ${gained} rows gained fields`);
     }
@@ -147,7 +148,7 @@ async function main() {
   if (doSites) {
     // the Overture fields carried above count as present for the site read
     const merged = attachExtras(shops, extra);
-    const r = await readSites(merged, extra, { limit: +opt("--limit", 100000), refresh: flag("--refresh") });
+    const r = await readSites(merged, extra, { limit: +opt("--limit", 100000), refresh: flag("--refresh"), blankHours: flag("--blank-hours") });
     console.log("own-site read:", JSON.stringify(r));
     save();
   }

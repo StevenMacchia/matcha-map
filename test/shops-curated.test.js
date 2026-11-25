@@ -130,3 +130,9 @@ test("a row with no city field takes it from its own address line when the state
   assert.equal(checkRow({ ...row, address: "63 Spring Street, Boston, MA, 02116" }).held, "no city");
   assert.equal(checkRow({ ...row, address: "3010 NJ-27" }).held, "no city");
 });
+
+test("a suite in the middle of the address line does not hide its city, and a state field with an address tail still gives the state", () => {
+  const row = { name: "Blank Street Coffee", state: "DC", source_url: "https://blankstreet.com/", read: "2026-11-25" };
+  assert.equal(checkRow({ ...row, address: "2200 Pennsylvania Ave NW, Suite 160E, Washington, DC, 20052" }).shop.city, "Washington");
+  assert.equal(checkRow({ name: "Holy Roly", city: "Los Angeles", state: "STE 109A, LOS ANGELES, CA", address: "3450 W. 6th St", source_url: "https://holyroly.com/", read: "2026-11-25" }).shop.state, "CA");
+});
