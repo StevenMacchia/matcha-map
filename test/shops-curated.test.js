@@ -123,3 +123,10 @@ test("a full state name, a name-led address and a missing city suffix are repair
   assert.ok(checkRow({ ...base, state: "Narnia" }).held);
   assert.equal(checkRow({ ...base, address: "123 Main St, Suite 4" }).shop.address, "123 Main St, Suite 4");
 });
+
+test("a row with no city field takes it from its own address line when the state matches", () => {
+  const row = { name: "Blank Street Coffee", state: "NY", source_url: "https://blankstreet.com/", read: "2026-11-24" };
+  assert.equal(checkRow({ ...row, address: "63 Spring Street, New York, NY, 10012" }).shop.city, "New York");
+  assert.equal(checkRow({ ...row, address: "63 Spring Street, Boston, MA, 02116" }).held, "no city");
+  assert.equal(checkRow({ ...row, address: "3010 NJ-27" }).held, "no city");
+});

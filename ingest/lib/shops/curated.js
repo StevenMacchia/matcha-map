@@ -47,7 +47,9 @@ export function checkRow(r, file = "") {
   // so a good row is not held for them. A city the provider did not have falls back to the listing name's " - City" suffix ("Kyuramen - Cherry Hill").
   const name = str(r?.name), state = stateAbbr(r?.state), source_url = http(r?.source_url);
   const address = str(r?.address)?.replace(/^[^\d,]+,\s*(?=\d)/, "") || null;
-  const city = str(r?.city) || (/ - ([A-Z][A-Za-z.' ]{2,30})$/.exec(name || "") || [])[1] || null;
+  // A second fallback for a row with no city field: the site's own address line, "63 Spring Street, New York, NY, 10012" (city, then the same state).
+  const printed = /^[^,]+,\s*([A-Za-z.' -]{2,30}),\s*([A-Z]{2})\b/.exec(address || "");
+  const city = str(r?.city) || (/ - ([A-Z][A-Za-z.' ]{2,30})$/.exec(name || "") || [])[1] || (printed && stateAbbr(printed[2]) === state ? printed[1].trim() : null) || null;
   if (!name) return { held: "no name" };
   if (!address || !/^\d/.test(address)) return { held: "no street address" };
   if (!city) return { held: "no city" };
