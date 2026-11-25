@@ -1,12 +1,12 @@
 {
  "about": "Last weekly liveness run (npm run shops:liveness); flagged rows are also in data/shops-overrides.json with status check or closed.",
- "date": "2026-11-24",
- "rows": 1269,
- "withSite": 1231,
- "siteRead": 1220,
+ "date": "2026-11-25",
+ "rows": 3867,
+ "withSite": 3829,
+ "siteRead": 3818,
  "siteUnreadable": 11,
- "bios": 17,
- "check": 8,
+ "bios": 45,
+ "check": 11,
  "closed": 0,
  "cleared": 0,
  "flagged": [
@@ -19,24 +19,8 @@
    "why": "own site's domain does not resolve"
   },
   {
-   "name": "TAIYO MATCHA",
-   "city": "Jacksonville",
-   "state": "FL",
-   "tier": "shop",
-   "verdict": "check",
-   "why": "own site returns 404"
-  },
-  {
    "name": "Sip Matcha",
    "city": "Rowland Heights",
-   "state": "CA",
-   "tier": "shop",
-   "verdict": "check",
-   "why": "own site's domain does not resolve"
-  },
-  {
-   "name": "Amausaan Uji Matcha",
-   "city": "Union City",
    "state": "CA",
    "tier": "shop",
    "verdict": "check",
@@ -51,6 +35,30 @@
    "why": "own site's domain does not resolve"
   },
   {
+   "name": "Kale Me Crazy",
+   "city": "Atlanta",
+   "state": "GA",
+   "tier": "serves",
+   "verdict": "check",
+   "why": "own site returns 404"
+  },
+  {
+   "name": "Kale Me Crazy",
+   "city": "Marietta",
+   "state": "GA",
+   "tier": "serves",
+   "verdict": "check",
+   "why": "own site returns 404"
+  },
+  {
+   "name": "Kale Me Crazy",
+   "city": "Ridgeland",
+   "state": "MS",
+   "tier": "serves",
+   "verdict": "check",
+   "why": "own site returns 404"
+  },
+  {
    "name": "Matcha Boba House",
    "city": "Ashland",
    "state": "OR",
@@ -59,18 +67,10 @@
    "why": "own site's domain does not resolve"
   },
   {
-   "name": "Amausaan Uji Matcha",
-   "city": "Newark",
-   "state": "CA",
-   "tier": "shop",
-   "verdict": "check",
-   "why": "own site's domain does not resolve"
-  },
-  {
-   "name": "Amausaan Uji Matcha",
-   "city": "Daly City",
-   "state": "CA",
-   "tier": "shop",
+   "name": "Sweet Palm – Breakfast Burritos, Wraps & Coffee",
+   "city": "Charleston",
+   "state": "SC",
+   "tier": "serves",
    "verdict": "check",
    "why": "own site's domain does not resolve"
   }

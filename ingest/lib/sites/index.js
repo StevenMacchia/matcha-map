@@ -123,4 +123,8 @@ import * as yelpEvents from "./yelp-events.js";
 const N2 = [reddit, mastodon, gnews, ticketmaster, eventbriteApi, yelpEvents];
 SITES.push(...N2);
 NAMES.push(...N2.map((s) => s.name));
-export const REVIEW_ONLY = new Set(["reddit", "mastodon", "gnews", "yelpevents", "roundups"]);
+// Third Population window: a pop-up brand's own website, read for an "Upcoming Events" block (the Saikō shape). Items belong to the real source.
+import * as ownsites from "./ownsites.js";
+SITES.push(ownsites);
+NAMES.push(ownsites.name);
+export const REVIEW_ONLY = new Set(["reddit", "mastodon", "gnews", "yelpevents", "roundups", "ownsites"]);

@@ -45,10 +45,11 @@ function matchaItems(list) {
 export function checkRow(r, file = "") {
   // A site prints "Arizona" for AZ, and an address can lead with the shop's own name ("Mad Coffee & More, 8049 US Highway 83"): both are repaired here
   // so a good row is not held for them. A city the provider did not have falls back to the listing name's " - City" suffix ("Kyuramen - Cherry Hill").
-  const name = str(r?.name), state = stateAbbr(r?.state), source_url = http(r?.source_url);
+  // A state field that carries a whole address tail ("STE 109A, LOS ANGELES, CA") still ends in the two letters.
+  const name = str(r?.name), state = stateAbbr(r?.state) || stateAbbr((/,\s*([A-Za-z]{2})\s*$/.exec(String(r?.state || "")) || [])[1]), source_url = http(r?.source_url);
   const address = str(r?.address)?.replace(/^[^\d,]+,\s*(?=\d)/, "") || null;
   // A second fallback for a row with no city field: the site's own address line, "63 Spring Street, New York, NY, 10012" (city, then the same state).
-  const printed = /^[^,]+,\s*([A-Za-z.' -]{2,30}),\s*([A-Z]{2})\b/.exec(address || "");
+  const printed = /,\s*([A-Za-z.' -]{2,30}),\s*([A-Z]{2})(?:,\s*\d{5}(?:-\d{4})?)?\s*$/.exec(address || "");
   const city = str(r?.city) || (/ - ([A-Z][A-Za-z.' ]{2,30})$/.exec(name || "") || [])[1] || (printed && stateAbbr(printed[2]) === state ? printed[1].trim() : null) || null;
   if (!name) return { held: "no name" };
   if (!address || !/^\d/.test(address)) return { held: "no street address" };

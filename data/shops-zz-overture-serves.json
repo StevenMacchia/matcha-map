@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T22:08:04.039Z",
+ "generated": "2026-11-25T22:50:46.979Z",
  "group": "overture-serves",
  "release": "2026-11-18.0",
  "shops": [
@@ -224259,6 +224259,1050 @@
      "dataset": "Overture-signals",
      "license": "CDLA-Permissive-2.0",
      "record_id": "f014165e-1464-446c-9730-6aa226705d04"
+    }
+   ]
+  },
+  {
+   "name": "Viola's Ice Cream Social",
+   "address": "3464 Avalon Park E Blvd suite 104",
+   "city": "Orlando",
+   "state": "FL",
+   "zip": "32828",
+   "website": "https://www.violasicecreamsocial.com/advent-calendar/p/ice-cream-advent-calendar",
+   "instagram": "violasicecreamsocial",
+   "phone": "4072334702",
+   "opening_hours": "Mo 11:00-21:00, Tu 11:00-21:00, We 11:00-21:00, Th 11:00-21:00, Fr 11:00-22:00, Sa 11:00-22:00, Su 13:00-21:00",
+   "menu_url": "https://www.violasicecreamsocial.com/menu",
+   "image_url": "http://static1.squarespace.com/static/68dddd501eb855393b63547c/t/68efd2249a63ac49151f9791/1760547364188/social-sharing-01.png?format=1500w",
+   "image_credit": "Photo: Viola's Ice Cream Social website",
+   "source_url": "https://www.violasicecreamsocial.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "MATCHA, TEA & HOT CHOCOLATE",
+     "price": null
+    },
+    {
+     "name": "Ube Dream Matcha Latte (NEW)",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "☕ COFFEE & MATCHA",
+     "price": null
+    }
+   ],
+   "overture_id": "2b7928fe-d198-4e57-8e24-d75cb4ec8233",
+   "lat": 28.514179,
+   "lng": -81.154587,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "793485057181548"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "02312239-a412-4e75-b760-4bbd591833be"
+    }
+   ]
+  },
+  {
+   "name": "Sugar Coated Bakery",
+   "address": "2803 Evans St Ste 100",
+   "city": "Greenville",
+   "state": "NC",
+   "zip": "27834",
+   "website": "https://www.sugarcoatedbakerync.com/",
+   "instagram": null,
+   "phone": "+12527516437",
+   "opening_hours": null,
+   "menu_url": "https://www.sugarcoatedbakerync.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.sugarcoatedbakerync.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Berry Matcha",
+     "price": null
+    },
+    {
+     "name": "Grinch Matcha Frappe",
+     "price": null
+    },
+    {
+     "name": "Honeycomb Matcha",
+     "price": null
+    },
+    {
+     "name": "Marshmallow Moonwalk Matcha",
+     "price": null
+    },
+    {
+     "name": "Plain Matcha",
+     "price": null
+    },
+    {
+     "name": "Plain Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Pumpkin Cream Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Fields Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "564787dd-a8c4-4546-b835-7cb06db1cdc1",
+   "lat": 35.584074,
+   "lng": -77.379539,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "116172698229937"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "367b5212-9400-489c-9a17-7624cea7dc97"
+    }
+   ]
+  },
+  {
+   "name": "Japanese Sweets",
+   "address": "648 Market St",
+   "city": "San Francisco",
+   "state": "CA",
+   "zip": "94104-5001",
+   "website": "http://www.kitchoan.com",
+   "instagram": "k.minamoto_usa",
+   "phone": "16464550457",
+   "opening_hours": null,
+   "menu_url": "http://www.kitchoan.com/",
+   "image_url": "https://www.kitchoan.com/wp-content/uploads/2020/05/tsuya_R.jpg",
+   "image_credit": "Photo: Japanese Sweets website",
+   "source_url": "http://www.kitchoan.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha items",
+     "price": null
+    },
+    {
+     "name": "MATCHA WARABI MOCHI",
+     "price": null
+    },
+    {
+     "name": "MATCHA CHEESE BOUCHEE(MANMARI)",
+     "price": null
+    },
+    {
+     "name": "MATCHA MOCHI",
+     "price": null
+    },
+    {
+     "name": "AYASHIRABE MATCHA",
+     "price": null
+    }
+   ],
+   "overture_id": "d3574f30-e0ba-4b30-a25a-0b7be5a589aa",
+   "lat": 37.788588,
+   "lng": -122.40255,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "255171417917644"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ]
+  },
+  {
+   "name": "Devia Juice Bar At Midtown Shops",
+   "address": "3401 N Miami Ave",
+   "city": "Miami",
+   "state": "FL",
+   "zip": "33127",
+   "website": "http://www.deviajuicebar.com",
+   "instagram": "deviajuicebar",
+   "phone": "+13474454682",
+   "opening_hours": "Mo-Su 10:00-19:00",
+   "menu_url": "http://www.deviajuicebar.com/menu",
+   "image_url": "http://static1.squarespace.com/static/67807c361940b66ad4def912/t/681e087f10fe7271fec2301e/1746798719157/devia-gallery-02-1024x683.jpg?format=1500w",
+   "image_credit": "Photo: Devia Juice Bar At Midtown Shops website",
+   "source_url": "http://www.deviajuicebar.com/locations",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "652b5a6f-2f7f-40c6-a970-fec7d6f42c7f",
+   "lat": 25.809526,
+   "lng": -80.194302,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "89705556"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "a6b9b9d0-b3fc-42f9-a59a-4ea5e1e8294d"
+    }
+   ]
+  },
+  {
+   "name": "Sweet Rabbit",
+   "address": "401 University Ave  # C",
+   "city": "San Diego",
+   "state": "CA",
+   "zip": "92103-3115",
+   "website": "https://www.sweet-rabbit.com",
+   "instagram": null,
+   "phone": "+16193268121",
+   "opening_hours": null,
+   "menu_url": "https://www.sweet-rabbit.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.sweet-rabbit.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Blackberry Cake Large",
+     "price": null
+    },
+    {
+     "name": "Matcha Strawberry Croissant",
+     "price": null
+    },
+    {
+     "name": "Matcha Twinkie",
+     "price": null
+    }
+   ],
+   "overture_id": "3d953af4-6f8f-4e3e-b826-33e099919392",
+   "lat": 32.748098,
+   "lng": -117.16127,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103206537"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "34b2644c-90d6-4938-bc19-fe721e402051"
+    }
+   ]
+  },
+  {
+   "name": "Mochinut",
+   "address": "510 Hidden Valley Pkwy  Ste 103",
+   "city": "Corona",
+   "state": "CA",
+   "zip": "92879-8618",
+   "website": "https://www.mochinut.com",
+   "instagram": null,
+   "phone": "+19514757029",
+   "opening_hours": null,
+   "menu_url": "https://www.mochinut.com/menu",
+   "image_url": "https://static.wixstatic.com/media/451416_72390ac8313c490e9aca7db513ddc2c3%7Emv2.png/v1/fit/w_2500,h_1330,al_c/451416_72390ac8313c490e9aca7db513ddc2c3%7Emv2.png",
+   "image_credit": "Photo: Mochinut website",
+   "source_url": "https://www.mochinut.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Organic Japanese Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Oreo",
+     "price": null
+    },
+    {
+     "name": "Japanese Matcha Einspanner",
+     "price": null
+    },
+    {
+     "name": "Ube Matcha Einspänner",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Einspanner",
+     "price": null
+    },
+    {
+     "name": "Classic Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Creme Brulee Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "59981e2a-609e-48c3-9552-bd4eab07080c",
+   "lat": 33.899214,
+   "lng": -117.556313,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "87287976"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "f9031c9c-c81f-4b87-b0a2-9b74ca82f964"
+    }
+   ]
+  },
+  {
+   "name": "Juice Hub",
+   "address": "252 North Ave",
+   "city": "Garwood",
+   "state": "NJ",
+   "zip": "07027-1119",
+   "website": "http://juicehubnj.com",
+   "instagram": "juice_hub",
+   "phone": "+17327848265",
+   "opening_hours": "Mo-Fr 08:00-18:00; Sa 09:00-18:00; Su 09:00-15:00",
+   "menu_url": "http://juicehubnj.com/",
+   "image_url": "https://juicehubnj.com/wp-content/plugins/juicehub-site/site/img/bowls-outside.jpg",
+   "image_credit": "Photo: Juice Hub website",
+   "source_url": "http://juicehubnj.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Madness",
+     "price": null
+    },
+    {
+     "name": "Fresh-squeezed juice, pineapple, kale, matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "e62ca9a2-53d0-42a0-8312-2bc757f15fa7",
+   "lat": 40.654074,
+   "lng": -74.322361,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "101442815"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "40ca4aef-506c-44dc-8848-55b60253cd66"
+    }
+   ]
+  },
+  {
+   "name": "Juice Eternity",
+   "address": "125 Westchester Ave  Ste Fs02b",
+   "city": "White Plains",
+   "state": "NY",
+   "zip": "10601-4522",
+   "website": "https://juiceeternity.com",
+   "instagram": "juiceeternity",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": "https://juiceeternity.com/",
+   "image_url": "http://www.juiceeternity.com/cdn/shop/files/logo-juice-eternity-black-final.png?v=1719337814",
+   "image_credit": "Photo: Juice Eternity website",
+   "source_url": "https://juiceeternity.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Vanilla Glow",
+     "price": null
+    },
+    {
+     "name": "Matcha Strawberry Bowl",
+     "price": null
+    },
+    {
+     "name": "Matcha Drinks",
+     "price": null
+    },
+    {
+     "name": "Lavender Bloom Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha & Acai",
+     "price": null
+    }
+   ],
+   "overture_id": "c7d8e253-f174-4a29-9b7d-11e1f6665a76",
+   "lat": 41.031471,
+   "lng": -73.75919,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100226768"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "18b9172e-eac3-405f-9964-227e779561f3"
+    }
+   ]
+  },
+  {
+   "name": "Bianco Gelato Tampa",
+   "address": "2398 Cypress Cv",
+   "city": "Wesley Chapel",
+   "state": "FL",
+   "zip": "33544-6468",
+   "website": "http://biancogelato.com/",
+   "instagram": "biancogelato_",
+   "phone": "+13059645550",
+   "opening_hours": null,
+   "menu_url": "http://biancogelato.com/menu",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://biancogelato.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "matcha latte hot/iced",
+     "price": null
+    },
+    {
+     "name": "Matcha Speciality",
+     "price": null
+    },
+    {
+     "name": "Matcha Vanilla Shake",
+     "price": null
+    },
+    {
+     "name": "Matcha Coconut Shake",
+     "price": null
+    },
+    {
+     "name": "Frothy Rose Matcha (Warm)",
+     "price": null
+    },
+    {
+     "name": "Matcha Powerhouse Smoothie",
+     "price": null
+    }
+   ],
+   "overture_id": "7097692e-4293-407e-b5fa-99fc387c4070",
+   "lat": 28.190668,
+   "lng": -82.372055,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "111793287620787"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "9185d4c3-cbdd-48a2-8879-59b855f932d3"
+    }
+   ]
+  },
+  {
+   "name": "Hula Bowls Webster",
+   "address": "234 W Lockwood Ave",
+   "city": "Webster Groves",
+   "state": "MO",
+   "zip": "63119",
+   "website": "http://hulabowlswebster.com/",
+   "instagram": null,
+   "phone": "+13146002503",
+   "opening_hours": null,
+   "menu_url": "http://hulabowlswebster.com/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "http://hulabowlswebster.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Brown Sugar Cinnamon Matcha",
+     "price": null
+    },
+    {
+     "name": "Lavender Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Lemonade",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Vanilla Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "3ed49e55-5703-4396-8e9c-ebdd8cd8b9e6",
+   "lat": 38.593124,
+   "lng": -90.362511,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "870713629462523"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "761d6f09-25b7-483f-8db9-7b7d3e610f3e"
+    }
+   ]
+  },
+  {
+   "name": "Honeymee",
+   "address": "2502 E Camelback Rd",
+   "city": "Phoenix",
+   "state": "AZ",
+   "zip": "85016-4225",
+   "website": "https://www.honeymee.com",
+   "instagram": null,
+   "phone": "+19515671311",
+   "opening_hours": null,
+   "menu_url": "https://www.honeymee.com/menu",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.honeymee.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Darling",
+     "price": null
+    },
+    {
+     "name": "Ceremonial Matcha True Milk Ice Cream",
+     "price": null
+    },
+    {
+     "name": "Matcha Honeymee",
+     "price": null
+    },
+    {
+     "name": "Matcha Sweetie",
+     "price": null
+    },
+    {
+     "name": "Matcha Affogato",
+     "price": null
+    },
+    {
+     "name": "Matcha Milkshake",
+     "price": null
+    },
+    {
+     "name": "Iced Honey Matcha Concentrate with Milk",
+     "price": null
+    },
+    {
+     "name": "Hot Honey Matcha",
+     "price": null
+    },
+    {
+     "name": "Hot Honey Matcha Concentrate with Water",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Cheese Cream Honey Tea",
+     "price": null
+    }
+   ],
+   "overture_id": "40f52650-c21c-4592-9597-fbca45abed4e",
+   "lat": 33.510702,
+   "lng": -112.028458,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "386620825482588"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ]
+  },
+  {
+   "name": "Terra Cafè Specialty Coffee",
+   "address": "2679 S Woodland Blvd",
+   "city": "DeLand",
+   "state": "FL",
+   "zip": "32720",
+   "website": "http://terracafeco.com/",
+   "instagram": null,
+   "phone": "+1-386-624-7043",
+   "opening_hours": "Mo-Th 08:30-16:30; Fr,Sa 08:30-18:00",
+   "menu_url": "http://terracafeco.com/menu",
+   "image_url": "https://terracafeco.com/img/9f467b30b5cc.jpg",
+   "image_credit": "Photo: Terra Cafè Specialty Coffee website",
+   "source_url": "http://terracafeco.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha & More",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": "$5.50"
+    },
+    {
+     "name": "Mango Iced Matcha",
+     "price": "$6.80"
+    }
+   ],
+   "overture_id": "1da081d5-174a-4497-9171-cf40a2c1ee3c",
+   "lat": 28.980761,
+   "lng": -81.29673,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "104716879394202"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "4f5e7810-a8ab-4feb-a4c1-f3dd1af3f53f"
+    }
+   ]
+  },
+  {
+   "name": "L'ami Bakery & Cafe",
+   "address": "485 Great Neck Rd",
+   "city": "Great Neck",
+   "state": "NY",
+   "zip": "11021",
+   "website": "http://www.lamibakerycafe.com/",
+   "instagram": null,
+   "phone": "+15165138030",
+   "opening_hours": null,
+   "menu_url": "http://www.lamibakerycafe.com/menu",
+   "image_url": "http://static1.squarespace.com/static/67b731f14c6a54390dd8cb66/t/67b8f4323eac1e0c87a0de50/1740174386127/LOGO_2.png?format=1500w",
+   "image_credit": "Photo: L'ami Bakery & Cafe website",
+   "source_url": "http://www.lamibakerycafe.com/locations",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Einspanner",
+     "price": null
+    },
+    {
+     "name": "Vanilla / Mocha / Caramel / Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Jeju Tangerine Matcha Ade",
+     "price": null
+    }
+   ],
+   "overture_id": "a1250980-0c1a-4c39-ae4c-aa6e943237b9",
+   "lat": 40.775465,
+   "lng": -73.732761,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "105482104546703"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "6878f5e3-eb27-4b25-a3e8-fe76aeea5f68"
+    }
+   ]
+  },
+  {
+   "name": "Rush Bowls Lafayette",
+   "address": "400 W South Boulder Rd Ste 1200",
+   "city": "Lafayette",
+   "state": "CO",
+   "zip": "80026",
+   "website": "https://rushbowls.com/lafayette",
+   "instagram": "rushbowls",
+   "phone": "303-546-9666",
+   "opening_hours": null,
+   "menu_url": "https://rushbowls.com/menu",
+   "image_url": "https://rushbowls.com/oak/files/images/smoothie-bowls-dark.jpg",
+   "image_credit": "Photo: Rush Bowls Lafayette website",
+   "source_url": "https://rushbowls.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Lattes",
+     "price": null
+    },
+    {
+     "name": "View All Matcha Lattes",
+     "price": null
+    },
+    {
+     "name": "Original Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "All Matcha Lattes",
+     "price": null
+    },
+    {
+     "name": "Original Matcha Latte Details",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte Details",
+     "price": null
+    }
+   ],
+   "overture_id": "f3e73b3a-ed77-44ec-b770-9d16fe162437",
+   "lat": 39.985624,
+   "lng": -105.095093,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "1114421075080353"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ]
+  },
+  {
+   "name": "Morning Star Bakery and Cafe",
+   "address": "1070 Ghent Rd",
+   "city": "Akron",
+   "state": "OH",
+   "zip": "44333",
+   "website": "https://www.morningstarbakerycafe.com/",
+   "instagram": "morningstarbakerycafe",
+   "phone": "+13306660660",
+   "opening_hours": null,
+   "menu_url": "https://www.morningstarbakerycafe.com/menu",
+   "image_url": "https://images.getbento.com/accounts/689b6ef81a209f374ff381a8cf18bfd1/media/images/71165MorningStar_BakeryCafe_Logo_White.png?w=1200&fit=fill&auto=compress,format&cs=origin&h=600&bg=fff&pad=100",
+   "image_credit": "Photo: Morning Star Bakery and Cafe website",
+   "source_url": "https://www.morningstarbakerycafe.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Coffee, Tea, Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Uji Genmaimatcha",
+     "price": null
+    }
+   ],
+   "overture_id": "bea7aa1b-cc65-4778-8d21-323ada7dc337",
+   "lat": 41.153101,
+   "lng": -81.633907,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "952918307905521"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    }
+   ]
+  },
+  {
+   "name": "Acai Joint Arcadia",
+   "address": "733 W Naomi Ave",
+   "city": "Arcadia",
+   "state": "CA",
+   "zip": "91007",
+   "website": "http://www.acaijoint.com/",
+   "instagram": null,
+   "phone": "+16263488379",
+   "opening_hours": null,
+   "menu_url": "http://www.acaijoint.com/",
+   "image_url": "https://www.acaijoint.com/uploads/b/c5778350-745f-11ea-9900-4fc5eb617ad8/Acai%20Bowls%20with%20Fruits%20and%20Superfoods_OTk0MT.png",
+   "image_credit": "Photo: Acai Joint Arcadia website",
+   "source_url": "http://www.acaijoint.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Dream Date",
+     "price": null
+    },
+    {
+     "name": "Matcha Dream Date Bp",
+     "price": null
+    },
+    {
+     "name": "Matcha Dream Date Rm",
+     "price": null
+    }
+   ],
+   "overture_id": "7b422b99-f642-4e28-897d-a3e1f8bbb336",
+   "lat": 34.124891,
+   "lng": -118.056602,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "837390592784412"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "b9a6d4a9-132b-4624-a0a2-fafef48be76d"
+    }
+   ]
+  },
+  {
+   "name": "Paris Baguette Warehouse",
+   "address": "3660 Thomas Rd",
+   "city": "Santa Clara",
+   "state": "CA",
+   "zip": "95054-2058",
+   "website": "https://www.parisbaguette.com",
+   "instagram": "parisbaguette_usa",
+   "phone": null,
+   "opening_hours": null,
+   "menu_url": "https://www.parisbaguette.com/menu",
+   "image_url": "https://parisbaguette.com/wp-content/uploads/2024/04/icon-catering.svg",
+   "image_credit": "Photo: Paris Baguette Warehouse website",
+   "source_url": "https://www.parisbaguette.com/",
+   "read": "2026-11-25",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Mirrorball Iced Croissant Latte & Matcha",
+     "price": null
+    },
+    {
+     "name": "Mirrorball Iced Croissant Matcha",
+     "price": null
+    },
+    {
+     "name": "Order Now for Mirrorball Iced Croissant Matcha",
+     "price": null
+    },
+    {
+     "name": "Details for Mirrorball Iced Croissant Matcha",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Cake",
+     "price": null
+    },
+    {
+     "name": "Order Now for Strawberry Matcha Cake",
+     "price": null
+    },
+    {
+     "name": "Details for Strawberry Matcha Cake",
+     "price": null
+    },
+    {
+     "name": "Iced Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Order Now for Iced Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Details for Iced Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Order Now for Iced Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "84d151db-5254-4bd2-94d9-e0f75bca8a97",
+   "lat": 37.385279,
+   "lng": -121.96109,
+   "overture_sources": [
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100841334"
+    },
+    {
+     "dataset": "BrightQuery",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "100841334"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
     }
    ]
   }

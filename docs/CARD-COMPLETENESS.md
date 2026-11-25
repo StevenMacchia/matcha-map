@@ -322,3 +322,15 @@ Chunks 2 and 3 of the national cafe-menu loop and the whole-North-Carolina pass 
 | serves (matcha on the menu) | 1375 | 100% | 96% | 39% | 100% | 70% | 83% | 3% |
 | shop (core) | 276 | 86% | 60% | 47% | 46% | 50% | 61% | 1% |
 | **All** | 1651 | 98% | 90% | 41% | 91% | 67% | 79% | 2% |
+
+## Reading 4, end of the third window (2026-11-25, 3,885 rows)
+
+The whole national cafe-menu loop is merged (cursor 153,911 of 153,911) plus the 37 PDF-menu rows. Hours were read again from every own site still blank after the first pass (`npm run shops:fill -- --sites --blank-hours`, 2,705 sites): +10 hours only, because 574 of those sites answer our reader with HTTP 429 every time (we do not retry around a rate limit) and about 2,100 were read and print no plain-text hours (image, embed or script widgets). `shops-extra.json` entries now carry `fill_status` ("read" or "unreadable") so a later pass can re-read only the unreadable ones.
+
+| Tier | Rows | Website | Phone | Hours | Menu link | Image | Instagram | Note |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| serves (matcha on the menu) | 3609 | 100% | 91% | 29% | 100% | 68% | 71% | 1% |
+| shop (core) | 276 | 86% | 60% | 47% | 46% | 52% | 61% | 1% |
+| **All** | 3885 | 99% | 89% | 30% | 96% | 67% | 70% | 1% |
+
+Hours is the blank that matters (30% overall, 29% on serves rows); the two ways up are Google/Instagram hours that cannot be read without a key and a plain-text hours reader for the 574 rate-limited hosts after the limit eases.
