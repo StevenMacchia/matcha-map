@@ -1,0 +1,40 @@
+{
+  "generated": "2026-11-25T23:36:42.392Z",
+  "group": "events-triage",
+  "items": [
+    {
+      "brand": "Phin Coffee",
+      "handle": null,
+      "source_id": null,
+      "title": "Phin Coffee at the lululemon Holiday Shop Party, Red Cliffs Mall",
+      "start": "2026-12-11T14:00:00-07:00",
+      "end": "2026-12-11T19:00:00-07:00",
+      "all_day": false,
+      "tz": "America/Denver",
+      "venue": "lululemon Red Cliffs Mall",
+      "address": "446 N 1680 E, St. George, UT 84790",
+      "city": "St. George",
+      "state": "UT",
+      "lat": null,
+      "lng": null,
+      "source_url": "https://www.eventbrite.com/e/holiday-shop-party-tickets-2005064373516",
+      "posts": [
+        "https://www.eventbrite.com/e/holiday-shop-party-tickets-2005064373516"
+      ],
+      "evidence": [
+        "https://www.eventbrite.com/e/holiday-shop-party-tickets-2005064373516"
+      ],
+      "menu": [
+        "specialty coffee",
+        "matcha"
+      ],
+      "price": null,
+      "hours": "2-7pm",
+      "pay": null,
+      "image_url": null,
+      "description": "Free specialty coffee or matcha from Phin Coffee while supplies last at lululemon's holiday shop party, with color analysis for the first 40 guests.",
+      "confidence": "confirmed",
+      "notes": "Date, time and street address are on the Eventbrite page (read 2026-11-25); the organizer is lululemon Red Cliffs Mall and Phin Coffee is the headliner pouring the matcha."
+    }
+  ]
+}

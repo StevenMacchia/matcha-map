@@ -114,7 +114,9 @@ const mer = (s) => (s ? (s[0].toLowerCase() === "a" ? "am" : "pm") : null);
 
 // Find a time (range or single) in a short segment. Returns {start,end,untilSoldOut} or null.
 export function findTime(raw) {
-  const text = raw.replace(/\bnoon\b/gi, "12pm").replace(/\bmidnight\b/gi, "12am");
+  // "630am" is 6:30am, "1030pm" is 10:30pm (a compact time, 3 or 4 digits); without this "630am-Midnight" read only "12am" and the event started at local midnight.
+  const text = raw.replace(/\bnoon\b/gi, "12pm").replace(/\bmidnight\b/gi, "12am")
+    .replace(/(?<![\d/:.])(\d{1,2})(\d{2})\s*(am|pm|a\.m\.|p\.m\.)/gi, (m, h, mi, ap) => (+h >= 1 && +h <= 12 && +mi < 60 ? `${h}:${mi}${ap}` : m));
   const soldOut = /(until|till|til)\s+(we\s+)?(sold\s*out|sell\s*out)|while\s+supplies\s+last|sold\s*out/i.test(text);
   const range = new RegExp(`(?<![\\d/:])(\\d{1,2})(?::(\\d{2}))?\\s*${MER}?\\s*(?:-|\\u2013|\\u2014|to|until|till|til)\\s*(\\d{1,2})(?::(\\d{2}))?\\s*${MER}`, "i").exec(text);
   if (range) {

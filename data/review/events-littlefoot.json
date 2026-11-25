@@ -1,0 +1,132 @@
+{
+  "generated": "2026-11-25T23:33:28.542Z",
+  "group": "events-littlefoot",
+  "items": [
+    {
+      "brand": "Littlefoot Matcha",
+      "handle": null,
+      "source_id": "littlefoot-matcha",
+      "tz": "America/New_York",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "source_url": "https://littlefootmatcha.com/pages/find-us",
+      "posts": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "evidence": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "menu": [],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "title": "Littlefoot Matcha at Small Business Saturday, North Hills",
+      "start": "2026-11-28T10:00:00-05:00",
+      "end": "2026-11-28T14:00:00-05:00",
+      "venue": "North Hills",
+      "address": "540 St Albans Dr, Raleigh, NC",
+      "city": "Raleigh",
+      "state": "NC",
+      "hours": "10am-2pm",
+      "description": "Small Business Saturday pop-up at North Hills in Raleigh.",
+      "confidence": "confirmed",
+      "notes": "Date, time and street address are printed under Upcoming popups on littlefootmatcha.com/pages/find-us (read 2026-11-25)."
+    },
+    {
+      "brand": "Littlefoot Matcha",
+      "handle": null,
+      "source_id": "littlefoot-matcha",
+      "tz": "America/New_York",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "source_url": "https://littlefootmatcha.com/pages/find-us",
+      "posts": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "evidence": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "menu": [],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "title": "Littlefoot Matcha study hall at the UNCG Alumni Center",
+      "start": "2026-12-03T16:00:00-05:00",
+      "end": "2026-12-03T19:00:00-05:00",
+      "venue": "UNCG Alumni Center",
+      "address": "1400 Spring Garden St, Greensboro, NC 27412",
+      "city": "Greensboro",
+      "state": "NC",
+      "hours": "4-7pm",
+      "description": "Study hall with free matcha at the alumni center. The page says UNCG students only.",
+      "confidence": "likely",
+      "notes": "Date, time and venue are on littlefootmatcha.com/pages/find-us (read 2026-11-25): 'free matcha @ the alumni center', 'uncg students only'. The page prints no street address; UNCG's alumni house is at 1400 Spring Garden St per alumni.uncg.edu."
+    },
+    {
+      "brand": "Littlefoot Matcha",
+      "handle": null,
+      "source_id": "littlefoot-matcha",
+      "tz": "America/New_York",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "source_url": "https://littlefootmatcha.com/pages/find-us",
+      "posts": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "evidence": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "menu": [
+        "matcha flights"
+      ],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "title": "Littlefoot Matcha at the Shop Local Market, SouthPark Mall",
+      "start": "2026-12-12T11:00:00-05:00",
+      "end": "2026-12-12T16:00:00-05:00",
+      "venue": "SouthPark Mall",
+      "address": "5622 Carnegie Blvd, Charlotte, NC 28209",
+      "city": "Charlotte",
+      "state": "NC",
+      "hours": "11-4pm",
+      "description": "Shop Local Market at SouthPark Mall with matcha flights available.",
+      "confidence": "confirmed",
+      "notes": "Date, time and street address are printed under Upcoming popups on littlefootmatcha.com/pages/find-us (read 2026-11-25)."
+    },
+    {
+      "brand": "Littlefoot Matcha",
+      "handle": null,
+      "source_id": "littlefoot-matcha",
+      "tz": "America/New_York",
+      "all_day": false,
+      "lat": null,
+      "lng": null,
+      "source_url": "https://littlefootmatcha.com/pages/find-us",
+      "posts": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "evidence": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "menu": [],
+      "price": null,
+      "pay": null,
+      "image_url": null,
+      "title": "Littlefoot Matcha: Matcha & Make at The Dollhouse by Busy Vintage",
+      "start": "2026-12-13T11:00:00-05:00",
+      "end": "2026-12-13T13:00:00-05:00",
+      "venue": "The Dollhouse by Busy Vintage",
+      "address": "",
+      "city": "Garner",
+      "state": "NC",
+      "hours": "11-1pm",
+      "description": "Matcha & Make in Garner. The page asks for an RSVP to get the address.",
+      "confidence": "likely",
+      "notes": "Date, time and venue are on littlefootmatcha.com/pages/find-us (read 2026-11-25); the street address is given on RSVP only."
+    }
+  ]
+}
