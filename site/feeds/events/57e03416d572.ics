@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Grounded: Plant Shop\, Cafe\, & Wellness Studio pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:57e03416d572@matchamap-cu7.pages.dev
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T180004Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:The Matcha Ritual: From Kyoto to Cup
+LOCATION:Washington\, DC
+DESCRIPTION:Join us for an immersive\, 90-minute matcha workshop where trad
+ ition and mindful living come together.\nDetails not confirmed yet. Check 
+ the brand's post before you go.\nMore: https://matchamap.app/e/57e03416d57
+ 2/
+URL:https://matchamap.app/e/57e03416d572/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

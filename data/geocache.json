@@ -1398,6 +1398,11 @@
     "lng": -117.779059,
     "source": "nominatim"
   },
+  "1548 ne 15th ave portland or": {
+    "lat": 45.53408,
+    "lng": -122.650233,
+    "source": "nominatim"
+  },
   "15482 s we ave 109 gardena ca 90249": {
     "miss": true,
     "at": 1795486058116
@@ -2178,6 +2183,11 @@
     "lng": -79.923012,
     "source": "nominatim"
   },
+  "2000 south lincoln avenue urbana il": {
+    "lat": 40.092796,
+    "lng": -88.217943,
+    "source": "nominatim"
+  },
   "2000 south lincoln avenue urbana il 61802": {
     "lat": 40.092796,
     "lng": -88.217943,
@@ -2294,6 +2304,11 @@
   "201 w calaveras blvd milpitas ca 95035": {
     "lat": 37.428807,
     "lng": -121.911173,
+    "source": "nominatim"
+  },
+  "2010 terry avenue seattle wa 98121": {
+    "lat": 47.617417,
+    "lng": -122.334901,
     "source": "nominatim"
   },
   "202 n 9th st philadelphia pa 19107": {
@@ -5298,6 +5313,11 @@
   "516 2nd st davis ca 95616": {
     "lat": 38.543027,
     "lng": -121.74188,
+    "source": "nominatim"
+  },
+  "518 west 27th street new york ny 10001": {
+    "lat": 40.750452,
+    "lng": -74.003391,
     "source": "nominatim"
   },
   "519 memorial dr atlanta ga": {
@@ -8736,6 +8756,10 @@
     "miss": true,
     "at": 1795400469201
   },
+  "venue: biyahe world seattle wa": {
+    "miss": true,
+    "at": 1795717068213
+  },
   "venue: blue bottle coffee new york ny": {
     "lat": 40.806297,
     "lng": -73.965491,
@@ -8895,6 +8919,10 @@
     "lng": -77.251843,
     "source": "nominatim-venue"
   },
+  "venue: grounded: plant shop washington dc": {
+    "miss": true,
+    "at": 1795717063140
+  },
   "venue: hemisfair park san antonio tx": {
     "miss": true,
     "at": 1795544189219
@@ -8998,6 +9026,11 @@
   "venue: moka & co east lansing mi": {
     "lat": 42.71812,
     "lng": -84.409052,
+    "source": "nominatim-venue"
+  },
+  "venue: moment coffee seattle wa": {
+    "lat": 47.649808,
+    "lng": -122.35001,
     "source": "nominatim-venue"
   },
   "venue: momoko mart @ chinatown atlanta ga": {

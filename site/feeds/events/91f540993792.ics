@@ -8,14 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:91f540993792@matchamap-cu7.pages.dev
-DTSTAMP:20261125T182233Z
-LAST-MODIFIED:20261125T182233Z
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
 DTSTART:20261212T210000Z
 DTEND:20261212T230000Z
 SUMMARY:Matcha & Movement
 LOCATION:12001 Douglas Ave\, Urbandale\, IA
-DESCRIPTION:Likely\, not fully confirmed.\nMore: https://matchamap.app/e/91
- f540993792/
+DESCRIPTION:Matcha & Movement: Mat Pilates with JetSet Pilates Join us at B
+ arista’s Bouquet in Urbandale on December 12th from 3–4 PM as we partn
+ er with JetSet Pilates for a little movement\, a little matcha…\nLikely\
+ , not fully confirmed.\nMore: https://matchamap.app/e/91f540993792/
 URL:https://matchamap.app/e/91f540993792/
 GEO:41.629478;-93.703775
 STATUS:CONFIRMED

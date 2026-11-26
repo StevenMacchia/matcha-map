@@ -7,19 +7,21 @@ X-WR-CALNAME:Matcha Map: St. George\, UT
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:662e0899a35f@matchamap-cu7.pages.dev
-DTSTAMP:20261125T182233Z
-LAST-MODIFIED:20261124T180010Z
-DTSTART;VALUE=DATE:20261211
-DTEND;VALUE=DATE:20261212
-SUMMARY:Holiday Shop Party
-LOCATION:St. George\, UT
-DESCRIPTION:Sip\, shop\, and celebrate the season with us. Enjoy compliment
- ary coffee or matcha and color analysis. More exciting details coming soon
- !\nDetails not confirmed yet. Check the brand's post before you go.\nMore:
-  https://matchamap.app/e/662e0899a35f/
-URL:https://matchamap.app/e/662e0899a35f/
-STATUS:TENTATIVE
+UID:65b5dde7dd74@matchamap-cu7.pages.dev
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
+DTSTART:20261211T210000Z
+DTEND:20261212T020000Z
+SUMMARY:Phin Coffee at the lululemon Holiday Shop Party\, Red Cliffs Mall
+LOCATION:lululemon Red Cliffs Mall\, 446 N 1680 E\, St. George\, UT 84790\,
+  St. George\, UT
+DESCRIPTION:Free specialty coffee or matcha from Phin Coffee while supplies
+  last at lululemon's holiday shop party\, with color analysis for the firs
+ t 40 guests.\nMenu: specialty coffee\, matcha\nPrice: Free\nMore: https://
+ matchamap.app/e/65b5dde7dd74/
+URL:https://matchamap.app/e/65b5dde7dd74/
+GEO:37.110862;-113.546712
+STATUS:CONFIRMED
 CATEGORIES:Matcha
 END:VEVENT
 END:VCALENDAR

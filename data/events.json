@@ -1,64 +1,6 @@
 {
-  "generated": "2026-11-25T23:38:55.354Z",
+  "generated": "2026-11-26T18:19:10.133Z",
   "events": [
-    {
-      "id": "dff2b230da9c",
-      "brand": "Stonemill Matcha",
-      "source_id": "stonemill-matcha",
-      "kind": "cafe",
-      "category": "matcha",
-      "handle": "stonemillmatcha",
-      "source_url": "https://www.instagram.com/reel/DezeyejAtMB/",
-      "title": "Stonemill Matcha pop-up",
-      "start": "2026-10-26T00:00:00-07:00",
-      "end": null,
-      "tz": "America/Los_Angeles",
-      "all_day": true,
-      "venue": "",
-      "address": "",
-      "city": "San Francisco",
-      "state": "CA",
-      "zip": null,
-      "lat": 37.7793,
-      "lng": -122.4193,
-      "geocode_source": "none",
-      "approx": true,
-      "confidence": "unsure",
-      "status": "past",
-      "last_seen": "2026-11-24T03:30:45.515Z",
-      "first_seen": "2026-11-22T23:56:32.160Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.71878-15/863356750_2605142783258625_7156651649161565549_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=8VSnT6fo6AQQ7kNvwFE9mo3&_nc_oc=AdoKdMvsiXw5srHPsOdLB86OMXYjPguttLSkSv8GyAQVqAWHY4VADlggtIJTKX7ERgY&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=38CyY-MMRbH_I7VNyOcR3A&_nc_tpa=Q5bMBQJ6jdMF5e0SVujdkfWQjbkdgqbepd80P3yYJ6CZ2BBv-bXJZd5zy0yP2jJ3ITdEegOL1RLk1_D_hw&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQSv6fIfZaFj0WJuABdOgsb4xhfZ6aIw8HocRIiZ9yqbcw&oe=6B0AE6C2",
-        "local": null,
-        "credit": "@stonemillmatcha",
-        "width": null,
-        "height": null
-      },
-      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.71878-15/863356750_2605142783258625_7156651649161565549_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=8VSnT6fo6AQQ7kNvwFE9mo3&_nc_oc=AdoKdMvsiXw5srHPsOdLB86OMXYjPguttLSkSv8GyAQVqAWHY4VADlggtIJTKX7ERgY&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=38CyY-MMRbH_I7VNyOcR3A&_nc_tpa=Q5bMBQJ6jdMF5e0SVujdkfWQjbkdgqbepd80P3yYJ6CZ2BBv-bXJZd5zy0yP2jJ3ITdEegOL1RLk1_D_hw&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQSv6fIfZaFj0WJuABdOgsb4xhfZ6aIw8HocRIiZ9yqbcw&oe=6B0AE6C2",
-      "posts": {
-        "instagram": "https://www.instagram.com/reel/DezeyejAtMB/",
-        "tiktok": null,
-        "other": null
-      },
-      "menu": [
-        "pumpkin",
-        "hojicha"
-      ],
-      "price": null,
-      "description": "How our October looks like...",
-      "links": {
-        "website": null,
-        "instagram": "https://www.instagram.com/stonemillmatcha/",
-        "tiktok": null
-      },
-      "hours": "until sold out",
-      "pay": null,
-      "evidence": [
-        "https://www.instagram.com/reel/DezeyejAtMB/"
-      ],
-      "series": null
-    },
     {
       "id": "7e60f5db530e",
       "brand": "Nomu",
@@ -2622,7 +2564,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -4081,7 +4023,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -4313,7 +4255,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -8678,7 +8620,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -10136,7 +10078,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -10872,7 +10814,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -15493,15 +15435,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-25T18:00:05.195Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198642313%2F3022224143438%2F1%2Foriginal.20261124-213815?crop=focalpoint&fit=crop&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.517&fp-y=0.175&s=5c5437d87b7bcbfce7b68aa41db434ba",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198642313%2F3022224143438%2F1%2Foriginal.20261124-213815?crop=focalpoint&fit=crop&w=278&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.517&fp-y=0.175&s=cad9113834028b57f22fd2cb50f08d1b",
         "local": "img/events/98c690d47b86.jpg",
         "credit": "eventbrite.com",
-        "width": 352,
-        "height": 437
+        "width": 278,
+        "height": 345
       },
       "image_url": null,
       "posts": {
@@ -16292,7 +16234,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T03:30:45.515Z",
       "first_seen": "2026-11-22T23:56:32.160Z",
       "extracted_by": "rule",
@@ -16347,7 +16289,7 @@
       "geocode_source": "yelp",
       "approx": false,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-23T00:59:42.578Z",
       "first_seen": "2026-11-22T20:31:15.526Z",
       "extracted_by": "rule",
@@ -16463,7 +16405,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -16636,8 +16578,8 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "status": "past",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -16704,7 +16646,7 @@
       "geocode_source": "nominatim-venue",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-25T23:37:45.171Z",
       "first_seen": "2026-11-23T13:16:40.235Z",
       "extracted_by": "rule",
@@ -17177,61 +17119,6 @@
       "series": null
     },
     {
-      "id": "6e3949ab5d9e",
-      "brand": "Roots Kava Bar",
-      "source_id": "eventbrite:roots-kava-bar",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844775666",
-      "title": "Friday Night Comedy and Open Mic at Roots Kava Bar, Port Jefferson",
-      "start": "2026-11-27T19:30:00-05:00",
-      "end": "2026-11-27T22:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "Roots Kava Bar",
-      "address": "250 East Main Street",
-      "city": "Port Jefferson",
-      "state": "NY",
-      "zip": "11777",
-      "lat": 40.945446,
-      "lng": -73.067637,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T13:16:40.235Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://cdn.evbstatic.com/s3-build/perm_001/6ce389/django/images/logos/eb_orange_on_white_1200x630.png",
-        "local": "img/events/6e3949ab5d9e.png",
-        "credit": "eventbrite.com",
-        "width": 1200,
-        "height": 630
-      },
-      "image_url": "https://cdn.evbstatic.com/s3-build/perm_001/6ce389/django/images/logos/eb_orange_on_white_1200x630.png",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844775666"
-      },
-      "menu": [],
-      "price": "Free",
-      "description": "Alcohol-free comedy night every Friday in Port Jeff. Sign-ups 7:30, open mic 8, comedy 9. Kava, coffee, matcha and mocktails.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844775666"
-      ],
-      "series": null
-    },
-    {
       "id": "bd54ec09c610",
       "brand": "Matcha event",
       "source_id": "eventbrite:event",
@@ -17255,7 +17142,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -17853,7 +17740,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T23:00:54.877Z",
       "extracted_by": "manual",
       "image": null,
@@ -17906,7 +17793,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -17961,7 +17848,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -18018,7 +17905,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -18057,7 +17944,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -18086,7 +17973,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -18226,6 +18113,61 @@
       "series": null
     },
     {
+      "id": "6e3949ab5d9e",
+      "brand": "Roots Kava Bar",
+      "source_id": "eventbrite:roots-kava-bar",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844775666",
+      "title": "Friday Night Comedy and Open Mic at Roots Kava Bar, Port Jefferson",
+      "start": "2026-11-27T19:30:00-05:00",
+      "end": "2026-11-27T22:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Roots Kava Bar",
+      "address": "250 East Main Street",
+      "city": "Port Jefferson",
+      "state": "NY",
+      "zip": "11777",
+      "lat": 40.945446,
+      "lng": -73.067637,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T13:16:40.235Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://cdn.evbstatic.com/s3-build/perm_001/6ce389/django/images/logos/eb_orange_on_white_1200x630.png",
+        "local": "img/events/6e3949ab5d9e.png",
+        "credit": "eventbrite.com",
+        "width": 1200,
+        "height": 630
+      },
+      "image_url": "https://cdn.evbstatic.com/s3-build/perm_001/6ce389/django/images/logos/eb_orange_on_white_1200x630.png",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844775666"
+      },
+      "menu": [],
+      "price": "Free",
+      "description": "Alcohol-free comedy night every Friday in Port Jeff. Sign-ups 7:30, open mic 8, comedy 9. Kava, coffee, matcha and mocktails.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844775666"
+      ],
+      "series": null
+    },
+    {
       "id": "5c522a699b41",
       "brand": "Demo Spot",
       "source_id": "instagram:demo_spot",
@@ -18336,10 +18278,10 @@
       "handle": null,
       "source_url": "https://www.eventbrite.com/e/matcha-workshop-tickets-2004866195761",
       "title": "Matcha Workshop",
-      "start": "2026-11-28T15:00:00-05:00",
-      "end": "2026-11-28T16:30:00-05:00",
+      "start": "2026-11-28T00:00:00-05:00",
+      "end": null,
       "tz": "America/Detroit",
-      "all_day": false,
+      "all_day": true,
       "venue": "Chengdu Teahouse",
       "address": "",
       "city": "Lansing",
@@ -18351,15 +18293,15 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198032881%2F2716388061661%2F1%2Foriginal.20261115-211145?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.488&fp-y=0.588&s=2170f6858e80a2a0b47e46246f220ff5",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198032881%2F2716388061661%2F1%2Foriginal.20261115-211145?crop=focalpoint&fit=crop&h=200&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.488&fp-y=0.588&s=eaeb0ec34f65f94d53889ac22bddcb20",
         "local": "img/events/833368044402.jpg",
         "credit": "eventbrite.com",
-        "width": 1080,
-        "height": 1350
+        "width": 160,
+        "height": 200
       },
       "image_url": null,
       "posts": {
@@ -18368,7 +18310,7 @@
         "other": "https://www.eventbrite.com/e/matcha-workshop-tickets-2004866195761"
       },
       "menu": [],
-      "price": "$65.87",
+      "price": null,
       "description": "Learn how to create an authentic matcha the traditional way with bamboo whisk and ceramic bowl which you get to keep. Also includes snacks.",
       "links": {
         "website": null,
@@ -18519,7 +18461,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -18541,63 +18483,6 @@
       "pay": null,
       "evidence": [
         "https://bigwissmatcha.com/"
-      ],
-      "series": null
-    },
-    {
-      "id": "f9030bc2013b",
-      "brand": "Peninsula Town Center",
-      "source_id": "eventbrite:peninsula-town-center",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/small-business-saturday-market-at-peninsula-town-center-by-swapmeet-757-tickets-2004376166069",
-      "title": "Small Business Saturday Market at Peninsula Town Center by SwapMeet 757",
-      "start": "2026-11-28T11:00:00-05:00",
-      "end": "2026-11-28T16:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "Peninsula Town Center",
-      "address": "2551 McMenamin Street",
-      "city": "Hampton",
-      "state": "VA",
-      "zip": "23666",
-      "lat": 37.044086,
-      "lng": -76.393706,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T12:17:36.576Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197263085%2F1508135059493%2F1%2Foriginal.20261104-150737?crop=focalpoint&fit=crop&h=200&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=a9261b4327e20ecfa49da6b8c62cc8a7",
-        "local": "img/events/f9030bc2013b.jpg",
-        "credit": "eventbrite.com",
-        "width": 224,
-        "height": 200
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/small-business-saturday-market-at-peninsula-town-center-by-swapmeet-757-tickets-2004376166069"
-      },
-      "menu": [
-        "chocolate"
-      ],
-      "price": "Free",
-      "description": "Come shop in the heart of Peninsula Town Center with local vendors, holiday deals, hot chocolate, matcha, great food, music, and more!",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/small-business-saturday-market-at-peninsula-town-center-by-swapmeet-757-tickets-2004376166069"
       ],
       "series": null
     },
@@ -18625,7 +18510,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -18859,61 +18744,6 @@
       "series": null
     },
     {
-      "id": "518e3aeb446f",
-      "brand": "Matcha event",
-      "source_id": "eventbrite:event",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/deco-dolls-market-tickets-2004246145173",
-      "title": "DECO DOLLS MARKET",
-      "start": "2026-11-28T13:00:00-06:00",
-      "end": "2026-11-28T17:00:00-06:00",
-      "tz": "America/Chicago",
-      "all_day": false,
-      "venue": "",
-      "address": "6207 Richmond Avenue",
-      "city": "Dallas",
-      "state": "TX",
-      "zip": "75214",
-      "lat": 32.816425,
-      "lng": -96.758386,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T01:04:15.523Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197139175%2F538315918307%2F1%2Foriginal.20261103-020321?crop=focalpoint&fit=crop&w=300&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.544&fp-y=0.618&s=4af76890549a36ebd872de0690df80f3",
-        "local": "img/events/518e3aeb446f.jpg",
-        "credit": "eventbrite.com",
-        "width": 300,
-        "height": 450
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/deco-dolls-market-tickets-2004246145173"
-      },
-      "menu": [],
-      "price": "Free",
-      "description": "Come shop from our local vendors at our Curated Market where we will have matcha, y2k, trinkets art and DIY activities Decoden station",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/deco-dolls-market-tickets-2004246145173"
-      ],
-      "series": null
-    },
-    {
       "id": "6869f2e22e38",
       "brand": "Hawa",
       "source_id": "hashtag:hawa",
@@ -18975,61 +18805,6 @@
       "series": null
     },
     {
-      "id": "762776aff9cf",
-      "brand": "Matcha event",
-      "source_id": "eventbrite:event",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854",
-      "title": "Brews & Botox",
-      "start": "2026-11-28T12:00:00-06:00",
-      "end": "2026-11-28T14:00:00-06:00",
-      "tz": "America/Chicago",
-      "all_day": false,
-      "venue": "Nspire",
-      "address": "455 Kehoe Boulevard",
-      "city": "Carol Stream",
-      "state": "IL",
-      "zip": "60188",
-      "lat": 41.909637,
-      "lng": -88.107625,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T13:04:49.907Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197641872%2F138600941353%2F1%2Foriginal.20261110-001012?crop=focalpoint&fit=crop&h=200&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.503&fp-y=0.084&s=8e1fa9178b0494fe524c039a156c9090",
-        "local": "img/events/762776aff9cf.jpg",
-        "credit": "eventbrite.com",
-        "width": 352,
-        "height": 200
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854"
-      },
-      "menu": [],
-      "price": "$50",
-      "description": "Ticket includes your choice of matcha, coffee or a mocktail, a professional consult, a lip flip and $50 toward your next service at Nspire.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854"
-      ],
-      "series": null
-    },
-    {
       "id": "fdd5d1d2e525",
       "brand": "Central Matcha",
       "source_id": "central-matcha",
@@ -19053,7 +18828,7 @@
       "approx": false,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -19123,61 +18898,6 @@
       "hours": null,
       "pay": null,
       "evidence": [],
-      "series": null
-    },
-    {
-      "id": "a0162911dc71",
-      "brand": "Matcha event",
-      "source_id": "eventbrite:event",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174",
-      "title": "The People's Matcha @ Yoga Six Oyster Point",
-      "start": "2026-11-28T08:30:00-08:00",
-      "end": "2026-11-28T12:00:00-08:00",
-      "tz": "America/Los_Angeles",
-      "all_day": false,
-      "venue": "",
-      "address": "101 Oyster Point Boulevard",
-      "city": "South San Francisco",
-      "state": "CA",
-      "zip": "94080",
-      "lat": 37.663165,
-      "lng": -122.396058,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T18:33:18.178Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189502229%2F2998634999262%2F1%2Foriginal.20260723-201806?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=721fba2f2e05c939d24f92c8b6873434",
-        "local": "img/events/a0162911dc71.jpg",
-        "credit": "eventbrite.com",
-        "width": 512,
-        "height": 384
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174"
-      },
-      "menu": [],
-      "price": "Free",
-      "description": "Matcha and yoga! The perfect Saturday! Come by for a class or a matcha, or both!",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174"
-      ],
       "series": null
     },
     {
@@ -19262,7 +18982,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -19317,7 +19037,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19484,7 +19204,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19539,7 +19259,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": null,
@@ -19696,7 +19416,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19808,7 +19528,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T23:00:54.877Z",
       "extracted_by": "manual",
       "image": null,
@@ -19967,7 +19687,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20000,6 +19720,118 @@
       "series": null
     },
     {
+      "id": "f9030bc2013b",
+      "brand": "Peninsula Town Center",
+      "source_id": "eventbrite:peninsula-town-center",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/small-business-saturday-market-at-peninsula-town-center-by-swapmeet-757-tickets-2004376166069",
+      "title": "Small Business Saturday Market at Peninsula Town Center by SwapMeet 757",
+      "start": "2026-11-28T11:00:00-05:00",
+      "end": "2026-11-28T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Peninsula Town Center",
+      "address": "2551 McMenamin Street",
+      "city": "Hampton",
+      "state": "VA",
+      "zip": "23666",
+      "lat": 37.044086,
+      "lng": -76.393706,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T12:17:36.576Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197263085%2F1508135059493%2F1%2Foriginal.20261104-150737?crop=focalpoint&fit=crop&h=200&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=a9261b4327e20ecfa49da6b8c62cc8a7",
+        "local": "img/events/f9030bc2013b.jpg",
+        "credit": "eventbrite.com",
+        "width": 224,
+        "height": 200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/small-business-saturday-market-at-peninsula-town-center-by-swapmeet-757-tickets-2004376166069"
+      },
+      "menu": [
+        "chocolate"
+      ],
+      "price": "Free",
+      "description": "Come shop in the heart of Peninsula Town Center with local vendors, holiday deals, hot chocolate, matcha, great food, music, and more!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/small-business-saturday-market-at-peninsula-town-center-by-swapmeet-757-tickets-2004376166069"
+      ],
+      "series": null
+    },
+    {
+      "id": "a0162911dc71",
+      "brand": "Matcha event",
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174",
+      "title": "The People's Matcha @ Yoga Six Oyster Point",
+      "start": "2026-11-28T08:30:00-08:00",
+      "end": "2026-11-28T12:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "",
+      "address": "101 Oyster Point Boulevard",
+      "city": "South San Francisco",
+      "state": "CA",
+      "zip": "94080",
+      "lat": 37.663165,
+      "lng": -122.396058,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T18:33:18.178Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189502229%2F2998634999262%2F1%2Foriginal.20260723-201806?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=721fba2f2e05c939d24f92c8b6873434",
+        "local": "img/events/a0162911dc71.jpg",
+        "credit": "eventbrite.com",
+        "width": 512,
+        "height": 384
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174"
+      },
+      "menu": [],
+      "price": "Free",
+      "description": "Matcha and yoga! The perfect Saturday! Come by for a class or a matcha, or both!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/the-peoples-matcha-yoga-six-oyster-point-tickets-2005298961174"
+      ],
+      "series": null
+    },
+    {
       "id": "00b35dbb0041",
       "brand": "Mellobun Cafe x Matte Matcha Bar",
       "source_id": "mellobun-matte-matcha",
@@ -20023,7 +19855,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -20080,7 +19912,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20144,7 +19976,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -20199,7 +20031,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -20256,7 +20088,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20281,6 +20113,61 @@
         "https://www.instagram.com/reel/Dfu1iAuKRQ2",
         "https://www.tiktok.com/@monicampdx/video/7708079751193234719",
         "https://www.tiktok.com/@bisteyy8/video/7707843028156714270"
+      ],
+      "series": null
+    },
+    {
+      "id": "762776aff9cf",
+      "brand": "Matcha event",
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854",
+      "title": "Brews & Botox",
+      "start": "2026-11-28T12:00:00-06:00",
+      "end": "2026-11-28T14:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "Nspire",
+      "address": "455 Kehoe Boulevard",
+      "city": "Carol Stream",
+      "state": "IL",
+      "zip": "60188",
+      "lat": 41.909637,
+      "lng": -88.107625,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T13:04:49.907Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197641872%2F138600941353%2F1%2Foriginal.20261110-001012?crop=focalpoint&fit=crop&h=200&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.503&fp-y=0.084&s=8e1fa9178b0494fe524c039a156c9090",
+        "local": "img/events/762776aff9cf.jpg",
+        "credit": "eventbrite.com",
+        "width": 352,
+        "height": 200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854"
+      },
+      "menu": [],
+      "price": "$50",
+      "description": "Ticket includes your choice of matcha, coffee or a mocktail, a professional consult, a lip flip and $50 toward your next service at Nspire.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854"
       ],
       "series": null
     },
@@ -20361,7 +20248,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20406,6 +20293,61 @@
       }
     },
     {
+      "id": "518e3aeb446f",
+      "brand": "Matcha event",
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/deco-dolls-market-tickets-2004246145173",
+      "title": "DECO DOLLS MARKET",
+      "start": "2026-11-28T13:00:00-06:00",
+      "end": "2026-11-28T17:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "",
+      "address": "6207 Richmond Avenue",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75214",
+      "lat": 32.816425,
+      "lng": -96.758386,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T01:04:15.523Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197139175%2F538315918307%2F1%2Foriginal.20261103-020321?crop=focalpoint&fit=crop&w=300&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.544&fp-y=0.618&s=4af76890549a36ebd872de0690df80f3",
+        "local": "img/events/518e3aeb446f.jpg",
+        "credit": "eventbrite.com",
+        "width": 300,
+        "height": 450
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/deco-dolls-market-tickets-2004246145173"
+      },
+      "menu": [],
+      "price": "Free",
+      "description": "Come shop from our local vendors at our Curated Market where we will have matcha, y2k, trinkets art and DIY activities Decoden station",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/deco-dolls-market-tickets-2004246145173"
+      ],
+      "series": null
+    },
+    {
       "id": "68e932a1bcfc",
       "brand": "Sabz Matcha",
       "source_id": "mato:sabzmatcha",
@@ -20429,7 +20371,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -20490,7 +20432,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T18:58:49.292Z",
       "extracted_by": "rule",
       "image": {
@@ -20545,7 +20487,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20607,7 +20549,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20724,7 +20666,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": {
@@ -20892,7 +20834,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -20947,7 +20889,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:29:32.330Z",
       "extracted_by": "rule",
       "image": {
@@ -21002,7 +20944,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -21030,6 +20972,61 @@
       "pay": null,
       "evidence": [
         "https://ma.to/event/moody-matcha-workshop-28-nov-2026"
+      ],
+      "series": null
+    },
+    {
+      "id": "fdd859904b7c",
+      "brand": "The Lobby Bar & Garden",
+      "source_id": "eventbrite:the-lobby-bar-garden",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/free-chelsea-holiday-pop-up-market-fashion-free-gifts-matcha-tickets-2003931884210",
+      "title": "Free Chelsea Holiday Pop-Up Market | Fashion, Free Gifts & Matcha",
+      "start": "2026-11-29T00:00:00-05:00",
+      "end": null,
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "The Lobby Bar & Garden",
+      "address": "518 West 27th Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "lat": 40.750452,
+      "lng": -74.003391,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198432165%2F1930336273943%2F1%2Foriginal.20261121-024438?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=de672f4d54653604c532b3afdfa5b559",
+        "local": "img/events/fdd859904b7c.jpg",
+        "credit": "eventbrite.com",
+        "width": 512,
+        "height": 640
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/free-chelsea-holiday-pop-up-market-fashion-free-gifts-matcha-tickets-2003931884210"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Discover your next favorite outfit or a thoughtful holiday gift at an intimate fashion pop-up in Chelsea!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/free-chelsea-holiday-pop-up-market-fashion-free-gifts-matcha-tickets-2003931884210"
       ],
       "series": null
     },
@@ -21197,63 +21194,6 @@
       "series": null
     },
     {
-      "id": "c247893ea25c",
-      "brand": "Garden House Wellness",
-      "source_id": "eventbrite:garden-house-wellness",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/japanese-matcha-tea-ceremony-big-brush-calligraphy-tickets-2005412712407",
-      "title": "Japanese Matcha Tea Ceremony & Big Brush Calligraphy",
-      "start": "2026-11-29T18:00:00-08:00",
-      "end": "2026-11-29T19:00:00-08:00",
-      "tz": "America/Los_Angeles",
-      "all_day": false,
-      "venue": "Garden House Wellness",
-      "address": "5120 Southeast 28th Avenue",
-      "city": "Portland",
-      "state": "OR",
-      "zip": "97202",
-      "lat": 45.485858,
-      "lng": -122.637317,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-25T18:00:05.195Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198630075%2F2994836093776%2F1%2Foriginal.20261124-184703?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.481&fp-y=0.06&s=d65ec2d837674d505b757dade5cd5e2e",
-        "local": "img/events/c247893ea25c.jpg",
-        "credit": "eventbrite.com",
-        "width": 1200,
-        "height": 1500
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/japanese-matcha-tea-ceremony-big-brush-calligraphy-tickets-2005412712407"
-      },
-      "menu": [
-        "mochi"
-      ],
-      "price": "Free",
-      "description": "Experience Japanese tea ceremony, Zen meditation, and big brush calligraphy with Kyoto artist Mochi. No experience needed!",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/japanese-matcha-tea-ceremony-big-brush-calligraphy-tickets-2005412712407"
-      ],
-      "series": null
-    },
-    {
       "id": "8115ea230191",
       "brand": "Houston Coffee",
       "source_id": "hashtag:houston-coffee",
@@ -21335,7 +21275,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T00:33:14.962Z",
       "extracted_by": "rule",
       "image": {
@@ -21390,8 +21330,8 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:19:10.133Z",
       "extracted_by": "sweep",
       "image": {
         "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/api-uploads/cq/5d9cc38f-a7ce-42ee-bc1b-1cbd6d464d3f.jpg",
@@ -21445,7 +21385,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "rule",
       "image": {
@@ -21553,7 +21493,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -21569,13 +21509,9 @@
         "tiktok": null,
         "other": "https://www.eventbrite.com/e/dream-tea-nyc-at-grand-bazaar-uws-indoors-tickets-2004635149696"
       },
-      "menu": [
-        "matcha",
-        "holiday tea sets",
-        "exclusive tea blends"
-      ],
-      "price": "free entry",
-      "description": "Dream Tea NYC sets up an indoor booth at the Upper West Side Sunday market with matcha and holiday tea gift sets. Free to drop in.",
+      "menu": [],
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": null,
@@ -21584,8 +21520,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://www.eventbrite.com/e/dream-tea-nyc-at-grand-bazaar-uws-indoors-tickets-2004635149696",
-        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+        "https://www.eventbrite.com/e/dream-tea-nyc-at-grand-bazaar-uws-indoors-tickets-2004635149696"
       ],
       "series": null
     },
@@ -21613,7 +21548,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -21633,7 +21568,7 @@
         "whisked matcha bowl",
         "japanese dry sweet"
       ],
-      "price": "$44.52",
+      "price": null,
       "description": "A 45-minute beginner class on matcha history, choosing and storing it, then whisking and drinking your own bowl with a dry sweet. Max 2 guests per booking.",
       "links": {
         "website": null,
@@ -21671,7 +21606,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-24T03:30:45.515Z",
       "extracted_by": "manual",
       "image": null,
@@ -21843,7 +21778,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -21875,7 +21810,7 @@
       "series": null
     },
     {
-      "id": "e515c047c297",
+      "id": "df42a83f695e",
       "brand": "Central Matcha",
       "source_id": "central-matcha",
       "kind": "popup",
@@ -21887,8 +21822,8 @@
       "end": "2026-11-29T14:00:00-06:00",
       "tz": "America/Chicago",
       "all_day": false,
-      "venue": "Texas Farmers' Market at Mueller",
-      "address": "2006 Philomena St, Austin, TX 78723",
+      "venue": "Mueller",
+      "address": "2006 Philomena St",
       "city": "Austin",
       "state": "TX",
       "zip": "78723",
@@ -21896,11 +21831,11 @@
       "lng": -97.702653,
       "geocode_source": "nominatim",
       "approx": false,
-      "confidence": "likely",
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
-      "extracted_by": "sweep",
+      "extracted_by": "rule",
       "image": null,
       "image_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/225603686_573153657045146_7170797240610520053_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=dgYX7IAGa88Q7kNvwEvfByM&_nc_oc=Adq7zaGT_mVmaJ4QhmyxfOMs4gvpCZ_J0QW1-nlirmfIBCrJVLGhQevTG3lNdD2_Gb8&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQSOfX_IDC6nC1Wr4g8ybSttKYfVdnYPN_4GlXSrGZbULQ&oe=6B09C103",
       "posts": {
@@ -21963,7 +21898,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -22018,7 +21953,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -22078,7 +22013,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -22252,7 +22187,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -22424,7 +22359,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -22482,7 +22417,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -22534,7 +22469,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -22589,7 +22524,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
@@ -22699,7 +22634,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -22775,6 +22710,63 @@
       "hours": null,
       "pay": null,
       "evidence": [],
+      "series": null
+    },
+    {
+      "id": "c247893ea25c",
+      "brand": "Garden House Wellness",
+      "source_id": "eventbrite:garden-house-wellness",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/japanese-matcha-tea-ceremony-big-brush-calligraphy-tickets-2005412712407",
+      "title": "Japanese Matcha Tea Ceremony & Big Brush Calligraphy",
+      "start": "2026-11-29T18:00:00-08:00",
+      "end": "2026-11-29T19:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Garden House Wellness",
+      "address": "5120 Southeast 28th Avenue",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97202",
+      "lat": 45.485858,
+      "lng": -122.637317,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-25T18:00:05.195Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198630075%2F2994836093776%2F1%2Foriginal.20261124-184703?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.481&fp-y=0.06&s=d65ec2d837674d505b757dade5cd5e2e",
+        "local": "img/events/c247893ea25c.jpg",
+        "credit": "eventbrite.com",
+        "width": 1200,
+        "height": 1500
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/japanese-matcha-tea-ceremony-big-brush-calligraphy-tickets-2005412712407"
+      },
+      "menu": [
+        "mochi"
+      ],
+      "price": "Free",
+      "description": "Experience Japanese tea ceremony, Zen meditation, and big brush calligraphy with Kyoto artist Mochi. No experience needed!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/japanese-matcha-tea-ceremony-big-brush-calligraphy-tickets-2005412712407"
+      ],
       "series": null
     },
     {
@@ -23090,7 +23082,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23241,61 +23233,6 @@
       "series": null
     },
     {
-      "id": "010bfb2277ab",
-      "brand": "Metanoia Toolbox Sacred Wellness Space",
-      "source_id": "eventbrite:metanoia-toolbox-sacred-wellness-space",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184236001",
-      "title": "Matcha & Movement with Tea",
-      "start": "2026-12-01T12:00:00-07:00",
-      "end": "2026-12-01T13:30:00-07:00",
-      "tz": "America/Phoenix",
-      "all_day": false,
-      "venue": "Metanoia Toolbox Sacred Wellness Space",
-      "address": "2150 East Brown Road",
-      "city": "Mesa",
-      "state": "AZ",
-      "zip": "85213",
-      "lat": 33.437584,
-      "lng": -111.784732,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-25T18:00:05.195Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194794774%2F2542621239291%2F1%2Foriginal.20261001-071327?crop=focalpoint&fit=crop&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=fb70dc578cdb30908b1f089b90f75af0",
-        "local": "img/events/010bfb2277ab.jpg",
-        "credit": "eventbrite.com",
-        "width": 352,
-        "height": 176
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184236001"
-      },
-      "menu": [],
-      "price": "$22.22",
-      "description": "Slow down, soften and breathe with this loving combination of Yin Yoga and Sound!",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184236001"
-      ],
-      "series": null
-    },
-    {
       "id": "5bb61b95cb25",
       "brand": "Vale Matcha",
       "source_id": "vale-matcha",
@@ -23374,7 +23311,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -23433,7 +23370,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -23488,7 +23425,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23533,6 +23470,61 @@
       }
     },
     {
+      "id": "010bfb2277ab",
+      "brand": "Metanoia Toolbox Sacred Wellness Space",
+      "source_id": "eventbrite:metanoia-toolbox-sacred-wellness-space",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184236001",
+      "title": "Matcha & Movement with Tea",
+      "start": "2026-12-01T12:00:00-07:00",
+      "end": "2026-12-01T13:30:00-07:00",
+      "tz": "America/Phoenix",
+      "all_day": false,
+      "venue": "Metanoia Toolbox Sacred Wellness Space",
+      "address": "2150 East Brown Road",
+      "city": "Mesa",
+      "state": "AZ",
+      "zip": "85213",
+      "lat": 33.437584,
+      "lng": -111.784732,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-25T18:00:05.195Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194794774%2F2542621239291%2F1%2Foriginal.20261001-071327?crop=focalpoint&fit=crop&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=fb70dc578cdb30908b1f089b90f75af0",
+        "local": "img/events/010bfb2277ab.jpg",
+        "credit": "eventbrite.com",
+        "width": 352,
+        "height": 176
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184236001"
+      },
+      "menu": [],
+      "price": "$22.22",
+      "description": "Slow down, soften and breathe with this loving combination of Yin Yoga and Sound!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184236001"
+      ],
+      "series": null
+    },
+    {
       "id": "35856e945cf2",
       "brand": "Nicho's Matcha Cafe",
       "source_id": "nichos-matcha-cafe",
@@ -23556,7 +23548,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23678,15 +23670,15 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198461487%2F3020926760890%2F1%2Foriginal.20261121-213242?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.126&fp-y=0.612&s=f14871a941e9088dcc82735a2377163f",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198461487%2F3020926760890%2F1%2Foriginal.20261121-213242?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.126&fp-y=0.612&s=ab2e100e0e32705785f3d62415ccbf47",
         "local": "img/events/a8b4b4445880.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 256
+        "width": 1200,
+        "height": 600
       },
       "image_url": null,
       "posts": {
@@ -23735,8 +23727,8 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:19:10.133Z",
       "extracted_by": "rule",
       "image": {
         "url": "https://cdn-az.allevents.in/events9/banners/d164a2a38df30264ae8e84992fbb34afed70c298c3ed3bffa37fb79aef170d06-rimg-w1200-h600-dcf8f8f8-gmir.jpg?v=1795160529",
@@ -23790,7 +23782,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
@@ -23845,7 +23837,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -23900,7 +23892,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23967,7 +23959,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24088,7 +24080,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24140,7 +24132,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -24179,7 +24171,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -24208,7 +24200,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -24246,7 +24238,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -24275,7 +24267,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24342,7 +24334,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": null,
@@ -24391,7 +24383,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -24423,6 +24415,61 @@
       "series": null
     },
     {
+      "id": "ad18f7388ca1",
+      "brand": "Pilates by Siren Curves MAT STUDIO",
+      "source_id": "eventbrite:pilates-by-siren-curves-mat-studio",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681",
+      "title": "POPPISmas x Pilates: Matcha & Mingle",
+      "start": "2026-12-04T00:00:00-08:00",
+      "end": null,
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "Pilates by Siren Curves MAT STUDIO",
+      "address": "1109 South 348th Street",
+      "city": "Federal Way",
+      "state": "WA",
+      "zip": "98003",
+      "lat": 47.289773,
+      "lng": -122.319894,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T12:52:52.775Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198355506%2F164096185479%2F1%2Foriginal.20261119-221225?crop=focalpoint&fit=crop&w=266&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.503&fp-y=0.167&s=d34ec6389351990a2f3f9874d506492e",
+        "local": "img/events/ad18f7388ca1.jpg",
+        "credit": "eventbrite.com",
+        "width": 266,
+        "height": 332
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Celebrate the holidays with Pilates, festive matcha, Poppi, flowers, fragrance-making, and a cozy girls' night!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681"
+      ],
+      "series": null
+    },
+    {
       "id": "6d53f0b347a7",
       "brand": "VERVE Columbia",
       "source_id": "eventbrite:verve-columbia",
@@ -24446,7 +24493,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -24478,61 +24525,6 @@
       "series": null
     },
     {
-      "id": "ad18f7388ca1",
-      "brand": "Pilates by Siren Curves MAT STUDIO",
-      "source_id": "eventbrite:pilates-by-siren-curves-mat-studio",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681",
-      "title": "POPPISmas x Pilates: Matcha & Mingle",
-      "start": "2026-12-04T17:00:00-08:00",
-      "end": "2026-12-04T20:00:00-08:00",
-      "tz": "America/Los_Angeles",
-      "all_day": false,
-      "venue": "Pilates by Siren Curves MAT STUDIO",
-      "address": "1109 South 348th Street",
-      "city": "Federal Way",
-      "state": "WA",
-      "zip": "98003",
-      "lat": 47.289773,
-      "lng": -122.319894,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T12:52:52.775Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198355506%2F164096185479%2F1%2Foriginal.20261119-221225?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.503&fp-y=0.167&s=fe99fde625f6448afdb0a77eccfff5c3",
-        "local": "img/events/ad18f7388ca1.jpg",
-        "credit": "eventbrite.com",
-        "width": 1122,
-        "height": 1402
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681"
-      },
-      "menu": [],
-      "price": "$49.87 to $76.54",
-      "description": "Celebrate the holidays with Pilates, festive matcha, Poppi, flowers, fragrance-making, and a cozy girls' night!",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681"
-      ],
-      "series": null
-    },
-    {
       "id": "18a451d55f1c",
       "brand": "Glimpse Matcha",
       "source_id": "glimpse-matcha-popup",
@@ -24556,7 +24548,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24608,7 +24600,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -24647,7 +24639,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -24731,7 +24723,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -24769,7 +24761,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -24798,7 +24790,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -24853,7 +24845,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -25015,7 +25007,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -25043,61 +25035,6 @@
       "pay": null,
       "evidence": [
         "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966"
-      ],
-      "series": null
-    },
-    {
-      "id": "307c4fc83a42",
-      "brand": "Japan House",
-      "source_id": "eventbrite:japan-house",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903",
-      "title": "Japan House Mottainai Bazaar & Matcha Café",
-      "start": "2026-12-05T11:00:00-06:00",
-      "end": "2026-12-05T12:00:00-06:00",
-      "tz": "America/Chicago",
-      "all_day": false,
-      "venue": "Japan House",
-      "address": "2000 South Lincoln Avenue",
-      "city": "Urbana",
-      "state": "IL",
-      "zip": "61802",
-      "lat": 40.092796,
-      "lng": -88.217943,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-24T18:00:10.224Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198259831%2F141034329664%2F1%2Foriginal.20261118-180039?crop=focalpoint&fit=crop&w=310&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.044&fp-y=0.482&s=a330af7813d6ea747655bd4ed0565408",
-        "local": "img/events/307c4fc83a42.jpg",
-        "credit": "eventbrite.com",
-        "width": 310,
-        "height": 174
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903"
-      },
-      "menu": [],
-      "price": "Free",
-      "description": "Japan House welcomes all to stop by and shop at our bazaar and matcha café! Proceeds support Japan House interns and programming.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903"
       ],
       "series": null
     },
@@ -25207,23 +25144,23 @@
       "category": "matcha",
       "handle": null,
       "source_url": "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960",
-      "title": "Dream Tea NYC at The Artisans Bazaar, Fort Greene Park",
+      "title": "Dream Tea NYC in Fort Greene",
       "start": "2026-12-05T09:00:00-05:00",
       "end": "2026-12-05T09:00:00-05:00",
       "tz": "America/New_York",
       "all_day": false,
       "venue": "The Artisans Bazaar at Fort Greene Park",
-      "address": "Fort Greene Park, Brooklyn, NY 11205",
+      "address": "",
       "city": "Brooklyn",
       "state": "NY",
       "zip": null,
-      "lat": 40.690584,
-      "lng": -73.974194,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
+      "lat": 40.6526,
+      "lng": -73.9497,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -25239,12 +25176,9 @@
         "tiktok": null,
         "other": "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960"
       },
-      "menu": [
-        "matcha",
-        "tea blends"
-      ],
-      "price": "free entry",
-      "description": "Dream Tea NYC at the Saturday Artisans Bazaar in Fort Greene Park with matcha and tea.",
+      "menu": [],
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": null,
@@ -25253,8 +25187,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960",
-        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+        "https://www.eventbrite.com/e/dream-tea-nyc-in-fort-greene-tickets-2004635237960"
       ],
       "series": null
     },
@@ -25282,7 +25215,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -25350,7 +25283,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -25496,13 +25429,13 @@
       "series": null
     },
     {
-      "id": "aa95372a56fa",
+      "id": "dfde0977547d",
       "brand": "Northeast Tea House",
-      "source_id": "allevents:northeast-tea-house",
+      "source_id": "eventbrite:northeast-tea-house",
       "kind": "popup",
       "category": "matcha",
       "handle": null,
-      "source_url": "https://allevents.in/minneapolis/matcha-cultivars-history-and-preparation/100002002639796541",
+      "source_url": "https://www.eventbrite.com/e/matcha-cultivars-history-and-preparation-tickets-2005210721246",
       "title": "Matcha Cultivars, History, and Preparation!",
       "start": "2026-12-05T09:00:00-06:00",
       "end": null,
@@ -25512,28 +25445,28 @@
       "address": "224 East Hennepin Avenue",
       "city": "Minneapolis",
       "state": "MN",
-      "zip": null,
+      "zip": "55414",
       "lat": 44.987698,
       "lng": -93.256485,
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T01:04:15.523Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:00:04.328Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://cdn-ip.allevents.in/s/rs:fill:500:250/g:sm/sh:100/aHR0cHM6Ly9jZG4tYXouYWxsZXZlbnRzLmluL2V2ZW50czkvYmFubmVycy84OGQwMjczYTBkMzFjN2ExMzY4ODczNWU5MTAxNmY3MTJkNjFmYzliNGJkYzY2MmRiYzkxM2U1ODVkMjEwN2UzLXJpbWctdzEwMjQtaDEwMjQtZGMwODA4MDgtZ21pci5qcGc_dj0xNzkwODI2MzYz.avif",
-        "local": null,
-        "credit": "allevents.in",
-        "width": null,
-        "height": null
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1193586054%2F810606430403%2F1%2Foriginal.20260915-185124?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=e4db80a17cbd2a2bfa6f22314c8c3f02",
+        "local": "img/events/dfde0977547d.jpg",
+        "credit": "eventbrite.com",
+        "width": 512,
+        "height": 512
       },
       "image_url": null,
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://allevents.in/minneapolis/matcha-cultivars-history-and-preparation/100002002639796541"
+        "other": "https://www.eventbrite.com/e/matcha-cultivars-history-and-preparation-tickets-2005210721246"
       },
       "menu": [],
       "price": "$12",
@@ -25546,6 +25479,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
+        "https://www.eventbrite.com/e/matcha-cultivars-history-and-preparation-tickets-2005210721246",
         "https://allevents.in/minneapolis/matcha-cultivars-history-and-preparation/100002002639796541"
       ],
       "series": null
@@ -25574,7 +25508,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -25591,8 +25525,8 @@
         "other": "https://luma.com/wmmlzm46"
       },
       "menu": [],
-      "price": "$50",
-      "description": "Pilates & Matcha: with The Ethereal x JETSET Pilates on the Mat with JETSET Pilates Downtown Miami is an exclusive wellness, beauty, and lifestyle experience curated for creators, models…",
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": null,
@@ -25629,7 +25563,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25685,7 +25619,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25741,7 +25675,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -25757,12 +25691,9 @@
         "tiktok": null,
         "other": "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966"
       },
-      "menu": [
-        "matcha",
-        "tea blends"
-      ],
-      "price": "free entry",
-      "description": "A Dream Tea NYC pop-up on Court Street in Cobble Hill with matcha and tea.",
+      "menu": [],
+      "price": null,
+      "description": null,
       "links": {
         "website": null,
         "instagram": null,
@@ -25771,8 +25702,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966",
-        "https://www.eventbrite.com/o/dream-tea-nyc-115792355101"
+        "https://www.eventbrite.com/e/dream-tea-nyc-in-cobble-hill-brooklyn-tickets-2004635239966"
       ],
       "series": null
     },
@@ -25800,7 +25730,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-24T03:30:45.515Z",
       "extracted_by": "manual",
       "image": null,
@@ -25853,7 +25783,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -25963,7 +25893,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26004,6 +25934,61 @@
       }
     },
     {
+      "id": "307c4fc83a42",
+      "brand": "Japan House",
+      "source_id": "eventbrite:japan-house",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903",
+      "title": "Japan House Mottainai Bazaar & Matcha Café",
+      "start": "2026-12-05T11:00:00-06:00",
+      "end": "2026-12-05T12:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "Japan House",
+      "address": "2000 South Lincoln Avenue",
+      "city": "Urbana",
+      "state": "IL",
+      "zip": "61802",
+      "lat": 40.092796,
+      "lng": -88.217943,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-24T18:00:10.224Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198259831%2F141034329664%2F1%2Foriginal.20261118-180039?crop=focalpoint&fit=crop&w=310&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.044&fp-y=0.482&s=a330af7813d6ea747655bd4ed0565408",
+        "local": "img/events/307c4fc83a42.jpg",
+        "credit": "eventbrite.com",
+        "width": 310,
+        "height": 174
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903"
+      },
+      "menu": [],
+      "price": "Free",
+      "description": "Japan House welcomes all to stop by and shop at our bazaar and matcha café! Proceeds support Japan House interns and programming.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903"
+      ],
+      "series": null
+    },
+    {
       "id": "91ef4639fdab",
       "brand": "Dov & Company",
       "source_id": "dov-and-company",
@@ -26027,7 +26012,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "sweep",
       "image": {
@@ -26192,7 +26177,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26298,7 +26283,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -26337,7 +26322,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -26366,7 +26351,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26418,7 +26403,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": {
@@ -26473,7 +26458,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26540,7 +26525,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26641,8 +26626,8 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:19:10.133Z",
       "extracted_by": "rule",
       "image": {
         "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/9c4c8727ee46dc742c148d317ca2e9c9dc73a09aeaddbd798a87d89994d06d30-original.webp",
@@ -26698,7 +26683,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26762,7 +26747,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -26815,7 +26800,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26877,7 +26862,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -26993,7 +26978,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -27110,7 +27095,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -27169,7 +27154,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -27209,10 +27194,10 @@
       "handle": null,
       "source_url": "https://www.eventbrite.com/e/the-pilates-social-holiday-edition-tickets-2005036729833",
       "title": "The Pilates Social: Holiday Edition",
-      "start": "2026-12-06T10:00:00-05:00",
-      "end": "2026-12-06T12:00:00-05:00",
+      "start": "2026-12-06T00:00:00-05:00",
+      "end": null,
       "tz": "America/New_York",
-      "all_day": false,
+      "all_day": true,
       "venue": "B Social Event Space",
       "address": "20 Willett Avenue",
       "city": "Port Chester",
@@ -27224,7 +27209,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T12:52:52.775Z",
       "extracted_by": "rule",
       "image": {
@@ -27241,7 +27226,7 @@
         "other": "https://www.eventbrite.com/e/the-pilates-social-holiday-edition-tickets-2005036729833"
       },
       "menu": [],
-      "price": "$65",
+      "price": null,
       "description": "A women-only holiday morning of mat Pilates, B12 shots, a coffee and matcha bar, gifting and a vendor market.",
       "links": {
         "website": null,
@@ -27489,10 +27474,10 @@
       "handle": null,
       "source_url": "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921",
       "title": "Pink Pilates + Matcha & Social Hour",
-      "start": "2026-12-06T16:00:00-06:00",
-      "end": "2026-12-06T18:00:00-06:00",
+      "start": "2026-12-06T00:00:00-06:00",
+      "end": null,
       "tz": "America/Chicago",
-      "all_day": false,
+      "all_day": true,
       "venue": "",
       "address": "",
       "city": "Burnsville",
@@ -27504,15 +27489,15 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-24T00:33:18.587Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197512273%2F2013060034983%2F1%2Foriginal.20261107-233836?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.452&fp-y=0.241&s=1b3823a37025c87081ca19e9f6d4b350",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197512273%2F2013060034983%2F1%2Foriginal.20261107-233836?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.452&fp-y=0.241&s=b74939e8bbfdeb19f81aad7aa2e9214c",
         "local": "img/events/c5771fa18607.jpg",
         "credit": "eventbrite.com",
-        "width": 1127,
-        "height": 1328
+        "width": 512,
+        "height": 603
       },
       "image_url": null,
       "posts": {
@@ -27521,7 +27506,7 @@
         "other": "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921"
       },
       "menu": [],
-      "price": "$33.85",
+      "price": null,
       "description": "Join Allform Club for Pink Pilates, matcha, and social hour! Enjoy a 45-minute beginner-friendly class. Wear pink and come connect!",
       "links": {
         "website": null,
@@ -27580,6 +27565,61 @@
       "hours": null,
       "pay": null,
       "evidence": [],
+      "series": null
+    },
+    {
+      "id": "4caecc92c722",
+      "brand": "The Ayer",
+      "source_id": "eventbrite:the-ayer",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/a-very-merry-crafting-affair-tickets-2005485377751",
+      "title": "A Very Merry Crafting Affair",
+      "start": "2026-12-06T00:00:00-08:00",
+      "end": null,
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "The Ayer",
+      "address": "2010 Terry Avenue",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98121",
+      "lat": 47.617417,
+      "lng": -122.334901,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198707443%2F3014509025022%2F1%2Foriginal.20261125-211047?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.939&fp-y=0.243&s=bec59c544760db97f9e40a8e4bd33083",
+        "local": "img/events/4caecc92c722.jpg",
+        "credit": "eventbrite.com",
+        "width": 512,
+        "height": 256
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/a-very-merry-crafting-affair-tickets-2005485377751"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Join Vale for a cozy Sunday of ornament decorating and winter drink tastings. We’ll provide the ornaments, craft supplies, and matcha!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/a-very-merry-crafting-affair-tickets-2005485377751"
+      ],
       "series": null
     },
     {
@@ -27661,7 +27701,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -27718,7 +27758,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -27775,7 +27815,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-24T18:00:10.224Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -27886,7 +27926,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -27941,7 +27981,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28006,7 +28046,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -28061,7 +28101,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28233,7 +28273,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28300,7 +28340,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28358,7 +28398,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28467,7 +28507,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -28522,15 +28562,15 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192622442%2F55303883129%2F1%2Foriginal.20260903-205717?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=0ee8f016b263a6b075daf9f8fbc7c00f",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192622442%2F55303883129%2F1%2Foriginal.20260903-205717?crop=focalpoint&fit=crop&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=fcc754c51a374d3d33cb91d2850e1f59",
         "local": "img/events/0994c21b5f64.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 256
+        "width": 352,
+        "height": 176
       },
       "image_url": "https://cdn.evbuc.com/images/1192622442/55303883129/1/original.20260903-205717?crop=focalpoint&fit=crop&w=1880&auto=format,compress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=ecd1c079d5fc62ad61a7ff25220b6b3a",
       "posts": {
@@ -28541,7 +28581,7 @@
       "menu": [
         "preferred matcha tea company matcha"
       ],
-      "price": "$23.18 to $25",
+      "price": null,
       "description": "A 60-minute Yogalates class with Chelsea Estevez followed by a matcha pop-up from Preferred Matcha Tea Company and a gallery stroll. Bring a mat and water.",
       "links": {
         "website": null,
@@ -28579,7 +28619,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28633,7 +28673,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -28688,7 +28728,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -28727,63 +28767,10 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
-    },
-    {
-      "id": "adf5e4822337",
-      "brand": "Metanoia Toolbox Sacred Wellness Space",
-      "source_id": "eventbrite:metanoia-toolbox-sacred-wellness-space",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184308217",
-      "title": "Matcha & Movement with Tea",
-      "start": "2026-12-08T12:00:00-07:00",
-      "end": "2026-12-08T13:30:00-07:00",
-      "tz": "America/Phoenix",
-      "all_day": false,
-      "venue": "Metanoia Toolbox Sacred Wellness Space",
-      "address": "2150 East Brown Road",
-      "city": "Mesa",
-      "state": "AZ",
-      "zip": "85213",
-      "lat": 33.437584,
-      "lng": -111.784732,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-23T01:04:15.523Z",
-      "first_seen": "2026-11-23T01:04:15.523Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194794774%2F2542621239291%2F1%2Foriginal.20261001-071327?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=bdc472be49c8c2d17b51a840df832fdc",
-        "local": "img/events/adf5e4822337.jpg",
-        "credit": "eventbrite.com",
-        "width": 1880,
-        "height": 940
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184308217"
-      },
-      "menu": [],
-      "price": "$22.22",
-      "description": "Slow down, soften and breathe with this loving combination of Yin Yoga and Sound!",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [],
-      "series": null
     },
     {
       "id": "78743c0635f5",
@@ -28862,7 +28849,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -28901,10 +28888,63 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
+    },
+    {
+      "id": "adf5e4822337",
+      "brand": "Metanoia Toolbox Sacred Wellness Space",
+      "source_id": "eventbrite:metanoia-toolbox-sacred-wellness-space",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184308217",
+      "title": "Matcha & Movement with Tea",
+      "start": "2026-12-08T12:00:00-07:00",
+      "end": "2026-12-08T13:30:00-07:00",
+      "tz": "America/Phoenix",
+      "all_day": false,
+      "venue": "Metanoia Toolbox Sacred Wellness Space",
+      "address": "2150 East Brown Road",
+      "city": "Mesa",
+      "state": "AZ",
+      "zip": "85213",
+      "lat": 33.437584,
+      "lng": -111.784732,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T01:04:15.523Z",
+      "first_seen": "2026-11-23T01:04:15.523Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194794774%2F2542621239291%2F1%2Foriginal.20261001-071327?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=bdc472be49c8c2d17b51a840df832fdc",
+        "local": "img/events/adf5e4822337.jpg",
+        "credit": "eventbrite.com",
+        "width": 1880,
+        "height": 940
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184308217"
+      },
+      "menu": [],
+      "price": "$22.22",
+      "description": "Slow down, soften and breathe with this loving combination of Yin Yoga and Sound!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [],
+      "series": null
     },
     {
       "id": "dbf8f22dca58",
@@ -28930,7 +28970,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -28994,7 +29034,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29046,7 +29086,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29113,7 +29153,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -29152,7 +29192,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -29236,7 +29276,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29303,7 +29343,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -29341,7 +29381,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -29370,7 +29410,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -29409,7 +29449,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -29438,7 +29478,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -29612,7 +29652,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -29651,7 +29691,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -29680,7 +29720,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -29718,7 +29758,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -29747,7 +29787,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": {
@@ -29782,6 +29822,118 @@
       "series": null
     },
     {
+      "id": "57e03416d572",
+      "brand": "Grounded: Plant Shop, Cafe, & Wellness Studio",
+      "source_id": "eventbrite:grounded-plant-shop-cafe-wellness-studio",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/the-matcha-ritual-from-kyoto-to-cup-tickets-2005429797509",
+      "title": "The Matcha Ritual: From Kyoto to Cup",
+      "start": "2026-12-12T00:00:00-05:00",
+      "end": null,
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Grounded: Plant Shop",
+      "address": "",
+      "city": "Washington",
+      "state": "DC",
+      "zip": null,
+      "lat": 38.9042,
+      "lng": -77.0165,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:00:04.328Z",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198650451%2F886739668473%2F1%2Foriginal.20261125-000545?crop=focalpoint&fit=crop&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.48&fp-y=0.716&s=5a93487c0e48d6b8800492bcb3b920c1",
+        "local": "img/events/57e03416d572.jpg",
+        "credit": "eventbrite.com",
+        "width": 352,
+        "height": 528
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/the-matcha-ritual-from-kyoto-to-cup-tickets-2005429797509"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Join us for an immersive, 90-minute matcha workshop where tradition and mindful living come together.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/the-matcha-ritual-from-kyoto-to-cup-tickets-2005429797509"
+      ],
+      "series": null
+    },
+    {
+      "id": "6d61a8ba1dfd",
+      "brand": "Matcha event",
+      "source_id": "eventbrite:event",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-latte-latte-candle-making-class-tickets-2005270875168",
+      "title": "Matcha Latte & Latte Candle Making Class",
+      "start": "2026-12-12T00:00:00-05:00",
+      "end": null,
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "",
+      "address": "11 Green Pond Road",
+      "city": "Rockaway",
+      "state": "NJ",
+      "zip": "07866",
+      "lat": 40.911908,
+      "lng": -74.501272,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T12:31:01.604Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198526149%2F3009667486841%2F1%2Foriginal.20261123-120053?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.089&fp-y=0.886&s=357306eee74ffee2a41c950f6dd2b253",
+        "local": "img/events/6d61a8ba1dfd.jpg",
+        "credit": "eventbrite.com",
+        "width": 400,
+        "height": 200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-latte-latte-candle-making-class-tickets-2005270875168"
+      },
+      "menu": [
+        "latte"
+      ],
+      "price": null,
+      "description": "Sip, create, and celebrate! Join us December 12 for a festive Matcha Latte & Latte Candle Making Class. Handmade gifts, holiday fun & memori",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-latte-latte-candle-making-class-tickets-2005270875168"
+      ],
+      "series": null
+    },
+    {
       "id": "b0cea107b5c1",
       "brand": "Matcha Fest",
       "source_id": "matcha-fest",
@@ -29805,7 +29957,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -29862,7 +30014,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-24T18:00:10.224Z",
       "extracted_by": "rule",
       "image": {
@@ -29891,59 +30043,6 @@
       "evidence": [
         "https://www.eventbrite.com/e/muracha-matcha-pop-up-saturday-december-12th-2026-tickets-2005395021493"
       ],
-      "series": null
-    },
-    {
-      "id": "e19faebb63be",
-      "brand": "Matcha event",
-      "source_id": "allevents:event",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://allevents.in/new-york/design-matcha-demo/4700031093557131",
-      "title": "Design Matcha Demo",
-      "start": "2026-12-12T12:00:00-05:00",
-      "end": "2026-12-12T16:00:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "",
-      "address": "",
-      "city": "New York",
-      "state": "NY",
-      "zip": null,
-      "lat": 40.6627,
-      "lng": -73.9387,
-      "geocode_source": "none",
-      "approx": true,
-      "confidence": "unsure",
-      "status": "upcoming",
-      "last_seen": "2026-11-23T01:04:15.523Z",
-      "first_seen": "2026-11-22T18:58:18.157Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://cdn-ip.allevents.in/s/rs:fill:500:250/g:sm/sh:100/aHR0cHM6Ly9jZG4tYXouYWxsZXZlbnRzLmluL2V2ZW50czQvYmFubmVycy84MWI5NDQzMC1lNWU1LTExZjEtYjhhMC02NWVmY2MwODlmOTgtcmltZy13MTIwMC1oMTE5Ny1kYzA4MDgwOC1nbWlyLnBuZz92PTE3OTUyOTA5MzE.avif",
-        "local": null,
-        "credit": "allevents.in",
-        "width": null,
-        "height": null
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://allevents.in/new-york/design-matcha-demo/4700031093557131"
-      },
-      "menu": [],
-      "price": null,
-      "description": "Join us for our first Design Matcha Demo, a monthly afternoon for people who love making things thoughtfully.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [],
       "series": null
     },
     {
@@ -30076,7 +30175,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -30144,7 +30243,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -30199,7 +30298,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": null,
@@ -30250,7 +30349,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T18:22:28.723Z",
       "extracted_by": "manual",
       "image": null,
@@ -30302,7 +30401,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30358,7 +30457,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -30474,7 +30573,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30515,6 +30614,59 @@
       }
     },
     {
+      "id": "e19faebb63be",
+      "brand": "Matcha event",
+      "source_id": "allevents:event",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://allevents.in/new-york/design-matcha-demo/4700031093557131",
+      "title": "Design Matcha Demo",
+      "start": "2026-12-12T12:00:00-05:00",
+      "end": "2026-12-12T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "",
+      "address": "",
+      "city": "New York",
+      "state": "NY",
+      "zip": null,
+      "lat": 40.6627,
+      "lng": -73.9387,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-23T01:04:15.523Z",
+      "first_seen": "2026-11-22T18:58:18.157Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://cdn-ip.allevents.in/s/rs:fill:500:250/g:sm/sh:100/aHR0cHM6Ly9jZG4tYXouYWxsZXZlbnRzLmluL2V2ZW50czQvYmFubmVycy84MWI5NDQzMC1lNWU1LTExZjEtYjhhMC02NWVmY2MwODlmOTgtcmltZy13MTIwMC1oMTE5Ny1kYzA4MDgwOC1nbWlyLnBuZz92PTE3OTUyOTA5MzE.avif",
+        "local": null,
+        "credit": "allevents.in",
+        "width": null,
+        "height": null
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://allevents.in/new-york/design-matcha-demo/4700031093557131"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Join us for our first Design Matcha Demo, a monthly afternoon for people who love making things thoughtfully.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [],
+      "series": null
+    },
+    {
       "id": "976646e44f86",
       "brand": "Frolic Cafe",
       "source_id": "frolic-cafe-seattle",
@@ -30538,7 +30690,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30587,7 +30739,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30710,7 +30862,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30749,7 +30901,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -30778,7 +30930,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -30835,7 +30987,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30899,7 +31051,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30952,7 +31104,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31014,7 +31166,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -31042,6 +31194,64 @@
       "series": null
     },
     {
+      "id": "a35f5290ae73",
+      "brand": "Portland Japanese Culture Workshops",
+      "source_id": "meetup:portland-japanese-culture-workshops",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.meetup.com/portland-japanese-culture-workshops/events/317590114/",
+      "title": "Japanese Matcha Workshop: Learn to Enjoy Tea in Everyday Life",
+      "start": "2026-12-12T12:30:00-08:00",
+      "end": null,
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "KEC Education Group America Campus",
+      "address": "1548 NE 15th Ave",
+      "city": "Portland",
+      "state": "OR",
+      "zip": null,
+      "lat": 45.53408,
+      "lng": -122.650233,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "confirmed",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://secure.meetupstatic.com/photos/event/6/f/4/8/highres_533488488.jpeg",
+        "local": null,
+        "credit": "meetup.com",
+        "width": null,
+        "height": null
+      },
+      "image_url": "https://secure.meetupstatic.com/photos/event/6/f/4/8/highres_533488488.jpeg",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.meetup.com/portland-japanese-culture-workshops/events/317590114/"
+      },
+      "menu": [
+        "how to enjoy matcha",
+        "matcha lovers"
+      ],
+      "price": "$20",
+      "description": "**Learn how to make matcha part of your everyday life **",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.meetup.com/portland-japanese-culture-workshops/events/317590114/"
+      ],
+      "series": null
+    },
+    {
       "id": "91f540993792",
       "brand": "Baristas Bouquet",
       "source_id": "allevents:baristas-bouquet",
@@ -31065,7 +31275,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-25T18:00:05.195Z",
       "extracted_by": "rule",
       "image": {
@@ -31120,7 +31330,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31149,63 +31359,6 @@
         "https://www.instagram.com/p/DfusXllF3Xy",
         "https://whatnow.com/?p=455996",
         "https://www.exploregeorgia.org/atlanta/places-to-stay/hotels-motels/nobu-hotel-atlanta"
-      ],
-      "series": null
-    },
-    {
-      "id": "6d61a8ba1dfd",
-      "brand": "Matcha event",
-      "source_id": "eventbrite:event",
-      "kind": "organizer",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-latte-latte-candle-making-class-tickets-2005270875168",
-      "title": "Matcha Latte & Latte Candle Making Class",
-      "start": "2026-12-12T18:30:00-05:00",
-      "end": "2026-12-12T20:30:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "",
-      "address": "11 Green Pond Road",
-      "city": "Rockaway",
-      "state": "NJ",
-      "zip": "07866",
-      "lat": 40.911908,
-      "lng": -74.501272,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T12:31:01.604Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198526149%2F3009667486841%2F1%2Foriginal.20261123-120053?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.089&fp-y=0.886&s=cf765e987ff76c42e7699d9d694515f6",
-        "local": "img/events/6d61a8ba1dfd.jpg",
-        "credit": "eventbrite.com",
-        "width": 1200,
-        "height": 600
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-latte-latte-candle-making-class-tickets-2005270875168"
-      },
-      "menu": [
-        "latte"
-      ],
-      "price": "$49.87",
-      "description": "Sip, create, and celebrate! Join us December 12 for a festive Matcha Latte & Latte Candle Making Class. Handmade gifts, holiday fun & memori",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/matcha-latte-latte-candle-making-class-tickets-2005270875168"
       ],
       "series": null
     },
@@ -31263,61 +31416,6 @@
       "series": null
     },
     {
-      "id": "f4cc086d259d",
-      "brand": "KinKa",
-      "source_id": "allevents:kinka",
-      "kind": "organizer",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519",
-      "title": "Matcha 101 'Whisk & Sip'",
-      "start": "2026-12-13T11:00:00-05:00",
-      "end": "2026-12-13T11:45:00-05:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "KINKA",
-      "address": "63 East 7th Street",
-      "city": "New York",
-      "state": "NY",
-      "zip": null,
-      "lat": 40.727665,
-      "lng": -73.986861,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T18:29:44.592Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://cdn-az.allevents.in/events7/banners/13c52c2b569ec5cc9408d3e3fd63fa8f77ac028864fb1b85539df1f24d2e9aae-rimg-w1200-h1622-dcd8e8e8-gmir.jpg?v=1794965138",
-        "local": "img/events/f4cc086d259d.webp",
-        "credit": "allevents.in",
-        "width": 1200,
-        "height": 1622
-      },
-      "image_url": "https://cdn-az.allevents.in/events7/banners/13c52c2b569ec5cc9408d3e3fd63fa8f77ac028864fb1b85539df1f24d2e9aae-rimg-w1200-h1622-dcd8e8e8-gmir.jpg?v=1794965138",
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519"
-      },
-      "menu": [],
-      "price": "$44.52",
-      "description": "Join us Matcha 101! Learn about Matcha and How to whisk and drink.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519"
-      ],
-      "series": null
-    },
-    {
       "id": "80067b26d6b5",
       "brand": "Inspire Yoga & Wellness Studio",
       "source_id": "eventbrite:inspire-yoga-wellness-studio",
@@ -31326,10 +31424,10 @@
       "handle": null,
       "source_url": "https://www.eventbrite.com/e/rise-shine-yoga-matcha-tickets-2004847903047",
       "title": "RISE & SHINE | YOGA & MATCHA",
-      "start": "2026-12-13T10:30:00-06:00",
-      "end": "2026-12-13T12:30:00-06:00",
+      "start": "2026-12-13T00:00:00-06:00",
+      "end": null,
       "tz": "America/Chicago",
-      "all_day": false,
+      "all_day": true,
       "venue": "Inspire Yoga & Wellness Studio",
       "address": "1100 Nerge Rd",
       "city": "Elk Grove Village",
@@ -31341,15 +31439,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197990622%2F1005144027503%2F1%2Foriginal.20261114-203920?crop=focalpoint&fit=crop&h=200&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=65e2c2d0159c1110fe44485fb3e9f9dd",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197990622%2F1005144027503%2F1%2Foriginal.20261114-203920?crop=focalpoint&fit=crop&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=bbc6d27ea8d96fbf008140b4091eb62d",
         "local": "img/events/80067b26d6b5.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 200
+        "width": 352,
+        "height": 264
       },
       "image_url": null,
       "posts": {
@@ -31358,7 +31456,7 @@
         "other": "https://www.eventbrite.com/e/rise-shine-yoga-matcha-tickets-2004847903047"
       },
       "menu": [],
-      "price": "$39.19",
+      "price": null,
       "description": "Kickstart your morning with some chill yoga flows and a refreshing matcha boost to keep you glowing all day.",
       "links": {
         "website": null,
@@ -31381,10 +31479,10 @@
       "handle": null,
       "source_url": "https://www.eventbrite.com/e/sweet-thang-sunday-tickets-1983022791551",
       "title": "Sweet Thang Sunday",
-      "start": "2026-12-13T11:00:00-08:00",
-      "end": "2026-12-13T15:00:00-08:00",
+      "start": "2026-12-13T00:00:00-08:00",
+      "end": null,
       "tz": "America/Los_Angeles",
-      "all_day": false,
+      "all_day": true,
       "venue": "Neighborhood Cafe",
       "address": "17165 Southcenter Parkway",
       "city": "Tukwila",
@@ -31396,15 +31494,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T12:52:52.775Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177418464%2F2329905505773%2F1%2Foriginal.20260212-214147?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=32677fb1972daccb8d3b6b6960d891e1",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177418464%2F2329905505773%2F1%2Foriginal.20260212-214147?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=459e2613dfd63700083193ee680e413c",
         "local": "img/events/95f3e62d1dd7.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 268
+        "width": 400,
+        "height": 209
       },
       "image_url": null,
       "posts": {
@@ -31415,7 +31513,7 @@
       "menu": [
         "matcha flight"
       ],
-      "price": "Free",
+      "price": null,
       "description": "It's Sweet Thang Sunday!! Join us for our monthly R&B Sunday brunch at Neighborhood Cafe in Tukwila!",
       "links": {
         "website": null,
@@ -31426,6 +31524,61 @@
       "pay": null,
       "evidence": [
         "https://www.eventbrite.com/e/sweet-thang-sunday-tickets-1983022791551"
+      ],
+      "series": null
+    },
+    {
+      "id": "c5373aebda67",
+      "brand": "Personal",
+      "source_id": "luma:personal",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://luma.com/npy7mjhj",
+      "title": "Alma Matcha Motor Co.",
+      "start": "2026-12-13T08:00:00-05:00",
+      "end": "2026-12-13T11:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Alma Matcha",
+      "address": "701 NW 5th Ave Unit 1011",
+      "city": "Fort Lauderdale",
+      "state": "FL",
+      "zip": "33311",
+      "lat": 26.131492,
+      "lng": -80.148896,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "confirmed",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1590007530236-b51ff30f5d3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjQyMjF8MHwxfHNlYXJjaHwzfHxyYWNlJTIwZmxhZ3xlbnwxfHx8fDE3OTUxMjI1Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "local": "img/events/c5373aebda67.jpg",
+        "credit": "luma.com",
+        "width": 1080,
+        "height": 720
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://luma.com/npy7mjhj"
+      },
+      "menu": [],
+      "price": null,
+      "description": null,
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://luma.com/npy7mjhj"
       ],
       "series": null
     },
@@ -31453,7 +31606,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -31508,7 +31661,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31573,7 +31726,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -31607,6 +31760,61 @@
       "series": null
     },
     {
+      "id": "f4cc086d259d",
+      "brand": "KinKa",
+      "source_id": "allevents:kinka",
+      "kind": "organizer",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519",
+      "title": "Matcha 101 'Whisk & Sip'",
+      "start": "2026-12-13T11:00:00-05:00",
+      "end": "2026-12-13T11:45:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "KINKA",
+      "address": "63 East 7th Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": null,
+      "lat": 40.727665,
+      "lng": -73.986861,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T18:29:44.592Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://cdn-az.allevents.in/events7/banners/13c52c2b569ec5cc9408d3e3fd63fa8f77ac028864fb1b85539df1f24d2e9aae-rimg-w1200-h1622-dcd8e8e8-gmir.jpg?v=1794965138",
+        "local": "img/events/f4cc086d259d.webp",
+        "credit": "allevents.in",
+        "width": 1200,
+        "height": 1622
+      },
+      "image_url": "https://cdn-az.allevents.in/events7/banners/13c52c2b569ec5cc9408d3e3fd63fa8f77ac028864fb1b85539df1f24d2e9aae-rimg-w1200-h1622-dcd8e8e8-gmir.jpg?v=1794965138",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519"
+      },
+      "menu": [],
+      "price": "$44.52",
+      "description": "Join us Matcha 101! Learn about Matcha and How to whisk and drink.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://allevents.in/new-york/matcha-101-whisk-and-sip/100002004983131519"
+      ],
+      "series": null
+    },
+    {
       "id": "f52b413b3c67",
       "brand": "Littlefoot Matcha",
       "source_id": "littlefoot-matcha",
@@ -31630,7 +31838,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": null,
@@ -31732,7 +31940,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31796,7 +32004,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31863,7 +32071,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31921,7 +32129,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -31976,7 +32184,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -32008,7 +32216,7 @@
       "series": null
     },
     {
-      "id": "00eb146ceeae",
+      "id": "43aeff9a1f1a",
       "brand": "Dream Tea NYC",
       "source_id": "dream-tea-nyc",
       "kind": "tea-brand",
@@ -32020,20 +32228,20 @@
       "end": "2026-12-14T11:00:00-05:00",
       "tz": "America/New_York",
       "all_day": false,
-      "venue": "Empire Stores",
-      "address": "83 Water Street",
+      "venue": "Empire Stores (Time Out Market)",
+      "address": "53 Water St, Brooklyn, NY 11201",
       "city": "Brooklyn",
       "state": "NY",
       "zip": "11201",
-      "lat": 40.70331,
-      "lng": -73.990971,
+      "lat": 40.703341,
+      "lng": -73.991574,
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
-      "extracted_by": "rule",
+      "extracted_by": "sweep",
       "image": {
         "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197657641%2F2891855102831%2F1%2Foriginal.20261110-053800?crop=focalpoint&fit=crop&h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=d87c2ae5fc457d06857af2f7e6d297a4",
         "local": "img/events/00eb146ceeae.jpg",
@@ -32090,7 +32298,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32129,7 +32337,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -32158,7 +32366,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -32194,6 +32402,61 @@
       "series": null
     },
     {
+      "id": "74b5fa2190b2",
+      "brand": "Metanoia Toolbox Sacred Wellness Space",
+      "source_id": "eventbrite:metanoia-toolbox-sacred-wellness-space",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433",
+      "title": "Matcha & Movement with Tea",
+      "start": "2026-12-15T00:00:00-07:00",
+      "end": null,
+      "tz": "America/Phoenix",
+      "all_day": true,
+      "venue": "Metanoia Toolbox Sacred Wellness Space",
+      "address": "2150 East Brown Road",
+      "city": "Mesa",
+      "state": "AZ",
+      "zip": "85213",
+      "lat": 33.437584,
+      "lng": -111.784732,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T01:04:15.523Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194794774%2F2542621239291%2F1%2Foriginal.20261001-071327?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=937c1b290bef9b11614b15d423d660e9",
+        "local": "img/events/74b5fa2190b2.jpg",
+        "credit": "eventbrite.com",
+        "width": 400,
+        "height": 200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Slow down, soften and breathe with this loving combination of Yin Yoga and Sound!",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433"
+      ],
+      "series": null
+    },
+    {
       "id": "d48010350f21",
       "brand": "Howdy Y'all Coffee",
       "source_id": "howdy-yall-coffee",
@@ -32217,7 +32480,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32256,7 +32519,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -32285,7 +32548,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32320,65 +32583,10 @@
         "weekdays": [
           2
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
-    },
-    {
-      "id": "74b5fa2190b2",
-      "brand": "Metanoia Toolbox Sacred Wellness Space",
-      "source_id": "eventbrite:metanoia-toolbox-sacred-wellness-space",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433",
-      "title": "Matcha & Movement with Tea",
-      "start": "2026-12-15T12:00:00-07:00",
-      "end": "2026-12-15T13:30:00-07:00",
-      "tz": "America/Phoenix",
-      "all_day": false,
-      "venue": "Metanoia Toolbox Sacred Wellness Space",
-      "address": "2150 East Brown Road",
-      "city": "Mesa",
-      "state": "AZ",
-      "zip": "85213",
-      "lat": 33.437584,
-      "lng": -111.784732,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T01:04:15.523Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194794774%2F2542621239291%2F1%2Foriginal.20261001-071327?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=937c1b290bef9b11614b15d423d660e9",
-        "local": "img/events/74b5fa2190b2.jpg",
-        "credit": "eventbrite.com",
-        "width": 400,
-        "height": 200
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433"
-      },
-      "menu": [],
-      "price": "$22.22",
-      "description": "Slow down, soften and breathe with this loving combination of Yin Yoga and Sound!",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433"
-      ],
-      "series": null
     },
     {
       "id": "c50e558455e4",
@@ -32457,7 +32665,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32496,7 +32704,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -32525,7 +32733,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32563,7 +32771,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -32675,61 +32883,6 @@
       "series": null
     },
     {
-      "id": "02df4c1fbcc8",
-      "brand": "Matcha event",
-      "source_id": "eventbrite:event",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": null,
-      "source_url": "https://www.eventbrite.com/e/worship-night-matcha-mercy-tickets-2004605696601",
-      "title": "Worship Night: Matcha + Mercy",
-      "start": "2026-12-17T19:00:00-06:00",
-      "end": "2026-12-17T21:00:00-06:00",
-      "tz": "America/Chicago",
-      "all_day": false,
-      "venue": "",
-      "address": "1512 Edison Street",
-      "city": "Dallas",
-      "state": "TX",
-      "zip": "75207",
-      "lat": 32.792977,
-      "lng": -96.817925,
-      "geocode_source": "nominatim",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
-      "first_seen": "2026-11-23T01:04:15.523Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197622644%2F3020812992044%2F1%2Foriginal.20261109-195455?crop=focalpoint&fit=crop&w=300&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=89b09764ddbcbbe77a45fbd1f0ee31a7",
-        "local": "img/events/02df4c1fbcc8.jpg",
-        "credit": "eventbrite.com",
-        "width": 300,
-        "height": 149
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://www.eventbrite.com/e/worship-night-matcha-mercy-tickets-2004605696601"
-      },
-      "menu": [],
-      "price": "Free",
-      "description": "Soulful worship, prayer, matcha sips, and mercy all night long. Come as you are and bring a friend.",
-      "links": {
-        "website": null,
-        "instagram": null,
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.eventbrite.com/e/worship-night-matcha-mercy-tickets-2004605696601"
-      ],
-      "series": null
-    },
-    {
       "id": "699c73b6d9c1",
       "brand": "Howdy Y'all Coffee",
       "source_id": "howdy-yall-coffee",
@@ -32753,7 +32906,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32792,7 +32945,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -32821,7 +32974,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32859,7 +33012,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -32888,7 +33041,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -32932,6 +33085,61 @@
       }
     },
     {
+      "id": "02df4c1fbcc8",
+      "brand": "Matcha event",
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/worship-night-matcha-mercy-tickets-2004605696601",
+      "title": "Worship Night: Matcha + Mercy",
+      "start": "2026-12-17T19:00:00-06:00",
+      "end": "2026-12-17T21:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "",
+      "address": "1512 Edison Street",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75207",
+      "lat": 32.792977,
+      "lng": -96.817925,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-23T01:04:15.523Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197622644%2F3020812992044%2F1%2Foriginal.20261109-195455?crop=focalpoint&fit=crop&w=300&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=89b09764ddbcbbe77a45fbd1f0ee31a7",
+        "local": "img/events/02df4c1fbcc8.jpg",
+        "credit": "eventbrite.com",
+        "width": 300,
+        "height": 149
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/worship-night-matcha-mercy-tickets-2004605696601"
+      },
+      "menu": [],
+      "price": "Free",
+      "description": "Soulful worship, prayer, matcha sips, and mercy all night long. Come as you are and bring a friend.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/worship-night-matcha-mercy-tickets-2004605696601"
+      ],
+      "series": null
+    },
+    {
       "id": "451d2ee7048a",
       "brand": "Muni Cafe",
       "source_id": "muni-cafe",
@@ -32955,7 +33163,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32993,7 +33201,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33022,7 +33230,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33061,7 +33269,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33090,7 +33298,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -33158,7 +33366,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -33213,7 +33421,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -33268,7 +33476,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -33322,7 +33530,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33357,7 +33565,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -33386,7 +33594,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33425,7 +33633,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33454,7 +33662,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33492,7 +33700,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33521,7 +33729,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33583,7 +33791,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33618,7 +33826,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33753,7 +33961,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33818,7 +34026,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": {
@@ -33873,7 +34081,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -33928,7 +34136,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33984,7 +34192,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34019,7 +34227,7 @@
         "weekdays": [
           0
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -34048,7 +34256,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34086,7 +34294,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34115,7 +34323,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34154,7 +34362,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34183,7 +34391,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34222,7 +34430,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34251,7 +34459,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34286,7 +34494,7 @@
         "weekdays": [
           2
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34315,7 +34523,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34354,7 +34562,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34383,7 +34591,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34421,7 +34629,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34450,7 +34658,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T06:33:16.113Z",
       "extracted_by": "rule",
       "image": {
@@ -34513,7 +34721,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34552,7 +34760,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34581,7 +34789,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34619,7 +34827,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34648,7 +34856,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -34702,7 +34910,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34737,7 +34945,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -34766,7 +34974,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34804,7 +35012,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34833,7 +35041,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34872,7 +35080,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34901,7 +35109,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -34963,7 +35171,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34998,7 +35206,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35143,7 +35351,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -35208,7 +35416,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35243,7 +35451,7 @@
         "weekdays": [
           0
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -35272,7 +35480,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35310,7 +35518,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35339,7 +35547,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -35392,7 +35600,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35431,7 +35639,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35460,7 +35668,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35499,7 +35707,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35528,7 +35736,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35563,7 +35771,7 @@
         "weekdays": [
           2
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35592,7 +35800,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35631,7 +35839,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35660,7 +35868,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35698,7 +35906,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35786,7 +35994,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -35841,7 +36049,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35879,7 +36087,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35908,7 +36116,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35947,7 +36155,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36126,6 +36334,61 @@
       "series": null
     },
     {
+      "id": "4a5c658e3668",
+      "brand": "Halo Venue",
+      "source_id": "eventbrite:halo-venue",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/pilates-matcha-tickets-2004901591631",
+      "title": "Pilates & Matcha",
+      "start": "2027-01-02T00:00:00-07:00",
+      "end": null,
+      "tz": "America/Denver",
+      "all_day": true,
+      "venue": "Halo Venue",
+      "address": "313 North State Street",
+      "city": "Orem",
+      "state": "UT",
+      "zip": "84057",
+      "lat": 40.302982,
+      "lng": -111.697661,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198746387%2F3018329861961%2F1%2Foriginal.20261126-152212?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.491&fp-y=0.366&s=d58286a0b680c76dfba5270e48b00af2",
+        "local": "img/events/4a5c658e3668.jpg",
+        "credit": "eventbrite.com",
+        "width": 512,
+        "height": 640
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/pilates-matcha-tickets-2004901591631"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Enjoy a 45-minute Pilates class led by Naomi followed by delicious matcha from The Matcha Bar",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/pilates-matcha-tickets-2004901591631"
+      ],
+      "series": null
+    },
+    {
       "id": "5dca5e383b5e",
       "brand": "More Than Matcha",
       "source_id": "more-than-matcha",
@@ -36272,7 +36535,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": {
@@ -36331,7 +36594,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36366,7 +36629,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -36395,7 +36658,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36434,7 +36697,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36463,7 +36726,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36501,7 +36764,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36530,7 +36793,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36565,7 +36828,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36716,7 +36979,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -36781,7 +37044,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36816,7 +37079,7 @@
         "weekdays": [
           0
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -36845,7 +37108,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36883,7 +37146,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37032,7 +37295,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -37071,7 +37334,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37100,7 +37363,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-24T18:19:43.168Z",
       "extracted_by": "manual",
       "image": null,
@@ -37139,7 +37402,7 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37168,7 +37431,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-24T18:19:43.168Z",
       "extracted_by": "manual",
       "image": null,
@@ -37203,7 +37466,7 @@
         "weekdays": [
           2
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37228,11 +37491,11 @@
       "zip": null,
       "lat": 47.606714,
       "lng": -122.332698,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-25T18:22:33.386Z",
       "extracted_by": "manual",
       "image": null,
@@ -37271,9 +37534,9 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
-        "projected": true
+        "projected": false
       }
     },
     {
@@ -37296,11 +37559,11 @@
       "zip": null,
       "lat": 47.599507,
       "lng": -122.326189,
-      "geocode_source": "manual",
+      "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:22:33.386Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-25T18:22:33.386Z",
       "extracted_by": "manual",
       "image": null,
@@ -37338,7 +37601,142 @@
           5,
           6
         ],
-        "until": "2027-01-06",
+        "until": "2027-01-07",
+        "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+        "projected": false
+      }
+    },
+    {
+      "id": "356d1d55e4d7",
+      "brand": "Muni Cafe",
+      "source_id": "muni-cafe",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "title": "Muni Cafe at Anh Oi Bake Shop",
+      "start": "2027-01-07T10:00:00-08:00",
+      "end": "2027-01-07T17:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Anh Oi Bake Shop",
+      "address": "314 6th Ave S, Seattle, WA 98104",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": null,
+      "lat": 47.599507,
+      "lng": -122.326189,
+      "geocode_source": "manual",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:19:10.133Z",
+      "extracted_by": "manual",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "daydreamer",
+        "biko latte",
+        "sesame ube latte (matcha or espresso)"
+      ],
+      "price": null,
+      "description": "Muni Cafe is the resident drink counter at a Japantown bakery. Lattes come with matcha or espresso, in Filipino-inspired flavors like biko and ube.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": "Wed-Sun 10am-5pm; closed Nov 25-29",
+      "pay": null,
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+        "https://southseattleemerald.org/news/2026/05/11/south-end-life-a-vietnamese-american-cookie-shop-provides-a-sweet-offering-in-historic-cid-building"
+      ],
+      "series": {
+        "id": "muni-cafe-anh-oi",
+        "rule": "weekly on Sundays, Wednesdays, Thursdays, Fridays, Saturdays",
+        "weekdays": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "until": "2027-01-07",
+        "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+        "projected": true
+      }
+    },
+    {
+      "id": "6d86bafe5ed9",
+      "brand": "Howdy Y'all Coffee",
+      "source_id": "howdy-yall-coffee",
+      "kind": "popup",
+      "category": "coffee",
+      "handle": "howdyyallcoffee",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "title": "Howdy Y'all Coffee at the Seattle Central Library",
+      "start": "2027-01-07T10:00:00-08:00",
+      "end": "2027-01-07T16:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Seattle Central Library",
+      "address": "1000 4th Ave, Seattle, WA 98104",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": null,
+      "lat": 47.606714,
+      "lng": -122.332698,
+      "geocode_source": "manual",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-26T18:19:10.133Z",
+      "first_seen": "2026-11-26T18:19:10.133Z",
+      "extracted_by": "manual",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "corn matcha",
+        "melon matcha",
+        "cream top matcha latte",
+        "hojicha"
+      ],
+      "price": null,
+      "description": "A matcha and hojicha counter inside the downtown library, with new corn and melon matcha this fall.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": "Mon-Sat 10am-4pm",
+      "pay": null,
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      ],
+      "series": {
+        "id": "howdy-yall-central-library",
+        "rule": "weekly on Mondays, Tuesdays, Wednesdays, Thursdays, Fridays, Saturdays",
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "until": "2027-01-07",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": true
       }
@@ -37367,7 +37765,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-24T18:19:43.168Z",
       "extracted_by": "rule",
       "image": {
@@ -37469,7 +37867,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -37524,7 +37922,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -37634,7 +38032,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-25T18:00:05.195Z",
+      "last_seen": "2026-11-26T18:00:04.328Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -37689,7 +38087,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -37970,7 +38368,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-25T23:37:45.171Z",
+      "last_seen": "2026-11-26T18:19:10.133Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {

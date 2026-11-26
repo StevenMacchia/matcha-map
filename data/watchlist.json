@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T04:06:59.048Z",
+  "updated": "2026-11-26T18:18:26.283Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -60,7 +60,9 @@
       "name": "Gishiki Matcha",
       "website": "http://drinkgishiki.com",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/642150790_18043162214734391_3377160301206772699_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=KtrkcCV4-wcQ7kNvwEHblsp&_nc_oc=AdrN2FczkEv5GaRsJ-g9xtG_cqjIt_7aRx7HGIUfieZYZ3_vjahWUFZ_gP63CNueGe4&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=XijxnnSLT7MVznCQ3u_8iw&oh=00_AQSyQ-1UNbslY8JDRESY9p0vvOLNgai5RIUhh3dlX18beg&oe=6B0965FF",
-      "followers_count": 3453
+      "followers_count": 3453,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "unlabeled.coffee",
@@ -111,11 +113,11 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-22T20:08:48.701Z",
+      "last_checked": "2026-11-26T18:18:26.283Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 3,
-      "cadence_hours": 72,
+      "checks": 4,
+      "cadence_hours": 168,
       "notes": "",
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-23T00:59:42.578Z",
@@ -181,7 +183,9 @@
       "name": "MATCH - A",
       "website": "http://www.toasttab.com/local/order/match-a-chicago",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/834123136_17906571615569315_8641705630867334739_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=1U593SKMUJ8Q7kNvwHYmp55&_nc_oc=AdqbSFX7IHd3csk291dVbt5bEvkW8YMym6kijgrxikcmyPoINQcC2yujALhIhhRZ1CY&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=8dD7le5qUP4imHCIWpyxLA&oh=00_AQRM9gUNbl3g8UOTk98w2lZdbtogDG0HD7JVya0WH9DFVA&oe=6B094FFF",
-      "followers_count": 18531
+      "followers_count": 18531,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "janecoffeeandmatcha",
@@ -201,7 +205,9 @@
       "name": "jane coffee and matcha",
       "website": "https://shopkaleidos.com/blogs/the-edit-by-kaleidos/slow-sips-fast-growth-a-conversation-with-jane-coffee-matcha",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/685804574_17901743256430231_2945567572368089622_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=NxR1Uvn_aO0Q7kNvwEYMrUb&_nc_oc=AdoMllFES9sMMhW8Ch343tdnTE4QPiQ5Je4AfqqVL3HIQxR19XRRp30boGA8jxZ7rC0&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=7K3m04CrHNvh6iAYkOqIUw&oh=00_AQQEXOlnVrJMyxsMPLcobLsTBjqIwfnABzeVicNeHKdykA&oe=6B0965DF",
-      "followers_count": 9803
+      "followers_count": 9803,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "folake.co",
@@ -220,7 +226,9 @@
       "graph_checked_at": "2026-11-23T00:59:42.578Z",
       "name": "FOLAKÉ | Coffee + Matcha Catering DMV",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/778340510_17964806514156863_8256455413211492077_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=WjRX-w14GnUQ7kNvwGBSGFa&_nc_oc=AdowbSof16n-gH0nAbLO6IEagi7WR0IL1m3_TlJIevwE2JxKCpjFOr9_hY04Y8Znauk&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=XHfbqghqI7s3e7QKdFPTtw&oh=00_AQQkunRxj3BOBMOV36p7jEges8UFshoeK0RGNk9s5bpa0Q&oe=6B097E52",
-      "followers_count": 6132
+      "followers_count": 6132,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "afterschoolcoffeehouse",
@@ -1096,7 +1104,9 @@
       "name": "byChae",
       "website": "http://bychae.com",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/619915376_17951067696084094_7928696621756713893_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=mYxWB5UlJkkQ7kNvwEbOVsE&_nc_oc=Adqb5cl8uJAAqNbWh4w0X7DrfSkMO1KJuwDVd-mfbEtmF7mGIrFtD4zqVgFZQ2Pzn70&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=A2LDMhNbRE50pdL9DFQ6gw&oh=00_AQTfxSHPhJ2X82T0bMOE1fhkSGpM-mNKYIKpzgUNVE5Svg&oe=6B0965D9",
-      "followers_count": 69610
+      "followers_count": 69610,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "stonemillmatcha",
@@ -1339,7 +1349,9 @@
       "name": "Cozy, Pls.",
       "website": "http://cozypls.com",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/565517641_18119075038525888_3477107509943165267_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=xHfoxS3EB5AQ7kNvwEry8Vc&_nc_oc=Adql6ItSawH0aDG3DpCyQZkyFWNoM1mAMfm0szuYMgf9bSUP9cxaLw7YQGQf4MXL67E&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=2x-46lKjFofNjqokG6k-5g&oh=00_AQS-iGqHxOHaDC256vdGTefNRj_LL4qDWxsQM73xir3Zcw&oe=6B095D56",
-      "followers_count": 2717
+      "followers_count": 2717,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "dailydosacafe",
@@ -1358,7 +1370,9 @@
       "graph_checked_at": "2026-11-23T00:59:42.578Z",
       "name": "DailyDosa",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/684255466_18072198551397208_5445762848557729636_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=ZqE_qksh37kQ7kNvwG_42Rk&_nc_oc=Adpbj5IAlEkpyft5CZSLHFszW4E5jENWOBJ5D-l23vdNgBUxMp1KcAqMxXcainqdGks&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=nKmdGdzG0cn8NAGLVA6ZVg&oh=00_AQSBq7to-CzyuPv-1PLJ_wUvKAaLMb9tS9TqF8t3JrokPg&oe=6B0954C9",
-      "followers_count": 431
+      "followers_count": 431,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "duodonutsandmatcha",
@@ -1437,7 +1451,9 @@
       "graph_checked_at": "2026-11-23T00:59:42.578Z",
       "name": "feīn.",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/684028266_17909952936392481_5774680576291553469_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=4CNu5GlUrdsQ7kNvwEEMRLo&_nc_oc=AdoIEs1Dz7WbBcdEYMEeaQEbcBLz1bNO1MQGoZ_Gt60-JPEiiNc8jc0KLbE2OoMDZ9s&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=dFwebpUKaMBBB1-aIW9qHA&oh=00_AQT8m_ZEIdpz8Glx2OdYvMoyec7pDhHszy9T6W-Gqo6wcg&oe=6B094D11",
-      "followers_count": 1822
+      "followers_count": 1822,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "filocaferockville",
@@ -1457,7 +1473,9 @@
       "name": "FILO CAFE",
       "website": "http://linktr.ee/filocafe",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/657287035_18018625367821061_5249930922549726940_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Kg_rpwmtOgYQ7kNvwGSQpMr&_nc_oc=Adobz54ViplH1HpKGlv45hN0ZbRLQPsXWWQzNX4Evhl9btCKXXjBIhvYM5kt19DJa8g&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=agECAyWQgk9G7DPXmiGQVQ&oh=00_AQQNVwqXvKyGh56o3gkt4Er4ja6tGsD0beCNERkS8lv1iw&oe=6B0964C2",
-      "followers_count": 7287
+      "followers_count": 7287,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "framematcha",
@@ -1518,7 +1536,9 @@
       "name": "Freedom Apothecary",
       "website": "https://linktr.ee/freedomapothecary.com",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/150515646_3783804685067831_2894824376367222544_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=aPgLNCNdhRwQ7kNvwEjsBCn&_nc_oc=AdptqrvhawutB3tgei24CCK9YQMityp0SWecFi8LXWqSsLHepYgfIqpvvPypkEXEis0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQTZqD6UtfXj0HqJQpnRtllyJNeqF70qkLvCrDW9IOCeBA&oe=6B095369",
-      "followers_count": 22169
+      "followers_count": 22169,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "drinkgrean",
@@ -1538,7 +1558,9 @@
       "name": "Grean Matcha",
       "website": "http://drinkgrean.com",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/536826247_17974765457868521_482765098751618106_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=UvaPbpknw5IQ7kNvwHfT-0N&_nc_oc=Adp8prD-1wRXHRSOg8XXrndyXMmhsU5wMfO7PgYfEImNbF1MkZdKIzGvbURlzu2quoE&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=5v-I4jznfKra9r-urR1tEQ&oh=00_AQQe4bFnNbcKKc9ZPZctqMJ-R2hNTinZ8SrkPSz2xyREyg&oe=6B0963E9",
-      "followers_count": 3327
+      "followers_count": 3327,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "thehamicafe",
@@ -1558,7 +1580,9 @@
       "name": "hami",
       "website": "http://thehamicafe.com",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/572351247_17855508864557303_4900728514711466951_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=qJAM2EZ3uTUQ7kNvwFbtdjU&_nc_oc=AdosLIXOu8h6Dsmu-l3fK6IkrcmMGH8eUbJibw_WemBrR68lUQF1TNTbv771-T73FVg&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=7FP1r3lq9ZvEov4oAPOvCw&oh=00_AQRuDF6UaN9pfq0frcOH-AcjIxUxB68dL_r0gygqW_2_Tg&oe=6B09736C",
-      "followers_count": 14351
+      "followers_count": 14351,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "hercafekc",
@@ -1659,7 +1683,9 @@
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
       "name": "homebody",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/840663982_17961060996216687_1916572182320736418_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=zUDWdqLDDtoQ7kNvwE1iWCL&_nc_oc=AdqI0goD8DlWPciw7e6c8Byn5uHV7nnoeZ2X2Oecu_ltr08mXd09BS264u1H0jJeUA8&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=TgU0Jly1lnvhwslNCPGjew&oh=00_AQQvu4fpCYXdcLxBw5p_0ZJ_ncHW1-N0IwiY-rN2wUNaLw&oe=6B09886D",
-      "followers_count": 5352
+      "followers_count": 5352,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "janesmatcha",
@@ -1679,7 +1705,9 @@
       "name": "jane’s matcha",
       "website": "https://janesmatcha.com",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.75761-15/497708335_17925248508064412_3379978048070607809_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=ppwfEvFhyzgQ7kNvwHN0kv6&_nc_oc=AdoxWyKlCxXXcLZt4MKg00Tdsamlv4VdudnBtCL5S9wRke7_uH7cZ07Exhgt3d7NZmo&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=i1ilyEa8jJvDL7188MWY7g&oh=00_AQQhOdmYHu1rTS8Ysx9HhyJ0RdrHEKdlag3krQYxibSWpQ&oe=6B09632F",
-      "followers_count": 6943
+      "followers_count": 6943,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "junbistlouis",
@@ -1811,11 +1839,11 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T20:31:15.526Z",
+      "last_checked": "2026-11-26T18:18:26.283Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 4,
-      "cadence_hours": 72,
+      "checks": 5,
+      "cadence_hours": 168,
       "notes": "",
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-23T00:59:42.578Z",
@@ -1839,7 +1867,9 @@
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
       "name": "Luanne’s Coffee & Matcha",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/774512087_17908449267463310_8309310911669208241_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=whKRuR1kTmgQ7kNvwH5bi9B&_nc_oc=Adr2VEfOPr44AWNgQTm6tnPilwmeptxtXOYucZY2fe9pVV_la_MaYEhIDE6OSyzTGrQ&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=_myu2_MTFS1bqeeZ_cLbqg&oh=00_AQQlz6OYwwKeA-7UOoMOZkKcjcTVyMytN9Bsxvuy2vu_wg&oe=6B096282",
-      "followers_count": 3901
+      "followers_count": 3901,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matcha.amor.ct",
@@ -2021,7 +2051,9 @@
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
       "name": "Hawaii’s First Luxury Mobile Matcha Bar",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/730274548_18091185791246660_3568379785071689720_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Pv6padDV6t4Q7kNvwHC4JRF&_nc_oc=AdqEtqW_tZD8uXoRNDTn7iWEDDG7Qnn1MSuRehZ9etWOzK7Sl9ma4yf955viXJpzOQc&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=wS0tw0DlICz83l_vnTnTfA&oh=00_AQSbOR52xK8qwfYDUG8vIZf8qYTBo5X_jqv-EVI_grGP4Q&oe=6B096015",
-      "followers_count": 935
+      "followers_count": 935,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matcha.sanya",
@@ -2041,7 +2073,9 @@
       "name": "Matchasanya",
       "website": "http://www.matchasanya.com/",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/122238594_777290383117385_2865148773561297079_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=zEJafrPiiEIQ7kNvwENjW5b&_nc_oc=AdqjXRkz_dNTL6PbEXHQ4aAK9sdY3Tkfe2Vec2b4koIrLJkIiZQRGjbQDXamyu_rva8&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQQbJWfcb2mlLlDIYy38if9gfEc4HU_mQtdeHVG3Jxjp2g&oe=6B0978B3",
-      "followers_count": 801
+      "followers_count": 801,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matcha.valley",
@@ -2060,7 +2094,9 @@
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
       "name": "Matcha Valley",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/751915696_18090997550322281_7843551515089082254_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=WsGlEHgjri8Q7kNvwHR4Zkf&_nc_oc=AdpL35IWFRCvl8vy9-4YwADWE7m66z2bSEFkcNH8R34p32MuXLPJ9Scbq5dhWQ8S5fA&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=kwJusjdznCwpYeneooPs8A&oh=00_AQR2EiUQGu_NE_9AFCjBGrphNfRK_bb_4riS7JpNVFp7Ow&oe=6B097771",
-      "followers_count": 264
+      "followers_count": 264,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matchaful",
@@ -2203,7 +2239,9 @@
       "name": "Mucho Matcha | Specialty Tea Albany NY",
       "website": "https://linktr.ee/Muchomatcha",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/617994992_17848858680664554_7599096271328289304_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=GKuy5prqOZMQ7kNvwF2OTGD&_nc_oc=Adqmxj0_svT_1IkPJT95SpotrFXhMaagIajRQdSd2dRXBikMaGPWuib0i-IlOcYUtTA&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=YbdGO-Q3YIjf0XzuUEHRzA&oh=00_AQT_XMYF98m3YIUhqoRSQ3NYXpcyXzI5ETEFpZrFowa11g&oe=6B09711D",
-      "followers_count": 771
+      "followers_count": 771,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "mudmobilecoffee",
@@ -2223,7 +2261,9 @@
       "name": "MUD mobile coffee",
       "website": "http://mudmobilecoffee.com",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/559271710_17850187050561538_2305776080577206369_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=kt8nycdPOk0Q7kNvwFOYWfv&_nc_oc=AdpQUTu2vtd8XybPCkgb2dT4-gCz1VPFcOKvUsYyzZ1bxI8HPWebqXmDSrkABekcBDY&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=4Pk82N1_xHmi_go2iiBlUA&oh=00_AQRRd4YsDiojnGNt66SmHU7_i9q9mS7e_eiUpFREhpgSDw&oe=6B098A80",
-      "followers_count": 551
+      "followers_count": 551,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "nakamamatchaco",
@@ -2242,7 +2282,9 @@
       "graph_checked_at": "2026-11-23T00:59:42.578Z",
       "name": "Nakama Matcha | Whisk + Gather",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/670276410_18093391855926097_208254634693931102_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=mkMZ_1l5nBUQ7kNvwFfD0L4&_nc_oc=Adpub_zY7Euif1P89FbrW2Iy576QauI_PYy7VCwkTET7on2nH17zrfuh23Oh-s_V99k&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=qApxDLIVFjHlfx0hyVbIUQ&oh=00_AQRgHJLzvtTz7pFvqmZpmVsFZFB6fQzNdBhglA7JcjftTg&oe=6B0946B6",
-      "followers_count": 727
+      "followers_count": 727,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "nomu.bos",
@@ -2293,11 +2335,11 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-22T20:31:15.526Z",
+      "last_checked": "2026-11-26T18:18:26.283Z",
       "last_post_with_popup": null,
       "hits": 0,
-      "checks": 4,
-      "cadence_hours": 72,
+      "checks": 5,
+      "cadence_hours": 168,
       "notes": "",
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-23T00:59:42.578Z",
@@ -2362,7 +2404,9 @@
       "name": "plentea matcha",
       "website": "https://linktr.ee/plenteamatcha",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/837039670_18111470063173386_1935338883714224845_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=BoPAXO9bG40Q7kNvwEAbeep&_nc_oc=Adr9E7pOodZOv0-AtlH-2r-L3H8CnODwlTM87ksRl0hWbOtwrmcKnzcOIEpWCQxMGI0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=R_-59u8wa7hhZ34nFIfcFw&oh=00_AQSBI2yuHO9rpcPOCfF5Od9xsmFnMpj-a5xRbT0kDRhrNg&oe=6B098408",
-      "followers_count": 22155
+      "followers_count": 22155,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "projectlatte",
@@ -2381,7 +2425,9 @@
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
       "website": "http://hoo.be/projectlatte",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/491442124_464622796674650_5218947497441731586_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=uP71kUnKSxgQ7kNvwH5f1xG&_nc_oc=AdqO3fZy9s6a1KCWcEThbNqpPF8NezNQjiKOV8SbPa_sHZs-nhMJfSOLCmS2Nm2F3bA&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQTR74LEfYCb_KmDzZLo1atENJq2vhNZlp2GbCdBuPbG5A&oe=6B09697E",
-      "followers_count": 1409
+      "followers_count": 1409,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "ritualgroundscafe",
@@ -2482,7 +2528,9 @@
       "name": "Matcha Sunday",
       "website": "https://linktr.ee/matchasunday",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/445826999_25517368774544312_2771507384037187714_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=fa1dIEXGC9QQ7kNvwGy0xr-&_nc_oc=AdqG3dd6TcByP3-X4JI4lMvWHgUD52e8oZB02j82cP8UPxtAhrHtwlNegKdApB9-dGQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQRlX9gSpwqYtRwDmBHIpO0j-_Xs5_kLZqqi50c3_HRMkA&oe=6B095A48",
-      "followers_count": 4465
+      "followers_count": 4465,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "tealoftshop",
@@ -2603,7 +2651,9 @@
       "name": "THEY SAY THAT",
       "website": "https://maps.app.goo.gl/zdu5ZUF9rfLq4LSU7?g_st=ic",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/606024824_17910752787272923_5508283859747585537_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Nv9gOIpjaLsQ7kNvwHMvmWH&_nc_oc=AdqQ5u8JVeDPkmmVxg9yaggbWiDtwdqj6xMAL4WXojgP73K7Ewr7R1E-K_Gw90XTTEo&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=ErR6CrvOK64ehNkDI2M1Rw&oh=00_AQQsiLcGzDwX9_bL3p7RJ9ixUg3MlkS3uIo3gSJm_X3O2A&oe=6B0960FB",
-      "followers_count": 2966
+      "followers_count": 2966,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "wanyen.slc",
@@ -3619,7 +3669,9 @@
       "name": "Newbery Street Coffee Roasters",
       "website": "http://beacons.ai/newberyst",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/581501363_18071240066583609_3716364517784595276_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=c6LGplyIC2kQ7kNvwHHer4h&_nc_oc=AdpW6yuhOIFJiYY82dPHJQ4-vuZJc1XXuARWAyD_cSbIO4kKk1Mp8b_v32G749PmUU4&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=wQvWefrZJcCMykW5tk6XQA&oh=00_AQTj1JoZDFIr36LeLdnqQBIrQenWnuLxbq7Qe5mTk82pLg&oe=6B097AAB",
-      "followers_count": 6644
+      "followers_count": 6644,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "pie",
@@ -3802,7 +3854,9 @@
       "name": "Amanari House",
       "website": "https://events.sweatpals.com/581dd276",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/771821279_18099373166197857_4207660443002406317_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=rK8VLswnqA0Q7kNvwEl1ESf&_nc_oc=AdrjaDt-WGcuQoiXT-MaGkFfzyi9FqptOD8BMauG9LdosfkMgeSigK9xnIY-6FY59Mc&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=-ZoJ_58hhvyh96YjiZnOGg&oh=00_AQRBFTw_HAu0X-DqFr_N0aVGm0h76m-N5-4lsL_GLj2SFg&oe=6B095663",
-      "followers_count": 335
+      "followers_count": 335,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "caphinmpls",
@@ -3945,7 +3999,9 @@
       "name": "Sabz Matcha",
       "website": "https://linktr.ee/Sabzmatcha",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/710461094_17906994825493934_636699672655295714_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=CthphLMXJsAQ7kNvwHHwgTv&_nc_oc=AdrfTciEota6gXsMFBWJ_KC5RoFfF4ayjm88wAlM1HQp3GF3mzc5z6tNKArCz4KgibQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=bNxfJdQWeDhQ_XEh12PrKQ&oh=00_AQQK5qPrm9zr-s7IAW5eMz7oWO-8CTKpXXC5xjsuTRCPdA&oe=6B097E69",
-      "followers_count": 1055
+      "followers_count": 1055,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "cookbookcourtyard",
@@ -4292,7 +4348,9 @@
       "name": "Moody Matcha Ritual",
       "website": "https://www.jiarencafe.com/eventcalendar",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/587291781_17848367811612023_6375177011962160605_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=pzuuHfu6_WMQ7kNvwF87JEq&_nc_oc=Adp_hDEkzPnG8gE4b9NzqmgT-KSNRb8Gjq7VCmjCrquHUu8pW9bJaC-wJbWeD6Ce41M&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=CK1enLwvV85KEiH2jVQrcw&oh=00_AQREMqKosF2OR62KdHmpXxf7TIct6299WZ_g6wBOapDQiw&oe=6B098D0D",
-      "followers_count": 74
+      "followers_count": 74,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "shesinvited",
@@ -4517,7 +4575,9 @@
       "name": "Wynwood Marketplace",
       "website": "http://wa.me/3059007799",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/359447990_806270887872801_2612633039930836004_n.jpg?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=8vJyOjc_LxwQ7kNvwF70qTP&_nc_oc=AdruuSN6-KPk_ry9OA2tMhz8ouv7CS_Fs_zATRE1hUbVRRCwXcax_hIq0ailFkBRHTc&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQQSrxvZIdFEmSrmrIMFyFr0NCNREPQhh7Nk2lMWFp_3_A&oe=6B097D07",
-      "followers_count": 49074
+      "followers_count": 49074,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "pipcoffeeclay",
@@ -4782,7 +4842,9 @@
       "name": "Saint Spicer",
       "website": "https://linktr.ee/saintsaidso",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/420523488_276272658540987_2985367504183540845_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=z82-obuErTUQ7kNvwFiwsBp&_nc_oc=AdpiZf-ExhJxhqASimZptnMrEiBgK5_hSJCXDgmk2L7zovWuE_3GRB0qYMpeoTArPYQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQQ-XJmstS_rk-FaN8jI6jXT6JIRPKwwoV2w2EeliU0QVA&oe=6B095CED",
-      "followers_count": 2193
+      "followers_count": 2193,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "kyrumatcha",
@@ -4925,7 +4987,9 @@
       "name": "Diablicos Coffee",
       "website": "http://Diablicos.Coffee",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/762276462_17944878495264319_4652704878913163754_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Ttfy5q2h8WUQ7kNvwEGupdF&_nc_oc=AdphBU47nHPlnZV_FpATKgoBMfICz-QTQzPvDNpR2zFZ7heMvu7RQCPXDkCajwBLI6Y&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=r1pwbshuhjyAjnWWOV8DPA&oh=00_AQRunNSZAKwptYHDWxrtmYYY2STdFvCjbbj7NvMPx54nfg&oe=6B097353",
-      "followers_count": 3472
+      "followers_count": 3472,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "merrimatcha",
@@ -6464,7 +6528,9 @@
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
       "name": "Gemora Matcha",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/754143252_18074255741414424_3949600118785977335_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=t8VYPuj-ItwQ7kNvwFGWjls&_nc_oc=Adr5p1SBg4_8iSzXv50I2EBNuLgIxeM0bS1GyvvmQ1W3Z1Ga405hotsgp6hogKUyMgA&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=ykb18HcuHBnr7BAU_2t2xw&oh=00_AQR6c03Dp1OApT1mkGkjPmwe71NGCFaY1DIurv00Ygm-JQ&oe=6B097340",
-      "followers_count": 11
+      "followers_count": 11,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "iriscoffeelab",
@@ -6566,7 +6632,9 @@
       "name": "Min's Matcha",
       "website": "http://www.minsmatcha.com",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/13827479_723081394517017_7084169429398847488_a.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=yfCQQ6njR_MQ7kNvwGhWDce&_nc_oc=Adps9ueeD1dCDelr0m70PqJZUsMhlrZjw8nFKE39FPNmI_UiHTqcA8JoNqi90gkrPjk&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQSZdlhmECa4_ySUizIbpH13eFj7YHzGsdl9sZ6Ta8NhtA&oe=6B09558B",
-      "followers_count": 3164
+      "followers_count": 3164,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "nok108matcha",
@@ -6769,7 +6837,9 @@
       "name": "UNOVA",
       "website": "https://linktr.ee/unovatea",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/463356159_449649030949789_1651695034412975299_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=EvTY_4czo2QQ7kNvwHZlFUR&_nc_oc=AdowsM0ZxFCiWgVV1m2o-gDEzcVEMh67AK27QtfYLMIsQgr19rhQhQBNVxMhBzZg2oQ&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQS3CeI5p1R4aKzbDPkf4-9fRy96BwBkZi6j4JrwyynHYg&oe=6B0985AD",
-      "followers_count": 410
+      "followers_count": 410,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "drinkwakari",
@@ -6789,7 +6859,9 @@
       "name": "SUPER PREMIUM MATCHA",
       "website": "http://drinkwakari.com",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/685947966_17928909195268195_9076480198711286870_n.jpg?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=cg_aJLf0IkQQ7kNvwHCPI85&_nc_oc=AdpA_5cTNl9yLXVLVm5yRmIEIrzFhURfzypvbaK8IEjJto4j3hS9KNVq_jEajGdVTvI&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=W92RcY33zhxk14L88N5dog&oh=00_AQRgqo7bMmbORkBQuYcrofo82M_iHPJiE_kvBXGajtUBhg&oe=6B098844",
-      "followers_count": 1056
+      "followers_count": 1056,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "jinniesmalls",
@@ -7014,7 +7086,9 @@
           "caption": "Things to do this Sunday at our Market in Eado 📅 October 25 ⏰ 2-5PM 📍 buffalob"
         }
       ],
-      "bio": "A Black Friday Market in Montrose | November 27\nLast Fall Market | November 29\nA Holiday Market w/ @houstonbotanic | December 13"
+      "bio": "A Black Friday Market in Montrose | November 27\nLast Fall Market | November 29\nA Holiday Market w/ @houstonbotanic | December 13",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "lcknits_",
@@ -7518,7 +7592,9 @@
           "caption": "📍 𝐖𝐚𝐬𝐡𝐢𝐧𝐠𝐭𝐨𝐧, 𝐃.𝐂. 𝐢𝐬 𝐧𝐨𝐰 𝐚 𝐋𝐨𝐧𝐠𝐞𝐯𝐢𝐭𝐲 𝐂𝐢𝐭𝐲! We'r"
         }
       ],
-      "bio": "📍 Longevity, but make it social\n🧬 Community • Expert events • Real science\n💚 Open to all & always free\n👇 Join us"
+      "bio": "📍 Longevity, but make it social\n🧬 Community • Expert events • Real science\n💚 Open to all & always free\n👇 Join us",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "the_supermarket",
@@ -8937,7 +9013,9 @@
           "caption": "Saturday Set-Up at Port Washington Farmers Market👩‍🌾 . . . . . . #farmersmarke"
         }
       ],
-      "bio": "✨Organic Ceremonial Grade Matcha🍵\n✨Kyushu, Japan🇯🇵 -> Long Island, NY\n✨Mother-daughter owned👩‍👧 抹茶\n✨Quality product for well-being😌\nShop at👇"
+      "bio": "✨Organic Ceremonial Grade Matcha🍵\n✨Kyushu, Japan🇯🇵 -> Long Island, NY\n✨Mother-daughter owned👩‍👧 抹茶\n✨Quality product for well-being😌\nShop at👇",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "MANGO",
@@ -9015,7 +9093,9 @@
           "caption": "A fresh mani + pedi & savings? Yes, please! Enjoy 20% OFF when you book your man"
         }
       ],
-      "bio": "Call today to book your appointment!\n✨ Mandeville: (985) 778-2708 | 4450 LA-22, Suite 1\n✨ Metairie: (504) 354-8167 | 3500 Severn Avenue"
+      "bio": "Call today to book your appointment!\n✨ Mandeville: (985) 778-2708 | 4450 LA-22, Suite 1\n✨ Metairie: (504) 354-8167 | 3500 Severn Avenue",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "cafe_8107",
@@ -9055,7 +9135,9 @@
           "caption": "Iced Pandan Latte #matcha #latte"
         }
       ],
-      "bio": "🍵 Premium ceremonial-grade matcha from Japan \n☕️ Our love for bold Vietnamese coffee\n✨ Pop-up dates coming soon!"
+      "bio": "🍵 Premium ceremonial-grade matcha from Japan \n☕️ Our love for bold Vietnamese coffee\n✨ Pop-up dates coming soon!",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "RECLAIMEDATL",
@@ -9129,7 +9211,9 @@
           "caption": "this saturday + sunday, let the celebrations continue!!! we are doing a blind bo"
         }
       ],
-      "bio": "monday & tues: closed\nwednesday - sunday: 7am - 4pm\nkitchen: 7am - 2pm"
+      "bio": "monday & tues: closed\nwednesday - sunday: 7am - 4pm\nkitchen: 7am - 2pm",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "rangcoffeehouse",
@@ -9242,7 +9326,9 @@
           "caption": "Whisked Away is so excited to be back for the autumn season!! We’ll be doing eve"
         }
       ],
-      "bio": "⭐️Ceremonial matcha cart serving first harvest single-origin matcha to Cape Cod & Boston\n🪽Fill out the form below for bookings"
+      "bio": "⭐️Ceremonial matcha cart serving first harvest single-origin matcha to Cape Cod & Boston\n🪽Fill out the form below for bookings",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "rsvpeventspace",
@@ -9283,7 +9369,9 @@
           "caption": "The holidays are just around the corner! We’re excited to host one last pop up m"
         }
       ],
-      "bio": "An intimate gathering space in the heart of Downtown Fullerton.\n- Closing our doors at the end of 2026!\nInquiries through contact form. PLEASE NO DMs"
+      "bio": "An intimate gathering space in the heart of Downtown Fullerton.\n- Closing our doors at the end of 2026!\nInquiries through contact form. PLEASE NO DMs",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "roetheone",
@@ -9384,7 +9472,9 @@
           "caption": "Homesik has grown so much over the past year, and we honestly couldn’t have imag"
         }
       ],
-      "bio": "Vietnamese coffee & premium ceremonial matcha\nBased in SLC, UT \nNovember’s Calendar Posted!"
+      "bio": "Vietnamese coffee & premium ceremonial matcha\nBased in SLC, UT \nNovember’s Calendar Posted!",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "thesaltlakecitygirl",
@@ -9439,7 +9529,9 @@
           "caption": "Have you been dreaming of hosting an event at Gramercy? ✶ our calendar is offici"
         }
       ],
-      "bio": "TEA ✶ COFFEE ✶ EVENTS                                     \nOpen 8am-2pm \nCLOSED Tuesdays"
+      "bio": "TEA ✶ COFFEE ✶ EVENTS                                     \nOpen 8am-2pm \nCLOSED Tuesdays",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "macxcastro",
@@ -9845,7 +9937,9 @@
           "caption": "I had no time to take photos of the drinks today lol see you tomorrow at Blind T"
         }
       ],
-      "bio": "omakase · workshops · letters to your inner child\ntampa, oct 24–dec 20\nsave yourself a seat ↓"
+      "bio": "omakase · workshops · letters to your inner child\ntampa, oct 24–dec 20\nsave yourself a seat ↓",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "bootybabeztampa",
@@ -9886,7 +9980,9 @@
           "caption": "Seeing everything through our \"Babez Pink\" colored glasses 🎀 Pick up your Babez"
         }
       ],
-      "bio": "The Glutes | The Babez\nCommunity + RESULTS \nStrength training for women\nTampa, FL \nLocated @sparkmanwharf \nBook a session ⤵"
+      "bio": "The Glutes | The Babez\nCommunity + RESULTS \nStrength training for women\nTampa, FL \nLocated @sparkmanwharf \nBook a session ⤵",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "elliestu20",
@@ -9957,7 +10053,9 @@
           "caption": "Serving it up in the Tampa Bay area 🫶🏻 Grateful for this community we’re build"
         }
       ],
-      "bio": "Tampa Bay Matcha and Coffee Pop Up 🍵🌴☕️\nUji matcha • Clean Milks • Housemade Syrups 🍓🍌🫐\nMobile Pop-Up and Private Events 📩🫡"
+      "bio": "Tampa Bay Matcha and Coffee Pop Up 🍵🌴☕️\nUji matcha • Clean Milks • Housemade Syrups 🍓🍌🫐\nMobile Pop-Up and Private Events 📩🫡",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "sirenatampa",
@@ -9998,7 +10096,9 @@
           "caption": "Effortlessly chic, insanely cool & now available at Sirena Tampa | shop it on ou"
         }
       ],
-      "bio": "from sea, to city, and everywhere in between\nHOURS…\nMon-Closed | Tue:12-6 | Wed-Sat: 11-6 | Sun: 11-5\nOwner : @sydneyxlane\n3310 W Cypress St Tampa, FL"
+      "bio": "from sea, to city, and everywhere in between\nHOURS…\nMon-Closed | Tue:12-6 | Wed-Sat: 11-6 | Sun: 11-5\nOwner : @sydneyxlane\n3310 W Cypress St Tampa, FL",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "alessandradileo",
@@ -10118,7 +10218,9 @@
           "caption": "jakesiffert in our Checkered One Sleeve Knit Top. A playful pattern reimagined i"
         }
       ],
-      "bio": "Knitwear-Focused Unisex Label from New York City, Worldwide Shipping.\nHoliday Shop - RSVP link in bio\nDec 4-5, 168 Ludlow"
+      "bio": "Knitwear-Focused Unisex Label from New York City, Worldwide Shipping.\nHoliday Shop - RSVP link in bio\nDec 4-5, 168 Ludlow",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "whoismeag",
@@ -10263,7 +10365,9 @@
           "caption": "grinch’s double matcha 🎄 stealing hearts, not christmas 🤭 this is only one of "
         }
       ],
-      "bio": "est. 2024 | ewa beach, hi\nhawai’i’s first matcha-on-tap ⋆˙⟡\npop-ups → check pinned post"
+      "bio": "est. 2024 | ewa beach, hi\nhawai’i’s first matcha-on-tap ⋆˙⟡\npop-ups → check pinned post",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "jessicasrestaurant808",
@@ -10345,7 +10449,9 @@
           "caption": "Every Friday paikohawaii 🗣️🗣️🗣️ vc: Jenn 🐐"
         }
       ],
-      "bio": "Pop ups 🍵\n•@paikohawaii on Fridays 10-3pm\n• @waipahuhighmarauders 11/21 10-4pm\n•@fishcake 11/28 11-3pm\nMatcha Map 🗺️ \n• v2 loading…"
+      "bio": "Pop ups 🍵\n•@paikohawaii on Fridays 10-3pm\n• @waipahuhighmarauders 11/21 10-4pm\n•@fishcake 11/28 11-3pm\nMatcha Map 🗺️ \n• v2 loading…",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "fiveftfoodie",
@@ -10386,7 +10492,9 @@
           "caption": "you don’t hate waikiki, you hate PARKING in waikiki 🌺 royalhwnctr is the only p"
         }
       ],
-      "bio": "living, laughing & crying \n📍canberra & oahu\n💌 corina@sumikallc.com\n🐇💜 @_getnicked"
+      "bio": "living, laughing & crying \n📍canberra & oahu\n💌 corina@sumikallc.com\n🐇💜 @_getnicked",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matcha.andmo",
@@ -10426,7 +10534,9 @@
           "caption": "no friends = no sharing 😂 #maui #matcha #hawaii #food #funny"
         }
       ],
-      "bio": "📍maui, hawaii\nmatcha pop up 🍵\nupcoming event:\nRise studio 11/22 7am-9am\nMaui sunday market 11/22 4pm-8pm"
+      "bio": "📍maui, hawaii\nmatcha pop up 🍵\nupcoming event:\nRise studio 11/22 7am-9am\nMaui sunday market 11/22 4pm-8pm",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "lunasmatcha",
@@ -10499,7 +10609,9 @@
           "caption": "STARTING TOMORROW!!! strawberry milk vietnamese iced coffee is yours starting at"
         }
       ],
-      "bio": "thanksgiving week:\nmon-fri | 9am-3pm\nclosed thanksgiving day\nsat-sun | 10am-4pm\nby @pochettely @25dials"
+      "bio": "thanksgiving week:\nmon-fri | 9am-3pm\nclosed thanksgiving day\nsat-sun | 10am-4pm\nby @pochettely @25dials",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "enchantea.matcha",
@@ -12022,7 +12134,9 @@
           "caption": "A matcha snob’s worst nightmares #matchasnobs 🍵🎃🍵🎃👀 Matcha whisk pic from c"
         }
       ],
-      "bio": "Your resident matcha snobs.\n🍞TOASTY MATCHA FROM YAME, JAPAN🇯🇵\nSee our products 👇🏻"
+      "bio": "Your resident matcha snobs.\n🍞TOASTY MATCHA FROM YAME, JAPAN🇯🇵\nSee our products 👇🏻",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "giannadior_",
@@ -15008,7 +15122,9 @@
       "name": "belly🪽",
       "website": "https://linktr.ee/Bellymayme",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.75761-15/499253497_18503594314058980_1480678729850078582_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=btOGxv9oWpUQ7kNvwHVAO09&_nc_oc=Adp4PjQYsoNVkqHJ57jXDvgK0pQIxw5SG3jotUkBIvEmnsjuATxOdb7XgilzG_BG0IA&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=A-2_CT_WbQgmKXs9DGJ3wQ&oh=00_AQQuvOT76bA7CP-djayZx_wcUrVKriSJE3rqO5U_WHd3lQ&oe=6B0969E4",
-      "followers_count": 15531
+      "followers_count": 15531,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "havenwellwithin",
@@ -15028,7 +15144,9 @@
       "name": "Haven Well Within",
       "website": "https://likeshop.me/havenwellwithin",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/465153617_3862773463992793_7846367127927595919_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=U06wnwaJZu0Q7kNvwGsNrQd&_nc_oc=AdrOPEZwOF-R3U8nVat-kwqYGdvCcrO8i1hKz3fGp1YGh2L_ZK-ujz80a1JYacc3Y-k&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQSUsO7sTA-Zvv4PQJD4ieas89LAbwjKzxfpA0R2iCVG9g&oe=6B098CB6",
-      "followers_count": 182859
+      "followers_count": 182859,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "thepeoplesmatcha",
@@ -15048,7 +15166,9 @@
       "name": "The People’s Matcha",
       "website": "https://linktr.ee/thepeoplesmatcha",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.75761-15/503172065_18024062537703521_6288524569275549479_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=U9wsPs-KmDUQ7kNvwFt8coN&_nc_oc=Adpmf6dzsw46kA6Q19wo_MuWaRPNGbOAyV0b8agfVNvCQ45r6OtQphyH7nn3b_N-ats&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=Kwv5C4jzydN3shJ35L5SvQ&oh=00_AQTz-jx-b3oIP-ju5wAo8tcWPcXCS5VRcJvAkJwkJjmDog&oe=6B0983B5",
-      "followers_count": 2901
+      "followers_count": 2901,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "thebetterlisa",
@@ -15068,7 +15188,9 @@
       "name": "Lisa Li",
       "website": "http://the-qi.com",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/481488558_614268891352121_1756766337953039849_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=N5_SJEV4BIAQ7kNvwEauiTg&_nc_oc=Adon2DZ882S6NpkSss0k8GKhcWtCPEYs48Ep9YG1BGTHkdIdJOPsMOSWX1IVJWSIpYU&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQT0QuUxErhukr6LGuuyBwgiDmm8w4CqCEgQrIei_QL8yw&oe=6B096C2A",
-      "followers_count": 23439
+      "followers_count": 23439,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "dezmatcha",
@@ -15088,7 +15210,9 @@
       "name": "dez matcha 🪸🌊🐚🪼🦀🐬",
       "website": "http://dezmatcha.com",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/650057043_18034742948606160_5003562709470547431_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=psC7srffOmoQ7kNvwEkxcTY&_nc_oc=Adr4iSe-Pj0Yznvsv_8SwsEAnVAzN16XALMZLMFS8xR9gth8oPeGen34pqnNVECERr0&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=Y7CiKxsi67hRRsk8YM83Mg&oh=00_AQQsOasG1A5YWWmk7R3wn-GUYXI3JKTpeZp_xIl6T9h0CQ&oe=6B098602",
-      "followers_count": 430
+      "followers_count": 430,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "publicgoods",
@@ -15108,7 +15232,9 @@
       "name": "Public Goods",
       "website": "http://www.publicgoods.com",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.82787-15/671189506_18542325256070058_194223484913191385_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=w9nwUkNK3nwQ7kNvwFyC0tO&_nc_oc=AdpiIR56xcVJph7MUYGaIU7n-zNoUjYA05q5HsTtjr42O_OcQrIt6MtH6uJ-lZfcbtA&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=Q8W0qRLMI8ey-eDoXzzj7A&oh=00_AQRSN0dqpi15wED_ecUyAGgqDkH0QHZaHTnePq0RZ5JyyQ&oe=6B095562",
-      "followers_count": 211783
+      "followers_count": 211783,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "kkat.dawg",
@@ -15233,7 +15359,9 @@
       "name": "Pour & Pulse",
       "website": "https://linktr.ee/pourandpulse",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/650887217_17877001836515376_2344876545368208749_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=2JXL9URA2NIQ7kNvwGRZKjQ&_nc_oc=AdpAV56jXcrJx9SubAlVCfciZxwLUxRMNnDGtqA3VGyV-m5piqUKv6ZmaGpdoT-upfU&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=_9v9miLfr1H2Vu8VT4SSzA&oh=00_AQRfSdbuvrLlOomZs-XBd6H5IQ4jfEVbnOTNgUu5Bn78Bg&oe=6B096058",
-      "followers_count": 8114
+      "followers_count": 8114,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "thehumblelush_mobilebar",
@@ -15253,7 +15381,9 @@
       "name": "The humble lush mobile bar",
       "website": "http://thehumblelush@gmail.com",
       "profile_picture_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.82787-15/522679208_17900519631231383_9177542859158095929_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=vZTam7vSQVsQ7kNvwFWlf6-&_nc_oc=AdoW1UJwBjE4INuJsWx7i98JuLad-6uokvtaL0CViF26tNNPrfGuOiE0BBosVimxH3I&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=c8UfSEQkz8OiWinb5Qspxw&oh=00_AQSy87Uh8cAOYvSKfmmJ5sVz4EI9Oti9XRQ5-_HtDTB5iA&oe=6B09586B",
-      "followers_count": 849
+      "followers_count": 849,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "emily.lorem",
@@ -15505,7 +15635,9 @@
       "name": "OAK OKC",
       "website": "https://linktr.ee/oak_okc",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/66403125_2409780202631261_3416014711458627584_n.jpg?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=H3INCxjjZkMQ7kNvwEjTbsL&_nc_oc=AdruXWmtqTcIXq849_RVq2RHF6wpyjYxM8h5vgYs8KeXYg7ZO4mTVii4fhYzFoQrWKc&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQQLUfn3Gow7nMhJ5Ea8SauyyyLXN553Kr0JQ81xFQh7Hg&oe=6B098AF6",
-      "followers_count": 33789
+      "followers_count": 33789,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "cafe_rose_the_pink_cafe_el_paso",
@@ -15850,7 +15982,9 @@
           "caption": "Less than 2 weeks left to snag your Raspberry Crumble Smoothie at Toastique🩷 Do"
         }
       ],
-      "bio": "Your local go-to all day café, delivering freshness, wellness, and connection every day\n🌱 Nourish Every Moment™"
+      "bio": "Your local go-to all day café, delivering freshness, wellness, and connection every day\n🌱 Nourish Every Moment™",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "spyc_pilates",
@@ -16156,7 +16290,9 @@
           "caption": "Let Nell Grace take care of the sides this Thanksgiving so you can spend more ti"
         }
       ],
-      "bio": "Discover the best of Jackson, MS! 🌟\n📍 Hidden gems, must-see spots & events\n🍴 Foodie finds & local favorites\n🗺️ Your guide to exploring the city"
+      "bio": "Discover the best of Jackson, MS! 🌟\n📍 Hidden gems, must-see spots & events\n🍴 Foodie finds & local favorites\n🗺️ Your guide to exploring the city",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "eykkm",
@@ -16389,7 +16525,9 @@
           "caption": "Christmas dates are better with matcha 🎄🍵🎀 Send this to your favorite person "
         }
       ],
-      "bio": "🚛🍵Matcha on wheels\n📍3900 Rosa Ave. Link Below.\n🗓️Open Wed-Sunday, Hours posted below\n⬇️ORDER AHEAD BELOW THRU LINK • Pick Up"
+      "bio": "🚛🍵Matcha on wheels\n📍3900 Rosa Ave. Link Below.\n🗓️Open Wed-Sunday, Hours posted below\n⬇️ORDER AHEAD BELOW THRU LINK • Pick Up",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "rushcycle_elpasoeast",
@@ -16430,7 +16568,9 @@
           "caption": "A little warmth goes a long way and we need your help. 🥹 We’re collecting new o"
         }
       ],
-      "bio": "Dimmed Lights • Fun Music  • Best Instructors\n#RUSHEPTX"
+      "bio": "Dimmed Lights • Fun Music  • Best Instructors\n#RUSHEPTX",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "blushisme",
@@ -16471,7 +16611,9 @@
           "caption": "Did you know we can actually improve the appearance of your neck? 👀✨ The neck i"
         }
       ],
-      "bio": "Certified Esthetician & Skin Specialist | Under MD \nEl Paso, TX📍 3624 Joe Battle Suite-113 \nMon-Sat 8:30AM-1:30PM 🗓️\n💖 Habló Español | Booking Link ⬇️"
+      "bio": "Certified Esthetician & Skin Specialist | Under MD \nEl Paso, TX📍 3624 Joe Battle Suite-113 \nMon-Sat 8:30AM-1:30PM 🗓️\n💖 Habló Español | Booking Link ⬇️",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "heyitsjaaaneelita",
@@ -16527,7 +16669,9 @@
           "caption": "Happy Friday! Gloss on, matcha in hand. Weekend ready. Matcha always looks good "
         }
       ],
-      "bio": "Buena Matcha - The Deserts First Matcha Bar \n73833 El Paseo Dr. Palm Desert CA\n@nekohama Ceremonial A1 Matcha&Houjicha\nOpen Everyday 8am-5pm"
+      "bio": "Buena Matcha - The Deserts First Matcha Bar \n73833 El Paseo Dr. Palm Desert CA\n@nekohama Ceremonial A1 Matcha&Houjicha\nOpen Everyday 8am-5pm",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "rhythmn_motion",
@@ -16793,7 +16937,7 @@
       "handle": "flushingfoodie",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgDUMcFCgaQ/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -16802,7 +16946,7 @@
       "hits": 0,
       "checks": 1,
       "cadence_hours": 72,
-      "notes": "Winter in my favorite szn and a little warmth goes a long way, especially in nyc this time of year 🍲🤍\n\nI’m back(ish) ♡\n\n#nyceats #soupseason #nycfoodie #flush",
+      "notes": "guessed handle, Graph does not know it",
       "guess": true,
       "graph_checked_at": "2026-11-23T03:03:15.610Z",
       "name": "Jessica",
@@ -16828,7 +16972,10 @@
           "caption": "🚨Closed🚨 📍Carnation Bakery 📍46-05 Kissena Blvd . OMG!! Just drove by Carnati"
         }
       ],
-      "bio": "Grew up in the LES/Chinatown now residing in Flushing"
+      "bio": "Grew up in the LES/Chinatown now residing in Flushing",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z",
+      "dropped_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "bestmatchanyc",
@@ -16987,7 +17134,9 @@
           "caption": "New season, new sips 🩷 Our fall menu is officially live at all locations ✨"
         }
       ],
-      "bio": "NY + LA\nSave Our Planet 🌎 \nNo Single-Use Plastic ♻️"
+      "bio": "NY + LA\nSave Our Planet 🌎 \nNo Single-Use Plastic ♻️",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "nationalmatchaday",
@@ -17321,7 +17470,9 @@
           "caption": "You need to try these Matcha Crusted Mexican Buns 🍄🍵 Recipe yields 12 mini 🍄 "
         }
       ],
-      "bio": "⚡️ | A Ceremony for your soul LA/Miami \n🇯🇵 | Premium Matcha Green Tea 🍵 \n🌱 | Plant based Energy\n⛩ | Wholesale inquiries info@yodhamatcha.com"
+      "bio": "⚡️ | A Ceremony for your soul LA/Miami \n🇯🇵 | Premium Matcha Green Tea 🍵 \n🌱 | Plant based Energy\n⛩ | Wholesale inquiries info@yodhamatcha.com",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "nyccoffeeshop",
@@ -17438,7 +17589,9 @@
           "caption": "Strawberry Forest won’t be here much longer 🍓🍵 Strawberry, jasmine green tea, "
         }
       ],
-      "bio": "Tea, coffee & pastries — reimagined.\nFind your flow in NYC ↓"
+      "bio": "Tea, coffee & pastries — reimagined.\nFind your flow in NYC ↓",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "teaandtreats",
@@ -17844,7 +17997,9 @@
           "caption": "Part 2: How does the field change? 🌱 What happens to a tea field when we stop a"
         }
       ],
-      "bio": "🍵 Natural matcha & tea — worldwide shipping\n🏡 Tea tours & internships in Nara, Japan\n奈良の自然栽培茶農家 🌿\n無農薬・無肥料 | 有機JAS認証"
+      "bio": "🍵 Natural matcha & tea — worldwide shipping\n🏡 Tea tours & internships in Nara, Japan\n奈良の自然栽培茶農家 🌿\n無農薬・無肥料 | 有機JAS認証",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "pistachio",
@@ -17964,7 +18119,9 @@
           "caption": "I’d wait 2 hours in the rain for fresh mochi pandan peanut butter waffles. Kuih "
         }
       ],
-      "bio": "“The world is made of everything, and everything is worth loving.”"
+      "bio": "“The world is made of everything, and everything is worth loving.”",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "coastmatcha",
@@ -18023,7 +18180,9 @@
           "caption": "Accidentally matching my matcha with my socks 💚 🍵 #greenlove. Socks by wunderb"
         }
       ],
-      "bio": "#authenticmatcha\nHolistic living 🌻🌞🧘🏽‍♀️\nGermany 🔛 California \nTea lover, obviously. \nIntuitive living. Mindful aesthetic.\n@jaynifb 🌿🍵"
+      "bio": "#authenticmatcha\nHolistic living 🌻🌞🧘🏽‍♀️\nGermany 🔛 California \nTea lover, obviously. \nIntuitive living. Mindful aesthetic.\n@jaynifb 🌿🍵",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "beli",
@@ -18083,7 +18242,9 @@
           "caption": "Our Kyoto Matcha Powder is back🍵💚 Made with ceremonial-grade matcha from Kyoto"
         }
       ],
-      "bio": "ナナズグリーンティー /nana’s green tea\nNo.1 Matcha Cafe from Tokyo, Japan\n📍1250 Broadway, New York, NY 10001"
+      "bio": "ナナズグリーンティー /nana’s green tea\nNo.1 Matcha Cafe from Tokyo, Japan\n📍1250 Broadway, New York, NY 10001",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "sohomatcha",
@@ -18124,7 +18285,9 @@
           "caption": "Llegaron los sabores de octubre y no es por nada pero si están muy bueno! 🎃🍁🍂"
         }
       ],
-      "bio": "📍Located in Integra Medical Center\n🍵 Wellness Community, Coffee & Matcha for all"
+      "bio": "📍Located in Integra Medical Center\n🍵 Wellness Community, Coffee & Matcha for all",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "uppereastsidematcha",
@@ -18203,7 +18366,9 @@
           "caption": "Cold coconut water, first-harvest Soku. Tradition meeting something new — shade-"
         }
       ],
-      "bio": "YOUR TEA RITUAL\n🇯🇵 from family-owned Farm, in Uji, Kyoto\n🍵 the finest Japanese Tea and Matcha"
+      "bio": "YOUR TEA RITUAL\n🇯🇵 from family-owned Farm, in Uji, Kyoto\n🍵 the finest Japanese Tea and Matcha",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "talkedaboutsomeadultstuff",
@@ -18281,7 +18446,9 @@
           "caption": "Skip the wait. Pay with Cash App or any Lightning-enabled bitcoin wallet at Hand"
         }
       ],
-      "bio": "Silverlake - 4459 W Sunset Blvd \nWest Hollywood - 8535 Sunset Blvd\nEveryday 7:30AM - 4:30PM"
+      "bio": "Silverlake - 4459 W Sunset Blvd \nWest Hollywood - 8535 Sunset Blvd\nEveryday 7:30AM - 4:30PM",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "ramen",
@@ -18513,13 +18680,15 @@
           "caption": "this cream top is so artsy she needed her own post made with housemade vanilla a"
         }
       ],
-      "bio": "Balance the Unbalanced\nMon to Fri — 8 - 5\nSat to Sun — 8 - 6"
+      "bio": "Balance the Unbalanced\nMon to Fri — 8 - 5\nSat to Sun — 8 - 6",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matchacore",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DXEkoe0FBSF/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18528,7 +18697,7 @@
       "hits": 0,
       "checks": 1,
       "cadence_hours": 72,
-      "notes": "#LosAngeles 🇺🇸 discoverla \n\nMatcha Core 🍵💚\n그 중심에 있는 곳, 바로\n📍Community Goods\nAddress: 710 N Edinburgh Ave, Los Angeles, CA 90046\n\n비버부부도 꾸준히 찾는다는 그 카페,\n\n가게 앞 ",
+      "notes": "guessed handle, Graph does not know it",
       "guess": true,
       "graph_checked_at": "2026-11-23T03:03:15.610Z",
       "name": "𓆩♡𓆪",
@@ -18554,7 +18723,10 @@
           "caption": "walking around in the rain at night is so fun until you realize you’ve been walk"
         }
       ],
-      "bio": "a visual diary"
+      "bio": "a visual diary",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z",
+      "dropped_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "allaboutmatcha",
@@ -18716,7 +18888,7 @@
       "handle": "midorimatcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DN4NoRMAT5R/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18725,7 +18897,7 @@
       "hits": 0,
       "checks": 1,
       "cadence_hours": 72,
-      "notes": "Matcha is my weakness. Ice cream is my kryptonite. Sometimes they combine the two and it’s pure magic. On my recent trip to LA, we were doing two to three match",
+      "notes": "guessed handle, Graph does not know it",
       "guess": true,
       "graph_checked_at": "2026-11-23T03:03:15.610Z",
       "name": "Midori Matcha ™",
@@ -18752,13 +18924,16 @@
           "caption": "Enjoy our Summer seasonal soft serve collection, one swirl at a time 🤎Hojicha |"
         }
       ],
-      "bio": "🌿   Crafted for Matcha Purists\n📍   Los Angeles | Little Tokyo"
+      "bio": "🌿   Crafted for Matcha Purists\n📍   Los Angeles | Little Tokyo",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z",
+      "dropped_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "losangelesrecs",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DSVnimWEvpC/",
       "first_seen": "2026-11-23T02:33:15.953Z",
@@ -18767,11 +18942,14 @@
       "hits": 0,
       "checks": 1,
       "cadence_hours": 72,
-      "notes": "one of my favorite hobbies is exploring new coffee/matcha spots so here’s my brutally honest roundup from this past year 🍵🫶🏼🤍 *first one is actually Damo no",
+      "notes": "guessed handle, Graph does not know it",
       "guess": true,
       "graph_checked_at": "2026-11-23T03:03:15.610Z",
       "name": "Adrienne Rice",
-      "followers_count": 1
+      "followers_count": 1,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z",
+      "dropped_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "canyoncoffee",
@@ -18812,7 +18990,9 @@
           "caption": "For the rainy weather, a warm breakfast and cup of hot coffee. Almond butter, sa"
         }
       ],
-      "bio": "Organic coffee roaster, wholesaler & retailer. \nLos Angeles & New York cafe hours: \n7am-5pm Monday - Thursday\n7am-6pm Friday - Sunday"
+      "bio": "Organic coffee roaster, wholesaler & retailer. \nLos Angeles & New York cafe hours: \n7am-5pm Monday - Thursday\n7am-6pm Friday - Sunday",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "likeafriendsaid",
@@ -18896,7 +19076,9 @@
           "caption": "We’ve recently updated our hours! Our doors now open at 11:30 am Tuesday-Sunday "
         }
       ],
-      "bio": "Japanese Green Tea + Matcha cafe in DTLA\nSTORE HOURS:\nMonday:CLOSED\nTuesday-Thursday:11:30-4pm\nFriday & Saturday:11:30-8pm\nSunday:11:30-5pm"
+      "bio": "Japanese Green Tea + Matcha cafe in DTLA\nSTORE HOURS:\nMonday:CLOSED\nTuesday-Thursday:11:30-4pm\nFriday & Saturday:11:30-8pm\nSunday:11:30-5pm",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "stickers",
@@ -18956,7 +19138,9 @@
           "caption": "Meet the S’mores Latte. ☕️ Espresso, maple syrup, brûléed marshmallow, Biscoff c"
         }
       ],
-      "bio": "Crème De La Crèma\nOpen Daily • 7AM–5PM\n13750 Ventura Blvd\nSherman Oaks, CA 91423"
+      "bio": "Crème De La Crèma\nOpen Daily • 7AM–5PM\n13750 Ventura Blvd\nSherman Oaks, CA 91423",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "bubbletea",
@@ -19114,7 +19298,9 @@
           "caption": "Meet your new fall favorites! Introducing our new hojicha line! Stop by to try o"
         }
       ],
-      "bio": "🍵 Matcha & Dorayaki | Built on Tradition 🇯🇵\n🌱 Ichibancha from Yame, Fukuoka\n📍 LA - Sawtelle | Validated Parking\n⏰ Mon 9am–3pm | Tue–Sun 9am–8pm"
+      "bio": "🍵 Matcha & Dorayaki | Built on Tradition 🇯🇵\n🌱 Ichibancha from Yame, Fukuoka\n📍 LA - Sawtelle | Validated Parking\n⏰ Mon 9am–3pm | Tue–Sun 9am–8pm",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "lacoffeeshops",
@@ -19292,7 +19478,9 @@
           "caption": "See you at chongmatcha #cookieicing"
         }
       ],
-      "bio": "📌 Close Wednesday\n♥️ Petfriendly\nสาขา 1 แสนสิริกรุงเทพกรีฑา Open 09:00-20:00 ☎️ 062-5546678\nสาขา 2 My Park รามคำแหง Open 08:00-18:00 ☎️ 065-5566198"
+      "bio": "📌 Close Wednesday\n♥️ Petfriendly\nสาขา 1 แสนสิริกรุงเทพกรีฑา Open 09:00-20:00 ☎️ 062-5546678\nสาขา 2 My Park รามคำแหง Open 08:00-18:00 ☎️ 065-5566198",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "losangelesstudycafe",
@@ -19717,7 +19905,9 @@
           "caption": "It’s official WATERMELON MATCHA IS HERE TO STAY! 🍉✨ By popular demand, this fan"
         }
       ],
-      "bio": "Matcha & coffee  ☕️ \nOpen weekends \n📍Bell\n🍵Click link to order 👇🏼"
+      "bio": "Matcha & coffee  ☕️ \nOpen weekends \n📍Bell\n🍵Click link to order 👇🏼",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "ktownla",
@@ -19777,7 +19967,9 @@
           "caption": "it’s almost timeee! winter specialty drinks are coming 11.16 ❄️☕️"
         }
       ],
-      "bio": "Grocer ✦ Coffee ✦ Eatery\nOpen daily, 7am-6pm\n914 N Wells\n-\nProject by @episcope.hospitality"
+      "bio": "Grocer ✦ Coffee ✦ Eatery\nOpen daily, 7am-6pm\n914 N Wells\n-\nProject by @episcope.hospitality",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matchaculture",
@@ -19931,7 +20123,9 @@
           "caption": "THE MOMENT WE HAVE ALL BEEN WAITING FOR!!! 🍡 🍵 The decoden sets ARE HERE!! Aft"
         }
       ],
-      "bio": "Trinkets and Stationery🍮\nHave a special request? DM 💌\nWeekly Drops🍡\nShipping from Miami, FL 📍\nLatina and Women Owned\nEst. 2023"
+      "bio": "Trinkets and Stationery🍮\nHave a special request? DM 💌\nWeekly Drops🍡\nShipping from Miami, FL 📍\nLatina and Women Owned\nEst. 2023",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "chicagoland",
@@ -26941,7 +27135,9 @@
           "caption": "We’re so grateful, for the love you guys are showing Mucho Mucho👼🏼🩵 #muchomuc"
         }
       ],
-      "bio": "-coffee • matcha-\n-naples, fl-"
+      "bio": "-coffee • matcha-\n-naples, fl-",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "daydream.bar",
@@ -27012,7 +27208,9 @@
           "caption": "We’re growing our Seven Sundays team! We’re looking for baristas to join us at o"
         }
       ],
-      "bio": "Because every day deserves a little Sunday\n📍Royal Oak | Troy | West Bloomfield (2027)\nBooking Private Events 2026–27"
+      "bio": "Because every day deserves a little Sunday\n📍Royal Oak | Troy | West Bloomfield (2027)\nBooking Private Events 2026–27",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "dumaguetematchafestival",
@@ -28710,7 +28908,9 @@
           "caption": "WHAT AN AMAZING AFTERNOON WE HAD 🌸🩷🌿✨ I still can’t quite believe just how ma"
         }
       ],
-      "bio": "Expressive & joyful abstract paintings\nClients include @tagheuer @porsche @skinrocks \nCollabs & commissions: hello@jessicaslackstudio.com"
+      "bio": "Expressive & joyful abstract paintings\nClients include @tagheuer @porsche @skinrocks \nCollabs & commissions: hello@jessicaslackstudio.com",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matchadibogor",
@@ -30966,7 +31166,7 @@
       "handle": "sangabrielvalley",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgGVKszynJv/",
       "first_seen": "2026-11-23T23:33:17.810Z",
@@ -30979,7 +31179,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T00:47:08.887Z",
-      "dropped_at": "2026-11-24T00:47:08.887Z"
+      "dropped_at": "2026-11-24T00:47:08.887Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T00:47:08.887Z"
     },
     {
       "handle": "dwts",
@@ -31579,7 +31781,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=roundups; org=melon-matcha; home=, ; brand=Melon matcha; e.g. "
+      "notes": "site=roundups; org=melon-matcha; home=, ; brand=Melon matcha; e.g. ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "muni_cafe",
@@ -31594,7 +31798,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=roundups; org=muni-cafe; home=, ; brand=Muni Cafe; e.g. "
+      "notes": "site=roundups; org=muni-cafe; home=, ; brand=Muni Cafe; e.g. ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "numa_coffee_bar_and_seaglass_bakeshop",
@@ -31609,7 +31815,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=roundups; org=numa-coffee-bar-and-seaglass-bakeshop; home=, ; brand=Numa Coffee Bar and Seaglass Bakeshop; e.g. "
+      "notes": "site=roundups; org=numa-coffee-bar-and-seaglass-bakeshop; home=, ; brand=Numa Coffee Bar and Seaglass Bakeshop; e.g. ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "givingmachine",
@@ -32152,7 +32360,7 @@
       "handle": "matchayourwaytochristmas",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgHj_0_xnFA/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32165,7 +32373,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T10:16:21.551Z",
-      "dropped_at": "2026-11-24T10:16:21.551Z"
+      "dropped_at": "2026-11-24T10:16:21.551Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T10:16:21.551Z"
     },
     {
       "handle": "cafeinsydney",
@@ -32229,7 +32439,7 @@
       "handle": "matchallama",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgHXmblhyZX/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32242,13 +32452,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T10:16:21.551Z",
-      "dropped_at": "2026-11-24T10:16:21.551Z"
+      "dropped_at": "2026-11-24T10:16:21.551Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T10:16:21.551Z"
     },
     {
       "handle": "matchaintulsa",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgHWwWAFmXU/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32261,13 +32473,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T10:16:21.551Z",
-      "dropped_at": "2026-11-24T10:16:21.551Z"
+      "dropped_at": "2026-11-24T10:16:21.551Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T10:16:21.551Z"
     },
     {
       "handle": "relatablereels",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgG7vMwxC8z/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32280,7 +32494,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "ameakiri",
@@ -32365,7 +32581,7 @@
       "handle": "lanham",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgGsBBLo4qu/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32378,7 +32594,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "matchaagusto",
@@ -32424,7 +32642,7 @@
       "handle": "matchaavenue",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgGheLhmbpY/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32437,7 +32655,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "uncertifiedcafe",
@@ -32462,7 +32682,7 @@
       "handle": "viralvideos",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgGgMD_TD1v/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32475,7 +32695,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "dfwmatchacart",
@@ -32719,7 +32941,7 @@
       "handle": "shizucha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DTmNjWxlkRA/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32732,7 +32954,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "ebbandflowdesignco",
@@ -32859,7 +33083,7 @@
       "handle": "matchaglasgow",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DZiCvvpMeP2/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -32872,7 +33096,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "the.puff.shop",
@@ -33104,7 +33330,7 @@
       "handle": "matchapopup",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DROh0CEk7C9/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -33117,7 +33343,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "justmatcha",
@@ -33164,7 +33392,7 @@
       "handle": "orlandocoffeecart",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DfTPBa4kXo_/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -33177,7 +33405,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "runningamatchacart",
@@ -33420,7 +33650,7 @@
       "handle": "cupforcause",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DdvJ-o2NFRX/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -33433,7 +33663,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "coconut",
@@ -33717,7 +33949,7 @@
       "handle": "private",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DboLvEqBABV/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -33730,13 +33962,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "napafarmersmarket",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/Db4RvyOmLNF/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -33749,7 +33983,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "leedsmatcha",
@@ -33816,7 +34052,7 @@
       "handle": "november",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DQMMxHwDdVS/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -33829,7 +34065,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "831matcha",
@@ -33854,7 +34092,7 @@
       "handle": "donationevent",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DV2E4aKDSBF/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -33867,7 +34105,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T05:16:21.492Z",
-      "dropped_at": "2026-11-24T05:16:21.492Z"
+      "dropped_at": "2026-11-24T05:16:21.492Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T05:16:21.492Z"
     },
     {
       "handle": "lmumatcha",
@@ -34030,7 +34270,7 @@
       "handle": "beaumontca",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DVZvq6sAf7O/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -34043,7 +34283,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "deanna_helene",
@@ -34111,7 +34353,7 @@
       "handle": "three",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DVggGqSjo0o/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -34124,7 +34366,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "vulturecultureoddities",
@@ -34172,7 +34416,7 @@
       "handle": "loveshack",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/C5lgBSVr2y0/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -34185,13 +34429,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "eventbusinesssmallbusinesscust",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DbTJZKzEc_9/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -34204,13 +34450,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "privatevents",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DVrrufUkg5_/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -34219,8 +34467,11 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "🎀had the best time with yulufoods 🎀\n\nloved experimenting with their instant cold foams (salted ube & lavender were my favs!!) and their yummy ceremonial match",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z",
+      "dropped_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "justbreathematchaandcoffeebar",
@@ -34245,7 +34496,7 @@
       "handle": "jesusandcoffee",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DYPh4EKu4j9/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -34258,7 +34509,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "dubai",
@@ -34305,7 +34558,7 @@
       "handle": "coffeetruck",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DWJEU56CNy0/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -34318,7 +34571,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "from.her.corner",
@@ -34547,7 +34802,7 @@
       "handle": "matchagusto",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DXzP955lOb9/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -34560,7 +34815,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "adelaidematcha",
@@ -35081,7 +35338,7 @@
       "handle": "ourmatchanightevent",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DXp60NTAt_e/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -35094,7 +35351,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "zaproszenie",
@@ -35264,7 +35523,7 @@
       "handle": "launchparty",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DUELGCNjmvI/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -35277,7 +35536,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "cafeplus",
@@ -35763,7 +36024,7 @@
       "handle": "wedding2027",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgIPXUzKeEB/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -35776,7 +36037,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T16:16:21.639Z",
-      "dropped_at": "2026-11-24T16:16:21.639Z"
+      "dropped_at": "2026-11-24T16:16:21.639Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T16:16:21.639Z"
     },
     {
       "handle": "nutriologa.palomacazarin",
@@ -35842,7 +36105,7 @@
       "handle": "offlinezlin",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgIAAizKc6e/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -35855,7 +36118,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T16:16:21.639Z",
-      "dropped_at": "2026-11-24T16:16:21.639Z"
+      "dropped_at": "2026-11-24T16:16:21.639Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T16:16:21.639Z"
     },
     {
       "handle": "mscatteateabar",
@@ -35880,7 +36145,7 @@
       "handle": "privatevent",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgH22fwS_RZ/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -35893,7 +36158,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T16:16:21.639Z",
-      "dropped_at": "2026-11-24T16:16:21.639Z"
+      "dropped_at": "2026-11-24T16:16:21.639Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T16:16:21.639Z"
     },
     {
       "handle": "cafebali",
@@ -36060,7 +36327,7 @@
       "handle": "brisbanebride",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgHBCJ8IHGF/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36073,7 +36340,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T10:16:21.551Z",
-      "dropped_at": "2026-11-24T10:16:21.551Z"
+      "dropped_at": "2026-11-24T10:16:21.551Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T10:16:21.551Z"
     },
     {
       "handle": "mecha.bkk",
@@ -36117,7 +36386,7 @@
       "handle": "matchmatcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgG_EdRBfwm/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36130,7 +36399,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T10:16:21.551Z",
-      "dropped_at": "2026-11-24T10:16:21.551Z"
+      "dropped_at": "2026-11-24T10:16:21.551Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T10:16:21.551Z"
     },
     {
       "handle": "dise",
@@ -36174,7 +36445,7 @@
       "handle": "marikina",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgG2HihSjor/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36187,7 +36458,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T06:16:21.519Z",
-      "dropped_at": "2026-11-24T06:16:21.519Z"
+      "dropped_at": "2026-11-24T06:16:21.519Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T06:16:21.519Z"
     },
     {
       "handle": "helenacafe",
@@ -36419,7 +36692,7 @@
       "handle": "foodieslp",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgGZmPIlsPR/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36432,7 +36705,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "spacenk",
@@ -36522,7 +36797,7 @@
       "handle": "sanramon",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgGSYffSwXT/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36535,13 +36810,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "matchastation",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgGSWYLmb0I/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36554,13 +36831,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "puertovallarta",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgGPzmNykWY/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36573,7 +36852,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "cebucafe",
@@ -36617,7 +36898,7 @@
       "handle": "anothersideofmeblog",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/Btk96iPlHsh/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36630,7 +36911,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "polanco",
@@ -36839,7 +37122,7 @@
       "handle": "memesdaily",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DEVjmYPT8Lf/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -36852,7 +37135,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "harumatcha",
@@ -37124,7 +37409,7 @@
       "handle": "chitchat",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/BkFjYdUnbvg/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -37137,13 +37422,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "hakk",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DVtCH-KF5cT/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -37156,7 +37443,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "tealilycafe",
@@ -37264,7 +37553,7 @@
       "handle": "foodbabylovesvanleeuwen",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/BwFgZsCBpMb/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -37277,7 +37566,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "tombo_london",
@@ -37324,7 +37615,7 @@
       "handle": "handmade",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/BeJBpsBARvK/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -37337,7 +37628,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "matchaeologist",
@@ -37524,7 +37817,7 @@
       "handle": "simplebeyond",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/B_i2lZKAQQz/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -37537,7 +37830,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T07:16:21.726Z",
-      "dropped_at": "2026-11-24T07:16:21.726Z"
+      "dropped_at": "2026-11-24T07:16:21.726Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T07:16:21.726Z"
     },
     {
       "handle": "cozyaf",
@@ -38168,7 +38463,7 @@
       "handle": "ourmobilematchabar",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DYUtfI3owOw/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38181,13 +38476,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "gradematcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DR2VifKjuWE/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38200,7 +38497,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "matchiahomecafe",
@@ -38304,7 +38603,7 @@
       "handle": "matchamanila",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DeT6f35GJDL/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38317,7 +38616,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "rituelmatcha",
@@ -38425,7 +38726,7 @@
       "handle": "matchafrance",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DR70_9iiFh9/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38438,13 +38739,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "matchabloom",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DLsVPctMZG4/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38457,7 +38760,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "cafebloom",
@@ -38504,7 +38809,7 @@
       "handle": "coffeegram",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DQdfDjdCBrr/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38517,7 +38822,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "amelie.graham",
@@ -38584,7 +38891,7 @@
       "handle": "beauty",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DY5GtsGgC16/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38597,7 +38904,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "bucm",
@@ -38662,7 +38971,7 @@
       "handle": "hanabirapr",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DM6TNFxRc_y/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38675,7 +38984,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "pameracoffee",
@@ -38803,7 +39114,7 @@
       "handle": "matchawonderland",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgHytX4GfEL/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38816,13 +39127,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T16:16:21.639Z",
-      "dropped_at": "2026-11-24T16:16:21.639Z"
+      "dropped_at": "2026-11-24T16:16:21.639Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T16:16:21.639Z"
     },
     {
       "handle": "bumbongmatcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgHl7Cwygmb/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -38835,7 +39148,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T10:16:21.551Z",
-      "dropped_at": "2026-11-24T10:16:21.551Z"
+      "dropped_at": "2026-11-24T10:16:21.551Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T10:16:21.551Z"
     },
     {
       "handle": "brisbane.genkimarket",
@@ -39035,7 +39350,7 @@
       "handle": "matchafest2015",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/2M9H1ahcys/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39048,7 +39363,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "ybor",
@@ -39133,7 +39450,7 @@
       "handle": "delicioso",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/BqEEteNlKBT/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39146,7 +39463,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "sfmatchafest",
@@ -39171,7 +39490,7 @@
       "handle": "matchawaisted",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/Bm9K8rMn9Hz/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39184,13 +39503,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "permatajingga",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/2LDecsiyAH/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39203,7 +39524,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "makati",
@@ -39247,7 +39570,7 @@
       "handle": "coladamatcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DbhDcx1DWRm/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39260,7 +39583,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T08:16:21.473Z",
-      "dropped_at": "2026-11-24T08:16:21.473Z"
+      "dropped_at": "2026-11-24T08:16:21.473Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T08:16:21.473Z"
     },
     {
       "handle": "firstmatchafest",
@@ -39304,7 +39629,7 @@
       "handle": "matchasocial",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DfxIWunGgky/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39317,7 +39642,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "sippinhabits",
@@ -39342,7 +39669,7 @@
       "handle": "matchamama",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/B03mRAxjHzs/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39355,13 +39682,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "fashionnet",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DL1bghuTiiw/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39374,13 +39703,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "matchamarket",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DQpC1dKDUN-/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39393,7 +39724,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "bad_eattt",
@@ -39418,7 +39751,7 @@
       "handle": "teapricetrends",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DLod4mlu_M8/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39437,7 +39770,7 @@
       "handle": "teaindustry",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DOtE2sokVyc/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39476,7 +39809,7 @@
       "handle": "lille",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DJjKTvoIBeE/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39536,7 +39869,7 @@
       "handle": "shenzhen",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DejKnLYD3e4/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39555,7 +39888,7 @@
       "handle": "snackcups",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DWKnhcaGDN5/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39568,7 +39901,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "kapina.cdo",
@@ -39657,7 +39992,7 @@
       "handle": "nriandemberincenseco",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DTnzAE3jgOw/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39676,7 +40011,7 @@
       "handle": "matchaworkshop",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DfZV9gAn7CZ/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39735,7 +40070,7 @@
       "handle": "bio",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/BatS9MLhFie/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39754,7 +40089,7 @@
       "handle": "slowbar",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DNawT2fBwaa/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39815,7 +40150,7 @@
       "handle": "matchachoo",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DdP0RsdKymY/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39877,7 +40212,7 @@
       "handle": "beetlejuice",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DVjWmpniXi4/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39896,7 +40231,7 @@
       "handle": "tbhcosmetics",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/Db5zHejE0vc/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -39909,7 +40244,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "jskinbeardco",
@@ -40040,7 +40377,7 @@
       "handle": "cafe1023",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DNkHj2Pznit/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40059,7 +40396,7 @@
       "handle": "thematchamorningclub",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DbB01XGlXio/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40119,7 +40456,7 @@
       "handle": "treematcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DeEFEDRGsj1/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40132,7 +40469,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "consulting",
@@ -40180,7 +40519,7 @@
       "handle": "dogshoes",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/Df9mFO-H2PH/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40193,7 +40532,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "vaniteacafe",
@@ -40208,13 +40549,15 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Most Indulgent Vibeeey drinks are dropping on VDay - SUPER EXCLUSIVE & ONLY for one evening at vaniteacafe (Chula Vista) ! \n\n📍Vanitea cafe ~ 525 Telegraph Cany"
+      "notes": "Most Indulgent Vibeeey drinks are dropping on VDay - SUPER EXCLUSIVE & ONLY for one evening at vaniteacafe (Chula Vista) ! \n\n📍Vanitea cafe ~ 525 Telegraph Cany",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "hellskitchennyc",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgIhJ2uBOQs/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40223,14 +40566,17 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "A hidden matcha gem in Hell's Kitchen?! 🍵💚\n\n5g of ceremonial matcha for UNDER $7?! 👀 Found this little spot tucked away in Hell's Kitchen and had to see what",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z",
+      "dropped_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "montclairnj",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgIQv36x_pt/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40239,8 +40585,11 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "🚨 New Matcha Spot Alert ‼️ 🚨\n\n#njmatcha #matchalatte #nycmatcha #montclairnj #hiddengem",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z",
+      "dropped_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "travelgram",
@@ -40289,7 +40638,7 @@
       "handle": "nycinfluencer",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgHRBteIbw-/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40302,13 +40651,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "shakenmatcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/C78h8w9g5aE/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40336,13 +40687,15 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "La Matcha’nın iki yeni lezzetiyle sıcak çikolata keyfini yeniden keşfet. \nKremsi, tatlı ve karşı konulmaz!\n\nSadece sıcak süt ekle, karıştır ve ilk yudumda aşık "
+      "notes": "La Matcha’nın iki yeni lezzetiyle sıcak çikolata keyfini yeniden keşfet. \nKremsi, tatlı ve karşı konulmaz!\n\nSadece sıcak süt ekle, karıştır ve ilk yudumda aşık ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "hohenlohe",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgHuuB1xEkB/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40355,7 +40708,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T13:16:21.514Z",
-      "dropped_at": "2026-11-24T13:16:21.514Z"
+      "dropped_at": "2026-11-24T13:16:21.514Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T13:16:21.514Z"
     },
     {
       "handle": "westwood",
@@ -40443,7 +40798,7 @@
       "handle": "guucoffee",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgHCqGcgxmv/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40456,7 +40811,9 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "hevi.cafe",
@@ -40471,13 +40828,15 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Me & my Matcha against the world ✨\n\nhevi.cafe \npoetryfoundation \n.\n.\n.\n#chicagogram"
+      "notes": "Me & my Matcha against the world ✨\n\nhevi.cafe \npoetryfoundation \n.\n.\n.\n#chicagogram",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "merrymatcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgGlyx5nGhe/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40496,7 +40855,7 @@
       "handle": "chicagothingstodo",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DdXXvwLjgJH/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40509,13 +40868,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "humblematcha",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgGqihkJUTo/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40543,7 +40904,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Fressooooo! I wasn’t familiar with your game babe! \n\nThat peach cobbler alone seals the deal for me! \n\n🍵Drink shown\nPeach Cobbler Matcha\n\n🍵Fresso Coffee and T"
+      "notes": "Fressooooo! I wasn’t familiar with your game babe! \n\nThat peach cobbler alone seals the deal for me! \n\n🍵Drink shown\nPeach Cobbler Matcha\n\n🍵Fresso Coffee and T",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "saigonartsmatchacafe",
@@ -40558,7 +40921,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "For our everyday regulars — this one’s for you. 🫶\nMatcha Delight Strawberry Float with Matcha Soft Serve\nSame smile, same order, same love every day. Thank you"
+      "notes": "For our everyday regulars — this one’s for you. 🫶\nMatcha Delight Strawberry Float with Matcha Soft Serve\nSame smile, same order, same love every day. Thank you",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "trophycoffeeandtea",
@@ -40573,13 +40938,15 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "🎄🍵 NEW HOLIDAY SPECIAL: PEPPERMINT MATCHA CLOUD! ❤️💚\n\nA little holiday magic in every sip! ✨\n\nOur smooth, earthy matcha meets creamy milk and a festive touch"
+      "notes": "🎄🍵 NEW HOLIDAY SPECIAL: PEPPERMINT MATCHA CLOUD! ❤️💚\n\nA little holiday magic in every sip! ✨\n\nOur smooth, earthy matcha meets creamy milk and a festive touch",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "brewphoria",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgGzx5EuI4f/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40639,7 +41006,7 @@
       "handle": "riveroakscoffee",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgGlIYqNiBG/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40652,13 +41019,15 @@
       "guess": true,
       "graph_error": "Graph API HTTP 400: Invalid user id",
       "graph_error_at": "2026-11-24T09:16:22.008Z",
-      "dropped_at": "2026-11-24T09:16:22.008Z"
+      "dropped_at": "2026-11-24T09:16:22.008Z",
+      "unreadable_prior": "candidate",
+      "unreadable_at": "2026-11-24T09:16:22.008Z"
     },
     {
       "handle": "phoenixkavabar",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "unreadable",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/p/DgGl1faPdxb/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40677,7 +41046,7 @@
       "handle": "rittenhousesquare",
       "platform": "instagram",
       "source_id": null,
-      "status": "candidate",
+      "status": "dropped",
       "found_via": "hashtag",
       "found_from": "https://www.instagram.com/reel/DgIIGcNR8Gy/",
       "first_seen": "2026-11-24T18:17:06.315Z",
@@ -40686,8 +41055,11 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "I’ve been missing a REALLY good matcha, and KYN understood the assignment. 🍵💚\n\n📍 KYN | 1807 Chestnut St, Philadelphia, PA 19103\n\n#phillymatcha #matchalover #",
-      "guess": true
+      "notes": "guessed handle, Graph does not know it",
+      "guess": true,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z",
+      "dropped_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "karma_espresso_bar",
@@ -40863,7 +41235,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "V: when others can't understand your matcha obsession. five entries · external observers · bay area @yelpbayarea field log · 2026 A botanical matcha lab opened "
+      "notes": "V: when others can't understand your matcha obsession. five entries · external observers · bay area @yelpbayarea field log · 2026 A botanical matcha lab opened ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "bayarea_matcha",
@@ -40878,7 +41252,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "matcha lab opened in Mountain View — and they put Dubai chocolate on the cone. view on instagram → @bayarea_matcha field log · 2026 Matcha Mori's jasmine gelato"
+      "notes": "matcha lab opened in Mountain View — and they put Dubai chocolate on the cone. view on instagram → @bayarea_matcha field log · 2026 Matcha Mori's jasmine gelato",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "edmunchthefoodie",
@@ -40893,7 +41269,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "d cheese on the Thai tea gelato should not work. It works. I do not have notes. view on instagram → @edmunchthefoodie field log · 2026 First time in the Bay I h"
+      "notes": "d cheese on the Thai tea gelato should not work. It works. I do not have notes. view on instagram → @edmunchthefoodie field log · 2026 First time in the Bay I h",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matchamori.cafe",
@@ -40908,7 +41286,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "ntonio Rd. Mountain View, CA silicon valley · bay area walk-ins · counter service · to-go instagram @matchamori.cafe #matchamori · #bayarea · #mountainview hour"
+      "notes": "ntonio Rd. Mountain View, CA silicon valley · bay area walk-ins · counter service · to-go instagram @matchamori.cafe #matchamori · #bayarea · #mountainview hour",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "rileydoestattoostoo",
@@ -40923,7 +41303,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "nks 29 Nov 2026 Flash Tattoo Pop-Up Doll Parts Collective First-come, first-served flash tattoos by @rileydoestattoostoo. Visual Arts 28 Nov 2026 Small Business"
+      "notes": "nks 29 Nov 2026 Flash Tattoo Pop-Up Doll Parts Collective First-come, first-served flash tattoos by @rileydoestattoostoo. Visual Arts 28 Nov 2026 Small Business",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "Undugubrtherhood",
@@ -40938,7 +41320,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Tiki Pop-Up @twobirds_taphouse Holiday pop-up bar with seasonal decor. Food and Drinks 24 Nov 2026 @Undugubrtherhood Peer Group Loudermilk, Atlanta Live peer gr"
+      "notes": "Tiki Pop-Up @twobirds_taphouse Holiday pop-up bar with seasonal decor. Food and Drinks 24 Nov 2026 @Undugubrtherhood Peer Group Loudermilk, Atlanta Live peer gr",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "revbrewchicago",
@@ -40953,7 +41337,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "-you clothing items are available to browse. Markets 24 Nov 2026 Vintage House $10 and Under Market @revbrewchicago Vintage and handmade finds priced at $10 or "
+      "notes": "-you clothing items are available to browse. Markets 24 Nov 2026 Vintage House $10 and Under Market @revbrewchicago Vintage and handmade finds priced at $10 or ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "preachergallery",
@@ -40968,7 +41354,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "($10 each) and build a bouquet at the pop-up Markets Workshops 24 Nov 2026 Objects of My Affection @preachergallery Gallery viewing hours for ceramics, lighting"
+      "notes": "($10 each) and build a bouquet at the pop-up Markets Workshops 24 Nov 2026 Objects of My Affection @preachergallery Gallery viewing hours for ceramics, lighting",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "sweatannex",
@@ -40983,7 +41371,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "mited-edition goods at Sweat Annex. Markets Visual Arts 28 Nov 2026 Sweat Records Soundtrack Pop-Up @sweatannex Treats are available during the weekend pop-up. "
+      "notes": "mited-edition goods at Sweat Annex. Markets Visual Arts 28 Nov 2026 Sweat Records Soundtrack Pop-Up @sweatannex Treats are available during the weekend pop-up. ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "cosmicjan_",
@@ -40998,7 +41388,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "istrict Community 24 Nov 2026 General Knowledge Trivia Milkhouse Team trivia with prizes, hosted by @cosmicjan_ at Milkhouse. Community 24 Nov 2026 Tasty Takeov"
+      "notes": "istrict Community 24 Nov 2026 General Knowledge Trivia Milkhouse Team trivia with prizes, hosted by @cosmicjan_ at Milkhouse. Community 24 Nov 2026 Tasty Takeov",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "maison_mariann",
@@ -41013,7 +41405,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "eans Sunday farmers market with local produce, flowers, and holiday vegetables. Markets 29 Nov 2026 @maison_mariann Jewelry Pop Up @claireelizabethgallery Jewel"
+      "notes": "eans Sunday farmers market with local produce, flowers, and holiday vegetables. Markets 29 Nov 2026 @maison_mariann Jewelry Pop Up @claireelizabethgallery Jewel",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "claireelizabethgallery",
@@ -41028,7 +41422,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "local produce, flowers, and holiday vegetables. Markets 29 Nov 2026 @maison_mariann Jewelry Pop Up @claireelizabethgallery Jewelry pop-up with bubbly and holida"
+      "notes": "local produce, flowers, and holiday vegetables. Markets 29 Nov 2026 @maison_mariann Jewelry Pop Up @claireelizabethgallery Jewelry pop-up with bubbly and holida",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "minasmatchacafe",
@@ -41043,7 +41439,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "h 6g of first-harvest matcha from kagoshima, japan mina’s matcha follow us on instagram for updates @minasmatchacafe Classic Matcha Strawberry Matcha Banana Pud"
+      "notes": "h 6g of first-harvest matcha from kagoshima, japan mina’s matcha follow us on instagram for updates @minasmatchacafe Classic Matcha Strawberry Matcha Banana Pud",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "mecchamatcha_ca",
@@ -41058,7 +41456,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "& so good.\" Explore the Latest Meccha Matcha Products Available Shop Now ​ ​ Follow us on Instagram @mecchamatcha_ca Load more FAQ Privacy Policy Shipping Polic"
+      "notes": "& so good.\" Explore the Latest Meccha Matcha Products Available Shop Now ​ ​ Follow us on Instagram @mecchamatcha_ca Load more FAQ Privacy Policy Shipping Polic",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "matcha.ren",
@@ -41073,7 +41473,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "and artisanal desserts. Stay tuned for grand opening details and exclusive promotions by following @matcha.ren on Instagram. May 15, 2025 New Seasonal Drink: Ba"
+      "notes": "and artisanal desserts. Stay tuned for grand opening details and exclusive promotions by following @matcha.ren on Instagram. May 15, 2025 New Seasonal Drink: Ba",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "foresteabar",
@@ -41088,7 +41490,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": ". Berkeley, California A place to slow down. Come for the matcha, stay for the moment. Follow along @foresteabar on instagram. Berkeley Restaurant Week DAY EVEN"
+      "notes": ". Berkeley, California A place to slow down. Come for the matcha, stay for the moment. Follow along @foresteabar on instagram. Berkeley Restaurant Week DAY EVEN",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "weallwegotsd",
@@ -41103,7 +41507,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "iness Saturday at Home Ec Home Ec Sidewalk pop-ups, small-business collaborations, and donations to @weallwegotsd. Markets 28 Nov 2026 the clovery pop-up at joo"
+      "notes": "iness Saturday at Home Ec Home Ec Sidewalk pop-ups, small-business collaborations, and donations to @weallwegotsd. Markets 28 Nov 2026 the clovery pop-up at joo",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "nanasgreentealv",
@@ -41118,7 +41524,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "et-up, we offer an experience as memorable as the menu. Get Directions We're on instagram fOLLUS uS @nanasgreentealv The best blend of green tea Where flavour m"
+      "notes": "et-up, we offer an experience as memorable as the menu. Get Directions We're on instagram fOLLUS uS @nanasgreentealv The best blend of green tea Where flavour m",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "garden_house_wellness",
@@ -41133,7 +41541,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=eventbrite; org=garden-house-wellness; home=Portland, OR; brand=Garden House Wellness; e.g. Japanese Matcha Tea Ceremony & Big Brush Calligraphy"
+      "notes": "site=eventbrite; org=garden-house-wellness; home=Portland, OR; brand=Garden House Wellness; e.g. Japanese Matcha Tea Ceremony & Big Brush Calligraphy",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "baristas_bouquet",
@@ -41148,7 +41558,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "site=allevents; org=baristas-bouquet; home=Urbandale, IA; brand=Baristas Bouquet; e.g. Matcha & Movement"
+      "notes": "site=allevents; org=baristas-bouquet; home=Urbandale, IA; brand=Baristas Bouquet; e.g. Matcha & Movement",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "songbird.nc",
@@ -41163,7 +41575,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Raleigh, NC | Songbird, all-day bar at East End Market (Frame Matcha on the menu); menu posted on Instagram; Triangle gap lane | evidence: https://songbird.bar/"
+      "notes": "Raleigh, NC | Songbird, all-day bar at East End Market (Frame Matcha on the menu); menu posted on Instagram; Triangle gap lane | evidence: https://songbird.bar/",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "bullandbean",
@@ -41178,7 +41592,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Durham, NC | Bull Street Gourmet & Market (sandwich_shop); Triangle gap lane, 1 of 30 recent posts name matcha"
+      "notes": "Durham, NC | Bull Street Gourmet & Market (sandwich_shop); Triangle gap lane, 1 of 30 recent posts name matcha",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "chahousecary",
@@ -41193,7 +41609,9 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Chapel Hill, NC | Cha House (breakfast_and_brunch_restaurant); Triangle gap lane, 7 of 30 recent posts name matcha"
+      "notes": "Chapel Hill, NC | Cha House (breakfast_and_brunch_restaurant); Triangle gap lane, 7 of 30 recent posts name matcha",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     },
     {
       "handle": "bonjour_banhmi",
@@ -41208,7 +41626,434 @@
       "hits": 0,
       "checks": 0,
       "cadence_hours": 72,
-      "notes": "Morrisville, NC | Bonjour Banh Mi & Tea (vietnamese_restaurant); Triangle gap lane, 1 of 30 recent posts name matcha"
+      "notes": "Morrisville, NC | Bonjour Banh Mi & Tea (vietnamese_restaurant); Triangle gap lane, 1 of 30 recent posts name matcha",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "nutcrackerpopupbar_raleigh",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://thisisraleigh.com/feed/",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "ecoration:none;\" target=\"_blank\" rel=\"noopener\">A post shared by Nutcracker Popup Bar at Clockwork (@nutcrackerpopupbar_raleigh)</a></p></div></blockquote> <scr",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "sera.chicago",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/events/chicago/anytime/food-and-drinks",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "he brewery's vendor pop-up. Food and Drinks 25 Nov 2026 Black Wednesday Quality Time Bar event with @sera.chicago and @wildturkey. Food and Drinks 25 Nov 2026 W",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "wildturkey",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/events/chicago/anytime/food-and-drinks",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "r pop-up. Food and Drinks 25 Nov 2026 Black Wednesday Quality Time Bar event with @sera.chicago and @wildturkey. Food and Drinks 25 Nov 2026 Wild Turkey Trot Ba",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "utopialoungeatl",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/events/atlanta",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "d Works An indie vendor market at Chattahoochee Food Works. Markets 25 Nov 2026 Wine Down Wednesday @utopialoungeatl · Free Women DJs, free entry and an all-nig",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "caneleclubnyc",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/events/new-york/anytime/food-and-drinks",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "ning overlooking the ice, with reservations for 90 minutes. Food and Drinks 25 Nov 2026 Pastries by @caneleclubnyc Colbo Pastries at the Colbo cafe. Food and Dr",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "morewontonplease",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://letitsimmernewsletter.substack.com/feed",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": ";:&quot;DfiuoKlmnOG&quot;,&quot;title&quot;:&quot;nicho on Instagram: \\&quot;dogs like matcha\\n\\nty @morewontonplease for&#8230;&quot;,&quot;author_name&quot;:&",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "nichosmatcha",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://letitsimmernewsletter.substack.com/feed",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "ram: \\&quot;dogs like matcha\\n\\nty @morewontonplease for&#8230;&quot;,&quot;author_name&quot;:&quot;@nichosmatcha&quot;,&quot;thumbnail_url&quot;:&quot;https://",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "diegomjazz",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/events/san-antonio",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "sgiving Eve at Sternewirth Sternewirth at Hotel Emma Coffee-inspired cocktails plus live music from @diegomjazz Food and Drinks Live Music 25 Nov 2026 New Braun",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "focus",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "http://chazui-tea-tower.square.site",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "ader__text-button \" aria-haspopup=\"menu\" :aria-expanded=\"popoverOpen\" aria-controls=\"phone-popover\" @focus=\"onClickButtonWithAction($event, togglePhonePopover, ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "unchartedtea",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "http://www.unchartedtea.com/",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "ed Bubble Tea Brewed fresh, every cup. Order Online E-Gift Card Purchase ​ ​ Follow us on Instagram @unchartedtea Load more Specials Neptune's Nectar Matcha, Bu",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "nyquistbrands",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "http://www.unchartedtea.com/",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "dtea Load more Specials Neptune's Nectar Matcha, Butterfly Pea Flower Tea, Oatmilk, Boba Order Now! @nyquistbrands St.Elmo's Fire Butterfly Pea Flower Tea, Stra",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "modal",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "http://www.staggercoffee.com/",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "bel=\"getModalLabel('popup', $el)\" tabindex=\"-1\" > { $el.setAttribute('aria-modal', 'true') }, 120)\" @modal-is-closed.window=\"setTimeout(() => { $el.removeAttrib",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "englishgardenraleigh",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://www.shopvillagedistrict.com/events/",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "love! 💕 Pop by Village District on Friday, February 13 from 11am-2pm for a Valentine’s Pop-Up with @englishgardenraleigh and @ifitspaper 💌 We’re... Friday, Fe",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "ifitspaper",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://www.shopvillagedistrict.com/events/",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "strict on Friday, February 13 from 11am-2pm for a Valentine’s Pop-Up with @englishgardenraleigh and @ifitspaper 💌 We’re... Friday, February 13th Learn More EVE",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "eatnettle",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/events/salt-lake-city/anytime/food-and-drinks",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "Christmas pop-up bar with a Christmas Town drink menu Food and Drinks 1 Dec 2026 Giving Tuesday at @eatnettle @eatnettle Dining, drinks and shopping with 20% of",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "wix",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "http://www.machapresso.com/",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "der Price $29.00 Quick View Genyo - Matcha Powder Price $29.00 View More ​ ​ Follow us on Instagram @wix Load more &copy; 2026 by machapresso Refund Policy Term",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "pomelopotteryclub",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/event/matcha-set-workshop-29-nov-2026",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "ay, 29 November 16:30–18:30 · America/Vancouver Add to Calendar Add to Calendar About Workshop with @pomelopotteryclub on making a matcha set. It runs 4:30-6:30",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "nobuyuki_tsujii_official",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/events/honolulu",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "BOY and a Thankful merch collab. Live Music 25 Nov 2026 Ana 'Aha Mele Blue Note Hawaii Concert with @nobuyuki_tsujii_official and @fumiakimiura. Live Music 25 N",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "cocoaandcreamla",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "ma.to/los-angeles",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "mato_venue=cocoaandcreamla; home=Los Angeles, CA; brand=Cocoa + Cream; e.g. Thanksgiving Day at Cocoa + Cream",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "the_lobby_bar_garden",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "eventbrite",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=eventbrite; org=the-lobby-bar-garden; home=New York, NY; brand=The Lobby Bar & Garden; e.g. Free Chelsea Holiday Pop-Up Market | Fashion, Free Gifts & Matc",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "the_ayer",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "eventbrite",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=eventbrite; org=the-ayer; home=Seattle, WA; brand=The Ayer; e.g. A Very Merry Crafting Affair",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "grounded_plant_shop_cafe_wellness_studio",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "eventbrite",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=eventbrite; org=grounded-plant-shop-cafe-wellness-studio; home=Washington, DC; brand=Grounded: Plant Shop, Cafe, & Wellness Studio; e.g. The Matcha Ritual:",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "portland_japanese_culture_workshops",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "meetup",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=meetup; org=portland-japanese-culture-workshops; home=Portland, OR; brand=Portland Japanese Culture Workshops; e.g. Japanese Matcha Workshop: Learn to Enjo",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "bakery_based",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "roundups",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=roundups; org=bakery-based; home=, ; brand=Bakery Based; e.g. ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "cafe_86",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "roundups",
+      "first_seen": "2026-11-26T18:00:04.328Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=roundups; org=cafe-86; home=, ; brand=Cafe 86; e.g. ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-26T18:18:26.283Z"
     }
   ]
 }

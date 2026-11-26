@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Lobby Bar & Garden pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:fdd859904b7c@matchamap-cu7.pages.dev
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Free Chelsea Holiday Pop-Up Market | Fashion\, Free Gifts & Matcha
+LOCATION:The Lobby Bar & Garden\, 518 West 27th Street\, New York\, NY
+DESCRIPTION:Discover your next favorite outfit or a thoughtful holiday gift
+  at an intimate fashion pop-up in Chelsea!\nLikely\, not fully confirmed.\
+ nMore: https://matchamap.app/e/fdd859904b7c/
+URL:https://matchamap.app/e/fdd859904b7c/
+GEO:40.750452;-74.003391
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

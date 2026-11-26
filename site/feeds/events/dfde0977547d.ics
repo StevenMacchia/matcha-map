@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Northeast Tea House pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:dfde0977547d@matchamap-cu7.pages.dev
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
+DTSTART:20261205T150000Z
+DTEND:20261205T170000Z
+SUMMARY:Matcha Cultivars\, History\, and Preparation!
+LOCATION:Northeast Tea House\, 224 East Hennepin Avenue\, Minneapolis\, MN
+DESCRIPTION:Join us for a deep dive into the world of Matcha and its many c
+ ultivars\, tasting\, learning\, and exploring together!\nPrice: $12\nLikel
+ y\, not fully confirmed.\nMore: https://matchamap.app/e/dfde0977547d/
+URL:https://matchamap.app/e/dfde0977547d/
+GEO:44.987698;-93.256485
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

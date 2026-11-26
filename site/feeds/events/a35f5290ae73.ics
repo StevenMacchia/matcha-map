@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Portland Japanese Culture Workshops pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a35f5290ae73@matchamap-cu7.pages.dev
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
+DTSTART:20261212T203000Z
+DTEND:20261212T223000Z
+SUMMARY:Japanese Matcha Workshop: Learn to Enjoy Tea in Everyday Life
+LOCATION:KEC Education Group America Campus\, 1548 NE 15th Ave\, Portland\,
+  OR
+DESCRIPTION:**Learn how to make matcha part of your everyday life **\nMenu:
+  how to enjoy matcha\, matcha lovers\nPrice: $20\nMore: https://matchamap.
+ app/e/a35f5290ae73/
+URL:https://matchamap.app/e/a35f5290ae73/
+GEO:45.534080;-122.650233
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

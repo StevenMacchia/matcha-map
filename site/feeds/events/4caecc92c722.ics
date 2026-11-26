@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Ayer pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:4caecc92c722@matchamap-cu7.pages.dev
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:A Very Merry Crafting Affair
+LOCATION:The Ayer\, 2010 Terry Avenue\, Seattle\, WA
+DESCRIPTION:Join Vale for a cozy Sunday of ornament decorating and winter d
+ rink tastings. We’ll provide the ornaments\, craft supplies\, and matcha
+ !\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/4caecc92c7
+ 22/
+URL:https://matchamap.app/e/4caecc92c722/
+GEO:47.617417;-122.334901
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

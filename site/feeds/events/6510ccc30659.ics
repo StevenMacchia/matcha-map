@@ -8,14 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:6510ccc30659@matchamap-cu7.pages.dev
-DTSTAMP:20261125T182233Z
-LAST-MODIFIED:20261125T182233Z
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
 DTSTART:20270109T150000Z
 DTEND:20270109T170000Z
 SUMMARY:Matcha on the Mat
 LOCATION:Aston's Room\, 8080 NW 17th Pl\, Ocala\, FL
-DESCRIPTION:Likely\, not fully confirmed.\nMore: https://matchamap.app/e/65
- 10ccc30659/
+DESCRIPTION:Bring a little balance into the new year with Matcha on the Mat
+ \, a special wellness experience presented by Calluna Spa at World Equestr
+ ian Center – Ocala.\nLikely\, not fully confirmed.\nMore: https://matcha
+ map.app/e/6510ccc30659/
 URL:https://matchamap.app/e/6510ccc30659/
 GEO:29.204701;-82.186606
 STATUS:CONFIRMED

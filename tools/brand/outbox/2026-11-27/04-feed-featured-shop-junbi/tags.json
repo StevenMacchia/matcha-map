@@ -1,0 +1,26 @@
+{
+  "slot": "feed",
+  "time": "10:00",
+  "image_url": "https://matchamap.app/social/2026-11-27/04-feed-featured-shop-junbi.png",
+  "location": "Katy, TX",
+  "link": "https://matchamap.app/",
+  "user_tags": [
+    {
+      "username": "junbimatcha",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "junbimatcha"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchakaty",
+    "#katyfood",
+    "#icedmatcha",
+    "#matchatime"
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "date": "2026-11-27",
+  "items": [
+    {
+      "slot": "story",
+      "kind": "location",
+      "time": "08:00",
+      "title": "Today in California",
+      "tag": "Today",
+      "date": "2026-11-27",
+      "city": "Sacramento",
+      "state": "CA",
+      "region": null,
+      "link": "https://matchamap.app/city/ca/sacramento/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchasacramento",
+        "#sacramentofood",
+        "#cafehopping",
+        "#localeats"
+      ],
+      "caption": "Today in California: Demo Spot; Atra Cafe.\n\nMore matcha in California: https://matchamap.app/city/ca/sacramento/\n\n#matcha #matchapopup #matchamap #matchasacramento #sacramentofood #cafehopping #localeats\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [],
+      "shopId": null,
+      "group": {
+        "key": "s:CA",
+        "rows": [
+          {
+            "id": "5c522a699b41",
+            "brand": "Demo Spot",
+            "kind": "popup",
+            "sub": "5 pm to 9 pm",
+            "drinks": []
+          },
+          {
+            "id": "brand:web-atra-cafe-ca-fountain-valley-18120-brookhurst-b041ef",
+            "brand": "Atra Cafe",
+            "kind": "cafe",
+            "sub": "Huntington Beach, CA",
+            "drinks": [
+              "Avocado Matcha Crema",
+              "Matcha Coconut"
+            ]
+          }
+        ],
+        "place": "California",
+        "title": "Today in California",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Demo Spot",
+          "Atra Cafe"
+        ]
+      },
+      "role": "title",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": null,
+      "n": "01",
+      "name": "01-story-location-california",
+      "style": "washi",
+      "image_url": "https://matchamap.app/social/2026-11-27/01-story-location-california.png"
+    },
+    {
+      "slot": "story",
+      "kind": "today",
+      "time": "08:30",
+      "title": "Today in Sacramento",
+      "tag": "Today",
+      "date": "2026-11-27",
+      "city": "Sacramento",
+      "state": "CA",
+      "region": null,
+      "link": "https://matchamap.app/city/ca/sacramento/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchasacramento",
+        "#sacramentofood",
+        "#weekendplans",
+        "#matchadrinks"
+      ],
+      "caption": "Today in Sacramento. Demo Spot (@demo.spot) is popping up at 2211 16th St, Sacramento, CA, today, Friday, November 27, 5 pm to 9 pm.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Sacramento on the map: https://matchamap.app/city/ca/sacramento/\n\n#matcha #matchapopup #matchamap #matchasacramento #sacramentofood #weekendplans #matchadrinks\n",
+      "user_tags": [],
+      "mentions": [
+        "demo.spot"
+      ],
+      "brands": [
+        "demo.spot"
+      ],
+      "shopId": null,
+      "group": {
+        "key": "s:CA",
+        "rows": [
+          {
+            "id": "5c522a699b41",
+            "brand": "Demo Spot",
+            "kind": "popup",
+            "sub": "5 pm to 9 pm",
+            "drinks": []
+          },
+          {
+            "id": "brand:web-atra-cafe-ca-fountain-valley-18120-brookhurst-b041ef",
+            "brand": "Atra Cafe",
+            "kind": "cafe",
+            "sub": "Huntington Beach, CA",
+            "drinks": [
+              "Avocado Matcha Crema",
+              "Matcha Coconut"
+            ]
+          }
+        ],
+        "place": "California",
+        "title": "Today in California",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Demo Spot",
+          "Atra Cafe"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [
+        {
+          "id": "5c522a699b41",
+          "brand": "Demo Spot",
+          "handle": "demo.spot",
+          "venue": "",
+          "venueHandle": null,
+          "address": "2211 16th St",
+          "city": "Sacramento",
+          "state": "CA",
+          "day": "2026-11-27",
+          "time": "5 pm to 9 pm",
+          "pour": null,
+          "menu": [],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "02",
+      "name": "02-story-today-sacramento",
+      "style": "washi",
+      "image_url": "https://matchamap.app/social/2026-11-27/02-story-today-sacramento.png"
+    },
+    {
+      "slot": "story",
+      "kind": "shop",
+      "time": "09:00",
+      "title": "Atra Cafe",
+      "tag": "New on the map",
+      "date": "2026-11-27",
+      "city": "Huntington Beach",
+      "state": "CA",
+      "region": null,
+      "link": "https://matchamap.app/city/ca/huntington-beach/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchahuntingtonbeach",
+        "#huntingtonbeachfood",
+        "#matchalatte",
+        "#matchalover"
+      ],
+      "caption": "New on the map: Atra Cafe (@atracafes) in Huntington Beach, CA. 18120 Brookhurst Street.\n\nMatcha on the menu: Avocado Matcha Crema, Matcha Coconut, Pumpkin Spice Matcha Crema, matcha.\n\nFind it and more matcha spots in Huntington Beach: https://matchamap.app/city/ca/huntington-beach/\n\n#matcha #matchapopup #matchamap #matchahuntingtonbeach #huntingtonbeachfood #matchalatte #matchalover\n",
+      "user_tags": [],
+      "mentions": [
+        "atracafes"
+      ],
+      "brands": [
+        "atracafes"
+      ],
+      "shopId": "brand:web-atra-cafe-ca-fountain-valley-18120-brookhurst-b041ef",
+      "group": {
+        "key": "s:CA",
+        "rows": [
+          {
+            "id": "5c522a699b41",
+            "brand": "Demo Spot",
+            "kind": "popup",
+            "sub": "5 pm to 9 pm",
+            "drinks": []
+          },
+          {
+            "id": "brand:web-atra-cafe-ca-fountain-valley-18120-brookhurst-b041ef",
+            "brand": "Atra Cafe",
+            "kind": "cafe",
+            "sub": "Huntington Beach, CA",
+            "drinks": [
+              "Avocado Matcha Crema",
+              "Matcha Coconut"
+            ]
+          }
+        ],
+        "place": "California",
+        "title": "Today in California",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Demo Spot",
+          "Atra Cafe"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-atra-cafe-ca-fountain-valley-18120-brookhurst-b041ef",
+        "name": "Atra Cafe",
+        "handle": "atracafes",
+        "city": "Huntington Beach",
+        "state": "CA",
+        "address": "18120 Brookhurst Street",
+        "drinks": [
+          "Avocado Matcha Crema",
+          "Matcha Coconut",
+          "Pumpkin Spice Matcha Crema",
+          "matcha"
+        ],
+        "pour": {
+          "items": [
+            {
+              "name": "Avocado Matcha Crema",
+              "plain": false
+            },
+            {
+              "name": "Matcha Coconut",
+              "plain": false
+            },
+            {
+              "name": "Pumpkin Spice Matcha Crema",
+              "plain": false
+            },
+            {
+              "name": "matcha",
+              "plain": false
+            },
+            {
+              "name": "Cookie Butter Matcha Crema",
+              "plain": false
+            }
+          ],
+          "more": 7
+        },
+        "tier": "serves",
+        "seen": "2026-11-24"
+      },
+      "n": "03",
+      "name": "03-story-shop-atra-cafe",
+      "style": "washi",
+      "image_url": "https://matchamap.app/social/2026-11-27/03-story-shop-atra-cafe.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "featured-shop",
+      "time": "10:00",
+      "title": "Junbi",
+      "tag": "Featured shop",
+      "date": "2026-11-27",
+      "city": "Katy",
+      "state": "TX",
+      "region": null,
+      "link": "https://matchamap.app/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchakaty",
+        "#katyfood",
+        "#icedmatcha",
+        "#matchatime"
+      ],
+      "caption": "Featured: Junbi (@junbimatcha) in Katy, TX. 23015 Colonial Parkway, Suite A-104.\n\nWhat they pour: Why Matcha, Matcha, Wild Strawberry Matcha Packet, Wild Blueberry Matcha Packet, Vanilla Bean Matcha Packet, and 1 more.\n\nFind it and more matcha spots in Katy: https://matchamap.app/\n\n#matcha #matchapopup #matchamap #matchakaty #katyfood #icedmatcha #matchatime\n",
+      "user_tags": [
+        {
+          "username": "junbimatcha",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "junbimatcha"
+      ],
+      "brands": [
+        "junbimatcha"
+      ],
+      "shopId": "brand:web-junbi-tx-katy-23015-colonial-parkway-suite-a-1-a1c87a",
+      "group": null,
+      "role": null,
+      "why": "featured shop",
+      "metro": "TX/katy",
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-junbi-tx-katy-23015-colonial-parkway-suite-a-1-a1c87a",
+        "name": "Junbi",
+        "handle": "junbimatcha",
+        "city": "Katy",
+        "state": "TX",
+        "address": "23015 Colonial Parkway, Suite A-104",
+        "drinks": [
+          "Why Matcha",
+          "Matcha",
+          "All Matcha",
+          "Wild Strawberry Matcha Packet"
+        ],
+        "pour": {
+          "items": [
+            {
+              "name": "Why Matcha",
+              "plain": false
+            },
+            {
+              "name": "Matcha",
+              "plain": false
+            },
+            {
+              "name": "Wild Strawberry Matcha Packet",
+              "plain": false
+            },
+            {
+              "name": "Wild Blueberry Matcha Packet",
+              "plain": false
+            },
+            {
+              "name": "Vanilla Bean Matcha Packet",
+              "plain": false
+            }
+          ],
+          "more": 1
+        },
+        "tier": "shop",
+        "seen": "2026-11-23"
+      },
+      "n": "04",
+      "name": "04-feed-featured-shop-junbi",
+      "style": "confetti",
+      "image_url": "https://matchamap.app/social/2026-11-27/04-feed-featured-shop-junbi.png"
+    },
+    {
+      "slot": "story",
+      "kind": "location",
+      "time": "11:30",
+      "title": "This week in Washington",
+      "tag": "This week",
+      "date": "2026-11-27",
+      "city": "Seattle",
+      "state": "WA",
+      "region": null,
+      "link": "https://matchamap.app/city/wa/seattle/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchaseattle",
+        "#seattlefood",
+        "#icedmatcha",
+        "#matchatime"
+      ],
+      "caption": "This week in Washington: Muni Cafe.\n\nMore matcha in Washington: https://matchamap.app/city/wa/seattle/\n\n#matcha #matchapopup #matchamap #matchaseattle #seattlefood #icedmatcha #matchatime\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [],
+      "shopId": null,
+      "group": {
+        "key": "s:WA",
+        "rows": [
+          {
+            "id": "7dbe6c549968",
+            "brand": "Muni Cafe",
+            "kind": "popup",
+            "sub": "10 am to 5 pm",
+            "drinks": [
+              "biko latte"
+            ]
+          }
+        ],
+        "place": "Washington",
+        "title": "This week in Washington",
+        "n": 2,
+        "of": 2,
+        "names": [
+          "Muni Cafe"
+        ]
+      },
+      "role": "title",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": null,
+      "n": "05",
+      "name": "05-story-location-washington",
+      "style": "neon",
+      "image_url": "https://matchamap.app/social/2026-11-27/05-story-location-washington.png"
+    },
+    {
+      "slot": "story",
+      "kind": "series",
+      "time": "12:00",
+      "title": "Every Sunday, Wednesday, Thursday, Friday and Saturday",
+      "tag": "Every Sunday, Wednesday, Thursday, Friday and Saturday",
+      "date": "2026-11-27",
+      "city": "Seattle",
+      "state": "WA",
+      "region": null,
+      "link": "https://matchamap.app/city/wa/seattle/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchaseattle",
+        "#seattlefood",
+        "#greentea",
+        "#popupshop"
+      ],
+      "caption": "Every Sunday, Wednesday, Thursday, Friday and Saturday: Muni Cafe at Anh Oi Bake Shop in Seattle, WA, 10 am to 5 pm.\n\nNext one: Wednesday, December 2.\n\nSchedules change; check their page before you go.\n\nMore matcha in Seattle: https://matchamap.app/city/wa/seattle/\n\n#matcha #matchapopup #matchamap #matchaseattle #seattlefood #greentea #popupshop\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [
+        "municafe"
+      ],
+      "shopId": null,
+      "group": {
+        "key": "s:WA",
+        "rows": [
+          {
+            "id": "7dbe6c549968",
+            "brand": "Muni Cafe",
+            "kind": "popup",
+            "sub": "10 am to 5 pm",
+            "drinks": [
+              "biko latte"
+            ]
+          }
+        ],
+        "place": "Washington",
+        "title": "This week in Washington",
+        "n": 2,
+        "of": 2,
+        "names": [
+          "Muni Cafe"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [
+        {
+          "id": "7dbe6c549968",
+          "brand": "Muni Cafe",
+          "handle": null,
+          "venue": "Anh Oi Bake Shop",
+          "venueHandle": null,
+          "address": "314 6th Ave S, Seattle, WA 98104",
+          "city": "Seattle",
+          "state": "WA",
+          "day": "2026-12-02",
+          "time": "10 am to 5 pm",
+          "pour": {
+            "items": [
+              {
+                "name": "biko latte",
+                "plain": false
+              }
+            ],
+            "more": 0
+          },
+          "menu": [
+            "daydreamer",
+            "biko latte",
+            "sesame ube latte (matcha or espresso)"
+          ],
+          "series": "Every Sunday, Wednesday, Thursday, Friday and Saturday",
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "06",
+      "name": "06-story-series-seattle",
+      "style": "neon",
+      "image_url": "https://matchamap.app/social/2026-11-27/06-story-series-seattle.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "weekend",
+      "time": "13:00",
+      "title": "This weekend in Portland",
+      "tag": "This weekend",
+      "date": "2026-11-27",
+      "city": "Portland",
+      "state": "OR",
+      "region": null,
+      "link": "https://matchamap.app/city/or/portland/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchaportland",
+        "#portlandfood",
+        "#greentea",
+        "#popupshop"
+      ],
+      "caption": "This weekend in Portland: 3 matcha pop-ups.\n\nGlimpse Matcha (@glimpsematchapopup), Friday 10 am to 6 pm, Glimpse Matcha pop-up storefront\nPortland Matcha & Coffee, Sunday 10 am to 3 pm, Pearl District Culinary Farmers Market\nGarden House Wellness, Sunday 6 pm to 7 pm\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Portland on the map: https://matchamap.app/city/or/portland/\n\n#matcha #matchapopup #matchamap #matchaportland #portlandfood #greentea #popupshop\n",
+      "user_tags": [
+        {
+          "username": "glimpsematchapopup",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "glimpsematchapopup"
+      ],
+      "brands": [
+        "glimpsematchapopup",
+        "portlandmatchacoffee",
+        "gardenhousewellness"
+      ],
+      "shopId": null,
+      "group": null,
+      "role": null,
+      "why": "weekend roundup",
+      "metro": null,
+      "events": [
+        {
+          "id": "f14e31648f00",
+          "brand": "Glimpse Matcha",
+          "handle": "glimpsematchapopup",
+          "venue": "Glimpse Matcha pop-up storefront",
+          "venueHandle": null,
+          "address": "433 NW 10th Ave, Portland, OR 97209",
+          "city": "Portland",
+          "state": "OR",
+          "day": "2026-11-27",
+          "time": "10 am to 6 pm",
+          "pour": null,
+          "menu": [],
+          "series": null,
+          "kind": "popup"
+        },
+        {
+          "id": "3a82df70bcd9",
+          "brand": "Portland Matcha & Coffee",
+          "handle": null,
+          "venue": "Pearl District Culinary Farmers Market",
+          "venueHandle": null,
+          "address": "327 NW 10th Ave, Portland, OR 97209",
+          "city": "Portland",
+          "state": "OR",
+          "day": "2026-11-29",
+          "time": "10 am to 3 pm",
+          "pour": null,
+          "menu": [],
+          "series": "Every Sunday",
+          "kind": "popup"
+        },
+        {
+          "id": "c247893ea25c",
+          "brand": "Garden House Wellness",
+          "handle": null,
+          "venue": "",
+          "venueHandle": null,
+          "address": "5120 Southeast 28th Avenue",
+          "city": "Portland",
+          "state": "OR",
+          "day": "2026-11-29",
+          "time": "6 pm to 7 pm",
+          "pour": {
+            "items": [
+              {
+                "name": "mochi",
+                "plain": false
+              }
+            ],
+            "more": 0
+          },
+          "menu": [
+            "mochi"
+          ],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "07",
+      "name": "07-feed-weekend-portland",
+      "style": "comic",
+      "image_url": "https://matchamap.app/social/2026-11-27/07-feed-weekend-portland.png"
+    }
+  ],
+  "featured": {
+    "brands": [
+      "atracafes",
+      "demo.spot",
+      "gardenhousewellness",
+      "glimpsematchapopup",
+      "junbimatcha",
+      "magnaye.sd",
+      "municafe",
+      "portlandmatchacoffee"
+    ],
+    "shops": [
+      "brand:web-atra-cafe-ca-fountain-valley-18120-brookhurst-b041ef",
+      "brand:web-junbi-tx-katy-23015-colonial-parkway-suite-a-1-a1c87a"
+    ],
+    "regions": {
+      "triangle": {
+        "feed": 0,
+        "story": 0
+      }
+    },
+    "styles": {
+      "feed": [
+        "confetti",
+        "comic"
+      ],
+      "story": [
+        "washi",
+        "neon"
+      ]
+    },
+    "feat": {
+      "shop": "brand:web-junbi-tx-katy-23015-colonial-parkway-suite-a-1-a1c87a",
+      "metro": "TX/katy",
+      "city": null
+    }
+  }
+}

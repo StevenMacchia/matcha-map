@@ -58,5 +58,42 @@
         "garden"
       ]
     }
+  },
+  "2026-11-27": {
+    "brands": [
+      "atracafes",
+      "demo.spot",
+      "gardenhousewellness",
+      "glimpsematchapopup",
+      "junbimatcha",
+      "magnaye.sd",
+      "municafe",
+      "portlandmatchacoffee"
+    ],
+    "shops": [
+      "brand:web-atra-cafe-ca-fountain-valley-18120-brookhurst-b041ef",
+      "brand:web-junbi-tx-katy-23015-colonial-parkway-suite-a-1-a1c87a"
+    ],
+    "regions": {
+      "triangle": {
+        "feed": 0,
+        "story": 0
+      }
+    },
+    "feat": {
+      "shop": "brand:web-junbi-tx-katy-23015-colonial-parkway-suite-a-1-a1c87a",
+      "metro": "TX/katy",
+      "city": null
+    },
+    "styles": {
+      "feed": [
+        "confetti",
+        "comic"
+      ],
+      "story": [
+        "washi",
+        "neon"
+      ]
+    }
   }
 }

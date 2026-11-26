@@ -1,0 +1,26 @@
+{
+  "slot": "feed",
+  "time": "13:00",
+  "image_url": "https://matchamap.app/social/2026-11-27/07-feed-weekend-portland.png",
+  "location": "Portland, OR",
+  "link": "https://matchamap.app/city/or/portland/",
+  "user_tags": [
+    {
+      "username": "glimpsematchapopup",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "glimpsematchapopup"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchaportland",
+    "#portlandfood",
+    "#greentea",
+    "#popupshop"
+  ]
+}

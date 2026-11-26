@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:6d53f0b347a7@matchamap-cu7.pages.dev
-DTSTAMP:20261125T182233Z
-LAST-MODIFIED:20261125T182233Z
-DTSTART;VALUE=DATE:20261204
-DTEND;VALUE=DATE:20261205
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
+DTSTART:20261204T140000Z
+DTEND:20261204T150000Z
 SUMMARY:JETSET On The Mat x  VERVE
 LOCATION:VERVE Columbia\, 450 Blossom Street\, Columbia\, SC
 DESCRIPTION:Enjoy a refreshing 45-minute Mat Pilates class at VERVE Apts. f
  ollowed by delicious coffee and matcha from Nible on Friday 12/04 at 9AM!\
- nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/6d53f0b347a7
- /
+ nPrice: Free\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e
+ /6d53f0b347a7/
 URL:https://matchamap.app/e/6d53f0b347a7/
 GEO:33.988678;-81.042395
 STATUS:CONFIRMED

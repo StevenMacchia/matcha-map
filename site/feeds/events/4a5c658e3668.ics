@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Halo Venue pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:4a5c658e3668@matchamap-cu7.pages.dev
+DTSTAMP:20261126T181910Z
+LAST-MODIFIED:20261126T181910Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:Pilates & Matcha
+LOCATION:Halo Venue\, 313 North State Street\, Orem\, UT
+DESCRIPTION:Enjoy a 45-minute Pilates class led by Naomi followed by delici
+ ous matcha from The Matcha Bar\nLikely\, not fully confirmed.\nMore: https
+ ://matchamap.app/e/4a5c658e3668/
+URL:https://matchamap.app/e/4a5c658e3668/
+GEO:40.302982;-111.697661
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR
