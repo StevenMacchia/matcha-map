@@ -15861,6 +15861,47 @@
   "brand:web-morning-star-bakery-and-cafe-oh-akron-1070-ghe-c19901": {
    "fill": "2026-11-25",
    "fill_status": "read"
+  },
+  "brand:web-bonjour-banh-mi-tea-nc-morrisville-2121-tw-ale-2b18db": {
+   "fill": "2026-11-26",
+   "opening_hours": "Tu-Th 11:00-15:00; Fr-Su 11:00-20:30",
+   "image_url": "https://irp.cdn-website.com/5e64cf6c/dms3rep/multi/opt/Untitled+design-1920w.jpeg",
+   "image_credit": "Photo: Bonjour Banh Mi & Tea website",
+   "read": "2026-11-26",
+   "source_url": "https://bonjourbanhmi-tea.com",
+   "fill_status": "read"
+  },
+  "brand:web-momo-house-nc-raleigh-3001-hillsborough-st-108-5e4e1c": {
+   "fill": "2026-11-26",
+   "opening_hours": "Mo-Th,Su 10:00-21:00; Fr,Sa 10:00-22:00",
+   "read": "2026-11-26",
+   "source_url": "https://www.momohouseusa.com/",
+   "fill_status": "read"
+  },
+  "brand:web-cha-house-cary-nc-cary-1319-kildaire-farm-rd-89a1e7": {
+   "fill": "2026-11-26",
+   "opening_hours": "Mo-Th 11:00-21:00; Fr-Su 11:00-21:30",
+   "image_url": "https://static.spotapps.co/website_images/ab_websites/229756_website/share_image.jpg",
+   "image_credit": "Photo: Cha House Cary website",
+   "read": "2026-11-26",
+   "source_url": "https://www.chahouseusa.com",
+   "fill_status": "read"
+  },
+  "brand:web-bull-street-gourmet-market-nc-durham-3710-shan-d0bf1c": {
+   "fill": "2026-11-26",
+   "fill_status": "read"
+  },
+  "brand:web-paris-baguette-nc-raleigh-10341-moncreiffe-rd-a1f51a": {
+   "fill": "2026-11-26",
+   "fill_status": "read"
+  },
+  "brand:web-songbird-nc-raleigh-1020-e-whitaker-mill-rd-e190b0": {
+   "fill": "2026-11-26",
+   "image_url": "http://static1.squarespace.com/static/69138ef94397e467a5f3a6f8/t/69837b537b3d0e2489f8dcb8/1770224467552/Songbird-Secondary-Fullcolor-RGB-01.png?format=1500w",
+   "image_credit": "Photo: Songbird website",
+   "read": "2026-11-26",
+   "source_url": "https://songbird.bar",
+   "fill_status": "read"
   }
  }
 }
