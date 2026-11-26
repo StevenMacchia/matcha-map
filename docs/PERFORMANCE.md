@@ -107,4 +107,17 @@ The home page score barely moves because its estimated largest paint and blockin
 to 0, shops.json 827 KB to 166 KB, unpkg connection gone, and speed index 23.7 s to 5.7 s, TTI 34.6 s to 8.5 s,
 first paint 3.6 s to 1.7 to 2.2 s.
 
-(Live numbers after the deploy are added below.)
+Live, https://matchamap.app after the deploy (main 6bfbc3e38, 2026-11-25), same Lighthouse settings:
+
+| Page | Perf before | after | LCP before | after | Speed index before | after | TBT before | after | Transferred before | after |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| / | 60 | 74 | 5.4 s | 4.8 s | 23.7 s | 6.6 s | 194 ms | 78 ms | 17.47 MB | 5.03 MB |
+| /city/nc/raleigh/ | 75 | 96 | 4.5 s | 2.5 s | 3.8 s | 1.9 s | 0 ms | 0 ms | 0.42 MB | 0.27 MB |
+| /state/nc/ | 82 | 97 | 3.6 s | 2.2 s | 3.5 s | 1.9 s | 0 ms | 0 ms | 0.24 MB | 0.12 MB |
+| /brand/333.matcha/ | 82 | 95 | 3.7 s | 2.2 s | 3.4 s | 2.0 s | 0 ms | 0 ms | 0.21 MB | 0.12 MB |
+
+SEO stays 100 on all four. Live smoke 43 of 43, card gate 192 of 192, shop gate and map gate (22 of 22) pass. The home page
+5 MB is the map: tiles about 3 MB, the rest own files (about 1.3 MB). Not done and why: the home page is under the 85 target
+(tiles, and Lighthouse's model of the page's script; see Budgets); the 9 city pages that fail SEO rule 2 (stale against
+`data/pages-lastmod.json`) fail the same way on `origin/main` before this lane and are the daily run's to regenerate.
+
