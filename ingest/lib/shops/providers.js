@@ -119,7 +119,7 @@ export async function confirmCandidate(c, get, { read = new Date().toISOString()
     if (hm?.drinks?.length >= MIN_HOSTED) { tier = hint === "core" ? "shop" : "serves"; menu_matcha = hm.drinks.slice(0, 12); hostedUrl = hm.menu_url; }
     else hostedReason = hm?.reason || null;
   }
-  if (!tier) return { held: hostedReason || (hint === "core" ? "own site barely mentions matcha" : "fewer than three matcha drinks on the site's own menu page") };
+  if (!tier) return { held: hostedReason || (hint === "core" ? "own site barely mentions matcha" : "fewer than three matcha drinks on the site's own menu page"), instagram: rd("instagram"), matcha_mentions: mentions };
   const best = (k) => sameSpot[k] || rd(k);
   return {
     row: {

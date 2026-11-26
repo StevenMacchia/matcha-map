@@ -13,7 +13,9 @@ export const STATES = new Set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS K
 // own-site, instagram-bio, press+site: confirmed (verified). public-page: a non-Yelp public page (ordering page header, Linktree, a market or mall
 // directory, local press, OpenStreetMap) names the shop and its address; the row is shown but verified stays false until an own page confirms it.
 // overture: an Overture Maps place whose name says matcha (open data, storable); shown, verified false until the shop's own site confirms it.
-export const CONFIRMED_VIA = new Set(["own-site", "instagram-bio", "press+site", "public-page", "overture"]);
+export const CONFIRMED_VIA = new Set(["own-site", "instagram-bio", "press+site", "public-page", "overture", "instagram-posts"]);
+// A serves row whose menu shows fewer than three matcha drinks carries a note that starts with this (one drink is enough then; the note may add a few words).
+export const WEAK_NOTE = /^Menu mentions matcha/;
 const http = (u) => (typeof u === "string" && /^https?:\/\/[^\s]+$/i.test(u.trim()) ? u.trim() : null);
 const str = (v) => (typeof v === "string" && v.trim() ? v.trim() : null);
 const handle = (v) => { const s = str(v); if (!s) return null; const m = /instagram\.com\/([A-Za-z0-9._]+)/i.exec(s); return (m ? m[1] : s.replace(/^@/, "")).toLowerCase().replace(/[^a-z0-9._]/g, "") || null; };
@@ -60,7 +62,7 @@ export function checkRow(r, file = "") {
   const via = CONFIRMED_VIA.has(r.confirmed_via) ? r.confirmed_via : null;
   const tier = r.tier === "serves" ? "serves" : "shop";
   const menu_matcha = tier === "serves" ? matchaItems(r.menu_matcha) : null;
-  if (tier === "serves" && (!http(r.menu_url) || menu_matcha.length < (str(r.note) === "Menu mentions matcha" ? 1 : MIN_SERVES_ITEMS))) return { held: `serves tier needs a menu_url and at least ${MIN_SERVES_ITEMS} distinct matcha drinks` };
+  if (tier === "serves" && (!http(r.menu_url) || menu_matcha.length < (WEAK_NOTE.test(str(r.note)) ? 1 : MIN_SERVES_ITEMS))) return { held: `serves tier needs a menu_url and at least ${MIN_SERVES_ITEMS} distinct matcha drinks` };
   const zip = /^\d{5}/.test(String(r.zip || "")) ? String(r.zip).slice(0, 5) : null;
   return {
     shop: {

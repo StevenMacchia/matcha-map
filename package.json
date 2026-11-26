@@ -60,7 +60,8 @@
     "outreach": "node tools/outreach.js",
     "shops:keyed": "node ingest/shops-keyed.js",
     "daily": "node ingest/daily.js",
-    "shops:overture": "node ingest/shops-overture.js"
+    "shops:overture": "node ingest/shops-overture.js",
+    "shops:instagram": "node ingest/shops-instagram.js"
   },
   "license": "MIT",
   "devDependencies": {

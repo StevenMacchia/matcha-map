@@ -1,0 +1,36 @@
+{
+ "generated": "2026-11-26T03:47:22.360Z",
+ "group": "south-triangle-gap",
+ "shops": [
+  {
+   "name": "Songbird",
+   "tier": "serves",
+   "address": "1020 E Whitaker Mill Rd",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27608",
+   "website": "https://songbird.bar",
+   "instagram": "songbird.nc",
+   "phone": null,
+   "opening_hours": "Mo,Su 08:00-14:00; Tu-Th 08:00-14:00,16:00-22:00; Fr-Sa 08:00-14:00,16:00-23:00",
+   "menu_url": "https://songbird.bar/morning-menu",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": "$7"
+    },
+    {
+     "name": "Rose Matcha Soda",
+     "price": "$8"
+    }
+   ],
+   "note": "Menu mentions matcha: latte and rose soda, made with Frame Matcha (Raleigh)",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://songbird.bar/location-hours",
+   "read": "2026-11-25",
+   "confirmed_via": "own-site",
+   "notes": "Overture files it as a bar, so the cafe menu pass never read it. Address, hours, Instagram handle (songbird.nc) and the Frame Matcha purveyor line are on its own site (songbird.bar, /location-hours, /purveyors); the morning menu is a picture on /morning-menu and lists a matcha latte (frame matcha, $7) and a seasonal rose matcha soda ($8). Also at visitraleigh.com/listing/songbird/78948/ (same address)."
+  }
+ ]
+}

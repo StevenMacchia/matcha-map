@@ -1,0 +1,123 @@
+{
+ "generated": "2026-11-26T04:07:51.435Z",
+ "group": "instagram-triangle",
+ "shops": [
+  {
+   "name": "Bonjour Banh Mi & Tea",
+   "address": "2121 TW Alexander Dr Ste 111",
+   "city": "Morrisville",
+   "state": "NC",
+   "zip": "27560",
+   "website": "https://bonjourbanhmi-tea.com",
+   "instagram": "bonjour_banhmi",
+   "phone": "+19192518426",
+   "opening_hours": null,
+   "menu_url": "https://www.instagram.com/p/DfVWyqymkKL/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.instagram.com/p/DfVWyqymkKL/",
+   "read": "2026-11-26",
+   "confirmed_via": "instagram-posts",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Mango Matcha Latte",
+     "price": null
+    }
+   ],
+   "note": "Menu mentions matcha: 1 drink named in recent posts",
+   "notes": "Read from the last 30 public posts of @bonjour_banhmi through the Instagram Graph API (1 name matcha); source_url is the newest post that names a drink.",
+   "overture_id": "7a175a78-5d7b-4a90-9344-dada827dd5bc",
+   "lat": 35.920446,
+   "lng": -78.810799,
+   "overture_sources": []
+  },
+  {
+   "name": "Cha House Cary",
+   "address": "1319 Kildaire Farm Rd",
+   "city": "Cary",
+   "state": "NC",
+   "zip": "27511",
+   "website": "https://www.chahouseusa.com",
+   "instagram": "chahousecary",
+   "phone": "+19844650498",
+   "opening_hours": null,
+   "menu_url": "https://www.instagram.com/p/DfxicMgIiO7/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.instagram.com/p/DfxicMgIiO7/",
+   "read": "2026-11-26",
+   "confirmed_via": "instagram-posts",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Coconut Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Vanilla Matcha",
+     "price": null
+    },
+    {
+     "name": "Brown Sugar Matcha",
+     "price": null
+    },
+    {
+     "name": "Brown Sugar Maple Matcha",
+     "price": null
+    },
+    {
+     "name": "Taro Matcha",
+     "price": null
+    }
+   ],
+   "notes": "Read from the last 30 public posts of @chahousecary through the Instagram Graph API (7 name matcha); source_url is the newest post that names a drink.",
+   "overture_id": "b210b92b-1425-4e40-b67b-0995b57241e6",
+   "lat": 35.759928,
+   "lng": -78.781937,
+   "overture_sources": []
+  },
+  {
+   "name": "Bull Street Gourmet & Market",
+   "address": "3710 Shannon Rd",
+   "city": "Durham",
+   "state": "NC",
+   "zip": "27707",
+   "website": "http://www.bullandbean.com",
+   "instagram": "bullandbean",
+   "phone": "+19192372398",
+   "opening_hours": null,
+   "menu_url": "https://www.instagram.com/p/DYnjiKIFLoo/",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://www.instagram.com/p/DYnjiKIFLoo/",
+   "read": "2026-11-26",
+   "confirmed_via": "instagram-posts",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Lemon Matcha",
+     "price": null
+    }
+   ],
+   "note": "Menu mentions matcha: 1 drink named in recent posts",
+   "notes": "Read from the last 30 public posts of @bullandbean through the Instagram Graph API (1 name matcha); source_url is the newest post that names a drink.",
+   "overture_id": "ae25a827-4a32-41cf-9de5-5252ae1f7cef",
+   "lat": 35.956709,
+   "lng": -78.956032,
+   "overture_sources": []
+  }
+ ]
+}

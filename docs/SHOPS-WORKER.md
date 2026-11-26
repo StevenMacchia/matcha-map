@@ -10,6 +10,7 @@ A permanent place that sells matcha drinks as a core offer: a matcha cafe or bar
 
 - `tier: "shop"` (the default): matcha is the core offer, as above.
 - `tier: "serves"` (product owner, 2026-11-23): a coffee or tea shop that is not a matcha bar but whose own public menu page lists at least three distinct matcha drinks (not one latte). Drawn as a lighter pin "Matcha on the menu", counted separately. Required: `menu_url` (the shop's own menu page) and `menu_matcha` = `[{ "name": "...", "price": "$6.50" or null }, ...]` with at least three distinct matcha drink names exactly as the menu prints them. Read the menu with `node tools/shop-read.js <menu page>` or the fetch tool; if the menu is an image or a PDF you cannot read, the row is not written. A row that fails the three-drink rule is held automatically.
+- A serves row with only one or two matcha drinks that can be seen on a public page (a menu picture counts when you can read it) carries a `note` that starts "Menu mentions matcha" (the rest may say more, 120 characters in all, for example "Menu mentions matcha: latte and rose soda, made with Frame Matcha"); it is then allowed with one drink or more.
 - Optional on any row: `note` (at most 120 characters, shown on the card), for example "Pop-up window at Maison Neue" for a fixed counter inside another business.
 
 ## How to find them (public pages only, read-only)
@@ -44,7 +45,7 @@ Run `node tools/shop-read.js <shop website> --paths home,/contact,/locations,/vi
 }
 ```
 
-- Required: name, address (starts with the street number), city, two-letter state, source_url (the public page where the address and the shop can be seen), read (the date you read it). `confirmed_via` is `own-site`, `instagram-bio` (a handle seen on its own site) or `press+site` (a press list plus the shop's own page). A row without `confirmed_via` is kept but not shown on the map.
+- Required: name, address (starts with the street number), city, two-letter state, source_url (the public page where the address and the shop can be seen), read (the date you read it). `confirmed_via` is `own-site`, `instagram-bio` (a handle seen on its own site), `press+site` (a press list plus the shop's own page) or `instagram-posts` (set by `ingest/shops-instagram.js`, not by hand: the account's own last 30 posts, read through the Graph API, name matcha drinks). A row without `confirmed_via` is kept but not shown on the map.
 - `image_url`: the shop's own og:image or hero photo URL from its own site, with `image_credit` "Photo: <shop name> website". Null if the site has none; never take a photo from a press site, Google, Yelp or an Instagram/Facebook CDN (those links expire and are not ours to serve).
 - No coordinates in the file. The pipeline geocodes the address.
 - One row per location. A chain gets one row per store you can confirm on its own location page.

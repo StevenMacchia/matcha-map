@@ -29,11 +29,9 @@ import graph, { creds, createRate, runAllowance } from "./adapters/instagram-gra
 import { brandOf } from "./lib/names.js";
 import { buildBrands, writeBrands } from "./lib/enrich/brands.js";
 import { readLock, acquire } from "./lib/runlock.js";
-import { readLock, acquire } from "./lib/runlock.js";
 
 const ADAPTERS = [mato, luma, eventbrite, marketspread, ics, website, manual];
 const pad = (s, n) => String(s).padEnd(n).slice(0, n);
-let releaseLock = null; // .cache/watch.lock (ingest/lib/runlock.js), released when main ends
 let releaseLock = null; // .cache/watch.lock (ingest/lib/runlock.js), released when main ends
 
 async function main() {

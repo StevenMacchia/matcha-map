@@ -33,7 +33,7 @@ import { UA } from "../lib/fetch.js";
 import { warnOnce, debug } from "../lib/log.js";
 
 export const VERSION = "v21.0";
-const BASE = `https://graph.facebook.com/${VERSION}`;
+export const BASE = `https://graph.facebook.com/${VERSION}`;
 export const HOURLY_LIMIT = 200;
 export const HASHTAG_LIMIT = 30;
 // One watch run spends at most this many calls (hashtags first, then accounts), less what the rolling hour already used:

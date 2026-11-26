@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T18:00:05.195Z",
+  "updated": "2026-11-26T04:06:59.048Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -31176,9 +31176,9 @@
       "cadence_hours": 72,
       "notes": "",
       "graph_error": "Graph API HTTP 400: Invalid user id",
-      "graph_error_at": "2026-11-24T01:56:11.094Z",
+      "graph_error_at": "2026-11-26T03:58:00.484Z",
       "unreadable_prior": "watching",
-      "unreadable_at": "2026-11-24T01:56:11.094Z"
+      "unreadable_at": "2026-11-26T03:58:00.484Z"
     },
     {
       "handle": "paulandjack_nc",
@@ -41149,6 +41149,66 @@
       "checks": 0,
       "cadence_hours": 72,
       "notes": "site=allevents; org=baristas-bouquet; home=Urbandale, IA; brand=Baristas Bouquet; e.g. Matcha & Movement"
+    },
+    {
+      "handle": "songbird.nc",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "manual",
+      "found_from": "https://songbird.bar/",
+      "first_seen": "2026-11-26T03:58:00.210Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "Raleigh, NC | Songbird, all-day bar at East End Market (Frame Matcha on the menu); menu posted on Instagram; Triangle gap lane | evidence: https://songbird.bar/"
+    },
+    {
+      "handle": "bullandbean",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "overture",
+      "found_from": "http://www.bullandbean.com",
+      "first_seen": "2026-11-26T03:58:21.487Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "Durham, NC | Bull Street Gourmet & Market (sandwich_shop); Triangle gap lane, 1 of 30 recent posts name matcha"
+    },
+    {
+      "handle": "chahousecary",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "overture",
+      "found_from": "http://www.chahouseusa.com",
+      "first_seen": "2026-11-26T04:06:59.037Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "Chapel Hill, NC | Cha House (breakfast_and_brunch_restaurant); Triangle gap lane, 7 of 30 recent posts name matcha"
+    },
+    {
+      "handle": "bonjour_banhmi",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "overture",
+      "found_from": "https://bonjourbanhmi-tea.com",
+      "first_seen": "2026-11-26T04:06:59.038Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "Morrisville, NC | Bonjour Banh Mi & Tea (vietnamese_restaurant); Triangle gap lane, 1 of 30 recent posts name matcha"
     }
   ]
 }

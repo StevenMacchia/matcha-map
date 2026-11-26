@@ -1,0 +1,179 @@
+{
+ "generated": "2026-11-26T04:05:14.950Z",
+ "group": "overture-triangle-wide",
+ "release": "2026-11-18.0",
+ "shops": [
+  {
+   "name": "Paris Baguette",
+   "address": "10341 Moncreiffe Rd",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27617",
+   "website": "https://parisbaguette.com/locations/nc/raleigh/10341-moncreiffe-road/",
+   "instagram": "parisbaguette_usa",
+   "phone": "+19842591299",
+   "opening_hours": null,
+   "menu_url": "https://parisbaguette.com/menu",
+   "image_url": "https://parisbaguette.com/wp-content/uploads/2024/04/icon-catering.svg",
+   "image_credit": "Photo: Paris Baguette website",
+   "source_url": "https://parisbaguette.com/",
+   "read": "2026-11-26",
+   "confirmed_via": "overture",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Mirrorball Iced Croissant Latte & Matcha",
+     "price": null
+    },
+    {
+     "name": "Mirrorball Iced Croissant Matcha",
+     "price": null
+    },
+    {
+     "name": "Iced Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Iced Matcha Latte",
+     "price": null
+    }
+   ],
+   "overture_id": "dc864f51-bb4e-4c03-8557-5dd0b0f9bd58",
+   "lat": 35.899538,
+   "lng": -78.792103,
+   "overture_sources": [
+    {
+     "dataset": "Microsoft",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "281474980838278"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "55964394-dec0-4d76-a5fd-4f4f60629e1b"
+    }
+   ]
+  },
+  {
+   "name": "Bowlba Cafe",
+   "address": "3607 Falls River Avenue",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27614-7365",
+   "website": "http://bowlbacafe.com/",
+   "instagram": "bowlbacafe",
+   "phone": "(919)900-7271",
+   "opening_hours": "Tu,Th,Fr 11:30-21:00; Sa,Su 13:00-21:00",
+   "menu_url": "http://bowlbacafe.com/menu",
+   "image_url": "https://static.wixstatic.com/media/fca6a8_6072da27aa984591845e8d4a02523f86~mv2.png/v1/fit/w_2500,h_1330,al_c/fca6a8_6072da27aa984591845e8d4a02523f86~mv2.png",
+   "image_credit": "Photo: Bowlba Cafe website",
+   "source_url": "http://bowlbacafe.com/",
+   "read": "2026-11-26",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Yuzu Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "91a323b3-0633-4855-8ab0-897cf96f4ac9",
+   "lat": 35.929663,
+   "lng": -78.564758,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "103634562438613"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "83d91a2b-8955-4ed4-8672-95014a76e50c"
+    }
+   ]
+  },
+  {
+   "name": "MOMO HOUSE",
+   "address": "3001 Hillsborough St #108",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27607",
+   "website": "https://www.momohouseusa.com/",
+   "instagram": "momohousenc",
+   "phone": "+19195941413",
+   "opening_hours": null,
+   "menu_url": "https://www.momohouseusa.com/menu",
+   "image_url": "https://momohouseusa.com/wp-content/uploads/2026/05/cropped-600336250_122137472528972290_645685214027829774_n.jpg",
+   "image_credit": "Photo: MOMO HOUSE website",
+   "source_url": "https://www.momohouseusa.com/",
+   "read": "2026-11-26",
+   "confirmed_via": "own-site",
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha",
+     "price": null
+    },
+    {
+     "name": "Lavender Matcha",
+     "price": null
+    },
+    {
+     "name": "Mango Matcha",
+     "price": null
+    },
+    {
+     "name": "Matcha Latte",
+     "price": null
+    },
+    {
+     "name": "Strawberry Matcha",
+     "price": null
+    },
+    {
+     "name": "Taro Matcha",
+     "price": null
+    }
+   ],
+   "overture_id": "8197aab5-dae8-4318-b00a-e8fafa8576e1",
+   "lat": 35.789536,
+   "lng": -78.676895,
+   "overture_sources": [
+    {
+     "dataset": "meta",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "720043297865009"
+    },
+    {
+     "dataset": "Overture",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": null
+    },
+    {
+     "dataset": "Overture-signals",
+     "license": "CDLA-Permissive-2.0",
+     "record_id": "9d81fac4-54fe-4983-bf4b-636f57a4762f"
+    }
+   ]
+  }
+ ]
+}

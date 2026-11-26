@@ -1,4 +1,4 @@
-// npm run shops:overture -- [--pull] [--build] [--menus [--limit 1500]] [--release 2026-11-18.0] [--in file.ndjson]
+// npm run shops:overture -- [--pull | --pull-wide --state NC --counties Wake,Durham --in file] [--wide (menus: restaurants, bars, bakeries and the rest, not only cafes)] [--build] [--menus [--limit 1500]] [--release 2026-11-18.0] [--in file.ndjson]
 // Overture Maps places (open, storable; see docs/OVERTURE.md) -> the storefront layer.
 //   --pull   DuckDB over the public Parquet (no key): US places that are matcha-named or cafe, coffee, tea room, bubble tea, dessert, Japanese,
 //            bakery, ice cream or juice, into .cache/overture/<release>/places-us.ndjson (gitignored, not committed).
@@ -41,6 +41,28 @@ export async function pull({ release = RELEASE, out }) {
     FROM read_parquet('${BUCKET}/${release}/theme=places/type=place/*', hive_partitioning=1) WHERE ${where}) TO '${target}' (FORMAT JSON)`);
 }
 
+// Wider pull (Triangle gap lane): every food and drink place (any category under food_and_drink) in the named counties of one state, using Overture's own
+// county polygons (theme=divisions), or in the whole state when no counties are named. Same columns as pull(), plus the taxonomy path.
+export async function pullWide({ release = RELEASE, out, state, counties = [] }) {
+  const { DuckDBInstance } = await import("@duckdb/node-api");
+  const db = await DuckDBInstance.create(":memory:");
+  const c = await db.connect();
+  await c.run("INSTALL httpfs; LOAD httpfs; INSTALL spatial; LOAD spatial; SET s3_region='us-west-2';");
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  const target = out.split(String.fromCharCode(92)).join("/");
+  const names = counties.map((x) => `'${x.replace(/'/g, "''")} County'`).join(",");
+  const poly = counties.length ? `(SELECT ST_Union_Agg(geometry) FROM read_parquet('${BUCKET}/${release}/theme=divisions/type=division_area/*', hive_partitioning=1) WHERE subtype='county' AND region='US-${state}' AND names.primary IN (${names}))` : null;
+  const where = `confidence >= 0.5 AND list_contains(taxonomy.hierarchy, 'food_and_drink') AND ${poly ? `ST_Within(geometry, ${poly})` : `addresses[1].region = 'US-${state}'`}`;
+  await c.run(`COPY (SELECT id, names.primary AS name, taxonomy.primary AS tax, round(confidence,3) AS conf, operating_status AS status,
+    addresses[1].freeform AS street, addresses[1].locality AS city, addresses[1].region AS state, addresses[1].postcode AS zip, addresses[1].country AS country,
+    websites[1] AS website, socials AS socials, phones[1] AS phone, round((bbox.xmin+bbox.xmax)/2,6) AS lng, round((bbox.ymin+bbox.ymax)/2,6) AS lat,
+    to_json([{'dataset':s.dataset,'license':s.license,'record_id':s.record_id} for s in sources]) AS sources
+    FROM read_parquet('${BUCKET}/${release}/theme=places/type=place/*', hive_partitioning=1) WHERE ${where}) TO '${target}' (FORMAT JSON)`);
+}
+// The wide category set: restaurants of every cuisine, bars of every kind, bakeries, desserts, ice cream, juice, bubble tea, brunch and breakfast.
+export const WIDE = /(^|_)restaurant$|^(bar|cocktail_bar|wine_bar|pub|sports_bar|lounge|beer_bar|hotel_bar|tiki_bar|brewery|winery|bakery|dessert_shop|ice_cream_shop|frozen_yogurt_shop|juice_bar|smoothie_juice_bar|bubble_tea_shop|donut_shop|bagel_shop|creperie|breakfast_and_brunch|diner|gastropub|food_truck|cafeteria|sandwich_shop|salad_bar|health_food_restaurant|patisserie|chocolate_shop|candy_store|tea_room|tea_shop|coffee_shop|cafe|coffee_roastery)$/;
+export const wideCategory = (p) => WIDE.test(p.tax || "");
+
 // ---- rows ---------------------------------------------------------------------------------------------------------------------------------
 export function readPlaces(file) {
   return fs.readFileSync(file, "utf8").split("\n").filter(Boolean).map((l) => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
@@ -79,7 +101,7 @@ export function coreRow(p, today = new Date().toISOString().slice(0, 10)) {
 
 // Cafes, tea rooms and the rest with a website, in the order the menu reader should read them.
 const PRIORITY = { tea_room: 0, bubble_tea_shop: 0, tea_shop: 0, japanese_restaurant: 1, dessert_shop: 1, coffee_roastery: 2, cafe: 3, coffee_shop: 3, bakery: 4, juice_bar: 4, smoothie_juice_bar: 4, ice_cream_shop: 4 };
-export const isServesCandidate = (p) => usable(p) && ownSite(p.website) && !isMatchaNamed(p) && FOOD.has(p.tax) && !/starbucks|dunkin|mcdonald|dutch bros|tim hortons|7-eleven|panera|subway|krispy|dairy queen|baskin/i.test(p.name);
+export const isServesCandidate = (p, wide = false) => usable(p) && ownSite(p.website) && !isMatchaNamed(p) && (FOOD.has(p.tax) || (wide && wideCategory(p))) && !/starbucks|dunkin|mcdonald|dutch bros|tim hortons|7-eleven|panera|subway|krispy|dairy queen|baskin|burger king|wendy's|taco bell|chick-fil-a|chipotle|domino|pizza hut|papa john|kfc|popeyes|sonic drive|arby|jimmy john|jersey mike|firehouse|five guys|wingstop|zaxby|bojangles|cook out|cookout|waffle house|ihop|denny's|applebee|chili's|olive garden|outback|texas roadhouse|buffalo wild|red robin|cracker barrel|golden corral|bob evans|hardee|carl's jr|jack in the box|whataburger|culver|raising cane|panda express|qdoba|moe's southwest|jason's deli|potbelly|cinnabon|auntie anne|pretzel|smoothie king|tropical smoothie|jamba|chuck e|mod pizza|marco's pizza|little caesars/i.test(p.name);
 export const toCandidate = (p) => ({ provider: "overture", name: p.name, address: String(p.street).trim(), city: p.city, state: stateOf(p), zip: p.zip || null, website: ownSite(p.website), instagram: igHandle(p.socials), phone: p.phone || null, lat: p.lat, lng: p.lng, hint: "serves-check", id: p.id, sources: p.sources });
 
 async function main() {
@@ -89,6 +111,12 @@ async function main() {
   const dir = `.cache/overture/${release}`;
   const file = arg("--in", `${dir}/places-us.ndjson`);
   if (argv.includes("--pull")) { info(`overture: pulling ${release} (DuckDB over S3)`); await pull({ release, out: file }); info(`overture: wrote ${file}`); }
+  if (argv.includes("--pull-wide")) {
+    const counties = String(arg("--counties", "")).split(",").map((x) => x.trim()).filter(Boolean);
+    info(`overture: wide pull ${release} state ${arg("--state", "NC")} counties ${counties.join("+") || "all"}`);
+    await pullWide({ release, out: file, state: arg("--state", "NC"), counties });
+    info(`overture: wrote ${file}`);
+  }
   const places = fs.existsSync(file) ? readPlaces(file) : [];
   if (!places.length) { warn(`overture: no places at ${file}; run with --pull`); return; }
   if (argv.includes("--build")) {
@@ -102,7 +130,8 @@ async function main() {
     const only = arg("--cities") ? new Set(String(arg("--cities")).split(",").map((x) => x.trim().toLowerCase())) : null;
     const box = arg("--bbox") ? String(arg("--bbox")).split(",").map(Number) : null;
     const st = arg("--state");
-    const cands = places.filter((p) => isServesCandidate(p) && (!only || only.has(String(p.city || "").toLowerCase())) && (!box || (p.lng >= box[0] && p.lat >= box[1] && p.lng <= box[2] && p.lat <= box[3])) && (!st || stateOf(p) === st)).sort((a, b) => (PRIORITY[a.tax] ?? 5) - (PRIORITY[b.tax] ?? 5) || (b.conf - a.conf));
+    const wide = argv.includes("--wide");
+    const cands = places.filter((p) => isServesCandidate(p, wide) && (!only || only.has(String(p.city || "").toLowerCase())) && (!box || (p.lng >= box[0] && p.lat >= box[1] && p.lng <= box[2] && p.lat <= box[3])) && (!st || stateOf(p) === st)).sort((a, b) => (PRIORITY[a.tax] ?? 5) - (PRIORITY[b.tax] ?? 5) || (b.conf - a.conf));
     const curFile = `${dir}/menus-cursor${only || box || st ? "-" + arg("--tag", "sel") : ""}.json`;
     // --all: every candidate, no cursor (with --cache-dir the pages come from an earlier run's fetch cache and only PDFs are downloaded);
     // --shard i/n takes every n-th candidate; --held-out file.json lists each held candidate with its reason (for counts per city).
@@ -128,7 +157,7 @@ async function main() {
         const p = batch[next++];
         const r = await confirmCandidate(toCandidate(p), (u) => f.get(u), { relaxAddress: true, weakOk: argv.includes("--weak"), getPdf }).catch((e) => ({ held: "error: " + e.message.slice(0, 40) }));
         done++;
-        if (r.held) { held[r.held] = (held[r.held] || 0) + 1; if (arg("--held-out")) heldList.push({ id: p.id, name: p.name, city: p.city, state: stateOf(p), website: p.website, reason: r.held }); continue; }
+        if (r.held) { held[r.held] = (held[r.held] || 0) + 1; if (arg("--held-out")) heldList.push({ id: p.id, name: p.name, city: p.city, state: stateOf(p), website: p.website, reason: r.held, instagram: r.instagram || igHandle(p.socials) || null, matcha_mentions: r.matcha_mentions ?? null }); continue; }
         rows.set(`${r.row.name}|${r.row.address}`.toLowerCase(), { ...r.row, overture_id: p.id, lat: p.lat, lng: p.lng, overture_sources: compactSources(p.sources) });
         ok++;
       }
