@@ -12,7 +12,8 @@ function site(ld) {
   fs.writeFileSync(path.join(dir, "city", "nc", "raleigh", "index.html"), `<script type="application/ld+json">${JSON.stringify(ld)}</script>`);
   return dir;
 }
-const good = { "@type": "Event", name: "x", startDate: "2026-12-01T10:00:00-05:00", location: { "@type": "Place", name: "Y" }, image: ["https://a.test/i.png"] };
+const good = { "@type": "Event", name: "x", startDate: "2026-12-01T10:00:00-05:00", location: { "@type": "Place", name: "Y" }, image: ["https://a.test/i.png"],
+  eventStatus: "https://schema.org/EventScheduled", description: "Moonbee matcha pop-up at Y, Raleigh.", performer: { "@type": "Organization", name: "Moonbee" } };
 
 test("every generated page passes the JSON-LD check (npm run check:jsonld)", () => {
   const { stats, errors } = checkSite();
@@ -30,6 +31,18 @@ test("the checker flags ListItem with url and item, a missing list image, bad da
   assert.match(checkSite(site({ ...good, name: "NaN" })).errors.join("\n"), /bad string/);
   assert.match(checkSite(site({ ...good, image: ["/rel.png"] })).errors.join("\n"), /absolute/);
   assert.match(checkSite(site({ ...good, location: {} })).errors.join("\n"), /location/);
+});
+
+test("the checker fails an Event without eventStatus, description, image or performer", () => {
+  const errs = (x) => checkSite(site(x)).errors.join("\n");
+  assert.match(errs({ ...good, eventStatus: undefined }), /without eventStatus/);
+  assert.match(errs({ ...good, description: " " }), /without description/);
+  assert.match(errs({ ...good, image: undefined }), /without image/);
+  assert.match(errs({ ...good, performer: undefined }), /without performer/);
+  assert.match(errs({ ...good, performer: { "@type": "Organization" } }), /without performer|Organization without name/);
+  // a performer or organizer with no site is fine; a relative one is not
+  assert.deepEqual(checkSite(site({ ...good, organizer: { "@type": "Organization", name: "Moonbee" } })).errors, []);
+  assert.match(errs({ ...good, performer: { "@type": "Organization", name: "Moonbee", url: "/brand/m/" } }), /url not absolute/);
 });
 
 test("the checker holds LocalBusiness, FAQPage, BreadcrumbList and opening hours to the fields Google reads", () => {

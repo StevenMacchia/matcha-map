@@ -217,7 +217,9 @@ test("rule 6: the sitemap lists only pages that exist without noindex, with YYYY
 test("rule 7: the structured-data check runs in the gate and any problem fails it", () => withRoot((root) => {
   const ld = (j) => `<script type="application/ld+json">${j}</script>\n`;
   const r7 = (j) => { build(root, { pages: { "city/nc/cary": { ld: ld(j) } } }); return rule(gate(root, { baseline: true }), 7); };
-  assert.equal(r7(JSON.stringify({ "@context": "https://schema.org", "@type": "Event", name: "A", startDate: "2026-11-28T11:00:00-05:00", location: { "@type": "Place", name: "X" }, image: ["https://matchamap.app/og.png"] })).ok, true);
+  assert.equal(r7(JSON.stringify({ "@context": "https://schema.org", "@type": "Event", name: "A", startDate: "2026-11-28T11:00:00-05:00", location: { "@type": "Place", name: "X" }, image: ["https://matchamap.app/og.png"], eventStatus: "https://schema.org/EventScheduled", description: "A matcha pop-up.", performer: { "@type": "Organization", name: "A" } })).ok, true);
+  // an Event must carry eventStatus, description, image and performer
+  assert.match(r7(JSON.stringify({ "@type": "Event", name: "A", startDate: "2026-11-28", location: { name: "X" }, image: ["https://matchamap.app/og.png"], eventStatus: "https://schema.org/EventScheduled", description: "A matcha pop-up." })).examples.join("\n"), /without performer/);
   assert.match(r7("{ not json").examples[0], /invalid JSON/);
   assert.match(r7(JSON.stringify({ "@type": "Event", name: "A", startDate: "soon", location: { name: "X" } })).examples[0], /startDate/);
   assert.match(r7(JSON.stringify({ "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "Q" }] })).examples[0], /acceptedAnswer/);

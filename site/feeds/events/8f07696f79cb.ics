@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Littlefoot Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:8f07696f79cb@matchamap-cu7.pages.dev
+DTSTAMP:20261125T233855Z
+LAST-MODIFIED:20261125T233745Z
+DTSTART:20261203T210000Z
+DTEND:20261204T000000Z
+SUMMARY:Littlefoot Matcha study hall at the UNCG Alumni Center
+LOCATION:UNCG Alumni Center\, 1400 Spring Garden St\, Greensboro\, NC 27412
+ \, Greensboro\, NC
+DESCRIPTION:Study hall with free matcha at the alumni center. The page says
+  UNCG students only.\nLikely\, not fully confirmed.\nMore: https://matcham
+ ap.app/e/8f07696f79cb/
+URL:https://matchamap.app/e/8f07696f79cb/
+GEO:36.065589;-79.813050
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

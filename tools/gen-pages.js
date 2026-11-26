@@ -145,6 +145,41 @@ export function eventHandle(e, srcById) {
 // ---- JSON-LD ----
 const FREE = /^\s*(free|free entry|free admission|no cover|no charge)\s*[.!]?\s*$/i;
 export const isFree = (e) => typeof e.price === "string" && FREE.test(e.price);
+const imgObj = (url, size) => {
+  const o = { "@type": "ImageObject", url };
+  if (size && Number(size.width) > 0 && Number(size.height) > 0) { o.width = Number(size.width); o.height = Number(size.height); }
+  return o.width ? o : url;
+};
+// The one picture an Event carries: its drawn scene (site/art/events/<id>.svg, with the size the SVG declares), else the
+// drawn site card. Never a photo: only events without a downloaded photo get a scene (tools/illustrate/run.js needsArt). artOf(id) -> { width, height } | true | falsy.
+export function eventImage(e, artOf) {
+  const a = artOf ? artOf(e.id) : null;
+  if (a) return imgObj(`${SITE_URL}/art/events/${e.id}.svg`, a);
+  return imgObj(`${SITE_URL}/og.png`, { width: 1200, height: 630 });
+}
+// One plain sentence from held fields only: "<Brand> matcha pop-up at <venue>, <city>, <day>, <time>."
+export function eventSentence(e, brand) {
+  const approx = isApprox(e);
+  const city = e.city || e.state || "";
+  const st = Date.parse(e.start);
+  const day = isNaN(st) ? "" : dayLabel(dayKey(st, e.tz || "America/New_York"));
+  const t = e.all_day ? "all day" : timeText(e, e.tz);
+  const bits = [approx || !e.venue ? "" : e.venue, city, day, /^time not posted$/i.test(t) ? "" : t].filter(Boolean);
+  return `${brand} matcha pop-up ${approx || !e.venue ? "in" : "at"} ${bits.join(", ")}.`.replace(/\s+/g, " ");
+}
+// ctx: { brand, insta, website, brandPage, art } (website and brandPage are absolute URLs when held; art is artOf for eventImage).
+// id -> { width, height } as the SVG declares them (true when it declares none), for every drawn scene on disk.
+export function eventArtSizes(dir) {
+  const m = new Map();
+  if (!fs.existsSync(dir)) return m;
+  for (const n of fs.readdirSync(dir)) {
+    if (!n.endsWith(".svg")) continue;
+    const head = fs.readFileSync(path.join(dir, n), "utf8").slice(0, 600);
+    const w = /<svg[^>]*\swidth="(\d+)"/.exec(head), h = /<svg[^>]*\sheight="(\d+)"/.exec(head);
+    m.set(n.slice(0, -4), w && h ? { width: +w[1], height: +h[1] } : true);
+  }
+  return m;
+}
 export function eventLd(e, ctx) {
   const approx = isApprox(e);
   const place = { "@type": "Place", name: approx || !e.venue ? [e.city, e.state].filter(Boolean).join(", ") : e.venue };
@@ -155,6 +190,10 @@ export function eventLd(e, ctx) {
   if (!approx && /^\d{5}(-\d{4})?$/.test(String(e.zip || ""))) addr.postalCode = String(e.zip);
   place.address = addr;
   if (!approx && typeof e.lat === "number" && typeof e.lng === "number" && isFinite(e.lat) && isFinite(e.lng)) place.geo = { "@type": "GeoCoordinates", latitude: e.lat, longitude: e.lng };
+  // the pop-up brand: its own site, else its page here, else its Instagram; sameAs its Instagram when held
+  const insta = safeUrl(ctx.insta) || safeUrl(e.links && e.links.instagram);
+  const orgUrl = safeUrl(ctx.website) || safeUrl(e.links && e.links.website) || safeUrl(ctx.brandPage) || insta;
+  const org = () => { const o = { "@type": "Organization", name: ctx.brand }; if (orgUrl) o.url = orgUrl; if (insta && insta !== orgUrl) o.sameAs = [insta]; return o; };
   const ld = {
     "@type": "Event",
     name: e.title || `${ctx.brand} matcha pop-up`,
@@ -162,15 +201,21 @@ export function eventLd(e, ctx) {
     eventStatus: e.status === "cancelled" ? "https://schema.org/EventCancelled" : "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: place,
-    organizer: { "@type": "Organization", name: ctx.brand },
+    performer: org(),
+    organizer: org(),
   };
-  if (e.end) ld.endDate = e.all_day ? String(e.end).slice(0, 10) : e.end;
-  if (ctx.insta) ld.organizer.url = ctx.insta;
-  if (isFree(e)) ld.isAccessibleForFree = true, ld.offers = { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock" };
-  const im = imgUrl(e);
-  if (im) ld.image = [im];
-  const d = String(e.description || "").slice(0, 200).trim();
-  ld.description = d || `Matcha pop-up by ${ctx.brand}${e.city ? " in " + e.city : ""}.`;
+  // endDate: the end we hold; an all-day pop-up with none ends on its own calendar day; a timed one with none gets no made-up hour
+  if (e.end && (e.all_day || Date.parse(e.end) > Date.parse(e.start))) ld.endDate = e.all_day ? String(e.end).slice(0, 10) : e.end;
+  else if (e.all_day) ld.endDate = ld.startDate;
+  if (isFree(e)) {
+    ld.isAccessibleForFree = true;
+    ld.offers = { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock" };
+    if (eventPageId(e)) ld.offers.url = `${SITE_URL}/e/${e.id}/`;
+    const seen = /^\d{4}-\d{2}-\d{2}/.exec(String(e.first_seen || ""));
+    if (seen) ld.offers.validFrom = seen[0];
+  }
+  ld.image = [eventImage(e, ctx.art)];
+  ld.description = eventSentence(e, ctx.brand);
   return ld;
 }
 // A page's lastmod: the newest day any of its events was seen, capped at the data's own date (never in the future).
@@ -546,14 +591,14 @@ ${credited.size ? `<p class="pg-credit">Every pop-up belongs to its brand: ${[..
   const canonical = `${SITE_URL}/${cityPath(c)}`;
   const ld = [crumbLd([["Matcha Map", SITE_URL + "/"], [STATE_NAMES[c.state] || c.state, `${SITE_URL}/${stateHref(c.state)}`], [label, canonical]])];
   // Standalone Event blocks carry an image, same fallback as the ItemList below: photo, drawn art, then the site card.
-  // No `performer`: Google lists it as recommended only, and these are brand pop-ups with no named act, so the
-  // organizer (already set) is the honest party; inventing a performer would be a made-up claim.
-  const evImage = (e, ev) => (ev.image && ev.image[0]) || (d.eventArt && d.eventArt.has(e.id) ? `${SITE_URL}/art/events/${e.id}.svg` : `${SITE_URL}/og.png`);
-  for (const it of ups) { const ev = eventLd(it.e, { brand: it.brand, insta: it.insta }); ev.image = [evImage(it.e, ev)]; ld.push({ "@context": "https://schema.org", ...ev }); }
+  // Every Event carries the fields Google recommends (performer, organizer, status, description, image); `evCtx` is the brand's side of that.
+  const artOf = (id) => (d.eventArt && d.eventArt.has(id) ? (d.eventArt.get ? d.eventArt.get(id) || true : true) : false);
+  const evCtx = (it) => ({ brand: it.brand, insta: it.insta, website: it.website, brandPage: it.handle ? `${SITE_URL}/brand/${it.handle}/` : "", art: artOf });
+  for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, evCtx(it)) });
   const listed = ups.filter((it) => eventPageId(it.e));
   if (listed.length) ld.push({ "@context": "https://schema.org", "@type": "ItemList", name: `Matcha pop-ups in ${label}`, numberOfItems: listed.length, itemListElement: listed.slice(0, 50).map((it, i) => {
-    const ev = eventLd(it.e, { brand: it.brand, insta: it.insta });
-    return { "@type": "ListItem", position: i + 1, item: { "@type": "Event", name: ev.name, startDate: ev.startDate, url: `${SITE_URL}/e/${it.e.id}/`, image: evImage(it.e, ev), location: { "@type": "Place", name: ev.location.name, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
+    const ev = eventLd(it.e, evCtx(it));
+    return { "@type": "ListItem", position: i + 1, item: { ...ev, url: `${SITE_URL}/e/${it.e.id}/`, location: { ...ev.location, address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.state } } } };
   }) });
   for (const { s } of sh.slice(0, NEARBY_MAX)) { const l = shopLd(s); if (l) ld.push({ "@context": "https://schema.org", ...l }); }
   if (indexable) ld.push(faqLd(faq)); // a noindex page keeps the questions on the page and drops the markup, to stay under 6 KB
@@ -677,7 +722,7 @@ export function buildSite(d) {
     const b = brandOf(e);
     const up = isUpcoming(e, nowMs);
     const c = up ? locate(e) : null;
-    const info = { e, up, brand: b ? b.name : brandNameOf(e, srcById), handle: b ? b.slug : "", insta: b && b.instagram ? `https://www.instagram.com/${b.instagram}/` : "" };
+    const info = { e, up, brand: b ? b.name : brandNameOf(e, srcById), handle: b ? b.slug : "", insta: b && b.instagram ? `https://www.instagram.com/${b.instagram}/` : "", website: b ? b.website : "" };
     if (b) b.events.push(info);
     if (c) { const k = cityKey(c); if (!byCity.has(k)) byCity.set(k, []); byCity.get(k).push(info); }
     if (up && isFinite(e.lat) && isFinite(e.lng) && e.lat != null && e.lng != null) allUp.push(info);
@@ -812,7 +857,7 @@ export function buildSite(d) {
     const logo = d.brandPictures && d.brandPictures.get(b.slug);
     if (logo) org.logo = logo;
     ld.push(org);
-    for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: b.instagram ? `https://www.instagram.com/${b.instagram}/` : "" }) });
+    for (const it of ups) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: b.instagram ? `https://www.instagram.com/${b.instagram}/` : "", website: b.website, brandPage: canonical, art: (id) => (d.eventArt && d.eventArt.has(id) ? (d.eventArt.get ? d.eventArt.get(id) || true : true) : false) }) });
     const bs = stamp(`brand/${b.slug}`, shell({ title, desc, canonical, ld, body }), newestDay(b.events.map((x) => x.e), lastmod));
     files.set(`brand/${b.slug}/index.html`, bs.html);
     brandCity[b.slug] = hc ? `${hc.state.toLowerCase()}/${hc.slug}` : "";
@@ -907,7 +952,7 @@ export function run({ root = ROOT, now = new Date() } = {}) {
     prevPages: (() => { try { return read("data/pages-lastmod.json"); } catch { return {}; } })(),
     shops: readSiteShops(root).shops || [], // every field: site/data/shops.json is the slim file now
     cityFeeds: new Set(fs.existsSync(path.join(root, "site/feeds")) ? fs.readdirSync(path.join(root, "site/feeds")).filter((n) => n.endsWith(".ics")).map((n) => n.slice(0, -4)) : []),
-    eventArt: new Set(fs.existsSync(path.join(root, "site/art/events")) ? fs.readdirSync(path.join(root, "site/art/events")).filter((n) => n.endsWith(".svg")).map((n) => n.slice(0, -4)) : []),
+    eventArt: eventArtSizes(path.join(root, "site/art/events")),
     cityOg: new Set(fs.existsSync(path.join(root, "site/og")) ? fs.readdirSync(path.join(root, "site/og")).filter((n) => /^city-.*.png$/.test(n)).map((n) => n.slice(0, -4)) : []),
     brandPictures: (() => { try { return new Map(read("site/data/brands.json").brands.filter((x) => String(x.picture || "").startsWith("https://")).map((x) => [handleSlug(x.handle), x.picture])); } catch { return new Map(); } })(),
     watchlist: fs.existsSync(path.join(root, "data/watchlist.json")) ? read("data/watchlist.json") : { accounts: [] },

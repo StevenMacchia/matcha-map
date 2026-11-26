@@ -194,11 +194,48 @@ test("Event JSON-LD carries schema.org's required fields (name, startDate, locat
   assert.equal(e.endDate, "2026-11-28T15:00:00-05:00");
   assert.equal(e.eventStatus, "https://schema.org/EventScheduled");
   assert.equal(e.eventAttendanceMode, "https://schema.org/OfflineEventAttendanceMode");
-  assert.equal(e.organizer.url, "https://www.instagram.com/moonbeematcha/");
-  assert.match(e.image[0], /^https:\/\/.+\/img\/events\/x\.jpg$/);
+  assert.equal(e.organizer.url, "https://moonbee.example", "the brand's own site leads");
+  assert.equal(e.image[0].url, SITE_URL + "/og.png", "no drawn scene: the drawn site card, never a photo");
   assert.equal(e.offers, undefined);
   const allDay = eventLd(ev({ all_day: true, start: "2026-11-28T00:00:00-05:00", end: null }), { brand: "Moonbee" });
   assert.equal(allDay.startDate, "2026-11-28");
+});
+
+test("Event JSON-LD: a timed, an all-day and a free pop-up each state only what the data holds", () => {
+  const art = (id) => (id ? { width: 640, height: 400 } : false);
+  const ctx = { brand: "Moonbee", insta: "https://www.instagram.com/moonbeematcha/", brandPage: SITE_URL + "/brand/moonbeematcha/", art };
+  // timed, with an end: performer and organizer are the brand, endDate is the held end, the drawn scene carries the SVG's own size, no offers
+  const timed = eventLd(ev({ first_seen: "2026-11-20T10:00:00Z" }), ctx);
+  assert.deepEqual(timed.performer, { "@type": "Organization", name: "Moonbee", url: SITE_URL + "/brand/moonbeematcha/", sameAs: ["https://www.instagram.com/moonbeematcha/"] });
+  assert.equal(timed.organizer.name, "Moonbee");
+  assert.equal(timed.endDate, "2026-11-28T15:00:00-05:00");
+  assert.equal(timed.eventStatus, "https://schema.org/EventScheduled");
+  assert.equal(timed.eventAttendanceMode, "https://schema.org/OfflineEventAttendanceMode");
+  assert.equal(timed.description, "Moonbee matcha pop-up at Books & Co, Raleigh, Saturday, Nov 28, 11 AM–3 PM.");
+  assert.equal(timed.image[0].width, 640);
+  assert.match(timed.image[0].url, /\/art\/events\/aaaaaa\d{6}\.svg$/);
+  assert.equal(timed.offers, undefined);
+  assert.equal(timed.isAccessibleForFree, undefined);
+  // timed with no end: no endDate, never an invented hour
+  assert.equal(eventLd(ev({ end: null }), ctx).endDate, undefined);
+  assert.equal(eventLd(ev({ end: "2026-11-28T11:00:00-05:00" }), ctx).endDate, undefined, "an end equal to the start is not an end");
+  // all day: the same calendar date, no hour, "all day" in the sentence; no scene falls back to the site card
+  const allDay = eventLd(ev({ all_day: true, start: "2026-11-28T00:00:00-05:00", end: null }), { ...ctx, art: () => false });
+  assert.equal(allDay.startDate, "2026-11-28");
+  assert.equal(allDay.endDate, "2026-11-28");
+  assert.match(allDay.description, /Saturday, Nov 28, all day\.$/);
+  assert.equal(allDay.image[0].url, SITE_URL + "/og.png");
+  // free: Offer price 0 USD InStock, the event page as url, validFrom the day it was first seen; a priced one gets no offer
+  const free = eventLd(ev({ price: "Free", first_seen: "2026-11-20T10:00:00.000Z" }), ctx);
+  assert.deepEqual({ ...free.offers, url: undefined }, { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock", url: undefined, validFrom: "2026-11-20" });
+  assert.match(free.offers.url, /\/e\/aaaaaa\d{6}\/$/);
+  assert.equal(free.isAccessibleForFree, true);
+  assert.equal(eventLd(ev({ price: "$25", first_seen: "2026-11-20" }), ctx).offers, undefined);
+  // a brand with no site, page or Instagram still names itself; a cancelled event says so; a place not posted says "in", not "at"
+  const bare = eventLd(ev({ status: "cancelled", approx: true, venue: "", address: "", geocode_source: "none" }), { brand: "M" });
+  assert.deepEqual(bare.performer, { "@type": "Organization", name: "M" });
+  assert.equal(bare.eventStatus, "https://schema.org/EventCancelled");
+  assert.match(bare.description, /^M matcha pop-up in Raleigh, Saturday/);
 });
 
 test("markup in data is escaped, past and cancelled events are left off, the CSP is strict", () => {
@@ -294,7 +331,7 @@ function checkShape(node, where) {
   };
   walk(node, "$");
   if (node["@type"] === "Event") {
-    for (const k of ["name", "startDate", "location", "eventStatus", "eventAttendanceMode", "organizer"]) assert.ok(node[k], `${where}: Event.${k}`);
+    for (const k of ["name", "startDate", "location", "eventStatus", "eventAttendanceMode", "organizer", "performer", "description", "image"]) assert.ok(node[k], `${where}: Event.${k}`);
     assert.match(node.startDate, ISO);
     if (node.endDate) assert.match(node.endDate, ISO);
     assert.ok(node.location.name && node.location.address, `${where}: location`);
@@ -324,7 +361,8 @@ test("city pages carry an ItemList of upcoming events; brand pages carry an Orga
   assert.equal(list.numberOfItems, 2);
   assert.equal(list.itemListElement[0].item["@type"], "Event");
   assert.equal(list.itemListElement[0].url, undefined, "Google: a ListItem has url or item, not both");
-  assert.match(list.itemListElement[0].item.image, /^https:\/\//);
+  assert.match(JSON.stringify(list.itemListElement[0].item.image), /"https:\/\//);
+  for (const k of ["eventStatus", "description", "performer", "organizer"]) assert.ok(list.itemListElement[0].item[k], `ItemList Event.${k}`);
   assert.match(list.itemListElement[0].item.url, /^https:\/\/.+\/e\/aaaaaa\d{6}\/$/);
   assert.equal(list.itemListElement[0].item.location.address.addressLocality, "Raleigh");
   const b = ldOf(page(out, "brand/moonbeematcha/index.html"));

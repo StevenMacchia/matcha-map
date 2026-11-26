@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Garner\, NC
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f52b413b3c67@matchamap-cu7.pages.dev
+DTSTAMP:20261125T233855Z
+LAST-MODIFIED:20261125T233745Z
+DTSTART:20261213T160000Z
+DTEND:20261213T180000Z
+SUMMARY:Littlefoot Matcha: Matcha & Make at The Dollhouse by Busy Vintage
+LOCATION:Garner\, NC
+DESCRIPTION:Matcha & Make in Garner. The page asks for an RSVP to get the a
+ ddress.\nDetails not confirmed yet. Check the brand's post before you go.\
+ nMore: https://matchamap.app/e/f52b413b3c67/
+URL:https://matchamap.app/e/f52b413b3c67/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

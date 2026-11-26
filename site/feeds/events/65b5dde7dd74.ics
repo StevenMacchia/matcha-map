@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Phin Coffee pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:65b5dde7dd74@matchamap-cu7.pages.dev
+DTSTAMP:20261125T233855Z
+LAST-MODIFIED:20261125T233745Z
+DTSTART:20261211T210000Z
+DTEND:20261212T020000Z
+SUMMARY:Phin Coffee at the lululemon Holiday Shop Party\, Red Cliffs Mall
+LOCATION:lululemon Red Cliffs Mall\, 446 N 1680 E\, St. George\, UT 84790\,
+  St. George\, UT
+DESCRIPTION:Free specialty coffee or matcha from Phin Coffee while supplies
+  last at lululemon's holiday shop party\, with color analysis for the firs
+ t 40 guests.\nMenu: specialty coffee\, matcha\nPrice: Free\nMore: https://
+ matchamap.app/e/65b5dde7dd74/
+URL:https://matchamap.app/e/65b5dde7dd74/
+GEO:37.110862;-113.546712
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

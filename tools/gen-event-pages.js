@@ -7,7 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
 import { cardHtml } from "../site/cards.js";
-import { esc, shortDayOf, makeCityLocator, cityPath, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf, newestDay } from "./gen-pages.js";
+import { esc, shortDayOf, makeCityLocator, cityPath, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf, eventHandle, eventArtSizes, newestDay } from "./gen-pages.js";
 import { patchState, updateRegistry, writeRedirects, dirsWithIndex, hash12, hashInput } from "./seo-lib.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -41,9 +41,10 @@ export function eventPage(e, { sources = new Map(), hasArt = () => false, card =
   const desc = bits.join(". ").slice(0, 280) + (tag.desc || "");
   const canonical = `${SITE_URL}/e/${e.id}/`;
   const img = ogImage(e, { hasArt });
-  const ld = { "@context": "https://schema.org", ...eventLd(e, { brand, insta: e.handle ? `https://www.instagram.com/${e.handle}/` : "" }), url: canonical };
-  if (img.endsWith("/og.png")) delete ld.image; else ld.image = [img];
-  if (typeof ld.description === "string") { ld.description = ld.description.replace(/[*_`#>]+/g, " ").replace(/\s+/g, " ").trim(); if (!ld.description) delete ld.description; }
+  const s = sources.get(e.source_id) || {};
+  const handle = eventHandle(e, sources);
+  const site = /^https?:\/\//i.test(s.website || "") ? s.website : "";
+  const ld = { "@context": "https://schema.org", ...eventLd(e, { brand, insta: e.handle ? `https://www.instagram.com/${e.handle}/` : s.instagram ? `https://www.instagram.com/${String(s.instagram).replace(/^@/, "")}/` : "", website: site, brandPage: handle && card.brandHref && card.brandHref(handle) ? `${SITE_URL}/brand/${handle}/` : "", art: hasArt }), url: canonical };
   const go = `/?event=${e.id}`;
   return `<!doctype html>
 <html lang="en" class="pg">
@@ -126,7 +127,8 @@ export function run({ root = ROOT, now = new Date() } = {}) {
   const ev = read("site/data/events.json");
   const sources = read("data/sources.json");
   const opt = (p) => { try { return read(p); } catch { return null; } };
-  const hasArt = (id) => fs.existsSync(path.join(root, "site", "art", "events", `${id}.svg`));
+  const arts = eventArtSizes(path.join(root, "site", "art", "events"));
+  const hasArt = (id) => arts.get(id) || false;
   const listDirs = (d) => (fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).filter((x) => x.isDirectory()).map((x) => x.name) : []);
   const cityDirs = new Set(); for (const st of listDirs(path.join(root, "site", "city"))) for (const sl of listDirs(path.join(root, "site", "city", st))) cityDirs.add(`${st}/${sl}`);
   const known = { cities: cityDirs, brands: new Set(listDirs(path.join(root, "site", "brand"))), locate: makeCityLocator(read("data/cities.json").cities) };

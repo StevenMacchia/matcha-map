@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Littlefoot Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c705fc6ea624@matchamap-cu7.pages.dev
+DTSTAMP:20261125T233855Z
+LAST-MODIFIED:20261125T233745Z
+DTSTART:20261128T150000Z
+DTEND:20261128T190000Z
+SUMMARY:Littlefoot Matcha at Small Business Saturday\, North Hills
+LOCATION:North Hills\, 540 St Albans Dr\, Raleigh\, NC\, Raleigh\, NC
+DESCRIPTION:Small Business Saturday pop-up at North Hills in Raleigh.\nMore
+ : https://matchamap.app/e/c705fc6ea624/
+URL:https://matchamap.app/e/c705fc6ea624/
+GEO:35.834325;-78.631154
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

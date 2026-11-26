@@ -88,6 +88,8 @@ First run, by hand: `node tools/seo-gate.js --baseline`. Without a state the gat
 
 **Fails as.** The checker's own lines, for example `city/nc/x/index.html#2.startDate: Event startDate missing or unparseable`.
 
+**Event fields.** Every Event block (event pages, city and brand pages, the ItemList entries and the weekend pages) must also carry `eventStatus`, `description`, `image` and `performer`; the checker fails as `<page>#n: Event without performer` (or `eventStatus`, `description`, `image`). The generator (`eventLd()` in `gen-pages.js`) fills them from held data only: performer and organizer are the brand (its site, else its page here, else its Instagram); `endDate` is the held end, or the start date for an all-day pop-up, and is left off a timed pop-up with no end; `offers` appear only for a free pop-up (price 0, USD, InStock, the event page as url, `validFrom` the day we first saw it); the image is the drawn scene, else the event's own downloaded photo, else the site card.
+
 ## Rule 8: robots and meta never block what should rank
 
 **Rule.** `robots.txt` has no `Disallow` that reaches `/`, `/city/`, `/state/`, `/weekend/`, `/e/` or `/brand/` (or a page inside any of them, wildcards included). The home page has no noindex. `site/_headers` sets no `X-Robots-Tag: noindex`. Every state hub that earned an index has no noindex and is in the sitemap.

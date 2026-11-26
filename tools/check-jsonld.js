@@ -1,6 +1,6 @@
 // Structured data self-check: parses every JSON-LD block in site/e, site/city, site/state and site/brand and checks the fields
 // Google needs (Event: name, startDate, location; Organization: name, url; CafeOrCoffeeShop/LocalBusiness: name, address, geo;
-// FAQPage: every Question has an acceptedAnswer with text; BreadcrumbList: named items with absolute URLs; OpeningHoursSpecification:
+// every Event also carries eventStatus, description, image and performer; FAQPage: every Question has an acceptedAnswer with text; BreadcrumbList: named items with absolute URLs; OpeningHoursSpecification:
 // schema.org days and HH:MM times), parseable dates, absolute image URLs, no
 // "undefined"/"null"/"NaN" strings, and that no ListItem carries both url and item (a mutually-exclusive pair).
 import fs from "node:fs";
@@ -41,13 +41,18 @@ function checkNode(node, at, err, stats) {
     if (node.endDate != null && !okDate(node.endDate)) err(`${at}: endDate unparseable (${node.endDate})`);
     const loc = node.location;
     if (!loc || !(loc.name || loc.address)) err(`${at}: Event location needs a name or address`);
+    // the fields Google lists as recommended that we can always state (docs/SEO-RULES.md, rule 7)
+    if (!node.eventStatus) err(`${at}: Event without eventStatus`);
+    if (!String(node.description || "").trim()) err(`${at}: Event without description`);
+    if (node.image === undefined) err(`${at}: Event without image`);
+    if (!node.performer || !node.performer.name) err(`${at}: Event without performer`);
   }
   if (t === "Organization") {
     stats.orgs++;
     if (!node.name) err(`${at}: Organization without name`);
     // an Event organizer with no known site is fine (Google only recommends a url there); a standalone Organization needs one
     if (node.url !== undefined && !isAbs(node.url)) err(`${at}: Organization url not absolute`);
-    else if (node.url === undefined && !/\.organizer$/.test(at)) err(`${at}: Organization url missing`);
+    else if (node.url === undefined && !/\.(organizer|performer)$/.test(at)) err(`${at}: Organization url missing`);
   }
   if (t === "CafeOrCoffeeShop" || t === "LocalBusiness") {
     stats.shops++;

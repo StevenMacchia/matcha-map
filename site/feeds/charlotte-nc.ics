@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Charlotte\, NC
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3ddc3fb6f82e@matchamap-cu7.pages.dev
+DTSTAMP:20261125T233855Z
+LAST-MODIFIED:20261125T233745Z
+DTSTART:20261212T160000Z
+DTEND:20261212T210000Z
+SUMMARY:Littlefoot Matcha at the Shop Local Market\, SouthPark Mall
+LOCATION:SouthPark Mall\, 5622 Carnegie Blvd\, Charlotte\, NC 28209\, Charl
+ otte\, NC
+DESCRIPTION:Shop Local Market at SouthPark Mall with matcha flights availab
+ le.\nMenu: matcha flights\nMore: https://matchamap.app/e/3ddc3fb6f82e/
+URL:https://matchamap.app/e/3ddc3fb6f82e/
+GEO:35.153802;-80.838578
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

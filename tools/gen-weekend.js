@@ -7,7 +7,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-url.js";
-import { esc, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf, eventHandle, makeCityLocator, cityPath, loadCities, weekendWindow, inWindow, windowText, addDays, SUNDAY_CUTOFF_HOUR } from "./gen-pages.js";
+import { esc, ldScript, eventLd, isUpcoming, isApprox, timeText, dayLabel, dayKey, brandNameOf, eventHandle, makeCityLocator, cityPath, loadCities, eventArtSizes, weekendWindow, inWindow, windowText, addDays, SUNDAY_CUTOFF_HOUR } from "./gen-pages.js";
 export { weekendWindow, inWindow, windowText, addDays, SUNDAY_CUTOFF_HOUR }; // the window rule lives in gen-pages.js (city pages link here too)
 import { cityCardHtml, renderCards, MAX_OG_BYTES } from "./gen-og.js";
 import { drinkLookup, drinkSlug, drinkName, slugify } from "../site/search.js";
@@ -102,7 +102,7 @@ export function cityPage(c, list, win, ctx) {
     { "@type": "ListItem", position: 1, name: "Matcha Map", item: SITE_URL + "/" },
     { "@type": "ListItem", position: 2, name: "This weekend", item: SITE_URL + "/weekend/" },
     { "@type": "ListItem", position: 3, name: label, item: canonical }] }];
-  for (const it of list) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: it.insta }), url: `${SITE_URL}/e/${it.e.id}/` });
+  for (const it of list) ld.push({ "@context": "https://schema.org", ...eventLd(it.e, { brand: it.brand, insta: it.insta, website: it.website, brandPage: it.handle ? `${SITE_URL}/brand/${it.handle}/` : "", art: ctx.hasArt }), url: `${SITE_URL}/e/${it.e.id}/` });
   let body = `<nav class="pg-crumb" aria-label="Breadcrumb"><a href="/">Matcha Map</a> <span aria-hidden="true">›</span> <a href="/weekend/">This weekend</a> <span aria-hidden="true">›</span> <span>${esc(label)}</span></nav>
 <h1>${esc(title)}</h1>
 <p class="pg-lead">${esc(windowText(win.keys))}, ${esc(label)}.</p>
@@ -174,7 +174,7 @@ export function buildWeekend({ events, cities = [], sources = [], art = null, no
     if (!key) continue;
     const city = c ? { ...c, key } : { key, name: e.city, state: e.state, slug: slugify(e.city), tz: e.tz || "America/New_York" };
     const s = srcById.get(e.source_id);
-    const info = { e, brand: brandNameOf(e, srcById), handle: eventHandle(e, srcById), insta: s && s.instagram ? `https://www.instagram.com/${String(s.instagram).replace(/^@/, "")}/` : "" };
+    const info = { e, brand: brandNameOf(e, srcById), handle: eventHandle(e, srcById), insta: s && s.instagram ? `https://www.instagram.com/${String(s.instagram).replace(/^@/, "")}/` : "", website: s && s.website ? s.website : "" };
     if (!upByCity.has(key)) upByCity.set(key, { city, n: 0 });
     upByCity.get(key).n++;
     const win = weekendWindow(nowMs, city.tz);
@@ -229,9 +229,10 @@ export function run({ root = ROOT, now = new Date() } = {}) {
   const site = path.join(root, "site");
   const ev = read("site/data/events.json");
   const art = fs.existsSync(path.join(site, "art", "index.json")) ? read("site/art/index.json") : null;
+  const arts = eventArtSizes(path.join(site, "art", "events"));
   const out = buildWeekend({
     events: ev.events, cities: loadCities(root), sources: read("data/sources.json"), art, now,
-    hasArt: (id) => fs.existsSync(path.join(site, "art", "events", `${id}.svg`)),
+    hasArt: (id) => arts.get(id) || false,
     hasFile: (p) => fs.existsSync(path.join(root, p)),
     hasOg: (n) => fs.existsSync(path.join(site, "og", n)),
     hasFeed: (k) => fs.existsSync(path.join(site, "feeds", `${k}.ics`)),
