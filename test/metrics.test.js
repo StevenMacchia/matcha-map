@@ -111,7 +111,7 @@ test("/api/metrics needs the token and returns the documented shape", async () =
   assert.equal(r.status, 200);
   assert.equal(j.series.length, 30);
   for (const w of ["7", "30"]) for (const k of ["views", "visitors", "states", "groups", "paths", "referrers", "devices", "features", "clicked", "rsvp"]) assert.ok(k in j.windows[w], w + k);
-  assert.equal(j.windows[7].views.human, 1); assert.equal(j.windows[7].clicked[0].label, "Mato, Austin TX"); assert.equal(j.windows[30].rsvp.total, 1); assert.equal(j.windows[7].rsvp.top[0].label, "Mato, Austin TX");
+  assert.equal(j.windows[7].views.human, 1); assert.equal(j.windows[7].clicked[0].label, "Mato, Austin TX (01-01)"); assert.equal(j.windows[30].rsvp.total, 1); assert.equal(j.windows[7].rsvp.top[0].label, "Mato, Austin TX (01-01)");
   assert.deepEqual(j.map, { shops: 2, events: 1, upcoming: 1, dataGenerated: "x" }); assert.equal(j.run.outcome, "ok");
 });
 test("summarize and helpers", () => {

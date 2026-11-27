@@ -45,6 +45,8 @@ ol.rank { margin: 0; padding: 0; list-style: none; counter-reset: r; display: gr
 .note { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
 @media (min-width: 700px) { .tiles { grid-template-columns: repeat(3, 1fr); } .grid { grid-template-columns: 1fr 1fr; } .wide { grid-column: 1 / -1; } }
 @media (min-width: 1000px) { .tiles { grid-template-columns: repeat(6, 1fr); } .tile b { font-size: 34px; } }
+.since { margin: 0 0 12px; font-size: 14px; color: var(--muted); } .since b { color: var(--ink); } .since button { margin-left: 4px; padding: 4px 12px; border: 2px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); font: 700 13px var(--font); cursor: pointer; }
+.card .tiles .tile b { font-size: clamp(20px, 4.6vw, 28px); overflow-wrap: anywhere; } .card .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 </style>
 </head>
 <body>
@@ -116,6 +118,8 @@ ol.rank { margin: 0; padding: 0; list-style: none; counter-reset: r; display: gr
     var has = w.views.human + w.views.bot > 0, pend = !has && !d.sample, sm = d.sample ? { t: "sample", s: 1 } : null;
     var count = function (re) { return sum(w.features, function (f) { return re.test(f.name) ? f.count : 0; }); };
     var sub = pend ? "counting from launch" : d.sample ? "sample" : "last " + win + " days";
+    var since = d.since ? new Date(d.since).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : null;
+    var stamp = el("p", { cls: "since" }, [el("b", { text: d.sample ? "Sample numbers. " : since ? "Counting since " + since + ". " : "Not counting yet. " }), document.createTextNode(d.sample ? "Real counting starts at launch. " : "Visits before that were not counted. Google Search Console counts Google searches and clicks, not visits to the site, so the two will not match. "), el("span", { id: "upd", text: d.generatedAt && !d.sample ? "Updated " + new Date(d.generatedAt).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" }) + ", refreshes every 5 minutes. " : "" }), d.sample ? none() : el("button", { type: "button", id: "refresh", text: "Refresh now" })]);
     var tiles = el("div", { cls: "tiles" }, [
       tile("People (visitors)", pend ? "—" : fmt(w.visitors.human), sub, pend ? "pend" : ""),
       tile("Bots (visitors)", pend ? "—" : fmt(w.visitors.bot), pend ? sub : "kept out of the rest", pend ? "pend" : ""),
@@ -146,7 +150,7 @@ ol.rank { margin: 0; padding: 0; list-style: none; counter-reset: r; display: gr
       card("Map size", [mapBox], ""),
       card("Run health", [runBox], "")
     ]);
-    board.textContent = ""; board.appendChild(tiles); board.appendChild(grid);
+    board.textContent = ""; board.appendChild(stamp); board.appendChild(tiles); board.appendChild(grid);
     if (d.sample) board.appendChild(el("p", { cls: "note", text: "Cards marked sample show made-up numbers for one day, in a lighter tone, so the layout can be seen. Real counting starts at launch." }));
     if (pend) board.appendChild(el("p", { cls: "note", text: "No visits counted yet. Counting starts on the first page view after this branch is deployed." }));
     Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (b) { b.setAttribute("aria-pressed", String(Number(b.getAttribute("data-win")) === win)); });
@@ -160,6 +164,11 @@ ol.rank { margin: 0; padding: 0; list-style: none; counter-reset: r; display: gr
       return r.json();
     });
   }
+  var TOKEN = null;
+  function refresh() { if (!TOKEN || document.hidden) return; load(TOKEN).then(function (d) { DATA = d; render(d, W); }).catch(function () { /* keep what is on screen */ }); }
+  document.addEventListener("click", function (e) { if (e.target && e.target.id === "refresh") { e.target.disabled = true; e.target.textContent = "Refreshing..."; TOKEN = TOKEN; if (TOKEN) load(TOKEN).then(function (d) { DATA = d; render(d, W); }).catch(function () { e.target.disabled = false; e.target.textContent = "Refresh now"; }); } });
+  setInterval(refresh, 5 * 60 * 1000);
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) refresh(); });
   function show(d) { DATA = d; $("gate").hidden = true; $("board").hidden = false; render(d, W); }
   Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (b) {
     b.addEventListener("click", function () { W = Number(b.getAttribute("data-win")); if (DATA) render(DATA, W); });
@@ -167,11 +176,12 @@ ol.rank { margin: 0; padding: 0; list-style: none; counter-reset: r; display: gr
   var gate = $("gate");
   if (gate && !window.MM_STATIC) {
     gate.addEventListener("submit", function (e) {
-      e.preventDefault(); var tok = $("tok").value.trim(); $("gate-msg").textContent = "";
-      load(tok).then(function (d) { try { sessionStorage.setItem("mm-metrics-token", tok); } catch (x) { /* private mode */ } show(d); }).catch(function (err) { $("gate-msg").textContent = err.message; });
+      e.preventDefault(); var tok = $("tok").value.trim(), go = gate.querySelector("button"); $("gate-msg").textContent = "Opening... the first load can take a few seconds.";
+      go.disabled = true; go.textContent = "Opening...";
+      load(tok).then(function (d) { TOKEN = tok; try { sessionStorage.setItem("mm-metrics-token", tok); } catch (x) { /* private mode */ } show(d); }).catch(function (err) { $("gate-msg").textContent = err.message; }).then(function () { go.disabled = false; go.textContent = "Open"; });
     });
     var saved = null; try { saved = sessionStorage.getItem("mm-metrics-token"); } catch (x) { /* private mode */ }
-    if (saved) load(saved).then(show).catch(function () { try { sessionStorage.removeItem("mm-metrics-token"); } catch (x) { /* private mode */ } });
+    if (saved) load(saved).then(function (d) { TOKEN = saved; show(d); }).catch(function () { try { sessionStorage.removeItem("mm-metrics-token"); } catch (x) { /* private mode */ } });
   }
   if (window.MM_STATIC) { window.MMDash.show = show; }
 })();
