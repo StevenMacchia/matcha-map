@@ -11,6 +11,9 @@
   Cache-Control: no-cache
 /robots.txt
   Cache-Control: no-cache
+# The dashboard files sit one folder down, where /*.css and /*.js do not reach: without this a browser kept m.css and m.js for four hours.
+/m/*
+  Cache-Control: no-cache
 /sw.js
   Cache-Control: no-cache
 /manifest.webmanifest
