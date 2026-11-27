@@ -110,8 +110,9 @@
   var gate = $("gate");
   if (gate && !window.MM_STATIC) {
     gate.addEventListener("submit", function (e) {
-      e.preventDefault(); var tok = $("tok").value.trim(); $("gate-msg").textContent = "";
-      load(tok).then(function (d) { try { sessionStorage.setItem("mm-metrics-token", tok); } catch (x) { /* private mode */ } show(d); }).catch(function (err) { $("gate-msg").textContent = err.message; });
+      e.preventDefault(); var tok = $("tok").value.trim(), go = gate.querySelector("button"); $("gate-msg").textContent = "Opening... the first load can take a few seconds.";
+      go.disabled = true; go.textContent = "Opening...";
+      load(tok).then(function (d) { try { sessionStorage.setItem("mm-metrics-token", tok); } catch (x) { /* private mode */ } show(d); }).catch(function (err) { $("gate-msg").textContent = err.message; }).then(function () { go.disabled = false; go.textContent = "Open"; });
     });
     var saved = null; try { saved = sessionStorage.getItem("mm-metrics-token"); } catch (x) { /* private mode */ }
     if (saved) load(saved).then(show).catch(function () { try { sessionStorage.removeItem("mm-metrics-token"); } catch (x) { /* private mode */ } });

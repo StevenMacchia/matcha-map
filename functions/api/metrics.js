@@ -22,9 +22,9 @@ export async function rsvpRows(kv, cap = 1500) {
 export async function onRequestGet({ request, env }) {
   const denied = guard(request, env); if (denied) return denied;
   const kv = kvOf(env); if (!kv) return json({ error: "KV is not bound." }, 503);
-  const today = dayOf(), perDay = [];
-  for (const day of lastDays(30, today)) perDay.push({ day, counts: await dayCounts(kv, day, today) });
-  const [slim, shops, daily] = await Promise.all([asset(env, request, "/data/events-slim.json"), asset(env, request, "/data/shops.json"), asset(env, request, "/data/daily-status.json")]);
+  const today = dayOf();
+  const [perDay, slim, shops, daily] = await Promise.all([
+    Promise.all(lastDays(30, today).map(async (day) => ({ day, counts: await dayCounts(kv, day, today) }))),asset(env, request, "/data/events-slim.json"), asset(env, request, "/data/shops.json"), asset(env, request, "/data/daily-status.json")]);
   const events = (slim && slim.events) || [], names = {};
   for (const e of events) names["e:" + e.id] = `${e.brand || e.title}${e.city ? ", " + e.city : ""}${e.state ? " " + e.state : ""}`;
   const now = Date.now(), upcoming = events.filter((e) => Date.parse(e.end || e.start) >= now).length;
