@@ -1,0 +1,30 @@
+{
+ "generated": "2026-11-27T19:00:00.000Z",
+ "group": "south-durham-bean-flower",
+ "shops": [
+  {
+   "name": "The Bean Flower",
+   "tier": "serves",
+   "address": "4015 University Dr Ste J",
+   "city": "Durham",
+   "state": "NC",
+   "zip": "27707",
+   "website": "https://thebeanflower.com",
+   "instagram": "thebeanflower",
+   "phone": null,
+   "opening_hours": "We-Su 11:00-20:00",
+   "menu_url": "https://thebeanflower.com/menu",
+   "menu_matcha": [
+    { "name": "Matcha Milk Tea", "price": "$8" },
+    { "name": "Matcha Limeade", "price": "$7.50" }
+   ],
+   "note": "Menu mentions matcha: milk tea (first-harvest Kagoshima and Uji) and limeade; add a matcha shot $1.50",
+   "image_url": null,
+   "image_credit": null,
+   "source_url": "https://thebeanflower.com/",
+   "read": "2026-11-27",
+   "confirmed_via": "own-site",
+   "notes": "Boba and dessert cafe (dou hua, taho, fizzes), opened summer 2024 by CC Chu (Durham Magazine profile). Address, hours (Wed-Sun 11am-8pm, last call 7:30pm) and @thebeanflower are on its own site; the menu is a picture dated 3.31.2026 on /menu: Matcha milk tea $8 (ceremonial grade), Matcha Limeade $7.50 under specialty, add 1 oz matcha shot $1.50. Two matcha drinks, so tier serves, not a matcha bar. Site prints no phone, so null."
+  }
+ ]
+}

@@ -274307,6 +274307,44 @@
    "geocode_source": "overture",
    "osm_url": null,
    "fetched": "2026-11-26T04:08:37.576Z"
+  },
+  {
+   "id": "brand:web-the-bean-flower-nc-durham-4015-university-dr-s-0d9213",
+   "name": "The Bean Flower",
+   "address": "4015 University Dr Ste J",
+   "city": "Durham",
+   "state": "NC",
+   "zip": "27707",
+   "website": "https://thebeanflower.com",
+   "instagram": "thebeanflower",
+   "phone": null,
+   "opening_hours": "We-Su 11:00-20:00",
+   "menu_url": "https://thebeanflower.com/menu",
+   "image_url": null,
+   "image_credit": null,
+   "tier": "serves",
+   "menu_matcha": [
+    {
+     "name": "Matcha Milk Tea",
+     "price": "$8"
+    },
+    {
+     "name": "Matcha Limeade",
+     "price": "$7.50"
+    }
+   ],
+   "note": "Menu mentions matcha: milk tea (first-harvest Kagoshima and Uji) and limeade; add a matcha shot $1.50",
+   "cuisine": null,
+   "source": "web",
+   "source_url": "https://thebeanflower.com/",
+   "read": "2026-11-27",
+   "confirmed_via": "own-site",
+   "verified": true,
+   "lat": 35.964757,
+   "lng": -78.956361,
+   "geocode_source": "nominatim",
+   "osm_url": null,
+   "fetched": "2026-11-27T18:50:43.590Z"
   }
  ]
 }
