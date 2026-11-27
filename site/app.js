@@ -393,6 +393,16 @@
   // Clusters come from MapLibre's GeoJSON clustering; every pin and cluster is drawn as an HTML
   // marker holding a character, synced from querySourceFeatures. The circle layers are invisible
   // and exist only so the sources load.
+  function addDots() {
+    if (map.getSource("svd") || !map.getStyle()) return;
+    try {
+      map.addSource("svd", { type: "geojson", data: svdColl() });
+      map.addLayer({ id: "svd-dots", type: "circle", source: "svd", maxzoom: DOT_FADE[1] + 0.2, paint: {
+        "circle-color": "#6FAE5E", "circle-blur": 0.5,
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 2.8, 6, 4.8, 8.5, 7, 9.4, 8.5],
+        "circle-opacity": ["interpolate", ["linear"], ["zoom"], DOT_FADE[0], 0.78, DOT_FADE[1], 0] } });
+    } catch (e) { /* a style change in flight: the next style.load adds them */ }
+  }
   function addData() {
     lockRange(); // the real map is here (style.load)
     lblOrig = null; lblNow = ""; // a fresh style carries its own label filters (syncCityLabels)
@@ -411,13 +421,8 @@
     ["ev", "br", "sh", "ap", "ct", "bc", "nt"].forEach(function (s) {
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
-    if (V2 && !map.getSource("svd")) {
-      map.addSource("svd", { type: "geojson", data: svdColl() });
-      map.addLayer({ id: "svd-dots", type: "circle", source: "svd", maxzoom: DOT_FADE[1] + 0.2, paint: {
-        "circle-color": "#6FAE5E", "circle-blur": 0.5,
-        "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 2.8, 6, 4.8, 8.5, 7, 9.4, 8.5],
-        "circle-opacity": ["interpolate", ["linear"], ["zoom"], DOT_FADE[0], 0.78, DOT_FADE[1], 0] } });
-    }
+    // the soft dots wait for the map's first idle plus 6 s: 3,600 blurred circles cost the home page 200 ms of blocking time at load (perf gate, 2026-11-27)
+    if (V2) { map.once("idle", function () { setTimeout(addDots, 6000); }); map.once("movestart", function () { setTimeout(addDots, 400); }); }
     scheduleSync();
     syncCityLabels(); // the layers are on the style now (lblOrig was reset above)
   }

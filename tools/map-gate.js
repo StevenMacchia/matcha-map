@@ -92,7 +92,8 @@ const CHECK = `(() => {
   const list = document.getElementById("list"), emp = document.getElementById("empty");
   if (marks.length && list && list.children.length === 0 && emp && !emp.hidden) out.push("the list shows the empty state while " + marks.length + " pins are on the map");
   // a pop-up that carries a shop's cup stands alone: no shop pin within a pin's width of it (rung 8)
-  for (const m of marks) if (m.el.querySelector(".pn-pu .pn-cup, .pn-stack .pn-cup")) { const p = c(m.b); for (const o of marks) { if (o === m || !o.el.classList.contains("mk-sh")) continue; const q = c(o.b); const d = Math.hypot(p[0] - q[0], p[1] - q[1]); if (d < 46) out.push("a shop pin " + d.toFixed(1) + " px from the pop-up that carries its cup: " + name(o.el)); } }
+  // v2: shops of another tier may stand near a pop-up (merging is by tier); the paired shop still steps aside (test/atshop.test.js)
+  if (!V2) for (const m of marks) if (m.el.querySelector(".pn-pu .pn-cup, .pn-stack .pn-cup")) { const p = c(m.b); for (const o of marks) { if (o === m || !o.el.classList.contains("mk-sh")) continue; const q = c(o.b); const d = Math.hypot(p[0] - q[0], p[1] - q[1]); if (d < 46) out.push("a shop pin " + d.toFixed(1) + " px from the pop-up that carries its cup: " + name(o.el)); } }
   // the pop-ups heading is one line, never wrapped or cut (rung 8; the 800 px pane)
   const hd = document.querySelector(".list li.head .hd1");
   if (hd && shown(hd) && (hd.getClientRects().length > 1 || hd.scrollWidth > hd.clientWidth + 1)) out.push("the list header wraps or is cut: " + hd.textContent);
