@@ -23,7 +23,7 @@ const CHROME_DEFAULT = "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const IDENTITY = ["-c", "user.name=Steven Macchia", "-c", "user.email=64022630+StevenMacchia@users.noreply.github.com"];
 const MODEL_KEYS = ["CLAUDE_API_KEY", "ANTHROPIC_API_KEY"];
 
-export const STEP_NAMES = ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "perf-gate", "report", "commit", "push", "deploy", "notify"];
+export const STEP_NAMES = ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "perf-gate", "report", "daily-status", "commit", "push", "deploy", "notify"];
 // Same arguments as YELP_LEADS in ingest/loop.js (test/daily.test.js checks they match).
 export const YELP_ARGS = ["ingest/shops-keyed.js", "--provider", "yelp", "--limit", "250"];
 const SCRIPTS = {
@@ -35,6 +35,7 @@ const SCRIPTS = {
   smoke: ["tools/smoke.js"],
   "perf-gate": ["tools/perf-gate.js"], // Lighthouse mobile on four page types against the budgets in docs/PERFORMANCE.md; soft
   "seo-gate": ["tools/seo-gate.js"],
+  "daily-status": ["tools/daily-status.js"], // docs/DAILY.md -> site/data/daily-status.json for the Run health tile on /m/; soft
   social: ["tools/social/outbox.js"], // npm run social; writes tools/brand/outbox/<date>/ and site/social/<date>/
 };
 // Explicit paths only, each only if it exists. Never `git add -A`.
@@ -306,6 +307,13 @@ async function main() {
         break;
       }
       case "report": reportStep(); break;
+      case "daily-status": {
+        // soft like social: needs the docs/DAILY.md the report step just wrote; a failure is recorded as "daily-status FAILED (soft)" and never stops the commit, the push or the deploy
+        if (args.dry) { rec(name, "skipped", null, "dry"); break; }
+        const r = await node(SCRIPTS["daily-status"]);
+        rec(name, r.ok ? "ok" : "FAILED (soft)", r.secs, r.ok ? "" : `daily-status FAILED (soft): ${r.note}`);
+        break;
+      }
       case "commit": {
         if (!state.smokeOk || !state.gateOk) { rec(name, "skipped", null, !state.smokeOk ? "smoke did not pass" : "seo gate did not pass"); break; }
         const msgOf = () => { const d = collect(ROOT, today); return `daily: ${today} ${d.events.total} events, ${d.events.upcoming} upcoming, ${d.newTotal} new`; };

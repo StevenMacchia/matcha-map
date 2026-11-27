@@ -12,7 +12,7 @@ import { loadEnv, parseEnv } from "../ingest/lib/env.js";
 import { llmEnabled, askLlm } from "../ingest/lib/llm.js";
 
 test("the step list and its order", () => {
-  assert.deepEqual(STEP_NAMES, ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "perf-gate", "report", "commit", "push", "deploy", "notify"]);
+  assert.deepEqual(STEP_NAMES, ["pull", "discover", "watch", "ingest", "yelp-leads", "overture", "deepen", "pages", "seo-gate", "social", "smoke", "perf-gate", "report", "daily-status", "commit", "push", "deploy", "notify"]);
   assert.deepEqual(parseArgs(["--dry", "--steps", "report,smoke"]), { dry: true, steps: ["report", "smoke"] });
   assert.deepEqual(parseArgs([]), { dry: false, steps: null });
 });
@@ -216,4 +216,15 @@ test("daily: the social outbox is committed, children carry the daily-child mark
   assert.equal(parseCredential("protocol=https\nhost=github.com\nusername=x\npassword=tok_123\n"), "tok_123");
   assert.equal(parseCredential("protocol=https\nhost=github.com\n"), null);
   assert.equal(parseCredential(""), null);
+});
+
+test("daily-status: a soft step right after report; its failure never blocks commit, push or deploy; the Run health tile reads its file", () => {
+  assert.equal(STEP_NAMES.indexOf("daily-status"), STEP_NAMES.indexOf("report") + 1);
+  assert.ok(STEP_NAMES.indexOf("daily-status") < STEP_NAMES.indexOf("commit"));
+  assert.ok(COMMIT_PATHS.includes("site/data"), "site/data/daily-status.json rides in the daily commit");
+  const src = fs.readFileSync(new URL("../ingest/daily.js", import.meta.url), "utf8");
+  assert.match(src, /tools\/daily-status\.js/);
+  assert.match(src, /daily-status FAILED \(soft\)/);
+  const soft = D({ steps: [{ name: "daily-status", status: "FAILED (soft)", secs: 1, note: "daily-status FAILED (soft): exit 1" }] });
+  assert.equal(needsIssue({ ...soft, newTotal: 3 }), false);
 });
