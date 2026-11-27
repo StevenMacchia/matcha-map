@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T18:18:26.283Z",
+  "updated": "2026-11-27T01:03:55.968Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -12833,8 +12833,8 @@
     {
       "handle": "littlefootmatcha",
       "platform": "instagram",
-      "source_id": null,
-      "status": "candidate",
+      "source_id": "littlefoot-matcha",
+      "status": "watching",
       "found_via": "search",
       "found_from": "tavily",
       "first_seen": "2026-11-22T20:12:18.734Z",
@@ -42054,6 +42054,51 @@
       "notes": "site=roundups; org=cafe-86; home=, ; brand=Cafe 86; e.g. ",
       "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
       "graph_error_at": "2026-11-26T18:18:26.283Z"
+    },
+    {
+      "handle": "heirloomraleigh",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "watching",
+      "found_via": "manual",
+      "found_from": "https://heirloom-raleigh.com",
+      "first_seen": "2026-11-27T01:03:47.230Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "Raleigh, NC | Triangle matcha-serving cafe (Heirloom Brewshop, 219 S West St); added 2026-11-26 for the Black Friday weekend sweep | evidence: https://heirloom-raleigh.com"
+    },
+    {
+      "handle": "pineapplesol",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "watching",
+      "found_via": "manual",
+      "found_from": "https://www.pineapplesol.com/menus",
+      "first_seen": "2026-11-27T01:03:47.230Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "Cary, NC | Triangle matcha-serving cafe (Pineapple Sol, Colonades Way, Cary); added 2026-11-26 for the Black Friday weekend sweep | evidence: https://www.pineapplesol.com/menus"
+    },
+    {
+      "handle": "littlefootlocal",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "watching",
+      "found_via": "manual",
+      "found_from": "https://littlefootmatcha.com/pages/find-us",
+      "first_seen": "2026-11-27T01:03:55.968Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "Raleigh, NC | Littlefoot Matcha's Instagram bio says find us >> @littlefootlocal (the Raleigh shop and its pop-ups) | evidence: https://littlefootmatcha.com/pages/find-us"
     }
   ]
 }
