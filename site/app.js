@@ -352,9 +352,9 @@
   // The approximate rings also shrink when zoomed out: zl under 6, zm from 6 to 9 (style.css). One class toggle, at most once a frame.
   // Below zoom 6 (the national and regional views) the map draws pop-ups only: city-only events join the same
   // clusters, and brands and storefronts wait until zoom 6, so a whole-country view reads as where things are on.
-  // ?pins=v2 (2026-11-27, mock): every pop-up its own pin at every zoom, core shops out of city pins from SHOP_SPLIT_Z, "Matcha on
+  // v2 is the default since 2026-11-27 (Steven: "Yes, ship v2"); ?pins=v1 keeps the old rules as a fallback until about 2026-12-04. v2: every pop-up its own pin at every zoom, core shops out of city pins from SHOP_SPLIT_Z, "Matcha on
   // the menu" as soft GL dots to zoom 9 then their lighter pin, overlap-only merging near 12 px, same tier only (tiersV2).
-  var V2 = params.get("pins") === "v2", SHOP_SPLIT_Z = 4, EV_SAME_PX = 4, MERGE_V2 = 12, LABEL_Z_V2 = 12, DOT_FADE = [8.6, 9.4];
+  var V2 = params.get("pins") !== "v1", SHOP_SPLIT_Z = 4, EV_SAME_PX = 4, MERGE_V2 = 12, LABEL_Z_V2 = 12, DOT_FADE = [8.6, 9.4];
   var LOW_Z = V2 ? 0 : 6, faceKey = null;
   // Pop-ups come in three bands (2026-11-23, after "some states only show their top two or three cities"): under CITY_LO one
   // clustered source, a pin per metro snapped onto its main city; from CITY_LO to CITY_HI one pin per city with a count,
@@ -776,7 +776,7 @@
       inner.innerHTML = PN.cityPin({ kind: p.kind, photo: lead ? photoOf(lead) : "", drawn: lead ? natArt(lead) : "", n: p.n, min: p.sm ? 1 : undefined });
       fillChars(inner);
       num = inner.querySelector(".pn-cn") || document.createElement("span");
-      el.className = "mk mk-cl cl-nt k-" + p.kind;
+      el.className = "mk mk-cl cl-nt k-" + p.kind + (p.sm ? " cl-sm" : "");
       if (lead) el.setAttribute("data-key", lead.key);
     }
     if (dgg && PN) {
@@ -1642,8 +1642,8 @@
     var precise = withoutShopsUnder(visibleEvents(false).concat(visibleShops(), visibleBrands())), approx = visibleEvents(true);
     ntStats = { cities: 0, pins: 0 };
     out.ap = approx;
-    var tier = { e: [], core: [], sv: [], b: [] };
-    precise.forEach(function (it) { (it.kind === "e" ? tier.e : it.kind === "b" ? tier.b : it.serves ? tier.sv : tier.core).push({ key: it.key, ll: it.ll, kind: it.kind }); });
+    var tier = { e: [], core: [], sv: [], b: [] }, tier0 = { sv: 0 };
+    precise.forEach(function (it) { (it.kind === "s" && it.serves) && tier0.sv++, (it.kind === "e" ? tier.e : it.kind === "b" ? tier.b : it.serves ? tier.sv : tier.core).push({ key: it.key, ll: it.ll, kind: it.kind }); });
     var cityList = [];
     if (low) {
       var folded = z < SHOP_SPLIT_Z ? tier.core.concat(tier.b) : tier.b;
@@ -1662,7 +1662,8 @@
         out[src].push({ type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: gk, dg: 1, fan: 1, n: g.keys.length } });
       });
     });
-    ntStats.pins = out.nt.length;
+    var places = low ? precise.length - tier0.sv : 0;
+    ntStats = { v2: true, pins: out.nt.length, places: places, dots: low ? tier0.sv : 0, covered: out.nt.reduce(function (n, f) { var g = ntG[f.properties.key]; return n + (g ? g.keys.length : 0); }, 0) };
     return out;
   }
   // the soft dots of "Matcha on the menu" (v2): one GL circle layer, so 3,600 of them cost no markers
@@ -2855,5 +2856,5 @@
   }
 
   // Exposed for tests only.
-  window.__matcha = { cityLabelNames: cityLabelNames, ntStats: function () { return ntStats; }, ntPlaces: function () { return Object.keys(live).filter(function (k) { return live[k].nt && ntG[k]; }).map(function (k) { return { key: k, lls: ntG[k].keys.map(function (q) { return items[q] ? lngLat(items[q].ll) : null; }).filter(Boolean) }; }); }, tierZoom: function () { return tierCache ? tierCache.z : null; }, state: state, shopsOn: function () { return shopsOn; }, servesOn: function () { return servesOn; }, shopsWords: shopsWords, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
+  window.__matcha = { v2: V2, cityLabelNames: cityLabelNames, ntStats: function () { return ntStats; }, ntPlaces: function () { return Object.keys(live).filter(function (k) { return live[k].nt && ntG[k]; }).map(function (k) { return { key: k, lls: ntG[k].keys.map(function (q) { return items[q] ? lngLat(items[q].ll) : null; }).filter(Boolean) }; }); }, tierZoom: function () { return tierCache ? tierCache.z : null; }, state: state, shopsOn: function () { return shopsOn; }, servesOn: function () { return servesOn; }, shopsWords: shopsWords, matchesChip: matchesChip, whenText: whenText, get map() { return map; }, live: live };
 })();

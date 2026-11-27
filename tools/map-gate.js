@@ -59,19 +59,24 @@ const CHECK = `(() => {
     for (const m of marks) { if (m.el === a.own) continue; const [w, h] = ov(a.b, m.b); if (w >= 0 && h >= 0) out.push("label touches a pin: " + a.l.textContent + " / " + name(m.el)); }
   }
   const singles = marks.filter((m) => !m.group && !m.ap), c = (b) => [(b.l + b.r) / 2, (b.t + b.b) / 2];
+  // v2 (2026-11-27): two single pins of one tier stand at least 12 px apart (events 4 px below zoom 9, where they are small), and
+  // pins of different tiers may stand anywhere; v1: 20 px for all
+  const V2 = !!(window.__matcha && window.__matcha.v2), Z = map ? map.getZoom() : 0;
+  const tierOf = (el) => el.classList.contains("mk-sv") ? "sv" : el.classList.contains("mk-sh") ? "s" : el.classList.contains("mk-ev") || el.classList.contains("k-e") ? "e" : "b";
+  const minFor = (a, b) => !V2 ? MIN : tierOf(a.el) !== tierOf(b.el) ? 0 : (tierOf(a.el) === "e" && Z < 9 ? 4 : 12) - 3; // 3 px: a day pill or cup moves a drawn box's middle off its point
   for (let i = 0; i < singles.length; i++) for (let j = i + 1; j < singles.length; j++) {
-    const p = c(singles[i].b), q = c(singles[j].b), d = Math.hypot(p[0] - q[0], p[1] - q[1]);
-    if (d < MIN) out.push("pins " + d.toFixed(1) + " px apart: " + name(singles[i].el) + " / " + name(singles[j].el));
+    const p = c(singles[i].b), q = c(singles[j].b), d = Math.hypot(p[0] - q[0], p[1] - q[1]), lim = minFor(singles[i], singles[j]);
+    if (d < lim) out.push("pins " + d.toFixed(1) + " px apart: " + name(singles[i].el) + " / " + name(singles[j].el));
   }
   // from zoom 6 a city pin stands only while its places sit within SPLIT px of each other on screen
-  if (map && map.getZoom() >= 6 && window.__matcha.ntPlaces) for (const c of window.__matcha.ntPlaces()) {
+  if (map && map.getZoom() >= 6 && window.__matcha.ntPlaces) for (const c of window.__matcha.ntPlaces().filter((q) => !V2 || q.key.startsWith("sm:"))) {
     const q = c.lls.map((ll) => map.project(ll));
     let far = 0;
     for (let i = 0; i < q.length; i++) for (let j = i + 1; j < q.length; j++) far = Math.max(far, Math.hypot(q[i].x - q[j].x, q[i].y - q[j].y));
-    if (far > SPLIT + 0.5) out.push("city pin " + c.key + " shown while its places stand " + far.toFixed(1) + " px apart");
+    if (far > (V2 ? 12 : SPLIT) + 0.5) out.push("city pin " + c.key + " shown while its places stand " + far.toFixed(1) + " px apart");
   }
   // city pins (the national tier) are round: their circles must not overlap
-  const nat = marks.filter((m) => m.el.classList.contains("cl-nt")).map((m) => { const r = m.el.getBoundingClientRect(); return { m, x: r.left + r.width / 2, y: r.top + r.height / 2, d: r.width }; });
+  const nat = marks.filter((m) => m.el.classList.contains("cl-nt") && !(V2 && m.el.classList.contains("cl-sm"))).map((m) => { const r = m.el.getBoundingClientRect(); return { m, x: r.left + r.width / 2, y: r.top + r.height / 2, d: r.width }; });
   for (let i = 0; i < nat.length; i++) for (let j = i + 1; j < nat.length; j++) {
     const a = nat[i], b = nat[j], dd = Math.hypot(a.x - b.x, a.y - b.y);
     if (dd < (a.d + b.d) / 2 - 1) out.push("city pins overlap, " + dd.toFixed(1) + " px apart: " + name(a.m.el) + " / " + name(b.m.el));
@@ -80,7 +85,8 @@ const CHECK = `(() => {
   // a single pin may tuck an edge under a neighbour (the mock's rule); a group may not be covered
   for (let i = 0; i < solid.length; i++) for (let j = i + 1; j < solid.length; j++) {
     const [w, h] = ov(solid[i].b, solid[j].b);
-    if ((solid[i].group || solid[j].group) && w > 12 && h > 12) out.push("markers overlap " + Math.round(w) + "x" + Math.round(h) + ": " + name(solid[i].el) + " / " + name(solid[j].el));
+    // v2: stacks merge by overlap at 12 px, so boxes of one tier overlap by design; the distance rule above holds the line there
+    if (!V2 && (solid[i].group || solid[j].group) && w > 12 && h > 12) out.push("markers overlap " + Math.round(w) + "x" + Math.round(h) + ": " + name(solid[i].el) + " / " + name(solid[j].el));
   }
   // the list must never show the sleepy empty state while pins are on the map (Steven's Triangle, 2026-11-23)
   const list = document.getElementById("list"), emp = document.getElementById("empty");
@@ -146,7 +152,11 @@ export async function runMapGate(cdp, base, opts = {}) {
           if (r && z === "home") {
             const t = r.nt || {};
             row.note = `opening view: ${r.cityPins} city pins on screen, ${t.pins} in all, covering ${t.covered} of ${t.cities} cities with anything`;
-            if (!(t.covered >= t.cities) || !(t.cities > 0)) row.fails.push("the city pins leave out a city: " + row.note);
+            if (t.v2) {
+              row.note = `opening view (v2): ${r.pins} markers on screen, ${t.pins} pins in all holding ${t.covered} of ${t.places} places, ${t.dots} soft dots`;
+              if (!(t.places > 0) || t.covered < t.places) row.fails.push("a place is left out of the pins: " + row.note);
+              if (r.pins < 100) row.fails.push("the opening view draws only " + r.pins + " markers (v2 expects at least 100): " + row.note);
+            } else if (!(t.covered >= t.cities) || !(t.cities > 0)) row.fails.push("the city pins leave out a city: " + row.note);
           }
         }
         if (row.fails.length) {
