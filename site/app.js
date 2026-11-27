@@ -352,7 +352,10 @@
   // The approximate rings also shrink when zoomed out: zl under 6, zm from 6 to 9 (style.css). One class toggle, at most once a frame.
   // Below zoom 6 (the national and regional views) the map draws pop-ups only: city-only events join the same
   // clusters, and brands and storefronts wait until zoom 6, so a whole-country view reads as where things are on.
-  var LOW_Z = 6, faceKey = null;
+  // ?pins=v2 (2026-11-27, mock): every pop-up its own pin at every zoom, core shops out of city pins from SHOP_SPLIT_Z, "Matcha on
+  // the menu" as soft GL dots to zoom 9 then their lighter pin, overlap-only merging near 12 px, same tier only (tiersV2).
+  var V2 = params.get("pins") === "v2", SHOP_SPLIT_Z = 4, EV_SAME_PX = 4, MERGE_V2 = 12, LABEL_Z_V2 = 12, DOT_FADE = [8.6, 9.4];
+  var LOW_Z = V2 ? 0 : 6, faceKey = null;
   // Pop-ups come in three bands (2026-11-23, after "some states only show their top two or three cities"): under CITY_LO one
   // clustered source, a pin per metro snapped onto its main city; from CITY_LO to CITY_HI one pin per city with a count,
   // from citypins.js, recomputed at each whole zoom; from CITY_HI the places themselves.
@@ -408,6 +411,13 @@
     ["ev", "br", "sh", "ap", "ct", "bc", "nt"].forEach(function (s) {
       if (!map.getLayer(s + "-hit")) map.addLayer({ id: s + "-hit", type: "circle", source: s, paint: { "circle-radius": 1, "circle-opacity": 0 } });
     });
+    if (V2 && !map.getSource("svd")) {
+      map.addSource("svd", { type: "geojson", data: svdColl() });
+      map.addLayer({ id: "svd-dots", type: "circle", source: "svd", maxzoom: DOT_FADE[1] + 0.2, paint: {
+        "circle-color": "#6FAE5E", "circle-blur": 0.5,
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 2.8, 6, 4.8, 8.5, 7, 9.4, 8.5],
+        "circle-opacity": ["interpolate", ["linear"], ["zoom"], DOT_FADE[0], 0.78, DOT_FADE[1], 0] } });
+    }
     scheduleSync();
     syncCityLabels(); // the layers are on the style now (lblOrig was reset above)
   }
@@ -464,7 +474,7 @@
   // A label that would overlap one already placed, or any pin, tries the other side, then below, then stays hidden.
   // Pop-ups go first, then shops; inside each, by key, so the same view always labels the same pins. Laid out after the
   // markers change and after every move; hidden while a zoom runs.
-  var LABEL_Z = 13, lblRaf = 0, PN_BUSY = 40; // PN_BUSY: past this many markers the idle bob rests (style.css .pn-busy)
+  var LABEL_Z = V2 ? LABEL_Z_V2 : 13, lblRaf = 0, PN_BUSY = 40; // PN_BUSY: past this many markers the idle bob rests (style.css .pn-busy)
   function labelSoon() { if (!lblRaf) lblRaf = requestAnimationFrame(function () { lblRaf = 0; layoutLabels(); }); }
   function boxOf(el) {
     // the pin's own box, with what sticks out of it: a count badge, a day pill, the cup (class bx)
@@ -489,7 +499,7 @@
     if (fan) recs = recs.concat(fan.pins);
     recs = recs.filter(function (r) { return r.marker && r.el.isConnected && !r.el.classList.contains("leaving"); });
     var natOn = map.getZoom() >= 5 && map.getZoom() < DENSE_Z;
-    var want = natOn ? recs.filter(function (r) { return r.nt && r.count >= 3 && r.city; }) : on ? recs.filter(function (r) { return (r.kind === "s" || (r.kind === "e" && !r.el.classList.contains("mk-ap")) || (r.dg && r.el.classList.contains("cl-stack"))) && !r.el.classList.contains("fanned"); }) : [];
+    var want = natOn ? recs.filter(function (r) { return r.nt && r.count >= 3 && r.city; }) : on ? recs.filter(function (r) { return ((r.kind === "s" && !(V2 && items[r.key] && items[r.key].serves)) || (r.kind === "e" && !r.el.classList.contains("mk-ap")) || (r.dg && r.el.classList.contains("cl-stack"))) && !r.el.classList.contains("fanned"); }) : [];
     recs.forEach(function (r) { if (r.lbl && want.indexOf(r) < 0) r.lbl.hidden = true; });
     if (!want.length) return;
     var pins = recs.map(function (r) { return { r: r, b: boxOf(r.el) }; }), placed = [];
@@ -763,7 +773,7 @@
     var dgg = p.dg && densG[p.key], PN = window.MatchaPins;
     if (p.nt && PN) {
       var lead = items[p.lead];
-      inner.innerHTML = PN.cityPin({ kind: p.kind, photo: lead ? photoOf(lead) : "", drawn: lead ? natArt(lead) : "", n: p.n });
+      inner.innerHTML = PN.cityPin({ kind: p.kind, photo: lead ? photoOf(lead) : "", drawn: lead ? natArt(lead) : "", n: p.n, min: p.sm ? 1 : undefined });
       fillChars(inner);
       num = inner.querySelector(".pn-cn") || document.createElement("span");
       el.className = "mk mk-cl cl-nt k-" + p.kind;
@@ -803,6 +813,12 @@
         var cam = map.cameraForBounds(b0, { padding: 80, maxZoom: 15 }), zz = Math.max(DENSE_Z + 2.2, Math.min(15, cam && isFinite(cam.zoom) ? cam.zoom : map.getZoom() + 2));
         var cc = cam && cam.center ? cam.center : f.geometry.coordinates;
         if (calm()) map.jumpTo({ center: cc, zoom: zz }); else map.easeTo({ center: cc, zoom: zz, duration: 600 });
+        return;
+      }
+      if (src === "nt" && p.sm) { // v2: one place opens its card; a merged pair or more zooms in to where they stand apart
+        if (p.n <= 1) { cardOpener = null; pinOpener = el; showCard(p.lead, ev.detail === 0); return; }
+        var cs = f.geometry.coordinates, zs = Math.min(map.getZoom() + 2.5, 15);
+        if (calm()) map.jumpTo({ center: cs, zoom: zs }); else map.easeTo({ center: cs, zoom: zs, duration: 600 });
         return;
       }
       if (src === "nt") { // a city pin: in to just past the zoom where its places stand more than SPLIT_PX apart
@@ -1559,6 +1575,7 @@
   }
   function tiers() {
     if (tierCache) return tierCache;
+    if (V2 && window.MatchaDensity) return (tierCache = tiersV2());
     var D = window.MatchaDensity, CP = window.MatchaCityPins, z = tierZoomNow(), out = { ev: [], sh: [], br: [], nt: [], ap: [], z: z };
     if (z < LOW_Z) return (tierCache = out);
     var precise = withoutShopsUnder(visibleEvents(false).concat(visibleShops(), visibleBrands())), approx = visibleEvents(true), open = precise;
@@ -1613,6 +1630,43 @@
     });
     return (tierCache = out);
   }
+  // v2: one small round pin per place below DENSE_Z (smFeature), the full pins and stacks from it. Merging is by overlap only:
+  // events on the same pixel (EV_SAME_PX) below DENSE_Z, everything else within MERGE_V2 px, each tier on its own.
+  function smFeature(g) {
+    var it = items[g.key], fk = "sm:" + g.key + (g.keys.length > 1 ? "|" + g.keys.length : "");
+    ntG[fk] = { keys: g.keys };
+    return { type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: fk, nt: 1, sm: 1, n: g.keys.length, city: "", cities: 1, lead: g.key, kind: it.kind } };
+  }
+  function tiersV2() {
+    var D = window.MatchaDensity, CP = window.MatchaCityPins, z = tierZoomNow(), out = { ev: [], sh: [], br: [], nt: [], ap: [], z: z }, low = z < DENSE_Z;
+    var precise = withoutShopsUnder(visibleEvents(false).concat(visibleShops(), visibleBrands())), approx = visibleEvents(true);
+    ntStats = { cities: 0, pins: 0 };
+    out.ap = approx;
+    var tier = { e: [], core: [], sv: [], b: [] };
+    precise.forEach(function (it) { (it.kind === "e" ? tier.e : it.kind === "b" ? tier.b : it.serves ? tier.sv : tier.core).push({ key: it.key, ll: it.ll, kind: it.kind }); });
+    var cityList = [];
+    if (low) {
+      var folded = z < SHOP_SPLIT_Z ? tier.core.concat(tier.b) : tier.b;
+      if (z < SHOP_SPLIT_Z) tier.core = [];
+      tier.b = []; tier.sv = []; // serves are the soft dots (svd layer) below DENSE_Z
+      folded.forEach(function (p) { var it = items[p.key], c = cityOf(it); cityList.push({ key: p.key, ll: p.ll, data: c[0] ? { city: c[0], state: c[1] } : { city: "@" + p.key, state: "" } }); });
+      if (cityList.length && CP) CP.cityPins(cityList, z, window.CITIES, { mergePx: NT_SIZE(z), capMi: Infinity }).forEach(function (p) { out.nt.push(ntFeature(p)); });
+    }
+    [["e", low ? EV_SAME_PX : MERGE_V2], ["core", MERGE_V2], ["sv", MERGE_V2], ["b", MERGE_V2]].forEach(function (t) {
+      D.group(tier[t[0]], z, { shift: low ? null : densShift, minPx: t[1] }).forEach(function (g) {
+        var kind = items[g.key].kind, src = KIND_SRC[kind];
+        if (low) { out.nt.push(smFeature(g)); return; }
+        if (g.keys.length === 1) { out[src].push({ type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: g.key } }); return; }
+        var gk = "g:" + src + ":" + g.key;
+        densG[gk] = { lead: kind === "b" ? leadBrand(g.keys) : g.key, kind: kind, keys: g.keys, ll: g.ll };
+        out[src].push({ type: "Feature", geometry: { type: "Point", coordinates: lngLat(g.ll) }, properties: { key: gk, dg: 1, fan: 1, n: g.keys.length } });
+      });
+    });
+    ntStats.pins = out.nt.length;
+    return out;
+  }
+  // the soft dots of "Matcha on the menu" (v2): one GL circle layer, so 3,600 of them cost no markers
+  function svdColl() { return featureColl(V2 ? visibleShops().filter(function (it) { return it.serves; }) : []); }
   function fc(list) { return { type: "FeatureCollection", features: list }; }
   function evColl() { return fc(isDense() ? tiers().ev : []); }
   function shColl() { return fc(isDense() ? tiers().sh : []); }
@@ -1690,6 +1744,8 @@
     if (ct) ct.setData(cityColl());
     var nts = map.getSource("nt");
     if (nts) { nts.setData(ntColl()); syncCityLabels(); }
+    var sd = map.getSource("svd");
+    if (sd) sd.setData(svdColl());
   }
   // Basemap city names under a city pin of the same name (zooms 5 to 10, rung 8): the pin carries the name, so the
   // style's own label for that city is filtered out while the pin stands, and comes back when the pin opens or the

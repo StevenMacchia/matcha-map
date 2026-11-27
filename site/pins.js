@@ -89,7 +89,7 @@
   function cityPin(o) {
     o = o || {};
     var n = Math.floor(+o.n || 0), k = /^[esb]$/.test(o.kind) ? o.kind : "s";
-    return "<span class=\"pn pn-city k-" + k + "\">" + art(o.photo, o.drawn) + "</span>" + (n > 3 ? "<span class=\"pn-cn\">" + n + "</span>" : "");
+    return "<span class=\"pn pn-city k-" + k + "\">" + art(o.photo, o.drawn) + "</span>" + (n > (o.min == null ? 3 : o.min) ? "<span class=\"pn-cn\">" + n + "</span>" : "");
   }
   // A slow random phase for the idle bob, the same for the same pin: a negative delay in 0 to 3.6 s.
   function phase(key) { var h = 5381; key = String(key || ""); for (var i = 0; i < key.length; i++) h = ((h << 5) + h + key.charCodeAt(i)) >>> 0; return -((h % 3600) / 1000); }
