@@ -368,6 +368,10 @@
 /* a short window with a large font: the quote steps out of the pop-up first (it is on the full page) so the buttons
    never scroll; 44.9rem is just under 720 px at the usual 16 px and just under 900 px at 20 px */
 @media (max-height: 44.9rem) { .mm-compact .mm-q { display: none; } }
+/* a short window: the card scrolls inside its box (style.css), so a fade at the cut edge says there is more under it, and it
+   goes when the end is reached (app.js sets the two classes); the mascot stands wholly outside the card, never over a link */
+.mm-pop .maplibregl-popup-content > div.mm-fade-b::after { content: ""; display: block; position: sticky; bottom: 0; height: 1.75rem; margin-top: -1.75rem; pointer-events: none; background: linear-gradient(to bottom, transparent, var(--panel, #FFFDF7)); }
+.mm-pop .maplibregl-popup-content > div.mm-fade-t::before { content: ""; display: block; position: sticky; top: 0; height: 1.25rem; margin-bottom: -1.25rem; z-index: 2; pointer-events: none; background: linear-gradient(to top, transparent, var(--panel, #FFFDF7)); }
 
 /* the grip, visible on cream */
 .sheet-grip::before { background: color-mix(in srgb, var(--muted, #6B5A4F) 45%, var(--panel, #FFFDF7)); }

@@ -1278,6 +1278,11 @@
       var pr = popup.getElement().getBoundingClientRect(), mr = map.getContainer().getBoundingClientRect();
       var over = mr.top + 12 - pr.top;
       if (over > 0) map.panBy([0, -over], { duration: calm() ? 0 : 300 });
+      // a short window scrolls the card inside its box: the fade classes say there is more above or below (cards.css)
+      var fade = function () { box.classList.toggle("mm-fade-b", box.scrollHeight - box.clientHeight - box.scrollTop > 2); box.classList.toggle("mm-fade-t", box.scrollTop > 2); };
+      box.addEventListener("scroll", fade, { passive: true });
+      if (window.ResizeObserver) new ResizeObserver(fade).observe(box);
+      fade(); setTimeout(fade, 400);
       if (focusIt) box.querySelector(".pop-close").focus();
       announce("card", { root: box, phone: false, key: key });
     } else {

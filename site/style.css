@@ -375,7 +375,7 @@ body.show-list .list-panel { display: block; }
 .mk.sel .pn { transform: scale(1.32); transition: transform .3s var(--spring); }
 .mk.sel .pn-ground { width: 92px; height: 92px; margin: -40px 0 0 -46px; background: radial-gradient(closest-side, rgba(255,253,247,.95) 55%, rgba(246,183,199,.55) 75%, rgba(246,183,199,0)); }
 .mk.sel.mk-ev .pn-ground { margin-top: -66px; }
-.pop-mattie { position: absolute; left: -30px; bottom: -14px; width: 46px; height: 46px; pointer-events: none; transform: scaleX(-1) rotate(-8deg); transform-origin: 50% 90%; animation: mattie-turn .5s var(--spring) .1s both; }
+.pop-mattie { position: absolute; left: -46px; bottom: -14px; width: 46px; height: 46px; pointer-events: none; transform: scaleX(-1) rotate(-8deg); transform-origin: 50% 90%; animation: mattie-turn .5s var(--spring) .1s both; }
 @keyframes mattie-turn { from { transform: scaleX(1) rotate(6deg); opacity: 0; } 60% { opacity: 1; } to { transform: scaleX(-1) rotate(-8deg); } }
 .card-open .sheet-peek .ch { transition: transform .4s var(--spring); transform: rotate(-10deg) translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .pn-bob, .pn-pulse, .pop-mattie { animation: none !important; } }

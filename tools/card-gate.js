@@ -10,7 +10,11 @@
 //   - an element that cannot wrap (white-space nowrap, text-overflow ellipsis, -webkit-line-clamp) is wider inside than it is
 //     (scrollWidth > clientWidth + 1), except ALLOW below;
 //   - the button row (.mm-dock .mm-acts) is not fully on screen without scrolling: inside the viewport and the sheet body's
-//     visible box (sheet), inside the popup content with the popup not scrolling (popup);
+//     visible box (sheet), inside the popup content (popup; the popup may scroll inside its box, FOOT then checks its end);
+//   - a footer link (.mm-foot a: Full details, Promote, More in <city>, Report a problem) is not inside the card's scroll box or is
+//     covered by another element once the card is scrolled to its end, or the corner mascot (.pop-mattie) overlaps one (FOOT);
+//     the event fixtures are also opened in a short desktop window (SHORT, 1280x520), where the pop-up scrolls inside its box on
+//     purpose, and only FOOT is checked there;
 //   - the sheet, which opens half way (motion.js), covers When and Where with its pinned row or has the row off screen there.
 // The sheet is measured at both snaps: half open (the button row and the boxes), then full (everything). A sticky box (the
 // pinned row) is meant to ride over what scrolls under it, so it is not counted as overlapping its siblings.
@@ -35,6 +39,8 @@ export const REDUCED = { widths: [320, 390, 1024, 1440], fixtures: ["longest bra
 // Cut on purpose, and only here: the quote (two lines in the sheet, one in the popup); the whole text is on /e/<id>/,
 // one tap away through "more" or "Full details and photo".
 export const ALLOW = [".mm-q-text"];
+// A short desktop window: the pop-up cannot fit its card and scrolls inside (style.css), so only the footer is checked.
+export const SHORT = { w: 1280, h: 520 };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ---- fixtures ----------------------------------------------------------------------------------------------------
@@ -148,13 +154,34 @@ const CHECK = (allow, card = ".mm-card", menu = true) => `(() => {
     let box = { left: 0, top: 0, right: vw, bottom: vh };
     const clip = (q) => { box = { left: Math.max(box.left, q.left), top: Math.max(box.top, q.top), right: Math.min(box.right, q.right), bottom: Math.min(box.bottom, q.bottom) }; };
     clip(root.getBoundingClientRect());
-    if (!phone) { const sc = root.querySelector(":scope > div"); if (sc) { clip(sc.getBoundingClientRect()); if (sc.scrollHeight > sc.clientHeight + T) out.push("popup scrolls: " + sc.scrollHeight + " in " + sc.clientHeight); } }
+    if (!phone) { const sc = root.querySelector(":scope > div"); if (sc) { clip(sc.getBoundingClientRect()); /* the pop-up may scroll inside its box (style.css, max-height 100vh - 190px) at a big font; FOOT checks the end of it */ } }
     if (a.left < box.left - T || a.right > box.right + T || a.top < box.top - T || a.bottom > box.bottom + T)
       out.push("button row not fully in view (" + [a.left, a.top, a.right, a.bottom].map(Math.round) + " in " + [box.left, box.top, box.right, box.bottom].map(Math.round) + ")");
   }
   return { phone, fails: [...new Set(out)] };
 })()`;
 
+// The footer links, with the card scrolled to its end (the sheet body under 900 px, the pop-up's inner box from 900 px): each is
+// inside the scroll box and the viewport, is what elementFromPoint finds at its centre (the mascot has pointer-events none, so
+// its box is compared with the link's as well).
+const FOOT = `(() => { const out = [], sb = document.getElementById("sheet-body"), pop = document.querySelector(".mm-pop .maplibregl-popup-content > div");
+  const root = pop || sb; if (!root || !root.querySelector(".mm-card")) return ["no card to scroll"];
+  root.scrollTop = root.scrollHeight;
+  const vw = innerWidth, vh = innerHeight, b = root.getBoundingClientRect(), T = 1;
+  const box = { left: Math.max(0, b.left), top: Math.max(0, b.top), right: Math.min(vw, b.right), bottom: Math.min(vh, b.bottom) };
+  const links = [...root.querySelectorAll(".mm-foot a, .mm-foot button")].filter((a) => getComputedStyle(a).display !== "none" && a.getClientRects().length);
+  if (!links.length) return ["no footer links"];
+  const m = root.querySelector(".pop-mattie"), mr = m && m.getBoundingClientRect();
+  for (const a of links) {
+    const r = a.getBoundingClientRect(), n = '"' + (a.textContent || "").trim().slice(0, 28) + '"';
+    if (r.left < box.left - T || r.right > box.right + T || r.top < box.top - T || r.bottom > box.bottom + T)
+      out.push("footer link " + n + " outside the card (" + [r.left, r.top, r.right, r.bottom].map(Math.round) + " in " + [box.left, box.top, box.right, box.bottom].map(Math.round) + ")");
+    else { const e = document.elementFromPoint((r.left + r.right) / 2, (r.top + r.bottom) / 2);
+      if (!e || !(a === e || a.contains(e))) out.push("footer link " + n + " covered by " + (e ? e.tagName.toLowerCase() + "." + String(e.className).split(" ")[0] : "nothing")); }
+    if (mr && Math.min(r.right, mr.right) - Math.max(r.left, mr.left) > T && Math.min(r.bottom, mr.bottom) - Math.max(r.top, mr.top) > T) out.push("mascot covers footer link " + n);
+  }
+  root.scrollTop = 0;
+  return out; })()`;
 const FORCE_GOING = `document.querySelectorAll("[data-mm-go]").forEach((s) => { s.hidden = false; const c = s.querySelector(".mm-gcount"); if (c) c.textContent = "You and 12 others going"; })`;
 // the same element and place featured.js uses: a span.mm-feat appended to the card's .mm-bname
 const ADD_FEATURED = `document.querySelectorAll(".mm-card[data-id]").forEach((el) => { const h = el.querySelector(".mm-bname"); if (h && !el.querySelector(".mm-feat")) { const s = document.createElement("span"); s.className = "mm-feat"; s.textContent = "Featured"; h.appendChild(s); } })`;
@@ -185,8 +212,10 @@ export async function runCardGate(cdp, base, opts = {}) {
   for (const f of fixtures) log(`  fixture ${f.name.padEnd(20)} ${f.label}`);
   for (const f of skipped) log(`  fixture ${f.name.padEnd(20)} skipped: ${f.label}`);
   const widths = opts.widths || M.widths, rows = [];
-  for (const f of fixtures) for (const w of widths) for (const font of [16, 20]) {
-    const h = HEIGHT[w] || 900, brand = f.kind === "brand", card = brand ? ".mm-brand" : ".mm-card";
+  const sizes = (f) => [...widths.map((w) => [w, HEIGHT[w] || 900]), ...(f.kind === "brand" ? [] : [[SHORT.w, SHORT.h]])];
+  for (const f of fixtures) for (const [w, h] of sizes(f)) for (const font of [16, 20]) {
+    const short = f.kind !== "brand" && w === SHORT.w && h === SHORT.h, label = short ? `${w}x${h}` : w;
+    const brand = f.kind === "brand", card = brand ? ".mm-brand" : ".mm-card";
     const { targetId } = await cdp.send("Target.createTarget", { url: "about:blank" });
     const { sessionId: sid } = await cdp.send("Target.attachToTarget", { targetId, flatten: true });
     const s = (m, p) => cdp.send(m, p, sid);
@@ -207,14 +236,16 @@ export async function runCardGate(cdp, base, opts = {}) {
       if (!ok) { await sleep(400); ok = opened2 = await load(); }
       if (ok) { await ev(`document.fonts ? document.fonts.ready.then(() => 1) : 1`); await sleep(700); }
       for (const [theme, feat] of [["light", false], ["dark", false], ["light", true]]) {
-        const row = { fixture: f.name, w, theme: theme + (feat ? "+featured" : ""), font, fails: [], retried: false };
+        const row = { fixture: f.name, w: label, theme: theme + (feat ? "+featured" : ""), font, fails: [], retried: false };
         const measure = async () => {
           const fails = [];
           await ev(SET_THEME(theme)); await ev(FORCE_GOING); if (feat) await ev(ADD_FEATURED);
           await ev(FRAMES);
+          if (short) { fails.push(...((await ev(FOOT)) || ["footer check did not run"])); return fails; }
           if (w < 900) { if ((await ev(SNAP("peek"))) === "peek" && !brand) { await ev(FRAMES); fails.push(...((await ev(PEEK)) || [])); } await ev(SNAP("full")); await ev(FRAMES); }
           const r = await ev(CHECK(ALLOW, card, f.menu !== false));
           if (!r || r.error) fails.push((r && r.error) || "checker did not run"); else fails.push(...r.fails);
+          if (!brand) fails.push(...((await ev(FOOT)) || ["footer check did not run"]));
           return fails;
         };
         if (!ok) row.fails.push("the card never opened");
@@ -227,15 +258,15 @@ export async function runCardGate(cdp, base, opts = {}) {
         }
         if (row.fails.length) {
           fs.mkdirSync(FAIL_DIR, { recursive: true });
-          try { const { data } = await s("Page.captureScreenshot", { format: "png" }); fs.writeFileSync(path.join(FAIL_DIR, `${f.name.replace(/\s+/g, "-")}-${w}-${row.theme}-${font}.png`), Buffer.from(data, "base64")); } catch { /* no frame */ }
+          try { const { data } = await s("Page.captureScreenshot", { format: "png" }); fs.writeFileSync(path.join(FAIL_DIR, `${f.name.replace(/\s+/g, "-")}-${label}-${row.theme}-${font}.png`), Buffer.from(data, "base64")); } catch { /* no frame */ }
         }
         rows.push(row);
       }
     } finally { await cdp.send("Target.closeTarget", { targetId }).catch(() => {}); }
   }
   const pad = (v, n) => String(v).padEnd(n);
-  log(`\n${pad("fixture", 22)}${pad("width", 7)}${pad("theme", 16)}${pad("font", 6)}${pad("result", 8)}first failures`);
-  for (const r of rows) log(`${pad(r.fixture, 22)}${pad(r.w, 7)}${pad(r.theme, 16)}${pad(r.font, 6)}${pad(r.fails.length ? "FAIL" : "pass", 8)}${r.retried ? "(retried) " : ""}${r.fails.slice(0, 3).join(" | ")}`);
+  log(`\n${pad("fixture", 22)}${pad("width", 9)}${pad("theme", 16)}${pad("font", 6)}${pad("result", 8)}first failures`);
+  for (const r of rows) log(`${pad(r.fixture, 22)}${pad(r.w, 9)}${pad(r.theme, 16)}${pad(r.font, 6)}${pad(r.fails.length ? "FAIL" : "pass", 8)}${r.retried ? "(retried) " : ""}${r.fails.slice(0, 3).join(" | ")}`);
   const failed = rows.filter((r) => r.fails.length).length, retried = rows.filter((r) => r.retried).length;
   log(`\ncard gate: ${rows.length} cases, ${failed} failed${retried ? ", " + retried + " passed on the retry" : ""}${skipped.length ? `; skipped: ${skipped.map((f) => f.name).join(", ")} (none in the data)` : ""}`);
   return { cases: rows.length, failed, retried, rows, skipped: skipped.map((f) => f.name) };
