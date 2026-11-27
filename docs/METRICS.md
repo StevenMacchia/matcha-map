@@ -20,3 +20,7 @@ Cost: one KV write per view plus one per first visit of the day, one write per t
 ## Not counted, on purpose
 
 No cookies, no local storage ids, no fingerprinting, no per-person history, no Yelp content, no search text (only that a search happened).
+
+## Changing the dashboard files
+
+Cloudflare serves `m.css` and `m.js` with a 4-hour browser cache whatever `_headers` says (a zone-level Browser Cache TTL overrides the shorter value). The page itself is `no-cache`, so the fix is the version on its links: bump `?v=` on the two links in `site/m/index.html` whenever `m.css` or `m.js` change, or visitors keep the old files for up to four hours.
