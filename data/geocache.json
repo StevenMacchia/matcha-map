@@ -4632,6 +4632,11 @@
     "miss": true,
     "at": 1795379452914
   },
+  "420 east church street orlando fl 32801": {
+    "lat": 28.540125,
+    "lng": -81.371571,
+    "source": "nominatim"
+  },
   "420 s germantown pkwy 103 cordova tn 38018": {
     "miss": true,
     "at": 1795485969134
@@ -5312,6 +5317,11 @@
     "lng": -115.210776,
     "source": "nominatim"
   },
+  "514 rhode island avenue washington dc": {
+    "lat": 38.935393,
+    "lng": -76.963138,
+    "source": "nominatim"
+  },
   "5144 w colonial dr orlando fl 32808": {
     "lat": 28.550476,
     "lng": -81.450956,
@@ -5938,6 +5948,11 @@
   "672 geary st san francisco ca 94102": {
     "miss": true,
     "at": 1795486752252
+  },
+  "6741 west 135th street overland park ks 66223": {
+    "lat": 38.883659,
+    "lng": -94.663888,
+    "source": "nominatim"
   },
   "675 saratoga ave san jose ca 95129": {
     "lat": 37.314604,
@@ -8976,6 +8991,11 @@
     "miss": true,
     "at": 1795400362792
   },
+  "venue: indigo coffee & tea charlotte nc": {
+    "lat": 35.232572,
+    "lng": -80.83748,
+    "source": "nominatim-venue"
+  },
   "venue: inspire seattle seattle wa": {
     "miss": true,
     "at": 1795436188383
@@ -9200,6 +9220,11 @@
   "venue: sephora washington dc": {
     "lat": 38.905362,
     "lng": -77.060767,
+    "source": "nominatim-venue"
+  },
+  "venue: songbird coffee & tea house phoenix az": {
+    "lat": 33.457024,
+    "lng": -112.070282,
     "source": "nominatim-venue"
   },
   "venue: south block arlington va": {

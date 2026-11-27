@@ -9921,6 +9921,15 @@
     "iced-matcha-latte"
    ]
   },
+  "1308b166827f": {
+   "file": "events/1308b166827f.svg",
+   "text": "{\"brand\":\"Longevity Cities (Matcha Walk)\",\"drinks\":[\"iced matcha latte\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Longevity Cities (Matcha Walk)",
+   "drinks": [
+    "iced-matcha-latte"
+   ]
+  },
   "13b10e6fcef8": {
    "file": "events/13b10e6fcef8.svg",
    "text": "{\"brand\":\"KinKa\",\"drinks\":[\"iced matcha latte\"]}",
@@ -10123,6 +10132,15 @@
    "text": "{\"brand\":\"Emkari Cafe\",\"drinks\":[\"iced matcha latte\"]}",
    "v": "drink-1.1269cs5.h4q7c1",
    "brand": "Emkari Cafe",
+   "drinks": [
+    "iced-matcha-latte"
+   ]
+  },
+  "1de492414a5e": {
+   "file": "events/1de492414a5e.svg",
+   "text": "{\"brand\":\"Longevity Philadelphia\",\"drinks\":[\"iced matcha latte\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Longevity Philadelphia",
    "drinks": [
     "iced-matcha-latte"
    ]
@@ -10387,15 +10405,6 @@
    "brand": "WanYen",
    "drinks": [
     "iced-matcha-latte"
-   ]
-  },
-  "2af246a08639": {
-   "file": "events/2af246a08639.svg",
-   "text": "{\"brand\":\"We'll meet outside of the cafe, right at the entrance. Look for a girl holding a red sign\",\"drinks\":[\"matcha einspanner\"]}",
-   "v": "drink-1.1269cs5.h4q7c1",
-   "brand": "We'll meet outside of the cafe, right at the entrance. Look for a girl holding a red sign",
-   "drinks": [
-    "matcha-einspanner"
    ]
   },
   "2b8bab42332a": {
@@ -13722,6 +13731,16 @@
     "hojicha-latte"
    ]
   },
+  "df42a83f695e": {
+   "file": "events/df42a83f695e.svg",
+   "text": "{\"brand\":\"Central Matcha\",\"drinks\":[\"matcha shot\",\"iced matcha latte\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Central Matcha",
+   "drinks": [
+    "matcha-shot",
+    "iced-matcha-latte"
+   ]
+  },
   "dff4bcf1b2e1": {
    "file": "events/dff4bcf1b2e1.svg",
    "text": "{\"brand\":\"Creator’s Kitchen\",\"drinks\":[\"iced matcha latte\"]}",
@@ -13811,16 +13830,6 @@
    "brand": "Ruma Latte",
    "drinks": [
     "strawberry-matcha"
-   ]
-  },
-  "e515c047c297": {
-   "file": "events/e515c047c297.svg",
-   "text": "{\"brand\":\"Central Matcha\",\"drinks\":[\"matcha shot\",\"iced matcha latte\"]}",
-   "v": "drink-1.1269cs5.h4q7c1",
-   "brand": "Central Matcha",
-   "drinks": [
-    "matcha-shot",
-    "iced-matcha-latte"
    ]
   },
   "e5b55337e852": {

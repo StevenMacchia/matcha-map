@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T13:21:46.735Z",
+ "generated": "2026-11-27T18:09:29.946Z",
  "all": "/feeds/all.ics",
  "new": "/feeds/new.xml",
  "cities": {
@@ -48,7 +48,6 @@
   "indianapolis-in": "/feeds/indianapolis-in.ics",
   "irvine-ca": "/feeds/irvine-ca.ics",
   "jersey-city-nj": "/feeds/jersey-city-nj.ics",
-  "kenner-la": "/feeds/kenner-la.ics",
   "kirkland-wa": "/feeds/kirkland-wa.ics",
   "lansing-mi": "/feeds/lansing-mi.ics",
   "las-vegas-nv": "/feeds/las-vegas-nv.ics",
@@ -150,7 +149,6 @@
   "indianapolis-in": "Indianapolis, IN",
   "irvine-ca": "Irvine, CA",
   "jersey-city-nj": "Jersey City, NJ",
-  "kenner-la": "Kenner, LA",
   "kirkland-wa": "Kirkland, WA",
   "lansing-mi": "Lansing, MI",
   "las-vegas-nv": "Las Vegas, NV",

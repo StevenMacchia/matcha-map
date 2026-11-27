@@ -1,0 +1,32 @@
+{
+  "slot": "feed",
+  "time": "13:00",
+  "image_url": "https://matchamap.app/social/2026-11-28/07-feed-city-new-york.png",
+  "location": "New York, NY",
+  "link": "https://matchamap.app/city/ny/new-york/",
+  "user_tags": [
+    {
+      "username": "matchahouse.nyc",
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "username": "kijitorabrooklyn",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "mentions": [
+    "matchahouse.nyc",
+    "kijitorabrooklyn"
+  ],
+  "hashtags": [
+    "#matcha",
+    "#matchapopup",
+    "#matchamap",
+    "#matchanewyork",
+    "#newyorkfood",
+    "#supportsmallbusiness",
+    "#shopsmall"
+  ]
+}

@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Tox Overland Park pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a352375a7d75@matchamap-cu7.pages.dev
+DTSTAMP:20261127T180929Z
+LAST-MODIFIED:20261127T180929Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:SELF-CARE SOCIAL: YOGA + MATCHA
+LOCATION:The Tox Overland Park\, 6741 West 135th Street\, Overland Park\, K
+ S
+DESCRIPTION:Join Xochi Matcha+Wellness ×The Tox for yoga\, matcha\, and se
+ lf care! Explore The Tox’s new space\, lymphatic drainage\, and sculptin
+ g services\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/a
+ 352375a7d75/
+URL:https://matchamap.app/e/a352375a7d75/
+GEO:38.883659;-94.663888
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

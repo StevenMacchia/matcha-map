@@ -95,5 +95,48 @@
         "neon"
       ]
     }
+  },
+  "2026-11-28": {
+    "brands": [
+      "boxiparklakenona",
+      "kijitorabrooklyn",
+      "latte_syndrome",
+      "longevitycities",
+      "longevitypittsburgh",
+      "matchahouse.nyc",
+      "mngocafe",
+      "northeastteahouse",
+      "sabzmatcha",
+      "setsugekkaeastvillage"
+    ],
+    "shops": [
+      "brand:web-beans-cafe-ca-san-diego-4176-convoy-st-eff204",
+      "brand:web-northeast-tea-house-mn-minneapolis-224-e-henne-822c8f",
+      "osm:node/6916463756",
+      "brand:web-matcha-house-ny-new-york-203-east-10th-street-1f82de",
+      "brand:web-kijitora-ridgewood-ny-ridgewood-279-st-nichola-791f76",
+      "brand:web-kijitora-e14th-ny-new-york-534-east-14th-stree-1ea3c2"
+    ],
+    "regions": {
+      "triangle": {
+        "feed": 0,
+        "story": 0
+      }
+    },
+    "feat": {
+      "shop": "brand:web-northeast-tea-house-mn-minneapolis-224-e-henne-822c8f",
+      "metro": "MN/minneapolis",
+      "city": "NY/new-york"
+    },
+    "styles": {
+      "feed": [
+        "sticker",
+        "diner"
+      ],
+      "story": [
+        "editorial",
+        "comic"
+      ]
+    }
   }
 }

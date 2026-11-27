@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kraken Kourts | Bryant Street NE pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:9eebf67f82d5@matchamap-cu7.pages.dev
+DTSTAMP:20261127T180929Z
+LAST-MODIFIED:20261127T180929Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:JETSET on the Mat x SWTN
+LOCATION:Kraken Kourts | Bryant Street NE\, 514 Rhode Island Avenue\, Washi
+ ngton\, DC
+DESCRIPTION:FREE mat Pilates with JETSET Union Market x SWTN x Matcha Mami!
+ \nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/9eebf67f82d
+ 5/
+URL:https://matchamap.app/e/9eebf67f82d5/
+GEO:38.935393;-76.963138
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

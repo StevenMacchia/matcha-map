@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha event pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:899e8d13e316@matchamap-cu7.pages.dev
+DTSTAMP:20261127T180929Z
+LAST-MODIFIED:20261127T180929Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:TRÈS MATCHA! TRÈS FLEUR!
+LOCATION:420 East Church Street\, Orlando\, FL
+DESCRIPTION:This intimate holiday workshop blends hands-on matcha mixology\
+ , luxury floral design\, and decadent French pastries in a stunning.\nMenu
+ : pastry\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/899
+ e8d13e316/
+URL:https://matchamap.app/e/899e8d13e316/
+GEO:28.540125;-81.371571
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,717 @@
+{
+  "date": "2026-11-28",
+  "items": [
+    {
+      "slot": "story",
+      "kind": "location",
+      "time": "08:00",
+      "title": "New in California",
+      "tag": "New on the map",
+      "date": "2026-11-28",
+      "city": "San Diego",
+      "state": "CA",
+      "region": null,
+      "link": "https://matchamap.app/city/ca/san-diego/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchasandiego",
+        "#sandiegofood",
+        "#weekendplans",
+        "#matchadrinks"
+      ],
+      "caption": "New in California: Beans Cafe; Latte Syndrome.\n\nMore matcha in California: https://matchamap.app/city/ca/san-diego/\n\n#matcha #matchapopup #matchamap #matchasandiego #sandiegofood #weekendplans #matchadrinks\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [],
+      "shopId": null,
+      "group": {
+        "key": "s:CA",
+        "rows": [
+          {
+            "id": "brand:web-beans-cafe-ca-san-diego-4176-convoy-st-eff204",
+            "brand": "Beans Cafe",
+            "kind": "cafe",
+            "sub": "San Diego, CA",
+            "drinks": [
+              "Mango Matcha",
+              "Matcha"
+            ]
+          },
+          {
+            "id": "fe4893d609ce",
+            "brand": "Latte Syndrome",
+            "kind": "popup",
+            "sub": "10 am to 4 pm",
+            "drinks": [
+              "strawberry matcha einspanner",
+              "banana matcha"
+            ]
+          }
+        ],
+        "place": "California",
+        "title": "New in California",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Beans Cafe",
+          "Latte Syndrome"
+        ]
+      },
+      "role": "title",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": null,
+      "n": "01",
+      "name": "01-story-location-california",
+      "style": "editorial",
+      "image_url": "https://matchamap.app/social/2026-11-28/01-story-location-california.png"
+    },
+    {
+      "slot": "story",
+      "kind": "shop",
+      "time": "08:30",
+      "title": "Beans Cafe",
+      "tag": "New on the map",
+      "date": "2026-11-28",
+      "city": "San Diego",
+      "state": "CA",
+      "region": null,
+      "link": "https://matchamap.app/city/ca/san-diego/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchasandiego",
+        "#sandiegofood",
+        "#matchalatte",
+        "#matchalover"
+      ],
+      "caption": "New on the map: Beans Cafe (@mngocafe) in San Diego, CA. 4176 Convoy St..\n\nMatcha on the menu: Mango Matcha, Matcha, Pure Matcha, Matcha Latte.\n\nFind it and more matcha spots in San Diego: https://matchamap.app/city/ca/san-diego/\n\n#matcha #matchapopup #matchamap #matchasandiego #sandiegofood #matchalatte #matchalover\n",
+      "user_tags": [],
+      "mentions": [
+        "mngocafe"
+      ],
+      "brands": [
+        "mngocafe"
+      ],
+      "shopId": "brand:web-beans-cafe-ca-san-diego-4176-convoy-st-eff204",
+      "group": {
+        "key": "s:CA",
+        "rows": [
+          {
+            "id": "brand:web-beans-cafe-ca-san-diego-4176-convoy-st-eff204",
+            "brand": "Beans Cafe",
+            "kind": "cafe",
+            "sub": "San Diego, CA",
+            "drinks": [
+              "Mango Matcha",
+              "Matcha"
+            ]
+          },
+          {
+            "id": "fe4893d609ce",
+            "brand": "Latte Syndrome",
+            "kind": "popup",
+            "sub": "10 am to 4 pm",
+            "drinks": [
+              "strawberry matcha einspanner",
+              "banana matcha"
+            ]
+          }
+        ],
+        "place": "California",
+        "title": "New in California",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Beans Cafe",
+          "Latte Syndrome"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-beans-cafe-ca-san-diego-4176-convoy-st-eff204",
+        "name": "Beans Cafe",
+        "handle": "mngocafe",
+        "city": "San Diego",
+        "state": "CA",
+        "address": "4176 Convoy St.",
+        "drinks": [
+          "Mango Matcha",
+          "Matcha",
+          "Pure Matcha",
+          "Matcha Latte"
+        ],
+        "pour": {
+          "items": [
+            {
+              "name": "Mango Matcha",
+              "plain": false
+            },
+            {
+              "name": "Matcha",
+              "plain": false
+            },
+            {
+              "name": "Pure Matcha",
+              "plain": false
+            },
+            {
+              "name": "Matcha Latte",
+              "plain": false
+            },
+            {
+              "name": "Golden Brown Matcha Latte",
+              "plain": false
+            }
+          ],
+          "more": 7
+        },
+        "tier": "serves",
+        "seen": "2026-11-24"
+      },
+      "n": "02",
+      "name": "02-story-shop-beans-cafe",
+      "style": "editorial",
+      "image_url": "https://matchamap.app/social/2026-11-28/02-story-shop-beans-cafe.png"
+    },
+    {
+      "slot": "story",
+      "kind": "series",
+      "time": "09:00",
+      "title": "Every Thursday",
+      "tag": "Every Thursday",
+      "date": "2026-11-28",
+      "city": "Oakland",
+      "state": "CA",
+      "region": null,
+      "link": "https://matchamap.app/city/ca/oakland/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchaoakland",
+        "#oaklandfood",
+        "#icedmatcha",
+        "#matchatime"
+      ],
+      "caption": "Every Thursday: Latte Syndrome (@latte_syndrome) at Me Va Con Vietnamese Kitchen (sidewalk pop-up) in Oakland, CA, 10 am to 4 pm.\n\nNext one: Thursday, December 3.\n\nSchedules change; check their page before you go.\n\nMore matcha in Oakland: https://matchamap.app/city/ca/oakland/\n\n#matcha #matchapopup #matchamap #matchaoakland #oaklandfood #icedmatcha #matchatime\n",
+      "user_tags": [],
+      "mentions": [
+        "latte_syndrome"
+      ],
+      "brands": [
+        "latte_syndrome"
+      ],
+      "shopId": null,
+      "group": {
+        "key": "s:CA",
+        "rows": [
+          {
+            "id": "brand:web-beans-cafe-ca-san-diego-4176-convoy-st-eff204",
+            "brand": "Beans Cafe",
+            "kind": "cafe",
+            "sub": "San Diego, CA",
+            "drinks": [
+              "Mango Matcha",
+              "Matcha"
+            ]
+          },
+          {
+            "id": "fe4893d609ce",
+            "brand": "Latte Syndrome",
+            "kind": "popup",
+            "sub": "10 am to 4 pm",
+            "drinks": [
+              "strawberry matcha einspanner",
+              "banana matcha"
+            ]
+          }
+        ],
+        "place": "California",
+        "title": "New in California",
+        "n": 1,
+        "of": 2,
+        "names": [
+          "Beans Cafe",
+          "Latte Syndrome"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [
+        {
+          "id": "fe4893d609ce",
+          "brand": "Latte Syndrome",
+          "handle": "latte_syndrome",
+          "venue": "Me Va Con Vietnamese Kitchen (sidewalk pop-up)",
+          "venueHandle": null,
+          "address": "6101 Telegraph Ave, Oakland, CA 94609",
+          "city": "Oakland",
+          "state": "CA",
+          "day": "2026-12-03",
+          "time": "10 am to 4 pm",
+          "pour": {
+            "items": [
+              {
+                "name": "strawberry matcha einspanner",
+                "plain": false
+              },
+              {
+                "name": "banana matcha",
+                "plain": false
+              },
+              {
+                "name": "caramelized banana matcha",
+                "plain": false
+              },
+              {
+                "name": "vietnamese coffee",
+                "plain": false
+              }
+            ],
+            "more": 0
+          },
+          "menu": [
+            "strawberry matcha einspanner",
+            "banana matcha",
+            "caramelized banana matcha",
+            "manila ube"
+          ],
+          "series": "Every Thursday",
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "03",
+      "name": "03-story-series-oakland",
+      "style": "editorial",
+      "image_url": "https://matchamap.app/social/2026-11-28/03-story-series-oakland.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "featured-shop",
+      "time": "10:00",
+      "title": "Northeast Tea House",
+      "tag": "Featured shop",
+      "date": "2026-11-28",
+      "city": "Minneapolis",
+      "state": "MN",
+      "region": null,
+      "link": "https://matchamap.app/city/mn/minneapolis/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchaminneapolis",
+        "#minneapolisfood",
+        "#greentea",
+        "#popupshop"
+      ],
+      "caption": "Featured: Northeast Tea House in Minneapolis, MN. 224 E Hennepin Ave.\n\nWhat they pour: HOUSE MILLED MATCHA, MATCHAWARE, ABOUT FRESH MATCHA, HOW TO MAKE A BOWL OF MATCHA, WHOLESALE MATCHA.\n\nFind it and more matcha spots in Minneapolis: https://matchamap.app/city/mn/minneapolis/\n\n#matcha #matchapopup #matchamap #matchaminneapolis #minneapolisfood #greentea #popupshop\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [
+        "northeastteahouse"
+      ],
+      "shopId": "brand:web-northeast-tea-house-mn-minneapolis-224-e-henne-822c8f",
+      "group": null,
+      "role": null,
+      "why": "featured shop",
+      "metro": "MN/minneapolis",
+      "events": [],
+      "more": 0,
+      "shop": {
+        "id": "brand:web-northeast-tea-house-mn-minneapolis-224-e-henne-822c8f",
+        "name": "Northeast Tea House",
+        "handle": null,
+        "city": "Minneapolis",
+        "state": "MN",
+        "address": "224 E Hennepin Ave",
+        "drinks": [
+          "House-Milled Matcha",
+          "MATCHAWARE",
+          "ABOUT FRESH MATCHA",
+          "HOW TO MAKE A BOWL OF MATCHA"
+        ],
+        "pour": {
+          "items": [
+            {
+              "name": "HOUSE MILLED MATCHA",
+              "plain": false
+            },
+            {
+              "name": "MATCHAWARE",
+              "plain": true
+            },
+            {
+              "name": "ABOUT FRESH MATCHA",
+              "plain": false
+            },
+            {
+              "name": "HOW TO MAKE A BOWL OF MATCHA",
+              "plain": false
+            },
+            {
+              "name": "WHOLESALE MATCHA",
+              "plain": false
+            }
+          ],
+          "more": 0
+        },
+        "tier": "shop",
+        "seen": "2026-11-23"
+      },
+      "n": "04",
+      "name": "04-feed-featured-shop-northeast-tea-house",
+      "style": "sticker",
+      "image_url": "https://matchamap.app/social/2026-11-28/04-feed-featured-shop-northeast-tea-house.png"
+    },
+    {
+      "slot": "story",
+      "kind": "location",
+      "time": "11:30",
+      "title": "Today in Pennsylvania",
+      "tag": "Today",
+      "date": "2026-11-28",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "region": null,
+      "link": "https://matchamap.app/city/pa/pittsburgh/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchapittsburgh",
+        "#pittsburghfood",
+        "#greentea",
+        "#popupshop"
+      ],
+      "caption": "Today in Pennsylvania: Longevity Pittsburgh, Longevity Cities.\n\nMore matcha in Pennsylvania: https://matchamap.app/city/pa/pittsburgh/\n\n#matcha #matchapopup #matchamap #matchapittsburgh #pittsburghfood #greentea #popupshop\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [],
+      "shopId": null,
+      "group": {
+        "key": "s:PA",
+        "rows": [
+          {
+            "id": "b747a3db5628",
+            "brand": "Longevity Pittsburgh",
+            "kind": "popup",
+            "sub": "From 10 am",
+            "drinks": []
+          },
+          {
+            "id": "9da038c597d6",
+            "brand": "Longevity Cities",
+            "kind": "popup",
+            "sub": "10 am to 12 pm",
+            "drinks": []
+          }
+        ],
+        "place": "Pennsylvania",
+        "title": "Today in Pennsylvania",
+        "n": 2,
+        "of": 2,
+        "names": [
+          "Longevity Pittsburgh, Longevity Cities"
+        ]
+      },
+      "role": "title",
+      "why": null,
+      "metro": null,
+      "events": [],
+      "more": 0,
+      "shop": null,
+      "n": "05",
+      "name": "05-story-location-pennsylvania",
+      "style": "comic",
+      "image_url": "https://matchamap.app/social/2026-11-28/05-story-location-pennsylvania.png"
+    },
+    {
+      "slot": "story",
+      "kind": "today",
+      "time": "12:00",
+      "title": "Today in Pittsburgh",
+      "tag": "Today",
+      "date": "2026-11-28",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "region": null,
+      "link": "https://matchamap.app/city/pa/pittsburgh/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchapittsburgh",
+        "#pittsburghfood",
+        "#supportsmallbusiness",
+        "#shopsmall"
+      ],
+      "caption": "Today in Pittsburgh: 2 matcha pop-ups.\n\nLongevity Pittsburgh, from 10 am, Novaria coffee co.\nLongevity Cities, 10 am to 12 pm, Novaria coffee co.\n\nTimes and places come from each brand's own posts; check their page before you go.\n\nEvery pop-up in Pittsburgh on the map: https://matchamap.app/city/pa/pittsburgh/\n\n#matcha #matchapopup #matchamap #matchapittsburgh #pittsburghfood #supportsmallbusiness #shopsmall\n",
+      "user_tags": [],
+      "mentions": [],
+      "brands": [
+        "longevitypittsburgh",
+        "longevitycities"
+      ],
+      "shopId": null,
+      "group": {
+        "key": "s:PA",
+        "rows": [
+          {
+            "id": "b747a3db5628",
+            "brand": "Longevity Pittsburgh",
+            "kind": "popup",
+            "sub": "From 10 am",
+            "drinks": []
+          },
+          {
+            "id": "9da038c597d6",
+            "brand": "Longevity Cities",
+            "kind": "popup",
+            "sub": "10 am to 12 pm",
+            "drinks": []
+          }
+        ],
+        "place": "Pennsylvania",
+        "title": "Today in Pennsylvania",
+        "n": 2,
+        "of": 2,
+        "names": [
+          "Longevity Pittsburgh, Longevity Cities"
+        ]
+      },
+      "role": "content",
+      "why": null,
+      "metro": null,
+      "events": [
+        {
+          "id": "b747a3db5628",
+          "brand": "Longevity Pittsburgh",
+          "handle": null,
+          "venue": "Novaria coffee co.",
+          "venueHandle": null,
+          "address": "1812 Penn Ave",
+          "city": "Pittsburgh",
+          "state": "PA",
+          "day": "2026-11-28",
+          "time": "From 10 am",
+          "pour": null,
+          "menu": [],
+          "series": null,
+          "kind": "popup"
+        },
+        {
+          "id": "9da038c597d6",
+          "brand": "Longevity Cities",
+          "handle": null,
+          "venue": "Novaria coffee co.",
+          "venueHandle": null,
+          "address": "1812 Penn Avenue",
+          "city": "Pittsburgh",
+          "state": "PA",
+          "day": "2026-11-28",
+          "time": "10 am to 12 pm",
+          "pour": null,
+          "menu": [],
+          "series": null,
+          "kind": "popup"
+        }
+      ],
+      "more": 0,
+      "shop": null,
+      "n": "06",
+      "name": "06-story-today-pittsburgh",
+      "style": "comic",
+      "image_url": "https://matchamap.app/social/2026-11-28/06-story-today-pittsburgh.png"
+    },
+    {
+      "slot": "feed",
+      "kind": "city",
+      "time": "13:00",
+      "title": "New in New York",
+      "tag": "City feature",
+      "date": "2026-11-28",
+      "city": "New York",
+      "state": "NY",
+      "region": null,
+      "link": "https://matchamap.app/city/ny/new-york/",
+      "hashtags": [
+        "#matcha",
+        "#matchapopup",
+        "#matchamap",
+        "#matchanewyork",
+        "#newyorkfood",
+        "#supportsmallbusiness",
+        "#shopsmall"
+      ],
+      "caption": "New on the map in New York, NY: Setsugekka East Village, Matcha House (@matchahouse.nyc), Kijitora Ridgewood (@kijitorabrooklyn), Kijitora E14th (@kijitorabrooklyn), and 41 more.\n\nEvery matcha spot in New York: https://matchamap.app/city/ny/new-york/\n\n#matcha #matchapopup #matchamap #matchanewyork #newyorkfood #supportsmallbusiness #shopsmall\n",
+      "user_tags": [
+        {
+          "username": "matchahouse.nyc",
+          "x": 0.5,
+          "y": 0.5
+        },
+        {
+          "username": "kijitorabrooklyn",
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      "mentions": [
+        "matchahouse.nyc",
+        "kijitorabrooklyn"
+      ],
+      "brands": [
+        "setsugekkaeastvillage",
+        "matchahouse.nyc",
+        "kijitorabrooklyn",
+        "kijitorabrooklyn"
+      ],
+      "shopId": null,
+      "group": null,
+      "role": null,
+      "why": "city feature",
+      "metro": "NY/new-york",
+      "events": [
+        {
+          "id": "osm:node/6916463756",
+          "brand": "Setsugekka East Village",
+          "handle": null,
+          "kind": "cafe",
+          "venue": "",
+          "venueHandle": null,
+          "address": "",
+          "city": "New York",
+          "state": "NY",
+          "day": "2026-11-28",
+          "time": "New on the map",
+          "menu": [],
+          "series": null,
+          "pour": {
+            "items": [],
+            "more": 0
+          }
+        },
+        {
+          "id": "brand:web-matcha-house-ny-new-york-203-east-10th-street-1f82de",
+          "brand": "Matcha House",
+          "handle": "matchahouse.nyc",
+          "kind": "cafe",
+          "venue": "",
+          "venueHandle": null,
+          "address": "",
+          "city": "New York",
+          "state": "NY",
+          "day": "2026-11-28",
+          "time": "New on the map",
+          "menu": [],
+          "series": null,
+          "pour": {
+            "items": [],
+            "more": 0
+          }
+        },
+        {
+          "id": "brand:web-kijitora-ridgewood-ny-ridgewood-279-st-nichola-791f76",
+          "brand": "Kijitora Ridgewood",
+          "handle": "kijitorabrooklyn",
+          "kind": "cafe",
+          "venue": "",
+          "venueHandle": null,
+          "address": "",
+          "city": "New York",
+          "state": "NY",
+          "day": "2026-11-28",
+          "time": "New on the map",
+          "menu": [],
+          "series": null,
+          "pour": {
+            "items": [],
+            "more": 0
+          }
+        },
+        {
+          "id": "brand:web-kijitora-e14th-ny-new-york-534-east-14th-stree-1ea3c2",
+          "brand": "Kijitora E14th",
+          "handle": "kijitorabrooklyn",
+          "kind": "cafe",
+          "venue": "",
+          "venueHandle": null,
+          "address": "",
+          "city": "New York",
+          "state": "NY",
+          "day": "2026-11-28",
+          "time": "New on the map",
+          "menu": [],
+          "series": null,
+          "pour": {
+            "items": [],
+            "more": 0
+          }
+        }
+      ],
+      "more": 41,
+      "shop": null,
+      "n": "07",
+      "name": "07-feed-city-new-york",
+      "style": "diner",
+      "image_url": "https://matchamap.app/social/2026-11-28/07-feed-city-new-york.png"
+    }
+  ],
+  "featured": {
+    "brands": [
+      "boxiparklakenona",
+      "kijitorabrooklyn",
+      "latte_syndrome",
+      "longevitycities",
+      "longevitypittsburgh",
+      "matchahouse.nyc",
+      "mngocafe",
+      "northeastteahouse",
+      "sabzmatcha",
+      "setsugekkaeastvillage"
+    ],
+    "shops": [
+      "brand:web-beans-cafe-ca-san-diego-4176-convoy-st-eff204",
+      "brand:web-northeast-tea-house-mn-minneapolis-224-e-henne-822c8f",
+      "osm:node/6916463756",
+      "brand:web-matcha-house-ny-new-york-203-east-10th-street-1f82de",
+      "brand:web-kijitora-ridgewood-ny-ridgewood-279-st-nichola-791f76",
+      "brand:web-kijitora-e14th-ny-new-york-534-east-14th-stree-1ea3c2"
+    ],
+    "regions": {
+      "triangle": {
+        "feed": 0,
+        "story": 0
+      }
+    },
+    "styles": {
+      "feed": [
+        "sticker",
+        "diner"
+      ],
+      "story": [
+        "editorial",
+        "comic"
+      ]
+    },
+    "feat": {
+      "shop": "brand:web-northeast-tea-house-mn-minneapolis-224-e-henne-822c8f",
+      "metro": "MN/minneapolis",
+      "city": "NY/new-york"
+    }
+  }
+}
