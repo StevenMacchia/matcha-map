@@ -286,10 +286,14 @@
 .mm-sheet .mm-menu, .mm-compact .mm-menu { gap: .375rem; }
 .mm-sheet .mm-menu .mm-h { font-size: .75rem; }
 .mm-compact .mm-menu .mm-h { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.mm-sheet .mm-chips, .mm-compact .mm-chips { flex-wrap: nowrap; gap: .375rem; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; padding: 1px 1.75rem 4px 0; overscroll-behavior-x: contain;
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.75rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 1.75rem), transparent); }
+/* 2026-11-27 (Steven: nothing may cross the card edge): the menu wraps inside the card instead of scrolling sideways under a fade */
+.mm-sheet .mm-chips, .mm-compact .mm-chips { flex-wrap: wrap; gap: .375rem; overflow: visible; padding: 1px 0 4px 0; max-width: 100%; }
+/* the desktop pop-up keeps the buttons in view: its menu section sits after the buttons, so every chip wraps and none is cut */
+.mm-compact { display: flex; flex-direction: column; }
+.mm-compact .mm-menu { order: 5; }
+.mm-compact .mm-foot, .mm-compact .mm-footer { order: 6; }
 .mm-sheet .mm-chips::-webkit-scrollbar, .mm-compact .mm-chips::-webkit-scrollbar { display: none; }
-.mm-sheet .mm-chip, .mm-compact .mm-chip, .mm-sheet .mm-chip:nth-child(even), .mm-compact .mm-chip:nth-child(even) { flex: none; transform: none; white-space: nowrap; gap: .375rem; padding: .1875rem .75rem .1875rem .1875rem; font-size: .875rem; line-height: 1.3; border-width: 1.5px; box-shadow: 0 2px 0 var(--mm-stk); }
+.mm-sheet .mm-chip, .mm-compact .mm-chip, .mm-sheet .mm-chip:nth-child(even), .mm-compact .mm-chip:nth-child(even) { flex: none; transform: none; white-space: normal; max-width: 100%; min-width: 0; overflow-wrap: anywhere; text-align: left; gap: .375rem; padding: .1875rem .75rem .1875rem .1875rem; font-size: .875rem; line-height: 1.3; border-width: 1.5px; box-shadow: 0 2px 0 var(--mm-stk); }
 .mm-sheet .mm-chip-art, .mm-sheet .mm-chip .mm-cup, .mm-compact .mm-chip-art, .mm-compact .mm-chip .mm-cup { width: 1.5rem; height: 1.5rem; }
 
 /* the photo strip */

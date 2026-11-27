@@ -2,19 +2,22 @@
 #   "Matcha Map daily"  runs `npm run daily` every day at 13:00 local time (America/New_York, so it follows daylight saving):
 #                       pull, discover, watch, ingest, Yelp leads, deepen new shops, smoke, report, commit, push, deploy. No model calls.
 #   "Matcha Map watch"  runs `npm run watch` every hour (hashtag harvest, then the accounts that are due)
+#   "Matcha Map weekend" runs `npm run daily:popups` at 08:00 local time on Friday, Saturday and Sunday (Steven, 2026-11-27: the pop-up
+#                       map must be fresh on weekend mornings): pull, discover, watch, ingest, pages, seo-gate, smoke, report, commit, push, deploy.
 # The old 6-hourly "Matcha Map refresh" task is retired: registering removes it if it is there.
 #   powershell -ExecutionPolicy Bypass -File tools\windows-task.ps1            # register daily and watch
 #   powershell -ExecutionPolicy Bypass -File tools\windows-task.ps1 -Remove    # remove daily, watch and the retired refresh
 # Register it from the plain checkout (the task runs in the folder this script lives in; -Repo overrides that).
 # Runs as the current user, only while that user is signed in. No keys needed. Output goes to .cache\daily.log and .cache\watch.log.
-param([switch]$Remove, [string]$Repo = "", [string]$DailyAt = "13:00", [int]$WatchEveryHours = 1)
+param([switch]$Remove, [string]$Repo = "", [string]$DailyAt = "13:00", [int]$WatchEveryHours = 1, [string]$WeekendAt = "08:00")
 
 $ErrorActionPreference = "Stop"
 if (-not $Repo) { $Repo = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path }
 $Retired = @("Matcha Map refresh")
 $Jobs = @(
   @{ Name = "Matcha Map daily"; Npm = "daily"; Log = "daily.log"; About = "daily run (pull, discover, watch, ingest, leads, smoke, report, commit, push, deploy) at $DailyAt local time"; Daily = $true;  LimitHours = 3 },
-  @{ Name = "Matcha Map watch"; Npm = "watch"; Log = "watch.log"; About = "watch (hashtags, then due accounts) every $WatchEveryHours hours";                                          Daily = $false; LimitHours = 1 }
+  @{ Name = "Matcha Map watch"; Npm = "watch"; Log = "watch.log"; About = "watch (hashtags, then due accounts) every $WatchEveryHours hours";                                          Daily = $false; LimitHours = 1 },
+  @{ Name = "Matcha Map weekend"; Npm = "daily:popups"; Log = "weekend.log"; About = "pop-up refresh (pull, discover, watch, ingest, pages, gate, smoke, deploy) at $WeekendAt local time Fri-Sun"; Daily = $false; Weekend = $true; LimitHours = 2 }
 )
 
 if ($Remove) {
@@ -50,6 +53,8 @@ foreach ($j in $Jobs) {
   $action = New-ScheduledTaskAction -Execute "cmd.exe" -Argument $cmd -WorkingDirectory $Repo
   if ($j.Daily) {
     $trigger = New-ScheduledTaskTrigger -Daily -At $DailyAt
+  } elseif ($j.Weekend) {
+    $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Friday,Saturday,Sunday -At $WeekendAt
   } else {
     $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(5) -RepetitionInterval (New-TimeSpan -Hours $WatchEveryHours)
   }
@@ -61,5 +66,5 @@ foreach ($j in $Jobs) {
 
 Write-Output "  Repo:    $Repo"
 Write-Output "  Node:    $nodeDir"
-Write-Output "  Daily:   $DailyAt local time. Watch: first run in about 5 minutes."
+Write-Output "  Daily:   $DailyAt local time. Weekend pop-up refresh: $WeekendAt Fri-Sun. Watch: first run in about 5 minutes."
 Write-Output "  Remove:  powershell -ExecutionPolicy Bypass -File tools\windows-task.ps1 -Remove"

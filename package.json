@@ -61,7 +61,8 @@
     "shops:keyed": "node ingest/shops-keyed.js",
     "daily": "node ingest/daily.js",
     "shops:overture": "node ingest/shops-overture.js",
-    "shops:instagram": "node ingest/shops-instagram.js"
+    "shops:instagram": "node ingest/shops-instagram.js",
+    "daily:popups": "node ingest/daily.js --steps pull,discover,watch,ingest,pages,seo-gate,smoke,report,commit,push,deploy"
   },
   "license": "MIT",
   "devDependencies": {
