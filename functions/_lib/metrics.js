@@ -97,3 +97,42 @@ export async function dayCounts(kv, day, today) {
   }
   return d;
 }
+
+// ---- reading side: the numbers behind /api/metrics ----
+export const lastDays = (n, today = dayOf()) => Array.from({ length: n }, (_, i) => dayOf(new Date(Date.parse(today + "T00:00:00Z") - (n - 1 - i) * 864e5)));
+const addInto = (a, b) => { for (const [k, v] of Object.entries(b || {})) a[k] = (a[k] || 0) + v; return a; };
+const top = (o, n = 10) => Object.entries(o || {}).sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1)).slice(0, n).map(([name, count]) => ({ name, count }));
+
+// Parses docs/DAILY.md (the latest daily run) into { date, outcome, failures, events, upcoming, shops, cities, minutes }.
+export function parseDaily(text) {
+  const t = String(text || ""), g = (re) => { const m = re.exec(t); return m ? m[1].trim() : null; }, n = (v) => (v == null ? null : Number(v.replace(/,/g, "")));
+  const head = /^Daily run (\d{4}-\d{2}-\d{2}):\s*(.+)$/m.exec(t);
+  const ev = /- Events: ([\d,]+) total, ([\d,]+) upcoming/.exec(t);
+  return {
+    date: head ? head[1] : null, outcome: head ? head[2].trim() : "unknown", failures: g(/^- Failures: (.+)$/m),
+    events: ev ? n(ev[1]) : null, upcoming: ev ? n(ev[2]) : null, shops: n(g(/^- Shops shown: ([\d,]+)/m)), cities: n(g(/^- Cities with an upcoming pop-up: ([\d,]+)/m)), total: g(/Total ([^.]+)\./),
+  };
+}
+// perDay: [{ day, counts }] oldest first. Returns the whole payload except map size and run health (the caller adds those).
+export function summarize(perDay, { names = {}, rsvp = { rows: [] }, windows = [7, 30] } = {}) {
+  const series = perDay.map(({ day, counts: c }) => ({ day, human: c.views.human, bot: c.views.bot, humanVisitors: c.visitors.human, botVisitors: c.visitors.bot }));
+  const out = { series, windows: {} };
+  for (const w of windows) {
+    const days = perDay.slice(-w), agg = { state: {}, group: {}, path: {}, ref: {}, device: {}, feature: {}, item: {} };
+    let views = { human: 0, bot: 0 }, visitors = { human: 0, bot: 0 };
+    for (const { counts: c } of days) {
+      for (const k of Object.keys(agg)) addInto(agg[k], c[k]);
+      views.human += c.views.human; views.bot += c.views.bot; visitors.human += c.visitors.human; visitors.bot += c.visitors.bot;
+    }
+    const cutoff = days.length ? days[0].day : "", rows = rsvp.rows.filter((r) => (r.at || "").slice(0, 10) >= cutoff), perEvent = {}, perDayR = {};
+    for (const r of rows) { perEvent[r.event] = (perEvent[r.event] || 0) + 1; const d = r.at.slice(0, 10); perDayR[d] = (perDayR[d] || 0) + 1; }
+    out.windows[w] = {
+      views, visitors, states: top(agg.state, 60), groups: top(agg.group, 10), paths: top(agg.path, 12), referrers: top(agg.ref, 10), devices: top(agg.device, 5),
+      features: FEATURES.map((k) => ({ name: k, count: agg.feature[k] || 0 })),
+      clicked: top(agg.item, 15).map((x) => ({ ...x, label: names[x.name] || x.name.replace(/^[es]:/, "") })),
+      rsvp: { total: rows.length, perDay: days.map((d) => ({ day: d.day, count: perDayR[d.day] || 0 })), top: top(perEvent, 10).map((x) => ({ count: x.count, id: x.name, label: names["e:" + x.name] || x.name })) },
+    };
+  }
+  out.rsvp = { allTime: rsvp.rows.length, events: new Set(rsvp.rows.map((r) => r.event)).size };
+  return out;
+}

@@ -1,0 +1,1 @@
+{"date":"2026-11-27","outcome":"FAILED pull","failures":"pull (exit 1: sync: STOPPED: tracked file(s) changed that the run does not regenerate: docs/DAILY-RUN.md, package.json, site/cards.css)","events":696,"upcoming":388,"shops":701,"cities":102,"total":"30m 29s"}
