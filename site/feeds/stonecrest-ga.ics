@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha Map: Stonecrest\, GA
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:11ec11fcbe7a@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Matcha and Mingle: HOLIDAY EDITION
+LOCATION:Tammy's Little Cafe\, 1706 Highway\, Conyers\, GA
+DESCRIPTION:Celebrate the season with an interactive matcha class. Come sol
+ o or with a bestie for TLC’s holiday flavors & good vibes. Secure your s
+ pot!\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/11ec11f
+ cbe7a/
+URL:https://matchamap.app/e/11ec11fcbe7a/
+GEO:33.651101;-83.985925
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Amato pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:58155427aded@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
+DTSTART:20261127T170000Z
+DTEND:20261127T210000Z
+SUMMARY:amatō Pop-Up: Nov 27
+LOCATION:Maynard Crossing\, Raleigh\, NC
+DESCRIPTION:A Thanksgiving weekend pop-up from amatō at Maynard Crossing\,
+  serving matcha and hōjicha drinks. The Friday session is part of a three
+ -day Thanksgiving weekend schedule.\nLikely\, not fully confirmed.\nMore: 
+ https://matchamap.app/e/58155427aded/
+URL:https://matchamap.app/e/58155427aded/
+GEO:35.787088;-78.811547
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

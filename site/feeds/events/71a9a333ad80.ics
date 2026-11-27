@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Matcha event pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:71a9a333ad80@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Matcha at the Art Gallery
+LOCATION:1705 North 16th Street\, Tampa\, FL
+DESCRIPTION:92 Moss Co. brings matcha & ube drinks to Tropical Home Gallery
+ \, Ybor City\, Sat 11/28. Sip\, create & shop local. SIP DIFFERENT\nMenu: 
+ ube\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/71a9a333
+ ad80/
+URL:https://matchamap.app/e/71a9a333ad80/
+GEO:27.959718;-82.441618
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

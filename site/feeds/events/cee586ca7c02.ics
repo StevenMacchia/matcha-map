@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cure Nailhouse pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:cee586ca7c02@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+SUMMARY:MERRY MATCHA MAKINGG
+LOCATION:Cure Nailhouse\, 119 Garfield Street\, Detroit\, MI
+DESCRIPTION:Learn how to make two signature matcha drinks with Cafecito Alv
+ arez baristas and take home a matcha kit just in time for the holidays\nLi
+ kely\, not fully confirmed.\nMore: https://matchamap.app/e/cee586ca7c02/
+URL:https://matchamap.app/e/cee586ca7c02/
+GEO:42.354782;-83.060432
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

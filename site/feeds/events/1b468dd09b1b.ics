@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:ONDO Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:1b468dd09b1b@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
+DTSTART:20261128T173000Z
+DTEND:20261128T193000Z
+SUMMARY:Poolside Brunch & Contrast Therapy
+LOCATION:Los Angeles\, CA
+DESCRIPTION:A poolside brunch and mingling event with contrast therapy\, a 
+ cold plunge and a sauna. The programme includes a 9:30 am soundbath\, brun
+ ch served at 11:11 am\, and golden hour vibes and music at 3 pm.\nDetails 
+ not confirmed yet. Check the brand's post before you go.\nMore: https://ma
+ tchamap.app/e/1b468dd09b1b/
+URL:https://matchamap.app/e/1b468dd09b1b/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

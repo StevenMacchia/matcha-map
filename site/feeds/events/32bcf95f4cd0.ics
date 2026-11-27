@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kyru pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:32bcf95f4cd0@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T130001Z
+DTSTART:20261128T150000Z
+DTEND:20261128T190000Z
+SUMMARY:Kyru x Fixation Coffee Pop-Up
+LOCATION:Washington\, DC
+DESCRIPTION:Kyru and Fixation Coffee host a pop-up coffee and matcha menu a
+ t homme essentials' Small Business Saturday pop-up market.\nDetails not co
+ nfirmed yet. Check the brand's post before you go.\nMore: https://matchama
+ p.app/e/32bcf95f4cd0/
+URL:https://matchamap.app/e/32bcf95f4cd0/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

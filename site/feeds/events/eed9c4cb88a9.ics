@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Mandarine Matcha pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:eed9c4cb88a9@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
+DTSTART:20261128T150000Z
+DTEND:20261128T190000Z
+SUMMARY:mandarine matcha popup
+LOCATION:Pittsburgh\, PA
+DESCRIPTION:The final mandarine matcha popup of the year takes place at Stu
+ debaker Metals on Small Biz Saturday.\nDetails not confirmed yet. Check th
+ e brand's post before you go.\nMore: https://matchamap.app/e/eed9c4cb88a9/
+URL:https://matchamap.app/e/eed9c4cb88a9/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

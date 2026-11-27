@@ -1,8 +1,9 @@
 {
- "generated": "2026-11-26T18:19:10.133Z",
+ "generated": "2026-11-27T13:21:46.735Z",
  "all": "/feeds/all.ics",
  "new": "/feeds/new.xml",
  "cities": {
+  "abingdon-va": "/feeds/abingdon-va.ics",
   "albuquerque-nm": "/feeds/albuquerque-nm.ics",
   "alexandria-va": "/feeds/alexandria-va.ics",
   "anaheim-ca": "/feeds/anaheim-ca.ics",
@@ -92,8 +93,8 @@
   "sioux-falls-sd": "/feeds/sioux-falls-sd.ics",
   "st-charles-mo": "/feeds/st-charles-mo.ics",
   "st-george-ut": "/feeds/st-george-ut.ics",
-  "st-louis-mo": "/feeds/st-louis-mo.ics",
   "st-petersburg-fl": "/feeds/st-petersburg-fl.ics",
+  "stonecrest-ga": "/feeds/stonecrest-ga.ics",
   "tacoma-wa": "/feeds/tacoma-wa.ics",
   "tampa-fl": "/feeds/tampa-fl.ics",
   "tulsa-ok": "/feeds/tulsa-ok.ics",
@@ -104,6 +105,7 @@
   "west-des-moines-ia": "/feeds/west-des-moines-ia.ics"
  },
  "names": {
+  "abingdon-va": "Abingdon, VA",
   "albuquerque-nm": "Albuquerque, NM",
   "alexandria-va": "Alexandria, VA",
   "anaheim-ca": "Anaheim, CA",
@@ -193,8 +195,8 @@
   "sioux-falls-sd": "Sioux Falls, SD",
   "st-charles-mo": "St. Charles, MO",
   "st-george-ut": "St. George, UT",
-  "st-louis-mo": "St. Louis, MO",
   "st-petersburg-fl": "St. Petersburg, FL",
+  "stonecrest-ga": "Stonecrest, GA",
   "tacoma-wa": "Tacoma, WA",
   "tampa-fl": "Tampa, FL",
   "tulsa-ok": "Tulsa, OK",

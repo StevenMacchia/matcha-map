@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Celeste Matcha Haven pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:26d8e71c0024@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T130001Z
+DTSTART:20261205T150000Z
+DTEND:20261205T210000Z
+SUMMARY:Celeste Matcha Pop-Up at Sephora
+LOCATION:Washington\, VA
+DESCRIPTION:Celeste Matcha Haven hosts its first holiday-season pop-up at S
+ ephora Old Town Alexandria. Attendees can sip Celeste matcha and shop Seph
+ ora favorites.\nDetails not confirmed yet. Check the brand's post before y
+ ou go.\nMore: https://matchamap.app/e/26d8e71c0024/
+URL:https://matchamap.app/e/26d8e71c0024/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

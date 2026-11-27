@@ -707,6 +707,11 @@
     "miss": true,
     "at": 1795486087251
   },
+  "119 garfield street detroit mi 48201": {
+    "lat": 42.354782,
+    "lng": -83.060432,
+    "source": "nominatim"
+  },
   "11900 south st cerritos ca 90703": {
     "lat": 33.857945,
     "lng": -118.080338,
@@ -1620,6 +1625,16 @@
   "1702 bardstown road louisville ky 40205": {
     "lat": 38.229943,
     "lng": -85.703626,
+    "source": "nominatim"
+  },
+  "1705 north 16th street tampa fl 33605": {
+    "lat": 27.959718,
+    "lng": -82.441618,
+    "source": "nominatim"
+  },
+  "1706 highway conyers ga": {
+    "lat": 33.651101,
+    "lng": -83.985925,
     "source": "nominatim"
   },
   "17086 magnolia st fountain valley ca 92708": {
@@ -8778,6 +8793,11 @@
     "miss": true,
     "at": 1795430121703
   },
+  "venue: boxi park orlando fl": {
+    "lat": 28.373189,
+    "lng": -81.278165,
+    "source": "nominatim-venue"
+  },
   "venue: boxi park tampa fl": {
     "miss": true,
     "at": 1795474922379
@@ -8829,6 +8849,10 @@
     "miss": true,
     "at": 1795438433818
   },
+  "venue: cocoa + cream | toluca lake los angeles ca": {
+    "miss": true,
+    "at": 1795720595623
+  },
   "venue: columbus circle holiday market by urbanspace new york ny": {
     "miss": true,
     "at": 1795400388996
@@ -8861,6 +8885,10 @@
   "venue: eoc studio sacramento ca": {
     "miss": true,
     "at": 1795400384964
+  },
+  "venue: evolution of cuts studio sacramento ca": {
+    "miss": true,
+    "at": 1795785607873
   },
   "venue: fair oaks mall washington dc": {
     "lat": 38.862904,
@@ -8900,6 +8928,11 @@
     "lng": -81.209008,
     "source": "nominatim-venue"
   },
+  "venue: geek’d orlando fl": {
+    "lat": 28.554945,
+    "lng": -81.209008,
+    "source": "nominatim-venue"
+  },
   "venue: goodnight goose seattle wa": {
     "miss": true,
     "at": 1795436183287
@@ -8930,6 +8963,14 @@
   "venue: home ec san diego ca": {
     "miss": true,
     "at": 1795400352698
+  },
+  "venue: hometeam seattle wa": {
+    "miss": true,
+    "at": 1795785611048
+  },
+  "venue: homme essentials washington dc": {
+    "miss": true,
+    "at": 1795785614417
   },
   "venue: ifellinlovehere el paso tx": {
     "miss": true,
@@ -9018,6 +9059,11 @@
     "miss": true,
     "at": 1795400409229
   },
+  "venue: maynard crossing raleigh nc": {
+    "lat": 35.787088,
+    "lng": -78.811547,
+    "source": "nominatim-venue"
+  },
   "venue: mills park": {
     "lat": 39.662077,
     "lng": -77.710877,
@@ -9052,6 +9098,11 @@
   "venue: nola's ice cream orlando fl": {
     "miss": true,
     "at": 1795400477274
+  },
+  "venue: norinori houston tx": {
+    "lat": 29.705291,
+    "lng": -95.555368,
+    "source": "nominatim-venue"
   },
   "venue: olastudionyc brooklyn ny": {
     "miss": true,
@@ -9130,9 +9181,21 @@
     "miss": true,
     "at": 1795400371861
   },
+  "venue: salvatore gelateria sacramento ca": {
+    "miss": true,
+    "at": 1795785605773
+  },
   "venue: sandy springs farmers market atlanta ga": {
     "miss": true,
     "at": 1795400458309
+  },
+  "venue: seoul bowl – kirkland seattle wa": {
+    "miss": true,
+    "at": 1795785612230
+  },
+  "venue: sephora old town alexandria washington va": {
+    "miss": true,
+    "at": 1795785615453
   },
   "venue: sephora washington dc": {
     "lat": 38.905362,
@@ -9163,6 +9226,10 @@
   "venue: stonemill matcha our japanese san francisco ca": {
     "miss": true,
     "at": 1795400436508
+  },
+  "venue: studebaker metals pittsburgh pa": {
+    "miss": true,
+    "at": 1795785602571
   },
   "venue: studio bubby los angeles ca": {
     "miss": true,
@@ -9243,6 +9310,11 @@
     "miss": true,
     "at": 1795400407185
   },
+  "venue: vale matcha seattle wa": {
+    "lat": 47.617271,
+    "lng": -122.334857,
+    "source": "nominatim-venue"
+  },
   "venue: vvv washington dc": {
     "miss": true,
     "at": 1795441146477
@@ -9263,6 +9335,10 @@
   "venue: we'll meet outside of the cafe washington dc": {
     "miss": true,
     "at": 1795400479358
+  },
+  "venue: wynwood marketplace miami fl": {
+    "miss": true,
+    "at": 1795720597664
   },
   "vintage vintage vintage dc washington va": {
     "miss": true,

@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:e1056c059388@matchamap-cu7.pages.dev
-DTSTAMP:20261126T181910Z
-LAST-MODIFIED:20261126T181910Z
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
 DTSTART:20261127T150000Z
 DTEND:20261127T200000Z
 SUMMARY:Peko Peko Pop-Up at GEEK'D
 LOCATION:GEEK'D\, Orlando\, FL
-DESCRIPTION:Peko Peko's drinks-only pop-up at GEEK'D\, featuring cloud matc
- has and Vietnamese coffee. This is the final day to enjoy the November men
- u. Open from 10:00 AM to 3:00 PM.\nLikely\, not fully confirmed.\nMore: ht
- tps://matchamap.app/e/e1056c059388/
+DESCRIPTION:GEEK’D and Peko Peko present a one-day drinks-only pop-up fea
+ turing cloud matchas and Vietnamese coffee. This is the last day to try th
+ e seasonal menu. Open from 10:00 AM to 3:00 PM.\nLikely\, not fully confir
+ med.\nMore: https://matchamap.app/e/e1056c059388/
 URL:https://matchamap.app/e/e1056c059388/
 GEO:28.554945;-81.209008
 STATUS:CONFIRMED

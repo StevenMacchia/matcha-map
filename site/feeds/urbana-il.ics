@@ -8,16 +8,15 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:307c4fc83a42@matchamap-cu7.pages.dev
-DTSTAMP:20261126T181910Z
-LAST-MODIFIED:20261126T181910Z
-DTSTART:20261205T170000Z
-DTEND:20261205T180000Z
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
 SUMMARY:Japan House Mottainai Bazaar & Matcha Café
 LOCATION:Japan House\, 2000 South Lincoln Avenue\, Urbana\, IL
 DESCRIPTION:Japan House welcomes all to stop by and shop at our bazaar and 
- matcha café! Proceeds support Japan House interns and programming.\nPrice
- : Free\nLikely\, not fully confirmed.\nMore: https://matchamap.app/e/307c4
- fc83a42/
+ matcha café! Proceeds support Japan House interns and programming.\nLikel
+ y\, not fully confirmed.\nMore: https://matchamap.app/e/307c4fc83a42/
 URL:https://matchamap.app/e/307c4fc83a42/
 GEO:40.092796;-88.217943
 STATUS:CONFIRMED

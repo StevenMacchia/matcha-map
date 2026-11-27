@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Seoul Bowl pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:15f12d02637f@matchamap-cu7.pages.dev
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T130001Z
+DTSTART:20261128T190000Z
+DTEND:20261128T230000Z
+SUMMARY:Seoul Bowl x Kindred Tea Pop-Up
+LOCATION:Seattle\, WA
+DESCRIPTION:Seoul Bowl and Kindred Tea host a pop-up at Seoul Bowl's Kirkla
+ nd location. Bowls are served alongside seasonal sips including Blueberry 
+ Pie Matcha and Apple Pie Hojicha\, from 11 AM to 3 PM.\nMenu: blueberry\, 
+ hojicha\nDetails not confirmed yet. Check the brand's post before you go.\
+ nMore: https://matchamap.app/e/15f12d02637f/
+URL:https://matchamap.app/e/15f12d02637f/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

@@ -8,16 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:703f38ec7253@matchamap-cu7.pages.dev
-DTSTAMP:20261126T181910Z
-LAST-MODIFIED:20261126T181910Z
-DTSTART:20261201T170000Z
-DTEND:20261201T190000Z
-SUMMARY:MoonchildLand: Family & Friends
+DTSTAMP:20261127T132146Z
+LAST-MODIFIED:20261127T132146Z
+DTSTART:20261201T000000Z
+DTEND:20261201T020000Z
+SUMMARY:MoonchildLand Grand Opening
 LOCATION:San Antonio\, TX
-DESCRIPTION:Family & Friends begins the six-day MoonchildLand grand opening
- \, welcoming the people who have been part of Moonchild's journey to the f
- irst San Antonio storefront.\nDetails not confirmed yet. Check the brand's
-  post before you go.\nMore: https://matchamap.app/e/703f38ec7253/
+DESCRIPTION:MoonchildLand's six-day grand opening week brings local creativ
+ es\, independent businesses and special collaborations together in Downtow
+ n San Antonio.\nDetails not confirmed yet. Check the brand's post before y
+ ou go.\nMore: https://matchamap.app/e/703f38ec7253/
 URL:https://matchamap.app/e/703f38ec7253/
 STATUS:TENTATIVE
 CATEGORIES:Matcha

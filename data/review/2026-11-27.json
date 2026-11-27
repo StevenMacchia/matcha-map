@@ -1,0 +1,2910 @@
+{
+  "generated": "2026-11-27T13:00:01.991Z",
+  "items": [
+    {
+      "brand": "Japan Village",
+      "handle": "japanvillagebrooklyn",
+      "title": "Japanese Bread & Matcha Workshop",
+      "start": "2026-09-06T14:30:00-04:00",
+      "end": "2026-09-06T16:30:00-04:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Japan Village",
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.6627,
+      "lng": -73.9387,
+      "approx": true,
+      "source_id": "mato:japanvillagebrooklyn",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/japanese-bread-making-matcha-workshop-6-sept-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/japanese-bread-making-matcha-workshop-6-sept-2026"
+      },
+      "menu": [
+        "strawberry",
+        "mango iced matcha"
+      ],
+      "price": "$40",
+      "description": "A hands-on workshop at Japan Village centered on the history and culture of Japanese bread.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/japanese-bread-making-matcha-workshop-6-sept-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Merri Matcha",
+      "handle": "merrimatcha",
+      "title": "Morning Hike + Matcha",
+      "start": "2026-09-12T09:00:00-04:00",
+      "end": "2026-09-12T11:30:00-04:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Great Falls Park",
+      "city": "Washington",
+      "state": "DC",
+      "lat": 38.990455,
+      "lng": -77.251843,
+      "approx": false,
+      "source_id": "merri-matcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/morning-hike-matcha-12-sept-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/morning-hike-matcha-12-sept-2026"
+      },
+      "description": "Merri Matcha hosts a morning session at Great Falls Park. 5-mile hike designed to soak up the last bit of summer, followed by matcha together.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/morning-hike-matcha-12-sept-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "studio bubby | by sofia",
+      "handle": "studio.bubby",
+      "title": "Silver & Matcha Ceremony",
+      "start": "2026-09-13T10:00:00-07:00",
+      "end": "2026-09-13T13:00:00-07:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Studio Bubby",
+      "city": "Los Angeles",
+      "state": "CA",
+      "lat": 34.0194,
+      "lng": -118.4108,
+      "approx": true,
+      "source_id": "mato:studio.bubby",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/silver-matcha-ceremony-13-sep-2026-10am",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/silver-matcha-ceremony-13-sep-2026-10am"
+      },
+      "description": "Studio Bubby returns to their new Westwood space for a collaborative workshop with Little Match Studio. 9% pure silver and gemstones.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/silver-matcha-ceremony-13-sep-2026-10am"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Saint Spicer",
+      "handle": "saintsaidso",
+      "title": "Yoga + Matcha & Mini Massage",
+      "start": "2026-09-19T09:00:00-05:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "Pilot Knob",
+      "city": "Austin",
+      "state": "TX",
+      "lat": 30.164169,
+      "lng": -97.693215,
+      "approx": false,
+      "source_id": "mato:saintsaidso",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/yoga-matcha-19-sep-2026-1",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/yoga-matcha-19-sep-2026-1"
+      },
+      "price": "$20",
+      "description": "Saint Spicer hosts a Saturday morning yoga session featuring matcha and mini chair massages. The event takes place in South Austin near the intersection of South Congress and 71.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/yoga-matcha-19-sep-2026-1"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Admari | Modern Tea Merchants",
+      "handle": "admaritea",
+      "title": "Matcha, Matcha, Matcha",
+      "start": "2026-09-27",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Admari",
+      "city": "Miami",
+      "state": "FL",
+      "lat": 25.7752,
+      "lng": -80.2086,
+      "approx": true,
+      "source_id": "mato:admaritea",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/matcha-matcha-matcha-27-sep-2026-1",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-matcha-matcha-27-sep-2026-1"
+      },
+      "description": "A Sunday gathering focused entirely on matcha. Join the CommuniTea table to connect over bowls of green tea and modern tea culture.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-matcha-matcha-27-sep-2026-1"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Kyoto Coast Matcha",
+      "handle": "kyotocoastmatcha",
+      "title": "Matcha Monday: $1 Off Any Drink",
+      "start": "2026-10-05",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Kyoto Coast Matcha - Ocean Beach",
+      "address": "5013 Newport Ave",
+      "city": "San Diego",
+      "state": "CA",
+      "lat": 32.746935,
+      "lng": -117.251361,
+      "approx": false,
+      "source_id": "mato:kyotocoastmatcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/matcha-monday-1-off-any-drink-2026-10-05-ocean-beach",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-monday-1-off-any-drink-2026-10-05-ocean-beach"
+      },
+      "price": "$12",
+      "description": "Matcha Monday takes $1 off any drink, all day, at Kyoto Coast Matcha's Ocean Beach shop at 5013 Newport Ave.",
+      "confidence": "confirmed",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-monday-1-off-any-drink-2026-10-05-ocean-beach"
+      ],
+      "hours": "until sold out",
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Isshiki Matcha",
+      "handle": "isshikimatcha",
+      "title": "Isshiki Matcha x Curvlife Pop-Up",
+      "start": "2026-10-11T11:00:00-04:00",
+      "end": "2026-10-11T17:00:00-04:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Curvlife's pop-up",
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.6627,
+      "lng": -73.9387,
+      "approx": true,
+      "source_id": "isshiki-matcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/isshiki-matcha-x-curvlife-pop-up-oct-11-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/isshiki-matcha-x-curvlife-pop-up-oct-11-2026"
+      },
+      "menu": [
+        "caramel"
+      ],
+      "description": "Celebrate Curvlife's 5th anniversary with a special drink collaboration: caramel hazelnut topped with matcha or hōjicha cloud.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/isshiki-matcha-x-curvlife-pop-up-oct-11-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Kyru",
+      "handle": "kyrumatcha",
+      "title": "Matcha Paint N’ Sip Workshop",
+      "start": "2026-10-18T09:00:00-04:00",
+      "end": "2026-10-18T11:00:00-04:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "The Shop by Potters Union",
+      "city": "Washington",
+      "state": "VA",
+      "lat": 36.740236,
+      "lng": -81.942167,
+      "approx": true,
+      "source_id": "mato:kyrumatcha",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/matcha-paint-n-sip-workshop-potters-union-18-oct-2026-0900",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-paint-n-sip-workshop-potters-union-18-oct-2026-0900"
+      },
+      "menu": [
+        "matcha bowl"
+      ],
+      "price": "$65",
+      "description": "Kyru heads to Herndon to celebrate the opening of Potters Union’s new shop. You’ll get a locally handmade matcha bowl to paint while sipping on Kyru matcha.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-paint-n-sip-workshop-potters-union-18-oct-2026-0900"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Kyoto Coast Matcha",
+      "handle": "kyotocoastmatcha",
+      "title": "Pumpkin Pie & Pancake Matcha Launch",
+      "start": "2026-11-01",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Kyoto Coast Matcha – Ocean Beach",
+      "city": "San Diego",
+      "state": "CA",
+      "lat": 32.815,
+      "lng": -117.1356,
+      "approx": true,
+      "source_id": "mato:kyotocoastmatcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/pumpkin-pie-pancake-matcha-launch-01-nov-2026-1",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/pumpkin-pie-pancake-matcha-launch-01-nov-2026-1"
+      },
+      "menu": [
+        "pumpkin"
+      ],
+      "description": "Kyoto Coast Matcha launches Pumpkin Pie Matcha and Pancake Matcha at both of its locations on Sunday, November 1.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/pumpkin-pie-pancake-matcha-launch-01-nov-2026-1"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Atlanta Chinatown • 亞特蘭大中國城",
+      "handle": "atlchinatown",
+      "title": "Bliss'd & Whisk'd Matcha Workshop",
+      "start": "2026-11-07T12:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Momoko Mart @ Chinatown",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": 33.7629,
+      "lng": -84.4227,
+      "approx": true,
+      "source_id": "mato:atlchinatown",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/blissd-whiskd-matcha-workshop-2026-11-07-12pm",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/blissd-whiskd-matcha-workshop-2026-11-07-12pm"
+      },
+      "menu": [
+        "matcha bowl"
+      ],
+      "price": "$35",
+      "description": "Bliss'd & Whisk'd is an interactive, guided matcha-making workshop presented by Bliss'd and Momoko Mart. Sessions on November 7, 2026 are at 12pm, 3pm and 6pm.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/blissd-whiskd-matcha-workshop-2026-11-07-12pm"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Diablicos Coffee",
+      "handle": "diablicos.coffee",
+      "title": "Matcha Party 2.0",
+      "start": "2026-11-19T21:00:00-05:00",
+      "end": "2026-11-20T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Gardens Studio",
+      "city": "Orlando",
+      "state": "FL",
+      "lat": 28.4087,
+      "lng": -81.2548,
+      "approx": true,
+      "source_id": "mato:diablicos.coffee",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/matcha-party-20-19-nov-2026-1",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-party-20-19-nov-2026-1"
+      },
+      "description": "0 is a late-night matcha gathering at Gardens Studio in Winter Park on November 19, 2026. Featuring music, parking, and a lineup including Starbaby, Diablicos, Satcha, and Zuko.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-party-20-19-nov-2026-1"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Filo Cafe",
+      "handle": "filocaferockville",
+      "title": "Mika Matcha Birthday Pop-Up",
+      "start": "2026-11-21T10:00:00-05:00",
+      "end": "2026-11-21T15:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Filo Cafe",
+      "city": "Washington",
+      "state": "MD",
+      "lat": 39.58935,
+      "lng": -77.710254,
+      "approx": true,
+      "source_id": "filo-cafe",
+      "kind": "venue",
+      "source_url": "https://ma.to/event/mika-matcha-birthday-pop-up-21-nov-2026-1",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/mika-matcha-birthday-pop-up-21-nov-2026-1"
+      },
+      "menu": [
+        "banana",
+        "chocolate",
+        "ube"
+      ],
+      "price": "$10–11",
+      "description": "The Twenty-Two & Matcha Too birthday pop-up takes place at Filo Cafe in Rockville, Maryland, from 10 am to 3 pm.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/mika-matcha-birthday-pop-up-21-nov-2026-1"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "☁️ MATCHA & CLOUDS ☁️",
+      "start": "2026-11-24T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "address": "141 Northeast 22nd Street",
+      "city": "Miami",
+      "state": "FL",
+      "zip": "33137",
+      "lat": 25.798132,
+      "lng": -80.191704,
+      "approx": false,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/matcha-clouds-tickets-2005423081421",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-clouds-tickets-2005423081421"
+      },
+      "description": "Sip, relax, and escape into the vibes. Experience an aesthetic social atmosphere featuring refreshing matcha",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-clouds-tickets-2005423081421"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Boxi Park",
+      "handle": "boxiparklakenona",
+      "title": "Before It's Gone: Alive Coffee",
+      "start": "2026-11-27",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Boxi Park",
+      "city": "Orlando",
+      "state": "FL",
+      "lat": 28.373189,
+      "lng": -81.278165,
+      "approx": false,
+      "source_id": "mato:boxiparklakenona",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/before-its-gone-alive-coffee-27-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/before-its-gone-alive-coffee-27-nov-2026"
+      },
+      "description": "Alive Coffee serves healthy coffee and matcha at Boxi Park as part of the Before It's Gone pop-up. The three-day pop-up runs Nov. 27-29, 2026.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/before-its-gone-alive-coffee-27-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Mellobun Cafe x Matte Matcha Bar",
+      "handle": "mellobunbakery",
+      "title": "Mellobun at Salvatore Gelateria",
+      "start": "2026-11-27",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Salvatore Gelateria",
+      "city": "Sacramento",
+      "state": "CA",
+      "lat": 38.5677,
+      "lng": -121.4682,
+      "approx": true,
+      "source_id": "mellobun-matte-matcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/mellobun-at-salvatore-gelateria-27-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/mellobun-at-salvatore-gelateria-27-nov-2026"
+      },
+      "menu": [
+        "hojicha"
+      ],
+      "description": "Mellobun Bakery sets up at Salvatore Gelateria in Elk Grove on Friday, November 27, serving until 1 PM.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/mellobun-at-salvatore-gelateria-27-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Katsumi's Kakkoii Cafe – A Japanese Food & Culture Experience",
+      "start": "2026-11-27T00:00:00-05:00",
+      "tz": "America/Indiana/Indianapolis",
+      "all_day": true,
+      "address": "222 Main Street",
+      "city": "Beech Grove",
+      "state": "IN",
+      "zip": "46107",
+      "lat": 39.722049,
+      "lng": -86.084667,
+      "approx": false,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/katsumis-kakkoii-cafe-a-japanese-food-culture-experience-tickets-2002001914619",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/katsumis-kakkoii-cafe-a-japanese-food-culture-experience-tickets-2002001914619"
+      },
+      "description": "Experience Japanese food and culture, a fun two-hour Japanese cafe experience featuring authentic dishes, matcha, crafts and activities.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/katsumis-kakkoii-cafe-a-japanese-food-culture-experience-tickets-2002001914619"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "magnaye",
+      "handle": "magnaye.sd",
+      "title": "Espresso & Matcha Pop-Up at Patine",
+      "start": "2026-11-27T10:00:00-08:00",
+      "end": "2026-11-27T14:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Patine",
+      "address": "2722 Fifth Ave",
+      "city": "San Diego",
+      "state": "CA",
+      "lat": 33.116063,
+      "lng": -117.082913,
+      "approx": false,
+      "source_id": "mato:magnaye.sd",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/espresso-matcha-pop-up-at-patine-27-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/espresso-matcha-pop-up-at-patine-27-nov-2026"
+      },
+      "menu": [
+        "pastry"
+      ],
+      "description": "A Black Friday pop-up brings an espresso bar and a matcha bar to Patine, a culinary and cookbook shop in Bankers Hill. miel provides pastries. m. m. at 2722 Fifth Ave.",
+      "confidence": "confirmed",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/espresso-matcha-pop-up-at-patine-27-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Hometeam",
+      "handle": "h.o.m.e.t.e.a.m",
+      "title": "Hometeam Black Friday",
+      "start": "2026-11-27T11:00:00-08:00",
+      "end": "2026-11-27T17:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Hometeam",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
+      "source_id": "mato:h.o.m.e.t.e.a.m",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/hometeam-black-friday-27-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/hometeam-black-friday-27-nov-2026"
+      },
+      "description": "Hometeam hosts a Black Friday gathering with storewide discounts of up to 50 percent, available in person only. Mobile Munchies provides food, Matcha Man serves matcha, and Ronn Photos is on site.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/hometeam-black-friday-27-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "amato",
+      "handle": "amatosweetlover",
+      "title": "amatō Pop-Up: Nov 27",
+      "start": "2026-11-27T12:00:00-05:00",
+      "end": "2026-11-27T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Maynard Crossing",
+      "city": "Raleigh",
+      "state": "NC",
+      "lat": 35.787088,
+      "lng": -78.811547,
+      "approx": false,
+      "source_id": "amato-raleigh",
+      "kind": "cafe",
+      "source_url": "https://ma.to/event/amato-pop-up-nov-27-27-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/amato-pop-up-nov-27-27-nov-2026"
+      },
+      "description": "A Thanksgiving weekend pop-up from amatō at Maynard Crossing, serving matcha and hōjicha drinks. The Friday session is part of a three-day Thanksgiving weekend schedule.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/amato-pop-up-nov-27-27-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Boxi Park",
+      "handle": "boxiparklakenona",
+      "title": "Before It's Gone: Alive Coffee",
+      "start": "2026-11-28",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Boxi Park",
+      "city": "Orlando",
+      "state": "FL",
+      "lat": 28.373189,
+      "lng": -81.278165,
+      "approx": false,
+      "source_id": "mato:boxiparklakenona",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/before-its-gone-alive-coffee-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/before-its-gone-alive-coffee-28-nov-2026"
+      },
+      "description": "Alive Coffee serves healthy coffee and matcha at Boxi Park as part of the Before It's Gone pop-up. The three-day pop-up runs Nov. 27-29, 2026.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/before-its-gone-alive-coffee-28-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Forbidden Fruit | Creative Wellness",
+      "handle": "4bidden4ruit",
+      "title": "Matcha + Meetup: Philadelphia",
+      "start": "2026-11-28",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Philadelphia",
+      "city": "Philadelphia",
+      "state": "PA",
+      "lat": 39.952724,
+      "lng": -75.163526,
+      "approx": false,
+      "source_id": "mato:4bidden4ruit",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/matcha-meetup-philadelphia-2026-11-28",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-meetup-philadelphia-2026-11-28"
+      },
+      "description": "Matcha + Meetup: Philadelphia is a social meetup centered on matcha in Philadelphia.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-meetup-philadelphia-2026-11-28"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Moody Matcha Ritual",
+      "handle": "moodymatcharitual",
+      "title": "Moody Matcha Workshop",
+      "start": "2026-11-28",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Jiaren Cafe",
+      "city": "San Francisco",
+      "state": "CA",
+      "lat": 37.7793,
+      "lng": -122.4193,
+      "approx": true,
+      "source_id": "mato:moodymatcharitual",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/moody-matcha-workshop-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/moody-matcha-workshop-28-nov-2026"
+      },
+      "description": "A weekly public matcha workshop from Moody Matcha Ritual at Jiaren Cafe. The workshop is presented as a creative session, and advance sign-up is requested. The workshop recurs weekly.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/moody-matcha-workshop-28-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "NoriNori",
+      "handle": "norinorihtx",
+      "title": "MATCHEE Pop-Up - Nov 28",
+      "start": "2026-11-28",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "NoriNori",
+      "city": "Houston",
+      "state": "TX",
+      "lat": 29.705291,
+      "lng": -95.555368,
+      "approx": false,
+      "source_id": "mato:norinorihtx",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/matchee-pop-up-nov-28-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matchee-pop-up-nov-28-28-nov-2026"
+      },
+      "description": "A MATCHEE matcha and coffee pop-up at NoriNori in Houston, part of the November pop-up series.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matchee-pop-up-nov-28-28-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Charlotte",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Charlotte",
+      "state": "NC",
+      "lat": 35.209,
+      "lng": -80.831,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-charlotte-tickets-1972032359874",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-charlotte-tickets-1972032359874"
+      },
+      "menu": [
+        "latte"
+      ],
+      "description": "Join us for coffee, latte, or matcha! Each gathering is at a different coffee shop. Sip and socialize while building community.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-charlotte-tickets-1972032359874"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Cafe of the Week",
+      "title": "Matcha + Meetup: Miami | Creatives Edition",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Week",
+      "city": "Miami",
+      "state": "FL",
+      "lat": 25.7752,
+      "lng": -80.2086,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-week",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-miami-creatives-edition-tickets-1972036463147",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-miami-creatives-edition-tickets-1972036463147"
+      },
+      "menu": [
+        "latte"
+      ],
+      "description": "Join us for coffee, latte, or matcha! Each gathering is at a different coffee shop. Sip and socialize while building community.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-miami-creatives-edition-tickets-1972036463147"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Chengdu Teahouse",
+      "title": "Matcha Workshop",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/Detroit",
+      "all_day": true,
+      "venue": "Chengdu Teahouse",
+      "city": "Lansing",
+      "state": "MI",
+      "lat": 42.7143,
+      "lng": -84.5609,
+      "approx": true,
+      "source_id": "eventbrite:chengdu-teahouse",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-workshop-tickets-2004866195761",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-workshop-tickets-2004866195761"
+      },
+      "description": "Learn how to create an authentic matcha the traditional way with bamboo whisk and ceramic bowl which you get to keep. Also includes snacks.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-workshop-tickets-2004866195761"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Hastings Market @ Vanguard",
+      "title": "Music and Matcha - Hastings Market",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/Detroit",
+      "all_day": true,
+      "venue": "Hastings Market @ Vanguard",
+      "address": "2795 East Grand Boulevard",
+      "city": "Detroit",
+      "state": "MI",
+      "zip": "48211",
+      "lat": 42.376913,
+      "lng": -83.055792,
+      "approx": false,
+      "source_id": "eventbrite:hastings-market-vanguard",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/music-and-matcha-hastings-market-tickets-2003859965098",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/music-and-matcha-hastings-market-tickets-2003859965098"
+      },
+      "description": "Meet the NextUP313 market vendors - explore their products. Enjoy a relaxing morning of music, beverages, snacks and business networking",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/music-and-matcha-hastings-market-tickets-2003859965098"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Matcha at the Art Gallery",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "address": "1705 North 16th Street",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33605",
+      "lat": 27.959718,
+      "lng": -82.441618,
+      "approx": false,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/matcha-at-the-art-gallery-tickets-2005493222214",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-at-the-art-gallery-tickets-2005493222214"
+      },
+      "menu": [
+        "ube"
+      ],
+      "description": "92 Moss Co. brings matcha & ube drinks to Tropical Home Gallery, Ybor City, Sat 11/28. Sip, create & shop local. SIP DIFFERENT",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-at-the-art-gallery-tickets-2005493222214"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Restaurant of the Week",
+      "title": "Matcha + Meetup: Boca Raton | Creatives Edition",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Restaurant of the Week",
+      "city": "Boca Raton",
+      "state": "FL",
+      "lat": 26.3727,
+      "lng": -80.1037,
+      "approx": true,
+      "source_id": "eventbrite:restaurant-of-the-week",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400"
+      },
+      "menu": [
+        "latte"
+      ],
+      "description": "Join us for coffee, latte, or matcha at different cafes. Build your creative community in your city with a fun day out!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-boca-raton-creatives-edition-tickets-1986770283400"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Wishing Cup",
+      "title": "Matcha Tasting + Mug Making Workshop",
+      "start": "2026-11-28T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Wishing Cup",
+      "address": "45 Court",
+      "city": "Boston",
+      "state": "MA",
+      "lat": 42.28799,
+      "lng": -71.094442,
+      "approx": false,
+      "source_id": "eventbrite:wishing-cup",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-tasting-mug-making-workshop-tickets-2003747660191",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-tasting-mug-making-workshop-tickets-2003747660191"
+      },
+      "description": "Sip, sculpt + unwind! Learn hand-building techniques and shape your own one-of-a-kind clay cup, perfect for coffee or tea!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-tasting-mug-making-workshop-tickets-2003747660191"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Brews & Botox",
+      "start": "2026-11-28T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "Nspire",
+      "address": "455 Kehoe Boulevard",
+      "city": "Carol Stream",
+      "state": "IL",
+      "zip": "60188",
+      "lat": 41.909637,
+      "lng": -88.107625,
+      "approx": false,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854"
+      },
+      "price": "$50",
+      "description": "Ticket includes your choice of matcha, coffee or a mocktail, a professional consult, a lip flip and $50 toward your next service at Nspire.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/brews-botox-tickets-2004622497854"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Cafe of the Month",
+      "title": "Matcha + Meetup: Phoenix | Film + Music Industry Monthly Mingle",
+      "start": "2026-11-28T00:00:00-07:00",
+      "tz": "America/Phoenix",
+      "all_day": true,
+      "venue": "Cafe of the Month",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lat": 33.5722,
+      "lng": -112.0901,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-month",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-phoenix-film-music-industry-monthly-mingle-tickets-1992446556285",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-phoenix-film-music-industry-monthly-mingle-tickets-1992446556285"
+      },
+      "description": "Life can be lonely for creatives when you're busy with your passions. Meet us at a different cafe each month for coffee and conversation!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-phoenix-film-music-industry-monthly-mingle-tickets-1992446556285"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Japanese MatchaTea Ceremony Experience",
+      "start": "2026-11-28T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "address": "733 7th Avenue",
+      "city": "Kirkland",
+      "state": "WA",
+      "zip": "98033",
+      "lat": 47.680243,
+      "lng": -122.193928,
+      "approx": false,
+      "source_id": "eventbrite:event",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/japanese-matchatea-ceremony-experience-tickets-2004687639695",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/japanese-matchatea-ceremony-experience-tickets-2004687639695"
+      },
+      "description": "Experience the beauty of Japanese tea ceremony! Prepare your own matcha, enjoy seasonal sweets, and discover Japanese traditions.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/japanese-matchatea-ceremony-experience-tickets-2004687639695"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Kyru",
+      "handle": "kyrumatcha",
+      "title": "Kyru x Fixation Coffee Pop-Up",
+      "start": "2026-11-28T10:00:00-05:00",
+      "end": "2026-11-28T14:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "homme essentials",
+      "city": "Washington",
+      "state": "DC",
+      "lat": 38.9042,
+      "lng": -77.0165,
+      "approx": true,
+      "source_id": "mato:kyrumatcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/kyru-x-fixation-coffee-pop-up-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/kyru-x-fixation-coffee-pop-up-28-nov-2026"
+      },
+      "description": "Kyru and Fixation Coffee host a pop-up coffee and matcha menu at homme essentials' Small Business Saturday pop-up market.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/kyru-x-fixation-coffee-pop-up-28-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Littlefoot Matcha",
+      "title": "Littlefoot Matcha pop-up",
+      "start": "2026-11-28T10:00:00-05:00",
+      "end": "2026-11-28T14:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "city": "Greensboro",
+      "state": "NC",
+      "lat": 36.0949,
+      "lng": -79.8236,
+      "approx": true,
+      "source_id": "littlefoot-matcha",
+      "kind": "cafe",
+      "source_url": "https://littlefootmatcha.com/pages/find-us",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://littlefootmatcha.com/pages/find-us"
+      },
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "notes": "found by ownsites; city inferred from the source; pin at the city centre"
+    },
+    {
+      "brand": "Mandarine Matcha",
+      "handle": "mandarinematcha",
+      "title": "mandarine matcha popup",
+      "start": "2026-11-28T10:00:00-05:00",
+      "end": "2026-11-28T14:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Studebaker Metals",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "lat": 40.4399,
+      "lng": -79.9757,
+      "approx": true,
+      "source_id": "mandarine-matcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/mandarine-matcha-popup-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/mandarine-matcha-popup-28-nov-2026"
+      },
+      "description": "The final mandarine matcha popup of the year takes place at Studebaker Metals on Small Biz Saturday.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/mandarine-matcha-popup-28-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Mystic Moon",
+      "handle": "mysticmoonmarkets",
+      "title": "Shop Small Saturday Market & Swap",
+      "start": "2026-11-28T10:00:00-05:00",
+      "end": "2026-11-28T15:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Audubon Park Church",
+      "city": "Orlando",
+      "state": "FL",
+      "lat": 28.4087,
+      "lng": -81.2548,
+      "approx": true,
+      "source_id": "mato:mysticmoonmarkets",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/shop-small-saturday-28-nov-2026-2",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/shop-small-saturday-28-nov-2026-2"
+      },
+      "price": "free",
+      "description": "Shop Small Saturday is a local vendor market featuring curated vintage and Y2K vendors, $5 bins, art, handmade goods, decor, matcha, plants, and treats.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/shop-small-saturday-28-nov-2026-2"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Bakery Based",
+      "title": "Bakery Based pop-up at Moment Coffee",
+      "start": "2026-11-28T10:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Moment Coffee",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.649808,
+      "lng": -122.35001,
+      "approx": false,
+      "source_id": "roundups:bakery-based",
+      "kind": "popup",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-nov-703",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-nov-703"
+      },
+      "menu": [
+        "strawberry tiramisu",
+        "lychee rose tiramisu"
+      ],
+      "description": "TIRAMISU | FREMONT — Bakery Based is popping up with Viet coffee caramelized flan tiramisu, matcha strawberry tiramisu, pandan tiramisu, Thai tea tiramisu, lychee rose tiramisu, and butter tteok…",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-nov-703"
+      ],
+      "hours": "until sold out",
+      "notes": "found by roundups; city inferred from the source"
+    },
+    {
+      "brand": "amato",
+      "handle": "amatosweetlover",
+      "title": "amatō Pop-Up: Nov 28",
+      "start": "2026-11-28T10:30:00-05:00",
+      "end": "2026-11-28T15:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Maynard Crossing",
+      "city": "Raleigh",
+      "state": "NC",
+      "lat": 35.787088,
+      "lng": -78.811547,
+      "approx": false,
+      "source_id": "amato-raleigh",
+      "kind": "cafe",
+      "source_url": "https://ma.to/event/amato-pop-up-nov-28-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/amato-pop-up-nov-28-28-nov-2026"
+      },
+      "description": "A Thanksgiving weekend pop-up from amatō at Maynard Crossing, serving matcha and hōjicha drinks. The Saturday session is part of a three-day Thanksgiving weekend schedule.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/amato-pop-up-nov-28-28-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Sabz Matcha",
+      "handle": "sabzmatcha",
+      "title": "Sabz Matcha at Cocobolo",
+      "start": "2026-11-28T11:00:00-08:00",
+      "end": "2026-11-28T15:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Cocobolo",
+      "address": "626 St",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
+      "source_id": "mato:sabzmatcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/sabz-matcha-at-cocobolo-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/sabz-matcha-at-cocobolo-28-nov-2026"
+      },
+      "menu": [
+        "berry sweet",
+        "matcha afghani",
+        "lavender fields",
+        "pumpkin pie",
+        "matcha vanille"
+      ],
+      "description": "Sabz Matcha takes part in Small Business Saturday at Cocobolo, 626 St Helens Ave in Tacoma. The pop-up runs 11 AM-3 PM.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/sabz-matcha-at-cocobolo-28-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Seoul Bowl",
+      "handle": "seoul_bowl",
+      "title": "Seoul Bowl x Kindred Tea Pop-Up",
+      "start": "2026-11-28T11:00:00-08:00",
+      "end": "2026-11-28T15:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Seoul Bowl – Kirkland",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
+      "source_id": "mato:seoul_bowl",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/seoul-bowl-x-kindred-tea-pop-up-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/seoul-bowl-x-kindred-tea-pop-up-28-nov-2026"
+      },
+      "menu": [
+        "blueberry",
+        "hojicha"
+      ],
+      "description": "Seoul Bowl and Kindred Tea host a pop-up at Seoul Bowl's Kirkland location. Bowls are served alongside seasonal sips including Blueberry Pie Matcha and Apple Pie Hojicha, from 11 AM to 3 PM.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/seoul-bowl-x-kindred-tea-pop-up-28-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Cafe 86",
+      "title": "Cafe 86 pop-up at Biyahe World",
+      "start": "2026-11-28T14:00:00-08:00",
+      "end": "2026-11-28T20:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Biyahe World",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
+      "source_id": "roundups:cafe-86",
+      "kind": "popup",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-nov-703",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-nov-703"
+      },
+      "menu": [
+        "hojicha"
+      ],
+      "description": "MATCHA & HOJICHA | RENTON — Cafe 86 is popping up with an exclusive collab drink for the grand opening of Biyahe World, a Y2K showroom and consignment shop.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-nov-703"
+      ],
+      "notes": "found by roundups; city inferred from the source; pin at the city centre"
+    },
+    {
+      "brand": "Jiaren Cafe: Coffee, Boba & Events",
+      "handle": "jiarencafe",
+      "title": "Weekly Matcha Workshop",
+      "start": "2026-11-28T16:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Jiaren Cafe",
+      "city": "San Francisco",
+      "state": "CA",
+      "lat": 37.7793,
+      "lng": -122.4193,
+      "approx": true,
+      "source_id": "mato:jiarencafe",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/weekly-matcha-workshop-28-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/weekly-matcha-workshop-28-nov-2026"
+      },
+      "description": "The workshop explores Japanese tea culture through a look at matcha production from farm to cup, behind-the-scenes photos from a 2026 Japan tea journey and a shared matcha tasting.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/weekly-matcha-workshop-28-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre; dropped: better source has it"
+    },
+    {
+      "brand": "Boxi Park",
+      "handle": "boxiparklakenona",
+      "title": "Before It's Gone: Alive Coffee",
+      "start": "2026-11-29",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Boxi Park",
+      "city": "Orlando",
+      "state": "FL",
+      "lat": 28.373189,
+      "lng": -81.278165,
+      "approx": false,
+      "source_id": "mato:boxiparklakenona",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/before-its-gone-alive-coffee-29-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/before-its-gone-alive-coffee-29-nov-2026"
+      },
+      "description": "Alive Coffee serves healthy coffee and matcha at Boxi Park as part of the Before It's Gone pop-up. The three-day pop-up runs Nov. 27-29, 2026.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/before-its-gone-alive-coffee-29-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "NoriNori",
+      "handle": "norinorihtx",
+      "title": "MATCHEE Pop-Up - Nov 29",
+      "start": "2026-11-29",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "NoriNori",
+      "city": "Houston",
+      "state": "TX",
+      "lat": 29.705291,
+      "lng": -95.555368,
+      "approx": false,
+      "source_id": "mato:norinorihtx",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/matchee-pop-up-nov-29-29-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matchee-pop-up-nov-29-29-nov-2026"
+      },
+      "description": "A MATCHEE matcha and coffee pop-up at NoriNori in Houston, part of the November pop-up series.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matchee-pop-up-nov-29-29-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "She’s Invited",
+      "handle": "shesinvited",
+      "title": "Pink Matcha & Thrift Finds",
+      "start": "2026-11-29",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "Monarca Thrift Club",
+      "city": "Minneapolis",
+      "state": "MN",
+      "lat": 44.9633,
+      "lng": -93.2683,
+      "approx": true,
+      "source_id": "mato:shesinvited",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/all-girls-thrift-matcha-day-29-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/all-girls-thrift-matcha-day-29-nov-2026"
+      },
+      "description": "SHE’S INVITED hosts an all-girls thrifting and matcha day featuring Monarca Thrift Club and Waku Waku Tea Bar.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/all-girls-thrift-matcha-day-29-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Tampa (Giving Back Edition)",
+      "start": "2026-11-29T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Tampa",
+      "state": "FL",
+      "lat": 27.9701,
+      "lng": -82.4797,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-tampa-giving-back-edition-tickets-1990218309539",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-tampa-giving-back-edition-tickets-1990218309539"
+      },
+      "description": "Join us for coffee at different cafe. Build your community while supporting local businesses, and giving back to people in need.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-tampa-giving-back-edition-tickets-1990218309539"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Chai Khana",
+      "title": "Matcha & Me: After Hours (Friendsgiving Edition)",
+      "start": "2026-11-29T00:00:00-05:00",
+      "tz": "America/Detroit",
+      "all_day": true,
+      "venue": "Chai Khana",
+      "address": "3574 2nd Avenue",
+      "city": "Detroit",
+      "state": "MI",
+      "zip": "48201",
+      "lat": 42.34542,
+      "lng": -83.063155,
+      "approx": false,
+      "source_id": "eventbrite:chai-khana",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/matcha-me-after-hours-friendsgiving-edition-tickets-2005005550575",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-me-after-hours-friendsgiving-edition-tickets-2005005550575"
+      },
+      "description": "Join us for the last Matcha & Me of the year. Meet new people, enjoy great music and matcha. Slow down and reflect.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-me-after-hours-friendsgiving-edition-tickets-2005005550575"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "KINKA",
+      "title": "Matcha 101 'Whisk & Sip'",
+      "start": "2026-11-29T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "KINKA",
+      "address": "63 East 7th Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10003",
+      "lat": 40.727665,
+      "lng": -73.986861,
+      "approx": false,
+      "source_id": "eventbrite:kinka",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-101-whisk-sip-tickets-2004290027426",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-101-whisk-sip-tickets-2004290027426"
+      },
+      "description": "Join us Matcha 101! Learn about Matcha and How to whisk and drink.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-101-whisk-sip-tickets-2004290027426"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Miami Run Club",
+      "handle": "miamirunclub",
+      "title": "Run, Matcha & Fiesta",
+      "start": "2026-11-29T09:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "El Patio Wynwood",
+      "city": "Miami",
+      "state": "FL",
+      "lat": 25.7752,
+      "lng": -80.2086,
+      "approx": true,
+      "source_id": "mato:miamirunclub",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/run-matcha-fiesta-29-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/run-matcha-fiesta-29-nov-2026"
+      },
+      "price": "$10",
+      "description": "El Patio Wynwood hosts a morning gathering of Miami Run Club, Miami Lakes Run Club and Runknown Run Club.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/run-matcha-fiesta-29-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Mellobun Cafe x Matte Matcha Bar",
+      "handle": "mellobunbakery",
+      "title": "Mellobun x Matte Matcha Pop-Up",
+      "start": "2026-11-29T09:00:00-08:00",
+      "end": "2026-11-29T13:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Evolution of Cuts Studio",
+      "city": "Sacramento",
+      "state": "CA",
+      "lat": 38.5677,
+      "lng": -121.4682,
+      "approx": true,
+      "source_id": "mellobun-matte-matcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/bloom-brew-pop-up-market-29-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/bloom-brew-pop-up-market-29-nov-2026"
+      },
+      "menu": [
+        "chocolate",
+        "banana",
+        "cookie",
+        "hojicha",
+        "pastry"
+      ],
+      "description": "A joint pop-up from Mellobun Bakery and Matte Matcha Bar at Bloom 'n Brew inside Evolution of Cuts Studio. Mellobun features chocolate banana salt breads, apple biscoff cinnamon rolls, and cookies.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/bloom-brew-pop-up-market-29-nov-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "amato",
+      "handle": "amatosweetlover",
+      "title": "amatō Pop-Up: Nov 29",
+      "start": "2026-11-29T10:30:00-05:00",
+      "end": "2026-11-29T15:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Maynard Crossing",
+      "city": "Raleigh",
+      "state": "NC",
+      "lat": 35.787088,
+      "lng": -78.811547,
+      "approx": false,
+      "source_id": "amato-raleigh",
+      "kind": "cafe",
+      "source_url": "https://ma.to/event/amato-pop-up-nov-29-29-nov-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/amato-pop-up-nov-29-29-nov-2026"
+      },
+      "menu": [
+        "pastry"
+      ],
+      "description": "A Thanksgiving weekend pop-up from amatō at Maynard Crossing, serving matcha and hōjicha drinks.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/amato-pop-up-nov-29-29-nov-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "STILLROOM Presents:",
+      "title": "Moss & Matcha",
+      "start": "2026-11-29T12:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "STILLROOM",
+      "city": "Irvington",
+      "state": "NY",
+      "lat": 41.039866,
+      "lng": -73.872717,
+      "approx": true,
+      "source_id": "meetup:stillroom-presents",
+      "kind": "popup",
+      "source_url": "https://www.meetup.com/irvington-small-business-marketing-strategy-meetup-group/events/317332294/",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.meetup.com/irvington-small-business-marketing-strategy-meetup-group/events/317332294/"
+      },
+      "price": "$75",
+      "description": "A little moss, a little matcha, and something green to bring home.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.meetup.com/irvington-small-business-marketing-strategy-meetup-group/events/317332294/"
+      ],
+      "notes": "found by meetup; pin at the city centre"
+    },
+    {
+      "brand": "Longevity New York",
+      "title": "Matcha & Walk | The High Line",
+      "start": "2026-11-29T15:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Blue Bottle Coffee",
+      "city": "New York",
+      "state": "NY",
+      "lat": 40.806297,
+      "lng": -73.965491,
+      "approx": false,
+      "source_id": "meetup:longevity-new-york",
+      "kind": "popup",
+      "source_url": "https://www.meetup.com/longevity-new-york/events/317490659/",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.meetup.com/longevity-new-york/events/317490659/"
+      },
+      "description": "Let's walk off the Thanksgiving Dinner!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.meetup.com/longevity-new-york/events/317490659/"
+      ],
+      "notes": "found by meetup"
+    },
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Tampa | Creatives Edition",
+      "start": "2026-11-30T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Tampa",
+      "state": "FL",
+      "lat": 27.9701,
+      "lng": -82.4797,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-tampa-creatives-edition-tickets-1986770109881",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-tampa-creatives-edition-tickets-1986770109881"
+      },
+      "menu": [
+        "latte"
+      ],
+      "description": "Join us for coffee, latte, or matcha at different cafes. Build your creative community in your city with a fun day out!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-tampa-creatives-edition-tickets-1986770109881"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Littlefoot Matcha",
+      "title": "Littlefoot Matcha pop-up",
+      "start": "2026-12-03T16:00:00-05:00",
+      "end": "2026-12-03T19:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "city": "Greensboro",
+      "state": "NC",
+      "lat": 36.0949,
+      "lng": -79.8236,
+      "approx": true,
+      "source_id": "littlefoot-matcha",
+      "kind": "cafe",
+      "source_url": "https://littlefootmatcha.com/pages/find-us",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://littlefootmatcha.com/pages/find-us"
+      },
+      "price": "free",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "notes": "found by ownsites; city inferred from the source; pin at the city centre"
+    },
+    {
+      "brand": "Pilates by Siren Curves MAT STUDIO",
+      "title": "POPPISmas x Pilates: Matcha & Mingle",
+      "start": "2026-12-04T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "Pilates by Siren Curves MAT STUDIO",
+      "address": "1109 South 348th Street",
+      "city": "Federal Way",
+      "state": "WA",
+      "zip": "98003",
+      "lat": 47.289773,
+      "lng": -122.319894,
+      "approx": false,
+      "source_id": "eventbrite:pilates-by-siren-curves-mat-studio",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681"
+      },
+      "description": "Celebrate the holidays with Pilates, festive matcha, Poppi, flowers, fragrance-making, and a cozy girls' night!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/poppismas-x-pilates-matcha-mingle-tickets-2005105551681"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Personal",
+      "title": "Alma Matcha After Hours Vinyl Bar",
+      "start": "2026-12-04T19:00:00-05:00",
+      "end": "2026-12-04T21:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Alma Matcha",
+      "address": "701 NW 5th Ave Unit 1011",
+      "city": "Fort Lauderdale",
+      "state": "FL",
+      "zip": "33311",
+      "lat": 26.131492,
+      "lng": -80.148896,
+      "approx": false,
+      "source_id": "luma:personal",
+      "kind": "popup",
+      "source_url": "https://luma.com/yl39w46b",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://luma.com/yl39w46b"
+      },
+      "confidence": "confirmed",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://luma.com/yl39w46b"
+      ],
+      "notes": "found by luma"
+    },
+    {
+      "brand": "Energi Studios",
+      "title": "December 2026 Spicy Sculpt with Goldies x Energi",
+      "start": "2026-12-05T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Energi Studios",
+      "address": "4126 Lorain Avenue",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44113",
+      "lat": 41.480215,
+      "lng": -81.714069,
+      "approx": false,
+      "source_id": "eventbrite:energi-studios",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/december-2026-spicy-sculpt-with-goldies-x-energi-registration-2004799251529",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/december-2026-spicy-sculpt-with-goldies-x-energi-registration-2004799251529"
+      },
+      "description": "Join us for Spicy Sculpt, a feel-good sculpt pilates class set to a Latin playlist, followed by coffee and matcha at Goldie's!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/december-2026-spicy-sculpt-with-goldies-x-energi-registration-2004799251529"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Bluestone Lane - Downtown Café",
+      "title": "Whisk & Bloom: The Art of Matcha Class ($24.99)",
+      "start": "2026-12-05T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "Bluestone Lane - Downtown Café",
+      "address": "127 Rosa L Parks Boulevard",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37203",
+      "lat": 36.159821,
+      "lng": -86.782943,
+      "approx": false,
+      "source_id": "eventbrite:bluestone-lane-downtown-cafe",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/whisk-bloom-the-art-of-matcha-class-2499-tickets-1994691663461",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/whisk-bloom-the-art-of-matcha-class-2499-tickets-1994691663461"
+      },
+      "menu": [
+        "latte"
+      ],
+      "price": "$24.99",
+      "description": "Learn the art of matcha! Join us at Bluestone Lane for a hands-on latte art class featuring premium matcha, expert tips & delicious sips.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/whisk-bloom-the-art-of-matcha-class-2499-tickets-1994691663461"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Japan House",
+      "title": "Japan House Mottainai Bazaar & Matcha Café",
+      "start": "2026-12-05T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "Japan House",
+      "address": "2000 South Lincoln Avenue",
+      "city": "Urbana",
+      "state": "IL",
+      "zip": "61802",
+      "lat": 40.092796,
+      "lng": -88.217943,
+      "approx": false,
+      "source_id": "eventbrite:japan-house",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903"
+      },
+      "description": "Japan House welcomes all to stop by and shop at our bazaar and matcha café! Proceeds support Japan House interns and programming.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/japan-house-mottainai-bazaar-matcha-cafe-tickets-2005045445903"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Northeast Tea House",
+      "title": "Matcha Cultivars, History, and Preparation!",
+      "start": "2026-12-05T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "Northeast Tea House",
+      "address": "224 East Hennepin Avenue",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55414",
+      "lat": 44.987698,
+      "lng": -93.256485,
+      "approx": false,
+      "source_id": "eventbrite:northeast-tea-house",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/matcha-cultivars-history-and-preparation-tickets-2005210721246",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-cultivars-history-and-preparation-tickets-2005210721246"
+      },
+      "description": "Join us for a deep dive into the world of Matcha and its many cultivars, tasting, learning, and exploring together!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-cultivars-history-and-preparation-tickets-2005210721246"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "@fujiyahawaii",
+      "handle": "fujiyahawaii",
+      "title": "Mochi & Matcha Fest",
+      "start": "2026-12-05T09:00:00-10:00",
+      "end": "2026-12-05T13:00:00-10:00",
+      "tz": "Pacific/Honolulu",
+      "all_day": false,
+      "venue": "JCCH",
+      "city": "Honolulu",
+      "state": "HI",
+      "lat": 21.3243,
+      "lng": -157.8476,
+      "approx": true,
+      "source_id": "mato:fujiyahawaii",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/mochi-matcha-fest-05-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/mochi-matcha-fest-05-dec-2026"
+      },
+      "menu": [
+        "mochi"
+      ],
+      "price": "free",
+      "description": "The first Mochi & Matcha Fest in Mōʻiliʻili is a pet- and family-friendly day of mochi and matcha with free admission.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/mochi-matcha-fest-05-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre; dropped: better source has it"
+    },
+    {
+      "brand": "Celeste Matcha Haven",
+      "handle": "celeste.matcha.haven",
+      "title": "Celeste Matcha Pop-Up at Sephora",
+      "start": "2026-12-05T10:00:00-05:00",
+      "end": "2026-12-05T16:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Sephora Old Town Alexandria",
+      "city": "Washington",
+      "state": "VA",
+      "lat": 36.740236,
+      "lng": -81.942167,
+      "approx": true,
+      "source_id": "celeste-matcha-haven",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/celeste-matcha-pop-up-at-sephora-05-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/celeste-matcha-pop-up-at-sephora-05-dec-2026"
+      },
+      "description": "Celeste Matcha Haven hosts its first holiday-season pop-up at Sephora Old Town Alexandria. Attendees can sip Celeste matcha and shop Sephora favorites.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/celeste-matcha-pop-up-at-sephora-05-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Personal",
+      "title": "Pilates & Matcha: with The Ethereal x JETSET Pilates",
+      "start": "2026-12-05T10:30:00-05:00",
+      "end": "2026-12-05T13:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Flow Wynwood",
+      "address": "176 NW 25th St",
+      "city": "Miami",
+      "state": "FL",
+      "zip": "33127",
+      "lat": 25.800662,
+      "lng": -80.198562,
+      "approx": false,
+      "source_id": "luma:personal",
+      "kind": "popup",
+      "source_url": "https://luma.com/wmmlzm46",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://luma.com/wmmlzm46"
+      },
+      "confidence": "confirmed",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://luma.com/wmmlzm46"
+      ],
+      "notes": "found by luma"
+    },
+    {
+      "brand": "Sabz Matcha",
+      "handle": "sabzmatcha",
+      "title": "Aveda x Sabz Matcha",
+      "start": "2026-12-05T11:00:00-08:00",
+      "end": "2026-12-05T16:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Aveda Store at Bellevue Square",
+      "city": "Seattle",
+      "state": "WA",
+      "lat": 47.6193,
+      "lng": -122.3515,
+      "approx": true,
+      "source_id": "mato:sabzmatcha",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/aveda-x-sabz-matcha-05-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/aveda-x-sabz-matcha-05-dec-2026"
+      },
+      "menu": [
+        "berry sweet",
+        "matcha afghani",
+        "lavender fields",
+        "pumpkin pie",
+        "matcha vanille"
+      ],
+      "description": "Sabz Matcha and Aveda hold a collaboration pop-up at the Aveda Store at Bellevue Square. The pop-up runs 11 AM-4 PM. A seasonal flavor is planned for the December pop-up.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/aveda-x-sabz-matcha-05-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Ricky Ly",
+      "handle": "tastychomps",
+      "title": "Très Matcha! Très Fleur! (1 PM)",
+      "start": "2026-12-05T13:00:00-05:00",
+      "end": "2026-12-05T15:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Amore Mio Florals Studio",
+      "city": "Orlando",
+      "state": "FL",
+      "lat": 28.4087,
+      "lng": -81.2548,
+      "approx": true,
+      "source_id": "mato:tastychomps",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/tres-matcha-tres-fleur-1-pm-05-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/tres-matcha-tres-fleur-1-pm-05-dec-2026"
+      },
+      "menu": [
+        "macaron",
+        "madeleine"
+      ],
+      "description": "Très Matcha! Très Fleur! is a one-day holiday workshop hosted by and at Amore Mio Florals Studio.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/tres-matcha-tres-fleur-1-pm-05-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Jiaren Cafe: Coffee, Boba & Events",
+      "handle": "jiarencafe",
+      "title": "Moody Matcha Workshop",
+      "start": "2026-12-05T16:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Jiaren Cafe",
+      "city": "San Francisco",
+      "state": "CA",
+      "lat": 37.7793,
+      "lng": -122.4193,
+      "approx": true,
+      "source_id": "mato:jiarencafe",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/moody-matcha-workshop-05-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/moody-matcha-workshop-05-dec-2026"
+      },
+      "description": "The workshop explores Japanese tea culture through a look at matcha production from farm to cup, behind-the-scenes photos from a 2026 Japan tea journey, and a shared matcha tasting.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/moody-matcha-workshop-05-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Cafe Monet Art & Clay Studio",
+      "handle": "cafe_monet_studio",
+      "title": "Matcha Bowl & Whisk Holder Workshop",
+      "start": "2026-12-06",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "Cafe Monet Art & Clay Studio",
+      "city": "Austin",
+      "state": "TX",
+      "lat": 30.2986,
+      "lng": -97.7541,
+      "approx": true,
+      "source_id": "mato:cafe_monet_studio",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/matcha-bowl-whisk-holder-workshop-06-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-bowl-whisk-holder-workshop-06-dec-2026"
+      },
+      "menu": [
+        "matcha bowl"
+      ],
+      "price": "$85",
+      "description": "The two-hour matcha-inspired pottery workshop covers throwing a matcha bowl on the pottery wheel with instructor guidance and painting a premade ceramic whisk holder to complete the set.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-bowl-whisk-holder-workshop-06-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Pink Pilates + Matcha & Social Hour",
+      "start": "2026-12-06T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "city": "Burnsville",
+      "state": "MN",
+      "lat": 44.7644,
+      "lng": -93.2794,
+      "approx": true,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921"
+      },
+      "description": "Join Allform Club for Pink Pilates, matcha, and social hour! Enjoy a 45-minute beginner-friendly class. Wear pink and come connect!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/pink-pilates-matcha-social-hour-tickets-2004530912921"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Mesa",
+      "start": "2026-12-06T00:00:00-07:00",
+      "tz": "America/Phoenix",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Mesa",
+      "state": "AZ",
+      "lat": 33.4006,
+      "lng": -111.7165,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-mesa-tickets-1974526090690",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-mesa-tickets-1974526090690"
+      },
+      "description": "Join us for coffee at different cafes each gathering. Build your community in your city with a fun day out! Meetup. Matcha. Support local!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-mesa-tickets-1974526090690"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "The Ayer",
+      "title": "A Very Merry Crafting Affair",
+      "start": "2026-12-06T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "The Ayer",
+      "address": "2010 Terry Avenue",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98121",
+      "lat": 47.617417,
+      "lng": -122.334901,
+      "approx": false,
+      "source_id": "eventbrite:the-ayer",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/a-very-merry-crafting-affair-tickets-2005485377751",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/a-very-merry-crafting-affair-tickets-2005485377751"
+      },
+      "description": "Join Vale for a cozy Sunday of ornament decorating and winter drink tastings. We’ll provide the ornaments, craft supplies, and matcha!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/a-very-merry-crafting-affair-tickets-2005485377751"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Cure Nailhouse",
+      "title": "MERRY MATCHA MAKINGG",
+      "start": "2026-12-09T00:00:00-05:00",
+      "tz": "America/Detroit",
+      "all_day": true,
+      "venue": "Cure Nailhouse",
+      "address": "119 Garfield Street",
+      "city": "Detroit",
+      "state": "MI",
+      "zip": "48201",
+      "lat": 42.354782,
+      "lng": -83.060432,
+      "approx": false,
+      "source_id": "eventbrite:cure-nailhouse",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/merry-matcha-makingg-tickets-2005516578072",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/merry-matcha-makingg-tickets-2005516578072"
+      },
+      "description": "Learn how to make two signature matcha drinks with Cafecito Alvarez baristas and take home a matcha kit just in time for the holidays",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/merry-matcha-makingg-tickets-2005516578072"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Bella Cucina",
+      "title": "Muracha Matcha Pop-Up | Saturday, December 12th, 2026",
+      "start": "2026-12-12T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Bella Cucina",
+      "address": "288 Buckhead Avenue",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": 33.838296,
+      "lng": -84.37842,
+      "approx": false,
+      "source_id": "eventbrite:bella-cucina",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/muracha-matcha-pop-up-saturday-december-12th-2026-tickets-2005395021493",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/muracha-matcha-pop-up-saturday-december-12th-2026-tickets-2005395021493"
+      },
+      "description": "Take a break from holiday hustle with Muracha and Bella Cucina. Sip on matcha from the bar and shop Muracha products and tools.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/muracha-matcha-pop-up-saturday-december-12th-2026-tickets-2005395021493"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Charlotte Creatives (Giving Back Edition)",
+      "start": "2026-12-12T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Charlotte",
+      "state": "NC",
+      "lat": 35.209,
+      "lng": -80.831,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-charlotte-creatives-giving-back-edition-tickets-1988352720512",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-charlotte-creatives-giving-back-edition-tickets-1988352720512"
+      },
+      "description": "Join us for brunch or coffee at different cafe. Build your community while supporting local businesses and giving back to people in need.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-charlotte-creatives-giving-back-edition-tickets-1988352720512"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Fresh Cups",
+      "title": "Live Music Saturday at Fresh Cups",
+      "start": "2026-12-12T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "Fresh Cups",
+      "address": "9924 Northeast 185th Street",
+      "city": "Bothell",
+      "state": "WA",
+      "zip": "98011",
+      "lat": 47.761816,
+      "lng": -122.208452,
+      "approx": false,
+      "source_id": "eventbrite:fresh-cups",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/live-music-saturday-at-fresh-cups-tickets-2004565880510",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/live-music-saturday-at-fresh-cups-tickets-2004565880510"
+      },
+      "menu": [
+        "ceremonial",
+        "pastry"
+      ],
+      "description": "Enjoy live local music with Vietnamese coffee, ceremonial matcha, and fresh pastries at Fresh Cups Bothell.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/live-music-saturday-at-fresh-cups-tickets-2004565880510"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Pip Coffee + Clay",
+      "handle": "pipcoffeeclay",
+      "title": "Matcha Making Workshop Part 2",
+      "start": "2026-12-12T09:30:00-07:00",
+      "tz": "America/Phoenix",
+      "all_day": false,
+      "venue": "PIP coffee+clay - Phoenix",
+      "city": "Phoenix",
+      "state": "AZ",
+      "lat": 33.5722,
+      "lng": -112.0901,
+      "approx": true,
+      "source_id": "mato:pipcoffeeclay",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/matcha-making-workshop-part-2-12-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-making-workshop-part-2-12-dec-2026"
+      },
+      "description": "Part two of a two-part matcha workshop with Neighbor Matcha at PIP coffee+clay - Phoenix. Participants make matcha using the bowl built and decorated in part one on November 21.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-making-workshop-part-2-12-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Portland Japanese Culture Workshops",
+      "title": "Japanese Matcha Workshop: Learn to Enjoy Tea in Everyday Life",
+      "start": "2026-12-12T12:30:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "KEC Education Group America Campus",
+      "address": "1548 NE 15th Ave",
+      "city": "Portland",
+      "state": "OR",
+      "lat": 45.53408,
+      "lng": -122.650233,
+      "approx": false,
+      "source_id": "meetup:portland-japanese-culture-workshops",
+      "kind": "organizer",
+      "source_url": "https://www.meetup.com/portland-japanese-culture-workshops/events/317590114/",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.meetup.com/portland-japanese-culture-workshops/events/317590114/"
+      },
+      "menu": [
+        "how to enjoy matcha",
+        "matcha lovers"
+      ],
+      "price": "$20",
+      "description": "**Learn how to make matcha part of your everyday life **",
+      "confidence": "confirmed",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.meetup.com/portland-japanese-culture-workshops/events/317590114/"
+      ],
+      "notes": "found by meetup"
+    },
+    {
+      "brand": "Cafe Monet Art & Clay Studio",
+      "handle": "cafe_monet_studio",
+      "title": "Matcha Bowl & Whisk Holder Workshop",
+      "start": "2026-12-13",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "Cafe Monet Art & Clay Studio",
+      "city": "Austin",
+      "state": "TX",
+      "lat": 30.2986,
+      "lng": -97.7541,
+      "approx": true,
+      "source_id": "mato:cafe_monet_studio",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/matcha-bowl-whisk-holder-workshop-13-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-bowl-whisk-holder-workshop-13-dec-2026"
+      },
+      "menu": [
+        "matcha bowl"
+      ],
+      "price": "$85",
+      "description": "The two-hour matcha-inspired pottery workshop covers throwing a matcha bowl on the pottery wheel with instructor guidance and painting a premade ceramic whisk holder to complete the set.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/matcha-bowl-whisk-holder-workshop-13-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Movement, Matcha & Bloom",
+      "start": "2026-12-13T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "address": "1810 County Line Road",
+      "city": "Upper Moreland Township",
+      "state": "PA",
+      "zip": "19006",
+      "lat": 40.16589,
+      "lng": -75.062115,
+      "approx": false,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/movement-matcha-bloom-tickets-2004964691364",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/movement-matcha-bloom-tickets-2004964691364"
+      },
+      "description": "Matcha, flowers, Pilates & good vibes? SAY LESS!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/movement-matcha-bloom-tickets-2004964691364"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Inspire Yoga & Wellness Studio",
+      "title": "RISE & SHINE | YOGA & MATCHA",
+      "start": "2026-12-13T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "Inspire Yoga & Wellness Studio",
+      "address": "1100 Nerge Rd",
+      "city": "Elk Grove Village",
+      "state": "IL",
+      "lat": 41.994894,
+      "lng": -88.028788,
+      "approx": false,
+      "source_id": "eventbrite:inspire-yoga-wellness-studio",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/rise-shine-yoga-matcha-tickets-2004847903047",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/rise-shine-yoga-matcha-tickets-2004847903047"
+      },
+      "description": "Kickstart your morning with some chill yoga flows and a refreshing matcha boost to keep you glowing all day.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/rise-shine-yoga-matcha-tickets-2004847903047"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Neighborhood Cafe",
+      "title": "Sweet Thang Sunday",
+      "start": "2026-12-13T00:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": true,
+      "venue": "Neighborhood Cafe",
+      "address": "17165 Southcenter Parkway",
+      "city": "Tukwila",
+      "state": "WA",
+      "zip": "98188",
+      "lat": 47.449536,
+      "lng": -122.263225,
+      "approx": false,
+      "source_id": "eventbrite:neighborhood-cafe",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/sweet-thang-sunday-tickets-1983022791551",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/sweet-thang-sunday-tickets-1983022791551"
+      },
+      "menu": [
+        "matcha flight"
+      ],
+      "description": "It's Sweet Thang Sunday!! Join us for our monthly R&B Sunday brunch at Neighborhood Cafe in Tukwila!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/sweet-thang-sunday-tickets-1983022791551"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Personal",
+      "title": "Alma Matcha Motor Co.",
+      "start": "2026-12-13T08:00:00-05:00",
+      "end": "2026-12-13T11:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Alma Matcha",
+      "address": "701 NW 5th Ave Unit 1011",
+      "city": "Fort Lauderdale",
+      "state": "FL",
+      "zip": "33311",
+      "lat": 26.131492,
+      "lng": -80.148896,
+      "approx": false,
+      "source_id": "luma:personal",
+      "kind": "popup",
+      "source_url": "https://luma.com/npy7mjhj",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://luma.com/npy7mjhj"
+      },
+      "confidence": "confirmed",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://luma.com/npy7mjhj"
+      ],
+      "notes": "found by luma"
+    },
+    {
+      "brand": "Metanoia Toolbox Sacred Wellness Space",
+      "title": "Matcha & Movement with Tea",
+      "start": "2026-12-15T00:00:00-07:00",
+      "tz": "America/Phoenix",
+      "all_day": true,
+      "venue": "Metanoia Toolbox Sacred Wellness Space",
+      "address": "2150 East Brown Road",
+      "city": "Mesa",
+      "state": "AZ",
+      "zip": "85213",
+      "lat": 33.437584,
+      "lng": -111.784732,
+      "approx": false,
+      "source_id": "eventbrite:metanoia-toolbox-sacred-wellness-space",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433"
+      },
+      "description": "Slow down, soften and breathe with this loving combination of Yin Yoga and Sound!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-movement-with-tea-tickets-2004184380433"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Matcha event",
+      "title": "Christmas Mat Pilates and matcha",
+      "start": "2026-12-16T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "address": "15317 Broadway Avenue",
+      "city": "Maple Heights",
+      "state": "OH",
+      "zip": "44137",
+      "lat": 41.418808,
+      "lng": -81.574369,
+      "approx": false,
+      "source_id": "eventbrite:event",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/christmas-mat-pilates-and-matcha-tickets-2004269057705",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/christmas-mat-pilates-and-matcha-tickets-2004269057705"
+      },
+      "description": "Join us for a festive afternoon of movement, matcha, treats, and Christmas fun! wear green and red workout sets!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/christmas-mat-pilates-and-matcha-tickets-2004269057705"
+      ],
+      "notes": "found by eventbrite; dropped: better source has it"
+    },
+    {
+      "brand": "Tammy's Little Cafe",
+      "title": "Matcha and Mingle: HOLIDAY EDITION",
+      "start": "2026-12-18T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Tammy's Little Cafe",
+      "address": "1706 Highway",
+      "city": "Conyers",
+      "state": "GA",
+      "lat": 33.651101,
+      "lng": -83.985925,
+      "approx": false,
+      "source_id": "eventbrite:tammy-s-little-cafe",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/matcha-and-mingle-holiday-edition-tickets-2005491297457",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-and-mingle-holiday-edition-tickets-2005491297457"
+      },
+      "description": "Celebrate the season with an interactive matcha class. Come solo or with a bestie for TLC’s holiday flavors & good vibes. Secure your spot!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-and-mingle-holiday-edition-tickets-2005491297457"
+      ],
+      "notes": "found by eventbrite"
+    },
+    {
+      "brand": "Crème Coffee & Social",
+      "handle": "cremesatx",
+      "title": "Mats & Matcha",
+      "start": "2026-12-19",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "The Creamery District",
+      "city": "San Antonio",
+      "state": "TX",
+      "lat": 29.4628,
+      "lng": -98.5246,
+      "approx": true,
+      "source_id": "mato:cremesatx",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/mats-matcha-19-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/mats-matcha-19-dec-2026"
+      },
+      "price": "$15",
+      "description": "Mats & Matcha is a pilates class hosted by Pilates Platinum at The Creamery District. The class is $15, and the ticket includes matcha. It takes place every third Saturday.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/mats-matcha-19-dec-2026"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Cafe of the Month",
+      "title": "Matcha + Meetup: Boston | Film + Music Speed Networking Roulette",
+      "start": "2026-12-19T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Month",
+      "city": "Boston",
+      "state": "MA",
+      "lat": 42.3386,
+      "lng": -71.0183,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-month",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-boston-film-music-speed-networking-roulette-tickets-1994314592632",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-boston-film-music-speed-networking-roulette-tickets-1994314592632"
+      },
+      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-boston-film-music-speed-networking-roulette-tickets-1994314592632"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Postern Coffee",
+      "handle": "posterncoffee",
+      "title": "Tea and Matcha Workshop",
+      "start": "2026-12-19T10:00:00-05:00",
+      "end": "2026-12-19T12:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Postern Coffee",
+      "city": "Atlanta",
+      "state": "GA",
+      "lat": 33.919381,
+      "lng": -84.282066,
+      "approx": false,
+      "source_id": "mato:posterncoffee",
+      "kind": "organizer",
+      "source_url": "https://ma.to/event/tea-and-matcha-workshop-19-dec-2026",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/tea-and-matcha-workshop-19-dec-2026"
+      },
+      "description": "Tea and Matcha is a two-hour workshop at Postern Coffee on December 19, 2026, from 10:00 to 12:00. It covers tea and matcha for people interested in developing their home coffee and tea skills.",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/tea-and-matcha-workshop-19-dec-2026"
+      ],
+      "notes": "found by mato"
+    },
+    {
+      "brand": "Cafe of the Month",
+      "title": "Matcha + Meetup: Charlotte | Entrepreneur Speed Networking Roulette",
+      "start": "2026-12-20T00:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Cafe of the Month",
+      "city": "Charlotte",
+      "state": "NC",
+      "lat": 35.209,
+      "lng": -80.831,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-month",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-charlotte-entrepreneur-speed-networking-roulette-tickets-1994335305585",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-charlotte-entrepreneur-speed-networking-roulette-tickets-1994335305585"
+      },
+      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-charlotte-entrepreneur-speed-networking-roulette-tickets-1994335305585"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Cafe of the Day",
+      "title": "Matcha + Meetup: Peoria",
+      "start": "2026-12-27T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "Cafe of the Day",
+      "city": "Peoria",
+      "state": "IL",
+      "lat": 40.7516,
+      "lng": -89.6172,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-day",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-peoria-tickets-1972092835759",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-peoria-tickets-1972092835759"
+      },
+      "menu": [
+        "latte"
+      ],
+      "description": "Join us for coffee, latte, or matcha at different cafes. Build your community, sip + socialize, and support local businesses!",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-peoria-tickets-1972092835759"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Cafe of the Month",
+      "title": "Matcha + Meetup: Nashville | Entrepreneur Speed Networking Roulette",
+      "start": "2026-12-27T00:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "Cafe of the Month",
+      "city": "Nashville",
+      "state": "TN",
+      "lat": 36.1718,
+      "lng": -86.785,
+      "approx": true,
+      "source_id": "eventbrite:cafe-of-the-month",
+      "kind": "organizer",
+      "source_url": "https://www.eventbrite.com/e/matcha-meetup-nashville-entrepreneur-speed-networking-roulette-tickets-1994320726980",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/matcha-meetup-nashville-entrepreneur-speed-networking-roulette-tickets-1994320726980"
+      },
+      "description": "Five Rounds. Five Curated Conversations. Endless possibilities for collaborations in this roulette edition of speed networking.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/matcha-meetup-nashville-entrepreneur-speed-networking-roulette-tickets-1994320726980"
+      ],
+      "notes": "found by eventbrite; pin at the city centre"
+    },
+    {
+      "brand": "Crème Coffee & Social",
+      "handle": "cremesatx",
+      "title": "Mats & Matcha",
+      "start": "2027-01-16",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "The Creamery District",
+      "city": "San Antonio",
+      "state": "TX",
+      "lat": 29.4628,
+      "lng": -98.5246,
+      "approx": true,
+      "source_id": "mato:cremesatx",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/mats-matcha-16-jan-2027",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/mats-matcha-16-jan-2027"
+      },
+      "price": "$15",
+      "description": "Mats & Matcha is a pilates class hosted by Pilates Platinum at The Creamery District. The class is $15, and the ticket includes matcha. It takes place every third Saturday.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/mats-matcha-16-jan-2027"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Crème Coffee & Social",
+      "handle": "cremesatx",
+      "title": "Mats & Matcha",
+      "start": "2027-02-20",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "The Creamery District",
+      "city": "San Antonio",
+      "state": "TX",
+      "lat": 29.4628,
+      "lng": -98.5246,
+      "approx": true,
+      "source_id": "mato:cremesatx",
+      "kind": "popup",
+      "source_url": "https://ma.to/event/mats-matcha-20-feb-2027",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/mats-matcha-20-feb-2027"
+      },
+      "price": "$15",
+      "description": "Mats & Matcha is a pilates class hosted by Pilates Platinum at The Creamery District. The class is $15, and the ticket includes matcha. It takes place every third Saturday.",
+      "confidence": "unsure",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://ma.to/event/mats-matcha-20-feb-2027"
+      ],
+      "notes": "found by mato; pin at the city centre"
+    },
+    {
+      "brand": "Wonderful World Coffee and Tea",
+      "title": "GOOD COMPANY: A Day of Rest",
+      "start": "2027-05-15T00:00:00-04:00",
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Wonderful World Coffee and Tea",
+      "address": "6 Olive Street",
+      "city": "Avondale Estates",
+      "state": "GA",
+      "zip": "30002",
+      "lat": 33.775965,
+      "lng": -84.273568,
+      "approx": false,
+      "source_id": "eventbrite:wonderful-world-coffee-and-tea",
+      "kind": "popup",
+      "source_url": "https://www.eventbrite.com/e/good-company-a-day-of-rest-tickets-2002637500674",
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/good-company-a-day-of-rest-tickets-2002637500674"
+      },
+      "description": "Enjoy coffee and matcha, wellness sessions, games, creative activities, & local vendors with good food, music, and even better company!",
+      "confidence": "likely",
+      "extracted_by": "rule",
+      "evidence": [
+        "https://www.eventbrite.com/e/good-company-a-day-of-rest-tickets-2002637500674"
+      ],
+      "notes": "found by eventbrite"
+    }
+  ]
+}
