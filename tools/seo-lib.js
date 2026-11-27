@@ -112,7 +112,43 @@ const WIN_RE = /[A-Z][a-z]{2} \d{1,2} to [A-Z][a-z]{2} \d{1,2}/g;
 const FONT_PRELOADS_RE = /<link rel="preload" href="\/fonts\/mplus-rounded-1c-latin-500\.woff2"[^>]*>\r?\n<link rel="preload" href="\/fonts\/mplus-rounded-1c-latin-700\.woff2"[^>]*>/;
 const FONT_LINK_OLD = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">';
 const asBefore = (html) => html.replace(FONT_PRELOADS_RE, FONT_LINK_OLD).replace("style-src 'self';", "style-src 'self' https://fonts.googleapis.com;").replace("font-src 'self';", "font-src https://fonts.gstatic.com;");
-export const hashInput = (html) => asBefore(html).replace(UPDATED_RE, `$1 ${UPDATED}`).replace(WIN_RE, WIN);
+const tokens = (t) => t.replace(UPDATED_RE, `$1 ${UPDATED}`).replace(WIN_RE, WIN);
+
+// ---- what a search engine reads from a page (the city-page freeze, test/city-page-seo-freeze.test.js) ----
+// seoParts() pulls the parts of a page that must not move when only its look changes: head tags, the H1 and H2s, the lead, every JSON-LD block,
+// the question and answer text, every link in <main>, and the visible words. It reads the plain template and the new look alike.
+const decode = (s) => String(s).replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, "&");
+export const textOf = (h) => decode(String(h).replace(/<(script|style|svg)[\s\S]*?<\/\1>/g, " ").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+const all = (re, s) => [...s.matchAll(re)];
+export function seoParts(html) {
+  const main = (/<main[^>]*>([\s\S]*?)<\/main>/.exec(html) || [, ""])[1];
+  const head = (/<head>([\s\S]*?)<\/head>/.exec(html) || [, ""])[1];
+  const one = (re, s) => { const m = re.exec(s); return m ? textOf(m[1]) : ""; };
+  const pTag = (cls) => one(new RegExp(`<p class="${cls}"[^>]*>([\s\S]*?)<\/p>`), main);
+  return {
+    seo: (/<html[^>]*\sdata-seo="([^"]*)"/.exec(html) || [, ""])[1],
+    lang: (/<html[^>]*\slang="([^"]*)"/.exec(html) || [, ""])[1],
+    title: one(/<title>([\s\S]*?)<\/title>/, head),
+    metas: all(/<meta\s+(?:name|property|http-equiv)="[^"]+"\s+content="[^"]*"\s*\/?>/g, head).map((m) => m[0]).sort(),
+    links: all(/<link\s+rel="(?:canonical|alternate|manifest|icon|apple-touch-icon)"[^>]*>/g, head).map((m) => m[0]).sort(),
+    h1: all(/<h1[^>]*>([\s\S]*?)<\/h1>/g, main).map((m) => textOf(m[1])),
+    h2: all(/<h2[^>]*>([\s\S]*?)<\/h2>/g, main).map((m) => textOf(m[1])),
+    lead: pTag("pg-lead"), intro: pTag("pg-intro"),
+    ld: all(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, html).map((m) => m[1]),
+    faq: all(/<details[^>]*>\s*<summary[^>]*>([\s\S]*?)<\/summary>\s*<p>([\s\S]*?)<\/p>\s*<\/details>/g, main).map((m) => [textOf(m[1]), textOf(m[2])]),
+    hrefs: [...new Set(all(/<a\s[^>]*?href="([^"]*)"/g, main).map((m) => decode(m[1])))].sort(),
+    text: textOf(main),
+    words: textOf(main) ? textOf(main).split(" ").length : 0,
+  };
+}
+export const isTpl2 = (html) => /<html[^>]*\sdata-tpl="2"/.test(html);
+// A page in the new look is hashed by what it says, not by how it is drawn, so a redesign moves no lastmod: the same view as the plain
+// template's page would give once its look is set aside. (The plain page itself is still hashed whole, as before.)
+export const hashInput = (html) => {
+  if (!isTpl2(html)) return tokens(asBefore(html));
+  const { words, ...v } = seoParts(html);
+  return tokens(JSON.stringify(v));
+};
 export const hash12 = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 12);
 export const dayText = (k) => new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" }).format(new Date(k + "T12:00:00Z"));
 export const SECTIONS = ["lead", "events", "shops", "brands", "nearby", "faq"]; // the order of a city page's sub-hashes
