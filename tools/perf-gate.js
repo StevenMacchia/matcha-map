@@ -32,7 +32,7 @@ export function targets() {
   const st = dirs("state"), br = dirs("brand"), ct = dirs("city/nc");
   return {
     home: "/",
-    city: "/" + (first(["city/nc/raleigh"]) || (ct[0] ? "city/nc/" + ct[0] : "")) + "/",
+    city: "/" + (first([process.env.PERF_CITY ? "city/" + process.env.PERF_CITY : "city/nc/raleigh"]) || (ct[0] ? "city/nc/" + ct[0] : "")) + "/",
     state: "/" + (first(["state/nc"]) || (st[0] ? "state/" + st[0] : "")) + "/",
     brand: "/" + (first(["brand/333.matcha"]) || (br[0] ? "brand/" + br[0] : "")) + "/",
   };
