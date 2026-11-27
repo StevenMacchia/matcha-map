@@ -20,7 +20,7 @@ import { fileURLToPath } from "node:url";
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const MERGE_STATE = path.join(HERE, "merge-state.cjs");
 
-const GENERATED = /^(site\/(city|state|brand|e|weekend|feeds|og|art|img|data|social)\/|site\/(sitemap\.xml|sitemap-\d+\.xml|robots\.txt|index\.html|_redirects)$|docs\/DAILY\.md$|LADDER\.md$|data\/(seo-state|pages-lastmod)\.json$|tools\/brand\/outbox\/\d{4}-\d{2}-\d{2}\/)/;
+const GENERATED = /^(site\/(city|state|brand|e|weekend|feeds|og|art|img|data|social)\/|site\/(sitemap\.xml|sitemap-\d+\.xml|robots\.txt|index\.html|_redirects|sw.js)$|docs\/DAILY\.md$|LADDER\.md$|data\/(seo-state|pages-lastmod)\.json$|tools\/brand\/outbox\/\d{4}-\d{2}-\d{2}\/)/;
 // Which merge-state.cjs kind a state file takes, or "plain" for any other data/*.json, or null when it is not a state file.
 export function stateKind(f) {
   const fixed = { "data/events.json": "events", "data/watchlist.json": "watchlist", "data/geocache.json": "geocache", "data/tavily-budget.json": "budget", "data/shops.json": "shops", "data/sources.json": "sources", "tools/brand/outbox/history.json": "plain" };
