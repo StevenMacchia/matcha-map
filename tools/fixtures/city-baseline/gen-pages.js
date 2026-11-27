@@ -7,11 +7,11 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
-import { SITE_URL } from "../../../tools/site-url.js";
+import { SITE_URL } from "../../site-url.js";
 import { readSiteShops } from "../../../ingest/lib/site-shops.js";
 import { brandOf as cleanBrand, placeOf } from "../../../ingest/lib/names.js";
 import { tzForPlace } from "../../../ingest/lib/tz.js";
-import { sitemapFiles, writeSitemaps, readState, patchState, updateRegistry, writeRedirects, dirsWithIndex, UPDATED, WIN, hashInput, hash12, dayText, subHash } from "../../../tools/seo-lib.js";
+import { sitemapFiles, writeSitemaps, readState, patchState, updateRegistry, writeRedirects, dirsWithIndex, UPDATED, WIN, hashInput, hash12, dayText, subHash } from "../../seo-lib.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const LIMITS = { files: 20000, bytes: 30 * 1024 * 1024 };

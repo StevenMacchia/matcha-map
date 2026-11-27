@@ -98,3 +98,7 @@ html[data-tpl="2"] .pg-chips li { background: var(--panel); }
 img.cv-sky { width: 100%; height: auto; max-height: 190px; display: block; }
 .cv-mattie { position: absolute; right: 10px; bottom: 1%; width: 64px; height: 64px; }
 @media (min-width: 760px) { img.cv-sky { max-height: none; } .cv-mattie { width: 76px; height: 76px; right: 14px; } }
+.cv-about { margin: 14px 0 0; line-height: 1.55; max-width: 70ch; }
+.cv-about p { margin: 0; }
+.cv-statechips { gap: 8px; }
+.cv-statechips li { padding: 7px 14px; }

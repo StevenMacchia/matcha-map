@@ -9,7 +9,7 @@ import { SITE_URL } from "./site-url.js";
 import { readSiteShops } from "../ingest/lib/site-shops.js";
 import { brandOf as cleanBrand, placeOf } from "../ingest/lib/names.js";
 import { tzForPlace } from "../ingest/lib/tz.js";
-import { cityBodyV2, skylineFile, SKY_KEYS } from "./city-v2.js";
+import { cityBodyV2, skylineFile, skylineHtml, SKY_KEYS } from "./city-v2.js";
 import { sitemapFiles, writeSitemaps, readState, patchState, updateRegistry, writeRedirects, dirsWithIndex, UPDATED, WIN, hashInput, hash12, dayText, subHash } from "./seo-lib.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -226,7 +226,7 @@ export const eventPageId = (e) => (e.id && /^[a-z0-9]{6,32}$/i.test(e.id) ? e.id
 export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
 // ---- html ----
-export const CITY_CSS_V = 1; // bump when site/city.css changes (the file is cached)
+export const CITY_CSS_V = 2; // bump when site/city.css changes (the file is cached)
 const CSP = "default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self' https: data:; base-uri 'self'; form-action 'none'; manifest-src 'self'; connect-src 'self' https://cloudflareinsights.com";
 
 // image: a page's own share card (a city card from `npm run weekend`); the site card otherwise.
@@ -639,18 +639,22 @@ function statePage(st, rows, x) {
   const lead = U
     ? `${plural(U, "upcoming matcha pop-up")} in ${name}, across ${withUps.length} ${withUps.length === 1 ? "city" : "cities"}${S ? `. ${plural(S, "matcha shop")} ${S === 1 ? "is" : "are"} listed too` : ""}.`
     : S ? `No matcha pop-up is listed in ${name} right now. ${plural(S, "matcha shop")} ${S === 1 ? "is" : "are"} listed.` : `No matcha pop-up or matcha shop is listed in ${name} right now. Pick a city below to see the nearest.`;
-  let body = `${crumbHtml([["Matcha Map", "/"]], name)}
-<h1>Matcha pop-ups in ${esc(name)}</h1>
-<p class="pg-lead">${esc(lead)}</p>
-<p class="pg-sub" data-boiler>Updated ${UPDATED}. <a href="/state/">All states</a></p>
-<p>${esc(stateAbout(name, rows, { U, S, withUps, withShops, rest, shopNames: x.shopNames || [] }))}</p>
-`;
+  const crumb = crumbHtml([["Matcha Map", "/"]], name);
+  const h1 = `<h1>Matcha pop-ups in ${esc(name)}</h1>\n<p class="pg-lead">${esc(lead)}</p>\n<p class="pg-sub" data-boiler>Updated ${UPDATED}. <a href="/state/">All states</a></p>\n`;
+  const about = `<p>${esc(stateAbout(name, rows, { U, S, withUps, withShops, rest, shopNames: x.shopNames || [] }))}</p>\n`;
+  let body = `${crumb}\n${h1}${about}`;
   if (withUps.length) body += `<section><h2>Cities with upcoming pop-ups</h2>\n<ul class="pg-chips">\n${withUps.map((r) => `<li>${link(r)} <span class="pg-dim">${r.ups.length} · next ${esc(shortDayOf(r.ups[0].e, r.c.tz))}</span></li>`).join("\n")}\n</ul></section>\n`;
   if (withShops.length) body += `<section><h2>Cities with matcha shops</h2>\n<ul class="pg-chips">\n${withShops.map((r) => `<li>${link(r)} <span class="pg-dim">${r.shops}</span></li>`).join("\n")}\n</ul></section>\n`;
   if (rest.length) body += `<section><h2>${withUps.length || withShops.length ? "Every other city" : "Every city"} in ${esc(name)}</h2>\n<ul class="pg-chips">\n${rest.map((r) => `<li>${link(r)}</li>`).join("\n")}\n</ul></section>\n`;
   const title = `Matcha pop-ups in ${name}: cities, this weekend and upcoming`;
   const ld = [crumbLd([["Matcha Map", SITE_URL + "/"], [name, canonical]])];
-  return { html: shell({ title, desc: clip(lead, 158), canonical, ld, body, noindex: !x.indexable, seo: `u${U} s${S} c${rows.length}` }), lastDay: x.lastDay };
+  const args = { title, desc: clip(lead, 158), canonical, ld, noindex: !x.indexable, seo: `u${U} s${S} c${rows.length}` };
+  const plain = shell({ ...args, body });
+  if (!x.v2) return { html: plain, legacy: null, lastDay: x.lastDay };
+  // the new look: the same words and links, a hero with the drawn skyline, the lists as sections of chips
+  const sections = body.slice(`${crumb}\n${h1}${about}`.length).split('<section>').join('<section class="cv-sec">').split('<ul class="pg-chips">').join('<ul class="pg-chips cv-statechips">');
+  const v2 = `${crumb}\n<section class="cv-hero"><div class="cv-hero-text">${h1}</div><div class="cv-hero-art">${skylineHtml(name, 1e6)}</div></section>\n<div class="cv-about">${about}</div>\n${sections}`;
+  return { html: shell({ ...args, body: v2, tpl2: true }), legacy: plain, lastDay: x.lastDay };
 }
 
 const cityWord = (n) => `${n} ${n === 1 ? "city" : "cities"}`;
@@ -895,8 +899,8 @@ export function buildSite(d) {
     const U = rows.reduce((n, r) => n + r.ups.length, 0), S = shopsByState.get(st) || 0;
     const indexable = stateIndexable({ ups: U, shops: S, cities: rows.length });
     const shopNames = S && S <= 3 ? shops.filter((s) => s.state === st).map((s) => (s.city ? `${s.name} in ${s.city}` : s.name)) : [];
-    const pg = statePage(st, rows, { shopCount: S, shopNames, indexable, lastDay: newestDay(rows.flatMap((r) => r.ups.map((x) => x.e)), lastmod) });
-    const s = stamp("state/" + st.toLowerCase(), pg.html, pg.lastDay);
+    const pg = statePage(st, rows, { v2: d.v2 === true, shopCount: S, shopNames, indexable, lastDay: newestDay(rows.flatMap((r) => r.ups.map((x) => x.e)), lastmod) });
+    const s = stamp("state/" + st.toLowerCase(), pg.html, pg.lastDay, pg);
     files.set(stateHref(st) + "index.html", s.html);
     if (indexable) urls.push({ loc: `${SITE_URL}/${stateHref(st)}`, lastmod: s.lm });
     stateList.push({ st, name: STATE_NAMES[st] || st, ups: U });
@@ -984,7 +988,7 @@ export function loadData({ root = ROOT, now = new Date() } = {}) {
     priorIndexable: (() => { const s = readState(root); return s && Array.isArray(s.indexable) ? new Set(s.indexable) : null; })(),
     paceCap: Number(process.env.SEO_PACE_LIMIT) || PACE_ADMIT,
     artIndex: (() => { try { return read("site/art/index.json"); } catch { return null; } })(),
-    v2: process.env.CITY_V2 === "all" ? true : process.env.CITY_V2 ? new Set(process.env.CITY_V2.split(",").map((x) => x.trim()).filter(Boolean)) : null, // "nc/raleigh,nc/clayton" or "all"
+    v2: process.env.CITY_V2 === "off" ? null : process.env.CITY_V2 && process.env.CITY_V2 !== "all" ? new Set(process.env.CITY_V2.split(",").map((x) => x.trim()).filter(Boolean)) : true, // "off" for the plain template, "nc/raleigh,nc/clayton" for a few; default: every page (2026-11-27)
   };
 }
 
