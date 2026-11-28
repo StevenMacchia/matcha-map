@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Magnaye pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5a8da20f03bf@matchamap-cu7.pages.dev
+DTSTAMP:20261128T132113Z
+LAST-MODIFIED:20261127T232502Z
+DTSTART:20261128T180000Z
+DTEND:20261128T220000Z
+SUMMARY:CAFE AYI Small Business Saturday
+LOCATION:San Diego\, CA
+DESCRIPTION:CAFE AYI returns for its annual Small Business Saturday popup a
+ t AYI.\nMenu: hojicha\nDetails not confirmed yet. Check the brand's post b
+ efore you go.\nMore: https://matchamap.app/e/5a8da20f03bf/
+URL:https://matchamap.app/e/5a8da20f03bf/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

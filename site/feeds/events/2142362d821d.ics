@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Roots Bookstore & Market pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:2142362d821d@matchamap-cu7.pages.dev
+DTSTAMP:20261128T132113Z
+LAST-MODIFIED:20261128T130006Z
+DTSTART:20261206T190000Z
+DTEND:20261207T000000Z
+SUMMARY:The Anime Edit Con 2026
+LOCATION:Miami\, FL
+DESCRIPTION:The Anime Edit Con 2026 takes place at Roots Bookstore & Market
+  in Liberty City\, presented by The Matcha Edit.\nDetails not confirmed ye
+ t. Check the brand's post before you go.\nMore: https://matchamap.app/e/21
+ 42362d821d/
+URL:https://matchamap.app/e/2142362d821d/
+STATUS:TENTATIVE
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

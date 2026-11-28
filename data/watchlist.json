@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T18:08:59.008Z",
+  "updated": "2026-11-28T13:20:42.867Z",
   "accounts": [
     {
       "handle": "rockysmatcha",
@@ -9,10 +9,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-23T16:00:03.000Z",
       "hits": 4,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -74,10 +74,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-23T17:26:02.000Z",
       "hits": 6,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -136,10 +136,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-04T06:19:40.000Z",
       "hits": 1,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -223,10 +223,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T19:16:20.793Z",
-      "last_post_with_popup": "2026-11-26T19:16:20.793Z",
+      "last_checked": "2026-11-27T19:25:02.038Z",
+      "last_post_with_popup": "2026-11-27T19:25:02.038Z",
       "hits": 1,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-23T00:59:42.578Z",
@@ -244,10 +244,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
-      "last_post_with_popup": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
+      "last_post_with_popup": "2026-11-27T21:25:02.036Z",
       "hits": 2,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -287,10 +287,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-23T23:22:35.000Z",
       "hits": 2,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -330,10 +330,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
-      "last_post_with_popup": "2026-11-13T03:02:38.000Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
+      "last_post_with_popup": "2026-11-27T21:25:02.036Z",
       "hits": 1,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -373,10 +373,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-04T00:15:05.000Z",
       "hits": 2,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -416,10 +416,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-18T00:30:03.000Z",
       "hits": 4,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -672,10 +672,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
-      "last_post_with_popup": "2026-11-26T21:16:21.481Z",
-      "hits": 3,
-      "checks": 8,
+      "last_checked": "2026-11-27T21:25:02.036Z",
+      "last_post_with_popup": "2026-11-27T21:25:02.036Z",
+      "hits": 4,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -929,10 +929,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
-      "last_post_with_popup": "2026-11-19T17:58:46.000Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
+      "last_post_with_popup": "2026-11-27T21:25:02.036Z",
       "hits": 4,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -972,10 +972,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-22T22:26:58.000Z",
       "hits": 1,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -1164,11 +1164,11 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T16:45:57.825Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-10-28T03:01:46.000Z",
       "hits": 4,
-      "checks": 8,
-      "cadence_hours": 24,
+      "checks": 9,
+      "cadence_hours": 72,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
       "name": "Stonemill Matcha",
@@ -1250,10 +1250,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-22T13:25:33.000Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 3,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -1335,10 +1335,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-27T04:16:21.568Z",
-      "last_post_with_popup": "2026-11-27T04:16:21.568Z",
+      "last_checked": "2026-11-28T04:25:02.063Z",
+      "last_post_with_popup": "2026-11-28T04:25:02.063Z",
       "hits": 0,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -1523,10 +1523,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T19:16:20.793Z",
-      "last_post_with_popup": "2026-11-26T19:16:20.793Z",
+      "last_checked": "2026-11-27T19:25:02.038Z",
+      "last_post_with_popup": "2026-11-27T19:25:02.038Z",
       "hits": 0,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-23T00:59:42.578Z",
@@ -1697,10 +1697,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-21T02:36:40.000Z",
       "hits": 7,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -1994,10 +1994,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-04T19:55:43.000Z",
       "hits": 1,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -2037,10 +2037,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-16T17:30:04.000Z",
       "hits": 0,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -2229,10 +2229,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 5,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -2272,10 +2272,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-14T20:05:53.000Z",
       "hits": 1,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -2442,10 +2442,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 0,
-      "checks": 8,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 1,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -2634,10 +2634,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-22T19:28:27.000Z",
       "hits": 1,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -2761,10 +2761,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-04T23:59:54.000Z",
       "hits": 5,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -2804,10 +2804,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T17:38:15.170Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
       "last_post_with_popup": "2026-11-12T06:50:19.000Z",
       "hits": 17,
-      "checks": 8,
+      "checks": 9,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -3711,10 +3711,10 @@
       "found_via": "search",
       "found_from": "ma.to/atlanta",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-23T21:30:18.000Z",
       "hits": 5,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=jaide.atelier; home=Atlanta, GA; brand=JAIDE; e.g. BUJI Matcha Pop-Up Atlanta",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -3754,10 +3754,10 @@
       "found_via": "search",
       "found_from": "ma.to/baltimore",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 22,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 24,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=sistahsweets; home=Baltimore, MD; brand=Sistahs’Sweets Cupcakes🧁; e.g. Sistahs’Sweets Black Friday Popup",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -3797,10 +3797,10 @@
       "found_via": "search",
       "found_from": "ma.to/boston",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T19:16:20.793Z",
-      "last_post_with_popup": "2026-11-26T19:16:20.793Z",
-      "hits": 8,
-      "checks": 6,
+      "last_checked": "2026-11-27T19:25:02.038Z",
+      "last_post_with_popup": "2026-11-27T19:25:02.038Z",
+      "hits": 10,
+      "checks": 7,
       "cadence_hours": 24,
       "notes": "mato_venue=newberyst; home=Boston, MA; brand=Newbery St.; e.g. Newbery Street Coffee Pop-Up",
       "graph_checked_at": "2026-11-23T00:59:42.578Z",
@@ -3819,10 +3819,10 @@
       "found_via": "search",
       "found_from": "ma.to/chicago",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-19T22:07:04.000Z",
       "hits": 4,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=pie; home=Chicago, IL; brand=pie; e.g. Matcha + Trinket Pop-Up",
       "graph_checked_at": "2026-11-24T01:16:21.169Z",
@@ -3862,10 +3862,10 @@
       "found_via": "search",
       "found_from": "ma.to/houston",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 38,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 40,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=creamedtx; home=Houston, TX; brand=Creamed | HTX; e.g. Creamed Pop-Up at Kohiko",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -3905,10 +3905,10 @@
       "found_via": "search",
       "found_from": "ma.to/houston",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-20T00:12:38.000Z",
       "hits": 46,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=searchinghighwithlo; home=Houston, TX; brand=Lauren Washington | Food+Travel Creator; e.g. Buji Matcha Pop Up",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -3947,10 +3947,10 @@
       "found_via": "search",
       "found_from": "ma.to/los-angeles",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-18T22:20:07.000Z",
       "hits": 15,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=camaircases; home=Los Angeles, CA; brand=CamAir; e.g. Camair Popup at Viviette Vintage",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4012,10 +4012,10 @@
       "found_via": "search",
       "found_from": "ma.to/minneapolis",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-22T21:38:59.000Z",
       "hits": 4,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=caphinmpls; home=Minneapolis, MN; brand=Caphin Minneapolis; e.g. mama browns cookie co pop-up",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4055,10 +4055,10 @@
       "found_via": "search",
       "found_from": "ma.to/new-york",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 52,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=joyflowerpotnyc; home=New York, NY; brand=J O Y  F L O W E R  P O T; e.g. Forum Bakery Pop-Up",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4098,10 +4098,10 @@
       "found_via": "search",
       "found_from": "ma.to/orlando",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 71,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 72,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=mysticmoonmarkets; home=Orlando, FL; brand=Mystic Moon; e.g. Shop Small Saturday Market & Swap",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4141,10 +4141,10 @@
       "found_via": "search",
       "found_from": "ma.to/seattle",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T19:16:20.793Z",
-      "last_post_with_popup": "2026-11-26T19:16:20.793Z",
+      "last_checked": "2026-11-27T19:25:02.038Z",
+      "last_post_with_popup": "2026-11-27T19:25:02.038Z",
       "hits": 0,
-      "checks": 6,
+      "checks": 7,
       "cadence_hours": 24,
       "notes": "mato_venue=sabzmatcha; home=Seattle, WA; brand=Sabz Matcha; e.g. Sabz Matcha at HAISA X Good Company",
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
@@ -4163,10 +4163,10 @@
       "found_via": "search",
       "found_from": "ma.to/washington",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-23T21:02:03.000Z",
-      "hits": 39,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 41,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=cookbookcourtyard; home=Washington, DC; brand=Cookbook Courtyard | DC Events & Food Community; e.g. Cookbook Courtyard Soup Swap",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4206,10 +4206,10 @@
       "found_via": "search",
       "found_from": "ma.to/washington",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-23T23:05:06.000Z",
       "hits": 54,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=vintagevintagevintage.dc; home=Washington, DC; brand=That's So Vintage; e.g. Curve Ball Vintage Weekend",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4249,10 +4249,10 @@
       "found_via": "search",
       "found_from": "ma.to/los-angeles",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-22T16:30:41.000Z",
       "hits": 28,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=foragercrafts; home=Los Angeles, CA; brand=Forager Crafts; e.g. Full & Still: Ikebana + Matcha",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4334,10 +4334,10 @@
       "found_via": "search",
       "found_from": "ma.to/san-diego",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 41,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 42,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=magnaye.sd; home=San Diego, CA; brand=magnaye; e.g. Espresso & Matcha Pop-Up at Patine",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4377,10 +4377,10 @@
       "found_via": "search",
       "found_from": "ma.to/chicago",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 58,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 60,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=potterychicago; home=Chicago, IL; brand=Pottery Chicago; e.g. The Perfect Matcha Bowl",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4420,10 +4420,10 @@
       "found_via": "search",
       "found_from": "ma.to/san-francisco",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-23T22:35:30.000Z",
       "hits": 8,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=jiarencafe; home=San Francisco, CA; brand=Jiaren Cafe: Coffee, Boba & Events; e.g. Weekly Matcha Workshop",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4463,10 +4463,10 @@
       "found_via": "search",
       "found_from": "ma.to/philadelphia",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 68,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 69,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=4bidden4ruit; home=Philadelphia, PA; brand=Forbidden Fruit | Creative Wellness; e.g. Matcha + Meetup: Philadelphia",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4506,10 +4506,10 @@
       "found_via": "search",
       "found_from": "ma.to/san-francisco",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T19:16:20.793Z",
-      "last_post_with_popup": "2026-11-26T19:16:20.793Z",
+      "last_checked": "2026-11-27T19:25:02.038Z",
+      "last_post_with_popup": "2026-11-27T19:25:02.038Z",
       "hits": 0,
-      "checks": 6,
+      "checks": 7,
       "cadence_hours": 24,
       "notes": "mato_venue=moodymatcharitual; home=San Francisco, CA; brand=Moody Matcha Ritual; e.g. Moody Matcha Workshop",
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
@@ -4528,10 +4528,10 @@
       "found_via": "search",
       "found_from": "ma.to/minneapolis",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-21T17:24:34.000Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 23,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=shesinvited; home=Minneapolis, MN; brand=She’s Invited; e.g. Pink Matcha & Thrift Finds",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4571,10 +4571,10 @@
       "found_via": "search",
       "found_from": "ma.to/miami",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-21T12:30:54.000Z",
       "hits": 45,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=miamirunclub; home=Miami, FL; brand=Miami Run Club; e.g. Run, Matcha & Fiesta",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4614,10 +4614,10 @@
       "found_via": "search",
       "found_from": "ma.to/orlando",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 121,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=tastychomps; home=Orlando, FL; brand=Ricky Ly; e.g. Très Matcha! Très Fleur! (4 PM)",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4657,10 +4657,10 @@
       "found_via": "search",
       "found_from": "ma.to/honolulu",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 12,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=fujiyahawaii; home=Honolulu, HI; brand=FUJIYA HAWAIʻI | MOCHI in HONOLULU 🍡; e.g. Mochi & Matcha Fest",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4700,10 +4700,10 @@
       "found_via": "search",
       "found_from": "ma.to/austin",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 18,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=cafe_monet_studio; home=Austin, TX; brand=Cafe Monet Art & Clay Studio; e.g. Matcha Bowl & Whisk Holder Workshop",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4743,10 +4743,10 @@
       "found_via": "search",
       "found_from": "ma.to/miami",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T19:16:20.793Z",
-      "last_post_with_popup": "2026-11-26T19:16:20.793Z",
-      "hits": 7,
-      "checks": 6,
+      "last_checked": "2026-11-27T19:25:02.038Z",
+      "last_post_with_popup": "2026-11-27T19:25:02.038Z",
+      "hits": 8,
+      "checks": 7,
       "cadence_hours": 24,
       "notes": "mato_venue=wynwood_marketplace; home=Miami, FL; brand=Wynwood Marketplace; e.g. MatchaFest Miami 2026",
       "graph_checked_at": "2026-11-23T00:59:42.578Z",
@@ -4765,10 +4765,10 @@
       "found_via": "search",
       "found_from": "ma.to/phoenix",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 65,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 66,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=pipcoffeeclay; home=Phoenix, AZ; brand=PIP coffee+clay; e.g. Matcha Making Workshop Part 2",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4807,10 +4807,10 @@
       "found_via": "search",
       "found_from": "ma.to/chicago",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-21T17:20:24.000Z",
       "hits": 33,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=thriftywhiskersvintage; home=Chicago, IL; brand=Thrifty Whiskers; e.g. Matchamootea Popup",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4850,10 +4850,10 @@
       "found_via": "search",
       "found_from": "ma.to/atlanta",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 13,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=posterncoffee; home=Atlanta, GA; brand=Postern Coffee; e.g. Tea and Matcha Workshop",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4893,10 +4893,10 @@
       "found_via": "search",
       "found_from": "ma.to/atlanta",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
-      "hits": 9,
-      "checks": 7,
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
+      "hits": 10,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=atlchinatown; home=Atlanta, GA; brand=Atlanta Chinatown • 亞特蘭大中國城; e.g. Bliss'd & Whisk'd Matcha Workshop",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4936,10 +4936,10 @@
       "found_via": "search",
       "found_from": "ma.to/san-diego",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 1,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=kyotocoastmatcha; home=San Diego, CA; brand=Kyoto Coast Matcha; e.g. Matcha Monday: $1 Off Any Drink",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -4979,10 +4979,10 @@
       "found_via": "search",
       "found_from": "ma.to/miami",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-12T18:43:38.000Z",
       "hits": 33,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=admaritea; home=Miami, FL; brand=Admari | Modern Tea Merchants; e.g. Matcha, Matcha, Matcha",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -5044,10 +5044,10 @@
       "found_via": "search",
       "found_from": "ma.to/washington",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
-      "last_post_with_popup": "2026-11-19T00:25:08.000Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
+      "last_post_with_popup": "2026-11-27T23:25:02.000Z",
       "hits": 21,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=kyrumatcha; home=Washington, VA; brand=Kyru; e.g. Matcha Paint N’ Sip Workshop",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -5087,10 +5087,10 @@
       "found_via": "search",
       "found_from": "ma.to/los-angeles",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-22T00:24:27.000Z",
       "hits": 11,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=studio.bubby; home=Los Angeles, CA; brand=studio bubby | by sofia; e.g. Silver & Matcha Ceremony",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -5130,10 +5130,10 @@
       "found_via": "search",
       "found_from": "ma.to/new-york",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-14T22:09:36.000Z",
       "hits": 54,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=japanvillagebrooklyn; home=New York, NY; brand=Japan Village; e.g. Japanese Bread & Matcha Workshop",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -5173,10 +5173,10 @@
       "found_via": "search",
       "found_from": "ma.to/orlando",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T19:16:20.793Z",
-      "last_post_with_popup": "2026-11-26T19:16:20.793Z",
+      "last_checked": "2026-11-27T19:25:02.038Z",
+      "last_post_with_popup": "2026-11-27T19:25:02.038Z",
       "hits": 0,
-      "checks": 6,
+      "checks": 7,
       "cadence_hours": 24,
       "notes": "mato_venue=diablicos.coffee; home=Orlando, FL; brand=Diablicos Coffee; e.g. Matcha Party 2.0",
       "graph_checked_at": "2026-11-23T02:01:13.925Z",
@@ -5195,10 +5195,10 @@
       "found_via": "search",
       "found_from": "ma.to/washington",
       "first_seen": "2026-11-22T18:13:07.235Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-10T22:07:56.000Z",
       "hits": 4,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "mato_venue=merrimatcha; home=Washington, DC; brand=merri; e.g. Morning Hike + Matcha",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -6700,10 +6700,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-21T03:00:14.000Z",
       "hits": 0,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -6872,10 +6872,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-22T23:18:53.000Z",
       "hits": 2,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -6934,10 +6934,10 @@
       "found_via": "seed",
       "found_from": "data/sources.json",
       "first_seen": "2026-11-22T18:29:32.330Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-22T15:19:55.000Z",
       "hits": 13,
-      "checks": 7,
+      "checks": 8,
       "cadence_hours": 24,
       "notes": "",
       "graph_checked_at": "2026-11-24T02:16:21.878Z",
@@ -26121,10 +26121,10 @@
       "found_via": "manual",
       "found_from": "https://bigwissmatcha.com/",
       "first_seen": "2026-11-22T00:00:00.000Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
-      "last_post_with_popup": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
+      "last_post_with_popup": "2026-11-27T21:25:02.036Z",
       "hits": 2,
-      "checks": 2,
+      "checks": 3,
       "cadence_hours": 24,
       "notes": "Dearborn, MI | wave4 midwest sweep: Big Wiss Matcha, matcha pop-up brand | evidence: https://bigwissmatcha.com/",
       "graph_checked_at": "2026-11-23T12:13:27.855Z",
@@ -26327,10 +26327,10 @@
       "found_via": "manual",
       "found_from": "https://centralmatcha.com/pages/find-us",
       "first_seen": "2026-11-22T00:00:00.000Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
-      "last_post_with_popup": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
+      "last_post_with_popup": "2026-11-27T21:25:02.036Z",
       "hits": 1,
-      "checks": 2,
+      "checks": 3,
       "cadence_hours": 24,
       "notes": "Austin, TX | wave4 texas sweep: Central Matcha, matcha pop-up brand | evidence: https://centralmatcha.com/pages/find-us",
       "graph_checked_at": "2026-11-23T12:13:27.855Z",
@@ -30166,10 +30166,10 @@
       "found_via": "search",
       "found_from": "ma.to/san-antonio",
       "first_seen": "2026-11-23T18:33:18.178Z",
-      "last_checked": "2026-11-26T21:16:21.481Z",
-      "last_post_with_popup": "2026-11-26T21:16:21.481Z",
+      "last_checked": "2026-11-27T21:25:02.036Z",
+      "last_post_with_popup": "2026-11-27T21:25:02.036Z",
       "hits": 0,
-      "checks": 2,
+      "checks": 3,
       "cadence_hours": 24,
       "notes": "mato_venue=cremesatx; home=San Antonio, TX; brand=Crème Coffee & Social; e.g. Mats & Matcha",
       "graph_checked_at": "2026-11-23T18:58:09.868Z",
@@ -32484,10 +32484,10 @@
       "found_via": "search",
       "found_from": "ma.to/san-antonio",
       "first_seen": "2026-11-24T18:00:10.224Z",
-      "last_checked": "2026-11-26T23:16:21.529Z",
+      "last_checked": "2026-11-27T23:25:02.000Z",
       "last_post_with_popup": "2026-11-21T18:23:50.000Z",
       "hits": 3,
-      "checks": 2,
+      "checks": 3,
       "cadence_hours": 24,
       "notes": "mato_venue=commonwealth_coffeehouse; home=San Antonio, TX; brand=CommonWealth Coffeehouse; e.g. Panda Fest at Hemisfair Park",
       "graph_checked_at": "2026-11-24T18:17:06.315Z",
@@ -32694,7 +32694,9 @@
           "caption": "Brown Sugar Vanilla Bean Matcha⭐️🍵 ~ a classic but slightly elevated! me thinks"
         }
       ],
-      "bio": "AMDG | my passion project in the making \n💌: littleflowermatchastop@gmail.com\n“Doing small things with great love —one cup at a time.”\nwinnipeg, mb"
+      "bio": "AMDG | my passion project in the making \n💌: littleflowermatchastop@gmail.com\n“Doing small things with great love —one cup at a time.”\nwinnipeg, mb",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T19:25:02.038Z"
     },
     {
       "handle": "butterandblissco",
@@ -32735,7 +32737,9 @@
           "caption": "Especially if the matcha wasn’t from Butter & Bliss Co. ✨😂 You can get your B&B"
         }
       ],
-      "bio": "Small-batch cookies •Crafted Coffee • Matcha • Boba \nWE CATER: Weddings-Private Events-Corporate\n📍3401 E. Lafayette St., DET\nSATURDAYS ONLY 9A-1P"
+      "bio": "Small-batch cookies •Crafted Coffee • Matcha • Boba \nWE CATER: Weddings-Private Events-Corporate\n📍3401 E. Lafayette St., DET\nSATURDAYS ONLY 9A-1P",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T19:25:02.038Z"
     },
     {
       "handle": "karacafeusa",
@@ -32775,7 +32779,9 @@
           "caption": "Are you ready for it? 3 more days till KARA Café x lashesannbeauty pop-up! 📆 Fr"
         }
       ],
-      "bio": "UPCOMING POPUP THIS FRIDAY 11/20!\n✦ based in Sacramento, CA\n✦ KARA means \"friend\"\n✦ DM for collabs | catering | events￼\n✦ karacafeusa@gmail.com"
+      "bio": "UPCOMING POPUP THIS FRIDAY 11/20!\n✦ based in Sacramento, CA\n✦ KARA means \"friend\"\n✦ DM for collabs | catering | events￼\n✦ karacafeusa@gmail.com",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T19:25:02.038Z"
     },
     {
       "handle": "freematcha",
@@ -33009,7 +33015,9 @@
       "name": "444 the Matcha Lovers",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/461293655_955697696366187_7763121805889265824_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=vq-9f65TLQ8Q7kNvwEa_Zug&_nc_oc=Adp1S2M8vgE6iXieG4XZvWPmloBZzhfZJe3-tMZVRAAG-FJfmuhaemQ-_W_UA3GpPLk&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQQsMHcIBvpajLTRyZWylA8k4a9PtmilPPLht9x77R1XRg&oe=6B0BA645",
       "followers_count": 26,
-      "bio": "Bringing You Matcha Made with Love 🍵\nNorCal Food Vendor \nEst. 2024\n@aleishasianipar"
+      "bio": "Bringing You Matcha Made with Love 🍵\nNorCal Food Vendor \nEst. 2024\n@aleishasianipar",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T19:25:02.038Z"
     },
     {
       "handle": "matchallama",
@@ -33215,7 +33223,9 @@
           "caption": "your usual, but make it october 🍂 #matchaagusto #matchagusto #matchalover #matc"
         }
       ],
-      "bio": "specialty matcha bar \n805 • ventura county \nweekend pop-ups\n📍fri-sun @channelislandsjuice \n↓ weekly hours, specials & updates in stories"
+      "bio": "specialty matcha bar \n805 • ventura county \nweekend pop-ups\n📍fri-sun @channelislandsjuice \n↓ weekly hours, specials & updates in stories",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T19:25:02.038Z"
     },
     {
       "handle": "matchaavenue",
@@ -33353,7 +33363,9 @@
           "caption": "snickerdoodle matcha 🤎 with some homemade snickerdoodle cookies #matchamoments "
         }
       ],
-      "bio": "matcha days 🍵\nhomemade and cafes ౨ৎ"
+      "bio": "matcha days 🍵\nhomemade and cafes ౨ৎ",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T19:25:02.038Z"
     },
     {
       "handle": "manilamatchafest",
@@ -33454,7 +33466,9 @@
           "caption": "Essentials for the kitchen, and everything that happens around it… ☕️ — Explore "
         }
       ],
-      "bio": "Discover more👇"
+      "bio": "Discover more👇",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T19:25:02.038Z"
     },
     {
       "handle": "batchedmatcha",
@@ -33514,7 +33528,9 @@
           "caption": "kuro, made with our dark roasted hojicha. crunchy black sesame butter, KOATJI oa"
         }
       ],
-      "bio": "a little known good place // traveling café concept serving japanese single cultivar matcha and specialty coffee."
+      "bio": "a little known good place // traveling café concept serving japanese single cultivar matcha and specialty coffee.",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T19:25:02.038Z"
     },
     {
       "handle": "shizucha",
@@ -33576,7 +33592,9 @@
           "caption": "we’re a small business, we love a tote (it’s the law) spend $100 friday 11.27 to"
         }
       ],
-      "bio": "✨Mon to Sat 11-6✨Sun 11-4✨\nWEBSITE 🎱 ALWAYS OPEN\n🌀 chasing a feeling 🌀"
+      "bio": "✨Mon to Sat 11-6✨Sun 11-4✨\nWEBSITE 🎱 ALWAYS OPEN\n🌀 chasing a feeling 🌀",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "sydneymatcha",
@@ -33760,7 +33778,9 @@
           "caption": "Dernière semaine avant une petite pause. Au plaisir de vous voir du 5 au 8 novem"
         }
       ],
-      "bio": "Specialty teahouse 🏠\n｡”* :˚;•.*☆*˚*.•･*:..｡☆*˚:\nEn vacances jusqu’au 26 novembre ⛱️\nSnacks par @honnetekid"
+      "bio": "Specialty teahouse 🏠\n｡”* :˚;•.*☆*˚*.•･*:..｡☆*˚:\nEn vacances jusqu’au 26 novembre ⛱️\nSnacks par @honnetekid",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "madismatcha",
@@ -33801,7 +33821,9 @@
           "caption": "available at Ramsey farmers market in NJ! check pinned post for location & time "
         }
       ],
-      "bio": "⭐️ medina@madismatcha.com\n⭐️ Every Sunday @ramseyfarmersmarket 9 AM - 2 PM"
+      "bio": "⭐️ medina@madismatcha.com\n⭐️ Every Sunday @ramseyfarmersmarket 9 AM - 2 PM",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "kno3cky",
@@ -33965,7 +33987,9 @@
           "caption": "Last chance to get 20% off!"
         }
       ],
-      "bio": "The #1 SA Supplier of genuine Matcha from Uji, Japan \nTeaching health benefits & how to use Matcha in fun & unique ways for Matcha lovers\nShop now👇🏼🍵"
+      "bio": "The #1 SA Supplier of genuine Matcha from Uji, Japan \nTeaching health benefits & how to use Matcha in fun & unique ways for Matcha lovers\nShop now👇🏼🍵",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "orlandocoffeecart",
@@ -34165,7 +34189,9 @@
           "timestamp": "2023-10-30T20:14:36+0000",
           "caption": "اكتشف سر سد الشهية مع أورجانك ماتشا الياباني 🍵 هل ترغب في التخلص من عادة الأكل "
         }
-      ]
+      ],
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "scmatchapopups",
@@ -34225,7 +34251,9 @@
           "caption": "No need to overthink, we already made the list 😉 🗓️ Nov 24-30, 2026 ⏰ 11AM-10P"
         }
       ],
-      "bio": "𝑴𝒐𝑴𝒂— 𝐀 𝐜𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐩𝐨𝐩-𝐮𝐩\nNov 24-30: SM Aura\nNov 28-29: GCP, 7th Ave, BGC @moma_eats \nDec 7-13: Eastwood Central Plaza\nJoin our channel for updates"
+      "bio": "𝑴𝒐𝑴𝒂— 𝐀 𝐜𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐩𝐨𝐩-𝐮𝐩\nNov 24-30: SM Aura\nNov 28-29: GCP, 7th Ave, BGC @moma_eats \nDec 7-13: Eastwood Central Plaza\nJoin our channel for updates",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "cupforcause",
@@ -34324,7 +34352,9 @@
           "caption": "Only two more days until renegadecraft ! 🥰🍀 Looking forward to another fun wee"
         }
       ],
-      "bio": "more than what we make. 🍀\nvietnamese coffee • premium matcha • handmade bakes\npop-ups • private events • catering"
+      "bio": "more than what we make. 🍀\nvietnamese coffee • premium matcha • handmade bakes\npop-ups • private events • catering",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "mexicalimatcha",
@@ -34383,7 +34413,9 @@
           "caption": "Find us tomorrow for your refreshing açaí bowl + energising matcha fix! 🥣⚡🍵 Fu"
         }
       ],
-      "bio": "Weekend & Event Pop-Ups 🍓\n• Açaí Bowls & Ceremonial Matcha\n• Visit @mokki_nz for 7-day matcha & açaí\n📩 hello@mokki.co.nz"
+      "bio": "Weekend & Event Pop-Ups 🍓\n• Açaí Bowls & Ceremonial Matcha\n• Visit @mokki_nz for 7-day matcha & açaí\n📩 hello@mokki.co.nz",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "thesocialfair",
@@ -34402,7 +34434,9 @@
       "graph_checked_at": "2026-11-24T20:16:22.146Z",
       "name": "The Social Fair JRZ",
       "profile_picture_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t51.2885-15/162790932_427853704993579_3095796908110660095_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=BclgAQs8IAYQ7kNvwG1Rv8j&_nc_oc=AdpC_P1dj1mxr68W981GRyiQ0lFD8LJA9u8omx1SL5iOm8WpRCc0hg1c_STGKRGwf5g&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AJ-jyNUEAAAA&oh=00_AQQkNTIONyVfL7pvXAsK1cO3HWa1V3RLmSanUJWFc_y9Vw&oe=6B0BB3AF",
-      "followers_count": 0
+      "followers_count": 0,
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "funkytownmatcha",
@@ -34442,7 +34476,9 @@
           "caption": "A little sneak peek of what’s brewing for winter… 👀❄️ AHH, I’m SO excited for t"
         }
       ],
-      "bio": "📍Fort Worth, TX\n🍵 Tag us in your drinks ☺️🫶🏽\n🧋Iced Coffee & Matcha Bar\nDM for Events & Birthdays ✨"
+      "bio": "📍Fort Worth, TX\n🍵 Tag us in your drinks ☺️🫶🏽\n🧋Iced Coffee & Matcha Bar\nDM for Events & Birthdays ✨",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "puertorico",
@@ -34524,7 +34560,9 @@
           "caption": "YOUR SUNDAY PLANS ARE SORTED! 🍵🥐🎄 A little matcha, a little hojicha, a taste "
         }
       ],
-      "bio": "꒰ঌ 🍵 ໒꒱ MOSSUMATCHA ✿\n♡ Japanese Matcha · Filipino Soul\nPop-ups · Collabs · Private Events\n✉️ Bookings: DM or email\nmossu.matcha@gmail.com\n📍 Adelaide"
+      "bio": "꒰ঌ 🍵 ໒꒱ MOSSUMATCHA ✿\n♡ Japanese Matcha · Filipino Soul\nPop-ups · Collabs · Private Events\n✉️ Bookings: DM or email\nmossu.matcha@gmail.com\n📍 Adelaide",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "private",
@@ -34746,7 +34784,9 @@
           "caption": "announcing angelbbmatcha will be at the flea market hosted by lmutheatreincolor "
         }
       ],
-      "bio": "💌: angelbbmatcha@yahoo.com \nhand whisked | latina owned 🇲🇽\nall organic | premium matcha sourced from uji, kyoto \nsanta cruz county | los angeles, ca"
+      "bio": "💌: angelbbmatcha@yahoo.com \nhand whisked | latina owned 🇲🇽\nall organic | premium matcha sourced from uji, kyoto \nsanta cruz county | los angeles, ca",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "the_shank_shoppe",
@@ -35338,7 +35378,9 @@
           "caption": "can’t wait for life to sound like this again, 4 Sundays to go before Christmas."
         }
       ],
-      "bio": "YOUR NEIGHBORHOOD COMFORT CAFE.\nBrunch all day • Coffee • Craft drinks\nmade with real ingredients.\n@xi_bycafeguilt \n@guiltwellness"
+      "bio": "YOUR NEIGHBORHOOD COMFORT CAFE.\nBrunch all day • Coffee • Craft drinks\nmade with real ingredients.\n@xi_bycafeguilt \n@guiltwellness",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "bookings",
@@ -35460,7 +35502,9 @@
           "caption": "Again it’s a ritual #matcharitual #pinkcrescentcafe #matcha"
         }
       ],
-      "bio": "⏾⋆.˚ Matcha • Henna • Wellness\n.✦ ݁˖    Pop-ups & Private Events\n☾⋆.˚ ATX | Book us ↓"
+      "bio": "⏾⋆.˚ Matcha • Henna • Wellness\n.✦ ݁˖    Pop-ups & Private Events\n☾⋆.˚ ATX | Book us ↓",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "gigismatcha",
@@ -35841,7 +35885,9 @@
           "caption": "Your Snaps. Our Matcha. #matcha #dublinfoodie #matchalatte #dublincity"
         }
       ],
-      "bio": "📍 Ireland’s first matcha bar\nWhere matcha isn’t an afterthought\nrefined sugar free, real ingredients in our flavours\n10-6 daily\nShop 🍵"
+      "bio": "📍 Ireland’s first matcha bar\nWhere matcha isn’t an afterthought\nrefined sugar free, real ingredients in our flavours\n10-6 daily\nShop 🍵",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "chasingmatcha",
@@ -36001,7 +36047,9 @@
           "caption": "Matcha after matcha after matcha.. Because it’s not just a trend it’s an obsessi"
         }
       ],
-      "bio": "🍵Your favorite matcha & hojicha\n💚Sourced from volcanic soil in Japan 🇯🇵\n🛒Supplying cafés & studios\n👇🏼Shop & Wholesale link below"
+      "bio": "🍵Your favorite matcha & hojicha\n💚Sourced from volcanic soil in Japan 🇯🇵\n🛒Supplying cafés & studios\n👇🏼Shop & Wholesale link below",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "square.gardens",
@@ -36189,7 +36237,9 @@
           "caption": "Coconut flower juice, meet mixology. 🌶️🍸 Coco Picante brings Elephant & Fig Tr"
         }
       ],
-      "bio": "Matcha & natural pantry superfoods 🍵\nSeeds • Flours • Oats • Cacao • Ube\n📍 Dubai | UAE delivery\n👇 Shop online or DM to order"
+      "bio": "Matcha & natural pantry superfoods 🍵\nSeeds • Flours • Oats • Cacao • Ube\n📍 Dubai | UAE delivery\n👇 Shop online or DM to order",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "community",
@@ -36329,7 +36379,9 @@
           "caption": "More Sundays like this, please 💫 Rückblick von unserem Matcha Sip & Face Yoga \ud83c"
         }
       ],
-      "bio": "Denn mit Matcha macht alles mehr Spaß, oder? #matchasipand\nNext Sip ↓\n🍵💃🏼 29. November: Matcha Sip & Dance x @danceoutbys"
+      "bio": "Denn mit Matcha macht alles mehr Spaß, oder? #matchasipand\nNext Sip ↓\n🍵💃🏼 29. November: Matcha Sip & Dance x @danceoutbys",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "thenewgreen_matcha",
@@ -36590,7 +36642,9 @@
           "caption": "Taller de Foto Bordado🤩🪡✨ Gracias por formar parte de Espacio Creativo🫟"
         }
       ],
-      "bio": "Acompañamiento artístico en procesos de expresión, creatividad y bienestar emocional🫟🎭❤️‍🩹"
+      "bio": "Acompañamiento artístico en procesos de expresión, creatividad y bienestar emocional🫟🎭❤️‍🩹",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "wafflepopbar",
@@ -36874,7 +36928,9 @@
           "caption": "🫒🍷 Bold bites, small batches. Your festive table starts here! 🧀🎄 Christmas i"
         }
       ],
-      "bio": "A culinary adventure like no other 🌶️🍸\nMelbourne: 27–29 NOV, Royal Exhibition Building\n🎟️ Tickets on sale now"
+      "bio": "A culinary adventure like no other 🌶️🍸\nMelbourne: 27–29 NOV, Royal Exhibition Building\n🎟️ Tickets on sale now",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "meowskycafe",
@@ -36915,7 +36971,9 @@
           "caption": "The sweetest wedding send-off! 🍪✨ Our fully customized Cookie Bar was the perfe"
         }
       ],
-      "bio": "SERVING IE • LA • OC • LV | ALL SOCAL☀️\nTHE CART EXPERTS 🥞☕️🍓\nCoffee, Mini Pancakes, & MORE\n📍 711 Monroe Way, Placentia, CA\n👇 Get your quote today !"
+      "bio": "SERVING IE • LA • OC • LV | ALL SOCAL☀️\nTHE CART EXPERTS 🥞☕️🍓\nCoffee, Mini Pancakes, & MORE\n📍 711 Monroe Way, Placentia, CA\n👇 Get your quote today !",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "brisbanebride",
@@ -37199,7 +37257,9 @@
           "caption": "Yesterday, Sokami Tea debuted their signature flavor at flow.withmya ‘s Return t"
         }
       ],
-      "bio": "ready when you are… \na new philosophy on tea by @aminataawasissoko.\nceremonial grade • dairy-free • gluten-free"
+      "bio": "ready when you are… \na new philosophy on tea by @aminataawasissoko.\nceremonial grade • dairy-free • gluten-free",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "sunspirecafe",
@@ -37571,7 +37631,9 @@
           "caption": "Your next coffee obsession? — Iced Dripppp. #samroasters #samdonuts"
         }
       ],
-      "bio": "Passion and craftsmanship in coffee roasting and brewing, for all coffee enthusiasts.\nCoffee hours: 8am - 6pm \n📍Ekkamai 15\n📍Sathorn 12"
+      "bio": "Passion and craftsmanship in coffee roasting and brewing, for all coffee enthusiasts.\nCoffee hours: 8am - 6pm \n📍Ekkamai 15\n📍Sathorn 12",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "dietitians_diary",
@@ -37673,7 +37735,9 @@
           "caption": "Olive oil in matcha?! 🫒🍵 Sounds a little extra. Tastes a little luxe 💅 We’ve "
         }
       ],
-      "bio": "More Matcha, Less Drama 💃🏻\n📍 12 locations\n🍵 Avenue K: Now OPEN! ✨️\n‎ \nOCMC Ventures 202403235104"
+      "bio": "More Matcha, Less Drama 💃🏻\n📍 12 locations\n🍵 Avenue K: Now OPEN! ✨️\n‎ \nOCMC Ventures 202403235104",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "homematcha",
@@ -37776,7 +37840,9 @@
           "caption": "5 adımda mükemmel matcha latte! Ana karakter HARU Matcha🍵 Perfect matcha latte "
         }
       ],
-      "bio": "Premium Matcha\na brand of @fube_co"
+      "bio": "Premium Matcha\na brand of @fube_co",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "hungrygrls",
@@ -37862,7 +37928,9 @@
           "caption": "A Quiet Moment, Anytime 🫖 บางครั้งการได้มีเวลาพักจากความวุ่นวายรอบตัว ก็เป็นเรื"
         }
       ],
-      "bio": "Matcha Bar & Casual Space 🌱\nOperational Days: \nTuesday to Sunday \n(Monday is our holiday)\n⏰ 9.00–17.45 O’Clock\n (Last Order 17.30)\n🚗 Plenty parking."
+      "bio": "Matcha Bar & Casual Space 🌱\nOperational Days: \nTuesday to Sunday \n(Monday is our holiday)\n⏰ 9.00–17.45 O’Clock\n (Last Order 17.30)\n🚗 Plenty parking.",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "jency_c",
@@ -38107,7 +38175,9 @@
           "caption": "We are hosting a Matcha Workshop and you are invited✉️ Learn the history, master"
         }
       ],
-      "bio": "Over one million cups served. Follow along as we move into our next chapter ♥️"
+      "bio": "Over one million cups served. Follow along as we move into our next chapter ♥️",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "copenhagenpride",
@@ -38211,7 +38281,9 @@
           "caption": "Another heatwave! 🥵 Our Kakigori’s got you covered. Our Budo grape kakigori is "
         }
       ],
-      "bio": "🍵Whisking Matcha Since 2010\n🍙Onigiri, Poké, Ramen & more \n🍰Craft Matcha Desserts & Soft Serve \n📍South Ken SW7. Family Run 🇯🇵🧑‍🧑‍🧒"
+      "bio": "🍵Whisking Matcha Since 2010\n🍙Onigiri, Poké, Ramen & more \n🍰Craft Matcha Desserts & Soft Serve \n📍South Ken SW7. Family Run 🇯🇵🧑‍🧑‍🧒",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "handmade",
@@ -38273,7 +38345,9 @@
           "caption": "A reminder that our biggest sale of the year is ongoing! Enjoy 20% off storewide"
         }
       ],
-      "bio": "Finest Artisanal Japanese Matcha Green Tea 🍵\nDefining the Ultimate #MatchaRitual Experience\nShipped Worldwide :: Retail & Wholesale\nShop Online: 👇"
+      "bio": "Finest Artisanal Japanese Matcha Green Tea 🍵\nDefining the Ultimate #MatchaRitual Experience\nShipped Worldwide :: Retail & Wholesale\nShop Online: 👇",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "ostrava",
@@ -38577,7 +38651,9 @@
           "caption": "Slide for more advice! Houjicha solves problems such as an uncreative & clueless"
         }
       ],
-      "bio": "Ceremonial Matcha for Everyone \n📍Cayenne, Kemang, Jakarta Open Every Day.\n📍Canggu, Bali Open Every Day."
+      "bio": "Ceremonial Matcha for Everyone \n📍Cayenne, Kemang, Jakarta Open Every Day.\n📍Canggu, Bali Open Every Day.",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "nobumadrid",
@@ -38659,7 +38735,9 @@
           "caption": "We’re coming to newbury st!! Join us at tutugether.ne on october 18 for our next"
         }
       ],
-      "bio": "Boston matcha pop-up\n4g first-harvest matcha · oat milk · hand-whisked\n📍 we’ll be returning next yr :) \n💌 DM or email for vendor & catering inquiries"
+      "bio": "Boston matcha pop-up\n4g first-harvest matcha · oat milk · hand-whisked\n📍 we’ll be returning next yr :) \n💌 DM or email for vendor & catering inquiries",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "macarons",
@@ -38780,7 +38858,9 @@
           "caption": "Saito brings fresh onigiri to Japansk Designfestival 🍙 We’re delighted to welco"
         }
       ],
-      "bio": "14. & 15. November at Kosmopol 🌸 Japanese & Danish design and craft. Market • exhibition • lectures • workshops • Culture. By Seidokan"
+      "bio": "14. & 15. November at Kosmopol 🌸 Japanese & Danish design and craft. Market • exhibition • lectures • workshops • Culture. By Seidokan",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "sofiacafe",
@@ -39026,7 +39106,9 @@
           "caption": "Miso Salted Caramel has taken the throne. #recipe #latte #latteart #miso"
         }
       ],
-      "bio": "(DAH-meh)\n                                        • You Deserve Better •\nTues - Sat 9-3\nLocated Inside @greyscalebarbers\nFramingham, MA"
+      "bio": "(DAH-meh)\n                                        • You Deserve Better •\nTues - Sat 9-3\nLocated Inside @greyscalebarbers\nFramingham, MA",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "nanthai_herndon",
@@ -39208,7 +39290,9 @@
           "caption": "Your sign to try our Matcha and fall in love with it ❤️ #matchatastetest #matcha"
         }
       ],
-      "bio": "organic & super ceremonial Matcha & Hojicha\nBuch unsere MATCHA BAR für dein Event!\nOder bestell dir Matcha direkt nach Hause ⬇️\nBy @dyg_cdn"
+      "bio": "organic & super ceremonial Matcha & Hojicha\nBuch unsere MATCHA BAR für dein Event!\nOder bestell dir Matcha direkt nach Hause ⬇️\nBy @dyg_cdn",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "matchamanila",
@@ -39288,7 +39372,9 @@
           "timestamp": "2020-12-08T16:13:43+0000",
           "caption": ""
         }
-      ]
+      ],
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "matchacandle",
@@ -39578,7 +39664,9 @@
           "caption": "Un cafecito nadamas ☺️"
         }
       ],
-      "bio": "🩷 Strawberry matcha\n🩷 Banana matcha \n🩷 Mango matcha \n🩷 Horchata matcha \n🩷 Matcha latte \n🩷 Biscoff matcha \n🩷 Cafe de olla latte \nSf vanilla cold foam"
+      "bio": "🩷 Strawberry matcha\n🩷 Banana matcha \n🩷 Mango matcha \n🩷 Horchata matcha \n🩷 Matcha latte \n🩷 Biscoff matcha \n🩷 Cafe de olla latte \nSf vanilla cold foam",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "hanabirapr",
@@ -40041,7 +40129,9 @@
           "caption": "wondering where your favourite matcha brands are? 👀💚 save this map so you know"
         }
       ],
-      "bio": "by @xyevents.my \n💌 xyevents.my@gmail.com (TR0327872-V)"
+      "bio": "by @xyevents.my \n💌 xyevents.my@gmail.com (TR0327872-V)",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-27T20:25:02.259Z"
     },
     {
       "handle": "manilamatchafest2026",
@@ -42599,10 +42689,10 @@
       "found_via": "search",
       "found_from": "ma.to/los-angeles",
       "first_seen": "2026-11-26T18:00:04.328Z",
-      "last_checked": "2026-11-26T19:16:20.793Z",
+      "last_checked": "2026-11-27T19:25:02.038Z",
       "last_post_with_popup": "2026-11-26T19:16:20.793Z",
       "hits": 1,
-      "checks": 1,
+      "checks": 2,
       "cadence_hours": 24,
       "notes": "mato_venue=cocoaandcreamla; home=Los Angeles, CA; brand=Cocoa + Cream; e.g. Thanksgiving Day at Cocoa + Cream",
       "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
@@ -43253,6 +43343,295 @@
       "notes": "site=eventbrite; org=the-tox-overland-park; home=Overland Park, KS; brand=The Tox Overland Park; e.g. SELF-CARE SOCIAL: YOGA + MATCHA",
       "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
       "graph_error_at": "2026-11-27T18:08:59.008Z"
+    },
+    {
+      "handle": "pomskytherapy",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/event/pups-n-chill-art-basel-edition-29-nov-2026",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "m leads Puppy Pilates and @fernandashaw_ leads Booty Sculpt. A fashion runway show follows at 5 PM. @pomskytherapy brings the pups, and the wellness market incl",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "craveclean_",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://ma.to/event/pups-n-chill-art-basel-edition-29-nov-2026",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "ps, and the wellness market includes giveaways. Food and drink offerings include protein bites from @craveclean_ , bars from @linear_bar , marine collagen gummi",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "godegamarket",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "http://www.godegamarket.com/",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "enu Learn more about our Coffee Shop and Market. What is Godega? Learn More Check out our instagram @godegamarket no sis, this is a tire shop. these shots got l",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "papesh_creative",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "http://www.godegamarket.com/contact",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "nquiry Vendor Product Inquiry Your Message File Upload Choose File Optional Submit Form 📷 photo by @papesh_creative You’ll find us in the heart of the Old Mark",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "jinjinmatcha",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://www.jinjinmatcha.com/contact",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "1019 pacific ave tacoma, wa 98402 hours monday — sunday: 9am — 4pm say hello hello@jinjinmatcha.com @jinjinmatcha",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "GROOVY",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://allevents.in/foley-al/matcha",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "December Family Bingo Local and Company Paint & Sip 2nd Annual Holiday Market IRON BOWL Watch Party @GROOVY GOAT OWA! Sparkling Lights Christmas Concert About C",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "mixedcandy.bsky.social",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=matcha%20bar%20Denver&limit=100&sort=latest",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": ") 🐾\\n\\nCoffee, matcha, friends, and fluff — see you soon! ✨\\n#AnimalCafe #SacredBeansCoffee\\n\\n🪡: @mixedcandy.bsky.social\"},\"embed\":{\"images\":[{\"thumb\":\"https",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "CoyoticTrouble",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "mention",
+      "found_from": "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=matcha%20bar%20Denver&limit=100&sort=latest",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "7 | 4–9 PM MT\\n📍 Locus Coffee Bar - Denver\\n☕️ Coffee, 🍵 Matcha & Good Vibes\\n🎨 Featuring art by @CoyoticTrouble\\n\\nCome hang out, drink coffee, be animals!\\",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "downtown_dallas",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "ma.to/dallas",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "mato_venue=downtown_dallas; home=Dallas, TX; brand=Downtown Dallas, Inc.; e.g. Matcha & Movement Pilates",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "culturewavecollective",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "ma.to/detroit",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "mato_venue=culturewavecollective; home=Detroit, MI; brand=Culture Wave Collective; e.g. The R&B Cafe: Holiday Edition",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "therootsbooksandmarket",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "ma.to/miami",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "mato_venue=therootsbooksandmarket; home=Miami, FL; brand=Roots Bookstore & Market; e.g. The Anime Edit Con 2026",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "whereshewore",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "ma.to/minneapolis",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "mato_venue=whereshewore; home=Minneapolis, MN; brand=Hannah Swenson; e.g. Shop Small Y’all Makers Market",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "balancemeoutnow",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "ma.to/sacramento",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "mato_venue=balancemeoutnow; home=Sacramento, CA; brand=Balance Me Out; e.g. Coffee with the Crew at Station 81",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "readtalltales",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "ma.to/san-diego",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "mato_venue=readtalltales; home=San Diego, CA; brand=books ✷ gifts ✷ gatherings; e.g. Small Business Saturday",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "quirk_haus",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "eventbrite",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=eventbrite; org=quirk-haus; home=Brooklyn, NY; brand=Quirk Haus; e.g. Pause, Pray, & Pilates: Pretty Charms Holiday Edition",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "sohot_nola",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "eventbrite",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=eventbrite; org=sohot-nola; home=New Orleans, LA; brand=SoHot NOLA; e.g. Mats & Matcha: Sip, Sculpt & Socialize",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
+    },
+    {
+      "handle": "richelle_s_wellness_group",
+      "platform": "instagram",
+      "source_id": null,
+      "status": "candidate",
+      "found_via": "search",
+      "found_from": "meetup",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "last_checked": null,
+      "last_post_with_popup": null,
+      "hits": 0,
+      "checks": 0,
+      "cadence_hours": 72,
+      "notes": "site=meetup; org=richelle-s-wellness-group; home=Raymond, NH; brand=Richelle's Wellness Group; e.g. Cacao & Plant Prana Circle",
+      "graph_error": "Graph API HTTP 400: Unsupported get request. Object with ID '17841409304705072' does not exist, cannot be loaded due to missing permissions, or does not support",
+      "graph_error_at": "2026-11-28T13:20:42.867Z"
     }
   ]
 }

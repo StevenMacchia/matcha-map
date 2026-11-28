@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Downtown Dallas\, Inc. pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a1734b3590d3@matchamap-cu7.pages.dev
+DTSTAMP:20261128T132113Z
+LAST-MODIFIED:20261128T132113Z
+DTSTART:20261128T150000Z
+DTEND:20261128T160000Z
+SUMMARY:Matcha & Movement Pilates
+LOCATION:Café Olivia\, Dallas\, TX
+DESCRIPTION:Matcha & Movement Pilates runs from 9 to 10 AM at Café Olivia.
+  Admission is free.\nPrice: free\nLikely\, not fully confirmed.\nMore: htt
+ ps://matchamap.app/e/a1734b3590d3/
+URL:https://matchamap.app/e/a1734b3590d3/
+GEO:32.787924;-96.796931
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

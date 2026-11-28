@@ -3594,6 +3594,45 @@
     "family": "latte"
    }
   },
+  "hot-chocolate": {
+   "file": "drinks/hot-chocolate.svg",
+   "text": "hot chocolate",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "spec": {
+    "v": "drink-1",
+    "name": "hot chocolate",
+    "label": "Hot Chocolate",
+    "seed": 718517698,
+    "size": "m",
+    "flavors": [
+     "chocolate"
+    ],
+    "side": "r",
+    "tilt": -2.9,
+    "pose": "m-peek",
+    "toppings": [],
+    "garnish": [],
+    "kind": "drink",
+    "vessel": "mug",
+    "temp": "hot",
+    "layers": [
+     {
+      "c": "#B4D190",
+      "f": 1,
+      "n": "matcha latte"
+     }
+    ],
+    "blend": "solid",
+    "ice": 0,
+    "fizz": false,
+    "streaks": null,
+    "top": {
+     "type": "art",
+     "c": "#FFF7EA"
+    },
+    "straw": null
+   }
+  },
   "hot-matcha-latte": {
    "file": "drinks/hot-matcha-latte.svg",
    "text": "hot matcha latte",
@@ -4544,6 +4583,57 @@
      "c2": "#6E9A5E",
      "w": 9,
      "a": 5.3
+    }
+   }
+  },
+  "mango": {
+   "file": "drinks/mango.svg",
+   "text": "mango",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "spec": {
+    "v": "drink-1",
+    "name": "mango",
+    "label": "Mango",
+    "seed": 267026807,
+    "size": "m",
+    "flavors": [
+     "mango"
+    ],
+    "side": "l",
+    "tilt": -3.7,
+    "pose": "m-happy",
+    "toppings": [],
+    "garnish": [],
+    "kind": "drink",
+    "vessel": "tall",
+    "temp": "iced",
+    "layers": [
+     {
+      "c": "#FFBE4F",
+      "f": 0.26,
+      "n": "mango"
+     },
+     {
+      "c": "#FFF7EA",
+      "f": 0.3,
+      "n": "milk"
+     },
+     {
+      "c": "#7DB54E",
+      "f": 0.4,
+      "n": "matcha"
+     }
+    ],
+    "blend": "layered",
+    "ice": 4,
+    "fizz": false,
+    "streaks": null,
+    "top": null,
+    "straw": {
+     "c": "#FFFBF0",
+     "c2": "#F28AA5",
+     "w": 9,
+     "a": -1.7
     }
    }
   },
@@ -6422,6 +6512,38 @@
      "w": 9,
      "a": -2.1
     }
+   }
+  },
+  "other-special-pastries": {
+   "file": "drinks/other-special-pastries.svg",
+   "text": "other special pastries",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "spec": {
+    "v": "drink-1",
+    "name": "other special pastries",
+    "label": "Other Special Pastries",
+    "seed": 1381238515,
+    "size": "m",
+    "flavors": [],
+    "side": "l",
+    "tilt": 2.7,
+    "pose": "m-excited",
+    "toppings": [],
+    "garnish": [],
+    "kind": "sweet",
+    "temp": "cold",
+    "layers": [],
+    "blend": "solid",
+    "ice": 0,
+    "fizz": false,
+    "streaks": null,
+    "top": null,
+    "straw": null,
+    "colors": [
+     "#FFE9B8"
+    ],
+    "vessel": "plate",
+    "item": "pastry"
    }
   },
   "pandan": {
@@ -9921,6 +10043,16 @@
     "iced-matcha-latte"
    ]
   },
+  "12ff174cb152": {
+   "file": "events/12ff174cb152.svg",
+   "text": "{\"brand\":\"Muni Cafe\",\"drinks\":[\"biko latte\",\"sesame ube latte matcha or espresso\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Muni Cafe",
+   "drinks": [
+    "biko-latte",
+    "sesame-ube-latte-matcha-or-espresso"
+   ]
+  },
   "1308b166827f": {
    "file": "events/1308b166827f.svg",
    "text": "{\"brand\":\"Longevity Cities (Matcha Walk)\",\"drinks\":[\"iced matcha latte\"]}",
@@ -10894,6 +11026,15 @@
     "berry-chantilly-matcha"
    ]
   },
+  "43f2882d7d3b": {
+   "file": "events/43f2882d7d3b.svg",
+   "text": "{\"brand\":\"Saikō Matcha House\",\"drinks\":[\"hojicha latte\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Saikō Matcha House",
+   "drinks": [
+    "hojicha-latte"
+   ]
+  },
   "44120b63a22f": {
    "file": "events/44120b63a22f.svg",
    "text": "{\"brand\":\"Emily Lorem\",\"drinks\":[\"ube ice cream\"]}",
@@ -11456,6 +11597,15 @@
    "drinks": [
     "black-sesame",
     "hojicha-latte"
+   ]
+  },
+  "64924d694143": {
+   "file": "events/64924d694143.svg",
+   "text": "{\"brand\":\"Roots Kava Bar\",\"drinks\":[\"yuzu matcha tonic\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Roots Kava Bar",
+   "drinks": [
+    "yuzu-matcha-tonic"
    ]
   },
   "655c0a08570c": {
@@ -12315,15 +12465,6 @@
     "iced-matcha-latte"
    ]
   },
-  "8f4d3f8ce76e": {
-   "file": "events/8f4d3f8ce76e.svg",
-   "text": "{\"brand\":\"Alma Matcha\",\"drinks\":[\"hojicha latte\"]}",
-   "v": "drink-1.1269cs5.h4q7c1",
-   "brand": "Alma Matcha",
-   "drinks": [
-    "hojicha-latte"
-   ]
-  },
   "8f8e1673d163": {
    "file": "events/8f8e1673d163.svg",
    "text": "{\"brand\":\"MATCH | A\",\"drinks\":[\"iced matcha latte\"]}",
@@ -12518,6 +12659,16 @@
    "brand": "Momokomart",
    "drinks": [
     "pistachio-matcha-latte"
+   ]
+  },
+  "9a2d4fa839bf": {
+   "file": "events/9a2d4fa839bf.svg",
+   "text": "{\"brand\":\"Howdy Y'all Coffee\",\"drinks\":[\"corn matcha\",\"melon matcha\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Howdy Y'all Coffee",
+   "drinks": [
+    "corn-matcha",
+    "melon-matcha"
    ]
   },
   "9a6762c17c0d": {
@@ -13731,16 +13882,6 @@
     "hojicha-latte"
    ]
   },
-  "df42a83f695e": {
-   "file": "events/df42a83f695e.svg",
-   "text": "{\"brand\":\"Central Matcha\",\"drinks\":[\"matcha shot\",\"iced matcha latte\"]}",
-   "v": "drink-1.1269cs5.h4q7c1",
-   "brand": "Central Matcha",
-   "drinks": [
-    "matcha-shot",
-    "iced-matcha-latte"
-   ]
-  },
   "dff4bcf1b2e1": {
    "file": "events/dff4bcf1b2e1.svg",
    "text": "{\"brand\":\"Creator’s Kitchen\",\"drinks\":[\"iced matcha latte\"]}",
@@ -13830,6 +13971,16 @@
    "brand": "Ruma Latte",
    "drinks": [
     "strawberry-matcha"
+   ]
+  },
+  "e515c047c297": {
+   "file": "events/e515c047c297.svg",
+   "text": "{\"brand\":\"Central Matcha\",\"drinks\":[\"matcha shot\",\"iced matcha latte\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Central Matcha",
+   "drinks": [
+    "matcha-shot",
+    "iced-matcha-latte"
    ]
   },
   "e5b55337e852": {
@@ -14221,6 +14372,16 @@
     "sesame-ube-latte-matcha-or-espresso"
    ]
   },
+  "f744dd131bf1": {
+   "file": "events/f744dd131bf1.svg",
+   "text": "{\"brand\":\"For the Love of Matcha\",\"drinks\":[\"iced matcha latte\",\"sweet potato matcha\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "For the Love of Matcha",
+   "drinks": [
+    "iced-matcha-latte",
+    "sweet-potato-matcha"
+   ]
+  },
   "f77fff089f4b": {
    "file": "events/f77fff089f4b.svg",
    "text": "{\"brand\":\"Creamed | HTX\",\"drinks\":[\"iced matcha latte\"]}",
@@ -14294,6 +14455,16 @@
    "v": "drink-1.1269cs5.h4q7c1",
    "brand": "Daylight Matcha",
    "drinks": [
+    "hojicha-latte"
+   ]
+  },
+  "fd1dc31e774b": {
+   "file": "events/fd1dc31e774b.svg",
+   "text": "{\"brand\":\"Nicho's Matcha Cafe\",\"drinks\":[\"signature matcha\",\"hojicha latte\"]}",
+   "v": "drink-1.1269cs5.h4q7c1",
+   "brand": "Nicho's Matcha Cafe",
+   "drinks": [
+    "signature-matcha",
     "hojicha-latte"
    ]
   },

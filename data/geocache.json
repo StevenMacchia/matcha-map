@@ -326,6 +326,11 @@
     "lng": -117.9466,
     "source": "nominatim"
   },
+  "10555 lake forest blvd new orleans la 70127": {
+    "lat": 30.033073,
+    "lng": -89.969355,
+    "source": "nominatim"
+  },
   "10582 foothill blvd rancho cucamonga ca 91730": {
     "lat": 34.10855,
     "lng": -117.573595,
@@ -3813,6 +3818,11 @@
   "313 north state street orem ut 84057": {
     "lat": 40.302982,
     "lng": -111.697661,
+    "source": "nominatim"
+  },
+  "3131 adams ave san diego ca": {
+    "lat": 32.763175,
+    "lng": -117.126669,
     "source": "nominatim"
   },
   "314 6th ave s seattle wa 98104 seattle wa": {
@@ -8782,6 +8792,10 @@
     "miss": true,
     "at": 1795400397067
   },
+  "venue: ayi san diego ca": {
+    "miss": true,
+    "at": 1795822087449
+  },
   "venue: bellevue square bellevue wa": {
     "lat": 47.615655,
     "lng": -122.203677,
@@ -8842,6 +8856,11 @@
   "venue: cafe monet art & clay studio austin tx": {
     "miss": true,
     "at": 1795400405244
+  },
+  "venue: café olivia dallas tx": {
+    "lat": 32.787924,
+    "lng": -96.796931,
+    "source": "nominatim-venue"
   },
   "venue: cagangohan seabreeze resort & food": {
     "miss": true,
@@ -8996,6 +9015,10 @@
     "miss": true,
     "at": 1795785614417
   },
+  "venue: homme essentials washington va": {
+    "miss": true,
+    "at": 1795822088483
+  },
   "venue: ifellinlovehere el paso tx": {
     "miss": true,
     "at": 1795400362792
@@ -9008,6 +9031,10 @@
   "venue: inspire seattle seattle wa": {
     "miss": true,
     "at": 1795436188383
+  },
+  "venue: isa matcha at onli houston tx": {
+    "miss": true,
+    "at": 1795822083363
   },
   "venue: isshiki matcha soho new york ny": {
     "miss": true,
@@ -9045,6 +9072,11 @@
   "venue: kaiser farmers market san francisco ca": {
     "miss": true,
     "at": 1795400360752
+  },
+  "venue: knock twice speakeasy detroit mi": {
+    "lat": 42.544057,
+    "lng": -83.38219,
+    "source": "nominatim-venue"
   },
   "venue: kohiko coffee house houston tx": {
     "lat": 29.578986,
@@ -9091,6 +9123,11 @@
   "venue: maynard crossing raleigh nc": {
     "lat": 35.787088,
     "lng": -78.811547,
+    "source": "nominatim-venue"
+  },
+  "venue: merai boston ma": {
+    "lat": 42.333627,
+    "lng": -71.118984,
     "source": "nominatim-venue"
   },
   "venue: mills park": {
@@ -9202,6 +9239,10 @@
     "miss": true,
     "at": 1795400413212
   },
+  "venue: roots bookstore & market miami fl": {
+    "miss": true,
+    "at": 1795871991726
+  },
   "venue: roots it miami fl": {
     "miss": true,
     "at": 1795400418266
@@ -9310,6 +9351,10 @@
     "miss": true,
     "at": 1795436177334
   },
+  "venue: the row at union market washington dc": {
+    "miss": true,
+    "at": 1795822085882
+  },
   "venue: the shop by potters union washington va": {
     "miss": true,
     "at": 1795440827027
@@ -9344,6 +9389,11 @@
     "miss": true,
     "at": 1795400407185
   },
+  "venue: union station baltimore md": {
+    "lat": 38.901992,
+    "lng": -77.003751,
+    "source": "nominatim-venue"
+  },
   "venue: vale matcha seattle wa": {
     "lat": 47.617271,
     "lng": -122.334857,
@@ -9369,6 +9419,10 @@
   "venue: we'll meet outside of the cafe washington dc": {
     "miss": true,
     "at": 1795400479358
+  },
+  "venue: wilton fire station 81 sacramento ca": {
+    "miss": true,
+    "at": 1795871994351
   },
   "venue: wynwood marketplace miami fl": {
     "miss": true,

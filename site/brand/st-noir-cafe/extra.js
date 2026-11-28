@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"st-noir-cafe","upcoming":[{"id":"9424ec29dea5","day":"Friday, Nov 27","time":"5–10 PM","place":"St. Noir Cafe, New Orleans","url":"/e/9424ec29dea5/","map":"/?event=9424ec29dea5"}],"drinks":[],"price":null,"story":"Cafe that hosts dated matcha events; not a matcha brand."});
+mmBrandExtra({"v":1,"brand":"st-noir-cafe","upcoming":[],"drinks":[],"price":null,"story":"Cafe that hosts dated matcha events; not a matcha brand."});

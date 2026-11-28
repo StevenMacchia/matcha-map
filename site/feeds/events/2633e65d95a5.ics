@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:SoHot NOLA pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:2633e65d95a5@matchamap-cu7.pages.dev
+DTSTAMP:20261128T132113Z
+LAST-MODIFIED:20261128T132113Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Mats & Matcha: Sip\, Sculpt & Socialize
+LOCATION:SoHot NOLA\, 10555 Lake Forest Blvd\, New Orleans\, LA
+DESCRIPTION:Start your Sunday with Hot Pilates\, signature matcha from In a
+  Bowl\, and a wellness social at SoHot NOLA.\nLikely\, not fully confirmed
+ .\nMore: https://matchamap.app/e/2633e65d95a5/
+URL:https://matchamap.app/e/2633e65d95a5/
+GEO:30.033073;-89.969355
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

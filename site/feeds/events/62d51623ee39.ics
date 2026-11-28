@@ -8,15 +8,16 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:62d51623ee39@matchamap-cu7.pages.dev
-DTSTAMP:20261127T180929Z
-LAST-MODIFIED:20261127T180929Z
-DTSTART:20261128T000000Z
-DTEND:20261128T020000Z
-SUMMARY:MATCHEE Pop-Up - Nov 28
+DTSTAMP:20261128T132113Z
+LAST-MODIFIED:20261128T132113Z
+DTSTART:20261128T170000Z
+DTEND:20261128T230000Z
+SUMMARY:Snack Bar × Matchee Pop-Up
 LOCATION:NoriNori\, Houston\, TX
-DESCRIPTION:A MATCHEE matcha and coffee pop-up at NoriNori in Houston\, par
- t of the November pop-up series.\nLikely\, not fully confirmed.\nMore: htt
- ps://matchamap.app/e/62d51623ee39/
+DESCRIPTION:Snack Bar and MATCHEE collaborate for a weekend pop-up at NoriN
+ ori. Featuring Basque cheesecake mochi\, matcha favorites\, and a special 
+ Mango Sticky Rice Matcha menu.\nMenu: cheesecake\, mochi\, mango\nLikely\,
+  not fully confirmed.\nMore: https://matchamap.app/e/62d51623ee39/
 URL:https://matchamap.app/e/62d51623ee39/
 GEO:29.705291;-95.555368
 STATUS:CONFIRMED

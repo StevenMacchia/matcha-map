@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T18:09:29.946Z",
+ "generated": "2026-11-28T13:21:13.162Z",
  "all": "/feeds/all.ics",
  "new": "/feeds/new.xml",
  "cities": {
@@ -27,7 +27,6 @@
   "dallas-tx": "/feeds/dallas-tx.ics",
   "dearborn-mi": "/feeds/dearborn-mi.ics",
   "decatur-ga": "/feeds/decatur-ga.ics",
-  "denver-co": "/feeds/denver-co.ics",
   "detroit-mi": "/feeds/detroit-mi.ics",
   "durham-nc": "/feeds/durham-nc.ics",
   "el-paso-tx": "/feeds/el-paso-tx.ics",
@@ -45,7 +44,6 @@
   "hialeah-fl": "/feeds/hialeah-fl.ics",
   "honolulu-hi": "/feeds/honolulu-hi.ics",
   "houston-tx": "/feeds/houston-tx.ics",
-  "indianapolis-in": "/feeds/indianapolis-in.ics",
   "irvine-ca": "/feeds/irvine-ca.ics",
   "jersey-city-nj": "/feeds/jersey-city-nj.ics",
   "kirkland-wa": "/feeds/kirkland-wa.ics",
@@ -128,7 +126,6 @@
   "dallas-tx": "Dallas, TX",
   "dearborn-mi": "Dearborn, MI",
   "decatur-ga": "Decatur, GA",
-  "denver-co": "Denver, CO",
   "detroit-mi": "Detroit, MI",
   "durham-nc": "Durham, NC",
   "el-paso-tx": "El Paso, TX",
@@ -146,7 +143,6 @@
   "hialeah-fl": "Hialeah, FL",
   "honolulu-hi": "Honolulu, HI",
   "houston-tx": "Houston, TX",
-  "indianapolis-in": "Indianapolis, IN",
   "irvine-ca": "Irvine, CA",
   "jersey-city-nj": "Jersey City, NJ",
   "kirkland-wa": "Kirkland, WA",

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Matcha Map//Pop-ups//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:books ✷ gifts ✷ gatherings pop-up
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5ac88eb4d7dd@matchamap-cu7.pages.dev
+DTSTAMP:20261128T132113Z
+LAST-MODIFIED:20261128T132113Z
+DTSTART:20261128T180000Z
+DTEND:20261129T000000Z
+SUMMARY:Small Business Saturday
+LOCATION:Tall Tales\, 3131 Adams Ave\, San Diego\, CA
+DESCRIPTION:Tall Tales hosts a Small Business Saturday gathering with books
+ \, matcha and shopping from local makers.\nMore: https://matchamap.app/e/5
+ ac88eb4d7dd/
+URL:https://matchamap.app/e/5ac88eb4d7dd/
+GEO:32.763175;-117.126669
+STATUS:CONFIRMED
+CATEGORIES:Matcha
+END:VEVENT
+END:VCALENDAR

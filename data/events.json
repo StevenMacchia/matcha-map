@@ -1,61 +1,6 @@
 {
-  "generated": "2026-11-27T18:09:29.946Z",
+  "generated": "2026-11-28T13:21:13.162Z",
   "events": [
-    {
-      "id": "8f4d3f8ce76e",
-      "brand": "Alma Matcha",
-      "source_id": "alma-matcha",
-      "kind": "cafe",
-      "category": "matcha",
-      "handle": "almamatcha",
-      "source_url": "https://www.instagram.com/p/De9pK1FOCmX/",
-      "title": "Alma Matcha pop-up",
-      "start": "2026-10-28T18:00:00-04:00",
-      "end": "2026-10-28T19:00:00-04:00",
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "",
-      "address": "",
-      "city": "Fort Lauderdale",
-      "state": "FL",
-      "zip": null,
-      "lat": 26.1412,
-      "lng": -80.1467,
-      "geocode_source": "none",
-      "approx": true,
-      "confidence": "unsure",
-      "status": "past",
-      "last_seen": "2026-11-24T03:30:45.515Z",
-      "first_seen": "2026-11-22T20:31:16.778Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/867376850_17962648686231369_1197037612207773579_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=k-G_JWGSWz0Q7kNvwGQIIJV&_nc_oc=AdoHYtItYLJrqvKUQH229t6ktHbzrZcEDYgBCpF2cPK-RbuGigs0Vdv8VKo1lBhHqfs&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=vQWY9vwSIb1n2CIjoJJ5Iw&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQRsTz43tMGtF4qaAVtYMh314ZTiILTMEncjWsZad1Zd8A&oe=6B0AD71A",
-        "local": null,
-        "credit": "@almamatcha",
-        "width": null,
-        "height": null
-      },
-      "image_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/867376850_17962648686231369_1197037612207773579_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=k-G_JWGSWz0Q7kNvwGQIIJV&_nc_oc=AdoHYtItYLJrqvKUQH229t6ktHbzrZcEDYgBCpF2cPK-RbuGigs0Vdv8VKo1lBhHqfs&_nc_zt=23&_nc_ht=scontent-atl3-2.cdninstagram.com&edm=AJ-jyNUEAAAA&_nc_gid=vQWY9vwSIb1n2CIjoJJ5Iw&_nc_ct=RQosPBUKFQIAAAA&oh=00_AQRsTz43tMGtF4qaAVtYMh314ZTiILTMEncjWsZad1Zd8A&oe=6B0AD71A",
-      "posts": {
-        "instagram": "https://www.instagram.com/p/De9pK1FOCmX/",
-        "tiktok": null,
-        "other": null
-      },
-      "menu": [],
-      "price": null,
-      "description": "Slow down, pick up a pen, and write a letter to yourself",
-      "links": {
-        "website": null,
-        "instagram": "https://www.instagram.com/almamatcha/",
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://www.instagram.com/p/De9pK1FOCmX/"
-      ],
-      "series": null
-    },
     {
       "id": "2a10a6a19b32",
       "brand": "UNLABELED Coffee and Matcha",
@@ -1685,7 +1630,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -3911,7 +3856,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -4143,7 +4088,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -8508,7 +8453,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -9966,7 +9911,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -12181,7 +12126,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "past",
-      "last_seen": "2026-11-26T23:16:21.529Z",
+      "last_seen": "2026-11-27T23:25:02.000Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -13548,7 +13493,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-26T23:16:21.529Z",
+      "last_seen": "2026-11-27T23:25:02.000Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -16954,7 +16899,7 @@
       "source_id": "mellobun-matte-matcha",
       "kind": "popup",
       "category": "matcha",
-      "handle": null,
+      "handle": "mellobunbakery",
       "source_url": "https://ma.to/event/mellobun-at-salvatore-gelateria-27-nov-2026",
       "title": "Mellobun at Salvatore Gelateria",
       "start": "2026-11-27",
@@ -16972,7 +16917,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "past",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-27T23:25:02.000Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -17083,7 +17028,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T03:30:45.515Z",
       "first_seen": "2026-11-23T23:00:54.877Z",
       "extracted_by": "rule",
@@ -17138,7 +17083,7 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-27T18:09:29.946Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
@@ -17193,7 +17138,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T12:16:21.482Z",
       "first_seen": "2026-11-23T12:13:27.855Z",
       "extracted_by": "rule",
@@ -17248,7 +17193,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-23T23:33:17.810Z",
       "first_seen": "2026-11-23T02:33:15.953Z",
       "extracted_by": "rule",
@@ -17303,7 +17248,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T03:30:45.515Z",
       "first_seen": "2026-11-24T03:30:45.515Z",
       "extracted_by": "rule",
@@ -17358,7 +17303,7 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T18:17:06.315Z",
       "first_seen": "2026-11-24T18:17:06.315Z",
       "extracted_by": "rule",
@@ -17407,7 +17352,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-23T01:04:15.523Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
@@ -17454,7 +17399,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T01:16:21.169Z",
       "first_seen": "2026-11-24T00:47:38.406Z",
       "extracted_by": "rule",
@@ -17509,7 +17454,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T03:30:45.515Z",
       "first_seen": "2026-11-23T23:00:54.877Z",
       "extracted_by": "rule",
@@ -17566,7 +17511,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T18:17:06.315Z",
       "first_seen": "2026-11-24T18:17:06.315Z",
       "extracted_by": "rule",
@@ -17624,7 +17569,7 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T12:16:21.482Z",
       "first_seen": "2026-11-23T06:33:16.113Z",
       "extracted_by": "rule",
@@ -17736,8 +17681,8 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "status": "past",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T23:00:54.877Z",
       "extracted_by": "manual",
       "image": null,
@@ -17789,8 +17734,8 @@
       "geocode_source": "nominatim-venue",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "status": "past",
+      "last_seen": "2026-11-27T23:25:02.000Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -17828,7 +17773,7 @@
       "source_id": "amato-raleigh",
       "kind": "cafe",
       "category": "bakery",
-      "handle": null,
+      "handle": "amatosweetlover",
       "source_url": "https://ma.to/event/amato-pop-up-nov-27-27-nov-2026",
       "title": "amatō Pop-Up: Nov 27",
       "start": "2026-11-27T12:00:00-05:00",
@@ -17845,8 +17790,8 @@
       "geocode_source": "nominatim-venue",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "status": "past",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -17878,6 +17823,66 @@
       "series": null
     },
     {
+      "id": "67e7a91fb416",
+      "brand": "Sistahs’Sweets Cupcakes🧁",
+      "source_id": "mato:sistahsweets",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "sistahsweets",
+      "source_url": "https://ma.to/event/sistahssweets-black-friday-pop-up-27-nov-2026",
+      "title": "Sistahs’Sweets Black Friday Pop-Up",
+      "start": "2026-11-27T12:00:00-05:00",
+      "end": "2026-11-27T18:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Union Station",
+      "address": "",
+      "city": "Baltimore",
+      "state": "MD",
+      "zip": null,
+      "lat": 38.901992,
+      "lng": -77.003751,
+      "geocode_source": "nominatim-venue",
+      "approx": false,
+      "confidence": "likely",
+      "status": "past",
+      "last_seen": "2026-11-27T23:25:02.000Z",
+      "first_seen": "2026-11-27T23:25:02.000Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/5f4789c8cc400541d0b2d40250501c233dd45800108550e082cc22ad80fcefe8-original.webp",
+        "local": "img/events/67e7a91fb416.webp",
+        "credit": "@sistahsweets",
+        "width": 675,
+        "height": 1200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/sistahssweets-black-friday-pop-up-27-nov-2026"
+      },
+      "menu": [
+        "cupcake",
+        "banana",
+        "latte",
+        "chocolate"
+      ],
+      "price": null,
+      "description": "Sistahs’Sweets hosts a Black Friday pop-up at Union Station with gourmet cupcakes, banana pudding, matcha lattes and gourmet hot chocolate, along with giveaways and the debut of the brand's first…",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/sistahsweets/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/sistahssweets-black-friday-pop-up-27-nov-2026"
+      ],
+      "series": null
+    },
+    {
       "id": "907bad3baf0e",
       "brand": "Magnaye",
       "source_id": "mato:magnaye.sd",
@@ -17900,8 +17905,8 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "confirmed",
-      "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "status": "past",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -17957,7 +17962,7 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-27T18:09:29.946Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
@@ -18025,8 +18030,8 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "status": "past",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -18077,7 +18082,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-27T18:00:03.572Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
@@ -18132,7 +18137,7 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-24T12:16:21.482Z",
       "first_seen": "2026-11-23T23:00:54.877Z",
       "extracted_by": "rule",
@@ -18190,7 +18195,7 @@
       "geocode_source": "yelp",
       "approx": false,
       "confidence": "unsure",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-22T18:26:06.518Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
@@ -18221,61 +18226,6 @@
       "series": null
     },
     {
-      "id": "62d51623ee39",
-      "brand": "NoriNori",
-      "source_id": "mato:norinorihtx",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": "norinorihtx",
-      "source_url": "https://ma.to/event/matchee-pop-up-nov-28-28-nov-2026",
-      "title": "MATCHEE Pop-Up - Nov 28",
-      "start": "2026-11-28",
-      "end": null,
-      "tz": "America/Chicago",
-      "all_day": false,
-      "venue": "NoriNori",
-      "address": "",
-      "city": "Houston",
-      "state": "TX",
-      "zip": null,
-      "lat": 29.705291,
-      "lng": -95.555368,
-      "geocode_source": "nominatim-venue",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
-      "first_seen": "2026-11-27T13:00:01.991Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/78db5c8213a687cb10710b849708638d34bd9ff210f8fe54a6c8a1da8018e198-original.webp",
-        "local": "img/events/62d51623ee39.webp",
-        "credit": "@norinorihtx",
-        "width": 511,
-        "height": 640
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://ma.to/event/matchee-pop-up-nov-28-28-nov-2026"
-      },
-      "menu": [],
-      "price": null,
-      "description": "A MATCHEE matcha and coffee pop-up at NoriNori in Houston, part of the November pop-up series.",
-      "links": {
-        "website": null,
-        "instagram": "https://www.instagram.com/norinorihtx/",
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://ma.to/event/matchee-pop-up-nov-28-28-nov-2026"
-      ],
-      "series": null
-    },
-    {
       "id": "68f970aee5d8",
       "brand": "Moody Matcha Ritual",
       "source_id": "mato:moodymatcharitual",
@@ -18298,8 +18248,8 @@
       "geocode_source": "none",
       "approx": true,
       "confidence": "unsure",
-      "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "status": "past",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -18353,8 +18303,8 @@
       "geocode_source": "nominatim-venue",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "status": "past",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -18408,7 +18358,7 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-27T18:09:29.946Z",
       "first_seen": "2026-11-23T13:16:40.235Z",
       "extracted_by": "rule",
@@ -18463,7 +18413,7 @@
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "likely",
-      "status": "upcoming",
+      "status": "past",
       "last_seen": "2026-11-22T19:34:50.123Z",
       "first_seen": "2026-11-22T19:34:50.123Z",
       "extracted_by": "rule",
@@ -18566,7 +18516,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -18623,15 +18573,15 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198032881%2F2716388061661%2F1%2Foriginal.20261115-211145?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.488&fp-y=0.588&s=2170f6858e80a2a0b47e46246f220ff5",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198032881%2F2716388061661%2F1%2Foriginal.20261115-211145?crop=focalpoint&fit=crop&h=200&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.488&fp-y=0.588&s=4e2f5cf8621c23f70b3d39ded91143e8",
         "local": "img/events/833368044402.jpg",
         "credit": "eventbrite.com",
-        "width": 1080,
-        "height": 1350
+        "width": 400,
+        "height": 200
       },
       "image_url": null,
       "posts": {
@@ -18736,7 +18686,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T18:00:03.572Z",
       "extracted_by": "rule",
       "image": {
@@ -18846,7 +18796,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -18895,7 +18845,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -19213,15 +19163,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197641872%2F138600941353%2F1%2Foriginal.20261110-001012?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.503&fp-y=0.084&s=2743f51bfdd5aa0b19eaddd81aebf14d",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197641872%2F138600941353%2F1%2Foriginal.20261110-001012?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.503&fp-y=0.084&s=74b861d548ea83002733123e09285520",
         "local": "img/events/762776aff9cf.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 640
+        "width": 1080,
+        "height": 1350
       },
       "image_url": null,
       "posts": {
@@ -19268,7 +19218,7 @@
       "approx": false,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": null,
@@ -19477,7 +19427,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -19532,7 +19482,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19676,6 +19626,61 @@
       "series": null
     },
     {
+      "id": "a1734b3590d3",
+      "brand": "Downtown Dallas, Inc.",
+      "source_id": "mato:downtown_dallas",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "downtown_dallas",
+      "source_url": "https://ma.to/event/matcha-movement-pilates-28-nov-2026",
+      "title": "Matcha & Movement Pilates",
+      "start": "2026-11-28T09:00:00-06:00",
+      "end": "2026-11-28T10:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "Café Olivia",
+      "address": "",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": null,
+      "lat": 32.787924,
+      "lng": -96.796931,
+      "geocode_source": "nominatim-venue",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/6fb7363ac877933cea74f71e6242bbef5869661328132e98fb90fa28f3fbc679-original.webp",
+        "local": "img/events/a1734b3590d3.webp",
+        "credit": "@downtown_dallas",
+        "width": 675,
+        "height": 1200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/matcha-movement-pilates-28-nov-2026"
+      },
+      "menu": [],
+      "price": "free",
+      "description": "Matcha & Movement Pilates runs from 9 to 10 AM at Café Olivia. Admission is free.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/downtown_dallas/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/matcha-movement-pilates-28-nov-2026"
+      ],
+      "series": null
+    },
+    {
       "id": "b747a3db5628",
       "brand": "Longevity Pittsburgh",
       "source_id": "meetup:longevity-pittsburgh",
@@ -19699,7 +19704,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -19754,7 +19759,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": null,
@@ -19911,7 +19916,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -19966,7 +19971,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -20021,7 +20026,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -20133,7 +20138,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T23:00:54.877Z",
       "extracted_by": "manual",
       "image": null,
@@ -20292,7 +20297,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20348,7 +20353,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T12:17:36.576Z",
       "extracted_by": "rule",
       "image": {
@@ -20405,7 +20410,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -20460,7 +20465,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -20494,6 +20499,66 @@
       "series": null
     },
     {
+      "id": "62d51623ee39",
+      "brand": "NoriNori",
+      "source_id": "mato:norinorihtx",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "norinorihtx",
+      "source_url": "https://ma.to/event/snack-bar-x-matchee-weekend-pop-up-28-nov-2026",
+      "title": "Snack Bar × Matchee Pop-Up",
+      "start": "2026-11-28T11:00:00-06:00",
+      "end": "2026-11-28T17:00:00-06:00",
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "NoriNori",
+      "address": "",
+      "city": "Houston",
+      "state": "TX",
+      "zip": null,
+      "lat": 29.705291,
+      "lng": -95.555368,
+      "geocode_source": "nominatim-venue",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-27T13:00:01.991Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/2241cd5954362f0e977cbbd83b23a16ea6132e352823be23955c3b2403a79f3b-original.webp",
+        "local": "img/events/62d51623ee39.webp",
+        "credit": "@norinorihtx",
+        "width": 676,
+        "height": 1200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/snack-bar-x-matchee-weekend-pop-up-28-nov-2026"
+      },
+      "menu": [
+        "cheesecake",
+        "mochi",
+        "mango"
+      ],
+      "price": null,
+      "description": "Snack Bar and MATCHEE collaborate for a weekend pop-up at NoriNori. Featuring Basque cheesecake mochi, matcha favorites, and a special Mango Sticky Rice Matcha menu.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/norinorihtx/",
+        "tiktok": null
+      },
+      "hours": "until sold out",
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/snack-bar-x-matchee-weekend-pop-up-28-nov-2026",
+        "https://ma.to/event/matchee-pop-up-nov-28-28-nov-2026"
+      ],
+      "series": null
+    },
+    {
       "id": "e751d0528825",
       "brand": "For the Love of Matcha",
       "source_id": "for-the-love-of-matcha",
@@ -20517,7 +20582,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20581,7 +20646,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:21:46.735Z",
       "extracted_by": "rule",
       "image": {
@@ -20636,7 +20701,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -20691,7 +20756,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -20725,6 +20790,118 @@
       "series": null
     },
     {
+      "id": "5a8da20f03bf",
+      "brand": "Magnaye",
+      "source_id": "mato:magnaye.sd",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "magnaye.sd",
+      "source_url": "https://ma.to/event/cafe-ayi-small-business-saturday-28-nov-2026",
+      "title": "CAFE AYI Small Business Saturday",
+      "start": "2026-11-28T10:00:00-08:00",
+      "end": "2026-11-28T14:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "AYI",
+      "address": "",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": null,
+      "lat": 32.815,
+      "lng": -117.1356,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-27T23:25:02.000Z",
+      "first_seen": "2026-11-27T23:25:02.000Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/93cbe12b7627d6b5657539a98f2d4550be198e0e0dd23a6e2e7e39683dfb53bb-original.webp",
+        "local": "img/events/5a8da20f03bf.webp",
+        "credit": "@magnaye.sd",
+        "width": 518,
+        "height": 640
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/cafe-ayi-small-business-saturday-28-nov-2026"
+      },
+      "menu": [
+        "hojicha"
+      ],
+      "price": null,
+      "description": "CAFE AYI returns for its annual Small Business Saturday popup at AYI.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/magnaye.sd/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/cafe-ayi-small-business-saturday-28-nov-2026"
+      ],
+      "series": null
+    },
+    {
+      "id": "5ac88eb4d7dd",
+      "brand": "books ✷ gifts ✷ gatherings",
+      "source_id": "mato:readtalltales",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "readtalltales",
+      "source_url": "https://ma.to/event/small-business-saturday-28-nov-2026-26",
+      "title": "Small Business Saturday",
+      "start": "2026-11-28T10:00:00-08:00",
+      "end": "2026-11-28T16:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Tall Tales",
+      "address": "3131 Adams Ave",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": null,
+      "lat": 32.763175,
+      "lng": -117.126669,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "confirmed",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/61c81055522e67f529c6848a796364df8940af6b5eb508aae63620c6e4f4ed98-original.webp",
+        "local": "img/events/5ac88eb4d7dd.webp",
+        "credit": "@readtalltales",
+        "width": 675,
+        "height": 1200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/small-business-saturday-28-nov-2026-26"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Tall Tales hosts a Small Business Saturday gathering with books, matcha and shopping from local makers.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/readtalltales/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/small-business-saturday-28-nov-2026-26"
+      ],
+      "series": null
+    },
+    {
       "id": "6b0572eb6ae9",
       "brand": "Glimpse Matcha",
       "source_id": "glimpse-matcha-popup",
@@ -20748,7 +20925,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20853,7 +21030,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -20921,7 +21098,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -20979,7 +21156,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -21034,7 +21211,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -21095,7 +21272,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T18:58:49.292Z",
       "extracted_by": "rule",
       "image": {
@@ -21150,7 +21327,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -21212,7 +21389,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -21329,7 +21506,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": {
@@ -21497,7 +21674,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -21552,7 +21729,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -21590,7 +21767,7 @@
       "kind": "popup",
       "category": "matcha",
       "handle": "shesinvited",
-      "source_url": "https://ma.to/event/all-girls-thrift-matcha-day-29-nov-2026",
+      "source_url": "https://ma.to/event/matcha-and-thrift-29-nov-2026",
       "title": "Pink Matcha & Thrift Finds",
       "start": "2026-11-29",
       "end": null,
@@ -21607,7 +21784,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -21621,11 +21798,11 @@
       "posts": {
         "instagram": null,
         "tiktok": null,
-        "other": "https://ma.to/event/all-girls-thrift-matcha-day-29-nov-2026"
+        "other": "https://ma.to/event/matcha-and-thrift-29-nov-2026"
       },
       "menu": [],
       "price": null,
-      "description": "SHE’S INVITED hosts an all-girls thrifting and matcha day featuring Monarca Thrift Club and Waku Waku Tea Bar.",
+      "description": "SHE’S INVITED hosts an all-girls thrifting and matcha day at Monarca Thrift Club.",
       "links": {
         "website": null,
         "instagram": "https://www.instagram.com/shesinvited/",
@@ -21634,7 +21811,7 @@
       "hours": null,
       "pay": null,
       "evidence": [
-        "https://ma.to/event/all-girls-thrift-matcha-day-29-nov-2026",
+        "https://ma.to/event/matcha-and-thrift-29-nov-2026",
         "https://ma.to/event/all-girls-thrift-matcha-29-nov-2026"
       ],
       "series": null
@@ -21663,7 +21840,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -21773,7 +21950,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T18:00:03.572Z",
       "extracted_by": "rule",
       "image": {
@@ -21828,15 +22005,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-26T18:00:04.328Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198432165%2F1930336273943%2F1%2Foriginal.20261121-024438?crop=focalpoint&fit=crop&w=350&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=76eb8d946b75c59b9bee3ea82fae6643",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198432165%2F1930336273943%2F1%2Foriginal.20261121-024438?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=e03a70596d0af86fff8d30973ca2f3e5",
         "local": "img/events/fdd859904b7c.jpg",
         "credit": "eventbrite.com",
-        "width": 350,
-        "height": 437
+        "width": 1122,
+        "height": 1402
       },
       "image_url": null,
       "posts": {
@@ -22104,7 +22281,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T00:33:14.962Z",
       "extracted_by": "rule",
       "image": {
@@ -22159,8 +22336,8 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
-      "first_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
       "extracted_by": "sweep",
       "image": null,
       "image_url": null,
@@ -22204,12 +22381,12 @@
       "zip": null,
       "lat": 40.0094,
       "lng": -75.1333,
-      "geocode_source": "manual",
+      "geocode_source": "none",
       "approx": true,
-      "confidence": "likely",
+      "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
-      "first_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
       "extracted_by": "rule",
       "image": null,
       "image_url": null,
@@ -22257,7 +22434,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -22312,7 +22489,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -22346,6 +22523,68 @@
       "series": null
     },
     {
+      "id": "33825468dbe7",
+      "brand": "Creamed | HTX",
+      "source_id": "mato:creamedtx",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "creamedtx",
+      "source_url": "https://ma.to/event/creamed-at-isa-matcha-29-nov-2026",
+      "title": "Creamed Pop-Up at Isa Matcha",
+      "start": "2026-11-29T10:00:00-06:00",
+      "end": null,
+      "tz": "America/Chicago",
+      "all_day": false,
+      "venue": "Isa Matcha at ONLI",
+      "address": "",
+      "city": "Houston",
+      "state": "TX",
+      "zip": null,
+      "lat": 29.7857,
+      "lng": -95.3888,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:00:06.639Z",
+      "first_seen": "2026-11-27T23:25:02.000Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/d4bf172e117e1c1eaa9c2917e492223f3129d04b4de655ba8544fb39cec93479-original.webp",
+        "local": "img/events/33825468dbe7.webp",
+        "credit": "@creamedtx",
+        "width": 512,
+        "height": 640
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/creamed-at-isa-matcha-29-nov-2026"
+      },
+      "menu": [
+        "matcha",
+        "corn basque cheesecakes",
+        "mandarin",
+        "chestnut cinnamon rolls",
+        "black sesame",
+        "sweet potato pie"
+      ],
+      "price": null,
+      "description": "Creamed returns to Isa Matcha at ONLI for a morning pop-up featuring a variety of bakes.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/creamedtx/",
+        "tiktok": null
+      },
+      "hours": "until sold out",
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/creamed-at-isa-matcha-29-nov-2026"
+      ],
+      "series": null
+    },
+    {
       "id": "57d7e842a46b",
       "brand": "Kinka",
       "source_id": "eventbrite:kinka",
@@ -22369,15 +22608,15 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F895489643%2F3285258954%2F1%2Foriginal.20241109-173903?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.509868421053&fp-y=0.5953307393&s=a100deced736c1fbc03561cbaca3251d",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F895489643%2F3285258954%2F1%2Foriginal.20241109-173903?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.509868421053&fp-y=0.5953307393&s=9e20b4d029a3c03eb680d3f3ab111f2b",
         "local": "img/events/57d7e842a46b.jpg",
         "credit": "eventbrite.com",
-        "width": 400,
-        "height": 541
+        "width": 512,
+        "height": 692
       },
       "image_url": null,
       "posts": {
@@ -22427,7 +22666,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-24T03:30:45.515Z",
       "extracted_by": "manual",
       "image": null,
@@ -22599,7 +22838,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -22631,7 +22870,7 @@
       "series": null
     },
     {
-      "id": "df42a83f695e",
+      "id": "e515c047c297",
       "brand": "Central Matcha",
       "source_id": "central-matcha",
       "kind": "popup",
@@ -22643,8 +22882,8 @@
       "end": "2026-11-29T14:00:00-06:00",
       "tz": "America/Chicago",
       "all_day": false,
-      "venue": "Mueller",
-      "address": "2006 Philomena St",
+      "venue": "Texas Farmers' Market at Mueller",
+      "address": "2006 Philomena St, Austin, TX 78723",
       "city": "Austin",
       "state": "TX",
       "zip": "78723",
@@ -22652,11 +22891,11 @@
       "lng": -97.702653,
       "geocode_source": "nominatim",
       "approx": false,
-      "confidence": "unsure",
+      "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
-      "extracted_by": "rule",
+      "extracted_by": "sweep",
       "image": null,
       "image_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t51.2885-15/225603686_573153657045146_7170797240610520053_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=7d201b&_nc_ohc=dgYX7IAGa88Q7kNvwEvfByM&_nc_oc=Adq7zaGT_mVmaJ4QhmyxfOMs4gvpCZ_J0QW1-nlirmfIBCrJVLGhQevTG3lNdD2_Gb8&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&edm=AJ-jyNUEAAAA&oh=00_AQRUZxOIHQspcbbM7EjQVd0pNkeZCmadPz18xqVEBjQnqA&oe=6B09F943",
       "posts": {
@@ -22690,7 +22929,7 @@
         "weekdays": [
           0
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://centralmatcha.com/pages/find-us",
         "projected": false
       }
@@ -22774,7 +23013,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -22895,7 +23134,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -22991,6 +23230,67 @@
       "series": null
     },
     {
+      "id": "d894bb38fe80",
+      "brand": "Balance Me Out",
+      "source_id": "mato:balancemeoutnow",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "balancemeoutnow",
+      "source_url": "https://ma.to/event/coffee-with-the-crew-at-station-81-29-nov-2026",
+      "title": "Coffee with the Crew at Station 81",
+      "start": "2026-11-29T09:00:00-08:00",
+      "end": "2026-11-29T11:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Wilton Fire Station 81",
+      "address": "",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": null,
+      "lat": 38.5677,
+      "lng": -121.4682,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:00:06.639Z",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/54ac523481f3e8ce3ced43192960085f06dce84cf4f11a124fe0610a6953318c-original.webp",
+        "local": "img/events/d894bb38fe80.webp",
+        "credit": "@balancemeoutnow",
+        "width": 1088,
+        "height": 1088
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/coffee-with-the-crew-at-station-81-29-nov-2026"
+      },
+      "menu": [
+        "specialty coffee",
+        "hot chocolate",
+        "matcha",
+        "chai",
+        "other special pastries"
+      ],
+      "price": null,
+      "description": "Balance Me Out and Wilton Fire District host a morning at Wilton Fire Station 81, where visitors can explore the fire station and enjoy drinks and baked goods from the coffee trailer.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/balancemeoutnow/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/coffee-with-the-crew-at-station-81-29-nov-2026"
+      ],
+      "series": null
+    },
+    {
       "id": "f6c4d24ddf8c",
       "brand": "For the Love of Matcha",
       "source_id": "for-the-love-of-matcha",
@@ -23014,7 +23314,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23186,7 +23486,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23244,7 +23544,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23296,7 +23596,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -23351,7 +23651,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
@@ -23461,7 +23761,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23563,7 +23863,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T18:00:05.195Z",
       "extracted_by": "rule",
       "image": {
@@ -23909,7 +24209,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -23977,7 +24277,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -24193,7 +24493,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -24252,7 +24552,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24320,7 +24620,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T18:00:05.195Z",
       "extracted_by": "rule",
       "image": {
@@ -24375,7 +24675,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24497,7 +24797,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -24554,7 +24854,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -24609,8 +24909,8 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
-      "first_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
       "extracted_by": "rule",
       "image": {
         "url": "https://cdn-az.allevents.in/events9/banners/d164a2a38df30264ae8e84992fbb34afed70c298c3ed3bffa37fb79aef170d06-rimg-w1200-h600-dcf8f8f8-gmir.jpg?v=1795160529",
@@ -24664,7 +24964,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
@@ -24719,7 +25019,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24786,7 +25086,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -24907,7 +25207,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -24962,7 +25262,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25014,7 +25314,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -25053,7 +25353,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -25082,7 +25382,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -25120,7 +25420,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -25149,7 +25449,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25216,7 +25516,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": null,
@@ -25238,6 +25538,104 @@
       "pay": null,
       "evidence": [
         "https://littlefootmatcha.com/pages/find-us"
+      ],
+      "series": null
+    },
+    {
+      "id": "43f2882d7d3b",
+      "brand": "Saikō Matcha House",
+      "source_id": "saiko-matcha-house",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.saikomatchahouse.com/",
+      "title": "Saikō Matcha House pop-up",
+      "start": "2026-12-04T00:00:00-05:00",
+      "end": null,
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "",
+      "address": "",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": null,
+      "lat": 35.8319,
+      "lng": -78.641,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
+      "extracted_by": "rule",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.saikomatchahouse.com/"
+      },
+      "menu": [],
+      "price": null,
+      "description": null,
+      "links": {
+        "website": "https://www.saikomatchahouse.com/",
+        "instagram": "https://www.instagram.com/saikomatchahouse/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.saikomatchahouse.com/"
+      ],
+      "series": null
+    },
+    {
+      "id": "64924d694143",
+      "brand": "Roots Kava Bar",
+      "source_id": "eventbrite:roots-kava-bar",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844776669",
+      "title": "Friday Night Comedy and Open Mic at Roots Kava Bar, Port Jefferson",
+      "start": "2026-12-04T00:00:00-05:00",
+      "end": null,
+      "tz": "America/New_York",
+      "all_day": true,
+      "venue": "Roots Kava Bar",
+      "address": "250 East Main Street",
+      "city": "Port Jefferson",
+      "state": "NY",
+      "zip": "11777",
+      "lat": 40.945446,
+      "lng": -73.067637,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "extracted_by": "rule",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844776669"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Alcohol-free comedy night every Friday in Port Jeff. Sign-ups 7:30, open mic 8, comedy 9. Kava, coffee, matcha and mocktails.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/friday-night-comedy-and-open-mic-at-roots-kava-bar-port-jefferson-tickets-2003844776669"
       ],
       "series": null
     },
@@ -25265,15 +25663,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T12:52:52.775Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198355506%2F164096185479%2F1%2Foriginal.20261119-221225?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.503&fp-y=0.167&s=1d0afe4322de1ad4dce7d2de0c30a2cf",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198355506%2F164096185479%2F1%2Foriginal.20261119-221225?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.503&fp-y=0.167&s=f812355e2717121c52f72d9a9913b27c",
         "local": "img/events/ad18f7388ca1.jpg",
         "credit": "eventbrite.com",
-        "width": 400,
-        "height": 500
+        "width": 512,
+        "height": 640
       },
       "image_url": null,
       "posts": {
@@ -25320,7 +25718,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -25375,7 +25773,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -25427,7 +25825,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -25466,7 +25864,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -25550,7 +25948,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -25588,7 +25986,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -25672,7 +26070,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -25704,6 +26102,61 @@
       "series": null
     },
     {
+      "id": "39470a524d45",
+      "brand": "Mystic Moon",
+      "source_id": "mato:mysticmoonmarkets",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "mysticmoonmarkets",
+      "source_url": "https://ma.to/event/mystic-moon-vintage-art-market-05-dec-2026",
+      "title": "mystic moon Vintage + Art Market",
+      "start": "2026-12-05",
+      "end": null,
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Audubon Park",
+      "address": "",
+      "city": "Orlando",
+      "state": "FL",
+      "zip": null,
+      "lat": 28.564601,
+      "lng": -81.342718,
+      "geocode_source": "nominatim-venue",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-27T23:25:02.000Z",
+      "first_seen": "2026-11-22T18:21:36.297Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/2ae9d2f34f779d66adceddb979ffe0414fb699582e976c0dd13978277cbd7ff8-original.webp",
+        "local": "img/events/39470a524d45.webp",
+        "credit": "@mysticmoonmarkets",
+        "width": 517,
+        "height": 640
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/mystic-moon-vintage-art-market-05-dec-2026"
+      },
+      "menu": [],
+      "price": null,
+      "description": "The mystic moon Vintage + Art Market brings curated vintage and Y2K, local art, handmade goods, matcha, sourdough and treats to Audubon Park.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/mysticmoonmarkets/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/mystic-moon-vintage-art-market-05-dec-2026"
+      ],
+      "series": null
+    },
+    {
       "id": "453b49b6f1be",
       "brand": "Personal",
       "source_id": "luma:personal",
@@ -25727,7 +26180,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -25782,7 +26235,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -25944,15 +26397,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T18:00:03.572Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198632546%2F3020577119413%2F1%2Foriginal.20261124-192203?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.25&fp-y=0.115&s=b5e4bdd48b6c896bea0be359039f0b28",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198632546%2F3020577119413%2F1%2Foriginal.20261124-192203?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.25&fp-y=0.115&s=3eb00445ac9ce79933a624fc06cc388c",
         "local": "img/events/899e8d13e316.jpg",
         "credit": "eventbrite.com",
-        "width": 820,
-        "height": 1024
+        "width": 512,
+        "height": 639
       },
       "image_url": null,
       "posts": {
@@ -26001,7 +26454,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -26056,15 +26509,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-24T18:00:10.224Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198259831%2F141034329664%2F1%2Foriginal.20261118-180039?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.044&fp-y=0.482&s=37b959745acd6fec887abefbc941dc4a",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198259831%2F141034329664%2F1%2Foriginal.20261118-180039?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.044&fp-y=0.482&s=48f8de21fdc2a4cb0e11b932e7e6a4d1",
         "local": "img/events/307c4fc83a42.jpg",
         "credit": "eventbrite.com",
-        "width": 400,
-        "height": 225
+        "width": 1200,
+        "height": 675
       },
       "image_url": null,
       "posts": {
@@ -26209,7 +26662,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -26264,7 +26717,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -26332,7 +26785,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -26446,7 +26899,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
@@ -26478,61 +26931,6 @@
       "series": null
     },
     {
-      "id": "39470a524d45",
-      "brand": "Mystic Moon",
-      "source_id": "mato:mysticmoonmarkets",
-      "kind": "popup",
-      "category": "matcha",
-      "handle": "mysticmoonmarkets",
-      "source_url": "https://ma.to/event/mystic-moon-vintage-art-market-05-dec-2026",
-      "title": "mystic moon Vintage + Art Market",
-      "start": "2026-12-05T10:00:00-05:00",
-      "end": null,
-      "tz": "America/New_York",
-      "all_day": false,
-      "venue": "Audubon Park",
-      "address": "",
-      "city": "Orlando",
-      "state": "FL",
-      "zip": null,
-      "lat": 28.564601,
-      "lng": -81.342718,
-      "geocode_source": "nominatim-venue",
-      "approx": false,
-      "confidence": "likely",
-      "status": "upcoming",
-      "last_seen": "2026-11-26T23:16:21.529Z",
-      "first_seen": "2026-11-22T18:21:36.297Z",
-      "extracted_by": "rule",
-      "image": {
-        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/2ae9d2f34f779d66adceddb979ffe0414fb699582e976c0dd13978277cbd7ff8-original.webp",
-        "local": "img/events/39470a524d45.webp",
-        "credit": "@mysticmoonmarkets",
-        "width": 517,
-        "height": 640
-      },
-      "image_url": null,
-      "posts": {
-        "instagram": null,
-        "tiktok": null,
-        "other": "https://ma.to/event/mystic-moon-vintage-art-market-05-dec-2026"
-      },
-      "menu": [],
-      "price": null,
-      "description": "The mystic moon Vintage + Art Market brings curated vintage and Y2K, local art, handmade goods, matcha, sourdough and treats to Audubon Park.",
-      "links": {
-        "website": null,
-        "instagram": "https://www.instagram.com/mysticmoonmarkets/",
-        "tiktok": null
-      },
-      "hours": null,
-      "pay": null,
-      "evidence": [
-        "https://ma.to/event/mystic-moon-vintage-art-market-05-dec-2026"
-      ],
-      "series": null
-    },
-    {
       "id": "dfde0977547d",
       "brand": "Northeast Tea House",
       "source_id": "eventbrite:northeast-tea-house",
@@ -26556,7 +26954,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-26T18:00:04.328Z",
       "extracted_by": "rule",
       "image": {
@@ -26612,7 +27010,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -26667,7 +27065,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26723,7 +27121,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -26779,7 +27177,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T19:09:02.673Z",
       "extracted_by": "rule",
       "image": {
@@ -26834,7 +27232,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-24T03:30:45.515Z",
       "extracted_by": "manual",
       "image": null,
@@ -26942,7 +27340,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27006,7 +27404,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "sweep",
       "image": {
@@ -27171,7 +27569,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27277,7 +27675,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -27316,7 +27714,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -27345,7 +27743,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27397,7 +27795,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": {
@@ -27452,7 +27850,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27519,7 +27917,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27620,8 +28018,8 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
-      "first_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
       "extracted_by": "rule",
       "image": {
         "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/9c4c8727ee46dc742c148d317ca2e9c9dc73a09aeaddbd798a87d89994d06d30-original.webp",
@@ -27677,7 +28075,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27741,7 +28139,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -27794,7 +28192,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -27856,7 +28254,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -27972,7 +28370,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -28089,7 +28487,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -28148,7 +28546,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -28204,7 +28602,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -28261,15 +28659,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T12:52:52.775Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198250936%2F3002587842824%2F1%2Foriginal.20261118-161325?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=880d734795593e580388a9179209ef91",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198250936%2F3002587842824%2F1%2Foriginal.20261118-161325?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=a2bea1aa119a609d2dbc5a40e4096d14",
         "local": "img/events/8692154643bf.jpg",
         "credit": "eventbrite.com",
-        "width": 400,
-        "height": 225
+        "width": 1200,
+        "height": 675
       },
       "image_url": null,
       "posts": {
@@ -28399,6 +28797,61 @@
       "pay": null,
       "evidence": [
         "https://www.instagram.com/reel/DgGMGXaOW2l/"
+      ],
+      "series": null
+    },
+    {
+      "id": "2633e65d95a5",
+      "brand": "SoHot NOLA",
+      "source_id": "eventbrite:sohot-nola",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://www.eventbrite.com/e/mats-matcha-sip-sculpt-socialize-tickets-2005421242922",
+      "title": "Mats & Matcha: Sip, Sculpt & Socialize",
+      "start": "2026-12-06T00:00:00-06:00",
+      "end": null,
+      "tz": "America/Chicago",
+      "all_day": true,
+      "venue": "SoHot NOLA",
+      "address": "10555 Lake Forest Blvd",
+      "city": "New Orleans",
+      "state": "LA",
+      "zip": "70127",
+      "lat": 30.033073,
+      "lng": -89.969355,
+      "geocode_source": "nominatim",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198692060%2F3021257081058%2F1%2Foriginal.20261125-165606?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.484&fp-y=0.378&s=5149aeba52aa8f8d7096987adac9dd94",
+        "local": "img/events/2633e65d95a5.jpg",
+        "credit": "eventbrite.com",
+        "width": 1080,
+        "height": 1350
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://www.eventbrite.com/e/mats-matcha-sip-sculpt-socialize-tickets-2005421242922"
+      },
+      "menu": [],
+      "price": null,
+      "description": "Start your Sunday with Hot Pilates, signature matcha from In a Bowl, and a wellness social at SoHot NOLA.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://www.eventbrite.com/e/mats-matcha-sip-sculpt-socialize-tickets-2005421242922"
       ],
       "series": null
     },
@@ -28541,15 +28994,15 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197512273%2F2013060034983%2F1%2Foriginal.20261107-233836?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.452&fp-y=0.241&s=b74939e8bbfdeb19f81aad7aa2e9214c",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197512273%2F2013060034983%2F1%2Foriginal.20261107-233836?crop=focalpoint&fit=crop&w=500&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.452&fp-y=0.241&s=19b444b22bd653aef92f9bfb711adc36",
         "local": "img/events/c5771fa18607.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 603
+        "width": 500,
+        "height": 589
       },
       "image_url": null,
       "posts": {
@@ -28643,8 +29096,8 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
-      "first_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
       "extracted_by": "rule",
       "image": {
         "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198707443%2F3014509025022%2F1%2Foriginal.20261125-211047?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.939&fp-y=0.243&s=a048de2f2acd0b33fc9a484551a0b42b",
@@ -28753,7 +29206,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -28921,7 +29374,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -28976,7 +29429,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29096,7 +29549,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29268,7 +29721,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29335,7 +29788,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:21:46.735Z",
       "extracted_by": "rule",
       "image": {
@@ -29390,7 +29843,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29448,7 +29901,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29475,6 +29928,61 @@
         "https://www.instagram.com/reel/Df-kjlFyU-Z",
         "https://www.instagram.com/reel/Df5ZRzOSeWX",
         "https://www.tiktok.com/@emkari_cafe/video/7710008452852075807"
+      ],
+      "series": null
+    },
+    {
+      "id": "2142362d821d",
+      "brand": "Roots Bookstore & Market",
+      "source_id": "mato:therootsbooksandmarket",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "therootsbooksandmarket",
+      "source_url": "https://ma.to/event/the-anime-edit-con-2026-06-dec-2026",
+      "title": "The Anime Edit Con 2026",
+      "start": "2026-12-06T14:00:00-05:00",
+      "end": "2026-12-06T19:00:00-05:00",
+      "tz": "America/New_York",
+      "all_day": false,
+      "venue": "Roots Bookstore & Market",
+      "address": "",
+      "city": "Miami",
+      "state": "FL",
+      "zip": null,
+      "lat": 25.7752,
+      "lng": -80.2086,
+      "geocode_source": "none",
+      "approx": true,
+      "confidence": "unsure",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:00:06.639Z",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/9a23d92cf3bea7a165963598e6f4c3c9218908aaf2dbf479e3a4bbbe6a21467d-original.webp",
+        "local": "img/events/2142362d821d.webp",
+        "credit": "@therootsbooksandmarket",
+        "width": 516,
+        "height": 640
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/the-anime-edit-con-2026-06-dec-2026"
+      },
+      "menu": [],
+      "price": null,
+      "description": "The Anime Edit Con 2026 takes place at Roots Bookstore & Market in Liberty City, presented by The Matcha Edit.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/therootsbooksandmarket/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/the-anime-edit-con-2026-06-dec-2026"
       ],
       "series": null
     },
@@ -29557,7 +30065,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T16:51:56.874Z",
       "extracted_by": "rule",
       "image": {
@@ -29612,7 +30120,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -29669,7 +30177,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -29723,7 +30231,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -29778,7 +30286,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -29817,7 +30325,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -29899,7 +30407,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -29938,7 +30446,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -30020,7 +30528,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30084,7 +30592,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30136,15 +30644,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198761351%2F3003345935585%2F1%2Foriginal.20261126-224232?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.461&fp-y=0.306&s=9cb35142cc883ea38a6628c07dc421d5",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198761351%2F3003345935585%2F1%2Foriginal.20261126-224232?crop=focalpoint&fit=crop&h=200&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.461&fp-y=0.306&s=e6a858eef68b1b189a4c9efeb24a7a73",
         "local": "img/events/cee586ca7c02.jpg",
         "credit": "eventbrite.com",
         "width": 512,
-        "height": 683
+        "height": 200
       },
       "image_url": null,
       "posts": {
@@ -30191,7 +30699,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30258,7 +30766,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30297,7 +30805,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -30381,7 +30889,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -30448,7 +30956,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30486,7 +30994,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -30515,7 +31023,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30554,7 +31062,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -30583,7 +31091,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -30757,7 +31265,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30796,7 +31304,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -30825,7 +31333,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -30863,7 +31371,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -30892,7 +31400,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": {
@@ -30950,15 +31458,15 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-26T18:00:04.328Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198650451%2F886739668473%2F1%2Foriginal.20261125-000545?crop=focalpoint&fit=crop&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.48&fp-y=0.716&s=5a93487c0e48d6b8800492bcb3b920c1",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198650451%2F886739668473%2F1%2Foriginal.20261125-000545?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.48&fp-y=0.716&s=1ec16b2ae93df8b879f558fd7298b0bd",
         "local": "img/events/57e03416d572.jpg",
         "credit": "eventbrite.com",
-        "width": 352,
-        "height": 528
+        "width": 512,
+        "height": 768
       },
       "image_url": null,
       "posts": {
@@ -31005,7 +31513,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T12:31:01.604Z",
       "extracted_by": "rule",
       "image": {
@@ -31062,7 +31570,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -31119,15 +31627,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-24T18:00:10.224Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198607874%2F1211508609%2F1%2Foriginal.20261124-135709?crop=focalpoint&fit=crop&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=fb7246c7cb64bd53c47b030cd98a2ab6",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198607874%2F1211508609%2F1%2Foriginal.20261124-135709?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=4b331822543ba21aa5cbd7cb7e849862",
         "local": "img/events/c49ef320b364.jpg",
         "credit": "eventbrite.com",
-        "width": 782,
-        "height": 716
+        "width": 400,
+        "height": 366
       },
       "image_url": null,
       "posts": {
@@ -31280,7 +31788,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -31348,7 +31856,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -31380,6 +31888,63 @@
       "series": null
     },
     {
+      "id": "16c8d9e0fbd8",
+      "brand": "Culture Wave Collective",
+      "source_id": "mato:culturewavecollective",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "culturewavecollective",
+      "source_url": "https://ma.to/event/the-rb-cafe-holiday-edition-12-dec-2026",
+      "title": "The R&B Cafe: Holiday Edition",
+      "start": "2026-12-12T11:00:00-05:00",
+      "end": "2026-12-12T15:00:00-05:00",
+      "tz": "America/Detroit",
+      "all_day": false,
+      "venue": "Knock Twice Speakeasy",
+      "address": "",
+      "city": "Detroit",
+      "state": "MI",
+      "zip": null,
+      "lat": 42.544057,
+      "lng": -83.38219,
+      "geocode_source": "nominatim-venue",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:00:06.639Z",
+      "extracted_by": "rule",
+      "image": {
+        "url": "https://mato.s3.us-east-1.amazonaws.com/instagram/post-image/6e1932ded82549e2b6893b4785f48c4083ebf96c215eb09f193ded6a88416d0b-original.webp",
+        "local": "img/events/16c8d9e0fbd8.webp",
+        "credit": "@culturewavecollective",
+        "width": 675,
+        "height": 1200
+      },
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": "https://ma.to/event/the-rb-cafe-holiday-edition-12-dec-2026"
+      },
+      "menu": [
+        "latte"
+      ],
+      "price": null,
+      "description": "The R&B Cafe: Holiday Edition is a holiday brunch themed \"All I Want for Christmas Is R&B,\" with R&B, matcha, lattes, mimosas, food and company. Holiday best is encouraged.",
+      "links": {
+        "website": null,
+        "instagram": "https://www.instagram.com/culturewavecollective/",
+        "tiktok": null
+      },
+      "hours": null,
+      "pay": null,
+      "evidence": [
+        "https://ma.to/event/the-rb-cafe-holiday-edition-12-dec-2026"
+      ],
+      "series": null
+    },
+    {
       "id": "3ddc3fb6f82e",
       "brand": "Littlefoot Matcha",
       "source_id": "littlefoot-matcha",
@@ -31403,7 +31968,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": null,
@@ -31454,7 +32019,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T18:22:28.723Z",
       "extracted_by": "manual",
       "image": null,
@@ -31506,7 +32071,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31562,7 +32127,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -31678,7 +32243,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31795,7 +32360,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31844,7 +32409,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -31967,7 +32532,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -32006,7 +32571,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -32035,7 +32600,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -32092,7 +32657,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -32156,7 +32721,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -32209,7 +32774,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -32271,7 +32836,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -32322,7 +32887,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-26T18:00:04.328Z",
       "extracted_by": "rule",
       "image": {
@@ -32380,7 +32945,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T18:00:05.195Z",
       "extracted_by": "rule",
       "image": {
@@ -32435,7 +33000,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -32491,7 +33056,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -32601,15 +33166,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197990622%2F1005144027503%2F1%2Foriginal.20261114-203920?crop=focalpoint&fit=crop&h=200&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=65e2c2d0159c1110fe44485fb3e9f9dd",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197990622%2F1005144027503%2F1%2Foriginal.20261114-203920?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=6141c3b6b8cb421314fc03896a8ab200",
         "local": "img/events/80067b26d6b5.jpg",
         "credit": "eventbrite.com",
         "width": 512,
-        "height": 200
+        "height": 384
       },
       "image_url": null,
       "posts": {
@@ -32656,7 +33221,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T18:00:03.572Z",
       "extracted_by": "rule",
       "image": {
@@ -32711,7 +33276,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T12:52:52.775Z",
       "extracted_by": "rule",
       "image": {
@@ -32768,7 +33333,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-26T18:00:04.328Z",
       "extracted_by": "rule",
       "image": {
@@ -32823,7 +33388,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -32878,7 +33443,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -32943,7 +33508,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T18:29:44.592Z",
       "extracted_by": "rule",
       "image": {
@@ -32998,7 +33563,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T23:37:45.171Z",
       "extracted_by": "manual",
       "image": null,
@@ -33100,7 +33665,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33164,7 +33729,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33231,7 +33796,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -33289,7 +33854,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -33344,7 +33909,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -33399,7 +33964,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T12:51:45.145Z",
       "extracted_by": "rule",
       "image": {
@@ -33435,7 +34000,7 @@
       "series": null
     },
     {
-      "id": "43aeff9a1f1a",
+      "id": "00eb146ceeae",
       "brand": "Dream Tea NYC",
       "source_id": "dream-tea-nyc",
       "kind": "tea-brand",
@@ -33447,20 +34012,20 @@
       "end": "2026-12-14T11:00:00-05:00",
       "tz": "America/New_York",
       "all_day": false,
-      "venue": "Empire Stores (Time Out Market)",
-      "address": "53 Water St, Brooklyn, NY 11201",
+      "venue": "Empire Stores",
+      "address": "83 Water Street",
       "city": "Brooklyn",
       "state": "NY",
       "zip": "11201",
-      "lat": 40.703341,
-      "lng": -73.991574,
+      "lat": 40.70331,
+      "lng": -73.990971,
       "geocode_source": "nominatim",
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
-      "extracted_by": "sweep",
+      "extracted_by": "rule",
       "image": {
         "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197657641%2F2891855102831%2F1%2Foriginal.20261110-053800?crop=focalpoint&fit=crop&h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=d87c2ae5fc457d06857af2f7e6d297a4",
         "local": "img/events/00eb146ceeae.jpg",
@@ -33517,7 +34082,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33556,7 +34121,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33585,7 +34150,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -33640,7 +34205,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33679,7 +34244,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33708,7 +34273,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33743,7 +34308,7 @@
         "weekdays": [
           2
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33825,7 +34390,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33864,7 +34429,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -33893,7 +34458,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -33931,7 +34496,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34066,7 +34631,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34105,7 +34670,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34134,7 +34699,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34172,7 +34737,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34201,7 +34766,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -34268,7 +34833,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T01:04:15.523Z",
       "extracted_by": "rule",
       "image": {
@@ -34323,15 +34888,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:00:01.991Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198718097%2F3003382173487%2F1%2Foriginal.20261126-012300?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.775&fp-y=0.866&s=259ddc733aac0deb6ed07ef2e26f2dfd",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198718097%2F3003382173487%2F1%2Foriginal.20261126-012300?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.775&fp-y=0.866&s=2e42401cc3443000e7350b8e32d5df86",
         "local": "img/events/11ec11fcbe7a.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 256
+        "width": 400,
+        "height": 200
       },
       "image_url": null,
       "posts": {
@@ -34378,7 +34943,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34416,7 +34981,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34445,7 +35010,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34484,7 +35049,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34513,7 +35078,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -34568,7 +35133,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T15:21:19.595Z",
       "extracted_by": "manual",
       "image": null,
@@ -34636,7 +35201,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:13:07.235Z",
       "extracted_by": "rule",
       "image": {
@@ -34691,7 +35256,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -34745,7 +35310,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34780,7 +35345,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -34809,7 +35374,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34848,7 +35413,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34877,7 +35442,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -34915,7 +35480,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -34944,7 +35509,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -35006,7 +35571,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35041,7 +35606,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35176,7 +35741,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -35241,7 +35806,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "rule",
       "image": {
@@ -35296,7 +35861,7 @@
       "approx": false,
       "confidence": "confirmed",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -35351,7 +35916,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T05:46:08.665Z",
       "extracted_by": "sweep",
       "image": null,
@@ -35407,7 +35972,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35442,7 +36007,7 @@
         "weekdays": [
           0
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -35471,7 +36036,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35509,7 +36074,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35538,7 +36103,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35577,7 +36142,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35606,7 +36171,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35645,7 +36210,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35674,7 +36239,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35709,7 +36274,7 @@
         "weekdays": [
           2
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35738,7 +36303,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35777,7 +36342,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35806,7 +36371,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35844,7 +36409,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -35873,7 +36438,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T06:33:16.113Z",
       "extracted_by": "rule",
       "image": {
@@ -35936,7 +36501,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -35975,7 +36540,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36004,7 +36569,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36042,7 +36607,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36071,7 +36636,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "manual",
       "image": null,
@@ -36125,7 +36690,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36160,7 +36725,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -36189,7 +36754,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36227,7 +36792,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36256,7 +36821,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36295,7 +36860,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36324,7 +36889,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -36386,7 +36951,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36421,7 +36986,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36566,7 +37131,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -36631,7 +37196,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36666,7 +37231,7 @@
         "weekdays": [
           0
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -36695,7 +37260,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36733,7 +37298,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36762,7 +37327,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -36815,7 +37380,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36854,7 +37419,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36883,7 +37448,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36922,7 +37487,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -36951,7 +37516,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -36986,7 +37551,7 @@
         "weekdays": [
           2
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37015,7 +37580,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -37054,7 +37619,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37083,7 +37648,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -37121,7 +37686,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37209,7 +37774,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:29:51.476Z",
       "extracted_by": "rule",
       "image": {
@@ -37264,7 +37829,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -37302,7 +37867,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37331,7 +37896,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -37370,7 +37935,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37572,15 +38137,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-26T18:00:04.328Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198746387%2F3018329861961%2F1%2Foriginal.20261126-152212?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.491&fp-y=0.366&s=d58286a0b680c76dfba5270e48b00af2",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198746387%2F3018329861961%2F1%2Foriginal.20261126-152212?crop=focalpoint&fit=crop&w=400&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.491&fp-y=0.366&s=efa392b3082623ff71e045947dcfe85b",
         "local": "img/events/4a5c658e3668.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 640
+        "width": 400,
+        "height": 500
       },
       "image_url": null,
       "posts": {
@@ -37750,7 +38315,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": {
@@ -37809,7 +38374,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -37844,7 +38409,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -37873,7 +38438,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -37912,7 +38477,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -37941,7 +38506,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -37979,7 +38544,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38008,7 +38573,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -38043,7 +38608,7 @@
         "weekdays": [
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38194,7 +38759,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:36:48.106Z",
       "extracted_by": "sweep",
       "image": null,
@@ -38259,7 +38824,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -38294,7 +38859,7 @@
         "weekdays": [
           0
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
         "projected": false
       }
@@ -38323,7 +38888,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -38361,7 +38926,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38510,7 +39075,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T17:52:31.893Z",
       "extracted_by": "manual",
       "image": null,
@@ -38549,7 +39114,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38578,7 +39143,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-24T18:19:43.168Z",
       "extracted_by": "manual",
       "image": null,
@@ -38617,7 +39182,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38646,7 +39211,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-24T18:19:43.168Z",
       "extracted_by": "manual",
       "image": null,
@@ -38681,7 +39246,7 @@
         "weekdays": [
           2
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38710,7 +39275,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T18:22:33.386Z",
       "extracted_by": "manual",
       "image": null,
@@ -38749,7 +39314,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38778,7 +39343,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-25T18:22:33.386Z",
       "extracted_by": "manual",
       "image": null,
@@ -38816,7 +39381,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38845,7 +39410,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-26T18:19:10.133Z",
       "extracted_by": "manual",
       "image": null,
@@ -38883,7 +39448,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38912,7 +39477,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-26T18:19:10.133Z",
       "extracted_by": "manual",
       "image": null,
@@ -38951,7 +39516,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -38980,7 +39545,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:21:46.735Z",
       "extracted_by": "manual",
       "image": null,
@@ -39018,7 +39583,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -39047,7 +39612,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-27T13:21:46.735Z",
       "extracted_by": "manual",
       "image": null,
@@ -39086,7 +39651,7 @@
           5,
           6
         ],
-        "until": "2027-01-08",
+        "until": "2027-01-09",
         "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
         "projected": false
       }
@@ -39115,7 +39680,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-24T18:19:43.168Z",
       "extracted_by": "rule",
       "image": {
@@ -39145,6 +39710,269 @@
         "https://allevents.in/ocala/matcha-on-the-mat/200031070067623"
       ],
       "series": null
+    },
+    {
+      "id": "f744dd131bf1",
+      "brand": "For the Love of Matcha",
+      "source_id": "for-the-love-of-matcha",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": "fortheloveofmatchacafe",
+      "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+      "title": "For the Love of Matcha at Grand Lake Farmers Market",
+      "start": "2027-01-09T09:00:00-08:00",
+      "end": "2027-01-09T14:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Splash Pad Park",
+      "address": "746 Grand Ave, Oakland, CA 94610",
+      "city": "Oakland",
+      "state": "CA",
+      "zip": null,
+      "lat": 37.811418,
+      "lng": -122.248801,
+      "geocode_source": "manual",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
+      "extracted_by": "manual",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "matcha latte",
+        "sweet potato matcha"
+      ],
+      "price": null,
+      "description": "A weekly matcha pop-up at the Grand Lake Farmers Market in Oakland that closes once it sells out, so go early. Seasonal specials such as sweet potato matcha rotate in.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": "Sat 9am-2pm, closes once sold out",
+      "pay": null,
+      "evidence": [
+        "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+        "https://joe.coffee/locations/ca/oakland/for-the-love-of-matcha-oakland/",
+        "https://www.instagram.com/reel/Dfvi65thyaz",
+        "https://www.agriculturalinstitute.org/grand-lake"
+      ],
+      "series": {
+        "id": "ftlom-grand-lake-saturdays",
+        "rule": "weekly on Saturdays",
+        "weekdays": [
+          6
+        ],
+        "until": "2027-01-09",
+        "source_url": "https://www.kqed.org/arts/13993389/best-matcha-bay-area-oakland-berkeley-sf-san-jose",
+        "projected": true
+      }
+    },
+    {
+      "id": "12ff174cb152",
+      "brand": "Muni Cafe",
+      "source_id": "muni-cafe",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "title": "Muni Cafe at Anh Oi Bake Shop",
+      "start": "2027-01-09T10:00:00-08:00",
+      "end": "2027-01-09T17:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Anh Oi Bake Shop",
+      "address": "314 6th Ave S, Seattle, WA 98104",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": null,
+      "lat": 47.599507,
+      "lng": -122.326189,
+      "geocode_source": "manual",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
+      "extracted_by": "manual",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "daydreamer",
+        "biko latte",
+        "sesame ube latte (matcha or espresso)"
+      ],
+      "price": null,
+      "description": "Muni Cafe is the resident drink counter at a Japantown bakery. Lattes come with matcha or espresso, in Filipino-inspired flavors like biko and ube.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": "Wed-Sun 10am-5pm; closed Nov 25-29",
+      "pay": null,
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+        "https://southseattleemerald.org/news/2026/05/11/south-end-life-a-vietnamese-american-cookie-shop-provides-a-sweet-offering-in-historic-cid-building"
+      ],
+      "series": {
+        "id": "muni-cafe-anh-oi",
+        "rule": "weekly on Sundays, Wednesdays, Thursdays, Fridays, Saturdays",
+        "weekdays": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "until": "2027-01-09",
+        "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+        "projected": true
+      }
+    },
+    {
+      "id": "9a2d4fa839bf",
+      "brand": "Howdy Y'all Coffee",
+      "source_id": "howdy-yall-coffee",
+      "kind": "popup",
+      "category": "coffee",
+      "handle": "howdyyallcoffee",
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "title": "Howdy Y'all Coffee at the Seattle Central Library",
+      "start": "2027-01-09T10:00:00-08:00",
+      "end": "2027-01-09T16:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Seattle Central Library",
+      "address": "1000 4th Ave, Seattle, WA 98104",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": null,
+      "lat": 47.606714,
+      "lng": -122.332698,
+      "geocode_source": "manual",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
+      "extracted_by": "manual",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "corn matcha",
+        "melon matcha",
+        "cream top matcha latte",
+        "hojicha"
+      ],
+      "price": null,
+      "description": "A matcha and hojicha counter inside the downtown library, with new corn and melon matcha this fall.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": "Mon-Sat 10am-4pm",
+      "pay": null,
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce"
+      ],
+      "series": {
+        "id": "howdy-yall-central-library",
+        "rule": "weekly on Mondays, Tuesdays, Wednesdays, Thursdays, Fridays, Saturdays",
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "until": "2027-01-09",
+        "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+        "projected": true
+      }
+    },
+    {
+      "id": "fd1dc31e774b",
+      "brand": "Nicho's Matcha Cafe",
+      "source_id": "nichos-matcha-cafe",
+      "kind": "popup",
+      "category": "matcha",
+      "handle": null,
+      "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+      "title": "Nicho's Matcha Saturday pop-up at Hiroshi's",
+      "start": "2027-01-09T11:00:00-08:00",
+      "end": "2027-01-09T15:00:00-08:00",
+      "tz": "America/Los_Angeles",
+      "all_day": false,
+      "venue": "Hiroshi's Take-Out & Deli",
+      "address": "2521 15th Ave S, Seattle, WA 98144",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": null,
+      "lat": 47.580434,
+      "lng": -122.313613,
+      "geocode_source": "manual",
+      "approx": false,
+      "confidence": "likely",
+      "status": "upcoming",
+      "last_seen": "2026-11-28T13:21:13.162Z",
+      "first_seen": "2026-11-28T13:21:13.162Z",
+      "extracted_by": "manual",
+      "image": null,
+      "image_url": null,
+      "posts": {
+        "instagram": null,
+        "tiktok": null,
+        "other": null
+      },
+      "menu": [
+        "signature matcha",
+        "hojicha",
+        "rotating seasonal menu"
+      ],
+      "price": null,
+      "description": "Saturdays in Beacon Hill: Nicho's serves signature matcha and hojicha from inside Hiroshi's.",
+      "links": {
+        "website": null,
+        "instagram": null,
+        "tiktok": null
+      },
+      "hours": "11am-3pm",
+      "pay": null,
+      "evidence": [
+        "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+        "https://www.instagram.com/p/Df-KmBwn5xX",
+        "https://www.allmenus.com/wa/seattle/464943-hiroshis-catering-take-out-deli/menu/"
+      ],
+      "series": {
+        "id": "nichos-hiroshis-saturdays",
+        "rule": "weekly on Saturdays",
+        "weekdays": [
+          6
+        ],
+        "until": "2027-01-09",
+        "source_url": "https://letitsimmernewsletter.substack.com/p/this-week-in-seattle-pop-ups-november-0ce",
+        "projected": true
+      }
     },
     {
       "id": "da33035a8ef2",
@@ -39217,7 +40045,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -39272,7 +40100,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
@@ -39382,7 +40210,7 @@
       "approx": true,
       "confidence": "unsure",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:00:03.572Z",
+      "last_seen": "2026-11-28T13:00:06.639Z",
       "first_seen": "2026-11-23T18:33:18.178Z",
       "extracted_by": "rule",
       "image": {
@@ -39437,7 +40265,7 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-23T13:04:49.907Z",
       "extracted_by": "rule",
       "image": {
@@ -39718,15 +40546,15 @@
       "approx": false,
       "confidence": "likely",
       "status": "upcoming",
-      "last_seen": "2026-11-27T18:09:29.946Z",
+      "last_seen": "2026-11-28T13:21:13.162Z",
       "first_seen": "2026-11-22T18:58:18.157Z",
       "extracted_by": "rule",
       "image": {
-        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194736949%2F2210789097043%2F1%2Foriginal.20260930-161559?crop=focalpoint&fit=crop&w=512&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.506&fp-y=0.787&s=4e3905666bfe4c3ebdc3330938cf5bcd",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194736949%2F2210789097043%2F1%2Foriginal.20260930-161559?crop=focalpoint&fit=crop&w=352&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.506&fp-y=0.787&s=1e1dfff50afac04e4e363ab65f5c1b54",
         "local": "img/events/1592600cd51b.jpg",
         "credit": "eventbrite.com",
-        "width": 512,
-        "height": 640
+        "width": 352,
+        "height": 440
       },
       "image_url": null,
       "posts": {

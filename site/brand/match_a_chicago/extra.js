@@ -1,1 +1,1 @@
-mmBrandExtra({"v":1,"brand":"match_a_chicago","upcoming":[{"id":"8f8e1673d163","day":"Friday, Nov 27","time":"All day","place":"Chicago, IL","url":"/e/8f8e1673d163/","map":"/?event=8f8e1673d163"}],"drinks":[],"price":null,"story":"Collective with a permanent West Town cafe; posts collabs and cocktail nights."});
+mmBrandExtra({"v":1,"brand":"match_a_chicago","upcoming":[],"drinks":[],"price":null,"story":"Collective with a permanent West Town cafe; posts collabs and cocktail nights."});
