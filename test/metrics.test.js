@@ -127,3 +127,21 @@ test("the dashboard is noindex, outside the sitemap and robots allow list is unt
   assert.ok(!/\/m\//.test(fs.readFileSync(new URL("../site/sitemap.xml", import.meta.url), "utf8")));
   assert.match(fs.readFileSync(new URL("../site/privacy/index.html", import.meta.url), "utf8"), /Counting visits and taps/);
 });
+
+test("states and countries are separate lists: US rows count under their state and under US, other countries only under their country, and Canada is not California", async () => {
+  const kv = fakeKV(), now = new Date("2026-11-27T15:00:00Z"), cf = (country, regionCode) => ({ country, regionCode });
+  const visit = (c, ip) => recordPageview(kv, req("https://matchamap.app/", UA.desk, c, { "cf-connecting-ip": ip }), {}, now);
+  await visit(cf("US", "CA"), "198.51.100.1"); await visit(cf("US", "CA"), "198.51.100.2"); await visit(cf("US", "NC"), "198.51.100.3");
+  await visit(cf("CA", "ON"), "198.51.100.4"); await visit(cf("GB", "ENG"), "198.51.100.5"); await visit(cf("SG", ""), "198.51.100.6");
+  const d = rollup((await kv.list({ prefix: "mp:" })).keys, []);
+  assert.deepEqual(d.state, { CA: 2, NC: 1 });
+  assert.deepEqual(d.country, { US: 3, CA: 1, GB: 1, SG: 1 });
+  const w = summarize([{ day: "2026-11-27", counts: d }]).windows[7];
+  assert.deepEqual(w.states.map((x) => x.name), ["CA", "NC"]);
+  assert.equal(w.countries[0].name, "US"); assert.equal(w.countries.length, 4);
+  // a rollup stored before countries existed has one mixed map: it is split on the way out
+  const old = rollup([], []); old.state = { NC: 5, GB: 2, SG: 1 }; delete old.country;
+  const o = summarize([{ day: "2026-11-26", counts: old }]).windows[7];
+  assert.deepEqual(o.states.map((x) => x.name), ["NC"]);
+  assert.deepEqual(Object.fromEntries(o.countries.map((x) => [x.name, x.count])), { US: 5, GB: 2, SG: 1 });
+});

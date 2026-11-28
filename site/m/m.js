@@ -16,6 +16,8 @@
   var fmt = function (n) { return n == null ? "n/a" : Number(n).toLocaleString("en-US"); };
   var sum = function (a, f) { return a.reduce(function (s, x) { return s + (f(x) || 0); }, 0); };
 
+  var regionNames = null; try { regionNames = new Intl.DisplayNames(["en"], { type: "region" }); } catch (x) { /* older browser: show the code */ }
+  function countryName(code) { if (code === "??") return "Unknown"; try { return (regionNames && regionNames.of(code)) || code; } catch (x) { return code; } }
   function tile(label, value, note, cls) { return el("div", { cls: "tile " + (cls || "") }, [el("b", { text: value }), el("span", { text: label }), note ? el("small", { text: note }) : none()]); }
   function card(title, body, cls, badge) {
     var h = el("h2", { text: title });
@@ -81,15 +83,16 @@
     var devs = w.devices.map(function (x) { return x.name + " " + x.count; }).join(", ") || "none yet";
     var grid = el("div", { cls: "grid" }, [
       card("Visitors per day", [pend ? el("p", { cls: "empty", text: "Counting from launch." }) : line(series), pend ? none() : legend()], "wide", sm),
-      card("Visitors by state", [bars(w.states.filter(function (x) { return /^[A-Z]{2}$/.test(x.name); }).slice(0, 15).map(function (x) { return { label: x.name, count: x.count }; }))], "", sm),
-      card("Pages people view", [bars(w.groups.map(function (x) { return { label: x.name, count: x.count }; }), "pink")], "", sm),
+      card("Visitors by US state", [bars(w.states.slice(0, 15).map(function (x) { return { label: x.name, count: x.count }; }))], "", sm),
+      card("Visitors by country", [bars((w.countries || []).slice(0, 12).map(function (x) { return { label: countryName(x.name), count: x.count }; }))], "", sm),
       card("How people use the site", [bars(feats)], "wide", sm),
       card("Top clicked cards", [rank(w.clicked)], "", sm),
       card("RSVPs, top pop-ups", [rank(w.rsvp.top)], "", d.sampleRsvp ? { t: "sample", s: 1 } : null),
+      card("Pages people view", [bars(w.groups.map(function (x) { return { label: x.name, count: x.count }; }), "pink")], "", sm),
       card("Top pages", [rank(w.paths)], "", sm),
       card("Where visitors come from", [rank(w.referrers), el("p", { cls: "note", text: "Devices: " + devs })], "", sm),
       card("Map size", [mapBox], ""),
-      card("Run health", [runBox], "")
+      card("Run health", [runBox], "wide")
     ]);
     board.textContent = ""; board.appendChild(stamp); board.appendChild(tiles); board.appendChild(grid);
     if (d.sample) board.appendChild(el("p", { cls: "note", text: "Cards marked sample show made-up numbers for one day, in a lighter tone, so the layout can be seen. Real counting starts at launch." }));
